@@ -1,10 +1,10 @@
 # Canonical Legal AST v0.1 — design contract
 
-**Status:** DRAFT UNDER STRESS TEST  
+**Status:** FROZEN INTERFACE — adapters remain versioned  
 **Issue:** #4  
 **Purpose:** source-independent internal representation for legal-text states.
 
-This is not yet frozen. It must survive at least three radically different official source fixtures before P0-D closes.
+The v0.1 interface is frozen after live adversarial validation. Source adapters remain versioned and may evolve without changing the core contract. See `docs/decisions/ast-v0.1-interface-freeze.md`.
 
 ## Why a flat-with-links AST
 
@@ -300,9 +300,9 @@ Source modification annotations may provide an additional official evidence path
 
 ---
 
-# Freeze criteria
+# Freeze criteria — satisfied 2026-09-20
 
-v0.1 is not considered stable until it can represent without material loss:
+v0.1 was frozen after demonstrating that it can represent without material loss:
 
 1. **modern fragmented FMX4** — Regulation 794/2004 original;
 2. **early historical HTML** — Regulation No 1 (1958);
@@ -311,3 +311,12 @@ v0.1 is not considered stable until it can represent without material loss:
 5. one source containing footnotes + ELI-marked references.
 
 If any case requires source-specific fields in the core legal model rather than provenance/native metadata, the abstraction should be reconsidered.
+
+
+---
+
+# Post-freeze rule
+
+New source-specific parser work does not reopen the AST foundation by default.
+
+Reopen the core contract only when an official adversarial fixture demonstrates legally relevant information that cannot be represented by v0.1 without semantic distortion. Otherwise improve the relevant adapter, accounting rule, completeness plan, or regression fixture.

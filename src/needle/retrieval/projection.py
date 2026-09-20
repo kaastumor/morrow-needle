@@ -94,7 +94,7 @@ def _empty_document(
     source_key: str,
     kind: str,
     entity_id: str,
-    support_count: int,
+    support_record_ids: list[str],
 ) -> dict[str, Any]:
     subject = thread["subject"]
     lexical: list[dict[str, str]] = []
@@ -122,8 +122,9 @@ def _empty_document(
         "evidence_states":[],
         "lexical":lexical,
         "source_mode":{
-            "closed":support_count > 0,
-            "support_count":support_count,
+            "closed":bool(support_record_ids),
+            "support_count":len(support_record_ids),
+            "support_record_ids":sorted(support_record_ids),
         },
     }
 
@@ -398,6 +399,11 @@ def build_thread_projection(
             "support_count":sum(
                 doc["source_mode"]["support_count"] for doc in documents.values()
             ),
+            "support_record_ids":sorted({
+                record_id
+                for doc in documents.values()
+                for record_id in doc["source_mode"]["support_record_ids"]
+            }),
         },
     }
 

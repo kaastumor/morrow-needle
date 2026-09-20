@@ -334,3 +334,30 @@ def render_dependency_ripple_text(view: dict[str, Any]) -> str:
         "- Legislative X-Ray is a derived view; canonical mutation and semantic truth stay in their owning contracts.",
     ])
     return "\n".join(lines)+"\n"
+
+
+
+def emit_dependency_ripple_facts(
+    composition: dict[str, Any],
+    *,
+    root: Path | str = Path("."),
+) -> list[dict[str, Any]]:
+    view=build_dependency_ripple_view(composition,root=root)
+    facts=[]
+    for case in view["cases"]:
+        facts.append({
+            "kind":"DEPENDENCY_RIPPLE",
+            "case_id":case["case_id"],
+            "language":case["language"],
+            "local_provision":case["local_provision"],
+            "local_textual_mutation":False,
+            "local_continuity_result":case["local_continuity"]["result"],
+            "upstream_mutation":case["upstream_change"],
+            "derived_effect":case["derived_effect"],
+            "dependency":case["dependency"],
+        })
+    facts.append({
+        "kind":"DEPENDENCY_RIPPLE_SUMMARY",
+        **view["summary"],
+    })
+    return facts

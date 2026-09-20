@@ -54,7 +54,9 @@ Define the normalized internal representation of legal texts before parsers prol
 ### P0-E — Temporal semantics
 **Issue #5**
 
-Stress-test entry into force, application, expiry, delayed provisions, transition periods, partial applicability, retroactivity, and time-scoped derogations.
+Stress-test entry into force, application, expiry, delayed provisions, transition periods, partial applicability, retroactivity, time-scoped derogations, and **gapped regime continuity**.
+
+Discovery finding now adopted into the foundation: genealogical continuity and applicability continuity are separate dimensions. A successor regime may descend directly from an expired predecessor while a real legal gap exists between them.
 
 ### P0-F — Corrigenda + multilingual state
 **Issue #6**
@@ -102,6 +104,7 @@ One historically messy act/domain reconstructed from original source to public e
 - plain-language explanation evaluation.
 - domain subscriptions and saved monitors.
 - Dark Matter: known-but-unavailable document representation.
+- **Half-Life (Issue #10):** factual history of temporary regimes — original planned duration, extensions, gaps, re-enactments, final expiry or transition into successor/permanent rules.
 
 ## P3 — Expansion
 

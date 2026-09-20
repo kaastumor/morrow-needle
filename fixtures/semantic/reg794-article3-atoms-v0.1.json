@@ -31,6 +31,14 @@
       "text_hash": "c7fc733a71948a5bd1b40fc83e6e0ba18f073803adaa8bd97bbc73a2f55cdb26",
       "locator": "L_2008082EN.01000101.xml#normalized-chars:7704-7983",
       "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
+    },
+    "span-pki-correspondence-duty": {
+      "identifier": "CELEX:32008R0271",
+      "language": "ENG",
+      "text": "All correspondence in connection with a notification shall be transmitted electronically via the secured e-mail system Public Key Infrastructure (PKI).",
+      "text_hash": "d248b91594760dc2970219153a93862d574eaf13ad6c38c08204f8ec380e4a6d",
+      "locator": "L_2008082EN.01000101.xml#normalized-chars:7551-7702",
+      "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
     }
   },
   "atoms": [
@@ -102,6 +110,70 @@
         "human_review": false
       },
       "notes": "First verified semantic atom; affected entities deliberately left empty until separately evidenced."
+    },
+    {
+      "atom_id": "reg794-art3-pki-correspondence-duty-v0.1",
+      "verification_state": "VERIFIED",
+      "source_mutation_ids": [
+        "reg794-article3-live-verified-v0.1"
+      ],
+      "act_id": "CELEX:32004R0794",
+      "provision_refs": [
+        {
+          "provision_instance_id": null,
+          "citation_path": "Article 3 > 3",
+          "language": "ENG"
+        }
+      ],
+      "language_scope": {
+        "languages": [
+          "ENG"
+        ],
+        "cross_language_equivalence_assumed": false
+      },
+      "claim": {
+        "legal_effect": "DUTY",
+        "dimensions": [
+          "PROCEDURE",
+          "DIGITAL_CHANNEL"
+        ],
+        "statement": "Correspondence in connection with a notification must be transmitted electronically via Public Key Infrastructure (PKI).",
+        "subject": "correspondence in connection with a notification",
+        "action": "must be transmitted electronically",
+        "object": "Public Key Infrastructure (PKI)"
+      },
+      "semantic_basis": {
+        "classification_method": "DETERMINISTIC_LEGAL_LANGUAGE",
+        "trigger_terms": [
+          "shall be transmitted electronically",
+          "Public Key Infrastructure (PKI)"
+        ],
+        "qualifier_terms": []
+      },
+      "evidence_state": "DIRECT",
+      "source_spans": [
+        {
+          "span_id": "span-pki-correspondence-duty",
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32008R0271",
+          "locator": "L_2008082EN.01000101.xml#normalized-chars:7551-7702",
+          "language": "ENG",
+          "text_hash": "d248b91594760dc2970219153a93862d574eaf13ad6c38c08204f8ec380e4a6d",
+          "role": "SEMANTIC_CLAIM",
+          "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
+        }
+      ],
+      "temporal_assertion_refs": [],
+      "procedure_state_refs": [],
+      "relations": [],
+      "affected_entities": [],
+      "provenance": {
+        "observed_at": "2026-09-20T16:29:41Z",
+        "extractor_version": "manual-gold-v0.1",
+        "adversary_version": "semantic-adversary-v0.1",
+        "human_review": false
+      },
+      "notes": "Positive correspondence-channel duty from the authentic 2008 replacement. No application-date reference is attached because the SANI-specific 1 July 2008 temporal clause must not be silently generalized to this sentence."
     },
     {
       "atom_id": "reg794-art3-invalid-channel-status-v0.1",

@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/operational-state-v0.1.json",
+  "title": "Morrow // Needle Operational State v0.1",
+  "description": "Minimal prospective operational cache for update comparison. It stores append-only provenance Source Observations plus pointers to the latest eligible baseline. It is not canonical legal truth.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "state_id",
+    "character",
+    "updated_at",
+    "baseline_policy",
+    "processed_event_keys",
+    "source_observations",
+    "baselines"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "operational-state-v0.1"
+    },
+    "state_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "character": {
+      "const": "OPERATIONAL_CACHE"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "baseline_policy": {
+      "const": "PROSPECTIVE_ONLY"
+    },
+    "processed_event_keys": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "source_observations": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "baselines": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "baseline_key",
+          "identifier",
+          "language",
+          "root_cellar_id",
+          "content_observation_id",
+          "metadata_observation_id",
+          "observed_at",
+          "eligible_for_event_ingestion_after",
+          "seed_character"
+        ],
+        "properties": {
+          "baseline_key": {
+            "type": "string",
+            "minLength": 1
+          },
+          "identifier": {
+            "type": "string",
+            "minLength": 1
+          },
+          "language": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+          },
+          "root_cellar_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "content_observation_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "metadata_observation_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "eligible_for_event_ingestion_after": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "seed_character": {
+            "enum": [
+              "COLD_START_SEED",
+              "POST_EVENT_REFRESH"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

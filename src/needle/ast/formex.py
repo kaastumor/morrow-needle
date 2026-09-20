@@ -37,6 +37,24 @@ PROVENANCE_ONLY_TAGS = {"GR.ANNOTATION", "GR.CORRIG", "GR.MOD.ACT", "GR.NOTES"}
 def local(tag: str) -> str: return tag.rsplit("}", 1)[-1].upper()
 def text_of(element: ET.Element) -> str: return normalize_compare_text("".join(element.itertext()))
 
+def _is_source_structural(element: ET.Element) -> bool:
+    tag = local(element.tag)
+    return tag == "TITLE" or tag in STRUCTURAL_KINDS
+
+def text_of_flow(element: ET.Element) -> str:
+    """Visible inline flow excluding nested legal structures."""
+    parts: list[str] = []
+    if element.text:
+        parts.append(element.text)
+    for child in list(element):
+        if not _is_source_structural(child):
+            value = text_of_flow(child)
+            if value:
+                parts.append(value)
+        if child.tail:
+            parts.append(child.tail)
+    return normalize_compare_text("".join(parts))
+
 def _native_identifier(element: ET.Element) -> str | None:
     for key in ("IDENTIFIER", "ID", "ITEM.ID"):
         if key in element.attrib: return element.attrib[key]
@@ -46,7 +64,7 @@ def _label_and_heading(element: ET.Element):
     label = heading = label_element = heading_element = None
     children = list(element)
     for child in children:
-        tag, value = local(child.tag), text_of(child)
+        tag, value = local(child.tag), text_of_flow(child)
         if not value:
             continue
         if tag in LABEL_TAGS and label is None:
@@ -61,7 +79,7 @@ def _label_and_heading(element: ET.Element):
             if local(child.tag) != "NP":
                 continue
             for grandchild in list(child):
-                tag, value = local(grandchild.tag), text_of(grandchild)
+                tag, value = local(grandchild.tag), text_of_flow(grandchild)
                 if value and tag in LABEL_TAGS:
                     label, label_element = value, grandchild
                     break
@@ -75,7 +93,7 @@ def _title_semantics(element: ET.Element):
     primary_element = secondary_element = None
     for child in list(element):
         tag = local(child.tag)
-        value = text_of(child)
+        value = text_of_flow(child)
         if not value:
             continue
         if tag == "TI" and primary is None:
@@ -199,6 +217,8 @@ class FormexASTParser:
         role: str = "BODY",
         reason: str = "mixed-content parent-flow text",
     ) -> None:
+        if self._ledger is not None and not self._ledger.element_text_is_unclaimed(element):
+            return
         segment_id = self._add_flow_segment(
             node_id=node_id,
             text=element.text,
@@ -222,6 +242,8 @@ class FormexASTParser:
         native_path: str,
         role: str = "BODY",
     ) -> None:
+        if self._ledger is not None and not self._ledger.child_tail_is_unclaimed(child):
+            return
         segment_id = self._add_flow_segment(
             node_id=node_id,
             text=child.tail,
@@ -266,7 +288,7 @@ class FormexASTParser:
                     and self._ledger is not None
                     and self._ledger.subtree_has_unclaimed(child)
                 ):
-                    value = text_of(child)
+                    value = text_of_flow(child)
                     if value:
                         segment_id = self.builder.add_segment(
                             node_id=parent_id,
@@ -279,11 +301,20 @@ class FormexASTParser:
                             ),
                         )
                         if segment_id:
-                            self._ledger.claim_subtree(
+                            self._ledger.claim_flow(
                                 child,
                                 category="LEGAL_MAPPED",
                                 reason="unowned source label in mixed legal flow",
+                                stop_at=_is_source_structural,
                             )
+                    if _has_structural_descendant(child):
+                        self._walk_structures(
+                            child,
+                            parent_id,
+                            native_path=native_path,
+                            citation_stack=citation_stack,
+                            capture_unstructured_text=True,
+                        )
                 if capture_unstructured_text:
                     self._claim_and_emit_child_tail(
                         child,
@@ -349,10 +380,11 @@ class FormexASTParser:
                         ),
                     )
                     if self._ledger is not None and label_element is not None:
-                        self._ledger.claim_subtree(
+                        self._ledger.claim_flow(
                             label_element,
                             category="LEGAL_MAPPED",
                             reason="canonical structural label",
+                            stop_at=_is_source_structural,
                         )
 
                 if heading:
@@ -367,10 +399,11 @@ class FormexASTParser:
                         ),
                     )
                     if self._ledger is not None and heading_element is not None:
-                        self._ledger.claim_subtree(
+                        self._ledger.claim_flow(
                             heading_element,
                             category="LEGAL_MAPPED",
                             reason="canonical structural heading",
+                            stop_at=_is_source_structural,
                         )
 
                 self._claim_and_emit_element_text(

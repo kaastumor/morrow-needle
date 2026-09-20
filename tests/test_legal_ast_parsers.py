@@ -102,3 +102,49 @@ def test_historical_html_recovers_articles_and_blocks():
     assert [n["display_label"] for n in articles] == ["Article 1", "Article 2"]
     assert ast["parse_report"]["fidelity"] == "PARTIAL_STRUCTURAL"
     assert any("The languages of the institutions" in s["text_source"] for s in ast["segments"])
+
+
+def test_formex_mixed_content_keeps_parent_flow_around_structures():
+    xml = b'''<?xml version="1.0" encoding="UTF-8"?>
+<ACT>
+  <ARTICLE IDENTIFIER="001">
+    <TI.ART>Article 1</TI.ART>
+    <P>Before <NOTE>footnote text</NOTE> after note.</P>
+    <CONTENTS>
+      <NP>
+        <TXT>Question before table</TXT>
+        <TABLE>
+          <ROW><CELL>Cell value</CELL></ROW>
+        </TABLE>
+        <P>Question after table</P>
+      </NP>
+    </CONTENTS>
+  </ARTICLE>
+</ACT>'''
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w") as zf:
+        zf.writestr("main.xml", xml)
+
+    parser = FormexASTParser(
+        state_id="test-mixed-flow",
+        source=_source("STRUCTURED_LEGAL_XML", "test-formex"),
+        source_observation_id="test:obs",
+    )
+    ast = parser.parse_zip(buf.getvalue())
+    _validate(ast)
+
+    text = " | ".join(segment["text_source"] for segment in ast["segments"])
+    assert "Before" in text
+    assert "after note." in text
+    assert "Question before table" in text
+    assert "Question after table" in text
+    assert "Cell value" in text
+
+    assert any(node["kind"] == "FOOTNOTE" for node in ast["nodes"])
+    assert any(node["kind"] == "TABLE" for node in ast["nodes"])
+    assert any(node["kind"] == "TABLE_CELL" for node in ast["nodes"])
+
+    accounting = ast["parse_report"]["source_text_accounting"]
+    assert accounting["unexplained_chars"] == 0
+    assert accounting["duplicate_claim_count"] == 0
+    assert ast["parse_report"]["fidelity"] == "FULL_STRUCTURAL"

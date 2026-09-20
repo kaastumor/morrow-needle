@@ -112,6 +112,7 @@ def test_formex_mixed_content_keeps_parent_flow_around_structures():
     <P>Before <NOTE>footnote text</NOTE> after note.</P>
     <CONTENTS>
       <NP>
+        <NO.P>6.</NO.P>
         <TXT>Question before table</TXT>
         <TABLE>
           <ROW><CELL>Cell value</CELL></ROW>
@@ -136,6 +137,7 @@ def test_formex_mixed_content_keeps_parent_flow_around_structures():
     text = " | ".join(segment["text_source"] for segment in ast["segments"])
     assert "Before" in text
     assert "after note." in text
+    assert "6." in text
     assert "Question before table" in text
     assert "Question after table" in text
     assert "Cell value" in text

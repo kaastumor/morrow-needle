@@ -1,0 +1,108 @@
+{
+  "fixture_version": "0.1",
+  "fixture_id": "eprivacy-temporary-regime-half-life-live-v0.1",
+  "concept": "HALF_LIFE",
+  "topic": "Temporary ePrivacy derogation for voluntary online child sexual abuse detection",
+  "scope": {
+    "source_regime": [
+      "CELEX:32021R1232",
+      "CELEX:32024R1307"
+    ],
+    "successor_regime": [
+      "CELEX:32026R1881"
+    ],
+    "proposition_continuity_asserted": false,
+    "temporal_genealogy_only": true
+  },
+  "official_evidence": {
+    "32021R1232": {
+      "artifact_hash": "sha256:87ebed4579b3473dc35dff103f6771e1518cc38bc6c501469c85f315c50b84e0",
+      "publication": {
+        "date": "2021-07-30",
+        "locator": "L_2021274EN.01004101.doc.xml#DATE[ISO=20210730]",
+        "text_hash": "5cfbb9af529652c56287f1d8fb5645b450b996a1e89a6f53c1896435c7278428"
+      },
+      "entry_into_force": {
+        "date": "2021-08-02",
+        "locator": "L_2021274EN.01004101.xml#normalized-chars:41391-41527",
+        "text_hash": "1683e019da62d143a5ba9b6e8362e502b484a28631725e9f00de172384d3a7ed"
+      },
+      "original_application_end": {
+        "date": "2024-08-03",
+        "locator": "L_2021274EN.01004101.xml#normalized-chars:41527-41562",
+        "text_hash": "884ae23a73035871f29c13f5e785c38c9386375de85b3e38d1c45b884428b730"
+      }
+    },
+    "32024R1307": {
+      "artifact_hash": "sha256:51011b43d10829e1129c28ba6ef94bf9515141349cd605fb6760884202808426",
+      "publication": {
+        "date": "2024-05-14",
+        "locator": "L_202401307EN.doc.fmx.xml#DATE[ISO=20240514]",
+        "text_hash": "a80948a44b4c8a21868ea7a326fa5b0d7bb9addb23b983f3a3f1c2df8735dcee"
+      },
+      "extended_application_end": {
+        "date": "2026-04-03",
+        "locator": "L_202401307EN.000101.fmx.xml#normalized-chars:8749-8783",
+        "text_hash": "379fa1a080ded79956f7ee71df19ab11d700340571ca6129d7dafce2fc43ad4d"
+      }
+    },
+    "32026R1881": {
+      "artifact_hash": "sha256:11856a254c2236a68b9ebc06ae598b5a1713526ade6a5a19f051d0e46098dc4d",
+      "publication": {
+        "date": "2026-07-28",
+        "locator": "L_202601881EN.doc.fmx.xml#DATE[ISO=20260728]",
+        "text_hash": "aae4c341cd4a142780552b76d2f7e41c6e26b9317a414ac7c6252fa7848146e2"
+      },
+      "entry_into_force": {
+        "date": "2026-07-31",
+        "locator": "L_202601881EN.000101.fmx.xml#normalized-chars:46414-46550",
+        "text_hash": "1683e019da62d143a5ba9b6e8362e502b484a28631725e9f00de172384d3a7ed"
+      },
+      "successor_application_end": {
+        "date": "2028-04-03",
+        "locator": "L_202601881EN.000101.fmx.xml#normalized-chars:46550-46584",
+        "text_hash": "ebbb6568cf6d63a8bbb108650cdceb77da4c0ca6bf9ceac289af74c6f0ea3118"
+      },
+      "predecessor_expired": {
+        "locator": "L_202601881EN.000101.fmx.xml#normalized-chars:12366-12404",
+        "text_hash": "880369450b78190471506cfd88aa5cfc5f6e22a9dd246f7f511701032200a402"
+      }
+    }
+  },
+  "derived_metrics": {
+    "original_application_start": "2021-08-02",
+    "original_planned_end": "2024-08-03",
+    "original_planned_days": 1098,
+    "extended_first_regime_end": "2026-04-03",
+    "extended_first_regime_days": 1706,
+    "extension_added_days": 608,
+    "gap_start": "2026-04-04",
+    "gap_end": "2026-07-30",
+    "gap_days": 118,
+    "successor_application_start": "2026-07-31",
+    "successor_application_end": "2028-04-03",
+    "successor_days": 613,
+    "total_applicable_days_through_successor_end": 2319,
+    "calendar_span_days": 2437,
+    "non_applicable_days_in_span": 118
+  },
+  "findings": [
+    "The original 2021 instrument was expressly temporary and originally scheduled to apply until 3 August 2024.",
+    "Regulation 2024/1307 extended the first regime through 3 April 2026, adding 608 calendar days beyond the original planned end.",
+    "The first regime then expired. The successor Regulation 2026/1881 entered into force on 31 July 2026, leaving a 118-day non-applicability gap from 4 April through 30 July 2026.",
+    "Through the successor's current 3 April 2028 end date, the two evidenced regimes cover 2,319 of 2,437 calendar days in the 2021-2028 span."
+  ],
+  "interpretation_guardrails": [
+    "Temporary is a legal/source characterization, not an evaluative criticism.",
+    "Genealogical or thematic succession does not imply uninterrupted applicability.",
+    "No proposition-by-proposition rule continuity is asserted by this fixture.",
+    "Derived durations are analytics over evidenced dates, not new legal-state facts.",
+    "The 118-day gap must remain visible in any future Half-Life visualization or Thread."
+  ],
+  "live_contract": {
+    "script": "scripts/probe_half_life_eprivacy.py",
+    "workflow": ".github/workflows/half-life-discovery.yml",
+    "first_verified_run": 35528707944
+  },
+  "status": "LIVE_VERIFIED_DISCOVERY"
+}

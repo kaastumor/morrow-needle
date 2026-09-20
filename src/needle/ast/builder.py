@@ -52,6 +52,7 @@ class LegalASTBuilder:
         self.representation_plan_id = representation_plan_id
         self.known_gaps: list[str] = []
         self.cross_representation_checks: list[str] = []
+        self.source_text_accounting: dict[str, Any] | None = None
 
     def anchor(
         self,
@@ -198,8 +199,32 @@ class LegalASTBuilder:
         )
         return annotation_id
 
+    def set_source_text_accounting(self, report: dict[str, Any]) -> None:
+        self.source_text_accounting = report
+
     def finalize(self, *, fidelity: str) -> dict[str, Any]:
         visible_chars_mapped = sum(len(s["text_source"]) for s in self.segments)
+        accounting = self.source_text_accounting
+        if accounting is None:
+            source_chars = self.visible_chars_source_estimate
+            accounting = {
+                "basis": "UNAVAILABLE",
+                "source_chars": source_chars,
+                "accounted_chars": 0,
+                "unexplained_chars": source_chars,
+                "unexplained_ratio": 0.0 if source_chars == 0 else 1.0,
+                "atom_count": 0,
+                "duplicate_claim_count": 0,
+                "duplicate_claim_examples": [],
+                "categories": [
+                    {
+                        "category": "UNEXPLAINED",
+                        "atom_count": 0,
+                        "chars": source_chars,
+                        "examples": [],
+                    }
+                ],
+            }
         return {
             "ast_version": "0.1",
             "state_id": self.state_id,
@@ -219,6 +244,7 @@ class LegalASTBuilder:
                 "unassembled_fragments": self.unassembled_fragments,
                 "warnings": self.warnings,
                 "declared_losses": self.declared_losses,
+                "source_text_accounting": accounting,
             },
             "completeness": {
                 "state": self.completeness_state,

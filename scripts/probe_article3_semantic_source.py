@@ -13,10 +13,18 @@ import requests
 
 
 BASE = "https://publications.europa.eu/resource/celex/{celex}"
-SANI_SENTENCE = (
-    "As from 1 July 2008, notifications shall be transmitted electronically "
-    "via the web application State Aid Notification Interactive (SANI)."
-)
+EXPECTED_SPANS = {
+    "span-sani-duty": (
+        "As from 1 July 2008, notifications shall be transmitted electronically "
+        "via the web application State Aid Notification Interactive (SANI)."
+    ),
+    "span-invalid-channel-status": (
+        "In the absence of such an agreement, any notification or correspondence "
+        "in connection with a notification sent to the Commission by a Member State "
+        "through a communication channel other than those referred to in paragraph 3 "
+        "shall not be considered as submitted to the Commission."
+    ),
+}
 
 
 def fetch_fmx4(celex: str, language: str = "eng") -> tuple[bytes, requests.Response]:
@@ -55,18 +63,20 @@ def main() -> int:
                 text=normalized_visible_text(zf.read(name))
             except ET.ParseError:
                 continue
-            start=text.find(SANI_SENTENCE)
-            if start < 0:
-                continue
-            end=start+len(SANI_SENTENCE)
-            matches.append({
-                "identifier":f"CELEX:{args.celex}",
-                "source_file":name,
-                "locator":f"{name}#normalized-chars:{start}-{end}",
-                "language":"ENG",
-                "text":SANI_SENTENCE,
-                "text_hash":hashlib.sha256(SANI_SENTENCE.encode("utf-8")).hexdigest(),
-            })
+            for span_id, expected_text in EXPECTED_SPANS.items():
+                start=text.find(expected_text)
+                if start < 0:
+                    continue
+                end=start+len(expected_text)
+                matches.append({
+                    "span_id":span_id,
+                    "identifier":f"CELEX:{args.celex}",
+                    "source_file":name,
+                    "locator":f"{name}#normalized-chars:{start}-{end}",
+                    "language":"ENG",
+                    "text":expected_text,
+                    "text_hash":hashlib.sha256(expected_text.encode("utf-8")).hexdigest(),
+                })
 
     result={
         "probe_version":"0.1",
@@ -80,8 +90,17 @@ def main() -> int:
     out.write_text(json.dumps(result,indent=2,ensure_ascii=False),encoding="utf-8")
     print(json.dumps(result,indent=2,ensure_ascii=False))
 
-    if len(matches) != 1:
-        print(f"ERROR: expected exactly one authentic SANI sentence, got {len(matches)}")
+    by_id={}
+    for match in matches:
+        by_id.setdefault(match["span_id"],[]).append(match)
+    errors=[]
+    for span_id in EXPECTED_SPANS:
+        count=len(by_id.get(span_id,[]))
+        if count != 1:
+            errors.append(f"{span_id}: expected exactly one authentic match, got {count}")
+    if errors:
+        for error in errors:
+            print("ERROR:",error)
         return 1
     return 0
 

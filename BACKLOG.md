@@ -14,12 +14,11 @@ Strategic rule from here:
 
 Unless new official/executable evidence reopens a foundation risk:
 
-1. **P2 Discovery / Issue #20 — Legislative X-Ray.** Finalize/freeze the now-green two-case dependency-ripple contract and close the discovery issue.
-2. **P2 / Issue #21 — operational vertical slice.** Start from real official update events and connect update detection → targeted source refresh → AST/diff/reconciliation → Change Atom/abstention → temporal state → retrieval → evidence-linked public feed card. Prove idempotence and at least three heterogeneous live events.
-3. **P2 — impact / affected-entity intelligence.** Begin with directly evidenced affected entities; preserve derived/interpretive separation.
-4. **Issue #19 — Half-Life v0.2 research** when official cases support proposition-level rule survival and explicit terminal outcomes without negative-absence inference.
-5. **Product validation / thin delivery surface.** After the operational slice, test feed comprehension, Source Mode, unknown/non-impact presentation and minimal API/UI needs before broad feature expansion.
-6. Ranking, broader plain-language evaluation, subscriptions and saved monitors follow.
+1. **P2 / Issue #21 — operational vertical slice.** Active. The first live cold-start cohort has already processed three distinct CELEX roots end-to-end through feed detection, targeted re-observation, sealed provenance, source-change classification and evidence-linked cards. All three correctly abstained because no pre-event baselines existed. Next: persist operational baselines and replay official feed events for known verified amendments to produce the first genuine CHANGE_FEED card.
+2. **P2 — impact / affected-entity intelligence.** Begin with directly evidenced affected entities; preserve derived/interpretive separation.
+3. **Issue #19 — Half-Life v0.2 research** when official cases support proposition-level rule survival and explicit terminal outcomes without negative-absence inference.
+4. **Product validation / thin delivery surface.** After the operational slice, test feed comprehension, Source Mode, unknown/non-impact presentation and minimal API/UI needs before broad feature expansion.
+5. Ranking, broader plain-language evaluation, subscriptions and saved monitors follow.
 
 All P0/P1 ownership boundaries remain explicitly tested. A freeze is reopened only when official or executable adversarial evidence demonstrates failure.
 
@@ -300,6 +299,7 @@ Risk-ordered after the post-P1 audit **and the v0.2 strategic step-back review**
 9. **Dark Matter:** known-but-unavailable document representation, coordinated with Source Anomaly rather than conflated with legal absence.
 
 Completed P2 slices:
+- **Legislative X-Ray v0.1 (Issue #20): CLOSED/FROZEN.** Two independent official dependency-ripple cases prove that unchanged local text can have an EVIDENCED + DERIVED cross-reference effect from a VERIFIED upstream mutation, without manufacturing local mutation truth.
 - **Half-Life v0.1 (Issue #10): CLOSED/FROZEN.** Derived, evidence-linked temporary-regime history over canonical Temporal Assertions + genealogy, with repeated extensions, gaps, view horizon and explicit unresolved terminal/rule-continuity coverage.
 - **Source Anomaly v0.1 (Issue #17): CLOSED/FROZEN.** Categorical, evidence-preserving cards for route fallback, source-internal conflict and representation duplication; no source anomaly creates legal-mutation truth.
 

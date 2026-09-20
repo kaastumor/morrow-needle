@@ -8,10 +8,10 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 Unless new official evidence creates a more severe blocker, the hourly build loop should start here:
 
-1. **P0-E / Issue #5 — bitemporal legal time.** Stress-test retroactive effect as two query perspectives: ex-post legal effect vs law/source state known at historical observation time.
-2. Still within **P0-E**, add one adversary for overlapping transition rules or provision-specific/partial end dates.
-3. When P0-E is frozen, move to **P0-F / Issue #6 — multilingual corrigenda**.
-4. Then P0-G → P0-H → P0-I.
+1. **P0-F / Issue #6 — multilingual corrigenda.** Prove that language expressions require separate text-state/mutation histories using official language-scoped corrigenda.
+2. Then **P0-G / Issue #7 — identifier/equivalence resolution**.
+3. Then P0-H → P0-I.
+4. Keep P0-C cross-cutting: feed each resolved P0 adversary into the Gold Corpus without letting corpus-format work displace the active foundation blocker.
 
 Do **not** return to P0-B unless a new official source fixture falsifies the validated ingestion contract. Issue #2 is closed; residual Cellar work is adapter/regression hardening.
 
@@ -86,31 +86,33 @@ Adapters continue to evolve, but the v0.1 core schema should change only when a 
 ### P0-E — Temporal semantics
 **Issue #5**
 
-Status: **ACTIVE FOUNDATION BLOCKER — ASSERTION MODEL + RESOLVER GREEN; BITEMPORAL PERSPECTIVE NOT YET FROZEN.**
+Status: **FOUNDATION CONTRACT RESOLVED; ISSUE CLOSED.**
 
-Canonical temporal contract:
+Frozen interfaces:
 - `schemas/temporal-assertion-v0.1.schema.json`
+- `schemas/temporal-query-v0.1.schema.json`
 - `src/needle/temporal/resolver.py`
-- `fixtures/temporal/temporal-adversaries-v0.1.json`
-
-The earlier `temporal-applicability-v0.1` schema is retained only as discovery provenance and is explicitly superseded for canonical work.
 
 Established:
-1. legal force, application, text-state validity, publication, deadlines and other temporal dimensions must not be collapsed;
-2. scoped provision overrides must be explicit;
-3. applicability may depend on entity-specific events and may require `CONTEXT_REQUIRED`;
-4. genealogical continuity may cross a real application gap;
-5. a text mutation may exist before the resulting rule applies;
-6. retroactive application may predate entry into force.
+1. publication, force, application, text-state, transition, derogation and deadlines are separate dimensions;
+2. explicit provision/regime overrides may differ from act-wide defaults;
+3. applicability may depend on entity-specific events and require `CONTEXT_REQUIRED`;
+4. text-state change may precede application;
+5. genealogical continuity may cross a real applicability gap;
+6. retroactive application may predate entry into force;
+7. historical queries must distinguish `EX_POST_LEGAL_EFFECT` from `OFFICIAL_SOURCE_STATE_AS_OF`;
+8. new and legacy regimes may overlap during transition and end on different dates.
 
-Current highest-risk unresolved question: **bitemporal perspective**. Needle must distinguish ex-post legal effect for date X from the legal/source state that was enacted and knowable as of observation date Y.
-
-Next within P0-E: model that perspective distinction, then add one overlapping-transition or partial-end adversary. Do not start the mutation engine until this contract is frozen.
+See `docs/decisions/temporal-v0.1-interface-freeze.md`.
 
 ### P0-F — Corrigenda + multilingual state
 **Issue #6**
 
-Determine how language-specific corrigenda alter text states and whether a single language-neutral mutation graph is ever safe.
+Status: **ACTIVE FOUNDATION BLOCKER.**
+
+First adversary: Regulation 794/2004 corrigenda of 28 January 2005. Official Journal metadata splits the corrections across different language groups, and the correction sets themselves differ. A language-neutral mutation history would therefore create false text states.
+
+Next: model language-expression mutation scope, build cross-language fixtures, and prove that an unaffected expression is not silently mutated.
 
 ### P0-G — Identifier/equivalence resolution
 **Issue #7**

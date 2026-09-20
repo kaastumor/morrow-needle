@@ -258,3 +258,38 @@ def test_formex_document_family_wrappers_are_metadata_not_legal_body():
     assert accounting["duplicate_claim_count"] == 0
     assert "DOC" not in ast["parse_report"]["unknown_native_kinds"]
     assert "FAM.COMP" not in ast["parse_report"]["unknown_native_kinds"]
+
+
+def test_formex_nested_title_text_has_single_owner():
+    xml = b'''<?xml version="1.0" encoding="UTF-8"?>
+<ACT>
+  <ANNEX>
+    <CONTENTS>
+      <GR.SEQ>
+        <TITLE>
+          <TI><P>FORM FOR INTERNAL REVIEW REQUESTS</P></TI>
+        </TITLE>
+      </GR.SEQ>
+    </CONTENTS>
+  </ANNEX>
+</ACT>'''
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w") as zf:
+        zf.writestr("main.xml", xml)
+
+    parser = FormexASTParser(
+        state_id="test-nested-title",
+        source=_source("STRUCTURED_LEGAL_XML", "test-formex"),
+        source_observation_id="test:obs",
+    )
+    ast = parser.parse_zip(buf.getvalue())
+    _validate(ast)
+
+    accounting = ast["parse_report"]["source_text_accounting"]
+    assert accounting["unexplained_chars"] == 0
+    assert accounting["duplicate_claim_count"] == 0, accounting["duplicate_claim_examples"]
+    headings = [
+        node for node in ast["nodes"]
+        if node["kind"] == "HEADING" and node["display_label"] == "FORM FOR INTERNAL REVIEW REQUESTS"
+    ]
+    assert len(headings) == 1

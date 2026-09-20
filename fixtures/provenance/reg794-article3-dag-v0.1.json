@@ -2045,6 +2045,100 @@
         "derivation_record_id": "run-temporal-article3-legacy-channel-end"
       },
       "record_hash": "sha256:0a0027186a07b87e10052a58e0b8ba0d15122565f76d1ec304ea6a7ec374114f"
+    },
+    {
+      "record_id": "run-temporal-reg271-2008-publication",
+      "record_type": "DERIVATION_RUN",
+      "created_at": "2026-09-20T17:48:00Z",
+      "payload": {
+        "derivation_kind": "TEMPORAL_RESOLVE",
+        "execution_character": "DETERMINISTIC",
+        "implementation": {
+          "name": "needle.temporal",
+          "version": "temporal-v0.1",
+          "config_hash": null
+        },
+        "input_record_ids": [
+          "src-reg271-2008-eng"
+        ],
+        "output_entity_refs": [
+          {
+            "entity_type": "TEMPORAL_ASSERTION",
+            "entity_id": "reg271-2008-publication"
+          }
+        ],
+        "executed_at": "2026-09-20T17:33:14Z"
+      },
+      "record_hash": "sha256:837a5b7a61a248c2b06c143b9df88201d007b2ad0594cbd8d2626e29420f680b"
+    },
+    {
+      "record_id": "support-temporal-reg271-publication-point",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T17:48:01Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "TEMPORAL_ASSERTION",
+          "entity_id": "reg271-2008-publication"
+        },
+        "source_observation_id": "src-reg271-2008-eng",
+        "source_span": {
+          "locator": "L_2008082EN.01000101.doc.xml#DATE[ISO=20080325]",
+          "language": "ENG",
+          "text_hash": "sha256:280f989c59b0e7feb1d7b9f0fba9daba12ba855deb20bad7835a3d73708b1302",
+          "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
+        },
+        "role": "TEMPORAL",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-temporal-reg271-2008-publication"
+      },
+      "record_hash": "sha256:a2520558cb771da4e26c81e9359cf8ca1536455267778369d2f6976270f3495c"
+    },
+    {
+      "record_id": "run-temporal-reg905-2025-publication",
+      "record_type": "DERIVATION_RUN",
+      "created_at": "2026-09-20T17:50:00Z",
+      "payload": {
+        "derivation_kind": "TEMPORAL_RESOLVE",
+        "execution_character": "DETERMINISTIC",
+        "implementation": {
+          "name": "needle.temporal",
+          "version": "temporal-v0.1",
+          "config_hash": null
+        },
+        "input_record_ids": [
+          "src-reg905-2025-eng"
+        ],
+        "output_entity_refs": [
+          {
+            "entity_type": "TEMPORAL_ASSERTION",
+            "entity_id": "reg905-2025-publication"
+          }
+        ],
+        "executed_at": "2026-09-20T17:49:00Z"
+      },
+      "record_hash": "sha256:dac17ef6dd37c9d98fa88aa9ff7fad4a098c520c5d00ff34cb8fda891a24ff20"
+    },
+    {
+      "record_id": "support-temporal-reg905-publication-point",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T17:50:01Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "TEMPORAL_ASSERTION",
+          "entity_id": "reg905-2025-publication"
+        },
+        "source_observation_id": "src-reg905-2025-eng",
+        "source_span": {
+          "locator": "L_202500905EN.doc.fmx.xml#DATE[ISO=20250613]",
+          "language": "ENG",
+          "text_hash": "sha256:24cac975ccb4483a85feccc1a2e2a57a618dcaab6729e967a91f5c0e29a268aa",
+          "artifact_hash": "sha256:91bc8da880879ef9e02ccd7c3bdae09d8b21f496d839d7418bd0a0b088976ff8"
+        },
+        "role": "TEMPORAL",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-temporal-reg905-2025-publication"
+      },
+      "record_hash": "sha256:c60c2e6763b2a3924680ddddb53a47141b6dc957dea598d37e7e35715974104e"
     }
   ]
 }

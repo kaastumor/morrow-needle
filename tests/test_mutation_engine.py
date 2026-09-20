@@ -4,6 +4,7 @@ from pathlib import Path
 from jsonschema import Draft202012Validator
 
 from needle.mutation.diff import (
+    diff_resolved_subtree,
     diff_same_location,
     diff_table_cells,
     diff_target_subtree,
@@ -501,3 +502,39 @@ def test_representation_only_whitespace_change_emits_no_mutation():
         citation_path="Article 3",
         language="ENG",
     ) is None
+
+
+
+def test_resolved_subtree_tolerates_native_label_punctuation_variants():
+    before = _ast("before-resolved", "Old paragraph.")
+    after = _ast("after-resolved", "New paragraph.")
+
+    # Simulate two official representation generations using different
+    # visual label punctuation while retaining the same legal address.
+    before_article = next(n for n in before["nodes"] if n["kind"] == "ARTICLE")
+    after_article = next(n for n in after["nodes"] if n["kind"] == "ARTICLE")
+    before_para = next(n for n in before["nodes"] if n["kind"] == "PARAGRAPH")
+    after_para = next(n for n in after["nodes"] if n["kind"] == "PARAGRAPH")
+
+    before_article["display_label"] = "Article 3"
+    before_article["citation_path"] = "Article 3"
+    after_article["display_label"] = "3."
+    after_article["citation_path"] = "3."
+
+    before_para["display_label"] = "3."
+    before_para["citation_path"] = "Article 3 > 3."
+    after_para["display_label"] = "(3)"
+    after_para["citation_path"] = "3. > (3)"
+
+    candidate = diff_resolved_subtree(
+        before,
+        after,
+        structural_path=[("ARTICLE","3"),("PARAGRAPH","3")],
+        canonical_kind="PARAGRAPH",
+        canonical_citation_path="Article 3 > 3",
+        language="ENG",
+    )
+    assert candidate is not None
+    assert candidate["operation"] == "REPLACE"
+    assert candidate["target"]["citation_path"] == "Article 3 > 3"
+    assert candidate["before"]["text_hash"] != candidate["after"]["text_hash"]

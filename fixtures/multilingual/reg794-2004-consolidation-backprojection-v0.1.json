@@ -1,0 +1,57 @@
+{
+  "fixture_version": "0.1",
+  "target_act": "CELEX:32004R0794",
+  "observation_character": "OFFICIAL_CONSOLIDATION_CHECKPOINT_OBSERVED_EX_POST",
+  "text_state_label_date": "2004-05-20",
+  "observed_expressions": [
+    {
+      "language": "ENG",
+      "consolidated_identifier": "CELEX:02004R0794-20040520",
+      "source_uri": "http://data.europa.eu/eli/reg/2004/794/2004-05-20/eng",
+      "observed_correction_markers": [
+        "C2"
+      ],
+      "observed_content": "Part III.14 supplementary information sheet for aid to fisheries is present.",
+      "supporting_later_sources": [
+        {
+          "identifier": "CELEX:32004R0794R(02)",
+          "source_date": "2005-01-28"
+        },
+        {
+          "identifier": "CELEX:32004R0794R(04)",
+          "source_date": "2005-05-25"
+        }
+      ]
+    },
+    {
+      "language": "FRA",
+      "consolidated_identifier": "CELEX:02004R0794-20040520",
+      "source_uri": "http://data.europa.eu/eli/reg/2004/794/2004-05-20/fra",
+      "observed_correction_markers": [
+        "C2",
+        "C3"
+      ],
+      "observed_content": "Partie III.14 fisheries supplementary information sheet is present.",
+      "supporting_later_sources": [
+        {
+          "identifier": "CELEX:32004R0794R(03)",
+          "source_date": "2005-01-28"
+        },
+        {
+          "identifier": "CELEX:32004R0794R(04)",
+          "source_date": "2005-05-25"
+        }
+      ]
+    }
+  ],
+  "foundation_result": "A consolidated version labelled 2004-05-20 can incorporate corrigenda published in 2005. Consolidated version date is therefore a legal text-state/checkpoint dimension, not a source-availability or contemporaneous-knowledge cutoff.",
+  "required_query_distinction": {
+    "EX_POST_LEGAL_EFFECT": "May use later corrigenda when reconstructing the corrected historical text state.",
+    "OFFICIAL_SOURCE_STATE_AS_OF": "Must exclude correction sources not officially available by the source cutoff date."
+  },
+  "forbidden_inferences": [
+    "Treating the consolidated version label date as proof that all displayed correction sources were available on that date.",
+    "Filtering ex-post historical text solely by corrigendum publication date.",
+    "Using one language expression's correction markers as evidence for every language."
+  ]
+}

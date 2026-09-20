@@ -1,0 +1,406 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/temporal-assertion-v0.1.json",
+  "title": "Morrow // Needle Temporal Assertion v0.1",
+  "description": "Evidence-backed temporal boundary. Legal force, application, text-state validity, deadlines and publication remain separate dimensions. Scoped overrides and context-dependent triggers are explicit.",
+  "type": "object",
+  "required": [
+    "assertion_id",
+    "subject_ref",
+    "dimension",
+    "boundary",
+    "trigger",
+    "scope",
+    "resolution_state",
+    "evidence_state",
+    "source_refs"
+  ],
+  "properties": {
+    "assertion_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subject_ref": {
+      "$ref": "#/$defs/subject_ref"
+    },
+    "dimension": {
+      "type": "string",
+      "enum": [
+        "PUBLICATION",
+        "LEGAL_FORCE",
+        "APPLICATION",
+        "TEXT_STATE",
+        "TRANSITION",
+        "DEROGATION",
+        "DEADLINE"
+      ]
+    },
+    "boundary": {
+      "type": "string",
+      "enum": [
+        "POINT",
+        "START",
+        "END"
+      ]
+    },
+    "inclusive": {
+      "type": "boolean",
+      "default": true
+    },
+    "trigger": {
+      "$ref": "#/$defs/trigger"
+    },
+    "normalized_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "scope": {
+      "$ref": "#/$defs/scope"
+    },
+    "resolution_state": {
+      "type": "string",
+      "enum": [
+        "RESOLVED_ABSOLUTE",
+        "RESOLVED_RELATIVE",
+        "CONTEXT_REQUIRED",
+        "CONFLICTING",
+        "UNRESOLVED"
+      ]
+    },
+    "evidence_state": {
+      "type": "string",
+      "enum": [
+        "DIRECT",
+        "DERIVED",
+        "CONTEXTUAL",
+        "ATTRIBUTED",
+        "INTERPRETIVE",
+        "UNRESOLVED"
+      ]
+    },
+    "source_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/source_ref"
+      }
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "$defs": {
+    "subject_ref": {
+      "type": "object",
+      "required": [
+        "kind",
+        "identifier"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "LEGAL_ACT",
+            "PROVISION_INSTANCE",
+            "MUTATION_EVENT",
+            "REGIME",
+            "PROCEDURE",
+            "ENTITY_INSTANCE"
+          ]
+        },
+        "identifier": {
+          "type": "string"
+        },
+        "locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "trigger": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "date"
+          ],
+          "properties": {
+            "kind": {
+              "const": "ABSOLUTE_DATE"
+            },
+            "date": {
+              "type": "string",
+              "format": "date"
+            },
+            "source_expression": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "event_key",
+            "offset"
+          ],
+          "properties": {
+            "kind": {
+              "const": "RELATIVE_EVENT"
+            },
+            "event_key": {
+              "type": "string",
+              "minLength": 1
+            },
+            "event_binding": {
+              "type": "string",
+              "enum": [
+                "SUBJECT",
+                "QUERY_ENTITY",
+                "EXTERNAL_CONTEXT"
+              ]
+            },
+            "offset": {
+              "$ref": "#/$defs/offset"
+            },
+            "guard": {
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/guard"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source_expression": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "offset": {
+      "type": "object",
+      "required": [
+        "value",
+        "unit"
+      ],
+      "properties": {
+        "value": {
+          "type": "integer"
+        },
+        "unit": {
+          "type": "string",
+          "enum": [
+            "DAYS",
+            "MONTHS",
+            "YEARS"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "guard": {
+      "type": "object",
+      "required": [
+        "operator",
+        "date"
+      ],
+      "properties": {
+        "operator": {
+          "type": "string",
+          "enum": [
+            "BEFORE",
+            "ON_OR_BEFORE",
+            "AFTER",
+            "ON_OR_AFTER"
+          ]
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "additionalProperties": false
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "mode",
+        "applies_to",
+        "overrides_assertion_ids"
+      ],
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "DEFAULT",
+            "OVERRIDE",
+            "CONDITIONAL_OVERRIDE"
+          ]
+        },
+        "applies_to": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "overrides_assertion_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "entity_condition": {
+          "oneOf": [
+            {
+              "type": "object",
+              "required": [
+                "attribute",
+                "operator",
+                "values"
+              ],
+              "properties": {
+                "attribute": {
+                  "type": "string"
+                },
+                "operator": {
+                  "const": "IN"
+                },
+                "values": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "source_ref": {
+      "type": "object",
+      "required": [
+        "source_type",
+        "identifier",
+        "role"
+      ],
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "OJ",
+            "EUR_LEX",
+            "CELLAR",
+            "ELI",
+            "COUNCIL",
+            "COMMISSION",
+            "OTHER_OFFICIAL"
+          ]
+        },
+        "identifier": {
+          "type": "string"
+        },
+        "locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "language": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "TEMPORAL_CLAUSE",
+            "PUBLICATION_METADATA",
+            "DERIVATION_INPUT",
+            "STATUS",
+            "CONTEXT"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "resolution_state": {
+            "const": "RESOLVED_ABSOLUTE"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "normalized_date"
+        ],
+        "properties": {
+          "normalized_date": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "scope": {
+            "properties": {
+              "mode": {
+                "const": "DEFAULT"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "scope": {
+            "properties": {
+              "overrides_assertion_ids": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

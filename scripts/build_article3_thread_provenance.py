@@ -359,6 +359,49 @@ def main() -> int:
             },
         })
 
+    # Canonical official publication point for source-as-of retrieval.
+    append({
+        "record_id":"run-temporal-reg271-2008-publication",
+        "record_type":"DERIVATION_RUN",
+        "created_at":"2026-09-20T17:48:00Z",
+        "payload":{
+            "derivation_kind":"TEMPORAL_RESOLVE",
+            "execution_character":"DETERMINISTIC",
+            "implementation":{
+                "name":"needle.temporal",
+                "version":"temporal-v0.1",
+                "config_hash":None,
+            },
+            "input_record_ids":["src-reg271-2008-eng"],
+            "output_entity_refs":[{
+                "entity_type":"TEMPORAL_ASSERTION",
+                "entity_id":"reg271-2008-publication",
+            }],
+            "executed_at":"2026-09-20T17:33:14Z",
+        },
+    })
+    append({
+        "record_id":"support-temporal-reg271-publication-point",
+        "record_type":"CLAIM_SUPPORT",
+        "created_at":"2026-09-20T17:48:01Z",
+        "payload":{
+            "claim_ref":{
+                "entity_type":"TEMPORAL_ASSERTION",
+                "entity_id":"reg271-2008-publication",
+            },
+            "source_observation_id":"src-reg271-2008-eng",
+            "source_span":{
+                "locator":"L_2008082EN.01000101.doc.xml#DATE[ISO=20080325]",
+                "language":"ENG",
+                "text_hash":"sha256:280f989c59b0e7feb1d7b9f0fba9daba12ba855deb20bad7835a3d73708b1302",
+                "artifact_hash":"sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7",
+            },
+            "role":"TEMPORAL",
+            "evidence_state":"DIRECT",
+            "derivation_record_id":"run-temporal-reg271-2008-publication",
+        },
+    })
+
     # Complete the 2008 channel lifecycle before time-aware retrieval.
     append({
         "record_id":"run-temporal-reg271-2008-entry-force",

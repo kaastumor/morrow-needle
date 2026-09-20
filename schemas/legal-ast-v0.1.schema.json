@@ -125,7 +125,8 @@
         "fidelity",
         "warnings",
         "unknown_native_kinds",
-        "declared_losses"
+        "declared_losses",
+        "source_text_accounting"
       ],
       "properties": {
         "fidelity": {
@@ -178,6 +179,107 @@
           "items": {
             "type": "string"
           }
+        },
+        "source_text_accounting": {
+          "type": "object",
+          "required": [
+            "basis",
+            "source_chars",
+            "accounted_chars",
+            "unexplained_chars",
+            "unexplained_ratio",
+            "atom_count",
+            "duplicate_claim_count",
+            "duplicate_claim_examples",
+            "categories"
+          ],
+          "properties": {
+            "basis": {
+              "type": "string",
+              "enum": [
+                "XML_TEXT_ATOMS",
+                "HTML_BLOCKS",
+                "UNAVAILABLE"
+              ]
+            },
+            "source_chars": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "accounted_chars": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "unexplained_chars": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "unexplained_ratio": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "atom_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "entry_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "duplicate_claim_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "duplicate_claim_examples": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "categories": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "category",
+                  "atom_count",
+                  "chars",
+                  "examples"
+                ],
+                "properties": {
+                  "category": {
+                    "type": "string",
+                    "enum": [
+                      "LEGAL_MAPPED",
+                      "SOURCE_METADATA",
+                      "PUBLICATION_NAVIGATION",
+                      "PROVENANCE_ONLY",
+                      "OPAQUE_OR_EMBEDDED",
+                      "DUPLICATE_FRAGMENT",
+                      "UNEXPLAINED"
+                    ]
+                  },
+                  "atom_count": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "chars": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "examples": {
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    }
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "additionalProperties": false
         }
       },
       "additionalProperties": false

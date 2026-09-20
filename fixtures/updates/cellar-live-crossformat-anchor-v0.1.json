@@ -1,0 +1,25 @@
+{
+  "fixture_version": "0.1",
+  "workflow_run": 35520865052,
+  "endpoint": "https://publications.europa.eu/webapi/notification/ingestion",
+  "event_key": "cellar:55b240bf-477b-11f0-85ba-01aa75ed71a1_2026-09-15T00:05:50.647+02:00",
+  "cellar_id": "cellar:55b240bf-477b-11f0-85ba-01aa75ed71a1",
+  "identifier": "celex:62024CC0286",
+  "ingestion_time": "2026-09-15T00:05:50.647+02:00",
+  "action": "UPDATE",
+  "rss": {
+    "payload_sha256": "4b149259bbf7b7d58d6c5512a98a9a2bb85ae3494b16501f45bab5e69b4a85c6",
+    "notification_id_basis": "RSS_GUID",
+    "raw_feed_id": "cellar:55b240bf-477b-11f0-85ba-01aa75ed71a1_2026-09-15T00:05:50.647+02:00"
+  },
+  "atom": {
+    "payload_sha256": "f6aa668083c9c528d9e34bafb97ce497feaa3db89038ed1035add250a54e9cbe",
+    "notification_id_basis": "DERIVED_CELLAR_ID_TIME",
+    "raw_feed_id": "${item.cellarUri}_2026-09-15T00:05:50.647+02:00"
+  },
+  "result": {
+    "rss_atom_semantically_equal": true,
+    "canonical_event_key_equal": true
+  },
+  "foundation_result": "Current Cellar RSS and Atom serializations disagree on usable feed-specific identity: RSS supplies a valid guid, while Atom emits an unresolved template. Canonical event identity is therefore derived from target Cellar ID plus ingestion timestamp and raw feed identity is retained separately."
+}

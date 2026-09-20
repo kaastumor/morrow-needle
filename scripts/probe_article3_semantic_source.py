@@ -14,6 +14,10 @@ import requests
 
 BASE = "https://publications.europa.eu/resource/celex/{celex}"
 EXPECTED_SPANS = {
+    "span-entry-into-force": (
+        "This Regulation shall enter into force on the 20th day following its "
+        "publication in the Official Journal of the European Union."
+    ),
     "span-sani-duty": (
         "As from 1 July 2008, notifications shall be transmitted electronically "
         "via the web application State Aid Notification Interactive (SANI)."
@@ -57,6 +61,41 @@ def normalized_visible_text(xml_bytes: bytes) -> str:
     return " ".join("".join(root.itertext()).split())
 
 
+def publication_date_metadata(payload: bytes) -> dict:
+    matches=[]
+    with zipfile.ZipFile(io.BytesIO(payload)) as zf:
+        for name in sorted(zf.namelist()):
+            if not name.lower().endswith((".xml",".frg")):
+                continue
+            try:
+                root=ET.fromstring(zf.read(name))
+            except ET.ParseError:
+                continue
+            for element in root.iter():
+                tag=element.tag.rsplit("}",1)[-1].upper()
+                if tag != "DATE":
+                    continue
+                iso=element.attrib.get("ISO")
+                text=" ".join("".join(element.itertext()).split())
+                if iso=="20080325" and text=="20080325":
+                    matches.append({
+                        "source_file":name,
+                        "locator":f"{name}#DATE[ISO=20080325]",
+                        "language":"ENG",
+                        "text":text,
+                        "text_hash":hashlib.sha256(text.encode("utf-8")).hexdigest(),
+                    })
+    if len(matches)!=1:
+        raise AssertionError(
+            "expected exactly one source-native publication DATE[ISO=20080325], "
+            f"got {len(matches)}"
+        )
+    return {
+        "normalized_date":"2008-03-25",
+        **matches[0],
+    }
+
+
 def main() -> int:
     ap=argparse.ArgumentParser()
     ap.add_argument("--celex",default="32008R0271")
@@ -88,11 +127,15 @@ def main() -> int:
                     "text_hash":hashlib.sha256(expected_text.encode("utf-8")).hexdigest(),
                 })
 
+    publication=publication_date_metadata(payload)
+
     result={
         "probe_version":"0.1",
         "celex":args.celex,
         "payload_sha256":hashlib.sha256(payload).hexdigest(),
         "final_url":response.url,
+        "publication_metadata":publication,
+        "derived_entry_into_force":"2008-04-14",
         "matches":matches,
     }
     out=Path(args.out)

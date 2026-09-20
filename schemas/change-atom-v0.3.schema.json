@@ -1,0 +1,421 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/change-atom-v0.3.json",
+  "title": "Morrow // Needle Change Atom v0.3",
+  "description": "An independently defensible legal-semantic claim derived from one or more VERIFIED textual mutations. Temporal/procedural truth is referenced, never collapsed into a lifecycle status.",
+  "type": "object",
+  "required": [
+    "atom_id",
+    "verification_state",
+    "source_mutation_ids",
+    "act_id",
+    "provision_refs",
+    "language_scope",
+    "claim",
+    "semantic_basis",
+    "evidence_state",
+    "source_spans",
+    "temporal_assertion_refs",
+    "procedure_state_refs",
+    "relations",
+    "affected_entities",
+    "provenance"
+  ],
+  "properties": {
+    "atom_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "verification_state": {
+      "type": "string",
+      "enum": [
+        "CANDIDATE",
+        "EVIDENCED",
+        "VERIFIED",
+        "QUARANTINED",
+        "REJECTED"
+      ]
+    },
+    "source_mutation_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "act_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provision_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "citation_path",
+          "language"
+        ],
+        "properties": {
+          "provision_instance_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "citation_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "language": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "language_scope": {
+      "type": "object",
+      "required": [
+        "languages",
+        "cross_language_equivalence_assumed"
+      ],
+      "properties": {
+        "languages": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+          }
+        },
+        "cross_language_equivalence_assumed": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "claim": {
+      "type": "object",
+      "required": [
+        "legal_effect",
+        "dimensions",
+        "statement"
+      ],
+      "properties": {
+        "legal_effect": {
+          "type": "string",
+          "enum": [
+            "DUTY",
+            "RIGHT",
+            "PROHIBITION",
+            "PERMISSION",
+            "POWER",
+            "REMEDY",
+            "DEFINITION",
+            "LEGAL_STATUS",
+            "NONE"
+          ]
+        },
+        "dimensions": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "PROCEDURE",
+              "SCOPE",
+              "EXCEPTION",
+              "DEROGATION",
+              "TIME",
+              "DEADLINE",
+              "TRANSITION",
+              "MONEY",
+              "THRESHOLD",
+              "REPORTING",
+              "ENFORCEMENT",
+              "SUPERVISION",
+              "DELEGATION",
+              "DIGITAL_CHANNEL",
+              "ANNEX",
+              "CLASSIFICATION",
+              "CROSS_REFERENCE",
+              "VALIDITY_CONDITION",
+              "IDENTIFIER",
+              "OTHER"
+            ]
+          }
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subject": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "action": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "object": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "semantic_basis": {
+      "type": "object",
+      "required": [
+        "classification_method",
+        "trigger_terms",
+        "qualifier_terms"
+      ],
+      "properties": {
+        "classification_method": {
+          "type": "string",
+          "enum": [
+            "DETERMINISTIC_LEGAL_LANGUAGE",
+            "HUMAN_LEGAL_REVIEW",
+            "MODEL_PROPOSAL_REVIEWED",
+            "UNRESOLVED"
+          ]
+        },
+        "trigger_terms": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "qualifier_terms": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidence_state": {
+      "type": "string",
+      "enum": [
+        "DIRECT",
+        "DERIVED",
+        "CONTEXTUAL",
+        "ATTRIBUTED",
+        "INTERPRETIVE",
+        "UNRESOLVED"
+      ]
+    },
+    "source_spans": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "span_id",
+          "source_type",
+          "identifier",
+          "locator",
+          "language",
+          "text_hash",
+          "role"
+        ],
+        "properties": {
+          "span_id": {
+            "type": "string"
+          },
+          "source_type": {
+            "type": "string",
+            "enum": [
+              "OJ",
+              "EUR_LEX",
+              "CELLAR",
+              "ELI",
+              "OTHER_OFFICIAL"
+            ]
+          },
+          "identifier": {
+            "type": "string"
+          },
+          "locator": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+          },
+          "text_hash": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "SEMANTIC_CLAIM",
+              "QUALIFIER",
+              "EXCEPTION",
+              "TEMPORAL",
+              "SCOPE",
+              "CONTEXT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "temporal_assertion_refs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "procedure_state_refs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "relation",
+          "target_atom_id"
+        ],
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "EXCEPTION_TO",
+              "QUALIFIES",
+              "CONDITION_OF",
+              "TEMPORAL_QUALIFIER_OF",
+              "SCOPE_OF"
+            ]
+          },
+          "target_atom_id": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "affected_entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "label",
+          "basis",
+          "source_span_ids"
+        ],
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "basis": {
+            "type": "string",
+            "enum": [
+              "DIRECT",
+              "DERIVED",
+              "CONTEXTUAL",
+              "ATTRIBUTED",
+              "INTERPRETIVE",
+              "UNRESOLVED"
+            ]
+          },
+          "source_span_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "observed_at",
+        "extractor_version",
+        "adversary_version"
+      ],
+      "properties": {
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "extractor_version": {
+          "type": "string"
+        },
+        "adversary_version": {
+          "type": "string"
+        },
+        "human_review": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "verification_state": {
+            "const": "VERIFIED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "evidence_state": {
+            "not": {
+              "const": "UNRESOLVED"
+            }
+          },
+          "semantic_basis": {
+            "properties": {
+              "classification_method": {
+                "not": {
+                  "const": "UNRESOLVED"
+                }
+              },
+              "trigger_terms": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

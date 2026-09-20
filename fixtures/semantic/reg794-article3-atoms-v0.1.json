@@ -1,0 +1,233 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "reg794-article3-semantic-atoms",
+  "source_mutation": {
+    "mutation_id": "reg794-article3-live-verified-v0.1",
+    "verification_state": "VERIFIED",
+    "operation": "REPLACE",
+    "target": "Article 3"
+  },
+  "source_span_registry": {
+    "span-sani-duty": {
+      "identifier": "CELEX:32008R0271",
+      "language": "ENG",
+      "text": "As from 1 July 2008, notifications shall be transmitted electronically via the web application State Aid Notification Interactive (SANI).",
+      "text_hash": "e4be9c1a527f6ef3ec8f4214aae06b58d86477e015651327e71ca83d45aa3d8a"
+    },
+    "span-invalid-channel-status": {
+      "identifier": "CELEX:32008R0271",
+      "language": "ENG",
+      "text": "In the absence of such an agreement, any notification or correspondence in connection with a notification sent to the Commission by a Member State through a communication channel other than those referred to in paragraph 3 shall not be considered as submitted to the Commission.",
+      "text_hash": "89db2848597405bd3fe6661af754001e96e292a97bb90d23c0d203095d67e5cd"
+    }
+  },
+  "atoms": [
+    {
+      "atom_id": "reg794-art3-sani-duty-v0.1",
+      "verification_state": "VERIFIED",
+      "source_mutation_ids": [
+        "reg794-article3-live-verified-v0.1"
+      ],
+      "act_id": "CELEX:32004R0794",
+      "provision_refs": [
+        {
+          "provision_instance_id": null,
+          "citation_path": "Article 3 > 3",
+          "language": "ENG"
+        }
+      ],
+      "language_scope": {
+        "languages": [
+          "ENG"
+        ],
+        "cross_language_equivalence_assumed": false
+      },
+      "claim": {
+        "legal_effect": "DUTY",
+        "dimensions": [
+          "PROCEDURE",
+          "DIGITAL_CHANNEL",
+          "TIME"
+        ],
+        "statement": "From 1 July 2008, notifications must be transmitted electronically through SANI.",
+        "subject": "notifications",
+        "action": "must be transmitted electronically",
+        "object": "State Aid Notification Interactive (SANI)"
+      },
+      "semantic_basis": {
+        "classification_method": "DETERMINISTIC_LEGAL_LANGUAGE",
+        "trigger_terms": [
+          "shall be transmitted electronically",
+          "State Aid Notification Interactive (SANI)"
+        ],
+        "qualifier_terms": [
+          "As from 1 July 2008"
+        ]
+      },
+      "evidence_state": "DIRECT",
+      "source_spans": [
+        {
+          "span_id": "span-sani-duty",
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32008R0271",
+          "locator": "Article 1 replacement of Article 3(3), first sentence",
+          "language": "ENG",
+          "text_hash": "e4be9c1a527f6ef3ec8f4214aae06b58d86477e015651327e71ca83d45aa3d8a",
+          "role": "SEMANTIC_CLAIM"
+        }
+      ],
+      "temporal_assertion_refs": [
+        "reg794-art3-p3-sani-application-start"
+      ],
+      "procedure_state_refs": [],
+      "relations": [],
+      "affected_entities": [],
+      "provenance": {
+        "observed_at": "2026-09-20T15:00:00Z",
+        "extractor_version": "manual-gold-v0.1",
+        "adversary_version": "semantic-adversary-v0.1",
+        "human_review": false
+      },
+      "notes": "First verified semantic atom; affected entities deliberately left empty until separately evidenced."
+    },
+    {
+      "atom_id": "reg794-art3-invalid-channel-status-v0.1",
+      "verification_state": "VERIFIED",
+      "source_mutation_ids": [
+        "reg794-article3-live-verified-v0.1"
+      ],
+      "act_id": "CELEX:32004R0794",
+      "provision_refs": [
+        {
+          "provision_instance_id": null,
+          "citation_path": "Article 3 > 4",
+          "language": "ENG"
+        }
+      ],
+      "language_scope": {
+        "languages": [
+          "ENG"
+        ],
+        "cross_language_equivalence_assumed": false
+      },
+      "claim": {
+        "legal_effect": "LEGAL_STATUS",
+        "dimensions": [
+          "PROCEDURE",
+          "VALIDITY_CONDITION",
+          "EXCEPTION"
+        ],
+        "statement": "Without an agreement permitting another channel, a notification or related correspondence sent through another channel is not considered submitted to the Commission.",
+        "subject": "notification or correspondence sent through another channel",
+        "action": "is not considered submitted",
+        "object": "the Commission"
+      },
+      "semantic_basis": {
+        "classification_method": "DETERMINISTIC_LEGAL_LANGUAGE",
+        "trigger_terms": [
+          "shall not be considered as submitted"
+        ],
+        "qualifier_terms": [
+          "In the absence of such an agreement"
+        ]
+      },
+      "evidence_state": "DIRECT",
+      "source_spans": [
+        {
+          "span_id": "span-invalid-channel-status",
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32008R0271",
+          "locator": "Article 1 replacement of Article 3(4), second sentence",
+          "language": "ENG",
+          "text_hash": "89db2848597405bd3fe6661af754001e96e292a97bb90d23c0d203095d67e5cd",
+          "role": "SEMANTIC_CLAIM"
+        }
+      ],
+      "temporal_assertion_refs": [],
+      "procedure_state_refs": [],
+      "relations": [],
+      "affected_entities": [],
+      "provenance": {
+        "observed_at": "2026-09-20T15:00:00Z",
+        "extractor_version": "manual-gold-v0.1",
+        "adversary_version": "semantic-adversary-v0.1",
+        "human_review": false
+      },
+      "notes": "Condition is preserved explicitly rather than flattened into an unconditional consequence."
+    }
+  ],
+  "negative_atoms": [
+    {
+      "description": "Plausible but false globalization of SANI to all correspondence.",
+      "atom": {
+        "atom_id": "unsupported-all-correspondence-sani",
+        "verification_state": "VERIFIED",
+        "source_mutation_ids": [
+          "reg794-article3-live-verified-v0.1"
+        ],
+        "act_id": "CELEX:32004R0794",
+        "provision_refs": [
+          {
+            "provision_instance_id": null,
+            "citation_path": "Article 3 > 3",
+            "language": "ENG"
+          }
+        ],
+        "language_scope": {
+          "languages": [
+            "ENG"
+          ],
+          "cross_language_equivalence_assumed": false
+        },
+        "claim": {
+          "legal_effect": "DUTY",
+          "dimensions": [
+            "PROCEDURE",
+            "DIGITAL_CHANNEL",
+            "TIME"
+          ],
+          "statement": "From 1 July 2008, all correspondence must be transmitted through SANI.",
+          "subject": "all correspondence",
+          "action": "must be transmitted",
+          "object": "SANI"
+        },
+        "semantic_basis": {
+          "classification_method": "DETERMINISTIC_LEGAL_LANGUAGE",
+          "trigger_terms": [
+            "All correspondence",
+            "shall",
+            "SANI"
+          ],
+          "qualifier_terms": [
+            "As from 1 July 2008"
+          ]
+        },
+        "evidence_state": "DIRECT",
+        "source_spans": [
+          {
+            "span_id": "span-sani-duty",
+            "source_type": "CELLAR",
+            "identifier": "CELEX:32008R0271",
+            "locator": "Article 1 replacement of Article 3(3), first sentence",
+            "language": "ENG",
+            "text_hash": "e4be9c1a527f6ef3ec8f4214aae06b58d86477e015651327e71ca83d45aa3d8a",
+            "role": "SEMANTIC_CLAIM"
+          }
+        ],
+        "temporal_assertion_refs": [
+          "reg794-art3-p3-sani-application-start"
+        ],
+        "procedure_state_refs": [],
+        "relations": [],
+        "affected_entities": [],
+        "provenance": {
+          "observed_at": "2026-09-20T15:00:00Z",
+          "extractor_version": "negative-control",
+          "adversary_version": "semantic-adversary-v0.1",
+          "human_review": false
+        },
+        "notes": "Must be rejected because the cited sentence applies SANI to notifications, not all correspondence."
+      }
+    }
+  ]
+}

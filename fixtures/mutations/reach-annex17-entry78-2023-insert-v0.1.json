@@ -1,0 +1,49 @@
+{
+  "candidate_id": "reach-annex17-entry78-2023-insert-v0.1",
+  "operation": "INSERT",
+  "target": {
+    "kind": "ANNEX_ENTRY",
+    "citation_path": "Annex XVII > entry 78",
+    "parent_citation_path": "Annex XVII",
+    "language": "ENG"
+  },
+  "alignment_basis": "SOURCE_NATIVE_IDENTIFIER",
+  "before": null,
+  "after": null,
+  "feature_deltas": {
+    "numbers_added": [
+      "78"
+    ],
+    "numbers_removed": [],
+    "dates_added": [],
+    "dates_removed": [],
+    "references_added": [],
+    "references_removed": []
+  },
+  "reconciliation_state": "CORROBORATED",
+  "verification_state": "VERIFIED",
+  "supporting_evidence": [
+    {
+      "channel": "AUTHENTIC_ACT",
+      "source_id": "CELEX:32023R2055",
+      "operation": "INSERT",
+      "target_locator": "Annex XVII > entry 78",
+      "authority_character": "CANONICAL_LEGAL_CAUSE",
+      "locator": "L_2023238EN.01007701.xml#normalized-chars:114-1757"
+    },
+    {
+      "channel": "CONSOLIDATED_CHECKPOINT",
+      "source_id": "CELEX:02006R1907-20231201",
+      "operation": "INSERT",
+      "target_locator": "Annex XVII > entry 78",
+      "authority_character": "CHECKPOINT",
+      "locator": "CL2006R1907EN0600020.0001.xml#normalized-chars:691015-691047"
+    }
+  ],
+  "conflicting_evidence": [],
+  "notes": "Verified source-assisted insertion from Regulation 2023/2055 plus the earliest tested consolidated checkpoint containing Annex XVII entry 78. This mutation is upstream of unchanged Article 67(1); it is not a textual mutation of Article 67(1).",
+  "lineage_edge_ids": [],
+  "consumed_candidate_ids": [],
+  "structural_alignment": null,
+  "comparison_scope": "DIRECT_NODE"
+}

@@ -235,10 +235,10 @@ def parse_feed(payload: bytes | str) -> FeedPage:
 
 def dedupe_events(
     events: list[dict[str, Any]] | tuple[dict[str, Any], ...],
-    processed_notification_ids: set[str],
+    processed_event_keys: set[str],
 ) -> tuple[list[dict[str, Any]], set[str]]:
     emitted = []
-    updated = set(processed_notification_ids)
+    updated = set(processed_event_keys)
     for event in events:
         event_id = event["event_key"]
         if event_id in updated:

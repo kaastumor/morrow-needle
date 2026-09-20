@@ -1,0 +1,46 @@
+{
+  "fixture_id":"representation-completeness-32004R0794-eng-v0.1",
+  "work_uri":"http://publications.europa.eu/resource/cellar/26f403d1-7656-4c91-9726-c08d466ff8bd",
+  "expression_uri":"http://publications.europa.eu/resource/cellar/26f403d1-7656-4c91-9726-c08d466ff8bd.0006",
+  "language":"ENG",
+  "representations":[
+    {
+      "manifestation_uri":"http://publications.europa.eu/resource/cellar/26f403d1-7656-4c91-9726-c08d466ff8bd.0006.05",
+      "format":"fmx4",
+      "roles":["PRIMARY_STRUCTURE","PROVENANCE_WITNESS"],
+      "representation_class":"STRUCTURED_LEGAL_XML",
+      "observed_entry_count":131,
+      "observed_text_entry_count":7,
+      "observed_raster_entry_count":124,
+      "notes":"Live Cellar ZIP inspection. Raster-heavy bundle requires completeness audit."
+    },
+    {
+      "manifestation_uri":"http://publications.europa.eu/resource/cellar/26f403d1-7656-4c91-9726-c08d466ff8bd.0006.03",
+      "format":"xhtml",
+      "roles":["TEXT_WITNESS","AUDIT_ONLY"],
+      "representation_class":"STRUCTURED_XHTML",
+      "observed_entry_count":1,
+      "observed_text_entry_count":1,
+      "observed_raster_entry_count":0,
+      "notes":"Single official HTML file; internal image/text composition still under live completeness probe."
+    },
+    {
+      "manifestation_uri":"http://publications.europa.eu/resource/cellar/26f403d1-7656-4c91-9726-c08d466ff8bd.0006.02",
+      "format":"pdf",
+      "roles":["VISUAL_WITNESS"],
+      "representation_class":"PDF_TEXT",
+      "observed_entry_count":null,
+      "observed_text_entry_count":null,
+      "observed_raster_entry_count":null,
+      "notes":"Visual witness; text/image classification not yet measured."
+    }
+  ],
+  "completeness_signals":["RASTER_ASSETS","UNKNOWN"],
+  "completeness_state":"UNKNOWN_COMPLETENESS",
+  "merge_policy":"PROVENANCE_PRESERVING_EXPLICIT_ALIGNMENT_ONLY",
+  "evidence":{
+    "workflow_run":35482611883,
+    "fmx4_zip_sha256":"b01567ea804ef7e20d50218d30204fbe763b48fff78482c6796578784726c558",
+    "xhtml_zip_sha256":"9d9cc767a21153e61da10b5ce5b8709affb58d1d7e4d8da2690ddbc7f422294b"
+  }
+}

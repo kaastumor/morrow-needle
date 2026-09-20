@@ -1,0 +1,169 @@
+{
+  "schema_version": "gold-corpus-case-v0.2",
+  "case_id": "dependency-ripple-first-cohort-v0.1",
+  "title": "Unchanged local provisions can have derived dependency ripples",
+  "adversarial_claim": "A local provision with an identical canonical subtree may have a derived semantic effect when a referenced provision or annex changes, but the system must not manufacture a local textual mutation or promote the derived effect to direct textual truth.",
+  "foundation_contracts": [
+    "mutation-v0.2",
+    "change-atom-v0.3",
+    "thread-v0.1",
+    "dependency-ripple-v0.1",
+    "gold-corpus-v0.2"
+  ],
+  "language_scope": {
+    "languages": [
+      "ENG"
+    ],
+    "cross_language_equivalence_assumed": false
+  },
+  "official_sources": [
+    {
+      "source_id": "article3-2025",
+      "authority": "CELLAR",
+      "identifier": "CELEX:32025R0905",
+      "role": "AUTHENTIC_TEXT",
+      "locator": "Article 1 replacement of Article 3(3)"
+    },
+    {
+      "source_id": "reach-2023",
+      "authority": "CELLAR",
+      "identifier": "CELEX:32023R2055",
+      "role": "AUTHENTIC_TEXT",
+      "locator": "Annex XVII insertion of entry 78"
+    }
+  ],
+  "expected": {
+    "document_relationships": [
+      {
+        "assertion_id": "xray.article3-ripple",
+        "expectation": "Unchanged Article 3(4) is linked to the VERIFIED Article 3(3) replacement through an EVIDENCED DERIVED cross-reference effect, not a local mutation.",
+        "evidence_source_ids": [
+          "article3-2025"
+        ],
+        "status": "ASSERTED"
+      },
+      {
+        "assertion_id": "xray.reach-ripple",
+        "expectation": "Unchanged REACH Article 67(1) is linked to the VERIFIED Annex XVII entry 78 insertion through an EVIDENCED DERIVED cross-reference effect, not a local mutation.",
+        "evidence_source_ids": [
+          "reach-2023"
+        ],
+        "status": "ASSERTED"
+      }
+    ],
+    "provision_alignments": [],
+    "textual_mutations": [],
+    "change_atoms": [],
+    "non_atoms": [
+      {
+        "assertion_id": "xray.no-local-mutation",
+        "expectation": "Do not emit a textual mutation for the unchanged dependent provision merely because its referenced legal content changed.",
+        "evidence_source_ids": [
+          "article3-2025",
+          "reach-2023"
+        ],
+        "status": "FORBIDDEN_INFERENCE"
+      },
+      {
+        "assertion_id": "xray.no-direct-ripple",
+        "expectation": "Do not classify a dependency ripple as DIRECT local textual evidence.",
+        "evidence_source_ids": [
+          "article3-2025",
+          "reach-2023"
+        ],
+        "status": "FORBIDDEN_INFERENCE"
+      }
+    ],
+    "temporal_assertions": []
+  },
+  "machine_expectations": [
+    {
+      "assertion_id": "xray.article3-ripple",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "DEPENDENCY_RIPPLE",
+        "case_id": "reg794-art3-p4-2025-channel-ripple",
+        "local_provision": "Article 3 > 4",
+        "local_textual_mutation": false,
+        "upstream_mutation": {
+          "operation": "REPLACE",
+          "target": "Article 3 > 3",
+          "verification_state": "VERIFIED"
+        },
+        "derived_effect": {
+          "verification_state": "EVIDENCED",
+          "evidence_state": "DERIVED",
+          "dimensions": [
+            "CROSS_REFERENCE"
+          ]
+        }
+      }
+    },
+    {
+      "assertion_id": "xray.reach-ripple",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "DEPENDENCY_RIPPLE",
+        "case_id": "reach-art67-annex17-entry78-ripple",
+        "local_provision": "Article 67 > 1",
+        "local_textual_mutation": false,
+        "upstream_mutation": {
+          "operation": "INSERT",
+          "target": "Annex XVII > entry 78",
+          "verification_state": "VERIFIED"
+        },
+        "derived_effect": {
+          "verification_state": "EVIDENCED",
+          "evidence_state": "DERIVED",
+          "dimensions": [
+            "CROSS_REFERENCE"
+          ]
+        }
+      }
+    },
+    {
+      "assertion_id": "xray.no-local-mutation",
+      "outcome": "ABSENT",
+      "match": {
+        "kind": "DEPENDENCY_RIPPLE",
+        "local_textual_mutation": true
+      }
+    },
+    {
+      "assertion_id": "xray.no-direct-ripple",
+      "outcome": "ABSENT",
+      "match": {
+        "kind": "DEPENDENCY_RIPPLE",
+        "derived_effect": {
+          "evidence_state": "DIRECT"
+        }
+      }
+    }
+  ],
+  "ambiguities": [
+    {
+      "description": "Dependency Ripple v0.1 represents only effects already encoded as EVIDENCED DERIVED Change Atoms; it does not infer arbitrary practical consequences from references.",
+      "retained_as": "UNRESOLVED"
+    },
+    {
+      "description": "Cross-language semantic equivalence is outside the English first cohort.",
+      "retained_as": "UNRESOLVED"
+    }
+  ],
+  "verification": {
+    "state": "VERIFIED",
+    "requirements": [
+      "Require identical before/after local canonical subtree hashes.",
+      "Require VERIFIED upstream mutation.",
+      "Require EVIDENCED + DERIVED Change Atom with CROSS_REFERENCE dimension.",
+      "Require the atom to reference the selected upstream mutation.",
+      "Forbid local textual mutation and DIRECT ripple classification."
+    ],
+    "verified_by": [
+      "tests/test_reach_dependency_ripple.py",
+      "tests/test_dependency_ripple_view.py",
+      "tests/test_gold_dependency_ripple.py",
+      "Legislative X-Ray dependency ripple workflow"
+    ]
+  }
+}

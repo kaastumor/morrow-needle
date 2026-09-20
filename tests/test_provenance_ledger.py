@@ -191,6 +191,7 @@ def test_retraction_can_remove_record_from_current_view_without_replacement():
 def test_all_article3_thread_atoms_have_source_mode_support():
     atom_ids = {
         "reg794-art3-sani-duty-v0.1",
+        "reg794-art3-pki-correspondence-duty-v0.1",
         "reg794-art3-alt-channel-permission-v0.1",
         "reg794-art3-invalid-channel-status-v0.1",
         "reg794-art3-2025-notification-channel-duty-v0.1",
@@ -252,3 +253,18 @@ def test_2025_temporal_and_cross_reference_effect_preserve_evidence_character():
     assert {
         trace["support_record"]["payload"]["role"] for trace in ripple
     } == {"SEMANTIC_CLAIM", "CONTEXT"}
+
+
+def test_pki_atom_traces_to_exact_authentic_span():
+    traces = trace_claim_support(
+        RECORDS,
+        entity_type="CHANGE_ATOM",
+        entity_id="reg794-art3-pki-correspondence-duty-v0.1",
+    )
+    assert len(traces) == 1
+    support = traces[0]["support_record"]["payload"]
+    assert support["evidence_state"] == "DIRECT"
+    assert support["source_span"]["locator"].endswith("7551-7702")
+    assert support["source_span"]["text_hash"] == (
+        "sha256:d248b91594760dc2970219153a93862d574eaf13ad6c38c08204f8ec380e4a6d"
+    )

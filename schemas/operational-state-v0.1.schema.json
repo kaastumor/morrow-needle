@@ -12,7 +12,8 @@
     "baseline_policy",
     "processed_event_keys",
     "source_observations",
-    "baselines"
+    "baselines",
+    "poll_cursor"
   ],
   "properties": {
     "schema_version": {
@@ -105,6 +106,28 @@
               "POST_EVENT_REFRESH"
             ]
           }
+        }
+      }
+    },
+    "poll_cursor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "last_completed_end",
+        "overlap_seconds"
+      ],
+      "properties": {
+        "last_completed_end": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "overlap_seconds": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3600
         }
       }
     }

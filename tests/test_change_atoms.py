@@ -289,3 +289,32 @@ def test_paragraph4_rules_continue_after_2025_paragraph3_replacement():
         )
         assert status["active"] is True
         assert status["end"]["state"] == "NOT_ASSERTED"
+
+
+
+def test_verified_atom_cannot_claim_language_without_source_span_evidence():
+    atom = deepcopy(FIXTURE["atoms"][0])
+    atom["language_scope"]["languages"] = ["ENG", "DEU"]
+    errors = validate_atom(
+        atom,
+        mutations=MUTATIONS,
+        source_span_registry=SPANS,
+        temporal_assertions=TEMPORAL_ASSERTIONS,
+    )
+    assert errors == [
+        "VERIFIED atom claims language without source-span evidence: DEU"
+    ]
+
+
+def test_provision_reference_language_must_be_inside_atom_language_scope():
+    atom = deepcopy(FIXTURE["atoms"][0])
+    atom["provision_refs"][0]["language"] = "DEU"
+    errors = validate_atom(
+        atom,
+        mutations=MUTATIONS,
+        source_span_registry=SPANS,
+        temporal_assertions=TEMPORAL_ASSERTIONS,
+    )
+    assert errors == [
+        "provision reference language outside atom language scope: DEU"
+    ]

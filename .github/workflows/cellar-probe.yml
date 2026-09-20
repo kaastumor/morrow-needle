@@ -1,0 +1,36 @@
+name: Cellar source probe
+
+on:
+  push:
+    paths:
+      - "scripts/probe_cellar.py"
+      - ".github/workflows/cellar-probe.yml"
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install probe dependency
+        run: python -m pip install requests
+
+      - name: Probe modern and historical CELEX works
+        run: |
+          python scripts/probe_cellar.py \
+            32004R0794 \
+            31958R0001 \
+            --out artifacts/cellar-probe.json
+
+      - name: Upload raw probe evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: cellar-source-probe
+          path: artifacts/cellar-probe.json
+          if-no-files-found: error

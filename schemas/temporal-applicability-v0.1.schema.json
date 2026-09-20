@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.local/schemas/temporal-applicability-v0.1.schema.json",
+  "title": "Needle temporal applicability v0.1",
+  "type": "object",
+  "required": ["schema_version", "subject", "events", "rules"],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "subject": {"type": "string", "minLength": 1},
+    "events": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/event"}
+    },
+    "rules": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/rule"}
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "event": {
+      "type": "object",
+      "required": ["id", "kind", "evidence"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "kind": {"enum": ["PUBLICATION", "ENTRY_INTO_FORCE", "APPLICATION_START", "APPLICATION_END", "NOTIFICATION", "DESIGNATION", "REPEAL", "EXPIRY"]},
+        "date": {"type": "string", "format": "date"},
+        "scope": {"type": "string"},
+        "context_key": {"type": "string"},
+        "evidence": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+      },
+      "additionalProperties": false
+    },
+    "rule": {
+      "type": "object",
+      "required": ["id", "target", "effect", "trigger", "evidence"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "target": {"type": "string", "minLength": 1},
+        "effect": {"enum": ["APPLIES", "CEASES_TO_APPLY"]},
+        "trigger": {
+          "oneOf": [
+            {"$ref": "#/$defs/absoluteTrigger"},
+            {"$ref": "#/$defs/relativeTrigger"}
+          ]
+        },
+        "context": {"type": "object", "additionalProperties": {"type": "string"}},
+        "evidence": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+      },
+      "additionalProperties": false
+    },
+    "absoluteTrigger": {
+      "type": "object",
+      "required": ["type", "date"],
+      "properties": {
+        "type": {"const": "ABSOLUTE_DATE"},
+        "date": {"type": "string", "format": "date"}
+      },
+      "additionalProperties": false
+    },
+    "relativeTrigger": {
+      "type": "object",
+      "required": ["type", "event_kind", "offset", "context_required"],
+      "properties": {
+        "type": {"const": "RELATIVE_TO_EVENT"},
+        "event_kind": {"enum": ["PUBLICATION", "ENTRY_INTO_FORCE", "NOTIFICATION", "DESIGNATION"]},
+        "offset": {"type": "string", "pattern": "^P"},
+        "context_required": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      },
+      "additionalProperties": false
+    }
+  }
+}

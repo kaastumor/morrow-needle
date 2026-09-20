@@ -3,15 +3,18 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import io
 import json
 from pathlib import Path
+import zipfile
+import xml.etree.ElementTree as ET
 from typing import Any
 
 import requests
 from jsonschema import Draft202012Validator
 
 from needle.ast.completeness import audit_text_witness
-from needle.ast.formex import FormexASTParser
+from needle.ast.formex import FormexASTParser, text_of
 from needle.ast.historical_html import HistoricalHTMLASTParser
 
 
@@ -60,10 +63,23 @@ def source_meta(
     }
 
 
-def first_html_from_zip(payload: bytes) -> tuple[str, bytes]:
-    import io
-    import zipfile
+def raw_formex_visible_text(payload: bytes) -> str:
+    parts: list[str] = []
+    with zipfile.ZipFile(io.BytesIO(payload)) as zf:
+        for name in sorted(zf.namelist()):
+            if not name.lower().endswith((".xml", ".frg")):
+                continue
+            try:
+                root = ET.fromstring(zf.read(name))
+            except ET.ParseError:
+                continue
+            value = text_of(root)
+            if value:
+                parts.append(value)
+    return " ".join(parts)
 
+
+def first_html_from_zip(payload: bytes) -> tuple[str, bytes]:
     with zipfile.ZipFile(io.BytesIO(payload)) as zf:
         names = sorted(
             name for name in zf.namelist()
@@ -106,9 +122,6 @@ def build_formex(celex: str, payload: bytes, response: requests.Response) -> dic
 
 
 def build_html(celex: str, payload: bytes, response: requests.Response) -> dict[str, Any]:
-    import io
-    import zipfile
-
     obs = observation_id(celex, payload)
     with zipfile.ZipFile(io.BytesIO(payload)) as zf:
         html_names = [
@@ -288,12 +301,27 @@ def main() -> int:
         if celex == "32004R0794":
             witness_zip, witness_response = fetch_zip(celex, "eng", "xhtml")
             witness_name, witness_html = first_html_from_zip(witness_zip)
+            raw_formex_text = raw_formex_visible_text(payload)
+            raw_formex_proxy = {
+                "segments": [{"text_compare": raw_formex_text}]
+            }
             ast["_probe"]["xhtml_witness"] = {
                 "response_url": witness_response.url,
                 "entry_name": witness_name,
                 "payload_bytes": len(witness_zip),
                 "html_bytes": len(witness_html),
-                "audit": audit_text_witness(ast, witness_html),
+                "ast_vs_xhtml": audit_text_witness(ast, witness_html),
+                "raw_formex_vs_xhtml": audit_text_witness(
+                    raw_formex_proxy,
+                    witness_html,
+                ),
+                "ast_mapping_ratio_of_raw_formex_chars": (
+                    None if not raw_formex_text
+                    else round(
+                        ast["parse_report"]["visible_chars_mapped"] / len(raw_formex_text),
+                        6,
+                    )
+                ),
             }
 
         errors = validate_ast(ast, schema)

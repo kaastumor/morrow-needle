@@ -209,6 +209,29 @@ class FormexASTParser:
             self.tag_counts[tag] += 1
 
             if tag in LABEL_TAGS or tag in HEADING_TAGS:
+                if (
+                    capture_unstructured_text
+                    and self._ledger is not None
+                    and self._ledger.subtree_has_unclaimed(child)
+                ):
+                    value = text_of(child)
+                    if value:
+                        segment_id = self.builder.add_segment(
+                            node_id=parent_id,
+                            role="INLINE_OTHER",
+                            text=value,
+                            native_kind=tag,
+                            source_anchor=self.builder.anchor(
+                                native_path=native_path,
+                                native_identifier=_native_identifier(child),
+                            ),
+                        )
+                        if segment_id:
+                            self._ledger.claim_subtree(
+                                child,
+                                category="LEGAL_MAPPED",
+                                reason="unowned source label in mixed legal flow",
+                            )
                 if capture_unstructured_text:
                     self._claim_and_emit_child_tail(
                         child,

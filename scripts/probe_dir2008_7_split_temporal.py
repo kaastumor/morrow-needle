@@ -62,8 +62,11 @@ def main() -> int:
             r"Articles\s+3,\s*4,\s*5,\s*7,\s*8,\s*12,\s*13\s+and\s+14"
             r".{0,180}?31\s+December\s+2008"
         ),
+        "canonical_predecessor_identifier":(
+            r"Council\s+Directive\s+69/335/EEC"
+        ),
         "repeal":(
-            r"Directive\s+69/335/EEC.{0,220}?"
+            r"Directive\s+69/(?P<printed_number>\d{3})/EEC.{0,220}?"
             r"repealed\s+with\s+effect\s+from\s+1\s+January\s+2009"
         ),
         "application_list":(
@@ -94,19 +97,43 @@ def main() -> int:
             "found_counts":{key:len(items) for key,items in hits.items()},
         })
 
+    repeal_context=hits["repeal"][0]["context"]
+    printed_match=re.search(r"Directive\s+69/(\d{3})/EEC",repeal_context,re.I)
+    if printed_match is None:
+        raise AssertionError(repeal_context)
+    printed_predecessor=f"69/{printed_match.group(1)}/EEC"
+    if printed_predecessor != "69/355/EEC":
+        raise AssertionError(
+            "source-internal predecessor identifier adversary changed; "
+            f"inspect before weakening: {printed_predecessor}"
+        )
+
     result={
-        "probe_version":"0.1",
+        "probe_version":"0.2",
         "celex":CELEX,
         "artifact_hash":"sha256:"+hashlib.sha256(payload).hexdigest(),
         "final_url":response.url,
         "hits":hits,
+        "source_internal_identifier_disagreement":{
+            "article16_printed":"69/355/EEC",
+            "canonical_predecessor":"69/335/EEC",
+            "resolution_basis":[
+                "Recital 1 identifies Council Directive 69/335/EEC.",
+                "Annex II lists Council Directive 69/335/EEC as the repealed Directive.",
+                "Annex III correlation table is headed Directive 69/335/EEC.",
+                "Article 16 literally prints Directive 69/355/EEC."
+            ],
+            "semantics":"PRESERVE_LITERAL_AND_RESOLVE_CANONICAL_SEPARATELY"
+        },
         "invariants":[
             "Official structural correlation is separate from temporal semantics.",
             "The Article 7(2) predecessor maps structurally to both Articles 7 and 8.",
             "Articles 7 and 8 are named in the 31 December 2008 transposition deadline.",
             "The repealed predecessor Directive ends from 1 January 2009.",
             "The explicit 1 January 2009 application clause names Articles 1, 2, 6, 9, 10 and 11, not Articles 7 or 8.",
-            "No application date for successor Articles 7 or 8 may be synthesized from lineage or repeal chronology."
+            "No application date for successor Articles 7 or 8 may be synthesized from lineage or repeal chronology.",
+            "The literal 69/355/EEC in Article 16 must be preserved as source text rather than silently normalized.",
+            "Canonical predecessor resolution may use the act's explicit recital and Annex II/III evidence for 69/335/EEC while retaining the Article 16 conflict."
         ],
     }
     out=Path("artifacts/audit/dir2008-7-split-temporal-inspection.json")

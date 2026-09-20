@@ -11,7 +11,7 @@ import xml.etree.ElementTree as ET
 import requests
 
 from needle.ast.formex import FormexASTParser
-from needle.mutation.diff import diff_target_subtree
+from needle.mutation.diff import diff_resolved_subtree
 from needle.mutation.instructions import parse_authentic_instructions
 from needle.mutation.reconcile import reconcile_candidate
 
@@ -131,11 +131,12 @@ def main() -> int:
 
     before_ast=build_ast(BEFORE,before_payload,before_response)
     after_ast=build_ast(AFTER,after_payload,after_response)
-    candidate=diff_target_subtree(
+    candidate=diff_resolved_subtree(
         before_ast,
         after_ast,
-        kind="PARAGRAPH",
-        citation_path=TARGET,
+        structural_path=[("ARTICLE","3"),("PARAGRAPH","3")],
+        canonical_kind="PARAGRAPH",
+        canonical_citation_path=TARGET,
         language="ENG",
     )
     if candidate is None:

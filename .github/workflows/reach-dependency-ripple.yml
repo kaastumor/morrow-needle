@@ -1,0 +1,26 @@
+name: REACH dependency ripple discovery
+
+on:
+  push:
+    paths:
+      - "scripts/probe_reach_dependency_ripple.py"
+      - ".github/workflows/reach-dependency-ripple.yml"
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install project
+        run: python -m pip install -e ".[test]"
+      - name: Probe official Cellar dependency ripple
+        run: python scripts/probe_reach_dependency_ripple.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reach-dependency-ripple-evidence
+          path: artifacts/discovery/reach-art67-annex17-entry78-ripple-v0.1.json

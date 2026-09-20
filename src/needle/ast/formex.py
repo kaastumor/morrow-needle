@@ -209,7 +209,7 @@ class FormexASTParser:
                     continue
 
                 self.parsed_entries.append(name)
-                self.builder.visible_chars_source_estimate += len(text_of(root))
+                self._ledger = XMLTextLedger(root, source_entry=name)
 
                 # Treat each physical XML file as a fragment whose root may itself
                 # be a legal structure (notably ANNEX). Wrapping it ensures root

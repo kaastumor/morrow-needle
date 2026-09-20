@@ -114,6 +114,9 @@ def _boundary_view(assertion: dict[str, Any]) -> dict[str, Any]:
         "date":assertion["normalized_date"],
         "assertion_id":assertion["assertion_id"],
         "inclusive":bool(assertion.get("inclusive", True)),
+        "resolution_state":assertion["resolution_state"],
+        "evidence_state":assertion["evidence_state"],
+        "source_refs":[dict(item) for item in assertion.get("source_refs", [])],
     }
 
 
@@ -337,6 +340,7 @@ def build_half_life_view(
         assertion_ids.append(start["assertion_id"])
         assertion_ids.extend(item["assertion_id"] for item in ends)
 
+    last_episode=episodes[-1]
     return {
         "schema_version":"half-life-view-v0.1",
         "analytic_id":composition["analytic_id"],
@@ -345,6 +349,25 @@ def build_half_life_view(
         "sources":{
             "temporal_assertion_ids":list(dict.fromkeys(assertion_ids)),
             "regime_lineage_edge_ids":[lineage["edge_id"]],
+        },
+        "genealogy":{
+            "edge_id":lineage["edge_id"],
+            "relation_type":lineage["relation_type"],
+            "evidence_state":lineage["genealogical_evidence_state"],
+            "source_regime_ids":[
+                item["regime_id"] for item in lineage["sources"]
+            ],
+            "target_regime_ids":[
+                item["regime_id"] for item in lineage["targets"]
+            ],
+        },
+        "coverage":{
+            "rule_continuity":"NOT_ASSERTED",
+            "terminal_outcome":"UNRESOLVED_AFTER_VIEW_HORIZON",
+            "view_horizon":{
+                "regime_id":last_episode["regime_id"],
+                "boundary":dict(last_episode["end"]),
+            },
         },
         "original_plan":original_plan,
         "extensions":extensions,
@@ -422,6 +445,17 @@ def render_half_life_text(view: dict[str, Any]) -> str:
         "- Every displayed boundary resolves to a canonical Temporal Assertion ID.",
         "- Regime lineage supplies genealogy only; it stores no application dates.",
         "- Durations and ratios are derived analytics, not canonical legal-time facts.",
+        f"- Genealogy relation: {view['genealogy']['relation_type']} "
+        f"({view['genealogy']['evidence_state']}).",
+        "",
+        "View horizon",
+        (
+            f"- The current view ends at "
+            f"{view['coverage']['view_horizon']['boundary']['date']} for "
+            f"{view['coverage']['view_horizon']['regime_id']}."
+        ),
+        "- This evidenced boundary is not presented as final expiry; later extension, replacement or permanent transition remains unresolved.",
+        "- Proposition-level rule continuity into the successor regime is not asserted.",
         "",
         "Unknowns",
     ])

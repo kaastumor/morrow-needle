@@ -5,6 +5,7 @@ from jsonschema import Draft202012Validator
 
 from needle.mutation.diff import diff_same_location
 from needle.mutation.reconcile import reconcile_candidate
+from needle.mutation.structural import reclassify_with_lineage
 
 
 SCHEMA = json.loads(
@@ -189,3 +190,119 @@ def test_conflicting_official_operation_quarantines_verification():
     assert result["reconciliation_state"] == "CONFLICTING"
     assert result["verification_state"] == "UNVERIFIED"
     assert any(item["source_id"] == "synthetic-conflict" for item in result["conflicting_evidence"])
+
+
+V2_SCHEMA = json.loads(
+    Path("schemas/mutation-candidate-v0.2.schema.json").read_text(encoding="utf-8")
+)
+STRUCTURAL = json.loads(
+    Path("fixtures/mutations/structural-lineage-reclassification-v0.1.json").read_text(encoding="utf-8")
+)
+
+
+def _structural_candidate(operation, path, candidate_id):
+    before = None
+    after = None
+    if operation == "DELETE":
+        before = {
+            "state_id":"old",
+            "node_id":f"old:{path}",
+            "text_hash":"c"*64,
+            "text_length":10,
+        }
+    elif operation == "INSERT":
+        after = {
+            "state_id":"new",
+            "node_id":f"new:{path}",
+            "text_hash":"d"*64,
+            "text_length":10,
+        }
+    return {
+        "candidate_id":candidate_id,
+        "operation":operation,
+        "target":{
+            "kind":"ARTICLE",
+            "citation_path":path,
+            "parent_citation_path":None,
+            "language":"ENG",
+        },
+        "alignment_basis":"UNALIGNED",
+        "before":before,
+        "after":after,
+        "feature_deltas":{
+            "numbers_added":[],"numbers_removed":[],
+            "dates_added":[],"dates_removed":[],
+            "references_added":[],"references_removed":[],
+        },
+        "reconciliation_state":"DIFF_ONLY",
+        "verification_state":"UNVERIFIED",
+        "supporting_evidence":[{
+            "channel":"DETERMINISTIC_DIFF",
+            "source_id":"synthetic-structural-diff",
+            "operation":operation,
+            "target_locator":path,
+            "authority_character":"DERIVED",
+            "locator":None,
+        }],
+        "conflicting_evidence":[],
+        "notes":None,
+    }
+
+
+def test_asserted_official_lineage_reclassifies_renumber():
+    candidates = [
+        _structural_candidate("DELETE","Article 4","del-art4"),
+        _structural_candidate("INSERT","Article 3","ins-art3"),
+    ]
+    edge = next(
+        e for e in STRUCTURAL["lineage_edges"]
+        if e["edge_id"] == "reg26-art4-to-reg1184-art3"
+    )
+    result = reclassify_with_lineage(candidates, [edge])
+    assert len(result) == 1
+    mutation = result[0]
+    assert mutation["operation"] == "RENUMBER"
+    assert mutation["alignment_basis"] == "ASSERTED_STRUCTURAL_LINEAGE"
+    assert mutation["structural_alignment"] == {
+        "source_paths":["Article 4"],
+        "target_paths":["Article 3"],
+    }
+    assert set(mutation["consumed_candidate_ids"]) == {"del-art4","ins-art3"}
+    assert mutation["reconciliation_state"] == "CORROBORATED"
+    assert mutation["verification_state"] == "UNVERIFIED"
+    assert mutation["lineage_edge_ids"] == ["reg26-art4-to-reg1184-art3"]
+    assert list(Draft202012Validator(V2_SCHEMA).iter_errors(mutation)) == []
+
+
+def test_asserted_lineage_preserves_one_to_many_split_cardinality():
+    candidates = [
+        _structural_candidate("DELETE","Article 7(2)","del-art7-2"),
+        _structural_candidate("INSERT","Article 7","ins-art7"),
+        _structural_candidate("INSERT","Article 8","ins-art8"),
+    ]
+    edge = next(
+        e for e in STRUCTURAL["lineage_edges"]
+        if e["edge_id"] == "dir69-art7-2-to-dir2008-arts7-8"
+    )
+    result = reclassify_with_lineage(candidates, [edge])
+    assert len(result) == 1
+    mutation = result[0]
+    assert mutation["operation"] == "SPLIT"
+    assert mutation["structural_alignment"]["source_paths"] == ["Article 7(2)"]
+    assert mutation["structural_alignment"]["target_paths"] == ["Article 7","Article 8"]
+    assert set(mutation["consumed_candidate_ids"]) == {"del-art7-2","ins-art7","ins-art8"}
+    assert list(Draft202012Validator(V2_SCHEMA).iter_errors(mutation)) == []
+
+
+def test_similarity_only_lineage_cannot_promote_move():
+    candidates = [
+        _structural_candidate("DELETE","Article 10","del-art10"),
+        _structural_candidate("INSERT","Article 20","ins-art20"),
+    ]
+    edge = next(
+        e for e in STRUCTURAL["lineage_edges"]
+        if e["edge_id"] == "similarity-only-false-promotion-control"
+    )
+    result = reclassify_with_lineage(candidates, [edge])
+    assert {candidate["operation"] for candidate in result} == {"DELETE","INSERT"}
+    assert all(candidate.get("lineage_edge_ids") is None for candidate in result)

@@ -54,7 +54,7 @@
     },
     "publication-date-oj": {
       "locator": "L_2004140EN.01000101.doc.xml#DATE[ISO=20040430]",
-      "text_hash": "a6ae65f06d768600a84a990c780db7601a537d0d5751f749a46428ad6b6769d7"
+      "text_hash": "6afbe8988699370c70e9344062afc9edb453e347ecf2a97bc306e37429855f15"
     }
   },
   "temporal_fixture": "fixtures/temporal/reg794-article3-original-v0.1.json",

@@ -202,3 +202,47 @@ def test_operational_result_and_feed_card_schemas_validate():
     assert list(
         Draft202012Validator(CARD_SCHEMA).iter_errors(card)
     ) == []
+
+
+
+def test_source_infrastructure_event_routes_to_audit_not_abstention():
+    infrastructure=json.loads(json.dumps(EVENT))
+    infrastructure["identifiers"]=["oj:C_202604922_SIG"]
+    infrastructure["classes"]=[
+        "http://publications.europa.eu/ontology/cdm#signature_digital",
+        "http://publications.europa.eu/ontology/cdm#work",
+    ]
+    unresolved=build_source_change(
+        infrastructure,
+        previous=None,
+        current=None,
+    )
+    result=build_operational_result(infrastructure,unresolved)
+    assert result["trigger"]["relevance"] == "SOURCE_INFRASTRUCTURE"
+    assert result["disposition"] == "OUT_OF_SCOPE_SOURCE_EVENT"
+    assert result["stream"] == "AUDIT_FEED"
+
+    card=build_feed_card(result)
+    assert card["stream"] == "AUDIT_FEED"
+    assert "Source infrastructure update" in card["headline"]
+    assert card["evidence_character"] == "SOURCE_ONLY"
+
+
+def test_reobserver_unknowns_survive_into_operational_card():
+    unresolved=build_source_change(
+        EVENT,
+        previous=None,
+        current=None,
+    )
+    unknown=(
+        "Feed event exposes no CELEX identifier supported by the v0.1 "
+        "operational reobserver."
+    )
+    result=build_operational_result(
+        EVENT,
+        unresolved,
+        source_unknowns=[unknown],
+    )
+    assert result["unknowns"] == [unknown]
+    card=build_feed_card(result)
+    assert card["unknowns"] == [unknown]

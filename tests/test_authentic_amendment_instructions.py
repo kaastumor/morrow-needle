@@ -1,7 +1,10 @@
 import json
 from pathlib import Path
 
-from needle.mutation.instructions import parse_authentic_instructions
+from needle.mutation.instructions import (
+    parse_authentic_corrigendum_replacements,
+    parse_authentic_instructions,
+)
 from needle.mutation.reconcile import reconcile_candidate
 
 
@@ -40,4 +43,44 @@ def test_ambiguous_amendment_language_abstains():
 def test_bare_similarity_or_consolidation_wording_abstains():
     assert parse_authentic_instructions(
         "Article 3 now contains substantially similar text.", source_id="CELEX:test"
+    ) == []
+
+
+
+def test_explicit_corrigendum_for_read_becomes_canonical_cause():
+    text = (
+        "On page 21 in the second line of Article 4 (1): "
+        "1.2 // for: // '. . . shall be ECU 225 . . .', // "
+        "read: // '. . . shall be ECU 255 . . .'."
+    )
+    replacements = parse_authentic_corrigendum_replacements(
+        text,
+        source_id="CELEX:31990R2742R(01)",
+        locator="normalized-visible-text#chars:553-683",
+    )
+    assert len(replacements) == 1
+    replacement = replacements[0]
+    assert replacement["target_locator"] == "Article 4 > 1"
+    assert "ECU 225" in replacement["before_text"]
+    assert "ECU 255" in replacement["after_text"]
+
+    candidate = _candidate()
+    candidate["target"]["language"] = "ENG"
+    result = reconcile_candidate(candidate, [replacement["evidence"]])
+    assert result["verification_state"] == "VERIFIED"
+    assert result["reconciliation_state"] == "CORROBORATED"
+    assert result["supporting_evidence"] == [replacement["evidence"]]
+
+
+def test_corrigendum_parser_abstains_without_exact_subdivision():
+    assert parse_authentic_corrigendum_replacements(
+        "for: 'ECU 225', read: 'ECU 255'",
+        source_id="CELEX:test",
+    ) == []
+
+
+def test_corrigendum_parser_abstains_without_for_read_pair():
+    assert parse_authentic_corrigendum_replacements(
+        "On page 21 in Article 4 (1): the amount is corrected.",
+        source_id="CELEX:test",
     ) == []

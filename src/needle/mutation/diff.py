@@ -143,6 +143,7 @@ def diff_same_location(
                 "language":language,
             },
             "alignment_basis":"EXACT_CITATION_AND_KIND",
+            "comparison_scope":"DIRECT_NODE",
             "before":None if not before_node else {
                 "state_id":before_ast["state_id"],
                 "node_id":before_node["node_id"],
@@ -285,6 +286,7 @@ def diff_table_cells(
                 "language":language,
             },
             "alignment_basis":"TABLE_COORDINATE",
+            "comparison_scope":"TABLE_CELL",
             "before":None if not before_node else {
                 "state_id":before_ast["state_id"],
                 "node_id":before_node["node_id"],
@@ -330,3 +332,146 @@ def diff_ast(
         seen.add(candidate["candidate_id"])
         result.append(candidate)
     return result
+
+
+
+def _descendant_ids(ast: dict[str, Any], root_id: str) -> set[str]:
+    children: dict[str, list[str]] = defaultdict(list)
+    for node in ast.get("nodes", []):
+        parent = node.get("parent_id")
+        if parent:
+            children[parent].append(node["node_id"])
+    found: set[str] = set()
+    stack = [root_id]
+    while stack:
+        node_id = stack.pop()
+        if node_id in found:
+            continue
+        found.add(node_id)
+        stack.extend(children.get(node_id, []))
+    return found
+
+
+def _subtree_text(ast: dict[str, Any], node_id: str) -> str:
+    node_ids = _descendant_ids(ast, node_id)
+    segments = sorted(
+        (
+            segment for segment in ast.get("segments", [])
+            if segment["node_id"] in node_ids
+        ),
+        key=lambda segment: (
+            segment.get("document_order", 0),
+            segment.get("ordinal", 0),
+        ),
+    )
+    parts = [
+        segment.get("text_compare", segment.get("text_source", "")).strip()
+        for segment in segments
+        if segment.get("role") not in {"LABEL", "HEADING"}
+        and segment.get("text_compare", segment.get("text_source", "")).strip()
+    ]
+    return " ".join(parts)
+
+
+def diff_target_subtree(
+    before_ast: dict[str, Any],
+    after_ast: dict[str, Any],
+    *,
+    kind: str,
+    citation_path: str,
+    language: str | None = None,
+) -> dict[str, Any] | None:
+    """Compare one evidence-selected structural target including descendants.
+
+    This function exists for source-assisted mutation work: official relation
+    metadata can identify an affected subdivision such as Article 3, and the
+    deterministic engine then compares exactly that subtree. It does not search
+    for a fuzzy matching provision elsewhere.
+    """
+    before_idx, after_idx = _index(before_ast), _index(after_ast)
+    before_node = before_idx.get((kind, citation_path))
+    after_node = after_idx.get((kind, citation_path))
+
+    if (before_node and before_node.get("AMBIGUOUS")) or (
+        after_node and after_node.get("AMBIGUOUS")
+    ):
+        return None
+    if before_node is None and after_node is None:
+        return None
+
+    before_text = (
+        _subtree_text(before_ast, before_node["node_id"])
+        if before_node else ""
+    )
+    after_text = (
+        _subtree_text(after_ast, after_node["node_id"])
+        if after_node else ""
+    )
+    if before_node and after_node and before_text == after_text:
+        return None
+
+    operation = (
+        "INSERT" if before_node is None
+        else "DELETE" if after_node is None
+        else "REPLACE"
+    )
+
+    source_node = after_node or before_node
+    source_ast = after_ast if after_node else before_ast
+    parent_citation = None
+    parent_id = source_node.get("parent_id") if source_node else None
+    if parent_id:
+        parent_node = next(
+            (
+                node for node in source_ast.get("nodes", [])
+                if node["node_id"] == parent_id
+            ),
+            None,
+        )
+        if parent_node:
+            parent_citation = parent_node.get("citation_path")
+
+    candidate_id = sha256(
+        (
+            f"{before_ast['state_id']}|{after_ast['state_id']}|"
+            f"{kind}|{citation_path}|SUBTREE|{operation}"
+        ).encode()
+    ).hexdigest()[:24]
+
+    return {
+        "candidate_id":candidate_id,
+        "operation":operation,
+        "target":{
+            "kind":kind,
+            "citation_path":citation_path,
+            "parent_citation_path":parent_citation,
+            "language":language,
+        },
+        "alignment_basis":"EXACT_CITATION_AND_KIND",
+        "comparison_scope":"SUBTREE",
+        "before":None if not before_node else {
+            "state_id":before_ast["state_id"],
+            "node_id":before_node["node_id"],
+            "text_hash":_hash(before_text),
+            "text_length":len(before_text),
+        },
+        "after":None if not after_node else {
+            "state_id":after_ast["state_id"],
+            "node_id":after_node["node_id"],
+            "text_hash":_hash(after_text),
+            "text_length":len(after_text),
+        },
+        "feature_deltas":feature_deltas(before_text, after_text),
+        "reconciliation_state":"DIFF_ONLY",
+        "verification_state":"UNVERIFIED",
+        "supporting_evidence":[{
+            "channel":"DETERMINISTIC_DIFF",
+            "source_id":f"{before_ast['state_id']}->{after_ast['state_id']}",
+            "operation":operation,
+            "target_locator":citation_path,
+            "authority_character":"DERIVED",
+            "locator":"targeted canonical-AST subtree comparison",
+        }],
+        "conflicting_evidence":[],
+        "notes":"Evidence-selected exact subtree comparison; no fuzzy identity inference.",
+    }

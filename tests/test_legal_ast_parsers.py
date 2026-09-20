@@ -293,3 +293,55 @@ def test_formex_nested_title_text_has_single_owner():
         if node["kind"] == "HEADING" and node["display_label"] == "FORM FOR INTERNAL REVIEW REQUESTS"
     ]
     assert len(headings) == 1
+
+
+def test_formex_title_inline_flow_excludes_nested_footnote_body():
+    xml = b'''<?xml version="1.0" encoding="UTF-8"?>
+<ACT>
+  <ANNEX>
+    <CONTENTS>
+      <GR.SEQ>
+        <TITLE>
+          <TI><P>FORM <NOTE>footnote detail</NOTE> TITLE</P></TI>
+        </TITLE>
+      </GR.SEQ>
+    </CONTENTS>
+  </ANNEX>
+</ACT>'''
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w") as zf:
+        zf.writestr("main.xml", xml)
+
+    parser = FormexASTParser(
+        state_id="test-title-footnote",
+        source=_source("STRUCTURED_LEGAL_XML", "test-formex"),
+        source_observation_id="test:obs",
+    )
+    ast = parser.parse_zip(buf.getvalue())
+    _validate(ast)
+
+    headings = [
+        node for node in ast["nodes"]
+        if node["kind"] == "HEADING" and node["display_label"] == "FORM TITLE"
+    ]
+    assert len(headings) == 1
+
+    footnotes = [node for node in ast["nodes"] if node["kind"] == "FOOTNOTE"]
+    assert len(footnotes) == 1
+    footnote_text = " ".join(
+        segment["text_source"]
+        for segment in ast["segments"]
+        if segment["node_id"] == footnotes[0]["node_id"]
+    )
+    assert "footnote detail" in footnote_text
+
+    heading_segments = [
+        segment["text_source"]
+        for segment in ast["segments"]
+        if segment["node_id"] == headings[0]["node_id"]
+    ]
+    assert all("footnote detail" not in text for text in heading_segments)
+
+    accounting = ast["parse_report"]["source_text_accounting"]
+    assert accounting["unexplained_chars"] == 0
+    assert accounting["duplicate_claim_count"] == 0, accounting["duplicate_claim_examples"]

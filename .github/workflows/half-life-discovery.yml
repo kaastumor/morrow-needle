@@ -1,0 +1,26 @@
+name: Half-Life discovery contract
+
+on:
+  push:
+    paths:
+      - "scripts/probe_half_life_eprivacy.py"
+      - ".github/workflows/half-life-discovery.yml"
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install project
+        run: python -m pip install -e ".[test]"
+      - name: Probe official Cellar sources
+        run: python scripts/probe_half_life_eprivacy.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: half-life-eprivacy-evidence
+          path: artifacts/discovery/half-life-eprivacy-v0.1.json

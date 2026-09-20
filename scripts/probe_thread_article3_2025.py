@@ -186,11 +186,13 @@ def main() -> int:
         "before":{
             "celex":BEFORE,
             "payload_sha256":hashlib.sha256(before_payload).hexdigest(),
+            "final_url":before_response.url,
             "state":candidate["before"],
         },
         "after":{
             "celex":AFTER,
             "payload_sha256":hashlib.sha256(after_payload).hexdigest(),
+            "final_url":after_response.url,
             "state":candidate["after"],
         },
         "candidate":candidate,

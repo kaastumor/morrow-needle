@@ -28,11 +28,18 @@ RSS = Path(
 CURRENT_RSS = Path(
     "fixtures/updates/cellar-live-guid-shape-20260915-v0.1.xml"
 ).read_bytes()
+CURRENT_ATOM = Path(
+    "fixtures/updates/cellar-live-atom-template-shape-20260915-v0.1.xml"
+).read_bytes()
 
 
 def _event(event_id, when="2026-09-20T10:00:00+00:00"):
+    event_key = f"cellar:target-{event_id}_{when}"
     return {
-        "notification_id":str(event_id),
+        "event_key":event_key,
+        "notification_id":event_key,
+        "notification_id_basis":"DERIVED_CELLAR_ID_TIME",
+        "raw_feed_id":None,
         "action":"UPDATE",
         "cellar_id":f"cellar:target-{event_id}",
         "root_cellar_id":"cellar:root",
@@ -69,6 +76,11 @@ def test_official_documented_feed_example_parses_and_validates():
 
     event = page.events[0]
     assert event["notification_id"] == "7081775"
+    assert event["notification_id_basis"] == "NOTIFICATION_ENTRY_ID"
+    assert event["event_key"] == (
+        "cellar:ca753ae9-cf80-11e2-859e-01aa75ed71a1_"
+        "2012-06-11T09:13:58+01:00"
+    )
     assert event["action"] == "UPDATE"
     assert event["cellar_id"] == (
         "cellar:ca753ae9-cf80-11e2-859e-01aa75ed71a1"
@@ -83,14 +95,22 @@ def test_official_documented_feed_example_parses_and_validates():
 
 def test_overlap_replay_is_idempotent_by_permanent_notification_id():
     first, seen = dedupe_events([_event("1"), _event("2")], set())
-    assert [event["notification_id"] for event in first] == ["1","2"]
+    assert [event["notification_id"] for event in first] == [
+        _event("1")["event_key"], _event("2")["event_key"]
+    ]
 
     replay, seen = dedupe_events(
         [_event("2"), _event("3")],
         seen,
     )
-    assert [event["notification_id"] for event in replay] == ["3"]
-    assert seen == {"1","2","3"}
+    assert [event["notification_id"] for event in replay] == [
+        _event("3")["event_key"]
+    ]
+    assert seen == {
+        _event("1")["event_key"],
+        _event("2")["event_key"],
+        _event("3")["event_key"],
+    }
 
 
 def test_same_ingestion_timestamp_does_not_drop_distinct_events():
@@ -99,8 +119,13 @@ def test_same_ingestion_timestamp_does_not_drop_distinct_events():
         [_event("101",same), _event("102",same)],
         set(),
     )
-    assert [event["notification_id"] for event in emitted] == ["101","102"]
-    assert seen == {"101","102"}
+    assert [event["notification_id"] for event in emitted] == [
+        _event("101",same)["event_key"], _event("102",same)["event_key"]
+    ]
+    assert seen == {
+        _event("101",same)["event_key"],
+        _event("102",same)["event_key"],
+    }
 
 
 def test_cursor_advances_only_after_complete_paginated_window():
@@ -277,7 +302,11 @@ def test_integrated_poller_is_replay_safe_across_overlapping_windows():
     )
     state, emissions = accept_poll_page(state,replay)
     assert [item.event["notification_id"] for item in emissions] == ["3"]
-    assert state.processed_notification_ids == frozenset({"1","2","3"})
+    assert state.processed_event_keys == frozenset({
+        _event("1")["event_key"],
+        _event("2")["event_key"],
+        _event("3")["event_key"],
+    })
 
 
 def test_integrated_poller_does_not_commit_incomplete_window():
@@ -335,6 +364,27 @@ def test_current_live_guid_shape_is_supported_without_losing_old_documented_shap
         "cellar:55b240bf-477b-11f0-85ba-01aa75ed71a1_"
         "2026-09-15T00:05:50.647+02:00"
     )
+    assert event["event_key"] == event["notification_id"]
+    assert event["notification_id_basis"] == "RSS_GUID"
     assert event["wemi_levels"] == ["WORK"]
     assert "celex:62024CC0286" in event["identifiers"]
     assert list(Draft202012Validator(SCHEMA).iter_errors(event)) == []
+
+
+
+def test_current_atom_template_bug_falls_back_to_cross_format_event_key():
+    rss_event = parse_feed(CURRENT_RSS).events[0]
+    atom_page = parse_feed(CURRENT_ATOM)
+    assert len(atom_page.events) == 1
+    atom_event = atom_page.events[0]
+
+    assert atom_event["event_key"] == rss_event["event_key"]
+    assert atom_event["notification_id"] == rss_event["event_key"]
+    assert atom_event["notification_id_basis"] == "DERIVED_CELLAR_ID_TIME"
+    assert atom_event["raw_feed_id"] == (
+        "${item.cellarUri}_2026-09-15T00:05:50.647+02:00"
+    )
+    assert atom_event["ingestion_time"] == "2026-09-15T00:05:50.647+02:00"
+    assert atom_event["identifiers"] == rss_event["identifiers"]
+    assert atom_event["wemi_levels"] == ["WORK"]
+    assert list(Draft202012Validator(SCHEMA).iter_errors(atom_event)) == []

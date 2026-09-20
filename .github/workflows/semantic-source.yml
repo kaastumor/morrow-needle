@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: live-semantic-source-${{ github.ref }}
+  group: live-semantic-source-v2-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/manifestation-selection-v0.1.json",
+  "title": "Morrow // Needle Manifestation Selection v0.1",
+  "description": "Deterministic selection of an official language-scoped manifestation from Cellar inventory. A manifestation selection is distinct from its Items and from internal content streams exposed by the publication endpoint.",
+  "type": "object",
+  "required": [
+    "work_uri",
+    "expression_uri",
+    "language",
+    "manifestation_uri",
+    "format",
+    "representation_class",
+    "selection_basis",
+    "item_uris"
+  ],
+  "properties": {
+    "work_uri": {"type":"string"},
+    "expression_uri": {"type":"string"},
+    "language": {"type":"string"},
+    "manifestation_uri": {"type":"string"},
+    "format": {"type":"string"},
+    "representation_class": {
+      "type":"string",
+      "enum":["STRUCTURED_LEGAL_XML","STRUCTURED_XHTML","STRUCTURED_HTML","PDF_TEXT","PDF_IMAGE","OTHER"]
+    },
+    "selection_basis": {
+      "type":"string",
+      "enum":["SPARQL_MANIFESTATION_INVENTORY","BRANCH_NOTICE_FALLBACK","MANUAL_OVERRIDE"]
+    },
+    "item_uris": {"type":"array","items":{"type":"string"}},
+    "collection_list_accept":{"type":["string","null"]},
+    "collection_zip_accept":{"type":["string","null"]},
+    "internal_stream_count":{"type":["integer","null"],"minimum":0},
+    "internal_stream_count_basis":{
+      "type":"string",
+      "enum":["PUBLICATION_LIST","NOT_YET_PROBED","NOT_APPLICABLE"]
+    }
+  },
+  "additionalProperties": false
+}

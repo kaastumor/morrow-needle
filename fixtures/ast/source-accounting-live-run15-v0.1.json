@@ -1,0 +1,67 @@
+{
+  "fixture_version": "0.1",
+  "captured_from": {
+    "workflow": "Live Legal AST contract",
+    "run_number": 14,
+    "head_sha": "705b30c9417eeaafd804886ce4ed861d92266430"
+  },
+  "purpose": "Freeze the first fail-closed source-text-accounting baseline so parser fixes can be measured against the actual unexplained material rather than only aggregate mapped-text ratios.",
+  "cases": [
+    {
+      "celex": "31958R0001",
+      "representation": "HTML",
+      "source_chars": 2563,
+      "unexplained_chars": 0,
+      "duplicate_claim_count": 0,
+      "finding": "Historical HTML already satisfies the source-text accounting invariant; its remaining PARTIAL_STRUCTURAL state is not caused by unexplained visible text."
+    },
+    {
+      "celex": "32004R0794",
+      "representation": "FMX4",
+      "source_chars": 31462,
+      "unexplained_chars": 7828,
+      "duplicate_claim_count": 0,
+      "category_chars": {
+        "LEGAL_MAPPED": 23364,
+        "SOURCE_METADATA": 268,
+        "PUBLICATION_NAVIGATION": 2,
+        "PROVENANCE_ONLY": 0,
+        "OPAQUE_OR_EMBEDDED": 0,
+        "DUPLICATE_FRAGMENT": 0,
+        "UNEXPLAINED": 7828
+      },
+      "finding": "The modern Formex failure is a real parser-disposition gap, not duplicate ownership. The next parser change should target mixed inline/source wrappers without weakening the fail-closed invariant."
+    },
+    {
+      "celex": "02004R0794-20250813",
+      "representation": "FMX4_CONSOLIDATED",
+      "source_chars": 1436961,
+      "unexplained_chars": 906534,
+      "duplicate_claim_count": 100,
+      "category_chars": {
+        "LEGAL_MAPPED": 521774,
+        "SOURCE_METADATA": 861,
+        "PUBLICATION_NAVIGATION": 1,
+        "PROVENANCE_ONLY": 7791,
+        "OPAQUE_OR_EMBEDDED": 0,
+        "DUPLICATE_FRAGMENT": 0,
+        "UNEXPLAINED": 906534
+      },
+      "representative_unexplained_shapes": [
+        "ARTICLE/ALINEA/NOTE tail containing operative continuation text",
+        "ARTICLE/PARAG/ALINEA/HT tail containing operative continuation text",
+        "CONS.ANNEX/CONTENTS/.../NP/NO.P numbering",
+        "CONS.ANNEX/CONTENTS/.../NP/TXT form heading",
+        "CONS.ANNEX/CONTENTS/.../NP/P form/question text"
+      ],
+      "finding": "The consolidated failure is dominated by substantive mixed-content annex/form material plus parent-flow tails around inline elements. CONTENTS cannot be classified as publication navigation. Nested TABLE descendants currently cause surrounding substantive NP/GR.SEQ content to escape canonical ownership. Duplicate claims are a separate parser-ownership defect and must also reach zero."
+    }
+  ],
+  "architecture_guardrails": [
+    "Do not classify CONTENTS as navigation merely to reduce unexplained counts.",
+    "A child tail belongs to the parent mixed-content flow and must receive an explicit canonical owner or explicit non-legal disposition.",
+    "A wrapper containing a structural descendant may still contain legally relevant text outside that descendant; structural recursion must not discard the surrounding mixed-content flow.",
+    "Do not promote FULL_STRUCTURAL until unexplained_chars == 0 and duplicate_claim_count == 0."
+  ],
+  "next_attack": "Implement mixed-content ownership that preserves parent-flow text before, between and after structural descendants, then rerun all three live cases. Treat the modern FMX4 case as the smaller adversary before applying the same mechanism to consolidated annex/forms."
+}

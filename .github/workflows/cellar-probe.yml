@@ -29,6 +29,7 @@ jobs:
             --out artifacts/cellar-probe.json
 
       - name: Upload raw probe evidence
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: cellar-source-probe

@@ -1,0 +1,207 @@
+from __future__ import annotations
+
+import html as html_lib
+import re
+from html.parser import HTMLParser
+from typing import Any
+
+from needle.ast.builder import LegalASTBuilder, normalize_compare_text
+
+
+BLOCK_TAGS = {
+    "p", "div", "li", "td", "th", "h1", "h2", "h3", "h4", "h5", "h6",
+}
+ARTICLE_RE = re.compile(r"^Article\s+(?P<label>\d+[A-Za-z]?)\b", re.IGNORECASE)
+ANNEX_RE = re.compile(r"^Annex(?:\s+(?P<label>[A-Z0-9IVXLC]+))?\b", re.IGNORECASE)
+
+
+class _BlockExtractor(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.depth = 0
+        self.current_tag: str | None = None
+        self.current_parts: list[str] = []
+        self.blocks: list[tuple[str, str]] = []
+        self._suppressed_depth = 0
+
+    def handle_starttag(self, tag: str, attrs) -> None:
+        tag = tag.lower()
+        if tag in {"script", "style", "noscript"}:
+            self._suppressed_depth += 1
+            return
+        if self._suppressed_depth:
+            return
+
+        if tag in BLOCK_TAGS:
+            if self.depth == 0:
+                self.current_tag = tag
+                self.current_parts = []
+            self.depth += 1
+        elif tag == "br" and self.depth:
+            self.current_parts.append("\n")
+
+    def handle_endtag(self, tag: str) -> None:
+        tag = tag.lower()
+        if tag in {"script", "style", "noscript"}:
+            self._suppressed_depth = max(0, self._suppressed_depth - 1)
+            return
+        if self._suppressed_depth:
+            return
+
+        if tag in BLOCK_TAGS and self.depth:
+            self.depth -= 1
+            if self.depth == 0 and self.current_tag is not None:
+                text = normalize_compare_text(" ".join(self.current_parts))
+                if text:
+                    self.blocks.append((self.current_tag, text))
+                self.current_tag = None
+                self.current_parts = []
+
+    def handle_data(self, data: str) -> None:
+        if self._suppressed_depth:
+            return
+        if self.depth:
+            self.current_parts.append(data)
+
+
+def extract_blocks(payload: bytes) -> list[tuple[str, str]]:
+    text = payload.decode("utf-8", errors="replace")
+    parser = _BlockExtractor()
+    parser.feed(text)
+    return parser.blocks
+
+
+class HistoricalHTMLASTParser:
+    """Conservative parser for older official HTML manifestations.
+
+    It intentionally extracts less structure than Formex. The goal is to
+    preserve text and obvious provision boundaries while making lower
+    structural fidelity visible in the parse report.
+    """
+
+    def __init__(
+        self,
+        *,
+        state_id: str,
+        source: dict[str, Any],
+        source_observation_id: str,
+        representation_plan_id: str | None = None,
+    ) -> None:
+        self.builder = LegalASTBuilder(
+            state_id=state_id,
+            source=source,
+            source_observation_id=source_observation_id,
+            completeness_state="UNKNOWN_COMPLETENESS",
+            representation_plan_id=representation_plan_id,
+        )
+        self.root_id = self.builder.add_node(
+            kind="DOCUMENT",
+            parent_id=None,
+            native_kind="HTML_DOCUMENT",
+            native_identifier=None,
+            source_anchor=self.builder.anchor(),
+            native_attributes={},
+        )
+
+    def parse(self, payload: bytes, *, native_path: str) -> dict[str, Any]:
+        blocks = extract_blocks(payload)
+        self.builder.visible_chars_source_estimate = sum(len(text) for _, text in blocks)
+
+        if not blocks:
+            self.builder.warnings.append("HTML parser found no visible block text")
+            self.builder.declared_losses.append("No legal structure recovered")
+            return self.builder.finalize(fidelity="FAILED")
+
+        current_parent = self.root_id
+        article_count = 0
+        annex_count = 0
+        block_count = 0
+        seen_text: set[str] = set()
+
+        for tag, raw_text in blocks:
+            text = normalize_compare_text(html_lib.unescape(raw_text))
+            if not text or text in seen_text:
+                continue
+            seen_text.add(text)
+
+            article_match = ARTICLE_RE.match(text)
+            if article_match:
+                article_count += 1
+                label = f"Article {article_match.group('label')}"
+                current_parent = self.builder.add_node(
+                    kind="ARTICLE",
+                    parent_id=self.root_id,
+                    native_kind=tag.upper(),
+                    native_identifier=None,
+                    display_label=label,
+                    citation_path=label,
+                    source_anchor=self.builder.anchor(native_path=native_path),
+                    native_attributes={},
+                )
+                self.builder.add_segment(
+                    node_id=current_parent,
+                    role="LABEL",
+                    text=label,
+                    native_kind=tag.upper(),
+                    source_anchor=self.builder.anchor(native_path=native_path),
+                )
+                remainder = text[len(article_match.group(0)):].strip(" :-—\u2013")
+                if remainder:
+                    self.builder.add_segment(
+                        node_id=current_parent,
+                        role="BODY",
+                        text=remainder,
+                        native_kind=tag.upper(),
+                        source_anchor=self.builder.anchor(native_path=native_path),
+                    )
+                continue
+
+            annex_match = ANNEX_RE.match(text)
+            if annex_match and len(text) < 120:
+                annex_count += 1
+                label = text
+                current_parent = self.builder.add_node(
+                    kind="ANNEX",
+                    parent_id=self.root_id,
+                    native_kind=tag.upper(),
+                    native_identifier=None,
+                    display_label=label,
+                    citation_path=label,
+                    source_anchor=self.builder.anchor(native_path=native_path),
+                    native_attributes={},
+                )
+                self.builder.add_segment(
+                    node_id=current_parent,
+                    role="LABEL",
+                    text=label,
+                    native_kind=tag.upper(),
+                    source_anchor=self.builder.anchor(native_path=native_path),
+                )
+                continue
+
+            block_count += 1
+            kind = "TABLE_CELL" if tag in {"td", "th"} else "BLOCK"
+            node_id = self.builder.add_node(
+                kind=kind,
+                parent_id=current_parent,
+                native_kind=tag.upper(),
+                native_identifier=None,
+                source_anchor=self.builder.anchor(native_path=native_path),
+                native_attributes={},
+            )
+            self.builder.add_segment(
+                node_id=node_id,
+                role="CELL_TEXT" if kind == "TABLE_CELL" else "BODY",
+                text=text,
+                native_kind=tag.upper(),
+                source_anchor=self.builder.anchor(native_path=native_path),
+            )
+
+        if article_count == 0:
+            self.builder.warnings.append("No article boundaries recognized in historical HTML")
+        self.builder.cross_representation_checks.append(
+            f"HTML_RECOVERY:articles={article_count};annexes={annex_count};blocks={block_count}"
+        )
+
+        fidelity = "PARTIAL_STRUCTURAL" if article_count else "TEXT_ONLY"
+        return self.builder.finalize(fidelity=fidelity)

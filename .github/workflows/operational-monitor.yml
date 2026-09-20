@@ -63,6 +63,7 @@ jobs:
       - name: Promote completed operational state
         run: |
           git fetch origin main
+          set +e
           python - <<'PY'
           import json, subprocess, sys
           generated=json.load(open('artifacts/operational-cycle/state.json'))
@@ -85,6 +86,7 @@ jobs:
               sys.exit(20)
           PY
           rc=$?
+          set -e
           if [ "$rc" -eq 20 ]; then
             exit 0
           fi

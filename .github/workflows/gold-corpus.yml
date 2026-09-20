@@ -11,6 +11,7 @@ on:
       - "tests/test_gold_corpus_contract.py"
       - "tests/test_gold_output_matcher.py"
       - "tests/test_gold_foundation_fixture.py"
+      - "tests/test_gold_mutation_fixture.py"
       - ".github/workflows/gold-corpus.yml"
       - "pyproject.toml"
   pull_request:
@@ -23,6 +24,7 @@ on:
       - "tests/test_gold_corpus_contract.py"
       - "tests/test_gold_output_matcher.py"
       - "tests/test_gold_foundation_fixture.py"
+      - "tests/test_gold_mutation_fixture.py"
       - ".github/workflows/gold-corpus.yml"
       - "pyproject.toml"
   workflow_dispatch:
@@ -43,6 +45,6 @@ jobs:
       - name: Install project and test dependencies
         run: python -m pip install -e ".[test]"
       - name: Run Gold Corpus contract tests
-        run: python -m pytest -q tests/test_gold_corpus_contract.py tests/test_gold_output_matcher.py tests/test_gold_foundation_fixture.py
+        run: python -m pytest -q tests/test_gold_corpus_contract.py tests/test_gold_output_matcher.py tests/test_gold_foundation_fixture.py tests/test_gold_mutation_fixture.py
       - name: Validate all Gold Corpus fixtures
         run: python scripts/validate_gold_corpus.py

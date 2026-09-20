@@ -78,22 +78,34 @@ def _parse_event(
     page: int,
     ordinal: int,
 ) -> dict[str, Any]:
-    notification_id = _first_text(element, "id")
-    cellar_id = _first_text(element, "cellarId")
-    root_cellar_id = _first_text(element, "rootCellarId")
-    action = _first_text(element, "type")
-    ingestion_time = _first_text(element, "date")
-
-    # Atom entries contain a generic <id>; prefer the notificationEntry id when
-    # namespaces are available by checking for the Cellar notification namespace.
+    generic_id = _first_text(element, "id")
+    guid = _first_text(element, "guid")
+    notification_entry_id = None
     for node in element.iter():
         if _local(node.tag) != "id":
             continue
         if "notificationEntry" in node.tag:
             value = (node.text or "").strip()
             if value:
-                notification_id = value
+                notification_entry_id = value
                 break
+
+    if (
+        format_name == "RSS"
+        and notification_entry_id
+        and guid
+        and notification_entry_id != guid
+    ):
+        raise FeedParseError(
+            f"feed entry {ordinal} on page {page} has conflicting "
+            f"notificationEntry:id and guid"
+        )
+
+    notification_id = notification_entry_id or guid or generic_id
+    cellar_id = _first_text(element, "cellarId")
+    root_cellar_id = _first_text(element, "rootCellarId")
+    action = _first_text(element, "type")
+    ingestion_time = _first_text(element, "date")
 
     required = {
         "notification_id": notification_id,
@@ -119,6 +131,14 @@ def _parse_event(
         )
 
     classes = sorted(set(_all_text(element, "class")))
+    explicit_wemi = [
+        value.upper()
+        for value in _all_text(element, "wemiClass")
+        if value.upper() in {
+            "WORK","EXPRESSION","MANIFESTATION","ITEM",
+            "DOSSIER","EVENT","AGENT"
+        }
+    ]
     identifiers = sorted(set(_all_text(element, "identifier")))
     priority = _first_text(element, "priority")
 
@@ -130,7 +150,7 @@ def _parse_event(
         "ingestion_time":ingestion_time,
         "priority":priority,
         "classes":classes,
-        "wemi_levels":_wemi_levels(classes),
+        "wemi_levels":sorted(set(_wemi_levels(classes) + explicit_wemi)),
         "identifiers":identifiers,
         "feed_observation":{
             "channel":"ingestion",

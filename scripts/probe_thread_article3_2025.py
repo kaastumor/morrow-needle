@@ -18,6 +18,7 @@ from needle.mutation.reconcile import reconcile_candidate
 
 BASE = "https://publications.europa.eu/resource/celex/{celex}"
 CAUSE = "32025R0905"
+CORRIGENDUM = "32025R0905R(01)"
 BEFORE = "02004R0794-20161222"
 AFTER = "02004R0794-20250703"
 TARGET = "Article 3 > 3"
@@ -90,6 +91,19 @@ def build_ast(celex,payload,response):
     ).parse_zip(payload)
 
 
+def all_visible_text(payload: bytes) -> str:
+    parts=[]
+    with zipfile.ZipFile(io.BytesIO(payload)) as zf:
+        for name in sorted(zf.namelist()):
+            if not name.lower().endswith((".xml",".frg")):
+                continue
+            try:
+                parts.append(normalized_visible_text(zf.read(name)))
+            except ET.ParseError:
+                continue
+    return " ".join(parts)
+
+
 def authentic_evidence_and_spans(payload: bytes):
     evidence=[]
     spans={}
@@ -128,8 +142,10 @@ def main() -> int:
     cause_payload,cause_response=fetch_fmx4(CAUSE)
     before_payload,before_response=fetch_fmx4(BEFORE)
     after_payload,after_response=fetch_fmx4(AFTER)
+    corrigendum_payload,corrigendum_response=fetch_fmx4(CORRIGENDUM)
 
     evidence,spans=authentic_evidence_and_spans(cause_payload)
+    corrigendum_text=all_visible_text(corrigendum_payload)
     authentic=[
         item for item in evidence
         if item["operation"]=="REPLACE"
@@ -176,6 +192,14 @@ def main() -> int:
     if reconciled["conflicting_evidence"]:
         raise AssertionError("Article 3(3) has conflicting evidence")
 
+    corrigendum_target="in the amendment to Article 4(1), second sentence"
+    if corrigendum_text.count(corrigendum_target)!=1:
+        raise AssertionError(
+            "corrigendum does not uniquely target Article 4(1), second sentence"
+        )
+    if "Article 3" in corrigendum_text:
+        raise AssertionError("corrigendum unexpectedly contains an Article 3 target")
+
     result={
         "probe_version":"0.1",
         "cause":{
@@ -212,9 +236,14 @@ def main() -> int:
             "special_2025_08_13_clause_applies_only_to":"Annex I / Part I / point 6.8",
         },
         "corrigendum_32025R0905R01":{
+            "celex":CORRIGENDUM,
             "publication_date":"2026-07-17",
+            "payload_sha256":hashlib.sha256(corrigendum_payload).hexdigest(),
+            "final_url":corrigendum_response.url,
+            "target_evidence":corrigendum_target,
             "targets":"Article 4(1), second sentence",
             "article3_effect":"NONE",
+            "verification_basis":"LIVE_AUTHENTIC_CORRIGENDUM_TARGET",
         },
     }
 

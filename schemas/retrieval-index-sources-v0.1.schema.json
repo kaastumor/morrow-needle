@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/retrieval-index-sources-v0.1.json",
+  "title": "Morrow // Needle Retrieval Index Sources v0.1",
+  "description": "Rebuild-only retrieval configuration pointing to canonical domain graphs. This file contains no legal truth.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "identity_graph_paths"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "retrieval-index-sources-v0.1"
+    },
+    "identity_graph_paths": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^fixtures/identity/.+\\.json$"
+      }
+    }
+  }
+}

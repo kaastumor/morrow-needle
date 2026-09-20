@@ -1,0 +1,83 @@
+# Decision — Freeze Legislative X-Ray / Dependency Ripple v0.1
+
+**Date:** 2026-09-20  
+**Status:** ADOPTED  
+**Issue:** #20
+
+## Decision
+
+Freeze Dependency Ripple v0.1 as a **derived public-intelligence projection** over existing canonical mutation and Change Atom truth.
+
+Canonical implementation:
+- `schemas/dependency-ripple-composition-v0.1.schema.json`
+- `schemas/dependency-ripple-view-v0.1.schema.json`
+- `src/needle/analytics/dependency_ripple.py`
+- `fixtures/analytics/dependency-ripple-first-cohort-v0.1.json`
+- `fixtures/gold/dependency-ripple-first-cohort-v0.1.json`
+- `tests/test_reach_dependency_ripple.py`
+- `tests/test_dependency_ripple_view.py`
+- `tests/test_gold_dependency_ripple.py`
+- `.github/workflows/dependency-ripple-view.yml`
+
+## Proven shape
+
+A Dependency Ripple requires all of:
+
+1. the local provision's canonical subtree is identical before/after;
+2. no local textual mutation is emitted;
+3. a different referenced provision/annex/rule has a VERIFIED upstream mutation;
+4. an EVIDENCED + DERIVED Change Atom explicitly carries CROSS_REFERENCE scope;
+5. the Change Atom references the selected upstream mutation;
+6. public output preserves the direct-vs-derived distinction.
+
+## First frozen cases
+
+### Regulation 794/2004 Article 3(4)
+
+Article 3(4) remains textually unchanged through the 2025 Article 3(3) replacement.
+
+Its operative references to channels described in paragraph 3 therefore experience a derived dependency ripple without a paragraph-4 textual mutation.
+
+### REACH Regulation 1907/2006 Article 67(1)
+
+Article 67(1) remains canonically identical across the 2023 transition.
+
+Its operative reference to Annex XVII means the VERIFIED insertion of Annex XVII entry 78 by Regulation 2023/2055 changes the referenced restriction set.
+
+The local effect is EVIDENCED + DERIVED, not a textual mutation of Article 67(1).
+
+## Ownership rule
+
+Legislative X-Ray owns presentation only.
+
+It does not own:
+- mutation truth;
+- local text-state truth;
+- semantic Change Atoms;
+- temporal state;
+- dependency identity beyond what the referenced semantic evidence supports.
+
+The persisted composition contains only references.
+
+## Stable v0.1 guardrails
+
+- unchanged local subtree means no local textual mutation;
+- upstream mutation must be VERIFIED;
+- local ripple must remain EVIDENCED + DERIVED;
+- CROSS_REFERENCE scope is mandatory;
+- local target must differ from upstream mutation target;
+- cross-language equivalence is not assumed;
+- X-Ray may not infer additional practical effects beyond the referenced Change Atom.
+
+## Gold contract
+
+The Gold case permanently rejects:
+- manufactured local textual mutations;
+- reclassification of a derived ripple as DIRECT evidence.
+
+## Reopen rule
+
+Reopen only when an official case cannot be represented without either:
+- manufacturing local mutation truth;
+- introducing a new dependency relation that existing semantic evidence cannot carry;
+- or collapsing direct upstream evidence into derived local effect.

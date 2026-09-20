@@ -8,10 +8,9 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 Unless new official evidence creates a more severe blocker, the hourly build loop should start here:
 
-1. **P0-G / Issue #7 — identifier/equivalence resolution.** Build the deterministic authoritative identity/equivalence layer across CELEX, ELI, Cellar, OJ and procedure identifiers.
-2. Then **P0-H / Issue #8 — legal/procedural state machine**.
-3. Then **P0-I / Issue #9 — source-assisted deterministic mutation engine**.
-4. Keep P0-C cross-cutting: feed each resolved P0 adversary into the Gold Corpus without letting corpus-format work displace the active foundation blocker.
+1. **P0-H / Issue #8 — legal/procedural state machine.** Prove that procedure events, document states and legal-effect states cannot be collapsed into one linear status.
+2. Then **P0-I / Issue #9 — source-assisted deterministic mutation engine**.
+3. Keep P0-C cross-cutting: feed each resolved P0 adversary into the Gold Corpus without letting corpus-format work displace the active foundation blocker.
 
 Do **not** return to P0-B unless a new official source fixture falsifies the validated ingestion contract. Issue #2 is closed; residual Cellar work is adapter/regression hardening.
 
@@ -128,16 +127,33 @@ See `docs/decisions/multilingual-corrigenda-v0.1-interface-freeze.md`.
 ### P0-G — Identifier/equivalence resolution
 **Issue #7**
 
-Status: **ACTIVE FOUNDATION BLOCKER.**
+Status: **FOUNDATION CONTRACT RESOLVED; ISSUE CLOSED.**
 
-Formalize CELEX ↔ ELI ↔ Cellar ↔ OJ ↔ procedure/interinstitutional identifiers and never synthesize identifiers when authoritative mapping exists.
+Frozen typed identity contract:
+- `schemas/identifier-graph-v0.1.schema.json`
+- `schemas/identifier-resolution-query-v0.1.schema.json`
+- `src/needle/identity/resolver.py`
 
-First attack: distinguish identifiers that name the same Work from identifiers that name language Expressions, Manifestations, consolidated text states, corrigenda, or procedures. Equivalence must be typed rather than flattened into “same document”.
+Established:
+1. there is no generic `same_document` equivalence;
+2. CELEX, ELI and Cellar may identify the same Work/legal resource while Expressions, Manifestations and Items remain distinct;
+3. consolidated states are related to but not equivalent to the authentic base act;
+4. corrigenda are their own legal resources;
+5. proposal, procedure and adopted act are distinct identities;
+6. OJ citations and ELI subdivisions are typed relations, not aliases;
+7. authoritative historical quirks such as the 1958 ELI `1(1)` must be resolved rather than normalized away;
+8. unknown identifiers produce abstention rather than synthesis.
+
+See `docs/decisions/identifier-graph-v0.1-interface-freeze.md`.
 
 ### P0-H — Legal/procedural state machine
 **Issue #8**
 
+Status: **ACTIVE FOUNDATION BLOCKER.**
+
 Validate the distinction between proposal/draft/position/agreement/adoption/publication/force/application/repeal against real procedures.
+
+First attack: model status as orthogonal state assertions + events, not one lifecycle enum. Ordinary legislative, delegated and implementing paths must fit without pretending they share identical steps. Include at least one terminal non-adopted proposal so `WITHDRAWN/REJECTED/LAPSED` cannot be confused with “not yet adopted”.
 
 ### P0-I — Source-assisted deterministic mutation engine
 **Issue #9**

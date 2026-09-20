@@ -1,0 +1,6 @@
+{
+  "schema_version": "retrieval-index-sources-v0.1",
+  "identity_graph_paths": [
+    "fixtures/identity/eu-identifier-adversaries-v0.1.json"
+  ]
+}

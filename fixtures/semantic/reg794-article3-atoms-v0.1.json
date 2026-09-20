@@ -12,19 +12,25 @@
       "identifier": "CELEX:32008R0271",
       "language": "ENG",
       "text": "As from 1 July 2008, notifications shall be transmitted electronically via the web application State Aid Notification Interactive (SANI).",
-      "text_hash": "e4be9c1a527f6ef3ec8f4214aae06b58d86477e015651327e71ca83d45aa3d8a"
+      "text_hash": "e4be9c1a527f6ef3ec8f4214aae06b58d86477e015651327e71ca83d45aa3d8a",
+      "locator": "L_2008082EN.01000101.xml#normalized-chars:7414-7551",
+      "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
     },
     "span-invalid-channel-status": {
       "identifier": "CELEX:32008R0271",
       "language": "ENG",
       "text": "In the absence of such an agreement, any notification or correspondence in connection with a notification sent to the Commission by a Member State through a communication channel other than those referred to in paragraph 3 shall not be considered as submitted to the Commission.",
-      "text_hash": "89db2848597405bd3fe6661af754001e96e292a97bb90d23c0d203095d67e5cd"
+      "text_hash": "89db2848597405bd3fe6661af754001e96e292a97bb90d23c0d203095d67e5cd",
+      "locator": "L_2008082EN.01000101.xml#normalized-chars:7983-8261",
+      "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
     },
     "span-alt-channel-permission": {
       "identifier": "CELEX:32008R0271",
       "language": "ENG",
       "text": "In exceptional circumstances and upon the agreement of the Commission and the Member State concerned, an agreed communication channel other than those referred to in paragraph 3 may be used for submission of a notification or any correspondence in connection with a notification.",
-      "text_hash": "c7fc733a71948a5bd1b40fc83e6e0ba18f073803adaa8bd97bbc73a2f55cdb26"
+      "text_hash": "c7fc733a71948a5bd1b40fc83e6e0ba18f073803adaa8bd97bbc73a2f55cdb26",
+      "locator": "L_2008082EN.01000101.xml#normalized-chars:7704-7983",
+      "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
     }
   },
   "atoms": [
@@ -76,10 +82,11 @@
           "span_id": "span-sani-duty",
           "source_type": "CELLAR",
           "identifier": "CELEX:32008R0271",
-          "locator": "Article 1 replacement of Article 3(3), first sentence",
+          "locator": "L_2008082EN.01000101.xml#normalized-chars:7414-7551",
           "language": "ENG",
           "text_hash": "e4be9c1a527f6ef3ec8f4214aae06b58d86477e015651327e71ca83d45aa3d8a",
-          "role": "SEMANTIC_CLAIM"
+          "role": "SEMANTIC_CLAIM",
+          "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
         }
       ],
       "temporal_assertion_refs": [
@@ -143,10 +150,11 @@
           "span_id": "span-invalid-channel-status",
           "source_type": "CELLAR",
           "identifier": "CELEX:32008R0271",
-          "locator": "Article 1 replacement of Article 3(4), second sentence",
+          "locator": "L_2008082EN.01000101.xml#normalized-chars:7983-8261",
           "language": "ENG",
           "text_hash": "89db2848597405bd3fe6661af754001e96e292a97bb90d23c0d203095d67e5cd",
-          "role": "SEMANTIC_CLAIM"
+          "role": "SEMANTIC_CLAIM",
+          "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
         }
       ],
       "temporal_assertion_refs": [],
@@ -209,10 +217,11 @@
           "span_id": "span-alt-channel-permission",
           "source_type": "CELLAR",
           "identifier": "CELEX:32008R0271",
-          "locator": "Article 1 replacement of Article 3(4), first sentence",
+          "locator": "L_2008082EN.01000101.xml#normalized-chars:7704-7983",
           "language": "ENG",
           "text_hash": "c7fc733a71948a5bd1b40fc83e6e0ba18f073803adaa8bd97bbc73a2f55cdb26",
-          "role": "SEMANTIC_CLAIM"
+          "role": "SEMANTIC_CLAIM",
+          "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
         }
       ],
       "temporal_assertion_refs": [],
@@ -285,10 +294,11 @@
             "span_id": "span-sani-duty",
             "source_type": "CELLAR",
             "identifier": "CELEX:32008R0271",
-            "locator": "Article 1 replacement of Article 3(3), first sentence",
+            "locator": "L_2008082EN.01000101.xml#normalized-chars:7414-7551",
             "language": "ENG",
             "text_hash": "e4be9c1a527f6ef3ec8f4214aae06b58d86477e015651327e71ca83d45aa3d8a",
-            "role": "SEMANTIC_CLAIM"
+            "role": "SEMANTIC_CLAIM",
+            "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
           }
         ],
         "temporal_assertion_refs": [
@@ -306,5 +316,12 @@
         "notes": "Must be rejected because the cited sentence applies SANI to notifications, not all correspondence."
       }
     }
-  ]
+  ],
+  "live_source_observation": {
+    "workflow_run": 35518899381,
+    "celex": "32008R0271",
+    "cellar_payload_sha256": "c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7",
+    "cellar_manifestation": "bcadcc9a-c971-43e1-a520-9e922e20ee03.0006.04",
+    "source_file": "L_2008082EN.01000101.xml"
+  }
 }

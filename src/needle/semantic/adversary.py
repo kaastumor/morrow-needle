@@ -68,6 +68,10 @@ def validate_atom(
             errors.append(f"source span identifier mismatch: {span_id}")
         if registered.get("language") != span["language"]:
             errors.append(f"source span language mismatch: {span_id}")
+        if registered.get("locator") and registered.get("locator") != span["locator"]:
+            errors.append(f"source span locator mismatch: {span_id}")
+        if registered.get("artifact_hash") and registered.get("artifact_hash") != span["artifact_hash"]:
+            errors.append(f"source span artifact hash mismatch: {span_id}")
         span_texts[span_id] = text
 
     referenced_span_ids = {span["span_id"] for span in atom.get("source_spans", [])}

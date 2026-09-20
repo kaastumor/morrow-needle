@@ -5,6 +5,7 @@ from pathlib import Path
 from jsonschema import Draft202012Validator
 
 from needle.provenance.ledger import (
+    active_records,
     compute_record_hash,
     seal_record,
     trace_claim_support,
@@ -131,3 +132,34 @@ def test_mutation_keeps_before_after_and_cause_as_independent_support_edges():
         "src-reg794-20080414-eng",
         "src-reg271-2008-eng",
     }
+
+
+def test_current_view_hides_superseded_record_without_erasing_history():
+    current = {record["record_id"] for record in active_records(RECORDS)}
+    historical = {record["record_id"] for record in RECORDS}
+
+    assert "support-audit-locator-v1" in historical
+    assert "support-audit-locator-v1" not in current
+    assert "support-audit-locator-v2" in current
+    assert "supersede-audit-locator-v1" not in current
+
+
+def test_competing_supersession_of_same_record_is_rejected():
+    records = deepcopy(RECORDS)
+    extra = {
+        "record_id":"supersede-audit-locator-v1-again",
+        "record_type":"SUPERSESSION",
+        "created_at":"2026-09-20T15:20:17Z",
+        "payload":{
+            "character":"CORRECTION",
+            "superseded_record_ids":["support-audit-locator-v1"],
+            "replacement_record_ids":["support-audit-locator-v2"],
+            "reason":"Conflicting duplicate correction for negative control.",
+        },
+    }
+    records.append(seal_record(extra))
+    errors = validate_ledger(records)
+    assert any(
+        "support-audit-locator-v1 was already superseded" in error
+        for error in errors
+    )

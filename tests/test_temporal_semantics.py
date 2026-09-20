@@ -222,3 +222,106 @@ def test_bitemporal_query_contract_requires_explicit_perspective():
         "valid_date": "2023-06-01",
     }
     assert list(validator.iter_errors(ambiguous))
+
+
+def _exclusive_boundary_assertion(*, assertion_id, boundary, date_value):
+    return {
+        "assertion_id":assertion_id,
+        "subject_ref":{
+            "kind":"REGIME",
+            "identifier":"TEST:EXCLUSIVE_BOUNDARY",
+            "locator":None,
+        },
+        "dimension":"APPLICATION",
+        "boundary":boundary,
+        "inclusive":False,
+        "trigger":{
+            "kind":"ABSOLUTE_DATE",
+            "date":date_value,
+            "source_expression":"test-only exclusive boundary",
+        },
+        "normalized_date":date_value,
+        "scope":{
+            "mode":"DEFAULT",
+            "applies_to":["RULE:TEST:EXCLUSIVE"],
+            "overrides_assertion_ids":[],
+            "entity_condition":None,
+        },
+        "resolution_state":"RESOLVED_ABSOLUTE",
+        "evidence_state":"DIRECT",
+        "source_refs":[{
+            "source_type":"OTHER_OFFICIAL",
+            "identifier":"TEST:SOURCE",
+            "locator":"test",
+            "language":"ENG",
+            "role":"TEMPORAL_CLAUSE",
+        }],
+    }
+
+
+def test_exclusive_start_is_not_active_on_boundary_date():
+    assertion = _exclusive_boundary_assertion(
+        assertion_id="exclusive-start",
+        boundary="START",
+        date_value="2026-01-01",
+    )
+    on_boundary = status_on(
+        [assertion],
+        dimension="APPLICATION",
+        subject_keys={"RULE:TEST:EXCLUSIVE"},
+        on_date="2026-01-01",
+    )
+    day_after = status_on(
+        [assertion],
+        dimension="APPLICATION",
+        subject_keys={"RULE:TEST:EXCLUSIVE"},
+        on_date="2026-01-02",
+    )
+    assert on_boundary["active"] is False
+    assert on_boundary["start"]["inclusive"] is False
+    assert day_after["active"] is True
+
+
+def test_exclusive_end_is_not_active_on_boundary_date():
+    start = _exclusive_boundary_assertion(
+        assertion_id="inclusive-start-for-end-test",
+        boundary="START",
+        date_value="2025-01-01",
+    )
+    start["inclusive"] = True
+    end = _exclusive_boundary_assertion(
+        assertion_id="exclusive-end",
+        boundary="END",
+        date_value="2026-01-01",
+    )
+    result = status_on(
+        [start,end],
+        dimension="APPLICATION",
+        subject_keys={"RULE:TEST:EXCLUSIVE"},
+        on_date="2026-01-01",
+    )
+    assert result["active"] is False
+    assert result["end"]["inclusive"] is False
+
+
+def test_same_date_with_conflicting_inclusivity_fails_closed():
+    inclusive = _exclusive_boundary_assertion(
+        assertion_id="same-date-inclusive",
+        boundary="START",
+        date_value="2026-01-01",
+    )
+    inclusive["inclusive"] = True
+    exclusive = _exclusive_boundary_assertion(
+        assertion_id="same-date-exclusive",
+        boundary="START",
+        date_value="2026-01-01",
+    )
+    result = resolve_boundary(
+        [inclusive,exclusive],
+        dimension="APPLICATION",
+        boundary="START",
+        subject_keys={"RULE:TEST:EXCLUSIVE"},
+    )
+    assert result["state"] == "CONFLICTING"
+    assert result["dates"] == ["2026-01-01"]
+    assert result["inclusive_values"] == [False, True]

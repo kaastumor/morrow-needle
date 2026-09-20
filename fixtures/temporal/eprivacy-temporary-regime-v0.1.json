@@ -51,9 +51,15 @@
       "boundary": "START",
       "inclusive": true,
       "trigger": {
-        "kind": "ABSOLUTE_DATE",
-        "date": "2021-08-02",
-        "source_expression": "entry into force on the third day following publication; no separate delayed application start"
+        "kind": "RELATIVE_EVENT",
+        "event_key": "eprivacy-2021-publication-date",
+        "event_binding": "SUBJECT",
+        "offset": {
+          "value": 3,
+          "unit": "DAYS"
+        },
+        "guard": null,
+        "source_expression": "third day following publication"
       },
       "normalized_date": "2021-08-02",
       "scope": {
@@ -208,9 +214,15 @@
       "boundary": "START",
       "inclusive": true,
       "trigger": {
-        "kind": "ABSOLUTE_DATE",
-        "date": "2026-07-31",
-        "source_expression": "third day following publication on 28 July 2026"
+        "kind": "RELATIVE_EVENT",
+        "event_key": "eprivacy-2026-publication-date",
+        "event_binding": "SUBJECT",
+        "offset": {
+          "value": 3,
+          "unit": "DAYS"
+        },
+        "guard": null,
+        "source_expression": "third day following publication"
       },
       "normalized_date": "2026-07-31",
       "scope": {

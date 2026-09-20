@@ -1,0 +1,21 @@
+{
+  "fixture_id": "reg2015-1536-authentic-replacement-instructions-v0.1",
+  "source": {
+    "celex": "32015R1536",
+    "eli": "http://data.europa.eu/eli/reg/2015/1536/oj",
+    "oj": "OJ L 241, 17.9.2015",
+    "language": "ENG",
+    "authority": "AUTHENTIC_OFFICIAL_JOURNAL"
+  },
+  "excerpt": "(4) In Article 4, paragraph 1 is replaced by the following: ‘1. Maintenance organisation approvals shall be issued in accordance with the provisions of Annex I, Subpart F, or Annex II.’",
+  "parser_case": "Article 4, paragraph 1 is replaced by the following",
+  "expected_evidence": {
+    "channel": "AUTHENTIC_ACT",
+    "source_id": "CELEX:32015R1536",
+    "operation": "REPLACE",
+    "target_locator": "Article 4 > 1",
+    "authority_character": "CANONICAL_LEGAL_CAUSE",
+    "locator": "Article 1(4)"
+  },
+  "guardrail": "The parser consumes only the explicit replacement command. The surrounding act contains grouped replacements and insertions that remain unsupported until their cardinality and nested locators are parsed explicitly."
+}

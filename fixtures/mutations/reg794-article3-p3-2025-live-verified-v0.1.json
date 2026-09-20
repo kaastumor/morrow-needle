@@ -1,0 +1,69 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "reg794-article3-p3-2025-live-verified",
+  "workflow_run": 35521420543,
+  "language": "ENG",
+  "target": "Article 3 > 3",
+  "before": {
+    "celex": "02004R0794-20161222",
+    "payload_sha256": "5aed9f446884f30786a1d96bfe090122dbabfbc6c281059f572377b0c1cc7d6b",
+    "node_id": "CELEX:02004R0794-20161222:n000022",
+    "text_hash": "2fad3273b6ddb7eead8595e94165d02a30f4a149e67dc106a9c3df220b081452",
+    "text_length": 289
+  },
+  "after": {
+    "celex": "02004R0794-20250703",
+    "payload_sha256": "d9a6ae56974c463fec60fd7fb12ee9d49fc4ae8fda226df06ee384463c259ab2",
+    "node_id": "CELEX:02004R0794-20250703:n000022",
+    "text_hash": "144a32004977b741ffa02847cffb05c981388243c6dab54e749ee0e71152ec19",
+    "text_length": 250
+  },
+  "authentic_cause": {
+    "celex": "32025R0905",
+    "payload_sha256": "91bc8da880879ef9e02ccd7c3bdae09d8b21f496d839d7418bd0a0b088976ff8",
+    "manifestation": "ea4a029d-47ef-11f0-85ba-01aa75ed71a1.0006.02",
+    "instruction_locator": "L_202500905EN.000101.fmx.xml#normalized-chars:10410-10461"
+  },
+  "semantic_spans": {
+    "notification-channel": {
+      "locator": "L_202500905EN.000101.fmx.xml#normalized-chars:10464-10568",
+      "text": "Notifications shall be sent electronically, via the electronic application designated by the Commission.",
+      "text_hash": "fd6c5bf4d5162189448d1184a230eb81845282acb33d1a344f3aeab6ee6f0e56"
+    },
+    "correspondence-channel": {
+      "locator": "L_202500905EN.000101.fmx.xml#normalized-chars:10568-10713",
+      "text": "All correspondence in connection with a notification shall be sent electronically via the secured electronic system designated by the Commission.",
+      "text_hash": "c55852f95e0a890d02f22ca83e4430861b63e35cadd1f96710e68037a2c81ca5"
+    }
+  },
+  "feature_deltas": {
+    "dates_removed": [
+      "1 July 2008"
+    ],
+    "named_systems_removed": [
+      "State Aid Notification Interactive (SANI)",
+      "Public Key Infrastructure (PKI)"
+    ],
+    "generic_channel_designation_added": [
+      "electronic application designated by the Commission",
+      "secured electronic system designated by the Commission"
+    ]
+  },
+  "result": {
+    "operation": "REPLACE",
+    "reconciliation_state": "CORROBORATED",
+    "verification_state": "VERIFIED"
+  },
+  "temporal": {
+    "publication_date": "2025-06-13",
+    "entry_into_force": "2025-07-03",
+    "article3_3_application_start": "2025-07-03",
+    "special_2025_08_13_application_applies_to": "Annex I / Part I / point 6.8 only"
+  },
+  "corrigendum_2026": {
+    "identifier": "CELEX:32025R0905R(01)",
+    "publication_date": "2026-07-17",
+    "target": "Article 4(1), second sentence",
+    "article3_effect": "NONE"
+  }
+}

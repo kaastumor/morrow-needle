@@ -90,3 +90,36 @@ def refresh_scope(event: dict[str, Any]) -> dict[str, Any]:
         "target_cellar_id":cellar_id,
         "root_cellar_id":root,
     }
+
+
+
+def snapshot_from_observations(
+    *,
+    content_observation: dict[str, Any] | None,
+    metadata_observation: dict[str, Any] | None,
+    available: bool,
+) -> dict[str, Any]:
+    """Project immutable provenance observations into a comparison snapshot.
+
+    Content and metadata remain distinct SOURCE_OBSERVATION records. This
+    projection deliberately does not mutate or merge their provenance.
+    """
+    return {
+        "available":available,
+        "content_hash":(
+            content_observation["payload"]["artifact_hash"]
+            if content_observation is not None else None
+        ),
+        "metadata_hash":(
+            metadata_observation["payload"]["artifact_hash"]
+            if metadata_observation is not None else None
+        ),
+        "content_observation_id":(
+            content_observation["record_id"]
+            if content_observation is not None else None
+        ),
+        "metadata_observation_id":(
+            metadata_observation["record_id"]
+            if metadata_observation is not None else None
+        ),
+    }

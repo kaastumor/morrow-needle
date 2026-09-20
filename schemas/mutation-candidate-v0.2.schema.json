@@ -67,7 +67,8 @@
         "EXACT_CITATION_AND_KIND",
         "SOURCE_NATIVE_IDENTIFIER",
         "ASSERTED_STRUCTURAL_LINEAGE",
-        "UNALIGNED"
+        "UNALIGNED",
+        "TABLE_COORDINATE"
       ]
     },
     "before": {

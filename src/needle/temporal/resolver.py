@@ -152,21 +152,26 @@ def resolve_boundary(
             "missing":pending_override,
         }
 
-    dates = {value for _, value in survivors}
+    boundaries = {
+        (value, bool(assertion.get("inclusive", True)))
+        for assertion, value in survivors
+    }
     if not survivors:
         return {"state":"NOT_ASSERTED","date":None,"assertion_ids":[]}
-    if len(dates) > 1:
+    if len(boundaries) > 1:
         return {
             "state":"CONFLICTING",
             "date":None,
             "assertion_ids":[a["assertion_id"] for a, _ in survivors],
-            "dates":sorted(v.isoformat() for v in dates),
+            "dates":sorted({v.isoformat() for v, _ in boundaries}),
+            "inclusive_values":sorted({inclusive for _, inclusive in boundaries}),
         }
 
-    value = next(iter(dates))
+    value, inclusive = next(iter(boundaries))
     return {
         "state":"RESOLVED",
         "date":value.isoformat(),
+        "inclusive":inclusive,
         "assertion_ids":[a["assertion_id"] for a, _ in survivors],
     }
 
@@ -202,9 +207,19 @@ def status_on(
         return {"state":"NOT_ASSERTED","active":None,"start":start,"end":end}
 
     query = _date(on_date)
-    active = query >= _date(start["date"])
+    start_date = _date(start["date"])
+    active = (
+        query >= start_date
+        if start.get("inclusive", True)
+        else query > start_date
+    )
     if end["state"] == "RESOLVED":
-        active = active and query <= _date(end["date"])
+        end_date = _date(end["date"])
+        active = active and (
+            query <= end_date
+            if end.get("inclusive", True)
+            else query < end_date
+        )
 
     return {"state":"RESOLVED","active":active,"start":start,"end":end}
 

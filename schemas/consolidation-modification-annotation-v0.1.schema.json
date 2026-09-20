@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/consolidation-modification-annotation-v0.1.json",
+  "title": "Morrow // Needle Consolidation Modification Annotation v0.1",
+  "description": "Parsed official Formex consolidation provenance. This is documentary source evidence from a consolidated text, not by itself canonical legal authority for the mutation.",
+  "type": "object",
+  "required": [
+    "annotation_id",
+    "source_state_id",
+    "source_entry",
+    "open_id",
+    "close_id",
+    "action",
+    "level",
+    "command",
+    "active_doc",
+    "active_loc",
+    "mod_level",
+    "source_span",
+    "evidence_character",
+    "legal_authority_character"
+  ],
+  "properties": {
+    "annotation_id": {"type":"string"},
+    "source_state_id": {"type":"string"},
+    "source_entry": {"type":"string"},
+    "open_id": {"type":"string"},
+    "close_id": {"type":"string"},
+    "action": {
+      "type":"string",
+      "enum":["INSERTED","DELETED","REPEALED","REPLACED","RENUMBERED","UNKNOWN"]
+    },
+    "level": {"type":"string","enum":["STRUCTURE","TEXT","UNKNOWN"]},
+    "command": {"type":"string","enum":["EXPLICIT","IMPLICIT","GENERAL","UNKNOWN"]},
+    "active_doc": {"type":"string"},
+    "active_loc": {"type":"string"},
+    "mod_level": {"type":"integer","minimum":0},
+    "source_span": {
+      "type":"object",
+      "required":["start_offset","end_offset"],
+      "properties":{
+        "start_offset":{"type":"integer","minimum":0},
+        "end_offset":{"type":"integer","minimum":0}
+      },
+      "additionalProperties":false
+    },
+    "target_node_ids":{"type":"array","items":{"type":"string"}},
+    "target_segment_ids":{"type":"array","items":{"type":"string"}},
+    "evidence_character":{"const":"OFFICIAL_EMBEDDED_CONSOLIDATION_PROVENANCE"},
+    "legal_authority_character":{"const":"DOCUMENTARY_NON_BINDING"},
+    "source_observation_id":{"type":["string","null"]},
+    "notes":{"type":["string","null"]}
+  },
+  "additionalProperties":false
+}

@@ -281,7 +281,7 @@ def benchmark_errors(celex: str, ast: dict[str, Any]) -> list[str]:
         actual_eli = sum(
             1
             for ref in ast["references"]
-            if ref.get("source_target_uri", "").startswith("http://data.europa.eu/eli/")
+            if (ref.get("source_target_uri") or "").startswith("http://data.europa.eu/eli/")
             and ref.get("resolution_state") == "SOURCE_RESOLVED"
         )
         if actual_eli < eli_min:

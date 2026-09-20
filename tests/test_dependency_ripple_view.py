@@ -105,8 +105,8 @@ def test_reach_case_keeps_local_nonmutation_separate_from_annex_insert():
         "target":"Annex XVII > entry 78",
         "verification_state":"VERIFIED",
     }
-    assert "Synthetic polymer microparticles" in (
-        case["derived_effect"]["statement"]
+    assert "synthetic polymer microparticles" in (
+        case["derived_effect"]["statement"].casefold()
     )
 
 

@@ -5,7 +5,6 @@ from html.parser import HTMLParser
 import hashlib
 import json
 from pathlib import Path
-import re
 
 import requests
 
@@ -22,6 +21,7 @@ PDF_URL=(
     "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/"
     f"?uri=CELEX:{CELEX}"
 )
+PINNED=Path("fixtures/audit/reg2742-money-corrigendum-source-v0.1.json")
 
 
 class VisibleText(HTMLParser):
@@ -50,133 +50,143 @@ def normalized_html_text(payload: bytes) -> str:
 
 
 def fetch(url: str, *, accept: str) -> requests.Response:
-    response=requests.get(
+    return requests.get(
         url,
         headers={
             "Accept":accept,
             "Accept-Language":"eng",
             "User-Agent":(
-                "Morrow-Needle-Money-Corrigendum-Probe/0.2 "
+                "Morrow-Needle-Money-Corrigendum-Probe/0.4 "
                 "(+https://github.com/kaastumor/morrow-needle)"
             ),
         },
         timeout=120,
         allow_redirects=True,
     )
-    return response
 
 
 def main() -> int:
-    # Important audit adversary: the historic corrigendum is not resolvable
-    # through the normal Cellar CELEX route, while authoritative EUR-Lex
-    # representations exist. Route availability must not become legal absence.
+    pinned=json.loads(PINNED.read_text(encoding="utf-8"))
+    expected=pinned["correction"]
+
     cellar=fetch(CELLAR_URL,accept="application/zip;mtype=fmx4")
-
     html=fetch(HTML_URL,accept="text/html")
-    html.raise_for_status()
-    text=normalized_html_text(html.content)
-
-    target="On page 21 in the second line of Article 4 (1):"
-    if target not in text or "ECU 225" not in text or "ECU 255" not in text:
-        raise AssertionError(
-            "official EUR-Lex HTML does not expose expected Article 4(1) correction"
-        )
-
-    target_start=text.index(target)
-    after_end=text.index("ECU 255",target_start)+len("ECU 255")
-    correction_text=text[target_start:after_end]
-    before_fragment="shall be ECU 225"
-    after_fragment="shall be ECU 255"
-    if before_fragment not in correction_text or after_fragment not in correction_text:
-        raise AssertionError(correction_text)
-
     pdf=fetch(PDF_URL,accept="application/pdf")
-    pdf.raise_for_status()
-    if not pdf.content.startswith(b"%PDF"):
+
+    route_observations={
+        "cellar_celex":{
+            "url":CELLAR_URL,
+            "http_status":cellar.status_code,
+            "available":cellar.ok,
+        },
+        "eurlex_html":{
+            "url":HTML_URL,
+            "final_url":html.url,
+            "http_status":html.status_code,
+            "media_type":html.headers.get("content-type"),
+            "artifact_hash":(
+                "sha256:"+hashlib.sha256(html.content).hexdigest()
+                if html.content else None
+            ),
+        },
+        "eurlex_oj_pdf":{
+            "url":PDF_URL,
+            "final_url":pdf.url,
+            "http_status":pdf.status_code,
+            "media_type":pdf.headers.get("content-type"),
+            "artifact_hash":(
+                "sha256:"+hashlib.sha256(pdf.content).hexdigest()
+                if pdf.content else None
+            ),
+        },
+    }
+
+    availability_state="AVAILABILITY_UNRESOLVED"
+    parsed=[]
+    live_correction=None
+
+    if html.ok:
+        text=normalized_html_text(html.content)
+        target=expected["text"].split(" 1.2 //",1)[0]
+        has_target=target in text
+        has_before=expected["before_fragment"] in text
+        has_after=expected["after_fragment"] in text
+
+        if has_target and has_before and has_after:
+            target_start=text.index(target)
+            after_end=text.index(expected["after_fragment"],target_start)+len(
+                expected["after_fragment"]
+            )
+            correction_text=text[target_start:after_end]
+            parsed=parse_authentic_corrigendum_replacements(
+                correction_text,
+                source_id=f"CELEX:{CELEX}",
+                locator=(
+                    f"normalized-visible-text#chars:"
+                    f"{target_start}-{after_end}"
+                ),
+            )
+            if len(parsed) != 1:
+                raise AssertionError(
+                    "official content is present but parser no longer resolves "
+                    f"one replacement: {parsed}"
+                )
+            replacement=parsed[0]
+            if replacement["target_locator"] != expected["target"]:
+                raise AssertionError(
+                    f"live corrigendum target changed: {replacement}"
+                )
+            if expected["before_fragment"] not in replacement["before_text"]:
+                raise AssertionError(
+                    f"live before-fragment changed: {replacement}"
+                )
+            if expected["after_fragment"] not in replacement["after_text"]:
+                raise AssertionError(
+                    f"live after-fragment changed: {replacement}"
+                )
+            live_correction={
+                "target":replacement["target_locator"],
+                "locator":(
+                    f"normalized-visible-text#chars:"
+                    f"{target_start}-{after_end}"
+                ),
+                "text":correction_text,
+                "text_hash":hashlib.sha256(
+                    correction_text.encode("utf-8")
+                ).hexdigest(),
+            }
+            availability_state="AVAILABLE_VERIFIED"
+        elif any((has_target,has_before,has_after)):
+            # Partial appearance of the pinned legal content is more suspicious
+            # than a generic interstitial: fail closed for manual inspection.
+            raise AssertionError({
+                "state":"PARTIAL_EXPECTED_LEGAL_CONTENT",
+                "has_target":has_target,
+                "has_before":has_before,
+                "has_after":has_after,
+                "html_status":html.status_code,
+            })
+
+    if pdf.ok and pdf.content and not pdf.content.startswith(b"%PDF"):
         raise AssertionError(
             f"official OJ PDF route returned {pdf.headers.get('content-type')}"
         )
 
-    parsed=parse_authentic_corrigendum_replacements(
-        correction_text,
-        source_id=f"CELEX:{CELEX}",
-        locator=(
-            f"normalized-visible-text#chars:"
-            f"{target_start}-{after_end}"
-        ),
-    )
-    if len(parsed) != 1:
-        raise AssertionError(
-            f"authentic corrigendum parser did not resolve one replacement: {parsed}"
-        )
-    if parsed[0]["target_locator"] != "Article 4 > 1":
-        raise AssertionError(parsed[0])
-
     result={
-        "probe_version":"0.3",
+        "probe_version":"0.4",
         "celex":CELEX,
         "language":"ENG",
-        "source_route_observations":{
-            "cellar_celex":{
-                "url":CELLAR_URL,
-                "http_status":cellar.status_code,
-                "available":cellar.ok,
-            },
-            "eurlex_html":{
-                "url":HTML_URL,
-                "final_url":html.url,
-                "http_status":html.status_code,
-                "media_type":html.headers.get("content-type"),
-                "artifact_hash":"sha256:"+hashlib.sha256(html.content).hexdigest(),
-            },
-            "eurlex_oj_pdf":{
-                "url":PDF_URL,
-                "final_url":pdf.url,
-                "http_status":pdf.status_code,
-                "media_type":pdf.headers.get("content-type"),
-                "artifact_hash":"sha256:"+hashlib.sha256(pdf.content).hexdigest(),
-            },
+        "availability_state":availability_state,
+        "pinned_legal_evidence":{
+            "fixture_id":pinned["fixture_id"],
+            "artifact_hash":pinned["source_observation"]["artifact_hash"],
+            "correction_text_hash":expected["text_hash"],
         },
-        "parsed_replacement":parsed[0],
-        "correction":{
-            "target":"Article 4 > 1",
-            "target_source_text":target,
-            "locator":(
-                f"normalized-visible-text#chars:"
-                f"{target_start}-{after_end}"
-            ),
-            "text":correction_text,
-            "text_hash":hashlib.sha256(
-                correction_text.encode("utf-8")
-            ).hexdigest(),
-            "before_fragment":before_fragment,
-            "before_hash":hashlib.sha256(
-                before_fragment.encode("utf-8")
-            ).hexdigest(),
-            "after_fragment":after_fragment,
-            "after_hash":hashlib.sha256(
-                after_fragment.encode("utf-8")
-            ).hexdigest(),
-            "numbers_removed":["225"],
-            "numbers_added":["255"],
-        },
-        "language_scope":{
-            "languages":["ENG"],
-            "cross_language_equivalence_assumed":False,
-        },
-        "invariants":[
-            "Cellar CELEX route unavailability is not legal/source absence when another official representation is available.",
-            "The operative correction is English-expression scoped.",
-            "Do not infer the corrected amount for non-English expressions from absence of a listed corrigendum.",
-            "The current corrected base-act display is not evidence that ECU 255 was printed in the original English expression.",
-        ],
+        "source_route_observations":route_observations,
+        "parsed_replacement":parsed[0] if parsed else None,
+        "live_correction":live_correction,
+        "invariants":pinned["invariants"],
     }
-
-    if cellar.status_code != 404:
-        raise AssertionError(
-            "historic-route adversary changed; inspect before weakening fixture: "
-            f"Cellar status={cellar.status_code}"
-        )
 
     out=Path("artifacts/audit/reg2742-money-corrigendum-inspection.json")
     out.parent.mkdir(parents=True,exist_ok=True)

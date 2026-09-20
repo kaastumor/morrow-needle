@@ -217,3 +217,44 @@ def test_formex_semantic_title_sequence_and_nested_list_labels():
     assert "FMX" not in ast["parse_report"]["unknown_native_kinds"]
     assert "TI" not in ast["parse_report"]["unknown_native_kinds"]
     assert "STI" not in ast["parse_report"]["unknown_native_kinds"]
+
+
+def test_formex_document_family_wrappers_are_metadata_not_legal_body():
+    xml = b'''<?xml version="1.0" encoding="UTF-8"?>
+<DOC>
+  <FMX>ENREGTEST</FMX>
+  <FAM.COMP>32004R0794 32008R0271 32025R0905</FAM.COMP>
+  <ACT>
+    <ARTICLE IDENTIFIER="001">
+      <TI.ART>Article 1</TI.ART>
+      <PARAG>Operative text survives.</PARAG>
+    </ARTICLE>
+  </ACT>
+</DOC>'''
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w") as zf:
+        zf.writestr("main.xml", xml)
+
+    parser = FormexASTParser(
+        state_id="test-source-metadata",
+        source=_source("STRUCTURED_LEGAL_XML", "test-formex"),
+        source_observation_id="test:obs",
+    )
+    ast = parser.parse_zip(buf.getvalue())
+    _validate(ast)
+
+    legal_text = " ".join(segment["text_source"] for segment in ast["segments"])
+    assert "Operative text survives." in legal_text
+    assert "ENREGTEST" not in legal_text
+    assert "32008R0271" not in legal_text
+
+    accounting = ast["parse_report"]["source_text_accounting"]
+    metadata = next(
+        category for category in accounting["categories"]
+        if category["category"] == "SOURCE_METADATA"
+    )
+    assert metadata["chars"] > 0
+    assert accounting["unexplained_chars"] == 0
+    assert accounting["duplicate_claim_count"] == 0
+    assert "DOC" not in ast["parse_report"]["unknown_native_kinds"]
+    assert "FAM.COMP" not in ast["parse_report"]["unknown_native_kinds"]

@@ -58,7 +58,8 @@ def test_sani_atom_references_temporal_truth_instead_of_copying_status():
         if atom["atom_id"] == "reg794-art3-sani-duty-v0.1"
     )
     assert sani["temporal_assertion_refs"] == [
-        "reg794-art3-p3-sani-application-start"
+        "reg794-art3-p3-sani-application-start",
+        "reg794-art3-p3-legacy-channels-application-end",
     ]
     assert "legal_state" not in sani
     assert "force_state" not in sani
@@ -177,8 +178,13 @@ def test_positive_pki_correspondence_duty_is_preserved():
     assert pki["claim"]["legal_effect"] == "DUTY"
     assert pki["claim"]["subject"] == "correspondence in connection with a notification"
     assert pki["claim"]["object"] == "Public Key Infrastructure (PKI)"
-    # Do not silently generalize the SANI-specific 1 July temporal qualifier.
-    assert pki["temporal_assertion_refs"] == []
+    # PKI does not borrow SANI's 1 July qualifier: it starts with the
+    # amending Regulation's entry into force and ends with the 2025
+    # paragraph-3 replacement.
+    assert pki["temporal_assertion_refs"] == [
+        "reg794-art3-2008-unqualified-rules-application-start",
+        "reg794-art3-p3-legacy-channels-application-end",
+    ]
     assert validate_atom(
         pki,
         mutations=MUTATIONS,
@@ -195,4 +201,18 @@ def test_sani_and_pki_channels_are_not_collapsed():
     assert "SANI" in sani["claim"]["object"]
     assert pki["claim"]["subject"] == "correspondence in connection with a notification"
     assert "PKI" in pki["claim"]["object"]
-    assert pki["temporal_assertion_refs"] == []
+    assert pki["temporal_assertion_refs"] == [
+        "reg794-art3-2008-unqualified-rules-application-start",
+        "reg794-art3-p3-legacy-channels-application-end",
+    ]
+
+
+def test_2008_paragraph4_atoms_start_with_amending_regulation_and_do_not_end_in_2025():
+    by_id = {atom["atom_id"]: atom for atom in FIXTURE["atoms"]}
+    for atom_id in (
+        "reg794-art3-alt-channel-permission-v0.1",
+        "reg794-art3-invalid-channel-status-v0.1",
+    ):
+        assert by_id[atom_id]["temporal_assertion_refs"] == [
+            "reg794-art3-2008-unqualified-rules-application-start"
+        ]

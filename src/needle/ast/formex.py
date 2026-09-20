@@ -305,6 +305,12 @@ class FormexASTParser:
                 self.builder.known_gaps.append(
                     f"{native_path}: opaque media element {tag}"
                 )
+                if self._ledger is not None:
+                    self._ledger.claim_subtree(
+                        child,
+                        category="OPAQUE_OR_EMBEDDED",
+                        reason=f"opaque source element {tag}",
+                    )
                 continue
 
             kind = STRUCTURAL_KINDS.get(tag)
@@ -383,6 +389,31 @@ class FormexASTParser:
                 )
                 continue
 
+            if tag in SOURCE_METADATA_TAGS:
+                if self._ledger is not None:
+                    self._ledger.claim_subtree(
+                        child,
+                        category="SOURCE_METADATA",
+                        reason=f"source metadata element {tag}",
+                    )
+                continue
+            if tag in PUBLICATION_NAVIGATION_TAGS:
+                if self._ledger is not None:
+                    self._ledger.claim_subtree(
+                        child,
+                        category="PUBLICATION_NAVIGATION",
+                        reason=f"publication navigation element {tag}",
+                    )
+                continue
+            if tag in PROVENANCE_ONLY_TAGS:
+                if self._ledger is not None:
+                    self._ledger.claim_subtree(
+                        child,
+                        category="PROVENANCE_ONLY",
+                        reason=f"source provenance element {tag}",
+                    )
+                continue
+
             # Text outside any mapped structural child is preserved on the current
             # canonical node. Unknown wrapper names are reported, not silently lost.
             if not capture_unstructured_text:
@@ -403,6 +434,12 @@ class FormexASTParser:
                     ),
                 )
                 if segment_id:
+                    if self._ledger is not None:
+                        self._ledger.claim_subtree(
+                            child,
+                            category="LEGAL_MAPPED",
+                            reason="top-level legal text wrapper mapped to canonical segment",
+                        )
                     self._emit_references(
                         child,
                         segment_id,
@@ -428,6 +465,12 @@ class FormexASTParser:
                     native_identifier=_native_identifier(element),
                 ),
             )
+            if self._ledger is not None:
+                self._ledger.claim_element_text(
+                    element,
+                    category="LEGAL_MAPPED",
+                    reason="direct text of canonical structural node",
+                )
 
         for child in list(element):
             tag = local(child.tag)
@@ -466,6 +509,12 @@ class FormexASTParser:
                 ),
             )
             if segment_id:
+                if self._ledger is not None:
+                    self._ledger.claim_subtree(
+                        child,
+                        category="LEGAL_MAPPED",
+                        reason="legal leaf wrapper mapped to canonical segment",
+                    )
                 self._emit_references(child, segment_id, native_path=native_path)
 
     def _emit_references(

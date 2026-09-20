@@ -1,0 +1,692 @@
+{
+  "fixture_version": "0.1",
+  "purpose": "Adversarial temporal semantics: delayed application, provision overrides, entity-relative triggers, text-state/application divergence, and gapped regime continuity.",
+  "cases": [
+    {
+      "case_id": "gdpr-force-vs-application",
+      "source_summary": "Regulation (EU) 2016/679 Article 99 separates entry into force from application.",
+      "assertions": [
+        {
+          "assertion_id": "gdpr-publication",
+          "subject_ref": {
+            "kind": "LEGAL_ACT",
+            "identifier": "CELEX:32016R0679",
+            "locator": null
+          },
+          "dimension": "PUBLICATION",
+          "boundary": "POINT",
+          "inclusive": true,
+          "trigger": {
+            "kind": "ABSOLUTE_DATE",
+            "date": "2016-05-04",
+            "source_expression": "OJ L 119, 4.5.2016"
+          },
+          "normalized_date": "2016-05-04",
+          "scope": {
+            "mode": "DEFAULT",
+            "applies_to": [
+              "ACT:32016R0679"
+            ],
+            "overrides_assertion_ids": [],
+            "entity_condition": null
+          },
+          "resolution_state": "RESOLVED_ABSOLUTE",
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32016R0679",
+              "locator": "Document information / OJ L 119, 4.5.2016",
+              "language": "ENG",
+              "role": "PUBLICATION_METADATA"
+            }
+          ],
+          "notes": null
+        },
+        {
+          "assertion_id": "gdpr-force-start",
+          "subject_ref": {
+            "kind": "LEGAL_ACT",
+            "identifier": "CELEX:32016R0679",
+            "locator": "Article 99(1)"
+          },
+          "dimension": "LEGAL_FORCE",
+          "boundary": "START",
+          "inclusive": true,
+          "trigger": {
+            "kind": "RELATIVE_EVENT",
+            "event_key": "publication",
+            "event_binding": "SUBJECT",
+            "offset": {
+              "value": 20,
+              "unit": "DAYS"
+            },
+            "guard": null,
+            "source_expression": "twentieth day following publication"
+          },
+          "normalized_date": "2016-05-24",
+          "scope": {
+            "mode": "DEFAULT",
+            "applies_to": [
+              "ACT:32016R0679"
+            ],
+            "overrides_assertion_ids": [],
+            "entity_condition": null
+          },
+          "resolution_state": "RESOLVED_RELATIVE",
+          "evidence_state": "DERIVED",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32016R0679",
+              "locator": "Article 99(1)",
+              "language": "ENG",
+              "role": "TEMPORAL_CLAUSE"
+            },
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32016R0679",
+              "locator": "Dates / Date of effect 24/05/2016",
+              "language": "ENG",
+              "role": "DERIVATION_INPUT"
+            }
+          ],
+          "notes": "Derived from the authentic temporal clause and publication date; EUR-Lex metadata independently exposes 24 May 2016."
+        },
+        {
+          "assertion_id": "gdpr-application-start",
+          "subject_ref": {
+            "kind": "LEGAL_ACT",
+            "identifier": "CELEX:32016R0679",
+            "locator": "Article 99(2)"
+          },
+          "dimension": "APPLICATION",
+          "boundary": "START",
+          "inclusive": true,
+          "trigger": {
+            "kind": "ABSOLUTE_DATE",
+            "date": "2018-05-25",
+            "source_expression": "shall apply from 25 May 2018"
+          },
+          "normalized_date": "2018-05-25",
+          "scope": {
+            "mode": "DEFAULT",
+            "applies_to": [
+              "ACT:32016R0679"
+            ],
+            "overrides_assertion_ids": [],
+            "entity_condition": null
+          },
+          "resolution_state": "RESOLVED_ABSOLUTE",
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32016R0679",
+              "locator": "Article 99(2)",
+              "language": "ENG",
+              "role": "TEMPORAL_CLAUSE"
+            }
+          ],
+          "notes": null
+        }
+      ],
+      "queries": [
+        {
+          "query_id": "gdpr-2017-force",
+          "dimension": "LEGAL_FORCE",
+          "subject_keys": [
+            "ACT:32016R0679"
+          ],
+          "date": "2017-01-01",
+          "context": {},
+          "expected": {
+            "state": "RESOLVED",
+            "active": true
+          }
+        },
+        {
+          "query_id": "gdpr-2017-application",
+          "dimension": "APPLICATION",
+          "subject_keys": [
+            "ACT:32016R0679"
+          ],
+          "date": "2017-01-01",
+          "context": {},
+          "expected": {
+            "state": "RESOLVED",
+            "active": false
+          }
+        },
+        {
+          "query_id": "gdpr-2018-application",
+          "dimension": "APPLICATION",
+          "subject_keys": [
+            "ACT:32016R0679"
+          ],
+          "date": "2018-05-25",
+          "context": {},
+          "expected": {
+            "state": "RESOLVED",
+            "active": true
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "dsa-scoped-and-entity-relative-application",
+      "source_summary": "Regulation (EU) 2022/2065 Articles 92-93 combine default application, enumerated early provisions, and entity-specific anticipated application four months after notification.",
+      "assertions": [
+        {
+          "assertion_id": "dsa-application-default",
+          "subject_ref": {
+            "kind": "LEGAL_ACT",
+            "identifier": "CELEX:32022R2065",
+            "locator": "Article 93(2)"
+          },
+          "dimension": "APPLICATION",
+          "boundary": "START",
+          "inclusive": true,
+          "trigger": {
+            "kind": "ABSOLUTE_DATE",
+            "date": "2024-02-17",
+            "source_expression": "shall apply from 17 February 2024"
+          },
+          "normalized_date": "2024-02-17",
+          "scope": {
+            "mode": "DEFAULT",
+            "applies_to": [
+              "ACT:32022R2065"
+            ],
+            "overrides_assertion_ids": [],
+            "entity_condition": null
+          },
+          "resolution_state": "RESOLVED_ABSOLUTE",
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32022R2065",
+              "locator": "Article 93(2) first sentence",
+              "language": "ENG",
+              "role": "TEMPORAL_CLAUSE"
+            }
+          ],
+          "notes": null
+        },
+        {
+          "assertion_id": "dsa-application-early-enumerated",
+          "subject_ref": {
+            "kind": "PROVISION_INSTANCE",
+            "identifier": "CELEX:32022R2065#ARTICLE_93_EARLY_SET",
+            "locator": "Article 93(2) second sentence"
+          },
+          "dimension": "APPLICATION",
+          "boundary": "START",
+          "inclusive": true,
+          "trigger": {
+            "kind": "ABSOLUTE_DATE",
+            "date": "2022-11-16",
+            "source_expression": "enumerated provisions shall apply from 16 November 2022"
+          },
+          "normalized_date": "2022-11-16",
+          "scope": {
+            "mode": "OVERRIDE",
+            "applies_to": [
+              "PROVISION:32022R2065:ARTICLE24_2",
+              "PROVISION:32022R2065:ARTICLE24_3",
+              "PROVISION:32022R2065:ARTICLE24_6",
+              "PROVISION:32022R2065:ARTICLE33_3_TO_6",
+              "PROVISION:32022R2065:ARTICLE37_7",
+              "PROVISION:32022R2065:ARTICLE40_13",
+              "PROVISION:32022R2065:ARTICLE43",
+              "PROVISION:32022R2065:CHAPTER_IV_SECTIONS_4_5_6"
+            ],
+            "overrides_assertion_ids": [
+              "dsa-application-default"
+            ],
+            "entity_condition": null
+          },
+          "resolution_state": "RESOLVED_ABSOLUTE",
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32022R2065",
+              "locator": "Article 93(2) second sentence",
+              "language": "ENG",
+              "role": "TEMPORAL_CLAUSE"
+            }
+          ],
+          "notes": "Explicit provision-set override; no inferred scope expansion."
+        },
+        {
+          "assertion_id": "dsa-application-designated-provider",
+          "subject_ref": {
+            "kind": "LEGAL_ACT",
+            "identifier": "CELEX:32022R2065",
+            "locator": "Article 92"
+          },
+          "dimension": "APPLICATION",
+          "boundary": "START",
+          "inclusive": true,
+          "trigger": {
+            "kind": "RELATIVE_EVENT",
+            "event_key": "article33_6_notification_date",
+            "event_binding": "QUERY_ENTITY",
+            "offset": {
+              "value": 4,
+              "unit": "MONTHS"
+            },
+            "guard": {
+              "operator": "BEFORE",
+              "date": "2024-02-17"
+            },
+            "source_expression": "four months after notification, where earlier than 17 February 2024"
+          },
+          "normalized_date": null,
+          "scope": {
+            "mode": "CONDITIONAL_OVERRIDE",
+            "applies_to": [
+              "ENTITY_SCOPE:32022R2065"
+            ],
+            "overrides_assertion_ids": [
+              "dsa-application-default"
+            ],
+            "entity_condition": {
+              "attribute": "designation_class",
+              "operator": "IN",
+              "values": [
+                "VLOP",
+                "VLOSE"
+              ]
+            }
+          },
+          "resolution_state": "CONTEXT_REQUIRED",
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32022R2065",
+              "locator": "Article 92",
+              "language": "ENG",
+              "role": "TEMPORAL_CLAUSE"
+            }
+          ],
+          "notes": "No universal absolute date exists. Resolution requires the provider-specific Article 33(6) notification date."
+        }
+      ],
+      "queries": [
+        {
+          "query_id": "dsa-default-before-2024",
+          "dimension": "APPLICATION",
+          "subject_keys": [
+            "ACT:32022R2065"
+          ],
+          "date": "2023-01-01",
+          "context": {},
+          "expected": {
+            "state": "RESOLVED",
+            "active": false
+          }
+        },
+        {
+          "query_id": "dsa-article24-2-early",
+          "dimension": "APPLICATION",
+          "subject_keys": [
+            "ACT:32022R2065",
+            "PROVISION:32022R2065:ARTICLE24_2"
+          ],
+          "date": "2022-11-16",
+          "context": {},
+          "expected": {
+            "state": "RESOLVED",
+            "active": true
+          }
+        },
+        {
+          "query_id": "dsa-vlop-context-missing",
+          "dimension": "APPLICATION",
+          "subject_keys": [
+            "ACT:32022R2065",
+            "ENTITY_SCOPE:32022R2065"
+          ],
+          "date": "2023-10-01",
+          "context": {
+            "entity": {
+              "designation_class": "VLOP"
+            }
+          },
+          "expected": {
+            "state": "CONTEXT_REQUIRED",
+            "active": null
+          }
+        },
+        {
+          "query_id": "dsa-vlop-anticipated",
+          "dimension": "APPLICATION",
+          "subject_keys": [
+            "ACT:32022R2065",
+            "ENTITY_SCOPE:32022R2065"
+          ],
+          "date": "2023-08-25",
+          "context": {
+            "entity": {
+              "designation_class": "VLOP"
+            },
+            "events": {
+              "article33_6_notification_date": "2023-04-25"
+            }
+          },
+          "expected": {
+            "state": "RESOLVED",
+            "active": true,
+            "start": "2023-08-25"
+          }
+        },
+        {
+          "query_id": "dsa-vlop-late-notification-falls-back",
+          "dimension": "APPLICATION",
+          "subject_keys": [
+            "ACT:32022R2065",
+            "ENTITY_SCOPE:32022R2065"
+          ],
+          "date": "2024-02-17",
+          "context": {
+            "entity": {
+              "designation_class": "VLOP"
+            },
+            "events": {
+              "article33_6_notification_date": "2023-11-01"
+            }
+          },
+          "expected": {
+            "state": "RESOLVED",
+            "active": true,
+            "start": "2024-02-17"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "reg2025-905-text-state-vs-application",
+      "source_summary": "Implementing Regulation (EU) 2025/905 entered into force after publication in June 2025, while Annex I Part I point 6.8 was expressly delayed until 13 August 2025.",
+      "assertions": [
+        {
+          "assertion_id": "r905-mutation-batch-application",
+          "subject_ref": {
+            "kind": "MUTATION_EVENT",
+            "identifier": "CELEX:32025R0905->CELEX:32004R0794",
+            "locator": "Article 2"
+          },
+          "dimension": "APPLICATION",
+          "boundary": "START",
+          "inclusive": true,
+          "trigger": {
+            "kind": "ABSOLUTE_DATE",
+            "date": "2025-07-03",
+            "source_expression": "twentieth day following publication on 13 June 2025"
+          },
+          "normalized_date": "2025-07-03",
+          "scope": {
+            "mode": "DEFAULT",
+            "applies_to": [
+              "MUTATION_BATCH:32025R0905"
+            ],
+            "overrides_assertion_ids": [],
+            "entity_condition": null
+          },
+          "resolution_state": "RESOLVED_ABSOLUTE",
+          "evidence_state": "DERIVED",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32025R0905",
+              "locator": "Article 2 first paragraph",
+              "language": "ENG",
+              "role": "TEMPORAL_CLAUSE"
+            },
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32025R0905",
+              "locator": "OJ L, 2025/905, 13.6.2025",
+              "language": "ENG",
+              "role": "PUBLICATION_METADATA"
+            }
+          ],
+          "notes": "General amending-act start used as the mutation-batch default; target-specific application may override it."
+        },
+        {
+          "assertion_id": "r905-point68-text-state-start",
+          "subject_ref": {
+            "kind": "PROVISION_INSTANCE",
+            "identifier": "CELEX:32004R0794#ANNEX_I_PART_I_6.8",
+            "locator": "Annex I Part I point 6.8"
+          },
+          "dimension": "TEXT_STATE",
+          "boundary": "START",
+          "inclusive": true,
+          "trigger": {
+            "kind": "ABSOLUTE_DATE",
+            "date": "2025-07-03",
+            "source_expression": "amending act entered into force 3 July 2025"
+          },
+          "normalized_date": "2025-07-03",
+          "scope": {
+            "mode": "DEFAULT",
+            "applies_to": [
+              "TARGET:32004R0794:ANNEX_I_PART_I_6.8"
+            ],
+            "overrides_assertion_ids": [],
+            "entity_condition": null
+          },
+          "resolution_state": "RESOLVED_ABSOLUTE",
+          "evidence_state": "DERIVED",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32025R0905",
+              "locator": "Article 1 point 11 + Article 2",
+              "language": "ENG",
+              "role": "TEMPORAL_CLAUSE"
+            },
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32004R0794",
+              "locator": "Modified by 32025R0905 / Annex I Part I / 03/07/2025",
+              "language": "ENG",
+              "role": "DERIVATION_INPUT"
+            }
+          ],
+          "notes": "Text-state boundary is kept distinct from the special application date."
+        },
+        {
+          "assertion_id": "r905-point68-application-start",
+          "subject_ref": {
+            "kind": "PROVISION_INSTANCE",
+            "identifier": "CELEX:32004R0794#ANNEX_I_PART_I_6.8",
+            "locator": "Annex I Part I point 6.8"
+          },
+          "dimension": "APPLICATION",
+          "boundary": "START",
+          "inclusive": true,
+          "trigger": {
+            "kind": "ABSOLUTE_DATE",
+            "date": "2025-08-13",
+            "source_expression": "Part I, point 6.8 ... shall apply from 13 August 2025"
+          },
+          "normalized_date": "2025-08-13",
+          "scope": {
+            "mode": "OVERRIDE",
+            "applies_to": [
+              "TARGET:32004R0794:ANNEX_I_PART_I_6.8"
+            ],
+            "overrides_assertion_ids": [
+              "r905-mutation-batch-application"
+            ],
+            "entity_condition": null
+          },
+          "resolution_state": "RESOLVED_ABSOLUTE",
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32025R0905",
+              "locator": "Article 2 second paragraph",
+              "language": "ENG",
+              "role": "TEMPORAL_CLAUSE"
+            }
+          ],
+          "notes": null
+        }
+      ],
+      "queries": [
+        {
+          "query_id": "r905-point68-july-text-present",
+          "dimension": "TEXT_STATE",
+          "subject_keys": [
+            "TARGET:32004R0794:ANNEX_I_PART_I_6.8"
+          ],
+          "date": "2025-07-20",
+          "context": {},
+          "expected": {
+            "state": "RESOLVED",
+            "active": true
+          }
+        },
+        {
+          "query_id": "r905-point68-july-not-applicable",
+          "dimension": "APPLICATION",
+          "subject_keys": [
+            "MUTATION_BATCH:32025R0905",
+            "TARGET:32004R0794:ANNEX_I_PART_I_6.8"
+          ],
+          "date": "2025-07-20",
+          "context": {},
+          "expected": {
+            "state": "RESOLVED",
+            "active": false,
+            "start": "2025-08-13"
+          }
+        },
+        {
+          "query_id": "r905-point68-august-applicable",
+          "dimension": "APPLICATION",
+          "subject_keys": [
+            "MUTATION_BATCH:32025R0905",
+            "TARGET:32004R0794:ANNEX_I_PART_I_6.8"
+          ],
+          "date": "2025-08-13",
+          "context": {},
+          "expected": {
+            "state": "RESOLVED",
+            "active": true
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "temporary-regime-real-gap",
+      "source_summary": "The 2021/1232 temporary regime expired after 3 April 2026; the successor Regulation (EU) 2026/1881 was published 28 July and entered into force 31 July 2026.",
+      "assertions": [
+        {
+          "assertion_id": "old-csam-regime-application-end",
+          "subject_ref": {
+            "kind": "REGIME",
+            "identifier": "REGIME:2021R1232_AS_EXTENDED",
+            "locator": "as extended by Regulation (EU) 2024/1307"
+          },
+          "dimension": "APPLICATION",
+          "boundary": "END",
+          "inclusive": true,
+          "trigger": {
+            "kind": "ABSOLUTE_DATE",
+            "date": "2026-04-03",
+            "source_expression": "period of application until 3 April 2026"
+          },
+          "normalized_date": "2026-04-03",
+          "scope": {
+            "mode": "DEFAULT",
+            "applies_to": [
+              "REGIME:2021R1232_AS_EXTENDED"
+            ],
+            "overrides_assertion_ids": [],
+            "entity_condition": null
+          },
+          "resolution_state": "RESOLVED_ABSOLUTE",
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32024R1307",
+              "locator": "Date of end of validity 03/04/2026",
+              "language": "ENG",
+              "role": "STATUS"
+            },
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32026R1881",
+              "locator": "Recital 12",
+              "language": "ENG",
+              "role": "CONTEXT"
+            }
+          ],
+          "notes": null
+        },
+        {
+          "assertion_id": "new-csam-regime-application-start",
+          "subject_ref": {
+            "kind": "REGIME",
+            "identifier": "REGIME:2026R1881",
+            "locator": "Article 11"
+          },
+          "dimension": "APPLICATION",
+          "boundary": "START",
+          "inclusive": true,
+          "trigger": {
+            "kind": "ABSOLUTE_DATE",
+            "date": "2026-07-31",
+            "source_expression": "third day following publication on 28 July 2026"
+          },
+          "normalized_date": "2026-07-31",
+          "scope": {
+            "mode": "DEFAULT",
+            "applies_to": [
+              "REGIME:2026R1881"
+            ],
+            "overrides_assertion_ids": [],
+            "entity_condition": null
+          },
+          "resolution_state": "RESOLVED_ABSOLUTE",
+          "evidence_state": "DERIVED",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32026R1881",
+              "locator": "Article 11",
+              "language": "ENG",
+              "role": "TEMPORAL_CLAUSE"
+            },
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32026R1881",
+              "locator": "Date of effect 31/07/2026",
+              "language": "ENG",
+              "role": "DERIVATION_INPUT"
+            }
+          ],
+          "notes": "Recital 12 explicitly states that Regulation 2021/1232 had expired before this self-standing successor."
+        }
+      ],
+      "gap_query": {
+        "previous_end_assertion_id": "old-csam-regime-application-end",
+        "next_start_assertion_id": "new-csam-regime-application-start",
+        "expected": {
+          "state": "GAP",
+          "start": "2026-04-04",
+          "end": "2026-07-30"
+        }
+      }
+    }
+  ]
+}

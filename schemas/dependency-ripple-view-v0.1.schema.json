@@ -1,0 +1,280 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/dependency-ripple-view-v0.1.json",
+  "title": "Morrow // Needle Legislative X-Ray / Dependency Ripple View v0.1",
+  "description": "Disposable derived view for unchanged local provisions affected through changed legal dependencies.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "analytic_id",
+    "character",
+    "cases",
+    "summary",
+    "guardrails"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "dependency-ripple-view-v0.1"
+    },
+    "analytic_id": {
+      "type": "string"
+    },
+    "character": {
+      "const": "DERIVED_VIEW"
+    },
+    "cases": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "$ref": "#/$defs/case"
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_count",
+        "verified_upstream_mutation_count",
+        "derived_local_effect_count",
+        "local_textual_mutation_count"
+      ],
+      "properties": {
+        "case_count": {
+          "type": "integer",
+          "minimum": 2
+        },
+        "verified_upstream_mutation_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "derived_local_effect_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "local_textual_mutation_count": {
+          "const": 0
+        }
+      }
+    },
+    "guardrails": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state_id",
+        "text_hash",
+        "text_length"
+      ],
+      "properties": {
+        "state_id": {
+          "type": "string"
+        },
+        "node_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "text_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "text_length": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "artifact_hash": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        }
+      }
+    },
+    "case": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_id",
+        "language",
+        "local_provision",
+        "local_continuity",
+        "dependency",
+        "upstream_change",
+        "derived_effect",
+        "evidence_anchors",
+        "non_implications"
+      ],
+      "properties": {
+        "case_id": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        },
+        "local_provision": {
+          "type": "string"
+        },
+        "local_continuity": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "result",
+            "textual_mutation",
+            "before",
+            "after"
+          ],
+          "properties": {
+            "result": {
+              "const": "IDENTICAL_CANONICAL_SUBTREE"
+            },
+            "textual_mutation": {
+              "type": "null"
+            },
+            "before": {
+              "$ref": "#/$defs/state"
+            },
+            "after": {
+              "$ref": "#/$defs/state"
+            }
+          }
+        },
+        "dependency": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "relation_character",
+            "local_provision",
+            "upstream_target"
+          ],
+          "properties": {
+            "relation_character": {
+              "const": "DERIVED_FROM_EVIDENCED_CROSS_REFERENCE_ATOM"
+            },
+            "local_provision": {
+              "type": "string"
+            },
+            "upstream_target": {
+              "type": "string"
+            }
+          }
+        },
+        "upstream_change": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "mutation_id",
+            "operation",
+            "target",
+            "verification_state"
+          ],
+          "properties": {
+            "mutation_id": {
+              "type": "string"
+            },
+            "operation": {
+              "enum": [
+                "INSERT",
+                "DELETE",
+                "REPLACE",
+                "MOVE",
+                "RENUMBER",
+                "SPLIT",
+                "MERGE"
+              ]
+            },
+            "target": {
+              "type": "string"
+            },
+            "verification_state": {
+              "const": "VERIFIED"
+            }
+          }
+        },
+        "derived_effect": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "atom_id",
+            "verification_state",
+            "evidence_state",
+            "legal_effect",
+            "dimensions",
+            "statement"
+          ],
+          "properties": {
+            "atom_id": {
+              "type": "string"
+            },
+            "verification_state": {
+              "const": "EVIDENCED"
+            },
+            "evidence_state": {
+              "const": "DERIVED"
+            },
+            "legal_effect": {
+              "type": "string"
+            },
+            "dimensions": {
+              "type": "array",
+              "contains": {
+                "const": "CROSS_REFERENCE"
+              }
+            },
+            "statement": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "evidence_anchors": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "identifier",
+              "locator",
+              "artifact_hash",
+              "role"
+            ],
+            "properties": {
+              "identifier": {
+                "type": "string"
+              },
+              "locator": {
+                "type": "string"
+              },
+              "artifact_hash": {
+                "type": "string",
+                "pattern": "^sha256:[0-9a-f]{64}$"
+              },
+              "role": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "non_implications": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

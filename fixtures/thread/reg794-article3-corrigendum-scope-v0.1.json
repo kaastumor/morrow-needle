@@ -7,7 +7,22 @@
     "eli": "http://data.europa.eu/eli/reg_impl/2025/905/corrigendum/2026-07-17/oj",
     "publication_date": "2026-07-17",
     "corrects": "CELEX:32025R0905",
-    "language_scope": ["BG", "ES", "DA", "DE", "EL", "EN", "FR", "GA", "HR", "IT", "LV", "MT", "RO", "SK"]
+    "language_scope": [
+      "BG",
+      "ES",
+      "DA",
+      "DE",
+      "EL",
+      "EN",
+      "FR",
+      "GA",
+      "HR",
+      "IT",
+      "LV",
+      "MT",
+      "RO",
+      "SK"
+    ]
   },
   "correction_target": {
     "amending_act_path": "Article 1(4)(b)",
@@ -28,5 +43,21 @@
     "retain_as": "RELATED_SOURCE_NON_IMPACT",
     "display_default": false,
     "source_mode_note": "Expose on provenance/source inspection to explain why the later corrigendum was considered and excluded from the Article 3 mutation timeline."
+  },
+  "verified_observation": {
+    "workflow_run": 35524679438,
+    "observed_at": "2026-09-20T17:04:33Z",
+    "source_type": "ELI",
+    "resource_uri": "https://data.europa.eu/eli/reg_impl/2025/905/corrigendum/2026-07-17/oj",
+    "final_uri": "https://eur-lex.europa.eu/eli/reg_impl/2025/905/corrigendum/2026-07-17/oj",
+    "representation_class": "OFFICIAL_HTML",
+    "media_type": "text/html",
+    "http_status": 200,
+    "artifact_hash": "sha256:1924e6e69d44a00fa42f5cf1124543c93a8bcc92bfb8fc0986d9fcb899c6f4f0",
+    "target_span": {
+      "locator": "normalized-visible-text#unique-target-phrase",
+      "text": "in the amendment to Article 4(1), second sentence",
+      "text_hash": "00a9840f89da76b9b22e859557770296d1351913bb4e29795a7f7d7fd6b2c23e"
+    }
   }
 }

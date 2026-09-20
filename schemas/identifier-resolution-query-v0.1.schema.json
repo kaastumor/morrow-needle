@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/identifier-resolution-query-v0.1.json",
+  "title": "Morrow // Needle Identifier Resolution Query v0.1",
+  "description": "Typed resolution request. Callers must ask for equivalence or a named relationship; there is no generic 'resolve same document' operation.",
+  "type": "object",
+  "required": [
+    "query_id",
+    "input",
+    "mode"
+  ],
+  "properties": {
+    "query_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "input": {
+      "type": "object",
+      "required": [
+        "scheme",
+        "value"
+      ],
+      "properties": {
+        "scheme": {
+          "type": "string",
+          "enum": [
+            "CELEX",
+            "ELI",
+            "CELLAR",
+            "COM",
+            "EU_PROCEDURE",
+            "OJ_CITATION",
+            "OTHER_OFFICIAL"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "EQUIVALENTS",
+        "RELATION"
+      ]
+    },
+    "relation_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        null,
+        "EXPRESSION_OF",
+        "MANIFESTATION_OF",
+        "ITEM_OF",
+        "TEXT_STATE_OF",
+        "SUBDIVISION_OF",
+        "CORRIGENDUM_OF",
+        "DOCUMENT_IN_PROCEDURE",
+        "RESULT_OF_PROCEDURE",
+        "PUBLISHED_AS"
+      ]
+    },
+    "direction": {
+      "type": "string",
+      "enum": [
+        "out",
+        "in"
+      ],
+      "default": "out"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "RELATION"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "relation_type"
+        ],
+        "properties": {
+          "relation_type": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "EQUIVALENTS"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "relation_type": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

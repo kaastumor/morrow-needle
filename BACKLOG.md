@@ -8,14 +8,13 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 Unless new official evidence creates a more severe blocker, the hourly build loop should start here:
 
-1. **P0-I / Issue #9 — source-assisted deterministic mutation engine.** Build the deterministic candidate/reconciliation engine on the frozen identity, AST, temporal, multilingual and procedure contracts.
-2. Start narrow: same-location insert/delete/replace + numeric/date/reference deltas, reconciled against official embedded Formex provenance and authentic amendment metadata.
-3. Then attack move/renumber, split/merge and annex/table structure without upgrading deterministic similarity into asserted lineage.
-4. Keep P0-C cross-cutting: feed each resolved mutation adversary into the Gold Corpus.
+1. **P1-A / Issue #11 — Change Atom v0.3 + Adversary.** Repair the stale semantic contract so it references frozen temporal/procedural/mutation truth instead of collapsing it.
+2. Use the VERIFIED Regulation 794/2004 Article 3 replacement as the first end-to-end semantic adversary.
+3. Require exact authentic source-span support for high-risk legal semantics and add at least one plausible-but-unsupported negative case.
+4. Feed every durable semantic invariant into the Gold Corpus.
+5. After P1-A has a stable semantic contract, reassess P1-C provenance ledger vs P1-B source update detection as the next system risk.
 
-Do **not** return to P0-B unless a new official source fixture falsifies the validated ingestion contract. Issue #2 is closed; residual Cellar work is adapter/regression hardening.
-
-P0-C / Gold Corpus is cross-cutting infrastructure: keep feeding each P0 fixture into it, but do not let standalone corpus-format polishing displace an unresolved foundation assumption.
+All P0 foundation contracts are now resolved. Do not reopen P0 interfaces for convenience; require a new official adversarial case that demonstrates representational failure.
 
 ## Priority model
 
@@ -66,9 +65,13 @@ Modern multi-asset FMX4 and early historical HTML now normalize through the froz
 ### P0-C — Gold Corpus / regression contract
 **Issue #3 — Formalize Gold Corpus case format**
 
-Status: **CROSS-CUTTING; DO NOT PICK AHEAD OF ACTIVE P0-E/F/G/H RISK.**
+Status: **FOUNDATION CONTRACT RESOLVED; ISSUE CLOSED.**
 
-Goal: every foundational claim becomes a machine-testable regression case. Keep open until real reconstruction outputs, not only fixture syntax, are matched against expectations in CI. Temporal adversaries are now executable fixtures and should later be folded into the common Gold Corpus case contract rather than redesigned separately.
+The v0.2 schema, semantic validator, PRESENT/ABSENT matcher and CI workflow are frozen. The corpus itself remains an ongoing asset and must continue growing across P1/P2.
+
+Current verified cases include official provision-lineage reconstruction and the fully live VERIFIED Regulation 794/2004 Article 3 textual mutation.
+
+See `docs/decisions/gold-corpus-v0.2-interface-freeze.md`.
 
 ### P0-D — Canonical document/provision AST
 **Issue #4**
@@ -163,29 +166,39 @@ See `docs/decisions/procedure-state-v0.1-interface-freeze.md`.
 ### P0-I — Source-assisted deterministic mutation engine
 **Issue #9**
 
-Architecture revised after live consolidated Formex testing.
+Status: **FOUNDATION CONTRACT RESOLVED; ISSUE CLOSED.**
 
-Reconcile five evidence channels: authentic modifying/correcting acts, embedded official consolidation provenance, official relationship metadata, consolidated checkpoints, and deterministic canonical-AST diff.
+Frozen canonical interface:
+- `schemas/mutation-candidate-v0.2.schema.json`
+- `src/needle/mutation/diff.py`
+- `src/needle/mutation/reconcile.py`
+- `src/needle/mutation/structural.py`
+- `src/needle/mutation/instructions.py`
 
-A parser/schema/test fixture now exists for Formex CLG.MDF* provenance, including nested corrigenda. Status: **ACTIVE FOUNDATION IMPLEMENTATION — SAME-LOCATION DIFF + EVIDENCE RECONCILIATION GREEN.**
-
-Implemented:
-- exact citation+kind INSERT/DELETE/REPLACE candidates;
+Validated:
+- INSERT / DELETE / REPLACE;
+- MOVE / RENUMBER / SPLIT / MERGE through evidence-backed structural lineage;
+- annex/table cell changes;
 - numeric/date/reference deltas;
-- evidence reconciliation across deterministic diff, official relationship metadata, consolidation provenance and checkpoints;
 - conflict quarantine;
-- verification remains gated on a parsed authentic legal cause.
+- representation-noise suppression;
+- exact authentic source-span verification;
+- fully live Article 3 verification using real Cellar before/after checkpoints plus Regulation 271/2008.
 
-Real Article 3 / Regulation 794/2004 case resolves to `CORROBORATED + UNVERIFIED`, which is intentional.
+Semantic legal effect remains downstream.
 
-Lineage-gated structural reclassification is now green for RENUMBER and SPLIT. Similarity-only alignment remains unresolved and cannot consume INSERT/DELETE candidates.
-
-Next: add a real many-to-one MERGE case, then annex/table structural changes, then parse authentic amending instructions so corroborated candidates can cross the VERIFIED gate.
+See `docs/decisions/mutation-engine-v0.2-interface-freeze.md`.
 
 ## P1 — Core system
 
 ### P1-A — Change Atom extraction + Adversary
-Turn verified textual mutations into legal-semantic changes while preserving evidence state and uncertainty.
+**Issue #11**
+
+Status: **ACTIVE CORE CAPABILITY.**
+
+First task: replace stale Change Atom v0.2 with v0.3. The semantic layer must reference frozen mutation, temporal and procedure truth rather than recreate a collapsed lifecycle.
+
+First adversary: VERIFIED Regulation 794/2004 Article 3 replacement.
 
 ### P1-B — Source update detection
 Detect new/changed official source objects without repeatedly crawling everything.

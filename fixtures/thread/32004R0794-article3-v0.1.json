@@ -1,0 +1,75 @@
+{
+  "fixture_id": "thread-32004R0794-art3-20080414-v0.1",
+  "act": {
+    "celex": "32004R0794",
+    "eli": "data.europa.eu/eli/reg/2004/794/oj",
+    "provision": "Article 3"
+  },
+  "comparator": {
+    "before_consolidation": "02004R0794-20070119",
+    "after_consolidation": "02004R0794-20080414",
+    "mutation_source": "32008R0271"
+  },
+  "observed_mutation_metadata": {
+    "operation": "REPLACE",
+    "effective_from": "2008-04-14",
+    "subdivision": "Article 3"
+  },
+  "candidate_atoms": [
+    {
+      "label": "Electronic validation becomes the transmission mechanism",
+      "legal_effect": "DUTY",
+      "dimensions": ["PROCEDURE","DIGITAL_CHANNEL"],
+      "textual_operations": ["REPLACE"],
+      "evidence_state": "DIRECT",
+      "rule_application_start": "2008-04-14"
+    },
+    {
+      "label": "SANI becomes the notification channel from 1 July 2008",
+      "legal_effect": "DUTY",
+      "dimensions": ["PROCEDURE","DIGITAL_CHANNEL","TIME"],
+      "textual_operations": ["REPLACE"],
+      "evidence_state": "DIRECT",
+      "text_state_valid_from": "2008-04-14",
+      "rule_application_start": "2008-07-01"
+    },
+    {
+      "label": "Alternative channel allowed only exceptionally by mutual agreement",
+      "legal_effect": "PERMISSION",
+      "dimensions": ["PROCEDURE","EXCEPTION","DIGITAL_CHANNEL"],
+      "textual_operations": ["REPLACE"],
+      "evidence_state": "DIRECT",
+      "rule_application_start": "2008-04-14"
+    },
+    {
+      "label": "Unagreed alternative-channel submissions are not treated as submitted",
+      "legal_effect": "LEGAL_STATUS",
+      "dimensions": ["PROCEDURE","VALIDITY_CONDITION","EXCEPTION"],
+      "textual_operations": ["REPLACE"],
+      "evidence_state": "DIRECT",
+      "rule_application_start": "2008-04-14"
+    },
+    {
+      "label": "Confidential material must be identified and justified",
+      "legal_effect": "DUTY",
+      "dimensions": ["PROCEDURE"],
+      "textual_operations": ["REPLACE"],
+      "evidence_state": "DIRECT",
+      "rule_application_start": "2008-04-14"
+    },
+    {
+      "label": "State-aid identification number required in grants, except fiscal measures",
+      "legal_effect": "DUTY",
+      "dimensions": ["IDENTIFIER","EXCEPTION"],
+      "textual_operations": ["REPLACE"],
+      "evidence_state": "DIRECT",
+      "rule_application_start": "2008-04-14"
+    }
+  ],
+  "validation_notes": [
+    "Official relationship metadata identifies Article 3 as replaced from 2008-04-14.",
+    "The pre/post consolidated checkpoints visibly differ at Article 3.",
+    "Consolidated text is a verification checkpoint, not canonical legal authority.",
+    "Candidate atoms require authentic source-span anchoring before VERIFIED publication state."
+  ]
+}

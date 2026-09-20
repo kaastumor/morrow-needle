@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import io
-import re
 import zipfile
 import xml.etree.ElementTree as ET
 from collections import Counter
@@ -48,9 +47,14 @@ LABEL_TAGS = {
 }
 HEADING_TAGS = {
     "STI.ART", "TI.CHAP", "TI.SECTION", "TI.SUBSECTION", "TI.PART",
-    "TI.TITLE", "TI.ANNEX", "TITLE", "STITLE", "GR.TITLE", "HD",
+    "TI.TITLE", "TI.ANNEX", "TITLE", "STITLE", "GR.TITLE", "HD", "HT",
 }
 OPAQUE_MEDIA_TAGS = {"INCL.ELEMENT", "FIGURE", "IMAGE", "IMG", "GRAPHIC"}
+KNOWN_TEXT_WRAPPERS = {
+    "P", "TXT", "DEFINITION", "VISA", "PREAMBLE.INIT", "PREAMBLE.FINAL",
+    "REF.DOC", "REF.DOC.OJ", "LINK", "DATE", "PLACE", "NAME", "QUOT.START",
+    "QUOT.END", "FORMULA", "MATH", "EXPR",
+}
 
 
 def local(tag: str) -> str:
@@ -83,22 +87,11 @@ def _label_and_heading(element: ET.Element) -> tuple[str | None, str | None]:
     return label, heading
 
 
-def _direct_text_without_structural_children(element: ET.Element) -> str:
-    chunks: list[str] = []
-    if element.text:
-        chunks.append(element.text)
-
-    for child in list(element):
-        tag = local(child.tag)
-        if tag in STRUCTURAL_KINDS or tag in LABEL_TAGS or tag in HEADING_TAGS:
-            if child.tail:
-                chunks.append(child.tail)
-            continue
-        chunks.extend(child.itertext())
-        if child.tail:
-            chunks.append(child.tail)
-
-    return normalize_compare_text(" ".join(chunks))
+def _has_structural_descendant(element: ET.Element) -> bool:
+    return any(
+        desc is not element and local(desc.tag) in STRUCTURAL_KINDS
+        for desc in element.iter()
+    )
 
 
 def _reference_target(element: ET.Element) -> str | None:
@@ -169,10 +162,8 @@ class FormexASTParser:
 
             for name in xml_names:
                 raw = zf.read(name)
-                try:
-                    text = raw.decode("utf-8")
-                except UnicodeDecodeError:
-                    text = raw.decode("utf-8", errors="replace")
+                text = raw.decode("utf-8", errors="replace")
+                if "�" in text:
                     self.builder.warnings.append(f"{name}: invalid UTF-8 replaced")
 
                 try:
@@ -184,7 +175,7 @@ class FormexASTParser:
 
                 self.parsed_entries.append(name)
                 self.builder.visible_chars_source_estimate += len(text_of(root))
-                self._walk(root, self.root_id, native_path=name, citation_stack=[])
+                self._walk_structures(root, self.root_id, native_path=name, citation_stack=[])
 
                 modification_result = parse_modification_markers(text, source_entry=name)
                 for marker in modification_result.markers:
@@ -226,7 +217,7 @@ class FormexASTParser:
             fidelity = "PARTIAL_STRUCTURAL"
         return self.builder.finalize(fidelity=fidelity)
 
-    def _walk(
+    def _walk_structures(
         self,
         element: ET.Element,
         parent_id: str,
@@ -237,8 +228,17 @@ class FormexASTParser:
         for child in list(element):
             tag = local(child.tag)
             self.tag_counts[tag] += 1
-            kind = STRUCTURAL_KINDS.get(tag)
 
+            if tag in LABEL_TAGS or tag in HEADING_TAGS:
+                continue
+
+            if tag in OPAQUE_MEDIA_TAGS:
+                self.builder.known_gaps.append(
+                    f"{native_path}: opaque media element {tag}"
+                )
+                continue
+
+            kind = STRUCTURAL_KINDS.get(tag)
             if kind is not None:
                 label, heading = _label_and_heading(child)
                 native_id = _native_identifier(child)
@@ -282,46 +282,8 @@ class FormexASTParser:
                         ),
                     )
 
-                body = _direct_text_without_structural_children(child)
-                body_segment = None
-                if body and body not in {label, heading}:
-                    role = "CELL_TEXT" if kind == "TABLE_CELL" else "BODY"
-                    body_segment = self.builder.add_segment(
-                        node_id=node_id,
-                        role=role,
-                        text=body,
-                        native_kind=tag,
-                        source_anchor=self.builder.anchor(
-                            native_path=native_path,
-                            native_identifier=native_id,
-                        ),
-                    )
-
-                for desc in child.iter():
-                    desc_tag = local(desc.tag)
-                    target = _reference_target(desc)
-                    if target or "REF" in desc_tag:
-                        display = text_of(desc)
-                        if not display or body_segment is None:
-                            continue
-                        self.builder.add_reference(
-                            segment_id=body_segment,
-                            kind=_reference_kind(target, desc_tag),
-                            display_text=display,
-                            source_target_uri=target,
-                            resolution_state="SOURCE_RESOLVED" if target else "UNRESOLVED",
-                            source_anchor=self.builder.anchor(
-                                native_path=native_path,
-                                native_identifier=_native_identifier(desc),
-                            ),
-                        )
-
-                    if desc_tag in OPAQUE_MEDIA_TAGS:
-                        self.builder.known_gaps.append(
-                            f"{native_path}: opaque media element {desc_tag}"
-                        )
-
-                self._walk(
+                self._emit_leaf_text(child, node_id, native_path=native_path)
+                self._walk_structures(
                     child,
                     node_id,
                     native_path=native_path,
@@ -329,29 +291,23 @@ class FormexASTParser:
                 )
                 continue
 
-            if tag in OPAQUE_MEDIA_TAGS:
-                self.builder.known_gaps.append(
-                    f"{native_path}: opaque media element {tag}"
+            if _has_structural_descendant(child):
+                self._walk_structures(
+                    child,
+                    parent_id,
+                    native_path=native_path,
+                    citation_stack=citation_stack,
                 )
                 continue
 
-            # Retain significant unmapped containers instead of silently dropping them.
+            # Text outside any mapped structural child is preserved on the current
+            # canonical node. Unknown wrapper names are reported, not silently lost.
             value = text_of(child)
-            if value and len(list(child)) == 0 and len(value) > 20:
-                self.builder.unknown_native_kinds.add(tag)
-                node_id = self.builder.add_node(
-                    kind="OTHER",
-                    parent_id=parent_id,
-                    native_kind=tag,
-                    native_identifier=_native_identifier(child),
-                    source_anchor=self.builder.anchor(
-                        native_path=native_path,
-                        native_identifier=_native_identifier(child),
-                    ),
-                    native_attributes=dict(child.attrib),
-                )
-                self.builder.add_segment(
-                    node_id=node_id,
+            if value:
+                if tag not in KNOWN_TEXT_WRAPPERS:
+                    self.builder.unknown_native_kinds.add(tag)
+                segment_id = self.builder.add_segment(
+                    node_id=parent_id,
                     role="INLINE_OTHER",
                     text=value,
                     native_kind=tag,
@@ -360,10 +316,95 @@ class FormexASTParser:
                         native_identifier=_native_identifier(child),
                     ),
                 )
-            else:
-                self._walk(
-                    child,
-                    parent_id,
+                if segment_id:
+                    self._emit_references(
+                        child,
+                        segment_id,
+                        native_path=native_path,
+                    )
+
+    def _emit_leaf_text(
+        self,
+        element: ET.Element,
+        node_id: str,
+        *,
+        native_path: str,
+    ) -> None:
+        direct = normalize_compare_text(element.text or "")
+        if direct:
+            self.builder.add_segment(
+                node_id=node_id,
+                role="BODY",
+                text=direct,
+                native_kind=local(element.tag),
+                source_anchor=self.builder.anchor(
                     native_path=native_path,
-                    citation_stack=citation_stack,
+                    native_identifier=_native_identifier(element),
+                ),
+            )
+
+        for child in list(element):
+            tag = local(child.tag)
+
+            if tag in LABEL_TAGS or tag in HEADING_TAGS:
+                continue
+            if tag in STRUCTURAL_KINDS:
+                continue
+            if tag in OPAQUE_MEDIA_TAGS:
+                self.builder.known_gaps.append(
+                    f"{native_path}: opaque media element {tag}"
                 )
+                continue
+            if _has_structural_descendant(child):
+                continue
+
+            value = text_of(child)
+            if not value:
+                continue
+            if tag not in KNOWN_TEXT_WRAPPERS:
+                self.builder.unknown_native_kinds.add(tag)
+
+            role = "CELL_TEXT" if any(
+                n["node_id"] == node_id and n["kind"] == "TABLE_CELL"
+                for n in self.builder.nodes[-1:]
+            ) else "BODY"
+
+            segment_id = self.builder.add_segment(
+                node_id=node_id,
+                role=role,
+                text=value,
+                native_kind=tag,
+                source_anchor=self.builder.anchor(
+                    native_path=native_path,
+                    native_identifier=_native_identifier(child),
+                ),
+            )
+            if segment_id:
+                self._emit_references(child, segment_id, native_path=native_path)
+
+    def _emit_references(
+        self,
+        element: ET.Element,
+        segment_id: str,
+        *,
+        native_path: str,
+    ) -> None:
+        for desc in element.iter():
+            desc_tag = local(desc.tag)
+            target = _reference_target(desc)
+            if not target and "REF" not in desc_tag:
+                continue
+            display = text_of(desc)
+            if not display:
+                continue
+            self.builder.add_reference(
+                segment_id=segment_id,
+                kind=_reference_kind(target, desc_tag),
+                display_text=display,
+                source_target_uri=target,
+                resolution_state="SOURCE_RESOLVED" if target else "UNRESOLVED",
+                source_anchor=self.builder.anchor(
+                    native_path=native_path,
+                    native_identifier=_native_identifier(desc),
+                ),
+            )

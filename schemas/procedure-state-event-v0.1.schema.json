@@ -1,0 +1,210 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/procedure-state-event-v0.1.json",
+  "title": "Morrow // Needle Procedure State Event v0.1",
+  "description": "Evidence-backed procedural event with orthogonal state effects. Legal force/application are deliberately excluded and resolved by the temporal subsystem.",
+  "type": "object",
+  "required": [
+    "event_id",
+    "procedure_id",
+    "procedure_family",
+    "event_kind",
+    "event_date",
+    "actor",
+    "effects",
+    "evidence_state",
+    "source_refs"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "procedure_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "procedure_family": {
+      "type": "string",
+      "enum": [
+        "ORDINARY_LEGISLATIVE",
+        "SPECIAL_LEGISLATIVE",
+        "DELEGATED_ACT",
+        "IMPLEMENTING_ACT",
+        "OTHER_NON_LEGISLATIVE"
+      ]
+    },
+    "event_kind": {
+      "type": "string",
+      "enum": [
+        "PROPOSAL_ADOPTED",
+        "PROPOSAL_TRANSMITTED",
+        "PARLIAMENT_POSITION_ADOPTED",
+        "COUNCIL_POSITION_ADOPTED",
+        "POLITICAL_AGREEMENT_REACHED",
+        "FORMAL_ACT_ADOPTED",
+        "FINAL_ACT_SIGNED",
+        "FINAL_ACT_PUBLISHED",
+        "PROPOSAL_WITHDRAWN",
+        "PROPOSAL_REJECTED",
+        "PROPOSAL_LAPSED",
+        "DRAFT_DELEGATED_ACT_PUBLISHED",
+        "DELEGATED_ACT_ADOPTED",
+        "OBJECTION_PERIOD_OPENED",
+        "OBJECTION_PERIOD_ENDED_NO_OBJECTION",
+        "DELEGATED_ACT_OBJECTED",
+        "IMPLEMENTING_ACT_ADOPTED",
+        "COMMITTEE_OPINION",
+        "OTHER"
+      ]
+    },
+    "event_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "actor": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "EUROPEAN_COMMISSION",
+          "EUROPEAN_PARLIAMENT",
+          "COUNCIL",
+          "PARLIAMENT_AND_COUNCIL",
+          "COMITOLOGY_COMMITTEE",
+          "OTHER"
+        ]
+      }
+    },
+    "document_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "role",
+          "identifier"
+        ],
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "PROPOSAL",
+              "PARLIAMENT_POSITION",
+              "COUNCIL_POSITION",
+              "AGREED_TEXT",
+              "ADOPTED_ACT",
+              "DELEGATED_ACT",
+              "IMPLEMENTING_ACT",
+              "DRAFT",
+              "OTHER"
+            ]
+          },
+          "identifier": {
+            "type": "string"
+          },
+          "relation": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "effects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "dimension",
+          "value"
+        ],
+        "properties": {
+          "dimension": {
+            "type": "string",
+            "enum": [
+              "PROCEDURE_ACTIVITY",
+              "PROCEDURE_OUTCOME",
+              "FORMAL_ACT_ADOPTION",
+              "FINAL_ACT_PUBLICATION",
+              "PARLIAMENT_POSITION",
+              "COUNCIL_POSITION",
+              "NEGOTIATION_STATE",
+              "DELEGATED_SCRUTINY"
+            ]
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "evidence_state": {
+      "type": "string",
+      "enum": [
+        "DIRECT",
+        "DERIVED",
+        "CONTEXTUAL",
+        "ATTRIBUTED",
+        "INTERPRETIVE",
+        "UNRESOLVED"
+      ]
+    },
+    "source_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "source_type",
+          "identifier",
+          "role"
+        ],
+        "properties": {
+          "source_type": {
+            "type": "string",
+            "enum": [
+              "EUR_LEX",
+              "OEIL",
+              "COMMISSION",
+              "COUNCIL",
+              "PARLIAMENT",
+              "OTHER_OFFICIAL"
+            ]
+          },
+          "identifier": {
+            "type": "string"
+          },
+          "locator": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "EVENT",
+              "STATUS",
+              "DOCUMENT",
+              "PROCEDURE_FAMILY",
+              "CONTEXT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

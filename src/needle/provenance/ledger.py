@@ -42,6 +42,7 @@ def validate_ledger(records: list[dict[str, Any]]) -> list[str]:
     """
     errors: list[str] = []
     seen: dict[str, dict[str, Any]] = {}
+    superseded_by: dict[str, str] = {}
 
     for record in records:
         record_id = record.get("record_id")
@@ -96,6 +97,14 @@ def validate_ledger(records: list[dict[str, Any]]) -> list[str]:
             replacements = payload.get("replacement_record_ids", [])
             for ref_id in superseded + replacements:
                 require_existing(ref_id)
+            for ref_id in superseded:
+                prior = superseded_by.get(ref_id)
+                if prior is not None:
+                    errors.append(
+                        f"{record_id}: {ref_id} was already superseded by {prior}"
+                    )
+                else:
+                    superseded_by[ref_id] = record_id
             if record_id in set(superseded + replacements):
                 errors.append(f"{record_id}: supersession cannot reference itself")
             if set(superseded) & set(replacements):
@@ -131,3 +140,31 @@ def trace_claim_support(
             "derivation_record":derivation,
         })
     return result
+
+
+
+def superseded_record_ids(records: list[dict[str, Any]]) -> set[str]:
+    result: set[str] = set()
+    for record in records:
+        if record.get("record_type") != "SUPERSESSION":
+            continue
+        result.update(record["payload"].get("superseded_record_ids", []))
+    return result
+
+
+def active_records(
+    records: list[dict[str, Any]],
+    *,
+    include_supersession_records: bool = False,
+) -> list[dict[str, Any]]:
+    """Return a current provenance view without deleting historical records."""
+    superseded = superseded_record_ids(records)
+    return [
+        record
+        for record in records
+        if record["record_id"] not in superseded
+        and (
+            include_supersession_records
+            or record.get("record_type") != "SUPERSESSION"
+        )
+    ]

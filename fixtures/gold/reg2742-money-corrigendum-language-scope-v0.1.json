@@ -1,0 +1,123 @@
+{
+  "schema_version": "gold-corpus-case-v0.2",
+  "case_id": "reg2742-money-corrigendum-language-scope-v0.1",
+  "title": "English-only monetary corrigendum survives mutation and semantic extraction",
+  "adversarial_claim": "An authentic English-only corrigendum changing Article 4(1) from ECU 225 to ECU 255 may support a VERIFIED English mutation and MONEY Change Atom, but must not be globalized to German, French or every language expression.",
+  "foundation_contracts": [
+    "P0-F",
+    "multilingual-corrigenda-v0.1",
+    "P0-I",
+    "mutation-v0.2",
+    "P1-A",
+    "change-atom-v0.3",
+    "P0-C"
+  ],
+  "language_scope": {
+    "languages": [
+      "ENG"
+    ],
+    "cross_language_equivalence_assumed": false
+  },
+  "official_sources": [
+    {
+      "source_id": "corrigendum",
+      "authority": "EUR_LEX",
+      "identifier": "CELEX:31990R2742R(01)",
+      "role": "AUTHENTIC_TEXT",
+      "locator": "Article 4(1) correction / normalized-visible-text#chars:553-683",
+      "observation_ref": "fixtures/audit/reg2742-money-corrigendum-source-v0.1.json"
+    }
+  ],
+  "expected": {
+    "document_relationships": [],
+    "provision_alignments": [],
+    "textual_mutations": [
+      {
+        "assertion_id": "money.mutation.eng-verified",
+        "expectation": "The authentic English corrigendum verifies a REPLACE mutation at Article 4(1), changing the monetary number from 225 to 255 without inventing a historical consolidated checkpoint.",
+        "evidence_source_ids": [
+          "corrigendum"
+        ],
+        "status": "ASSERTED"
+      }
+    ],
+    "change_atoms": [
+      {
+        "assertion_id": "money.atom.eng-only",
+        "expectation": "The corrected monetary semantic claim is VERIFIED only for the English expression and carries MONEY dimension.",
+        "evidence_source_ids": [
+          "corrigendum"
+        ],
+        "status": "ASSERTED"
+      }
+    ],
+    "non_atoms": [
+      {
+        "assertion_id": "money.nonatom.globalized",
+        "expectation": "Do not infer the ECU 225→255 correction for German, French or every language expression from the English-only corrigendum.",
+        "evidence_source_ids": [
+          "corrigendum"
+        ],
+        "status": "FORBIDDEN_INFERENCE"
+      }
+    ],
+    "temporal_assertions": []
+  },
+  "machine_expectations": [
+    {
+      "assertion_id": "money.mutation.eng-verified",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "SOURCE_MUTATION",
+        "mutation_id": "reg2742-art4p1-eng-money-corrigendum-v0.1",
+        "verification_state": "VERIFIED",
+        "operation": "REPLACE",
+        "language": "ENG"
+      }
+    },
+    {
+      "assertion_id": "money.atom.eng-only",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "CHANGE_ATOM",
+        "atom_id": "reg2742-art4p1-eng-money-255-v0.1",
+        "verification_state": "VERIFIED",
+        "legal_effect": "NONE",
+        "dimensions": [
+          "MONEY"
+        ],
+        "languages": [
+          "ENG"
+        ]
+      }
+    },
+    {
+      "assertion_id": "money.nonatom.globalized",
+      "outcome": "ABSENT",
+      "match": {
+        "kind": "CHANGE_ATOM",
+        "claim_key": "REG2742_MONEY_CORRECTION_GLOBALIZED"
+      }
+    }
+  ],
+  "ambiguities": [
+    {
+      "description": "No assertion is made about the monetary text printed or corrected in non-English expressions; absence of a listed corrigendum is not proof of their value.",
+      "retained_as": "UNRESOLVED"
+    }
+  ],
+  "verification": {
+    "state": "VERIFIED",
+    "requirements": [
+      "Validate the source-assisted mutation against mutation-candidate-v0.2.",
+      "Validate the English Change Atom against change-atom-v0.3 and semantic adversary.",
+      "Require source-span language evidence for every language claimed by a VERIFIED atom.",
+      "Enforce the globalized-money-correction negative expectation."
+    ],
+    "verified_by": [
+      "tests/test_money_corrigendum_semantics.py",
+      "tests/test_gold_money_corrigendum.py",
+      "Money corrigendum audit probe"
+    ]
+  }
+}

@@ -18,6 +18,27 @@ Freeze P1-B around:
 
 The official Cellar ingestion feed is a **change-hint stream**, not evidence that legal text changed.
 
+## Official history contract
+
+The Publications Office documents the notification service as providing a
+**complete history of performed ingestion actions**:
+
+- https://op.europa.eu/en/web/cellar/cellar-data/rss-and-atom-feeds
+
+That does **not** turn the feed into legal-history truth. Its `CREATE`,
+`UPDATE`, and `DELETE` values describe Cellar ingestion actions. The documented
+`priority` field is likewise the priority of ingestion of the element, not a
+legal-materiality or product-ranking signal.
+
+Consequences:
+
+- historical replay is a supported source-audit capability;
+- an ingestion action must still be reconciled with immutable source
+  observations and canonical legal evidence;
+- a missing match in one tested window is a locator/query failure until the
+  official history contract itself is falsified;
+- production identifiers are useful locators but should not outrank stable
+  Cellar root identity when the latter is already known.
 ## Polling contract
 
 - use inclusive, overlapping time windows;
@@ -30,7 +51,7 @@ The official Cellar ingestion feed is a **change-hint stream**, not evidence tha
 
 ## Live feed discovery
 
-The official documentation example from 2012 remains a useful parser fixture but is not currently replayable as a live anchor.
+The official documentation example from 2012 remains a useful parser fixture. A permanent modern live anchor is also retained below; historical replay is tested separately from live-contract drift.
 
 A live September 2026 probe exposed current service drift:
 

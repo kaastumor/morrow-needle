@@ -1,0 +1,47 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "reg794-article3-live-verified",
+  "workflow_run": 35517262971,
+  "language": "ENG",
+  "before_checkpoint": {
+    "celex": "02004R0794-20070119",
+    "payload_sha256": "8d71b04b69b7b757e056c926f20676a355fe2bc5af22407858755efb256eb151",
+    "article3": {
+      "node_id": "CELEX:02004R0794-20070119:n000034",
+      "text_hash": "d2fed56ff253de5abde15990eb87fe2bcfc65865496249849814553f485311d4",
+      "text_length": 1830
+    }
+  },
+  "after_checkpoint": {
+    "celex": "02004R0794-20080414",
+    "payload_sha256": "ccf4e4e92d8191fb22685b0ac9062ef64a816a39c81455f445052a4ad03a68f1",
+    "article3": {
+      "node_id": "CELEX:02004R0794-20080414:n000034",
+      "text_hash": "f36b625716e97e83be29fd99d3be128a2fe6b872cfa78c8df8f6f1b6fa2dbab9",
+      "text_length": 1729
+    }
+  },
+  "authentic_amending_act": {
+    "celex": "32008R0271",
+    "cellar_payload_sha256": "c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7",
+    "cellar_manifestation": "bcadcc9a-c971-43e1-a520-9e922e20ee03.0006.04",
+    "instruction": {
+      "operation": "REPLACE",
+      "target_locator": "Article 3",
+      "source_locator": "L_2008082EN.01000101.xml#normalized-chars:6924-6962",
+      "authority_character": "CANONICAL_LEGAL_CAUSE"
+    }
+  },
+  "evidence_channels": [
+    "DETERMINISTIC_DIFF",
+    "RELATIONSHIP_METADATA",
+    "CONSOLIDATION_PROVENANCE",
+    "AUTHENTIC_ACT"
+  ],
+  "result": {
+    "reconciliation_state": "CORROBORATED",
+    "verification_state": "VERIFIED",
+    "conflicting_evidence": []
+  },
+  "foundation_result": "Needle can verify a live textual mutation using distinct real before/after official text states plus an exact source span in the authentic amending act. Consolidation provenance and relationship metadata corroborate but do not supply the canonical legal cause."
+}

@@ -1,0 +1,213 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/identifier-graph-v0.1.json",
+  "title": "Morrow // Needle Typed Identifier Graph v0.1",
+  "description": "Authoritative identifiers and typed relationships. Generic 'same document' equivalence is forbidden; equivalence is level-specific.",
+  "type": "object",
+  "required": [
+    "graph_id",
+    "identifiers",
+    "relations"
+  ],
+  "properties": {
+    "graph_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "identifiers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "node_id",
+          "scheme",
+          "value",
+          "identity_level",
+          "resource_kind"
+        ],
+        "properties": {
+          "node_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scheme": {
+            "type": "string",
+            "enum": [
+              "CELEX",
+              "ELI",
+              "CELLAR",
+              "COM",
+              "EU_PROCEDURE",
+              "OJ_CITATION",
+              "OTHER_OFFICIAL"
+            ]
+          },
+          "value": {
+            "type": "string",
+            "minLength": 1
+          },
+          "identity_level": {
+            "type": "string",
+            "enum": [
+              "LEGAL_RESOURCE",
+              "TEXT_STATE",
+              "EXPRESSION",
+              "MANIFESTATION",
+              "ITEM",
+              "SUBDIVISION",
+              "PROCEDURE",
+              "PUBLICATION_CITATION"
+            ]
+          },
+          "resource_kind": {
+            "type": "string",
+            "enum": [
+              "LEGAL_ACT",
+              "PROPOSAL",
+              "CORRIGENDUM",
+              "CONSOLIDATED_TEXT",
+              "LANGUAGE_EXPRESSION",
+              "FORMAT_MANIFESTATION",
+              "CONTENT_ITEM",
+              "LEGAL_SUBDIVISION",
+              "LEGISLATIVE_PROCEDURE",
+              "OFFICIAL_JOURNAL_CITATION",
+              "OTHER"
+            ]
+          },
+          "language": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "version_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "relation_id",
+          "relation_type",
+          "from_node_id",
+          "to_node_id",
+          "evidence_state",
+          "source_refs"
+        ],
+        "properties": {
+          "relation_id": {
+            "type": "string"
+          },
+          "relation_type": {
+            "type": "string",
+            "enum": [
+              "SAME_LEGAL_RESOURCE",
+              "SAME_TEXT_STATE",
+              "SAME_EXPRESSION",
+              "SAME_MANIFESTATION",
+              "EXPRESSION_OF",
+              "MANIFESTATION_OF",
+              "ITEM_OF",
+              "TEXT_STATE_OF",
+              "SUBDIVISION_OF",
+              "CORRIGENDUM_OF",
+              "DOCUMENT_IN_PROCEDURE",
+              "RESULT_OF_PROCEDURE",
+              "PUBLISHED_AS"
+            ]
+          },
+          "from_node_id": {
+            "type": "string"
+          },
+          "to_node_id": {
+            "type": "string"
+          },
+          "evidence_state": {
+            "type": "string",
+            "enum": [
+              "DIRECT",
+              "DERIVED",
+              "CONTEXTUAL",
+              "ATTRIBUTED",
+              "INTERPRETIVE",
+              "UNRESOLVED"
+            ]
+          },
+          "source_refs": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "source_type",
+                "identifier",
+                "role"
+              ],
+              "properties": {
+                "source_type": {
+                  "type": "string",
+                  "enum": [
+                    "EUR_LEX",
+                    "CELLAR",
+                    "ELI",
+                    "OJ",
+                    "OEIL",
+                    "COUNCIL",
+                    "COMMISSION",
+                    "OTHER_OFFICIAL"
+                  ]
+                },
+                "identifier": {
+                  "type": "string"
+                },
+                "locator": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "role": {
+                  "type": "string",
+                  "enum": [
+                    "EQUIVALENCE",
+                    "HIERARCHY",
+                    "RELATIONSHIP",
+                    "PROCEDURE",
+                    "PUBLICATION",
+                    "STATUS"
+                  ]
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

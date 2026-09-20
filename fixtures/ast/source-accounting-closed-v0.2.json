@@ -1,0 +1,61 @@
+{
+  "fixture_version": "0.2",
+  "captured_from": {
+    "workflow": "Live Legal AST contract",
+    "run_id": 35512261467,
+    "head_sha": "094ca30e3c79fcd8b06d5f6b1f051f12b06e7c69"
+  },
+  "purpose": "Freeze the point at which fail-closed source-text accounting reached zero unexplained text and zero duplicate ownership across the three foundation fixtures. Structural semantics remain deliberately unresolved.",
+  "cases": [
+    {
+      "celex": "31958R0001",
+      "representation": "HTML",
+      "source_chars": 2563,
+      "unexplained_chars": 0,
+      "duplicate_claim_count": 0,
+      "unknown_native_kinds": [],
+      "fidelity": "PARTIAL_STRUCTURAL"
+    },
+    {
+      "celex": "32004R0794",
+      "representation": "FMX4",
+      "source_chars": 31462,
+      "unexplained_chars": 0,
+      "duplicate_claim_count": 0,
+      "unknown_native_kinds": [
+        "FMX",
+        "GR.CONSID.INIT",
+        "GR.SEQ",
+        "NO.GR.SEQ",
+        "NP",
+        "PL.DATE",
+        "PUBLICATION.REF",
+        "SIGNATORY",
+        "STI",
+        "TI"
+      ],
+      "fidelity": "PARTIAL_STRUCTURAL"
+    },
+    {
+      "celex": "02004R0794-20250813",
+      "representation": "FMX4_CONSOLIDATED",
+      "source_chars": 1436961,
+      "unexplained_chars": 0,
+      "duplicate_claim_count": 0,
+      "unknown_native_kinds": [
+        "CONTENTS",
+        "FMX",
+        "FT",
+        "GR.SEQ",
+        "NO.GR.SEQ",
+        "NP",
+        "PUBLICATION.REF",
+        "STI",
+        "TI"
+      ],
+      "fidelity": "PARTIAL_STRUCTURAL"
+    }
+  ],
+  "foundation_result": "Text completeness accounting and structural fidelity are separate gates. Zero unexplained text does not authorize FULL_STRUCTURAL while source-native structural semantics remain unresolved.",
+  "next_attack": "Classify remaining native kinds by semantics. Preserve real hierarchy such as grouped numbered sequences and title/chapter/part headings; explicitly mark transparent production wrappers and metadata instead of whitelisting unknowns."
+}

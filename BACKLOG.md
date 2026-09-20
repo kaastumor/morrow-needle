@@ -8,9 +8,9 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 Unless new official evidence creates a more severe blocker, the hourly build loop should start here:
 
-1. **P0-F / Issue #6 — multilingual corrigenda.** Prove that language expressions require separate text-state/mutation histories using official language-scoped corrigenda.
-2. Then **P0-G / Issue #7 — identifier/equivalence resolution**.
-3. Then P0-H → P0-I.
+1. **P0-G / Issue #7 — identifier/equivalence resolution.** Build the deterministic authoritative identity/equivalence layer across CELEX, ELI, Cellar, OJ and procedure identifiers.
+2. Then **P0-H / Issue #8 — legal/procedural state machine**.
+3. Then **P0-I / Issue #9 — source-assisted deterministic mutation engine**.
 4. Keep P0-C cross-cutting: feed each resolved P0 adversary into the Gold Corpus without letting corpus-format work displace the active foundation blocker.
 
 Do **not** return to P0-B unless a new official source fixture falsifies the validated ingestion contract. Issue #2 is closed; residual Cellar work is adapter/regression hardening.
@@ -108,16 +108,31 @@ See `docs/decisions/temporal-v0.1-interface-freeze.md`.
 ### P0-F — Corrigenda + multilingual state
 **Issue #6**
 
-Status: **ACTIVE FOUNDATION BLOCKER.**
+Status: **FOUNDATION CONTRACT RESOLVED; ISSUE CLOSED.**
 
-First adversary: Regulation 794/2004 corrigenda of 28 January 2005. Official Journal metadata splits the corrections across different language groups, and the correction sets themselves differ. A language-neutral mutation history would therefore create false text states.
+Frozen language-expression mutation contract:
+- `schemas/language-scoped-mutation-v0.1.schema.json`
+- `src/needle/multilingual/mutations.py`
 
-Next: model language-expression mutation scope, build cross-language fixtures, and prove that an unaffected expression is not silently mutated.
+Established:
+1. mutation histories are expression-scoped;
+2. non-listed corrigendum languages mean `NO_ASSERTION`, never a global negative;
+3. different language groups may receive materially different correction sets;
+4. corrigenda may correct prior corrigenda and the chain remains explicit;
+5. source-publication time and corrected text-state time are different dimensions;
+6. current consolidations may back-project later corrigenda into earlier labelled text states;
+7. language-scoped corrections may alter operative monetary rules, so scope must survive into downstream Change Atoms.
+
+See `docs/decisions/multilingual-corrigenda-v0.1-interface-freeze.md`.
 
 ### P0-G — Identifier/equivalence resolution
 **Issue #7**
 
+Status: **ACTIVE FOUNDATION BLOCKER.**
+
 Formalize CELEX ↔ ELI ↔ Cellar ↔ OJ ↔ procedure/interinstitutional identifiers and never synthesize identifiers when authoritative mapping exists.
+
+First attack: distinguish identifiers that name the same Work from identifiers that name language Expressions, Manifestations, consolidated text states, corrigenda, or procedures. Equivalence must be typed rather than flattened into “same document”.
 
 ### P0-H — Legal/procedural state machine
 **Issue #8**

@@ -1,0 +1,52 @@
+{
+  "fixture_id": "cellar-manifestation-contract-run6-v0.1",
+  "workflow_run": 35482059284,
+  "observed_at": "2026-09-20T01:42:07Z",
+  "cases": [
+    {
+      "celex": "32004R0794",
+      "language": "eng",
+      "expression": "26f403d1-7656-4c91-9726-c08d466ff8bd.0006",
+      "available_tested": {
+        "fmx4": {
+          "status": 200,
+          "manifestation": "26f403d1-7656-4c91-9726-c08d466ff8bd.0006.05",
+          "content_stream_count": 132,
+          "zip_bytes": 7986973,
+          "selection_class": "STRUCTURED_LEGAL_XML"
+        },
+        "xhtml": {
+          "status": 200,
+          "manifestation": "26f403d1-7656-4c91-9726-c08d466ff8bd.0006.03",
+          "content_stream_count": 1,
+          "selection_class": "STRUCTURED_XHTML"
+        },
+        "html": {"status":404}
+      },
+      "preferred_tested_representation": "fmx4"
+    },
+    {
+      "celex": "31958R0001",
+      "language": "eng",
+      "expression": "115852e8-30ac-496e-8015-d580366ff059.0008",
+      "available_tested": {
+        "fmx4": {"status":404},
+        "xhtml": {"status":404},
+        "html": {
+          "status":200,
+          "manifestation":"115852e8-30ac-496e-8015-d580366ff059.0008.02",
+          "content_stream_count":1,
+          "stream_name":"31958R0001en.html",
+          "selection_class":"STRUCTURED_HTML"
+        }
+      },
+      "preferred_tested_representation":"html"
+    }
+  ],
+  "invariants":[
+    "Representation availability is expression-scoped.",
+    "A manifestation may contain many content streams.",
+    "Fallback to a less structured official representation is a normal historical-ingestion path.",
+    "Legacy and current dissemination request contracts must not be conflated."
+  ]
+}

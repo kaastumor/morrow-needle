@@ -11,7 +11,7 @@ from .cursor import PollCursor, accept_page, begin_window
 @dataclass(frozen=True)
 class PollState:
     cursor: PollCursor
-    processed_notification_ids: frozenset[str]
+    processed_event_keys: frozenset[str]
 
 
 @dataclass(frozen=True)
@@ -32,7 +32,7 @@ def begin_poll(
             window_start=window_start,
             window_end=window_end,
         ),
-        processed_notification_ids=state.processed_notification_ids,
+        processed_event_keys=state.processed_event_keys,
     )
 
 
@@ -48,7 +48,7 @@ def accept_poll_page(
     """
     emitted, seen = dedupe_events(
         page.events,
-        set(state.processed_notification_ids),
+        set(state.processed_event_keys),
     )
     next_cursor = accept_page(state.cursor, page)
     emissions = tuple(
@@ -61,7 +61,7 @@ def accept_poll_page(
     return (
         PollState(
             cursor=next_cursor,
-            processed_notification_ids=frozenset(seen),
+            processed_event_keys=frozenset(seen),
         ),
         emissions,
     )
@@ -70,9 +70,9 @@ def accept_poll_page(
 def new_poll_state(
     *,
     last_completed_end: str | None = None,
-    processed_notification_ids: Iterable[str] = (),
+    processed_event_keys: Iterable[str] = (),
 ) -> PollState:
     return PollState(
         cursor=PollCursor(last_completed_end=last_completed_end),
-        processed_notification_ids=frozenset(processed_notification_ids),
+        processed_event_keys=frozenset(processed_event_keys),
     )

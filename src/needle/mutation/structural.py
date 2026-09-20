@@ -108,7 +108,7 @@ def reclassify_with_lineage(
                 if "OFFICIAL_RELATION_METADATA" in edge.get("evidence_basis", [])
                 else "AUTHENTIC_ACT"
                 if "OFFICIAL_AMENDMENT_INSTRUCTION" in edge.get("evidence_basis", [])
-                else "CONSOLIDATED_CHECKPOINT",
+                else "LINEAGE_EVIDENCE",
             "source_id":ref["identifier"],
             "operation":operation,
             "target_locator":target_path,
@@ -141,6 +141,10 @@ def reclassify_with_lineage(
             "conflicting_evidence":[],
             "lineage_edge_ids":[edge["edge_id"]],
             "consumed_candidate_ids":consumed_ids,
+            "structural_alignment":{
+                "source_paths":source_paths,
+                "target_paths":target_paths,
+            },
             "notes":(
                 f"Structural {operation} candidate requires asserted lineage; "
                 "semantic rule continuity remains a separate claim."

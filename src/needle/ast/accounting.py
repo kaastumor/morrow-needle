@@ -157,12 +157,20 @@ class XMLTextLedger:
         for atom_id in self._subtree_atoms.get(id(element), ()):
             self._claim_atom(atom_id, category=category, reason=reason)
 
+    def subtree_claim_counts(self, element: ET.Element) -> tuple[int, int]:
+        claimed = unclaimed = 0
+        for atom_id in self._subtree_atoms.get(id(element), ()):
+            atom = self.atoms.get(atom_id)
+            if atom is None:
+                continue
+            if atom["category"] is None:
+                unclaimed += 1
+            else:
+                claimed += 1
+        return claimed, unclaimed
+
     def subtree_has_unclaimed(self, element: ET.Element) -> bool:
-        return any(
-            self.atoms[atom_id]["category"] is None
-            for atom_id in self._subtree_atoms.get(id(element), ())
-            if atom_id in self.atoms
-        )
+        return self.subtree_claim_counts(element)[1] > 0
 
     def claim_child_tail(
         self,

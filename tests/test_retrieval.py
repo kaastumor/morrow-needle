@@ -13,6 +13,16 @@ QUERY_SCHEMA = json.loads(
 RESPONSE_SCHEMA = json.loads(
     Path("schemas/retrieval-response-v0.1.schema.json").read_text(encoding="utf-8")
 )
+INDEX_SOURCES_SCHEMA = json.loads(
+    Path("schemas/retrieval-index-sources-v0.1.schema.json").read_text(
+        encoding="utf-8"
+    )
+)
+INDEX_SOURCES = json.loads(
+    Path("fixtures/retrieval/index-sources-v0.1.json").read_text(
+        encoding="utf-8"
+    )
+)
 THREAD = json.loads(
     Path("fixtures/thread/reg794-article3-thread-v0.1.json").read_text(
         encoding="utf-8"
@@ -561,3 +571,69 @@ def test_thread_unknown_does_not_masquerade_as_proven_negative():
     assert ids(response) == ["affected-entity-labels"]
     assert response["results"][0]["canonical_entity"]["state"] == "UNRESOLVED"
     assert response["results"][0]["source_mode"]["support_required"] is False
+
+
+def test_retrieval_index_source_registry_validates():
+    assert list(
+        Draft202012Validator(INDEX_SOURCES_SCHEMA).iter_errors(INDEX_SOURCES)
+    ) == []
+
+
+def test_identifier_enrichment_uses_only_same_legal_resource_equivalents():
+    projection = build_thread_projection(THREAD)
+    thread_doc = next(
+        doc for doc in projection["documents"]
+        if doc["entity_ref"]["kind"] == "THREAD"
+    )
+    identifiers = {
+        (item["scheme"], item["value"])
+        for item in thread_doc["identifiers"]
+    }
+    assert identifiers == {
+        ("CELEX", "32004R0794"),
+        ("ELI", "http://data.europa.eu/eli/reg/2004/794/oj"),
+        ("CELLAR", "26f403d1-7656-4c91-9726-c08d466ff8bd"),
+    }
+    assert ("CELEX", "02004R0794-20250813") not in identifiers
+    assert ("CELEX", "32004R0794R(02)") not in identifiers
+    assert (
+        "CELLAR",
+        "26f403d1-7656-4c91-9726-c08d466ff8bd.0006",
+    ) not in identifiers
+
+
+def test_thread_can_be_retrieved_by_authoritative_eli_alias():
+    eli = "http://data.europa.eu/eli/reg/2004/794/oj"
+    response = search_thread(
+        THREAD,
+        query(
+            "thread-by-eli",
+            filters={
+                "entity_kinds":["THREAD"],
+                "identifiers":[{"scheme":"ELI", "value":eli}],
+            },
+        ),
+    )
+    assert ids(response) == ["CELEX:32004R0794#Article3:ENG"]
+    reason = next(
+        reason for reason in response["results"][0]["match_reasons"]
+        if reason["field"] == "identifiers"
+    )
+    assert reason["query_value"] == f"ELI:{eli}"
+
+
+def test_identifier_scheme_and_value_are_matched_as_one_typed_pair():
+    response = search_thread(
+        THREAD,
+        query(
+            "mismatched-identifier-pair",
+            filters={
+                "entity_kinds":["THREAD"],
+                "identifiers":[
+                    {"scheme":"ELI", "value":"32004R0794"}
+                ],
+            },
+        ),
+    )
+    assert response["results"] == []
+    assert response["abstentions"] == []

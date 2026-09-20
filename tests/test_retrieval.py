@@ -412,3 +412,118 @@ def test_retrieval_result_exposes_active_support_record_ids():
     assert result["source_mode"]["support_count"] == len(
         result["source_mode"]["support_record_ids"]
     )
+
+
+def test_official_source_perspective_abstains_before_2025_publication():
+    response = search_thread(
+        THREAD,
+        query(
+            "new-channel-before-publication",
+            text_terms=["reg794-art3-2025-notification-channel-duty-v0.1"],
+            filters={"entity_kinds":["CHANGE_ATOM"]},
+            temporal=_application_on(
+                "2025-07-03",
+                perspective="OFFICIAL_SOURCE_STATE_AS_OF",
+                source_cutoff_date="2025-06-12",
+            ),
+        ),
+    )
+    assert response["results"] == []
+    assert len(response["abstentions"]) == 1
+    abstention = response["abstentions"][0]
+    assert abstention["reason"] == "NOT_ASSERTED_AS_OF_SOURCE_DATE"
+    assert abstention["temporal_evaluation"]["later_assertions"] == [{
+        "assertion_id":"reg794-art3-p3-2025-application-start",
+        "official_source_available_from":"2025-06-13",
+    }]
+    assert "reg905-2025-publication" in (
+        abstention["temporal_evaluation"]["source_availability_assertion_ids"]
+    )
+
+
+def test_official_source_perspective_activates_new_rule_from_publication_record():
+    response = search_thread(
+        THREAD,
+        query(
+            "new-channel-after-publication",
+            text_terms=["reg794-art3-2025-notification-channel-duty-v0.1"],
+            filters={"entity_kinds":["CHANGE_ATOM"]},
+            temporal=_application_on(
+                "2025-07-03",
+                perspective="OFFICIAL_SOURCE_STATE_AS_OF",
+                source_cutoff_date="2025-06-13",
+            ),
+        ),
+    )
+    assert ids(response) == [
+        "reg794-art3-2025-notification-channel-duty-v0.1"
+    ]
+    evaluation = response["results"][0]["temporal_evaluation"]
+    assert evaluation["active"] is True
+    assert evaluation["perspective"] == "OFFICIAL_SOURCE_STATE_AS_OF"
+    assert evaluation["source_cutoff_date"] == "2025-06-13"
+
+
+def test_bitemporal_source_cutoff_changes_supported_sani_state():
+    before_publication = search_thread(
+        THREAD,
+        query(
+            "sani-source-state-before-905",
+            text_terms=["reg794-art3-sani-duty-v0.1"],
+            filters={"entity_kinds":["CHANGE_ATOM"]},
+            temporal=_application_on(
+                "2025-07-03",
+                mode="EVALUATE",
+                perspective="OFFICIAL_SOURCE_STATE_AS_OF",
+                source_cutoff_date="2025-06-12",
+            ),
+        ),
+    )
+    sani_before = before_publication["results"][0]
+    assert sani_before["temporal_evaluation"]["active"] is True
+    assert sani_before["temporal_evaluation"]["later_assertions"] == [{
+        "assertion_id":"reg794-art3-p3-legacy-channels-application-end",
+        "official_source_available_from":"2025-06-13",
+    }]
+
+    after_publication = search_thread(
+        THREAD,
+        query(
+            "sani-source-state-after-905",
+            text_terms=["reg794-art3-sani-duty-v0.1"],
+            filters={"entity_kinds":["CHANGE_ATOM"]},
+            temporal=_application_on(
+                "2025-07-03",
+                mode="EVALUATE",
+                perspective="OFFICIAL_SOURCE_STATE_AS_OF",
+                source_cutoff_date="2025-06-13",
+            ),
+        ),
+    )
+    sani_after = after_publication["results"][0]
+    assert sani_after["temporal_evaluation"]["active"] is False
+    assert sani_after["temporal_evaluation"]["end"]["inclusive"] is False
+
+
+def test_query_context_cannot_inject_official_source_availability():
+    temporal = _application_on(
+        "2025-07-03",
+        perspective="OFFICIAL_SOURCE_STATE_AS_OF",
+        source_cutoff_date="2025-06-12",
+    )
+    temporal["context"] = {
+        "source_available_from":{
+            "CELEX:32025R0905":"1900-01-01"
+        }
+    }
+    response = search_thread(
+        THREAD,
+        query(
+            "reject-source-availability-injection",
+            text_terms=["reg794-art3-2025-notification-channel-duty-v0.1"],
+            filters={"entity_kinds":["CHANGE_ATOM"]},
+            temporal=temporal,
+        ),
+    )
+    assert response["results"] == []
+    assert response["abstentions"][0]["reason"] == "NOT_ASSERTED_AS_OF_SOURCE_DATE"

@@ -20,6 +20,24 @@ def _inclusive_days(start: str, end: str) -> int:
     return (date.fromisoformat(end) - date.fromisoformat(start)).days + 1
 
 
+def _effective_start(boundary: dict[str, Any]) -> date:
+    value=date.fromisoformat(boundary["date"])
+    return value if boundary["inclusive"] else value.fromordinal(value.toordinal()+1)
+
+
+def _effective_end(boundary: dict[str, Any]) -> date:
+    value=date.fromisoformat(boundary["date"])
+    return value if boundary["inclusive"] else value.fromordinal(value.toordinal()-1)
+
+
+def _interval_days(start: dict[str, Any], end: dict[str, Any]) -> int:
+    first=_effective_start(start)
+    last=_effective_end(end)
+    if last < first:
+        raise HalfLifeError("temporal interval has no applicable calendar days")
+    return (last-first).days+1
+
+
 def _assertion(
     registry: dict[str, dict[str, Any]],
     assertion_id: str,
@@ -105,17 +123,13 @@ def _interval(
     start: dict[str, Any],
     end: dict[str, Any],
 ) -> dict[str, Any]:
-    start_date=start["normalized_date"]
-    end_date=end["normalized_date"]
-    if date.fromisoformat(end_date) < date.fromisoformat(start_date):
-        raise HalfLifeError(
-            f"{regime_id}: end {end_date} precedes start {start_date}"
-        )
+    start_view=_boundary_view(start)
+    end_view=_boundary_view(end)
     return {
         "regime_id":regime_id,
-        "start":_boundary_view(start),
-        "end":_boundary_view(end),
-        "duration_days":_inclusive_days(start_date,end_date),
+        "start":start_view,
+        "end":end_view,
+        "duration_days":_interval_days(start_view,end_view),
     }
 
 
@@ -131,8 +145,8 @@ def _extensions(
             "previous_end":previous["normalized_date"],
             "new_end":current["normalized_date"],
             "added_days":(
-                date.fromisoformat(current["normalized_date"])
-                - date.fromisoformat(previous["normalized_date"])
+                _effective_end(_boundary_view(current))
+                - _effective_end(_boundary_view(previous))
             ).days,
             "supersedes_assertion_id":previous["assertion_id"],
             "extension_assertion_id":current["assertion_id"],
@@ -283,9 +297,9 @@ def build_half_life_view(
     for previous,following in zip(episodes,episodes[1:]):
         previous_end=previous["end"]
         next_start=following["start"]
-        previous_date=date.fromisoformat(previous_end["date"])
-        next_date=date.fromisoformat(next_start["date"])
-        if next_date <= previous_date:
+        previous_last=_effective_end(previous_end)
+        next_first=_effective_start(next_start)
+        if next_first <= previous_last:
             raise HalfLifeError(
                 "Half-Life v0.1 does not yet represent overlapping episodes; "
                 f"{previous['regime_id']} -> {following['regime_id']}"
@@ -307,10 +321,10 @@ def build_half_life_view(
                 "next_start_assertion_id":next_start["assertion_id"],
             })
 
-    first_start=episodes[0]["start"]["date"]
-    last_end=episodes[-1]["end"]["date"]
+    first_start=_effective_start(episodes[0]["start"])
+    last_end=_effective_end(episodes[-1]["end"])
     total_applicable=sum(item["duration_days"] for item in episodes)
-    calendar_span=_inclusive_days(first_start,last_end)
+    calendar_span=(last_end-first_start).days+1
     gap_days=sum(item["duration_days"] for item in gaps)
     if calendar_span-total_applicable != gap_days:
         raise HalfLifeError(

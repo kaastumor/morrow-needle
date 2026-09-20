@@ -122,6 +122,13 @@ def fetch_text(celex):
     return None,{"attempts":attempts}
 
 
+def is_sector3_legislation(celex: str) -> bool:
+    # Narrow operational discovery filter: CELEX sector 3 is secondary
+    # legislation. Other legal-resource families remain valid Needle inputs,
+    # but they are outside this amendment-act discovery experiment.
+    return bool(celex) and celex[0] == "3"
+
+
 def snippets(text):
     hits=[]
     for pattern in AMEND_PATTERNS:
@@ -175,7 +182,7 @@ def main():
                 ):
                     continue
                 celex=celex_from_event(event)
-                if not celex:
+                if not celex or not is_sector3_legislation(celex):
                     continue
                 roots.setdefault(
                     event["root_cellar_id"],
@@ -224,9 +231,10 @@ def main():
         ),
         "candidates":candidates,
         "discovery_scope":(
-            "CREATE notifications at WEMI WORK level only. Expression and "
-            "manifestation creation is representation traffic, not a new "
-            "legal-work discovery signal."
+            "CREATE notifications at WEMI WORK level, restricted to CELEX "
+            "sector 3 legislation. Other legal-resource families remain in "
+            "Needle's broader ingestion universe but are not candidates for "
+            "this amendment-act discovery lane."
         ),
         "guardrail":(
             "Drafting-language matches are discovery hints only. They do not "

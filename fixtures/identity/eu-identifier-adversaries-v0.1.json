@@ -220,6 +220,46 @@
       "language": null,
       "version_date": null,
       "notes": "Article-level ELI example documented by EUR-Lex."
+    },
+    {
+      "node_id": "cellar-doc-example-work",
+      "scheme": "CELLAR",
+      "value": "b84f49cd-750f-11e3-8e20-01aa75ed71a1",
+      "identity_level": "LEGAL_RESOURCE",
+      "resource_kind": "OTHER",
+      "language": null,
+      "version_date": null,
+      "notes": "Official Publications Office Cellar identifier-format example."
+    },
+    {
+      "node_id": "cellar-doc-example-expression",
+      "scheme": "CELLAR",
+      "value": "b84f49cd-750f-11e3-8e20-01aa75ed71a1.0003",
+      "identity_level": "EXPRESSION",
+      "resource_kind": "LANGUAGE_EXPRESSION",
+      "language": null,
+      "version_date": null,
+      "notes": "Official Cellar identifier-format example."
+    },
+    {
+      "node_id": "cellar-doc-example-manifestation",
+      "scheme": "CELLAR",
+      "value": "b84f49cd-750f-11e3-8e20-01aa75ed71a1.0003.01",
+      "identity_level": "MANIFESTATION",
+      "resource_kind": "FORMAT_MANIFESTATION",
+      "language": null,
+      "version_date": null,
+      "notes": "Official Cellar identifier-format example."
+    },
+    {
+      "node_id": "cellar-doc-example-item",
+      "scheme": "CELLAR",
+      "value": "b84f49cd-750f-11e3-8e20-01aa75ed71a1.0003.01/DOC_1",
+      "identity_level": "ITEM",
+      "resource_kind": "CONTENT_ITEM",
+      "language": null,
+      "version_date": null,
+      "notes": "Official Publications Office Item/content-stream identifier example."
     }
   ],
   "relations": [
@@ -506,6 +546,54 @@
           "source_type": "EUR_LEX",
           "identifier": "ELI help",
           "locator": "Article 2 of Regulation 2019/1241 example",
+          "role": "HIERARCHY"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "relation_id": "cellar-example-expression-of",
+      "relation_type": "EXPRESSION_OF",
+      "from_node_id": "cellar-doc-example-expression",
+      "to_node_id": "cellar-doc-example-work",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "Cellar data / identifier formats",
+          "locator": "WEMI identifier example",
+          "role": "HIERARCHY"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "relation_id": "cellar-example-manifestation-of",
+      "relation_type": "MANIFESTATION_OF",
+      "from_node_id": "cellar-doc-example-manifestation",
+      "to_node_id": "cellar-doc-example-expression",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "Cellar data / identifier formats",
+          "locator": "WEMI identifier example",
+          "role": "HIERARCHY"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "relation_id": "cellar-example-item-of",
+      "relation_type": "ITEM_OF",
+      "from_node_id": "cellar-doc-example-item",
+      "to_node_id": "cellar-doc-example-manifestation",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "Cellar data / identifier formats",
+          "locator": "WEMI Item example",
           "role": "HIERARCHY"
         }
       ],

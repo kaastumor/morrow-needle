@@ -837,6 +837,325 @@
             "active": false
           }
         }
+      ],
+      "perspective_queries": [
+        {
+          "query_id": "r2773-june-ex-post",
+          "dimension": "APPLICATION",
+          "subject_keys": [
+            "ACT:32023R2773"
+          ],
+          "valid_date": "2023-06-01",
+          "perspective": "EX_POST_LEGAL_EFFECT",
+          "source_cutoff_date": null,
+          "context": {},
+          "expected": {
+            "state": "RESOLVED",
+            "active": true
+          }
+        },
+        {
+          "query_id": "r2773-june-as-officially-available-in-june",
+          "dimension": "APPLICATION",
+          "subject_keys": [
+            "ACT:32023R2773"
+          ],
+          "valid_date": "2023-06-01",
+          "perspective": "OFFICIAL_SOURCE_STATE_AS_OF",
+          "source_cutoff_date": "2023-06-01",
+          "context": {},
+          "expected": {
+            "state": "NOT_ASSERTED_AS_OF_SOURCE_DATE",
+            "active": null
+          }
+        },
+        {
+          "query_id": "r2773-june-as-officially-available-in-2024",
+          "dimension": "APPLICATION",
+          "subject_keys": [
+            "ACT:32023R2773"
+          ],
+          "valid_date": "2023-06-01",
+          "perspective": "OFFICIAL_SOURCE_STATE_AS_OF",
+          "source_cutoff_date": "2024-01-01",
+          "context": {},
+          "expected": {
+            "state": "RESOLVED",
+            "active": true
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "mdr-overlapping-transition-and-partial-end",
+      "source_summary": "Regulation (EU) 2017/745 applies from 26 May 2021, while legacy-directive rules continue for Article 120 transition devices; a narrower placement derogation ends before the broader legacy transition.",
+      "assertions": [
+        {
+          "assertion_id": "mdr-general-application-start",
+          "subject_ref": {
+            "kind": "LEGAL_ACT",
+            "identifier": "CELEX:32017R0745",
+            "locator": "Article 123(2), as amended by 2020/561"
+          },
+          "dimension": "APPLICATION",
+          "boundary": "START",
+          "inclusive": true,
+          "trigger": {
+            "kind": "ABSOLUTE_DATE",
+            "date": "2021-05-26",
+            "source_expression": "shall apply from 26 May 2021"
+          },
+          "normalized_date": "2021-05-26",
+          "scope": {
+            "mode": "DEFAULT",
+            "applies_to": [
+              "ACT:32017R0745"
+            ],
+            "overrides_assertion_ids": [],
+            "entity_condition": null
+          },
+          "resolution_state": "RESOLVED_ABSOLUTE",
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32020R0561",
+              "locator": "Article 1(8)(a)",
+              "language": "ENG",
+              "role": "TEMPORAL_CLAUSE"
+            },
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:02017R0745-20200424",
+              "locator": "Article 123(2)",
+              "language": "ENG",
+              "role": "CONTEXT"
+            }
+          ],
+          "notes": "Regulation 2020/561 postponed the MDR general application date from 2020 to 2021."
+        },
+        {
+          "assertion_id": "mdr-legacy-transition-start",
+          "subject_ref": {
+            "kind": "REGIME",
+            "identifier": "REGIME:MDR_LEGACY_DIRECTIVE_CONTINUITY",
+            "locator": "Articles 120(3)-(4), 122"
+          },
+          "dimension": "TRANSITION",
+          "boundary": "START",
+          "inclusive": true,
+          "trigger": {
+            "kind": "ABSOLUTE_DATE",
+            "date": "2021-05-26",
+            "source_expression": "legacy directives continue to apply for transition devices from MDR date of application"
+          },
+          "normalized_date": "2021-05-26",
+          "scope": {
+            "mode": "DEFAULT",
+            "applies_to": [
+              "REGIME:MDR_LEGACY_DIRECTIVE_CONTINUITY"
+            ],
+            "overrides_assertion_ids": [],
+            "entity_condition": null
+          },
+          "resolution_state": "RESOLVED_ABSOLUTE",
+          "evidence_state": "DERIVED",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:02017R0745-20200424",
+              "locator": "Articles 120(3)-(4), 122",
+              "language": "ENG",
+              "role": "TEMPORAL_CLAUSE"
+            },
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32020R0561",
+              "locator": "Article 1(6)-(8)",
+              "language": "ENG",
+              "role": "DERIVATION_INPUT"
+            }
+          ],
+          "notes": "This is a bounded transition-regime assertion, not a claim that the repealed Directives remain generally applicable."
+        },
+        {
+          "assertion_id": "mdr-legacy-transition-end",
+          "subject_ref": {
+            "kind": "REGIME",
+            "identifier": "REGIME:MDR_LEGACY_DIRECTIVE_CONTINUITY",
+            "locator": "Article 122"
+          },
+          "dimension": "TRANSITION",
+          "boundary": "END",
+          "inclusive": true,
+          "trigger": {
+            "kind": "ABSOLUTE_DATE",
+            "date": "2025-05-27",
+            "source_expression": "Directives continue to apply until 27 May 2025 to the extent necessary for Article 120(3) and (4)"
+          },
+          "normalized_date": "2025-05-27",
+          "scope": {
+            "mode": "DEFAULT",
+            "applies_to": [
+              "REGIME:MDR_LEGACY_DIRECTIVE_CONTINUITY"
+            ],
+            "overrides_assertion_ids": [],
+            "entity_condition": null
+          },
+          "resolution_state": "RESOLVED_ABSOLUTE",
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:02017R0745-20200424",
+              "locator": "Article 122",
+              "language": "ENG",
+              "role": "TEMPORAL_CLAUSE"
+            }
+          ],
+          "notes": null
+        },
+        {
+          "assertion_id": "mdr-art120-3-derogation-start",
+          "subject_ref": {
+            "kind": "REGIME",
+            "identifier": "REGIME:MDR_ART120_3_PLACEMENT_DEROGATION",
+            "locator": "Article 120(3)"
+          },
+          "dimension": "DEROGATION",
+          "boundary": "START",
+          "inclusive": true,
+          "trigger": {
+            "kind": "ABSOLUTE_DATE",
+            "date": "2021-05-26",
+            "source_expression": "from 26 May 2021 legacy devices may continue under stated conditions"
+          },
+          "normalized_date": "2021-05-26",
+          "scope": {
+            "mode": "DEFAULT",
+            "applies_to": [
+              "REGIME:MDR_ART120_3_PLACEMENT_DEROGATION"
+            ],
+            "overrides_assertion_ids": [],
+            "entity_condition": null
+          },
+          "resolution_state": "RESOLVED_ABSOLUTE",
+          "evidence_state": "DERIVED",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32020R0561",
+              "locator": "Article 1(6)(b), replacing Article 120(3) first subparagraph",
+              "language": "ENG",
+              "role": "TEMPORAL_CLAUSE"
+            }
+          ],
+          "notes": "Applies only to devices satisfying the substantive Article 120(3) eligibility conditions; those conditions are outside this temporal-only fixture."
+        },
+        {
+          "assertion_id": "mdr-art120-3-derogation-end",
+          "subject_ref": {
+            "kind": "REGIME",
+            "identifier": "REGIME:MDR_ART120_3_PLACEMENT_DEROGATION",
+            "locator": "Article 120(3)"
+          },
+          "dimension": "DEROGATION",
+          "boundary": "END",
+          "inclusive": true,
+          "trigger": {
+            "kind": "ABSOLUTE_DATE",
+            "date": "2024-05-26",
+            "source_expression": "may be placed on the market or put into service until 26 May 2024"
+          },
+          "normalized_date": "2024-05-26",
+          "scope": {
+            "mode": "DEFAULT",
+            "applies_to": [
+              "REGIME:MDR_ART120_3_PLACEMENT_DEROGATION"
+            ],
+            "overrides_assertion_ids": [],
+            "entity_condition": null
+          },
+          "resolution_state": "RESOLVED_ABSOLUTE",
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32020R0561",
+              "locator": "Article 1(6)(b), Article 120(3) replacement",
+              "language": "ENG",
+              "role": "TEMPORAL_CLAUSE"
+            }
+          ],
+          "notes": null
+        }
+      ],
+      "queries": [
+        {
+          "query_id": "mdr-new-regulation-active-2022",
+          "dimension": "APPLICATION",
+          "subject_keys": [
+            "ACT:32017R0745"
+          ],
+          "date": "2022-01-01",
+          "context": {},
+          "expected": {
+            "state": "RESOLVED",
+            "active": true
+          }
+        },
+        {
+          "query_id": "mdr-legacy-transition-also-active-2022",
+          "dimension": "TRANSITION",
+          "subject_keys": [
+            "REGIME:MDR_LEGACY_DIRECTIVE_CONTINUITY"
+          ],
+          "date": "2022-01-01",
+          "context": {},
+          "expected": {
+            "state": "RESOLVED",
+            "active": true
+          }
+        },
+        {
+          "query_id": "mdr-placement-derogation-active-2023",
+          "dimension": "DEROGATION",
+          "subject_keys": [
+            "REGIME:MDR_ART120_3_PLACEMENT_DEROGATION"
+          ],
+          "date": "2023-01-01",
+          "context": {},
+          "expected": {
+            "state": "RESOLVED",
+            "active": true
+          }
+        },
+        {
+          "query_id": "mdr-placement-derogation-ended-but-transition-remains",
+          "dimension": "DEROGATION",
+          "subject_keys": [
+            "REGIME:MDR_ART120_3_PLACEMENT_DEROGATION"
+          ],
+          "date": "2024-06-01",
+          "context": {},
+          "expected": {
+            "state": "RESOLVED",
+            "active": false
+          }
+        },
+        {
+          "query_id": "mdr-broader-transition-still-active-2024",
+          "dimension": "TRANSITION",
+          "subject_keys": [
+            "REGIME:MDR_LEGACY_DIRECTIVE_CONTINUITY"
+          ],
+          "date": "2024-06-01",
+          "context": {},
+          "expected": {
+            "state": "RESOLVED",
+            "active": true
+          }
+        }
       ]
     }
   ]

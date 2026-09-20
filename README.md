@@ -36,9 +36,17 @@ data/          small reference matrices and controlled datasets
 
 ## Current status
 
-Foundation v0.1 is complete. Source probing has begun against real historical EU legislation. The first stress test already invalidated the original one-dimensional Change Atom taxonomy, producing schema v0.2 with separate legal-effect, descriptive-dimension, and textual-operation axes.
+The P0/P1 legal-change foundation is complete and has survived an explicit post-foundation red-team across historical legislation, multilingual corrigenda, temporal edge cases, source anomalies, provision/rule lineage and end-to-end Thread reconstruction.
 
-The next falsification target is provision identity across renumbering, split/merge, and repeal-and-replacement chains.
+The first P2 product projections are now evidenced:
+
+- **Half-Life** — temporary regimes as extensions, gaps and successor episodes;
+- **Source Anomaly** — authoritative-source irregularities without confusing source state with legal state;
+- **Legislative X-Ray** — derived dependency effects where local provision text remains unchanged.
+
+The current strategic priority is no longer another ontology or analytic primitive. It is the first **operational Needle loop**: start from a real official update event and carry it through targeted re-observation, verified mutation/non-impact/abstention, semantic and temporal resolution, retrieval, provenance and an evidence-linked public feed card.
+
+See `docs/step-back-review-2026-09-20-v0.2.md` and Issue #21.
 
 ---
 

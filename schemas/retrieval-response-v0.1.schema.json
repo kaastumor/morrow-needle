@@ -52,7 +52,8 @@
                   "CHANGE_ATOM",
                   "TEMPORAL_ASSERTION",
                   "LINEAGE_EDGE",
-                  "THREAD_EVIDENCE"
+                  "THREAD_EVIDENCE",
+                  "THREAD_UNKNOWN"
                 ]
               },
               "entity_id": {
@@ -131,7 +132,8 @@
             "required": [
               "closed",
               "support_count",
-              "support_record_ids"
+              "support_record_ids",
+              "support_required"
             ],
             "properties": {
               "closed": {
@@ -148,6 +150,9 @@
                   "type": "string",
                   "minLength": 1
                 }
+              },
+              "support_required": {
+                "type": "boolean"
               }
             }
           },
@@ -189,7 +194,8 @@
                   "CHANGE_ATOM",
                   "TEMPORAL_ASSERTION",
                   "LINEAGE_EDGE",
-                  "THREAD_EVIDENCE"
+                  "THREAD_EVIDENCE",
+                  "THREAD_UNKNOWN"
                 ]
               },
               "entity_id": {

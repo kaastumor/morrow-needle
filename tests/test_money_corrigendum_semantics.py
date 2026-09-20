@@ -133,4 +133,4 @@ def test_current_corrected_display_is_not_used_as_original_printed_state():
     notes = MUTATION["notes"].casefold()
     invariants = " ".join(SOURCE["invariants"]).casefold()
     assert "no historical consolidated before/after checkpoint is invented" in notes
-    assert "current corrected display is not evidence" in invariants
+    assert "current corrected display is not used as evidence" in invariants

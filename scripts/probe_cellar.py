@@ -235,6 +235,7 @@ def inspect_zip_payload(body: bytes) -> Dict[str, Any]:
         "extension_counts": {},
         "xml_entries": [],
         "image_reference_examples": [],
+        "html_entries": [],
     }
     try:
         with zipfile.ZipFile(io.BytesIO(body)) as zf:
@@ -249,7 +250,33 @@ def inspect_zip_payload(body: bytes) -> Dict[str, Any]:
             result["extension_counts"] = dict(sorted(extension_counts.items()))
 
             for name in names:
-                if not name.lower().endswith((".xml", ".frg")):
+                lower = name.lower()
+                if lower.endswith((".html", ".xhtml", ".htm")):
+                    try:
+                        data = zf.read(name)
+                    except Exception:
+                        data = b""
+                    html_text = data.decode("utf-8", errors="replace")
+                    visible_html = re.sub(r"<script\\b.*?</script>", " ", html_text, flags=re.I | re.S)
+                    visible_html = re.sub(r"<style\\b.*?</style>", " ", visible_html, flags=re.I | re.S)
+                    visible_html = re.sub(r"<[^>]+>", " ", visible_html)
+                    visible_html = re.sub(r"\\s+", " ", visible_html).strip()
+                    img_tags = re.findall(r"<img\\b[^>]*>", html_text, flags=re.I)
+                    srcs = []
+                    for tag in img_tags[:500]:
+                        m = re.search(r'\\bsrc=["\\\']([^"\\\']+)', tag, flags=re.I)
+                        if m:
+                            srcs.append(m.group(1)[:300])
+                    result["html_entries"].append({
+                        "name": name,
+                        "bytes": len(data),
+                        "visible_text_chars_estimate": len(visible_html),
+                        "img_tag_count": len(img_tags),
+                        "data_image_count": sum(1 for src in srcs if src.lower().startswith("data:image")),
+                        "image_src_sample": srcs[:20],
+                    })
+
+                if not lower.endswith((".xml", ".frg")):
                     continue
                 result["xml_like_entries"] += 1
                 try:

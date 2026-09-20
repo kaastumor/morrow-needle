@@ -56,13 +56,16 @@
   "foundation_results": [
     "CELEX reliably resolves to Cellar work IDs in both test eras.",
     "Language-expression suffixes are not globally stable language identifiers.",
-    "Direct structured-format availability differs by work and era.",
     "Manifestations may be regenerated independently of legal change.",
-    "Metadata-first manifestation discovery is required."
+    "Metadata-first manifestation discovery is required.",
+    "CELEX/work/expression resolution evidence remains valid; manifestation availability must use the current dissemination contract."
   ],
   "evidence_origin": {
     "workflow": ".github/workflows/cellar-probe.yml",
     "workflow_run": 35481889034,
     "artifact_name": "cellar-source-probe"
-  }
+  },
+  "status": "SUPERSEDED_FOR_MANIFESTATION_AVAILABILITY",
+  "superseded_by": "fixtures/source/cellar-manifestation-contract-run6-v0.1.json",
+  "correction_note": "The original probe used legacy application/xml;type=fmx4 negotiation. Its CELEX/work/expression resolution evidence remains valid, but its FMX4 availability inference is superseded by the current application/list|zip;mtype=fmx4 contract test."
 }

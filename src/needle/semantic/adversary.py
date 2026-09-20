@@ -91,8 +91,33 @@ def validate_atom(
         if procedure_id not in procedure_state_refs:
             errors.append(f"unknown procedure state reference: {procedure_id}")
 
+    atom_languages=set(
+        atom.get("language_scope", {}).get("languages", [])
+    )
+    provision_languages={
+        ref.get("language")
+        for ref in atom.get("provision_refs", [])
+        if ref.get("language")
+    }
+    for language in sorted(provision_languages - atom_languages):
+        errors.append(
+            "provision reference language outside atom language scope: "
+            + language
+        )
+
     if atom.get("verification_state") != "VERIFIED":
         return errors
+
+    span_languages={
+        span.get("language")
+        for span in atom.get("source_spans", [])
+        if span.get("language")
+    }
+    for language in sorted(atom_languages - span_languages):
+        errors.append(
+            "VERIFIED atom claims language without source-span evidence: "
+            + language
+        )
 
     basis = atom.get("semantic_basis", {})
     method = basis.get("classification_method")

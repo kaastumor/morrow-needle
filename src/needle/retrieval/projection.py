@@ -341,10 +341,10 @@ def build_thread_projection(
             continue
         for entity_id, entity in source["index"].items():
             entity_type = PROVENANCE_ENTITY_TYPES.get(entity_kind)
-            support_count = (
-                len(support.get((entity_type, entity_id), []))
+            support_record_ids = (
+                support.get((entity_type, entity_id), [])
                 if entity_type
-                else 0
+                else []
             )
             documents[(entity_kind, entity_id)] = _project_entity(
                 thread=thread,
@@ -352,7 +352,7 @@ def build_thread_projection(
                 kind=entity_kind,
                 entity_id=entity_id,
                 entity=entity,
-                support_count=support_count,
+                support_record_ids=support_record_ids,
             )
 
     for event in materialized["events"]:

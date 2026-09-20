@@ -1,0 +1,90 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import argparse
+import hashlib
+import io
+import json
+from pathlib import Path
+import zipfile
+import xml.etree.ElementTree as ET
+
+import requests
+
+
+BASE = "https://publications.europa.eu/resource/celex/{celex}"
+SANI_SENTENCE = (
+    "As from 1 July 2008, notifications shall be transmitted electronically "
+    "via the web application State Aid Notification Interactive (SANI)."
+)
+
+
+def fetch_fmx4(celex: str, language: str = "eng") -> tuple[bytes, requests.Response]:
+    response = requests.get(
+        BASE.format(celex=celex),
+        headers={
+            "Accept":"application/zip;mtype=fmx4",
+            "Accept-Language":language,
+            "User-Agent":"Morrow-Needle-Semantic-Span-Probe/0.1 (+https://github.com/kaastumor/morrow-needle)",
+        },
+        timeout=120,
+        allow_redirects=True,
+    )
+    response.raise_for_status()
+    return response.content, response
+
+
+def normalized_visible_text(xml_bytes: bytes) -> str:
+    root = ET.fromstring(xml_bytes)
+    return " ".join("".join(root.itertext()).split())
+
+
+def main() -> int:
+    ap=argparse.ArgumentParser()
+    ap.add_argument("--celex",default="32008R0271")
+    ap.add_argument("--out",default="artifacts/semantic-source/reg794-art3-sani.json")
+    args=ap.parse_args()
+
+    payload,response=fetch_fmx4(args.celex)
+    matches=[]
+    with zipfile.ZipFile(io.BytesIO(payload)) as zf:
+        for name in sorted(zf.namelist()):
+            if not name.lower().endswith((".xml",".frg")):
+                continue
+            try:
+                text=normalized_visible_text(zf.read(name))
+            except ET.ParseError:
+                continue
+            start=text.find(SANI_SENTENCE)
+            if start < 0:
+                continue
+            end=start+len(SANI_SENTENCE)
+            matches.append({
+                "identifier":f"CELEX:{args.celex}",
+                "source_file":name,
+                "locator":f"{name}#normalized-chars:{start}-{end}",
+                "language":"ENG",
+                "text":SANI_SENTENCE,
+                "text_hash":hashlib.sha256(SANI_SENTENCE.encode("utf-8")).hexdigest(),
+            })
+
+    result={
+        "probe_version":"0.1",
+        "celex":args.celex,
+        "payload_sha256":hashlib.sha256(payload).hexdigest(),
+        "final_url":response.url,
+        "matches":matches,
+    }
+    out=Path(args.out)
+    out.parent.mkdir(parents=True,exist_ok=True)
+    out.write_text(json.dumps(result,indent=2,ensure_ascii=False),encoding="utf-8")
+    print(json.dumps(result,indent=2,ensure_ascii=False))
+
+    if len(matches) != 1:
+        print(f"ERROR: expected exactly one authentic SANI sentence, got {len(matches)}")
+        return 1
+    return 0
+
+
+if __name__=="__main__":
+    raise SystemExit(main())

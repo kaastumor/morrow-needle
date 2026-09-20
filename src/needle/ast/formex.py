@@ -254,6 +254,27 @@ class FormexASTParser:
                         f"close={list(modification_result.unmatched_close_ids)}"
                     )
 
+                self._ledger.classify_unclaimed(_classify_unclaimed_atom)
+                self.accounting_reports.append(self._ledger.report())
+                self._ledger = None
+
+            accounting = aggregate_accounting_reports(self.accounting_reports)
+            self.builder.visible_chars_source_estimate = accounting["source_chars"]
+            self.builder.set_source_text_accounting(accounting)
+
+            if accounting["duplicate_claim_count"]:
+                self.builder.warnings.append(
+                    "source-text ledger recorded {} duplicate claims".format(
+                        accounting["duplicate_claim_count"]
+                    )
+                )
+            if accounting["unexplained_chars"]:
+                self.builder.declared_losses.append(
+                    "{} normalized source-text characters remain unexplained".format(
+                        accounting["unexplained_chars"]
+                    )
+                )
+
             if len(xml_names) > 1:
                 self.builder.cross_representation_checks.append(
                     f"FORMEX_FRAGMENT_SET:{len(xml_names)}_XML_ENTRIES"

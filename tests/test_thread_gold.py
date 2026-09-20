@@ -48,7 +48,7 @@ def test_gold_rejects_false_2025_paragraph4_textual_mutation():
         CASE["machine_expectations"],
         facts() + [false_fact],
     )
-    assert "nonmutation.p4-2025: forbidden fact was emitted" in errors
+    assert "thread.no-p4-2025-mutation: forbidden fact was emitted" in errors
 
 
 def test_gold_rejects_false_corrigendum_thread_mutation():
@@ -65,7 +65,7 @@ def test_gold_rejects_false_corrigendum_thread_mutation():
         CASE["machine_expectations"],
         facts() + [false_fact],
     )
-    assert "nonmutation.corrigendum-2026: forbidden fact was emitted" in errors
+    assert "thread.no-corrigendum-art3-mutation: forbidden fact was emitted" in errors
 
 
 def test_gold_rejects_copying_sani_date_to_pki_atom():
@@ -90,4 +90,4 @@ def test_gold_rejects_copying_sani_date_to_pki_atom():
         CASE["machine_expectations"],
         contaminated,
     )
-    assert "nonatom.pki-sani-temporal: forbidden fact was emitted" in errors
+    assert "thread.no-pki-sani-date: forbidden fact was emitted" in errors

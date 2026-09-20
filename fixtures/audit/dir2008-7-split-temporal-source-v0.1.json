@@ -1,0 +1,79 @@
+{
+  "fixture_version": "0.1",
+  "fixture_id": "dir2008-7-split-temporal-source-v0.1",
+  "act": "CELEX:32008L0007",
+  "language": "ENG",
+  "source_observation": {
+    "source_type": "CELLAR",
+    "representation_class": "FMX4_ZIP",
+    "artifact_hash": "sha256:a77571b3b894918a0c880fb1a093ec8540a2bffd920d8256a1cc9f346a9e6a3b",
+    "resource_uri": "http://publications.europa.eu/resource/cellar/99aeb253-b195-4075-ac4a-32eb4847c913.0006.04/zip",
+    "first_verified_workflow_run": 35530361778
+  },
+  "evidence": {
+    "structural_split": {
+      "source_file": "L_2008046EN.01002101.xml",
+      "locator": "normalized-visible-text#chars:1190-1218",
+      "text": "Article 7(2)Articles 7 and 8",
+      "context_hash": "b359fb475f06ad4aaaccbf9450fd94f4373d0c09b4597aba825ba7b15f4e744e"
+    },
+    "transposition_deadline": {
+      "source_file": "L_2008046EN.01001101.xml",
+      "locator": "Article 15(1)",
+      "normalized_date": "2008-12-31",
+      "text": "Member States shall bring into force the laws, regulations and administrative provisions necessary to comply with Articles 3, 4, 5, 7, 8, 12, 13 and 14 by 31 December 2008 at the latest.",
+      "context_hash": "de30bfdfaac5509a0bd3b1c845d7be887954e388ccd350cfe911eeb0fae8425c"
+    },
+    "repeal_clause": {
+      "source_file": "L_2008046EN.01001101.xml",
+      "locator": "Article 16",
+      "normalized_date": "2009-01-01",
+      "printed_predecessor": "69/355/EEC",
+      "canonical_predecessor": "69/335/EEC",
+      "context_hash": "d68d9e41f8f2fb1a1c819c4f37f3e0dcf2e806d01d3d5e62d857b3a3d74d29c7"
+    },
+    "explicit_application_set": {
+      "source_file": "L_2008046EN.01001101.xml",
+      "locator": "Article 18",
+      "normalized_date": "2009-01-01",
+      "applies_to_articles": [
+        "1",
+        "2",
+        "6",
+        "9",
+        "10",
+        "11"
+      ],
+      "excluded_split_targets": [
+        "7",
+        "8"
+      ],
+      "text": "Articles 1, 2, 6, 9, 10 and 11 shall apply from 1 January 2009.",
+      "context_hash": "82efc5f2c215e9bd35f327f90d4de1b30e31a942a07eee81a34e8eacc382c893"
+    },
+    "canonical_predecessor_support": {
+      "recital_1": "Council Directive 69/335/EEC",
+      "annex_ii": "Council Directive 69/335/EEC",
+      "annex_iii_header": "Directive 69/335/EEC"
+    }
+  },
+  "source_internal_identifier_disagreement": {
+    "literal_article16": "69/355/EEC",
+    "resolved_canonical_predecessor": "69/335/EEC",
+    "semantics": "PRESERVE_LITERAL_AND_RESOLVE_CANONICAL_SEPARATELY",
+    "conflict_state": "SOURCE_INTERNAL_CONFLICT"
+  },
+  "invariants": [
+    "Structural split evidence does not carry temporal application semantics.",
+    "Articles 7 and 8 have a 31 December 2008 transposition deadline in Article 15(1).",
+    "Article 18's explicit 1 January 2009 application set excludes Articles 7 and 8.",
+    "The predecessor repeal boundary does not synthesize an application start for successor Articles 7 or 8.",
+    "The authentic Article 16 text prints 69/355/EEC and must be preserved literally.",
+    "Canonical predecessor resolution to 69/335/EEC is supported independently by recital 1 and Annexes II and III."
+  ],
+  "live_contract": {
+    "script": "scripts/probe_dir2008_7_split_temporal.py",
+    "workflow": ".github/workflows/split-temporal-audit.yml"
+  },
+  "status": "LIVE_VERIFIED_AUDIT"
+}

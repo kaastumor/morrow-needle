@@ -1,0 +1,44 @@
+{
+  "schema_version": "regime-lineage-v0.2",
+  "edge_id": "eprivacy-2021-regime-reenacted-as-2026",
+  "relation_type": "REENACTED_AS",
+  "genealogical_evidence_state": "DIRECT",
+  "sources": [
+    {
+      "regime_id": "REGIME:2021R1232_AS_EXTENDED",
+      "act_ids": [
+        "CELEX:32021R1232",
+        "CELEX:32024R1307"
+      ],
+      "scope_note": "Temporary derogation regime as extended through 3 April 2026; temporal boundary is referenced, not copied."
+    }
+  ],
+  "targets": [
+    {
+      "regime_id": "REGIME:2026R1881",
+      "act_ids": [
+        "CELEX:32026R1881"
+      ],
+      "scope_note": "New self-standing temporary regime; proposition-level rule continuity remains unresolved."
+    }
+  ],
+  "temporal_assertion_refs": [
+    "eprivacy-2021-extended-application-end",
+    "eprivacy-2026-application-start"
+  ],
+  "source_refs": [
+    {
+      "source_type": "COUNCIL",
+      "identifier": "Council first-reading reasons 2026/C 3747",
+      "locator": "statement that expired Regulation 2021/1232 could no longer be extended and its full text would be adopted as a new self-standing Regulation with adaptations",
+      "role": "GENEALOGY"
+    },
+    {
+      "source_type": "CELLAR",
+      "identifier": "CELEX:32026R1881",
+      "locator": "Recital 12",
+      "role": "CONTEXT"
+    }
+  ],
+  "notes": "Genealogy only. Applicability continuity and any gap are derived from referenced P0-E temporal assertions; no application dates are persisted here."
+}

@@ -51,6 +51,10 @@
     "correspondence-from-2006": {
       "locator": "L_2004140EN.01000101.xml#normalized-chars:9189-9324",
       "text_hash": "9f8e15f5f20d3deafdb65c6c5d5bc42f6b1ed26705bebc6d57b0eb3acc74bc6b"
+    },
+    "publication-date-oj": {
+      "locator": "L_2004140EN.01000101.doc.xml#DATE[ISO=20040430]",
+      "text_hash": "a6ae65f06d768600a84a990c780db7601a537d0d5751f749a46428ad6b6769d7"
     }
   },
   "temporal_fixture": "fixtures/temporal/reg794-article3-original-v0.1.json",

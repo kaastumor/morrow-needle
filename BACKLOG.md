@@ -178,7 +178,9 @@ Implemented:
 
 Real Article 3 / Regulation 794/2004 case resolves to `CORROBORATED + UNVERIFIED`, which is intentional.
 
-Next: MOVE/RENUMBER using evidence-backed Provision Lineage only. Similarity-only alignment must remain unresolved. Then attack SPLIT/MERGE and annex/table structure.
+Lineage-gated structural reclassification is now green for RENUMBER and SPLIT. Similarity-only alignment remains unresolved and cannot consume INSERT/DELETE candidates.
+
+Next: add a real many-to-one MERGE case, then annex/table structural changes, then parse authentic amending instructions so corroborated candidates can cross the VERIFIED gate.
 
 ## P1 — Core system
 

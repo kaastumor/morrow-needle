@@ -161,9 +161,28 @@ def publication_date_metadata(payload: bytes) -> dict:
                     "attributes":attrs,
                     "text":text[:300],
                 })
+    exact=[
+        candidate for candidate in candidates
+        if candidate["tag"]=="DATE"
+        and candidate["attributes"].get("ISO")=="20040430"
+        and candidate["text"]=="20040430"
+    ]
+    if len(exact)!=1:
+        raise AssertionError(
+            "expected one source-native publication DATE[ISO=20040430], "
+            f"got {len(exact)}"
+        )
+    candidate=exact[0]
     return {
         "normalized_date":"2004-04-30",
-        "candidates":candidates,
+        "source_file":candidate["source_file"],
+        "locator":(
+            f"{candidate['source_file']}#DATE[ISO=20040430]"
+        ),
+        "source_text":"20040430",
+        "text_hash":hashlib.sha256(b"20040430").hexdigest(),
+        "tag":candidate["tag"],
+        "attributes":candidate["attributes"],
     }
 
 

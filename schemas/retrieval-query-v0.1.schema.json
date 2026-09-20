@@ -47,7 +47,8 @@
               "CHANGE_ATOM",
               "TEMPORAL_ASSERTION",
               "LINEAGE_EDGE",
-              "THREAD_EVIDENCE"
+              "THREAD_EVIDENCE",
+              "THREAD_UNKNOWN"
             ]
           }
         },

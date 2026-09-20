@@ -136,3 +136,36 @@ class TypedIdentifierGraph:
             node["node_id"] == right_node_id
             for node in self.equivalents(left_node_id)
         )
+
+
+
+def resolve_query(graph: TypedIdentifierGraph, query: dict[str, Any]) -> dict[str, Any]:
+    """Resolve only the identity relation the caller explicitly requested."""
+    node = graph.find(query["input"]["scheme"], query["input"]["value"])
+    if node is None:
+        return {
+            "state":"NOT_FOUND",
+            "query_id":query["query_id"],
+            "input":query["input"],
+            "results":[],
+        }
+
+    if query["mode"] == "EQUIVALENTS":
+        results = graph.equivalents(node["node_id"])
+    elif query["mode"] == "RELATION":
+        results = graph.related(
+            node["node_id"],
+            query["relation_type"],
+            direction=query.get("direction","out"),
+        )
+    else:
+        raise IdentityGraphError(f"unsupported resolution mode: {query['mode']}")
+
+    return {
+        "state":"RESOLVED",
+        "query_id":query["query_id"],
+        "input_node":node,
+        "mode":query["mode"],
+        "relation_type":query.get("relation_type"),
+        "results":results,
+    }

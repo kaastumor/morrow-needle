@@ -1,0 +1,38 @@
+{
+  "fixture_version": "0.1",
+  "fixture_id": "reg905-2025-formex-publication-duplication-v0.1",
+  "subject_identifier": "CELEX:32025R0905",
+  "language": "ENG",
+  "source_observation": {
+    "source_type": "CELLAR",
+    "representation_class": "FMX4_ZIP",
+    "artifact_hash": "sha256:91bc8da880879ef9e02ccd7c3bdae09d8b21f496d839d7418bd0a0b088976ff8",
+    "first_verified_workflow_run": 35527037205
+  },
+  "representation_duplication": {
+    "semantic_key": "PUBLICATION_DATE",
+    "normalized_value": "2025-06-13",
+    "source_native_value": "20250613",
+    "text_hash": "24cac975ccb4483a85feccc1a2e2a57a618dcaab6729e967a91f5c0e29a268aa",
+    "occurrences": [
+      {
+        "source_file": "L_202500905EN.doc.fmx.xml",
+        "locator": "L_202500905EN.doc.fmx.xml#DATE[ISO=20250613]"
+      },
+      {
+        "source_file": "L_202500905EN.toc.fmx.xml",
+        "locator": "L_202500905EN.toc.fmx.xml#DATE[ISO=20250613]"
+      }
+    ],
+    "canonical_occurrence_locator": "L_202500905EN.doc.fmx.xml#DATE[ISO=20250613]",
+    "semantics": "REPRESENTATION_DUPLICATION_NOT_CORROBORATION",
+    "unique_evidence_value_count": 1
+  },
+  "invariants": [
+    "Identical metadata repeated across streams is representation duplication, not independent corroboration.",
+    "Duplicate occurrences do not multiply evidentiary weight.",
+    "Conflicting duplicate values must fail closed rather than being deduplicated silently.",
+    "A deterministic canonical locator may be selected for citation while all observed occurrences remain auditable."
+  ],
+  "status": "LIVE_VERIFIED_AUDIT"
+}

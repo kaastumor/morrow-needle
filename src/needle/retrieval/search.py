@@ -41,8 +41,9 @@ _EXACT_FIELD_PRIORITY = {
     "ENTITY_ID":0,
     "THREAD_ID":1,
     "ACT_ID":2,
-    "PROVISION_PATH":3,
-    "CLAIM":4,
+    "IDENTIFIER":3,
+    "PROVISION_PATH":4,
+    "CLAIM":5,
     "RULE_STATEMENT":5,
     "SOURCE_EXPRESSION":6,
 }
@@ -51,8 +52,9 @@ _FUZZY_FIELD_PRIORITY = {
     "CLAIM":0,
     "RULE_STATEMENT":1,
     "SOURCE_EXPRESSION":2,
-    "PROVISION_PATH":3,
-    "SOURCE_IDENTIFIER":4,
+    "IDENTIFIER":3,
+    "PROVISION_PATH":4,
+    "SOURCE_IDENTIFIER":5,
     "QUALIFIER_TERM":5,
     "TRIGGER_TERM":6,
     "ENTITY_ID":20,
@@ -121,6 +123,28 @@ def _structured_reasons(
                 "field":query_field,
                 "query_value":value,
                 "matched_values":[value],
+                "match_quality":None,
+            })
+
+    wanted_identifiers = filters.get("identifiers", [])
+    if wanted_identifiers:
+        actual = {
+            (identifier["scheme"], identifier["value"])
+            for identifier in document.get("identifiers", [])
+        }
+        matched = [
+            identifier for identifier in wanted_identifiers
+            if (identifier["scheme"], identifier["value"]) in actual
+        ]
+        if not matched:
+            return None
+        for identifier in matched:
+            encoded = f"{identifier['scheme']}:{identifier['value']}"
+            reasons.append({
+                "kind":"STRUCTURED_FILTER",
+                "field":"identifiers",
+                "query_value":encoded,
+                "matched_values":[encoded],
                 "match_quality":None,
             })
 

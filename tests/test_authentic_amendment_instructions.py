@@ -5,7 +5,7 @@ from needle.mutation.instructions import parse_authentic_instructions
 from needle.mutation.reconcile import reconcile_candidate
 
 
-FIXTURE = json.loads(Path("fixtures/mutations/reg312-2008-authentic-replacement-instructions-v0.1.json").read_text())
+FIXTURE = json.loads(Path("fixtures/mutations/reg2015-1536-authentic-replacement-instructions-v0.1.json").read_text())
 
 
 def _candidate():
@@ -32,8 +32,6 @@ def test_explicit_authentic_replacement_becomes_canonical_cause():
 
 
 def test_ambiguous_amendment_language_abstains():
-    # 'amended as follows' identifies a container but does not itself say which
-    # mutation operation applies; nested instructions must provide that cause.
     assert parse_authentic_instructions(
         "Article 3 is amended as follows:", source_id="CELEX:test"
     ) == []

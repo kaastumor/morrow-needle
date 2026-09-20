@@ -12,6 +12,11 @@ from needle.updates.classify import (
     snapshot_from_observations,
 )
 from needle.updates.cursor import PollCursor, accept_page, begin_window
+from needle.updates.poller import (
+    accept_poll_page,
+    begin_poll,
+    new_poll_state,
+)
 
 
 SCHEMA = json.loads(
@@ -230,3 +235,89 @@ def test_refresh_scope_respects_wemi_level():
     work = _event("w")
     work["wemi_levels"] = ["WORK"]
     assert refresh_scope(work)["scope"] == "WORK"
+
+
+
+def test_integrated_poller_is_replay_safe_across_overlapping_windows():
+    state = new_poll_state(
+        last_completed_end="2026-09-20T10:00:00+00:00",
+    )
+    state = begin_poll(
+        state,
+        window_start="2026-09-20T09:55:00+00:00",
+        window_end="2026-09-20T10:05:00+00:00",
+    )
+    page = FeedPage(
+        window_start="2026-09-20T09:55:00+00:00",
+        window_end="2026-09-20T10:05:00+00:00",
+        page=1,
+        more_entries=False,
+        format="RSS",
+        events=(_event("1"),_event("2")),
+    )
+    state, emissions = accept_poll_page(state,page)
+    assert [item.event["notification_id"] for item in emissions] == ["1","2"]
+    assert state.cursor.last_completed_end == "2026-09-20T10:05:00+00:00"
+
+    state = begin_poll(
+        state,
+        window_start="2026-09-20T10:00:00+00:00",
+        window_end="2026-09-20T10:10:00+00:00",
+    )
+    replay = FeedPage(
+        window_start="2026-09-20T10:00:00+00:00",
+        window_end="2026-09-20T10:10:00+00:00",
+        page=1,
+        more_entries=False,
+        format="RSS",
+        events=(_event("2"),_event("3")),
+    )
+    state, emissions = accept_poll_page(state,replay)
+    assert [item.event["notification_id"] for item in emissions] == ["3"]
+    assert state.processed_notification_ids == frozenset({"1","2","3"})
+
+
+def test_integrated_poller_does_not_commit_incomplete_window():
+    state = begin_poll(
+        new_poll_state(last_completed_end="2026-09-20T09:00:00+00:00"),
+        window_start="2026-09-20T08:55:00+00:00",
+        window_end="2026-09-20T10:00:00+00:00",
+    )
+    page1 = FeedPage(
+        window_start="2026-09-20T08:55:00+00:00",
+        window_end="2026-09-20T10:00:00+00:00",
+        page=1,
+        more_entries=True,
+        format="RSS",
+        events=(_event("10"),),
+    )
+    state, emissions = accept_poll_page(state,page1)
+    assert [item.event["notification_id"] for item in emissions] == ["10"]
+    assert state.cursor.last_completed_end == "2026-09-20T09:00:00+00:00"
+    assert state.cursor.next_page == 2
+    assert state.cursor.active_window_start is not None
+
+
+def test_integrated_poller_emits_targeted_refresh_plan_not_legal_change():
+    event = _event("manifestation")
+    event["wemi_levels"] = ["MANIFESTATION"]
+    state = begin_poll(
+        new_poll_state(),
+        window_start="2026-09-20T09:00:00+00:00",
+        window_end="2026-09-20T10:00:00+00:00",
+    )
+    page = FeedPage(
+        window_start="2026-09-20T09:00:00+00:00",
+        window_end="2026-09-20T10:00:00+00:00",
+        page=1,
+        more_entries=False,
+        format="RSS",
+        events=(event,),
+    )
+    _, emissions = accept_poll_page(state,page)
+    assert emissions[0].refresh_plan == {
+        "scope":"MANIFESTATION",
+        "target_cellar_id":"cellar:target-manifestation",
+        "root_cellar_id":"cellar:root",
+    }
+    assert "change_state" not in emissions[0].refresh_plan

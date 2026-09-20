@@ -1,0 +1,67 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "cellar-source-change-classification",
+  "event": {
+    "event_key": "cellar:work-1_2026-09-20T10:00:00+00:00",
+    "notification_id": "cellar:work-1_2026-09-20T10:00:00+00:00",
+    "notification_id_basis": "RSS_GUID",
+    "raw_feed_id": "cellar:work-1_2026-09-20T10:00:00+00:00",
+    "action": "UPDATE",
+    "cellar_id": "cellar:work-1",
+    "root_cellar_id": "cellar:work-1",
+    "ingestion_time": "2026-09-20T10:00:00+00:00",
+    "priority": "DAILY",
+    "classes": [
+      "http://publications.europa.eu/ontology/cdm#work"
+    ],
+    "wemi_levels": [
+      "WORK"
+    ],
+    "identifiers": [
+      "celex:32026R0001"
+    ],
+    "feed_observation": {
+      "channel": "ingestion",
+      "format": "RSS",
+      "window_start": "2026-09-20T09:55:00+00:00",
+      "window_end": "2026-09-20T10:05:00+00:00",
+      "page": 1,
+      "entry_ordinal": 0
+    }
+  },
+  "snapshots": {
+    "before": {
+      "available": true,
+      "content_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "metadata_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "content_observation_id": "src-content-before",
+      "metadata_observation_id": "src-meta-before"
+    },
+    "same": {
+      "available": true,
+      "content_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "metadata_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "content_observation_id": "src-content-after-same",
+      "metadata_observation_id": "src-meta-after-same"
+    },
+    "metadata_changed": {
+      "available": true,
+      "content_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "metadata_hash": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "content_observation_id": "src-content-after-meta",
+      "metadata_observation_id": "src-meta-after-meta"
+    },
+    "content_changed": {
+      "available": true,
+      "content_hash": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "metadata_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "content_observation_id": "src-content-after-content",
+      "metadata_observation_id": "src-meta-after-content"
+    }
+  },
+  "expected": {
+    "same": "NO_MATERIAL_CHANGE",
+    "metadata_changed": "METADATA_ONLY",
+    "content_changed": "CONTENT_CHANGED"
+  }
+}

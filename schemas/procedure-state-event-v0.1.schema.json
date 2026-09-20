@@ -117,30 +117,7 @@
     "effects": {
       "type": "array",
       "items": {
-        "type": "object",
-        "required": [
-          "dimension",
-          "value"
-        ],
-        "properties": {
-          "dimension": {
-            "type": "string",
-            "enum": [
-              "PROCEDURE_ACTIVITY",
-              "PROCEDURE_OUTCOME",
-              "FORMAL_ACT_ADOPTION",
-              "FINAL_ACT_PUBLICATION",
-              "PARLIAMENT_POSITION",
-              "COUNCIL_POSITION",
-              "NEGOTIATION_STATE",
-              "DELEGATED_SCRUTINY"
-            ]
-          },
-          "value": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
+        "$ref": "#/$defs/effect"
       }
     },
     "evidence_state": {
@@ -206,5 +183,176 @@
       ]
     }
   },
-  "additionalProperties": false
+  "additionalProperties": false,
+  "$defs": {
+    "effect": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "dimension",
+            "value"
+          ],
+          "properties": {
+            "dimension": {
+              "const": "PROCEDURE_ACTIVITY"
+            },
+            "value": {
+              "enum": [
+                "OPEN",
+                "CLOSED"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "dimension",
+            "value"
+          ],
+          "properties": {
+            "dimension": {
+              "const": "PROCEDURE_OUTCOME"
+            },
+            "value": {
+              "enum": [
+                "PENDING",
+                "ADOPTED",
+                "WITHDRAWN",
+                "REJECTED",
+                "LAPSED",
+                "OTHER_TERMINAL"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "dimension",
+            "value"
+          ],
+          "properties": {
+            "dimension": {
+              "const": "FORMAL_ACT_ADOPTION"
+            },
+            "value": {
+              "enum": [
+                "NOT_ADOPTED",
+                "ADOPTED"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "dimension",
+            "value"
+          ],
+          "properties": {
+            "dimension": {
+              "const": "FINAL_ACT_PUBLICATION"
+            },
+            "value": {
+              "enum": [
+                "NOT_PUBLISHED",
+                "PUBLISHED"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "dimension",
+            "value"
+          ],
+          "properties": {
+            "dimension": {
+              "const": "PARLIAMENT_POSITION"
+            },
+            "value": {
+              "enum": [
+                "NONE",
+                "FIRST_READING_POSITION_ADOPTED",
+                "SECOND_READING_POSITION_ADOPTED",
+                "OTHER_POSITION_ADOPTED"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "dimension",
+            "value"
+          ],
+          "properties": {
+            "dimension": {
+              "const": "COUNCIL_POSITION"
+            },
+            "value": {
+              "enum": [
+                "NONE",
+                "GENERAL_APPROACH",
+                "POSITION_ADOPTED",
+                "OTHER_POSITION_ADOPTED"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "dimension",
+            "value"
+          ],
+          "properties": {
+            "dimension": {
+              "const": "NEGOTIATION_STATE"
+            },
+            "value": {
+              "enum": [
+                "NONE",
+                "PROVISIONAL_POLITICAL_AGREEMENT",
+                "COMPLETED",
+                "FAILED"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "dimension",
+            "value"
+          ],
+          "properties": {
+            "dimension": {
+              "const": "DELEGATED_SCRUTINY"
+            },
+            "value": {
+              "enum": [
+                "NOT_APPLICABLE",
+                "OPEN",
+                "CLOSED_WITHOUT_BLOCKING_OBJECTION",
+                "OBJECTED",
+                "UNKNOWN"
+              ]
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
 }

@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/source-change-v0.1.json",
+  "title": "Morrow // Needle Source Change v0.1",
+  "description": "Auditable classification of a Cellar change hint after targeted re-observation. A source change is not a legal mutation.",
+  "type": "object",
+  "required": [
+    "change_id",
+    "event_key",
+    "feed_action",
+    "classification",
+    "target_cellar_id",
+    "root_cellar_id",
+    "refresh_scope",
+    "previous",
+    "current",
+    "classification_basis"
+  ],
+  "properties": {
+    "change_id": {
+      "type": "string",
+      "pattern": "^source-change:[0-9a-f]{32}$"
+    },
+    "event_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "feed_action": {
+      "type": "string",
+      "enum": [
+        "CREATE",
+        "UPDATE",
+        "DELETE"
+      ]
+    },
+    "classification": {
+      "type": "string",
+      "enum": [
+        "SOURCE_CREATED",
+        "CONTENT_CHANGED",
+        "METADATA_ONLY",
+        "AVAILABILITY_CHANGED",
+        "NO_MATERIAL_CHANGE",
+        "UNRESOLVED"
+      ]
+    },
+    "target_cellar_id": {
+      "type": "string"
+    },
+    "root_cellar_id": {
+      "type": "string"
+    },
+    "refresh_scope": {
+      "type": "string",
+      "enum": [
+        "WORK",
+        "EXPRESSION",
+        "MANIFESTATION",
+        "ITEM_AND_PARENT_MANIFESTATION",
+        "TARGET_AND_ROOT"
+      ]
+    },
+    "previous": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/snapshot"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "current": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/snapshot"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "classification_basis": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "FEED_ACTION",
+          "AVAILABILITY",
+          "CONTENT_HASH",
+          "METADATA_HASH",
+          "MISSING_BASELINE",
+          "MISSING_OBSERVATION"
+        ]
+      }
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "$defs": {
+    "snapshot": {
+      "type": "object",
+      "required": [
+        "available",
+        "content_hash",
+        "metadata_hash",
+        "content_observation_id",
+        "metadata_observation_id"
+      ],
+      "properties": {
+        "available": {
+          "type": "boolean"
+        },
+        "content_hash": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "metadata_hash": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "content_observation_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "metadata_observation_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

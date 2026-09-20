@@ -15,7 +15,11 @@ REPLACEMENT_RE = re.compile(
 def _canonical_target(raw: str) -> str:
     value = re.sub(r"\s+", " ", raw.strip()).rstrip(",")
     # Map common amendment drafting locators onto Needle citation paths.
-    match = re.match(r"(Article\s+\S+)\s*,?\s*paragraph\s+([A-Za-z0-9().-]+)$", value, re.I)
+    match = re.match(
+        r"(Article\s+[A-Za-z0-9IVXLC().-]+)\s*,?\s*paragraph\s+([A-Za-z0-9().-]+)$",
+        value,
+        re.I,
+    )
     if match:
         return f"{match.group(1)} > {match.group(2).strip('()')}"
     return value

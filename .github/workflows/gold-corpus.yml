@@ -4,20 +4,24 @@ on:
   push:
     paths:
       - "fixtures/gold/**"
+      - "fixtures/lineage/**"
       - "schemas/gold-corpus-case-*.json"
       - "scripts/validate_gold_corpus.py"
       - "src/needle/gold.py"
       - "tests/test_gold_corpus_contract.py"
       - "tests/test_gold_output_matcher.py"
+      - "tests/test_gold_foundation_fixture.py"
       - ".github/workflows/gold-corpus.yml"
   pull_request:
     paths:
       - "fixtures/gold/**"
+      - "fixtures/lineage/**"
       - "schemas/gold-corpus-case-*.json"
       - "scripts/validate_gold_corpus.py"
       - "src/needle/gold.py"
       - "tests/test_gold_corpus_contract.py"
       - "tests/test_gold_output_matcher.py"
+      - "tests/test_gold_foundation_fixture.py"
       - ".github/workflows/gold-corpus.yml"
   workflow_dispatch:
 
@@ -33,6 +37,6 @@ jobs:
       - name: Install test dependencies
         run: python -m pip install "jsonschema>=4.23,<5" "pytest>=8,<9"
       - name: Run Gold Corpus contract tests
-        run: python -m pytest -q tests/test_gold_corpus_contract.py tests/test_gold_output_matcher.py
+        run: python -m pytest -q tests/test_gold_corpus_contract.py tests/test_gold_output_matcher.py tests/test_gold_foundation_fixture.py
       - name: Validate all Gold Corpus fixtures
         run: python scripts/validate_gold_corpus.py

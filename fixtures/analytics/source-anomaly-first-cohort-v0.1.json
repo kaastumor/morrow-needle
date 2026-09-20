@@ -1,0 +1,17 @@
+{
+  "schema_version": "source-anomaly-composition-v0.1",
+  "analytic_id": "source-anomaly:first-audit-cohort",
+  "composition_character": "REFERENCE_ONLY",
+  "evidence_fixture_paths": [
+    "fixtures/audit/reg2742-money-corrigendum-source-v0.1.json",
+    "fixtures/audit/dir2008-7-split-temporal-source-v0.1.json",
+    "fixtures/audit/reg905-2025-formex-publication-duplication-v0.1.json"
+  ],
+  "guardrails": [
+    "Source anomaly is not a legal defect unless legal evidence separately establishes one.",
+    "Endpoint or preferred-route failure does not imply document or law absence.",
+    "Authentic literal source text is preserved even when canonical identity resolution differs.",
+    "Representation duplication does not multiply evidentiary weight.",
+    "No Source Anomaly card may emit a legal mutation merely from source-layer oddity."
+  ]
+}

@@ -9,6 +9,9 @@ from typing import Dict, Any
 import requests
 import xml.etree.ElementTree as ET
 from collections import Counter
+import io
+import zipfile
+import re
 
 # Official Cellar dissemination resource endpoint documented by the Publications Office.
 BASE = "https://publications.europa.eu/resource/celex/{celex}"
@@ -204,6 +207,46 @@ def summarize_xml(body: bytes) -> Dict[str, Any]:
 
     return result
 
+def inspect_zip_payload(body: bytes) -> Dict[str, Any]:
+    result = {
+        "entry_count": 0,
+        "xml_like_entries": 0,
+        "clg_mdfo_occurrences": 0,
+        "clg_mdfc_occurrences": 0,
+        "modification_examples": [],
+        "entry_names_sample": [],
+    }
+    try:
+        with zipfile.ZipFile(io.BytesIO(body)) as zf:
+            names = zf.namelist()
+            result["entry_count"] = len(names)
+            result["entry_names_sample"] = names[:50]
+            for name in names:
+                if not name.lower().endswith((".xml", ".frg")):
+                    continue
+                result["xml_like_entries"] += 1
+                try:
+                    data = zf.read(name)
+                except Exception:
+                    continue
+                open_count = data.count(b"CLG.MDFO")
+                close_count = data.count(b"CLG.MDFC")
+                result["clg_mdfo_occurrences"] += open_count
+                result["clg_mdfc_occurrences"] += close_count
+
+                if open_count and len(result["modification_examples"]) < 12:
+                    text = data.decode("utf-8", errors="replace")
+                    for match in re.finditer(r"<\\?CLG\\.MDFO\\b[^?]*\\?>", text):
+                        result["modification_examples"].append({
+                            "entry": name,
+                            "processing_instruction": match.group(0)[:2000],
+                        })
+                        if len(result["modification_examples"]) >= 12:
+                            break
+    except Exception as exc:
+        result["zip_parse_error"] = f"{type(exc).__name__}: {exc}"
+    return result
+
 def summarize_response(r: requests.Response) -> Dict[str, Any]:
     body = r.content
     content_type = (r.headers.get("content-type") or "").lower()
@@ -231,6 +274,9 @@ def summarize_response(r: requests.Response) -> Dict[str, Any]:
 
     if r.status_code == 200 and ("xml" in content_type or body.lstrip().startswith(b"<?xml")):
         summary["xml_structure"] = summarize_xml(body)
+
+    if r.status_code == 200 and ("zip" in content_type or body.startswith(b"PK")):
+        summary["zip_structure"] = inspect_zip_payload(body)
 
     return summary
 

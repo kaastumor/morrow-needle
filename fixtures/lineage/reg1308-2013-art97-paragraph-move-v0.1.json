@@ -1,0 +1,100 @@
+{
+  "fixture_id": "reg1308-2013-art97-paragraph-move-v0.1",
+  "purpose": "Test lineage when a provision is physically moved within the same act and no correlation table supplies the mapping. Official later acts explicitly state the move.",
+  "subject_act": {
+    "celex": "32013R1308",
+    "eli": "http://data.europa.eu/eli/reg/2013/1308/oj",
+    "title": "Regulation (EU) No 1308/2013"
+  },
+  "mutation_act": {
+    "celex": "32021R2117",
+    "eli": "http://data.europa.eu/eli/reg/2021/2117/oj",
+    "title": "Regulation (EU) 2021/2117"
+  },
+  "official_evidence": [
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32023R1607",
+      "locator": "recital (1)",
+      "language": "ENG",
+      "observation": "The authentic implementing regulation states that, following the amendments of Article 97 of Regulation (EU) No 1308/2013 by Regulation (EU) 2021/2117, the provisions previously in paragraph 3 were moved to paragraph 4."
+    },
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32023R1606",
+      "locator": "recital (5)",
+      "language": "ENG",
+      "observation": "The authentic delegated regulation independently states that addition of a new paragraph 3 caused the existing paragraph 3 of Article 97 to become paragraph 4."
+    },
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32021R2117",
+      "locator": "Article 1(23)",
+      "language": "ENG",
+      "observation": "The authentic modifying act replaces Article 97 paragraphs 2, 3 and 4, providing the operative mutation that created the post-amendment structure."
+    }
+  ],
+  "expected_structural_edge": {
+    "edge_id": "reg1308-art97-old-p3-moved-to-new-p4",
+    "assertion_scope": "STRUCTURAL_LINEAGE",
+    "edge_type": "MOVED_TO",
+    "sources": [
+      {
+        "act_id": "CELEX:32013R1308",
+        "eli": "http://data.europa.eu/eli/reg/2013/1308/oj",
+        "version": "pre-2021/2117 amendment",
+        "language": "ENG",
+        "structural_path": "Article 97(3)",
+        "text_hash": null
+      }
+    ],
+    "targets": [
+      {
+        "act_id": "CELEX:32013R1308",
+        "eli": "http://data.europa.eu/eli/reg/2013/1308/oj",
+        "version": "post-2021/2117 amendment",
+        "language": "ENG",
+        "structural_path": "Article 97(4)",
+        "text_hash": null
+      }
+    ],
+    "evidence_basis": ["OFFICIAL_RECITAL", "OFFICIAL_AMENDMENT_INSTRUCTION"],
+    "evidence_state": "DIRECT",
+    "source_refs": [
+      {
+        "source_type": "EUR_LEX",
+        "identifier": "CELEX:32023R1607",
+        "locator": "recital (1)",
+        "language": "ENG",
+        "role": "LINEAGE_EVIDENCE"
+      },
+      {
+        "source_type": "EUR_LEX",
+        "identifier": "CELEX:32023R1606",
+        "locator": "recital (5)",
+        "language": "ENG",
+        "role": "LINEAGE_EVIDENCE"
+      },
+      {
+        "source_type": "EUR_LEX",
+        "identifier": "CELEX:32021R2117",
+        "locator": "Article 1(23)",
+        "language": "ENG",
+        "role": "STATUS"
+      }
+    ],
+    "confidence": {
+      "level": "HIGH",
+      "rationale": "Two later authentic EU acts independently and explicitly identify the old and new paragraph positions, and the authentic modifying act supplies the operative structural mutation.",
+      "conflict_state": "NO_KNOWN_CONFLICT"
+    },
+    "notes": "This is a move of provisions between immutable text states of the same CELEX work, not a new persistent provision object."
+  },
+  "forbidden_inferences": [
+    "Do not treat Article 97(3) as a persistent object whose identifier merely changed in place.",
+    "Do not require a correlation table before recording high-confidence structural lineage when authentic official narrative evidence explicitly states the move.",
+    "Do not infer proposition-level semantic continuity solely from the structural move; RULE_LINEAGE remains separately anchored."
+  ],
+  "architecture_result": "Lineage reconstruction needs an official-narrative evidence channel in addition to correlation tables and amendment instructions. A same-act move still creates distinct Provision Instances across text states connected by a MOVED_TO edge.",
+  "status": "OFFICIAL_EVIDENCE_CAPTURED"
+}

@@ -1,5 +1,5 @@
 {
-  "schema_version": "gold-corpus-case-v0.1",
+  "schema_version": "gold-corpus-case-v0.2",
   "case_id": "reg26-to-reg1184-lineage-v0.1",
   "title": "Repeal/replacement with non-positional provision lineage",
   "adversarial_claim": "Article numbers and document succession are insufficient to reconstruct provision ancestry; the official correlation table must control asserted structural lineage.",
@@ -11,12 +11,16 @@
   ],
   "expected": {
     "document_relationships": [{"assertion_id": "doc.replacement", "expectation": "Regulation 1184/2006 codifies and replaces Regulation No 26.", "evidence_source_ids": ["reg1184"], "status": "ASSERTED"}],
-    "provision_alignments": [{"assertion_id": "lineage.table-controls", "expectation": "Only mappings supported by the official correlation table may be emitted as asserted structural lineage from this case.", "evidence_source_ids": ["correlation"], "status": "ASSERTED"}],
+    "provision_alignments": [{"assertion_id": "lineage.table-controls", "expectation": "The official correlation table establishes old Article 4 → new Article 3 structural lineage.", "evidence_source_ids": ["correlation"], "status": "ASSERTED"}],
     "textual_mutations": [],
     "change_atoms": [],
-    "non_atoms": [{"assertion_id": "nonatom.article-number", "expectation": "Same or nearby article numbering alone is not a legal-semantic Change Atom and cannot prove lineage.", "evidence_source_ids": ["correlation"], "status": "FORBIDDEN_INFERENCE"}],
+    "non_atoms": [{"assertion_id": "nonatom.article-number", "expectation": "Same numeric Article 3 must not be asserted as lineage: old Article 3 is deleted while new Article 3 descends from old Article 4.", "evidence_source_ids": ["correlation"], "status": "FORBIDDEN_INFERENCE"}],
     "temporal_assertions": []
   },
+  "machine_expectations": [
+    {"assertion_id": "lineage.table-controls", "outcome": "PRESENT", "match": {"kind": "STRUCTURAL_LINEAGE", "source": "Article 4", "target": "Article 3", "status": "ASSERTED"}},
+    {"assertion_id": "nonatom.article-number", "outcome": "ABSENT", "match": {"kind": "STRUCTURAL_LINEAGE", "source": "Article 3", "target": "Article 3", "status": "ASSERTED"}}
+  ],
   "ambiguities": [{"description": "The correlation table establishes structural correspondence, not proposition-level semantic continuity.", "retained_as": "UNRESOLVED"}],
-  "verification": {"state": "EVIDENCED", "requirements": ["Validate fixture against gold-corpus-case-v0.1 schema.", "Cross-check emitted lineage edges against Annex II without inferring rule continuity."]}
+  "verification": {"state": "VERIFIED", "requirements": ["Validate fixture against gold-corpus-case-v0.2 schema.", "Machine-compare normalized lineage fixture emissions against PRESENT and ABSENT expectations."], "verified_by": ["tests/test_gold_foundation_fixture.py"]}
 }

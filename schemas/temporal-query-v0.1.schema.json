@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/temporal-query-v0.1.json",
+  "title": "Morrow // Needle Temporal Query v0.1",
+  "description": "Separates valid/legal time from official-source availability time. OFFICIAL_SOURCE_STATE_AS_OF means what can be established from official sources available by the cutoff, not what any person actually knew.",
+  "type": "object",
+  "required": [
+    "query_id",
+    "dimension",
+    "subject_keys",
+    "valid_date",
+    "perspective"
+  ],
+  "properties": {
+    "query_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dimension": {
+      "type": "string",
+      "enum": [
+        "PUBLICATION",
+        "LEGAL_FORCE",
+        "APPLICATION",
+        "TEXT_STATE",
+        "TRANSITION",
+        "DEROGATION",
+        "DEADLINE"
+      ]
+    },
+    "subject_keys": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "valid_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "perspective": {
+      "type": "string",
+      "enum": [
+        "EX_POST_LEGAL_EFFECT",
+        "OFFICIAL_SOURCE_STATE_AS_OF"
+      ]
+    },
+    "source_cutoff_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "context": {
+      "type": "object"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "perspective": {
+            "const": "OFFICIAL_SOURCE_STATE_AS_OF"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "source_cutoff_date"
+        ],
+        "properties": {
+          "source_cutoff_date": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

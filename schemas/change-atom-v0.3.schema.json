@@ -233,7 +233,8 @@
           "locator",
           "language",
           "text_hash",
-          "role"
+          "role",
+          "artifact_hash"
         ],
         "properties": {
           "span_id": {
@@ -273,6 +274,10 @@
               "SCOPE",
               "CONTEXT"
             ]
+          },
+          "artifact_hash": {
+            "type": "string",
+            "pattern": "^sha256:[0-9a-f]{64}$"
           }
         },
         "additionalProperties": false

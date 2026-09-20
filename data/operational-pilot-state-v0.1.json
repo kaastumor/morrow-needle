@@ -165,5 +165,9 @@
       "eligible_for_event_ingestion_after": "2026-09-20T20:16:46.806643+00:00",
       "seed_character": "COLD_START_SEED"
     }
-  ]
+  ],
+  "poll_cursor": {
+    "last_completed_end": "2026-09-20T20:16:46.806643+00:00",
+    "overlap_seconds": 300
+  }
 }

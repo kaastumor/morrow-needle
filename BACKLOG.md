@@ -39,7 +39,13 @@ Remaining attacks:
 ### P0-B — Cellar as ingestion backbone
 **Issue #2 — Probe Cellar structured text and identifier resolution**
 
-Goal: prove CELEX → official structured source → language expression → manifestation → normalized provision tree without fragile page scraping.
+Status: **SOURCE CONTRACT VALIDATED; AST INTEGRATION PENDING #4.**
+
+Validated path: CELEX → Cellar SPARQL inventory → language expression → deterministic manifestation selection → official byte delivery → immutable Source Observation.
+
+Key constraints: availability is expression-scoped; manifestations may be multi-stream; WEMI Item count is not internal stream count; raw artifact changes are not legal mutations.
+
+Remaining P0-B work is downstream of the canonical AST: normalize one modern FMX4 multi-stream act and one early HTML act.
 
 ### P0-C — Gold Corpus / regression contract
 **Issue #3 — Formalize Gold Corpus case format**

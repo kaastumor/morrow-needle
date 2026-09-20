@@ -1,0 +1,348 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "reg794-article3-provenance-dag",
+  "purpose": "Trace a VERIFIED semantic atom back to immutable official bytes and prove correction is append-only.",
+  "records": [
+    {
+      "record_id": "src-reg794-20070119-eng",
+      "record_type": "SOURCE_OBSERVATION",
+      "created_at": "2026-09-20T15:20:00Z",
+      "payload": {
+        "source_type": "CELLAR",
+        "identifier": "CELEX:02004R0794-20070119",
+        "resource_uri": "https://publications.europa.eu/resource/celex/02004R0794-20070119",
+        "language": "ENG",
+        "representation_class": "STRUCTURED_LEGAL_XML",
+        "observed_at": "2026-09-20T14:41:50Z",
+        "artifact_hash": "sha256:8d71b04b69b7b757e056c926f20676a355fe2bc5af22407858755efb256eb151",
+        "retrieval": {
+          "final_uri": "https://publications.europa.eu/resource/celex/02004R0794-20070119",
+          "media_type": "application/zip;mtype=fmx4",
+          "http_status": 200
+        }
+      },
+      "record_hash": "sha256:7fe8d5bb2c9a1f31c3a233177c1af3d8c7c65fa17ee45467129c7c95eeec95b3"
+    },
+    {
+      "record_id": "src-reg794-20080414-eng",
+      "record_type": "SOURCE_OBSERVATION",
+      "created_at": "2026-09-20T15:20:01Z",
+      "payload": {
+        "source_type": "CELLAR",
+        "identifier": "CELEX:02004R0794-20080414",
+        "resource_uri": "https://publications.europa.eu/resource/celex/02004R0794-20080414",
+        "language": "ENG",
+        "representation_class": "STRUCTURED_LEGAL_XML",
+        "observed_at": "2026-09-20T14:41:50Z",
+        "artifact_hash": "sha256:ccf4e4e92d8191fb22685b0ac9062ef64a816a39c81455f445052a4ad03a68f1",
+        "retrieval": {
+          "final_uri": "https://publications.europa.eu/resource/celex/02004R0794-20080414",
+          "media_type": "application/zip;mtype=fmx4",
+          "http_status": 200
+        }
+      },
+      "record_hash": "sha256:c1011e017835de0983308d9ddf051605b0ebb09f8181867650b52a93e086bffa"
+    },
+    {
+      "record_id": "src-reg271-2008-eng",
+      "record_type": "SOURCE_OBSERVATION",
+      "created_at": "2026-09-20T15:20:02Z",
+      "payload": {
+        "source_type": "CELLAR",
+        "identifier": "CELEX:32008R0271",
+        "resource_uri": "https://publications.europa.eu/resource/celex/32008R0271",
+        "language": "ENG",
+        "representation_class": "STRUCTURED_LEGAL_XML",
+        "observed_at": "2026-09-20T15:13:45Z",
+        "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7",
+        "retrieval": {
+          "final_uri": "http://publications.europa.eu/resource/cellar/bcadcc9a-c971-43e1-a520-9e922e20ee03.0006.04/zip",
+          "media_type": "application/zip;mtype=fmx4",
+          "http_status": 200
+        }
+      },
+      "record_hash": "sha256:5a8e65a568eb9078a433308da6082002653702a495d194b3b7f681c1e2ca92fe"
+    },
+    {
+      "record_id": "run-normalize-before",
+      "record_type": "DERIVATION_RUN",
+      "created_at": "2026-09-20T15:20:03Z",
+      "payload": {
+        "derivation_kind": "NORMALIZE_AST",
+        "execution_character": "DETERMINISTIC",
+        "implementation": {
+          "name": "needle.ast.formex.FormexASTParser",
+          "version": "0.1",
+          "config_hash": null
+        },
+        "input_record_ids": [
+          "src-reg794-20070119-eng"
+        ],
+        "output_entity_refs": [
+          {
+            "entity_type": "AST_STATE",
+            "entity_id": "CELEX:02004R0794-20070119"
+          }
+        ],
+        "executed_at": "2026-09-20T14:41:52Z"
+      },
+      "record_hash": "sha256:5a18b7cc76053b7d164e2e1269f6b85a615a0bc8b81bc05461e1023e49b0fbb3"
+    },
+    {
+      "record_id": "run-normalize-after",
+      "record_type": "DERIVATION_RUN",
+      "created_at": "2026-09-20T15:20:04Z",
+      "payload": {
+        "derivation_kind": "NORMALIZE_AST",
+        "execution_character": "DETERMINISTIC",
+        "implementation": {
+          "name": "needle.ast.formex.FormexASTParser",
+          "version": "0.1",
+          "config_hash": null
+        },
+        "input_record_ids": [
+          "src-reg794-20080414-eng"
+        ],
+        "output_entity_refs": [
+          {
+            "entity_type": "AST_STATE",
+            "entity_id": "CELEX:02004R0794-20080414"
+          }
+        ],
+        "executed_at": "2026-09-20T14:41:53Z"
+      },
+      "record_hash": "sha256:2e327ec63039ee89af79199b16b08441a77107ce96bf99a8f3c765f084460083"
+    },
+    {
+      "record_id": "run-diff-article3",
+      "record_type": "DERIVATION_RUN",
+      "created_at": "2026-09-20T15:20:05Z",
+      "payload": {
+        "derivation_kind": "DIFF",
+        "execution_character": "DETERMINISTIC",
+        "implementation": {
+          "name": "needle.mutation.diff.diff_target_subtree",
+          "version": "mutation-v0.2",
+          "config_hash": null
+        },
+        "input_record_ids": [
+          "run-normalize-before",
+          "run-normalize-after"
+        ],
+        "output_entity_refs": [
+          {
+            "entity_type": "MUTATION",
+            "entity_id": "reg794-article3-live-verified-v0.1"
+          }
+        ],
+        "executed_at": "2026-09-20T14:45:30Z"
+      },
+      "record_hash": "sha256:84aff5a781b14d53581821586c6bef9b4406e887370297fee13ae4a95eb74e9d"
+    },
+    {
+      "record_id": "run-reconcile-article3",
+      "record_type": "DERIVATION_RUN",
+      "created_at": "2026-09-20T15:20:06Z",
+      "payload": {
+        "derivation_kind": "RECONCILE",
+        "execution_character": "DETERMINISTIC",
+        "implementation": {
+          "name": "needle.mutation.reconcile.reconcile_candidate",
+          "version": "mutation-v0.2",
+          "config_hash": null
+        },
+        "input_record_ids": [
+          "run-diff-article3",
+          "src-reg271-2008-eng"
+        ],
+        "output_entity_refs": [
+          {
+            "entity_type": "MUTATION",
+            "entity_id": "reg794-article3-live-verified-v0.1"
+          }
+        ],
+        "executed_at": "2026-09-20T14:45:35Z"
+      },
+      "record_hash": "sha256:7d4747a85f8ccd8c7a0b608f4cfded880692720bdd3418b09a5592e7a1a04211"
+    },
+    {
+      "record_id": "support-mutation-authentic-cause",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T15:20:07Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "MUTATION",
+          "entity_id": "reg794-article3-live-verified-v0.1"
+        },
+        "source_observation_id": "src-reg271-2008-eng",
+        "source_span": {
+          "locator": "L_2008082EN.01000101.xml#normalized-chars:6924-6962",
+          "language": "ENG",
+          "text_hash": "sha256:b0b7d3453e67ae9419cd44af197fea25c77526d3d60a64e4e2df2198a731a8f8",
+          "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
+        },
+        "role": "CAUSE",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-reconcile-article3"
+      },
+      "record_hash": "sha256:78ecc053013a8d0711f34719eabee5c8cd4a991261840946e80892f4c0ea7a92"
+    },
+    {
+      "record_id": "run-temporal-sani",
+      "record_type": "DERIVATION_RUN",
+      "created_at": "2026-09-20T15:20:08Z",
+      "payload": {
+        "derivation_kind": "TEMPORAL_RESOLVE",
+        "execution_character": "DETERMINISTIC",
+        "implementation": {
+          "name": "needle.temporal",
+          "version": "temporal-v0.1",
+          "config_hash": null
+        },
+        "input_record_ids": [
+          "src-reg271-2008-eng",
+          "run-reconcile-article3"
+        ],
+        "output_entity_refs": [
+          {
+            "entity_type": "TEMPORAL_ASSERTION",
+            "entity_id": "reg794-art3-p3-sani-application-start"
+          }
+        ],
+        "executed_at": "2026-09-20T15:08:00Z"
+      },
+      "record_hash": "sha256:644ca8420381367645af90cff86a9dbed291aefa42807fbaa5b2d1f24d2d527d"
+    },
+    {
+      "record_id": "support-temporal-sani",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T15:20:09Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "TEMPORAL_ASSERTION",
+          "entity_id": "reg794-art3-p3-sani-application-start"
+        },
+        "source_observation_id": "src-reg271-2008-eng",
+        "source_span": {
+          "locator": "L_2008082EN.01000101.xml#normalized-chars:7414-7551",
+          "language": "ENG",
+          "text_hash": "sha256:e4be9c1a527f6ef3ec8f4214aae06b58d86477e015651327e71ca83d45aa3d8a",
+          "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
+        },
+        "role": "TEMPORAL",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-temporal-sani"
+      },
+      "record_hash": "sha256:2741995e04563bdaab029fa24b23e5bf7a6c3d402264242b80fb5b8b0c75a8b8"
+    },
+    {
+      "record_id": "run-semantic-sani",
+      "record_type": "DERIVATION_RUN",
+      "created_at": "2026-09-20T15:20:10Z",
+      "payload": {
+        "derivation_kind": "SEMANTIC_EXTRACT",
+        "execution_character": "DETERMINISTIC",
+        "implementation": {
+          "name": "needle.semantic.adversary",
+          "version": "change-atom-v0.3",
+          "config_hash": null
+        },
+        "input_record_ids": [
+          "run-reconcile-article3",
+          "support-temporal-sani",
+          "src-reg271-2008-eng"
+        ],
+        "output_entity_refs": [
+          {
+            "entity_type": "CHANGE_ATOM",
+            "entity_id": "reg794-art3-sani-duty-v0.1"
+          }
+        ],
+        "executed_at": "2026-09-20T15:14:00Z"
+      },
+      "record_hash": "sha256:d7867de9cf0c1abbf828cf4f8a94ec9911905cbdf42c965fcc231f161238dc15"
+    },
+    {
+      "record_id": "support-atom-sani",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T15:20:11Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "CHANGE_ATOM",
+          "entity_id": "reg794-art3-sani-duty-v0.1"
+        },
+        "source_observation_id": "src-reg271-2008-eng",
+        "source_span": {
+          "locator": "L_2008082EN.01000101.xml#normalized-chars:7414-7551",
+          "language": "ENG",
+          "text_hash": "sha256:e4be9c1a527f6ef3ec8f4214aae06b58d86477e015651327e71ca83d45aa3d8a",
+          "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
+        },
+        "role": "SEMANTIC_CLAIM",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-semantic-sani"
+      },
+      "record_hash": "sha256:3128873bffdbc36a03261816d36161f20a8c56259a3fbf3647eaad9450a3ab63"
+    },
+    {
+      "record_id": "support-audit-locator-v1",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T15:20:12Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "OTHER",
+          "entity_id": "TEST_ONLY:sani-locator-correction"
+        },
+        "source_observation_id": "src-reg271-2008-eng",
+        "source_span": {
+          "locator": "Article 3(3) SANI sentence",
+          "language": "ENG",
+          "text_hash": "sha256:e4be9c1a527f6ef3ec8f4214aae06b58d86477e015651327e71ca83d45aa3d8a",
+          "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
+        },
+        "role": "CONTEXT",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-semantic-sani"
+      },
+      "record_hash": "sha256:1284565102411789565caebbde53a23684f6cd3616c8d6723192c6f88905543e"
+    },
+    {
+      "record_id": "support-audit-locator-v2",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T15:20:13Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "OTHER",
+          "entity_id": "TEST_ONLY:sani-locator-correction"
+        },
+        "source_observation_id": "src-reg271-2008-eng",
+        "source_span": {
+          "locator": "L_2008082EN.01000101.xml#normalized-chars:7414-7551",
+          "language": "ENG",
+          "text_hash": "sha256:e4be9c1a527f6ef3ec8f4214aae06b58d86477e015651327e71ca83d45aa3d8a",
+          "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
+        },
+        "role": "CONTEXT",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-semantic-sani"
+      },
+      "record_hash": "sha256:529eb45e4a37ad3feac7fa1c9a1730e52189aaea32c77a40a429d262c0295788"
+    },
+    {
+      "record_id": "supersede-audit-locator-v1",
+      "record_type": "SUPERSESSION",
+      "created_at": "2026-09-20T15:20:14Z",
+      "payload": {
+        "character": "CORRECTION",
+        "superseded_record_ids": [
+          "support-audit-locator-v1"
+        ],
+        "replacement_record_ids": [
+          "support-audit-locator-v2"
+        ],
+        "reason": "Test-only correction replaces a coarse legal locator with the exact live Cellar character span without mutating the original record."
+      },
+      "record_hash": "sha256:9932767a13ccd43c6ca5977d176dd58d9b7699c13ebd7544a1ac3d1291e5915b"
+    }
+  ]
+}

@@ -3,7 +3,11 @@ from pathlib import Path
 
 from jsonschema import Draft202012Validator
 
-from needle.mutation.diff import diff_same_location, diff_table_cells
+from needle.mutation.diff import (
+    diff_same_location,
+    diff_table_cells,
+    diff_target_subtree,
+)
 from needle.mutation.reconcile import reconcile_candidate
 from needle.mutation.structural import reclassify_with_lineage
 
@@ -456,3 +460,24 @@ def test_real_official_narrative_lineage_can_support_move():
         "reg1308-art97-old-p3-moved-to-new-p4"
     ]
     assert list(Draft202012Validator(V2_SCHEMA).iter_errors(mutation)) == []
+
+
+def test_targeted_subtree_diff_detects_descendant_change_at_article_level():
+    before = _ast("before-subtree", "Old descendant paragraph text.")
+    after = _ast("after-subtree", "New descendant paragraph text.")
+
+    candidate = diff_target_subtree(
+        before,
+        after,
+        kind="ARTICLE",
+        citation_path="Article 3",
+        language="ENG",
+    )
+    assert candidate is not None
+    assert candidate["operation"] == "REPLACE"
+    assert candidate["comparison_scope"] == "SUBTREE"
+    assert candidate["alignment_basis"] == "EXACT_CITATION_AND_KIND"
+    assert candidate["before"]["text_hash"] != candidate["after"]["text_hash"]
+    assert candidate["before"]["text_length"] > 0
+    assert candidate["after"]["text_length"] > 0
+    assert list(Draft202012Validator(V2_SCHEMA).iter_errors(candidate)) == []

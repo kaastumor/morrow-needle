@@ -19,6 +19,7 @@ FEED="https://publications.europa.eu/webapi/notification/ingestion"
 CELLAR="https://publications.europa.eu/resource/celex/{celex}"
 CAUSE="32026R2104"
 TARGET_BASE="02021R0404"
+KNOWN_BEFORE="02021R0404-20260817"
 EVENT_START="2026-09-18T10:32:18+02:00"
 EVENT_END="2026-09-18T10:32:23+02:00"
 SCAN_START=date(2026,9,1)
@@ -220,6 +221,27 @@ def main() -> int:
             "missing expected authentic source spans: "+", ".join(missing)
         )
 
+    latest_before=fetch_celex(KNOWN_BEFORE)
+    if latest_before["status"] != 200 or not latest_before.get("text"):
+        raise AssertionError(
+            f"known current pre-2104 consolidated checkpoint unavailable: "
+            f"{KNOWN_BEFORE}"
+        )
+    latest_before_text=latest_before.pop("text")
+    latest_before["markers"]={
+        marker:(marker in latest_before_text)
+        for marker in ("US-2.1404","US-2.1405","US-2.1406")
+    }
+    if not latest_before["markers"]["US-2.1404"]:
+        raise AssertionError("pre-change checkpoint lacks anchor US-2.1404")
+    if (
+        latest_before["markers"]["US-2.1405"]
+        or latest_before["markers"]["US-2.1406"]
+    ):
+        raise AssertionError(
+            "pre-change checkpoint unexpectedly contains new 2104 zones"
+        )
+
     checkpoints=scan_checkpoints()
     before=[
         item for item in checkpoints
@@ -253,6 +275,7 @@ def main() -> int:
             "consolidated_celex_prefix":TARGET_BASE,
             "scan_start":SCAN_START.isoformat(),
             "scan_end":SCAN_END.isoformat(),
+            "latest_pre_change_checkpoint":latest_before,
             "checkpoint_count":len(checkpoints),
             "checkpoints":checkpoints,
         },
@@ -264,6 +287,9 @@ def main() -> int:
             ),
             "instruction_character":"AUTHENTIC_EXPLICIT_INSERTION",
             "verification_route":verification_route,
+            "consolidation_lag_state":(
+                "PRE_CHANGE_CHECKPOINT_AVAILABLE_POST_CHANGE_CHECKPOINT_MISSING"
+            ),
             "before_checkpoint_count":len(before),
             "after_checkpoint_count":len(after),
             "verification_state":(
@@ -289,6 +315,11 @@ def main() -> int:
         "event_key":event["event_key"],
         "root_cellar_id":event["root_cellar_id"],
         "cause_hash":cause["artifact_hash"],
+        "latest_before":{
+            "celex":latest_before["celex"],
+            "artifact_hash":latest_before["artifact_hash"],
+            "markers":latest_before["markers"],
+        },
         "checkpoint_count":len(checkpoints),
         "before_count":len(before),
         "after_count":len(after),

@@ -87,7 +87,8 @@
                 "kind": {
                   "enum": [
                     "STRUCTURED_FILTER",
-                    "LEXICAL_MATCH"
+                    "LEXICAL_MATCH",
+                    "TEMPORAL_EVALUATION"
                   ]
                 },
                 "field": {
@@ -196,7 +197,9 @@
               "SOURCE_AVAILABILITY_UNRESOLVED",
               "NOT_ASSERTED_AS_OF_SOURCE_DATE",
               "TEMPORAL_NOT_ACTIVE",
-              "TEMPORAL_NOT_ASSERTED"
+              "TEMPORAL_NOT_ASSERTED",
+              "UNKNOWN_TEMPORAL_REFERENCE",
+              "TEMPORAL_PROVENANCE_GAP"
             ]
           },
           "temporal_evaluation": {

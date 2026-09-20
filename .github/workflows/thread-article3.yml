@@ -9,6 +9,12 @@ on:
       - "scripts/build_article3_thread_provenance.py"
       - "src/needle/ast/**"
       - "src/needle/mutation/**"
+      - "src/needle/thread/**"
+      - "scripts/build_thread_article3_preview.py"
+      - "tests/test_thread_gold.py"
+      - "tests/test_thread_render.py"
+      - "fixtures/gold/reg794-article3-thread-v0.1.json"
+      - "schemas/thread-v0.1.schema.json"
       - "fixtures/thread/**"
       - "tests/test_thread_article3.py"
       - ".github/workflows/thread-article3.yml"
@@ -32,11 +38,14 @@ jobs:
         run: python -m pip install -e ".[test]"
       - name: Run Thread unit tests
         run: |
-          if [ -f tests/test_thread_article3.py ]; then
-            python -m pytest -q tests/test_thread_article3.py
-          fi
+          python -m pytest -q \
+            tests/test_thread_article3.py \
+            tests/test_thread_gold.py \
+            tests/test_thread_render.py
       - name: Build Thread provenance closure candidate
         run: python scripts/build_article3_thread_provenance.py
+      - name: Build public Thread preview
+        run: python scripts/build_thread_article3_preview.py
       - name: Verify Article 3 2004 baseline from live official sources
         run: python scripts/probe_thread_article3_2004.py
       - name: Verify Article 3 2025 transition from live official sources
@@ -53,4 +62,5 @@ jobs:
             artifacts/thread-2025
             artifacts/thread-corrigendum
             artifacts/thread-provenance
+            artifacts/thread-preview
           if-no-files-found: error

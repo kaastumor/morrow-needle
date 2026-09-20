@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+ xmlns:notifReq="http://publications.europa.eu/rss/notificationRequest"
+ xmlns:notifEntry="http://publications.europa.eu/rss/notificationEntry">
+ <channel>
+  <notifReq:startDate>2026-09-15T00:05:00.000+02:00</notifReq:startDate>
+  <notifReq:endDate>2026-09-15T00:06:59.999+02:00</notifReq:endDate>
+  <notifReq:page>1</notifReq:page>
+  <notifReq:moreEntries>false</notifReq:moreEntries>
+  <item>
+   <guid isPermaLink="false">cellar:55b240bf-477b-11f0-85ba-01aa75ed71a1_2026-09-15T00:05:50.647+02:00</guid>
+   <notifEntry:cellarId>cellar:55b240bf-477b-11f0-85ba-01aa75ed71a1</notifEntry:cellarId>
+   <notifEntry:rootCellarId>cellar:55b240bf-477b-11f0-85ba-01aa75ed71a1</notifEntry:rootCellarId>
+   <notifEntry:type>update</notifEntry:type>
+   <notifEntry:priority>BULK</notifEntry:priority>
+   <notifEntry:wemiClass>WORK</notifEntry:wemiClass>
+   <notifEntry:classes>
+    <notifEntry:class>http://publications.europa.eu/ontology/cdm#evolutive_work</notifEntry:class>
+    <notifEntry:class>http://publications.europa.eu/ontology/cdm#serial_work</notifEntry:class>
+    <notifEntry:class>http://publications.europa.eu/ontology/cdm#resource_legal</notifEntry:class>
+    <notifEntry:class>http://publications.europa.eu/ontology/cdm#work</notifEntry:class>
+   </notifEntry:classes>
+   <notifEntry:identifiers>
+    <notifEntry:identifier>celex:62024CC0286</notifEntry:identifier>
+    <notifEntry:identifier>ecli:ECLI%3AEU%3AC%3A2025%3A436</notifEntry:identifier>
+   </notifEntry:identifiers>
+   <notifEntry:date>2026-09-15T00:05:50.647+02:00</notifEntry:date>
+  </item>
+ </channel>
+</rss>

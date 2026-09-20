@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import date, timedelta
+from datetime import date
 import json
 from pathlib import Path
 from typing import Any
@@ -57,6 +57,40 @@ def _assertion(
     return assertion
 
 
+def _end_history(
+    registry: dict[str, dict[str, Any]],
+    regime: dict[str, Any],
+) -> list[dict[str, Any]]:
+    result = [
+        _assertion(
+            registry,
+            assertion_id,
+            boundary="END",
+            regime_id=regime["regime_id"],
+        )
+        for assertion_id in regime["end_assertion_ids"]
+    ]
+    previous = result[0]
+    for current in result[1:]:
+        overrides=set(
+            current.get("scope", {}).get("overrides_assertion_ids", [])
+        )
+        if previous["assertion_id"] not in overrides:
+            raise HalfLifeError(
+                f"{current['assertion_id']}: extension history does not "
+                f"explicitly override prior end {previous['assertion_id']}"
+            )
+        if date.fromisoformat(current["normalized_date"]) <= date.fromisoformat(
+            previous["normalized_date"]
+        ):
+            raise HalfLifeError(
+                f"{current['assertion_id']}: Half-Life extension must move "
+                "the regime end later"
+            )
+        previous=current
+    return result
+
+
 def _boundary_view(assertion: dict[str, Any]) -> dict[str, Any]:
     return {
         "date":assertion["normalized_date"],
@@ -83,6 +117,27 @@ def _interval(
         "end":_boundary_view(end),
         "duration_days":_inclusive_days(start_date,end_date),
     }
+
+
+def _extensions(
+    *,
+    regime_id: str,
+    end_history: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    result=[]
+    for previous,current in zip(end_history,end_history[1:]):
+        result.append({
+            "regime_id":regime_id,
+            "previous_end":previous["normalized_date"],
+            "new_end":current["normalized_date"],
+            "added_days":(
+                date.fromisoformat(current["normalized_date"])
+                - date.fromisoformat(previous["normalized_date"])
+            ).days,
+            "supersedes_assertion_id":previous["assertion_id"],
+            "extension_assertion_id":current["assertion_id"],
+        })
+    return result
 
 
 def _validate_lineage(
@@ -122,7 +177,6 @@ def _validate_lineage(
             + ", ".join(sorted(missing_refs))
         )
 
-    # v0.2 must never regress into a second legal-time store.
     encoded=json.dumps(lineage,sort_keys=True)
     for forbidden in (
         '"application_start"',
@@ -143,8 +197,8 @@ def build_half_life_view(
 ) -> dict[str, Any]:
     """Build a disposable temporary-regime history view from canonical facts.
 
-    The composition is reference-only. Every date comes from a referenced
-    P0-E Temporal Assertion. Regime genealogy supplies ancestry only.
+    Every date comes from referenced P0-E Temporal Assertions. The composition
+    contains identifiers only; Regime Lineage supplies genealogy only.
     """
     root=Path(root)
     if composition.get("composition_character") != "REFERENCE_ONLY":
@@ -165,18 +219,7 @@ def build_half_life_view(
         boundary="START",
         regime_id=original_id,
     )
-    original_end=_assertion(
-        registry,
-        original["original_end_assertion_id"],
-        boundary="END",
-        regime_id=original_id,
-    )
-    current_end=_assertion(
-        registry,
-        original["current_end_assertion_id"],
-        boundary="END",
-        regime_id=original_id,
-    )
+    original_ends=_end_history(registry,original)
 
     successors=[]
     successor_ids=[]
@@ -189,16 +232,11 @@ def build_half_life_view(
             boundary="START",
             regime_id=regime_id,
         )
-        end=_assertion(
-            registry,
-            item["application_end_assertion_id"],
-            boundary="END",
-            regime_id=regime_id,
-        )
-        successors.append((item,start,end))
+        ends=_end_history(registry,item)
+        successors.append((item,start,ends))
 
     required_lineage_temporal_refs={
-        current_end["assertion_id"],
+        original_ends[-1]["assertion_id"],
         successors[0][1]["assertion_id"],
     }
     _validate_lineage(
@@ -212,45 +250,33 @@ def build_half_life_view(
     original_plan=_interval(
         regime_id=original_id,
         start=original_start,
-        end=original_end,
+        end=original_ends[0],
     )
     actual_first=_interval(
         regime_id=original_id,
         start=original_start,
-        end=current_end,
+        end=original_ends[-1],
     )
 
-    extensions=[]
-    if current_end["assertion_id"] != original_end["assertion_id"]:
-        overrides=set(
-            current_end.get("scope", {}).get("overrides_assertion_ids", [])
-        )
-        if original_end["assertion_id"] not in overrides:
-            raise HalfLifeError(
-                f"{current_end['assertion_id']}: current end does not "
-                f"explicitly override original end {original_end['assertion_id']}"
-            )
-        added=(
-            date.fromisoformat(current_end["normalized_date"])
-            - date.fromisoformat(original_end["normalized_date"])
-        ).days
-        if added <= 0:
-            raise HalfLifeError(
-                "Half-Life v0.1 extension must move the end date later"
-            )
-        extensions.append({
-            "regime_id":original_id,
-            "previous_end":original_end["normalized_date"],
-            "new_end":current_end["normalized_date"],
-            "added_days":added,
-            "supersedes_assertion_id":original_end["assertion_id"],
-            "extension_assertion_id":current_end["assertion_id"],
-        })
+    extensions=_extensions(
+        regime_id=original_id,
+        end_history=original_ends,
+    )
 
     episodes=[actual_first]
-    for item,start,end in successors:
+    for item,start,ends in successors:
+        extensions.extend(
+            _extensions(
+                regime_id=item["regime_id"],
+                end_history=ends,
+            )
+        )
         episodes.append(
-            _interval(regime_id=item["regime_id"],start=start,end=end)
+            _interval(
+                regime_id=item["regime_id"],
+                start=start,
+                end=ends[-1],
+            )
         )
 
     gaps=[]
@@ -291,13 +317,11 @@ def build_half_life_view(
             "episode accounting does not reconcile to calendar span"
         )
 
-    assertion_ids=[
-        original_start["assertion_id"],
-        original_end["assertion_id"],
-        current_end["assertion_id"],
-    ]
-    for _,start,end in successors:
-        assertion_ids.extend([start["assertion_id"],end["assertion_id"]])
+    assertion_ids=[original_start["assertion_id"]]
+    assertion_ids.extend(item["assertion_id"] for item in original_ends)
+    for _,start,ends in successors:
+        assertion_ids.append(start["assertion_id"])
+        assertion_ids.extend(item["assertion_id"] for item in ends)
 
     return {
         "schema_version":"half-life-view-v0.1",
@@ -336,15 +360,18 @@ def build_half_life_view(
 
 def render_half_life_text(view: dict[str, Any]) -> str:
     summary=view["summary"]
-    extension=view["extensions"][0] if view["extensions"] else None
     gap=view["gaps"][0] if view["gaps"] else None
 
     short=(
         f"The temporary regime was originally planned for "
         f"{summary['original_planned_days']:,} days"
     )
-    if extension:
-        short += f", then extended by {extension['added_days']:,} days"
+    if view["extensions"]:
+        short += (
+            f", then extended by {summary['extension_added_days']:,} days "
+            f"across {len(view['extensions'])} evidenced extension"
+            + ("s" if len(view["extensions"]) != 1 else "")
+        )
     if gap:
         short += (
             f". After expiry there was a {gap['duration_days']:,}-day gap "
@@ -362,10 +389,11 @@ def render_half_life_text(view: dict[str, Any]) -> str:
         f"- Original planned duration: {summary['original_planned_days']:,} days.",
         f"- First regime after evidenced extensions: {summary['first_regime_actual_days']:,} days.",
     ]
-    if extension:
+    for item in view["extensions"]:
         lines.append(
-            f"- Extension beyond the original planned end: "
-            f"{extension['added_days']:,} days."
+            f"- Extension for {item['regime_id']}: "
+            f"{item['previous_end']} → {item['new_end']} "
+            f"(+{item['added_days']:,} days)."
         )
     for item in view["gaps"]:
         lines.append(

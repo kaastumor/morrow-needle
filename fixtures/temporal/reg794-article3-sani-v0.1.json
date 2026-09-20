@@ -1,0 +1,43 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "reg794-article3-sani-application",
+  "assertions": [
+    {
+      "assertion_id": "reg794-art3-p3-sani-application-start",
+      "subject_ref": {
+        "kind": "PROVISION_INSTANCE",
+        "identifier": "CELEX:32004R0794#ARTICLE_3_PARAGRAPH_3",
+        "locator": "Article 3(3)"
+      },
+      "dimension": "APPLICATION",
+      "boundary": "START",
+      "inclusive": true,
+      "trigger": {
+        "kind": "ABSOLUTE_DATE",
+        "date": "2008-07-01",
+        "source_expression": "As from 1 July 2008"
+      },
+      "normalized_date": "2008-07-01",
+      "scope": {
+        "mode": "OVERRIDE",
+        "applies_to": [
+          "RULE:32004R0794:ARTICLE3_3:SANI_TRANSMISSION"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_ABSOLUTE",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32008R0271",
+          "locator": "Article 1 replacement of Article 3(3)",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        }
+      ],
+      "notes": "Rule-specific application date inside the Article 3 replacement; separate from the 14 April 2008 text-state mutation date."
+    }
+  ]
+}

@@ -198,9 +198,13 @@ def main() -> int:
         ),
         "zone_1405_row":find_span(
             cause_text,
-            r"US\s+United\s+States\s+US-2\.1405\s+BPP,\s*BPR,\s*DOC,"
-            r"\s*DOR,\s*SP,\s*SR,\s*POU-LT20,\s*HEP,\s*HER,\s*"
-            r"HE-LT20\s+N,\s*P1\s+27\.8\.2026"
+            # Formex table serialization may omit/reorder repeated country
+            # cells when flattened. Anchor on the source-native zone key and
+            # its own row payload rather than presentation repetition.
+            r"US-2\.1405(?:(?!US-2\.1406).){0,600}?"
+            r"BPP,\s*BPR,\s*DOC,\s*DOR,\s*SP,\s*SR,\s*POU-LT20,"
+            r"\s*HEP,\s*HER,\s*HE-LT20(?:(?!US-2\.1406).){0,250}?"
+            r"27\.8\.2026"
         ),
         "entry_into_force":find_span(
             cause_text,

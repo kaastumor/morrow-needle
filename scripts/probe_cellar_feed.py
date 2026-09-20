@@ -12,19 +12,16 @@ from needle.updates.cellar_feed import parse_feed
 
 
 ENDPOINT = "https://publications.europa.eu/webapi/notification/ingestion"
-TARGET_NOTIFICATION_ID = "7081775"
+TARGET_CELLAR_ID = "cellar:55b240bf-477b-11f0-85ba-01aa75ed71a1"
+TARGET_CELEX = "celex:62024CC0286"
+TARGET_INGESTION_TIME = "2026-09-15T00:05:50.647+02:00"
 WINDOW = {
-    "startDate":"2012-06-11T08:13:00+01:00",
-    "endDate":"2012-06-11T08:14:59+01:00",
+    "startDate":"2026-09-15T00:05:50.000+02:00",
+    "endDate":"2026-09-15T00:05:51.999+02:00",
     "type":"UPDATE",
     "wemiClasses":"work",
     "page":"1",
 }
-# The Publications Office documentation prints notification 7081775 at
-# 2012-06-11T09:13:58+01:00. Live Cellar normalizes June timestamps to
-# +02:00. This probe deliberately queries the corresponding 09:13 CEST
-# wall-clock window (08:13+01) to test whether the documentation carried a
-# daylight-saving offset mismatch.
 
 
 def fetch_feed(accept: str) -> tuple[bytes, requests.Response]:
@@ -49,11 +46,14 @@ def target(page):
     matches = [
         event
         for event in page.events
-        if event["notification_id"] == TARGET_NOTIFICATION_ID
+        if event["cellar_id"] == TARGET_CELLAR_ID
+        and event["ingestion_time"] == TARGET_INGESTION_TIME
+        and TARGET_CELEX in event["identifiers"]
     ]
     if len(matches) != 1:
         raise AssertionError(
-            f"expected one notification {TARGET_NOTIFICATION_ID}, "
+            "expected one live anchor event "
+            f"{TARGET_CELLAR_ID} / {TARGET_INGESTION_TIME}, "
             f"got {len(matches)}"
         )
     return matches[0]
@@ -130,7 +130,7 @@ def main() -> int:
 
         if event["action"] != "UPDATE":
             raise AssertionError(f"{name}: expected UPDATE")
-        if "celex:32006D0241" not in event["identifiers"]:
+        if TARGET_CELEX not in event["identifiers"]:
             raise AssertionError(f"{name}: CELEX identifier missing")
         if event["wemi_levels"] != ["WORK"]:
             raise AssertionError(
@@ -167,12 +167,14 @@ def main() -> int:
         "probe_version":"0.1",
         "endpoint":ENDPOINT,
         "query":WINDOW,
-        "target_notification_id":TARGET_NOTIFICATION_ID,
+        "target_cellar_id":TARGET_CELLAR_ID,
+        "target_celex":TARGET_CELEX,
+        "target_ingestion_time":TARGET_INGESTION_TIME,
         "rss_atom_semantically_equal":True,
         "representations":outputs,
     }
 
-    out = out_dir / "live-7081775.json"
+    out = out_dir / "live-62024CC0286-anchor.json"
     out.write_text(
         json.dumps(result,indent=2,ensure_ascii=False),
         encoding="utf-8",

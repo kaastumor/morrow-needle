@@ -175,7 +175,7 @@ class FormexASTParser:
 
                 self.parsed_entries.append(name)
                 self.builder.visible_chars_source_estimate += len(text_of(root))
-                self._walk_structures(root, self.root_id, native_path=name, citation_stack=[])
+                self._walk_structures(root, self.root_id, native_path=name, citation_stack=[], capture_unstructured_text=True)
 
                 modification_result = parse_modification_markers(text, source_entry=name)
                 for marker in modification_result.markers:
@@ -224,6 +224,7 @@ class FormexASTParser:
         *,
         native_path: str,
         citation_stack: list[str],
+        capture_unstructured_text: bool,
     ) -> None:
         for child in list(element):
             tag = local(child.tag)
@@ -288,6 +289,7 @@ class FormexASTParser:
                     node_id,
                     native_path=native_path,
                     citation_stack=next_stack,
+                    capture_unstructured_text=False,
                 )
                 continue
 
@@ -297,11 +299,15 @@ class FormexASTParser:
                     parent_id,
                     native_path=native_path,
                     citation_stack=citation_stack,
+                    capture_unstructured_text=capture_unstructured_text,
                 )
                 continue
 
             # Text outside any mapped structural child is preserved on the current
             # canonical node. Unknown wrapper names are reported, not silently lost.
+            if not capture_unstructured_text:
+                continue
+
             value = text_of(child)
             if value:
                 if tag not in KNOWN_TEXT_WRAPPERS:

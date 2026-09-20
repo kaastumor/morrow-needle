@@ -14,8 +14,8 @@ from needle.updates.cellar_feed import parse_feed
 ENDPOINT = "https://publications.europa.eu/webapi/notification/ingestion"
 TARGET_NOTIFICATION_ID = "7081775"
 WINDOW = {
-    "startDate":"2012-06-11T09:13:58+01:00",
-    "endDate":"2012-06-11T09:13:58+01:00",
+    "startDate":"2012-06-11T09:13:00+01:00",
+    "endDate":"2012-06-11T09:14:59+01:00",
     "type":"UPDATE",
     "wemiClasses":"work",
     "page":"1",
@@ -76,13 +76,44 @@ def main() -> int:
     )
     validator = Draft202012Validator(schema)
 
+    out_dir = Path("artifacts/cellar-feed")
+    out_dir.mkdir(parents=True, exist_ok=True)
+
     outputs = {}
     for name, accept in {
         "rss":"application/rss+xml",
         "atom":"application/atom+xml",
     }.items():
         payload, response = fetch_feed(accept)
+        raw_path = out_dir / f"live-{name}.xml"
+        raw_path.write_bytes(payload)
+
         page = parse_feed(payload)
+        parsed_events = list(page.events)
+        event_ids = [event["notification_id"] for event in parsed_events]
+
+        debug = {
+            "accept":accept,
+            "request_url":response.url,
+            "status_code":response.status_code,
+            "content_type":response.headers.get("Content-Type"),
+            "payload_sha256":hashlib.sha256(payload).hexdigest(),
+            "payload_bytes":len(payload),
+            "page":{
+                "format":page.format,
+                "window_start":page.window_start,
+                "window_end":page.window_end,
+                "page":page.page,
+                "more_entries":page.more_entries,
+                "event_count":len(parsed_events),
+                "event_ids":event_ids,
+            },
+        }
+        (out_dir / f"live-{name}-debug.json").write_text(
+            json.dumps(debug,indent=2,ensure_ascii=False),
+            encoding="utf-8",
+        )
+
         event = target(page)
 
         errors = list(validator.iter_errors(event))
@@ -136,8 +167,7 @@ def main() -> int:
         "representations":outputs,
     }
 
-    out = Path("artifacts/cellar-feed/live-7081775.json")
-    out.parent.mkdir(parents=True, exist_ok=True)
+    out = out_dir / "live-7081775.json"
     out.write_text(
         json.dumps(result,indent=2,ensure_ascii=False),
         encoding="utf-8",

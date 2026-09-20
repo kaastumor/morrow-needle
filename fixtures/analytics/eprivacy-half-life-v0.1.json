@@ -1,0 +1,33 @@
+{
+  "schema_version": "half-life-composition-v0.1",
+  "analytic_id": "half-life:eprivacy-temporary-derogation",
+  "topic": "Temporary ePrivacy derogation for voluntary online child sexual abuse detection",
+  "composition_character": "REFERENCE_ONLY",
+  "temporal_fixture_path": "fixtures/temporal/eprivacy-temporary-regime-v0.1.json",
+  "lineage_fixture_path": "fixtures/lineage/reg2021-1232-to-reg2026-1881-gap-v0.2.json",
+  "lineage_edge_id": "eprivacy-2021-regime-reenacted-as-2026",
+  "original_regime": {
+    "regime_id": "REGIME:2021R1232_AS_EXTENDED",
+    "application_start_assertion_id": "eprivacy-2021-application-start",
+    "original_end_assertion_id": "eprivacy-2021-original-application-end",
+    "current_end_assertion_id": "eprivacy-2021-extended-application-end"
+  },
+  "successor_regimes": [
+    {
+      "regime_id": "REGIME:2026R1881",
+      "application_start_assertion_id": "eprivacy-2026-application-start",
+      "application_end_assertion_id": "eprivacy-2026-application-end"
+    }
+  ],
+  "guardrails": [
+    "Temporary is a legal/source characterization, not an evaluative criticism.",
+    "Genealogical succession does not imply uninterrupted applicability.",
+    "No proposition-level rule continuity is asserted by this analytic.",
+    "Durations, ratios and gaps are derived values, not canonical legal-time facts.",
+    "Future extensions, expiry changes or successors are not predicted."
+  ],
+  "unknowns": [
+    "Proposition-by-proposition continuity between the predecessor and successor temporary regimes remains unresolved.",
+    "The analytic makes no claim about future extension or replacement after the currently evidenced successor end."
+  ]
+}

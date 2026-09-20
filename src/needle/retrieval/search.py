@@ -35,7 +35,7 @@ _KIND_PRIORITY = {
     "THREAD":5,
 }
 
-_FIELD_PRIORITY = {
+_EXACT_FIELD_PRIORITY = {
     "ENTITY_ID":0,
     "THREAD_ID":1,
     "ACT_ID":2,
@@ -45,7 +45,26 @@ _FIELD_PRIORITY = {
     "SOURCE_EXPRESSION":6,
 }
 
+_FUZZY_FIELD_PRIORITY = {
+    "CLAIM":0,
+    "RULE_STATEMENT":1,
+    "SOURCE_EXPRESSION":2,
+    "PROVISION_PATH":3,
+    "SOURCE_IDENTIFIER":4,
+    "QUALIFIER_TERM":5,
+    "TRIGGER_TERM":6,
+    "ENTITY_ID":20,
+    "THREAD_ID":21,
+    "ACT_ID":22,
+}
+
 _QUALITY_PRIORITY = {"EXACT":0, "PREFIX":1, "SUBSTRING":2}
+
+
+def _field_priority(field: str, quality: str) -> int:
+    if quality == "EXACT":
+        return _EXACT_FIELD_PRIORITY.get(field, 50)
+    return _FUZZY_FIELD_PRIORITY.get(field, 50)
 
 
 def _document_values(document: dict[str, Any], field: str) -> list[str]:
@@ -137,7 +156,7 @@ def _text_match(
             quality = "SUBSTRING"
         hits.append((
             _QUALITY_PRIORITY[quality],
-            _FIELD_PRIORITY.get(item["field"], 50),
+            _field_priority(item["field"], quality),
             item["field"],
             item["value"],
             quality,
@@ -147,8 +166,13 @@ def _text_match(
 
     hits.sort()
     best_quality = hits[0][4]
-    best_fields = sorted({hit[2] for hit in hits if hit[4] == best_quality})
-    best_values = sorted({hit[3] for hit in hits if hit[4] == best_quality})
+    best_field_priority = hits[0][1]
+    best_hits = [
+        hit for hit in hits
+        if hit[4] == best_quality and hit[1] == best_field_priority
+    ]
+    best_fields = sorted({hit[2] for hit in best_hits})
+    best_values = sorted({hit[3] for hit in best_hits})
     return {
         "kind":"LEXICAL_MATCH",
         "field":"|".join(best_fields),
@@ -201,7 +225,7 @@ def _ordering_key(result: dict[str, Any]) -> tuple[Any, ...]:
     best_field = min(
         (
             min(
-                _FIELD_PRIORITY.get(field, 50)
+                _field_priority(field, reason["match_quality"])
                 for field in reason["field"].split("|")
             )
             for reason in lexical

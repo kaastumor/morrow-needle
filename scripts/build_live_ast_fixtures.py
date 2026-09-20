@@ -10,6 +10,7 @@ from typing import Any
 import requests
 from jsonschema import Draft202012Validator
 
+from needle.ast.completeness import audit_text_witness
 from needle.ast.formex import FormexASTParser
 from needle.ast.historical_html import HistoricalHTMLASTParser
 
@@ -57,6 +58,21 @@ def source_meta(
         "adapter_version": "0.1",
         "canonicalization_profile": "whitespace-collapse-v0.1",
     }
+
+
+def first_html_from_zip(payload: bytes) -> tuple[str, bytes]:
+    import io
+    import zipfile
+
+    with zipfile.ZipFile(io.BytesIO(payload)) as zf:
+        names = sorted(
+            name for name in zf.namelist()
+            if name.lower().endswith((".html", ".htm", ".xhtml"))
+        )
+        if not names:
+            raise RuntimeError("HTML/XHTML ZIP contains no HTML entry")
+        name = names[0]
+        return name, zf.read(name)
 
 
 def build_formex(celex: str, payload: bytes, response: requests.Response) -> dict[str, Any]:
@@ -263,6 +279,18 @@ def main() -> int:
             if mtype == "fmx4"
             else build_html(celex, payload, response)
         )
+
+        if celex == "32004R0794":
+            witness_zip, witness_response = fetch_zip(celex, "eng", "xhtml")
+            witness_name, witness_html = first_html_from_zip(witness_zip)
+            ast["_probe"]["xhtml_witness"] = {
+                "response_url": witness_response.url,
+                "entry_name": witness_name,
+                "payload_bytes": len(witness_zip),
+                "html_bytes": len(witness_html),
+                "audit": audit_text_witness(ast, witness_html),
+            }
+
         errors = validate_ast(ast, schema)
         benchmark = benchmark_errors(celex, ast)
         case_report = summary(ast)

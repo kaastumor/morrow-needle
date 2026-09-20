@@ -191,6 +191,16 @@ def summarize_xml(body: bytes) -> Dict[str, Any]:
         result["branch_manifestation_inventory"] = branch_inventory
         result["selected_representation"] = choose_representation(branch_inventory)
 
+        relation_examples = []
+        for relation in root.iter():
+            if _local(relation.tag) == "EXPRESSION_MANIFESTED_BY_MANIFESTATION":
+                relation_examples.append(
+                    ET.tostring(relation, encoding="unicode")[:5000]
+                )
+                if len(relation_examples) >= 3:
+                    break
+        result["manifestation_relation_examples"] = relation_examples
+
     return result
 
 def summarize_response(r: requests.Response) -> Dict[str, Any]:

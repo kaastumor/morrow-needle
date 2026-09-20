@@ -425,3 +425,34 @@ def test_exact_table_coordinate_diff_detects_numeric_change_and_insert():
     assert "Article 7" in inserted["feature_deltas"]["references_added"]
     assert list(Draft202012Validator(V2_SCHEMA).iter_errors(replacement)) == []
     assert list(Draft202012Validator(V2_SCHEMA).iter_errors(inserted)) == []
+
+
+MOVE = json.loads(
+    Path("fixtures/lineage/reg1308-2013-art97-paragraph-move-v0.1.json").read_text(encoding="utf-8")
+)
+
+
+def test_real_official_narrative_lineage_can_support_move():
+    candidates = [
+        _structural_candidate("DELETE","Article 97(3)","del-art97-3"),
+        _structural_candidate("INSERT","Article 97(4)","ins-art97-4"),
+    ]
+    edge = MOVE["expected_structural_edge"]
+    result = reclassify_with_lineage(candidates, [edge])
+    assert len(result) == 1
+    mutation = result[0]
+    assert mutation["operation"] == "MOVE"
+    assert mutation["alignment_basis"] == "ASSERTED_STRUCTURAL_LINEAGE"
+    assert mutation["structural_alignment"] == {
+        "source_paths":["Article 97(3)"],
+        "target_paths":["Article 97(4)"],
+    }
+    assert set(mutation["consumed_candidate_ids"]) == {
+        "del-art97-3","ins-art97-4"
+    }
+    assert mutation["reconciliation_state"] == "CORROBORATED"
+    assert mutation["verification_state"] == "UNVERIFIED"
+    assert mutation["lineage_edge_ids"] == [
+        "reg1308-art97-old-p3-moved-to-new-p4"
+    ]
+    assert list(Draft202012Validator(V2_SCHEMA).iter_errors(mutation)) == []

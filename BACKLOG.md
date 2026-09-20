@@ -4,6 +4,19 @@ This is the canonical execution order for autonomous work.
 
 The backlog is a **risk register**, not a feature wishlist. Early work is ranked by how badly a wrong assumption could poison later architecture.
 
+## Autonomous Next Pick
+
+Unless new official evidence creates a more severe blocker, the hourly build loop should start here:
+
+1. **P0-E / Issue #5 — bitemporal legal time.** Stress-test retroactive effect as two query perspectives: ex-post legal effect vs law/source state known at historical observation time.
+2. Still within **P0-E**, add one adversary for overlapping transition rules or provision-specific/partial end dates.
+3. When P0-E is frozen, move to **P0-F / Issue #6 — multilingual corrigenda**.
+4. Then P0-G → P0-H → P0-I.
+
+Do **not** return to P0-B unless a new official source fixture falsifies the validated ingestion contract. Issue #2 is closed; residual Cellar work is adapter/regression hardening.
+
+P0-C / Gold Corpus is cross-cutting infrastructure: keep feeding each P0 fixture into it, but do not let standalone corpus-format polishing displace an unresolved foundation assumption.
+
 ## Priority model
 
 - **P0 — Foundation blocker:** resolve before significant product/application build.
@@ -42,7 +55,7 @@ Conceptual ancestry remains deliberately interpretive and must not be promoted f
 ### P0-B — Cellar as ingestion backbone
 **Issue #2 — Probe Cellar structured text and identifier resolution**
 
-Status: **SOURCE CONTRACT + FIRST AST INTEGRATION VALIDATED.**
+Status: **FOUNDATION CONTRACT RESOLVED; ISSUE CLOSED.**
 
 Validated path: CELEX → Cellar SPARQL inventory → language expression → deterministic manifestation selection → official byte delivery → immutable Source Observation.
 
@@ -53,7 +66,9 @@ Modern multi-asset FMX4 and early historical HTML now normalize through the froz
 ### P0-C — Gold Corpus / regression contract
 **Issue #3 — Formalize Gold Corpus case format**
 
-Goal: every foundational claim becomes a machine-testable regression case. Keep open until real reconstruction outputs, not only fixture syntax, are matched against expectations in CI.
+Status: **CROSS-CUTTING; DO NOT PICK AHEAD OF ACTIVE P0-E/F/G/H RISK.**
+
+Goal: every foundational claim becomes a machine-testable regression case. Keep open until real reconstruction outputs, not only fixture syntax, are matched against expectations in CI. Temporal adversaries are now executable fixtures and should later be folded into the common Gold Corpus case contract rather than redesigned separately.
 
 ### P0-D — Canonical document/provision AST
 **Issue #4**
@@ -71,13 +86,26 @@ Adapters continue to evolve, but the v0.1 core schema should change only when a 
 ### P0-E — Temporal semantics
 **Issue #5**
 
-Stress-test entry into force, application, expiry, delayed provisions, transition periods, partial applicability, retroactivity, time-scoped derogations, **gapped regime continuity**, and **context-dependent applicability**.
+Status: **ACTIVE FOUNDATION BLOCKER — ASSERTION MODEL + RESOLVER GREEN; BITEMPORAL PERSPECTIVE NOT YET FROZEN.**
 
-Two foundation findings are now adopted:
-1. genealogical continuity and applicability continuity are separate dimensions; a successor regime may descend directly from an expired predecessor while a real legal gap exists;
-2. applicability is not always a function of act/provision + date. DSA Article 33(6) makes obligations apply four months after notification to the provider concerned, so provider/service/event context may be required.
+Canonical temporal contract:
+- `schemas/temporal-assertion-v0.1.schema.json`
+- `src/needle/temporal/resolver.py`
+- `fixtures/temporal/temporal-adversaries-v0.1.json`
 
-Needle must represent absolute and event-relative triggers separately and return context-required/unresolved rather than inventing a universal application date.
+The earlier `temporal-applicability-v0.1` schema is retained only as discovery provenance and is explicitly superseded for canonical work.
+
+Established:
+1. legal force, application, text-state validity, publication, deadlines and other temporal dimensions must not be collapsed;
+2. scoped provision overrides must be explicit;
+3. applicability may depend on entity-specific events and may require `CONTEXT_REQUIRED`;
+4. genealogical continuity may cross a real application gap;
+5. a text mutation may exist before the resulting rule applies;
+6. retroactive application may predate entry into force.
+
+Current highest-risk unresolved question: **bitemporal perspective**. Needle must distinguish ex-post legal effect for date X from the legal/source state that was enacted and knowable as of observation date Y.
+
+Next within P0-E: model that perspective distinction, then add one overlapping-transition or partial-end adversary. Do not start the mutation engine until this contract is frozen.
 
 ### P0-F — Corrigenda + multilingual state
 **Issue #6**
@@ -101,7 +129,7 @@ Architecture revised after live consolidated Formex testing.
 
 Reconcile five evidence channels: authentic modifying/correcting acts, embedded official consolidation provenance, official relationship metadata, consolidated checkpoints, and deterministic canonical-AST diff.
 
-A parser/schema/test fixture now exists for Formex CLG.MDF* provenance, including nested corrigenda. Full mutation engine implementation remains downstream of the AST and temporal contracts.
+A parser/schema/test fixture now exists for Formex CLG.MDF* provenance, including nested corrigenda. Full mutation engine implementation remains downstream of the now-frozen AST and still-active temporal contract. P0-I becomes the next major implementation target only after P0-E/F/G/H foundation decisions are stable enough.
 
 ## P1 — Core system
 

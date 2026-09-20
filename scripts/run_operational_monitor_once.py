@@ -48,7 +48,9 @@ def instant(value: str) -> datetime:
 
 
 def iso(value: datetime) -> str:
-    return value.astimezone(timezone.utc).isoformat()
+    return value.astimezone(timezone.utc).replace(
+        microsecond=0
+    ).isoformat()
 
 
 def fetch_feed(params: dict[str,str]):

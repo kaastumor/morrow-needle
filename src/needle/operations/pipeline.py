@@ -119,6 +119,16 @@ def build_operational_result(
             unknowns=[]
         elif classification in _SOURCE_ONLY_DISPOSITIONS:
             disposition=_SOURCE_ONLY_DISPOSITIONS[classification]
+            if classification == "UNRESOLVED":
+                basis=set(source_change.get("classification_basis",[]))
+                if "MISSING_BASELINE" in basis:
+                    unknowns.append(
+                        "No pre-event source snapshot is available, so Needle cannot determine what changed in this update."
+                    )
+                if "MISSING_OBSERVATION" in basis:
+                    unknowns.append(
+                        "The current official source observation is incomplete or unavailable."
+                    )
         elif classification == "SOURCE_CREATED":
             disposition="SOURCE_CREATED_UNANALYSED"
             unknowns.append(
@@ -220,6 +230,17 @@ def _source_only_copy(result: dict[str, Any]) -> tuple[str,str,str]:
             "Shown in the audit stream because source availability is operational evidence, not legal-state truth.",
         )
     if disposition == "ABSTAIN_SOURCE_UNRESOLVED":
+        basis=set(
+            result.get("source_change",{}).get(
+                "classification_basis",[]
+            )
+        )
+        if "MISSING_BASELINE" in basis:
+            return (
+                f"Needle cannot compare this update yet — {label}",
+                "The official source was re-observed successfully, but no pre-event baseline is available to determine what changed.",
+                "Shown as an abstention because a feed UPDATE is only a hint; Needle will not infer change without a comparator.",
+            )
         return (
             f"Needle could not resolve source state for {label}",
             "The official feed event was observed, but the targeted source re-observation is insufficient to classify material source change.",

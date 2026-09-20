@@ -412,8 +412,10 @@ def test_retrieval_result_exposes_active_support_record_ids():
         THREAD,
         query(
             "sani-support",
-            text_terms=["reg794-art3-sani-duty-v0.1"],
-            filters={"entity_kinds":["CHANGE_ATOM"]},
+            filters={
+                "entity_kinds":["CHANGE_ATOM"],
+                "entity_ids":["reg794-art3-sani-duty-v0.1"],
+            },
         ),
     )
     result = response["results"][0]
@@ -429,8 +431,10 @@ def test_official_source_perspective_abstains_before_2025_publication():
         THREAD,
         query(
             "new-channel-before-publication",
-            text_terms=["reg794-art3-2025-notification-channel-duty-v0.1"],
-            filters={"entity_kinds":["CHANGE_ATOM"]},
+            filters={
+                "entity_kinds":["CHANGE_ATOM"],
+                "entity_ids":["reg794-art3-2025-notification-channel-duty-v0.1"],
+            },
             temporal=_application_on(
                 "2025-07-03",
                 perspective="OFFICIAL_SOURCE_STATE_AS_OF",
@@ -456,8 +460,10 @@ def test_official_source_perspective_activates_new_rule_from_publication_record(
         THREAD,
         query(
             "new-channel-after-publication",
-            text_terms=["reg794-art3-2025-notification-channel-duty-v0.1"],
-            filters={"entity_kinds":["CHANGE_ATOM"]},
+            filters={
+                "entity_kinds":["CHANGE_ATOM"],
+                "entity_ids":["reg794-art3-2025-notification-channel-duty-v0.1"],
+            },
             temporal=_application_on(
                 "2025-07-03",
                 perspective="OFFICIAL_SOURCE_STATE_AS_OF",
@@ -479,8 +485,10 @@ def test_bitemporal_source_cutoff_changes_supported_sani_state():
         THREAD,
         query(
             "sani-source-state-before-905",
-            text_terms=["reg794-art3-sani-duty-v0.1"],
-            filters={"entity_kinds":["CHANGE_ATOM"]},
+            filters={
+                "entity_kinds":["CHANGE_ATOM"],
+                "entity_ids":["reg794-art3-sani-duty-v0.1"],
+            },
             temporal=_application_on(
                 "2025-07-03",
                 mode="EVALUATE",
@@ -500,8 +508,10 @@ def test_bitemporal_source_cutoff_changes_supported_sani_state():
         THREAD,
         query(
             "sani-source-state-after-905",
-            text_terms=["reg794-art3-sani-duty-v0.1"],
-            filters={"entity_kinds":["CHANGE_ATOM"]},
+            filters={
+                "entity_kinds":["CHANGE_ATOM"],
+                "entity_ids":["reg794-art3-sani-duty-v0.1"],
+            },
             temporal=_application_on(
                 "2025-07-03",
                 mode="EVALUATE",
@@ -530,8 +540,10 @@ def test_query_context_cannot_inject_official_source_availability():
         THREAD,
         query(
             "reject-source-availability-injection",
-            text_terms=["reg794-art3-2025-notification-channel-duty-v0.1"],
-            filters={"entity_kinds":["CHANGE_ATOM"]},
+            filters={
+                "entity_kinds":["CHANGE_ATOM"],
+                "entity_ids":["reg794-art3-2025-notification-channel-duty-v0.1"],
+            },
             temporal=temporal,
         ),
     )
@@ -544,8 +556,10 @@ def test_explicit_thread_unknowns_are_searchable_not_silently_absent():
         THREAD,
         query(
             "technical-identity-unknown",
-            text_terms=["technical identity"],
-            filters={"entity_kinds":["THREAD_UNKNOWN"]},
+            filters={
+                "entity_kinds":["THREAD_UNKNOWN"],
+                "entity_ids":["technical-channel-identity"],
+            },
         ),
     )
     assert ids(response) == ["technical-channel-identity"]

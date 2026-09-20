@@ -22,19 +22,21 @@ Within a priority band, prefer the task that:
 ### P0-A — Provision and rule identity
 **Issue #1 — Stress-test provision identity across renumbering, split/merge and replacement**
 
-Status: ACTIVE.
+Status: ACTIVE; attack surface substantially narrowed.
 
 Already established:
 - persistent provision identity is rejected;
 - use immutable Provision Instances + evidence-backed Lineage Edges;
-- distinguish STRUCTURAL_LINEAGE from RULE_LINEAGE.
+- distinguish STRUCTURAL_LINEAGE from proposition-granular RULE_LINEAGE;
+- structural lineage and substantive change can coexist;
+- same-act physical moves still create distinct instances across text states;
+- authentic official recitals can provide DIRECT structural-lineage evidence when they explicitly identify a move, even without a correlation table;
+- lineage confidence/conflict is explicit and non-numeric.
 
-Remaining attacks:
-- move without recodification;
-- recast with substantive change;
-- no-correlation-table fallback;
-- proposition-level continuity;
-- lineage confidence/evidence model.
+Remaining attack:
+- **hard fallback with neither correlation table nor explicit official narrative mapping**: determine the maximum claim deterministic structural/text alignment may safely emit and the evidence state/confidence required.
+
+Conceptual ancestry remains deliberately interpretive and must not be promoted from textual/structural similarity alone.
 
 ### P0-B — Cellar as ingestion backbone
 **Issue #2 — Probe Cellar structured text and identifier resolution**

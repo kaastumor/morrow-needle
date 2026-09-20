@@ -1,6 +1,6 @@
 {
   "fixture_version": "0.1",
-  "case_id": "reg794-article3-sani-application",
+  "case_id": "reg794-article3-2008-channel-application",
   "assertions": [
     {
       "assertion_id": "reg794-art3-p3-sani-application-start",
@@ -38,6 +38,160 @@
         }
       ],
       "notes": "Rule-specific application date inside the Article 3 replacement; separate from the 14 April 2008 text-state mutation date."
+    },
+    {
+      "assertion_id": "reg271-2008-entry-into-force",
+      "subject_ref": {
+        "kind": "LEGAL_ACT",
+        "identifier": "CELEX:32008R0271",
+        "locator": "Article 2"
+      },
+      "dimension": "LEGAL_FORCE",
+      "boundary": "START",
+      "inclusive": true,
+      "trigger": {
+        "kind": "RELATIVE_EVENT",
+        "event_key": "publication",
+        "event_binding": "SUBJECT",
+        "offset": {
+          "value": 20,
+          "unit": "DAYS"
+        },
+        "guard": null,
+        "source_expression": "20th day following publication"
+      },
+      "normalized_date": "2008-04-14",
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": [
+          "ACT:32008R0271"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_RELATIVE",
+      "evidence_state": "DERIVED",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32008R0271",
+          "locator": "L_2008082EN.01000101.xml#normalized-chars:11427-11554",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        },
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32008R0271",
+          "locator": "L_2008082EN.01000101.doc.xml#DATE[ISO=20080325]",
+          "language": "ENG",
+          "role": "DERIVATION_INPUT"
+        }
+      ],
+      "notes": "Derived entirely from the immutable authentic Cellar representation: publication metadata 25 March 2008 plus Article 2's twentieth-day clause."
+    },
+    {
+      "assertion_id": "reg794-art3-2008-unqualified-rules-application-start",
+      "subject_ref": {
+        "kind": "MUTATION_EVENT",
+        "identifier": "CELEX:32008R0271#ARTICLE_1_ARTICLE_3_REPLACEMENT",
+        "locator": "Article 1 replacement of Article 3"
+      },
+      "dimension": "APPLICATION",
+      "boundary": "START",
+      "inclusive": true,
+      "trigger": {
+        "kind": "RELATIVE_EVENT",
+        "event_key": "ENTRY_INTO_FORCE:32008R0271",
+        "event_binding": "SUBJECT",
+        "offset": {
+          "value": 0,
+          "unit": "DAYS"
+        },
+        "guard": null,
+        "source_expression": "unqualified replacement rules apply when Regulation 271/2008 enters into force"
+      },
+      "normalized_date": "2008-04-14",
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": [
+          "RULE:32004R0794:ARTICLE3_3:PKI_CORRESPONDENCE",
+          "RULE:32004R0794:ARTICLE3_4:ALTERNATIVE_CHANNEL_PERMISSION",
+          "RULE:32004R0794:ARTICLE3_4:INVALID_CHANNEL_STATUS"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_RELATIVE",
+      "evidence_state": "DERIVED",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32008R0271",
+          "locator": "L_2008082EN.01000101.xml#normalized-chars:6924-8261",
+          "language": "ENG",
+          "role": "CONTEXT"
+        },
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32008R0271",
+          "locator": "L_2008082EN.01000101.xml#normalized-chars:11427-11554",
+          "language": "ENG",
+          "role": "DERIVATION_INPUT"
+        },
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32008R0271",
+          "locator": "L_2008082EN.01000101.doc.xml#DATE[ISO=20080325]",
+          "language": "ENG",
+          "role": "DERIVATION_INPUT"
+        }
+      ],
+      "notes": "Unlike the SANI notification sentence, these replacement rules carry no later application qualifier. Their application begins with the amending Regulation's entry into force; the SANI-specific 1 July 2008 override remains separate."
+    },
+    {
+      "assertion_id": "reg794-art3-p3-legacy-channels-application-end",
+      "subject_ref": {
+        "kind": "PROVISION_INSTANCE",
+        "identifier": "CELEX:02004R0794-20161222#ARTICLE_3_PARAGRAPH_3",
+        "locator": "Article 3(3)"
+      },
+      "dimension": "APPLICATION",
+      "boundary": "END",
+      "inclusive": false,
+      "trigger": {
+        "kind": "ABSOLUTE_DATE",
+        "date": "2025-07-03",
+        "source_expression": "Article 3(3) is replaced by Regulation 2025/905 when that Regulation enters into force"
+      },
+      "normalized_date": "2025-07-03",
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": [
+          "RULE:32004R0794:ARTICLE3_3:SANI_TRANSMISSION",
+          "RULE:32004R0794:ARTICLE3_3:PKI_CORRESPONDENCE"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_ABSOLUTE",
+      "evidence_state": "DERIVED",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32025R0905",
+          "locator": "L_202500905EN.000101.fmx.xml#normalized-chars:10410-10461",
+          "language": "ENG",
+          "role": "CONTEXT"
+        },
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32025R0905",
+          "locator": "L_202500905EN.000101.fmx.xml#normalized-chars:13176-13316",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        }
+      ],
+      "notes": "Exclusive end: the old paragraph-3 SANI/PKI rules are not active on 3 July 2025, when the replacement paragraph applies. Article 3(4) is intentionally excluded because its text and rules continue."
     }
   ]
 }

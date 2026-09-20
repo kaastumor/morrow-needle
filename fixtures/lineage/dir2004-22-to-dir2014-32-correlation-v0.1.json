@@ -1,0 +1,23 @@
+{
+  "fixture_id": "dir2004-22-to-dir2014-32-correlation-v0.1",
+  "purpose": "Stress-test structural lineage in a recast where official correlation data distinguishes continuation, deletion and large relocation/renumbering. It also demonstrates that a correlation table alone does not prove proposition-level RULE_LINEAGE.",
+  "official_source": {
+    "type": "ELI",
+    "identifier": "http://data.europa.eu/eli/dir/2014/32/oj",
+    "celex": "32014L0032",
+    "locator": "Annex XV — Correlation table",
+    "language": "eng"
+  },
+  "observations": [
+    {"source": "Directive 2004/22/EC Article 8", "target": "Directive 2014/32/EU Article 7", "structural_claim": "RENUMBERED_TO", "note": "Direct official correlation; structural correspondence only."},
+    {"source": "Directive 2004/22/EC Article 7(1)", "target": "Directive 2014/32/EU Article 20", "structural_claim": "RENUMBERED_TO", "note": "Large path displacement shows article-number proximity is not a lineage signal."},
+    {"source": "Directive 2004/22/EC Article 6(2)", "target": null, "structural_claim": "DELETED", "note": "Official correlation records no successor."},
+    {"source": null, "target": "Directive 2014/32/EU Article 8", "structural_claim": "INSERTED", "note": "Official correlation records no predecessor."}
+  ],
+  "invariants": [
+    "Official correlation establishes DIRECT STRUCTURAL_LINEAGE for the mapped containers.",
+    "A large structural-path change must not be classified by numeric distance or article-number similarity.",
+    "Correlation alone must not create RULE_LINEAGE or claim unchanged legal propositions.",
+    "Deletion and insertion are explicit outcomes, not failed matching." 
+  ]
+}

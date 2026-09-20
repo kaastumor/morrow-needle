@@ -5,7 +5,10 @@
   "description": "Idempotent change hint from the official Cellar ingestion notification feed. It is not itself evidence of a legal change.",
   "type": "object",
   "required": [
+    "event_key",
     "notification_id",
+    "notification_id_basis",
+    "raw_feed_id",
     "action",
     "cellar_id",
     "root_cellar_id",
@@ -119,6 +122,25 @@
         }
       },
       "additionalProperties": false
+    },
+    "event_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "notification_id_basis": {
+      "type": "string",
+      "enum": [
+        "NOTIFICATION_ENTRY_ID",
+        "RSS_GUID",
+        "ATOM_ID",
+        "DERIVED_CELLAR_ID_TIME"
+      ]
+    },
+    "raw_feed_id": {
+      "type": [
+        "string",
+        "null"
+      ]
     }
   },
   "additionalProperties": false

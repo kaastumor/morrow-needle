@@ -7,6 +7,8 @@ from pathlib import Path
 from typing import Dict, Any
 
 import requests
+import xml.etree.ElementTree as ET
+from collections import Counter
 
 # Official Cellar dissemination resource endpoint documented by the Publications Office.\nBASE = "https://publications.europa.eu/resource/celex/{celex}"
 
@@ -42,10 +44,44 @@ PROBES = [
     },
 ]
 
+def _local(tag: str) -> str:
+    return tag.rsplit("}", 1)[-1]
+
+def summarize_xml(body: bytes) -> Dict[str, Any]:
+    try:
+        root = ET.fromstring(body)
+    except Exception as exc:
+        return {"parse_error": f"{type(exc).__name__}: {exc}"}
+
+    counts = Counter(_local(el.tag) for el in root.iter())
+
+    manifestations = []
+    for node in root.iter():
+        if _local(node.tag).upper() != "MANIFESTATION":
+            continue
+        fields = {}
+        for child in node.iter():
+            name = _local(child.tag)
+            text = (child.text or "").strip()
+            if text and len(text) <= 500:
+                fields.setdefault(name, [])
+                if text not in fields[name] and len(fields[name]) < 10:
+                    fields[name].append(text)
+        manifestations.append(fields)
+        if len(manifestations) >= 30:
+            break
+
+    return {
+        "root_tag": _local(root.tag),
+        "top_tag_counts": counts.most_common(40),
+        "manifestation_count_sampled": len(manifestations),
+        "manifestations": manifestations,
+    }
+
 def summarize_response(r: requests.Response) -> Dict[str, Any]:
     body = r.content
     text_head = body[:500].decode("utf-8", errors="replace").replace("\n", " ")
-    return {
+    summary = {
         "status": r.status_code,
         "content_type": r.headers.get("content-type"),
         "content_length_header": r.headers.get("content-length"),
@@ -62,6 +98,12 @@ def summarize_response(r: requests.Response) -> Dict[str, Any]:
         ],
         "head": text_head,
     }
+
+    content_type = (r.headers.get("content-type") or "").lower()
+    if r.status_code == 200 and ("xml" in content_type or body.lstrip().startswith(b"<?xml")):
+        summary["xml_structure"] = summarize_xml(body)
+
+    return summary
 
 def run_probe(celex: str) -> Dict[str, Any]:
     url = BASE.format(celex=celex)

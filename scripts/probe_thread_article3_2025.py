@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import hashlib
+from html.parser import HTMLParser
 import io
 import json
 from pathlib import Path
@@ -19,6 +20,10 @@ from needle.mutation.reconcile import reconcile_candidate
 BASE = "https://publications.europa.eu/resource/celex/{celex}"
 CAUSE = "32025R0905"
 CORRIGENDUM = "32025R0905R(01)"
+CORRIGENDUM_HTML = (
+    "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/"
+    "?uri=CELEX%3A32025R0905R%2801%29"
+)
 BEFORE = "02004R0794-20161222"
 AFTER = "02004R0794-20250703"
 TARGET = "Article 3 > 3"
@@ -62,6 +67,38 @@ def fetch_fmx4(celex: str) -> tuple[bytes, requests.Response]:
 def normalized_visible_text(xml_bytes: bytes) -> str:
     root=ET.fromstring(xml_bytes)
     return " ".join("".join(root.itertext()).split())
+
+
+class _VisibleHTML(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.parts=[]
+
+    def handle_data(self,data: str) -> None:
+        self.parts.append(data)
+
+
+def fetch_corrigendum_html() -> tuple[bytes,requests.Response,str]:
+    response=requests.get(
+        CORRIGENDUM_HTML,
+        headers={
+            "Accept":"text/html",
+            "Accept-Language":"en",
+            "User-Agent":(
+                "Morrow-Needle-Thread-Corrigendum-Probe/0.1 "
+                "(+https://github.com/kaastumor/morrow-needle)"
+            ),
+        },
+        timeout=120,
+        allow_redirects=True,
+    )
+    response.raise_for_status()
+    media_type=response.headers.get("Content-Type","").split(";",1)[0].lower()
+    if media_type not in {"text/html","application/xhtml+xml"}:
+        raise AssertionError(f"unexpected corrigendum media type: {media_type}")
+    parser=_VisibleHTML()
+    parser.feed(response.text)
+    return response.content,response," ".join(" ".join(parser.parts).split())
 
 
 def source_meta(celex,response,payload):
@@ -142,10 +179,14 @@ def main() -> int:
     cause_payload,cause_response=fetch_fmx4(CAUSE)
     before_payload,before_response=fetch_fmx4(BEFORE)
     after_payload,after_response=fetch_fmx4(AFTER)
-    corrigendum_payload,corrigendum_response=fetch_fmx4(CORRIGENDUM)
+    # Publications Office CELEX dereferencing currently returns 404 for this
+    # parenthesised corrigendum identifier. Verify against the official EUR-Lex
+    # representation instead; keep the source class explicit in the artifact.
+    corrigendum_payload,corrigendum_response,corrigendum_text=(
+        fetch_corrigendum_html()
+    )
 
     evidence,spans=authentic_evidence_and_spans(cause_payload)
-    corrigendum_text=all_visible_text(corrigendum_payload)
     authentic=[
         item for item in evidence
         if item["operation"]=="REPLACE"
@@ -240,6 +281,9 @@ def main() -> int:
             "publication_date":"2026-07-17",
             "payload_sha256":hashlib.sha256(corrigendum_payload).hexdigest(),
             "final_url":corrigendum_response.url,
+            "source_type":"EUR_LEX",
+            "representation_class":"OFFICIAL_HTML",
+            "cellar_celex_dereference":"UNAVAILABLE_404",
             "target_evidence":corrigendum_target,
             "targets":"Article 4(1), second sentence",
             "article3_effect":"NONE",

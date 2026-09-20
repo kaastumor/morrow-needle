@@ -276,6 +276,42 @@ def main() -> int:
 
     before_ast=build_ast(BEFORE,before_payload,before_response)
     after_ast=build_ast(AFTER,after_payload,after_response)
+
+    p4_path=[("ARTICLE","3"),("PARAGRAPH","4")]
+    p4_before=subtree_state(before_ast,p4_path)
+    p4_after=subtree_state(after_ast,p4_path)
+    p4_candidate=diff_resolved_subtree(
+        before_ast,
+        after_ast,
+        structural_path=p4_path,
+        canonical_kind="PARAGRAPH",
+        canonical_citation_path="Article 3 > 4",
+        language="ENG",
+    )
+    if p4_candidate is not None:
+        raise AssertionError(
+            "Article 3(4) unexpectedly emitted a textual mutation across 2025"
+        )
+    if p4_before["text_hash"] != p4_after["text_hash"]:
+        raise AssertionError("Article 3(4) subtree changed across the 2025 transition")
+
+    p4_expected=p4_expected_sentences()
+    p4_before_spans=locate_unique_sentences(
+        before_payload,
+        f"CELEX:{BEFORE}",
+        p4_expected,
+    )
+    p4_after_spans=locate_unique_sentences(
+        after_payload,
+        f"CELEX:{AFTER}",
+        p4_expected,
+    )
+    for span_id in p4_expected:
+        if p4_before_spans[span_id]["text_hash"] != p4_after_spans[span_id]["text_hash"]:
+            raise AssertionError(
+                f"Article 3(4) sentence changed across 2025: {span_id}"
+            )
+
     candidate=diff_resolved_subtree(
         before_ast,
         after_ast,
@@ -351,6 +387,21 @@ def main() -> int:
             for key in ("notification-channel","correspondence-channel")
         },
         "reconciled":reconciled,
+        "paragraph4_continuity":{
+            "before":p4_before,
+            "after":p4_after,
+            "text_equal":True,
+            "textual_mutation":None,
+            "before_sentence_spans":p4_before_spans,
+            "after_sentence_spans":p4_after_spans,
+            "semantic_effect_character":"DERIVED_CROSS_REFERENCE_RIPPLE_ONLY",
+            "invariant":(
+                "The 2025 amendment changes paragraph 3, not paragraph 4. "
+                "Paragraph 4 text remains identical; any changed operation of "
+                "its reference to paragraph 3 is derived semantic context, not "
+                "a paragraph-4 textual mutation."
+            ),
+        },
         "temporal":{
             "publication_date":"2025-06-13",
             "entry_into_force":"2025-07-03",

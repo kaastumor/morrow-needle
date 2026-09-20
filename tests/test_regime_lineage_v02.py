@@ -12,6 +12,7 @@ def load(path):
 
 
 SCHEMA = load("schemas/regime-lineage-v0.2.schema.json")
+TEMPORAL_SCHEMA = load("schemas/temporal-assertion-v0.1.schema.json")
 LINEAGE = load(
     "fixtures/lineage/reg2021-1232-to-reg2026-1881-gap-v0.2.json"
 )
@@ -51,6 +52,16 @@ def referenced_gap(edge=LINEAGE, temporal=TEMPORAL):
 
 def test_regime_lineage_v02_validates():
     assert list(Draft202012Validator(SCHEMA).iter_errors(LINEAGE)) == []
+
+
+def test_eprivacy_temporal_assertions_validate_canonical_contract():
+    validator = Draft202012Validator(TEMPORAL_SCHEMA)
+    errors = [
+        f"{assertion['assertion_id']}: {error.message}"
+        for assertion in TEMPORAL["assertions"]
+        for error in validator.iter_errors(assertion)
+    ]
+    assert errors == []
 
 
 def test_regime_lineage_v02_contains_no_canonical_temporal_values():

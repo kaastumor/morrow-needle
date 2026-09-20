@@ -3,7 +3,7 @@ from pathlib import Path
 
 from jsonschema import Draft202012Validator
 
-from needle.retrieval.projection import build_thread_projection
+from needle.retrieval.projection import build_thread_projection, _support_index
 from needle.retrieval.search import search_thread
 
 
@@ -383,3 +383,32 @@ def test_temporal_evaluate_mode_retains_inactive_result_instead_of_hiding_it():
     )
     assert sani["temporal_evaluation"]["active"] is False
     assert sani["temporal_evaluation"]["state"] == "RESOLVED"
+
+
+def test_retrieval_support_index_uses_current_provenance_view():
+    support = _support_index(THREAD, root=Path("."))
+    assert support[("OTHER", "TEST_ONLY:sani-locator-correction")] == [
+        "support-audit-locator-v2"
+    ]
+    assert "support-audit-locator-v1" not in {
+        record_id
+        for record_ids in support.values()
+        for record_id in record_ids
+    }
+
+
+def test_retrieval_result_exposes_active_support_record_ids():
+    response = search_thread(
+        THREAD,
+        query(
+            "sani-support",
+            text_terms=["reg794-art3-sani-duty-v0.1"],
+            filters={"entity_kinds":["CHANGE_ATOM"]},
+        ),
+    )
+    result = response["results"][0]
+    assert result["source_mode"]["closed"] is True
+    assert "support-atom-sani" in result["source_mode"]["support_record_ids"]
+    assert result["source_mode"]["support_count"] == len(
+        result["source_mode"]["support_record_ids"]
+    )

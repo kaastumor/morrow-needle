@@ -28,17 +28,41 @@ PROBES = [
         "params": {"language": "eng"},
     },
     {
-        "name": "fmx4_eng",
+        "name": "fmx4_list_eng",
         "headers": {
-            "Accept": "application/xml;type=fmx4",
+            "Accept": "application/list;mtype=fmx4",
             "Accept-Language": "eng",
         },
         "params": {},
     },
     {
-        "name": "xhtml_eng",
+        "name": "fmx4_zip_eng",
         "headers": {
-            "Accept": "application/xhtml+xml",
+            "Accept": "application/zip;mtype=fmx4",
+            "Accept-Language": "eng",
+        },
+        "params": {},
+    },
+    {
+        "name": "xhtml_list_eng",
+        "headers": {
+            "Accept": "application/list;mtype=xhtml",
+            "Accept-Language": "eng",
+        },
+        "params": {},
+    },
+    {
+        "name": "html_list_eng",
+        "headers": {
+            "Accept": "application/list;mtype=html",
+            "Accept-Language": "eng",
+        },
+        "params": {},
+    },
+    {
+        "name": "legacy_xml_type_fmx4_eng",
+        "headers": {
+            "Accept": "application/xml;type=fmx4",
             "Accept-Language": "eng",
         },
         "params": {},
@@ -81,7 +105,11 @@ def summarize_xml(body: bytes) -> Dict[str, Any]:
 
 def summarize_response(r: requests.Response) -> Dict[str, Any]:
     body = r.content
-    text_head = body[:500].decode("utf-8", errors="replace").replace("\n", " ")
+    content_type = (r.headers.get("content-type") or "").lower()
+    if "zip" in content_type or body.startswith(b"PK"):
+        text_head = "<binary zip payload>"
+    else:
+        text_head = body[:500].decode("utf-8", errors="replace").replace("\n", " ")
     summary = {
         "status": r.status_code,
         "content_type": r.headers.get("content-type"),
@@ -100,7 +128,6 @@ def summarize_response(r: requests.Response) -> Dict[str, Any]:
         "head": text_head,
     }
 
-    content_type = (r.headers.get("content-type") or "").lower()
     if r.status_code == 200 and ("xml" in content_type or body.lstrip().startswith(b"<?xml")):
         summary["xml_structure"] = summarize_xml(body)
 

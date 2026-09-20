@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 from jsonschema import Draft202012Validator
 
-from needle.identity.resolver import IdentityGraphError, TypedIdentifierGraph
+from needle.identity.resolver import IdentityGraphError, TypedIdentifierGraph, resolve_query
 
 
 SCHEMA = json.loads(
@@ -92,3 +92,83 @@ def test_equivalence_relation_rejects_cross_level_nodes():
     })
     with pytest.raises(IdentityGraphError):
         TypedIdentifierGraph(broken)
+
+
+QUERY_SCHEMA = json.loads(
+    Path("schemas/identifier-resolution-query-v0.1.schema.json").read_text(encoding="utf-8")
+)
+
+
+def test_cellar_item_is_distinct_and_resolves_only_through_item_of():
+    graph = _graph()
+    item = graph.find(
+        "CELLAR",
+        "b84f49cd-750f-11e3-8e20-01aa75ed71a1.0003.01/DOC_1",
+    )
+    assert item["identity_level"] == "ITEM"
+    assert not graph.same_identity(
+        "cellar-doc-example-item",
+        "cellar-doc-example-manifestation",
+    )
+    assert graph.related(
+        "cellar-doc-example-item",
+        "ITEM_OF",
+    )[0]["node_id"] == "cellar-doc-example-manifestation"
+
+
+def test_resolution_query_requires_caller_to_name_semantics():
+    validator = Draft202012Validator(QUERY_SCHEMA)
+
+    equivalence_query = {
+        "query_id":"resolve-r794-work",
+        "input":{"scheme":"CELEX","value":"32004R0794"},
+        "mode":"EQUIVALENTS",
+        "relation_type":None,
+        "direction":"out",
+    }
+    assert list(validator.iter_errors(equivalence_query)) == []
+    result = resolve_query(_graph(), equivalence_query)
+    assert {node["scheme"] for node in result["results"]} == {"CELEX","ELI","CELLAR"}
+
+    ambiguous = {
+        "query_id":"bad-generic-resolution",
+        "input":{"scheme":"CELEX","value":"32004R0794"},
+        "mode":"RELATION",
+        "relation_type":None,
+    }
+    assert list(validator.iter_errors(ambiguous))
+
+
+def test_reverse_procedure_resolution_returns_distinct_documents():
+    query = {
+        "query_id":"procedure-adopted-act",
+        "input":{"scheme":"EU_PROCEDURE","value":"2020/0361/COD"},
+        "mode":"RELATION",
+        "relation_type":"RESULT_OF_PROCEDURE",
+        "direction":"in",
+    }
+    result = resolve_query(_graph(), query)
+    assert [node["value"] for node in result["results"]] == ["32022R2065"]
+
+    proposal_query = {
+        "query_id":"procedure-proposal",
+        "input":{"scheme":"EU_PROCEDURE","value":"2020/0361/COD"},
+        "mode":"RELATION",
+        "relation_type":"DOCUMENT_IN_PROCEDURE",
+        "direction":"in",
+    }
+    result = resolve_query(_graph(), proposal_query)
+    assert [node["value"] for node in result["results"]] == ["52020PC0825"]
+
+
+def test_unknown_identifier_abstains_instead_of_synthesizing():
+    query = {
+        "query_id":"do-not-invent-1958-eli",
+        "input":{"scheme":"ELI","value":"http://data.europa.eu/eli/reg/1958/1/oj"},
+        "mode":"EQUIVALENTS",
+        "relation_type":None,
+        "direction":"out",
+    }
+    result = resolve_query(_graph(), query)
+    assert result["state"] == "NOT_FOUND"
+    assert result["results"] == []

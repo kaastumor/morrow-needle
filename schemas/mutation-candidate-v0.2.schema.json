@@ -1,0 +1,273 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/mutation-candidate-v0.2.json",
+  "title": "Morrow // Needle Mutation Candidate v0.2",
+  "description": "Deterministic/source-assisted textual or structural mutation candidate. Structural reclassification requires evidence-backed lineage.",
+  "type": "object",
+  "required": [
+    "candidate_id",
+    "operation",
+    "target",
+    "alignment_basis",
+    "before",
+    "after",
+    "feature_deltas",
+    "reconciliation_state",
+    "verification_state",
+    "supporting_evidence",
+    "conflicting_evidence"
+  ],
+  "properties": {
+    "candidate_id": {
+      "type": "string"
+    },
+    "operation": {
+      "type": "string",
+      "enum": [
+        "INSERT",
+        "DELETE",
+        "REPLACE",
+        "MOVE",
+        "RENUMBER",
+        "SPLIT",
+        "MERGE"
+      ]
+    },
+    "target": {
+      "type": "object",
+      "required": [
+        "kind",
+        "citation_path"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "citation_path": {
+          "type": "string"
+        },
+        "parent_citation_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "language": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "alignment_basis": {
+      "type": "string",
+      "enum": [
+        "EXACT_CITATION_AND_KIND",
+        "SOURCE_NATIVE_IDENTIFIER",
+        "ASSERTED_STRUCTURAL_LINEAGE",
+        "UNALIGNED"
+      ]
+    },
+    "before": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/state_ref"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "after": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/state_ref"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "feature_deltas": {
+      "type": "object",
+      "required": [
+        "numbers_added",
+        "numbers_removed",
+        "dates_added",
+        "dates_removed",
+        "references_added",
+        "references_removed"
+      ],
+      "properties": {
+        "numbers_added": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "numbers_removed": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dates_added": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dates_removed": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "references_added": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "references_removed": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "reconciliation_state": {
+      "type": "string",
+      "enum": [
+        "DIFF_ONLY",
+        "CORROBORATED",
+        "CONFLICTING",
+        "QUARANTINED"
+      ]
+    },
+    "verification_state": {
+      "type": "string",
+      "enum": [
+        "UNVERIFIED",
+        "VERIFIED"
+      ]
+    },
+    "supporting_evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence_ref"
+      }
+    },
+    "conflicting_evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence_ref"
+      }
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "lineage_edge_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "consumed_candidate_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "state_ref": {
+      "type": "object",
+      "required": [
+        "state_id",
+        "node_id",
+        "text_hash"
+      ],
+      "properties": {
+        "state_id": {
+          "type": "string"
+        },
+        "node_id": {
+          "type": "string"
+        },
+        "text_hash": {
+          "type": "string"
+        },
+        "text_length": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidence_ref": {
+      "type": "object",
+      "required": [
+        "channel",
+        "source_id",
+        "operation",
+        "target_locator",
+        "authority_character"
+      ],
+      "properties": {
+        "channel": {
+          "type": "string",
+          "enum": [
+            "AUTHENTIC_ACT",
+            "RELATIONSHIP_METADATA",
+            "CONSOLIDATION_PROVENANCE",
+            "CONSOLIDATED_CHECKPOINT",
+            "DETERMINISTIC_DIFF"
+          ]
+        },
+        "source_id": {
+          "type": "string"
+        },
+        "operation": {
+          "type": "string",
+          "enum": [
+            "INSERT",
+            "DELETE",
+            "REPLACE",
+            "UNKNOWN"
+          ]
+        },
+        "target_locator": {
+          "type": "string"
+        },
+        "authority_character": {
+          "type": "string",
+          "enum": [
+            "CANONICAL_LEGAL_CAUSE",
+            "OFFICIAL_STRUCTURED_METADATA",
+            "DOCUMENTARY_NON_BINDING",
+            "CHECKPOINT",
+            "DERIVED"
+          ]
+        },
+        "locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

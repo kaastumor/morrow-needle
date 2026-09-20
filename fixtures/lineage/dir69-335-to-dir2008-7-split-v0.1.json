@@ -1,0 +1,34 @@
+{
+  "fixture_id": "lineage-dir69-335-to-dir2008-7-split-v0.1",
+  "purpose": "Stress-test one-to-many provision lineage using an official correlation table.",
+  "predecessor": {
+    "act": "Council Directive 69/335/EEC",
+    "provision": "Article 7(2)"
+  },
+  "successor": {
+    "act": "Council Directive 2008/7/EC",
+    "celex": "32008L0007",
+    "eli": "http://data.europa.eu/eli/dir/2008/7/oj"
+  },
+  "official_correlation": {
+    "from": "Article 7(2)",
+    "to": ["Article 7", "Article 8"],
+    "evidence_type": "OFFICIAL_CORRELATION_TABLE",
+    "evidence_state": "DIRECT",
+    "source": "Directive 2008/7/EC correlation table"
+  },
+  "expected_lineage": {
+    "cardinality": "ONE_TO_MANY",
+    "edges": [
+      {"from": "69/335/EEC::Article 7(2)", "to": "2008/7/EC::Article 7"},
+      {"from": "69/335/EEC::Article 7(2)", "to": "2008/7/EC::Article 8"}
+    ]
+  },
+  "assertions": [
+    "A lineage model must allow one predecessor provision instance to have multiple successor provision instances.",
+    "A single stable provision ID cannot represent this transition without losing branching structure.",
+    "The correlation table proves structural lineage but does not by itself prove that every legal proposition in the predecessor survives unchanged in both successors.",
+    "Conceptual/legal-rule lineage must therefore be separately asserted from structural lineage."
+  ],
+  "status": "GOLD_CANDIDATE"
+}

@@ -527,3 +527,37 @@ def test_query_context_cannot_inject_official_source_availability():
     )
     assert response["results"] == []
     assert response["abstentions"][0]["reason"] == "NOT_ASSERTED_AS_OF_SOURCE_DATE"
+
+
+def test_explicit_thread_unknowns_are_searchable_not_silently_absent():
+    response = search_thread(
+        THREAD,
+        query(
+            "technical-identity-unknown",
+            text_terms=["technical identity"],
+            filters={"entity_kinds":["THREAD_UNKNOWN"]},
+        ),
+    )
+    assert ids(response) == ["technical-channel-identity"]
+    result = response["results"][0]
+    assert result["canonical_entity"]["state"] == "UNRESOLVED"
+    assert result["source_mode"] == {
+        "support_required":False,
+        "closed":True,
+        "support_count":0,
+        "support_record_ids":[],
+    }
+
+
+def test_thread_unknown_does_not_masquerade_as_proven_negative():
+    response = search_thread(
+        THREAD,
+        query(
+            "affected-entities-gap",
+            text_terms=["Affected-entity labels"],
+            filters={"entity_kinds":["THREAD_UNKNOWN"]},
+        ),
+    )
+    assert ids(response) == ["affected-entity-labels"]
+    assert response["results"][0]["canonical_entity"]["state"] == "UNRESOLVED"
+    assert response["results"][0]["source_mode"]["support_required"] is False

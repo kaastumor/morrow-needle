@@ -8,14 +8,14 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 Unless new official evidence creates a more severe blocker, the hourly build loop should start here:
 
-1. **P1-E / Issue #14 — first end-to-end Thread: Regulation 794/2004 Article 3.** Force the frozen source, identity, AST, mutation, temporal, semantic and provenance contracts to produce one complete rule history.
-2. Reconstruct verified Article 3 states for 2004 → 2008 → 2025/2026 before designing generic Thread abstractions.
-3. Thread must expose a chronological mutation timeline, rule/provision lineage, semantic Change Atoms, temporal distinctions, exceptions, source-mode provenance and explicit unknowns.
-4. Add 3-second / 30-second / 3-minute public narrative layers only after the machine Thread object can be regenerated from evidence.
-5. Add Gold expectations including forbidden inferences.
-6. **P1-D search/retrieval intentionally follows this vertical slice.** Retrieval should be designed around proven Thread/Atom objects rather than guessed early.
+1. **P1-D / Issue #15 — structured-first search/retrieval.** Build a rebuildable retrieval projection over the now-proven Thread / Atom / temporal / lineage / provenance objects.
+2. Start with deterministic exact retrieval and structured filters; embeddings remain secondary discovery.
+3. Make date-aware retrieval require an explicit temporal perspective instead of collapsing text-state and application.
+4. Every result must resolve to canonical entity IDs and expose why it matched plus Source Mode/provenance state.
+5. Use the Article 3 Thread as the first adversarial retrieval corpus: SANI/PKI scope, 2025 paragraph-4 non-mutation, 2026 corrigendum non-impact and the exclusive 2004 Chapter II boundary must survive retrieval.
+6. **After P1-D, stop expansion and execute Issue #16 — the post-P1 P0/P1 foundation audit + Discovery Lane pass — before broad P2 work.**
 
-P1-B Cellar update detection, P1-A Change Atom v0.3 and P1-C provenance ledger v0.1 are frozen. All P0 contracts remain closed unless an official adversary demonstrates representational failure.
+P1-A Change Atom v0.3, P1-B Cellar update detection, P1-C provenance ledger v0.1 and P1-E Thread v0.1 are frozen. All P0 contracts remain closed unless an official adversary demonstrates representational failure.
 
 ## Priority model
 
@@ -105,7 +105,8 @@ Established:
 5. genealogical continuity may cross a real applicability gap;
 6. retroactive application may predate entry into force;
 7. historical queries must distinguish `EX_POST_LEGAL_EFFECT` from `OFFICIAL_SOURCE_STATE_AS_OF`;
-8. new and legacy regimes may overlap during transition and end on different dates.
+8. new and legacy regimes may overlap during transition and end on different dates;
+9. inclusive/exclusive boundaries are executable semantics, not documentation: an integration adversary exposed and fixed a resolver bug where `inclusive: false` was previously ignored.
 
 See `docs/decisions/temporal-v0.1-interface-freeze.md`.
 
@@ -220,14 +221,37 @@ Append-only provenance ledger v0.1 is frozen: immutable Source Observations, der
 See `docs/decisions/provenance-ledger-v0.1-interface-freeze.md`.
 
 ### P1-D — Search/retrieval
-Structured-first retrieval over acts, provisions, atoms, entities, dates and lineage; embeddings remain secondary discovery.
+**Issue #15**
+
+Status: **ACTIVE CORE CAPABILITY.**
+
+Structured-first retrieval over acts, provisions, mutations, atoms, dates, lineage, Threads and provenance. The search index is a rebuildable projection, never canonical legal truth. Embeddings remain secondary discovery.
+
+First adversarial retrieval corpus: the frozen Regulation 794/2004 Article 3 Thread.
 
 ### P1-E — First end-to-end Thread
 **Issue #14**
 
-Status: **ACTIVE CORE INTEGRATION.**
+Status: **CORE INTERFACE RESOLVED; ISSUE CLOSED.**
 
-First Thread: Regulation 794/2004 Article 3, framed as the history of legally valid State-aid notification submission. Build the vertical slice before P1-D search/retrieval.
+Thread v0.1 is frozen as a reference-only chronological composition over canonical domain entities. The Article 3 Thread reconstructs 2004 → 2008 → 2025/2026, has zero Source Mode gaps, canonical Gold chronology/negative regressions, and generated evidence-linked 3-second / 30-second / 3-minute public views.
+
+Important integration discoveries retained as regressions:
+- baseline state must not be manufactured as a mutation;
+- exclusive temporal boundaries must be executed correctly;
+- unchanged paragraph text can have a derived cross-reference ripple without a textual mutation;
+- related corrigenda can be retained as reviewed non-impact evidence;
+- live endpoint availability is separate from pinned legal truth;
+- Thread persistence must not duplicate semantic/temporal truth.
+
+See `docs/decisions/thread-v0.1-interface-freeze.md`.
+
+### P1-F — Post-P1 foundation audit
+**Issue #16**
+
+Status: **QUEUED AFTER P1-D; BLOCKS BROAD P2 EXPANSION.**
+
+Re-audit every frozen P0/P1 interface using integration-derived evidence and several deliberately different official-source adversaries. Include at least one creative Discovery Lane cycle. Reopen a freeze only when evidence demonstrates representational or implementation failure.
 
 ## P2 — Public intelligence
 

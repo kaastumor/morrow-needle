@@ -70,7 +70,46 @@ def test_as_of_history_excludes_later_correction_of_correction():
     eng_january = [
         event["event_id"]
         for event in events_for_language(
-            FIXTURE["events"], "ENG", as_of_date="2005-02-01"
+            FIXTURE["events"], "ENG", source_cutoff_date="2005-02-01"
         )
     ]
     assert eng_january == ["corr-2005-01-28-group-a"]
+
+
+BACKPROJECTION = json.loads(
+    Path("fixtures/multilingual/reg794-2004-consolidation-backprojection-v0.1.json").read_text(encoding="utf-8")
+)
+
+
+def test_consolidated_version_date_is_not_source_availability_date():
+    state_date = BACKPROJECTION["text_state_label_date"]
+    for expression in BACKPROJECTION["observed_expressions"]:
+        assert expression["supporting_later_sources"]
+        assert all(
+            source["source_date"] > state_date
+            for source in expression["supporting_later_sources"]
+        )
+
+
+def test_source_cutoff_and_ex_post_text_state_must_not_be_conflated():
+    # By 1 February 2005 English has the January correction source available,
+    # but not the May correction-of-corrigendum.
+    english_sources = [
+        event["event_id"]
+        for event in events_for_language(
+            FIXTURE["events"],
+            "ENG",
+            source_cutoff_date="2005-02-01",
+        )
+    ]
+    assert english_sources == ["corr-2005-01-28-group-a"]
+
+    # Yet today's official consolidation labelled 20 May 2004 already carries
+    # later correction markers. That is an ex-post corrected text state, not
+    # evidence that those sources were available in May 2004.
+    eng = next(
+        item for item in BACKPROJECTION["observed_expressions"]
+        if item["language"] == "ENG"
+    )
+    assert eng["observed_correction_markers"] == ["C2"]
+    assert BACKPROJECTION["text_state_label_date"] < "2005-01-28"

@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import hashlib
 import json
 from pathlib import Path
+import uuid
 
 import requests
 
@@ -29,6 +30,59 @@ TARGETS=[
 ACTIONS=("CREATE","UPDATE")
 WEMI=("work","expression","manifestation")
 MAX_PAGES=20
+
+
+def _uuid1_instant(cellar_root: str) -> datetime | None:
+    raw=cellar_root.split(":",1)[-1]
+    try:
+        value=uuid.UUID(raw)
+    except ValueError:
+        return None
+    if value.version != 1:
+        return None
+    unix_seconds=(value.time-0x01B21DD213814000)/10_000_000
+    return datetime.fromtimestamp(unix_seconds,tz=timezone.utc)
+
+
+def _matches_target(event,target) -> bool:
+    wanted=f"celex:{target['celex']}".lower()
+    wanted_root=target["root_cellar_id"].lower()
+    identifiers={
+        value.lower() for value in event.get("identifiers",[])
+    }
+    root=event.get("root_cellar_id","").lower()
+    return wanted in identifiers or root == wanted_root
+
+
+def _query_unfiltered_window(start: str,end: str,target):
+    attempts=[]
+    matches=[]
+    for page_number in range(1,MAX_PAGES+1):
+        params={
+            "startDate":start,
+            "endDate":end,
+            "page":str(page_number),
+        }
+        payload,response=fetch(params)
+        page=parse_feed(payload)
+        attempts.append({
+            "query":params,
+            "request_url":response.url,
+            "payload_sha256":hashlib.sha256(payload).hexdigest(),
+            "event_count":len(page.events),
+            "more_entries":page.more_entries,
+            "search_mode":"UUID1_NARROW_UNFILTERED",
+        })
+        matches.extend(
+            event for event in page.events
+            if _matches_target(event,target)
+        )
+        if not page.more_entries:
+            return matches,attempts
+    raise AssertionError(
+        f"unfiltered root-time window exceeded {MAX_PAGES} pages "
+        f"for {target['celex']}"
+    )
 
 
 def fetch(params):
@@ -65,10 +119,30 @@ def _daily_windows(start: str, end: str):
 
 
 def find_target(target):
-    wanted=f"celex:{target['celex']}".lower()
-    wanted_root=target["root_cellar_id"].lower()
     attempts=[]
     matches=[]
+
+    root_instant=_uuid1_instant(target["root_cellar_id"])
+    if root_instant is not None:
+        narrow_start=(root_instant-timedelta(minutes=15)).replace(
+            microsecond=0
+        ).isoformat()
+        narrow_end=(root_instant+timedelta(minutes=15)).replace(
+            microsecond=0
+        ).isoformat()
+        narrow_matches,narrow_attempts=_query_unfiltered_window(
+            narrow_start,narrow_end,target
+        )
+        attempts.extend(narrow_attempts)
+        matches.extend(narrow_matches)
+        if matches:
+            matches.sort(key=lambda event:(
+                "WORK" not in event.get("wemi_levels",[]),
+                event["action"] != "CREATE",
+                event["ingestion_time"],
+                event["event_key"],
+            ))
+            return matches,attempts
     for window_start,window_end in _daily_windows(
         target["start"],target["end"]
     ):
@@ -92,12 +166,7 @@ def find_target(target):
                         "more_entries":page.more_entries,
                     })
                     for event in page.events:
-                        identifiers={
-                            value.lower()
-                            for value in event.get("identifiers",[])
-                        }
-                        root=event.get("root_cellar_id","").lower()
-                        if wanted in identifiers or root == wanted_root:
+                        if _matches_target(event,target):
                             matches.append(event)
                     if not page.more_entries:
                         break
@@ -183,6 +252,14 @@ def main() -> int:
             "match_count":result["match_count"],
             "selected_event_key":(
                 result["selected_event"]["event_key"]
+                if result["selected_event"] else None
+            ),
+            "selected_action":(
+                result["selected_event"]["action"]
+                if result["selected_event"] else None
+            ),
+            "selected_wemi_levels":(
+                result["selected_event"]["wemi_levels"]
                 if result["selected_event"] else None
             ),
         }

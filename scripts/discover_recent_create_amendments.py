@@ -19,8 +19,8 @@ from needle.updates.reobserve import celex_from_event
 
 ENDPOINT="https://publications.europa.eu/webapi/notification/ingestion"
 CELLAR_CELEX="https://publications.europa.eu/resource/celex/{celex}"
-WEMI=("work","expression","manifestation")
-MAX_PAGES=25
+WEMI="work"
+MAX_PAGES=12
 LOOKBACK_DAYS=7
 MAX_CANDIDATES=20
 AMEND_PATTERNS=(
@@ -154,44 +154,42 @@ def main():
         if days_back == 0:
             end=now.replace(microsecond=0)
         start=end.replace(hour=0,minute=0,second=0)
-        for wemi in WEMI:
-            for page_number in range(1,MAX_PAGES+1):
-                payload,response=fetch_feed(
-                    start,end,wemi,page_number
-                )
-                page=parse_feed(payload)
-                feed_attempts.append({
-                    "start":iso(start),
-                    "end":iso(end),
-                    "wemi":wemi,
-                    "page":page_number,
-                    "payload_sha256":hashlib.sha256(payload).hexdigest(),
-                    "event_count":len(page.events),
-                    "more_entries":page.more_entries,
-                })
-                for event in page.events:
-                    if (
-                        classify_event_relevance(event)
-                        != "LEGAL_RESOURCE_CANDIDATE"
-                    ):
-                        continue
-                    celex=celex_from_event(event)
-                    if not celex:
-                        continue
-                    current=roots.get(event["root_cellar_id"])
-                    candidate={
+        for page_number in range(1,MAX_PAGES+1):
+            payload,response=fetch_feed(
+                start,end,WEMI,page_number
+            )
+            page=parse_feed(payload)
+            feed_attempts.append({
+                "start":iso(start),
+                "end":iso(end),
+                "wemi":WEMI,
+                "page":page_number,
+                "payload_sha256":hashlib.sha256(payload).hexdigest(),
+                "event_count":len(page.events),
+                "more_entries":page.more_entries,
+            })
+            for event in page.events:
+                if (
+                    classify_event_relevance(event)
+                    != "LEGAL_RESOURCE_CANDIDATE"
+                ):
+                    continue
+                celex=celex_from_event(event)
+                if not celex:
+                    continue
+                roots.setdefault(
+                    event["root_cellar_id"],
+                    {
                         "event":event,
                         "celex":celex,
-                    }
-                    if current is None:
-                        roots[event["root_cellar_id"]]=candidate
-                    elif (
-                        "WORK" in event["wemi_levels"]
-                        and "WORK" not in current["event"]["wemi_levels"]
-                    ):
-                        roots[event["root_cellar_id"]]=candidate
-                if not page.more_entries:
-                    break
+                    },
+                )
+            if len(roots) >= MAX_CANDIDATES:
+                break
+            if not page.more_entries:
+                break
+        if len(roots) >= MAX_CANDIDATES:
+            break
 
     ordered=sorted(
         roots.values(),
@@ -225,6 +223,11 @@ def main():
             item["looks_like_amending_act"] for item in candidates
         ),
         "candidates":candidates,
+        "discovery_scope":(
+            "CREATE notifications at WEMI WORK level only. Expression and "
+            "manifestation creation is representation traffic, not a new "
+            "legal-work discovery signal."
+        ),
         "guardrail":(
             "Drafting-language matches are discovery hints only. They do not "
             "establish a legal mutation until target, comparator and authentic "

@@ -284,7 +284,9 @@ def test_integrated_poller_is_replay_safe_across_overlapping_windows():
         events=(_event("1"),_event("2")),
     )
     state, emissions = accept_poll_page(state,page)
-    assert [item.event["notification_id"] for item in emissions] == ["1","2"]
+    assert [item.event["event_key"] for item in emissions] == [
+        _event("1")["event_key"], _event("2")["event_key"]
+    ]
     assert state.cursor.last_completed_end == "2026-09-20T10:05:00+00:00"
 
     state = begin_poll(
@@ -301,7 +303,9 @@ def test_integrated_poller_is_replay_safe_across_overlapping_windows():
         events=(_event("2"),_event("3")),
     )
     state, emissions = accept_poll_page(state,replay)
-    assert [item.event["notification_id"] for item in emissions] == ["3"]
+    assert [item.event["event_key"] for item in emissions] == [
+        _event("3")["event_key"]
+    ]
     assert state.processed_event_keys == frozenset({
         _event("1")["event_key"],
         _event("2")["event_key"],
@@ -324,7 +328,9 @@ def test_integrated_poller_does_not_commit_incomplete_window():
         events=(_event("10"),),
     )
     state, emissions = accept_poll_page(state,page1)
-    assert [item.event["notification_id"] for item in emissions] == ["10"]
+    assert [item.event["event_key"] for item in emissions] == [
+        _event("10")["event_key"]
+    ]
     assert state.cursor.last_completed_end == "2026-09-20T09:00:00+00:00"
     assert state.cursor.next_page == 2
     assert state.cursor.active_window_start is not None

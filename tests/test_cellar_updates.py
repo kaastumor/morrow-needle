@@ -7,6 +7,7 @@ import pytest
 
 from needle.updates.cellar_feed import FeedPage, dedupe_events, parse_feed
 from needle.updates.classify import (
+    build_source_change,
     classify_source_change,
     refresh_scope,
     snapshot_from_observations,
@@ -394,3 +395,81 @@ def test_current_atom_template_bug_falls_back_to_cross_format_event_key():
     assert atom_event["identifiers"] == rss_event["identifiers"]
     assert atom_event["wemi_levels"] == ["WORK"]
     assert list(Draft202012Validator(SCHEMA).iter_errors(atom_event)) == []
+
+
+
+SOURCE_CHANGE_SCHEMA = json.loads(
+    Path("schemas/source-change-v0.1.schema.json").read_text(encoding="utf-8")
+)
+SOURCE_CHANGE_FIXTURE = json.loads(
+    Path("fixtures/updates/source-change-adversaries-v0.1.json").read_text(
+        encoding="utf-8"
+    )
+)
+
+
+def test_auditable_source_change_records_preserve_observation_refs():
+    fixture = SOURCE_CHANGE_FIXTURE
+    event = fixture["event"]
+    before = fixture["snapshots"]["before"]
+
+    for snapshot_name, expected in fixture["expected"].items():
+        change = build_source_change(
+            event,
+            previous=before,
+            current=fixture["snapshots"][snapshot_name],
+        )
+        assert change["classification"] == expected
+        assert change["event_key"] == event["event_key"]
+        assert change["previous"]["content_observation_id"] == (
+            "src-content-before"
+        )
+        assert list(
+            Draft202012Validator(SOURCE_CHANGE_SCHEMA).iter_errors(change)
+        ) == []
+
+
+def test_no_material_change_still_records_distinct_reobservation_ids():
+    fixture = SOURCE_CHANGE_FIXTURE
+    change = build_source_change(
+        fixture["event"],
+        previous=fixture["snapshots"]["before"],
+        current=fixture["snapshots"]["same"],
+    )
+    assert change["classification"] == "NO_MATERIAL_CHANGE"
+    assert change["previous"]["content_hash"] == change["current"]["content_hash"]
+    assert (
+        change["previous"]["content_observation_id"]
+        != change["current"]["content_observation_id"]
+    )
+    assert set(change["classification_basis"]) == {
+        "CONTENT_HASH",
+        "METADATA_HASH",
+    }
+
+
+def test_source_change_id_is_deterministic_over_event_and_observation_refs():
+    fixture = SOURCE_CHANGE_FIXTURE
+    first = build_source_change(
+        fixture["event"],
+        previous=fixture["snapshots"]["before"],
+        current=fixture["snapshots"]["metadata_changed"],
+    )
+    second = build_source_change(
+        fixture["event"],
+        previous=fixture["snapshots"]["before"],
+        current=fixture["snapshots"]["metadata_changed"],
+    )
+    assert first["change_id"] == second["change_id"]
+
+
+def test_source_change_is_not_a_legal_mutation():
+    fixture = SOURCE_CHANGE_FIXTURE
+    change = build_source_change(
+        fixture["event"],
+        previous=fixture["snapshots"]["before"],
+        current=fixture["snapshots"]["content_changed"],
+    )
+    assert change["classification"] == "CONTENT_CHANGED"
+    assert "legal_effect" not in change
+    assert "mutation" not in change

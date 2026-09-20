@@ -182,6 +182,7 @@ LIVE_EXPECTATIONS = {
         "articles_min": 13,
         "paragraphs_min": 70,
         "recitals_min": 15,
+        "annexes_min": 5,
         "annotations_min": 0,
         "mapped_not_above_source": True,
         "known_gap_contains": "raster assets",
@@ -194,6 +195,8 @@ LIVE_EXPECTATIONS = {
     "02004R0794-20250813": {
         "articles_min": 15,
         "paragraphs_min": 80,
+        "annexes_min": 8,
+        "tables_min": 190,
         "table_cells_min": 1000,
         "annotations_exact": 48,
         "mapped_not_above_source": True,
@@ -212,10 +215,12 @@ def benchmark_errors(celex: str, ast: dict[str, Any]) -> list[str]:
         "articles": kinds.get("ARTICLE", 0),
         "paragraphs": kinds.get("PARAGRAPH", 0),
         "recitals": kinds.get("RECITAL", 0),
+        "annexes": kinds.get("ANNEX", 0),
+        "tables": kinds.get("TABLE", 0),
         "table_cells": kinds.get("TABLE_CELL", 0),
     }
 
-    for name in ("articles", "paragraphs", "recitals", "table_cells"):
+    for name in ("articles", "paragraphs", "recitals", "annexes", "tables", "table_cells"):
         minimum = expected.get(f"{name}_min")
         exact = expected.get(f"{name}_exact")
         actual = checks[name]

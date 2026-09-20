@@ -241,3 +241,93 @@ Provisional representation classes:
 - `OTHER`
 
 The class records parser capability; it is not a judgment about legal authority.
+
+
+---
+
+# Resolver architecture — adopted after SPARQL live test
+
+The primary Cellar ingestion path is now split into two official interfaces:
+
+## Discovery / identity plane — Cellar SPARQL
+
+Use the Publications Office SPARQL endpoint to resolve:
+
+```
+CELEX
+  → Work
+  → language-scoped Expression
+  → available Manifestations
+  → manifestation format
+  → WEMI Item URI(s)
+```
+
+This is the canonical representation inventory for routine ingestion.
+
+The live controlled cases returned:
+
+### 32004R0794 / ENG
+- FMX4 manifestation `.0006.05`
+- PDF manifestation `.0006.02`
+- XHTML manifestation `.0006.03`
+
+### 31958R0001 / ENG
+- HTML manifestation `.0008.02`
+- PDFA1B manifestation `.0008.01`
+
+This exactly matches the observed retrieval behaviour and removes the need to infer format availability from large XML notices.
+
+## Delivery plane — Cellar publication endpoint
+
+After a manifestation is selected:
+
+- use `application/list;mtype={format}` to inspect its publication content structure where appropriate;
+- use `application/zip;mtype={format}` for complete bundled retrieval where supported;
+- or retrieve the authoritative Item URI(s) returned by the knowledge graph.
+
+The raw bytes are hashed and stored as immutable Source Observations before parsing.
+
+## Branch/tree notices
+
+Branch and tree notices remain useful for:
+- independent cross-checks;
+- richer metadata;
+- difficult historical reconstruction;
+- diagnostics when SPARQL and delivery behaviour disagree.
+
+They are **not** the primary routine manifestation selector.
+
+## Critical WEMI/content distinction
+
+The Cellar knowledge graph reported one WEMI Item for the 2004 FMX4 manifestation, while the publication list exposed 132 content entries inside the delivered FMX bundle.
+
+Therefore:
+
+> **WEMI Item count and internal publication-stream count are different quantities.**
+
+Needle must not flatten them.
+
+The manifestation is the parser-selection unit.
+The exact delivered bytes/streams are the artifact-provenance unit.
+The normalized legal provisions are the legal-comparison unit.
+
+## Deterministic selection policy
+
+The current parser-capability preference is:
+
+1. FMX4 → `STRUCTURED_LEGAL_XML`
+2. XHTML → `STRUCTURED_XHTML`
+3. HTML → `STRUCTURED_HTML`
+4. supported text-bearing PDF variants → `PDF_TEXT`
+5. image-only PDF → `PDF_IMAGE`
+6. other → explicit manual/adapter handling
+
+This is a **technical parseability preference**, not a ranking of legal authority.
+
+If the preferred format is unavailable for a given language expression, the selector falls back deterministically and records that fact.
+
+Machine contract:
+- `schemas/manifestation-selection-v0.1.schema.json`
+
+Regression tests:
+- `tests/test_cellar_representation_selection.py`

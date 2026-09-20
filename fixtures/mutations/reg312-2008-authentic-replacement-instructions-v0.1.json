@@ -1,0 +1,21 @@
+{
+  "fixture_id": "reg312-2008-authentic-replacement-instructions-v0.1",
+  "source": {
+    "celex": "32008R0312",
+    "eli": "http://data.europa.eu/eli/reg/2008/312/oj",
+    "oj": "OJ L 93, 4.4.2008",
+    "language": "ENG",
+    "authority": "AUTHENTIC_OFFICIAL_JOURNAL"
+  },
+  "excerpt": "Article 1\nRegulation (EC) No 297/95 is amended as follows:\n1. Article 3 is amended as follows:\n(a) Paragraph 1 is amended as follows:\n(i) point (a) is amended as follows:\n— in the first subparagraph, ‘EUR 232 000’ is replaced by ‘EUR 242 600’,",
+  "parser_case": "Article 3, paragraph 1 is replaced by the following",
+  "expected_evidence": {
+    "channel": "AUTHENTIC_ACT",
+    "source_id": "CELEX:32008R0312",
+    "operation": "REPLACE",
+    "target_locator": "Article 3 > 1",
+    "authority_character": "CANONICAL_LEGAL_CAUSE",
+    "locator": "Article 1(1)(a)"
+  },
+  "guardrail": "The parser fixture isolates an explicit replacement drafting form. The authentic source excerpt also demonstrates nested monetary replacements, but those are not promoted until their nested target locator can be anchored deterministically."
+}

@@ -238,7 +238,13 @@ For consolidation modification annotations, the AST is expected to preserve sour
 - opening/closing source markers;
 - resolved covered node/segment ranges.
 
-The exact field contract will be frozen only after live Formex attribute extraction.
+Live extraction has now validated this annotation family against consolidated CELEX `02004R0794-20250813`.
+
+The dedicated machine contract is `schemas/consolidation-modification-annotation-v0.1.schema.json`, with a parser in `src/needle/formex/modifications.py`.
+
+Observed current Formex fields include `ACTION`, `LEVEL`, `COMMAND`, `ACTIVE.DOC`, `ACTIVE.LOC`, and `MOD.LEVEL`. Nested level-2 corrigendum provenance has been observed in live Cellar data.
+
+These annotations preserve official documentary mutation provenance while explicitly carrying a non-binding authority character; they feed the mutation evidence reconciler rather than directly generating Change Atoms.
 
 ---
 

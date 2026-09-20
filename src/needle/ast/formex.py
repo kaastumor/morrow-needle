@@ -14,7 +14,7 @@ from needle.formex.modifications import parse_modification_markers
 STRUCTURAL_KINDS = {
     "ARTICLE": "ARTICLE", "PARAG": "PARAGRAPH", "PARAGRAPH": "PARAGRAPH",
     "ALINEA": "PARAGRAPH", "SUBPARAG": "SUBPARAGRAPH", "POINT": "POINT",
-    "INDENT": "INDENT", "PART": "PART", "TITLE": "TITLE", "CHAPTER": "CHAPTER",
+    "INDENT": "INDENT", "PART": "PART", "CHAPTER": "CHAPTER",
     "SECTION": "SECTION", "SUBSECTION": "SUBSECTION", "ANNEX": "ANNEX",
     "CONS.ANNEX": "ANNEX", "APPENDIX": "APPENDIX", "FORM": "FORM",
     "FOOTNOTE": "FOOTNOTE", "NOTE": "FOOTNOTE", "LIST": "LIST",
@@ -22,12 +22,13 @@ STRUCTURAL_KINDS = {
     "CELL": "TABLE_CELL", "CONSID": "RECITAL", "RECITAL": "RECITAL",
     "PREAMBLE": "PREAMBLE", "ENACTING.TERMS": "ENACTING_TERMS",
     "ENACTING-TERMS": "ENACTING_TERMS", "FINAL": "SIGNATURE", "SIGNATURE": "SIGNATURE",
+    "GR.SEQ": "BLOCK",
 }
-LABEL_TAGS = {"TI.ART", "NO.ART", "NO.ARTICLE", "NO.PARAG", "NO.P", "NO.PNT", "NO.POINT", "NO.EL", "NO.DASH", "NO.ITEM", "NO.ANNEX", "NUM"}
+LABEL_TAGS = {"TI.ART", "NO.ART", "NO.ARTICLE", "NO.PARAG", "NO.P", "NO.PNT", "NO.POINT", "NO.EL", "NO.DASH", "NO.ITEM", "NO.ANNEX", "NO.GR.SEQ", "NUM"}
 HEADING_TAGS = {"STI.ART", "TI.CHAP", "TI.SECTION", "TI.SUBSECTION", "TI.PART", "TI.TITLE", "TI.ANNEX", "STITLE", "GR.TITLE", "HD", "HT"}
 OPAQUE_MEDIA_TAGS = {"INCL.ELEMENT", "FIGURE", "IMAGE", "IMG", "GRAPHIC"}
-KNOWN_TEXT_WRAPPERS = {"P", "TXT", "DEFINITION", "VISA", "PREAMBLE.INIT", "PREAMBLE.FINAL", "REF.DOC", "REF.DOC.OJ", "LINK", "DATE", "PLACE", "NAME", "QUOT.START", "QUOT.END", "FORMULA", "MATH", "EXPR"}
-SOURCE_METADATA_TAGS = {"BIB.DOC", "BIB.INSTANCE", "BIB.INSTANCE.CONS", "NO.CELEX"}
+KNOWN_TEXT_WRAPPERS = {"P", "TXT", "DEFINITION", "VISA", "PREAMBLE.INIT", "PREAMBLE.FINAL", "REF.DOC", "REF.DOC.OJ", "LINK", "DATE", "PLACE", "NAME", "QUOT.START", "QUOT.END", "FORMULA", "MATH", "EXPR", "NP", "CONTENTS", "GR.CONSID.INIT", "PL.DATE", "SIGNATORY", "FT", "TI", "STI"}
+SOURCE_METADATA_TAGS = {"BIB.DOC", "BIB.INSTANCE", "BIB.INSTANCE.CONS", "NO.CELEX", "FMX", "PUBLICATION.REF"}
 PUBLICATION_NAVIGATION_TAGS = {"TOC", "ITEM.REF"}
 PROVENANCE_ONLY_TAGS = {"GR.ANNOTATION", "GR.CORRIG", "GR.MOD.ACT", "GR.NOTES"}
 
@@ -42,12 +43,62 @@ def _native_identifier(element: ET.Element) -> str | None:
 
 def _label_and_heading(element: ET.Element):
     label = heading = label_element = heading_element = None
-    for child in list(element):
+    children = list(element)
+    for child in children:
         tag, value = local(child.tag), text_of(child)
-        if not value: continue
-        if tag in LABEL_TAGS and label is None: label, label_element = value, child
-        elif tag in HEADING_TAGS and heading is None: heading, heading_element = value, child
+        if not value:
+            continue
+        if tag in LABEL_TAGS and label is None:
+            label, label_element = value, child
+        elif tag in HEADING_TAGS and heading is None:
+            heading, heading_element = value, child
+
+    # Formex commonly wraps a point/recital number and its text in NP.
+    # Look exactly one transparent level down; do not search arbitrarily deep.
+    if label is None:
+        for child in children:
+            if local(child.tag) != "NP":
+                continue
+            for grandchild in list(child):
+                tag, value = local(grandchild.tag), text_of(grandchild)
+                if value and tag in LABEL_TAGS:
+                    label, label_element = value, grandchild
+                    break
+            if label is not None:
+                break
     return label, heading, label_element, heading_element
+
+
+def _title_semantics(element: ET.Element):
+    primary = secondary = None
+    primary_element = secondary_element = None
+    for child in list(element):
+        tag = local(child.tag)
+        value = text_of(child)
+        if not value:
+            continue
+        if tag == "TI" and primary is None:
+            primary, primary_element = value, child
+        elif tag == "STI" and secondary is None:
+            secondary, secondary_element = value, child
+
+    visible = (primary or "").strip()
+    upper = visible.upper()
+    if upper.startswith("CHAPTER "):
+        kind = "CHAPTER"
+    elif upper.startswith("PART "):
+        kind = "PART"
+    elif upper.startswith("SUBSECTION "):
+        kind = "SUBSECTION"
+    elif upper.startswith("SECTION "):
+        kind = "SECTION"
+    elif upper.startswith("TITLE "):
+        kind = "TITLE"
+    else:
+        kind = "HEADING"
+
+    # TI is the visible title/number line; STI is its subtitle.
+    return kind, primary, secondary, primary_element, secondary_element
 
 def _classify_unclaimed_atom(atom: dict[str, Any]) -> tuple[str, str]:
     tags = set(atom.get("native_tags", ()))
@@ -258,9 +309,15 @@ class FormexASTParser:
                     )
                 continue
 
-            kind = STRUCTURAL_KINDS.get(tag)
+            if tag == "TITLE":
+                kind, label, heading, label_element, heading_element = _title_semantics(child)
+            else:
+                kind = STRUCTURAL_KINDS.get(tag)
+                label = heading = label_element = heading_element = None
+                if kind is not None:
+                    label, heading, label_element, heading_element = _label_and_heading(child)
+
             if kind is not None:
-                label, heading, label_element, heading_element = _label_and_heading(child)
                 native_id = _native_identifier(child)
                 citation_piece = label or native_id
                 next_stack = citation_stack + ([citation_piece] if citation_piece else [])

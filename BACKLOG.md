@@ -55,7 +55,11 @@ Goal: every foundational claim becomes a machine-testable regression case.
 ### P0-D — Canonical document/provision AST
 **Issue #4**
 
-Define the normalized internal representation of legal texts before parsers proliferate.
+Status: **DRAFT CONTRACT COMMITTED; LIVE FIXTURES/PARSERS IN PROGRESS.**
+
+Adopted flat-with-links model: structural nodes + ordered text segments + references + source annotations, all source-anchored. Live consolidated FMX4 validated the need for first-class nested mutation provenance annotations.
+
+Next: normalize modern FMX4, 1958 HTML, and consolidated FMX4 into the same AST before freezing v0.1.
 
 ### P0-E — Temporal semantics
 **Issue #5**
@@ -79,10 +83,14 @@ Formalize CELEX ↔ ELI ↔ Cellar ↔ OJ ↔ procedure/interinstitutional ident
 
 Validate the distinction between proposal/draft/position/agreement/adoption/publication/force/application/repeal against real procedures.
 
-### P0-I — Deterministic mutation engine
+### P0-I — Source-assisted deterministic mutation engine
 **Issue #9**
 
-Specify and prototype structural matching and textual diffing after identity/AST/time assumptions stabilize.
+Architecture revised after live consolidated Formex testing.
+
+Reconcile five evidence channels: authentic modifying/correcting acts, embedded official consolidation provenance, official relationship metadata, consolidated checkpoints, and deterministic canonical-AST diff.
+
+A parser/schema/test fixture now exists for Formex CLG.MDF* provenance, including nested corrigenda. Full mutation engine implementation remains downstream of the AST and temporal contracts.
 
 ## P1 — Core system
 

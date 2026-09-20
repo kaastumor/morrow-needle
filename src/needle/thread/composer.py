@@ -208,3 +208,59 @@ def materialize_thread(
         },
         "unknowns":thread["unknowns"],
     }
+
+
+
+def emit_thread_facts(
+    thread: dict[str, Any],
+    *,
+    root: Path | str = Path("."),
+) -> list[dict[str, Any]]:
+    """Flatten a materialized Thread into Gold-testable partial facts.
+
+    Facts retain canonical domain entities by reference/materialization; they do
+    not become a second persistence model.
+    """
+    materialized = materialize_thread(thread, root=root)
+    facts: list[dict[str, Any]] = []
+
+    for event_index, event in enumerate(materialized["events"]):
+        facts.append({
+            "kind":"THREAD_EVENT",
+            "event_index":event_index,
+            "event_id":event["event_id"],
+            "event_kind":event["event_kind"],
+            "refs":[
+                {
+                    "kind":ref["kind"],
+                    "entity_id":ref["entity_id"],
+                }
+                for ref in event["refs"]
+            ],
+        })
+        for ref in event["refs"]:
+            facts.append({
+                "kind":"THREAD_REF",
+                "event_index":event_index,
+                "event_id":event["event_id"],
+                "event_kind":event["event_kind"],
+                "ref_kind":ref["kind"],
+                "entity_id":ref["entity_id"],
+                "source_key":ref["source_key"],
+                "entity":ref["entity"],
+            })
+
+    gaps = materialized["source_mode"]["gaps"]
+    facts.append({
+        "kind":"THREAD_SOURCE_MODE",
+        "closed":not gaps,
+        "gap_count":len(gaps),
+    })
+
+    for unknown in materialized["unknowns"]:
+        facts.append({
+            "kind":"THREAD_UNKNOWN",
+            **unknown,
+        })
+
+    return facts

@@ -186,3 +186,69 @@ def test_retraction_can_remove_record_from_current_view_without_replacement():
     assert validate_ledger(records) == []
     current = {record["record_id"] for record in active_records(records)}
     assert target["record_id"] not in current
+
+
+def test_all_article3_thread_atoms_have_source_mode_support():
+    atom_ids = {
+        "reg794-art3-sani-duty-v0.1",
+        "reg794-art3-alt-channel-permission-v0.1",
+        "reg794-art3-invalid-channel-status-v0.1",
+        "reg794-art3-2025-notification-channel-duty-v0.1",
+        "reg794-art3-2025-correspondence-channel-duty-v0.1",
+        "reg794-art3-2025-crossref-exception-ripple-v0.1",
+    }
+    for atom_id in atom_ids:
+        traces = trace_claim_support(
+            RECORDS,
+            entity_type="CHANGE_ATOM",
+            entity_id=atom_id,
+        )
+        assert traces, atom_id
+        assert all(trace["source_observation"] is not None for trace in traces)
+        assert all(trace["derivation_record"] is not None for trace in traces)
+
+
+def test_2025_mutation_keeps_before_after_and_cause_independent():
+    traces = trace_claim_support(
+        RECORDS,
+        entity_type="MUTATION",
+        entity_id="reg794-article3-p3-2025-live-verified-v0.1",
+    )
+    assert {trace["support_record"]["payload"]["role"] for trace in traces} == {
+        "BEFORE",
+        "AFTER",
+        "CAUSE",
+    }
+    assert {
+        trace["source_observation"]["record_id"] for trace in traces
+    } == {
+        "src-reg794-20161222-eng",
+        "src-reg794-20250703-eng",
+        "src-reg905-2025-eng",
+    }
+
+
+def test_2025_temporal_and_cross_reference_effect_preserve_evidence_character():
+    temporal = trace_claim_support(
+        RECORDS,
+        entity_type="TEMPORAL_ASSERTION",
+        entity_id="reg794-art3-p3-2025-application-start",
+    )
+    assert len(temporal) == 1
+    assert temporal[0]["support_record"]["payload"]["role"] == "TEMPORAL"
+    assert temporal[0]["support_record"]["payload"]["source_span"]["locator"].endswith(
+        "13176-13316"
+    )
+
+    ripple = trace_claim_support(
+        RECORDS,
+        entity_type="CHANGE_ATOM",
+        entity_id="reg794-art3-2025-crossref-exception-ripple-v0.1",
+    )
+    assert len(ripple) == 3
+    assert {
+        trace["support_record"]["payload"]["evidence_state"] for trace in ripple
+    } == {"DERIVED"}
+    assert {
+        trace["support_record"]["payload"]["role"] for trace in ripple
+    } == {"SEMANTIC_CLAIM", "CONTEXT"}

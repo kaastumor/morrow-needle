@@ -8,13 +8,14 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 Unless new official evidence creates a more severe blocker, the hourly build loop should start here:
 
-1. **P1-C / Issue #12 — append-only provenance ledger + claim-support graph.** Build the canonical audit spine before feeds/search/UI multiply provenance logic.
-2. First adversary: trace the VERIFIED Regulation 794/2004 Article 3 SANI atom back through semantic support, authentic source span, deterministic mutation derivation and immutable Cellar source observations.
-3. Prove corrections/supersessions append new records without rewriting historical provenance.
-4. Preserve independent evidence channels as independent support edges.
-5. After the provenance interface is stable, reassess P1-B source update detection as the likely next operational capability.
+1. **P1-B — Cellar source update detection.** Treat the official Cellar ingestion RSS/Atom feed as a durable change-hint stream, not as evidence that law changed.
+2. Build an idempotent feed-event contract keyed by permanent notification ID, with target/root WEMI identity, CREATE/UPDATE/DELETE action, source identifiers and ingestion time.
+3. Use overlap-window polling + event-ID dedupe; never rely on timestamp alone because `startDate` is inclusive and replay/backfill must be safe.
+4. A feed UPDATE triggers targeted metadata/content re-observation. Only hash/metadata comparison may classify CONTENT_CHANGED, METADATA_ONLY, AVAILABILITY_CHANGED or NO_MATERIAL_CHANGE.
+5. Preserve DELETE as source availability history; never erase Source Observations.
+6. After P1-B is stable, reassess P1-D search/retrieval versus P1-E first end-to-end Thread.
 
-P1-A / Change Atom v0.3 is frozen. All P0 foundation contracts remain closed unless a new official adversary demonstrates representational failure.
+P1-A Change Atom v0.3 and P1-C provenance ledger v0.1 are frozen. All P0 contracts remain closed unless an official adversary demonstrates representational failure.
 
 ## Priority model
 
@@ -206,9 +207,11 @@ Detect new/changed official source objects without repeatedly crawling everythin
 ### P1-C — Provenance ledger
 **Issue #12**
 
-Status: **ACTIVE CORE CAPABILITY.**
+Status: **CORE INTERFACE RESOLVED; ISSUE CLOSED.**
 
-Build an append-only audit graph of SOURCE_OBSERVATION, DERIVATION_RUN, CLAIM_SUPPORT and SUPERSESSION records with deterministic hashes and fail-closed references.
+Append-only provenance ledger v0.1 is frozen: immutable Source Observations, derivation runs, claim-support edges and correction/supersession/retraction records with deterministic hashes and a derived current view.
+
+See `docs/decisions/provenance-ledger-v0.1-interface-freeze.md`.
 
 ### P1-D — Search/retrieval
 Structured-first retrieval over acts, provisions, atoms, entities, dates and lineage; embeddings remain secondary discovery.

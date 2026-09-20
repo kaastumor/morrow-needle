@@ -33,7 +33,8 @@ _KIND_PRIORITY = {
     "TEMPORAL_ASSERTION":2,
     "LINEAGE_EDGE":3,
     "THREAD_EVIDENCE":4,
-    "THREAD":5,
+    "THREAD_UNKNOWN":5,
+    "THREAD":6,
 }
 
 _EXACT_FIELD_PRIORITY = {
@@ -233,6 +234,11 @@ def _hydrate(
     ref = document["entity_ref"]
     if ref["kind"] == "THREAD":
         return thread
+    if ref["kind"] == "THREAD_UNKNOWN":
+        return next(
+            unknown for unknown in thread.get("unknowns", [])
+            if unknown["unknown_id"] == ref["entity_id"]
+        )
     source_key = document["source_key"]
     return sources[source_key]["index"][ref["entity_id"]]
 

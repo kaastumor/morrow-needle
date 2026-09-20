@@ -1,0 +1,32 @@
+{
+  "fixture_id": "reg794-article3-corrigendum-scope-v0.1",
+  "thread": "CELEX:32004R0794#Article3",
+  "observed_at": "2026-09-20",
+  "official_source": {
+    "celex": "32025R0905R(01)",
+    "eli": "http://data.europa.eu/eli/reg_impl/2025/905/corrigendum/2026-07-17/oj",
+    "publication_date": "2026-07-17",
+    "corrects": "CELEX:32025R0905",
+    "language_scope": ["BG", "ES", "DA", "DE", "EL", "EN", "FR", "GA", "HR", "IT", "LV", "MT", "RO", "SK"]
+  },
+  "correction_target": {
+    "amending_act_path": "Article 1(4)(b)",
+    "base_act_path": "Article 4(1), second sentence",
+    "base_act_celex": "32004R0794"
+  },
+  "thread_scope_result": {
+    "article3_affected": false,
+    "classification": "NO_THREAD_MUTATION",
+    "rationale": "The corrigendum explicitly targets the amendment of Article 4(1), not Article 3. It is relevant provenance for the 2025 amending act but does not create an Article 3 text state, mutation, Change Atom, or rule-lineage event."
+  },
+  "forbidden_inferences": [
+    "A corrigendum to an act that also amended Article 3 must not automatically be attached as an Article 3 mutation.",
+    "A language being listed for the corrigendum does not imply that Article 3 changed in that language.",
+    "The 2026 publication date must not create a new Article 3 text-state boundary without provision-scoped evidence."
+  ],
+  "thread_handling": {
+    "retain_as": "RELATED_SOURCE_NON_IMPACT",
+    "display_default": false,
+    "source_mode_note": "Expose on provenance/source inspection to explain why the later corrigendum was considered and excluded from the Article 3 mutation timeline."
+  }
+}

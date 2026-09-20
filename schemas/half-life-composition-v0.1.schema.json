@@ -45,13 +45,13 @@
       "minLength": 1
     },
     "original_regime": {
-      "$ref": "#/$defs/original_regime"
+      "$ref": "#/$defs/regime"
     },
     "successor_regimes": {
       "type": "array",
       "minItems": 1,
       "items": {
-        "$ref": "#/$defs/successor_regime"
+        "$ref": "#/$defs/regime"
       }
     },
     "guardrails": {
@@ -71,13 +71,12 @@
     }
   },
   "$defs": {
-    "original_regime": {
+    "regime": {
       "type": "object",
       "required": [
         "regime_id",
         "application_start_assertion_id",
-        "original_end_assertion_id",
-        "current_end_assertion_id"
+        "end_assertion_ids"
       ],
       "properties": {
         "regime_id": {
@@ -86,31 +85,14 @@
         "application_start_assertion_id": {
           "type": "string"
         },
-        "original_end_assertion_id": {
-          "type": "string"
-        },
-        "current_end_assertion_id": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": false
-    },
-    "successor_regime": {
-      "type": "object",
-      "required": [
-        "regime_id",
-        "application_start_assertion_id",
-        "application_end_assertion_id"
-      ],
-      "properties": {
-        "regime_id": {
-          "type": "string"
-        },
-        "application_start_assertion_id": {
-          "type": "string"
-        },
-        "application_end_assertion_id": {
-          "type": "string"
+        "end_assertion_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          },
+          "description": "Chronological end-boundary history: original/current end first, followed by explicit later overrides/extensions."
         }
       },
       "additionalProperties": false

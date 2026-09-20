@@ -72,6 +72,89 @@ PROBES = [
 def _local(tag: str) -> str:
     return tag.rsplit("}", 1)[-1]
 
+def _child_values(node, child_tag: str):
+    values = []
+    for child in list(node):
+        if _local(child.tag) != child_tag:
+            continue
+        for descendant in child.iter():
+            if _local(descendant.tag) == "VALUE":
+                value = (descendant.text or "").strip()
+                if value and value not in values:
+                    values.append(value)
+    return values
+
+def _first_uri(node):
+    for child in list(node):
+        if _local(child.tag) != "URI":
+            continue
+        for descendant in child.iter():
+            if _local(descendant.tag) == "VALUE":
+                value = (descendant.text or "").strip()
+                if value:
+                    return value
+    return None
+
+def extract_branch_manifestations(root):
+    inventory = []
+    seen = set()
+
+    for relation in root.iter():
+        if _local(relation.tag) != "EXPRESSION_MANIFESTED_BY_MANIFESTATION":
+            continue
+        for manifestation in relation.iter():
+            if _local(manifestation.tag) != "MANIFESTATION":
+                continue
+
+            uri = _first_uri(manifestation)
+            types = _child_values(manifestation, "MANIFESTATION_TYPE")
+
+            # Some notices encode manifestation type in embedded metadata.
+            if not types:
+                for candidate in manifestation.iter():
+                    if _local(candidate.tag) == "MANIFESTATION_TYPE":
+                        for descendant in candidate.iter():
+                            if _local(descendant.tag) == "VALUE":
+                                value = (descendant.text or "").strip()
+                                if value and value not in types:
+                                    types.append(value)
+
+            key = (uri, tuple(types))
+            if key in seen:
+                continue
+            seen.add(key)
+
+            inventory.append({
+                "uri": uri,
+                "types": types,
+            })
+
+    return inventory
+
+def choose_representation(inventory):
+    preference = [
+        ("fmx4", "STRUCTURED_LEGAL_XML"),
+        ("xhtml", "STRUCTURED_XHTML"),
+        ("html", "STRUCTURED_HTML"),
+        ("pdfa2a", "PDF_TEXT"),
+        ("pdfa1a", "PDF_TEXT"),
+        ("pdf", "PDF_TEXT"),
+    ]
+    normalized = []
+    for item in inventory:
+        for value in item.get("types", []):
+            normalized.append((value.lower(), item))
+
+    for wanted, quality in preference:
+        for typ, item in normalized:
+            if typ == wanted:
+                return {
+                    "manifestation_type": wanted,
+                    "representation_class": quality,
+                    "manifestation_uri": item.get("uri"),
+                }
+    return None
+
 def summarize_xml(body: bytes) -> Dict[str, Any]:
     try:
         root = ET.fromstring(body)
@@ -96,12 +179,19 @@ def summarize_xml(body: bytes) -> Dict[str, Any]:
         if len(manifestations) >= 30:
             break
 
-    return {
+    result = {
         "root_tag": _local(root.tag),
         "top_tag_counts": counts.most_common(40),
         "manifestation_count_sampled": len(manifestations),
         "manifestations": manifestations,
     }
+
+    if _local(root.tag) == "NOTICE":
+        branch_inventory = extract_branch_manifestations(root)
+        result["branch_manifestation_inventory"] = branch_inventory
+        result["selected_representation"] = choose_representation(branch_inventory)
+
+    return result
 
 def summarize_response(r: requests.Response) -> Dict[str, Any]:
     body = r.content

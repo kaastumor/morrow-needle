@@ -101,7 +101,7 @@ def test_half_life_refuses_discovery_era_lineage_with_embedded_dates():
 
 def test_half_life_refuses_unknown_temporal_reference():
     bad=deepcopy(COMPOSITION)
-    bad["original_regime"]["current_end_assertion_id"]="invented-end"
+    bad["original_regime"]["end_assertion_ids"][-1]="invented-end"
     with pytest.raises(HalfLifeError,match="unknown temporal assertion"):
         build_half_life_view(bad)
 
@@ -129,3 +129,83 @@ def test_half_life_does_not_assert_rule_level_continuity():
     combined=" ".join(view["guardrails"] + view["unknowns"]).casefold()
     assert "no proposition-level rule continuity" in combined
     assert "proposition-by-proposition continuity" in combined
+
+
+
+def test_half_life_supports_repeated_extension_history(tmp_path):
+    composition=deepcopy(COMPOSITION)
+    temporal=load(composition["temporal_fixture_path"])
+    lineage=load(composition["lineage_fixture_path"])
+
+    prior=next(
+        item for item in temporal["assertions"]
+        if item["assertion_id"] == "eprivacy-2021-extended-application-end"
+    )
+    second=deepcopy(prior)
+    second["assertion_id"]="test-second-extension-end"
+    second["normalized_date"]="2026-06-03"
+    second["trigger"]={
+        "kind":"ABSOLUTE_DATE",
+        "date":"2026-06-03",
+        "source_expression":"test-only second extension boundary",
+    }
+    second["scope"]["overrides_assertion_ids"]=[
+        "eprivacy-2021-extended-application-end"
+    ]
+    temporal["assertions"].append(second)
+
+    composition["original_regime"]["end_assertion_ids"].append(
+        "test-second-extension-end"
+    )
+    lineage["temporal_assertion_refs"].append("test-second-extension-end")
+
+    temporal_path=tmp_path / composition["temporal_fixture_path"]
+    lineage_path=tmp_path / composition["lineage_fixture_path"]
+    temporal_path.parent.mkdir(parents=True,exist_ok=True)
+    lineage_path.parent.mkdir(parents=True,exist_ok=True)
+    temporal_path.write_text(json.dumps(temporal),encoding="utf-8")
+    lineage_path.write_text(json.dumps(lineage),encoding="utf-8")
+
+    view=build_half_life_view(composition,root=tmp_path)
+    assert [item["added_days"] for item in view["extensions"]] == [608,61]
+    assert view["summary"]["extension_added_days"] == 669
+    assert view["episodes"][0]["end"]["assertion_id"] == (
+        "test-second-extension-end"
+    )
+
+
+def test_half_life_rejects_broken_extension_override_chain(tmp_path):
+    composition=deepcopy(COMPOSITION)
+    temporal=load(composition["temporal_fixture_path"])
+    lineage=load(composition["lineage_fixture_path"])
+
+    prior=next(
+        item for item in temporal["assertions"]
+        if item["assertion_id"] == "eprivacy-2021-extended-application-end"
+    )
+    second=deepcopy(prior)
+    second["assertion_id"]="test-broken-extension-end"
+    second["normalized_date"]="2026-06-03"
+    second["trigger"]={
+        "kind":"ABSOLUTE_DATE",
+        "date":"2026-06-03",
+        "source_expression":"test-only broken extension boundary",
+    }
+    second["scope"]["overrides_assertion_ids"]=[
+        "eprivacy-2021-original-application-end"
+    ]
+    temporal["assertions"].append(second)
+    composition["original_regime"]["end_assertion_ids"].append(
+        "test-broken-extension-end"
+    )
+    lineage["temporal_assertion_refs"].append("test-broken-extension-end")
+
+    temporal_path=tmp_path / composition["temporal_fixture_path"]
+    lineage_path=tmp_path / composition["lineage_fixture_path"]
+    temporal_path.parent.mkdir(parents=True,exist_ok=True)
+    lineage_path.parent.mkdir(parents=True,exist_ok=True)
+    temporal_path.write_text(json.dumps(temporal),encoding="utf-8")
+    lineage_path.write_text(json.dumps(lineage),encoding="utf-8")
+
+    with pytest.raises(HalfLifeError,match="does not explicitly override"):
+        build_half_life_view(composition,root=tmp_path)

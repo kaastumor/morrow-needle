@@ -7,6 +7,7 @@ on:
       - "schemas/**"
       - "fixtures/**"
       - "tests/test_post_p1_foundation_audit.py"
+      - "tests/test_half_life_discovery.py"
       - "tests/test_temporal_semantics.py"
       - "tests/test_multilingual_corrigenda.py"
       - "tests/test_identifier_graph.py"
@@ -35,6 +36,7 @@ jobs:
         run: |
           python -m pytest -q \
             tests/test_post_p1_foundation_audit.py \
+            tests/test_half_life_discovery.py \
             tests/test_temporal_semantics.py \
             tests/test_multilingual_corrigenda.py \
             tests/test_identifier_graph.py \

@@ -8,7 +8,7 @@ from typing import Dict, Any
 
 import requests
 
-BASE = "https://publications.europa.eu/resource/celex/{celex}"
+# Official Cellar dissemination resource endpoint documented by the Publications Office.\nBASE = "https://publications.europa.eu/resource/celex/{celex}"
 
 PROBES = [
     {

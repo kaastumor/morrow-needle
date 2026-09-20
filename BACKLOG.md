@@ -8,14 +8,14 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 Unless new official evidence creates a more severe blocker, the hourly build loop should start here:
 
-1. **P1-B — Cellar source update detection.** Treat the official Cellar ingestion RSS/Atom feed as a durable change-hint stream, not as evidence that law changed.
-2. Build an idempotent feed-event contract keyed by permanent notification ID, with target/root WEMI identity, CREATE/UPDATE/DELETE action, source identifiers and ingestion time.
-3. Use overlap-window polling + event-ID dedupe; never rely on timestamp alone because `startDate` is inclusive and replay/backfill must be safe.
-4. A feed UPDATE triggers targeted metadata/content re-observation. Only hash/metadata comparison may classify CONTENT_CHANGED, METADATA_ONLY, AVAILABILITY_CHANGED or NO_MATERIAL_CHANGE.
-5. Preserve DELETE as source availability history; never erase Source Observations.
-6. After P1-B is stable, reassess P1-D search/retrieval versus P1-E first end-to-end Thread.
+1. **P1-E / Issue #14 — first end-to-end Thread: Regulation 794/2004 Article 3.** Force the frozen source, identity, AST, mutation, temporal, semantic and provenance contracts to produce one complete rule history.
+2. Reconstruct verified Article 3 states for 2004 → 2008 → 2025/2026 before designing generic Thread abstractions.
+3. Thread must expose a chronological mutation timeline, rule/provision lineage, semantic Change Atoms, temporal distinctions, exceptions, source-mode provenance and explicit unknowns.
+4. Add 3-second / 30-second / 3-minute public narrative layers only after the machine Thread object can be regenerated from evidence.
+5. Add Gold expectations including forbidden inferences.
+6. **P1-D search/retrieval intentionally follows this vertical slice.** Retrieval should be designed around proven Thread/Atom objects rather than guessed early.
 
-P1-A Change Atom v0.3 and P1-C provenance ledger v0.1 are frozen. All P0 contracts remain closed unless an official adversary demonstrates representational failure.
+P1-B Cellar update detection, P1-A Change Atom v0.3 and P1-C provenance ledger v0.1 are frozen. All P0 contracts remain closed unless an official adversary demonstrates representational failure.
 
 ## Priority model
 
@@ -202,7 +202,13 @@ Change Atom v0.3 is frozen. VERIFIED semantic claims reference VERIFIED textual 
 See `docs/decisions/change-atom-v0.3-interface-freeze.md`.
 
 ### P1-B — Source update detection
-Detect new/changed official source objects without repeatedly crawling everything.
+**Issue #13**
+
+Status: **CORE INTERFACE RESOLVED; ISSUE CLOSED.**
+
+Cellar update detection v0.1 is frozen: live RSS/Atom feed normalization, cross-format event identity, overlap-safe polling, fail-closed pagination, WEMI-targeted refresh planning and auditable Source Change classification.
+
+See `docs/decisions/cellar-update-detection-v0.1-interface-freeze.md`.
 
 ### P1-C — Provenance ledger
 **Issue #12**
@@ -217,7 +223,11 @@ See `docs/decisions/provenance-ledger-v0.1-interface-freeze.md`.
 Structured-first retrieval over acts, provisions, atoms, entities, dates and lineage; embeddings remain secondary discovery.
 
 ### P1-E — First end-to-end Thread
-One historically messy act/domain reconstructed from original source to public explanation.
+**Issue #14**
+
+Status: **ACTIVE CORE INTEGRATION.**
+
+First Thread: Regulation 794/2004 Article 3, framed as the history of legally valid State-aid notification submission. Build the vertical slice before P1-D search/retrieval.
 
 ## P2 — Public intelligence
 

@@ -1,4 +1,5 @@
 name: Recent CREATE amendment discovery
+# Discovery is non-authoritative; amendment-language hits are candidate hints only.
 
 on:
   push:

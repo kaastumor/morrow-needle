@@ -25,6 +25,9 @@ SCHEMA = json.loads(
 RSS = Path(
     "fixtures/updates/cellar-official-doc-example-7081775-v0.1.xml"
 ).read_bytes()
+CURRENT_RSS = Path(
+    "fixtures/updates/cellar-live-guid-shape-20260915-v0.1.xml"
+).read_bytes()
 
 
 def _event(event_id, when="2026-09-20T10:00:00+00:00"):
@@ -321,3 +324,17 @@ def test_integrated_poller_emits_targeted_refresh_plan_not_legal_change():
         "root_cellar_id":"cellar:root",
     }
     assert "change_state" not in emissions[0].refresh_plan
+
+
+
+def test_current_live_guid_shape_is_supported_without_losing_old_documented_shape():
+    page = parse_feed(CURRENT_RSS)
+    assert len(page.events) == 1
+    event = page.events[0]
+    assert event["notification_id"] == (
+        "cellar:55b240bf-477b-11f0-85ba-01aa75ed71a1_"
+        "2026-09-15T00:05:50.647+02:00"
+    )
+    assert event["wemi_levels"] == ["WORK"]
+    assert "celex:62024CC0286" in event["identifiers"]
+    assert list(Draft202012Validator(SCHEMA).iter_errors(event)) == []

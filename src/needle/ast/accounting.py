@@ -138,6 +138,14 @@ class XMLTextLedger:
         atom["category"] = category
         atom["reason"] = reason
 
+    def element_text_is_unclaimed(self, element: ET.Element) -> bool:
+        atom_id = self._element_text_atom.get(id(element))
+        return bool(atom_id and self.atoms[atom_id]["category"] is None)
+
+    def child_tail_is_unclaimed(self, child: ET.Element) -> bool:
+        atom_id = self._child_tail_atom.get(id(child))
+        return bool(atom_id and self.atoms[atom_id]["category"] is None)
+
     def claim_element_text(
         self,
         element: ET.Element,
@@ -158,6 +166,26 @@ class XMLTextLedger:
     ) -> None:
         for atom_id in self._subtree_atoms.get(id(element), ()):
             self._claim_atom(atom_id, category=category, reason=reason)
+
+    def claim_flow(
+        self,
+        element: ET.Element,
+        *,
+        category: str,
+        reason: str,
+        stop_at: Callable[[ET.Element], bool],
+    ) -> None:
+        """Claim visible flow while leaving nested structural subtrees unowned."""
+        self.claim_element_text(element, category=category, reason=reason)
+        for child in list(element):
+            if not stop_at(child):
+                self.claim_flow(
+                    child,
+                    category=category,
+                    reason=reason,
+                    stop_at=stop_at,
+                )
+            self.claim_child_tail(child, category=category, reason=reason)
 
     def subtree_claim_counts(self, element: ET.Element) -> tuple[int, int]:
         claimed = unclaimed = 0

@@ -175,7 +175,19 @@ class FormexASTParser:
 
                 self.parsed_entries.append(name)
                 self.builder.visible_chars_source_estimate += len(text_of(root))
-                self._walk_structures(root, self.root_id, native_path=name, citation_stack=[], capture_unstructured_text=True)
+
+                # Treat each physical XML file as a fragment whose root may itself
+                # be a legal structure (notably ANNEX). Wrapping it ensures root
+                # structures and nested structures use exactly the same mapping path.
+                fragment_container = ET.Element("NEEDLE.FRAGMENT")
+                fragment_container.append(root)
+                self._walk_structures(
+                    fragment_container,
+                    self.root_id,
+                    native_path=name,
+                    citation_stack=[],
+                    capture_unstructured_text=True,
+                )
 
                 modification_result = parse_modification_markers(text, source_entry=name)
                 for marker in modification_result.markers:

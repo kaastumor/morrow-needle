@@ -1,0 +1,32 @@
+name: Live 2026/2104 mutation case
+
+on:
+  push:
+    paths:
+      - "scripts/probe_reg2104_live_case.py"
+      - ".github/workflows/reg2104-live-case.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: reg2104-live-case-main
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install project
+        run: python -m pip install -e ".[test]"
+      - name: Probe trigger, authentic cause and target checkpoints
+        run: python scripts/probe_reg2104_live_case.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reg2104-live-case-evidence
+          path: artifacts/reg2104-live-case/
+          if-no-files-found: error

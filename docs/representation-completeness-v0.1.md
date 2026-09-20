@@ -108,4 +108,17 @@ For CELEX 32004R0794 / ENG:
 - XHTML/PDF are candidate completeness/visual witnesses.
 - The FMX4 bundle's 124 TIFF assets make a completeness audit mandatory before the AST can claim full coverage.
 
-The probe is now comparing the XHTML manifestation to determine whether those raster regions are represented as text, embedded images, or another generated form.
+The follow-up live probe found that the official XHTML manifestation is a single 49,863,735-byte HTML file with approximately **66,258 visible text characters** and **zero `<img>` tags**.
+
+By contrast, a coarse visible-text estimate across the seven FMX XML files totals roughly **31,500 characters**, while the same FMX bundle contains 124 TIFF assets.
+
+These metrics are deliberately not treated as exact semantic coverage measurements, but they decisively reject the assumption that FMX4's structural richness implies standalone machine-text completeness.
+
+### Adopted consequence
+
+For raster-heavy structured manifestations, Needle uses a **representation ensemble**:
+- FMX4 as `PRIMARY_STRUCTURE` and often `PROVENANCE_WITNESS`;
+- XHTML/HTML as `TEXT_WITNESS` when available;
+- PDF as `VISUAL_WITNESS`.
+
+The canonical AST may be assembled from more than one official manifestation, but only through explicit alignment with source-level provenance.

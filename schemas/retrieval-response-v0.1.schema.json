@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/retrieval-response-v0.1.json",
+  "title": "Morrow // Needle Retrieval Response v0.1",
+  "description": "Ephemeral search response. Canonical entities are hydrated from owning fixtures at query time; results do not become canonical state.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "query_id",
+    "projection_fingerprint",
+    "results"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "retrieval-response-v0.1"
+    },
+    "query_id": {
+      "type": "string"
+    },
+    "projection_fingerprint": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "entity_ref",
+          "thread_id",
+          "event_ids",
+          "match_reasons",
+          "source_mode",
+          "canonical_entity"
+        ],
+        "properties": {
+          "entity_ref": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "entity_id"
+            ],
+            "properties": {
+              "kind": {
+                "enum": [
+                  "THREAD",
+                  "MUTATION",
+                  "CHANGE_ATOM",
+                  "TEMPORAL_ASSERTION",
+                  "LINEAGE_EDGE",
+                  "THREAD_EVIDENCE"
+                ]
+              },
+              "entity_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "thread_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "event_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "match_reasons": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "kind",
+                "field",
+                "query_value",
+                "matched_values"
+              ],
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "STRUCTURED_FILTER",
+                    "LEXICAL_MATCH"
+                  ]
+                },
+                "field": {
+                  "type": "string"
+                },
+                "query_value": {
+                  "type": [
+                    "string",
+                    "boolean"
+                  ]
+                },
+                "matched_values": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": [
+                      "string",
+                      "boolean"
+                    ]
+                  }
+                },
+                "match_quality": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "enum": [
+                    "EXACT",
+                    "PREFIX",
+                    "SUBSTRING",
+                    null
+                  ]
+                }
+              }
+            }
+          },
+          "source_mode": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "closed",
+              "support_count"
+            ],
+            "properties": {
+              "closed": {
+                "type": "boolean"
+              },
+              "support_count": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          },
+          "canonical_entity": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}

@@ -184,6 +184,41 @@ def all_visible_text(payload: bytes) -> str:
     return " ".join(parts)
 
 
+def publication_date_metadata(payload: bytes) -> dict:
+    matches=[]
+    with zipfile.ZipFile(io.BytesIO(payload)) as zf:
+        for name in sorted(zf.namelist()):
+            if not name.lower().endswith((".xml",".frg")):
+                continue
+            try:
+                root=ET.fromstring(zf.read(name))
+            except ET.ParseError:
+                continue
+            for element in root.iter():
+                tag=element.tag.rsplit("}",1)[-1].upper()
+                if tag != "DATE":
+                    continue
+                iso=element.attrib.get("ISO")
+                text=" ".join("".join(element.itertext()).split())
+                if iso=="20250613" and text=="20250613":
+                    matches.append({
+                        "source_file":name,
+                        "locator":f"{name}#DATE[ISO=20250613]",
+                        "language":"ENG",
+                        "text":text,
+                        "text_hash":hashlib.sha256(text.encode("utf-8")).hexdigest(),
+                    })
+    if len(matches)!=1:
+        raise AssertionError(
+            "expected exactly one source-native publication DATE[ISO=20250613], "
+            f"got {len(matches)}"
+        )
+    return {
+        "normalized_date":"2025-06-13",
+        **matches[0],
+    }
+
+
 def authentic_evidence_and_spans(payload: bytes):
     evidence=[]
     spans={}
@@ -223,6 +258,7 @@ def main() -> int:
     before_payload,before_response=fetch_fmx4(BEFORE)
     after_payload,after_response=fetch_fmx4(AFTER)
     evidence,spans=authentic_evidence_and_spans(cause_payload)
+    publication=publication_date_metadata(cause_payload)
     authentic=[
         item for item in evidence
         if item["operation"]=="REPLACE"
@@ -352,6 +388,7 @@ def main() -> int:
         },
         "temporal":{
             "publication_date":"2025-06-13",
+            "publication_metadata":publication,
             "entry_into_force":"2025-07-03",
             "article3_3_special_deferred_application":False,
             "special_2025_08_13_clause_applies_only_to":"Annex I / Part I / point 6.8",

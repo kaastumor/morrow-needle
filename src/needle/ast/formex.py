@@ -302,15 +302,16 @@ class FormexASTParser:
                 continue
 
             if tag in OPAQUE_MEDIA_TAGS:
-                self.builder.known_gaps.append(
-                    f"{native_path}: opaque media element {tag}"
-                )
-                if self._ledger is not None:
-                    self._ledger.claim_subtree(
-                        child,
-                        category="OPAQUE_OR_EMBEDDED",
-                        reason=f"opaque source element {tag}",
+                if capture_unstructured_text:
+                    self.builder.known_gaps.append(
+                        f"{native_path}: opaque media element {tag}"
                     )
+                    if self._ledger is not None:
+                        self._ledger.claim_subtree(
+                            child,
+                            category="OPAQUE_OR_EMBEDDED",
+                            reason=f"opaque source element {tag}",
+                        )
                 continue
 
             kind = STRUCTURAL_KINDS.get(tag)
@@ -390,7 +391,7 @@ class FormexASTParser:
                 continue
 
             if tag in SOURCE_METADATA_TAGS:
-                if self._ledger is not None:
+                if capture_unstructured_text and self._ledger is not None:
                     self._ledger.claim_subtree(
                         child,
                         category="SOURCE_METADATA",
@@ -398,7 +399,7 @@ class FormexASTParser:
                     )
                 continue
             if tag in PUBLICATION_NAVIGATION_TAGS:
-                if self._ledger is not None:
+                if capture_unstructured_text and self._ledger is not None:
                     self._ledger.claim_subtree(
                         child,
                         category="PUBLICATION_NAVIGATION",
@@ -406,7 +407,7 @@ class FormexASTParser:
                     )
                 continue
             if tag in PROVENANCE_ONLY_TAGS:
-                if self._ledger is not None:
+                if capture_unstructured_text and self._ledger is not None:
                     self._ledger.claim_subtree(
                         child,
                         category="PROVENANCE_ONLY",
@@ -479,10 +480,40 @@ class FormexASTParser:
                 continue
             if tag in STRUCTURAL_KINDS:
                 continue
+            if tag in SOURCE_METADATA_TAGS:
+                if self._ledger is not None:
+                    self._ledger.claim_subtree(
+                        child,
+                        category="SOURCE_METADATA",
+                        reason=f"source metadata element {tag}",
+                    )
+                continue
+            if tag in PUBLICATION_NAVIGATION_TAGS:
+                if self._ledger is not None:
+                    self._ledger.claim_subtree(
+                        child,
+                        category="PUBLICATION_NAVIGATION",
+                        reason=f"publication navigation element {tag}",
+                    )
+                continue
+            if tag in PROVENANCE_ONLY_TAGS:
+                if self._ledger is not None:
+                    self._ledger.claim_subtree(
+                        child,
+                        category="PROVENANCE_ONLY",
+                        reason=f"source provenance element {tag}",
+                    )
+                continue
             if tag in OPAQUE_MEDIA_TAGS:
                 self.builder.known_gaps.append(
                     f"{native_path}: opaque media element {tag}"
                 )
+                if self._ledger is not None:
+                    self._ledger.claim_subtree(
+                        child,
+                        category="OPAQUE_OR_EMBEDDED",
+                        reason=f"opaque source element {tag}",
+                    )
                 continue
             if _has_structural_descendant(child):
                 continue

@@ -1,0 +1,43 @@
+name: Thread Article 3 2025 contract
+
+on:
+  push:
+    paths:
+      - "scripts/probe_thread_article3_2025.py"
+      - "src/needle/ast/**"
+      - "src/needle/mutation/**"
+      - "fixtures/thread/**"
+      - "tests/test_thread_article3.py"
+      - ".github/workflows/thread-article3.yml"
+      - "pyproject.toml"
+  workflow_dispatch:
+
+concurrency:
+  group: thread-article3-v1-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify-2025:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install project and test dependencies
+        run: python -m pip install -e ".[test]"
+      - name: Run Thread unit tests
+        run: |
+          if [ -f tests/test_thread_article3.py ]; then
+            python -m pytest -q tests/test_thread_article3.py
+          fi
+      - name: Verify Article 3 2025 transition from live official sources
+        run: python scripts/probe_thread_article3_2025.py
+      - name: Upload Thread evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: thread-article3-2025-evidence
+          path: artifacts/thread-2025
+          if-no-files-found: error

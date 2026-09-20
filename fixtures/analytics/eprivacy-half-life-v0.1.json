@@ -9,14 +9,18 @@
   "original_regime": {
     "regime_id": "REGIME:2021R1232_AS_EXTENDED",
     "application_start_assertion_id": "eprivacy-2021-application-start",
-    "original_end_assertion_id": "eprivacy-2021-original-application-end",
-    "current_end_assertion_id": "eprivacy-2021-extended-application-end"
+    "end_assertion_ids": [
+      "eprivacy-2021-original-application-end",
+      "eprivacy-2021-extended-application-end"
+    ]
   },
   "successor_regimes": [
     {
       "regime_id": "REGIME:2026R1881",
       "application_start_assertion_id": "eprivacy-2026-application-start",
-      "application_end_assertion_id": "eprivacy-2026-application-end"
+      "end_assertion_ids": [
+        "eprivacy-2026-application-end"
+      ]
     }
   ],
   "guardrails": [

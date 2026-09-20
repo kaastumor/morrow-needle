@@ -217,11 +217,36 @@ class XMLTextLedger:
             )
 
         source_chars = sum(atom["chars"] for atom in self.atoms.values())
-        unexplained = sum(
-            atom["chars"]
+        unexplained_atoms = [
+            atom
             for atom in self.atoms.values()
             if (atom["category"] or "UNEXPLAINED") == "UNEXPLAINED"
-        )
+        ]
+        unexplained = sum(atom["chars"] for atom in unexplained_atoms)
+
+        shape_stats: dict[str, dict[str, Any]] = {}
+        for atom in unexplained_atoms:
+            slot = "tail" if atom["locator"].endswith("#tail") else "text"
+            shape = "/".join(atom["native_tags"]) + f"#{slot}"
+            stat = shape_stats.setdefault(
+                shape,
+                {"shape": shape, "atom_count": 0, "chars": 0, "examples": []},
+            )
+            stat["atom_count"] += 1
+            stat["chars"] += atom["chars"]
+            if len(stat["examples"]) < 4:
+                stat["examples"].append(
+                    {
+                        "locator": atom["locator"],
+                        "text_prefix": atom["text"][:220],
+                    }
+                )
+
+        unexplained_shapes = sorted(
+            shape_stats.values(),
+            key=lambda item: (-item["chars"], -item["atom_count"], item["shape"]),
+        )[:30]
+
         return {
             "basis": "XML_TEXT_ATOMS",
             "source_entry": self.source_entry,
@@ -232,6 +257,7 @@ class XMLTextLedger:
             "atom_count": len(self.atoms),
             "duplicate_claim_count": len(self._duplicate_claims),
             "duplicate_claim_examples": self._duplicate_claims[:12],
+            "unexplained_shapes": unexplained_shapes,
             "categories": categories,
         }
 
@@ -248,6 +274,7 @@ def aggregate_accounting_reports(reports: list[dict[str, Any]]) -> dict[str, Any
             "atom_count": 0,
             "duplicate_claim_count": 0,
             "duplicate_claim_examples": [],
+            "unexplained_shapes": [],
             "categories": [
                 {
                     "category": category,
@@ -270,6 +297,7 @@ def aggregate_accounting_reports(reports: list[dict[str, Any]]) -> dict[str, Any
         for category in ACCOUNTING_CATEGORIES
     }
     duplicate_examples: list[dict[str, Any]] = []
+    shape_totals: dict[str, dict[str, Any]] = {}
 
     for report in reports:
         for category_report in report["categories"]:
@@ -281,6 +309,21 @@ def aggregate_accounting_reports(reports: list[dict[str, Any]]) -> dict[str, Any
 
         remaining = max(0, 20 - len(duplicate_examples))
         duplicate_examples.extend(report["duplicate_claim_examples"][:remaining])
+
+        for shape in report.get("unexplained_shapes", []):
+            target = shape_totals.setdefault(
+                shape["shape"],
+                {
+                    "shape": shape["shape"],
+                    "atom_count": 0,
+                    "chars": 0,
+                    "examples": [],
+                },
+            )
+            target["atom_count"] += shape["atom_count"]
+            target["chars"] += shape["chars"]
+            remaining_examples = max(0, 6 - len(target["examples"]))
+            target["examples"].extend(shape["examples"][:remaining_examples])
 
     source_chars = sum(report["source_chars"] for report in reports)
     unexplained = sum(report["unexplained_chars"] for report in reports)
@@ -295,6 +338,10 @@ def aggregate_accounting_reports(reports: list[dict[str, Any]]) -> dict[str, Any
             report["duplicate_claim_count"] for report in reports
         ),
         "duplicate_claim_examples": duplicate_examples,
+        "unexplained_shapes": sorted(
+            shape_totals.values(),
+            key=lambda item: (-item["chars"], -item["atom_count"], item["shape"]),
+        )[:40],
         "categories": [by_category[c] for c in ACCOUNTING_CATEGORIES],
         "entry_count": len(reports),
     }

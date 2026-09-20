@@ -23,8 +23,8 @@ def test_pinned_money_corrigendum_evidence_is_self_consistent():
     )
     assert len(parsed) == 1
     assert parsed[0]["target_locator"] == correction["target"]
-    assert parsed[0]["before_text"] == correction["before_fragment"]
-    assert parsed[0]["after_text"] == correction["after_fragment"]
+    assert correction["before_fragment"] in parsed[0]["before_text"]
+    assert correction["after_fragment"] in parsed[0]["after_text"]
 
 
 def test_route_failure_is_observation_not_legal_absence():

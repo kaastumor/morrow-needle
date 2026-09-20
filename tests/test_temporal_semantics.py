@@ -14,6 +14,9 @@ from needle.temporal.resolver import (
 SCHEMA = json.loads(
     Path("schemas/temporal-assertion-v0.1.schema.json").read_text(encoding="utf-8")
 )
+QUERY_SCHEMA = json.loads(
+    Path("schemas/temporal-query-v0.1.schema.json").read_text(encoding="utf-8")
+)
 FIXTURE = json.loads(
     Path("fixtures/temporal/temporal-adversaries-v0.1.json").read_text(encoding="utf-8")
 )
@@ -192,3 +195,30 @@ def test_transition_regime_can_overlap_new_regulation_and_end_in_layers():
     )
     assert narrow_derogation["active"] is False
     assert broad_transition["active"] is True
+
+
+def test_bitemporal_query_contract_requires_explicit_perspective():
+    validator = Draft202012Validator(QUERY_SCHEMA)
+    case = _case("reg2023-2773-retroactive-application")
+    errors = []
+    for query in case["perspective_queries"]:
+        candidate = {
+            "query_id": query["query_id"],
+            "dimension": query["dimension"],
+            "subject_keys": query["subject_keys"],
+            "valid_date": query["valid_date"],
+            "perspective": query["perspective"],
+            "source_cutoff_date": query.get("source_cutoff_date"),
+            "context": query.get("context", {}),
+        }
+        for error in validator.iter_errors(candidate):
+            errors.append(f"{query['query_id']}: {error.message}")
+    assert errors == []
+
+    ambiguous = {
+        "query_id": "ambiguous-history-question",
+        "dimension": "APPLICATION",
+        "subject_keys": ["ACT:32023R2773"],
+        "valid_date": "2023-06-01",
+    }
+    assert list(validator.iter_errors(ambiguous))

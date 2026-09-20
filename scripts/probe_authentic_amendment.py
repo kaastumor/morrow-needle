@@ -11,6 +11,7 @@ import xml.etree.ElementTree as ET
 
 import requests
 
+from needle.ast.formex import FormexASTParser
 from needle.mutation.instructions import parse_authentic_instructions
 from needle.mutation.reconcile import reconcile_candidate
 
@@ -62,7 +63,82 @@ def extract_evidence(payload: bytes, celex: str) -> list[dict]:
     return evidence
 
 
-def article3_candidate() -> dict:
+def _source_meta(celex: str, response: requests.Response, payload: bytes) -> dict:
+    observation = f"live:{celex}:{hashlib.sha256(payload).hexdigest()[:16]}"
+    return {
+        "source_observation_ids":[observation],
+        "celex":celex,
+        "eli":None,
+        "work_uri":None,
+        "expression_uri":None,
+        "manifestation_uri":response.url.removesuffix("/zip"),
+        "language":"ENG",
+        "representation_class":"STRUCTURED_LEGAL_XML",
+        "adapter":"cellar-fmx4",
+        "adapter_version":"0.1",
+        "canonicalization_profile":"whitespace-collapse-v0.1",
+    }
+
+
+def build_ast(celex: str, payload: bytes, response: requests.Response) -> dict:
+    observation = f"live:{celex}:{hashlib.sha256(payload).hexdigest()[:16]}"
+    parser = FormexASTParser(
+        state_id=f"CELEX:{celex}",
+        source=_source_meta(celex, response, payload),
+        source_observation_id=observation,
+        representation_plan_id=f"{celex}:ENG:verification",
+    )
+    return parser.parse_zip(payload)
+
+
+def article_subtree_state(ast: dict, citation_path: str) -> dict:
+    article = next(
+        node
+        for node in ast["nodes"]
+        if node.get("kind") == "ARTICLE"
+        and node.get("citation_path") == citation_path
+    )
+    children: dict[str, list[str]] = {}
+    for node in ast["nodes"]:
+        parent = node.get("parent_id")
+        if parent:
+            children.setdefault(parent, []).append(node["node_id"])
+
+    node_ids = set()
+    stack = [article["node_id"]]
+    while stack:
+        node_id = stack.pop()
+        if node_id in node_ids:
+            continue
+        node_ids.add(node_id)
+        stack.extend(children.get(node_id, []))
+
+    segments = sorted(
+        (
+            segment
+            for segment in ast["segments"]
+            if segment["node_id"] in node_ids
+        ),
+        key=lambda segment: (
+            segment.get("document_order", 0),
+            segment.get("ordinal", 0),
+        ),
+    )
+    text = " ".join(
+        segment.get("text_compare", segment.get("text_source", "")).strip()
+        for segment in segments
+        if segment.get("role") not in {"LABEL", "HEADING"}
+        and segment.get("text_compare", segment.get("text_source", "")).strip()
+    )
+    return {
+        "state_id":ast["state_id"],
+        "node_id":article["node_id"],
+        "text_hash":hashlib.sha256(text.encode("utf-8")).hexdigest(),
+        "text_length":len(text),
+    }
+
+
+def article3_candidate(before_state: dict, after_state: dict) -> dict:
     return {
         "candidate_id":"reg794-art3-replace-live-verification",
         "operation":"REPLACE",
@@ -73,18 +149,8 @@ def article3_candidate() -> dict:
             "language":"ENG",
         },
         "alignment_basis":"EXACT_CITATION_AND_KIND",
-        "before":{
-            "state_id":"CELEX:02004R0794-20070119",
-            "node_id":"Article 3@20070119",
-            "text_hash":"0" * 64,
-            "text_length":0,
-        },
-        "after":{
-            "state_id":"CELEX:02004R0794-20080414",
-            "node_id":"Article 3@20080414",
-            "text_hash":"1" * 64,
-            "text_length":0,
-        },
+        "before":before_state,
+        "after":after_state,
         "feature_deltas":{
             "numbers_added":[],"numbers_removed":[],
             "dates_added":[],"dates_removed":[],
@@ -119,7 +185,7 @@ def article3_candidate() -> dict:
             },
         ],
         "conflicting_evidence":[],
-        "notes":"Live verification probe candidate; hashes are not used by reconciliation.",
+        "notes":"Live verification probe candidate built from actual consolidated Article 3 subtree hashes.",
     }
 
 
@@ -138,7 +204,18 @@ def main() -> int:
         and item["target_locator"] == "Article 3"
     ]
 
-    candidate = article3_candidate()
+    before_payload, before_response = fetch_fmx4("02004R0794-20070119")
+    after_payload, after_response = fetch_fmx4("02004R0794-20080414")
+    before_ast = build_ast("02004R0794-20070119", before_payload, before_response)
+    after_ast = build_ast("02004R0794-20080414", after_payload, after_response)
+    before_state = article_subtree_state(before_ast, "Article 3")
+    after_state = article_subtree_state(after_ast, "Article 3")
+
+    if before_state["text_hash"] == after_state["text_hash"]:
+        print("ERROR: live Article 3 checkpoint subtrees are identical")
+        return 1
+
+    candidate = article3_candidate(before_state, after_state)
     reconciled = reconcile_candidate(candidate, evidence)
 
     result = {
@@ -148,6 +225,16 @@ def main() -> int:
         "final_url":response.url,
         "payload_bytes":len(payload),
         "payload_sha256":hashlib.sha256(payload).hexdigest(),
+        "before_checkpoint":{
+            "celex":"02004R0794-20070119",
+            "payload_sha256":hashlib.sha256(before_payload).hexdigest(),
+            "article3":before_state,
+        },
+        "after_checkpoint":{
+            "celex":"02004R0794-20080414",
+            "payload_sha256":hashlib.sha256(after_payload).hexdigest(),
+            "article3":after_state,
+        },
         "authentic_instruction_count":len(evidence),
         "article3_authentic_evidence":article3,
         "reconciled_article3":reconciled,

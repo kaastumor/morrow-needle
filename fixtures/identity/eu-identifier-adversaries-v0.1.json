@@ -1,0 +1,524 @@
+{
+  "graph_id": "eu-identifier-adversaries-v0.1",
+  "identifiers": [
+    {
+      "node_id": "r794-celex",
+      "scheme": "CELEX",
+      "value": "32004R0794",
+      "identity_level": "LEGAL_RESOURCE",
+      "resource_kind": "LEGAL_ACT",
+      "language": null,
+      "version_date": null,
+      "notes": "Base legal act."
+    },
+    {
+      "node_id": "r794-eli",
+      "scheme": "ELI",
+      "value": "http://data.europa.eu/eli/reg/2004/794/oj",
+      "identity_level": "LEGAL_RESOURCE",
+      "resource_kind": "LEGAL_ACT",
+      "language": null,
+      "version_date": null,
+      "notes": "EU ELI for the base act."
+    },
+    {
+      "node_id": "r794-cellar-work",
+      "scheme": "CELLAR",
+      "value": "26f403d1-7656-4c91-9726-c08d466ff8bd",
+      "identity_level": "LEGAL_RESOURCE",
+      "resource_kind": "LEGAL_ACT",
+      "language": null,
+      "version_date": null,
+      "notes": "Cellar Work resolved from CELEX."
+    },
+    {
+      "node_id": "r794-eng-expression",
+      "scheme": "CELLAR",
+      "value": "26f403d1-7656-4c91-9726-c08d466ff8bd.0006",
+      "identity_level": "EXPRESSION",
+      "resource_kind": "LANGUAGE_EXPRESSION",
+      "language": "ENG",
+      "version_date": null,
+      "notes": "Work-local expression suffix; not a language code."
+    },
+    {
+      "node_id": "r794-eng-fmx4",
+      "scheme": "CELLAR",
+      "value": "26f403d1-7656-4c91-9726-c08d466ff8bd.0006.05",
+      "identity_level": "MANIFESTATION",
+      "resource_kind": "FORMAT_MANIFESTATION",
+      "language": "ENG",
+      "version_date": null,
+      "notes": "FMX4 manifestation."
+    },
+    {
+      "node_id": "r794-consolidated-celex",
+      "scheme": "CELEX",
+      "value": "02004R0794-20250813",
+      "identity_level": "TEXT_STATE",
+      "resource_kind": "CONSOLIDATED_TEXT",
+      "language": null,
+      "version_date": "2025-08-13",
+      "notes": "Sector-0 consolidated text-state identifier."
+    },
+    {
+      "node_id": "r794-consolidated-eli",
+      "scheme": "ELI",
+      "value": "http://data.europa.eu/eli/reg/2004/794/2025-08-13",
+      "identity_level": "TEXT_STATE",
+      "resource_kind": "CONSOLIDATED_TEXT",
+      "language": null,
+      "version_date": "2025-08-13",
+      "notes": "ELI for the same consolidated state."
+    },
+    {
+      "node_id": "r794-consolidated-nld",
+      "scheme": "ELI",
+      "value": "http://data.europa.eu/eli/reg/2004/794/2025-08-13/nld",
+      "identity_level": "EXPRESSION",
+      "resource_kind": "LANGUAGE_EXPRESSION",
+      "language": "NLD",
+      "version_date": "2025-08-13",
+      "notes": "Language expression of consolidated state."
+    },
+    {
+      "node_id": "r794-corr-celex",
+      "scheme": "CELEX",
+      "value": "32004R0794R(02)",
+      "identity_level": "LEGAL_RESOURCE",
+      "resource_kind": "CORRIGENDUM",
+      "language": null,
+      "version_date": null,
+      "notes": "Corrigendum is its own legal resource, not the base act."
+    },
+    {
+      "node_id": "r794-corr-eli",
+      "scheme": "ELI",
+      "value": "http://data.europa.eu/eli/reg/2004/794/corrigendum/2005-01-28/1/oj",
+      "identity_level": "LEGAL_RESOURCE",
+      "resource_kind": "CORRIGENDUM",
+      "language": null,
+      "version_date": null,
+      "notes": "ELI of same corrigendum."
+    },
+    {
+      "node_id": "r1958-celex",
+      "scheme": "CELEX",
+      "value": "31958R0001",
+      "identity_level": "LEGAL_RESOURCE",
+      "resource_kind": "LEGAL_ACT",
+      "language": null,
+      "version_date": null,
+      "notes": "Historical act."
+    },
+    {
+      "node_id": "r1958-eli",
+      "scheme": "ELI",
+      "value": "http://data.europa.eu/eli/reg/1958/1(1)/oj",
+      "identity_level": "LEGAL_RESOURCE",
+      "resource_kind": "LEGAL_ACT",
+      "language": null,
+      "version_date": null,
+      "notes": "Awkward official ELI; '(1)' is authoritative and must not be synthesized away."
+    },
+    {
+      "node_id": "r1958-cellar-work",
+      "scheme": "CELLAR",
+      "value": "115852e8-30ac-496e-8015-d580366ff059",
+      "identity_level": "LEGAL_RESOURCE",
+      "resource_kind": "LEGAL_ACT",
+      "language": null,
+      "version_date": null,
+      "notes": "Resolved Cellar Work."
+    },
+    {
+      "node_id": "r1958-eng-expression",
+      "scheme": "CELLAR",
+      "value": "115852e8-30ac-496e-8015-d580366ff059.0008",
+      "identity_level": "EXPRESSION",
+      "resource_kind": "LANGUAGE_EXPRESSION",
+      "language": "ENG",
+      "version_date": null,
+      "notes": "English expression."
+    },
+    {
+      "node_id": "dsa-act",
+      "scheme": "CELEX",
+      "value": "32022R2065",
+      "identity_level": "LEGAL_RESOURCE",
+      "resource_kind": "LEGAL_ACT",
+      "language": null,
+      "version_date": null,
+      "notes": "Adopted Digital Services Act."
+    },
+    {
+      "node_id": "dsa-act-eli",
+      "scheme": "ELI",
+      "value": "http://data.europa.eu/eli/reg/2022/2065/oj",
+      "identity_level": "LEGAL_RESOURCE",
+      "resource_kind": "LEGAL_ACT",
+      "language": null,
+      "version_date": null,
+      "notes": "ELI of adopted act."
+    },
+    {
+      "node_id": "dsa-proposal-celex",
+      "scheme": "CELEX",
+      "value": "52020PC0825",
+      "identity_level": "LEGAL_RESOURCE",
+      "resource_kind": "PROPOSAL",
+      "language": null,
+      "version_date": null,
+      "notes": "Commission proposal."
+    },
+    {
+      "node_id": "dsa-proposal-com",
+      "scheme": "COM",
+      "value": "COM/2020/825 final",
+      "identity_level": "LEGAL_RESOURCE",
+      "resource_kind": "PROPOSAL",
+      "language": null,
+      "version_date": null,
+      "notes": "Commission document identifier for same proposal."
+    },
+    {
+      "node_id": "dsa-procedure",
+      "scheme": "EU_PROCEDURE",
+      "value": "2020/0361/COD",
+      "identity_level": "PROCEDURE",
+      "resource_kind": "LEGISLATIVE_PROCEDURE",
+      "language": null,
+      "version_date": null,
+      "notes": "Ordinary legislative procedure."
+    },
+    {
+      "node_id": "dsa-oj",
+      "scheme": "OJ_CITATION",
+      "value": "OJ L 277, 27.10.2022, p. 1",
+      "identity_level": "PUBLICATION_CITATION",
+      "resource_kind": "OFFICIAL_JOURNAL_CITATION",
+      "language": null,
+      "version_date": null,
+      "notes": "Publication citation, not an equivalent identifier for the act."
+    },
+    {
+      "node_id": "r2019-1241-eli",
+      "scheme": "ELI",
+      "value": "http://data.europa.eu/eli/reg/2019/1241/oj",
+      "identity_level": "LEGAL_RESOURCE",
+      "resource_kind": "LEGAL_ACT",
+      "language": null,
+      "version_date": null,
+      "notes": "Base resource for official ELI subdivision example."
+    },
+    {
+      "node_id": "r2019-1241-art2-eli",
+      "scheme": "ELI",
+      "value": "https://eur-lex.europa.eu/eli/reg/2019/1241/art_2/oj",
+      "identity_level": "SUBDIVISION",
+      "resource_kind": "LEGAL_SUBDIVISION",
+      "language": null,
+      "version_date": null,
+      "notes": "Article-level ELI example documented by EUR-Lex."
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "r794-celex-eli",
+      "relation_type": "SAME_LEGAL_RESOURCE",
+      "from_node_id": "r794-celex",
+      "to_node_id": "r794-eli",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32004R0794",
+          "locator": "ELI field",
+          "role": "EQUIVALENCE"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "relation_id": "r794-celex-cellar",
+      "relation_type": "SAME_LEGAL_RESOURCE",
+      "from_node_id": "r794-celex",
+      "to_node_id": "r794-cellar-work",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "http://publications.europa.eu/resource/celex/32004R0794",
+          "locator": "303 redirect / SPARQL sameAs",
+          "role": "EQUIVALENCE"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "relation_id": "r794-expression-work",
+      "relation_type": "EXPRESSION_OF",
+      "from_node_id": "r794-eng-expression",
+      "to_node_id": "r794-cellar-work",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "32004R0794 / ENG branch",
+          "locator": "expression_belongs_to_work",
+          "role": "HIERARCHY"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "relation_id": "r794-manifestation-expression",
+      "relation_type": "MANIFESTATION_OF",
+      "from_node_id": "r794-eng-fmx4",
+      "to_node_id": "r794-eng-expression",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "32004R0794 / ENG SPARQL inventory",
+          "locator": "manifestation_manifests_expression",
+          "role": "HIERARCHY"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "relation_id": "r794-consolidated-equivalence",
+      "relation_type": "SAME_TEXT_STATE",
+      "from_node_id": "r794-consolidated-celex",
+      "to_node_id": "r794-consolidated-eli",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:02004R0794-20250813",
+          "locator": "ELI field",
+          "role": "EQUIVALENCE"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "relation_id": "r794-state-base",
+      "relation_type": "TEXT_STATE_OF",
+      "from_node_id": "r794-consolidated-celex",
+      "to_node_id": "r794-celex",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:02004R0794-20250813",
+          "locator": "Access initial legal act / consolidated text",
+          "role": "RELATIONSHIP"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "relation_id": "r794-nld-state-expression",
+      "relation_type": "EXPRESSION_OF",
+      "from_node_id": "r794-consolidated-nld",
+      "to_node_id": "r794-consolidated-eli",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "ELI",
+          "identifier": "http://data.europa.eu/eli/reg/2004/794/2025-08-13/nld",
+          "locator": "language-specific consolidated resource",
+          "role": "HIERARCHY"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "relation_id": "r794-corr-equivalence",
+      "relation_type": "SAME_LEGAL_RESOURCE",
+      "from_node_id": "r794-corr-celex",
+      "to_node_id": "r794-corr-eli",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32004R0794R(02)",
+          "locator": "ELI field",
+          "role": "EQUIVALENCE"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "relation_id": "r794-corr-base",
+      "relation_type": "CORRIGENDUM_OF",
+      "from_node_id": "r794-corr-celex",
+      "to_node_id": "r794-celex",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32004R0794R(02)",
+          "locator": "Corrigendum to Regulation 794/2004",
+          "role": "RELATIONSHIP"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "relation_id": "r1958-celex-eli",
+      "relation_type": "SAME_LEGAL_RESOURCE",
+      "from_node_id": "r1958-celex",
+      "to_node_id": "r1958-eli",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:31958R0001",
+          "locator": "ELI field",
+          "role": "EQUIVALENCE"
+        }
+      ],
+      "notes": "Do not generate the ELI from the visible act number; preserve the official '(1)'."
+    },
+    {
+      "relation_id": "r1958-celex-cellar",
+      "relation_type": "SAME_LEGAL_RESOURCE",
+      "from_node_id": "r1958-celex",
+      "to_node_id": "r1958-cellar-work",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "http://publications.europa.eu/resource/celex/31958R0001",
+          "locator": "303 redirect / SPARQL sameAs",
+          "role": "EQUIVALENCE"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "relation_id": "r1958-expression-work",
+      "relation_type": "EXPRESSION_OF",
+      "from_node_id": "r1958-eng-expression",
+      "to_node_id": "r1958-cellar-work",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "31958R0001 / ENG branch",
+          "locator": "expression_belongs_to_work",
+          "role": "HIERARCHY"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "relation_id": "dsa-act-eli-equivalence",
+      "relation_type": "SAME_LEGAL_RESOURCE",
+      "from_node_id": "dsa-act",
+      "to_node_id": "dsa-act-eli",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32022R2065",
+          "locator": "ELI field",
+          "role": "EQUIVALENCE"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "relation_id": "dsa-proposal-alias",
+      "relation_type": "SAME_LEGAL_RESOURCE",
+      "from_node_id": "dsa-proposal-celex",
+      "to_node_id": "dsa-proposal-com",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:52020PC0825",
+          "locator": "COM/2020/825 final",
+          "role": "EQUIVALENCE"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "relation_id": "dsa-proposal-procedure",
+      "relation_type": "DOCUMENT_IN_PROCEDURE",
+      "from_node_id": "dsa-proposal-celex",
+      "to_node_id": "dsa-procedure",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:52020PC0825",
+          "locator": "2020/0361(COD)",
+          "role": "PROCEDURE"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "relation_id": "dsa-act-procedure",
+      "relation_type": "RESULT_OF_PROCEDURE",
+      "from_node_id": "dsa-act",
+      "to_node_id": "dsa-procedure",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "PROCEDURE:2020_361",
+          "locator": "Completed (Adopted act: 32022R2065)",
+          "role": "PROCEDURE"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "relation_id": "dsa-publication",
+      "relation_type": "PUBLISHED_AS",
+      "from_node_id": "dsa-act",
+      "to_node_id": "dsa-oj",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32022R2065",
+          "locator": "OJ publication metadata",
+          "role": "PUBLICATION"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "relation_id": "eli-art2-parent",
+      "relation_type": "SUBDIVISION_OF",
+      "from_node_id": "r2019-1241-art2-eli",
+      "to_node_id": "r2019-1241-eli",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "ELI help",
+          "locator": "Article 2 of Regulation 2019/1241 example",
+          "role": "HIERARCHY"
+        }
+      ],
+      "notes": null
+    }
+  ],
+  "forbidden_inferences": [
+    "Treating a Cellar Expression or Manifestation as equivalent to its Work.",
+    "Treating a consolidated text-state identifier as the same identity as the authentic base act.",
+    "Treating a corrigendum as an alias of the act it corrects.",
+    "Treating an OJ citation as an equivalent identifier for the legal resource.",
+    "Treating a proposal, procedure and adopted act as one identity.",
+    "Generating ELI identifiers from visible act numbers when an authoritative ELI can be resolved.",
+    "Treating an ELI subdivision URI as equivalent to the whole act."
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": "dependency-ripple-composition-v0.1",
+  "analytic_id": "legislative-xray:dependency-ripple-first-cohort",
+  "composition_character": "REFERENCE_ONLY",
+  "cases": [
+    {
+      "case_id": "reg794-art3-p4-2025-channel-ripple",
+      "continuity_fixture_path": "fixtures/thread/reg794-article3-p4-continuity-v0.1.json",
+      "continuity_object_key": "paragraph4",
+      "mutation_fixture_path": "fixtures/mutations/reg794-article3-p3-2025-live-verified-v0.1.json",
+      "semantic_fixture_path": "fixtures/semantic/reg794-article3-2025-atoms-v0.1.json",
+      "atom_id": "reg794-art3-2025-crossref-exception-ripple-v0.1"
+    },
+    {
+      "case_id": "reach-art67-annex17-entry78-ripple",
+      "continuity_fixture_path": "fixtures/discovery/reach-art67-annex17-entry78-ripple-v0.1.json",
+      "continuity_object_key": "local_continuity",
+      "mutation_fixture_path": "fixtures/mutations/reach-annex17-entry78-2023-insert-v0.1.json",
+      "semantic_fixture_path": "fixtures/semantic/reach-art67-annex17-entry78-ripple-v0.1.json",
+      "atom_id": "reach-art67p1-annex17-entry78-ripple-v0.1"
+    }
+  ],
+  "guardrails": [
+    "No local textual mutation is emitted when the local canonical subtree is unchanged.",
+    "The upstream change must be VERIFIED textual or structural mutation evidence.",
+    "The local ripple remains EVIDENCED and DERIVED; it is not upgraded to direct textual truth.",
+    "Dependency-ripple presentation may not infer effects beyond the referenced Change Atom.",
+    "Cross-language equivalence is not assumed.",
+    "Legislative X-Ray is a product projection and owns no canonical legal-change truth."
+  ]
+}

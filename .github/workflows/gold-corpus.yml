@@ -27,6 +27,10 @@ on:
       - "pyproject.toml"
   workflow_dispatch:
 
+concurrency:
+  group: gold-corpus-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate:
     runs-on: ubuntu-latest

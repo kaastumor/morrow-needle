@@ -4,7 +4,7 @@ from pathlib import Path
 
 from jsonschema import Draft202012Validator
 
-from needle.semantic.adversary import validate_atom
+from needle.semantic.adversary import validate_atom, validate_atom_set
 
 
 SCHEMA = json.loads(
@@ -139,3 +139,19 @@ def test_exception_permission_is_linked_to_primary_duty():
         source_span_registry=SPANS,
         temporal_assertions=TEMPORAL_ASSERTIONS,
     ) == []
+
+
+def test_semantic_atom_graph_relations_are_closed_and_language_compatible():
+    assert validate_atom_set(FIXTURE["atoms"]) == []
+
+
+def test_dangling_exception_relation_is_rejected():
+    atoms = deepcopy(FIXTURE["atoms"])
+    permission = next(
+        atom for atom in atoms
+        if atom["atom_id"] == "reg794-art3-alt-channel-permission-v0.1"
+    )
+    permission["relations"][0]["target_atom_id"] = "missing-primary-duty"
+    assert validate_atom_set(atoms) == [
+        "unknown relation target from reg794-art3-alt-channel-permission-v0.1: missing-primary-duty"
+    ]

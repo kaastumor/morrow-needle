@@ -100,3 +100,17 @@ def test_implementing_act_does_not_invent_legislative_positions():
     assert d["COUNCIL_POSITION"] == "NONE"
     assert d["FORMAL_ACT_ADOPTION"] == "ADOPTED"
     assert d["FINAL_ACT_PUBLICATION"] == "PUBLISHED"
+
+
+def test_provisional_political_agreement_is_not_formal_adoption():
+    case = _case("dsa-provisional-agreement-vs-adoption")
+    result = state_as_of(
+        case["events"],
+        procedure_id=case["procedure_id"],
+        on_date="2022-04-24",
+    )
+    d = result["dimensions"]
+    assert d["NEGOTIATION_STATE"] == "PROVISIONAL_POLITICAL_AGREEMENT"
+    assert d["PROCEDURE_OUTCOME"] == "PENDING"
+    assert d["FORMAL_ACT_ADOPTION"] == "NOT_ADOPTED"
+    assert d["FINAL_ACT_PUBLICATION"] == "NOT_PUBLISHED"

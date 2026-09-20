@@ -197,11 +197,16 @@ LIVE_EXPECTATIONS = {
         "recitals_min": 15,
         "annexes_min": 5,
         "annotations_min": 0,
+        "unknown_native_exact": 0,
+        "source_text_unexplained_exact": 0,
+        "duplicate_claims_exact": 0,
         "mapped_not_above_source": True,
         "known_gap_contains": "raster assets",
     },
     "31958R0001": {
         "articles_exact": 8,
+        "source_text_unexplained_exact": 0,
+        "duplicate_claims_exact": 0,
         "mapped_equals_source": True,
         "warnings_exact": 0,
     },
@@ -211,7 +216,12 @@ LIVE_EXPECTATIONS = {
         "annexes_min": 8,
         "tables_min": 190,
         "table_cells_min": 1000,
+        "footnotes_min": 700,
+        "source_resolved_eli_refs_min": 20,
         "annotations_exact": 48,
+        "unknown_native_exact": 0,
+        "source_text_unexplained_exact": 0,
+        "duplicate_claims_exact": 0,
         "mapped_not_above_source": True,
     },
 }
@@ -231,9 +241,10 @@ def benchmark_errors(celex: str, ast: dict[str, Any]) -> list[str]:
         "annexes": kinds.get("ANNEX", 0),
         "tables": kinds.get("TABLE", 0),
         "table_cells": kinds.get("TABLE_CELL", 0),
+        "footnotes": kinds.get("FOOTNOTE", 0),
     }
 
-    for name in ("articles", "paragraphs", "recitals", "annexes", "tables", "table_cells"):
+    for name in ("articles", "paragraphs", "recitals", "annexes", "tables", "table_cells", "footnotes"):
         minimum = expected.get(f"{name}_min")
         exact = expected.get(f"{name}_exact")
         actual = checks[name]
@@ -241,6 +252,42 @@ def benchmark_errors(celex: str, ast: dict[str, Any]) -> list[str]:
             errors.append(f"{name}: expected >= {minimum}, got {actual}")
         if exact is not None and actual != exact:
             errors.append(f"{name}: expected {exact}, got {actual}")
+
+    unknown_exact = expected.get("unknown_native_exact")
+    if unknown_exact is not None:
+        actual_unknown = len(ast["parse_report"]["unknown_native_kinds"])
+        if actual_unknown != unknown_exact:
+            errors.append(
+                f"unknown native kinds: expected {unknown_exact}, got "
+                f"{actual_unknown}: {ast['parse_report']['unknown_native_kinds']}"
+            )
+
+    accounting = ast["parse_report"]["source_text_accounting"]
+    unexplained_exact = expected.get("source_text_unexplained_exact")
+    if unexplained_exact is not None and accounting["unexplained_chars"] != unexplained_exact:
+        errors.append(
+            f"unexplained source chars: expected {unexplained_exact}, "
+            f"got {accounting['unexplained_chars']}"
+        )
+    duplicate_exact = expected.get("duplicate_claims_exact")
+    if duplicate_exact is not None and accounting["duplicate_claim_count"] != duplicate_exact:
+        errors.append(
+            f"duplicate source claims: expected {duplicate_exact}, "
+            f"got {accounting['duplicate_claim_count']}"
+        )
+
+    eli_min = expected.get("source_resolved_eli_refs_min")
+    if eli_min is not None:
+        actual_eli = sum(
+            1
+            for ref in ast["references"]
+            if ref.get("source_target_uri", "").startswith("http://data.europa.eu/eli/")
+            and ref.get("resolution_state") == "SOURCE_RESOLVED"
+        )
+        if actual_eli < eli_min:
+            errors.append(
+                f"source-resolved ELI references: expected >= {eli_min}, got {actual_eli}"
+            )
 
     annotations = len(ast["annotations"])
     if "annotations_min" in expected and annotations < expected["annotations_min"]:

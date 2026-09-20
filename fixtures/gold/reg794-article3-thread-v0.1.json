@@ -1,0 +1,458 @@
+{
+  "schema_version": "gold-corpus-case-v0.2",
+  "case_id": "reg794-article3-thread-v0.1",
+  "title": "Article 3 end-to-end Thread chronology and category boundaries",
+  "adversarial_claim": "A historical Thread must compose source-backed baseline state, temporal boundaries, verified textual mutations, semantic effects, lineage and related non-impact sources without turning unchanged text, corrigenda, temporal qualifiers or interpretive rule continuity into the wrong kind of fact.",
+  "foundation_contracts": [
+    "thread-v0.1",
+    "provenance-ledger-v0.1",
+    "change-atom-v0.3",
+    "temporal-v0.1",
+    "mutation-v0.2",
+    "provision-lineage-v0.5",
+    "gold-corpus-v0.2"
+  ],
+  "language_scope": {
+    "languages": [
+      "ENG"
+    ],
+    "cross_language_equivalence_assumed": false
+  },
+  "official_sources": [
+    {
+      "source_id": "base",
+      "authority": "CELLAR",
+      "identifier": "CELEX:32004R0794",
+      "role": "AUTHENTIC_TEXT",
+      "locator": "Article 3 and Article 13"
+    },
+    {
+      "source_id": "amend2008",
+      "authority": "CELLAR",
+      "identifier": "CELEX:32008R0271",
+      "role": "AUTHENTIC_TEXT",
+      "locator": "Article 1 replacement of Article 3"
+    },
+    {
+      "source_id": "amend2025",
+      "authority": "CELLAR",
+      "identifier": "CELEX:32025R0905",
+      "role": "AUTHENTIC_TEXT",
+      "locator": "Article 1 replacement of Article 3(3)"
+    },
+    {
+      "source_id": "corr2026",
+      "authority": "OTHER_OFFICIAL",
+      "identifier": "CELEX:32025R0905R(01)",
+      "role": "OTHER",
+      "locator": "ELI corrigendum target to Article 4(1), second sentence"
+    }
+  ],
+  "expected": {
+    "document_relationships": [
+      {
+        "assertion_id": "thread.corrigendum-nonimpact",
+        "expectation": "The 2026 corrigendum is retained as a reviewed related source but does not create an Article 3 mutation event.",
+        "evidence_source_ids": [
+          "corr2026"
+        ],
+        "status": "ASSERTED"
+      }
+    ],
+    "provision_alignments": [
+      {
+        "assertion_id": "thread.lineage-separated",
+        "expectation": "Structural replacement/continuity and proposition-level rule continuity remain separate referenced lineage claims.",
+        "evidence_source_ids": [
+          "amend2008",
+          "amend2025"
+        ],
+        "status": "ASSERTED"
+      }
+    ],
+    "textual_mutations": [
+      {
+        "assertion_id": "thread.mutation-2008",
+        "expectation": "The 2008 whole-Article replacement is a distinct verified textual mutation event.",
+        "evidence_source_ids": [
+          "amend2008"
+        ],
+        "status": "ASSERTED"
+      },
+      {
+        "assertion_id": "thread.mutation-2025",
+        "expectation": "The 2025 Article 3(3) replacement is a distinct verified textual mutation event.",
+        "evidence_source_ids": [
+          "amend2025"
+        ],
+        "status": "ASSERTED"
+      }
+    ],
+    "change_atoms": [
+      {
+        "assertion_id": "thread.atom-sani",
+        "expectation": "The 2008 event includes the SANI notification duty.",
+        "evidence_source_ids": [
+          "amend2008"
+        ],
+        "status": "ASSERTED"
+      },
+      {
+        "assertion_id": "thread.atom-pki",
+        "expectation": "The 2008 event separately includes the PKI correspondence duty.",
+        "evidence_source_ids": [
+          "amend2008"
+        ],
+        "status": "ASSERTED"
+      },
+      {
+        "assertion_id": "thread.atom-exception",
+        "expectation": "The exceptional agreed alternative-channel permission remains explicit.",
+        "evidence_source_ids": [
+          "amend2008"
+        ],
+        "status": "ASSERTED"
+      },
+      {
+        "assertion_id": "thread.atom-invalid-status",
+        "expectation": "The invalid-channel submission consequence remains explicit.",
+        "evidence_source_ids": [
+          "amend2008"
+        ],
+        "status": "ASSERTED"
+      },
+      {
+        "assertion_id": "thread.atom-2025-direct",
+        "expectation": "The 2025 direct paragraph-3 duties are distinct from the derived paragraph-4 cross-reference ripple.",
+        "evidence_source_ids": [
+          "amend2025"
+        ],
+        "status": "ASSERTED"
+      }
+    ],
+    "non_atoms": [
+      {
+        "assertion_id": "thread.no-baseline-change-atom",
+        "expectation": "Do not manufacture a mutation-derived Change Atom for the original 2004 baseline state.",
+        "evidence_source_ids": [
+          "base"
+        ],
+        "status": "FORBIDDEN_INFERENCE"
+      },
+      {
+        "assertion_id": "thread.no-p4-2025-mutation",
+        "expectation": "Do not emit a 2025 textual mutation for unchanged Article 3(4).",
+        "evidence_source_ids": [
+          "amend2025"
+        ],
+        "status": "FORBIDDEN_INFERENCE"
+      },
+      {
+        "assertion_id": "thread.no-corrigendum-art3-mutation",
+        "expectation": "Do not convert the 2026 Article 4 corrigendum into an Article 3 mutation.",
+        "evidence_source_ids": [
+          "corr2026"
+        ],
+        "status": "FORBIDDEN_INFERENCE"
+      },
+      {
+        "assertion_id": "thread.no-pki-sani-date",
+        "expectation": "Do not copy the SANI-specific 1 July 2008 temporal assertion onto the separate PKI correspondence duty.",
+        "evidence_source_ids": [
+          "amend2008"
+        ],
+        "status": "FORBIDDEN_INFERENCE"
+      },
+      {
+        "assertion_id": "thread.no-global-sani-correspondence",
+        "expectation": "Do not infer that all correspondence must use SANI.",
+        "evidence_source_ids": [
+          "amend2008"
+        ],
+        "status": "FORBIDDEN_INFERENCE"
+      }
+    ],
+    "temporal_assertions": [
+      {
+        "assertion_id": "thread.temporal-original",
+        "expectation": "Original force, Chapter II applicability, paper-rule end, electronic-notification start and event-conditioned correspondence remain distinct temporal assertions.",
+        "evidence_source_ids": [
+          "base"
+        ],
+        "status": "ASSERTED"
+      },
+      {
+        "assertion_id": "thread.temporal-sani",
+        "expectation": "The SANI-specific 1 July 2008 application start remains separate from the 2008 text-state replacement.",
+        "evidence_source_ids": [
+          "amend2008"
+        ],
+        "status": "ASSERTED"
+      },
+      {
+        "assertion_id": "thread.temporal-2025",
+        "expectation": "The 2025 paragraph-3 application boundary remains separate from the later Annex-only special date.",
+        "evidence_source_ids": [
+          "amend2025"
+        ],
+        "status": "ASSERTED"
+      }
+    ]
+  },
+  "machine_expectations": [
+    {
+      "assertion_id": "source-mode.closed",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "THREAD_SOURCE_MODE",
+        "closed": true,
+        "gap_count": 0
+      }
+    },
+    {
+      "assertion_id": "chronology.baseline",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "THREAD_EVENT",
+        "event_index": 0,
+        "event_id": "original-article3-state",
+        "event_kind": "BASELINE_STATE"
+      }
+    },
+    {
+      "assertion_id": "chronology.force",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "THREAD_EVENT",
+        "event_index": 1,
+        "event_id": "original-entry-into-force",
+        "event_kind": "TEMPORAL_BOUNDARY"
+      }
+    },
+    {
+      "assertion_id": "chronology.chapter2",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "THREAD_EVENT",
+        "event_index": 2,
+        "event_id": "chapter2-application-gate",
+        "event_kind": "TEMPORAL_BOUNDARY"
+      }
+    },
+    {
+      "assertion_id": "chronology.paper-end",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "THREAD_EVENT",
+        "event_index": 3,
+        "event_id": "original-paper-regime-end",
+        "event_kind": "TEMPORAL_BOUNDARY"
+      }
+    },
+    {
+      "assertion_id": "chronology.electronic-notification",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "THREAD_EVENT",
+        "event_index": 4,
+        "event_id": "original-electronic-notification-start",
+        "event_kind": "TEMPORAL_BOUNDARY"
+      }
+    },
+    {
+      "assertion_id": "chronology.correspondence-condition",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "THREAD_EVENT",
+        "event_index": 5,
+        "event_id": "original-electronic-correspondence-condition",
+        "event_kind": "TEMPORAL_BOUNDARY"
+      }
+    },
+    {
+      "assertion_id": "chronology.2008-mutation",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "THREAD_EVENT",
+        "event_index": 6,
+        "event_id": "article3-replacement-2008",
+        "event_kind": "TEXTUAL_MUTATION"
+      }
+    },
+    {
+      "assertion_id": "chronology.2008-sani-date",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "THREAD_EVENT",
+        "event_index": 7,
+        "event_id": "sani-rule-application-2008",
+        "event_kind": "TEMPORAL_BOUNDARY"
+      }
+    },
+    {
+      "assertion_id": "chronology.2025-mutation",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "THREAD_EVENT",
+        "event_index": 8,
+        "event_id": "article3-paragraph3-replacement-2025",
+        "event_kind": "TEXTUAL_MUTATION"
+      }
+    },
+    {
+      "assertion_id": "chronology.2025-p4-ripple",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "THREAD_EVENT",
+        "event_index": 9,
+        "event_id": "paragraph4-cross-reference-ripple-2025",
+        "event_kind": "DERIVED_SEMANTIC_EFFECT"
+      }
+    },
+    {
+      "assertion_id": "chronology.2025-application",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "THREAD_EVENT",
+        "event_index": 10,
+        "event_id": "article3-paragraph3-application-2025",
+        "event_kind": "TEMPORAL_BOUNDARY"
+      }
+    },
+    {
+      "assertion_id": "chronology.2026-corrigendum-review",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "THREAD_EVENT",
+        "event_index": 11,
+        "event_id": "corrigendum-review-2026",
+        "event_kind": "RELATED_SOURCE_NON_IMPACT"
+      }
+    },
+    {
+      "assertion_id": "atom.pki-present-in-2008",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "THREAD_REF",
+        "event_id": "article3-replacement-2008",
+        "ref_kind": "CHANGE_ATOM",
+        "entity_id": "reg794-art3-pki-correspondence-duty-v0.1",
+        "entity": {
+          "verification_state": "VERIFIED",
+          "claim": {
+            "legal_effect": "DUTY"
+          }
+        }
+      }
+    },
+    {
+      "assertion_id": "atom.p4-ripple-derived",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "THREAD_REF",
+        "event_id": "paragraph4-cross-reference-ripple-2025",
+        "ref_kind": "CHANGE_ATOM",
+        "entity_id": "reg794-art3-2025-crossref-exception-ripple-v0.1",
+        "entity": {
+          "verification_state": "EVIDENCED",
+          "evidence_state": "DERIVED"
+        }
+      }
+    },
+    {
+      "assertion_id": "nonatom.baseline-change-atom",
+      "outcome": "ABSENT",
+      "match": {
+        "kind": "THREAD_REF",
+        "event_id": "original-article3-state",
+        "ref_kind": "CHANGE_ATOM"
+      }
+    },
+    {
+      "assertion_id": "nonmutation.p4-2025",
+      "outcome": "ABSENT",
+      "match": {
+        "kind": "THREAD_REF",
+        "event_id": "paragraph4-cross-reference-ripple-2025",
+        "ref_kind": "MUTATION"
+      }
+    },
+    {
+      "assertion_id": "nonmutation.corrigendum-2026",
+      "outcome": "ABSENT",
+      "match": {
+        "kind": "THREAD_REF",
+        "event_id": "corrigendum-review-2026",
+        "ref_kind": "MUTATION"
+      }
+    },
+    {
+      "assertion_id": "nonatom.pki-sani-temporal",
+      "outcome": "ABSENT",
+      "match": {
+        "kind": "THREAD_REF",
+        "entity_id": "reg794-art3-pki-correspondence-duty-v0.1",
+        "entity": {
+          "temporal_assertion_refs": [
+            "reg794-art3-p3-sani-application-start"
+          ]
+        }
+      }
+    },
+    {
+      "assertion_id": "separation.p4-ripple-not-direct-2025-event",
+      "outcome": "ABSENT",
+      "match": {
+        "kind": "THREAD_REF",
+        "event_id": "article3-paragraph3-replacement-2025",
+        "entity_id": "reg794-art3-2025-crossref-exception-ripple-v0.1"
+      }
+    },
+    {
+      "assertion_id": "unknown.language-scope-explicit",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "THREAD_UNKNOWN",
+        "unknown_id": "language-scope-v0.1",
+        "state": "SCOPED"
+      }
+    },
+    {
+      "assertion_id": "unknown.technical-identity-explicit",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "THREAD_UNKNOWN",
+        "unknown_id": "technical-channel-identity",
+        "state": "UNRESOLVED"
+      }
+    }
+  ],
+  "ambiguities": [
+    {
+      "description": "The original 2004 state is source-backed baseline context, not a mutation-derived Change Atom under v0.3.",
+      "retained_as": "UNRESOLVED"
+    },
+    {
+      "description": "Rule continuity from named 2008 systems to Commission-designated 2025 systems is interpretive and does not assert technical-system identity.",
+      "retained_as": "UNRESOLVED"
+    },
+    {
+      "description": "Cross-language semantic equivalence is outside the English v0.1 Thread.",
+      "retained_as": "UNRESOLVED"
+    }
+  ],
+  "verification": {
+    "state": "VERIFIED",
+    "requirements": [
+      "Validate Thread v0.1 reference composition and all referenced domain fixtures.",
+      "Require zero active Source Mode provenance gaps.",
+      "Enforce chronological event order and negative category-boundary expectations.",
+      "Keep live source availability observations separate from pinned legal evidence."
+    ],
+    "verified_by": [
+      "tests/test_thread_article3.py",
+      "tests/test_thread_gold.py",
+      "Thread Article 3 live-source workflow"
+    ]
+  }
+}

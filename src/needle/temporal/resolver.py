@@ -224,3 +224,204 @@ def gap_between(
     if gap_start > gap_end:
         return {"state":"NO_GAP","start":None,"end":None}
     return {"state":"GAP","start":gap_start.isoformat(),"end":gap_end.isoformat()}
+
+
+
+def _publication_availability_index(
+    assertions: list[dict[str, Any]],
+    context: dict[str, Any] | None = None,
+) -> dict[str, date]:
+    """Earliest official-source availability known to this fixture/query.
+
+    Historical-source perspective is based on official publication/availability,
+    not on when Needle happened to ingest the source and not on assumptions
+    about what a particular person knew.
+    """
+    context = context or {}
+    index: dict[str, date] = {
+        key: _date(value)
+        for key, value in context.get("source_available_from", {}).items()
+    }
+
+    for assertion in assertions:
+        if assertion["dimension"] != "PUBLICATION" or assertion["boundary"] != "POINT":
+            continue
+        value, missing = _trigger_date(assertion, context)
+        if value is None or missing:
+            continue
+        identifier = assertion["subject_ref"]["identifier"]
+        previous = index.get(identifier)
+        if previous is None or value < previous:
+            index[identifier] = value
+    return index
+
+
+def _is_relevant(
+    assertion: dict[str, Any],
+    *,
+    dimension: str,
+    subject_keys: set[str],
+) -> bool:
+    return (
+        assertion["dimension"] == dimension
+        and bool(subject_keys.intersection(assertion["scope"]["applies_to"]))
+    )
+
+
+def _filter_assertions_by_official_source_cutoff(
+    assertions: list[dict[str, Any]],
+    *,
+    cutoff_date: str,
+    dimension: str,
+    subject_keys: set[str],
+    context: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    context = context or {}
+    cutoff = _date(cutoff_date)
+    availability = _publication_availability_index(assertions, context)
+
+    included: list[dict[str, Any]] = []
+    later: list[dict[str, Any]] = []
+    unresolved: list[dict[str, Any]] = []
+
+    for assertion in assertions:
+        source_dates: list[date] = []
+        missing_sources: list[str] = []
+
+        # Publication assertions are self-dating official-source facts.
+        if assertion["dimension"] == "PUBLICATION":
+            value, missing = _trigger_date(assertion, context)
+            if value is not None and not missing:
+                source_dates.append(value)
+        else:
+            for source_ref in assertion.get("source_refs", []):
+                identifier = source_ref["identifier"]
+                value = availability.get(identifier)
+                if value is None:
+                    missing_sources.append(identifier)
+                else:
+                    source_dates.append(value)
+
+        if missing_sources:
+            if _is_relevant(assertion, dimension=dimension, subject_keys=subject_keys):
+                unresolved.append({
+                    "assertion_id": assertion["assertion_id"],
+                    "missing_source_availability": sorted(set(missing_sources)),
+                })
+            continue
+
+        available_from = max(source_dates) if source_dates else None
+        if available_from is None:
+            if _is_relevant(assertion, dimension=dimension, subject_keys=subject_keys):
+                unresolved.append({
+                    "assertion_id": assertion["assertion_id"],
+                    "missing_source_availability": ["<no dated official source>"],
+                })
+            continue
+
+        if available_from <= cutoff:
+            included.append(assertion)
+        elif _is_relevant(assertion, dimension=dimension, subject_keys=subject_keys):
+            later.append({
+                "assertion_id": assertion["assertion_id"],
+                "official_source_available_from": available_from.isoformat(),
+            })
+
+    return {
+        "assertions": included,
+        "later_relevant": later,
+        "unresolved_relevant": unresolved,
+        "cutoff_date": cutoff.isoformat(),
+    }
+
+
+def status_on_perspective(
+    assertions: list[dict[str, Any]],
+    *,
+    dimension: str,
+    subject_keys: set[str],
+    valid_date: str,
+    perspective: str = "EX_POST_LEGAL_EFFECT",
+    source_cutoff_date: str | None = None,
+    context: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Resolve legal time under an explicit historical-source perspective.
+
+    EX_POST_LEGAL_EFFECT:
+        Use the full evidence set, including later acts with retroactive effect.
+
+    OFFICIAL_SOURCE_STATE_AS_OF:
+        Only use assertions supported by official sources available by the
+        source cutoff date. This reconstructs the official-source state as of
+        that date; it does not claim what any particular person actually knew.
+    """
+    context = context or {}
+
+    if perspective == "EX_POST_LEGAL_EFFECT":
+        result = status_on(
+            assertions,
+            dimension=dimension,
+            subject_keys=subject_keys,
+            on_date=valid_date,
+            context=context,
+        )
+        return {
+            **result,
+            "perspective":"EX_POST_LEGAL_EFFECT",
+            "valid_date":valid_date,
+            "source_cutoff_date":None,
+        }
+
+    if perspective != "OFFICIAL_SOURCE_STATE_AS_OF":
+        raise ValueError(f"unsupported temporal perspective: {perspective}")
+    if not source_cutoff_date:
+        return {
+            "state":"SOURCE_CUTOFF_REQUIRED",
+            "active":None,
+            "perspective":perspective,
+            "valid_date":valid_date,
+            "source_cutoff_date":None,
+        }
+
+    filtered = _filter_assertions_by_official_source_cutoff(
+        assertions,
+        cutoff_date=source_cutoff_date,
+        dimension=dimension,
+        subject_keys=subject_keys,
+        context=context,
+    )
+    if filtered["unresolved_relevant"]:
+        return {
+            "state":"SOURCE_AVAILABILITY_UNRESOLVED",
+            "active":None,
+            "perspective":perspective,
+            "valid_date":valid_date,
+            "source_cutoff_date":source_cutoff_date,
+            "unresolved":filtered["unresolved_relevant"],
+            "later_assertions":filtered["later_relevant"],
+        }
+
+    result = status_on(
+        filtered["assertions"],
+        dimension=dimension,
+        subject_keys=subject_keys,
+        on_date=valid_date,
+        context=context,
+    )
+    if result["state"] == "NOT_ASSERTED" and filtered["later_relevant"]:
+        return {
+            "state":"NOT_ASSERTED_AS_OF_SOURCE_DATE",
+            "active":None,
+            "perspective":perspective,
+            "valid_date":valid_date,
+            "source_cutoff_date":source_cutoff_date,
+            "later_assertions":filtered["later_relevant"],
+        }
+
+    return {
+        **result,
+        "perspective":perspective,
+        "valid_date":valid_date,
+        "source_cutoff_date":source_cutoff_date,
+        "later_assertions":filtered["later_relevant"],
+    }

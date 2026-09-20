@@ -1,0 +1,43 @@
+{
+  "candidate_id": "reg2742-art4p1-eng-money-corrigendum-v0.1",
+  "operation": "REPLACE",
+  "target": {
+    "kind": "PARAGRAPH",
+    "citation_path": "Article 4 > 1",
+    "parent_citation_path": "Article 4",
+    "language": "ENG"
+  },
+  "alignment_basis": "SOURCE_NATIVE_IDENTIFIER",
+  "before": null,
+  "after": null,
+  "feature_deltas": {
+    "numbers_added": [
+      "255"
+    ],
+    "numbers_removed": [
+      "225"
+    ],
+    "dates_added": [],
+    "dates_removed": [],
+    "references_added": [],
+    "references_removed": []
+  },
+  "reconciliation_state": "CORROBORATED",
+  "verification_state": "VERIFIED",
+  "supporting_evidence": [
+    {
+      "channel": "AUTHENTIC_ACT",
+      "source_id": "CELEX:31990R2742R(01)",
+      "operation": "REPLACE",
+      "target_locator": "Article 4 > 1",
+      "authority_character": "CANONICAL_LEGAL_CAUSE",
+      "locator": "normalized-visible-text#chars:553-683"
+    }
+  ],
+  "conflicting_evidence": [],
+  "notes": "Verified directly from the authentic English corrigendum's explicit for/read replacement. No historical consolidated before/after checkpoint is invented; the authentic correction instruction itself establishes ECU 225 → ECU 255 for the English expression.",
+  "lineage_edge_ids": [],
+  "consumed_candidate_ids": [],
+  "structural_alignment": null,
+  "comparison_scope": "DIRECT_NODE"
+}

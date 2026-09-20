@@ -692,6 +692,128 @@
           }
         }
       ]
+    },
+    {
+      "case_id": "dsa-provisional-agreement-vs-adoption",
+      "procedure_id": "2020/0361(COD)",
+      "events": [
+        {
+          "event_id": "dsa-political-agreement-2022-04-23",
+          "procedure_id": "2020/0361(COD)",
+          "procedure_family": "ORDINARY_LEGISLATIVE",
+          "event_kind": "POLITICAL_AGREEMENT_REACHED",
+          "event_date": "2022-04-23",
+          "actor": [
+            "EUROPEAN_PARLIAMENT",
+            "COUNCIL"
+          ],
+          "document_refs": [
+            {
+              "role": "AGREED_TEXT",
+              "identifier": "DSA provisional political agreement 23/04/2022",
+              "relation": "provisional interinstitutional agreement"
+            }
+          ],
+          "effects": [
+            {
+              "dimension": "PROCEDURE_ACTIVITY",
+              "value": "OPEN"
+            },
+            {
+              "dimension": "PROCEDURE_OUTCOME",
+              "value": "PENDING"
+            },
+            {
+              "dimension": "NEGOTIATION_STATE",
+              "value": "PROVISIONAL_POLITICAL_AGREEMENT"
+            },
+            {
+              "dimension": "FORMAL_ACT_ADOPTION",
+              "value": "NOT_ADOPTED"
+            },
+            {
+              "dimension": "FINAL_ACT_PUBLICATION",
+              "value": "NOT_PUBLISHED"
+            }
+          ],
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "COUNCIL",
+              "identifier": "Council press release 23/04/2022",
+              "locator": "Provisional political agreement; subject to approval by Council and European Parliament",
+              "role": "EVENT"
+            }
+          ],
+          "notes": "Political agreement is a negotiation milestone, not formal adoption."
+        },
+        {
+          "event_id": "dsa-final-adoption-2022-10-04",
+          "procedure_id": "2020/0361(COD)",
+          "procedure_family": "ORDINARY_LEGISLATIVE",
+          "event_kind": "FORMAL_ACT_ADOPTED",
+          "event_date": "2022-10-04",
+          "actor": [
+            "COUNCIL"
+          ],
+          "document_refs": [
+            {
+              "role": "ADOPTED_ACT",
+              "identifier": "Digital Services Act final legislative act",
+              "relation": "Council final approval following Parliament position"
+            }
+          ],
+          "effects": [
+            {
+              "dimension": "FORMAL_ACT_ADOPTION",
+              "value": "ADOPTED"
+            },
+            {
+              "dimension": "PROCEDURE_OUTCOME",
+              "value": "ADOPTED"
+            },
+            {
+              "dimension": "PROCEDURE_ACTIVITY",
+              "value": "CLOSED"
+            },
+            {
+              "dimension": "NEGOTIATION_STATE",
+              "value": "COMPLETED"
+            }
+          ],
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "COUNCIL",
+              "identifier": "Council press release 04/10/2022",
+              "locator": "Following Council approval, the legislative act was adopted",
+              "role": "EVENT"
+            }
+          ],
+          "notes": "Publication and legal effect remain separate later states."
+        }
+      ],
+      "snapshots": [
+        {
+          "date": "2022-04-24",
+          "expect": {
+            "PROCEDURE_ACTIVITY": "OPEN",
+            "PROCEDURE_OUTCOME": "PENDING",
+            "NEGOTIATION_STATE": "PROVISIONAL_POLITICAL_AGREEMENT",
+            "FORMAL_ACT_ADOPTION": "NOT_ADOPTED",
+            "FINAL_ACT_PUBLICATION": "NOT_PUBLISHED"
+          }
+        },
+        {
+          "date": "2022-10-04",
+          "expect": {
+            "PROCEDURE_ACTIVITY": "CLOSED",
+            "PROCEDURE_OUTCOME": "ADOPTED",
+            "NEGOTIATION_STATE": "COMPLETED",
+            "FORMAL_ACT_ADOPTION": "ADOPTED"
+          }
+        }
+      ]
     }
   ],
   "forbidden_inferences": [

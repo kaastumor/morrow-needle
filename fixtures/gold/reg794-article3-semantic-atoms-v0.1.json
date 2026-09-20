@@ -1,0 +1,188 @@
+{
+  "schema_version": "gold-corpus-case-v0.2",
+  "case_id": "reg794-article3-semantic-atoms-v0.1",
+  "title": "Article 3 semantic decomposition with explicit exception and validity consequence",
+  "adversarial_claim": "One verified Article 3 textual replacement contains multiple distinct legal-semantic effects; semantic extraction must preserve their scope, exception structure and temporal qualification without globalizing SANI to all correspondence.",
+  "foundation_contracts": [
+    "P1-A",
+    "change-atom-v0.3",
+    "P0-E",
+    "P0-I"
+  ],
+  "language_scope": {
+    "languages": [
+      "ENG"
+    ],
+    "cross_language_equivalence_assumed": false
+  },
+  "official_sources": [
+    {
+      "source_id": "cause",
+      "authority": "CELLAR",
+      "identifier": "CELEX:32008R0271",
+      "role": "AUTHENTIC_TEXT",
+      "locator": "Article 1 replacement of Article 3"
+    },
+    {
+      "source_id": "after",
+      "authority": "EUR_LEX",
+      "identifier": "CELEX:02004R0794-20080414",
+      "role": "CONSOLIDATED_CHECKPOINT",
+      "locator": "Article 3"
+    },
+    {
+      "source_id": "relation",
+      "authority": "EUR_LEX",
+      "identifier": "CELEX:32004R0794",
+      "role": "OFFICIAL_METADATA",
+      "locator": "Modified by 32008R0271 / Replacement / Article 3"
+    }
+  ],
+  "expected": {
+    "document_relationships": [],
+    "provision_alignments": [],
+    "textual_mutations": [
+      {
+        "assertion_id": "mutation.article3.verified",
+        "expectation": "The semantic atoms derive from the independently VERIFIED Article 3 replacement.",
+        "evidence_source_ids": [
+          "cause",
+          "after",
+          "relation"
+        ],
+        "status": "ASSERTED"
+      }
+    ],
+    "change_atoms": [
+      {
+        "assertion_id": "atom.sani-duty",
+        "expectation": "Article 3(3) creates a duty for notifications to be transmitted electronically through SANI from 1 July 2008.",
+        "evidence_source_ids": [
+          "cause"
+        ],
+        "status": "ASSERTED"
+      },
+      {
+        "assertion_id": "atom.alt-channel-permission",
+        "expectation": "Article 3(4) permits an agreed alternative communication channel only exceptionally and with Commission/Member State agreement.",
+        "evidence_source_ids": [
+          "cause"
+        ],
+        "status": "ASSERTED"
+      },
+      {
+        "assertion_id": "atom.invalid-channel-status",
+        "expectation": "Absent such agreement, a notification or related correspondence sent through another channel is not considered submitted to the Commission.",
+        "evidence_source_ids": [
+          "cause"
+        ],
+        "status": "ASSERTED"
+      }
+    ],
+    "non_atoms": [
+      {
+        "assertion_id": "nonatom.all-correspondence-sani",
+        "expectation": "Do not infer that all correspondence must be transmitted through SANI; the authentic text distinguishes SANI notifications from correspondence transmission.",
+        "evidence_source_ids": [
+          "cause"
+        ],
+        "status": "FORBIDDEN_INFERENCE"
+      }
+    ],
+    "temporal_assertions": [
+      {
+        "assertion_id": "temporal.sani-2008-07-01",
+        "expectation": "The SANI duty references the rule-specific application start of 1 July 2008 rather than collapsing it into the Article replacement date.",
+        "evidence_source_ids": [
+          "cause"
+        ],
+        "status": "ASSERTED"
+      }
+    ]
+  },
+  "machine_expectations": [
+    {
+      "assertion_id": "mutation.article3.verified",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "SOURCE_MUTATION",
+        "mutation_id": "reg794-article3-live-verified-v0.1",
+        "verification_state": "VERIFIED"
+      }
+    },
+    {
+      "assertion_id": "atom.sani-duty",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "CHANGE_ATOM",
+        "atom_id": "reg794-art3-sani-duty-v0.1",
+        "legal_effect": "DUTY",
+        "verification_state": "VERIFIED"
+      }
+    },
+    {
+      "assertion_id": "atom.alt-channel-permission",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "CHANGE_ATOM",
+        "atom_id": "reg794-art3-alt-channel-permission-v0.1",
+        "legal_effect": "PERMISSION",
+        "verification_state": "VERIFIED",
+        "relations": [
+          {
+            "relation": "EXCEPTION_TO",
+            "target_atom_id": "reg794-art3-sani-duty-v0.1"
+          }
+        ]
+      }
+    },
+    {
+      "assertion_id": "atom.invalid-channel-status",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "CHANGE_ATOM",
+        "atom_id": "reg794-art3-invalid-channel-status-v0.1",
+        "legal_effect": "LEGAL_STATUS",
+        "verification_state": "VERIFIED"
+      }
+    },
+    {
+      "assertion_id": "nonatom.all-correspondence-sani",
+      "outcome": "ABSENT",
+      "match": {
+        "kind": "CHANGE_ATOM",
+        "claim_key": "ALL_CORRESPONDENCE_VIA_SANI"
+      }
+    },
+    {
+      "assertion_id": "temporal.sani-2008-07-01",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "CHANGE_ATOM",
+        "atom_id": "reg794-art3-sani-duty-v0.1",
+        "temporal_assertion_refs": [
+          "reg794-art3-p3-sani-application-start"
+        ]
+      }
+    }
+  ],
+  "ambiguities": [
+    {
+      "description": "Affected-entity labels are intentionally not asserted in this first semantic case; they require separately evidenced scope analysis.",
+      "retained_as": "UNRESOLVED"
+    }
+  ],
+  "verification": {
+    "state": "VERIFIED",
+    "requirements": [
+      "Validate all Change Atom v0.3 objects and adversary checks.",
+      "Verify authentic source-span hashes against live Cellar Formex.",
+      "Enforce the all-correspondence-via-SANI negative expectation."
+    ],
+    "verified_by": [
+      "tests/test_change_atoms.py",
+      "tests/test_gold_semantic_fixture.py",
+      "Live semantic source contract"
+    ]
+  }
+}

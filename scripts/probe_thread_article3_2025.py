@@ -208,14 +208,25 @@ def publication_date_metadata(payload: bytes) -> dict:
                         "text":text,
                         "text_hash":hashlib.sha256(text.encode("utf-8")).hexdigest(),
                     })
-    if len(matches)!=1:
+    if not matches:
         raise AssertionError(
-            "expected exactly one source-native publication DATE[ISO=20250613], "
-            f"got {len(matches)}"
+            "expected source-native publication DATE[ISO=20250613], got none"
         )
+    signatures={
+        (match["text"], match["text_hash"])
+        for match in matches
+    }
+    if len(signatures)!=1:
+        raise AssertionError(
+            "conflicting source-native publication DATE[ISO=20250613] "
+            f"occurrences: {matches}"
+        )
+    matches=sorted(matches,key=lambda item:item["locator"])
     return {
         "normalized_date":"2025-06-13",
-        **matches[0],
+        "occurrence_count":len(matches),
+        "canonical_occurrence":matches[0],
+        "occurrences":matches,
     }
 
 

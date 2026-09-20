@@ -3,12 +3,33 @@ name: Split temporal audit probe
 on:
   push:
     paths:
-      - "scripts/probe_dir2008_7_split_temporal.py"
+      - "fixtures/audit/dir2008-7-split-temporal-source-v0.1.json"
+      - "fixtures/temporal/dir2008-7-split-temporal-v0.1.json"
+      - "fixtures/mutations/structural-lineage-reclassification-v0.1.json"
+      - "src/needle/mutation/structural.py"
+      - "src/needle/temporal/**"
+      - "tests/test_split_temporal_audit.py"
       - ".github/workflows/split-temporal-audit.yml"
   workflow_dispatch:
 
 jobs:
-  verify:
+  verify-pinned-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install project
+        run: python -m pip install -e ".[test]"
+      - name: Verify pinned split/temporal composition
+        run: python -m pytest -q tests/test_split_temporal_audit.py
+
+  inspect-live-source:
+    # Live source availability/drift is audit evidence, not canonical legal truth.
+    # Keep it inspectable without making ordinary branch CI depend on endpoints.
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 6
     steps:

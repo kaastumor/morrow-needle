@@ -161,6 +161,76 @@
           "type": "boolean"
         }
       }
+    },
+    "temporal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dimension",
+        "valid_date",
+        "perspective",
+        "mode"
+      ],
+      "properties": {
+        "dimension": {
+          "enum": [
+            "PUBLICATION",
+            "LEGAL_FORCE",
+            "APPLICATION",
+            "TEXT_STATE",
+            "TRANSITION",
+            "DEROGATION",
+            "DEADLINE"
+          ]
+        },
+        "valid_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "perspective": {
+          "enum": [
+            "EX_POST_LEGAL_EFFECT",
+            "OFFICIAL_SOURCE_STATE_AS_OF"
+          ]
+        },
+        "source_cutoff_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "context": {
+          "type": "object"
+        },
+        "mode": {
+          "enum": [
+            "ACTIVE_ONLY",
+            "EVALUATE"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "perspective": {
+                "const": "OFFICIAL_SOURCE_STATE_AS_OF"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "source_cutoff_date"
+            ],
+            "properties": {
+              "source_cutoff_date": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ]
     }
   }
 }

@@ -14,12 +14,17 @@ from needle.updates.cellar_feed import parse_feed
 ENDPOINT = "https://publications.europa.eu/webapi/notification/ingestion"
 TARGET_NOTIFICATION_ID = "7081775"
 WINDOW = {
-    "startDate":"2012-06-11T09:13:00+01:00",
-    "endDate":"2012-06-11T09:14:59+01:00",
+    "startDate":"2012-06-11T08:13:00+01:00",
+    "endDate":"2012-06-11T08:14:59+01:00",
     "type":"UPDATE",
     "wemiClasses":"work",
     "page":"1",
 }
+# The Publications Office documentation prints notification 7081775 at
+# 2012-06-11T09:13:58+01:00. Live Cellar normalizes June timestamps to
+# +02:00. This probe deliberately queries the corresponding 09:13 CEST
+# wall-clock window (08:13+01) to test whether the documentation carried a
+# daylight-saving offset mismatch.
 
 
 def fetch_feed(accept: str) -> tuple[bytes, requests.Response]:

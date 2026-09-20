@@ -5,6 +5,8 @@ from hashlib import sha256
 import re
 from typing import Any
 
+from needle.ast.resolve import resolve_structural_path
+
 
 DATE_RE = re.compile(
     r"\b(?:\d{1,2}\s+(?:January|February|March|April|May|June|July|August|"
@@ -474,4 +476,91 @@ def diff_target_subtree(
         }],
         "conflicting_evidence":[],
         "notes":"Evidence-selected exact subtree comparison; no fuzzy identity inference.",
+    }
+
+
+
+def diff_resolved_subtree(
+    before_ast: dict[str, Any],
+    after_ast: dict[str, Any],
+    *,
+    structural_path: list[tuple[str, str]],
+    canonical_kind: str,
+    canonical_citation_path: str,
+    language: str | None = None,
+) -> dict[str, Any] | None:
+    """Compare the same legal address across representation label variants.
+
+    The resolver establishes the exact canonical nodes through parent links.
+    It does not use text similarity or create lineage assertions.
+    """
+    before_node = resolve_structural_path(before_ast, structural_path)
+    after_node = resolve_structural_path(after_ast, structural_path)
+    if before_node is None and after_node is None:
+        return None
+
+    before_text = (
+        _subtree_text(before_ast, before_node["node_id"])
+        if before_node else ""
+    )
+    after_text = (
+        _subtree_text(after_ast, after_node["node_id"])
+        if after_node else ""
+    )
+    if before_node and after_node and before_text == after_text:
+        return None
+
+    operation = (
+        "INSERT" if before_node is None
+        else "DELETE" if after_node is None
+        else "REPLACE"
+    )
+    candidate_id = sha256(
+        (
+            f"{before_ast['state_id']}|{after_ast['state_id']}|"
+            f"{canonical_kind}|{canonical_citation_path}|RESOLVED_SUBTREE|"
+            f"{operation}"
+        ).encode()
+    ).hexdigest()[:24]
+
+    return {
+        "candidate_id":candidate_id,
+        "operation":operation,
+        "target":{
+            "kind":canonical_kind,
+            "citation_path":canonical_citation_path,
+            "parent_citation_path":canonical_citation_path.rsplit(" > ",1)[0]
+                if " > " in canonical_citation_path else None,
+            "language":language,
+        },
+        "alignment_basis":"EXACT_CITATION_AND_KIND",
+        "comparison_scope":"SUBTREE",
+        "before":None if not before_node else {
+            "state_id":before_ast["state_id"],
+            "node_id":before_node["node_id"],
+            "text_hash":_hash(before_text),
+            "text_length":len(before_text),
+        },
+        "after":None if not after_node else {
+            "state_id":after_ast["state_id"],
+            "node_id":after_node["node_id"],
+            "text_hash":_hash(after_text),
+            "text_length":len(after_text),
+        },
+        "feature_deltas":feature_deltas(before_text, after_text),
+        "reconciliation_state":"DIFF_ONLY",
+        "verification_state":"UNVERIFIED",
+        "supporting_evidence":[{
+            "channel":"DETERMINISTIC_DIFF",
+            "source_id":f"{before_ast['state_id']}->{after_ast['state_id']}",
+            "operation":operation,
+            "target_locator":canonical_citation_path,
+            "authority_character":"DERIVED",
+            "locator":"resolved canonical-AST structural path comparison",
+        }],
+        "conflicting_evidence":[],
+        "notes":(
+            "Exact structural-path resolution tolerates source-native label "
+            "punctuation; no fuzzy textual identity inference."
+        ),
     }

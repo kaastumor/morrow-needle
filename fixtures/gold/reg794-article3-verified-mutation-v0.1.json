@@ -1,0 +1,126 @@
+{
+  "schema_version": "gold-corpus-case-v0.2",
+  "case_id": "reg794-article3-verified-mutation-v0.1",
+  "title": "Verified Article 3 replacement from authentic cause and independent official evidence",
+  "adversarial_claim": "A textual mutation may be VERIFIED only when the deterministic comparator, independent official corroboration and the authentic amending instruction agree; that verification must not silently become a semantic Change Atom.",
+  "foundation_contracts": [
+    "P0-D",
+    "P0-I",
+    "mutation-candidate-v0.2",
+    "temporal-v0.1"
+  ],
+  "language_scope": {
+    "languages": [
+      "ENG"
+    ],
+    "cross_language_equivalence_assumed": false
+  },
+  "official_sources": [
+    {
+      "source_id": "before",
+      "authority": "CELLAR",
+      "identifier": "CELEX:02004R0794-20070119",
+      "role": "CONSOLIDATED_CHECKPOINT",
+      "locator": "English Formex Article 3 subtree"
+    },
+    {
+      "source_id": "after",
+      "authority": "CELLAR",
+      "identifier": "CELEX:02004R0794-20080414",
+      "role": "CONSOLIDATED_CHECKPOINT",
+      "locator": "English Formex Article 3 subtree"
+    },
+    {
+      "source_id": "cause",
+      "authority": "CELLAR",
+      "identifier": "CELEX:32008R0271",
+      "role": "AUTHENTIC_TEXT",
+      "locator": "L_2008082EN.01000101.xml#normalized-chars:6924-6962"
+    },
+    {
+      "source_id": "relationship",
+      "authority": "EUR_LEX",
+      "identifier": "CELEX:32004R0794",
+      "role": "OFFICIAL_METADATA",
+      "locator": "Modified by 32008R0271 / Replacement / Article 3"
+    },
+    {
+      "source_id": "embedded-provenance",
+      "authority": "CELLAR",
+      "identifier": "CELEX:02004R0794-20250813",
+      "role": "OFFICIAL_METADATA",
+      "locator": "CLG.MDFO O003001M001000; ACTIVE.DOC=32008R0271"
+    }
+  ],
+  "expected": {
+    "document_relationships": [],
+    "provision_alignments": [],
+    "textual_mutations": [
+      {
+        "assertion_id": "mutation.article3.replace",
+        "expectation": "Article 3 is emitted as a corroborated and VERIFIED REPLACE mutation between the 19 January 2007 and 14 April 2008 official text-state checkpoints.",
+        "evidence_source_ids": [
+          "before",
+          "after",
+          "cause",
+          "relationship",
+          "embedded-provenance"
+        ],
+        "status": "ASSERTED"
+      }
+    ],
+    "change_atoms": [],
+    "non_atoms": [
+      {
+        "assertion_id": "nonatom.semantic-effect",
+        "expectation": "The verified textual replacement must not by itself emit a semantic Change Atom; semantic legal-effect extraction is a separate downstream stage.",
+        "evidence_source_ids": [
+          "cause"
+        ],
+        "status": "FORBIDDEN_INFERENCE"
+      }
+    ],
+    "temporal_assertions": []
+  },
+  "machine_expectations": [
+    {
+      "assertion_id": "mutation.article3.replace",
+      "outcome": "PRESENT",
+      "match": {
+        "kind": "TEXTUAL_MUTATION",
+        "operation": "REPLACE",
+        "target": "Article 3",
+        "language": "ENG",
+        "reconciliation_state": "CORROBORATED",
+        "verification_state": "VERIFIED",
+        "authentic_cause": "CELEX:32008R0271"
+      }
+    },
+    {
+      "assertion_id": "nonatom.semantic-effect",
+      "outcome": "ABSENT",
+      "match": {
+        "kind": "CHANGE_ATOM",
+        "source_mutation": "reg794-article3-live-verified-v0.1"
+      }
+    }
+  ],
+  "ambiguities": [
+    {
+      "description": "The replacement contains multiple proposition-level legal effects and a delayed application date for one rule; those semantic atoms are intentionally outside this P0 textual-mutation case.",
+      "retained_as": "UNRESOLVED"
+    }
+  ],
+  "verification": {
+    "state": "VERIFIED",
+    "requirements": [
+      "Validate against gold-corpus-case-v0.2.",
+      "Match machine expectations against the frozen live verified mutation output.",
+      "Keep semantic Change Atoms absent until downstream extraction verifies them."
+    ],
+    "verified_by": [
+      "tests/test_gold_mutation_fixture.py",
+      "Live authentic amendment contract run 35517455357"
+    ]
+  }
+}

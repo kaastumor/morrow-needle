@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/legal-ast-v0.1.json",
+  "title": "Morrow // Needle Canonical Legal AST v0.1",
+  "description": "Draft source-independent legal-text state. Node IDs are state-scoped and do not imply historical provision identity.",
+  "type": "object",
+  "required": ["ast_version","state_id","source","nodes","segments","references","annotations","parse_report"],
+  "properties": {
+    "ast_version": {"const":"0.1"},
+    "state_id": {"type":"string"},
+    "source": {
+      "type":"object",
+      "required":["source_observation_ids","language","representation_class","adapter","adapter_version"],
+      "properties":{
+        "source_observation_ids":{"type":"array","minItems":1,"items":{"type":"string"}},
+        "celex":{"type":["string","null"]},
+        "eli":{"type":["string","null"]},
+        "work_uri":{"type":["string","null"]},
+        "expression_uri":{"type":["string","null"]},
+        "manifestation_uri":{"type":["string","null"]},
+        "language":{"type":"string"},
+        "representation_class":{"type":"string","enum":["STRUCTURED_LEGAL_XML","STRUCTURED_XHTML","STRUCTURED_HTML","PDF_TEXT","PDF_IMAGE","OTHER"]},
+        "adapter":{"type":"string"},
+        "adapter_version":{"type":"string"},
+        "canonicalization_profile":{"type":"string"}
+      },
+      "additionalProperties":false
+    },
+    "nodes": {
+      "type":"array",
+      "items":{"$ref":"#/$defs/node"}
+    },
+    "segments": {
+      "type":"array",
+      "items":{"$ref":"#/$defs/segment"}
+    },
+    "references": {
+      "type":"array",
+      "items":{"$ref":"#/$defs/reference"}
+    },
+    "annotations": {
+      "type":"array",
+      "items":{"$ref":"#/$defs/annotation"}
+    },
+    "parse_report": {
+      "type":"object",
+      "required":["fidelity","warnings","unknown_native_kinds","declared_losses"],
+      "properties":{
+        "fidelity":{"type":"string","enum":["FULL_STRUCTURAL","PARTIAL_STRUCTURAL","TEXT_ONLY","FAILED"]},
+        "visible_chars_source_estimate":{"type":["integer","null"],"minimum":0},
+        "visible_chars_mapped":{"type":["integer","null"],"minimum":0},
+        "unknown_native_kinds":{"type":"array","items":{"type":"string"}},
+        "unresolved_references":{"type":"integer","minimum":0,"default":0},
+        "unassembled_fragments":{"type":"integer","minimum":0,"default":0},
+        "warnings":{"type":"array","items":{"type":"string"}},
+        "declared_losses":{"type":"array","items":{"type":"string"}}
+      },
+      "additionalProperties":false
+    }
+  },
+  "$defs": {
+    "source_anchor": {
+      "type":"object",
+      "required":["source_observation_id"],
+      "properties":{
+        "source_observation_id":{"type":"string"},
+        "item_uri":{"type":["string","null"]},
+        "native_path":{"type":["string","null"]},
+        "native_identifier":{"type":["string","null"]},
+        "char_start":{"type":["integer","null"],"minimum":0},
+        "char_end":{"type":["integer","null"],"minimum":0}
+      },
+      "additionalProperties":false
+    },
+    "node": {
+      "type":"object",
+      "required":["node_id","kind","ordinal","document_order","presence_state","source_anchor"],
+      "properties":{
+        "node_id":{"type":"string"},
+        "parent_id":{"type":["string","null"]},
+        "kind":{"type":"string","enum":["DOCUMENT","PREAMBLE","RECITAL","ENACTING_TERMS","PART","TITLE","CHAPTER","SECTION","SUBSECTION","ARTICLE","PARAGRAPH","SUBPARAGRAPH","POINT","INDENT","ANNEX","APPENDIX","FORM","SIGNATURE","FOOTNOTE","LIST","LIST_ITEM","TABLE","TABLE_ROW","TABLE_CELL","HEADING","BLOCK","OTHER"]},
+        "native_kind":{"type":["string","null"]},
+        "native_identifier":{"type":["string","null"]},
+        "ordinal":{"type":"integer","minimum":0},
+        "document_order":{"type":"integer","minimum":0},
+        "display_label":{"type":["string","null"]},
+        "citation_path":{"type":["string","null"]},
+        "eli_subdivision_uri":{"type":["string","null"]},
+        "presence_state":{"type":"string","enum":["PRESENT","DELETED_PLACEHOLDER","REPEALED_PLACEHOLDER","RESERVED","UNKNOWN"]},
+        "table_coordinates":{
+          "type":["object","null"],
+          "properties":{
+            "row":{"type":["integer","null"],"minimum":0},
+            "column":{"type":["integer","null"],"minimum":0},
+            "row_span":{"type":["integer","null"],"minimum":1},
+            "column_span":{"type":["integer","null"],"minimum":1}
+          },
+          "additionalProperties":false
+        },
+        "native_attributes":{"type":"object"},
+        "source_anchor":{"$ref":"#/$defs/source_anchor"}
+      },
+      "additionalProperties":false
+    },
+    "segment": {
+      "type":"object",
+      "required":["segment_id","node_id","ordinal","document_order","role","text_source","text_compare","source_anchor"],
+      "properties":{
+        "segment_id":{"type":"string"},
+        "node_id":{"type":"string"},
+        "ordinal":{"type":"integer","minimum":0},
+        "document_order":{"type":"integer","minimum":0},
+        "role":{"type":"string","enum":["LABEL","HEADING","BODY","CELL_TEXT","FOOTNOTE_TEXT","CAPTION","INLINE_OTHER"]},
+        "native_kind":{"type":["string","null"]},
+        "text_source":{"type":"string"},
+        "text_compare":{"type":"string"},
+        "source_hash":{"type":["string","null"]},
+        "compare_hash":{"type":["string","null"]},
+        "source_anchor":{"$ref":"#/$defs/source_anchor"}
+      },
+      "additionalProperties":false
+    },
+    "reference": {
+      "type":"object",
+      "required":["reference_id","segment_id","kind","display_text","resolution_state","source_anchor"],
+      "properties":{
+        "reference_id":{"type":"string"},
+        "segment_id":{"type":"string"},
+        "kind":{"type":"string","enum":["INTERNAL_PROVISION","EU_LEGAL_ACT","EU_LEGAL_SUBDIVISION","OFFICIAL_JOURNAL","FOOTNOTE","EXTERNAL","UNRESOLVED"]},
+        "display_text":{"type":"string"},
+        "source_target_uri":{"type":["string","null"]},
+        "resolved_identifiers":{"type":"object"},
+        "resolution_state":{"type":"string","enum":["SOURCE_RESOLVED","RESOLVED","PARTIAL","UNRESOLVED"]},
+        "source_anchor":{"$ref":"#/$defs/source_anchor"}
+      },
+      "additionalProperties":false
+    },
+    "annotation": {
+      "type":"object",
+      "required":["annotation_id","kind","source_anchor","target_node_ids","target_segment_ids","data"],
+      "properties":{
+        "annotation_id":{"type":"string"},
+        "kind":{"type":"string","enum":["CONSOLIDATION_MODIFICATION","CORRIGENDUM_MARKER","PAGE_BREAK","SOURCE_PROVENANCE","PRODUCTION_MARKER","OTHER"]},
+        "source_anchor":{"$ref":"#/$defs/source_anchor"},
+        "end_source_anchor":{"anyOf":[{"$ref":"#/$defs/source_anchor"},{"type":"null"}]},
+        "target_node_ids":{"type":"array","items":{"type":"string"}},
+        "target_segment_ids":{"type":"array","items":{"type":"string"}},
+        "data":{"type":"object"}
+      },
+      "additionalProperties":false
+    }
+  },
+  "additionalProperties":false
+}

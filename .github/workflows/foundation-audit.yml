@@ -1,0 +1,46 @@
+name: Post-P1 foundation audit
+
+on:
+  push:
+    paths:
+      - "src/needle/**"
+      - "schemas/**"
+      - "fixtures/**"
+      - "tests/test_post_p1_foundation_audit.py"
+      - "tests/test_temporal_semantics.py"
+      - "tests/test_multilingual_corrigenda.py"
+      - "tests/test_identifier_graph.py"
+      - "tests/test_procedure_state.py"
+      - "tests/test_cellar_updates.py"
+      - "tests/test_provenance_ledger.py"
+      - "tests/test_retrieval.py"
+      - "tests/test_thread_article3.py"
+      - "tests/test_thread_gold.py"
+      - "docs/audits/**"
+      - ".github/workflows/foundation-audit.yml"
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install project
+        run: python -m pip install -e ".[test]"
+      - name: Run composed foundation audit
+        run: |
+          python -m pytest -q \
+            tests/test_post_p1_foundation_audit.py \
+            tests/test_temporal_semantics.py \
+            tests/test_multilingual_corrigenda.py \
+            tests/test_identifier_graph.py \
+            tests/test_procedure_state.py \
+            tests/test_cellar_updates.py \
+            tests/test_provenance_ledger.py \
+            tests/test_retrieval.py \
+            tests/test_thread_article3.py \
+            tests/test_thread_gold.py

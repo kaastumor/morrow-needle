@@ -1,0 +1,22 @@
+{
+  "schema_version": "gold-corpus-case-v0.1",
+  "case_id": "reg26-to-reg1184-lineage-v0.1",
+  "title": "Repeal/replacement with non-positional provision lineage",
+  "adversarial_claim": "Article numbers and document succession are insufficient to reconstruct provision ancestry; the official correlation table must control asserted structural lineage.",
+  "foundation_contracts": ["P0-A", "provision-lineage-v0.5"],
+  "language_scope": {"languages": ["ENG"], "cross_language_equivalence_assumed": false},
+  "official_sources": [
+    {"source_id": "reg1184", "authority": "EUR_LEX", "identifier": "CELEX:32006R1184", "role": "AUTHENTIC_TEXT", "locator": "Regulation (EC) No 1184/2006"},
+    {"source_id": "correlation", "authority": "EUR_LEX", "identifier": "CELEX:32006R1184", "role": "CORRELATION_TABLE", "locator": "Annex II — Correlation table"}
+  ],
+  "expected": {
+    "document_relationships": [{"assertion_id": "doc.replacement", "expectation": "Regulation 1184/2006 codifies and replaces Regulation No 26.", "evidence_source_ids": ["reg1184"], "status": "ASSERTED"}],
+    "provision_alignments": [{"assertion_id": "lineage.table-controls", "expectation": "Only mappings supported by the official correlation table may be emitted as asserted structural lineage from this case.", "evidence_source_ids": ["correlation"], "status": "ASSERTED"}],
+    "textual_mutations": [],
+    "change_atoms": [],
+    "non_atoms": [{"assertion_id": "nonatom.article-number", "expectation": "Same or nearby article numbering alone is not a legal-semantic Change Atom and cannot prove lineage.", "evidence_source_ids": ["correlation"], "status": "FORBIDDEN_INFERENCE"}],
+    "temporal_assertions": []
+  },
+  "ambiguities": [{"description": "The correlation table establishes structural correspondence, not proposition-level semantic continuity.", "retained_as": "UNRESOLVED"}],
+  "verification": {"state": "EVIDENCED", "requirements": ["Validate fixture against gold-corpus-case-v0.1 schema.", "Cross-check emitted lineage edges against Annex II without inferring rule continuity."]}
+}

@@ -1,0 +1,43 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "reg794-article3-2025-application",
+  "assertions": [
+    {
+      "assertion_id": "reg794-art3-p3-2025-application-start",
+      "subject_ref": {
+        "kind": "PROVISION_INSTANCE",
+        "identifier": "CELEX:02004R0794-20250703#ARTICLE_3_PARAGRAPH_3",
+        "locator": "Article 3(3)"
+      },
+      "dimension": "APPLICATION",
+      "boundary": "START",
+      "inclusive": true,
+      "trigger": {
+        "kind": "ABSOLUTE_DATE",
+        "date": "2025-07-03",
+        "source_expression": "Article 2: twentieth day following publication on 13 June 2025"
+      },
+      "normalized_date": "2025-07-03",
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": [
+          "RULE:32004R0794:ARTICLE3_3:ELECTRONIC_CHANNELS_2025"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_ABSOLUTE",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32025R0905",
+          "locator": "Article 2 entry-into-force clause",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        }
+      ],
+      "notes": "The special 13 August 2025 application clause applies only to Annex I Part I point 6.8, not Article 3(3)."
+    }
+  ]
+}

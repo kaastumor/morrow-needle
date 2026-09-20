@@ -1,0 +1,68 @@
+{
+  "fixture_version": "0.1",
+  "target_act": "CELEX:31990R2742",
+  "purpose": "Operative numeric corrigendum proving that language-neutral correction propagation can alter a monetary rule in expressions not covered by the official corrigendum.",
+  "events": [
+    {
+      "event_id": "corr-1990-10-06-en-article4-money",
+      "event_kind": "CORRIGENDUM",
+      "source_document": {
+        "identifier": "CELEX:31990R2742R(01)",
+        "eli": "http://data.europa.eu/eli/reg/1990/2742/corrigendum/1990-10-06/oj",
+        "document_type": "CORRIGENDUM"
+      },
+      "target_act": "CELEX:31990R2742",
+      "event_date": "1990-10-06",
+      "expression_scope": {
+        "basis": "OFFICIAL_OJ_LANGUAGE_LIST",
+        "languages": [
+          "ENG"
+        ],
+        "nonlisted_semantics": "NO_ASSERTION"
+      },
+      "operations": [
+        {
+          "operation_id": "article4-1-ecu-amount",
+          "operation_type": "REPLACE",
+          "target_kind": "ACT_TEXT",
+          "target_locator": "Article 4(1), second line",
+          "before_text": "ECU 225",
+          "after_text": "ECU 255",
+          "resulting_act_locator": "Article 4(1)",
+          "notes": "Operative monetary correction; a 13.3% change in the printed amount."
+        }
+      ],
+      "corrects_event_ids": [],
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:31990R2742R(01)",
+          "locator": "OJ L 276, 6.10.1990, p. 46; EN",
+          "language": "ENG",
+          "role": "LANGUAGE_SCOPE"
+        },
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:31990R2742R(01)",
+          "locator": "Article 4(1) correction text",
+          "language": "ENG",
+          "role": "MUTATION_TEXT"
+        }
+      ],
+      "notes": "No assertion is made about the content or correctness of non-English expressions."
+    }
+  ],
+  "expected_expression_histories": {
+    "ENG": [
+      "corr-1990-10-06-en-article4-money"
+    ],
+    "DEU": [],
+    "FRA": []
+  },
+  "forbidden_inferences": [
+    "Applying the ECU 225→255 correction to every language expression because the underlying regulation is one legal act.",
+    "Treating the absence of a German/French corrigendum as proof of the value printed in those expressions.",
+    "Collapsing a language-scoped numeric correction into a language-neutral Change Atom without expression scope."
+  ]
+}

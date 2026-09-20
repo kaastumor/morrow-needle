@@ -167,3 +167,32 @@ def test_wrong_source_artifact_hash_blocks_verified_atom():
         temporal_assertions=TEMPORAL_ASSERTIONS,
     )
     assert any("source span artifact hash mismatch" in error for error in errors)
+
+
+def test_positive_pki_correspondence_duty_is_preserved():
+    pki = next(
+        atom for atom in FIXTURE["atoms"]
+        if atom["atom_id"] == "reg794-art3-pki-correspondence-duty-v0.1"
+    )
+    assert pki["claim"]["legal_effect"] == "DUTY"
+    assert pki["claim"]["subject"] == "correspondence in connection with a notification"
+    assert pki["claim"]["object"] == "Public Key Infrastructure (PKI)"
+    # Do not silently generalize the SANI-specific 1 July temporal qualifier.
+    assert pki["temporal_assertion_refs"] == []
+    assert validate_atom(
+        pki,
+        mutations=MUTATIONS,
+        source_span_registry=SPANS,
+        temporal_assertions=TEMPORAL_ASSERTIONS,
+    ) == []
+
+
+def test_sani_and_pki_channels_are_not_collapsed():
+    by_id = {atom["atom_id"]: atom for atom in FIXTURE["atoms"]}
+    sani = by_id["reg794-art3-sani-duty-v0.1"]
+    pki = by_id["reg794-art3-pki-correspondence-duty-v0.1"]
+    assert sani["claim"]["subject"] == "notifications"
+    assert "SANI" in sani["claim"]["object"]
+    assert pki["claim"]["subject"] == "correspondence in connection with a notification"
+    assert "PKI" in pki["claim"]["object"]
+    assert pki["temporal_assertion_refs"] == []

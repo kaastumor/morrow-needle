@@ -232,8 +232,6 @@ def main() -> int:
         marker:(marker in latest_before_text)
         for marker in ("US-2.1404","US-2.1405","US-2.1406")
     }
-    if not latest_before["markers"]["US-2.1404"]:
-        raise AssertionError("pre-change checkpoint lacks anchor US-2.1404")
     if (
         latest_before["markers"]["US-2.1405"]
         or latest_before["markers"]["US-2.1406"]
@@ -275,7 +273,17 @@ def main() -> int:
             "consolidated_celex_prefix":TARGET_BASE,
             "scan_start":SCAN_START.isoformat(),
             "scan_end":SCAN_END.isoformat(),
-            "latest_pre_change_checkpoint":latest_before,
+            "latest_pre_change_checkpoint":{
+                **latest_before,
+                "immediate_pre_change_state_reconstructable":(
+                    latest_before["markers"]["US-2.1404"]
+                ),
+                "lag_note":(
+                    "The latest consolidated checkpoint predates at least "
+                    "the placement-anchor row US-2.1404; it cannot be treated "
+                    "as the immediate pre-2104 table state."
+                ),
+            },
             "checkpoint_count":len(checkpoints),
             "checkpoints":checkpoints,
         },
@@ -288,7 +296,7 @@ def main() -> int:
             "instruction_character":"AUTHENTIC_EXPLICIT_INSERTION",
             "verification_route":verification_route,
             "consolidation_lag_state":(
-                "PRE_CHANGE_CHECKPOINT_AVAILABLE_POST_CHANGE_CHECKPOINT_MISSING"
+                "LATEST_CONSOLIDATION_PREDATES_PLACEMENT_ANCHOR_AND_POST_CHANGE"
             ),
             "before_checkpoint_count":len(before),
             "after_checkpoint_count":len(after),

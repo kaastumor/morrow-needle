@@ -119,3 +119,23 @@ def test_schema_rejects_reintroduction_of_collapsed_lifecycle_state():
         "force_state":"IN_FORCE_NOT_APPLICABLE"
     }
     assert list(Draft202012Validator(SCHEMA).iter_errors(atom))
+
+
+def test_exception_permission_is_linked_to_primary_duty():
+    permission = next(
+        atom for atom in FIXTURE["atoms"]
+        if atom["atom_id"] == "reg794-art3-alt-channel-permission-v0.1"
+    )
+    assert permission["claim"]["legal_effect"] == "PERMISSION"
+    assert permission["relations"] == [
+        {
+            "relation":"EXCEPTION_TO",
+            "target_atom_id":"reg794-art3-sani-duty-v0.1",
+        }
+    ]
+    assert validate_atom(
+        permission,
+        mutations=MUTATIONS,
+        source_span_registry=SPANS,
+        temporal_assertions=TEMPORAL_ASSERTIONS,
+    ) == []

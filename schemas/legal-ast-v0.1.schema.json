@@ -277,6 +277,38 @@
                 },
                 "additionalProperties": false
               }
+            },
+            "unexplained_shapes": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "shape",
+                  "atom_count",
+                  "chars",
+                  "examples"
+                ],
+                "properties": {
+                  "shape": {
+                    "type": "string"
+                  },
+                  "atom_count": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "chars": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "examples": {
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    }
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "additionalProperties": false

@@ -132,6 +132,83 @@ def build_ast(celex,payload,response):
     ).parse_zip(payload)
 
 
+def p4_expected_sentences() -> dict[str,str]:
+    fixture=json.loads(SEMANTIC_2008_FIXTURE.read_text(encoding="utf-8"))
+    registry=fixture["source_span_registry"]
+    return {
+        "alt-channel-permission":registry["span-alt-channel-permission"]["text"],
+        "invalid-channel-status":registry["span-invalid-channel-status"]["text"],
+    }
+
+
+def subtree_state(ast: dict, structural_path: list[tuple[str,str]]) -> dict:
+    node=resolve_structural_path(ast,structural_path)
+    if node is None:
+        raise AssertionError(f"could not resolve structural path: {structural_path}")
+    children={}
+    for candidate in ast.get("nodes",[]):
+        children.setdefault(candidate.get("parent_id"),[]).append(candidate["node_id"])
+    ids=set()
+    stack=[node["node_id"]]
+    while stack:
+        node_id=stack.pop()
+        if node_id in ids:
+            continue
+        ids.add(node_id)
+        stack.extend(children.get(node_id,[]))
+    segments=sorted(
+        (
+            segment for segment in ast.get("segments",[])
+            if segment["node_id"] in ids
+            and segment.get("role") not in {"LABEL","HEADING"}
+        ),
+        key=lambda segment:(
+            segment.get("document_order",0),
+            segment.get("ordinal",0),
+        ),
+    )
+    text=" ".join(
+        segment.get("text_compare",segment.get("text_source","")).strip()
+        for segment in segments
+        if segment.get("text_compare",segment.get("text_source","")).strip()
+    )
+    return {
+        "state_id":ast["state_id"],
+        "node_id":node["node_id"],
+        "text_hash":hashlib.sha256(text.encode("utf-8")).hexdigest(),
+        "text_length":len(text),
+    }
+
+
+def locate_unique_sentences(payload: bytes, identifier: str, expected: dict[str,str]) -> dict:
+    matches={key:[] for key in expected}
+    with zipfile.ZipFile(io.BytesIO(payload)) as zf:
+        for name in sorted(zf.namelist()):
+            if not name.lower().endswith((".xml",".frg")):
+                continue
+            try:
+                text=normalized_visible_text(zf.read(name))
+            except ET.ParseError:
+                continue
+            for key,sentence in expected.items():
+                start=text.find(sentence)
+                while start >= 0:
+                    matches[key].append({
+                        "identifier":identifier,
+                        "source_file":name,
+                        "locator":f"{name}#normalized-chars:{start}-{start+len(sentence)}",
+                        "language":"ENG",
+                        "text_hash":hashlib.sha256(sentence.encode("utf-8")).hexdigest(),
+                    })
+                    start=text.find(sentence,start+1)
+    for key,found in matches.items():
+        if len(found)!=1:
+            raise AssertionError(
+                f"{identifier} {key}: expected one sentence, got {len(found)}"
+            )
+    return {key:found[0] for key,found in matches.items()}
+
+
 def all_visible_text(payload: bytes) -> str:
     parts=[]
     with zipfile.ZipFile(io.BytesIO(payload)) as zf:

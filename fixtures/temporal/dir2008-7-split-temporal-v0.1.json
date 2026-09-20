@@ -1,0 +1,147 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "dir2008-7-split-temporal-v0.1",
+  "purpose": "Compose official one-to-many structural lineage with orthogonal temporal semantics. The split targets must not inherit a synthetic application date from predecessor repeal or neighboring Article 18 provisions.",
+  "lineage_edge_ref": {
+    "fixture": "fixtures/mutations/structural-lineage-reclassification-v0.1.json",
+    "edge_id": "dir69-art7-2-to-dir2008-arts7-8"
+  },
+  "assertions": [
+    {
+      "assertion_id": "dir2008-7-arts7-8-transposition-deadline",
+      "subject_ref": {
+        "kind": "LEGAL_ACT",
+        "identifier": "CELEX:32008L0007",
+        "locator": "Article 15(1)"
+      },
+      "dimension": "DEADLINE",
+      "boundary": "POINT",
+      "inclusive": true,
+      "trigger": {
+        "kind": "ABSOLUTE_DATE",
+        "date": "2008-12-31",
+        "source_expression": "by 31 December 2008 at the latest"
+      },
+      "normalized_date": "2008-12-31",
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": [
+          "PROVISION:32008L0007:ARTICLE7",
+          "PROVISION:32008L0007:ARTICLE8"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_ABSOLUTE",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32008L0007",
+          "locator": "L_2008046EN.01001101.xml#Article15(1)",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        }
+      ],
+      "notes": "Transposition deadline for the split successor provisions. This is not an APPLICATION start."
+    },
+    {
+      "assertion_id": "dir69-335-legal-force-end",
+      "subject_ref": {
+        "kind": "LEGAL_ACT",
+        "identifier": "CELEX:31969L0335",
+        "locator": "repeal by Directive 2008/7/EC Article 16"
+      },
+      "dimension": "LEGAL_FORCE",
+      "boundary": "END",
+      "inclusive": false,
+      "trigger": {
+        "kind": "ABSOLUTE_DATE",
+        "date": "2009-01-01",
+        "source_expression": "repealed with effect from 1 January 2009"
+      },
+      "normalized_date": "2009-01-01",
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": [
+          "ACT:31969L0335"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_ABSOLUTE",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32008L0007",
+          "locator": "L_2008046EN.01001101.xml#Article16",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        }
+      ],
+      "notes": "The authentic Article 16 literally prints 69/355/EEC; canonical predecessor identity 31969L0335 is independently supported by recital 1 and Annexes II/III. Literal source conflict is preserved in the paired audit fixture."
+    },
+    {
+      "assertion_id": "dir2008-7-article18-explicit-application-set",
+      "subject_ref": {
+        "kind": "LEGAL_ACT",
+        "identifier": "CELEX:32008L0007",
+        "locator": "Article 18"
+      },
+      "dimension": "APPLICATION",
+      "boundary": "START",
+      "inclusive": true,
+      "trigger": {
+        "kind": "ABSOLUTE_DATE",
+        "date": "2009-01-01",
+        "source_expression": "Articles 1, 2, 6, 9, 10 and 11 shall apply from 1 January 2009"
+      },
+      "normalized_date": "2009-01-01",
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": [
+          "PROVISION:32008L0007:ARTICLE1",
+          "PROVISION:32008L0007:ARTICLE2",
+          "PROVISION:32008L0007:ARTICLE6",
+          "PROVISION:32008L0007:ARTICLE9",
+          "PROVISION:32008L0007:ARTICLE10",
+          "PROVISION:32008L0007:ARTICLE11"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_ABSOLUTE",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32008L0007",
+          "locator": "L_2008046EN.01001101.xml#Article18",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        }
+      ],
+      "notes": "Explicit application set. Articles 7 and 8 are intentionally absent and may not borrow this date."
+    }
+  ],
+  "expected": {
+    "split_targets": [
+      "PROVISION:32008L0007:ARTICLE7",
+      "PROVISION:32008L0007:ARTICLE8"
+    ],
+    "transposition_deadline": "2008-12-31",
+    "predecessor_force_end_exclusive": "2009-01-01",
+    "split_target_application_on_2009_01_01": "NOT_ASSERTED",
+    "explicit_article9_application_on_2009_01_01": true
+  },
+  "forbidden_inferences": [
+    "Assigning 1 January 2009 as the application start of Articles 7 or 8 merely because Article 18 gives that date to a different enumerated article set.",
+    "Assigning 1 January 2009 as the application start of Articles 7 or 8 merely because Directive 69/335/EEC is repealed from that date.",
+    "Copying a predecessor temporal boundary across a structural SPLIT_INTO edge.",
+    "Treating the 31 December 2008 transposition deadline as an APPLICATION start.",
+    "Silently normalizing the authentic Article 16 text from 69/355/EEC to 69/335/EEC without retaining the source conflict."
+  ],
+  "source_fixture": "fixtures/audit/dir2008-7-split-temporal-source-v0.1.json",
+  "status": "LIVE_EVIDENCE_COMPOSED"
+}

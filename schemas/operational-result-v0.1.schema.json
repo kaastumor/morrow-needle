@@ -37,7 +37,8 @@
         "target_cellar_id",
         "root_cellar_id",
         "identifiers",
-        "refresh_scope"
+        "refresh_scope",
+        "relevance"
       ],
       "properties": {
         "event_key": {
@@ -75,6 +76,13 @@
             "ITEM_AND_PARENT_MANIFESTATION",
             "TARGET_AND_ROOT"
           ]
+        },
+        "relevance": {
+          "enum": [
+            "LEGAL_RESOURCE_CANDIDATE",
+            "SOURCE_INFRASTRUCTURE",
+            "UNRESOLVED_RESOURCE"
+          ]
         }
       }
     },
@@ -91,7 +99,8 @@
         "SOURCE_AVAILABILITY_CHANGED",
         "NO_MATERIAL_CHANGE",
         "ABSTAIN_SOURCE_UNRESOLVED",
-        "ABSTAIN_LEGAL_UNRESOLVED"
+        "ABSTAIN_LEGAL_UNRESOLVED",
+        "OUT_OF_SCOPE_SOURCE_EVENT"
       ]
     },
     "stream": {

@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/regime-lineage-v0.2.json",
+  "title": "Morrow // Needle Regime Lineage Edge v0.2",
+  "description": "Genealogical relationship between regime instances. Legal-time truth is owned exclusively by Temporal Assertions and may only be referenced here.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "edge_id",
+    "relation_type",
+    "genealogical_evidence_state",
+    "sources",
+    "targets",
+    "temporal_assertion_refs",
+    "source_refs"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "regime-lineage-v0.2"
+    },
+    "edge_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "relation_type": {
+      "type": "string",
+      "enum": [
+        "EXTENDED_BY",
+        "REPLACED_BY",
+        "RECAST_AS",
+        "REENACTED_AS",
+        "SUPERSEDED_BY",
+        "CONCEPTUAL_SUCCESSOR",
+        "EXPIRED_WITHOUT_SUCCESSOR"
+      ]
+    },
+    "genealogical_evidence_state": {
+      "type": "string",
+      "enum": [
+        "DIRECT",
+        "DERIVED",
+        "CONTEXTUAL",
+        "ATTRIBUTED",
+        "INTERPRETIVE",
+        "UNRESOLVED"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/regime_instance_ref"
+      }
+    },
+    "targets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/regime_instance_ref"
+      }
+    },
+    "temporal_assertion_refs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": "References only. Dates, gaps, overlap and applicability continuity are derived from P0-E Temporal Assertions."
+    },
+    "source_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/source_ref"
+      }
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "$defs": {
+    "regime_instance_ref": {
+      "type": "object",
+      "required": [
+        "regime_id"
+      ],
+      "properties": {
+        "regime_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "act_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "scope_note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "source_ref": {
+      "type": "object",
+      "required": [
+        "source_type",
+        "identifier",
+        "role"
+      ],
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "OJ",
+            "EUR_LEX",
+            "CELLAR",
+            "OEIL",
+            "COUNCIL",
+            "COMMISSION",
+            "OTHER_OFFICIAL"
+          ]
+        },
+        "identifier": {
+          "type": "string"
+        },
+        "locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "GENEALOGY",
+            "STATUS",
+            "CONTEXT"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -3,6 +3,43 @@
   "case_id": "reg794-article3-2008-channel-application",
   "assertions": [
     {
+      "assertion_id": "reg271-2008-publication",
+      "subject_ref": {
+        "kind": "LEGAL_ACT",
+        "identifier": "CELEX:32008R0271",
+        "locator": "official publication metadata"
+      },
+      "dimension": "PUBLICATION",
+      "boundary": "POINT",
+      "inclusive": true,
+      "trigger": {
+        "kind": "ABSOLUTE_DATE",
+        "date": "2008-03-25",
+        "source_expression": "source-native Formex DATE[ISO=20080325]"
+      },
+      "normalized_date": "2008-03-25",
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": [
+          "ACT:32008R0271"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_ABSOLUTE",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32008R0271",
+          "locator": "L_2008082EN.01000101.doc.xml#DATE[ISO=20080325]",
+          "language": "ENG",
+          "role": "PUBLICATION_METADATA"
+        }
+      ],
+      "notes": "Official publication date pinned from source-native metadata in the immutable Cellar Formex manifestation."
+    },
+    {
       "assertion_id": "reg794-art3-p3-sani-application-start",
       "subject_ref": {
         "kind": "PROVISION_INSTANCE",

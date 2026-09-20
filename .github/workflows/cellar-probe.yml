@@ -11,6 +11,10 @@ on:
       - ".github/workflows/cellar-probe.yml"
   workflow_dispatch:
 
+concurrency:
+  group: cellar-source-probe-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   probe:
     runs-on: ubuntu-latest

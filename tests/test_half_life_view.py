@@ -209,3 +209,46 @@ def test_half_life_rejects_broken_extension_override_chain(tmp_path):
 
     with pytest.raises(HalfLifeError,match="does not explicitly override"):
         build_half_life_view(composition,root=tmp_path)
+
+
+
+def test_every_half_life_boundary_carries_official_source_evidence():
+    view=build_half_life_view(COMPOSITION)
+    for interval in [view["original_plan"], *view["episodes"]]:
+        for boundary_name in ("start","end"):
+            boundary=interval[boundary_name]
+            assert boundary["resolution_state"].startswith("RESOLVED_")
+            assert boundary["evidence_state"] in {"DIRECT","DERIVED"}
+            assert boundary["source_refs"]
+            assert all(ref["identifier"] for ref in boundary["source_refs"])
+            assert all(ref["role"] for ref in boundary["source_refs"])
+
+
+def test_half_life_genealogy_is_exposed_without_becoming_time_owner():
+    view=build_half_life_view(COMPOSITION)
+    assert view["genealogy"] == {
+        "edge_id":"eprivacy-2021-regime-reenacted-as-2026",
+        "relation_type":"REENACTED_AS",
+        "evidence_state":"DIRECT",
+        "source_regime_ids":["REGIME:2021R1232_AS_EXTENDED"],
+        "target_regime_ids":["REGIME:2026R1881"],
+    }
+    encoded=json.dumps(view["genealogy"],sort_keys=True)
+    assert "2026-04-03" not in encoded
+    assert "2026-07-31" not in encoded
+
+
+def test_half_life_view_horizon_is_not_misreported_as_final_expiry():
+    view=build_half_life_view(COMPOSITION)
+    horizon=view["coverage"]["view_horizon"]
+    assert horizon["regime_id"] == "REGIME:2026R1881"
+    assert horizon["boundary"]["date"] == "2028-04-03"
+    assert horizon["boundary"]["assertion_id"] == "eprivacy-2026-application-end"
+    assert view["coverage"]["terminal_outcome"] == (
+        "UNRESOLVED_AFTER_VIEW_HORIZON"
+    )
+    assert view["coverage"]["rule_continuity"] == "NOT_ASSERTED"
+
+    text=render_half_life_text(view)
+    assert "not presented as final expiry" in text
+    assert "Proposition-level rule continuity" in text

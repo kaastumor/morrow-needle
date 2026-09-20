@@ -4,10 +4,23 @@ from pathlib import Path
 from jsonschema import Draft202012Validator
 
 from needle.temporal.resolver import resolve_boundary, status_on
+from needle.thread.composer import (
+    materialize_thread,
+    resolve_thread_references,
+    source_mode_gaps,
+)
 
 
 TEMPORAL_SCHEMA = json.loads(
     Path("schemas/temporal-assertion-v0.1.schema.json").read_text(encoding="utf-8")
+)
+THREAD_SCHEMA = json.loads(
+    Path("schemas/thread-v0.1.schema.json").read_text(encoding="utf-8")
+)
+THREAD = json.loads(
+    Path("fixtures/thread/reg794-article3-thread-v0.1.json").read_text(
+        encoding="utf-8"
+    )
 )
 ORIGINAL_TEMPORAL = json.loads(
     Path("fixtures/temporal/reg794-article3-original-v0.1.json").read_text(
@@ -147,3 +160,60 @@ def test_2026_corrigendum_is_retained_but_not_a_thread_mutation():
     assert CORRIGENDUM_SCOPE["thread_handling"]["retain_as"] == (
         "RELATED_SOURCE_NON_IMPACT"
     )
+
+
+def test_thread_spec_validates_against_reference_only_contract():
+    errors = list(Draft202012Validator(THREAD_SCHEMA).iter_errors(THREAD))
+    assert errors == []
+    assert THREAD["composition_character"] == "REFERENCE_ONLY"
+
+
+def test_thread_references_resolve_without_filename_inference():
+    events, errors = resolve_thread_references(THREAD)
+    assert errors == []
+    assert [event["event_id"] for event in events] == [
+        event["event_id"] for event in THREAD["events"]
+    ]
+    assert all(event["refs"] for event in events)
+
+
+def test_thread_event_specs_do_not_duplicate_domain_truth():
+    forbidden = {
+        "claim",
+        "statement",
+        "legal_effect",
+        "normalized_date",
+        "verification_state",
+        "text_hash",
+        "artifact_hash",
+        "evidence_state",
+    }
+    for event in THREAD["events"]:
+        assert not (forbidden & set(event))
+        for ref in event["refs"]:
+            assert set(ref) == {"source_key", "kind", "entity_id"}
+
+
+def test_materialized_thread_reports_source_mode_gaps_explicitly():
+    materialized = materialize_thread(THREAD)
+    assert materialized["source_mode"]["required"] is True
+    assert materialized["source_mode"]["gaps"] == source_mode_gaps(THREAD)
+    assert materialized["source_mode"]["gaps"]
+
+
+def test_thread_contains_all_temporal_boundary_classes_needed_for_history():
+    ids = [
+        ref["entity_id"]
+        for event in THREAD["events"]
+        for ref in event["refs"]
+        if ref["kind"] == "TEMPORAL_ASSERTION"
+    ]
+    assert {
+        "reg794-2004-entry-into-force",
+        "reg794-2004-chapter2-application-threshold",
+        "reg794-art3-original-paper-notification-end",
+        "reg794-art3-original-electronic-notification-start",
+        "reg794-art3-original-electronic-correspondence-trigger",
+        "reg794-art3-p3-sani-application-start",
+        "reg794-art3-p3-2025-application-start",
+    } <= set(ids)

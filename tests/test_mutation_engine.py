@@ -13,7 +13,7 @@ from needle.mutation.structural import reclassify_with_lineage
 
 
 SCHEMA = json.loads(
-    Path("schemas/mutation-candidate-v0.1.schema.json").read_text(encoding="utf-8")
+    Path("schemas/mutation-candidate-v0.2.schema.json").read_text(encoding="utf-8")
 )
 REAL = json.loads(
     Path("fixtures/mutations/reg794-article3-replacement-evidence-v0.1.json").read_text(encoding="utf-8")
@@ -481,3 +481,23 @@ def test_targeted_subtree_diff_detects_descendant_change_at_article_level():
     assert candidate["before"]["text_length"] > 0
     assert candidate["after"]["text_length"] > 0
     assert list(Draft202012Validator(V2_SCHEMA).iter_errors(candidate)) == []
+
+
+def test_representation_only_whitespace_change_emits_no_mutation():
+    before = _ast("before-whitespace", "The same legal text.")
+    after = _ast("after-whitespace", "The same legal text.")
+
+    # Raw/source representations differ, but canonical compare text is equal.
+    before["segments"][1]["text_source"] = "The   same\nlegal   text."
+    after["segments"][1]["text_source"] = "The same legal text."
+    before["segments"][1]["text_compare"] = "The same legal text."
+    after["segments"][1]["text_compare"] = "The same legal text."
+
+    assert diff_same_location(before, after, language="ENG") == []
+    assert diff_target_subtree(
+        before,
+        after,
+        kind="ARTICLE",
+        citation_path="Article 3",
+        language="ENG",
+    ) is None

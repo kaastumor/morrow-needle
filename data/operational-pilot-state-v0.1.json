@@ -1,0 +1,169 @@
+{
+  "schema_version": "operational-state-v0.1",
+  "state_id": "operational-pilot:live-baselines-v0.1",
+  "character": "OPERATIONAL_CACHE",
+  "updated_at": "2026-09-20T20:16:46.806643+00:00",
+  "baseline_policy": "PROSPECTIVE_ONLY",
+  "processed_event_keys": [
+    "cellar:b2fb9bcf-f871-11ed-a05c-01aa75ed71a1_2026-09-19T08:03:17.981+02:00",
+    "cellar:e26bdaad-6759-11e9-9f05-01aa75ed71a1_2026-09-19T08:02:40.099+02:00",
+    "cellar:e93c0014-776c-11ed-9887-01aa75ed71a1_2026-09-19T08:03:01.699+02:00"
+  ],
+  "source_observations": [
+    {
+      "record_id": "src-operational-metadata-b9ce44d3eb856b5cb789413f9557e293",
+      "record_type": "SOURCE_OBSERVATION",
+      "created_at": "2026-09-20T20:16:46.806643+00:00",
+      "payload": {
+        "source_type": "CELLAR",
+        "identifier": "CELEX:32019R0632",
+        "resource_uri": "https://publications.europa.eu/resource/celex/32019R0632",
+        "language": null,
+        "representation_class": "CELLAR_RDF_NOTICE_TREE",
+        "observed_at": "2026-09-20T20:16:46.806643+00:00",
+        "artifact_hash": "sha256:b4ef3683299a2970dae23573ae652ce625f17a0ffad65252ae351bbf2c239c51",
+        "retrieval": {
+          "final_uri": "http://publications.europa.eu/resource/cellar/e26bdaad-6759-11e9-9f05-01aa75ed71a1/rdf/tree/full",
+          "media_type": "application/rdf+xml",
+          "http_status": 200
+        }
+      },
+      "record_hash": "sha256:bff5b1c369be4310886adf9a9bf20e9e50cbfd77f4ceb8c685b88a5bc3ba34b6"
+    },
+    {
+      "record_id": "src-operational-content-0204a83622f5602f2eefb29ca9f8cd6c",
+      "record_type": "SOURCE_OBSERVATION",
+      "created_at": "2026-09-20T20:16:46.806643+00:00",
+      "payload": {
+        "source_type": "CELLAR",
+        "identifier": "CELEX:32019R0632",
+        "resource_uri": "https://publications.europa.eu/resource/celex/32019R0632",
+        "language": "ENG",
+        "representation_class": "STRUCTURED_LEGAL_XML",
+        "observed_at": "2026-09-20T20:16:46.806643+00:00",
+        "artifact_hash": "sha256:b2f4fc192ebe69d743c9ee15f1d576b8ad87bd83d5de19b3373c8eba4d13d020",
+        "retrieval": {
+          "final_uri": "http://publications.europa.eu/resource/cellar/e26bdaad-6759-11e9-9f05-01aa75ed71a1.0006.02/zip",
+          "media_type": "application/zip",
+          "http_status": 200
+        }
+      },
+      "record_hash": "sha256:1770460ed4b3265e1ece0039ea9378bf6d3afcc8e7210e295e936238119b693b"
+    },
+    {
+      "record_id": "src-operational-metadata-41b8b29359064c540351d5eae0ee5df3",
+      "record_type": "SOURCE_OBSERVATION",
+      "created_at": "2026-09-20T20:16:46.806643+00:00",
+      "payload": {
+        "source_type": "CELLAR",
+        "identifier": "CELEX:32022R2399",
+        "resource_uri": "https://publications.europa.eu/resource/celex/32022R2399",
+        "language": null,
+        "representation_class": "CELLAR_RDF_NOTICE_TREE",
+        "observed_at": "2026-09-20T20:16:46.806643+00:00",
+        "artifact_hash": "sha256:6b1baac899e6a517293feb654e80fc4997f84d4618caabedcb9bf9201a6f0eb7",
+        "retrieval": {
+          "final_uri": "http://publications.europa.eu/resource/cellar/e93c0014-776c-11ed-9887-01aa75ed71a1/rdf/tree/full",
+          "media_type": "application/rdf+xml",
+          "http_status": 200
+        }
+      },
+      "record_hash": "sha256:0d9d202b651cfb72044ef15bcc278ca13d57c19804838848b9ca47837ac85a8e"
+    },
+    {
+      "record_id": "src-operational-content-9e62324b4695bd00ed1da6a87c8938cf",
+      "record_type": "SOURCE_OBSERVATION",
+      "created_at": "2026-09-20T20:16:46.806643+00:00",
+      "payload": {
+        "source_type": "CELLAR",
+        "identifier": "CELEX:32022R2399",
+        "resource_uri": "https://publications.europa.eu/resource/celex/32022R2399",
+        "language": "ENG",
+        "representation_class": "STRUCTURED_LEGAL_XML",
+        "observed_at": "2026-09-20T20:16:46.806643+00:00",
+        "artifact_hash": "sha256:c7748767e76c6b91ee28042cce745ddb2ad33932bf7e4a10c44aa48eabf730e9",
+        "retrieval": {
+          "final_uri": "http://publications.europa.eu/resource/cellar/e93c0014-776c-11ed-9887-01aa75ed71a1.0006.02/zip",
+          "media_type": "application/zip",
+          "http_status": 200
+        }
+      },
+      "record_hash": "sha256:f73c915a1cce14bffad0a5022ea1ffa3eae90021f6fe01c1014e75693e5b1635"
+    },
+    {
+      "record_id": "src-operational-metadata-2d9669520ea8cbee5622140c79719f39",
+      "record_type": "SOURCE_OBSERVATION",
+      "created_at": "2026-09-20T20:16:46.806643+00:00",
+      "payload": {
+        "source_type": "CELLAR",
+        "identifier": "CELEX:52023PC0258",
+        "resource_uri": "https://publications.europa.eu/resource/celex/52023PC0258",
+        "language": null,
+        "representation_class": "CELLAR_RDF_NOTICE_TREE",
+        "observed_at": "2026-09-20T20:16:46.806643+00:00",
+        "artifact_hash": "sha256:55927cef5418c5d2be4ee7ac4451f0e968938430b337f6afcd41d399b67bd195",
+        "retrieval": {
+          "final_uri": "http://publications.europa.eu/resource/cellar/b2fb9bcf-f871-11ed-a05c-01aa75ed71a1/rdf/tree/full",
+          "media_type": "application/rdf+xml",
+          "http_status": 200
+        }
+      },
+      "record_hash": "sha256:1184fee29012e73c267575ba56c74b1a8981f0a7f952340b1b9b1cf42c869b2e"
+    },
+    {
+      "record_id": "src-operational-content-b2a50e28ef502397845c8a19a06850ae",
+      "record_type": "SOURCE_OBSERVATION",
+      "created_at": "2026-09-20T20:16:46.806643+00:00",
+      "payload": {
+        "source_type": "CELLAR",
+        "identifier": "CELEX:52023PC0258",
+        "resource_uri": "https://publications.europa.eu/resource/celex/52023PC0258",
+        "language": "ENG",
+        "representation_class": "STRUCTURED_XHTML",
+        "observed_at": "2026-09-20T20:16:46.806643+00:00",
+        "artifact_hash": "sha256:b0fc235ebcb0bb8c8994afc6c2b148a4bced3074983d742ce09fc86aa30d6c2b",
+        "retrieval": {
+          "final_uri": "http://publications.europa.eu/resource/cellar/b2fb9bcf-f871-11ed-a05c-01aa75ed71a1.0001.03/zip",
+          "media_type": "application/zip",
+          "http_status": 200
+        }
+      },
+      "record_hash": "sha256:97d8782cab72eecedc76a62c8588f4e3c30970dbd57d03b2d438ef2b32650b71"
+    }
+  ],
+  "baselines": [
+    {
+      "baseline_key": "CELEX:32019R0632|ENG",
+      "identifier": "CELEX:32019R0632",
+      "language": "ENG",
+      "root_cellar_id": "cellar:e26bdaad-6759-11e9-9f05-01aa75ed71a1",
+      "content_observation_id": "src-operational-content-0204a83622f5602f2eefb29ca9f8cd6c",
+      "metadata_observation_id": "src-operational-metadata-b9ce44d3eb856b5cb789413f9557e293",
+      "observed_at": "2026-09-20T20:16:46.806643+00:00",
+      "eligible_for_event_ingestion_after": "2026-09-20T20:16:46.806643+00:00",
+      "seed_character": "COLD_START_SEED"
+    },
+    {
+      "baseline_key": "CELEX:32022R2399|ENG",
+      "identifier": "CELEX:32022R2399",
+      "language": "ENG",
+      "root_cellar_id": "cellar:e93c0014-776c-11ed-9887-01aa75ed71a1",
+      "content_observation_id": "src-operational-content-9e62324b4695bd00ed1da6a87c8938cf",
+      "metadata_observation_id": "src-operational-metadata-41b8b29359064c540351d5eae0ee5df3",
+      "observed_at": "2026-09-20T20:16:46.806643+00:00",
+      "eligible_for_event_ingestion_after": "2026-09-20T20:16:46.806643+00:00",
+      "seed_character": "COLD_START_SEED"
+    },
+    {
+      "baseline_key": "CELEX:52023PC0258|ENG",
+      "identifier": "CELEX:52023PC0258",
+      "language": "ENG",
+      "root_cellar_id": "cellar:b2fb9bcf-f871-11ed-a05c-01aa75ed71a1",
+      "content_observation_id": "src-operational-content-b2a50e28ef502397845c8a19a06850ae",
+      "metadata_observation_id": "src-operational-metadata-2d9669520ea8cbee5622140c79719f39",
+      "observed_at": "2026-09-20T20:16:46.806643+00:00",
+      "eligible_for_event_ingestion_after": "2026-09-20T20:16:46.806643+00:00",
+      "seed_character": "COLD_START_SEED"
+    }
+  ]
+}

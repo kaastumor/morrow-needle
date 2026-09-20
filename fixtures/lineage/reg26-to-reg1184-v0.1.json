@@ -1,0 +1,41 @@
+{
+  "fixture_id": "lineage-reg26-to-reg1184-v0.1",
+  "case_type": "codification_repeal_replacement_with_official_correlation",
+  "source_act": {
+    "celex": "31962R0026",
+    "eli": "http://data.europa.eu/eli/reg/1962/26/oj",
+    "title": "Regulation No 26 applying certain rules of competition to production of and trade in agricultural products"
+  },
+  "target_act": {
+    "celex": "32006R1184",
+    "eli": "http://data.europa.eu/eli/reg/2006/1184/oj",
+    "title": "Council Regulation (EC) No 1184/2006 applying certain rules of competition to the production of and trade in agricultural products"
+  },
+  "official_replacement": {
+    "source_repealed": true,
+    "correlation_table_locator": "Annex II"
+  },
+  "mappings": [
+    {"source":"Article 1","target":"Article 1","classification":"CONTINUES_AS"},
+    {"source":"Article 2(1)","target":"Article 2(1)","classification":"CONTINUES_AS"},
+    {"source":"Article 2(2)","target":"Article 2(2), first subparagraph","classification":"RECAST_AS"},
+    {"source":"Article 2(3)","target":"Article 2(2), second subparagraph","classification":"MERGED_INTO"},
+    {"source":"Article 2(4)","target":"Article 2(3)","classification":"RENUMBERED_TO"},
+    {"source":"Article 3","target":null,"classification":"DELETED"},
+    {"source":"Article 4","target":"Article 3","classification":"RENUMBERED_TO"},
+    {"source":null,"target":"Article 4","classification":"INSERTED"},
+    {"source":"Article 5","target":"Article 5","classification":"CONTINUES_AS"}
+  ],
+  "adversarial_properties": [
+    "Article number continuity is false for old Article 4 → new Article 3.",
+    "Same numeric location is false evidence of lineage because old Article 3 has no successor while new Article 3 descends from old Article 4.",
+    "Two old paragraph-level provisions map into two subparagraphs within one new paragraph container.",
+    "One provision is deleted and another is inserted inside an otherwise strongly correlated codification.",
+    "The lineage crosses a complete repeal/replacement boundary and a new CELEX work."
+  ],
+  "foundation_result": {
+    "persistent_provision_id_model":"REJECTED",
+    "replacement_model":"IMMUTABLE_PROVISION_INSTANCES_PLUS_LINEAGE_EDGES",
+    "public_lineage_evidence":"OFFICIAL_CORRELATION_TABLE"
+  }
+}

@@ -538,6 +538,48 @@ def main() -> int:
         })
 
     append({
+        "record_id":"run-temporal-reg905-2025-publication",
+        "record_type":"DERIVATION_RUN",
+        "created_at":"2026-09-20T17:50:00Z",
+        "payload":{
+            "derivation_kind":"TEMPORAL_RESOLVE",
+            "execution_character":"DETERMINISTIC",
+            "implementation":{
+                "name":"needle.temporal",
+                "version":"temporal-v0.1",
+                "config_hash":None,
+            },
+            "input_record_ids":["src-reg905-2025-eng"],
+            "output_entity_refs":[{
+                "entity_type":"TEMPORAL_ASSERTION",
+                "entity_id":"reg905-2025-publication",
+            }],
+            "executed_at":"2026-09-20T17:49:00Z",
+        },
+    })
+    append({
+        "record_id":"support-temporal-reg905-publication-point",
+        "record_type":"CLAIM_SUPPORT",
+        "created_at":"2026-09-20T17:50:01Z",
+        "payload":{
+            "claim_ref":{
+                "entity_type":"TEMPORAL_ASSERTION",
+                "entity_id":"reg905-2025-publication",
+            },
+            "source_observation_id":"src-reg905-2025-eng",
+            "source_span":{
+                "locator":"L_202500905EN.doc.fmx.xml#DATE[ISO=20250613]",
+                "language":"ENG",
+                "text_hash":"sha256:24cac975ccb4483a85feccc1a2e2a57a618dcaab6729e967a91f5c0e29a268aa",
+                "artifact_hash":"sha256:91bc8da880879ef9e02ccd7c3bdae09d8b21f496d839d7418bd0a0b088976ff8",
+            },
+            "role":"TEMPORAL",
+            "evidence_state":"DIRECT",
+            "derivation_record_id":"run-temporal-reg905-2025-publication",
+        },
+    })
+
+    append({
         "record_id":"run-temporal-article3-legacy-channel-end",
         "record_type":"DERIVATION_RUN",
         "created_at":"2026-09-20T17:37:08Z",

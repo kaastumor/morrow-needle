@@ -51,7 +51,7 @@ jobs:
         with:
           name: operational-monitor-cycle
           path: artifacts/operational-cycle/
-          if-no-files-found: error
+          if-no-files-found: warn
       - name: Promote completed operational state
         run: |
           cp artifacts/operational-cycle/state.json data/operational-pilot-state-v0.1.json

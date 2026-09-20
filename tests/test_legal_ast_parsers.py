@@ -148,5 +148,6 @@ def test_formex_mixed_content_keeps_parent_flow_around_structures():
 
     accounting = ast["parse_report"]["source_text_accounting"]
     assert accounting["unexplained_chars"] == 0
+    assert accounting["unexplained_shapes"] == []
     assert accounting["duplicate_claim_count"] == 0
     assert ast["parse_report"]["fidelity"] == "FULL_STRUCTURAL"

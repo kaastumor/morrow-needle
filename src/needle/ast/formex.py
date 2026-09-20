@@ -439,6 +439,33 @@ class FormexASTParser:
             if not capture_unstructured_text:
                 continue
 
+            if self._ledger is not None:
+                claimed_atoms, unclaimed_atoms = self._ledger.subtree_claim_counts(child)
+                if unclaimed_atoms == 0:
+                    self._claim_and_emit_child_tail(
+                        child,
+                        node_id=parent_id,
+                        native_path=native_path,
+                    )
+                    continue
+                if claimed_atoms:
+                    # A transparent wrapper can be partially owned already
+                    # (for example NP whose NO.P became the LIST_ITEM label).
+                    # Traverse it rather than re-emitting the whole subtree.
+                    self._walk_structures(
+                        child,
+                        parent_id,
+                        native_path=native_path,
+                        citation_stack=citation_stack,
+                        capture_unstructured_text=True,
+                    )
+                    self._claim_and_emit_child_tail(
+                        child,
+                        node_id=parent_id,
+                        native_path=native_path,
+                    )
+                    continue
+
             value = text_of(child)
             if value:
                 if tag not in KNOWN_TEXT_WRAPPERS:

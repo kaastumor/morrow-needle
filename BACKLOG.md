@@ -167,9 +167,18 @@ Architecture revised after live consolidated Formex testing.
 
 Reconcile five evidence channels: authentic modifying/correcting acts, embedded official consolidation provenance, official relationship metadata, consolidated checkpoints, and deterministic canonical-AST diff.
 
-A parser/schema/test fixture now exists for Formex CLG.MDF* provenance, including nested corrigenda. Status: **ACTIVE FOUNDATION IMPLEMENTATION.**
+A parser/schema/test fixture now exists for Formex CLG.MDF* provenance, including nested corrigenda. Status: **ACTIVE FOUNDATION IMPLEMENTATION — SAME-LOCATION DIFF + EVIDENCE RECONCILIATION GREEN.**
 
-All prerequisite foundation contracts P0-A/B/D/E/F/G/H are now frozen or resolved. Begin deterministic candidate generation and evidence reconciliation. Do not let structural/text similarity alone create asserted lineage or semantic Change Atoms.
+Implemented:
+- exact citation+kind INSERT/DELETE/REPLACE candidates;
+- numeric/date/reference deltas;
+- evidence reconciliation across deterministic diff, official relationship metadata, consolidation provenance and checkpoints;
+- conflict quarantine;
+- verification remains gated on a parsed authentic legal cause.
+
+Real Article 3 / Regulation 794/2004 case resolves to `CORROBORATED + UNVERIFIED`, which is intentional.
+
+Next: MOVE/RENUMBER using evidence-backed Provision Lineage only. Similarity-only alignment must remain unresolved. Then attack SPLIT/MERGE and annex/table structure.
 
 ## P1 — Core system
 

@@ -60,6 +60,29 @@ _FUZZY_FIELD_PRIORITY = {
 
 _QUALITY_PRIORITY = {"EXACT":0, "PREFIX":1, "SUBSTRING":2}
 
+_EVIDENCE_PRIORITY = {
+    "DIRECT":0,
+    "DERIVED":1,
+    "CONTEXTUAL":2,
+    "ATTRIBUTED":3,
+    "INTERPRETIVE":4,
+    "UNRESOLVED":5,
+}
+
+_VERIFICATION_PRIORITY = {
+    "VERIFIED":0,
+    "ASSERTED":1,
+    "EVIDENCED":2,
+    "CORROBORATED":2,
+    "RESOLVED_ABSOLUTE":2,
+    "RESOLVED_RELATIVE":2,
+    "CONTEXT_REQUIRED":4,
+    "CANDIDATE":5,
+    "QUARANTINED":6,
+    "REJECTED":7,
+    "UNRESOLVED":8,
+}
+
 
 def _field_priority(field: str, quality: str) -> int:
     if quality == "EXACT":
@@ -213,6 +236,20 @@ def _hydrate(
     return sources[source_key]["index"][ref["entity_id"]]
 
 
+def _canonical_evidence_state(entity: dict[str, Any]) -> str | None:
+    return entity.get("evidence_state")
+
+
+def _canonical_verification_state(entity: dict[str, Any]) -> str | None:
+    return (
+        entity.get("verification_state")
+        or entity.get("claim_status")
+        or entity.get("resolution_state")
+        or entity.get("result", {}).get("verification_state")
+        or entity.get("result", {}).get("reconciliation_state")
+    )
+
+
 def _ordering_key(result: dict[str, Any]) -> tuple[Any, ...]:
     lexical = [
         reason for reason in result["match_reasons"]
@@ -236,10 +273,15 @@ def _ordering_key(result: dict[str, Any]) -> tuple[Any, ...]:
         reason["kind"] == "STRUCTURED_FILTER"
         for reason in result["match_reasons"]
     )
+    entity = result["canonical_entity"]
+    evidence_state = _canonical_evidence_state(entity)
+    verification_state = _canonical_verification_state(entity)
     return (
         best_quality,
         best_field,
         -structured_count,
+        _EVIDENCE_PRIORITY.get(evidence_state, 9),
+        _VERIFICATION_PRIORITY.get(verification_state, 9),
         _KIND_PRIORITY[result["entity_ref"]["kind"]],
         result["entity_ref"]["entity_id"],
     )

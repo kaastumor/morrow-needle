@@ -1,0 +1,237 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/thread-v0.1.json",
+  "title": "Morrow // Needle Thread v0.1",
+  "description": "Reference-only composition of legal-change domain entities into one chronological rule history. Canonical mutation, semantic, temporal, lineage and provenance truth remains in its owning contracts.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "thread_id",
+    "subject",
+    "composition_character",
+    "source_registry",
+    "events",
+    "lineage_edge_ids",
+    "provenance_source_key",
+    "narrative_policy",
+    "unknowns"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "thread-v0.1"
+    },
+    "thread_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subject": {
+      "type": "object",
+      "required": [
+        "act_id",
+        "structural_path",
+        "language"
+      ],
+      "properties": {
+        "act_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "structural_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "language": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "composition_character": {
+      "const": "REFERENCE_ONLY"
+    },
+    "source_registry": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "kind",
+          "fixture_path"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "BASELINE_EVIDENCE",
+              "MUTATION",
+              "SEMANTIC",
+              "TEMPORAL",
+              "LINEAGE",
+              "PROVENANCE",
+              "CONTINUITY",
+              "RELATED_SOURCE"
+            ]
+          },
+          "fixture_path": {
+            "type": "string",
+            "pattern": "^fixtures/.+\\.json$"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "event_id",
+          "event_kind",
+          "refs"
+        ],
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "event_kind": {
+            "type": "string",
+            "enum": [
+              "BASELINE_STATE",
+              "TEMPORAL_BOUNDARY",
+              "TEXTUAL_MUTATION",
+              "DERIVED_SEMANTIC_EFFECT",
+              "RELATED_SOURCE_NON_IMPACT"
+            ]
+          },
+          "refs": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "source_key",
+                "kind",
+                "entity_id"
+              ],
+              "properties": {
+                "source_key": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "THREAD_EVIDENCE",
+                    "MUTATION",
+                    "CHANGE_ATOM",
+                    "TEMPORAL_ASSERTION",
+                    "LINEAGE_EDGE",
+                    "PROVENANCE_CLAIM"
+                  ]
+                },
+                "entity_id": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "lineage_edge_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "provenance_source_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "narrative_policy": {
+      "type": "object",
+      "required": [
+        "generation",
+        "layers",
+        "source_mode"
+      ],
+      "properties": {
+        "generation": {
+          "const": "DETERMINISTIC_FROM_REFERENCED_CLAIMS"
+        },
+        "layers": {
+          "type": "array",
+          "minItems": 3,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "3_SECONDS",
+              "30_SECONDS",
+              "3_MINUTES"
+            ]
+          },
+          "allOf": [
+            {
+              "contains": {
+                "const": "3_SECONDS"
+              }
+            },
+            {
+              "contains": {
+                "const": "30_SECONDS"
+              }
+            },
+            {
+              "contains": {
+                "const": "3_MINUTES"
+              }
+            }
+          ]
+        },
+        "source_mode": {
+          "const": "REQUIRED"
+        }
+      },
+      "additionalProperties": false
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "unknown_id",
+          "state",
+          "description"
+        ],
+        "properties": {
+          "unknown_id": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "EXPLICIT_GAP",
+              "SCOPED",
+              "UNRESOLVED"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

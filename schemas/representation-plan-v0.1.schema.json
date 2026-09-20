@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/representation-plan-v0.1.json",
+  "title": "Morrow // Needle Representation Plan v0.1",
+  "description": "Plan for using one or more official manifestations to build and audit a provenance-preserving legal AST.",
+  "type": "object",
+  "required": ["work_uri","expression_uri","language","representations","completeness_state","completeness_signals"],
+  "properties": {
+    "work_uri":{"type":"string"},
+    "expression_uri":{"type":"string"},
+    "language":{"type":"string"},
+    "representations":{
+      "type":"array",
+      "minItems":1,
+      "items":{
+        "type":"object",
+        "required":["manifestation_uri","format","roles","representation_class"],
+        "properties":{
+          "manifestation_uri":{"type":"string"},
+          "format":{"type":"string"},
+          "roles":{
+            "type":"array",
+            "minItems":1,
+            "uniqueItems":true,
+            "items":{"type":"string","enum":["PRIMARY_STRUCTURE","TEXT_WITNESS","VISUAL_WITNESS","PROVENANCE_WITNESS","FALLBACK","AUDIT_ONLY"]}
+          },
+          "representation_class":{"type":"string","enum":["STRUCTURED_LEGAL_XML","STRUCTURED_XHTML","STRUCTURED_HTML","PDF_TEXT","PDF_IMAGE","OTHER"]},
+          "observed_entry_count":{"type":["integer","null"],"minimum":0},
+          "observed_text_entry_count":{"type":["integer","null"],"minimum":0},
+          "observed_raster_entry_count":{"type":["integer","null"],"minimum":0},
+          "notes":{"type":["string","null"]}
+        },
+        "additionalProperties":false
+      }
+    },
+    "completeness_signals":{
+      "type":"array",
+      "items":{
+        "type":"string",
+        "enum":["RASTER_ASSETS","OPAQUE_INCLUSIONS","LOW_TEXT_COVERAGE","UNRESOLVED_FRAGMENTS","PARSER_WARNINGS","CROSS_REPRESENTATION_VOLUME_GAP","GRAPHICAL_TABLES_OR_FORMULAS","UNKNOWN"]
+      }
+    },
+    "completeness_state":{
+      "type":"string",
+      "enum":["COMPLETE_SINGLE_REPRESENTATION","COMPLETE_MULTI_REPRESENTATION","PARTIAL_KNOWN_GAPS","UNKNOWN_COMPLETENESS"]
+    },
+    "merge_policy":{"type":"string","const":"PROVENANCE_PRESERVING_EXPLICIT_ALIGNMENT_ONLY"},
+    "notes":{"type":["string","null"]}
+  },
+  "additionalProperties":false
+}

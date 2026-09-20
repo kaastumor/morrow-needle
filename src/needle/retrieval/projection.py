@@ -122,6 +122,7 @@ def _empty_document(
         "evidence_states":[],
         "lexical":lexical,
         "source_mode":{
+            "support_required":True,
             "closed":bool(support_record_ids),
             "support_count":len(support_record_ids),
             "support_record_ids":sorted(support_record_ids),
@@ -366,6 +367,43 @@ def build_thread_projection(
             doc["event_kinds"] = _unique(doc["event_kinds"] + [event["event_kind"]])
 
     subject = thread["subject"]
+
+    for unknown in thread.get("unknowns", []):
+        unknown_id = unknown["unknown_id"]
+        lexical: list[dict[str, str]] = []
+        _add_lexical(lexical, "ENTITY_ID", unknown_id)
+        _add_lexical(lexical, "THREAD_ID", thread["thread_id"])
+        _add_lexical(lexical, "ACT_ID", subject["act_id"])
+        _add_lexical(lexical, "PROVISION_PATH", subject["structural_path"])
+        _add_lexical(lexical, "UNKNOWN_STATE", unknown.get("state"))
+        _add_lexical(lexical, "DESCRIPTION", unknown.get("description"))
+        documents[("THREAD_UNKNOWN", unknown_id)] = {
+            "projection_version":PROJECTION_VERSION,
+            "entity_ref":{"kind":"THREAD_UNKNOWN", "entity_id":unknown_id},
+            "source_key":None,
+            "thread_id":thread["thread_id"],
+            "event_ids":[],
+            "event_kinds":[],
+            "act_ids":[subject["act_id"]],
+            "provision_paths":[normalize_provision_path(subject["structural_path"])],
+            "languages":[subject["language"]],
+            "legal_effects":[],
+            "dimensions":[],
+            "mutation_operations":[],
+            "temporal_dimensions":[],
+            "lineage_scopes":[],
+            "lineage_edge_types":[],
+            "verification_states":[],
+            "evidence_states":[],
+            "lexical":lexical,
+            "source_mode":{
+                "support_required":False,
+                "closed":True,
+                "support_count":0,
+                "support_record_ids":[],
+            },
+        }
+
     thread_lexical: list[dict[str, str]] = []
     _add_lexical(thread_lexical, "ENTITY_ID", thread["thread_id"])
     _add_lexical(thread_lexical, "THREAD_ID", thread["thread_id"])
@@ -395,6 +433,7 @@ def build_thread_projection(
         "evidence_states":[],
         "lexical":thread_lexical,
         "source_mode":{
+            "support_required":True,
             "closed":True,
             "support_count":sum(
                 doc["source_mode"]["support_count"] for doc in documents.values()

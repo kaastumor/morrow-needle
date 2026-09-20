@@ -316,26 +316,49 @@ def build_thread_projection(
     if materialized["source_mode"]["gaps"]:
         raise ValueError("retrieval projection requires closed Thread Source Mode")
 
+    sources = load_thread_sources(thread, root=root)
     support = _support_index(thread, root=root)
     documents: dict[tuple[str, str], dict[str, Any]] = {}
+
+    source_kind_to_entity_kind = {
+        "BASELINE_EVIDENCE":"THREAD_EVIDENCE",
+        "CONTINUITY":"THREAD_EVIDENCE",
+        "RELATED_SOURCE":"THREAD_EVIDENCE",
+        "MUTATION":"MUTATION",
+        "SEMANTIC":"CHANGE_ATOM",
+        "TEMPORAL":"TEMPORAL_ASSERTION",
+        "LINEAGE":"LINEAGE_EDGE",
+    }
+
+    # Index the complete canonical entity set deliberately registered by the
+    # Thread. Event membership is attached separately below; helper assertions
+    # remain searchable without being manufactured into timeline events.
+    for source_key, source in sources.items():
+        entity_kind = source_kind_to_entity_kind.get(source["kind"])
+        if entity_kind is None:
+            continue
+        for entity_id, entity in source["index"].items():
+            entity_type = PROVENANCE_ENTITY_TYPES.get(entity_kind)
+            support_count = (
+                len(support.get((entity_type, entity_id), []))
+                if entity_type
+                else 0
+            )
+            documents[(entity_kind, entity_id)] = _project_entity(
+                thread=thread,
+                source_key=source_key,
+                kind=entity_kind,
+                entity_id=entity_id,
+                entity=entity,
+                support_count=support_count,
+            )
 
     for event in materialized["events"]:
         for ref in event["refs"]:
             key = (ref["kind"], ref["entity_id"])
             if key not in documents:
-                entity_type = PROVENANCE_ENTITY_TYPES.get(ref["kind"])
-                support_count = (
-                    len(support.get((entity_type, ref["entity_id"]), []))
-                    if entity_type
-                    else 0
-                )
-                documents[key] = _project_entity(
-                    thread=thread,
-                    source_key=ref["source_key"],
-                    kind=ref["kind"],
-                    entity_id=ref["entity_id"],
-                    entity=ref["entity"],
-                    support_count=support_count,
+                raise ValueError(
+                    f"Thread event references unprojected canonical entity: {key}"
                 )
             doc = documents[key]
             doc["event_ids"] = _unique(doc["event_ids"] + [event["event_id"]])

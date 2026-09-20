@@ -57,6 +57,25 @@
           "corr2026"
         ],
         "status": "ASSERTED"
+      },
+      {
+        "assertion_id": "thread.source-mode-closed",
+        "expectation": "Every factual legal claim referenced by the Thread has active provenance support to official evidence; Source Mode has zero gaps.",
+        "evidence_source_ids": [
+          "base",
+          "amend2008",
+          "amend2025",
+          "corr2026"
+        ],
+        "status": "ASSERTED"
+      },
+      {
+        "assertion_id": "thread.baseline-state",
+        "expectation": "The original 2004 Article 3 is retained as the first source-backed baseline event rather than represented as a later mutation.",
+        "evidence_source_ids": [
+          "base"
+        ],
+        "status": "ASSERTED"
       }
     ],
     "provision_alignments": [
@@ -128,6 +147,14 @@
           "amend2025"
         ],
         "status": "ASSERTED"
+      },
+      {
+        "assertion_id": "thread.p4-ripple-derived",
+        "expectation": "The 2025 Article 3(4) effect is a derived cross-reference ripple attached separately from the direct paragraph-3 mutation event.",
+        "evidence_source_ids": [
+          "amend2025"
+        ],
+        "status": "ASSERTED"
       }
     ],
     "non_atoms": [
@@ -170,6 +197,25 @@
           "amend2008"
         ],
         "status": "FORBIDDEN_INFERENCE"
+      },
+      {
+        "assertion_id": "thread.language-scope-explicit",
+        "expectation": "The Thread explicitly retains English-only scope and does not assume cross-language semantic equivalence.",
+        "evidence_source_ids": [
+          "base",
+          "amend2008",
+          "amend2025"
+        ],
+        "status": "ASSERTED"
+      },
+      {
+        "assertion_id": "thread.technical-identity-unresolved",
+        "expectation": "The Thread explicitly leaves technical identity between the named 2008 systems and the 2025 Commission-designated systems unresolved.",
+        "evidence_source_ids": [
+          "amend2008",
+          "amend2025"
+        ],
+        "status": "ASSERTED"
       }
     ],
     "temporal_assertions": [
@@ -201,7 +247,7 @@
   },
   "machine_expectations": [
     {
-      "assertion_id": "source-mode.closed",
+      "assertion_id": "thread.source-mode-closed",
       "outcome": "PRESENT",
       "match": {
         "kind": "THREAD_SOURCE_MODE",
@@ -210,7 +256,7 @@
       }
     },
     {
-      "assertion_id": "chronology.baseline",
+      "assertion_id": "thread.baseline-state",
       "outcome": "PRESENT",
       "match": {
         "kind": "THREAD_EVENT",
@@ -220,7 +266,7 @@
       }
     },
     {
-      "assertion_id": "chronology.force",
+      "assertion_id": "thread.temporal-original",
       "outcome": "PRESENT",
       "match": {
         "kind": "THREAD_EVENT",
@@ -230,7 +276,7 @@
       }
     },
     {
-      "assertion_id": "chronology.chapter2",
+      "assertion_id": "thread.temporal-original",
       "outcome": "PRESENT",
       "match": {
         "kind": "THREAD_EVENT",
@@ -240,7 +286,7 @@
       }
     },
     {
-      "assertion_id": "chronology.paper-end",
+      "assertion_id": "thread.temporal-original",
       "outcome": "PRESENT",
       "match": {
         "kind": "THREAD_EVENT",
@@ -250,7 +296,7 @@
       }
     },
     {
-      "assertion_id": "chronology.electronic-notification",
+      "assertion_id": "thread.temporal-original",
       "outcome": "PRESENT",
       "match": {
         "kind": "THREAD_EVENT",
@@ -260,7 +306,7 @@
       }
     },
     {
-      "assertion_id": "chronology.correspondence-condition",
+      "assertion_id": "thread.temporal-original",
       "outcome": "PRESENT",
       "match": {
         "kind": "THREAD_EVENT",
@@ -270,7 +316,7 @@
       }
     },
     {
-      "assertion_id": "chronology.2008-mutation",
+      "assertion_id": "thread.mutation-2008",
       "outcome": "PRESENT",
       "match": {
         "kind": "THREAD_EVENT",
@@ -280,7 +326,7 @@
       }
     },
     {
-      "assertion_id": "chronology.2008-sani-date",
+      "assertion_id": "thread.temporal-sani",
       "outcome": "PRESENT",
       "match": {
         "kind": "THREAD_EVENT",
@@ -290,7 +336,7 @@
       }
     },
     {
-      "assertion_id": "chronology.2025-mutation",
+      "assertion_id": "thread.mutation-2025",
       "outcome": "PRESENT",
       "match": {
         "kind": "THREAD_EVENT",
@@ -300,7 +346,7 @@
       }
     },
     {
-      "assertion_id": "chronology.2025-p4-ripple",
+      "assertion_id": "thread.p4-ripple-derived",
       "outcome": "PRESENT",
       "match": {
         "kind": "THREAD_EVENT",
@@ -310,7 +356,7 @@
       }
     },
     {
-      "assertion_id": "chronology.2025-application",
+      "assertion_id": "thread.temporal-2025",
       "outcome": "PRESENT",
       "match": {
         "kind": "THREAD_EVENT",
@@ -320,7 +366,7 @@
       }
     },
     {
-      "assertion_id": "chronology.2026-corrigendum-review",
+      "assertion_id": "thread.corrigendum-nonimpact",
       "outcome": "PRESENT",
       "match": {
         "kind": "THREAD_EVENT",
@@ -330,7 +376,7 @@
       }
     },
     {
-      "assertion_id": "atom.pki-present-in-2008",
+      "assertion_id": "thread.atom-pki",
       "outcome": "PRESENT",
       "match": {
         "kind": "THREAD_REF",
@@ -346,7 +392,7 @@
       }
     },
     {
-      "assertion_id": "atom.p4-ripple-derived",
+      "assertion_id": "thread.p4-ripple-derived",
       "outcome": "PRESENT",
       "match": {
         "kind": "THREAD_REF",
@@ -360,7 +406,7 @@
       }
     },
     {
-      "assertion_id": "nonatom.baseline-change-atom",
+      "assertion_id": "thread.no-baseline-change-atom",
       "outcome": "ABSENT",
       "match": {
         "kind": "THREAD_REF",
@@ -369,7 +415,7 @@
       }
     },
     {
-      "assertion_id": "nonmutation.p4-2025",
+      "assertion_id": "thread.no-p4-2025-mutation",
       "outcome": "ABSENT",
       "match": {
         "kind": "THREAD_REF",
@@ -378,7 +424,7 @@
       }
     },
     {
-      "assertion_id": "nonmutation.corrigendum-2026",
+      "assertion_id": "thread.no-corrigendum-art3-mutation",
       "outcome": "ABSENT",
       "match": {
         "kind": "THREAD_REF",
@@ -387,7 +433,7 @@
       }
     },
     {
-      "assertion_id": "nonatom.pki-sani-temporal",
+      "assertion_id": "thread.no-pki-sani-date",
       "outcome": "ABSENT",
       "match": {
         "kind": "THREAD_REF",
@@ -400,7 +446,7 @@
       }
     },
     {
-      "assertion_id": "separation.p4-ripple-not-direct-2025-event",
+      "assertion_id": "thread.p4-ripple-derived",
       "outcome": "ABSENT",
       "match": {
         "kind": "THREAD_REF",
@@ -409,7 +455,7 @@
       }
     },
     {
-      "assertion_id": "unknown.language-scope-explicit",
+      "assertion_id": "thread.language-scope-explicit",
       "outcome": "PRESENT",
       "match": {
         "kind": "THREAD_UNKNOWN",
@@ -418,7 +464,7 @@
       }
     },
     {
-      "assertion_id": "unknown.technical-identity-explicit",
+      "assertion_id": "thread.technical-identity-unresolved",
       "outcome": "PRESENT",
       "match": {
         "kind": "THREAD_UNKNOWN",

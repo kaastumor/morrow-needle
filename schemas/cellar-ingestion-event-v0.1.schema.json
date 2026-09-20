@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/cellar-ingestion-event-v0.1.json",
+  "title": "Morrow // Needle Cellar Ingestion Event v0.1",
+  "description": "Idempotent change hint from the official Cellar ingestion notification feed. It is not itself evidence of a legal change.",
+  "type": "object",
+  "required": [
+    "notification_id",
+    "action",
+    "cellar_id",
+    "root_cellar_id",
+    "ingestion_time",
+    "classes",
+    "identifiers",
+    "feed_observation"
+  ],
+  "properties": {
+    "notification_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "CREATE",
+        "UPDATE",
+        "DELETE"
+      ]
+    },
+    "cellar_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "root_cellar_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ingestion_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "priority": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "classes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "wemi_levels": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "WORK",
+          "EXPRESSION",
+          "MANIFESTATION",
+          "ITEM",
+          "DOSSIER",
+          "EVENT",
+          "AGENT",
+          "OTHER"
+        ]
+      }
+    },
+    "identifiers": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "feed_observation": {
+      "type": "object",
+      "required": [
+        "channel",
+        "format",
+        "window_start",
+        "window_end",
+        "page",
+        "entry_ordinal"
+      ],
+      "properties": {
+        "channel": {
+          "const": "ingestion"
+        },
+        "format": {
+          "type": "string",
+          "enum": [
+            "RSS",
+            "ATOM"
+          ]
+        },
+        "window_start": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "window_end": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "page": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "entry_ordinal": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

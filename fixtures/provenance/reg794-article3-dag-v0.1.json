@@ -905,6 +905,54 @@
         "derivation_record_id": "run-semantic-article3-p4-2025-crossref"
       },
       "record_hash": "sha256:5fb7b76043f832d91e1df99b652aec43da08b8c9942fbb60ddae396418102f9b"
+    },
+    {
+      "record_id": "run-semantic-article3-2008-pki",
+      "record_type": "DERIVATION_RUN",
+      "created_at": "2026-09-20T16:31:00Z",
+      "payload": {
+        "derivation_kind": "SEMANTIC_EXTRACT",
+        "execution_character": "DETERMINISTIC",
+        "implementation": {
+          "name": "needle.semantic.adversary",
+          "version": "change-atom-v0.3",
+          "config_hash": null
+        },
+        "input_record_ids": [
+          "run-reconcile-article3",
+          "src-reg271-2008-eng"
+        ],
+        "output_entity_refs": [
+          {
+            "entity_type": "CHANGE_ATOM",
+            "entity_id": "reg794-art3-pki-correspondence-duty-v0.1"
+          }
+        ],
+        "executed_at": "2026-09-20T16:29:41Z"
+      },
+      "record_hash": "sha256:e14c4bb1b211c3ac310d42a69e42e0d2b790261d10e6f3fa1d675e1e8cf2dfbc"
+    },
+    {
+      "record_id": "support-atom-pki-correspondence",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T16:31:01Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "CHANGE_ATOM",
+          "entity_id": "reg794-art3-pki-correspondence-duty-v0.1"
+        },
+        "source_observation_id": "src-reg271-2008-eng",
+        "source_span": {
+          "locator": "L_2008082EN.01000101.xml#normalized-chars:7551-7702",
+          "language": "ENG",
+          "text_hash": "sha256:d248b91594760dc2970219153a93862d574eaf13ad6c38c08204f8ec380e4a6d",
+          "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
+        },
+        "role": "SEMANTIC_CLAIM",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-semantic-article3-2008-pki"
+      },
+      "record_hash": "sha256:a19ea0ea5b538ad88fe88f1254749668fe18be13bd8bea7286dee9b795071da0"
     }
   ]
 }

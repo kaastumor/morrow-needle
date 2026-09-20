@@ -12,6 +12,7 @@ on:
       - "tests/test_money_corrigendum_semantics.py"
       - "tests/test_gold_money_corrigendum.py"
       - "tests/test_split_temporal_audit.py"
+      - "tests/test_regime_lineage_v02.py"
       - "tests/test_temporal_semantics.py"
       - "tests/test_multilingual_corrigenda.py"
       - "tests/test_identifier_graph.py"
@@ -45,6 +46,7 @@ jobs:
             tests/test_money_corrigendum_semantics.py \
             tests/test_gold_money_corrigendum.py \
             tests/test_split_temporal_audit.py \
+            tests/test_regime_lineage_v02.py \
             tests/test_temporal_semantics.py \
             tests/test_multilingual_corrigenda.py \
             tests/test_identifier_graph.py \

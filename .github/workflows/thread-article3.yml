@@ -5,6 +5,7 @@ on:
     paths:
       - "scripts/probe_thread_article3_2004.py"
       - "scripts/probe_thread_article3_2025.py"
+      - "scripts/probe_thread_article3_corrigendum.py"
       - "src/needle/ast/**"
       - "src/needle/mutation/**"
       - "fixtures/thread/**"
@@ -37,6 +38,8 @@ jobs:
         run: python scripts/probe_thread_article3_2004.py
       - name: Verify Article 3 2025 transition from live official sources
         run: python scripts/probe_thread_article3_2025.py
+      - name: Observe related corrigendum source availability
+        run: python scripts/probe_thread_article3_corrigendum.py
       - name: Upload Thread evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -45,4 +48,5 @@ jobs:
           path: |
             artifacts/thread-2004
             artifacts/thread-2025
+            artifacts/thread-corrigendum
           if-no-files-found: error

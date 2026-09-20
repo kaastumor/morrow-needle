@@ -58,7 +58,10 @@
         "text_hash": null
       }
     ],
-    "evidence_basis": ["OFFICIAL_RECITAL", "OFFICIAL_AMENDMENT_INSTRUCTION"],
+    "evidence_basis": [
+      "OFFICIAL_RECITAL",
+      "OFFICIAL_AMENDMENT_INSTRUCTION"
+    ],
     "evidence_state": "DIRECT",
     "source_refs": [
       {
@@ -88,7 +91,10 @@
       "rationale": "Two later authentic EU acts independently and explicitly identify the old and new paragraph positions, and the authentic modifying act supplies the operative structural mutation.",
       "conflict_state": "NO_KNOWN_CONFLICT"
     },
-    "notes": "This is a move of provisions between immutable text states of the same CELEX work, not a new persistent provision object."
+    "notes": "This is a move of provisions between immutable text states of the same CELEX work, not a new persistent provision object.",
+    "claim_status": "ASSERTED",
+    "rule_anchor": null,
+    "conflicting_source_refs": []
   },
   "forbidden_inferences": [
     "Do not treat Article 97(3) as a persistent object whose identifier merely changed in place.",

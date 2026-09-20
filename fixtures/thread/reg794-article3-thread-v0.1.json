@@ -70,6 +70,17 @@
       ]
     },
     {
+      "event_id": "original-entry-into-force",
+      "event_kind": "TEMPORAL_BOUNDARY",
+      "refs": [
+        {
+          "source_key": "temporal_original",
+          "kind": "TEMPORAL_ASSERTION",
+          "entity_id": "reg794-2004-entry-into-force"
+        }
+      ]
+    },
+    {
       "event_id": "chapter2-application-gate",
       "event_kind": "TEMPORAL_BOUNDARY",
       "refs": [

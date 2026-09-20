@@ -306,3 +306,27 @@ def test_similarity_only_lineage_cannot_promote_move():
     result = reclassify_with_lineage(candidates, [edge])
     assert {candidate["operation"] for candidate in result} == {"DELETE","INSERT"}
     assert all(candidate.get("lineage_edge_ids") is None for candidate in result)
+
+
+def test_derived_official_correlation_can_support_many_to_one_merge():
+    candidates = [
+        _structural_candidate("DELETE","Article 2(2)","del-art2-2"),
+        _structural_candidate("DELETE","Article 2(3)","del-art2-3"),
+        _structural_candidate("INSERT","Article 2(2)","ins-new-art2-2"),
+    ]
+    edge = next(
+        e for e in STRUCTURAL["lineage_edges"]
+        if e["edge_id"] == "reg26-art2-2-art2-3-to-reg1184-art2-2"
+    )
+    result = reclassify_with_lineage(candidates, [edge])
+    assert len(result) == 1
+    mutation = result[0]
+    assert mutation["operation"] == "MERGE"
+    assert mutation["structural_alignment"]["source_paths"] == ["Article 2(2)","Article 2(3)"]
+    assert mutation["structural_alignment"]["target_paths"] == ["Article 2(2)"]
+    assert set(mutation["consumed_candidate_ids"]) == {
+        "del-art2-2","del-art2-3","ins-new-art2-2"
+    }
+    assert mutation["reconciliation_state"] == "CORROBORATED"
+    assert mutation["verification_state"] == "UNVERIFIED"
+    assert list(Draft202012Validator(V2_SCHEMA).iter_errors(mutation)) == []

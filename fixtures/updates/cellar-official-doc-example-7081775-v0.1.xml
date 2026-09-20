@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+ xmlns:notifReq="http://publications.europa.eu/rss/notificationRequest"
+ xmlns:notifEntry="http://publications.europa.eu/rss/notificationEntry">
+ <channel>
+  <title>Ingestion Notification Messages Response</title>
+  <notifReq:startDate>2012-06-11T09:13:58+01:00</notifReq:startDate>
+  <notifReq:endDate>2012-06-11T09:13:58+01:00</notifReq:endDate>
+  <notifReq:page>1</notifReq:page>
+  <notifReq:moreEntries>false</notifReq:moreEntries>
+  <item>
+   <guid isPermaLink="false">7081775</guid>
+   <notifEntry:id>7081775</notifEntry:id>
+   <notifEntry:cellarId>cellar:ca753ae9-cf80-11e2-859e-01aa75ed71a1</notifEntry:cellarId>
+   <notifEntry:rootCellarId>cellar:ca753ae9-cf80-11e2-859e-01aa75ed71a1</notifEntry:rootCellarId>
+   <notifEntry:type>update</notifEntry:type>
+   <notifEntry:priority>DAILY</notifEntry:priority>
+   <notifEntry:classes>
+    <notifEntry:class>http://publications.europa.eu/ontology/cdm#case-law_national</notifEntry:class>
+    <notifEntry:class>http://publications.europa.eu/ontology/cdm#case-law</notifEntry:class>
+    <notifEntry:class>http://publications.europa.eu/ontology/cdm#resource_legal</notifEntry:class>
+    <notifEntry:class>http://publications.europa.eu/ontology/cdm#work</notifEntry:class>
+   </notifEntry:classes>
+   <notifEntry:identifiers>
+    <notifEntry:identifier>oj:JOL_2012_154_R_0012_01</notifEntry:identifier>
+    <notifEntry:identifier>celex:32006D0241</notifEntry:identifier>
+   </notifEntry:identifiers>
+   <notifEntry:date>2012-06-11T09:13:58+01:00</notifEntry:date>
+  </item>
+ </channel>
+</rss>

@@ -309,7 +309,7 @@ class FormexASTParser:
 
             kind = STRUCTURAL_KINDS.get(tag)
             if kind is not None:
-                label, heading = _label_and_heading(child)
+                label, heading, label_element, heading_element = _label_and_heading(child)
                 native_id = _native_identifier(child)
                 citation_piece = label or native_id
                 next_stack = citation_stack + ([citation_piece] if citation_piece else [])
@@ -339,6 +339,12 @@ class FormexASTParser:
                             native_identifier=native_id,
                         ),
                     )
+                    if self._ledger is not None and label_element is not None:
+                        self._ledger.claim_subtree(
+                            label_element,
+                            category="LEGAL_MAPPED",
+                            reason="canonical structural label",
+                        )
                 if heading:
                     self.builder.add_segment(
                         node_id=node_id,
@@ -350,6 +356,12 @@ class FormexASTParser:
                             native_identifier=native_id,
                         ),
                     )
+                    if self._ledger is not None and heading_element is not None:
+                        self._ledger.claim_subtree(
+                            heading_element,
+                            category="LEGAL_MAPPED",
+                            reason="canonical structural heading",
+                        )
 
                 self._emit_leaf_text(child, node_id, native_path=native_path)
                 self._walk_structures(

@@ -343,6 +343,7 @@ def build_thread_projection(
 
     subject = thread["subject"]
     thread_lexical: list[dict[str, str]] = []
+    _add_lexical(thread_lexical, "ENTITY_ID", thread["thread_id"])
     _add_lexical(thread_lexical, "THREAD_ID", thread["thread_id"])
     _add_lexical(thread_lexical, "ACT_ID", subject["act_id"])
     _add_lexical(thread_lexical, "PROVISION_PATH", subject["structural_path"])

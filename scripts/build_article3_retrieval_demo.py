@@ -79,8 +79,10 @@ def main() -> int:
         ),
         q(
             "sani-source-state-before-2025-publication",
-            text_terms=["reg794-art3-sani-duty-v0.1"],
-            filters={"entity_kinds":["CHANGE_ATOM"]},
+            filters={
+                "entity_kinds":["CHANGE_ATOM"],
+                "entity_ids":["reg794-art3-sani-duty-v0.1"],
+            },
             temporal=application_on(
                 "2025-07-03",
                 mode="EVALUATE",
@@ -90,8 +92,10 @@ def main() -> int:
         ),
         q(
             "sani-source-state-after-2025-publication",
-            text_terms=["reg794-art3-sani-duty-v0.1"],
-            filters={"entity_kinds":["CHANGE_ATOM"]},
+            filters={
+                "entity_kinds":["CHANGE_ATOM"],
+                "entity_ids":["reg794-art3-sani-duty-v0.1"],
+            },
             temporal=application_on(
                 "2025-07-03",
                 mode="EVALUATE",
@@ -109,8 +113,10 @@ def main() -> int:
         ),
         q(
             "technical-system-identity-unknown",
-            text_terms=["technical identity"],
-            filters={"entity_kinds":["THREAD_UNKNOWN"]},
+            filters={
+                "entity_kinds":["THREAD_UNKNOWN"],
+                "entity_ids":["technical-channel-identity"],
+            },
         ),
     ]
 

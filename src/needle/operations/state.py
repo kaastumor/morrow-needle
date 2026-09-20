@@ -281,7 +281,7 @@ def advance_baseline(
 
     if mark_event_processed:
         next_state["processed_event_keys"]=sorted(set(
-            next_state.get("processed_event_keys",[])
+            set(next_state.get("processed_event_keys",[]))
             | {event["event_key"]}
         ))
     next_state["updated_at"]=updated_at

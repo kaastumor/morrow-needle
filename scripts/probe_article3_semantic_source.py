@@ -18,6 +18,10 @@ EXPECTED_SPANS = {
         "As from 1 July 2008, notifications shall be transmitted electronically "
         "via the web application State Aid Notification Interactive (SANI)."
     ),
+    "span-pki-correspondence-duty": (
+        "All correspondence in connection with a notification shall be transmitted "
+        "electronically via the secured e-mail system Public Key Infrastructure (PKI)."
+    ),
     "span-invalid-channel-status": (
         "In the absence of such an agreement, any notification or correspondence "
         "in connection with a notification sent to the Commission by a Member State "

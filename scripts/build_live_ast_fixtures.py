@@ -74,11 +74,17 @@ def build_formex(celex: str, payload: bytes, response: requests.Response) -> dic
         representation_plan_id=f"{celex}:ENG:live-plan",
     )
     ast = parser.parse_zip(payload)
+    interesting_tags = {
+        tag: count
+        for tag, count in sorted(parser.tag_counts.items())
+        if any(token in tag for token in ("ANNEX", "TABLE", "FORM", "TBL", "GR.", "TOC"))
+    }
     ast["_probe"] = {
         "requested_celex": celex,
         "response_url": response.url,
         "payload_bytes": len(payload),
         "payload_sha256": hashlib.sha256(payload).hexdigest(),
+        "source_tag_counts_interest": interesting_tags,
     }
     return ast
 
@@ -155,6 +161,82 @@ def summary(ast: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+LIVE_EXPECTATIONS = {
+    "32004R0794": {
+        "articles_min": 13,
+        "paragraphs_min": 70,
+        "recitals_min": 15,
+        "annotations_min": 0,
+        "mapped_not_above_source": True,
+        "known_gap_contains": "raster assets",
+    },
+    "31958R0001": {
+        "articles_exact": 8,
+        "mapped_equals_source": True,
+        "warnings_exact": 0,
+    },
+    "02004R0794-20250813": {
+        "articles_min": 15,
+        "paragraphs_min": 80,
+        "table_cells_min": 1000,
+        "annotations_exact": 48,
+        "mapped_not_above_source": True,
+    },
+}
+
+
+def benchmark_errors(celex: str, ast: dict[str, Any]) -> list[str]:
+    expected = LIVE_EXPECTATIONS.get(celex, {})
+    kinds: dict[str, int] = {}
+    for node in ast["nodes"]:
+        kinds[node["kind"]] = kinds.get(node["kind"], 0) + 1
+
+    errors: list[str] = []
+    checks = {
+        "articles": kinds.get("ARTICLE", 0),
+        "paragraphs": kinds.get("PARAGRAPH", 0),
+        "recitals": kinds.get("RECITAL", 0),
+        "table_cells": kinds.get("TABLE_CELL", 0),
+    }
+
+    for name in ("articles", "paragraphs", "recitals", "table_cells"):
+        minimum = expected.get(f"{name}_min")
+        exact = expected.get(f"{name}_exact")
+        actual = checks[name]
+        if minimum is not None and actual < minimum:
+            errors.append(f"{name}: expected >= {minimum}, got {actual}")
+        if exact is not None and actual != exact:
+            errors.append(f"{name}: expected {exact}, got {actual}")
+
+    annotations = len(ast["annotations"])
+    if "annotations_min" in expected and annotations < expected["annotations_min"]:
+        errors.append(f"annotations: expected >= {expected['annotations_min']}, got {annotations}")
+    if "annotations_exact" in expected and annotations != expected["annotations_exact"]:
+        errors.append(f"annotations: expected {expected['annotations_exact']}, got {annotations}")
+
+    source_chars = ast["parse_report"]["visible_chars_source_estimate"]
+    mapped_chars = ast["parse_report"]["visible_chars_mapped"]
+    if expected.get("mapped_not_above_source") and source_chars is not None and mapped_chars is not None:
+        if mapped_chars > source_chars:
+            errors.append(f"mapped chars exceed source estimate: {mapped_chars} > {source_chars}")
+    if expected.get("mapped_equals_source") and source_chars != mapped_chars:
+        errors.append(f"expected full visible-text recovery: {mapped_chars} != {source_chars}")
+
+    warnings_exact = expected.get("warnings_exact")
+    if warnings_exact is not None and len(ast["parse_report"]["warnings"]) != warnings_exact:
+        errors.append(
+            f"warnings: expected {warnings_exact}, got {len(ast['parse_report']['warnings'])}"
+        )
+
+    gap_needle = expected.get("known_gap_contains")
+    if gap_needle and not any(
+        gap_needle in gap.lower() for gap in ast["completeness"]["known_gaps"]
+    ):
+        errors.append(f"expected known gap containing {gap_needle!r}")
+
+    return errors
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default="artifacts/live-ast")
@@ -182,15 +264,17 @@ def main() -> int:
             else build_html(celex, payload, response)
         )
         errors = validate_ast(ast, schema)
+        benchmark = benchmark_errors(celex, ast)
         case_report = summary(ast)
         case_report["schema_errors"] = errors
+        case_report["benchmark_errors"] = benchmark
         report["cases"].append(case_report)
 
         ast_path = out / f"{celex}.ast.json"
         ast_path.write_text(json.dumps(ast, indent=2, ensure_ascii=False), encoding="utf-8")
 
         print(json.dumps(case_report, indent=2, ensure_ascii=False))
-        if errors:
+        if errors or benchmark:
             failed = True
 
     (out / "summary.json").write_text(

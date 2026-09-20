@@ -187,6 +187,39 @@
       "items": {
         "type": "string"
       }
+    },
+    "structural_alignment": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "source_paths",
+            "target_paths"
+          ],
+          "properties": {
+            "source_paths": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "string"
+              }
+            },
+            "target_paths": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
     }
   },
   "$defs": {
@@ -231,7 +264,8 @@
             "RELATIONSHIP_METADATA",
             "CONSOLIDATION_PROVENANCE",
             "CONSOLIDATED_CHECKPOINT",
-            "DETERMINISTIC_DIFF"
+            "DETERMINISTIC_DIFF",
+            "LINEAGE_EVIDENCE"
           ]
         },
         "source_id": {

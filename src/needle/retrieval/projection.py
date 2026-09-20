@@ -284,14 +284,14 @@ def _project_entity(
     kind: str,
     entity_id: str,
     entity: dict[str, Any],
-    support_count: int,
+    support_record_ids: list[str],
 ) -> dict[str, Any]:
     doc = _empty_document(
         thread=thread,
         source_key=source_key,
         kind=kind,
         entity_id=entity_id,
-        support_count=support_count,
+        support_record_ids=support_record_ids,
     )
     if kind == "CHANGE_ATOM":
         _project_change_atom(doc, entity)

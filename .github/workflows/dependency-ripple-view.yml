@@ -1,0 +1,42 @@
+name: Legislative X-Ray dependency ripple
+
+on:
+  push:
+    paths:
+      - "src/needle/analytics/dependency_ripple.py"
+      - "schemas/dependency-ripple-*.schema.json"
+      - "fixtures/analytics/dependency-ripple-first-cohort-v0.1.json"
+      - "fixtures/discovery/reach-art67-annex17-entry78-ripple-v0.1.json"
+      - "fixtures/mutations/reach-annex17-entry78-2023-insert-v0.1.json"
+      - "fixtures/semantic/reach-art67-annex17-entry78-ripple-v0.1.json"
+      - "fixtures/thread/reg794-article3-p4-continuity-v0.1.json"
+      - "fixtures/mutations/reg794-article3-p3-2025-live-verified-v0.1.json"
+      - "fixtures/semantic/reg794-article3-2025-atoms-v0.1.json"
+      - "tests/test_dependency_ripple_view.py"
+      - "tests/test_reach_dependency_ripple.py"
+      - "scripts/build_dependency_ripple_view.py"
+      - ".github/workflows/dependency-ripple-view.yml"
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install project
+        run: python -m pip install -e ".[test]"
+      - name: Test dependency-ripple truth and product contracts
+        run: |
+          python -m pytest -q \
+            tests/test_reach_dependency_ripple.py \
+            tests/test_dependency_ripple_view.py
+      - name: Build Legislative X-Ray preview
+        run: python scripts/build_dependency_ripple_view.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dependency-ripple-first-cohort
+          path: artifacts/dependency-ripple/

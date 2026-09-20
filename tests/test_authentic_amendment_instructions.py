@@ -12,7 +12,7 @@ def _candidate():
     return {
         "candidate_id":"test-authentic-replace",
         "operation":"REPLACE",
-        "target":{"kind":"PARAGRAPH","citation_path":"Article 3 > 1","parent_citation_path":"Article 3","language":"ENG"},
+        "target":{"kind":"PARAGRAPH","citation_path":"Article 4 > 1","parent_citation_path":"Article 4","language":"ENG"},
         "alignment_basis":"EXACT_CITATION_AND_KIND",
         "before":None,"after":None,
         "feature_deltas":{"numbers_added":[],"numbers_removed":[],"dates_added":[],"dates_removed":[],"references_added":[],"references_removed":[]},
@@ -23,7 +23,7 @@ def _candidate():
 
 def test_explicit_authentic_replacement_becomes_canonical_cause():
     evidence = parse_authentic_instructions(
-        FIXTURE["parser_case"], source_id="CELEX:32008R0312", locator="Article 1(1)(a)"
+        FIXTURE["parser_case"], source_id="CELEX:32015R1536", locator="Article 1(4)"
     )
     assert evidence == [FIXTURE["expected_evidence"]]
     result = reconcile_candidate(_candidate(), evidence)

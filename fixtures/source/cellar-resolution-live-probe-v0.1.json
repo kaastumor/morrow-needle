@@ -1,0 +1,68 @@
+{
+  "fixture_id": "cellar-resolution-live-probe-20260920-v0.1",
+  "observed_at": "2026-09-20T01:38Z",
+  "runner": "GitHub Actions",
+  "source": "Cellar dissemination API",
+  "cases": [
+    {
+      "celex": "32004R0794",
+      "cellar_work": "26f403d1-7656-4c91-9726-c08d466ff8bd",
+      "english_expression": "26f403d1-7656-4c91-9726-c08d466ff8bd.0006",
+      "rdf_tree_notice": {
+        "status": 200,
+        "bytes": 14544829,
+        "sha256": "1863552bc878313f8b0b1aa479fcbe778c481fe7bb3e23ab9e95e3b10139e1bd"
+      },
+      "english_branch_notice": {
+        "status": 200,
+        "bytes": 1216279,
+        "sha256": "d4e00f614e050a4b9a290b2426f2dc69a5ad272afb499cbbb05047bfb20b4b75"
+      },
+      "fmx4_direct": {
+        "status": 404,
+        "finding": "Requested content datastream type is not held by the work through direct content negotiation."
+      },
+      "xhtml_direct": {
+        "status": 200,
+        "manifestation": "26f403d1-7656-4c91-9726-c08d466ff8bd.0006.03",
+        "stream": "DOC_1",
+        "bytes": 49863735,
+        "sha256": "bb8e206839df0ccd686a56ed5fabe065f51eec4da7d5e3f317a2a7addbca6bf2",
+        "observation": "XHTML header includes a 2026 converter-generation marker for a 2004 legal act."
+      }
+    },
+    {
+      "celex": "31958R0001",
+      "cellar_work": "115852e8-30ac-496e-8015-d580366ff059",
+      "english_expression": "115852e8-30ac-496e-8015-d580366ff059.0008",
+      "rdf_tree_notice": {
+        "status": 200,
+        "bytes": 21061996,
+        "sha256": "cd81a6d769f7b8f210894db78e37005e045be9e07990115901d3da37ecb85ff7"
+      },
+      "english_branch_notice": {
+        "status": 200,
+        "bytes": 1348695,
+        "sha256": "841e20a15ec2b5beafe58dfe5330ace8d9e383d8965d7e62405bd0172d5022ed"
+      },
+      "fmx4_direct": {
+        "status": 404
+      },
+      "xhtml_direct": {
+        "status": 404
+      }
+    }
+  ],
+  "foundation_results": [
+    "CELEX reliably resolves to Cellar work IDs in both test eras.",
+    "Language-expression suffixes are not globally stable language identifiers.",
+    "Direct structured-format availability differs by work and era.",
+    "Manifestations may be regenerated independently of legal change.",
+    "Metadata-first manifestation discovery is required."
+  ],
+  "evidence_origin": {
+    "workflow": ".github/workflows/cellar-probe.yml",
+    "workflow_run": 35481889034,
+    "artifact_name": "cellar-source-probe"
+  }
+}

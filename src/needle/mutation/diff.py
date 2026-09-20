@@ -44,6 +44,8 @@ def _node_text(ast: dict[str, Any], node_id: str) -> str:
 def _index(ast: dict[str, Any]) -> dict[tuple[str, str], dict[str, Any]]:
     result = {}
     for node in ast.get("nodes", []):
+        if node.get("kind") in {"TABLE_ROW", "TABLE_CELL"}:
+            continue
         citation = node.get("citation_path")
         kind = node.get("kind")
         if not citation or not kind:
@@ -169,3 +171,162 @@ def diff_same_location(
         })
 
     return candidates
+
+
+
+def _node_map(ast: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    return {node["node_id"]:node for node in ast.get("nodes", [])}
+
+
+def _nearest_legal_anchor(
+    node: dict[str, Any],
+    nodes: dict[str, dict[str, Any]],
+) -> str | None:
+    current = node
+    while current:
+        citation = current.get("citation_path")
+        if citation and current.get("kind") not in {"TABLE","TABLE_ROW","TABLE_CELL"}:
+            return citation
+        parent_id = current.get("parent_id")
+        current = nodes.get(parent_id) if parent_id else None
+    return None
+
+
+def _table_context(
+    cell: dict[str, Any],
+    nodes: dict[str, dict[str, Any]],
+) -> tuple[str, int, int, int] | None:
+    coordinates = cell.get("table_coordinates")
+    if not coordinates:
+        return None
+    row = coordinates.get("row")
+    column = coordinates.get("column")
+    if row is None or column is None:
+        return None
+
+    current = nodes.get(cell.get("parent_id"))
+    table = None
+    while current:
+        if current.get("kind") == "TABLE":
+            table = current
+            break
+        parent_id = current.get("parent_id")
+        current = nodes.get(parent_id) if parent_id else None
+    if table is None:
+        return None
+
+    anchor = _nearest_legal_anchor(table, nodes)
+    if not anchor:
+        return None
+    return anchor, int(table.get("ordinal", 0)), int(row), int(column)
+
+
+def _table_cell_index(ast: dict[str, Any]) -> dict[tuple[str, int, int, int], dict[str, Any]]:
+    nodes = _node_map(ast)
+    result = {}
+    for node in ast.get("nodes", []):
+        if node.get("kind") != "TABLE_CELL":
+            continue
+        key = _table_context(node, nodes)
+        if key is None:
+            continue
+        if key in result:
+            result[key] = {"AMBIGUOUS":True,"key":key}
+        else:
+            result[key] = node
+    return result
+
+
+def diff_table_cells(
+    before_ast: dict[str, Any],
+    after_ast: dict[str, Any],
+    *,
+    language: str | None = None,
+) -> list[dict[str, Any]]:
+    """Compare exact table coordinates under a stable legal/table anchor.
+
+    Reordered rows/cells are deliberately not inferred as moves in v0.2.
+    """
+    before_idx = _table_cell_index(before_ast)
+    after_idx = _table_cell_index(after_ast)
+    keys = sorted(set(before_idx) | set(after_idx))
+    candidates = []
+
+    for anchor, table_ordinal, row, column in keys:
+        before_node = before_idx.get((anchor, table_ordinal, row, column))
+        after_node = after_idx.get((anchor, table_ordinal, row, column))
+        if (before_node and before_node.get("AMBIGUOUS")) or (
+            after_node and after_node.get("AMBIGUOUS")
+        ):
+            continue
+
+        before_text = _node_text(before_ast, before_node["node_id"]) if before_node else ""
+        after_text = _node_text(after_ast, after_node["node_id"]) if after_node else ""
+        if before_node and after_node and before_text == after_text:
+            continue
+
+        operation = (
+            "INSERT" if before_node is None
+            else "DELETE" if after_node is None
+            else "REPLACE"
+        )
+        address = f"{anchor} :: TABLE[{table_ordinal}] :: CELL[{row},{column}]"
+        candidate_id = sha256(
+            f"{before_ast['state_id']}|{after_ast['state_id']}|TABLE_CELL|{address}|{operation}".encode()
+        ).hexdigest()[:24]
+
+        candidates.append({
+            "candidate_id":candidate_id,
+            "operation":operation,
+            "target":{
+                "kind":"TABLE_CELL",
+                "citation_path":address,
+                "parent_citation_path":anchor,
+                "language":language,
+            },
+            "alignment_basis":"TABLE_COORDINATE",
+            "before":None if not before_node else {
+                "state_id":before_ast["state_id"],
+                "node_id":before_node["node_id"],
+                "text_hash":_hash(before_text),
+                "text_length":len(before_text),
+            },
+            "after":None if not after_node else {
+                "state_id":after_ast["state_id"],
+                "node_id":after_node["node_id"],
+                "text_hash":_hash(after_text),
+                "text_length":len(after_text),
+            },
+            "feature_deltas":feature_deltas(before_text, after_text),
+            "reconciliation_state":"DIFF_ONLY",
+            "verification_state":"UNVERIFIED",
+            "supporting_evidence":[{
+                "channel":"DETERMINISTIC_DIFF",
+                "source_id":f"{before_ast['state_id']}->{after_ast['state_id']}",
+                "operation":operation,
+                "target_locator":address,
+                "authority_character":"DERIVED",
+                "locator":"exact table coordinate",
+            }],
+            "conflicting_evidence":[],
+            "notes":"Exact table-coordinate candidate; row/column reordering is not inferred.",
+        })
+    return candidates
+
+
+def diff_ast(
+    before_ast: dict[str, Any],
+    after_ast: dict[str, Any],
+    *,
+    language: str | None = None,
+) -> list[dict[str, Any]]:
+    candidates = diff_same_location(before_ast, after_ast, language=language)
+    candidates.extend(diff_table_cells(before_ast, after_ast, language=language))
+    seen = set()
+    result = []
+    for candidate in candidates:
+        if candidate["candidate_id"] in seen:
+            continue
+        seen.add(candidate["candidate_id"])
+        result.append(candidate)
+    return result

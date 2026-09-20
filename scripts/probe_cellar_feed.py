@@ -23,6 +23,19 @@ WINDOW = {
     "page":"1",
 }
 
+DOCUMENTED_HISTORY_TARGET = {
+    "cellar_id":"cellar:ca753ae9-cf80-11e2-859e-01aa75ed71a1",
+    "celex":"celex:32006D0241",
+    "ingestion_time":"2012-06-11T09:13:58+01:00",
+}
+DOCUMENTED_HISTORY_WINDOW = {
+    "startDate":"2012-06-11T09:13:57+01:00",
+    "endDate":"2012-06-11T09:13:59+01:00",
+    "type":"UPDATE",
+    "wemiClasses":"work",
+    "page":"1",
+}
+
 
 def fetch_feed(accept: str) -> tuple[bytes, requests.Response]:
     response = requests.get(
@@ -70,6 +83,54 @@ def comparable(event: dict) -> dict:
         "classes":event["classes"],
         "wemi_levels":event["wemi_levels"],
         "identifiers":event["identifiers"],
+    }
+
+
+def probe_documented_history_example() -> dict:
+    response = requests.get(
+        ENDPOINT,
+        params=DOCUMENTED_HISTORY_WINDOW,
+        headers={
+            "Accept":"application/rss+xml",
+            "User-Agent":(
+                "Morrow-Needle-Cellar-History-Sentinel/0.1 "
+                "(+https://github.com/kaastumor/morrow-needle)"
+            ),
+        },
+        timeout=120,
+        allow_redirects=True,
+    )
+    response.raise_for_status()
+    payload=response.content
+    page=parse_feed(payload)
+    matches=[
+        event for event in page.events
+        if event["cellar_id"] == DOCUMENTED_HISTORY_TARGET["cellar_id"]
+        and DOCUMENTED_HISTORY_TARGET["celex"] in event["identifiers"]
+        and event["ingestion_time"]
+            == DOCUMENTED_HISTORY_TARGET["ingestion_time"]
+    ]
+    return {
+        "documentation":(
+            "https://op.europa.eu/en/web/cellar/cellar-data/"
+            "rss-and-atom-feeds"
+        ),
+        "query":DOCUMENTED_HISTORY_WINDOW,
+        "request_url":response.url,
+        "payload_sha256":hashlib.sha256(payload).hexdigest(),
+        "payload_bytes":len(payload),
+        "event_count":len(page.events),
+        "target_match_count":len(matches),
+        "state":(
+            "DOCUMENTED_EXAMPLE_REPLAYED"
+            if len(matches) == 1
+            else "DOCUMENTED_EXAMPLE_NOT_REPLAYED"
+        ),
+        "interpretation_guardrail":(
+            "This sentinel records current endpoint behavior only. It does "
+            "not convert absence from the live response into absence of the "
+            "historical ingestion action or legal document."
+        ),
     }
 
 
@@ -172,6 +233,7 @@ def main() -> int:
         "target_ingestion_time":TARGET_INGESTION_TIME,
         "rss_atom_semantically_equal":True,
         "representations":outputs,
+        "documented_history_sentinel":probe_documented_history_example(),
     }
 
     out = out_dir / "live-62024CC0286-anchor.json"

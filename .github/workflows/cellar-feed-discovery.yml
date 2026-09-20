@@ -1,0 +1,35 @@
+name: Discover Cellar feed anchor
+
+on:
+  push:
+    paths:
+      - "scripts/discover_cellar_feed_anchor.py"
+      - "src/needle/updates/cellar_feed.py"
+      - ".github/workflows/cellar-feed-discovery.yml"
+      - "pyproject.toml"
+  workflow_dispatch:
+
+concurrency:
+  group: cellar-feed-anchor-discovery-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install project
+        run: python -m pip install -e ".[test]"
+      - name: Discover replayable official event
+        run: python scripts/discover_cellar_feed_anchor.py
+      - name: Upload discovery evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cellar-feed-anchor-discovery
+          path: artifacts/cellar-feed-discovery
+          if-no-files-found: error

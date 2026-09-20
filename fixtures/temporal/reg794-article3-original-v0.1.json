@@ -1,0 +1,236 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "reg794-article3-original-temporal-state",
+  "source_artifact": {
+    "identifier": "CELEX:32004R0794",
+    "language": "ENG",
+    "artifact_hash": "sha256:b01567ea804ef7e20d50218d30204fbe763b48fff78482c6796578784726c558"
+  },
+  "assertions": [
+    {
+      "assertion_id": "reg794-2004-entry-into-force",
+      "subject_ref": {
+        "kind": "LEGAL_ACT",
+        "identifier": "CELEX:32004R0794",
+        "locator": "Article 13 first paragraph"
+      },
+      "dimension": "LEGAL_FORCE",
+      "boundary": "START",
+      "inclusive": true,
+      "trigger": {
+        "kind": "RELATIVE_EVENT",
+        "event_key": "publication",
+        "event_binding": "SUBJECT",
+        "offset": {
+          "value": 20,
+          "unit": "DAYS"
+        },
+        "guard": null,
+        "source_expression": "twentieth day following publication"
+      },
+      "normalized_date": "2004-05-20",
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": [
+          "ACT:32004R0794"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_RELATIVE",
+      "evidence_state": "DERIVED",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32004R0794",
+          "locator": "L_2004140EN.01000101.xml#normalized-chars:18221-18361",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        },
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32004R0794",
+          "locator": "Dates / Date of effect 20/05/2004",
+          "language": "ENG",
+          "role": "DERIVATION_INPUT"
+        }
+      ],
+      "notes": "The authentic act supplies the relative force clause; official EUR-Lex metadata independently exposes 20 May 2004 as the date of effect."
+    },
+    {
+      "assertion_id": "reg794-2004-chapter2-application-threshold",
+      "subject_ref": {
+        "kind": "REGIME",
+        "identifier": "CELEX:32004R0794#CHAPTER_II",
+        "locator": "Article 13 second paragraph"
+      },
+      "dimension": "APPLICATION",
+      "boundary": "START",
+      "inclusive": false,
+      "trigger": {
+        "kind": "RELATIVE_EVENT",
+        "event_key": "ENTRY_INTO_FORCE:32004R0794",
+        "event_binding": "SUBJECT",
+        "offset": {
+          "value": 5,
+          "unit": "MONTHS"
+        },
+        "guard": null,
+        "source_expression": "more than five months after the entry into force of this Regulation"
+      },
+      "normalized_date": "2004-10-20",
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": [
+          "REGIME:32004R0794:CHAPTER_II"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_RELATIVE",
+      "evidence_state": "DERIVED",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32004R0794",
+          "locator": "L_2004140EN.01000101.xml#normalized-chars:18361-18510",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        },
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32004R0794",
+          "locator": "Dates / Date of effect 20/05/2004",
+          "language": "ENG",
+          "role": "DERIVATION_INPUT"
+        }
+      ],
+      "notes": "The normalized boundary is 20 October 2004 but is exclusive: Chapter II applies only to notifications transmitted more than five months after entry into force."
+    },
+    {
+      "assertion_id": "reg794-art3-original-paper-notification-end",
+      "subject_ref": {
+        "kind": "PROVISION_INSTANCE",
+        "identifier": "CELEX:32004R0794#ARTICLE_3_PARAGRAPH_4",
+        "locator": "Article 3(4)"
+      },
+      "dimension": "APPLICATION",
+      "boundary": "END",
+      "inclusive": true,
+      "trigger": {
+        "kind": "ABSOLUTE_DATE",
+        "date": "2005-12-31",
+        "source_expression": "Until 31 December 2005"
+      },
+      "normalized_date": "2005-12-31",
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": [
+          "RULE:32004R0794:ARTICLE3_4:PAPER_NOTIFICATION"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_ABSOLUTE",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32004R0794",
+          "locator": "L_2004140EN.01000101.xml#normalized-chars:8862-8949",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        }
+      ],
+      "notes": "The paper-transmission regime ends inclusively on 31 December 2005."
+    },
+    {
+      "assertion_id": "reg794-art3-original-electronic-notification-start",
+      "subject_ref": {
+        "kind": "PROVISION_INSTANCE",
+        "identifier": "CELEX:32004R0794#ARTICLE_3_PARAGRAPH_4",
+        "locator": "Article 3(4)"
+      },
+      "dimension": "APPLICATION",
+      "boundary": "START",
+      "inclusive": true,
+      "trigger": {
+        "kind": "ABSOLUTE_DATE",
+        "date": "2006-01-01",
+        "source_expression": "With effect from 1 January 2006"
+      },
+      "normalized_date": "2006-01-01",
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": [
+          "RULE:32004R0794:ARTICLE3_4:ELECTRONIC_NOTIFICATION"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_ABSOLUTE",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32004R0794",
+          "locator": "L_2004140EN.01000101.xml#normalized-chars:9033-9189",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        }
+      ],
+      "notes": "The agreement exception belongs to the substantive rule scope and is not collapsed into the temporal boundary."
+    },
+    {
+      "assertion_id": "reg794-art3-original-electronic-correspondence-trigger",
+      "subject_ref": {
+        "kind": "PROVISION_INSTANCE",
+        "identifier": "CELEX:32004R0794#ARTICLE_3_PARAGRAPH_4",
+        "locator": "Article 3(4)"
+      },
+      "dimension": "APPLICATION",
+      "boundary": "START",
+      "inclusive": true,
+      "trigger": {
+        "kind": "RELATIVE_EVENT",
+        "event_key": "notification_submission_date",
+        "event_binding": "QUERY_ENTITY",
+        "offset": {
+          "value": 0,
+          "unit": "DAYS"
+        },
+        "guard": {
+          "operator": "AFTER",
+          "date": "2006-01-01"
+        },
+        "source_expression": "a notification which has been submitted after 1 January 2006"
+      },
+      "normalized_date": null,
+      "scope": {
+        "mode": "CONDITIONAL_OVERRIDE",
+        "applies_to": [
+          "RULE:32004R0794:ARTICLE3_4:ELECTRONIC_CORRESPONDENCE"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "CONTEXT_REQUIRED",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32004R0794",
+          "locator": "L_2004140EN.01000101.xml#normalized-chars:9189-9324",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        }
+      ],
+      "notes": "There is no single entity-independent application date: the correspondence duty turns on when the connected notification was submitted, and the source uses a strict 'after 1 January 2006' guard."
+    }
+  ],
+  "forbidden_collapses": [
+    "Do not treat 20 October 2004 itself as an applicable Chapter II date; the source says more than five months after entry into force.",
+    "Do not collapse the Chapter II gate, the paper-rule end, and the electronic-notification start into one lifecycle date.",
+    "Do not convert the correspondence condition into a universal 1 January 2006 start; it is tied to the submission date of the connected notification."
+  ]
+}

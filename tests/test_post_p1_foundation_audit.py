@@ -18,7 +18,10 @@ def load(path):
 
 
 LINEAGE_GAP = load(
-    "fixtures/lineage/reg2021-1232-to-reg2026-1881-gap-v0.1.json"
+    "fixtures/lineage/reg2021-1232-to-reg2026-1881-gap-v0.2.json"
+)
+EPRIVACY_TEMPORAL = load(
+    "fixtures/temporal/eprivacy-temporary-regime-v0.1.json"
 )
 LINEAGE_SPLIT = load(
     "fixtures/lineage/dir69-335-to-dir2008-7-split-v0.1.json"
@@ -56,18 +59,27 @@ def _procedure_case(case_id):
 
 
 def test_audit_lineage_genealogy_does_not_erase_temporal_gap():
+    registry = {
+        assertion["assertion_id"]:assertion
+        for assertion in EPRIVACY_TEMPORAL["assertions"]
+    }
+    end = registry["eprivacy-2021-extended-application-end"]
+    start = registry["eprivacy-2026-application-start"]
+    assert set(LINEAGE_GAP["temporal_assertion_refs"]) >= {
+        end["assertion_id"],
+        start["assertion_id"],
+    }
     result = gap_between(
-        LINEAGE_GAP["source_regime"]["application_end"],
-        LINEAGE_GAP["target_regime"]["application_start"],
+        end["normalized_date"],
+        start["normalized_date"],
     )
     assert result == {
         "state":"GAP",
         "start":"2026-04-04",
         "end":"2026-07-30",
     }
-    assert result["start"] == LINEAGE_GAP["edge"]["gap"]["start"]
-    assert result["end"] == LINEAGE_GAP["edge"]["gap"]["end"]
-    assert LINEAGE_GAP["edge"]["applicability_continuity"] == "GAPPED"
+    assert "application_start" not in json.dumps(LINEAGE_GAP)
+    assert "application_end" not in json.dumps(LINEAGE_GAP)
 
 
 def test_audit_structural_split_does_not_claim_whole_rule_identity():

@@ -1,0 +1,184 @@
+{
+  "fixture_version": "0.1",
+  "purpose": "Prove that structural mutation reclassification requires asserted evidence-backed provision lineage.",
+  "lineage_edges": [
+    {
+      "edge_id": "reg26-art4-to-reg1184-art3",
+      "claim_status": "ASSERTED",
+      "assertion_scope": "STRUCTURAL_LINEAGE",
+      "edge_type": "RENUMBERED_TO",
+      "rule_anchor": null,
+      "sources": [
+        {
+          "act_id": "CELEX:31962R0026",
+          "eli": "http://data.europa.eu/eli/reg/1962/26/oj",
+          "version": null,
+          "language": "ENG",
+          "structural_path": "Article 4",
+          "text_hash": null
+        }
+      ],
+      "targets": [
+        {
+          "act_id": "CELEX:32006R1184",
+          "eli": "http://data.europa.eu/eli/reg/2006/1184/oj",
+          "version": null,
+          "language": "ENG",
+          "structural_path": "Article 3",
+          "text_hash": null
+        }
+      ],
+      "evidence_basis": [
+        "OFFICIAL_CORRELATION_TABLE"
+      ],
+      "evidence_state": "DIRECT",
+      "confidence": {
+        "level": "HIGH",
+        "rationale": "Annex II official correlation table maps old Article 4 to new Article 3.",
+        "conflict_state": "NO_KNOWN_CONFLICT"
+      },
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32006R1184",
+          "locator": "Annex II correlation table",
+          "language": "ENG",
+          "role": "LINEAGE_EVIDENCE"
+        }
+      ],
+      "conflicting_source_refs": [],
+      "notes": "Structural renumbering across repeal/replacement; does not itself assert proposition-level rule continuity."
+    },
+    {
+      "edge_id": "dir69-art7-2-to-dir2008-arts7-8",
+      "claim_status": "ASSERTED",
+      "assertion_scope": "STRUCTURAL_LINEAGE",
+      "edge_type": "SPLIT_INTO",
+      "rule_anchor": null,
+      "sources": [
+        {
+          "act_id": "69/335/EEC",
+          "eli": null,
+          "version": null,
+          "language": "ENG",
+          "structural_path": "Article 7(2)",
+          "text_hash": null
+        }
+      ],
+      "targets": [
+        {
+          "act_id": "CELEX:32008L0007",
+          "eli": "http://data.europa.eu/eli/dir/2008/7/oj",
+          "version": null,
+          "language": "ENG",
+          "structural_path": "Article 7",
+          "text_hash": null
+        },
+        {
+          "act_id": "CELEX:32008L0007",
+          "eli": "http://data.europa.eu/eli/dir/2008/7/oj",
+          "version": null,
+          "language": "ENG",
+          "structural_path": "Article 8",
+          "text_hash": null
+        }
+      ],
+      "evidence_basis": [
+        "OFFICIAL_CORRELATION_TABLE"
+      ],
+      "evidence_state": "DIRECT",
+      "confidence": {
+        "level": "HIGH",
+        "rationale": "Official correlation table maps Article 7(2) to both successor Articles 7 and 8.",
+        "conflict_state": "NO_KNOWN_CONFLICT"
+      },
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32008L0007",
+          "locator": "Correlation table",
+          "language": "ENG",
+          "role": "LINEAGE_EVIDENCE"
+        }
+      ],
+      "conflicting_source_refs": [],
+      "notes": "Structural split only. Rule continuity must be asserted separately."
+    },
+    {
+      "edge_id": "similarity-only-false-promotion-control",
+      "claim_status": "CANDIDATE",
+      "assertion_scope": "STRUCTURAL_LINEAGE",
+      "edge_type": "MOVED_TO",
+      "rule_anchor": null,
+      "sources": [
+        {
+          "act_id": "TEST:OLD",
+          "eli": null,
+          "version": null,
+          "language": "ENG",
+          "structural_path": "Article 10",
+          "text_hash": null
+        }
+      ],
+      "targets": [
+        {
+          "act_id": "TEST:NEW",
+          "eli": null,
+          "version": null,
+          "language": "ENG",
+          "structural_path": "Article 20",
+          "text_hash": null
+        }
+      ],
+      "evidence_basis": [
+        "DETERMINISTIC_TEXT_ALIGNMENT"
+      ],
+      "evidence_state": "UNRESOLVED",
+      "confidence": {
+        "level": "UNRESOLVED",
+        "rationale": "Text similarity only; insufficient evidence for asserted lineage.",
+        "conflict_state": "INSUFFICIENT_EVIDENCE"
+      },
+      "source_refs": [
+        {
+          "source_type": "OTHER_OFFICIAL",
+          "identifier": "test-control",
+          "locator": null,
+          "language": "ENG",
+          "role": "SOURCE_TEXT"
+        }
+      ],
+      "conflicting_source_refs": [],
+      "notes": "Negative control: must not promote DELETE+INSERT into MOVE."
+    }
+  ],
+  "expected": [
+    {
+      "edge_id": "reg26-art4-to-reg1184-art3",
+      "operation": "RENUMBER",
+      "source_paths": [
+        "Article 4"
+      ],
+      "target_paths": [
+        "Article 3"
+      ]
+    },
+    {
+      "edge_id": "dir69-art7-2-to-dir2008-arts7-8",
+      "operation": "SPLIT",
+      "source_paths": [
+        "Article 7(2)"
+      ],
+      "target_paths": [
+        "Article 7",
+        "Article 8"
+      ]
+    }
+  ],
+  "forbidden_inferences": [
+    "Promoting similarity-only lineage into MOVE/RENUMBER.",
+    "Treating RENUMBER as proof that every legal proposition is unchanged.",
+    "Collapsing SPLIT into two independent one-to-one continuities.",
+    "Discarding the source/target cardinality of a structural mutation."
+  ]
+}

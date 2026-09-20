@@ -124,3 +124,49 @@ def validate_atom(
         errors.append("VERIFIED atom requires a SEMANTIC_CLAIM source span")
 
     return errors
+
+
+
+def validate_atom_set(atoms: list[dict[str, Any]]) -> list[str]:
+    """Validate cross-atom graph integrity independently of atom semantics."""
+    errors: list[str] = []
+    ids = [atom.get("atom_id") for atom in atoms]
+    duplicates = sorted({atom_id for atom_id in ids if ids.count(atom_id) > 1})
+    for atom_id in duplicates:
+        errors.append(f"duplicate atom_id: {atom_id}")
+
+    by_id = {atom["atom_id"]: atom for atom in atoms if atom.get("atom_id")}
+    for atom in atoms:
+        source_id = atom.get("atom_id")
+        source_languages = set(atom.get("language_scope", {}).get("languages", []))
+        for relation in atom.get("relations", []):
+            target_id = relation["target_atom_id"]
+            if target_id == source_id:
+                errors.append(f"self-referential atom relation: {source_id}")
+                continue
+            target = by_id.get(target_id)
+            if target is None:
+                errors.append(
+                    f"unknown relation target from {source_id}: {target_id}"
+                )
+                continue
+            target_languages = set(
+                target.get("language_scope", {}).get("languages", [])
+            )
+            if source_languages and target_languages and not (
+                source_languages & target_languages
+            ):
+                errors.append(
+                    f"relation has disjoint language scopes: "
+                    f"{source_id} -> {target_id}"
+                )
+            if atom.get("verification_state") == "VERIFIED":
+                if target.get("verification_state") not in {
+                    "VERIFIED",
+                    "EVIDENCED",
+                }:
+                    errors.append(
+                        f"VERIFIED atom relation targets unsupported atom: "
+                        f"{source_id} -> {target_id}"
+                    )
+    return errors

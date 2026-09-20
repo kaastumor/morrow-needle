@@ -9,7 +9,8 @@
     "schema_version",
     "query_id",
     "projection_fingerprint",
-    "results"
+    "results",
+    "abstentions"
   ],
   "properties": {
     "schema_version": {
@@ -141,6 +142,63 @@
             }
           },
           "canonical_entity": {
+            "type": "object"
+          },
+          "temporal_evaluation": {
+            "type": [
+              "object",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "abstentions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "entity_ref",
+          "reason",
+          "temporal_evaluation"
+        ],
+        "properties": {
+          "entity_ref": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "entity_id"
+            ],
+            "properties": {
+              "kind": {
+                "enum": [
+                  "THREAD",
+                  "MUTATION",
+                  "CHANGE_ATOM",
+                  "TEMPORAL_ASSERTION",
+                  "LINEAGE_EDGE",
+                  "THREAD_EVIDENCE"
+                ]
+              },
+              "entity_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "reason": {
+            "enum": [
+              "NO_TEMPORAL_ASSERTIONS",
+              "TEMPORAL_CONTEXT_REQUIRED",
+              "TEMPORAL_CONFLICT",
+              "SOURCE_AVAILABILITY_UNRESOLVED",
+              "NOT_ASSERTED_AS_OF_SOURCE_DATE",
+              "TEMPORAL_NOT_ACTIVE"
+            ]
+          },
+          "temporal_evaluation": {
             "type": "object"
           }
         }

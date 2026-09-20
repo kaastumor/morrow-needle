@@ -1,0 +1,66 @@
+{
+  "fixture_id": "dir92-34-art11-to-dir2008-90-art9-rule-decomposition-v0.1",
+  "purpose": "Stress-test proposition-level lineage inside an officially mapped provision that the successor correlation table labels 'amended'. The fixture demonstrates that one provision-to-provision structural edge can contain both continuing propositions and newly introduced propositions.",
+  "source_act": {
+    "celex": "31992L0034",
+    "eli": "http://data.europa.eu/eli/dir/1992/34/oj",
+    "provision": "Article 11"
+  },
+  "target_act": {
+    "celex": "32008L0090",
+    "eli": "http://data.europa.eu/eli/dir/2008/90/oj",
+    "provision": "Article 9"
+  },
+  "official_structural_evidence": {
+    "identifier": "CELEX:32008L0090",
+    "locator": "Annex III — Correlation table",
+    "observation": "Article 11 of Directive 92/34/EEC maps to Article 9 of Directive 2008/90/EC with the explicit qualifier 'amended'."
+  },
+  "authentic_text_comparison": [
+    {
+      "rule_id": "homogeneous-lot-and-qualification-gate",
+      "source_anchor": "Article 11, opening sentence and points (i)-(ii)",
+      "target_anchor": "Article 9(1), opening sentence and points (a)-(b)",
+      "classification": "RULE_CONTINUES",
+      "evidence_basis": ["AUTHENTIC_TEXT_COMPARISON", "OFFICIAL_CORRELATION_TABLE"],
+      "evidence_state": "DIRECT",
+      "confidence": "HIGH",
+      "rationale": "Both authentic provisions retain the operative gate that propagating material and fruit plants may be marketed only in sufficiently homogeneous lots and when qualified/documented as CAC or certified categories. Terminology and implementing references change, so this claim is deliberately narrower than whole-article identity."
+    },
+    {
+      "rule_id": "retail-nonprofessional-labelling-relaxation",
+      "source_anchor": "Article 11, final paragraph",
+      "target_anchor": "Article 9(2)",
+      "classification": "RULE_CONTINUES",
+      "evidence_basis": ["AUTHENTIC_TEXT_COMPARISON", "OFFICIAL_CORRELATION_TABLE"],
+      "evidence_state": "DIRECT",
+      "confidence": "HIGH",
+      "rationale": "Both texts preserve the rule allowing labelling requirements for retail supply to a non-professional final consumer to be confined to appropriate product information."
+    },
+    {
+      "rule_id": "gm-variety-disclosure",
+      "source_anchor": null,
+      "target_anchor": "Article 9(3)",
+      "classification": "NEW_PROPOSITION_WITHIN_STRUCTURAL_SUCCESSOR",
+      "evidence_basis": ["AUTHENTIC_TEXT_COMPARISON"],
+      "evidence_state": "DIRECT",
+      "confidence": "HIGH",
+      "rationale": "The successor Article 9 contains a distinct genetically-modified-variety label/document disclosure obligation for which Article 11 of the predecessor text contains no corresponding proposition. This is not evidence that every part of Article 9 is novel; it is evidence against whole-provision semantic identity."
+    }
+  ],
+  "architecture_result": {
+    "decision": "Rule lineage is proposition-granular and may fan in/out beneath a single structural provision edge.",
+    "invariant": "A provision-level qualifier such as 'amended' is a warning against whole-provision semantic continuity, not a verdict that all predecessor propositions terminated. Structural correspondence must be decomposed into independently evidenced rule anchors before semantic lineage is emitted.",
+    "forbidden_shortcuts": [
+      "Treat Article 11 -> Article 9 amended as one RULE_CONTINUES claim covering the entire provisions.",
+      "Treat the qualifier amended as proof that every predecessor proposition terminated.",
+      "Assign the new GMO disclosure proposition an invented predecessor merely because it resides in the structural successor provision."
+    ]
+  },
+  "source_notes": [
+    "EUR-Lex authentic Directive 92/34/EEC Article 11 contains the homogeneous-lot/qualification rule and retail non-professional labelling relaxation.",
+    "EUR-Lex authentic Directive 2008/90/EC Article 9 retains those propositions and additionally contains paragraph 3 on genetically modified varieties.",
+    "Consolidated texts may be used as verification checkpoints, but this fixture's lineage claims are anchored to the original legal acts and their official correlation table."
+  ],
+  "status": "OFFICIAL_EVIDENCE_CAPTURED_PROPOSITION_DECOMPOSITION_VALIDATED"
+}

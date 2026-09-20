@@ -221,6 +221,14 @@
           "type": "null"
         }
       ]
+    },
+    "comparison_scope": {
+      "type": "string",
+      "enum": [
+        "DIRECT_NODE",
+        "SUBTREE",
+        "TABLE_CELL"
+      ]
     }
   },
   "$defs": {

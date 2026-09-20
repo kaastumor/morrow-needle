@@ -100,3 +100,23 @@ def test_genealogical_successor_does_not_erase_real_application_gap():
     following = by_id[query["next_start_assertion_id"]]["normalized_date"]
     result = gap_between(previous, following)
     assert result == query["expected"]
+
+
+def test_retroactive_application_can_precede_entry_into_force_ex_post():
+    case = _case("reg2023-2773-retroactive-application")
+    application = status_on(
+        case["assertions"],
+        dimension="APPLICATION",
+        subject_keys={"ACT:32023R2773"},
+        on_date="2023-06-01",
+    )
+    legal_force = status_on(
+        case["assertions"],
+        dimension="LEGAL_FORCE",
+        subject_keys={"ACT:32023R2773"},
+        on_date="2023-06-01",
+    )
+    assert application["active"] is True
+    assert legal_force["active"] is False
+    # This deliberately exposes the need for query perspective: ex-post legal
+    # effect is not the same question as what was enacted/knowable in June 2023.

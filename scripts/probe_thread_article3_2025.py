@@ -21,9 +21,9 @@ from needle.mutation.reconcile import reconcile_candidate
 BASE = "https://publications.europa.eu/resource/celex/{celex}"
 CAUSE = "32025R0905"
 CORRIGENDUM = "32025R0905R(01)"
-CORRIGENDUM_HTML = (
-    "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/"
-    "?uri=CELEX%3A32025R0905R%2801%29"
+CORRIGENDUM_ELI = (
+    "https://data.europa.eu/eli/reg_impl/2025/905/"
+    "corrigendum/2026-07-17/oj"
 )
 BEFORE = "02004R0794-20161222"
 AFTER = "02004R0794-20250703"
@@ -84,7 +84,7 @@ class _VisibleHTML(HTMLParser):
 
 def fetch_corrigendum_html() -> tuple[bytes,requests.Response,str]:
     response=requests.get(
-        CORRIGENDUM_HTML,
+        CORRIGENDUM_ELI,
         headers={
             "Accept":"text/html",
             "Accept-Language":"en",
@@ -102,7 +102,14 @@ def fetch_corrigendum_html() -> tuple[bytes,requests.Response,str]:
         raise AssertionError(f"unexpected corrigendum media type: {media_type}")
     parser=_VisibleHTML()
     parser.feed(response.text)
-    return response.content,response," ".join(" ".join(parser.parts).split())
+    visible=" ".join(" ".join(parser.parts).split())
+    if "32025R0905R(01)" not in visible:
+        raise AssertionError(
+            "official corrigendum resolver did not return the requested legal text"
+        )
+    if "verify that you're not a robot" in visible.lower():
+        raise AssertionError("official corrigendum resolver returned an interstitial")
+    return response.content,response,visible
 
 
 def source_meta(celex,response,payload):
@@ -413,7 +420,8 @@ def main() -> int:
             "publication_date":"2026-07-17",
             "payload_sha256":hashlib.sha256(corrigendum_payload).hexdigest(),
             "final_url":corrigendum_response.url,
-            "source_type":"EUR_LEX",
+            "source_type":"ELI",
+            "canonical_identifier":CORRIGENDUM_ELI,
             "representation_class":"OFFICIAL_HTML",
             "cellar_celex_dereference":"UNAVAILABLE_404",
             "target_evidence":corrigendum_target,

@@ -5,6 +5,7 @@ on:
     paths:
       - "src/needle/operations/**"
       - "src/needle/updates/reobserve.py"
+      - "src/needle/updates/relevance.py"
       - "schemas/operational-result-v0.1.schema.json"
       - "schemas/feed-card-v0.1.schema.json"
       - "tests/test_operational_feed.py"

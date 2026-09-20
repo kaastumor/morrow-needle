@@ -9,6 +9,8 @@ import re
 
 import requests
 
+from needle.mutation.instructions import parse_authentic_corrigendum_replacements
+
 
 CELEX="31990R2742R(01)"
 CELLAR_URL=f"https://publications.europa.eu/resource/celex/{CELEX}"
@@ -95,8 +97,23 @@ def main() -> int:
             f"official OJ PDF route returned {pdf.headers.get('content-type')}"
         )
 
+    parsed=parse_authentic_corrigendum_replacements(
+        correction_text,
+        source_id=f"CELEX:{CELEX}",
+        locator=(
+            f"normalized-visible-text#chars:"
+            f"{target_start}-{after_end}"
+        ),
+    )
+    if len(parsed) != 1:
+        raise AssertionError(
+            f"authentic corrigendum parser did not resolve one replacement: {parsed}"
+        )
+    if parsed[0]["target_locator"] != "Article 4 > 1":
+        raise AssertionError(parsed[0])
+
     result={
-        "probe_version":"0.2",
+        "probe_version":"0.3",
         "celex":CELEX,
         "language":"ENG",
         "source_route_observations":{
@@ -120,6 +137,7 @@ def main() -> int:
                 "artifact_hash":"sha256:"+hashlib.sha256(pdf.content).hexdigest(),
             },
         },
+        "parsed_replacement":parsed[0],
         "correction":{
             "target":"Article 4 > 1",
             "target_source_text":target,

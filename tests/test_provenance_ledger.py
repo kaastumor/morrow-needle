@@ -163,3 +163,26 @@ def test_competing_supersession_of_same_record_is_rejected():
         "support-audit-locator-v1 was already superseded" in error
         for error in errors
     )
+
+
+def test_retraction_can_remove_record_from_current_view_without_replacement():
+    base = RECORDS[:]
+    target = next(
+        record for record in base
+        if record["record_id"] == "support-audit-locator-v2"
+    )
+    retraction = seal_record({
+        "record_id":"retract-audit-locator-v2",
+        "record_type":"SUPERSESSION",
+        "created_at":"2026-09-20T15:20:18Z",
+        "payload":{
+            "character":"RETRACTION",
+            "superseded_record_ids":[target["record_id"]],
+            "replacement_record_ids":[],
+            "reason":"Test-only retraction with no replacement.",
+        },
+    })
+    records = base + [retraction]
+    assert validate_ledger(records) == []
+    current = {record["record_id"] for record in active_records(records)}
+    assert target["record_id"] not in current

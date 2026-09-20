@@ -1,0 +1,269 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "reg794-article3-2025-semantic-atoms",
+  "source_mutation": {
+    "mutation_id": "reg794-article3-p3-2025-live-verified-v0.1",
+    "verification_state": "VERIFIED",
+    "operation": "REPLACE",
+    "target": "Article 3 > 3"
+  },
+  "source_span_registry": {
+    "span-2025-notification-channel": {
+      "identifier": "CELEX:32025R0905",
+      "language": "ENG",
+      "locator": "L_202500905EN.000101.fmx.xml#normalized-chars:10464-10568",
+      "artifact_hash": "sha256:91bc8da880879ef9e02ccd7c3bdae09d8b21f496d839d7418bd0a0b088976ff8",
+      "text": "Notifications shall be sent electronically, via the electronic application designated by the Commission.",
+      "text_hash": "fd6c5bf4d5162189448d1184a230eb81845282acb33d1a344f3aeab6ee6f0e56"
+    },
+    "span-2025-correspondence-channel": {
+      "identifier": "CELEX:32025R0905",
+      "language": "ENG",
+      "locator": "L_202500905EN.000101.fmx.xml#normalized-chars:10568-10713",
+      "artifact_hash": "sha256:91bc8da880879ef9e02ccd7c3bdae09d8b21f496d839d7418bd0a0b088976ff8",
+      "text": "All correspondence in connection with a notification shall be sent electronically via the secured electronic system designated by the Commission.",
+      "text_hash": "c55852f95e0a890d02f22ca83e4430861b63e35cadd1f96710e68037a2c81ca5"
+    },
+    "span-2008-alt-channel-permission": {
+      "identifier": "CELEX:32008R0271",
+      "language": "ENG",
+      "locator": "L_2008082EN.01000101.xml#normalized-chars:7704-7983",
+      "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7",
+      "text": "In exceptional circumstances and upon the agreement of the Commission and the Member State concerned, an agreed communication channel other than those referred to in paragraph 3 may be used for submission of a notification or any correspondence in connection with a notification.",
+      "text_hash": "c7fc733a71948a5bd1b40fc83e6e0ba18f073803adaa8bd97bbc73a2f55cdb26"
+    }
+  },
+  "atoms": [
+    {
+      "atom_id": "reg794-art3-2025-notification-channel-duty-v0.1",
+      "verification_state": "VERIFIED",
+      "source_mutation_ids": [
+        "reg794-article3-p3-2025-live-verified-v0.1"
+      ],
+      "act_id": "CELEX:32004R0794",
+      "provision_refs": [
+        {
+          "provision_instance_id": null,
+          "citation_path": "Article 3 > 3",
+          "language": "ENG"
+        }
+      ],
+      "language_scope": {
+        "languages": [
+          "ENG"
+        ],
+        "cross_language_equivalence_assumed": false
+      },
+      "claim": {
+        "legal_effect": "DUTY",
+        "dimensions": [
+          "PROCEDURE",
+          "DIGITAL_CHANNEL"
+        ],
+        "statement": "Notifications must be sent electronically via the electronic application designated by the Commission.",
+        "subject": "notifications",
+        "action": "must be sent electronically",
+        "object": "the electronic application designated by the Commission"
+      },
+      "semantic_basis": {
+        "classification_method": "DETERMINISTIC_LEGAL_LANGUAGE",
+        "trigger_terms": [
+          "shall be sent electronically"
+        ],
+        "qualifier_terms": [
+          "electronic application designated by the Commission"
+        ]
+      },
+      "evidence_state": "DIRECT",
+      "source_spans": [
+        {
+          "span_id": "span-2025-notification-channel",
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32025R0905",
+          "locator": "L_202500905EN.000101.fmx.xml#normalized-chars:10464-10568",
+          "language": "ENG",
+          "text_hash": "fd6c5bf4d5162189448d1184a230eb81845282acb33d1a344f3aeab6ee6f0e56",
+          "artifact_hash": "sha256:91bc8da880879ef9e02ccd7c3bdae09d8b21f496d839d7418bd0a0b088976ff8",
+          "role": "SEMANTIC_CLAIM"
+        }
+      ],
+      "temporal_assertion_refs": [
+        "reg794-art3-p3-2025-application-start"
+      ],
+      "procedure_state_refs": [],
+      "relations": [],
+      "affected_entities": [],
+      "provenance": {
+        "observed_at": "2026-09-20T16:02:24Z",
+        "extractor_version": "manual-thread-v0.1",
+        "adversary_version": "semantic-adversary-v0.1",
+        "human_review": false
+      },
+      "notes": "Replaces the specific SANI application name with a Commission-designated application."
+    },
+    {
+      "atom_id": "reg794-art3-2025-correspondence-channel-duty-v0.1",
+      "verification_state": "VERIFIED",
+      "source_mutation_ids": [
+        "reg794-article3-p3-2025-live-verified-v0.1"
+      ],
+      "act_id": "CELEX:32004R0794",
+      "provision_refs": [
+        {
+          "provision_instance_id": null,
+          "citation_path": "Article 3 > 3",
+          "language": "ENG"
+        }
+      ],
+      "language_scope": {
+        "languages": [
+          "ENG"
+        ],
+        "cross_language_equivalence_assumed": false
+      },
+      "claim": {
+        "legal_effect": "DUTY",
+        "dimensions": [
+          "PROCEDURE",
+          "DIGITAL_CHANNEL"
+        ],
+        "statement": "Correspondence connected with a notification must be sent electronically via the secured electronic system designated by the Commission.",
+        "subject": "correspondence in connection with a notification",
+        "action": "must be sent electronically",
+        "object": "the secured electronic system designated by the Commission"
+      },
+      "semantic_basis": {
+        "classification_method": "DETERMINISTIC_LEGAL_LANGUAGE",
+        "trigger_terms": [
+          "shall be sent electronically"
+        ],
+        "qualifier_terms": [
+          "secured electronic system designated by the Commission"
+        ]
+      },
+      "evidence_state": "DIRECT",
+      "source_spans": [
+        {
+          "span_id": "span-2025-correspondence-channel",
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32025R0905",
+          "locator": "L_202500905EN.000101.fmx.xml#normalized-chars:10568-10713",
+          "language": "ENG",
+          "text_hash": "c55852f95e0a890d02f22ca83e4430861b63e35cadd1f96710e68037a2c81ca5",
+          "artifact_hash": "sha256:91bc8da880879ef9e02ccd7c3bdae09d8b21f496d839d7418bd0a0b088976ff8",
+          "role": "SEMANTIC_CLAIM"
+        }
+      ],
+      "temporal_assertion_refs": [
+        "reg794-art3-p3-2025-application-start"
+      ],
+      "procedure_state_refs": [],
+      "relations": [],
+      "affected_entities": [],
+      "provenance": {
+        "observed_at": "2026-09-20T16:02:24Z",
+        "extractor_version": "manual-thread-v0.1",
+        "adversary_version": "semantic-adversary-v0.1",
+        "human_review": false
+      },
+      "notes": "Replaces the specific PKI secured e-mail system name with a Commission-designated secured electronic system."
+    },
+    {
+      "atom_id": "reg794-art3-2025-crossref-exception-ripple-v0.1",
+      "verification_state": "EVIDENCED",
+      "source_mutation_ids": [
+        "reg794-article3-p3-2025-live-verified-v0.1"
+      ],
+      "act_id": "CELEX:32004R0794",
+      "provision_refs": [
+        {
+          "provision_instance_id": null,
+          "citation_path": "Article 3 > 4",
+          "language": "ENG"
+        }
+      ],
+      "language_scope": {
+        "languages": [
+          "ENG"
+        ],
+        "cross_language_equivalence_assumed": false
+      },
+      "claim": {
+        "legal_effect": "PERMISSION",
+        "dimensions": [
+          "EXCEPTION",
+          "CROSS_REFERENCE",
+          "DIGITAL_CHANNEL"
+        ],
+        "statement": "The exceptional alternative-channel permission in Article 3(4) now operates relative to the Commission-designated application and secured electronic system referenced through paragraph 3, rather than the previously named SANI and PKI systems.",
+        "subject": "the exceptional alternative-channel permission",
+        "action": "continues to operate as an exception to",
+        "object": "the channels referred to in Article 3(3)"
+      },
+      "semantic_basis": {
+        "classification_method": "UNRESOLVED",
+        "trigger_terms": [
+          "may be used"
+        ],
+        "qualifier_terms": [
+          "other than those referred to in paragraph 3"
+        ]
+      },
+      "evidence_state": "DERIVED",
+      "source_spans": [
+        {
+          "span_id": "span-2008-alt-channel-permission",
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32008R0271",
+          "locator": "L_2008082EN.01000101.xml#normalized-chars:7704-7983",
+          "language": "ENG",
+          "text_hash": "c7fc733a71948a5bd1b40fc83e6e0ba18f073803adaa8bd97bbc73a2f55cdb26",
+          "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7",
+          "role": "SEMANTIC_CLAIM"
+        },
+        {
+          "span_id": "span-2025-notification-channel",
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32025R0905",
+          "locator": "L_202500905EN.000101.fmx.xml#normalized-chars:10464-10568",
+          "language": "ENG",
+          "text_hash": "fd6c5bf4d5162189448d1184a230eb81845282acb33d1a344f3aeab6ee6f0e56",
+          "artifact_hash": "sha256:91bc8da880879ef9e02ccd7c3bdae09d8b21f496d839d7418bd0a0b088976ff8",
+          "role": "CONTEXT"
+        },
+        {
+          "span_id": "span-2025-correspondence-channel",
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32025R0905",
+          "locator": "L_202500905EN.000101.fmx.xml#normalized-chars:10568-10713",
+          "language": "ENG",
+          "text_hash": "c55852f95e0a890d02f22ca83e4430861b63e35cadd1f96710e68037a2c81ca5",
+          "artifact_hash": "sha256:91bc8da880879ef9e02ccd7c3bdae09d8b21f496d839d7418bd0a0b088976ff8",
+          "role": "CONTEXT"
+        }
+      ],
+      "temporal_assertion_refs": [
+        "reg794-art3-p3-2025-application-start"
+      ],
+      "procedure_state_refs": [],
+      "relations": [
+        {
+          "relation": "EXCEPTION_TO",
+          "target_atom_id": "reg794-art3-2025-notification-channel-duty-v0.1"
+        },
+        {
+          "relation": "EXCEPTION_TO",
+          "target_atom_id": "reg794-art3-2025-correspondence-channel-duty-v0.1"
+        }
+      ],
+      "affected_entities": [],
+      "provenance": {
+        "observed_at": "2026-09-20T16:02:24Z",
+        "extractor_version": "thread-derived-v0.1",
+        "adversary_version": "semantic-adversary-v0.1",
+        "human_review": false
+      },
+      "notes": "No Article 3(4) textual mutation is asserted. This is a derived cross-reference-dependent semantic effect."
+    }
+  ]
+}

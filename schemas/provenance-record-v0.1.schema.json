@@ -402,7 +402,7 @@
         },
         "replacement_record_ids": {
           "type": "array",
-          "minItems": 1,
+          "minItems": 0,
           "uniqueItems": true,
           "items": {
             "type": "string"
@@ -413,7 +413,44 @@
           "minLength": 1
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "character": {
+                "enum": [
+                  "CORRECTION",
+                  "SUPERSESSION"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "replacement_record_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "character": {
+                "const": "RETRACTION"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "replacement_record_ids": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      ]
     }
   },
   "additionalProperties": false

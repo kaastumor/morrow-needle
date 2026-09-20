@@ -41,18 +41,20 @@ An English branch-notice request resolved to:
 
 **Invariant:** numeric Cellar expression suffixes must never be treated as a globally stable language code. Resolve language from metadata every time.
 
-### Format availability is heterogeneous
+### Manifestation retrieval contract must be version-aware
 
-Direct content negotiation produced:
+The first probe used `Accept: application/xml;type=fmx4`, an older interface form still visible in legacy Cellar interface material. That request returned 404 for both controlled works.
 
-| CELEX | FMX4 | XHTML |
-|---|---:|---:|
-| 32004R0794 | 404 | 200 |
-| 31958R0001 | 404 | 404 |
+The current Publications Office documentation instead specifies publication retrieval using:
 
-Therefore the initial assumption “prefer/request FMX4 directly from CELEX” is rejected.
+- `Accept: application/list;mtype={manifestation-type}`
+- `Accept: application/zip;mtype={manifestation-type}`
 
-**Invariant:** enumerate actual manifestations from metadata before choosing a representation.
+with `Accept-Language` selecting the expression.
+
+The branch metadata itself exposes manifestation types including FMX4 for historical material, so the earlier 404 **must not be interpreted as evidence that FMX4 is absent**.
+
+**Invariant:** the source adapter follows the current official dissemination contract and enumerates metadata before interpreting a failed representation request. Legacy negotiation forms may be retained only as compatibility probes.
 
 ### Manifestation regeneration is not legal mutation
 
@@ -175,6 +177,6 @@ Full tree retrieval remains useful for:
 
 ## Current foundation verdict
 
-**Cellar remains the preferred ingestion backbone, but only with metadata-first manifestation discovery.**
+**Cellar remains the preferred ingestion backbone, with metadata-first manifestation discovery and contract-tested retrieval.**
 
-The simplistic “CELEX → request FMX4” path is rejected.
+The simplistic “CELEX → assume one fixed retrieval header forever” path is rejected.

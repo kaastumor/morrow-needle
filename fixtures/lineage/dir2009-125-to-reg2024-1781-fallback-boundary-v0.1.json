@@ -1,0 +1,53 @@
+{
+  "fixture_id": "dir2009-125-to-reg2024-1781-fallback-boundary-v0.1",
+  "purpose": "Negative regression: similar structure/text across repeal-and-successor framework must not become asserted provision lineage without provision-level official mapping or reviewed evidence.",
+  "source": {
+    "celex": "32009L0125",
+    "eli": "http://data.europa.eu/eli/dir/2009/125/oj",
+    "provision": "Article 1",
+    "heading": "Subject matter and scope",
+    "observation": "Establishes a framework for ecodesign requirements and free movement of covered products."
+  },
+  "target": {
+    "celex": "32024R1781",
+    "eli": "http://data.europa.eu/eli/reg/2024/1781/oj",
+    "provision": "Article 1",
+    "heading": "Subject matter and scope",
+    "observation": "Establishes a broader framework for ecodesign requirements and free movement of sustainable products."
+  },
+  "official_context": {
+    "repeal": "Regulation (EU) 2024/1781 Article 79 repeals Directive 2009/125/EC subject to transitional exceptions.",
+    "transition": "Article 79(1)(a) preserves a grouped set of old provisions temporarily 'instead of' a grouped set of provisions in the new Regulation. This is official regime-level transition evidence, not a one-to-one Article 1 lineage mapping.",
+    "correlation_table_found": false,
+    "explicit_one_to_one_article_mapping_found": false
+  },
+  "adversarial_signal": {
+    "same_article_number": true,
+    "same_heading_en": true,
+    "strong_topic_overlap": true,
+    "formal_predecessor_successor_context": true,
+    "safe_conclusion": "These signals justify a lineage candidate for review, not an asserted provision-lineage edge."
+  },
+  "expected_claim": {
+    "claim_status": "CANDIDATE",
+    "assertion_scope": "STRUCTURAL_LINEAGE",
+    "edge_type": "REPLACED_BY",
+    "evidence_basis": ["DETERMINISTIC_TEXT_ALIGNMENT"],
+    "evidence_state": "UNRESOLVED",
+    "confidence": {
+      "level": "UNRESOLVED",
+      "rationale": "Similarity and act-level succession do not establish one-to-one provision ancestry; Article 79 supplies grouped transitional context but no Article 1 mapping.",
+      "conflict_state": "INSUFFICIENT_EVIDENCE"
+    }
+  },
+  "forbidden": [
+    "Emit ASSERTED lineage from article-number equality.",
+    "Emit ASSERTED lineage from heading/text similarity alone.",
+    "Convert act-level repeal/succession into one-to-one provision lineage.",
+    "Treat grouped transitional substitution as a correlation table."
+  ],
+  "official_sources": [
+    "http://data.europa.eu/eli/dir/2009/125/oj",
+    "http://data.europa.eu/eli/reg/2024/1781/oj"
+  ]
+}

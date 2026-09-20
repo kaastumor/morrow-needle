@@ -8,9 +8,10 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 Unless new official evidence creates a more severe blocker, the hourly build loop should start here:
 
-1. **P0-H / Issue #8 — legal/procedural state machine.** Prove that procedure events, document states and legal-effect states cannot be collapsed into one linear status.
-2. Then **P0-I / Issue #9 — source-assisted deterministic mutation engine**.
-3. Keep P0-C cross-cutting: feed each resolved P0 adversary into the Gold Corpus without letting corpus-format work displace the active foundation blocker.
+1. **P0-I / Issue #9 — source-assisted deterministic mutation engine.** Build the deterministic candidate/reconciliation engine on the frozen identity, AST, temporal, multilingual and procedure contracts.
+2. Start narrow: same-location insert/delete/replace + numeric/date/reference deltas, reconciled against official embedded Formex provenance and authentic amendment metadata.
+3. Then attack move/renumber, split/merge and annex/table structure without upgrading deterministic similarity into asserted lineage.
+4. Keep P0-C cross-cutting: feed each resolved mutation adversary into the Gold Corpus.
 
 Do **not** return to P0-B unless a new official source fixture falsifies the validated ingestion contract. Issue #2 is closed; residual Cellar work is adapter/regression hardening.
 
@@ -149,11 +150,15 @@ See `docs/decisions/identifier-graph-v0.1-interface-freeze.md`.
 ### P0-H — Legal/procedural state machine
 **Issue #8**
 
-Status: **ACTIVE FOUNDATION BLOCKER.**
+Status: **FOUNDATION CONTRACT RESOLVED; ISSUE CLOSED.**
 
-Validate the distinction between proposal/draft/position/agreement/adoption/publication/force/application/repeal against real procedures.
+Frozen model:
+- `schemas/procedure-state-event-v0.1.schema.json`
+- `src/needle/procedure/resolver.py`
 
-First attack: model status as orthogonal state assertions + events, not one lifecycle enum. Ordinary legislative, delegated and implementing paths must fit without pretending they share identical steps. Include at least one terminal non-adopted proposal so `WITHDRAWN/REJECTED/LAPSED` cannot be confused with “not yet adopted”.
+Procedure state is an orthogonal vector, not one status. Proposal state, institutional positions, political agreement, formal adoption, publication and delegated scrutiny remain separate. Withdrawn proposals terminate without an adopted act. Legal force/application remain in P0-E's temporal model.
+
+See `docs/decisions/procedure-state-v0.1-interface-freeze.md`.
 
 ### P0-I — Source-assisted deterministic mutation engine
 **Issue #9**
@@ -162,7 +167,9 @@ Architecture revised after live consolidated Formex testing.
 
 Reconcile five evidence channels: authentic modifying/correcting acts, embedded official consolidation provenance, official relationship metadata, consolidated checkpoints, and deterministic canonical-AST diff.
 
-A parser/schema/test fixture now exists for Formex CLG.MDF* provenance, including nested corrigenda. Full mutation engine implementation remains downstream of the now-frozen AST and still-active temporal contract. P0-I becomes the next major implementation target only after P0-E/F/G/H foundation decisions are stable enough.
+A parser/schema/test fixture now exists for Formex CLG.MDF* provenance, including nested corrigenda. Status: **ACTIVE FOUNDATION IMPLEMENTATION.**
+
+All prerequisite foundation contracts P0-A/B/D/E/F/G/H are now frozen or resolved. Begin deterministic candidate generation and evidence reconciliation. Do not let structural/text similarity alone create asserted lineage or semantic Change Atoms.
 
 ## P1 — Core system
 

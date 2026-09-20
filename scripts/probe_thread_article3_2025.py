@@ -12,6 +12,7 @@ import xml.etree.ElementTree as ET
 import requests
 
 from needle.ast.formex import FormexASTParser
+from needle.ast.resolve import resolve_structural_path
 from needle.mutation.diff import diff_resolved_subtree
 from needle.mutation.instructions import parse_authentic_instructions
 from needle.mutation.reconcile import reconcile_candidate
@@ -27,6 +28,9 @@ CORRIGENDUM_HTML = (
 BEFORE = "02004R0794-20161222"
 AFTER = "02004R0794-20250703"
 TARGET = "Article 3 > 3"
+SEMANTIC_2008_FIXTURE = Path(
+    "fixtures/semantic/reg794-article3-atoms-v0.1.json"
+)
 SENTENCES = {
     "amendment-instruction": (
         "Article 3, paragraph 3 is replaced by the following"

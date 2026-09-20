@@ -3,7 +3,12 @@ from pathlib import Path
 
 from jsonschema import Draft202012Validator
 
-from needle.temporal.resolver import gap_between, resolve_boundary, status_on
+from needle.temporal.resolver import (
+    gap_between,
+    resolve_boundary,
+    status_on,
+    status_on_perspective,
+)
 
 
 SCHEMA = json.loads(
@@ -120,3 +125,70 @@ def test_retroactive_application_can_precede_entry_into_force_ex_post():
     assert legal_force["active"] is False
     # This deliberately exposes the need for query perspective: ex-post legal
     # effect is not the same question as what was enacted/knowable in June 2023.
+
+
+def test_retroactive_effect_differs_by_official_source_perspective():
+    case = _case("reg2023-2773-retroactive-application")
+    for query in case["perspective_queries"]:
+        result = status_on_perspective(
+            case["assertions"],
+            dimension=query["dimension"],
+            subject_keys=set(query["subject_keys"]),
+            valid_date=query["valid_date"],
+            perspective=query["perspective"],
+            source_cutoff_date=query.get("source_cutoff_date"),
+            context=query.get("context", {}),
+        )
+        expected = query["expected"]
+        assert result["state"] == expected["state"], query["query_id"]
+        assert result["active"] == expected["active"], query["query_id"]
+
+
+def test_official_source_perspective_is_not_claimed_human_knowledge():
+    case = _case("reg2023-2773-retroactive-application")
+    result = status_on_perspective(
+        case["assertions"],
+        dimension="APPLICATION",
+        subject_keys={"ACT:32023R2773"},
+        valid_date="2023-06-01",
+        perspective="OFFICIAL_SOURCE_STATE_AS_OF",
+        source_cutoff_date="2023-06-01",
+    )
+    assert result["state"] == "NOT_ASSERTED_AS_OF_SOURCE_DATE"
+    assert result["active"] is None
+    assert result["later_assertions"][0]["assertion_id"] == "r2773-application-start"
+    assert result["later_assertions"][0]["official_source_available_from"] == "2023-12-14"
+
+
+def test_transition_regime_can_overlap_new_regulation_and_end_in_layers():
+    case = _case("mdr-overlapping-transition-and-partial-end")
+
+    new_law = status_on(
+        case["assertions"],
+        dimension="APPLICATION",
+        subject_keys={"ACT:32017R0745"},
+        on_date="2022-01-01",
+    )
+    legacy_transition = status_on(
+        case["assertions"],
+        dimension="TRANSITION",
+        subject_keys={"REGIME:MDR_LEGACY_DIRECTIVE_CONTINUITY"},
+        on_date="2022-01-01",
+    )
+    assert new_law["active"] is True
+    assert legacy_transition["active"] is True
+
+    narrow_derogation = status_on(
+        case["assertions"],
+        dimension="DEROGATION",
+        subject_keys={"REGIME:MDR_ART120_3_PLACEMENT_DEROGATION"},
+        on_date="2024-06-01",
+    )
+    broad_transition = status_on(
+        case["assertions"],
+        dimension="TRANSITION",
+        subject_keys={"REGIME:MDR_LEGACY_DIRECTIVE_CONTINUITY"},
+        on_date="2024-06-01",
+    )
+    assert narrow_derogation["active"] is False
+    assert broad_transition["active"] is True

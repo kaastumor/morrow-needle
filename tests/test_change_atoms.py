@@ -155,3 +155,15 @@ def test_dangling_exception_relation_is_rejected():
     assert validate_atom_set(atoms) == [
         "unknown relation target from reg794-art3-alt-channel-permission-v0.1: missing-primary-duty"
     ]
+
+
+def test_wrong_source_artifact_hash_blocks_verified_atom():
+    atom = deepcopy(FIXTURE["atoms"][0])
+    atom["source_spans"][0]["artifact_hash"] = "sha256:" + ("0" * 64)
+    errors = validate_atom(
+        atom,
+        mutations=MUTATIONS,
+        source_span_registry=SPANS,
+        temporal_assertions=TEMPORAL_ASSERTIONS,
+    )
+    assert any("source span artifact hash mismatch" in error for error in errors)

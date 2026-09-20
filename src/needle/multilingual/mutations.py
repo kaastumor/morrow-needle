@@ -7,18 +7,20 @@ def events_for_language(
     events: list[dict[str, Any]],
     language: str,
     *,
-    as_of_date: str | None = None,
+    source_cutoff_date: str | None = None,
 ) -> list[dict[str, Any]]:
-    """Return only events whose official expression scope includes language.
+    """Return correction sources officially available for one language.
 
-    A missing language is NO_ASSERTION, not evidence that the expression is
-    globally unaffected or correct.
+    source_cutoff_date is a source-availability cutoff, not a legal text-state
+    date. Corrigenda may be back-projected into earlier text states by official
+    consolidation. A missing language is NO_ASSERTION, not evidence that the
+    expression is globally unaffected or correct.
     """
     selected = []
     for event in events:
         if language not in event["expression_scope"]["languages"]:
             continue
-        if as_of_date is not None and event["event_date"] > as_of_date:
+        if source_cutoff_date is not None and event["event_date"] > source_cutoff_date:
             continue
         selected.append(event)
     return sorted(selected, key=lambda e: (e["event_date"], e["event_id"]))
@@ -32,7 +34,7 @@ def operation_ids_for_language(
 ) -> list[str]:
     return [
         operation["operation_id"]
-        for event in events_for_language(events, language, as_of_date=as_of_date)
+        for event in events_for_language(events, language, source_cutoff_date=source_cutoff_date)
         for operation in event["operations"]
     ]
 

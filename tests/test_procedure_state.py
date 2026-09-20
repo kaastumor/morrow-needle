@@ -114,3 +114,22 @@ def test_provisional_political_agreement_is_not_formal_adoption():
     assert d["PROCEDURE_OUTCOME"] == "PENDING"
     assert d["FORMAL_ACT_ADOPTION"] == "NOT_ADOPTED"
     assert d["FINAL_ACT_PUBLICATION"] == "NOT_PUBLISHED"
+
+
+def test_procedure_schema_rejects_cross_dimension_and_legal_effect_leakage():
+    validator = Draft202012Validator(SCHEMA)
+    base = _case("gdpr-ordinary-legislative")["events"][0]
+
+    bad_publication = {
+        **base,
+        "event_id":"bad-publication",
+        "effects":[{"dimension":"FINAL_ACT_PUBLICATION","value":"ADOPTED"}],
+    }
+    assert list(validator.iter_errors(bad_publication))
+
+    bad_legal_effect = {
+        **base,
+        "event_id":"bad-legal-effect",
+        "effects":[{"dimension":"APPLICATION","value":"APPLICABLE"}],
+    }
+    assert list(validator.iter_errors(bad_legal_effect))

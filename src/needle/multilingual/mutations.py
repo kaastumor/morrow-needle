@@ -30,7 +30,7 @@ def operation_ids_for_language(
     events: list[dict[str, Any]],
     language: str,
     *,
-    as_of_date: str | None = None,
+    source_cutoff_date: str | None = None,
 ) -> list[str]:
     return [
         operation["operation_id"]

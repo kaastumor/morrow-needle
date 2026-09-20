@@ -343,6 +343,50 @@
         "reason": "Test-only correction replaces a coarse legal locator with the exact live Cellar character span without mutating the original record."
       },
       "record_hash": "sha256:9932767a13ccd43c6ca5977d176dd58d9b7699c13ebd7544a1ac3d1291e5915b"
+    },
+    {
+      "record_id": "support-mutation-before-checkpoint",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T15:20:15Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "MUTATION",
+          "entity_id": "reg794-article3-live-verified-v0.1"
+        },
+        "source_observation_id": "src-reg794-20070119-eng",
+        "source_span": {
+          "locator": "Article 3 subtree",
+          "language": "ENG",
+          "text_hash": "sha256:d2fed56ff253de5abde15990eb87fe2bcfc65865496249849814553f485311d4",
+          "artifact_hash": "sha256:8d71b04b69b7b757e056c926f20676a355fe2bc5af22407858755efb256eb151"
+        },
+        "role": "BEFORE",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-diff-article3"
+      },
+      "record_hash": "sha256:f91f9760b14e6193d5ddf6fc42f49783bc08c61b7596a4701f423f4c9ba96f47"
+    },
+    {
+      "record_id": "support-mutation-after-checkpoint",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T15:20:16Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "MUTATION",
+          "entity_id": "reg794-article3-live-verified-v0.1"
+        },
+        "source_observation_id": "src-reg794-20080414-eng",
+        "source_span": {
+          "locator": "Article 3 subtree",
+          "language": "ENG",
+          "text_hash": "sha256:f36b625716e97e83be29fd99d3be128a2fe6b872cfa78c8df8f6f1b6fa2dbab9",
+          "artifact_hash": "sha256:ccf4e4e92d8191fb22685b0ac9062ef64a816a39c81455f445052a4ad03a68f1"
+        },
+        "role": "AFTER",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-diff-article3"
+      },
+      "record_hash": "sha256:a8679b19a1faf8a9599f57ca7b58a6c3c2d939cb75df3a9f17b2ac59384723a3"
     }
   ]
 }

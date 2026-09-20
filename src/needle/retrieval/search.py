@@ -1,0 +1,271 @@
+from __future__ import annotations
+
+from pathlib import Path
+from typing import Any
+
+from needle.retrieval.projection import (
+    build_thread_projection,
+    normalize_provision_path,
+)
+from needle.thread.composer import load_thread_sources
+
+
+_FILTER_FIELDS = {
+    "entity_kinds":"entity_ref.kind",
+    "act_ids":"act_ids",
+    "languages":"languages",
+    "event_ids":"event_ids",
+    "event_kinds":"event_kinds",
+    "legal_effects":"legal_effects",
+    "dimensions":"dimensions",
+    "mutation_operations":"mutation_operations",
+    "temporal_dimensions":"temporal_dimensions",
+    "lineage_scopes":"lineage_scopes",
+    "lineage_edge_types":"lineage_edge_types",
+    "verification_states":"verification_states",
+    "evidence_states":"evidence_states",
+}
+
+_KIND_PRIORITY = {
+    "CHANGE_ATOM":0,
+    "MUTATION":1,
+    "TEMPORAL_ASSERTION":2,
+    "LINEAGE_EDGE":3,
+    "THREAD_EVIDENCE":4,
+    "THREAD":5,
+}
+
+_FIELD_PRIORITY = {
+    "ENTITY_ID":0,
+    "THREAD_ID":1,
+    "ACT_ID":2,
+    "PROVISION_PATH":3,
+    "CLAIM":4,
+    "RULE_STATEMENT":5,
+    "SOURCE_EXPRESSION":6,
+}
+
+_QUALITY_PRIORITY = {"EXACT":0, "PREFIX":1, "SUBSTRING":2}
+
+
+def _document_values(document: dict[str, Any], field: str) -> list[str]:
+    if field == "entity_ref.kind":
+        return [document["entity_ref"]["kind"]]
+    value = document.get(field, [])
+    if isinstance(value, list):
+        return [str(item) for item in value]
+    return [str(value)]
+
+
+def _structured_reasons(
+    document: dict[str, Any],
+    filters: dict[str, Any],
+) -> list[dict[str, Any]] | None:
+    reasons: list[dict[str, Any]] = []
+
+    for query_field, doc_field in _FILTER_FIELDS.items():
+        wanted = filters.get(query_field, [])
+        if not wanted:
+            continue
+        actual = _document_values(document, doc_field)
+        matched = [value for value in wanted if value in actual]
+        if not matched:
+            return None
+        for value in matched:
+            reasons.append({
+                "kind":"STRUCTURED_FILTER",
+                "field":query_field,
+                "query_value":value,
+                "matched_values":[value],
+                "match_quality":None,
+            })
+
+    wanted_paths = filters.get("provision_path_prefixes", [])
+    if wanted_paths:
+        actual = document["provision_paths"]
+        matched_pairs = []
+        for raw in wanted_paths:
+            wanted = normalize_provision_path(raw)
+            hits = [
+                path for path in actual
+                if path == wanted or path.startswith(wanted + " >")
+            ]
+            if hits:
+                matched_pairs.append((raw, hits))
+        if not matched_pairs:
+            return None
+        for raw, hits in matched_pairs:
+            reasons.append({
+                "kind":"STRUCTURED_FILTER",
+                "field":"provision_path_prefixes",
+                "query_value":raw,
+                "matched_values":hits,
+                "match_quality":None,
+            })
+
+    if "source_mode_closed" in filters:
+        wanted = filters["source_mode_closed"]
+        actual = document["source_mode"]["closed"]
+        if actual is not wanted:
+            return None
+        reasons.append({
+            "kind":"STRUCTURED_FILTER",
+            "field":"source_mode_closed",
+            "query_value":wanted,
+            "matched_values":[actual],
+            "match_quality":None,
+        })
+
+    return reasons
+
+
+def _text_match(
+    lexical: list[dict[str, str]],
+    term: str,
+) -> dict[str, Any] | None:
+    wanted = term.casefold().strip()
+    hits: list[tuple[int, int, str, str, str]] = []
+    for item in lexical:
+        candidate = item["value"].casefold()
+        if wanted not in candidate:
+            continue
+        if candidate == wanted:
+            quality = "EXACT"
+        elif candidate.startswith(wanted):
+            quality = "PREFIX"
+        else:
+            quality = "SUBSTRING"
+        hits.append((
+            _QUALITY_PRIORITY[quality],
+            _FIELD_PRIORITY.get(item["field"], 50),
+            item["field"],
+            item["value"],
+            quality,
+        ))
+    if not hits:
+        return None
+
+    hits.sort()
+    best_quality = hits[0][4]
+    best_fields = sorted({hit[2] for hit in hits if hit[4] == best_quality})
+    best_values = sorted({hit[3] for hit in hits if hit[4] == best_quality})
+    return {
+        "kind":"LEXICAL_MATCH",
+        "field":"|".join(best_fields),
+        "query_value":term,
+        "matched_values":best_values,
+        "match_quality":best_quality,
+    }
+
+
+def _text_reasons(
+    document: dict[str, Any],
+    text_terms: list[str],
+    text_mode: str,
+) -> list[dict[str, Any]] | None:
+    if not text_terms:
+        return []
+    matches = [
+        _text_match(document["lexical"], term)
+        for term in text_terms
+    ]
+    if text_mode == "ALL" and any(match is None for match in matches):
+        return None
+    if text_mode == "ANY" and all(match is None for match in matches):
+        return None
+    return [match for match in matches if match is not None]
+
+
+def _hydrate(
+    *,
+    thread: dict[str, Any],
+    sources: dict[str, dict[str, Any]],
+    document: dict[str, Any],
+) -> dict[str, Any]:
+    ref = document["entity_ref"]
+    if ref["kind"] == "THREAD":
+        return thread
+    source_key = document["source_key"]
+    return sources[source_key]["index"][ref["entity_id"]]
+
+
+def _ordering_key(result: dict[str, Any]) -> tuple[Any, ...]:
+    lexical = [
+        reason for reason in result["match_reasons"]
+        if reason["kind"] == "LEXICAL_MATCH"
+    ]
+    best_quality = min(
+        (_QUALITY_PRIORITY[reason["match_quality"]] for reason in lexical),
+        default=9,
+    )
+    best_field = min(
+        (
+            min(
+                _FIELD_PRIORITY.get(field, 50)
+                for field in reason["field"].split("|")
+            )
+            for reason in lexical
+        ),
+        default=50,
+    )
+    structured_count = sum(
+        reason["kind"] == "STRUCTURED_FILTER"
+        for reason in result["match_reasons"]
+    )
+    return (
+        best_quality,
+        best_field,
+        -structured_count,
+        _KIND_PRIORITY[result["entity_ref"]["kind"]],
+        result["entity_ref"]["entity_id"],
+    )
+
+
+def search_thread(
+    thread: dict[str, Any],
+    query: dict[str, Any],
+    *,
+    root: Path | str = Path("."),
+) -> dict[str, Any]:
+    """Search one Thread projection without creating a second legal truth store.
+
+    List filters are OR within one field and AND across fields.
+    Lexical matching is deterministic case-insensitive substring matching.
+    """
+    root = Path(root)
+    projection = build_thread_projection(thread, root=root)
+    sources = load_thread_sources(thread, root=root)
+
+    filters = query.get("filters", {})
+    text_terms = query.get("text_terms", [])
+    text_mode = query.get("text_mode", "ALL")
+
+    results = []
+    for document in projection["documents"]:
+        structured = _structured_reasons(document, filters)
+        if structured is None:
+            continue
+        lexical = _text_reasons(document, text_terms, text_mode)
+        if lexical is None:
+            continue
+
+        results.append({
+            "entity_ref":document["entity_ref"],
+            "thread_id":document["thread_id"],
+            "event_ids":document["event_ids"],
+            "match_reasons":structured + lexical,
+            "source_mode":document["source_mode"],
+            "canonical_entity":_hydrate(
+                thread=thread,
+                sources=sources,
+                document=document,
+            ),
+        })
+
+    results.sort(key=_ordering_key)
+    return {
+        "schema_version":"retrieval-response-v0.1",
+        "query_id":query["query_id"],
+        "projection_fingerprint":projection["projection_fingerprint"],
+        "results":results,
+    }

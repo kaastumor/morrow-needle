@@ -1,0 +1,35 @@
+name: Source Anomaly derived view
+
+on:
+  push:
+    paths:
+      - "src/needle/analytics/source_anomaly.py"
+      - "schemas/source-anomaly-*.schema.json"
+      - "fixtures/analytics/source-anomaly-first-cohort-v0.1.json"
+      - "fixtures/audit/reg2742-money-corrigendum-source-v0.1.json"
+      - "fixtures/audit/dir2008-7-split-temporal-source-v0.1.json"
+      - "fixtures/audit/reg905-2025-formex-publication-duplication-v0.1.json"
+      - "tests/test_source_anomaly_view.py"
+      - "scripts/build_source_anomaly_view.py"
+      - ".github/workflows/source-anomaly-view.yml"
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install project
+        run: python -m pip install -e ".[test]"
+      - name: Test Source Anomaly contract
+        run: python -m pytest -q tests/test_source_anomaly_view.py
+      - name: Build Source Anomaly preview
+        run: python scripts/build_source_anomaly_view.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-anomaly-first-cohort
+          path: artifacts/source-anomaly/

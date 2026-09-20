@@ -261,7 +261,7 @@ def inspect_zip_payload(body: bytes) -> Dict[str, Any]:
                 visible = re.sub(r"<\\?.*?\\?>", "", text, flags=re.S)
                 visible = re.sub(r"<[^>]+>", " ", visible)
                 visible = re.sub(r"\\s+", " ", visible).strip()
-                refs = sorted(set(re.findall(r'[^"\\'<>\\s]+\\.(?:tif|tiff|png|jpg|jpeg|gif)', text, flags=re.I)))
+                refs = sorted(set(re.findall(r"[^\\\"'<>\\s]+\\.(?:tif|tiff|png|jpg|jpeg|gif)", text, flags=re.I)))
 
                 result["xml_entries"].append({
                     "name": name,

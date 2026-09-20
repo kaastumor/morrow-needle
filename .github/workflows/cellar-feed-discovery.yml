@@ -1,12 +1,6 @@
 name: Discover Cellar feed anchor
 
 on:
-  push:
-    paths:
-      - "scripts/discover_cellar_feed_anchor.py"
-      - "src/needle/updates/cellar_feed.py"
-      - ".github/workflows/cellar-feed-discovery.yml"
-      - "pyproject.toml"
   workflow_dispatch:
 
 concurrency:

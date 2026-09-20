@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed
+ xmlns:notifReq="http://publications.europa.eu/atom/notificationRequest"
+ xmlns:notifEntry="http://publications.europa.eu/atom/notificationEntry"
+ xmlns="http://www.w3.org/2005/Atom">
+ <title>IngestionNotificationMessagesResponse</title>
+ <id>http://publications.europa.eu/webapi/notification/ingestion</id>
+ <updated>2026-09-15T00:05:50.647+02:00</updated>
+ <notifReq:startDate>2026-09-15T00:05:50.000+02:00</notifReq:startDate>
+ <notifReq:endDate>2026-09-15T00:05:51.999+02:00</notifReq:endDate>
+ <notifReq:page>1</notifReq:page>
+ <notifReq:moreEntries>false</notifReq:moreEntries>
+ <entry>
+  <title>$item.title</title>
+  <summary>$item.entrySummary</summary>
+  <id>${item.cellarUri}_2026-09-15T00:05:50.647+02:00</id>
+  <updated>2026-09-15T00:05:50.647+02:00</updated>
+  <notifEntry:cellarId>cellar:55b240bf-477b-11f0-85ba-01aa75ed71a1</notifEntry:cellarId>
+  <notifEntry:rootCellarId>cellar:55b240bf-477b-11f0-85ba-01aa75ed71a1</notifEntry:rootCellarId>
+  <notifEntry:type>update</notifEntry:type>
+  <notifEntry:priority>BULK</notifEntry:priority>
+  <notifEntry:wemiClass>WORK</notifEntry:wemiClass>
+  <notifEntry:classes>
+   <notifEntry:class>http://publications.europa.eu/ontology/cdm#evolutive_work</notifEntry:class>
+   <notifEntry:class>http://publications.europa.eu/ontology/cdm#serial_work</notifEntry:class>
+   <notifEntry:class>http://publications.europa.eu/ontology/cdm#resource_legal</notifEntry:class>
+   <notifEntry:class>http://publications.europa.eu/ontology/cdm#work</notifEntry:class>
+  </notifEntry:classes>
+  <notifEntry:identifiers>
+   <notifEntry:identifier>celex:62024CC0286</notifEntry:identifier>
+   <notifEntry:identifier>ecli:ECLI%3AEU%3AC%3A2025%3A436</notifEntry:identifier>
+  </notifEntry:identifiers>
+ </entry>
+</feed>

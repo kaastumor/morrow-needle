@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://morrow-needle.invalid/schemas/change-atom-v0.2.json",
   "title": "Morrow // Needle Change Atom v0.2",
-  "description": "Stress-tested draft representation of an independently defensible legal change.",
+  "description": "Historical stress-tested draft. Superseded because its legal_state.force_state collapsed orthogonal P0-E/P0-H dimensions.",
   "type": "object",
   "required": [
     "atom_id",
@@ -16,21 +16,74 @@
     "provenance"
   ],
   "properties": {
-    "atom_id": { "type": "string" },
-    "dossier_id": { "type": ["string", "null"] },
-    "act_id": { "type": ["string", "null"] },
-    "provision_ids": { "type": "array", "items": { "type": "string" } },
-    "subject": { "type": ["string", "null"] },
+    "atom_id": {
+      "type": "string"
+    },
+    "dossier_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "act_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "provision_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "subject": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
     "legal_effect": {
       "type": "string",
-      "enum": ["DUTY","RIGHT","PROHIBITION","PERMISSION","POWER","REMEDY","DEFINITION","LEGAL_STATUS","NONE"]
+      "enum": [
+        "DUTY",
+        "RIGHT",
+        "PROHIBITION",
+        "PERMISSION",
+        "POWER",
+        "REMEDY",
+        "DEFINITION",
+        "LEGAL_STATUS",
+        "NONE"
+      ]
     },
     "dimensions": {
       "type": "array",
       "uniqueItems": true,
       "items": {
         "type": "string",
-        "enum": ["PROCEDURE","SCOPE","EXCEPTION","DEROGATION","TIME","DEADLINE","TRANSITION","MONEY","THRESHOLD","REPORTING","ENFORCEMENT","SUPERVISION","DELEGATION","DIGITAL_CHANNEL","ANNEX","CLASSIFICATION","CROSS_REFERENCE","VALIDITY_CONDITION","IDENTIFIER","OTHER"]
+        "enum": [
+          "PROCEDURE",
+          "SCOPE",
+          "EXCEPTION",
+          "DEROGATION",
+          "TIME",
+          "DEADLINE",
+          "TRANSITION",
+          "MONEY",
+          "THRESHOLD",
+          "REPORTING",
+          "ENFORCEMENT",
+          "SUPERVISION",
+          "DELEGATION",
+          "DIGITAL_CHANNEL",
+          "ANNEX",
+          "CLASSIFICATION",
+          "CROSS_REFERENCE",
+          "VALIDITY_CONDITION",
+          "IDENTIFIER",
+          "OTHER"
+        ]
       }
     },
     "textual_operations": {
@@ -39,31 +92,88 @@
       "uniqueItems": true,
       "items": {
         "type": "string",
-        "enum": ["INSERT","DELETE","REPLACE","MOVE","RENUMBER","SPLIT","MERGE","CORRECT","REPEAL","REVIVE","EXTEND","ANNEX_REPLACE","CROSS_REFERENCE_UPDATE"]
+        "enum": [
+          "INSERT",
+          "DELETE",
+          "REPLACE",
+          "MOVE",
+          "RENUMBER",
+          "SPLIT",
+          "MERGE",
+          "CORRECT",
+          "REPEAL",
+          "REVIVE",
+          "EXTEND",
+          "ANNEX_REPLACE",
+          "CROSS_REFERENCE_UPDATE"
+        ]
       }
     },
-    "before_state": { "type": ["object", "null"] },
-    "after_state": { "type": ["object", "null"] },
+    "before_state": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "after_state": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
     "comparator": {
       "type": "object",
-      "required": ["kind"],
+      "required": [
+        "kind"
+      ],
       "properties": {
         "kind": {
           "type": "string",
-          "enum": ["PREVIOUS_LEGAL_STATE","PREVIOUS_DRAFT","COMMISSION_PROPOSAL","PARLIAMENT_POSITION","COUNCIL_POSITION","CONSOLIDATED_CHECKPOINT","OTHER"]
+          "enum": [
+            "PREVIOUS_LEGAL_STATE",
+            "PREVIOUS_DRAFT",
+            "COMMISSION_PROPOSAL",
+            "PARLIAMENT_POSITION",
+            "COUNCIL_POSITION",
+            "CONSOLIDATED_CHECKPOINT",
+            "OTHER"
+          ]
         },
-        "reference": { "type": ["string", "null"] }
+        "reference": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       },
       "additionalProperties": false
     },
     "legal_state": {
       "type": "object",
-      "required": ["force_state"],
+      "required": [
+        "force_state"
+      ],
       "properties": {
-        "procedure_state": { "type": ["string", "null"] },
+        "procedure_state": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "force_state": {
           "type": "string",
-          "enum": ["NOT_ADOPTED","ADOPTED_NOT_PUBLISHED","PUBLISHED_NOT_IN_FORCE","IN_FORCE_NOT_APPLICABLE","APPLICABLE","PARTIALLY_APPLICABLE","EXPIRED","REPEALED","PARTIALLY_REPEALED","UNKNOWN"]
+          "enum": [
+            "NOT_ADOPTED",
+            "ADOPTED_NOT_PUBLISHED",
+            "PUBLISHED_NOT_IN_FORCE",
+            "IN_FORCE_NOT_APPLICABLE",
+            "APPLICABLE",
+            "PARTIALLY_APPLICABLE",
+            "EXPIRED",
+            "REPEALED",
+            "PARTIALLY_REPEALED",
+            "UNKNOWN"
+          ]
         }
       },
       "additionalProperties": false
@@ -71,16 +181,67 @@
     "temporal_effect": {
       "type": "object",
       "properties": {
-        "source_document_date": { "type": ["string", "null"], "format": "date" },
-        "source_publication_date": { "type": ["string", "null"], "format": "date" },
-        "source_entry_into_force": { "type": ["string", "null"], "format": "date" },
-        "text_state_valid_from": { "type": ["string", "null"], "format": "date" },
-        "text_state_valid_to": { "type": ["string", "null"], "format": "date" },
-        "rule_application_start": { "type": ["string", "null"], "format": "date" },
-        "rule_application_end": { "type": ["string", "null"], "format": "date" },
+        "source_document_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "source_publication_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "source_entry_into_force": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "text_state_valid_from": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "text_state_valid_to": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "rule_application_start": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "rule_application_end": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
         "date_derivation": {
-          "type": ["string", "null"],
-          "enum": [null,"EXPLICIT_SOURCE","OFFICIAL_RELATION_METADATA","DERIVED","UNKNOWN"]
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            null,
+            "EXPLICIT_SOURCE",
+            "OFFICIAL_RELATION_METADATA",
+            "DERIVED",
+            "UNKNOWN"
+          ]
         }
       },
       "additionalProperties": false
@@ -89,12 +250,24 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["label","basis"],
+        "required": [
+          "label",
+          "basis"
+        ],
         "properties": {
-          "label": { "type": "string" },
+          "label": {
+            "type": "string"
+          },
           "basis": {
             "type": "string",
-            "enum": ["DIRECT","DERIVED","CONTEXTUAL","ATTRIBUTED","INTERPRETIVE","UNRESOLVED"]
+            "enum": [
+              "DIRECT",
+              "DERIVED",
+              "CONTEXTUAL",
+              "ATTRIBUTED",
+              "INTERPRETIVE",
+              "UNRESOLVED"
+            ]
           }
         },
         "additionalProperties": false
@@ -102,25 +275,65 @@
     },
     "evidence_state": {
       "type": "string",
-      "enum": ["DIRECT","DERIVED","CONTEXTUAL","ATTRIBUTED","INTERPRETIVE","UNRESOLVED"]
+      "enum": [
+        "DIRECT",
+        "DERIVED",
+        "CONTEXTUAL",
+        "ATTRIBUTED",
+        "INTERPRETIVE",
+        "UNRESOLVED"
+      ]
     },
     "source_refs": {
       "type": "array",
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["source_type","identifier","role"],
+        "required": [
+          "source_type",
+          "identifier",
+          "role"
+        ],
         "properties": {
           "source_type": {
             "type": "string",
-            "enum": ["OJ","EUR_LEX","CELLAR","ELI","OEIL","COUNCIL","COMMISSION","OTHER_OFFICIAL"]
+            "enum": [
+              "OJ",
+              "EUR_LEX",
+              "CELLAR",
+              "ELI",
+              "OEIL",
+              "COUNCIL",
+              "COMMISSION",
+              "OTHER_OFFICIAL"
+            ]
           },
-          "identifier": { "type": "string" },
-          "locator": { "type": ["string","null"] },
-          "language": { "type": ["string","null"] },
+          "identifier": {
+            "type": "string"
+          },
+          "locator": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "language": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
           "role": {
             "type": "string",
-            "enum": ["CAUSE","BEFORE","AFTER","CORROBORATION","CONTEXT","STATUS","TEMPORAL"]
+            "enum": [
+              "CAUSE",
+              "BEFORE",
+              "AFTER",
+              "CORROBORATION",
+              "CONTEXT",
+              "STATUS",
+              "TEMPORAL"
+            ]
           }
         },
         "additionalProperties": false
@@ -128,17 +341,46 @@
     },
     "provenance": {
       "type": "object",
-      "required": ["observed_at"],
+      "required": [
+        "observed_at"
+      ],
       "properties": {
-        "observed_at": { "type": "string", "format": "date-time" },
-        "raw_artifact_hashes": { "type": "array", "items": { "type": "string" } },
-        "extractor_version": { "type": ["string","null"] },
-        "verifier_version": { "type": ["string","null"] },
-        "human_review": { "type": "boolean", "default": false }
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "raw_artifact_hashes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "extractor_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verifier_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "human_review": {
+          "type": "boolean",
+          "default": false
+        }
       },
       "additionalProperties": false
     },
-    "notes": { "type": ["string","null"] }
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
   },
-  "additionalProperties": false
+  "additionalProperties": false,
+  "$comment": "RETAINED PRECURSOR. Superseded by change-atom-v0.3. v0.2 collapses procedure/publication/force/application state and must not be extended."
 }

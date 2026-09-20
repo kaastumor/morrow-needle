@@ -651,3 +651,37 @@ def test_identifier_scheme_and_value_are_matched_as_one_typed_pair():
     )
     assert response["results"] == []
     assert response["abstentions"] == []
+
+
+def test_broad_sani_discovery_is_not_the_same_as_exact_rule_status():
+    broad = search_thread(
+        THREAD,
+        query(
+            "broad-sani-on-2025-boundary",
+            text_terms=["SANI"],
+            filters={"entity_kinds":["CHANGE_ATOM"]},
+            temporal=_application_on("2025-07-03"),
+        ),
+    )
+    assert "reg794-art3-sani-duty-v0.1" not in ids(broad)
+    assert "reg794-art3-2025-crossref-exception-ripple-v0.1" in ids(broad)
+    assert "reg794-art3-alt-channel-permission-v0.1" in ids(broad)
+
+    exact = search_thread(
+        THREAD,
+        query(
+            "exact-sani-on-2025-boundary",
+            filters={
+                "entity_kinds":["CHANGE_ATOM"],
+                "entity_ids":["reg794-art3-sani-duty-v0.1"],
+            },
+            temporal=_application_on("2025-07-03"),
+        ),
+    )
+    assert exact["results"] == []
+    assert len(exact["abstentions"]) == 1
+    assert exact["abstentions"][0]["entity_ref"] == {
+        "kind":"CHANGE_ATOM",
+        "entity_id":"reg794-art3-sani-duty-v0.1",
+    }
+    assert exact["abstentions"][0]["reason"] == "TEMPORAL_NOT_ACTIVE"

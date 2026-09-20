@@ -12,6 +12,7 @@ on:
       - "tests/test_gold_output_matcher.py"
       - "tests/test_gold_foundation_fixture.py"
       - ".github/workflows/gold-corpus.yml"
+      - "pyproject.toml"
   pull_request:
     paths:
       - "fixtures/gold/**"
@@ -23,6 +24,7 @@ on:
       - "tests/test_gold_output_matcher.py"
       - "tests/test_gold_foundation_fixture.py"
       - ".github/workflows/gold-corpus.yml"
+      - "pyproject.toml"
   workflow_dispatch:
 
 jobs:
@@ -34,8 +36,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Install test dependencies
-        run: python -m pip install "jsonschema>=4.23,<5" "pytest>=8,<9"
+      - name: Install project and test dependencies
+        run: python -m pip install -e ".[test]"
       - name: Run Gold Corpus contract tests
         run: python -m pytest -q tests/test_gold_corpus_contract.py tests/test_gold_output_matcher.py tests/test_gold_foundation_fixture.py
       - name: Validate all Gold Corpus fixtures

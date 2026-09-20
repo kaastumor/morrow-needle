@@ -1,0 +1,308 @@
+{
+  "fixture_id": "reg794-article3-thread-lineage-v0.1",
+  "purpose": "Thread-specific structural and proposition-level lineage for Regulation 794/2004 Article 3. Structural continuity and rule continuity are recorded as separate claims.",
+  "subject_act": {
+    "celex": "32004R0794",
+    "title": "Commission Regulation (EC) No 794/2004"
+  },
+  "edges": [
+    {
+      "edge_id": "reg794-art3-pre2008-replaced-by-2008",
+      "claim_status": "ASSERTED",
+      "assertion_scope": "STRUCTURAL_LINEAGE",
+      "edge_type": "REPLACED_BY",
+      "rule_anchor": null,
+      "sources": [
+        {
+          "act_id": "CELEX:32004R0794",
+          "eli": null,
+          "version": "02004R0794-20070119",
+          "language": "ENG",
+          "structural_path": "Article 3",
+          "text_hash": "d2fed56ff253de5abde15990eb87fe2bcfc65865496249849814553f485311d4"
+        }
+      ],
+      "targets": [
+        {
+          "act_id": "CELEX:32004R0794",
+          "eli": null,
+          "version": "02004R0794-20080414",
+          "language": "ENG",
+          "structural_path": "Article 3",
+          "text_hash": "f36b625716e97e83be29fd99d3be128a2fe6b872cfa78c8df8f6f1b6fa2dbab9"
+        }
+      ],
+      "evidence_basis": [
+        "OFFICIAL_AMENDMENT_INSTRUCTION",
+        "AUTHENTIC_TEXT_COMPARISON"
+      ],
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32008R0271",
+          "locator": "L_2008082EN.01000101.xml#normalized-chars:6924-6962",
+          "language": "ENG",
+          "role": "LINEAGE_EVIDENCE"
+        },
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:02004R0794-20070119",
+          "locator": "Article 3 subtree",
+          "language": "ENG",
+          "role": "SOURCE_TEXT"
+        },
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:02004R0794-20080414",
+          "locator": "Article 3 subtree",
+          "language": "ENG",
+          "role": "TARGET_TEXT"
+        }
+      ],
+      "conflicting_source_refs": [],
+      "confidence": {
+        "level": "HIGH",
+        "rationale": "The authentic 2008 act explicitly replaces Article 3, and official before/after checkpoints independently establish the replaced provision states.",
+        "conflict_state": "NO_KNOWN_CONFLICT"
+      },
+      "notes": "This structural replacement does not by itself assert continuity of every proposition within Article 3."
+    },
+    {
+      "edge_id": "reg794-art3-p3-pre2025-replaced-by-2025",
+      "claim_status": "ASSERTED",
+      "assertion_scope": "STRUCTURAL_LINEAGE",
+      "edge_type": "REPLACED_BY",
+      "rule_anchor": null,
+      "sources": [
+        {
+          "act_id": "CELEX:32004R0794",
+          "eli": null,
+          "version": "02004R0794-20161222",
+          "language": "ENG",
+          "structural_path": "Article 3(3)",
+          "text_hash": "2fad3273b6ddb7eead8595e94165d02a30f4a149e67dc106a9c3df220b081452"
+        }
+      ],
+      "targets": [
+        {
+          "act_id": "CELEX:32004R0794",
+          "eli": null,
+          "version": "02004R0794-20250703",
+          "language": "ENG",
+          "structural_path": "Article 3(3)",
+          "text_hash": "144a32004977b741ffa02847cffb05c981388243c6dab54e749ee0e71152ec19"
+        }
+      ],
+      "evidence_basis": [
+        "OFFICIAL_AMENDMENT_INSTRUCTION",
+        "AUTHENTIC_TEXT_COMPARISON"
+      ],
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32025R0905",
+          "locator": "L_202500905EN.000101.fmx.xml#normalized-chars:10410-10461",
+          "language": "ENG",
+          "role": "LINEAGE_EVIDENCE"
+        },
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:02004R0794-20161222",
+          "locator": "Article 3(3) subtree",
+          "language": "ENG",
+          "role": "SOURCE_TEXT"
+        },
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:02004R0794-20250703",
+          "locator": "Article 3(3) subtree",
+          "language": "ENG",
+          "role": "TARGET_TEXT"
+        }
+      ],
+      "conflicting_source_refs": [],
+      "confidence": {
+        "level": "HIGH",
+        "rationale": "The authentic 2025 act explicitly replaces Article 3(3), while the official checkpoints establish both immutable paragraph states.",
+        "conflict_state": "NO_KNOWN_CONFLICT"
+      },
+      "notes": "Paragraph identity is structural; proposition-level continuity is represented by separate RULE_LINEAGE edges."
+    },
+    {
+      "edge_id": "reg794-art3-parent-continues-through-2025-p3-replacement",
+      "claim_status": "ASSERTED",
+      "assertion_scope": "STRUCTURAL_LINEAGE",
+      "edge_type": "CONTINUES_AS",
+      "rule_anchor": null,
+      "sources": [
+        {
+          "act_id": "CELEX:32004R0794",
+          "eli": null,
+          "version": "02004R0794-20161222",
+          "language": "ENG",
+          "structural_path": "Article 3",
+          "text_hash": null
+        }
+      ],
+      "targets": [
+        {
+          "act_id": "CELEX:32004R0794",
+          "eli": null,
+          "version": "02004R0794-20250703",
+          "language": "ENG",
+          "structural_path": "Article 3",
+          "text_hash": null
+        }
+      ],
+      "evidence_basis": [
+        "OFFICIAL_AMENDMENT_INSTRUCTION"
+      ],
+      "evidence_state": "DERIVED",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32025R0905",
+          "locator": "Article 1(3): Article 3, paragraph 3 is replaced",
+          "language": "ENG",
+          "role": "LINEAGE_EVIDENCE"
+        }
+      ],
+      "conflicting_source_refs": [],
+      "confidence": {
+        "level": "HIGH",
+        "rationale": "The authentic amendment operates on paragraph 3 within Article 3 rather than replacing or renumbering the parent Article.",
+        "conflict_state": "NO_KNOWN_CONFLICT"
+      },
+      "notes": "No semantic continuity is inferred from this parent structural edge."
+    },
+    {
+      "edge_id": "reg794-art3-notification-channel-rule-2008-to-2025",
+      "claim_status": "ASSERTED",
+      "assertion_scope": "RULE_LINEAGE",
+      "edge_type": "RULE_CONTINUES",
+      "rule_anchor": {
+        "rule_id": "RULE:32004R0794:ARTICLE3_3:NOTIFICATION_ELECTRONIC_CHANNEL",
+        "source_span": "L_2008082EN.01000101.xml#normalized-chars:7414-7551",
+        "target_span": "L_202500905EN.000101.fmx.xml#normalized-chars:10464-10568",
+        "statement": "Notifications remain subject to a mandatory electronic submission channel, while the 2025 replacement changes the channel description from named SANI to the electronic application designated by the Commission."
+      },
+      "sources": [
+        {
+          "act_id": "CELEX:32004R0794",
+          "eli": null,
+          "version": "post-32008R0271",
+          "language": "ENG",
+          "structural_path": "Article 3(3)",
+          "text_hash": null
+        }
+      ],
+      "targets": [
+        {
+          "act_id": "CELEX:32004R0794",
+          "eli": null,
+          "version": "post-32025R0905",
+          "language": "ENG",
+          "structural_path": "Article 3(3)",
+          "text_hash": null
+        }
+      ],
+      "evidence_basis": [
+        "OFFICIAL_AMENDMENT_INSTRUCTION",
+        "AUTHENTIC_TEXT_COMPARISON"
+      ],
+      "evidence_state": "INTERPRETIVE",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32008R0271",
+          "locator": "L_2008082EN.01000101.xml#normalized-chars:7414-7551",
+          "language": "ENG",
+          "role": "SOURCE_TEXT"
+        },
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32025R0905",
+          "locator": "L_202500905EN.000101.fmx.xml#normalized-chars:10410-10568",
+          "language": "ENG",
+          "role": "TARGET_TEXT"
+        }
+      ],
+      "conflicting_source_refs": [],
+      "confidence": {
+        "level": "MEDIUM",
+        "rationale": "Both authentic texts independently establish mandatory electronic notification channels and the 2025 act explicitly replaces the same paragraph, but proposition-level continuity remains a legal-semantic interpretation rather than a structural identity fact.",
+        "conflict_state": "NO_KNOWN_CONFLICT"
+      },
+      "notes": "This edge does not claim that SANI and the later designated application are technically identical systems."
+    },
+    {
+      "edge_id": "reg794-art3-correspondence-channel-rule-2008-to-2025",
+      "claim_status": "ASSERTED",
+      "assertion_scope": "RULE_LINEAGE",
+      "edge_type": "RULE_CONTINUES",
+      "rule_anchor": {
+        "rule_id": "RULE:32004R0794:ARTICLE3_3:CORRESPONDENCE_ELECTRONIC_CHANNEL",
+        "source_span": "L_2008082EN.01000101.xml#normalized-chars:7551-7702",
+        "target_span": "L_202500905EN.000101.fmx.xml#normalized-chars:10568-10713",
+        "statement": "Correspondence connected with a notification remains subject to a mandatory secured electronic channel, while the 2025 replacement changes the description from named PKI to the secured electronic system designated by the Commission."
+      },
+      "sources": [
+        {
+          "act_id": "CELEX:32004R0794",
+          "eli": null,
+          "version": "post-32008R0271",
+          "language": "ENG",
+          "structural_path": "Article 3(3)",
+          "text_hash": null
+        }
+      ],
+      "targets": [
+        {
+          "act_id": "CELEX:32004R0794",
+          "eli": null,
+          "version": "post-32025R0905",
+          "language": "ENG",
+          "structural_path": "Article 3(3)",
+          "text_hash": null
+        }
+      ],
+      "evidence_basis": [
+        "OFFICIAL_AMENDMENT_INSTRUCTION",
+        "AUTHENTIC_TEXT_COMPARISON"
+      ],
+      "evidence_state": "INTERPRETIVE",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32008R0271",
+          "locator": "L_2008082EN.01000101.xml#normalized-chars:7551-7702",
+          "language": "ENG",
+          "role": "SOURCE_TEXT"
+        },
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32025R0905",
+          "locator": "L_202500905EN.000101.fmx.xml#normalized-chars:10410-10713",
+          "language": "ENG",
+          "role": "TARGET_TEXT"
+        }
+      ],
+      "conflicting_source_refs": [],
+      "confidence": {
+        "level": "MEDIUM",
+        "rationale": "The authentic 2008 and 2025 texts preserve a mandatory electronic correspondence-channel proposition inside the explicitly replaced paragraph, but semantic continuity is intentionally kept distinct from structural continuity.",
+        "conflict_state": "NO_KNOWN_CONFLICT"
+      },
+      "notes": "This edge does not claim PKI and the later secured electronic system are technically identical."
+    }
+  ],
+  "forbidden_inferences": [
+    "Do not infer RULE_LINEAGE from a structural edge alone.",
+    "Do not treat SANI and the 2025 electronic application as technically identical merely because the notification-channel rule continues.",
+    "Do not treat PKI and the 2025 secured electronic system as technically identical merely because the correspondence-channel rule continues.",
+    "Do not apply the SANI-specific 1 July 2008 qualifier to the PKI correspondence sentence without separate temporal evidence."
+  ],
+  "status": "OFFICIAL_EVIDENCE_CAPTURED"
+}

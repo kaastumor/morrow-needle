@@ -12,6 +12,7 @@ from collections import Counter
 
 # Official Cellar dissemination resource endpoint documented by the Publications Office.
 BASE = "https://publications.europa.eu/resource/celex/{celex}"
+SPARQL_ENDPOINT = "https://publications.europa.eu/webapi/rdf/sparql"
 
 PROBES = [
     {
@@ -233,12 +234,69 @@ def summarize_response(r: requests.Response) -> Dict[str, Any]:
 
     return summary
 
+def sparql_inventory(celex: str, language: str = "ENG") -> Dict[str, Any]:
+    query = f"""
+PREFIX cdm: <http://publications.europa.eu/ontology/cdm#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX purl: <http://purl.org/dc/elements/1.1/>
+
+SELECT DISTINCT ?work ?expr ?manif ?langCode (str(?format) AS ?format) ?item
+WHERE {{
+  ?work owl:sameAs <http://publications.europa.eu/resource/celex/{celex}> .
+  ?expr cdm:expression_belongs_to_work ?work ;
+        cdm:expression_uses_language ?lang .
+  ?lang purl:identifier ?langCode .
+  ?manif cdm:manifestation_manifests_expression ?expr ;
+         cdm:manifestation_type ?format .
+  ?item cdm:item_belongs_to_manifestation ?manif .
+  FILTER(str(?langCode)="{language}")
+}}
+ORDER BY ?format ?manif ?item
+LIMIT 5000
+"""
+    try:
+        r = requests.get(
+            SPARQL_ENDPOINT,
+            params={"query": query, "format": "application/sparql-results+json"},
+            headers={
+                "Accept": "application/sparql-results+json",
+                "User-Agent": "Morrow-Needle-Source-Probe/0.1 (+https://github.com/kaastumor/morrow-needle)",
+            },
+            timeout=90,
+        )
+        result = {
+            "status": r.status_code,
+            "content_type": r.headers.get("content-type"),
+            "bytes": len(r.content),
+            "sha256": hashlib.sha256(r.content).hexdigest(),
+        }
+        if r.status_code == 200:
+            payload = r.json()
+            rows = []
+            for binding in payload.get("results", {}).get("bindings", []):
+                rows.append({
+                    key: value.get("value")
+                    for key, value in binding.items()
+                })
+            result["row_count"] = len(rows)
+            result["rows"] = rows
+            formats = sorted({row.get("format") for row in rows if row.get("format")})
+            result["formats"] = formats
+            result["manifestation_count"] = len({row.get("manif") for row in rows if row.get("manif")})
+            result["item_count"] = len({row.get("item") for row in rows if row.get("item")})
+        else:
+            result["head"] = r.text[:1000]
+        return result
+    except Exception as exc:
+        return {"error": type(exc).__name__, "message": str(exc)}
+
 def run_probe(celex: str) -> Dict[str, Any]:
     url = BASE.format(celex=celex)
     record: Dict[str, Any] = {
         "celex": celex,
         "resource_url": url,
         "observed_at": datetime.now(timezone.utc).isoformat(),
+        "sparql_inventory_eng": sparql_inventory(celex, "ENG"),
         "probes": {},
     }
 

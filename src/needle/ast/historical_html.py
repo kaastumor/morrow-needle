@@ -208,5 +208,33 @@ class HistoricalHTMLASTParser:
             f"HTML_RECOVERY:articles={article_count};annexes={annex_count};blocks={block_count}"
         )
 
+        mapped_chars = sum(len(segment["text_source"]) for segment in self.builder.segments)
+        source_chars = self.builder.visible_chars_source_estimate
+        unexplained = max(0, source_chars - mapped_chars)
+        self.builder.set_source_text_accounting({
+            "basis": "HTML_BLOCKS",
+            "source_chars": source_chars,
+            "accounted_chars": source_chars - unexplained,
+            "unexplained_chars": unexplained,
+            "unexplained_ratio": 0.0 if source_chars == 0 else unexplained / source_chars,
+            "atom_count": len(blocks),
+            "duplicate_claim_count": 0,
+            "duplicate_claim_examples": [],
+            "categories": [
+                {
+                    "category": "LEGAL_MAPPED",
+                    "atom_count": len(blocks) if unexplained == 0 else 0,
+                    "chars": source_chars - unexplained,
+                    "examples": [],
+                },
+                {
+                    "category": "UNEXPLAINED",
+                    "atom_count": 0 if unexplained == 0 else 1,
+                    "chars": unexplained,
+                    "examples": [],
+                },
+            ],
+        })
+
         fidelity = "PARTIAL_STRUCTURAL" if article_count else "TEXT_ONLY"
         return self.builder.finalize(fidelity=fidelity)

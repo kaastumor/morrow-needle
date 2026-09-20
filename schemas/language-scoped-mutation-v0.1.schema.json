@@ -1,0 +1,256 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/language-scoped-mutation-v0.1.json",
+  "title": "Morrow // Needle Language-Scoped Mutation Event v0.1",
+  "description": "Official textual mutation whose scope is one or more language expressions. Non-listed languages mean no assertion from this event; absence is never converted into a global negative.",
+  "type": "object",
+  "required": [
+    "event_id",
+    "event_kind",
+    "source_document",
+    "target_act",
+    "event_date",
+    "expression_scope",
+    "operations",
+    "evidence_state",
+    "source_refs"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_kind": {
+      "type": "string",
+      "enum": [
+        "CORRIGENDUM",
+        "CORRIGENDUM_OF_CORRIGENDUM",
+        "OTHER_LANGUAGE_SCOPED_MUTATION"
+      ]
+    },
+    "source_document": {
+      "type": "object",
+      "required": [
+        "identifier",
+        "document_type"
+      ],
+      "properties": {
+        "identifier": {
+          "type": "string"
+        },
+        "eli": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "document_type": {
+          "type": "string",
+          "enum": [
+            "CORRIGENDUM",
+            "CORRIGENDUM_OF_CORRIGENDUM",
+            "OTHER"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "target_act": {
+      "type": "string"
+    },
+    "event_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "expression_scope": {
+      "type": "object",
+      "required": [
+        "basis",
+        "languages",
+        "nonlisted_semantics"
+      ],
+      "properties": {
+        "basis": {
+          "type": "string",
+          "enum": [
+            "OFFICIAL_OJ_LANGUAGE_LIST",
+            "OFFICIAL_EXPRESSION_METADATA",
+            "OTHER_OFFICIAL"
+          ]
+        },
+        "languages": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+          }
+        },
+        "nonlisted_semantics": {
+          "const": "NO_ASSERTION"
+        }
+      },
+      "additionalProperties": false
+    },
+    "operations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "operation_id",
+          "operation_type",
+          "target_kind",
+          "target_locator"
+        ],
+        "properties": {
+          "operation_id": {
+            "type": "string"
+          },
+          "operation_type": {
+            "type": "string",
+            "enum": [
+              "REPLACE",
+              "INSERT",
+              "DELETE",
+              "CORRECT_INSTRUCTION",
+              "RELOCATE_INSTRUCTION"
+            ]
+          },
+          "target_kind": {
+            "type": "string",
+            "enum": [
+              "ACT_TEXT",
+              "CORRIGENDUM_INSTRUCTION"
+            ]
+          },
+          "target_locator": {
+            "type": "string"
+          },
+          "before_text": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "after_text": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "resulting_act_locator": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "corrects_event_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_state": {
+      "type": "string",
+      "enum": [
+        "DIRECT",
+        "DERIVED",
+        "CONTEXTUAL",
+        "ATTRIBUTED",
+        "INTERPRETIVE",
+        "UNRESOLVED"
+      ]
+    },
+    "source_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "source_type",
+          "identifier",
+          "role"
+        ],
+        "properties": {
+          "source_type": {
+            "type": "string",
+            "enum": [
+              "OJ",
+              "EUR_LEX",
+              "CELLAR",
+              "ELI",
+              "OTHER_OFFICIAL"
+            ]
+          },
+          "identifier": {
+            "type": "string"
+          },
+          "locator": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "language": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "LANGUAGE_SCOPE",
+              "MUTATION_TEXT",
+              "TARGET_TEXT",
+              "CORRECTION_CHAIN",
+              "STATUS"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "event_kind": {
+            "const": "CORRIGENDUM_OF_CORRIGENDUM"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "corrects_event_ids"
+        ],
+        "properties": {
+          "corrects_event_ids": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

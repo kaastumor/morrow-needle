@@ -31,6 +31,7 @@ jobs:
           python scripts/probe_cellar.py \
             32004R0794 \
             31958R0001 \
+            02004R0794-20250813 \
             --out artifacts/cellar-probe.json
 
       - name: Upload raw probe evidence

@@ -387,6 +387,524 @@
         "derivation_record_id": "run-diff-article3"
       },
       "record_hash": "sha256:a8679b19a1faf8a9599f57ca7b58a6c3c2d939cb75df3a9f17b2ac59384723a3"
+    },
+    {
+      "record_id": "run-semantic-article3-2008-complete",
+      "record_type": "DERIVATION_RUN",
+      "created_at": "2026-09-20T16:21:00Z",
+      "payload": {
+        "derivation_kind": "SEMANTIC_EXTRACT",
+        "execution_character": "DETERMINISTIC",
+        "implementation": {
+          "name": "needle.semantic.adversary",
+          "version": "change-atom-v0.3",
+          "config_hash": null
+        },
+        "input_record_ids": [
+          "run-reconcile-article3",
+          "src-reg271-2008-eng"
+        ],
+        "output_entity_refs": [
+          {
+            "entity_type": "CHANGE_ATOM",
+            "entity_id": "reg794-art3-alt-channel-permission-v0.1"
+          },
+          {
+            "entity_type": "CHANGE_ATOM",
+            "entity_id": "reg794-art3-invalid-channel-status-v0.1"
+          }
+        ],
+        "executed_at": "2026-09-20T15:14:00Z"
+      },
+      "record_hash": "sha256:ea104ff7638cb1e1e6933bf01084004e60c71f5c8384e4f53ebb159722cfd2bf"
+    },
+    {
+      "record_id": "support-atom-alt-channel",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T16:21:01Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "CHANGE_ATOM",
+          "entity_id": "reg794-art3-alt-channel-permission-v0.1"
+        },
+        "source_observation_id": "src-reg271-2008-eng",
+        "source_span": {
+          "locator": "L_2008082EN.01000101.xml#normalized-chars:7704-7983",
+          "language": "ENG",
+          "text_hash": "sha256:c7fc733a71948a5bd1b40fc83e6e0ba18f073803adaa8bd97bbc73a2f55cdb26",
+          "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
+        },
+        "role": "SEMANTIC_CLAIM",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-semantic-article3-2008-complete"
+      },
+      "record_hash": "sha256:592668da9c10093ede9fb4f548fb1f281d2ffac5e6f89f4fb43301da1ef745cc"
+    },
+    {
+      "record_id": "support-atom-invalid-channel",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T16:21:02Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "CHANGE_ATOM",
+          "entity_id": "reg794-art3-invalid-channel-status-v0.1"
+        },
+        "source_observation_id": "src-reg271-2008-eng",
+        "source_span": {
+          "locator": "L_2008082EN.01000101.xml#normalized-chars:7983-8261",
+          "language": "ENG",
+          "text_hash": "sha256:89db2848597405bd3fe6661af754001e96e292a97bb90d23c0d203095d67e5cd",
+          "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
+        },
+        "role": "SEMANTIC_CLAIM",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-semantic-article3-2008-complete"
+      },
+      "record_hash": "sha256:33392651946d7157d9ba8bab33a5847424f2fc0d4534a3aa1f21143b769d60a2"
+    },
+    {
+      "record_id": "src-reg794-20161222-eng",
+      "record_type": "SOURCE_OBSERVATION",
+      "created_at": "2026-09-20T16:21:03Z",
+      "payload": {
+        "source_type": "CELLAR",
+        "identifier": "CELEX:02004R0794-20161222",
+        "resource_uri": "https://publications.europa.eu/resource/celex/02004R0794-20161222",
+        "language": "ENG",
+        "representation_class": "STRUCTURED_LEGAL_XML",
+        "observed_at": "2026-09-20T16:19:16Z",
+        "artifact_hash": "sha256:5aed9f446884f30786a1d96bfe090122dbabfbc6c281059f572377b0c1cc7d6b",
+        "retrieval": {
+          "final_uri": "http://publications.europa.eu/resource/cellar/060c7a27-d9c0-47d2-b0fa-508773b3790a.0020.02/zip",
+          "media_type": "application/zip;mtype=fmx4",
+          "http_status": 200
+        }
+      },
+      "record_hash": "sha256:b4978ffa24a3e5b0e4a0fce62b65f9ae6d6a64bf77f89a2b7cfa137545bbde6c"
+    },
+    {
+      "record_id": "src-reg794-20250703-eng",
+      "record_type": "SOURCE_OBSERVATION",
+      "created_at": "2026-09-20T16:21:04Z",
+      "payload": {
+        "source_type": "CELLAR",
+        "identifier": "CELEX:02004R0794-20250703",
+        "resource_uri": "https://publications.europa.eu/resource/celex/02004R0794-20250703",
+        "language": "ENG",
+        "representation_class": "STRUCTURED_LEGAL_XML",
+        "observed_at": "2026-09-20T16:19:16Z",
+        "artifact_hash": "sha256:d9a6ae56974c463fec60fd7fb12ee9d49fc4ae8fda226df06ee384463c259ab2",
+        "retrieval": {
+          "final_uri": "http://publications.europa.eu/resource/cellar/373ea4e1-77ba-11f0-9af8-01aa75ed71a1.0006.01/zip",
+          "media_type": "application/zip;mtype=fmx4",
+          "http_status": 200
+        }
+      },
+      "record_hash": "sha256:fa8bf007110b9d11e32432c70f229c9521ca40e1729d0e3c1ca62c01abe05837"
+    },
+    {
+      "record_id": "src-reg905-2025-eng",
+      "record_type": "SOURCE_OBSERVATION",
+      "created_at": "2026-09-20T16:21:05Z",
+      "payload": {
+        "source_type": "CELLAR",
+        "identifier": "CELEX:32025R0905",
+        "resource_uri": "https://publications.europa.eu/resource/celex/32025R0905",
+        "language": "ENG",
+        "representation_class": "STRUCTURED_LEGAL_XML",
+        "observed_at": "2026-09-20T16:19:16Z",
+        "artifact_hash": "sha256:91bc8da880879ef9e02ccd7c3bdae09d8b21f496d839d7418bd0a0b088976ff8",
+        "retrieval": {
+          "final_uri": "http://publications.europa.eu/resource/cellar/ea4a029d-47ef-11f0-85ba-01aa75ed71a1.0006.02/zip",
+          "media_type": "application/zip;mtype=fmx4",
+          "http_status": 200
+        }
+      },
+      "record_hash": "sha256:6bd96cc1082de56878fc99f60e7c89b4d765fe06ebb95f9b1c5c32bc79232e56"
+    },
+    {
+      "record_id": "run-normalize-2025-before",
+      "record_type": "DERIVATION_RUN",
+      "created_at": "2026-09-20T16:21:06Z",
+      "payload": {
+        "derivation_kind": "NORMALIZE_AST",
+        "execution_character": "DETERMINISTIC",
+        "implementation": {
+          "name": "needle.ast.formex.FormexASTParser",
+          "version": "0.1",
+          "config_hash": null
+        },
+        "input_record_ids": [
+          "src-reg794-20161222-eng"
+        ],
+        "output_entity_refs": [
+          {
+            "entity_type": "AST_STATE",
+            "entity_id": "CELEX:02004R0794-20161222"
+          }
+        ],
+        "executed_at": "2026-09-20T16:19:16Z"
+      },
+      "record_hash": "sha256:db752638b006ba00f1b0aa24a4ccb5150dd32e15f8d4878c661f38db5256e896"
+    },
+    {
+      "record_id": "run-normalize-2025-after",
+      "record_type": "DERIVATION_RUN",
+      "created_at": "2026-09-20T16:21:07Z",
+      "payload": {
+        "derivation_kind": "NORMALIZE_AST",
+        "execution_character": "DETERMINISTIC",
+        "implementation": {
+          "name": "needle.ast.formex.FormexASTParser",
+          "version": "0.1",
+          "config_hash": null
+        },
+        "input_record_ids": [
+          "src-reg794-20250703-eng"
+        ],
+        "output_entity_refs": [
+          {
+            "entity_type": "AST_STATE",
+            "entity_id": "CELEX:02004R0794-20250703"
+          }
+        ],
+        "executed_at": "2026-09-20T16:19:16Z"
+      },
+      "record_hash": "sha256:3a71ca57b513d2c1da5348b27e40290e374d202881e7dc8b795131c59e20b13c"
+    },
+    {
+      "record_id": "run-diff-article3-p3-2025",
+      "record_type": "DERIVATION_RUN",
+      "created_at": "2026-09-20T16:21:08Z",
+      "payload": {
+        "derivation_kind": "DIFF",
+        "execution_character": "DETERMINISTIC",
+        "implementation": {
+          "name": "needle.mutation.diff.diff_target_subtree",
+          "version": "mutation-v0.2",
+          "config_hash": null
+        },
+        "input_record_ids": [
+          "run-normalize-2025-before",
+          "run-normalize-2025-after"
+        ],
+        "output_entity_refs": [
+          {
+            "entity_type": "MUTATION",
+            "entity_id": "reg794-article3-p3-2025-live-verified-v0.1"
+          }
+        ],
+        "executed_at": "2026-09-20T16:19:16Z"
+      },
+      "record_hash": "sha256:de6bf3bc6e986b83018999b5b01cc1988ab46a674fb5646d3e1aec9746ca6239"
+    },
+    {
+      "record_id": "run-reconcile-article3-p3-2025",
+      "record_type": "DERIVATION_RUN",
+      "created_at": "2026-09-20T16:21:09Z",
+      "payload": {
+        "derivation_kind": "RECONCILE",
+        "execution_character": "DETERMINISTIC",
+        "implementation": {
+          "name": "needle.mutation.reconcile.reconcile_candidate",
+          "version": "mutation-v0.2",
+          "config_hash": null
+        },
+        "input_record_ids": [
+          "run-diff-article3-p3-2025",
+          "src-reg905-2025-eng"
+        ],
+        "output_entity_refs": [
+          {
+            "entity_type": "MUTATION",
+            "entity_id": "reg794-article3-p3-2025-live-verified-v0.1"
+          }
+        ],
+        "executed_at": "2026-09-20T16:19:16Z"
+      },
+      "record_hash": "sha256:a404a9999449d05bb6a7eac74c8f629671944176b8d9eb22d25a14bbe2ed5962"
+    },
+    {
+      "record_id": "support-mutation-2025-before",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T16:21:10Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "MUTATION",
+          "entity_id": "reg794-article3-p3-2025-live-verified-v0.1"
+        },
+        "source_observation_id": "src-reg794-20161222-eng",
+        "source_span": {
+          "locator": "Article 3 > 3 subtree",
+          "language": "ENG",
+          "text_hash": "sha256:2fad3273b6ddb7eead8595e94165d02a30f4a149e67dc106a9c3df220b081452",
+          "artifact_hash": "sha256:5aed9f446884f30786a1d96bfe090122dbabfbc6c281059f572377b0c1cc7d6b"
+        },
+        "role": "BEFORE",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-diff-article3-p3-2025"
+      },
+      "record_hash": "sha256:6d5dca33c81505527fb66cb25c194f536b68076abda0307f035d963bd4ba8c73"
+    },
+    {
+      "record_id": "support-mutation-2025-after",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T16:21:11Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "MUTATION",
+          "entity_id": "reg794-article3-p3-2025-live-verified-v0.1"
+        },
+        "source_observation_id": "src-reg794-20250703-eng",
+        "source_span": {
+          "locator": "Article 3 > 3 subtree",
+          "language": "ENG",
+          "text_hash": "sha256:144a32004977b741ffa02847cffb05c981388243c6dab54e749ee0e71152ec19",
+          "artifact_hash": "sha256:d9a6ae56974c463fec60fd7fb12ee9d49fc4ae8fda226df06ee384463c259ab2"
+        },
+        "role": "AFTER",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-diff-article3-p3-2025"
+      },
+      "record_hash": "sha256:77dddf4d43dda98d41b217b7b0a9df4b25425bdb619552d3031be030dc32890b"
+    },
+    {
+      "record_id": "support-mutation-2025-cause",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T16:21:12Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "MUTATION",
+          "entity_id": "reg794-article3-p3-2025-live-verified-v0.1"
+        },
+        "source_observation_id": "src-reg905-2025-eng",
+        "source_span": {
+          "locator": "L_202500905EN.000101.fmx.xml#normalized-chars:10410-10461",
+          "language": "ENG",
+          "text_hash": "sha256:4b0aea16593c10154d2e827d3979fbe1f1066dab929f69923fd522de1180a80e",
+          "artifact_hash": "sha256:91bc8da880879ef9e02ccd7c3bdae09d8b21f496d839d7418bd0a0b088976ff8"
+        },
+        "role": "CAUSE",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-reconcile-article3-p3-2025"
+      },
+      "record_hash": "sha256:57656cd33bbe7a6d26d4132f161c568d16364bd567ccc5ddc82ba15cc4433c99"
+    },
+    {
+      "record_id": "run-temporal-article3-p3-2025",
+      "record_type": "DERIVATION_RUN",
+      "created_at": "2026-09-20T16:21:13Z",
+      "payload": {
+        "derivation_kind": "TEMPORAL_RESOLVE",
+        "execution_character": "DETERMINISTIC",
+        "implementation": {
+          "name": "needle.temporal",
+          "version": "temporal-v0.1",
+          "config_hash": null
+        },
+        "input_record_ids": [
+          "src-reg905-2025-eng",
+          "run-reconcile-article3-p3-2025"
+        ],
+        "output_entity_refs": [
+          {
+            "entity_type": "TEMPORAL_ASSERTION",
+            "entity_id": "reg794-art3-p3-2025-application-start"
+          }
+        ],
+        "executed_at": "2026-09-20T16:19:16Z"
+      },
+      "record_hash": "sha256:86410f86dd1c25003fbcc87cd5a06c7a834a9f4f4deb48d02bef4468cf9dc127"
+    },
+    {
+      "record_id": "support-temporal-article3-p3-2025",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T16:21:14Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "TEMPORAL_ASSERTION",
+          "entity_id": "reg794-art3-p3-2025-application-start"
+        },
+        "source_observation_id": "src-reg905-2025-eng",
+        "source_span": {
+          "locator": "L_202500905EN.000101.fmx.xml#normalized-chars:13176-13316",
+          "language": "ENG",
+          "text_hash": "sha256:7521c32a90f5ee981042548d552a96206956fd9a1b9c292a5454ee68610371f8",
+          "artifact_hash": "sha256:91bc8da880879ef9e02ccd7c3bdae09d8b21f496d839d7418bd0a0b088976ff8"
+        },
+        "role": "TEMPORAL",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-temporal-article3-p3-2025"
+      },
+      "record_hash": "sha256:e31656881db20b00b566f163509addbf12ca92a1a1c59e4c889d27bd2bddc6c7"
+    },
+    {
+      "record_id": "run-semantic-article3-p3-2025",
+      "record_type": "DERIVATION_RUN",
+      "created_at": "2026-09-20T16:21:15Z",
+      "payload": {
+        "derivation_kind": "SEMANTIC_EXTRACT",
+        "execution_character": "DETERMINISTIC",
+        "implementation": {
+          "name": "needle.semantic.adversary",
+          "version": "change-atom-v0.3",
+          "config_hash": null
+        },
+        "input_record_ids": [
+          "run-reconcile-article3-p3-2025",
+          "support-temporal-article3-p3-2025",
+          "src-reg905-2025-eng"
+        ],
+        "output_entity_refs": [
+          {
+            "entity_type": "CHANGE_ATOM",
+            "entity_id": "reg794-art3-2025-notification-channel-duty-v0.1"
+          },
+          {
+            "entity_type": "CHANGE_ATOM",
+            "entity_id": "reg794-art3-2025-correspondence-channel-duty-v0.1"
+          }
+        ],
+        "executed_at": "2026-09-20T16:19:16Z"
+      },
+      "record_hash": "sha256:3341168a0ca20cf42dab0c5dbb359764f8aa74764eb6262c8418c7b674d678b6"
+    },
+    {
+      "record_id": "support-atom-2025-notification-channel",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T16:21:16Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "CHANGE_ATOM",
+          "entity_id": "reg794-art3-2025-notification-channel-duty-v0.1"
+        },
+        "source_observation_id": "src-reg905-2025-eng",
+        "source_span": {
+          "locator": "L_202500905EN.000101.fmx.xml#normalized-chars:10464-10568",
+          "language": "ENG",
+          "text_hash": "sha256:fd6c5bf4d5162189448d1184a230eb81845282acb33d1a344f3aeab6ee6f0e56",
+          "artifact_hash": "sha256:91bc8da880879ef9e02ccd7c3bdae09d8b21f496d839d7418bd0a0b088976ff8"
+        },
+        "role": "SEMANTIC_CLAIM",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-semantic-article3-p3-2025"
+      },
+      "record_hash": "sha256:ba031a35693dbf3e58af3be6413aea26af348dc5bf49cc08afdd0f3a90add556"
+    },
+    {
+      "record_id": "support-atom-2025-correspondence-channel",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T16:21:17Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "CHANGE_ATOM",
+          "entity_id": "reg794-art3-2025-correspondence-channel-duty-v0.1"
+        },
+        "source_observation_id": "src-reg905-2025-eng",
+        "source_span": {
+          "locator": "L_202500905EN.000101.fmx.xml#normalized-chars:10568-10713",
+          "language": "ENG",
+          "text_hash": "sha256:c55852f95e0a890d02f22ca83e4430861b63e35cadd1f96710e68037a2c81ca5",
+          "artifact_hash": "sha256:91bc8da880879ef9e02ccd7c3bdae09d8b21f496d839d7418bd0a0b088976ff8"
+        },
+        "role": "SEMANTIC_CLAIM",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-semantic-article3-p3-2025"
+      },
+      "record_hash": "sha256:a31533a136a70d8f4b780c8828f2905c0fbcfbbfe859ed12e8961a661397ff84"
+    },
+    {
+      "record_id": "run-semantic-article3-p4-2025-crossref",
+      "record_type": "DERIVATION_RUN",
+      "created_at": "2026-09-20T16:21:18Z",
+      "payload": {
+        "derivation_kind": "SEMANTIC_EXTRACT",
+        "execution_character": "DETERMINISTIC",
+        "implementation": {
+          "name": "needle.thread.crossref",
+          "version": "thread-derived-v0.1",
+          "config_hash": null
+        },
+        "input_record_ids": [
+          "support-atom-alt-channel",
+          "support-atom-2025-notification-channel",
+          "support-atom-2025-correspondence-channel"
+        ],
+        "output_entity_refs": [
+          {
+            "entity_type": "CHANGE_ATOM",
+            "entity_id": "reg794-art3-2025-crossref-exception-ripple-v0.1"
+          }
+        ],
+        "executed_at": "2026-09-20T16:19:16Z"
+      },
+      "record_hash": "sha256:757d530e0acc120bc9c417de37feed78a1e2950d4bc0472e7539e240b209514f"
+    },
+    {
+      "record_id": "support-atom-2025-crossref-base-exception",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T16:21:19Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "CHANGE_ATOM",
+          "entity_id": "reg794-art3-2025-crossref-exception-ripple-v0.1"
+        },
+        "source_observation_id": "src-reg271-2008-eng",
+        "source_span": {
+          "locator": "L_2008082EN.01000101.xml#normalized-chars:7704-7983",
+          "language": "ENG",
+          "text_hash": "sha256:c7fc733a71948a5bd1b40fc83e6e0ba18f073803adaa8bd97bbc73a2f55cdb26",
+          "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
+        },
+        "role": "SEMANTIC_CLAIM",
+        "evidence_state": "DERIVED",
+        "derivation_record_id": "run-semantic-article3-p4-2025-crossref"
+      },
+      "record_hash": "sha256:2b95192125c63c9b899b853a8e87112fb9becb8a98e206c2a231dfb600fa8f47"
+    },
+    {
+      "record_id": "support-atom-2025-crossref-notification-context",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T16:21:20Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "CHANGE_ATOM",
+          "entity_id": "reg794-art3-2025-crossref-exception-ripple-v0.1"
+        },
+        "source_observation_id": "src-reg905-2025-eng",
+        "source_span": {
+          "locator": "L_202500905EN.000101.fmx.xml#normalized-chars:10464-10568",
+          "language": "ENG",
+          "text_hash": "sha256:fd6c5bf4d5162189448d1184a230eb81845282acb33d1a344f3aeab6ee6f0e56",
+          "artifact_hash": "sha256:91bc8da880879ef9e02ccd7c3bdae09d8b21f496d839d7418bd0a0b088976ff8"
+        },
+        "role": "CONTEXT",
+        "evidence_state": "DERIVED",
+        "derivation_record_id": "run-semantic-article3-p4-2025-crossref"
+      },
+      "record_hash": "sha256:155a6fc663ee8a9272b43877dcb103b931b9aa49bf1e919be87725e9c6104503"
+    },
+    {
+      "record_id": "support-atom-2025-crossref-correspondence-context",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T16:21:21Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "CHANGE_ATOM",
+          "entity_id": "reg794-art3-2025-crossref-exception-ripple-v0.1"
+        },
+        "source_observation_id": "src-reg905-2025-eng",
+        "source_span": {
+          "locator": "L_202500905EN.000101.fmx.xml#normalized-chars:10568-10713",
+          "language": "ENG",
+          "text_hash": "sha256:c55852f95e0a890d02f22ca83e4430861b63e35cadd1f96710e68037a2c81ca5",
+          "artifact_hash": "sha256:91bc8da880879ef9e02ccd7c3bdae09d8b21f496d839d7418bd0a0b088976ff8"
+        },
+        "role": "CONTEXT",
+        "evidence_state": "DERIVED",
+        "derivation_record_id": "run-semantic-article3-p4-2025-crossref"
+      },
+      "record_hash": "sha256:5fb7b76043f832d91e1df99b652aec43da08b8c9942fbb60ddae396418102f9b"
     }
   ]
 }

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, replace
+from datetime import datetime
 from typing import Any
 
 from .cellar_feed import FeedPage
@@ -30,6 +31,17 @@ def begin_window(
     )
 
 
+def _instant(value: str) -> datetime:
+    parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    if parsed.tzinfo is None:
+        raise ValueError("Cellar polling windows must be offset-aware")
+    return parsed
+
+
+def _same_instant(left: str, right: str) -> bool:
+    return _instant(left) == _instant(right)
+
+
 def accept_page(cursor: PollCursor, page: FeedPage) -> PollCursor:
     if cursor.active_window_start is None or cursor.active_window_end is None:
         raise ValueError("no active polling window")
@@ -39,9 +51,13 @@ def accept_page(cursor: PollCursor, page: FeedPage) -> PollCursor:
         )
 
     # Feed echoes are audit signals; when present they must match the request.
-    if page.window_start is not None and page.window_start != cursor.active_window_start:
+    if page.window_start is not None and not _same_instant(
+        page.window_start, cursor.active_window_start
+    ):
         raise ValueError("feed page startDate does not match active window")
-    if page.window_end is not None and page.window_end != cursor.active_window_end:
+    if page.window_end is not None and not _same_instant(
+        page.window_end, cursor.active_window_end
+    ):
         raise ValueError("feed page endDate does not match active window")
 
     if page.more_entries:

@@ -151,3 +151,69 @@ def test_formex_mixed_content_keeps_parent_flow_around_structures():
     assert accounting["unexplained_shapes"] == []
     assert accounting["duplicate_claim_count"] == 0
     assert ast["parse_report"]["fidelity"] == "FULL_STRUCTURAL"
+
+
+def test_formex_semantic_title_sequence_and_nested_list_labels():
+    xml = b'''<?xml version="1.0" encoding="UTF-8"?>
+<ACT>
+  <FMX>ENREGTEST</FMX>
+  <ENACTING.TERMS>
+    <TITLE>
+      <TI>CHAPTER I</TI>
+      <STI>Subject matter</STI>
+    </TITLE>
+    <ARTICLE IDENTIFIER="001">
+      <TI.ART>Article 1</TI.ART>
+      <GR.SEQ>
+        <NO.GR.SEQ>1.</NO.GR.SEQ>
+        <P>Grouped question text.</P>
+      </GR.SEQ>
+      <LIST TYPE="alpha">
+        <ITEM>
+          <NP>
+            <NO.P>(a)</NO.P>
+            <TXT>first item;</TXT>
+          </NP>
+        </ITEM>
+      </LIST>
+    </ARTICLE>
+  </ENACTING.TERMS>
+</ACT>'''
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w") as zf:
+        zf.writestr("main.xml", xml)
+
+    parser = FormexASTParser(
+        state_id="test-semantic-structure",
+        source=_source("STRUCTURED_LEGAL_XML", "test-formex"),
+        source_observation_id="test:obs",
+    )
+    ast = parser.parse_zip(buf.getvalue())
+    _validate(ast)
+
+    chapters = [n for n in ast["nodes"] if n["kind"] == "CHAPTER"]
+    assert len(chapters) == 1
+    assert chapters[0]["display_label"] == "CHAPTER I"
+    chapter_segments = [
+        s for s in ast["segments"] if s["node_id"] == chapters[0]["node_id"]
+    ]
+    assert any(s["role"] == "HEADING" and s["text_source"] == "Subject matter" for s in chapter_segments)
+
+    blocks = [n for n in ast["nodes"] if n["kind"] == "BLOCK" and n["native_kind"] == "GR.SEQ"]
+    assert len(blocks) == 1
+    assert blocks[0]["display_label"] == "1."
+
+    items = [n for n in ast["nodes"] if n["kind"] == "LIST_ITEM"]
+    assert len(items) == 1
+    assert items[0]["display_label"] == "(a)"
+    item_text = " ".join(
+        s["text_source"] for s in ast["segments"] if s["node_id"] == items[0]["node_id"]
+    )
+    assert "first item;" in item_text
+
+    accounting = ast["parse_report"]["source_text_accounting"]
+    assert accounting["unexplained_chars"] == 0
+    assert accounting["duplicate_claim_count"] == 0
+    assert "FMX" not in ast["parse_report"]["unknown_native_kinds"]
+    assert "TI" not in ast["parse_report"]["unknown_native_kinds"]
+    assert "STI" not in ast["parse_report"]["unknown_native_kinds"]

@@ -22,19 +22,20 @@ Within a priority band, prefer the task that:
 ### P0-A — Provision and rule identity
 **Issue #1 — Stress-test provision identity across renumbering, split/merge and replacement**
 
-Status: ACTIVE; attack surface substantially narrowed.
+Status: **FOUNDATION CONTRACT RESOLVED; keep fixtures as regression corpus.**
 
-Already established:
+Established:
 - persistent provision identity is rejected;
 - use immutable Provision Instances + evidence-backed Lineage Edges;
 - distinguish STRUCTURAL_LINEAGE from proposition-granular RULE_LINEAGE;
 - structural lineage and substantive change can coexist;
 - same-act physical moves still create distinct instances across text states;
 - authentic official recitals can provide DIRECT structural-lineage evidence when they explicitly identify a move, even without a correlation table;
-- lineage confidence/conflict is explicit and non-numeric.
-
-Remaining attack:
-- **hard fallback with neither correlation table nor explicit official narrative mapping**: determine the maximum claim deterministic structural/text alignment may safely emit and the evidence state/confidence required.
+- lineage confidence/conflict is explicit and non-numeric;
+- deterministic text/structure alignment is a **candidate generator, not sufficient evidence for an asserted lineage edge**;
+- act-level succession, same article number, same heading and strong textual similarity do not establish one-to-one provision ancestry;
+- grouped transitional substitution must not be laundered into one-to-one provision mappings;
+- deterministic-only/authentic-comparison-only/model-only fallback claims remain `CANDIDATE + UNRESOLVED + INSUFFICIENT_EVIDENCE` until promoted by stronger evidence/review.
 
 Conceptual ancestry remains deliberately interpretive and must not be promoted from textual/structural similarity alone.
 

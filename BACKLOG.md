@@ -6,18 +6,18 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-The first Half-Life P2 implementation pass reopened one narrow foundation risk: regime-lineage v0.1 duplicated P0-E application dates and derived gap state.
+The narrow regime-lineage temporal-ownership reopen is resolved and green. Controlled P2 expansion is unblocked again.
 
-Until Issue #18 is green and closed:
+Unless new official/executable evidence reopens a foundation risk:
 
-1. **Foundation / Issue #18 — regime-lineage v0.2 temporal ownership.** Finish the migration to genealogy-only lineage + Temporal Assertion references.
-2. Re-run the post-P1 foundation and Half-Life gates.
-3. Re-close Issue #16 with an audit addendum if the migration holds.
-4. Resume **P2 / Issue #10 — Half-Life** immediately afterward.
-5. Then **P2 / Issue #17 — Source Anomaly**.
-6. Legislative X-Ray / dependency-ripple research remains the next Discovery Lane target.
+1. **P2 / Issue #10 — Half-Life.** Build the first product analytic strictly as a derived view over canonical Temporal Assertions + reference-only regime genealogy.
+2. **P2 / Issue #17 — Source Anomaly.** Provenance-driven visibility into authoritative-source fallback, source-internal conflicts and representation duplication.
+3. **P2 Discovery — Legislative X-Ray / silent dependency ripple.** Find a second official case before freezing a reusable dependency-ripple primitive.
+4. **P2 — factual daily/weekly change feed.**
+5. **P2 — impact / affected-entity intelligence** only after direct-vs-derived-vs-interpretive presentation semantics are exercised.
+6. Ranking, plain-language evaluation, subscriptions and saved monitors follow.
 
-Broad P2 implementation is temporarily paused, not rolled back. All other P0/P1 freezes remain retained.
+All P0/P1 ownership boundaries are now explicitly tested. A freeze is reopened only when official or executable adversarial evidence demonstrates failure.
 
 Canonical audit: docs/audits/post-p1-foundation-audit-v0.1.md
 Ownership correction: docs/decisions/regime-lineage-v0.2-temporal-ownership.md

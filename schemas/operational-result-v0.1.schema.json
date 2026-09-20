@@ -83,6 +83,14 @@
             "SOURCE_INFRASTRUCTURE",
             "UNRESOLVED_RESOURCE"
           ]
+        },
+        "related_event_keys": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         }
       }
     },

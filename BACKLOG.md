@@ -42,13 +42,13 @@ Conceptual ancestry remains deliberately interpretive and must not be promoted f
 ### P0-B — Cellar as ingestion backbone
 **Issue #2 — Probe Cellar structured text and identifier resolution**
 
-Status: **SOURCE CONTRACT VALIDATED; AST INTEGRATION PENDING #4.**
+Status: **SOURCE CONTRACT + FIRST AST INTEGRATION VALIDATED.**
 
 Validated path: CELEX → Cellar SPARQL inventory → language expression → deterministic manifestation selection → official byte delivery → immutable Source Observation.
 
 Key constraints: availability is expression-scoped; manifestations may be multi-stream; WEMI Item count is not internal stream count; raw artifact changes are not legal mutations.
 
-Remaining P0-B work is downstream of the canonical AST: normalize one modern FMX4 multi-stream act and one early HTML act.
+Modern multi-asset FMX4 and early historical HTML now normalize through the frozen AST interface. Remaining source-adapter work (including deeper manifestation assembly/completeness audits) is regression/adapter hardening rather than a blocker on the canonical model.
 
 ### P0-C — Gold Corpus / regression contract
 **Issue #3 — Formalize Gold Corpus case format**
@@ -58,13 +58,15 @@ Goal: every foundational claim becomes a machine-testable regression case. Keep 
 ### P0-D — Canonical document/provision AST
 **Issue #4**
 
-Status: **DRAFT CONTRACT COMMITTED; LIVE FIXTURES/PARSERS IN PROGRESS; FAIL-CLOSED FIDELITY ADOPTED.**
+Status: **FOUNDATION CONTRACT RESOLVED — AST v0.1 INTERFACE FROZEN.**
 
-Adopted flat-with-links model: structural nodes + ordered text segments + references + source annotations, all source-anchored. Live consolidated FMX4 validated the need for first-class nested mutation provenance annotations.
+The flat-with-links contract (structural nodes + ordered segments + references + annotations + explicit parse/completeness state) passed live modern Formex, 1958 HTML, and large consolidated Formex adversaries.
 
-Step-back review (2026-09-20): source-text accounting is now a parser-correctness invariant, not a coverage metric. `FULL_STRUCTURAL` requires zero unexplained normalized source-text characters and zero duplicate ownership claims, as well as no unassembled fragments or unknown native structural kinds. No percentage threshold may silently convert unknown source text into success. See `docs/step-back-review-2026-09-20-v0.1.md`.
+Fail-closed invariants now enforce zero unexplained source text, zero duplicate ownership and zero unknown structural kinds before `FULL_STRUCTURAL`. The consolidated fixture also exercises annexes, 197 tables, 739 footnotes, ELI references and 48 embedded mutation annotations.
 
-Next: drive unexplained/duplicate accounting to zero on the modern FMX4, 1958 HTML, and consolidated FMX4 live fixtures before freezing v0.1. Do not start the mutation engine while this invariant is red.
+Important separation retained: `FULL_STRUCTURAL` does not imply complete representation coverage; raster/opaque evidence can keep completeness unknown.
+
+Adapters continue to evolve, but the v0.1 core schema should change only when a new official fixture demonstrates a representational impossibility. See `docs/decisions/ast-v0.1-interface-freeze.md`.
 
 ### P0-E — Temporal semantics
 **Issue #5**

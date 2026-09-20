@@ -7,6 +7,7 @@ from needle.retrieval.projection import (
     build_thread_projection,
     normalize_provision_path,
 )
+from needle.retrieval.temporal import evaluate_entity_temporally
 from needle.thread.composer import load_thread_sources
 
 
@@ -307,6 +308,9 @@ def search_thread(
     text_mode = query.get("text_mode", "ALL")
 
     results = []
+    abstentions = []
+    temporal = query.get("temporal")
+
     for document in projection["documents"]:
         structured = _structured_reasons(document, filters)
         if structured is None:
@@ -315,23 +319,61 @@ def search_thread(
         if lexical is None:
             continue
 
-        results.append({
+        entity = _hydrate(
+            thread=thread,
+            sources=sources,
+            document=document,
+        )
+        match_reasons = structured + lexical
+        temporal_evaluation = None
+
+        if temporal is not None:
+            temporal_result = evaluate_entity_temporally(
+                thread,
+                entity,
+                temporal,
+                root=root,
+            )
+            temporal_evaluation = temporal_result["evaluation"]
+            if temporal_result["decision"] == "ABSTAIN":
+                abstentions.append({
+                    "entity_ref":document["entity_ref"],
+                    "reason":temporal_result["reason"],
+                    "temporal_evaluation":temporal_evaluation,
+                })
+                continue
+
+            match_reasons = match_reasons + [{
+                "kind":"TEMPORAL_EVALUATION",
+                "field":f"temporal.{temporal['dimension']}",
+                "query_value":temporal["valid_date"],
+                "matched_values":temporal_evaluation["supporting_assertion_ids"],
+                "match_quality":None,
+            }]
+
+        result = {
             "entity_ref":document["entity_ref"],
             "thread_id":document["thread_id"],
             "event_ids":document["event_ids"],
-            "match_reasons":structured + lexical,
+            "match_reasons":match_reasons,
             "source_mode":document["source_mode"],
-            "canonical_entity":_hydrate(
-                thread=thread,
-                sources=sources,
-                document=document,
-            ),
-        })
+            "canonical_entity":entity,
+        }
+        if temporal is not None:
+            result["temporal_evaluation"] = temporal_evaluation
+        results.append(result)
 
     results.sort(key=_ordering_key)
+    abstentions.sort(
+        key=lambda item:(
+            _KIND_PRIORITY[item["entity_ref"]["kind"]],
+            item["entity_ref"]["entity_id"],
+        )
+    )
     return {
         "schema_version":"retrieval-response-v0.1",
         "query_id":query["query_id"],
         "projection_fingerprint":projection["projection_fingerprint"],
         "results":results,
+        "abstentions":abstentions,
     }

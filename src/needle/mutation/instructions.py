@@ -30,6 +30,7 @@ def parse_authentic_instructions(
     *,
     source_id: str,
     locator: str | None = None,
+    include_match_span: bool = False,
 ) -> list[dict[str, Any]]:
     """Extract only explicit amendment commands that are safe to assert.
 
@@ -38,12 +39,17 @@ def parse_authentic_instructions(
     """
     evidence = []
     for match in REPLACEMENT_RE.finditer(text):
+        resolved_locator = locator
+        if include_match_span and locator is not None:
+            resolved_locator = (
+                f"{locator}#normalized-chars:{match.start()}-{match.end()}"
+            )
         evidence.append({
             "channel":"AUTHENTIC_ACT",
             "source_id":source_id,
             "operation":"REPLACE",
             "target_locator":_canonical_target(match.group("target")),
             "authority_character":"CANONICAL_LEGAL_CAUSE",
-            "locator":locator,
+            "locator":resolved_locator,
         })
     return evidence

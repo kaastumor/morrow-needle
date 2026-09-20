@@ -18,6 +18,7 @@ BASE = "https://publications.europa.eu/resource/celex/{celex}"
 AUTHENTIC = "32004R0794"
 INITIAL = "02004R0794-20040520"
 SENTENCES = {
+    "publication-date-oj": "30.4.2004",
     "entry-into-force": (
         "This Regulation shall enter into force on the twentieth day following "
         "that of its publication in the Official Journal of the European Union."
@@ -202,6 +203,7 @@ def main() -> int:
         },
         "source_spans":spans,
         "temporal_boundaries":{
+            "publication_date":"2004-04-30",
             "entry_into_force_expression":(
                 "twentieth day following publication"
             ),

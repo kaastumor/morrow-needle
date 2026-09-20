@@ -1,0 +1,177 @@
+{
+  "fixture_version": "0.1",
+  "fixture_id": "reach-art67-annex17-entry78-ripple-v0.1",
+  "purpose": "Second silent-dependency adversary: an unchanged operative provision depends on an amended annex. Preserve upstream textual mutation separately from the derived local semantic ripple.",
+  "source_mutation": {
+    "mutation_id": "reach-annex17-entry78-2023-insert-v0.1",
+    "verification_state": "VERIFIED",
+    "operation": "INSERT",
+    "target": "Annex XVII > entry 78",
+    "language": "ENG"
+  },
+  "local_nonmutation": {
+    "provision": "Article 67 > 1",
+    "before_state": "CELEX:02006R1907-20230806",
+    "after_state": "CELEX:02006R1907-20231201",
+    "before_text_hash": "72ffa37f50c709a28b4782909c438f5c82b769de702aee2f0c745729854faaee",
+    "after_text_hash": "72ffa37f50c709a28b4782909c438f5c82b769de702aee2f0c745729854faaee",
+    "result": "IDENTICAL_CANONICAL_SUBTREE",
+    "textual_mutation": null
+  },
+  "dependency": {
+    "relation_type": "OPERATIVE_REFERENCE",
+    "source": "Article 67 > 1",
+    "target": "Annex XVII"
+  },
+  "source_span_registry": {
+    "span-reach-art67-annex17-dependency": {
+      "identifier": "CELEX:02006R1907-20230806",
+      "language": "ENG",
+      "locator": "CL2006R1907EN0590010.0001.xml#normalized-chars:183728-183886",
+      "artifact_hash": "sha256:783c47cf6bca53e4fb2e0ec0394b1b76325af7dff50f48f3ad2b1896aafbea86",
+      "text": "for which Annex XVII contains a restriction shall not be manufactured, placed on the market or used unless it complies with the conditions of that restriction",
+      "text_hash": "7a8714574725f4067a65175ee3c54582a8a5ed90fbf54a59c766d420d159d34b"
+    },
+    "span-reach-2023-entry-added": {
+      "identifier": "CELEX:32023R2055",
+      "language": "ENG",
+      "locator": "L_2023238EN.01007701.xml#normalized-chars:114-142",
+      "artifact_hash": "sha256:d8fb1517d19572bfeaa1c499ded8151b4e56a90101e278906b576e59a6410402",
+      "text": "the following entry is added",
+      "text_hash": "af9e4a2f9e14889f9d52d18e771ea52750f1feacd4a40cd1311b947f5a88835c"
+    },
+    "span-reach-2023-entry78": {
+      "identifier": "CELEX:32023R2055",
+      "language": "ENG",
+      "locator": "L_2023238EN.01007701.xml#normalized-chars:1722-1757",
+      "artifact_hash": "sha256:d8fb1517d19572bfeaa1c499ded8151b4e56a90101e278906b576e59a6410402",
+      "text": "78.Synthetic polymer microparticles",
+      "text_hash": "dbb8d28f10c6b8a0fd5b88699f32163f5015770290c9bb3e7ba7657baa9915f8"
+    },
+    "span-reach-after-entry78": {
+      "identifier": "CELEX:02006R1907-20231201",
+      "language": "ENG",
+      "locator": "CL2006R1907EN0600020.0001.xml#normalized-chars:691015-691047",
+      "artifact_hash": "sha256:8b92fb75528d814228a60c7076d8deca9794101ccb467e9e4153c3a9a7816cc4",
+      "text": "Synthetic polymer microparticles",
+      "text_hash": "aa104afe7bb63889b1af89e24f4ea5bbd513ec247b4919576c4230838d298981"
+    }
+  },
+  "atoms": [
+    {
+      "atom_id": "reach-art67p1-annex17-entry78-ripple-v0.1",
+      "verification_state": "EVIDENCED",
+      "source_mutation_ids": [
+        "reach-annex17-entry78-2023-insert-v0.1"
+      ],
+      "act_id": "CELEX:32006R1907",
+      "provision_refs": [
+        {
+          "provision_instance_id": null,
+          "citation_path": "Article 67 > 1",
+          "language": "ENG"
+        }
+      ],
+      "language_scope": {
+        "languages": [
+          "ENG"
+        ],
+        "cross_language_equivalence_assumed": false
+      },
+      "claim": {
+        "legal_effect": "PROHIBITION",
+        "dimensions": [
+          "SCOPE",
+          "ANNEX",
+          "CROSS_REFERENCE"
+        ],
+        "statement": "Article 67(1) is textually unchanged, but its operative reference to Annex XVII now encompasses the newly added entry 78 on synthetic polymer microparticles, subject to that entry's conditions.",
+        "subject": "the Article 67(1) restriction rule",
+        "action": "now operates over an Annex XVII set that includes entry 78",
+        "object": "Synthetic polymer microparticles"
+      },
+      "semantic_basis": {
+        "classification_method": "UNRESOLVED",
+        "trigger_terms": [
+          "Annex XVII contains a restriction"
+        ],
+        "qualifier_terms": [
+          "Synthetic polymer microparticles",
+          "entry 78"
+        ]
+      },
+      "evidence_state": "DERIVED",
+      "source_spans": [
+        {
+          "span_id": "span-reach-art67-annex17-dependency",
+          "source_type": "CELLAR",
+          "identifier": "CELEX:02006R1907-20230806",
+          "locator": "CL2006R1907EN0590010.0001.xml#normalized-chars:183728-183886",
+          "language": "ENG",
+          "text_hash": "7a8714574725f4067a65175ee3c54582a8a5ed90fbf54a59c766d420d159d34b",
+          "role": "SEMANTIC_CLAIM",
+          "artifact_hash": "sha256:783c47cf6bca53e4fb2e0ec0394b1b76325af7dff50f48f3ad2b1896aafbea86"
+        },
+        {
+          "span_id": "span-reach-2023-entry-added",
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32023R2055",
+          "locator": "L_2023238EN.01007701.xml#normalized-chars:114-142",
+          "language": "ENG",
+          "text_hash": "af9e4a2f9e14889f9d52d18e771ea52750f1feacd4a40cd1311b947f5a88835c",
+          "role": "CONTEXT",
+          "artifact_hash": "sha256:d8fb1517d19572bfeaa1c499ded8151b4e56a90101e278906b576e59a6410402"
+        },
+        {
+          "span_id": "span-reach-2023-entry78",
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32023R2055",
+          "locator": "L_2023238EN.01007701.xml#normalized-chars:1722-1757",
+          "language": "ENG",
+          "text_hash": "dbb8d28f10c6b8a0fd5b88699f32163f5015770290c9bb3e7ba7657baa9915f8",
+          "role": "CONTEXT",
+          "artifact_hash": "sha256:d8fb1517d19572bfeaa1c499ded8151b4e56a90101e278906b576e59a6410402"
+        },
+        {
+          "span_id": "span-reach-after-entry78",
+          "source_type": "CELLAR",
+          "identifier": "CELEX:02006R1907-20231201",
+          "locator": "CL2006R1907EN0600020.0001.xml#normalized-chars:691015-691047",
+          "language": "ENG",
+          "text_hash": "aa104afe7bb63889b1af89e24f4ea5bbd513ec247b4919576c4230838d298981",
+          "role": "CONTEXT",
+          "artifact_hash": "sha256:8b92fb75528d814228a60c7076d8deca9794101ccb467e9e4153c3a9a7816cc4"
+        }
+      ],
+      "temporal_assertion_refs": [],
+      "procedure_state_refs": [],
+      "relations": [],
+      "affected_entities": [
+        {
+          "label": "Synthetic polymer microparticles",
+          "basis": "DERIVED",
+          "source_span_ids": [
+            "span-reach-2023-entry78"
+          ]
+        }
+      ],
+      "provenance": {
+        "observed_at": "2026-09-20T19:45:41Z",
+        "extractor_version": "dependency-ripple-discovery-v0.1",
+        "adversary_version": "semantic-adversary-v0.1",
+        "human_review": false
+      },
+      "notes": "No Article 67(1) textual mutation is asserted. The local rule is unchanged; this atom represents only the derived change in its Annex XVII dependency context."
+    }
+  ],
+  "negative_atoms": [
+    {
+      "case_id": "forbidden-local-art67-mutation",
+      "forbidden_inference": "Regulation 2023/2055 inserted or replaced text in Article 67(1)."
+    },
+    {
+      "case_id": "forbidden-direct-ripple-evidence",
+      "forbidden_inference": "The Article 67(1) dependency ripple is a direct local textual change rather than a derived effect of the Annex XVII insertion."
+    }
+  ]
+}

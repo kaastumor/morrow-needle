@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/source-anomaly-view-v0.1.json",
+  "title": "Morrow // Needle Source Anomaly Derived View v0.1",
+  "description": "Disposable factual projection of source-layer anomalies. It does not create legal-state or mutation truth.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "analytic_id",
+    "character",
+    "cards",
+    "summary",
+    "guardrails"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "source-anomaly-view-v0.1"
+    },
+    "analytic_id": {
+      "type": "string"
+    },
+    "character": {
+      "const": "DERIVED_VIEW"
+    },
+    "cards": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/card"
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "card_count",
+        "kind_counts"
+      ],
+      "properties": {
+        "card_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "kind_counts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "guardrails": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fixture_path",
+        "fixture_id",
+        "artifact_hash"
+      ],
+      "properties": {
+        "fixture_path": {
+          "type": "string"
+        },
+        "fixture_id": {
+          "type": "string"
+        },
+        "artifact_hash": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        }
+      }
+    },
+    "card": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "anomaly_id",
+        "kind",
+        "subject_identifier",
+        "language",
+        "semantics",
+        "legal_mutation_inference",
+        "facts",
+        "evidence",
+        "non_implications"
+      ],
+      "properties": {
+        "anomaly_id": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "ROUTE_FALLBACK",
+            "SOURCE_INTERNAL_CONFLICT",
+            "REPRESENTATION_DUPLICATION"
+          ]
+        },
+        "subject_identifier": {
+          "type": "string"
+        },
+        "language": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "semantics": {
+          "type": "string"
+        },
+        "legal_mutation_inference": {
+          "const": "NONE_FROM_SOURCE_ANOMALY_ALONE"
+        },
+        "facts": {
+          "type": "object"
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence"
+        },
+        "non_implications": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

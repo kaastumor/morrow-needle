@@ -43,5 +43,6 @@
     "verification_state": "VERIFIED",
     "conflicting_evidence": []
   },
-  "foundation_result": "Needle can verify a live textual mutation using distinct real before/after official text states plus an exact source span in the authentic amending act. Consolidation provenance and relationship metadata corroborate but do not supply the canonical legal cause."
+  "foundation_result": "Needle can verify a live textual mutation using distinct real before/after official text states plus an exact source span in the authentic amending act. Consolidation provenance and relationship metadata corroborate but do not supply the canonical legal cause.",
+  "mutation_id": "reg794-article3-live-verified-v0.1"
 }

@@ -10,7 +10,8 @@ import requests
 import xml.etree.ElementTree as ET
 from collections import Counter
 
-# Official Cellar dissemination resource endpoint documented by the Publications Office.\nBASE = "https://publications.europa.eu/resource/celex/{celex}"
+# Official Cellar dissemination resource endpoint documented by the Publications Office.
+BASE = "https://publications.europa.eu/resource/celex/{celex}"
 
 PROBES = [
     {

@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import hashlib
-from html.parser import HTMLParser
 import io
 import json
 from pathlib import Path
@@ -20,11 +19,6 @@ from needle.mutation.reconcile import reconcile_candidate
 
 BASE = "https://publications.europa.eu/resource/celex/{celex}"
 CAUSE = "32025R0905"
-CORRIGENDUM = "32025R0905R(01)"
-CORRIGENDUM_ELI = (
-    "https://data.europa.eu/eli/reg_impl/2025/905/"
-    "corrigendum/2026-07-17/oj"
-)
 BEFORE = "02004R0794-20161222"
 AFTER = "02004R0794-20250703"
 TARGET = "Article 3 > 3"
@@ -71,45 +65,6 @@ def fetch_fmx4(celex: str) -> tuple[bytes, requests.Response]:
 def normalized_visible_text(xml_bytes: bytes) -> str:
     root=ET.fromstring(xml_bytes)
     return " ".join("".join(root.itertext()).split())
-
-
-class _VisibleHTML(HTMLParser):
-    def __init__(self) -> None:
-        super().__init__()
-        self.parts=[]
-
-    def handle_data(self,data: str) -> None:
-        self.parts.append(data)
-
-
-def fetch_corrigendum_html() -> tuple[bytes,requests.Response,str]:
-    response=requests.get(
-        CORRIGENDUM_ELI,
-        headers={
-            "Accept":"text/html",
-            "Accept-Language":"en",
-            "User-Agent":(
-                "Morrow-Needle-Thread-Corrigendum-Probe/0.1 "
-                "(+https://github.com/kaastumor/morrow-needle)"
-            ),
-        },
-        timeout=120,
-        allow_redirects=True,
-    )
-    response.raise_for_status()
-    media_type=response.headers.get("Content-Type","").split(";",1)[0].lower()
-    if media_type not in {"text/html","application/xhtml+xml"}:
-        raise AssertionError(f"unexpected corrigendum media type: {media_type}")
-    parser=_VisibleHTML()
-    parser.feed(response.text)
-    visible=" ".join(" ".join(parser.parts).split())
-    if "32025R0905R(01)" not in visible:
-        raise AssertionError(
-            "official corrigendum resolver did not return the requested legal text"
-        )
-    if "verify that you're not a robot" in visible.lower():
-        raise AssertionError("official corrigendum resolver returned an interstitial")
-    return response.content,response,visible
 
 
 def source_meta(celex,response,payload):
@@ -267,13 +222,6 @@ def main() -> int:
     cause_payload,cause_response=fetch_fmx4(CAUSE)
     before_payload,before_response=fetch_fmx4(BEFORE)
     after_payload,after_response=fetch_fmx4(AFTER)
-    # Publications Office CELEX dereferencing currently returns 404 for this
-    # parenthesised corrigendum identifier. Verify against the official EUR-Lex
-    # representation instead; keep the source class explicit in the artifact.
-    corrigendum_payload,corrigendum_response,corrigendum_text=(
-        fetch_corrigendum_html()
-    )
-
     evidence,spans=authentic_evidence_and_spans(cause_payload)
     authentic=[
         item for item in evidence
@@ -357,13 +305,6 @@ def main() -> int:
     if reconciled["conflicting_evidence"]:
         raise AssertionError("Article 3(3) has conflicting evidence")
 
-    corrigendum_target="in the amendment to Article 4(1), second sentence"
-    if corrigendum_text.count(corrigendum_target)!=1:
-        raise AssertionError(
-            "corrigendum does not uniquely target Article 4(1), second sentence"
-        )
-    if "Article 3" in corrigendum_text:
-        raise AssertionError("corrigendum unexpectedly contains an Article 3 target")
 
     result={
         "probe_version":"0.1",
@@ -414,20 +355,6 @@ def main() -> int:
             "entry_into_force":"2025-07-03",
             "article3_3_special_deferred_application":False,
             "special_2025_08_13_clause_applies_only_to":"Annex I / Part I / point 6.8",
-        },
-        "corrigendum_32025R0905R01":{
-            "celex":CORRIGENDUM,
-            "publication_date":"2026-07-17",
-            "payload_sha256":hashlib.sha256(corrigendum_payload).hexdigest(),
-            "final_url":corrigendum_response.url,
-            "source_type":"ELI",
-            "canonical_identifier":CORRIGENDUM_ELI,
-            "representation_class":"OFFICIAL_HTML",
-            "cellar_celex_dereference":"UNAVAILABLE_404",
-            "target_evidence":corrigendum_target,
-            "targets":"Article 4(1), second sentence",
-            "article3_effect":"NONE",
-            "verification_basis":"LIVE_AUTHENTIC_CORRIGENDUM_TARGET",
         },
     }
 

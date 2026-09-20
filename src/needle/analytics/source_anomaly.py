@@ -72,6 +72,7 @@ def _route_fallback_card(
             "preferred_route":{
                 "source_system":"CELLAR",
                 "resource_uri":route["preferred_cellar_celex_uri"],
+                "observed_at":fixture.get("observed_at"),
                 "http_status":status,
                 "available":False,
             },
@@ -273,8 +274,13 @@ def render_source_anomaly_text(view: dict[str, Any]) -> str:
             preferred=card["facts"]["preferred_route"]
             lines.append(
                 f"- {card['subject_identifier']}: preferred "
-                f"{preferred['source_system']} route returned HTTP "
-                f"{preferred['http_status']}, while "
+                f"{preferred['source_system']} route was observed returning HTTP "
+                f"{preferred['http_status']}"
+                + (
+                    f" at {preferred['observed_at']}"
+                    if preferred.get("observed_at") else ""
+                )
+                + ", while "
                 f"{len(card['facts']['authoritative_fallbacks'])} pinned "
                 "authoritative fallback representation(s) remained available."
             )

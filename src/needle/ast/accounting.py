@@ -31,6 +31,7 @@ class XMLTextLedger:
         self.atoms: dict[str, dict[str, Any]] = {}
         self._subtree_atoms: dict[int, tuple[str, ...]] = {}
         self._element_text_atom: dict[int, str] = {}
+        self._child_tail_atom: dict[int, str] = {}
         self._duplicate_claims: list[dict[str, Any]] = []
         self._build(root)
 
@@ -106,6 +107,7 @@ class XMLTextLedger:
                     native_tags=tags,
                 )
                 if tail:
+                    self._child_tail_atom[id(child)] = tail
                     owned.append(tail)
 
             self._subtree_atoms[id(element)] = tuple(owned)
@@ -153,6 +155,17 @@ class XMLTextLedger:
         reason: str,
     ) -> None:
         for atom_id in self._subtree_atoms.get(id(element), ()):
+            self._claim_atom(atom_id, category=category, reason=reason)
+
+    def claim_child_tail(
+        self,
+        child: ET.Element,
+        *,
+        category: str,
+        reason: str,
+    ) -> None:
+        atom_id = self._child_tail_atom.get(id(child))
+        if atom_id:
             self._claim_atom(atom_id, category=category, reason=reason)
 
     def classify_unclaimed(

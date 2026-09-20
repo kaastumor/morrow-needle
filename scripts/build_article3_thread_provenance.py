@@ -12,6 +12,7 @@ from needle.provenance.ledger import seal_record, validate_ledger
 LEDGER_PATH = Path("fixtures/provenance/reg794-article3-dag-v0.1.json")
 BASELINE_PATH = Path("fixtures/thread/reg794-article3-baseline-v0.1.json")
 ORIGINAL_TEMPORAL_PATH = Path("fixtures/temporal/reg794-article3-original-v0.1.json")
+TEMPORAL_2008_PATH = Path("fixtures/temporal/reg794-article3-sani-v0.1.json")
 LINEAGE_PATH = Path("fixtures/lineage/reg794-article3-thread-lineage-v0.1.json")
 P4_PATH = Path("fixtures/thread/reg794-article3-p4-continuity-v0.1.json")
 CORR_PATH = Path("fixtures/thread/reg794-article3-corrigendum-scope-v0.1.json")
@@ -36,6 +37,7 @@ def main() -> int:
     ledger = load(LEDGER_PATH)
     baseline = load(BASELINE_PATH)
     temporal = load(ORIGINAL_TEMPORAL_PATH)
+    temporal_2008 = load(TEMPORAL_2008_PATH)
     lineage = load(LINEAGE_PATH)
     p4 = load(P4_PATH)
     corrigendum = load(CORR_PATH)
@@ -354,6 +356,203 @@ def main() -> int:
                 "role":"TEMPORAL",
                 "evidence_state":"DIRECT",
                 "derivation_record_id":"run-temporal-original-article3",
+            },
+        })
+
+    # Complete the 2008 channel lifecycle before time-aware retrieval.
+    append({
+        "record_id":"run-temporal-reg271-2008-entry-force",
+        "record_type":"DERIVATION_RUN",
+        "created_at":"2026-09-20T17:37:00Z",
+        "payload":{
+            "derivation_kind":"TEMPORAL_RESOLVE",
+            "execution_character":"DETERMINISTIC",
+            "implementation":{
+                "name":"needle.temporal",
+                "version":"temporal-v0.1",
+                "config_hash":None,
+            },
+            "input_record_ids":["src-reg271-2008-eng"],
+            "output_entity_refs":[{
+                "entity_type":"TEMPORAL_ASSERTION",
+                "entity_id":"reg271-2008-entry-into-force",
+            }],
+            "executed_at":"2026-09-20T17:33:14Z",
+        },
+    })
+    for record_id, locator, text_hash, role, created_at in [
+        (
+            "support-temporal-reg271-publication",
+            "L_2008082EN.01000101.doc.xml#DATE[ISO=20080325]",
+            "280f989c59b0e7feb1d7b9f0fba9daba12ba855deb20bad7835a3d73708b1302",
+            "CONTEXT",
+            "2026-09-20T17:37:01Z",
+        ),
+        (
+            "support-temporal-reg271-entry-clause",
+            "L_2008082EN.01000101.xml#normalized-chars:11427-11554",
+            "54d5a5d17e73703f7db092dec7d536193a9946b6d0b56707b0e1aa3acc26f67a",
+            "TEMPORAL",
+            "2026-09-20T17:37:02Z",
+        ),
+    ]:
+        append({
+            "record_id":record_id,
+            "record_type":"CLAIM_SUPPORT",
+            "created_at":created_at,
+            "payload":{
+                "claim_ref":{
+                    "entity_type":"TEMPORAL_ASSERTION",
+                    "entity_id":"reg271-2008-entry-into-force",
+                },
+                "source_observation_id":"src-reg271-2008-eng",
+                "source_span":{
+                    "locator":locator,
+                    "language":"ENG",
+                    "text_hash":sha(text_hash),
+                    "artifact_hash":"sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7",
+                },
+                "role":role,
+                "evidence_state":"DIRECT",
+                "derivation_record_id":"run-temporal-reg271-2008-entry-force",
+            },
+        })
+
+    append({
+        "record_id":"run-temporal-article3-2008-unqualified",
+        "record_type":"DERIVATION_RUN",
+        "created_at":"2026-09-20T17:37:03Z",
+        "payload":{
+            "derivation_kind":"TEMPORAL_RESOLVE",
+            "execution_character":"DETERMINISTIC",
+            "implementation":{
+                "name":"needle.temporal",
+                "version":"temporal-v0.1",
+                "config_hash":None,
+            },
+            "input_record_ids":[
+                "support-temporal-reg271-publication",
+                "support-temporal-reg271-entry-clause",
+                "run-reconcile-article3",
+            ],
+            "output_entity_refs":[{
+                "entity_type":"TEMPORAL_ASSERTION",
+                "entity_id":"reg794-art3-2008-unqualified-rules-application-start",
+            }],
+            "executed_at":"2026-09-20T17:33:14Z",
+        },
+    })
+    for record_id, locator, text_hash, role, created_at in [
+        (
+            "support-temporal-article3-2008-unqualified-entry",
+            "L_2008082EN.01000101.xml#normalized-chars:11427-11554",
+            "54d5a5d17e73703f7db092dec7d536193a9946b6d0b56707b0e1aa3acc26f67a",
+            "TEMPORAL",
+            "2026-09-20T17:37:04Z",
+        ),
+        (
+            "support-temporal-article3-2008-pki-context",
+            "L_2008082EN.01000101.xml#normalized-chars:7551-7702",
+            "d248b91594760dc2970219153a93862d574eaf13ad6c38c08204f8ec380e4a6d",
+            "CONTEXT",
+            "2026-09-20T17:37:05Z",
+        ),
+        (
+            "support-temporal-article3-2008-alt-context",
+            "L_2008082EN.01000101.xml#normalized-chars:7704-7983",
+            "c7fc733a71948a5bd1b40fc83e6e0ba18f073803adaa8bd97bbc73a2f55cdb26",
+            "CONTEXT",
+            "2026-09-20T17:37:06Z",
+        ),
+        (
+            "support-temporal-article3-2008-invalid-context",
+            "L_2008082EN.01000101.xml#normalized-chars:7983-8261",
+            "89db2848597405bd3fe6661af754001e96e292a97bb90d23c0d203095d67e5cd",
+            "CONTEXT",
+            "2026-09-20T17:37:07Z",
+        ),
+    ]:
+        append({
+            "record_id":record_id,
+            "record_type":"CLAIM_SUPPORT",
+            "created_at":created_at,
+            "payload":{
+                "claim_ref":{
+                    "entity_type":"TEMPORAL_ASSERTION",
+                    "entity_id":"reg794-art3-2008-unqualified-rules-application-start",
+                },
+                "source_observation_id":"src-reg271-2008-eng",
+                "source_span":{
+                    "locator":locator,
+                    "language":"ENG",
+                    "text_hash":sha(text_hash),
+                    "artifact_hash":"sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7",
+                },
+                "role":role,
+                "evidence_state":"DIRECT",
+                "derivation_record_id":"run-temporal-article3-2008-unqualified",
+            },
+        })
+
+    append({
+        "record_id":"run-temporal-article3-legacy-channel-end",
+        "record_type":"DERIVATION_RUN",
+        "created_at":"2026-09-20T17:37:08Z",
+        "payload":{
+            "derivation_kind":"TEMPORAL_RESOLVE",
+            "execution_character":"DETERMINISTIC",
+            "implementation":{
+                "name":"needle.temporal",
+                "version":"temporal-v0.1",
+                "config_hash":None,
+            },
+            "input_record_ids":[
+                "src-reg905-2025-eng",
+                "run-reconcile-article3-p3-2025",
+                "run-temporal-article3-p3-2025",
+            ],
+            "output_entity_refs":[{
+                "entity_type":"TEMPORAL_ASSERTION",
+                "entity_id":"reg794-art3-p3-legacy-channels-application-end",
+            }],
+            "executed_at":"2026-09-20T17:23:20Z",
+        },
+    })
+    for record_id, locator, text_hash, role, created_at in [
+        (
+            "support-temporal-article3-legacy-channel-end-cause",
+            "L_202500905EN.000101.fmx.xml#normalized-chars:10410-10461",
+            "4b0aea16593c10154d2e827d3979fbe1f1066dab929f69923fd522de1180a80e",
+            "CAUSE",
+            "2026-09-20T17:37:09Z",
+        ),
+        (
+            "support-temporal-article3-legacy-channel-end-time",
+            "L_202500905EN.000101.fmx.xml#normalized-chars:13176-13316",
+            "7521c32a90f5ee981042548d552a96206956fd9a1b9c292a5454ee68610371f8",
+            "TEMPORAL",
+            "2026-09-20T17:37:10Z",
+        ),
+    ]:
+        append({
+            "record_id":record_id,
+            "record_type":"CLAIM_SUPPORT",
+            "created_at":created_at,
+            "payload":{
+                "claim_ref":{
+                    "entity_type":"TEMPORAL_ASSERTION",
+                    "entity_id":"reg794-art3-p3-legacy-channels-application-end",
+                },
+                "source_observation_id":"src-reg905-2025-eng",
+                "source_span":{
+                    "locator":locator,
+                    "language":"ENG",
+                    "text_hash":sha(text_hash),
+                    "artifact_hash":"sha256:91bc8da880879ef9e02ccd7c3bdae09d8b21f496d839d7418bd0a0b088976ff8",
+                },
+                "role":role,
+                "evidence_state":"DIRECT",
+                "derivation_record_id":"run-temporal-article3-legacy-channel-end",
             },
         })
 

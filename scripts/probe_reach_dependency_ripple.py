@@ -5,6 +5,7 @@ import hashlib
 import io
 import json
 from pathlib import Path
+import re
 import zipfile
 import xml.etree.ElementTree as ET
 
@@ -35,7 +36,6 @@ CAUSE_ANCHORS={
         "Annex XVII to Regulation (EC) No 1907/2006 is amended as follows"
     ),
     "entry-added":"the following entry is added",
-    "entry-78":"78. Synthetic polymer microparticles",
 }
 
 
@@ -191,6 +191,45 @@ def locate_unique(
     return matches[0]
 
 
+def locate_unique_regex(
+    payload: bytes,
+    *,
+    identifier: str,
+    pattern: str,
+) -> dict:
+    regex=re.compile(pattern)
+    matches=[]
+    with zipfile.ZipFile(io.BytesIO(payload)) as zf:
+        for name in sorted(zf.namelist()):
+            if not name.lower().endswith((".xml",".frg")):
+                continue
+            try:
+                text=normalized_visible_text(zf.read(name))
+            except ET.ParseError:
+                continue
+            for match in regex.finditer(text):
+                matched=match.group(0)
+                matches.append({
+                    "identifier":identifier,
+                    "source_file":name,
+                    "locator":(
+                        f"{name}#normalized-chars:"
+                        f"{match.start()}-{match.end()}"
+                    ),
+                    "language":"ENG",
+                    "text":matched,
+                    "text_hash":hashlib.sha256(
+                        matched.encode("utf-8")
+                    ).hexdigest(),
+                })
+    if len(matches)!=1:
+        raise AssertionError(
+            f"{identifier}: expected one regex match for {pattern!r}, "
+            f"got {len(matches)}"
+        )
+    return matches[0]
+
+
 def earliest_after_checkpoint() -> tuple[str,bytes,requests.Response]:
     observed=[]
     for celex in AFTER_CANDIDATES:
@@ -277,6 +316,11 @@ def main() -> int:
         )
         for key,phrase in CAUSE_ANCHORS.items()
     }
+    cause_spans["entry-78"]=locate_unique_regex(
+        cause_payload,
+        identifier=f"CELEX:{CAUSE}",
+        pattern=r"78\.\s*Synthetic polymer microparticles",
+    )
     entry_after=locate_unique(
         after_payload,
         identifier=f"CELEX:{after_celex}",

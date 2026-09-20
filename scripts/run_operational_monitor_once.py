@@ -319,7 +319,7 @@ def main() -> int:
         "cycle_version":"0.1",
         "window":{
             "start":iso(start),
-            "previous_completed_end":iso(last),
+            "previous_completed_end":cursor["last_completed_end"],
             "end":iso(end),
             "overlap_seconds":cursor["overlap_seconds"],
         },

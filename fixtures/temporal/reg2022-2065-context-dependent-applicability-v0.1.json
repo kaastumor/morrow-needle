@@ -1,0 +1,42 @@
+{
+  "schema_version": "0.1",
+  "subject": "CELEX:32022R2065",
+  "events": [
+    {
+      "id": "entry-into-force",
+      "kind": "ENTRY_INTO_FORCE",
+      "date": "2022-11-16",
+      "scope": "Regulation (EU) 2022/2065",
+      "evidence": ["ELI:http://data.europa.eu/eli/reg/2022/2065/oj#art_93"]
+    },
+    {
+      "id": "general-application",
+      "kind": "APPLICATION_START",
+      "date": "2024-02-17",
+      "scope": "general application subject to Article 93(2) exceptions",
+      "evidence": ["ELI:http://data.europa.eu/eli/reg/2022/2065/oj#art_93"]
+    }
+  ],
+  "rules": [
+    {
+      "id": "general-application-rule",
+      "target": "Regulation (EU) 2022/2065 general application",
+      "effect": "APPLIES",
+      "trigger": {"type": "ABSOLUTE_DATE", "date": "2024-02-17"},
+      "evidence": ["ELI:http://data.europa.eu/eli/reg/2022/2065/oj#art_93"]
+    },
+    {
+      "id": "vlop-vlose-obligations",
+      "target": "Article 33(6) obligations for a designated very large online platform or very large online search engine",
+      "effect": "APPLIES",
+      "trigger": {
+        "type": "RELATIVE_TO_EVENT",
+        "event_kind": "NOTIFICATION",
+        "offset": "P4M",
+        "context_required": ["provider", "designated_service", "notification_date"]
+      },
+      "context": {"designation_basis": "Article 33(4)"},
+      "evidence": ["ELI:http://data.europa.eu/eli/reg/2022/2065/oj#art_33"]
+    }
+  ]
+}

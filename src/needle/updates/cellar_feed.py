@@ -101,14 +101,14 @@ def _parse_event(
             f"notificationEntry:id and guid"
         )
 
-    notification_id = notification_entry_id or guid or generic_id
     cellar_id = _first_text(element, "cellarId")
     root_cellar_id = _first_text(element, "rootCellarId")
     action = _first_text(element, "type")
     ingestion_time = _first_text(element, "date")
+    if ingestion_time is None and format_name == "ATOM":
+        ingestion_time = _first_text(element, "updated")
 
     required = {
-        "notification_id": notification_id,
         "cellar_id": cellar_id,
         "root_cellar_id": root_cellar_id,
         "action": action,
@@ -130,6 +130,29 @@ def _parse_event(
             f"feed entry {ordinal} on page {page} has unknown action {action!r}"
         )
 
+    event_key = f"{cellar_id}_{ingestion_time}"
+
+    if notification_entry_id:
+        notification_id = notification_entry_id
+        notification_id_basis = "NOTIFICATION_ENTRY_ID"
+        raw_feed_id = notification_entry_id
+    elif format_name == "RSS" and guid:
+        notification_id = guid
+        notification_id_basis = "RSS_GUID"
+        raw_feed_id = guid
+    elif (
+        format_name == "ATOM"
+        and generic_id
+        and "${" not in generic_id
+    ):
+        notification_id = generic_id
+        notification_id_basis = "ATOM_ID"
+        raw_feed_id = generic_id
+    else:
+        notification_id = event_key
+        notification_id_basis = "DERIVED_CELLAR_ID_TIME"
+        raw_feed_id = generic_id or guid
+
     classes = sorted(set(_all_text(element, "class")))
     explicit_wemi = [
         value.upper()
@@ -143,7 +166,10 @@ def _parse_event(
     priority = _first_text(element, "priority")
 
     return {
+        "event_key":event_key,
         "notification_id":notification_id,
+        "notification_id_basis":notification_id_basis,
+        "raw_feed_id":raw_feed_id,
         "action":action,
         "cellar_id":cellar_id,
         "root_cellar_id":root_cellar_id,
@@ -214,7 +240,7 @@ def dedupe_events(
     emitted = []
     updated = set(processed_notification_ids)
     for event in events:
-        event_id = event["notification_id"]
+        event_id = event["event_key"]
         if event_id in updated:
             continue
         emitted.append(event)

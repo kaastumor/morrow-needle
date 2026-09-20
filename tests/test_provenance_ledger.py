@@ -111,3 +111,23 @@ def test_support_artifact_hash_must_match_source_observation():
         "source span artifact hash does not match source observation" in error
         for error in errors
     )
+
+
+def test_mutation_keeps_before_after_and_cause_as_independent_support_edges():
+    traces = trace_claim_support(
+        RECORDS,
+        entity_type="MUTATION",
+        entity_id="reg794-article3-live-verified-v0.1",
+    )
+    assert {trace["support_record"]["payload"]["role"] for trace in traces} == {
+        "BEFORE",
+        "AFTER",
+        "CAUSE",
+    }
+    assert {
+        trace["source_observation"]["record_id"] for trace in traces
+    } == {
+        "src-reg794-20070119-eng",
+        "src-reg794-20080414-eng",
+        "src-reg271-2008-eng",
+    }

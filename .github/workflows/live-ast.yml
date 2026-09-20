@@ -1,0 +1,50 @@
+name: Live Legal AST contract
+
+on:
+  push:
+    paths:
+      - "src/needle/ast/**"
+      - "src/needle/formex/modifications.py"
+      - "scripts/build_live_ast_fixtures.py"
+      - "schemas/legal-ast-v0.1.schema.json"
+      - "schemas/consolidation-modification-annotation-v0.1.schema.json"
+      - "tests/test_legal_ast_parsers.py"
+      - "tests/test_ast_completeness.py"
+      - "pyproject.toml"
+      - ".github/workflows/live-ast.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: live-legal-ast-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install project and test dependencies
+        run: python -m pip install -e ".[test]"
+
+      - name: Run AST parser unit tests
+        run: |
+          python -m pytest -q \
+            tests/test_legal_ast_parsers.py \
+            tests/test_ast_completeness.py \
+            tests/test_formex_modifications.py
+
+      - name: Build and benchmark live official AST fixtures
+        run: python scripts/build_live_ast_fixtures.py --out artifacts/live-ast
+
+      - name: Upload live AST evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-ast-fixtures
+          path: artifacts/live-ast
+          if-no-files-found: error

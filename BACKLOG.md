@@ -71,9 +71,13 @@ Adapters continue to evolve, but the v0.1 core schema should change only when a 
 ### P0-E — Temporal semantics
 **Issue #5**
 
-Stress-test entry into force, application, expiry, delayed provisions, transition periods, partial applicability, retroactivity, time-scoped derogations, and **gapped regime continuity**.
+Stress-test entry into force, application, expiry, delayed provisions, transition periods, partial applicability, retroactivity, time-scoped derogations, **gapped regime continuity**, and **context-dependent applicability**.
 
-Discovery finding now adopted into the foundation: genealogical continuity and applicability continuity are separate dimensions. A successor regime may descend directly from an expired predecessor while a real legal gap exists between them.
+Two foundation findings are now adopted:
+1. genealogical continuity and applicability continuity are separate dimensions; a successor regime may descend directly from an expired predecessor while a real legal gap exists;
+2. applicability is not always a function of act/provision + date. DSA Article 33(6) makes obligations apply four months after notification to the provider concerned, so provider/service/event context may be required.
+
+Needle must represent absolute and event-relative triggers separately and return context-required/unresolved rather than inventing a universal application date.
 
 ### P0-F — Corrigenda + multilingual state
 **Issue #6**

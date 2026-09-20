@@ -6,16 +6,20 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-Unless new official evidence creates a more severe blocker, the hourly build loop should start here:
+The post-P1 foundation audit is complete. Controlled P2 expansion is now unblocked.
 
-1. **P1-F / Issue #16 — post-P1 foundation audit + adversarial Discovery pass.** Stop feature expansion and red-team the composed P0/P1 system.
-2. Build an explicit audit matrix over every frozen contract: schema invariant → implementation enforcement → integration evidence → adversarial gap → retain/reopen decision.
-3. Start with cross-contract failure modes already exposed by integration: temporal boundary execution, duplicate truth, source availability vs legal truth, projection staleness, multilingual scope and derived effects without textual mutation.
-4. Add several official-source adversaries unlike Article 3 rather than overfitting the audit to one unusually clean administrative-law case.
-5. Run at least one creative Discovery Lane cycle that leaves behind official evidence, a fixture, issue, architecture decision or useful negative result.
-6. **Broad P2 work remains blocked until this audit explicitly says the foundation is ready.**
+Unless new official evidence reopens a foundation risk, the autonomous loop should start here:
 
-All P0 contracts and P1-A/B/C/D/E interfaces are frozen. A freeze is reopened only when official or executable adversarial evidence demonstrates representational or implementation failure.
+1. **P2 / Issue #10 — Half-Life.** Build the first public-intelligence analytic as a read-only/reference-only projection over canonical temporal + regime-lineage facts. The ePrivacy temporary-regime fixture is already live-verified and includes extensions, a 118-day gap and successor period.
+2. **P2 / Issue #17 — Source Anomaly.** Expose authoritative-source fallback, internal conflicts and representation duplication without turning source infrastructure anomalies into legal truth.
+3. **P2 Discovery — Legislative X-Ray / silent dependency ripple.** Find a second official case where unchanged text changes practical operation through a modified reference before promoting this into a reusable public primitive.
+4. **P2 — factual daily/weekly change feed.** Compose P1-B update detection + P1-D retrieval + Thread rendering; keep feed ranking separate from legal truth.
+5. **P2 — impact / affected-entity intelligence.** Deliberately later because inference risk is materially higher; require direct-vs-derived-vs-interpretive separation before public ranking or alerts.
+6. Ranking, plain-language evaluation, subscriptions and saved monitors follow after the first P2 views prove presentation semantics.
+
+All P0 and P1 interfaces are frozen and survived the post-P1 composed red-team. A freeze is reopened only when official or executable adversarial evidence demonstrates representational or implementation failure.
+
+Canonical audit: docs/audits/post-p1-foundation-audit-v0.1.md
 
 ## Priority model
 
@@ -258,20 +262,34 @@ See `docs/decisions/thread-v0.1-interface-freeze.md`.
 ### P1-F — Post-P1 foundation audit
 **Issue #16**
 
-Status: **ACTIVE FOUNDATION RED-TEAM; BLOCKS BROAD P2 EXPANSION.**
+Status: **COMPLETED; ALL P0/P1 FREEZES RETAINED; P2 UNBLOCKED.**
 
-Re-audit every frozen P0/P1 interface using integration-derived evidence and several deliberately different official-source adversaries. Include at least one creative Discovery Lane cycle. Reopen a freeze only when evidence demonstrates representational or implementation failure.
+The composed red-team found one real enforcement defect and several useful negative/source-anomaly cases without requiring a canonical interface redesign.
+
+Key durable findings:
+- VERIFIED Change Atoms now require source-span evidence for every claimed language;
+- preferred source-route failure is not legal/source absence;
+- authentic source text may conflict internally and must be preserved literally while canonical identity is resolved separately;
+- structural lineage does not inherit temporal application;
+- a transposition deadline is not an application start;
+- genealogical succession may cross a real applicability gap;
+- the Gold Corpus now includes a non-Article-3 multilingual semantic adversary.
+
+See docs/audits/post-p1-foundation-audit-v0.1.md.
 
 ## P2 — Public intelligence
 
-- Needle daily/weekly change feed.
-- Legislative X-Ray.
-- impact/affected-entity model with strict direct-vs-inferred separation.
-- public ranking dimensions and transparent ranking rationale.
-- plain-language explanation evaluation.
-- domain subscriptions and saved monitors.
-- Dark Matter: known-but-unavailable document representation.
-- **Half-Life (Issue #10):** factual history of temporary regimes — original planned duration, extensions, gaps, re-enactments, final expiry or transition into successor/permanent rules.
+Risk-ordered after the post-P1 audit:
+
+1. **Half-Life (Issue #10):** factual history of temporary regimes — original planned duration, extensions, legal gaps, re-enactments, final expiry or transition into successor/permanent rules. First live fixture is already verified.
+2. **Source Anomaly (Issue #17):** provenance-driven visibility into authoritative-source fallback, internal identifier/text conflicts, duplicated representations and unavailable branches.
+3. **Legislative X-Ray / dependency ripple:** surface rule effects caused by changed referenced provisions even when local text is unchanged. Require a second official adversary before freezing a reusable primitive.
+4. **Needle daily/weekly change feed:** factual feed over verified source changes, Threads and retrieval.
+5. **Impact / affected-entity model:** strict direct-vs-derived-vs-interpretive separation before public use.
+6. **Public ranking dimensions + transparent rationale.**
+7. **Plain-language explanation evaluation.**
+8. **Domain subscriptions and saved monitors.**
+9. **Dark Matter:** known-but-unavailable document representation, coordinated with Source Anomaly rather than conflated with legal absence.
 
 ## P3 — Expansion
 

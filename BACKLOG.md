@@ -6,20 +6,21 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-The post-P1 foundation audit is complete. Controlled P2 expansion is now unblocked.
+The first Half-Life P2 implementation pass reopened one narrow foundation risk: regime-lineage v0.1 duplicated P0-E application dates and derived gap state.
 
-Unless new official evidence reopens a foundation risk, the autonomous loop should start here:
+Until Issue #18 is green and closed:
 
-1. **P2 / Issue #10 — Half-Life.** Build the first public-intelligence analytic as a read-only/reference-only projection over canonical temporal + regime-lineage facts. The ePrivacy temporary-regime fixture is already live-verified and includes extensions, a 118-day gap and successor period.
-2. **P2 / Issue #17 — Source Anomaly.** Expose authoritative-source fallback, internal conflicts and representation duplication without turning source infrastructure anomalies into legal truth.
-3. **P2 Discovery — Legislative X-Ray / silent dependency ripple.** Find a second official case where unchanged text changes practical operation through a modified reference before promoting this into a reusable public primitive.
-4. **P2 — factual daily/weekly change feed.** Compose P1-B update detection + P1-D retrieval + Thread rendering; keep feed ranking separate from legal truth.
-5. **P2 — impact / affected-entity intelligence.** Deliberately later because inference risk is materially higher; require direct-vs-derived-vs-interpretive separation before public ranking or alerts.
-6. Ranking, plain-language evaluation, subscriptions and saved monitors follow after the first P2 views prove presentation semantics.
+1. **Foundation / Issue #18 — regime-lineage v0.2 temporal ownership.** Finish the migration to genealogy-only lineage + Temporal Assertion references.
+2. Re-run the post-P1 foundation and Half-Life gates.
+3. Re-close Issue #16 with an audit addendum if the migration holds.
+4. Resume **P2 / Issue #10 — Half-Life** immediately afterward.
+5. Then **P2 / Issue #17 — Source Anomaly**.
+6. Legislative X-Ray / dependency-ripple research remains the next Discovery Lane target.
 
-All P0 and P1 interfaces are frozen and survived the post-P1 composed red-team. A freeze is reopened only when official or executable adversarial evidence demonstrates representational or implementation failure.
+Broad P2 implementation is temporarily paused, not rolled back. All other P0/P1 freezes remain retained.
 
 Canonical audit: docs/audits/post-p1-foundation-audit-v0.1.md
+Ownership correction: docs/decisions/regime-lineage-v0.2-temporal-ownership.md
 
 ## Priority model
 

@@ -1790,6 +1790,261 @@
         "derivation_record_id": "run-thread-corrigendum-scope-2026"
       },
       "record_hash": "sha256:d73a54478d78912178144526b328e20ef7e776b3c6e7a434c3863601f2403f6f"
+    },
+    {
+      "record_id": "run-temporal-reg271-2008-entry-force",
+      "record_type": "DERIVATION_RUN",
+      "created_at": "2026-09-20T17:37:00Z",
+      "payload": {
+        "derivation_kind": "TEMPORAL_RESOLVE",
+        "execution_character": "DETERMINISTIC",
+        "implementation": {
+          "name": "needle.temporal",
+          "version": "temporal-v0.1",
+          "config_hash": null
+        },
+        "input_record_ids": [
+          "src-reg271-2008-eng"
+        ],
+        "output_entity_refs": [
+          {
+            "entity_type": "TEMPORAL_ASSERTION",
+            "entity_id": "reg271-2008-entry-into-force"
+          }
+        ],
+        "executed_at": "2026-09-20T17:33:14Z"
+      },
+      "record_hash": "sha256:840538f04d07e1c263f6f84b2839bc4976de535c06f14adc5569196fe1013aea"
+    },
+    {
+      "record_id": "support-temporal-reg271-publication",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T17:37:01Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "TEMPORAL_ASSERTION",
+          "entity_id": "reg271-2008-entry-into-force"
+        },
+        "source_observation_id": "src-reg271-2008-eng",
+        "source_span": {
+          "locator": "L_2008082EN.01000101.doc.xml#DATE[ISO=20080325]",
+          "language": "ENG",
+          "text_hash": "sha256:280f989c59b0e7feb1d7b9f0fba9daba12ba855deb20bad7835a3d73708b1302",
+          "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
+        },
+        "role": "CONTEXT",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-temporal-reg271-2008-entry-force"
+      },
+      "record_hash": "sha256:2c6277c8b2fdd26e05d6213bf30b1083dfa1d410465914dd2ee62a6bbd109a31"
+    },
+    {
+      "record_id": "support-temporal-reg271-entry-clause",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T17:37:02Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "TEMPORAL_ASSERTION",
+          "entity_id": "reg271-2008-entry-into-force"
+        },
+        "source_observation_id": "src-reg271-2008-eng",
+        "source_span": {
+          "locator": "L_2008082EN.01000101.xml#normalized-chars:11427-11554",
+          "language": "ENG",
+          "text_hash": "sha256:54d5a5d17e73703f7db092dec7d536193a9946b6d0b56707b0e1aa3acc26f67a",
+          "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
+        },
+        "role": "TEMPORAL",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-temporal-reg271-2008-entry-force"
+      },
+      "record_hash": "sha256:2a7eedef918a77e9bc1e8bdeece603d66e486116e25faf4a681b670b68923d95"
+    },
+    {
+      "record_id": "run-temporal-article3-2008-unqualified",
+      "record_type": "DERIVATION_RUN",
+      "created_at": "2026-09-20T17:37:03Z",
+      "payload": {
+        "derivation_kind": "TEMPORAL_RESOLVE",
+        "execution_character": "DETERMINISTIC",
+        "implementation": {
+          "name": "needle.temporal",
+          "version": "temporal-v0.1",
+          "config_hash": null
+        },
+        "input_record_ids": [
+          "support-temporal-reg271-publication",
+          "support-temporal-reg271-entry-clause",
+          "run-reconcile-article3"
+        ],
+        "output_entity_refs": [
+          {
+            "entity_type": "TEMPORAL_ASSERTION",
+            "entity_id": "reg794-art3-2008-unqualified-rules-application-start"
+          }
+        ],
+        "executed_at": "2026-09-20T17:33:14Z"
+      },
+      "record_hash": "sha256:77c8a6cbeaeb2e45ad06d79673ab094edd5ccd63bd324854dde209c1d3c5ee78"
+    },
+    {
+      "record_id": "support-temporal-article3-2008-unqualified-entry",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T17:37:04Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "TEMPORAL_ASSERTION",
+          "entity_id": "reg794-art3-2008-unqualified-rules-application-start"
+        },
+        "source_observation_id": "src-reg271-2008-eng",
+        "source_span": {
+          "locator": "L_2008082EN.01000101.xml#normalized-chars:11427-11554",
+          "language": "ENG",
+          "text_hash": "sha256:54d5a5d17e73703f7db092dec7d536193a9946b6d0b56707b0e1aa3acc26f67a",
+          "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
+        },
+        "role": "TEMPORAL",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-temporal-article3-2008-unqualified"
+      },
+      "record_hash": "sha256:86aea83a8965d5a6d8640ba35d596f2de805e7f3191d17d540f7aee9f58f1642"
+    },
+    {
+      "record_id": "support-temporal-article3-2008-pki-context",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T17:37:05Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "TEMPORAL_ASSERTION",
+          "entity_id": "reg794-art3-2008-unqualified-rules-application-start"
+        },
+        "source_observation_id": "src-reg271-2008-eng",
+        "source_span": {
+          "locator": "L_2008082EN.01000101.xml#normalized-chars:7551-7702",
+          "language": "ENG",
+          "text_hash": "sha256:d248b91594760dc2970219153a93862d574eaf13ad6c38c08204f8ec380e4a6d",
+          "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
+        },
+        "role": "CONTEXT",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-temporal-article3-2008-unqualified"
+      },
+      "record_hash": "sha256:b6ea7b29a85e77f3f58dc510a6743e9d2dc5ea02ba38da9b9380ecd929c59a00"
+    },
+    {
+      "record_id": "support-temporal-article3-2008-alt-context",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T17:37:06Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "TEMPORAL_ASSERTION",
+          "entity_id": "reg794-art3-2008-unqualified-rules-application-start"
+        },
+        "source_observation_id": "src-reg271-2008-eng",
+        "source_span": {
+          "locator": "L_2008082EN.01000101.xml#normalized-chars:7704-7983",
+          "language": "ENG",
+          "text_hash": "sha256:c7fc733a71948a5bd1b40fc83e6e0ba18f073803adaa8bd97bbc73a2f55cdb26",
+          "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
+        },
+        "role": "CONTEXT",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-temporal-article3-2008-unqualified"
+      },
+      "record_hash": "sha256:f067257e9c0d61eac159667a77a44f143744d15045348b858e6a467fe20eaa86"
+    },
+    {
+      "record_id": "support-temporal-article3-2008-invalid-context",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T17:37:07Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "TEMPORAL_ASSERTION",
+          "entity_id": "reg794-art3-2008-unqualified-rules-application-start"
+        },
+        "source_observation_id": "src-reg271-2008-eng",
+        "source_span": {
+          "locator": "L_2008082EN.01000101.xml#normalized-chars:7983-8261",
+          "language": "ENG",
+          "text_hash": "sha256:89db2848597405bd3fe6661af754001e96e292a97bb90d23c0d203095d67e5cd",
+          "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
+        },
+        "role": "CONTEXT",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-temporal-article3-2008-unqualified"
+      },
+      "record_hash": "sha256:81b1ebfbe2cc459d6992a31ddcd77839c3083ad893ab26117f19794d96b1bed4"
+    },
+    {
+      "record_id": "run-temporal-article3-legacy-channel-end",
+      "record_type": "DERIVATION_RUN",
+      "created_at": "2026-09-20T17:37:08Z",
+      "payload": {
+        "derivation_kind": "TEMPORAL_RESOLVE",
+        "execution_character": "DETERMINISTIC",
+        "implementation": {
+          "name": "needle.temporal",
+          "version": "temporal-v0.1",
+          "config_hash": null
+        },
+        "input_record_ids": [
+          "src-reg905-2025-eng",
+          "run-reconcile-article3-p3-2025",
+          "run-temporal-article3-p3-2025"
+        ],
+        "output_entity_refs": [
+          {
+            "entity_type": "TEMPORAL_ASSERTION",
+            "entity_id": "reg794-art3-p3-legacy-channels-application-end"
+          }
+        ],
+        "executed_at": "2026-09-20T17:23:20Z"
+      },
+      "record_hash": "sha256:a4b469a25dcf61f2f651518e53f9b81f08ddaa0c701a93489fed61881f5893db"
+    },
+    {
+      "record_id": "support-temporal-article3-legacy-channel-end-cause",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T17:37:09Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "TEMPORAL_ASSERTION",
+          "entity_id": "reg794-art3-p3-legacy-channels-application-end"
+        },
+        "source_observation_id": "src-reg905-2025-eng",
+        "source_span": {
+          "locator": "L_202500905EN.000101.fmx.xml#normalized-chars:10410-10461",
+          "language": "ENG",
+          "text_hash": "sha256:4b0aea16593c10154d2e827d3979fbe1f1066dab929f69923fd522de1180a80e",
+          "artifact_hash": "sha256:91bc8da880879ef9e02ccd7c3bdae09d8b21f496d839d7418bd0a0b088976ff8"
+        },
+        "role": "CAUSE",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-temporal-article3-legacy-channel-end"
+      },
+      "record_hash": "sha256:b4787086feb4fd8599818b8fc5592ff1d3e5d3012218ce2f3e186cdd2c076bb7"
+    },
+    {
+      "record_id": "support-temporal-article3-legacy-channel-end-time",
+      "record_type": "CLAIM_SUPPORT",
+      "created_at": "2026-09-20T17:37:10Z",
+      "payload": {
+        "claim_ref": {
+          "entity_type": "TEMPORAL_ASSERTION",
+          "entity_id": "reg794-art3-p3-legacy-channels-application-end"
+        },
+        "source_observation_id": "src-reg905-2025-eng",
+        "source_span": {
+          "locator": "L_202500905EN.000101.fmx.xml#normalized-chars:13176-13316",
+          "language": "ENG",
+          "text_hash": "sha256:7521c32a90f5ee981042548d552a96206956fd9a1b9c292a5454ee68610371f8",
+          "artifact_hash": "sha256:91bc8da880879ef9e02ccd7c3bdae09d8b21f496d839d7418bd0a0b088976ff8"
+        },
+        "role": "TEMPORAL",
+        "evidence_state": "DIRECT",
+        "derivation_record_id": "run-temporal-article3-legacy-channel-end"
+      },
+      "record_hash": "sha256:0a0027186a07b87e10052a58e0b8ba0d15122565f76d1ec304ea6a7ec374114f"
     }
   ]
 }

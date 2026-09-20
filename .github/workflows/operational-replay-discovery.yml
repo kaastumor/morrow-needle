@@ -1,0 +1,28 @@
+name: Operational legal-change replay discovery
+
+on:
+  push:
+    paths:
+      - "scripts/discover_operational_replay_events.py"
+      - ".github/workflows/operational-replay-discovery.yml"
+  workflow_dispatch:
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install project
+        run: python -m pip install -e ".[test]"
+      - name: Discover official feed events for verified amendment cases
+        run: python scripts/discover_operational_replay_events.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: operational-replay-events
+          path: artifacts/operational-replay-discovery/
+          if-no-files-found: error

@@ -687,6 +687,157 @@
           "end": "2026-07-30"
         }
       }
+    },
+    {
+      "case_id": "reg2023-2773-retroactive-application",
+      "source_summary": "Commission Implementing Regulation (EU) 2023/2773 was adopted in December 2023 and entered into force after publication, but Article 2 expressly applies it from 1 January 2023.",
+      "assertions": [
+        {
+          "assertion_id": "r2773-publication",
+          "subject_ref": {
+            "kind": "LEGAL_ACT",
+            "identifier": "CELEX:32023R2773",
+            "locator": null
+          },
+          "dimension": "PUBLICATION",
+          "boundary": "POINT",
+          "inclusive": true,
+          "trigger": {
+            "kind": "ABSOLUTE_DATE",
+            "date": "2023-12-14",
+            "source_expression": "OJ L, 14.12.2023"
+          },
+          "normalized_date": "2023-12-14",
+          "scope": {
+            "mode": "DEFAULT",
+            "applies_to": [
+              "ACT:32023R2773"
+            ],
+            "overrides_assertion_ids": [],
+            "entity_condition": null
+          },
+          "resolution_state": "RESOLVED_ABSOLUTE",
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32023R2773",
+              "locator": "OJ L, 14.12.2023",
+              "language": "ENG",
+              "role": "PUBLICATION_METADATA"
+            }
+          ],
+          "notes": null
+        },
+        {
+          "assertion_id": "r2773-force-start",
+          "subject_ref": {
+            "kind": "LEGAL_ACT",
+            "identifier": "CELEX:32023R2773",
+            "locator": "Article 2 first paragraph"
+          },
+          "dimension": "LEGAL_FORCE",
+          "boundary": "START",
+          "inclusive": true,
+          "trigger": {
+            "kind": "RELATIVE_EVENT",
+            "event_key": "publication",
+            "event_binding": "SUBJECT",
+            "offset": {
+              "value": 3,
+              "unit": "DAYS"
+            },
+            "guard": null,
+            "source_expression": "third day following publication"
+          },
+          "normalized_date": "2023-12-17",
+          "scope": {
+            "mode": "DEFAULT",
+            "applies_to": [
+              "ACT:32023R2773"
+            ],
+            "overrides_assertion_ids": [],
+            "entity_condition": null
+          },
+          "resolution_state": "RESOLVED_RELATIVE",
+          "evidence_state": "DERIVED",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32023R2773",
+              "locator": "Article 2 first paragraph",
+              "language": "ENG",
+              "role": "TEMPORAL_CLAUSE"
+            }
+          ],
+          "notes": null
+        },
+        {
+          "assertion_id": "r2773-application-start",
+          "subject_ref": {
+            "kind": "LEGAL_ACT",
+            "identifier": "CELEX:32023R2773",
+            "locator": "Article 2 second paragraph"
+          },
+          "dimension": "APPLICATION",
+          "boundary": "START",
+          "inclusive": true,
+          "trigger": {
+            "kind": "ABSOLUTE_DATE",
+            "date": "2023-01-01",
+            "source_expression": "shall apply from 1 January 2023"
+          },
+          "normalized_date": "2023-01-01",
+          "scope": {
+            "mode": "DEFAULT",
+            "applies_to": [
+              "ACT:32023R2773"
+            ],
+            "overrides_assertion_ids": [],
+            "entity_condition": null
+          },
+          "resolution_state": "RESOLVED_ABSOLUTE",
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32023R2773",
+              "locator": "Article 2 second paragraph",
+              "language": "ENG",
+              "role": "TEMPORAL_CLAUSE"
+            }
+          ],
+          "notes": "Retroactive application: application begins before publication and entry into force. This is an ex-post legal-effect assertion, not evidence that the act was contemporaneously enacted or knowable on 1 January 2023."
+        }
+      ],
+      "queries": [
+        {
+          "query_id": "r2773-june-ex-post-application",
+          "dimension": "APPLICATION",
+          "subject_keys": [
+            "ACT:32023R2773"
+          ],
+          "date": "2023-06-01",
+          "context": {},
+          "expected": {
+            "state": "RESOLVED",
+            "active": true
+          }
+        },
+        {
+          "query_id": "r2773-june-not-yet-in-force",
+          "dimension": "LEGAL_FORCE",
+          "subject_keys": [
+            "ACT:32023R2773"
+          ],
+          "date": "2023-06-01",
+          "context": {},
+          "expected": {
+            "state": "RESOLVED",
+            "active": false
+          }
+        }
+      ]
     }
   ]
 }

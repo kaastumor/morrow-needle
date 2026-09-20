@@ -92,38 +92,57 @@ def main() -> int:
     results={}
     for target in TARGETS:
         matches,attempts=find_target(target)
-        if not matches:
-            raise AssertionError(
-                f"no official feed event found for CELEX:{target['celex']}"
-            )
         results[target["celex"]]={
-            "selected_event":matches[0],
+            "state":(
+                "FOUND"
+                if matches
+                else "NO_RETAINED_MATCH_IN_TESTED_WINDOW"
+            ),
+            "selected_event":matches[0] if matches else None,
             "match_count":len(matches),
             "matches":matches,
             "attempts":attempts,
         }
 
+    found_count=sum(
+        result["state"] == "FOUND"
+        for result in results.values()
+    )
+    output={
+        "probe_version":"0.2",
+        "character":"HISTORICAL_FEED_REPLAY_DISCOVERY",
+        "targets":results,
+        "summary":{
+            "target_count":len(results),
+            "found_count":found_count,
+            "missing_count":len(results)-found_count,
+            "historical_replay_available_for_all_targets":(
+                found_count == len(results)
+            ),
+        },
+        "guardrail":(
+            "A missing notification in a tested historical feed window is "
+            "not evidence that the legal act or amendment did not exist. "
+            "The ingestion feed is not treated as a canonical historical "
+            "event archive."
+        ),
+    }
+
     out=Path("artifacts/operational-replay-discovery")
     out.mkdir(parents=True,exist_ok=True)
     path=out/"events.json"
     path.write_text(
-        json.dumps(
-            {
-                "probe_version":"0.1",
-                "targets":results,
-            },
-            indent=2,
-            ensure_ascii=False,
-        )+"\n",
+        json.dumps(output,indent=2,ensure_ascii=False)+"\n",
         encoding="utf-8",
     )
     print(json.dumps({
         celex:{
-            "action":result["selected_event"]["action"],
-            "wemi_levels":result["selected_event"]["wemi_levels"],
-            "ingestion_time":result["selected_event"]["ingestion_time"],
-            "event_key":result["selected_event"]["event_key"],
+            "state":result["state"],
             "match_count":result["match_count"],
+            "selected_event_key":(
+                result["selected_event"]["event_key"]
+                if result["selected_event"] else None
+            ),
         }
         for celex,result in results.items()
     },indent=2))

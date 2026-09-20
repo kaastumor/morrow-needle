@@ -1,0 +1,66 @@
+{
+  "fixture_id": "reg794-article3-baseline-v0.1",
+  "purpose": "Pin the original English Article 3 source state without manufacturing mutation-derived Change Atoms for a baseline enactment.",
+  "subject": {
+    "act_id": "CELEX:32004R0794",
+    "structural_path": "Article 3",
+    "language": "ENG"
+  },
+  "authentic_source": {
+    "celex": "32004R0794",
+    "artifact_hash": "sha256:b01567ea804ef7e20d50218d30204fbe763b48fff78482c6796578784726c558",
+    "manifestation": "cellar:26f403d1-7656-4c91-9726-c08d466ff8bd.0006.05",
+    "article3": {
+      "node_id": "CELEX:32004R0794:n000034",
+      "text_hash": "d2fed56ff253de5abde15990eb87fe2bcfc65865496249849814553f485311d4",
+      "text_length": 1830
+    }
+  },
+  "initial_consolidated_checkpoint": {
+    "celex": "02004R0794-20040520",
+    "artifact_hash": "sha256:e0b0390c8d2bf974f8aeeb0df10692bf069f542ab426cf4295cfa998e593eddc",
+    "manifestation": "cellar:a18ae2f9-d2ea-44e3-bdc0-11cca6a10034.0004.02",
+    "article3": {
+      "node_id": "CELEX:02004R0794-20040520:n000034",
+      "text_hash": "d2fed56ff253de5abde15990eb87fe2bcfc65865496249849814553f485311d4",
+      "text_length": 1830
+    }
+  },
+  "comparison": {
+    "article3_text_equal": true,
+    "basis": "EXACT_CANONICAL_AST_SUBTREE_HASH",
+    "lineage_inference": false
+  },
+  "source_spans": {
+    "entry-into-force": {
+      "locator": "L_2004140EN.01000101.xml#normalized-chars:18221-18361",
+      "text_hash": "7521c32a90f5ee981042548d552a96206956fd9a1b9c292a5454ee68610371f8"
+    },
+    "chapter-ii-application": {
+      "locator": "L_2004140EN.01000101.xml#normalized-chars:18361-18510",
+      "text_hash": "229ff41213fa32ffa02cd60bbaab5f28757b33be3d08d82e0c6b9b709a631052"
+    },
+    "paper-until-2005": {
+      "locator": "L_2004140EN.01000101.xml#normalized-chars:8862-8949",
+      "text_hash": "4398373f7714f149fe1804cad456321abc739007c99d05c0f0986c1061cd5c2b"
+    },
+    "electronic-from-2006": {
+      "locator": "L_2004140EN.01000101.xml#normalized-chars:9033-9189",
+      "text_hash": "6b08fb71e33e8fe9f53445d1858381d463bb1c1356c8fd2f669bb1ff1f0f9589"
+    },
+    "correspondence-from-2006": {
+      "locator": "L_2004140EN.01000101.xml#normalized-chars:9189-9324",
+      "text_hash": "9f8e15f5f20d3deafdb65c6c5d5bc42f6b1ed26705bebc6d57b0eb3acc74bc6b"
+    }
+  },
+  "temporal_fixture": "fixtures/temporal/reg794-article3-original-v0.1.json",
+  "semantic_character": {
+    "state": "SOURCE_BACKED_BASELINE",
+    "change_atoms_created": false,
+    "rationale": "Change Atom v0.3 represents semantic change derived from VERIFIED textual mutations. The initial Article 3 state is retained as source-backed baseline context rather than being mislabelled as a later amendment."
+  },
+  "verification": {
+    "live_workflow_run": 35524115414,
+    "state": "VERIFIED"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "reg794-article3-2008-replacement",
+  "target_act": "CELEX:32004R0794",
+  "before_checkpoint": "CELEX:02004R0794-20070119",
+  "after_checkpoint": "CELEX:02004R0794-20080414",
+  "expected_candidate": {
+    "operation": "REPLACE",
+    "target_locator": "Article 3",
+    "modifying_act": "CELEX:32008R0271",
+    "reconciliation_state": "CORROBORATED",
+    "verification_state": "UNVERIFIED"
+  },
+  "evidence": [
+    {
+      "channel": "RELATIONSHIP_METADATA",
+      "source_id": "CELEX:32004R0794",
+      "operation": "REPLACEMENT",
+      "target_locator": "Article 3",
+      "authority_character": "OFFICIAL_STRUCTURED_METADATA",
+      "locator": "Modified by 32008R0271 / Replacement / article 3 / 14/04/2008"
+    },
+    {
+      "channel": "CONSOLIDATION_PROVENANCE",
+      "source_id": "CELEX:02004R0794-20250813",
+      "operation": "REPLACED",
+      "target_locator": "Article 3",
+      "authority_character": "DOCUMENTARY_NON_BINDING",
+      "locator": "CLG.MDFO O003001M001000; ACTIVE.DOC=32008R0271; ACTIVE.LOC=AR:1;PT:1"
+    },
+    {
+      "channel": "CONSOLIDATED_CHECKPOINT",
+      "source_id": "CELEX:02004R0794-20070119->02004R0794-20080414",
+      "operation": "REPLACE",
+      "target_locator": "Article 3",
+      "authority_character": "CHECKPOINT",
+      "locator": "Article 3 before/after checkpoints"
+    }
+  ],
+  "foundation_assertion": "Independent official metadata and embedded consolidation provenance agree that Article 3 was replaced by Regulation 271/2008. This corroborates a deterministic replacement candidate but does not by itself substitute for parsing the authentic amending instruction.",
+  "forbidden_inferences": [
+    "Promoting the mutation to VERIFIED solely because consolidated provenance and relationship metadata agree.",
+    "Treating the consolidated text as the canonical legal cause.",
+    "Converting Article 3 replacement directly into semantic Change Atoms without source-span extraction.",
+    "Using exact citation alignment as evidence of historical provision identity outside this comparator."
+  ]
+}

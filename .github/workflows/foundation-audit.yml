@@ -10,6 +10,7 @@ on:
       - "tests/test_half_life_discovery.py"
       - "tests/test_money_corrigendum_fixture.py"
       - "tests/test_money_corrigendum_semantics.py"
+      - "tests/test_gold_money_corrigendum.py"
       - "tests/test_temporal_semantics.py"
       - "tests/test_multilingual_corrigenda.py"
       - "tests/test_identifier_graph.py"
@@ -41,6 +42,7 @@ jobs:
             tests/test_half_life_discovery.py \
             tests/test_money_corrigendum_fixture.py \
             tests/test_money_corrigendum_semantics.py \
+            tests/test_gold_money_corrigendum.py \
             tests/test_temporal_semantics.py \
             tests/test_multilingual_corrigenda.py \
             tests/test_identifier_graph.py \

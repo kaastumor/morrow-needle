@@ -18,9 +18,7 @@ ANNEX_RE = re.compile(r"^Annex(?:\s+(?P<label>[A-Z0-9IVXLC]+))?\b", re.IGNORECAS
 class _BlockExtractor(HTMLParser):
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
-        self.depth = 0
-        self.current_tag: str | None = None
-        self.current_parts: list[str] = []
+        self.stack: list[dict[str, object]] = []
         self.blocks: list[tuple[str, str]] = []
         self._suppressed_depth = 0
 
@@ -33,42 +31,49 @@ class _BlockExtractor(HTMLParser):
             return
 
         if tag in BLOCK_TAGS:
-            if self.depth == 0:
-                self.current_tag = tag
-                self.current_parts = []
-            self.depth += 1
-        elif tag == "br" and self.depth:
-            self.current_parts.append("\n")
+            self.stack.append({"tag": tag, "parts": []})
+        elif tag == "br" and self.stack:
+            self.stack[-1]["parts"].append("\n")
 
     def handle_endtag(self, tag: str) -> None:
         tag = tag.lower()
         if tag in {"script", "style", "noscript"}:
             self._suppressed_depth = max(0, self._suppressed_depth - 1)
             return
-        if self._suppressed_depth:
+        if self._suppressed_depth or tag not in BLOCK_TAGS:
             return
 
-        if tag in BLOCK_TAGS and self.depth:
-            self.depth -= 1
-            if self.depth == 0 and self.current_tag is not None:
-                text = normalize_compare_text(" ".join(self.current_parts))
-                if text:
-                    self.blocks.append((self.current_tag, text))
-                self.current_tag = None
-                self.current_parts = []
+        # Pop the matching block even if the historical HTML is slightly malformed.
+        idx = None
+        for i in range(len(self.stack) - 1, -1, -1):
+            if self.stack[i]["tag"] == tag:
+                idx = i
+                break
+        if idx is None:
+            return
+
+        block = self.stack.pop(idx)
+        text = normalize_compare_text(" ".join(block["parts"]))
+        if text:
+            self.blocks.append((tag, text))
 
     def handle_data(self, data: str) -> None:
-        if self._suppressed_depth:
+        if self._suppressed_depth or not self.stack:
             return
-        if self.depth:
-            self.current_parts.append(data)
+        # Text belongs to the innermost semantic block. Parent DIVs are fallback
+        # containers and should not swallow child paragraphs.
+        self.stack[-1]["parts"].append(data)
 
 
 def extract_blocks(payload: bytes) -> list[tuple[str, str]]:
     text = payload.decode("utf-8", errors="replace")
     parser = _BlockExtractor()
     parser.feed(text)
-    return parser.blocks
+
+    # Prefer leaf-ish semantic blocks. DIVs are useful only when the old page
+    # has no paragraph/list/table/heading structure at all.
+    non_div = [block for block in parser.blocks if block[0] != "div"]
+    return non_div or parser.blocks
 
 
 class HistoricalHTMLASTParser:

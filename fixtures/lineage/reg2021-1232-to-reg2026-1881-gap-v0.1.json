@@ -3,13 +3,18 @@
   "topic": "Temporary derogation from selected ePrivacy Directive provisions",
   "source_regime": {
     "regime_id": "temporary-eprivacy-derogation-2021",
-    "act_ids": ["32021R1232","32024R1307"],
+    "act_ids": [
+      "32021R1232",
+      "32024R1307"
+    ],
     "application_start": "2021-08-02",
     "application_end": "2026-04-03"
   },
   "target_regime": {
     "regime_id": "temporary-eprivacy-derogation-2026",
-    "act_ids": ["32026R1881"],
+    "act_ids": [
+      "32026R1881"
+    ],
     "application_start": "2026-07-31",
     "application_end": "2028-04-03"
   },
@@ -20,7 +25,7 @@
     "gap": {
       "start": "2026-04-04",
       "end": "2026-07-30",
-      "basis": "DERIVED_FROM_APPLICATION_DATES"
+      "basis": "LIVE_CELLAR_DERIVED_FROM_APPLICATION_DATES"
     }
   },
   "official_evidence": [
@@ -40,10 +45,10 @@
       "note": "Published 28 July 2026; Article 11 provides entry into force on the third day following publication and application until 3 April 2028."
     }
   ],
-  "foundation_assertion": "Genealogical continuity does not imply uninterrupted applicability.",
-  "status": "CANDIDATE_VERIFIED",
+  "foundation_assertion": "Genealogical or thematic succession does not imply uninterrupted applicability; the 118-day 2026 gap is live-verified from official Cellar bytes.",
+  "status": "TEMPORAL_GAP_LIVE_VERIFIED_RULE_LINEAGE_PENDING",
   "verification_todo": [
-    "Anchor source and target rule-level spans before asserting proposition-by-proposition continuity.",
-    "Confirm machine-readable status/date fields through Cellar during ingestion probe."
-  ]
+    "Anchor source and target rule-level spans before asserting proposition-by-proposition continuity."
+  ],
+  "live_temporal_evidence_fixture": "fixtures/discovery/eprivacy-half-life-live-v0.1.json"
 }

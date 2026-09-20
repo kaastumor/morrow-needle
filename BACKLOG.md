@@ -8,14 +8,14 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 Unless new official evidence creates a more severe blocker, the hourly build loop should start here:
 
-1. **P1-D / Issue #15 — structured-first search/retrieval.** Build a rebuildable retrieval projection over the now-proven Thread / Atom / temporal / lineage / provenance objects.
-2. Start with deterministic exact retrieval and structured filters; embeddings remain secondary discovery.
-3. Make date-aware retrieval require an explicit temporal perspective instead of collapsing text-state and application.
-4. Every result must resolve to canonical entity IDs and expose why it matched plus Source Mode/provenance state.
-5. Use the Article 3 Thread as the first adversarial retrieval corpus: SANI/PKI scope, 2025 paragraph-4 non-mutation, 2026 corrigendum non-impact and the exclusive 2004 Chapter II boundary must survive retrieval.
-6. **After P1-D, stop expansion and execute Issue #16 — the post-P1 P0/P1 foundation audit + Discovery Lane pass — before broad P2 work.**
+1. **P1-F / Issue #16 — post-P1 foundation audit + adversarial Discovery pass.** Stop feature expansion and red-team the composed P0/P1 system.
+2. Build an explicit audit matrix over every frozen contract: schema invariant → implementation enforcement → integration evidence → adversarial gap → retain/reopen decision.
+3. Start with cross-contract failure modes already exposed by integration: temporal boundary execution, duplicate truth, source availability vs legal truth, projection staleness, multilingual scope and derived effects without textual mutation.
+4. Add several official-source adversaries unlike Article 3 rather than overfitting the audit to one unusually clean administrative-law case.
+5. Run at least one creative Discovery Lane cycle that leaves behind official evidence, a fixture, issue, architecture decision or useful negative result.
+6. **Broad P2 work remains blocked until this audit explicitly says the foundation is ready.**
 
-P1-A Change Atom v0.3, P1-B Cellar update detection, P1-C provenance ledger v0.1 and P1-E Thread v0.1 are frozen. All P0 contracts remain closed unless an official adversary demonstrates representational failure.
+All P0 contracts and P1-A/B/C/D/E interfaces are frozen. A freeze is reopened only when official or executable adversarial evidence demonstrates representational or implementation failure.
 
 ## Priority model
 
@@ -223,11 +223,20 @@ See `docs/decisions/provenance-ledger-v0.1-interface-freeze.md`.
 ### P1-D — Search/retrieval
 **Issue #15**
 
-Status: **ACTIVE CORE CAPABILITY.**
+Status: **CORE INTERFACE RESOLVED; ISSUE CLOSED.**
 
-Structured-first retrieval over acts, provisions, mutations, atoms, dates, lineage, Threads and provenance. The search index is a rebuildable projection, never canonical legal truth. Embeddings remain secondary discovery.
+Structured retrieval v0.1 is frozen as a deterministic, rebuildable projection over canonical Needle objects. It supports typed exact/entity/identifier filtering, explainable lexical discovery, explicit bitemporal perspective, provenance-current Source Mode, searchable unknown/non-impact records and fail-closed temporal abstention.
 
-First adversarial retrieval corpus: the frozen Regulation 794/2004 Article 3 Thread.
+Integration discoveries retained as regressions:
+- exact legal retrieval must remain distinct from broad lexical discovery;
+- date-aware retrieval may not synthesize validity from event order, mutation dates or lineage;
+- retrieval pressure exposed missing canonical PKI/SANI lifecycle boundaries, which were repaired in P0-E data rather than patched in search;
+- official-source-as-of queries require evidence-backed publication time;
+- duplicate identical Formex metadata across streams is representation duplication, not evidence conflict;
+- superseded provenance support must disappear from the active retrieval projection even when support cardinality is unchanged;
+- typed CELEX/ELI/Cellar equivalence must not absorb Expressions, Manifestations, consolidated states or corrigenda.
+
+See `docs/decisions/retrieval-v0.1-interface-freeze.md`.
 
 ### P1-E — First end-to-end Thread
 **Issue #14**
@@ -249,7 +258,7 @@ See `docs/decisions/thread-v0.1-interface-freeze.md`.
 ### P1-F — Post-P1 foundation audit
 **Issue #16**
 
-Status: **QUEUED AFTER P1-D; BLOCKS BROAD P2 EXPANSION.**
+Status: **ACTIVE FOUNDATION RED-TEAM; BLOCKS BROAD P2 EXPANSION.**
 
 Re-audit every frozen P0/P1 interface using integration-derived evidence and several deliberately different official-source adversaries. Include at least one creative Discovery Lane cycle. Reopen a freeze only when evidence demonstrates representational or implementation failure.
 

@@ -110,6 +110,10 @@ def empty_operational_state(
         "processed_event_keys":[],
         "source_observations":[],
         "baselines":[],
+        "poll_cursor":{
+            "last_completed_end":updated_at,
+            "overlap_seconds":300,
+        },
     }
 
 
@@ -201,6 +205,7 @@ def advance_baseline(
     seed_character: str,
     language: str = "ENG",
     mark_event_processed: bool = True,
+    eligible_for_event_ingestion_after: str | None = None,
 ) -> dict[str,Any]:
     """Append observations and move one operational baseline pointer.
 
@@ -268,7 +273,9 @@ def advance_baseline(
             "metadata_observation_id"
         ),
         "observed_at":observed_at,
-        "eligible_for_event_ingestion_after":observed_at,
+        "eligible_for_event_ingestion_after":(
+            eligible_for_event_ingestion_after or observed_at
+        ),
         "seed_character":seed_character,
     }
     next_state["baselines"]=[
@@ -289,4 +296,36 @@ def advance_baseline(
     errors=validate_operational_state(next_state)
     if errors:
         raise OperationalStateError("; ".join(errors))
+    return next_state
+
+
+
+def mark_event_processed(
+    state: dict[str,Any],
+    event_key: str,
+    *,
+    updated_at: str,
+) -> dict[str,Any]:
+    next_state=deepcopy(state)
+    next_state["processed_event_keys"]=sorted(
+        set(next_state.get("processed_event_keys",[]))
+        | {event_key}
+    )
+    next_state["updated_at"]=updated_at
+    return next_state
+
+
+def complete_poll_window(
+    state: dict[str,Any],
+    *,
+    window_end: str,
+    updated_at: str,
+) -> dict[str,Any]:
+    """Advance only the last fully completed operational polling boundary."""
+    _instant(window_end)
+    next_state=deepcopy(state)
+    next_state.setdefault("poll_cursor",{})
+    next_state["poll_cursor"]["last_completed_end"]=window_end
+    next_state["poll_cursor"].setdefault("overlap_seconds",300)
+    next_state["updated_at"]=updated_at
     return next_state

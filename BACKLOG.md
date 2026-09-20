@@ -8,13 +8,13 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 Unless new official evidence creates a more severe blocker, the hourly build loop should start here:
 
-1. **P1-A / Issue #11 — Change Atom v0.3 + Adversary.** Repair the stale semantic contract so it references frozen temporal/procedural/mutation truth instead of collapsing it.
-2. Use the VERIFIED Regulation 794/2004 Article 3 replacement as the first end-to-end semantic adversary.
-3. Require exact authentic source-span support for high-risk legal semantics and add at least one plausible-but-unsupported negative case.
-4. Feed every durable semantic invariant into the Gold Corpus.
-5. After P1-A has a stable semantic contract, reassess P1-C provenance ledger vs P1-B source update detection as the next system risk.
+1. **P1-C / Issue #12 — append-only provenance ledger + claim-support graph.** Build the canonical audit spine before feeds/search/UI multiply provenance logic.
+2. First adversary: trace the VERIFIED Regulation 794/2004 Article 3 SANI atom back through semantic support, authentic source span, deterministic mutation derivation and immutable Cellar source observations.
+3. Prove corrections/supersessions append new records without rewriting historical provenance.
+4. Preserve independent evidence channels as independent support edges.
+5. After the provenance interface is stable, reassess P1-B source update detection as the likely next operational capability.
 
-All P0 foundation contracts are now resolved. Do not reopen P0 interfaces for convenience; require a new official adversarial case that demonstrates representational failure.
+P1-A / Change Atom v0.3 is frozen. All P0 foundation contracts remain closed unless a new official adversary demonstrates representational failure.
 
 ## Priority model
 
@@ -194,17 +194,21 @@ See `docs/decisions/mutation-engine-v0.2-interface-freeze.md`.
 ### P1-A — Change Atom extraction + Adversary
 **Issue #11**
 
-Status: **ACTIVE CORE CAPABILITY.**
+Status: **CORE INTERFACE RESOLVED; ISSUE CLOSED.**
 
-First task: replace stale Change Atom v0.2 with v0.3. The semantic layer must reference frozen mutation, temporal and procedure truth rather than recreate a collapsed lifecycle.
+Change Atom v0.3 is frozen. VERIFIED semantic claims reference VERIFIED textual mutations, temporal/procedure truth, explicit language scope and exact immutable authentic source spans. The first Article 3 graph decomposes one replacement into DUTY, exceptional PERMISSION and LEGAL_STATUS atoms, with a permanent negative regression against false SANI globalization.
 
-First adversary: VERIFIED Regulation 794/2004 Article 3 replacement.
+See `docs/decisions/change-atom-v0.3-interface-freeze.md`.
 
 ### P1-B — Source update detection
 Detect new/changed official source objects without repeatedly crawling everything.
 
 ### P1-C — Provenance ledger
-Immutable source hashes, observation times, transformation versions, and claim-support edges.
+**Issue #12**
+
+Status: **ACTIVE CORE CAPABILITY.**
+
+Build an append-only audit graph of SOURCE_OBSERVATION, DERIVATION_RUN, CLAIM_SUPPORT and SUPERSESSION records with deterministic hashes and fail-closed references.
 
 ### P1-D — Search/retrieval
 Structured-first retrieval over acts, provisions, atoms, entities, dates and lineage; embeddings remain secondary discovery.

@@ -1,0 +1,28 @@
+name: Recent CREATE amendment discovery
+
+on:
+  push:
+    paths:
+      - "scripts/discover_recent_create_amendments.py"
+      - ".github/workflows/recent-create-amendment-discovery.yml"
+  workflow_dispatch:
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install project
+        run: python -m pip install -e ".[test]"
+      - name: Discover recent amendment-like legal CREATE events
+        run: python scripts/discover_recent_create_amendments.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: recent-create-amendment-discovery
+          path: artifacts/recent-create-discovery/
+          if-no-files-found: error

@@ -1,0 +1,131 @@
+import json
+import re
+from copy import deepcopy
+from pathlib import Path
+
+from jsonschema import Draft202012Validator
+import pytest
+
+from needle.analytics.half_life import (
+    HalfLifeError,
+    build_half_life_view,
+    render_half_life_text,
+)
+
+
+def load(path):
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+COMPOSITION = load("fixtures/analytics/eprivacy-half-life-v0.1.json")
+COMPOSITION_SCHEMA = load("schemas/half-life-composition-v0.1.schema.json")
+VIEW_SCHEMA = load("schemas/half-life-view-v0.1.schema.json")
+
+
+def test_half_life_composition_is_reference_only_and_schema_valid():
+    assert list(
+        Draft202012Validator(COMPOSITION_SCHEMA).iter_errors(COMPOSITION)
+    ) == []
+    encoded=json.dumps(COMPOSITION,sort_keys=True)
+    assert re.search(r"\b\d{4}-\d{2}-\d{2}\b",encoded) is None
+    for forbidden in (
+        "application_start",
+        "application_end",
+        "gap_start",
+        "gap_end",
+        "duration_days",
+    ):
+        assert f'"{forbidden}"' not in encoded
+
+
+def test_eprivacy_half_life_view_is_derived_and_schema_valid():
+    view=build_half_life_view(COMPOSITION)
+    assert list(Draft202012Validator(VIEW_SCHEMA).iter_errors(view)) == []
+    assert view["character"] == "DERIVED_VIEW"
+    assert view["summary"] == {
+        "original_planned_days":1098,
+        "first_regime_actual_days":1706,
+        "extension_added_days":608,
+        "successor_days":613,
+        "total_applicable_days":2319,
+        "calendar_span_days":2437,
+        "non_applicable_days":118,
+        "first_regime_duration_ratio":1.5537,
+    }
+
+
+def test_every_displayed_boundary_retains_temporal_assertion_identity():
+    view=build_half_life_view(COMPOSITION)
+    source_ids=set(view["sources"]["temporal_assertion_ids"])
+    for interval in [view["original_plan"], *view["episodes"]]:
+        for boundary in ("start","end"):
+            assert interval[boundary]["assertion_id"] in source_ids
+    for gap in view["gaps"]:
+        assert gap["previous_end_assertion_id"] in source_ids
+        assert gap["next_start_assertion_id"] in source_ids
+
+
+def test_extension_is_derived_from_explicit_temporal_override():
+    view=build_half_life_view(COMPOSITION)
+    assert view["extensions"] == [{
+        "regime_id":"REGIME:2021R1232_AS_EXTENDED",
+        "previous_end":"2024-08-03",
+        "new_end":"2026-04-03",
+        "added_days":608,
+        "supersedes_assertion_id":"eprivacy-2021-original-application-end",
+        "extension_assertion_id":"eprivacy-2021-extended-application-end",
+    }]
+
+
+def test_gap_is_visible_not_smoothed_into_genealogical_continuity():
+    view=build_half_life_view(COMPOSITION)
+    assert view["gaps"] == [{
+        "from_regime_id":"REGIME:2021R1232_AS_EXTENDED",
+        "to_regime_id":"REGIME:2026R1881",
+        "start":"2026-04-04",
+        "end":"2026-07-30",
+        "duration_days":118,
+        "previous_end_assertion_id":"eprivacy-2021-extended-application-end",
+        "next_start_assertion_id":"eprivacy-2026-application-start",
+    }]
+
+
+def test_half_life_refuses_discovery_era_lineage_with_embedded_dates():
+    bad=deepcopy(COMPOSITION)
+    bad["lineage_fixture_path"] = (
+        "fixtures/lineage/reg2021-1232-to-reg2026-1881-gap-v0.1.json"
+    )
+    with pytest.raises(HalfLifeError,match="regime-lineage-v0.2"):
+        build_half_life_view(bad)
+
+
+def test_half_life_refuses_unknown_temporal_reference():
+    bad=deepcopy(COMPOSITION)
+    bad["original_regime"]["current_end_assertion_id"]="invented-end"
+    with pytest.raises(HalfLifeError,match="unknown temporal assertion"):
+        build_half_life_view(bad)
+
+
+def test_half_life_refuses_wrong_temporal_dimension():
+    bad=deepcopy(COMPOSITION)
+    bad["original_regime"]["application_start_assertion_id"]="eprivacy-2021-publication"
+    with pytest.raises(HalfLifeError,match="requires APPLICATION"):
+        build_half_life_view(bad)
+
+
+def test_render_is_factual_and_exposes_evidence_model():
+    text=render_half_life_text(build_half_life_view(COMPOSITION))
+    assert "originally planned for 1,098 days" in text
+    assert "extended by 608 days" in text
+    assert "118-day gap" in text
+    assert "canonical Temporal Assertion ID" in text
+    assert "genealogy only" in text
+    assert "temporary was abused" not in text.casefold()
+    assert "should have expired" not in text.casefold()
+
+
+def test_half_life_does_not_assert_rule_level_continuity():
+    view=build_half_life_view(COMPOSITION)
+    combined=" ".join(view["guardrails"] + view["unknowns"]).casefold()
+    assert "no proposition-level rule continuity" in combined
+    assert "proposition-by-proposition continuity" in combined

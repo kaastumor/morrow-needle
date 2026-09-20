@@ -58,7 +58,11 @@ def _observation_refs(source_change: dict[str, Any]) -> list[str]:
     return list(dict.fromkeys(refs))
 
 
-def _trigger(event: dict[str, Any], source_change: dict[str, Any]) -> dict[str, Any]:
+def _trigger(
+    event: dict[str, Any],
+    source_change: dict[str, Any],
+    related_event_keys: list[str] | None = None,
+) -> dict[str, Any]:
     return {
         "event_key":event["event_key"],
         "feed_action":event["action"],
@@ -68,6 +72,7 @@ def _trigger(event: dict[str, Any], source_change: dict[str, Any]) -> dict[str, 
         "identifiers":list(event.get("identifiers",[])),
         "refresh_scope":source_change["refresh_scope"],
         "relevance":classify_event_relevance(event),
+        "related_event_keys":sorted(set(related_event_keys or [])),
     }
 
 
@@ -96,6 +101,7 @@ def build_operational_result(
     *,
     downstream: dict[str, Any] | None = None,
     source_unknowns: list[str] | None = None,
+    related_event_keys: list[str] | None = None,
 ) -> dict[str, Any]:
     """Connect feed/source state to downstream legal analysis without conflation."""
     if source_change["event_key"] != event["event_key"]:
@@ -107,8 +113,10 @@ def build_operational_result(
     canonical_refs=[]
     explanation=None
     unknowns=list(source_unknowns or [])
+    related=sorted(set(related_event_keys or []))
     evidence_refs=[
         f"feed-event:{event['event_key']}",
+        *(f"feed-event:{key}" for key in related),
         *_observation_refs(source_change),
     ]
 
@@ -188,7 +196,9 @@ def build_operational_result(
         "schema_version":"operational-result-v0.1",
         "result_id":f"operational-result:{_stable_digest(material)}",
         "character":"PROCESS_RECORD",
-        "trigger":_trigger(event,source_change),
+        "trigger":_trigger(
+            event,source_change,related_event_keys=related
+        ),
         "source_change":source_change,
         "disposition":disposition,
         "stream":stream,

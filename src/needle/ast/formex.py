@@ -114,72 +114,287 @@ class FormexASTParser:
             fidelity = "PARTIAL_STRUCTURAL"
         return self.builder.finalize(fidelity=fidelity)
 
-    def _walk_structures(self, element: ET.Element, parent_id: str, *, native_path: str, citation_stack: list[str], capture_unstructured_text: bool) -> None:
-        for child in list(element):
-            tag = local(child.tag); self.tag_counts[tag] += 1
-            if tag in LABEL_TAGS or tag in HEADING_TAGS: continue
-            if tag in OPAQUE_MEDIA_TAGS:
-                if capture_unstructured_text:
-                    self.builder.known_gaps.append(f"{native_path}: opaque media element {tag}")
-                    if self._ledger is not None: self._ledger.claim_subtree(child, category="OPAQUE_OR_EMBEDDED", reason=f"opaque source element {tag}")
-                continue
-            kind = STRUCTURAL_KINDS.get(tag)
-            if kind is not None:
-                label, heading, label_element, heading_element = _label_and_heading(child); native_id = _native_identifier(child); citation_piece = label or native_id; next_stack = citation_stack + ([citation_piece] if citation_piece else [])
-                node_id = self.builder.add_node(kind=kind, parent_id=parent_id, native_kind=tag, native_identifier=native_id, source_anchor=self.builder.anchor(native_path=native_path, native_identifier=native_id), display_label=label, citation_path=" > ".join(next_stack) if next_stack else None, native_attributes=dict(child.attrib))
-                if label:
-                    self.builder.add_segment(node_id=node_id, role="LABEL", text=label, native_kind=tag, source_anchor=self.builder.anchor(native_path=native_path, native_identifier=native_id))
-                    if self._ledger is not None and label_element is not None: self._ledger.claim_subtree(label_element, category="LEGAL_MAPPED", reason="canonical structural label")
-                if heading:
-                    self.builder.add_segment(node_id=node_id, role="HEADING", text=heading, native_kind=tag, source_anchor=self.builder.anchor(native_path=native_path, native_identifier=native_id))
-                    if self._ledger is not None and heading_element is not None: self._ledger.claim_subtree(heading_element, category="LEGAL_MAPPED", reason="canonical structural heading")
-                self._emit_leaf_text(child, node_id, native_path=native_path); self._walk_structures(child, node_id, native_path=native_path, citation_stack=next_stack, capture_unstructured_text=False); continue
-            if _has_structural_descendant(child):
-                self._walk_structures(child, parent_id, native_path=native_path, citation_stack=citation_stack, capture_unstructured_text=capture_unstructured_text); continue
-            category = None
-            if tag in SOURCE_METADATA_TAGS: category = "SOURCE_METADATA"
-            elif tag in PUBLICATION_NAVIGATION_TAGS: category = "PUBLICATION_NAVIGATION"
-            elif tag in PROVENANCE_ONLY_TAGS: category = "PROVENANCE_ONLY"
-            if category:
-                if capture_unstructured_text and self._ledger is not None: self._ledger.claim_subtree(child, category=category, reason=f"source disposition element {tag}")
-                continue
-            if not capture_unstructured_text: continue
-            value = text_of(child)
-            if value:
-                if tag not in KNOWN_TEXT_WRAPPERS: self.builder.unknown_native_kinds.add(tag)
-                segment_id = self.builder.add_segment(node_id=parent_id, role="INLINE_OTHER", text=value, native_kind=tag, source_anchor=self.builder.anchor(native_path=native_path, native_identifier=_native_identifier(child)))
-                if segment_id:
-                    if self._ledger is not None: self._ledger.claim_subtree(child, category="LEGAL_MAPPED", reason="top-level legal text wrapper mapped to canonical segment")
-                    self._emit_references(child, segment_id, native_path=native_path)
+    def _add_flow_segment(
+        self,
+        *,
+        node_id: str,
+        text: str | None,
+        native_kind: str,
+        native_path: str,
+        native_identifier: str | None = None,
+        role: str = "BODY",
+    ) -> str | None:
+        value = normalize_compare_text(text or "")
+        if not value:
+            return None
+        return self.builder.add_segment(
+            node_id=node_id,
+            role=role,
+            text=value,
+            native_kind=native_kind,
+            source_anchor=self.builder.anchor(
+                native_path=native_path,
+                native_identifier=native_identifier,
+            ),
+        )
 
-    def _emit_leaf_text(self, element: ET.Element, node_id: str, *, native_path: str) -> None:
-        direct = normalize_compare_text(element.text or "")
-        if direct:
-            self.builder.add_segment(node_id=node_id, role="BODY", text=direct, native_kind=local(element.tag), source_anchor=self.builder.anchor(native_path=native_path, native_identifier=_native_identifier(element)))
-            if self._ledger is not None: self._ledger.claim_element_text(element, category="LEGAL_MAPPED", reason="direct text of canonical structural node")
+    def _claim_and_emit_element_text(
+        self,
+        element: ET.Element,
+        *,
+        node_id: str,
+        native_path: str,
+        role: str = "BODY",
+        reason: str = "mixed-content parent-flow text",
+    ) -> None:
+        segment_id = self._add_flow_segment(
+            node_id=node_id,
+            text=element.text,
+            native_kind=local(element.tag),
+            native_path=native_path,
+            native_identifier=_native_identifier(element),
+            role=role,
+        )
+        if segment_id and self._ledger is not None:
+            self._ledger.claim_element_text(
+                element,
+                category="LEGAL_MAPPED",
+                reason=reason,
+            )
+
+    def _claim_and_emit_child_tail(
+        self,
+        child: ET.Element,
+        *,
+        node_id: str,
+        native_path: str,
+        role: str = "BODY",
+    ) -> None:
+        segment_id = self._add_flow_segment(
+            node_id=node_id,
+            text=child.tail,
+            native_kind=f"{local(child.tag)}#TAIL",
+            native_path=native_path,
+            role=role,
+        )
+        if segment_id and self._ledger is not None:
+            self._ledger.claim_child_tail(
+                child,
+                category="LEGAL_MAPPED",
+                reason="parent-flow tail after nested source element",
+            )
+
+    def _walk_structures(
+        self,
+        element: ET.Element,
+        parent_id: str,
+        *,
+        native_path: str,
+        citation_stack: list[str],
+        capture_unstructured_text: bool,
+    ) -> None:
+        # Non-structural wrappers may carry substantive text before, between,
+        # and after structural descendants. That flow belongs to the current
+        # canonical parent and must not disappear merely because we recurse
+        # into a nested ARTICLE/TABLE/NOTE/etc.
+        if capture_unstructured_text and local(element.tag) not in STRUCTURAL_KINDS:
+            self._claim_and_emit_element_text(
+                element,
+                node_id=parent_id,
+                native_path=native_path,
+            )
+
         for child in list(element):
             tag = local(child.tag)
-            if tag in LABEL_TAGS or tag in HEADING_TAGS or tag in STRUCTURAL_KINDS: continue
-            category = None
-            if tag in SOURCE_METADATA_TAGS: category = "SOURCE_METADATA"
-            elif tag in PUBLICATION_NAVIGATION_TAGS: category = "PUBLICATION_NAVIGATION"
-            elif tag in PROVENANCE_ONLY_TAGS: category = "PROVENANCE_ONLY"
-            if category:
-                if self._ledger is not None: self._ledger.claim_subtree(child, category=category, reason=f"source disposition element {tag}")
+            self.tag_counts[tag] += 1
+
+            if tag in LABEL_TAGS or tag in HEADING_TAGS:
+                if capture_unstructured_text:
+                    self._claim_and_emit_child_tail(
+                        child,
+                        node_id=parent_id,
+                        native_path=native_path,
+                    )
                 continue
+
             if tag in OPAQUE_MEDIA_TAGS:
-                self.builder.known_gaps.append(f"{native_path}: opaque media element {tag}")
-                if self._ledger is not None: self._ledger.claim_subtree(child, category="OPAQUE_OR_EMBEDDED", reason=f"opaque source element {tag}")
+                self.builder.known_gaps.append(
+                    f"{native_path}: opaque media element {tag}"
+                )
+                if self._ledger is not None:
+                    self._ledger.claim_subtree(
+                        child,
+                        category="OPAQUE_OR_EMBEDDED",
+                        reason=f"opaque source element {tag}",
+                    )
+                if capture_unstructured_text:
+                    self._claim_and_emit_child_tail(
+                        child,
+                        node_id=parent_id,
+                        native_path=native_path,
+                    )
                 continue
-            if _has_structural_descendant(child): continue
+
+            kind = STRUCTURAL_KINDS.get(tag)
+            if kind is not None:
+                label, heading, label_element, heading_element = _label_and_heading(child)
+                native_id = _native_identifier(child)
+                citation_piece = label or native_id
+                next_stack = citation_stack + ([citation_piece] if citation_piece else [])
+
+                node_id = self.builder.add_node(
+                    kind=kind,
+                    parent_id=parent_id,
+                    native_kind=tag,
+                    native_identifier=native_id,
+                    source_anchor=self.builder.anchor(
+                        native_path=native_path,
+                        native_identifier=native_id,
+                    ),
+                    display_label=label,
+                    citation_path=" > ".join(next_stack) if next_stack else None,
+                    native_attributes=dict(child.attrib),
+                )
+
+                if label:
+                    self.builder.add_segment(
+                        node_id=node_id,
+                        role="LABEL",
+                        text=label,
+                        native_kind=tag,
+                        source_anchor=self.builder.anchor(
+                            native_path=native_path,
+                            native_identifier=native_id,
+                        ),
+                    )
+                    if self._ledger is not None and label_element is not None:
+                        self._ledger.claim_subtree(
+                            label_element,
+                            category="LEGAL_MAPPED",
+                            reason="canonical structural label",
+                        )
+
+                if heading:
+                    self.builder.add_segment(
+                        node_id=node_id,
+                        role="HEADING",
+                        text=heading,
+                        native_kind=tag,
+                        source_anchor=self.builder.anchor(
+                            native_path=native_path,
+                            native_identifier=native_id,
+                        ),
+                    )
+                    if self._ledger is not None and heading_element is not None:
+                        self._ledger.claim_subtree(
+                            heading_element,
+                            category="LEGAL_MAPPED",
+                            reason="canonical structural heading",
+                        )
+
+                self._claim_and_emit_element_text(
+                    child,
+                    node_id=node_id,
+                    native_path=native_path,
+                    role="CELL_TEXT" if kind == "TABLE_CELL" else "BODY",
+                    reason="direct text of canonical structural node",
+                )
+                self._walk_structures(
+                    child,
+                    node_id,
+                    native_path=native_path,
+                    citation_stack=next_stack,
+                    capture_unstructured_text=True,
+                )
+
+                if capture_unstructured_text:
+                    self._claim_and_emit_child_tail(
+                        child,
+                        node_id=parent_id,
+                        native_path=native_path,
+                    )
+                continue
+
+            category = None
+            if tag in SOURCE_METADATA_TAGS:
+                category = "SOURCE_METADATA"
+            elif tag in PUBLICATION_NAVIGATION_TAGS:
+                category = "PUBLICATION_NAVIGATION"
+            elif tag in PROVENANCE_ONLY_TAGS:
+                category = "PROVENANCE_ONLY"
+
+            if category:
+                if self._ledger is not None:
+                    self._ledger.claim_subtree(
+                        child,
+                        category=category,
+                        reason=f"source disposition element {tag}",
+                    )
+                if capture_unstructured_text:
+                    self._claim_and_emit_child_tail(
+                        child,
+                        node_id=parent_id,
+                        native_path=native_path,
+                    )
+                continue
+
+            if _has_structural_descendant(child):
+                # Preserve wrapper-owned text while recursively extracting the
+                # nested canonical structures.
+                self._walk_structures(
+                    child,
+                    parent_id,
+                    native_path=native_path,
+                    citation_stack=citation_stack,
+                    capture_unstructured_text=capture_unstructured_text,
+                )
+                if capture_unstructured_text:
+                    self._claim_and_emit_child_tail(
+                        child,
+                        node_id=parent_id,
+                        native_path=native_path,
+                    )
+                continue
+
+            if not capture_unstructured_text:
+                continue
+
             value = text_of(child)
-            if not value: continue
-            if tag not in KNOWN_TEXT_WRAPPERS: self.builder.unknown_native_kinds.add(tag)
-            role = "CELL_TEXT" if any(n["node_id"] == node_id and n["kind"] == "TABLE_CELL" for n in self.builder.nodes[-1:]) else "BODY"
-            segment_id = self.builder.add_segment(node_id=node_id, role=role, text=value, native_kind=tag, source_anchor=self.builder.anchor(native_path=native_path, native_identifier=_native_identifier(child)))
-            if segment_id:
-                if self._ledger is not None: self._ledger.claim_subtree(child, category="LEGAL_MAPPED", reason="legal leaf wrapper mapped to canonical segment")
-                self._emit_references(child, segment_id, native_path=native_path)
+            if value:
+                if tag not in KNOWN_TEXT_WRAPPERS:
+                    self.builder.unknown_native_kinds.add(tag)
+                role = "CELL_TEXT" if any(
+                    n["node_id"] == parent_id and n["kind"] == "TABLE_CELL"
+                    for n in self.builder.nodes[-1:]
+                ) else "BODY"
+                segment_id = self.builder.add_segment(
+                    node_id=parent_id,
+                    role=role,
+                    text=value,
+                    native_kind=tag,
+                    source_anchor=self.builder.anchor(
+                        native_path=native_path,
+                        native_identifier=_native_identifier(child),
+                    ),
+                )
+                if segment_id:
+                    if self._ledger is not None:
+                        self._ledger.claim_subtree(
+                            child,
+                            category="LEGAL_MAPPED",
+                            reason="legal leaf wrapper mapped to canonical segment",
+                        )
+                    self._emit_references(
+                        child,
+                        segment_id,
+                        native_path=native_path,
+                    )
+
+            self._claim_and_emit_child_tail(
+                child,
+                node_id=parent_id,
+                native_path=native_path,
+            )
 
     def _emit_references(self, element: ET.Element, segment_id: str, *, native_path: str) -> None:
         for desc in element.iter():

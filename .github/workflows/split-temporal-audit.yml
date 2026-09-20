@@ -1,0 +1,26 @@
+name: Split temporal audit probe
+
+on:
+  push:
+    paths:
+      - "scripts/probe_dir2008_7_split_temporal.py"
+      - ".github/workflows/split-temporal-audit.yml"
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install project
+        run: python -m pip install -e ".[test]"
+      - name: Probe official split and temporal clauses
+        run: python scripts/probe_dir2008_7_split_temporal.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dir2008-7-split-temporal-inspection
+          path: artifacts/audit/dir2008-7-split-temporal-inspection.json

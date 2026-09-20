@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from needle.provenance.ledger import active_records
+from needle.retrieval.identity import equivalent_act_identifiers
 from needle.thread.composer import (
     PROVENANCE_ENTITY_TYPES,
     load_thread_sources,
@@ -453,6 +454,20 @@ def build_thread_projection(
             doc["entity_ref"]["entity_id"],
         ),
     )
+
+    identifiers = equivalent_act_identifiers(
+        thread["subject"]["act_id"],
+        root=root,
+    )
+    for doc in ordered:
+        doc["identifiers"] = identifiers
+        for identifier in identifiers:
+            _add_lexical(
+                doc["lexical"],
+                "IDENTIFIER",
+                identifier["value"],
+            )
+
     digest = hashlib.sha256(
         json.dumps(
             ordered,

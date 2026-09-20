@@ -13,6 +13,7 @@ from needle.thread.composer import load_thread_sources
 
 _FILTER_FIELDS = {
     "entity_kinds":"entity_ref.kind",
+    "entity_ids":"entity_ref.entity_id",
     "act_ids":"act_ids",
     "languages":"languages",
     "event_ids":"event_ids",
@@ -97,6 +98,8 @@ def _field_priority(field: str, quality: str) -> int:
 def _document_values(document: dict[str, Any], field: str) -> list[str]:
     if field == "entity_ref.kind":
         return [document["entity_ref"]["kind"]]
+    if field == "entity_ref.entity_id":
+        return [document["entity_ref"]["entity_id"]]
     value = document.get(field, [])
     if isinstance(value, list):
         return [str(item) for item in value]

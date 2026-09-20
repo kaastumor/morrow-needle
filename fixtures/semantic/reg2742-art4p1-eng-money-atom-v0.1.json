@@ -1,0 +1,103 @@
+{
+  "fixture_version": "0.1",
+  "fixture_id": "reg2742-art4p1-eng-money-atom-v0.1",
+  "purpose": "End-to-end language-scope adversary: an operative English-only corrigendum must survive mutation → Change Atom without becoming language-neutral.",
+  "source_mutation": {
+    "mutation_id": "reg2742-art4p1-eng-money-corrigendum-v0.1",
+    "verification_state": "VERIFIED",
+    "operation": "REPLACE",
+    "target": "Article 4 > 1",
+    "language": "ENG"
+  },
+  "source_span_registry": {
+    "span-money-corrigendum": {
+      "identifier": "CELEX:31990R2742R(01)",
+      "language": "ENG",
+      "text": "On page 21 in the second line of Article 4 (1): 1.2 // for: // '. . . shall be ECU 225 . . .', // read: // '. . . shall be ECU 255",
+      "text_hash": "22c3f9beb6aa316e10e7eca72a660f145bf67c62639a2f1c594d171414d9be59",
+      "locator": "normalized-visible-text#chars:553-683",
+      "artifact_hash": "sha256:3734c2b8ffd8547325f262e7b0a432304171b080f39bcd7c3ec56cc3d0d70c28"
+    }
+  },
+  "atoms": [
+    {
+      "atom_id": "reg2742-art4p1-eng-money-255-v0.1",
+      "verification_state": "VERIFIED",
+      "source_mutation_ids": [
+        "reg2742-art4p1-eng-money-corrigendum-v0.1"
+      ],
+      "act_id": "CELEX:31990R2742",
+      "provision_refs": [
+        {
+          "provision_instance_id": null,
+          "citation_path": "Article 4 > 1",
+          "language": "ENG"
+        }
+      ],
+      "language_scope": {
+        "languages": [
+          "ENG"
+        ],
+        "cross_language_equivalence_assumed": false
+      },
+      "claim": {
+        "legal_effect": "NONE",
+        "dimensions": [
+          "MONEY"
+        ],
+        "statement": "In the English expression, the Article 4(1) monetary amount is corrected from ECU 225 to ECU 255.",
+        "subject": "Article 4(1) monetary amount",
+        "action": "is corrected from ECU 225 to ECU 255",
+        "object": "ECU 255"
+      },
+      "semantic_basis": {
+        "classification_method": "DETERMINISTIC_LEGAL_LANGUAGE",
+        "trigger_terms": [
+          "read",
+          "shall be ECU 255"
+        ],
+        "qualifier_terms": [
+          "Article 4 (1)",
+          "ECU 225"
+        ]
+      },
+      "evidence_state": "DIRECT",
+      "source_spans": [
+        {
+          "span_id": "span-money-corrigendum",
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:31990R2742R(01)",
+          "locator": "normalized-visible-text#chars:553-683",
+          "language": "ENG",
+          "text_hash": "22c3f9beb6aa316e10e7eca72a660f145bf67c62639a2f1c594d171414d9be59",
+          "role": "SEMANTIC_CLAIM",
+          "artifact_hash": "sha256:3734c2b8ffd8547325f262e7b0a432304171b080f39bcd7c3ec56cc3d0d70c28"
+        }
+      ],
+      "temporal_assertion_refs": [],
+      "procedure_state_refs": [],
+      "relations": [],
+      "affected_entities": [],
+      "provenance": {
+        "observed_at": "2026-09-20T18:26:00Z",
+        "extractor_version": "post-p1-audit-corrigendum-v0.1",
+        "adversary_version": "semantic-adversary-v0.1",
+        "human_review": false
+      },
+      "notes": "Expression-scoped semantic claim only. It does not assert the printed/corrected amount in DEU, FRA, or any other expression."
+    }
+  ],
+  "negative_atoms": [
+    {
+      "case_id": "forbidden-globalized-money-correction",
+      "forbidden_inference": "The English ECU 225→255 corrigendum establishes the same corrected amount for German, French, or every language expression.",
+      "mutation": {
+        "language_scope": [
+          "ENG",
+          "DEU",
+          "FRA"
+        ]
+      }
+    }
+  ]
+}

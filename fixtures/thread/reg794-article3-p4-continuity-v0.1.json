@@ -1,0 +1,52 @@
+{
+  "fixture_id": "reg794-article3-p4-2025-continuity-v0.1",
+  "thread": "CELEX:32004R0794#Article3",
+  "transition": {
+    "before": "CELEX:02004R0794-20161222",
+    "after": "CELEX:02004R0794-20250703",
+    "modifying_act": "CELEX:32025R0905",
+    "modified_target": "Article 3(3)"
+  },
+  "paragraph4": {
+    "structural_path": "Article 3(4)",
+    "before": {
+      "artifact_hash": "sha256:5aed9f446884f30786a1d96bfe090122dbabfbc6c281059f572377b0c1cc7d6b",
+      "node_id": "CELEX:02004R0794-20161222:n000024",
+      "text_hash": "c33bdd5a036a31b0125223464c565a84a2830504616eaf8dfb2559a3b321d49e",
+      "text_length": 558
+    },
+    "after": {
+      "artifact_hash": "sha256:d9a6ae56974c463fec60fd7fb12ee9d49fc4ae8fda226df06ee384463c259ab2",
+      "node_id": "CELEX:02004R0794-20250703:n000025",
+      "text_hash": "c33bdd5a036a31b0125223464c565a84a2830504616eaf8dfb2559a3b321d49e",
+      "text_length": 558
+    },
+    "textual_mutation": null,
+    "continuity_result": "IDENTICAL_CANONICAL_SUBTREE"
+  },
+  "sentence_checks": {
+    "alt-channel-permission": {
+      "text_hash": "c7fc733a71948a5bd1b40fc83e6e0ba18f073803adaa8bd97bbc73a2f55cdb26",
+      "before_locator": "CL2004R0794EN0100010.0001.xml#normalized-chars:6374-6653",
+      "after_locator": "CL2004R0794EN0110010.0001.xml#normalized-chars:6674-6953"
+    },
+    "invalid-channel-status": {
+      "text_hash": "89db2848597405bd3fe6661af754001e96e292a97bb90d23c0d203095d67e5cd",
+      "before_locator": "CL2004R0794EN0100010.0001.xml#normalized-chars:6653-6931",
+      "after_locator": "CL2004R0794EN0110010.0001.xml#normalized-chars:6953-7231"
+    }
+  },
+  "semantic_result": {
+    "character": "DERIVED_CROSS_REFERENCE_RIPPLE_ONLY",
+    "explanation": "Paragraph 4 text remains identical. Its references to the channels in paragraph 3 operate against the newly replaced paragraph 3, so semantic context can change without a paragraph-4 textual mutation."
+  },
+  "forbidden_inferences": [
+    "Do not emit a 2025 textual mutation for Article 3(4).",
+    "Do not describe the paragraph-4 exception or invalid-submission consequence as newly inserted in 2025.",
+    "Do not suppress the derived cross-reference ripple merely because paragraph 4 text is unchanged."
+  ],
+  "verification": {
+    "live_workflow_run": 35523960022,
+    "state": "VERIFIED"
+  }
+}

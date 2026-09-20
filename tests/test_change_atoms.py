@@ -5,10 +5,14 @@ from pathlib import Path
 from jsonschema import Draft202012Validator
 
 from needle.semantic.adversary import validate_atom, validate_atom_set
+from needle.temporal.resolver import status_on
 
 
 SCHEMA = json.loads(
     Path("schemas/change-atom-v0.3.schema.json").read_text(encoding="utf-8")
+)
+TEMPORAL_SCHEMA = json.loads(
+    Path("schemas/temporal-assertion-v0.1.schema.json").read_text(encoding="utf-8")
 )
 FIXTURE = json.loads(
     Path("fixtures/semantic/reg794-article3-atoms-v0.1.json").read_text(encoding="utf-8")
@@ -216,3 +220,72 @@ def test_2008_paragraph4_atoms_start_with_amending_regulation_and_do_not_end_in_
         assert by_id[atom_id]["temporal_assertion_refs"] == [
             "reg794-art3-2008-unqualified-rules-application-start"
         ]
+
+
+def test_article3_channel_temporal_assertions_validate():
+    validator = Draft202012Validator(TEMPORAL_SCHEMA)
+    errors = [
+        f"{assertion['assertion_id']}: {error.message}"
+        for assertion in TEMPORAL["assertions"]
+        for error in validator.iter_errors(assertion)
+    ]
+    assert errors == []
+
+
+def test_sani_and_pki_switch_off_on_2025_replacement_day():
+    assertions = TEMPORAL["assertions"]
+    for key in (
+        "RULE:32004R0794:ARTICLE3_3:SANI_TRANSMISSION",
+        "RULE:32004R0794:ARTICLE3_3:PKI_CORRESPONDENCE",
+    ):
+        before = status_on(
+            assertions,
+            dimension="APPLICATION",
+            subject_keys={key},
+            on_date="2025-07-02",
+        )
+        boundary = status_on(
+            assertions,
+            dimension="APPLICATION",
+            subject_keys={key},
+            on_date="2025-07-03",
+        )
+        assert before["active"] is True
+        assert boundary["active"] is False
+        assert boundary["end"]["inclusive"] is False
+
+
+def test_pki_starts_before_sani_without_borrowing_sani_date():
+    assertions = TEMPORAL["assertions"]
+    pki = status_on(
+        assertions,
+        dimension="APPLICATION",
+        subject_keys={"RULE:32004R0794:ARTICLE3_3:PKI_CORRESPONDENCE"},
+        on_date="2008-04-14",
+    )
+    sani = status_on(
+        assertions,
+        dimension="APPLICATION",
+        subject_keys={"RULE:32004R0794:ARTICLE3_3:SANI_TRANSMISSION"},
+        on_date="2008-04-14",
+    )
+    assert pki["active"] is True
+    assert pki["start"]["date"] == "2008-04-14"
+    assert sani["active"] is False
+    assert sani["start"]["date"] == "2008-07-01"
+
+
+def test_paragraph4_rules_continue_after_2025_paragraph3_replacement():
+    assertions = TEMPORAL["assertions"]
+    for key in (
+        "RULE:32004R0794:ARTICLE3_4:ALTERNATIVE_CHANNEL_PERMISSION",
+        "RULE:32004R0794:ARTICLE3_4:INVALID_CHANNEL_STATUS",
+    ):
+        status = status_on(
+            assertions,
+            dimension="APPLICATION",
+            subject_keys={key},
+            on_date="2026-01-01",
+        )
+        assert status["active"] is True
+        assert status["end"]["state"] == "NOT_ASSERTED"

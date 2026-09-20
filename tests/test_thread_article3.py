@@ -194,11 +194,11 @@ def test_thread_event_specs_do_not_duplicate_domain_truth():
             assert set(ref) == {"source_key", "kind", "entity_id"}
 
 
-def test_materialized_thread_reports_source_mode_gaps_explicitly():
+def test_materialized_thread_has_complete_source_mode_closure():
     materialized = materialize_thread(THREAD)
     assert materialized["source_mode"]["required"] is True
     assert materialized["source_mode"]["gaps"] == source_mode_gaps(THREAD)
-    assert materialized["source_mode"]["gaps"]
+    assert materialized["source_mode"]["gaps"] == []
 
 
 def test_thread_contains_all_temporal_boundary_classes_needed_for_history():

@@ -6,21 +6,27 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-Half-Life v0.1 is frozen and Issue #10 is closed. Controlled P2 expansion continues.
+The project remains aligned with the original thesis, but the 2026-09-20 v0.2 step-back review identified **allocation drift**: the legal-change engine is substantially more proven than the operational public product loop.
+
+Strategic rule from here:
+
+> After Legislative X-Ray v0.1 freezes, do not add new analytic primitives until Needle proves one operational official-update → verified public-feed-card loop.
 
 Unless new official/executable evidence reopens a foundation risk:
 
-1. **P2 Discovery / Issue #20 — Legislative X-Ray / silent dependency ripple.** Live-verify a second official case before freezing a reusable dependency-ripple primitive. Current candidate: REACH Article 67(1) → Annex XVII around Regulation 2023/2055.
-2. **P2 — factual daily/weekly change feed.**
-3. **P2 — impact / affected-entity intelligence** only after direct-vs-derived-vs-interpretive presentation semantics are exercised.
-4. **P2 — impact / affected-entity intelligence** only after direct-vs-derived-vs-interpretive presentation semantics are exercised.
-5. **Issue #19 — Half-Life v0.2 research** when official cases support proposition-level rule survival and explicit terminal outcomes without negative-absence inference.
-6. Ranking, plain-language evaluation, subscriptions and saved monitors follow.
+1. **P2 Discovery / Issue #20 — Legislative X-Ray.** Finalize/freeze the now-green two-case dependency-ripple contract and close the discovery issue.
+2. **P2 / Issue #21 — operational vertical slice.** Start from real official update events and connect update detection → targeted source refresh → AST/diff/reconciliation → Change Atom/abstention → temporal state → retrieval → evidence-linked public feed card. Prove idempotence and at least three heterogeneous live events.
+3. **P2 — impact / affected-entity intelligence.** Begin with directly evidenced affected entities; preserve derived/interpretive separation.
+4. **Issue #19 — Half-Life v0.2 research** when official cases support proposition-level rule survival and explicit terminal outcomes without negative-absence inference.
+5. **Product validation / thin delivery surface.** After the operational slice, test feed comprehension, Source Mode, unknown/non-impact presentation and minimal API/UI needs before broad feature expansion.
+6. Ranking, broader plain-language evaluation, subscriptions and saved monitors follow.
 
-All P0/P1 ownership boundaries are explicitly tested. A freeze is reopened only when official or executable adversarial evidence demonstrates failure.
+All P0/P1 ownership boundaries remain explicitly tested. A freeze is reopened only when official or executable adversarial evidence demonstrates failure.
 
-Canonical audit: docs/audits/post-p1-foundation-audit-v0.1.md
-Half-Life freeze: docs/decisions/half-life-v0.1-interface-freeze.md
+Canonical audit: docs/audits/post-p1-foundation-audit-v0.1.md  
+Strategic review: docs/step-back-review-2026-09-20-v0.2.md  
+Half-Life freeze: docs/decisions/half-life-v0.1-interface-freeze.md  
+Source Anomaly freeze: docs/decisions/source-anomaly-v0.1-interface-freeze.md  
 Ownership correction: docs/decisions/regime-lineage-v0.2-temporal-ownership.md
 
 ## Priority model
@@ -281,12 +287,13 @@ See docs/audits/post-p1-foundation-audit-v0.1.md.
 
 ## P2 — Public intelligence
 
-Risk-ordered after the post-P1 audit:
+Risk-ordered after the post-P1 audit **and the v0.2 strategic step-back review**:
 
-1. **Legislative X-Ray / dependency ripple (Issue #20):** surface rule effects caused by changed referenced provisions even when local text is unchanged. Require a second official adversary before freezing a reusable primitive.
-2. **Needle daily/weekly change feed:** factual feed over verified source changes, Threads and retrieval.
-4. **Impact / affected-entity model:** strict direct-vs-derived-vs-interpretive separation before public use.
-5. **Half-Life v0.2 research (Issue #19):** rule survival and terminal outcomes only after official evidence supports them without negative-absence inference.
+1. **Legislative X-Ray / dependency ripple (Issue #20):** finish/freeze the now-green two-case product contract.
+2. **Operational Needle vertical slice (Issue #21):** official update → verified/non-impact/abstention result → retrieval → evidence-linked public feed card. This is the next major product proof.
+3. **Impact / affected-entity model:** strict direct-vs-derived-vs-interpretive separation before public use.
+4. **Half-Life v0.2 research (Issue #19):** rule survival and terminal outcomes only after official evidence supports them without negative-absence inference.
+5. **Thin public delivery + user validation:** test feed comprehension, Source Mode and unknown/non-impact presentation before a broad UI build.
 6. **Public ranking dimensions + transparent rationale.**
 7. **Plain-language explanation evaluation.**
 8. **Domain subscriptions and saved monitors.**
@@ -295,6 +302,9 @@ Risk-ordered after the post-P1 audit:
 Completed P2 slices:
 - **Half-Life v0.1 (Issue #10): CLOSED/FROZEN.** Derived, evidence-linked temporary-regime history over canonical Temporal Assertions + genealogy, with repeated extensions, gaps, view horizon and explicit unresolved terminal/rule-continuity coverage.
 - **Source Anomaly v0.1 (Issue #17): CLOSED/FROZEN.** Categorical, evidence-preserving cards for route fallback, source-internal conflict and representation duplication; no source anomaly creates legal-mutation truth.
+
+Strategic constraint:
+- **Do not grow a catalogue of analytic primitives before Issue #21 is operationally green.** The highest-value unknown is now whether Needle can notice real changes continuously and make them useful to a person.
 
 ## P3 — Expansion
 

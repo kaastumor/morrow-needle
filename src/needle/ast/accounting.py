@@ -128,7 +128,9 @@ class XMLTextLedger:
                     "atom_id": atom_id,
                     "locator": atom["locator"],
                     "first_category": atom["category"],
+                    "first_reason": atom["reason"],
                     "second_category": category,
+                    "second_reason": reason,
                     "text_prefix": atom["text"][:180],
                 }
             )

@@ -1,0 +1,282 @@
+{
+  "schema_version": "thread-v0.1",
+  "thread_id": "CELEX:32004R0794#Article3:ENG",
+  "subject": {
+    "act_id": "CELEX:32004R0794",
+    "structural_path": "Article 3",
+    "language": "ENG"
+  },
+  "composition_character": "REFERENCE_ONLY",
+  "source_registry": {
+    "baseline": {
+      "kind": "BASELINE_EVIDENCE",
+      "fixture_path": "fixtures/thread/reg794-article3-baseline-v0.1.json"
+    },
+    "temporal_original": {
+      "kind": "TEMPORAL",
+      "fixture_path": "fixtures/temporal/reg794-article3-original-v0.1.json"
+    },
+    "mutation_2008": {
+      "kind": "MUTATION",
+      "fixture_path": "fixtures/mutations/reg794-article3-live-verified-v0.1.json"
+    },
+    "semantic_2008": {
+      "kind": "SEMANTIC",
+      "fixture_path": "fixtures/semantic/reg794-article3-atoms-v0.1.json"
+    },
+    "temporal_2008": {
+      "kind": "TEMPORAL",
+      "fixture_path": "fixtures/temporal/reg794-article3-sani-v0.1.json"
+    },
+    "mutation_2025": {
+      "kind": "MUTATION",
+      "fixture_path": "fixtures/mutations/reg794-article3-p3-2025-live-verified-v0.1.json"
+    },
+    "semantic_2025": {
+      "kind": "SEMANTIC",
+      "fixture_path": "fixtures/semantic/reg794-article3-2025-atoms-v0.1.json"
+    },
+    "temporal_2025": {
+      "kind": "TEMPORAL",
+      "fixture_path": "fixtures/temporal/reg794-article3-2025-v0.1.json"
+    },
+    "lineage": {
+      "kind": "LINEAGE",
+      "fixture_path": "fixtures/lineage/reg794-article3-thread-lineage-v0.1.json"
+    },
+    "provenance": {
+      "kind": "PROVENANCE",
+      "fixture_path": "fixtures/provenance/reg794-article3-dag-v0.1.json"
+    },
+    "p4_continuity": {
+      "kind": "CONTINUITY",
+      "fixture_path": "fixtures/thread/reg794-article3-p4-continuity-v0.1.json"
+    },
+    "corrigendum_scope": {
+      "kind": "RELATED_SOURCE",
+      "fixture_path": "fixtures/thread/reg794-article3-corrigendum-scope-v0.1.json"
+    }
+  },
+  "events": [
+    {
+      "event_id": "original-article3-state",
+      "event_kind": "BASELINE_STATE",
+      "refs": [
+        {
+          "source_key": "baseline",
+          "kind": "THREAD_EVIDENCE",
+          "entity_id": "reg794-article3-baseline-v0.1"
+        }
+      ]
+    },
+    {
+      "event_id": "chapter2-application-gate",
+      "event_kind": "TEMPORAL_BOUNDARY",
+      "refs": [
+        {
+          "source_key": "temporal_original",
+          "kind": "TEMPORAL_ASSERTION",
+          "entity_id": "reg794-2004-chapter2-application-threshold"
+        }
+      ]
+    },
+    {
+      "event_id": "original-paper-regime-end",
+      "event_kind": "TEMPORAL_BOUNDARY",
+      "refs": [
+        {
+          "source_key": "temporal_original",
+          "kind": "TEMPORAL_ASSERTION",
+          "entity_id": "reg794-art3-original-paper-notification-end"
+        }
+      ]
+    },
+    {
+      "event_id": "original-electronic-notification-start",
+      "event_kind": "TEMPORAL_BOUNDARY",
+      "refs": [
+        {
+          "source_key": "temporal_original",
+          "kind": "TEMPORAL_ASSERTION",
+          "entity_id": "reg794-art3-original-electronic-notification-start"
+        }
+      ]
+    },
+    {
+      "event_id": "original-electronic-correspondence-condition",
+      "event_kind": "TEMPORAL_BOUNDARY",
+      "refs": [
+        {
+          "source_key": "temporal_original",
+          "kind": "TEMPORAL_ASSERTION",
+          "entity_id": "reg794-art3-original-electronic-correspondence-trigger"
+        }
+      ]
+    },
+    {
+      "event_id": "article3-replacement-2008",
+      "event_kind": "TEXTUAL_MUTATION",
+      "refs": [
+        {
+          "source_key": "mutation_2008",
+          "kind": "MUTATION",
+          "entity_id": "reg794-article3-live-verified-v0.1"
+        },
+        {
+          "source_key": "semantic_2008",
+          "kind": "CHANGE_ATOM",
+          "entity_id": "reg794-art3-sani-duty-v0.1"
+        },
+        {
+          "source_key": "semantic_2008",
+          "kind": "CHANGE_ATOM",
+          "entity_id": "reg794-art3-pki-correspondence-duty-v0.1"
+        },
+        {
+          "source_key": "semantic_2008",
+          "kind": "CHANGE_ATOM",
+          "entity_id": "reg794-art3-alt-channel-permission-v0.1"
+        },
+        {
+          "source_key": "semantic_2008",
+          "kind": "CHANGE_ATOM",
+          "entity_id": "reg794-art3-invalid-channel-status-v0.1"
+        },
+        {
+          "source_key": "lineage",
+          "kind": "LINEAGE_EDGE",
+          "entity_id": "reg794-art3-pre2008-replaced-by-2008"
+        }
+      ]
+    },
+    {
+      "event_id": "sani-rule-application-2008",
+      "event_kind": "TEMPORAL_BOUNDARY",
+      "refs": [
+        {
+          "source_key": "temporal_2008",
+          "kind": "TEMPORAL_ASSERTION",
+          "entity_id": "reg794-art3-p3-sani-application-start"
+        }
+      ]
+    },
+    {
+      "event_id": "article3-paragraph3-replacement-2025",
+      "event_kind": "TEXTUAL_MUTATION",
+      "refs": [
+        {
+          "source_key": "mutation_2025",
+          "kind": "MUTATION",
+          "entity_id": "reg794-article3-p3-2025-live-verified-v0.1"
+        },
+        {
+          "source_key": "semantic_2025",
+          "kind": "CHANGE_ATOM",
+          "entity_id": "reg794-art3-2025-notification-channel-duty-v0.1"
+        },
+        {
+          "source_key": "semantic_2025",
+          "kind": "CHANGE_ATOM",
+          "entity_id": "reg794-art3-2025-correspondence-channel-duty-v0.1"
+        },
+        {
+          "source_key": "lineage",
+          "kind": "LINEAGE_EDGE",
+          "entity_id": "reg794-art3-p3-pre2025-replaced-by-2025"
+        },
+        {
+          "source_key": "lineage",
+          "kind": "LINEAGE_EDGE",
+          "entity_id": "reg794-art3-parent-continues-through-2025-p3-replacement"
+        },
+        {
+          "source_key": "lineage",
+          "kind": "LINEAGE_EDGE",
+          "entity_id": "reg794-art3-notification-channel-rule-2008-to-2025"
+        },
+        {
+          "source_key": "lineage",
+          "kind": "LINEAGE_EDGE",
+          "entity_id": "reg794-art3-correspondence-channel-rule-2008-to-2025"
+        }
+      ]
+    },
+    {
+      "event_id": "paragraph4-cross-reference-ripple-2025",
+      "event_kind": "DERIVED_SEMANTIC_EFFECT",
+      "refs": [
+        {
+          "source_key": "semantic_2025",
+          "kind": "CHANGE_ATOM",
+          "entity_id": "reg794-art3-2025-crossref-exception-ripple-v0.1"
+        },
+        {
+          "source_key": "p4_continuity",
+          "kind": "THREAD_EVIDENCE",
+          "entity_id": "reg794-article3-p4-2025-continuity-v0.1"
+        }
+      ]
+    },
+    {
+      "event_id": "article3-paragraph3-application-2025",
+      "event_kind": "TEMPORAL_BOUNDARY",
+      "refs": [
+        {
+          "source_key": "temporal_2025",
+          "kind": "TEMPORAL_ASSERTION",
+          "entity_id": "reg794-art3-p3-2025-application-start"
+        }
+      ]
+    },
+    {
+      "event_id": "corrigendum-review-2026",
+      "event_kind": "RELATED_SOURCE_NON_IMPACT",
+      "refs": [
+        {
+          "source_key": "corrigendum_scope",
+          "kind": "THREAD_EVIDENCE",
+          "entity_id": "reg794-article3-corrigendum-scope-v0.1"
+        }
+      ]
+    }
+  ],
+  "lineage_edge_ids": [
+    "reg794-art3-pre2008-replaced-by-2008",
+    "reg794-art3-p3-pre2025-replaced-by-2025",
+    "reg794-art3-parent-continues-through-2025-p3-replacement",
+    "reg794-art3-notification-channel-rule-2008-to-2025",
+    "reg794-art3-correspondence-channel-rule-2008-to-2025"
+  ],
+  "provenance_source_key": "provenance",
+  "narrative_policy": {
+    "generation": "DETERMINISTIC_FROM_REFERENCED_CLAIMS",
+    "layers": [
+      "3_SECONDS",
+      "30_SECONDS",
+      "3_MINUTES"
+    ],
+    "source_mode": "REQUIRED"
+  },
+  "unknowns": [
+    {
+      "unknown_id": "baseline-semantic-state-contract",
+      "state": "EXPLICIT_GAP",
+      "description": "Change Atom v0.3 is mutation-derived. The original 2004 Article 3 state is retained as source-backed baseline context rather than being retroactively manufactured as a Change Atom."
+    },
+    {
+      "unknown_id": "language-scope-v0.1",
+      "state": "SCOPED",
+      "description": "Thread v0.1 is verified for the English expression only; cross-language semantic equivalence is not assumed."
+    },
+    {
+      "unknown_id": "affected-entity-labels",
+      "state": "UNRESOLVED",
+      "description": "Affected-entity labels remain intentionally unresolved until separately evidenced scope analysis exists."
+    },
+    {
+      "unknown_id": "technical-channel-identity",
+      "state": "UNRESOLVED",
+      "description": "Rule lineage does not assert that SANI or PKI are technically identical to the Commission-designated systems used after the 2025 amendment."
+    }
+  ]
+}

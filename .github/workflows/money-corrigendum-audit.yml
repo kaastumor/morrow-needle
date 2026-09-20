@@ -5,7 +5,10 @@ on:
     paths:
       - "scripts/probe_reg2742_money_corrigendum.py"
       - "fixtures/audit/reg2742-money-corrigendum-source-v0.1.json"
+      - "fixtures/mutations/reg2742-art4p1-eng-money-corrigendum-v0.1.json"
+      - "fixtures/semantic/reg2742-art4p1-eng-money-atom-v0.1.json"
       - "tests/test_money_corrigendum_fixture.py"
+      - "tests/test_money_corrigendum_semantics.py"
       - ".github/workflows/money-corrigendum-audit.yml"
   workflow_dispatch:
 
@@ -20,8 +23,11 @@ jobs:
           python-version: "3.12"
       - name: Install project
         run: python -m pip install -e ".[test]"
-      - name: Verify pinned official corrigendum evidence
-        run: pytest -q tests/test_money_corrigendum_fixture.py
+      - name: Verify pinned official corrigendum evidence and semantic scope
+        run: |
+          pytest -q \
+            tests/test_money_corrigendum_fixture.py \
+            tests/test_money_corrigendum_semantics.py
 
   inspect-live-source:
     # Live official endpoint availability is useful audit evidence, but it is not

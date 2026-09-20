@@ -1,0 +1,54 @@
+{
+  "fixture_version": "0.1",
+  "fixture_id": "reg2742-money-corrigendum-source-v0.1",
+  "target_act": "CELEX:31990R2742",
+  "corrigendum": "CELEX:31990R2742R(01)",
+  "language": "ENG",
+  "observed_at": "2026-09-20T18:26:00Z",
+  "source_observation": {
+    "source_type": "EUR_LEX",
+    "resource_uri": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:31990R2742R(01)",
+    "representation_class": "OFFICIAL_HTML",
+    "artifact_hash": "sha256:3734c2b8ffd8547325f262e7b0a432304171b080f39bcd7c3ec56cc3d0d70c28",
+    "corroborating_pdf": {
+      "resource_uri": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:31990R2742R(01)",
+      "artifact_hash": "sha256:2d0ac08b0da978c302ad0c8d7c44507c145d0c4c95c378684ee34db25f8eecd4"
+    }
+  },
+  "source_route_observation": {
+    "preferred_cellar_celex_uri": "https://publications.europa.eu/resource/celex/31990R2742R(01)",
+    "observed_http_status": 404,
+    "inference": "ROUTE_UNAVAILABLE_NOT_SOURCE_ABSENT"
+  },
+  "correction": {
+    "target": "Article 4 > 1",
+    "locator": "normalized-visible-text#chars:553-683",
+    "text": "On page 21 in the second line of Article 4 (1): 1.2 // for: // '. . . shall be ECU 225 . . .', // read: // '. . . shall be ECU 255",
+    "text_hash": "22c3f9beb6aa316e10e7eca72a660f145bf67c62639a2f1c594d171414d9be59",
+    "before_fragment": "shall be ECU 225",
+    "before_hash": "d1f7a61daf5cad57a30e0c0e6c71929b14af0f9ef065b9fa2ce94feb55d2f4a8",
+    "after_fragment": "shall be ECU 255",
+    "after_hash": "ba7be088b6fb36c70e505962f65ce8c227b17ac6eab1046f688188695fa2990c",
+    "numbers_removed": [
+      "225"
+    ],
+    "numbers_added": [
+      "255"
+    ]
+  },
+  "language_scope": {
+    "basis": "OFFICIAL_OJ_LANGUAGE_LIST",
+    "languages": [
+      "ENG"
+    ],
+    "nonlisted_semantics": "NO_ASSERTION",
+    "cross_language_equivalence_assumed": false
+  },
+  "invariants": [
+    "Cellar CELEX route unavailability is not legal/source absence when another official representation is available.",
+    "The operative correction is scoped to the English expression.",
+    "No value is inferred for non-English expressions from absence of a listed corrigendum.",
+    "A current corrected display is not used as evidence of the originally printed English amount."
+  ],
+  "first_verified_workflow_run": 35529022716
+}

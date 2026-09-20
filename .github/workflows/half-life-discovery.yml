@@ -5,8 +5,12 @@ on:
     paths:
       - "scripts/probe_half_life_eprivacy.py"
       - "fixtures/discovery/eprivacy-half-life-live-v0.1.json"
+      - "fixtures/temporal/eprivacy-temporary-regime-v0.1.json"
+      - "fixtures/lineage/reg2021-1232-to-reg2026-1881-gap-v0.2.json"
+      - "schemas/regime-lineage-v0.2.schema.json"
       - "fixtures/lineage/reg2021-1232-to-reg2026-1881-gap-v0.1.json"
       - "tests/test_half_life_discovery.py"
+      - "tests/test_regime_lineage_v02.py"
       - ".github/workflows/half-life-discovery.yml"
   workflow_dispatch:
 
@@ -24,7 +28,7 @@ jobs:
       - name: Probe official Cellar sources
         run: python scripts/probe_half_life_eprivacy.py
       - name: Regress Half-Life metrics and guardrails
-        run: python -m pytest -q tests/test_half_life_discovery.py
+        run: python -m pytest -q tests/test_half_life_discovery.py tests/test_regime_lineage_v02.py
       - uses: actions/upload-artifact@v4
         with:
           name: half-life-eprivacy-evidence

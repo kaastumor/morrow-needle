@@ -17,6 +17,10 @@ WEMI_SUFFIXES = {
 }
 
 
+class FeedParseError(ValueError):
+    """Raised when a feed page cannot be represented without losing events."""
+
+
 @dataclass(frozen=True)
 class FeedPage:
     window_start: str | None
@@ -73,7 +77,7 @@ def _parse_event(
     window_end: str | None,
     page: int,
     ordinal: int,
-) -> dict[str, Any] | None:
+) -> dict[str, Any]:
     notification_id = _first_text(element, "id")
     cellar_id = _first_text(element, "cellarId")
     root_cellar_id = _first_text(element, "rootCellarId")
@@ -91,8 +95,28 @@ def _parse_event(
                 notification_id = value
                 break
 
-    if not all([notification_id, cellar_id, root_cellar_id, action, ingestion_time]):
-        return None
+    required = {
+        "notification_id": notification_id,
+        "cellar_id": cellar_id,
+        "root_cellar_id": root_cellar_id,
+        "action": action,
+        "ingestion_time": ingestion_time,
+    }
+    missing = sorted(name for name, value in required.items() if not value)
+    if missing:
+        # Never silently discard a notification and then allow the polling
+        # cursor to advance. A malformed/changed official feed shape is an
+        # unresolved ingestion window that must be retried or adapted.
+        raise FeedParseError(
+            f"feed entry {ordinal} on page {page} missing required fields: "
+            + ", ".join(missing)
+        )
+
+    action = action.upper()
+    if action not in {"CREATE", "UPDATE", "DELETE"}:
+        raise FeedParseError(
+            f"feed entry {ordinal} on page {page} has unknown action {action!r}"
+        )
 
     classes = sorted(set(_all_text(element, "class")))
     identifiers = sorted(set(_all_text(element, "identifier")))
@@ -100,7 +124,7 @@ def _parse_event(
 
     return {
         "notification_id":notification_id,
-        "action":action.upper(),
+        "action":action,
         "cellar_id":cellar_id,
         "root_cellar_id":root_cellar_id,
         "ingestion_time":ingestion_time,
@@ -124,6 +148,8 @@ def parse_feed(payload: bytes | str) -> FeedPage:
         payload = payload.encode("utf-8")
     root = ET.fromstring(payload)
     root_name = _local(root.tag)
+    if root_name not in {"rss", "feed"}:
+        raise FeedParseError(f"unsupported feed root {root_name!r}")
     format_name = "RSS" if root_name == "rss" else "ATOM"
 
     window_start = _first_text(root, "startDate")
@@ -140,16 +166,16 @@ def parse_feed(payload: bytes | str) -> FeedPage:
 
     events = []
     for ordinal, entry in enumerate(entries):
-        event = _parse_event(
-            entry,
-            format_name=format_name,
-            window_start=window_start,
-            window_end=window_end,
-            page=page,
-            ordinal=ordinal,
+        events.append(
+            _parse_event(
+                entry,
+                format_name=format_name,
+                window_start=window_start,
+                window_end=window_end,
+                page=page,
+                ordinal=ordinal,
+            )
         )
-        if event is not None:
-            events.append(event)
 
     return FeedPage(
         window_start=window_start,

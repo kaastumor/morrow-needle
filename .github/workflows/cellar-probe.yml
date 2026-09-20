@@ -36,6 +36,17 @@ jobs:
             02004R0794-20250813 \
             --out artifacts/cellar-probe.json
 
+      - name: Build live canonical AST fixtures
+        run: python scripts/build_live_ast_fixtures.py --out artifacts/live-ast
+
+      - name: Upload live AST evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-ast-fixtures
+          path: artifacts/live-ast
+          if-no-files-found: error
+
       - name: Upload raw probe evidence
         if: always()
         uses: actions/upload-artifact@v4

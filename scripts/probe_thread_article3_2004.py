@@ -18,6 +18,14 @@ BASE = "https://publications.europa.eu/resource/celex/{celex}"
 AUTHENTIC = "32004R0794"
 INITIAL = "02004R0794-20040520"
 SENTENCES = {
+    "entry-into-force": (
+        "This Regulation shall enter into force on the twentieth day following "
+        "that of its publication in the Official Journal of the European Union."
+    ),
+    "chapter-ii-application": (
+        "Chapter II shall apply only to those notifications transmitted to the "
+        "Commission more than five months after the entry into force of this Regulation."
+    ),
     "paper-until-2005": (
         "Until 31 December 2005 notifications shall be transmitted by the Member State "
         "on paper."
@@ -194,9 +202,16 @@ def main() -> int:
         },
         "source_spans":spans,
         "temporal_boundaries":{
+            "entry_into_force_expression":(
+                "twentieth day following publication"
+            ),
+            "chapter_ii_application_expression":(
+                "more than five months after entry into force"
+            ),
+            "chapter_ii_application_boundary_inclusive":False,
             "paper_rule_end":"2005-12-31",
             "electronic_notification_start":"2006-01-01",
-            "electronic_correspondence_scope_start":"2006-01-01",
+            "electronic_correspondence_scope_start":"EVENT_CONDITIONED",
         },
     }
     out=Path("artifacts/thread-2004/article3-2004.json")

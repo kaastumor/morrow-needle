@@ -20,14 +20,24 @@ THREAD = json.loads(
 )
 
 
-def query(query_id, *, text_terms=None, text_mode="ALL", filters=None):
-    return {
+def query(
+    query_id,
+    *,
+    text_terms=None,
+    text_mode="ALL",
+    filters=None,
+    temporal=None,
+):
+    result = {
         "schema_version":"retrieval-query-v0.1",
         "query_id":query_id,
         "text_terms":text_terms or [],
         "text_mode":text_mode,
         "filters":filters or {},
     }
+    if temporal is not None:
+        result["temporal"] = temporal
+    return result
 
 
 def ids(response):
@@ -215,3 +225,161 @@ def test_retrieval_response_hydrates_current_canonical_entity():
     entity = response["results"][0]["canonical_entity"]
     assert entity["atom_id"] == "reg794-art3-pki-correspondence-duty-v0.1"
     assert entity["claim"]["object"] == "Public Key Infrastructure (PKI)"
+
+
+def _application_on(date_value, *, mode="ACTIVE_ONLY", perspective="EX_POST_LEGAL_EFFECT", source_cutoff_date=None):
+    temporal = {
+        "dimension":"APPLICATION",
+        "valid_date":date_value,
+        "perspective":perspective,
+        "mode":mode,
+        "context":{},
+    }
+    if source_cutoff_date is not None:
+        temporal["source_cutoff_date"] = source_cutoff_date
+    return temporal
+
+
+def test_temporal_retrieval_requires_explicit_perspective_and_mode():
+    validator = Draft202012Validator(QUERY_SCHEMA)
+    ambiguous = query(
+        "ambiguous-date",
+        filters={"entity_kinds":["CHANGE_ATOM"]},
+    )
+    ambiguous["temporal"] = {
+        "dimension":"APPLICATION",
+        "valid_date":"2025-07-03",
+    }
+    assert list(validator.iter_errors(ambiguous))
+
+    official_without_cutoff = query(
+        "official-no-cutoff",
+        filters={"entity_kinds":["CHANGE_ATOM"]},
+        temporal=_application_on(
+            "2025-07-03",
+            perspective="OFFICIAL_SOURCE_STATE_AS_OF",
+        ),
+    )
+    assert list(validator.iter_errors(official_without_cutoff))
+
+
+def test_sani_is_active_day_before_2025_replacement_and_inactive_on_boundary():
+    before = search_thread(
+        THREAD,
+        query(
+            "sani-before-replacement",
+            text_terms=["SANI"],
+            filters={"entity_kinds":["CHANGE_ATOM"]},
+            temporal=_application_on("2025-07-02"),
+        ),
+    )
+    assert ids(before)[0] == "reg794-art3-sani-duty-v0.1"
+    assert before["results"][0]["temporal_evaluation"]["active"] is True
+    assert before["results"][0]["temporal_evaluation"]["supporting_assertion_ids"] == [
+        "reg794-art3-p3-sani-application-start",
+        "reg794-art3-p3-legacy-channels-application-end",
+    ]
+    assert any(
+        reason["kind"] == "TEMPORAL_EVALUATION"
+        for reason in before["results"][0]["match_reasons"]
+    )
+
+    boundary = search_thread(
+        THREAD,
+        query(
+            "sani-on-replacement",
+            text_terms=["SANI"],
+            filters={"entity_kinds":["CHANGE_ATOM"]},
+            temporal=_application_on("2025-07-03"),
+        ),
+    )
+    assert "reg794-art3-sani-duty-v0.1" not in ids(boundary)
+    abstention = next(
+        item for item in boundary["abstentions"]
+        if item["entity_ref"]["entity_id"] == "reg794-art3-sani-duty-v0.1"
+    )
+    assert abstention["reason"] == "TEMPORAL_NOT_ACTIVE"
+    assert abstention["temporal_evaluation"]["active"] is False
+    assert abstention["temporal_evaluation"]["end"]["inclusive"] is False
+
+
+def test_2025_channel_duties_activate_on_replacement_day():
+    response = search_thread(
+        THREAD,
+        query(
+            "new-channels-on-replacement",
+            filters={
+                "entity_kinds":["CHANGE_ATOM"],
+                "legal_effects":["DUTY"],
+                "dimensions":["DIGITAL_CHANNEL"],
+            },
+            temporal=_application_on("2025-07-03"),
+        ),
+    )
+    assert set(ids(response)) == {
+        "reg794-art3-2025-notification-channel-duty-v0.1",
+        "reg794-art3-2025-correspondence-channel-duty-v0.1",
+    }
+    assert all(
+        result["temporal_evaluation"]["active"] is True
+        for result in response["results"]
+    )
+    assert {
+        item["entity_ref"]["entity_id"]
+        for item in response["abstentions"]
+        if item["reason"] == "TEMPORAL_NOT_ACTIVE"
+    } >= {
+        "reg794-art3-sani-duty-v0.1",
+        "reg794-art3-pki-correspondence-duty-v0.1",
+    }
+
+
+def test_pki_is_active_before_sani_without_borrowing_sani_date():
+    response = search_thread(
+        THREAD,
+        query(
+            "spring-2008-channel-duties",
+            filters={
+                "entity_kinds":["CHANGE_ATOM"],
+                "legal_effects":["DUTY"],
+                "dimensions":["DIGITAL_CHANNEL"],
+            },
+            temporal=_application_on("2008-04-14"),
+        ),
+    )
+    assert "reg794-art3-pki-correspondence-duty-v0.1" in ids(response)
+    assert "reg794-art3-sani-duty-v0.1" not in ids(response)
+
+
+def test_temporal_query_abstains_for_entities_without_explicit_temporal_refs():
+    response = search_thread(
+        THREAD,
+        query(
+            "mutation-date-abstain",
+            filters={"entity_kinds":["MUTATION"]},
+            temporal=_application_on("2025-07-03"),
+        ),
+    )
+    assert response["results"] == []
+    assert response["abstentions"]
+    assert {
+        item["reason"] for item in response["abstentions"]
+    } == {"NO_TEMPORAL_ASSERTIONS"}
+
+
+def test_temporal_evaluate_mode_retains_inactive_result_instead_of_hiding_it():
+    response = search_thread(
+        THREAD,
+        query(
+            "evaluate-sani-boundary",
+            text_terms=["SANI"],
+            filters={"entity_kinds":["CHANGE_ATOM"]},
+            temporal=_application_on("2025-07-03", mode="EVALUATE"),
+        ),
+    )
+    sani = next(
+        result for result in response["results"]
+        if result["entity_ref"]["entity_id"] == "reg794-art3-sani-duty-v0.1"
+    )
+    assert sani["temporal_evaluation"]["active"] is False
+    assert sani["temporal_evaluation"]["state"] == "RESOLVED"

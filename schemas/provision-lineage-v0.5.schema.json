@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/provision-lineage-v0.5.json",
+  "title": "Morrow // Needle Provision Lineage Claim v0.5",
+  "description": "Evidence-backed lineage claims between immutable provision instances. Deterministic similarity may generate candidates but cannot by itself assert legal lineage.",
+  "type": "object",
+  "required": ["edge_id","claim_status","assertion_scope","edge_type","sources","targets","evidence_basis","evidence_state","source_refs","confidence"],
+  "properties": {
+    "edge_id": {"type":"string"},
+    "claim_status": {"type":"string","enum":["ASSERTED","CANDIDATE"]},
+    "assertion_scope": {"type":"string","enum":["STRUCTURAL_LINEAGE","RULE_LINEAGE"]},
+    "edge_type": {"type":"string","enum":["CONTINUES_AS","RENUMBERED_TO","MOVED_TO","SPLIT_INTO","MERGED_INTO","RECAST_AS","REPLACED_BY","DELETED","INSERTED","RULE_CONTINUES","RULE_BRANCHES","RULE_NARROWS","RULE_EXPANDS","RULE_TERMINATES","CONCEPTUAL_SUCCESSOR"]},
+    "rule_anchor": {"description":"Required for RULE_LINEAGE. Identifies the proposition/change-atom/rule claim whose continuity is asserted; never inferred merely from structural correspondence.","type":["object","null"],"properties":{"rule_id":{"type":["string","null"]},"source_span":{"type":["string","null"]},"target_span":{"type":["string","null"]},"statement":{"type":["string","null"]}},"additionalProperties":false},
+    "sources":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/provision_instance_ref"}},
+    "targets":{"type":"array","items":{"$ref":"#/$defs/provision_instance_ref"}},
+    "evidence_basis":{"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string","enum":["OFFICIAL_CORRELATION_TABLE","OFFICIAL_AMENDMENT_INSTRUCTION","OFFICIAL_RECITAL","OFFICIAL_RELATION_METADATA","AUTHENTIC_TEXT_COMPARISON","DETERMINISTIC_TEXT_ALIGNMENT","OFFICIAL_EXPLANATORY_MATERIAL","HUMAN_LEGAL_REVIEW","MODEL_HYPOTHESIS"]}},
+    "evidence_state":{"type":"string","enum":["DIRECT","DERIVED","CONTEXTUAL","ATTRIBUTED","INTERPRETIVE","UNRESOLVED"]},
+    "confidence":{"type":"object","required":["level","rationale","conflict_state"],"properties":{"level":{"type":"string","enum":["HIGH","MEDIUM","LOW","UNRESOLVED"]},"rationale":{"type":"string","minLength":1},"conflict_state":{"type":"string","enum":["NO_KNOWN_CONFLICT","CONFLICTING_EVIDENCE","INSUFFICIENT_EVIDENCE"]}},"additionalProperties":false},
+    "source_refs":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/source_ref"}},
+    "conflicting_source_refs":{"type":"array","items":{"$ref":"#/$defs/source_ref"}},
+    "notes":{"type":["string","null"]}
+  },
+  "allOf": [
+    {"if":{"properties":{"assertion_scope":{"const":"RULE_LINEAGE"}}},"then":{"required":["rule_anchor"],"properties":{"rule_anchor":{"type":"object"}}}},
+    {"if":{"properties":{"assertion_scope":{"const":"STRUCTURAL_LINEAGE"}}},"then":{"properties":{"edge_type":{"enum":["CONTINUES_AS","RENUMBERED_TO","MOVED_TO","SPLIT_INTO","MERGED_INTO","RECAST_AS","REPLACED_BY","DELETED","INSERTED"]}}}},
+    {"if":{"properties":{"confidence":{"properties":{"conflict_state":{"const":"CONFLICTING_EVIDENCE"}},"required":["conflict_state"]}}},"then":{"required":["conflicting_source_refs"],"properties":{"conflicting_source_refs":{"minItems":1}}}},
+    {"if":{"properties":{"confidence":{"properties":{"level":{"const":"HIGH"}},"required":["level"]}}},"then":{"not":{"properties":{"evidence_basis":{"minItems":1,"maxItems":1,"contains":{"const":"MODEL_HYPOTHESIS"}}},"required":["evidence_basis"]}}},
+    {"if":{"properties":{"evidence_basis":{"minItems":1,"maxItems":1,"contains":{"enum":["DETERMINISTIC_TEXT_ALIGNMENT","AUTHENTIC_TEXT_COMPARISON","MODEL_HYPOTHESIS"]}}},"required":["evidence_basis"]},"then":{"properties":{"claim_status":{"const":"CANDIDATE"},"evidence_state":{"const":"UNRESOLVED"},"confidence":{"properties":{"level":{"const":"UNRESOLVED"},"conflict_state":{"const":"INSUFFICIENT_EVIDENCE"}}}}}},
+    {"if":{"properties":{"claim_status":{"const":"ASSERTED"}}},"then":{"not":{"properties":{"evidence_state":{"const":"UNRESOLVED"}},"required":["evidence_state"]}}}
+  ],
+  "$defs": {
+    "provision_instance_ref":{"type":"object","required":["act_id","structural_path"],"properties":{"act_id":{"type":"string"},"eli":{"type":["string","null"]},"version":{"type":["string","null"]},"language":{"type":["string","null"]},"structural_path":{"type":"string"},"text_hash":{"type":["string","null"]}},"additionalProperties":false},
+    "source_ref":{"type":"object","required":["source_type","identifier","role"],"properties":{"source_type":{"type":"string","enum":["OJ","EUR_LEX","CELLAR","ELI","OTHER_OFFICIAL"]},"identifier":{"type":"string"},"locator":{"type":["string","null"]},"language":{"type":["string","null"]},"role":{"type":"string","enum":["LINEAGE_EVIDENCE","SOURCE_TEXT","TARGET_TEXT","STATUS"]}},"additionalProperties":false}
+  },
+  "additionalProperties":false
+}

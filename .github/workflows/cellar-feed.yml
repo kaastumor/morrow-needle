@@ -32,7 +32,7 @@ jobs:
       - name: Run update-detector tests
         run: python -m pytest -q tests/test_cellar_updates.py
 
-      - name: Verify historical notification through live RSS and Atom
+      - name: Verify replayable notification through live RSS and Atom
         run: python scripts/probe_cellar_feed.py
 
       - name: Upload live feed evidence

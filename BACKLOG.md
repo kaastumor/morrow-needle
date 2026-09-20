@@ -53,16 +53,18 @@ Remaining P0-B work is downstream of the canonical AST: normalize one modern FMX
 ### P0-C — Gold Corpus / regression contract
 **Issue #3 — Formalize Gold Corpus case format**
 
-Goal: every foundational claim becomes a machine-testable regression case.
+Goal: every foundational claim becomes a machine-testable regression case. Keep open until real reconstruction outputs, not only fixture syntax, are matched against expectations in CI.
 
 ### P0-D — Canonical document/provision AST
 **Issue #4**
 
-Status: **DRAFT CONTRACT COMMITTED; LIVE FIXTURES/PARSERS IN PROGRESS.**
+Status: **DRAFT CONTRACT COMMITTED; LIVE FIXTURES/PARSERS IN PROGRESS; FAIL-CLOSED FIDELITY ADOPTED.**
 
 Adopted flat-with-links model: structural nodes + ordered text segments + references + source annotations, all source-anchored. Live consolidated FMX4 validated the need for first-class nested mutation provenance annotations.
 
-Next: normalize modern FMX4, 1958 HTML, and consolidated FMX4 into the same AST before freezing v0.1.
+Step-back review (2026-09-20): source-text accounting is now a parser-correctness invariant, not a coverage metric. `FULL_STRUCTURAL` requires zero unexplained normalized source-text characters and zero duplicate ownership claims, as well as no unassembled fragments or unknown native structural kinds. No percentage threshold may silently convert unknown source text into success. See `docs/step-back-review-2026-09-20-v0.1.md`.
+
+Next: drive unexplained/duplicate accounting to zero on the modern FMX4, 1958 HTML, and consolidated FMX4 live fixtures before freezing v0.1. Do not start the mutation engine while this invariant is red.
 
 ### P0-E — Temporal semantics
 **Issue #5**

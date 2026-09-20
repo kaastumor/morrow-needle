@@ -4,6 +4,7 @@ import hashlib
 import json
 from datetime import datetime, timezone
 from pathlib import Path
+import pathlib
 from typing import Dict, Any
 
 import requests
@@ -56,9 +57,25 @@ PROBES = [
         "params": {},
     },
     {
+        "name": "xhtml_zip_eng",
+        "headers": {
+            "Accept": "application/zip;mtype=xhtml",
+            "Accept-Language": "eng",
+        },
+        "params": {},
+    },
+    {
         "name": "html_list_eng",
         "headers": {
             "Accept": "application/list;mtype=html",
+            "Accept-Language": "eng",
+        },
+        "params": {},
+    },
+    {
+        "name": "html_zip_eng",
+        "headers": {
+            "Accept": "application/zip;mtype=html",
             "Accept-Language": "eng",
         },
         "params": {},
@@ -215,12 +232,22 @@ def inspect_zip_payload(body: bytes) -> Dict[str, Any]:
         "clg_mdfc_occurrences": 0,
         "modification_examples": [],
         "entry_names_sample": [],
+        "extension_counts": {},
+        "xml_entries": [],
+        "image_reference_examples": [],
     }
     try:
         with zipfile.ZipFile(io.BytesIO(body)) as zf:
             names = zf.namelist()
             result["entry_count"] = len(names)
             result["entry_names_sample"] = names[:50]
+
+            extension_counts = Counter()
+            for name in names:
+                suffix = pathlib.PurePosixPath(name).suffix.lower() or "<none>"
+                extension_counts[suffix] += 1
+            result["extension_counts"] = dict(sorted(extension_counts.items()))
+
             for name in names:
                 if not name.lower().endswith((".xml", ".frg")):
                     continue
@@ -229,13 +256,31 @@ def inspect_zip_payload(body: bytes) -> Dict[str, Any]:
                     data = zf.read(name)
                 except Exception:
                     continue
+
+                text = data.decode("utf-8", errors="replace")
+                visible = re.sub(r"<\\?.*?\\?>", "", text, flags=re.S)
+                visible = re.sub(r"<[^>]+>", " ", visible)
+                visible = re.sub(r"\\s+", " ", visible).strip()
+                refs = sorted(set(re.findall(r'[^"\\'<>\\s]+\\.(?:tif|tiff|png|jpg|jpeg|gif)', text, flags=re.I)))
+
+                result["xml_entries"].append({
+                    "name": name,
+                    "bytes": len(data),
+                    "visible_text_chars_estimate": len(visible),
+                    "image_reference_count": len(refs),
+                    "image_references_sample": refs[:20],
+                })
+                for ref in refs:
+                    if len(result["image_reference_examples"]) >= 30:
+                        break
+                    result["image_reference_examples"].append({"entry": name, "reference": ref})
+
                 open_count = data.count(b"CLG.MDFO")
                 close_count = data.count(b"CLG.MDFC")
                 result["clg_mdfo_occurrences"] += open_count
                 result["clg_mdfc_occurrences"] += close_count
 
                 if open_count and len(result["modification_examples"]) < 12:
-                    text = data.decode("utf-8", errors="replace")
                     cursor = 0
                     while len(result["modification_examples"]) < 12:
                         idx = text.find("CLG.MDFO", cursor)

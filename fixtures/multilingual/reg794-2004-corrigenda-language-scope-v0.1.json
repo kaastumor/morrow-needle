@@ -1,0 +1,244 @@
+{
+  "fixture_version": "0.1",
+  "target_act": "CELEX:32004R0794",
+  "purpose": "Prove that corrigenda create expression-specific mutation histories and that a language-neutral mutation stream produces false states.",
+  "language_code_system": "Publications Office three-letter language identifiers",
+  "events": [
+    {
+      "event_id": "corr-2005-01-28-group-a",
+      "event_kind": "CORRIGENDUM",
+      "source_document": {
+        "identifier": "CELEX:32004R0794R(02)",
+        "eli": "http://data.europa.eu/eli/reg/2004/794/corrigendum/2005-01-28/1/oj",
+        "document_type": "CORRIGENDUM"
+      },
+      "target_act": "CELEX:32004R0794",
+      "event_date": "2005-01-28",
+      "expression_scope": {
+        "basis": "OFFICIAL_OJ_LANGUAGE_LIST",
+        "languages": [
+          "DAN",
+          "DEU",
+          "ENG",
+          "ITA",
+          "NLD",
+          "POR",
+          "SWE"
+        ],
+        "nonlisted_semantics": "NO_ASSERTION"
+      },
+      "operations": [
+        {
+          "operation_id": "group-a-annex-i-part-iii-14-heading",
+          "operation_type": "REPLACE",
+          "target_kind": "ACT_TEXT",
+          "target_locator": "Annex I / Part III / point 14",
+          "before_text": "Shipbuilding aid (to be completed)",
+          "after_text": "Aid to the fisheries sector",
+          "resulting_act_locator": "Annex I / Part III / point 14",
+          "notes": "English wording recorded as representative source text; other affected expressions carry their own language text."
+        },
+        {
+          "operation_id": "group-a-fisheries-sheet-insert",
+          "operation_type": "INSERT",
+          "target_kind": "ACT_TEXT",
+          "target_locator": "Corrigendum instruction: page 134 / end of document",
+          "before_text": null,
+          "after_text": "PART III.14 — supplementary information sheet for aid to fisheries",
+          "resulting_act_locator": "Placement later corrected by CELEX:32004R0794R(04)",
+          "notes": "Do not freeze this provisional placement as final structure."
+        }
+      ],
+      "corrects_event_ids": [],
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32004R0794R(02)",
+          "locator": "OJ L 25, 28.1.2005, p. 74; language list",
+          "language": null,
+          "role": "LANGUAGE_SCOPE"
+        },
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32004R0794R(02)",
+          "locator": "Corrigendum text",
+          "language": "ENG",
+          "role": "MUTATION_TEXT"
+        }
+      ],
+      "notes": "This event does not assert anything about non-listed language expressions."
+    },
+    {
+      "event_id": "corr-2005-01-28-group-b",
+      "event_kind": "CORRIGENDUM",
+      "source_document": {
+        "identifier": "CELEX:32004R0794R(03)",
+        "eli": "http://data.europa.eu/eli/reg/2004/794/corrigendum/2005-01-28/2/oj",
+        "document_type": "CORRIGENDUM"
+      },
+      "target_act": "CELEX:32004R0794",
+      "event_date": "2005-01-28",
+      "expression_scope": {
+        "basis": "OFFICIAL_OJ_LANGUAGE_LIST",
+        "languages": [
+          "SPA",
+          "ELL",
+          "FRA",
+          "FIN"
+        ],
+        "nonlisted_semantics": "NO_ASSERTION"
+      },
+      "operations": [
+        {
+          "operation_id": "group-b-title-number",
+          "operation_type": "REPLACE",
+          "target_kind": "ACT_TEXT",
+          "target_locator": "Document title",
+          "before_text": "Regulation (EC) No 784/2004",
+          "after_text": "Regulation (EC) No 794/2004",
+          "resulting_act_locator": "Document title",
+          "notes": "Representative French corrigendum also corrects the act number in the title."
+        },
+        {
+          "operation_id": "group-b-annex-i-intro",
+          "operation_type": "REPLACE",
+          "target_kind": "ACT_TEXT",
+          "target_locator": "Annex I / first paragraph",
+          "before_text": "Introductory text containing a fisheries/aquaculture exception",
+          "after_text": "Introductory text without that exception",
+          "resulting_act_locator": "Annex I / first paragraph",
+          "notes": "Language-group-specific correction absent from group A corrigendum."
+        },
+        {
+          "operation_id": "group-b-annex-i-part-iii-14-heading",
+          "operation_type": "REPLACE",
+          "target_kind": "ACT_TEXT",
+          "target_locator": "Annex I / Part III / point 14",
+          "before_text": "Shipbuilding aid (to be completed)",
+          "after_text": "Aid to the fisheries sector",
+          "resulting_act_locator": "Annex I / Part III / point 14",
+          "notes": "Representative English gloss only; mutation is scoped to SPA/ELL/FRA/FIN expressions."
+        },
+        {
+          "operation_id": "group-b-annex-iii-c-heading",
+          "operation_type": "REPLACE",
+          "target_kind": "ACT_TEXT",
+          "target_locator": "Annex III C / heading",
+          "before_text": "Information to be contained in the annual report to be provided to the Commission",
+          "after_text": "Information to be contained in the annual report to be provided to the Commission (form covering the fisheries sector)",
+          "resulting_act_locator": "Annex III C / heading",
+          "notes": "Present in group B corrigendum but not group A."
+        },
+        {
+          "operation_id": "group-b-fisheries-sheet-insert",
+          "operation_type": "INSERT",
+          "target_kind": "ACT_TEXT",
+          "target_locator": "Annex III C / end (as stated in January corrigendum)",
+          "before_text": null,
+          "after_text": "PART III.14 — supplementary information sheet for aid to fisheries",
+          "resulting_act_locator": "Placement later corrected by CELEX:32004R0794R(04)",
+          "notes": "The May 2005 corrigendum corrects this placement instruction."
+        }
+      ],
+      "corrects_event_ids": [],
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32004R0794R(03)",
+          "locator": "OJ L 25, 28.1.2005, pp. 74-75; ES, EL, FR, FI",
+          "language": null,
+          "role": "LANGUAGE_SCOPE"
+        },
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32004R0794R(03)",
+          "locator": "Corrigendum text",
+          "language": "FRA",
+          "role": "MUTATION_TEXT"
+        }
+      ],
+      "notes": "Different language group, different mutation set."
+    },
+    {
+      "event_id": "corr-2005-05-25-correct-placement",
+      "event_kind": "CORRIGENDUM_OF_CORRIGENDUM",
+      "source_document": {
+        "identifier": "CELEX:32004R0794R(04)",
+        "eli": "http://data.europa.eu/eli/reg/2004/794/corrigendum/2005-05-25/oj",
+        "document_type": "CORRIGENDUM_OF_CORRIGENDUM"
+      },
+      "target_act": "CELEX:32004R0794",
+      "event_date": "2005-05-25",
+      "expression_scope": {
+        "basis": "OFFICIAL_OJ_LANGUAGE_LIST",
+        "languages": [
+          "SPA",
+          "DAN",
+          "DEU",
+          "ELL",
+          "ENG",
+          "FRA",
+          "ITA",
+          "NLD",
+          "POR",
+          "FIN",
+          "SWE"
+        ],
+        "nonlisted_semantics": "NO_ASSERTION"
+      },
+      "operations": [
+        {
+          "operation_id": "correct-fisheries-sheet-placement",
+          "operation_type": "CORRECT_INSTRUCTION",
+          "target_kind": "CORRIGENDUM_INSTRUCTION",
+          "target_locator": "January 2005 instruction for fisheries information sheet placement",
+          "before_text": "On page 134 add the following text to the end of the document / Annex III C",
+          "after_text": "On page 128 add the following text to the end of Part III of Annex I",
+          "resulting_act_locator": "Annex I / Part III / end",
+          "notes": "Corrects the correction instruction; the resulting act-text placement is language-scoped across the union of the January groups."
+        }
+      ],
+      "corrects_event_ids": [
+        "corr-2005-01-28-group-a",
+        "corr-2005-01-28-group-b"
+      ],
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32004R0794R(04)",
+          "locator": "OJ L 131, 25.5.2005, p. 45; language list",
+          "language": null,
+          "role": "LANGUAGE_SCOPE"
+        },
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32004R0794R(04)",
+          "locator": "Corrigendum-of-corrigendum text",
+          "language": "ENG",
+          "role": "CORRECTION_CHAIN"
+        }
+      ],
+      "notes": "A mutation event may target a prior correction instruction, not only the base act."
+    }
+  ],
+  "expected_expression_histories": {
+    "ENG": [
+      "corr-2005-01-28-group-a",
+      "corr-2005-05-25-correct-placement"
+    ],
+    "FRA": [
+      "corr-2005-01-28-group-b",
+      "corr-2005-05-25-correct-placement"
+    ],
+    "POL": []
+  },
+  "forbidden_inferences": [
+    "Applying group B title/Annex-I-intro/Annex-III-C corrections to English because they affect the same legal act.",
+    "Applying either January corrigendum to every language expression of Regulation 794/2004.",
+    "Treating absence from a corrigendum language list as proof that the non-listed expression was correct in every respect.",
+    "Flattening the May corrigendum-of-corrigendum into an unrelated base-act mutation without preserving the correction chain."
+  ]
+}

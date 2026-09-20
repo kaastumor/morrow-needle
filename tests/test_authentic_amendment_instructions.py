@@ -23,7 +23,7 @@ def _candidate():
 
 def test_explicit_authentic_replacement_becomes_canonical_cause():
     evidence = parse_authentic_instructions(
-        FIXTURE["parser_case"], source_id="CELEX:32015R1536", locator="Article 1(4)"
+        FIXTURE["excerpt"], source_id="CELEX:32015R1536", locator="Article 1(4)"
     )
     assert evidence == [FIXTURE["expected_evidence"]]
     result = reconcile_candidate(_candidate(), evidence)

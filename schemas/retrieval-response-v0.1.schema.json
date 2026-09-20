@@ -195,7 +195,8 @@
               "TEMPORAL_CONFLICT",
               "SOURCE_AVAILABILITY_UNRESOLVED",
               "NOT_ASSERTED_AS_OF_SOURCE_DATE",
-              "TEMPORAL_NOT_ACTIVE"
+              "TEMPORAL_NOT_ACTIVE",
+              "TEMPORAL_NOT_ASSERTED"
             ]
           },
           "temporal_evaluation": {

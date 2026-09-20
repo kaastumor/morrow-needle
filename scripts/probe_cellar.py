@@ -234,6 +234,63 @@ def summarize_response(r: requests.Response) -> Dict[str, Any]:
 
     return summary
 
+REPRESENTATION_PREFERENCE = [
+    ("fmx4", "STRUCTURED_LEGAL_XML"),
+    ("xhtml", "STRUCTURED_XHTML"),
+    ("html", "STRUCTURED_HTML"),
+    ("pdfa2a", "PDF_TEXT"),
+    ("pdfa1a", "PDF_TEXT"),
+    ("pdfa1b", "PDF_TEXT"),
+    ("pdf", "PDF_TEXT"),
+]
+
+def select_sparql_representation(rows):
+    """Select a manifestation, never an arbitrary item.
+
+    The knowledge graph may expose one or more Item URIs for a manifestation.
+    Those Items are not assumed to equal every internal stream exposed by
+    Cellar's publication-list endpoint.
+    """
+    by_format = {}
+    for row in rows:
+        fmt = (row.get("format") or "").lower()
+        manif = row.get("manif")
+        if not fmt or not manif:
+            continue
+        key = (fmt, manif)
+        entry = by_format.setdefault(key, {
+            "format": fmt,
+            "manifestation_uri": manif,
+            "expression_uri": row.get("expr"),
+            "work_uri": row.get("work"),
+            "language": row.get("langCode"),
+            "item_uris": [],
+        })
+        item = row.get("item")
+        if item and item not in entry["item_uris"]:
+            entry["item_uris"].append(item)
+
+    for wanted, quality in REPRESENTATION_PREFERENCE:
+        candidates = [
+            entry for (fmt, _), entry in by_format.items()
+            if fmt == wanted
+        ]
+        if not candidates:
+            continue
+        candidates.sort(key=lambda x: x["manifestation_uri"])
+        selected = candidates[0]
+        return {
+            **selected,
+            "representation_class": quality,
+            "selection_basis": "SPARQL_MANIFESTATION_INVENTORY",
+            "collection_list_accept": f"application/list;mtype={wanted}",
+            "collection_zip_accept": f"application/zip;mtype={wanted}",
+            "internal_stream_count": None,
+            "internal_stream_count_basis": "NOT_YET_PROBED",
+        }
+
+    return None
+
 def sparql_inventory(celex: str, language: str = "ENG") -> Dict[str, Any]:
     query = f"""
 PREFIX cdm: <http://publications.europa.eu/ontology/cdm#>
@@ -284,6 +341,7 @@ LIMIT 5000
             result["formats"] = formats
             result["manifestation_count"] = len({row.get("manif") for row in rows if row.get("manif")})
             result["item_count"] = len({row.get("item") for row in rows if row.get("item")})
+            result["selected_representation"] = select_sparql_representation(rows)
         else:
             result["head"] = r.text[:1000]
         return result

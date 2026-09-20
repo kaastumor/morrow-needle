@@ -30,13 +30,28 @@ That does **not** turn the feed into legal-history truth. Its `CREATE`,
 `priority` field is likewise the priority of ingestion of the element, not a
 legal-materiality or product-ranking signal.
 
+Observed live behavior currently conflicts with that documentation:
+
+- the documentation's own 2012 example event returns a valid feed response
+  with zero entries when queried at its documented timestamp;
+- known Cellar roots for Regulation 2025/905 and Regulation 2023/2055 also
+  return zero entries in tested publication-date and UUIDv1 root-time windows;
+- the September 2026 live anchor remains replayable.
+
+Therefore historical replay is currently classified:
+
+`DOCUMENTED_CAPABILITY / LIVE_REPLAY_UNVERIFIED`
+
 Consequences:
 
-- historical replay is a supported source-audit capability;
+- do not depend on the public notification endpoint as the sole historical
+  event archive until the documented/live divergence is resolved;
+- do not infer that the historical ingestion action never occurred;
+- preserve historical replay probes as contract-drift evidence;
+- use the feed confidently for prospectively observed windows while the
+  monitor maintains its own durable cursor/event history;
 - an ingestion action must still be reconciled with immutable source
   observations and canonical legal evidence;
-- a missing match in one tested window is a locator/query failure until the
-  official history contract itself is falsified;
 - production identifiers are useful locators but should not outrank stable
   Cellar root identity when the latter is already known.
 ## Polling contract
@@ -51,7 +66,7 @@ Consequences:
 
 ## Live feed discovery
 
-The official documentation example from 2012 remains a useful parser fixture. A permanent modern live anchor is also retained below; historical replay is tested separately from live-contract drift.
+The official documentation example from 2012 remains a useful parser fixture and is now also a **live historical sentinel**. As of 2026-09-20 the current endpoint returns zero entries for its exact documented timestamp. A permanent September 2026 live anchor is retained below.
 
 A live September 2026 probe exposed current service drift:
 

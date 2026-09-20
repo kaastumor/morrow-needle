@@ -6,20 +6,21 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-The narrow regime-lineage temporal-ownership reopen is resolved and green. Controlled P2 expansion is unblocked again.
+Half-Life v0.1 is frozen and Issue #10 is closed. Controlled P2 expansion continues.
 
 Unless new official/executable evidence reopens a foundation risk:
 
-1. **P2 / Issue #10 — Half-Life.** Build the first product analytic strictly as a derived view over canonical Temporal Assertions + reference-only regime genealogy.
-2. **P2 / Issue #17 — Source Anomaly.** Provenance-driven visibility into authoritative-source fallback, source-internal conflicts and representation duplication.
-3. **P2 Discovery — Legislative X-Ray / silent dependency ripple.** Find a second official case before freezing a reusable dependency-ripple primitive.
-4. **P2 — factual daily/weekly change feed.**
-5. **P2 — impact / affected-entity intelligence** only after direct-vs-derived-vs-interpretive presentation semantics are exercised.
+1. **P2 / Issue #17 — Source Anomaly.** Build the first read-only provenance/source analytic over authoritative fallback, source-internal conflicts and representation duplication.
+2. **P2 Discovery — Legislative X-Ray / silent dependency ripple.** Find a second official case before freezing a reusable dependency-ripple primitive.
+3. **P2 — factual daily/weekly change feed.**
+4. **P2 — impact / affected-entity intelligence** only after direct-vs-derived-vs-interpretive presentation semantics are exercised.
+5. **Issue #19 — Half-Life v0.2 research** when official cases support proposition-level rule survival and explicit terminal outcomes without negative-absence inference.
 6. Ranking, plain-language evaluation, subscriptions and saved monitors follow.
 
-All P0/P1 ownership boundaries are now explicitly tested. A freeze is reopened only when official or executable adversarial evidence demonstrates failure.
+All P0/P1 ownership boundaries are explicitly tested. A freeze is reopened only when official or executable adversarial evidence demonstrates failure.
 
 Canonical audit: docs/audits/post-p1-foundation-audit-v0.1.md
+Half-Life freeze: docs/decisions/half-life-v0.1-interface-freeze.md
 Ownership correction: docs/decisions/regime-lineage-v0.2-temporal-ownership.md
 
 ## Priority model
@@ -282,15 +283,18 @@ See docs/audits/post-p1-foundation-audit-v0.1.md.
 
 Risk-ordered after the post-P1 audit:
 
-1. **Half-Life (Issue #10):** factual history of temporary regimes — original planned duration, extensions, legal gaps, re-enactments, final expiry or transition into successor/permanent rules. First live fixture is already verified.
-2. **Source Anomaly (Issue #17):** provenance-driven visibility into authoritative-source fallback, internal identifier/text conflicts, duplicated representations and unavailable branches.
-3. **Legislative X-Ray / dependency ripple:** surface rule effects caused by changed referenced provisions even when local text is unchanged. Require a second official adversary before freezing a reusable primitive.
-4. **Needle daily/weekly change feed:** factual feed over verified source changes, Threads and retrieval.
-5. **Impact / affected-entity model:** strict direct-vs-derived-vs-interpretive separation before public use.
+1. **Source Anomaly (Issue #17):** provenance-driven visibility into authoritative-source fallback, internal identifier/text conflicts, duplicated representations and unavailable branches.
+2. **Legislative X-Ray / dependency ripple:** surface rule effects caused by changed referenced provisions even when local text is unchanged. Require a second official adversary before freezing a reusable primitive.
+3. **Needle daily/weekly change feed:** factual feed over verified source changes, Threads and retrieval.
+4. **Impact / affected-entity model:** strict direct-vs-derived-vs-interpretive separation before public use.
+5. **Half-Life v0.2 research (Issue #19):** rule survival and terminal outcomes only after official evidence supports them without negative-absence inference.
 6. **Public ranking dimensions + transparent rationale.**
 7. **Plain-language explanation evaluation.**
 8. **Domain subscriptions and saved monitors.**
 9. **Dark Matter:** known-but-unavailable document representation, coordinated with Source Anomaly rather than conflated with legal absence.
+
+Completed P2 slice:
+- **Half-Life v0.1 (Issue #10): CLOSED/FROZEN.** Derived, evidence-linked temporary-regime history over canonical Temporal Assertions + genealogy, with repeated extensions, gaps, view horizon and explicit unresolved terminal/rule-continuity coverage.
 
 ## P3 — Expansion
 

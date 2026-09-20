@@ -157,6 +157,13 @@ class XMLTextLedger:
         for atom_id in self._subtree_atoms.get(id(element), ()):
             self._claim_atom(atom_id, category=category, reason=reason)
 
+    def subtree_has_unclaimed(self, element: ET.Element) -> bool:
+        return any(
+            self.atoms[atom_id]["category"] is None
+            for atom_id in self._subtree_atoms.get(id(element), ())
+            if atom_id in self.atoms
+        )
+
     def claim_child_tail(
         self,
         child: ET.Element,

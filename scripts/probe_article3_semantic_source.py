@@ -24,6 +24,12 @@ EXPECTED_SPANS = {
         "through a communication channel other than those referred to in paragraph 3 "
         "shall not be considered as submitted to the Commission."
     ),
+    "span-alt-channel-permission": (
+        "In exceptional circumstances and upon the agreement of the Commission and "
+        "the Member State concerned, an agreed communication channel other than those "
+        "referred to in paragraph 3 may be used for submission of a notification or "
+        "any correspondence in connection with a notification."
+    ),
 }
 
 

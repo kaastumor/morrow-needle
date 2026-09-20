@@ -40,7 +40,7 @@ def _stable_digest(value: dict[str, Any]) -> str:
 
 
 def _observation_refs(source_change: dict[str, Any]) -> list[str]:
-    refs=[f"source-change:{source_change['change_id']}"]
+    refs=[source_change["change_id"]]
     for side in ("previous","current"):
         snapshot=source_change.get(side)
         if not snapshot:

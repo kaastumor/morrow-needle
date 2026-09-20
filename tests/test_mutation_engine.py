@@ -3,7 +3,7 @@ from pathlib import Path
 
 from jsonschema import Draft202012Validator
 
-from needle.mutation.diff import diff_same_location
+from needle.mutation.diff import diff_same_location, diff_table_cells
 from needle.mutation.reconcile import reconcile_candidate
 from needle.mutation.structural import reclassify_with_lineage
 
@@ -330,3 +330,98 @@ def test_derived_official_correlation_can_support_many_to_one_merge():
     assert mutation["reconciliation_state"] == "CORROBORATED"
     assert mutation["verification_state"] == "UNVERIFIED"
     assert list(Draft202012Validator(V2_SCHEMA).iter_errors(mutation)) == []
+
+
+def _table_ast(state_id, cell_text, *, include_extra=False):
+    nodes = [
+        {
+            "node_id":f"{state_id}:doc",
+            "kind":"DOCUMENT",
+            "citation_path":"Regulation X",
+            "parent_id":None,
+            "ordinal":0,
+        },
+        {
+            "node_id":f"{state_id}:annex1",
+            "kind":"ANNEX",
+            "citation_path":"Annex I",
+            "parent_id":f"{state_id}:doc",
+            "ordinal":0,
+        },
+        {
+            "node_id":f"{state_id}:table0",
+            "kind":"TABLE",
+            "citation_path":"Annex I",
+            "parent_id":f"{state_id}:annex1",
+            "ordinal":0,
+        },
+        {
+            "node_id":f"{state_id}:row2",
+            "kind":"TABLE_ROW",
+            "citation_path":"Annex I",
+            "parent_id":f"{state_id}:table0",
+            "ordinal":2,
+        },
+        {
+            "node_id":f"{state_id}:cell23",
+            "kind":"TABLE_CELL",
+            "citation_path":"Annex I",
+            "parent_id":f"{state_id}:row2",
+            "ordinal":3,
+            "table_coordinates":{"row":2,"column":3,"row_span":1,"column_span":1},
+        },
+    ]
+    segments = [
+        {
+            "segment_id":f"{state_id}:cell23text",
+            "node_id":f"{state_id}:cell23",
+            "role":"CELL_TEXT",
+            "text_source":cell_text,
+            "text_compare":cell_text,
+            "ordinal":0,
+            "document_order":1,
+        }
+    ]
+    if include_extra:
+        nodes.append({
+            "node_id":f"{state_id}:cell24",
+            "kind":"TABLE_CELL",
+            "citation_path":"Annex I",
+            "parent_id":f"{state_id}:row2",
+            "ordinal":4,
+            "table_coordinates":{"row":2,"column":4,"row_span":1,"column_span":1},
+        })
+        segments.append({
+            "segment_id":f"{state_id}:cell24text",
+            "node_id":f"{state_id}:cell24",
+            "role":"CELL_TEXT",
+            "text_source":"Article 7",
+            "text_compare":"Article 7",
+            "ordinal":0,
+            "document_order":2,
+        })
+    return {"state_id":state_id,"nodes":nodes,"segments":segments}
+
+
+def test_exact_table_coordinate_diff_detects_numeric_change_and_insert():
+    before = _table_ast("before-table", "Threshold: 100")
+    after = _table_ast("after-table", "Threshold: 125", include_extra=True)
+
+    candidates = diff_table_cells(before, after, language="ENG")
+    replacement = next(
+        c for c in candidates
+        if c["target"]["citation_path"] == "Annex I :: TABLE[0] :: CELL[2,3]"
+    )
+    inserted = next(
+        c for c in candidates
+        if c["target"]["citation_path"] == "Annex I :: TABLE[0] :: CELL[2,4]"
+    )
+
+    assert replacement["operation"] == "REPLACE"
+    assert replacement["alignment_basis"] == "TABLE_COORDINATE"
+    assert "125" in replacement["feature_deltas"]["numbers_added"]
+    assert "100" in replacement["feature_deltas"]["numbers_removed"]
+    assert inserted["operation"] == "INSERT"
+    assert "Article 7" in inserted["feature_deltas"]["references_added"]
+    assert list(Draft202012Validator(V2_SCHEMA).iter_errors(replacement)) == []
+    assert list(Draft202012Validator(V2_SCHEMA).iter_errors(inserted)) == []

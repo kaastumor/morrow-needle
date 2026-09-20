@@ -3,7 +3,7 @@
 **Started:** 2026-09-20
 **Completed:** 2026-09-20
 **Issue:** #16
-**Status:** COMPLETE — P0/P1 freezes retained; broad P2 unblocked
+**Status:** COMPLETE AFTER NARROW REOPEN — P0/P1 ownership repaired; P2 unblocked
 
 ## Decision
 
@@ -182,3 +182,27 @@ P0/P1 is not finished forever; freezes remain reopenable when official evidence 
 But the current baseline has now survived isolated contract tests, one complete Thread, structured retrieval pressure, and a deliberately heterogeneous post-P1 red-team.
 
 **Decision: retain all frozen P0/P1 interfaces and proceed to P2, starting with Half-Life.**
+
+
+## Addendum — first P2 slice reopened temporal ownership
+
+The first Half-Life implementation pass immediately found one omission in the audit itself: discovery-era regime-lineage v0.1 still persisted application start/end dates, derived gap dates and an applicability-continuity verdict.
+
+That contradicted P0-E's later ownership rule that Temporal Assertions are canonical legal-time truth.
+
+Issue #18 reopened the foundation narrowly.
+
+Resolution:
+- regime-lineage v0.1 remains historical discovery provenance only;
+- regime-lineage v0.2 is genealogy-only and reference-based;
+- canonical ePrivacy dates now live in fixtures/temporal/eprivacy-temporary-regime-v0.1.json;
+- the v0.2 genealogy edge references temporal assertion IDs and stores no dates/gap verdict;
+- Half-Life regressions derive all metrics from Temporal Assertions;
+- changing a temporal assertion changes the derived gap without modifying lineage.
+
+Decision record:
+- docs/decisions/regime-lineage-v0.2-temporal-ownership.md
+
+This addendum strengthens, rather than weakens, the audit conclusion:
+
+**Genealogy owns ancestry. P0-E owns legal time. Product analytics own neither; they derive.**

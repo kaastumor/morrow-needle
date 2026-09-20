@@ -18,6 +18,7 @@ from needle.provenance.ledger import verify_record_hash
 from needle.updates.cellar_feed import parse_feed
 from needle.updates.classify import build_source_change
 from needle.updates.reobserve import reobserve_event
+from needle.updates.relevance import classify_event_relevance
 
 
 ENDPOINT="https://publications.europa.eu/webapi/notification/ingestion"
@@ -72,10 +73,11 @@ def candidate_windows(now: datetime):
 
 
 def discover_events(now: datetime) -> tuple[list[dict[str,Any]],list[dict[str,Any]]]:
-    found=[]
+    legal=[]
+    other=[]
     attempts=[]
     seen_event_keys=set()
-    seen_signatures=set()
+    seen_roots=set()
 
     for start,end in candidate_windows(now):
         for action in ACTIONS:
@@ -111,7 +113,8 @@ def discover_events(now: datetime) -> tuple[list[dict[str,Any]],list[dict[str,An
                     ordered=sorted(
                         page.events,
                         key=lambda event:(
-                            not has_celex(event),
+                            classify_event_relevance(event)
+                            != "LEGAL_RESOURCE_CANDIDATE",
                             event["ingestion_time"],
                             event["event_key"],
                         ),
@@ -119,23 +122,34 @@ def discover_events(now: datetime) -> tuple[list[dict[str,Any]],list[dict[str,An
                     for event in ordered:
                         if event["event_key"] in seen_event_keys:
                             continue
-                        signature=(
-                            event["action"],
-                            tuple(event.get("wemi_levels",[])),
-                        )
-                        # Prefer heterogeneity until we have three signatures.
-                        if signature in seen_signatures:
+                        root=event["root_cellar_id"]
+                        if root in seen_roots:
                             continue
                         seen_event_keys.add(event["event_key"])
-                        seen_signatures.add(signature)
-                        found.append(event)
-                        if len(found) >= TARGET_EVENTS:
-                            return found,attempts
+                        seen_roots.add(root)
+                        if (
+                            classify_event_relevance(event)
+                            == "LEGAL_RESOURCE_CANDIDATE"
+                        ):
+                            legal.append(event)
+                        else:
+                            other.append(event)
 
+                    if len(legal) >= TARGET_EVENTS:
+                        return legal[:TARGET_EVENTS],attempts
                     if not page.more_entries:
                         break
 
-    return found,attempts
+    selected=legal[:TARGET_EVENTS]
+    selected_roots={event["root_cellar_id"] for event in selected}
+    for event in other:
+        if event["root_cellar_id"] in selected_roots:
+            continue
+        selected.append(event)
+        selected_roots.add(event["root_cellar_id"])
+        if len(selected) >= TARGET_EVENTS:
+            break
+    return selected,attempts
 
 
 def validate_provenance_record(record: dict[str,Any] | None) -> None:
@@ -152,8 +166,17 @@ def main() -> int:
     events,attempts=discover_events(now)
     if len(events) < TARGET_EVENTS:
         raise AssertionError(
-            f"expected {TARGET_EVENTS} heterogeneous live Cellar events "
+            f"expected {TARGET_EVENTS} distinct-root live Cellar events "
             f"within {MAX_LOOKBACK_DAYS} days, found {len(events)}"
+        )
+    if len({event["root_cellar_id"] for event in events}) != len(events):
+        raise AssertionError("operational sample contains duplicate root resources")
+    if not any(
+        classify_event_relevance(event) == "LEGAL_RESOURCE_CANDIDATE"
+        for event in events
+    ):
+        raise AssertionError(
+            "operational sample found no CELEX-addressable legal-resource candidate"
         )
 
     event_schema=json.loads(
@@ -183,7 +206,19 @@ def main() -> int:
                 + "; ".join(error.message for error in event_errors)
             )
 
-        if event["action"] == "DELETE":
+        relevance=classify_event_relevance(event)
+        if relevance == "SOURCE_INFRASTRUCTURE":
+            observation={
+                "state":"OUT_OF_SCOPE_SOURCE_INFRASTRUCTURE",
+                "celex":None,
+                "snapshot":None,
+                "metadata_observation":None,
+                "content_observation":None,
+                "attempts":[],
+                "unknowns":[],
+            }
+            current=None
+        elif event["action"] == "DELETE":
             observation={
                 "state":"DELETE_EVENT_NO_CURRENT_REOBSERVATION",
                 "celex":None,
@@ -224,7 +259,11 @@ def main() -> int:
                 + "; ".join(error.message for error in change_errors)
             )
 
-        result=build_operational_result(event,change)
+        result=build_operational_result(
+            event,
+            change,
+            source_unknowns=observation.get("unknowns",[]),
+        )
         card=build_feed_card(result)
         card_errors=list(
             Draft202012Validator(card_schema).iter_errors(card)
@@ -249,8 +288,8 @@ def main() -> int:
         "sampled_at":now.isoformat(),
         "lookback_days":MAX_LOOKBACK_DAYS,
         "selection_rule":(
-            "first three distinct (feed action, WEMI level set) signatures; "
-            "CELEX-addressable events preferred within each page"
+            "up to three distinct root resources; CELEX-addressable legal-resource "
+            "candidates are selected before non-legal/source-infrastructure events"
         ),
         "attempts":attempts,
         "cohort":cohort,
@@ -260,9 +299,22 @@ def main() -> int:
                 {
                     "action":item["event"]["action"],
                     "wemi_levels":item["event"]["wemi_levels"],
+                    "root_cellar_id":item["event"]["root_cellar_id"],
+                    "relevance":classify_event_relevance(item["event"]),
                 }
                 for item in cohort
             ],
+            "relevance_counts":{
+                state:sum(
+                    classify_event_relevance(item["event"]) == state
+                    for item in cohort
+                )
+                for state in (
+                    "LEGAL_RESOURCE_CANDIDATE",
+                    "SOURCE_INFRASTRUCTURE",
+                    "UNRESOLVED_RESOURCE",
+                )
+            },
             "source_change_classifications":[
                 item["source_change"]["classification"]
                 for item in cohort

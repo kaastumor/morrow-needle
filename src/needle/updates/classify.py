@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import hashlib
+import json
 from typing import Any
 
 
@@ -122,4 +124,86 @@ def snapshot_from_observations(
             metadata_observation["record_id"]
             if metadata_observation is not None else None
         ),
+    }
+
+
+
+def _classification_basis(
+    *,
+    action: str,
+    classification: str,
+    previous: dict[str, Any] | None,
+    current: dict[str, Any] | None,
+) -> list[str]:
+    if classification == "SOURCE_CREATED":
+        return ["FEED_ACTION","MISSING_BASELINE"]
+    if classification == "AVAILABILITY_CHANGED":
+        return ["FEED_ACTION","AVAILABILITY"]
+    if classification == "CONTENT_CHANGED":
+        return ["CONTENT_HASH"]
+    if classification == "METADATA_ONLY":
+        return ["CONTENT_HASH","METADATA_HASH"]
+    if classification == "NO_MATERIAL_CHANGE":
+        return ["CONTENT_HASH","METADATA_HASH"]
+    basis = ["FEED_ACTION"]
+    if previous is None:
+        basis.append("MISSING_BASELINE")
+    if current is None:
+        basis.append("MISSING_OBSERVATION")
+    return basis
+
+
+def build_source_change(
+    event: dict[str, Any],
+    *,
+    previous: dict[str, Any] | None,
+    current: dict[str, Any] | None,
+) -> dict[str, Any]:
+    classification = classify_source_change(
+        action=event["action"],
+        previous=previous,
+        current=current,
+    )
+    plan = refresh_scope(event)
+    identity_material = {
+        "event_key":event["event_key"],
+        "classification":classification,
+        "previous_content_observation_id":(
+            previous.get("content_observation_id") if previous else None
+        ),
+        "previous_metadata_observation_id":(
+            previous.get("metadata_observation_id") if previous else None
+        ),
+        "current_content_observation_id":(
+            current.get("content_observation_id") if current else None
+        ),
+        "current_metadata_observation_id":(
+            current.get("metadata_observation_id") if current else None
+        ),
+    }
+    digest = hashlib.sha256(
+        json.dumps(
+            identity_material,
+            sort_keys=True,
+            separators=(",", ":"),
+        ).encode("utf-8")
+    ).hexdigest()[:32]
+
+    return {
+        "change_id":f"source-change:{digest}",
+        "event_key":event["event_key"],
+        "feed_action":event["action"],
+        "classification":classification,
+        "target_cellar_id":event["cellar_id"],
+        "root_cellar_id":event["root_cellar_id"],
+        "refresh_scope":plan["scope"],
+        "previous":previous,
+        "current":current,
+        "classification_basis":_classification_basis(
+            action=event["action"],
+            classification=classification,
+            previous=previous,
+            current=current,
+        ),
+        "notes":None,
     }

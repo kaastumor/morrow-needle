@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/half-life-composition-v0.1.json",
+  "title": "Morrow // Needle Half-Life Composition v0.1",
+  "description": "Reference-only specification for a derived temporary-regime history analytic. It contains no canonical legal dates.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "analytic_id",
+    "topic",
+    "composition_character",
+    "temporal_fixture_path",
+    "lineage_fixture_path",
+    "lineage_edge_id",
+    "original_regime",
+    "successor_regimes",
+    "guardrails",
+    "unknowns"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "half-life-composition-v0.1"
+    },
+    "analytic_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "topic": {
+      "type": "string",
+      "minLength": 1
+    },
+    "composition_character": {
+      "const": "REFERENCE_ONLY"
+    },
+    "temporal_fixture_path": {
+      "type": "string",
+      "pattern": "^fixtures/temporal/.+\\.json$"
+    },
+    "lineage_fixture_path": {
+      "type": "string",
+      "pattern": "^fixtures/lineage/.+\\.json$"
+    },
+    "lineage_edge_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "original_regime": {
+      "$ref": "#/$defs/original_regime"
+    },
+    "successor_regimes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/successor_regime"
+      }
+    },
+    "guardrails": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "$defs": {
+    "original_regime": {
+      "type": "object",
+      "required": [
+        "regime_id",
+        "application_start_assertion_id",
+        "original_end_assertion_id",
+        "current_end_assertion_id"
+      ],
+      "properties": {
+        "regime_id": {
+          "type": "string"
+        },
+        "application_start_assertion_id": {
+          "type": "string"
+        },
+        "original_end_assertion_id": {
+          "type": "string"
+        },
+        "current_end_assertion_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "successor_regime": {
+      "type": "object",
+      "required": [
+        "regime_id",
+        "application_start_assertion_id",
+        "application_end_assertion_id"
+      ],
+      "properties": {
+        "regime_id": {
+          "type": "string"
+        },
+        "application_start_assertion_id": {
+          "type": "string"
+        },
+        "application_end_assertion_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

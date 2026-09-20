@@ -236,13 +236,18 @@ def inspect_zip_payload(body: bytes) -> Dict[str, Any]:
 
                 if open_count and len(result["modification_examples"]) < 12:
                     text = data.decode("utf-8", errors="replace")
-                    for match in re.finditer(r"<\\?CLG\\.MDFO\\b[^?]*\\?>", text):
+                    cursor = 0
+                    while len(result["modification_examples"]) < 12:
+                        idx = text.find("CLG.MDFO", cursor)
+                        if idx < 0:
+                            break
+                        start = max(0, idx - 120)
+                        end = min(len(text), idx + 1800)
                         result["modification_examples"].append({
                             "entry": name,
-                            "processing_instruction": match.group(0)[:2000],
+                            "context": text[start:end],
                         })
-                        if len(result["modification_examples"]) >= 12:
-                            break
+                        cursor = idx + len("CLG.MDFO")
     except Exception as exc:
         result["zip_parse_error"] = f"{type(exc).__name__}: {exc}"
     return result

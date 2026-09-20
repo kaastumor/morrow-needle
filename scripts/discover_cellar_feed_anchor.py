@@ -62,7 +62,19 @@ def main() -> int:
     for index,params in enumerate(WINDOWS, start=1):
         response=fetch(params)
         payload=response.content
-        page=parse_feed(payload)
+        raw_path=out_dir/f"attempt-{index}.xml"
+        raw_path.write_bytes(payload)
+        try:
+            page=parse_feed(payload)
+        except Exception as exc:
+            attempts.append({
+                "query":params,
+                "request_url":response.url,
+                "status_code":response.status_code,
+                "payload_sha256":hashlib.sha256(payload).hexdigest(),
+                "parse_error":f"{type(exc).__name__}: {exc}",
+            })
+            continue
         events=list(page.events)
         attempt={
             "query":params,
@@ -79,7 +91,6 @@ def main() -> int:
             "events":events[:25],
         }
         attempts.append(attempt)
-        (out_dir/f"attempt-{index}.xml").write_bytes(payload)
         if events:
             event=events[0]
             result={

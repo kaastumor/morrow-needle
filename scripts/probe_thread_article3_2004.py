@@ -18,7 +18,6 @@ BASE = "https://publications.europa.eu/resource/celex/{celex}"
 AUTHENTIC = "32004R0794"
 INITIAL = "02004R0794-20040520"
 SENTENCES = {
-    "publication-date-oj": "30.4.2004",
     "entry-into-force": (
         "This Regulation shall enter into force on the twentieth day following "
         "that of its publication in the Official Journal of the European Union."
@@ -135,6 +134,39 @@ def subtree_state(ast: dict, structural_path: list[tuple[str,str]]) -> dict:
     }
 
 
+def publication_date_metadata(payload: bytes) -> dict:
+    candidates=[]
+    date_patterns=("20040430","2004-04-30","30.04.2004","30/04/2004")
+    with zipfile.ZipFile(io.BytesIO(payload)) as zf:
+        for name in sorted(zf.namelist()):
+            if not name.lower().endswith((".xml",".frg")):
+                continue
+            raw=zf.read(name).decode("utf-8",errors="replace")
+            try:
+                root=ET.fromstring(raw)
+            except ET.ParseError:
+                continue
+            for element in root.iter():
+                tag=element.tag.rsplit("}",1)[-1].upper()
+                text=" ".join("".join(element.itertext()).split())
+                attrs={str(k):str(v) for k,v in element.attrib.items()}
+                material=" ".join([tag,text,*attrs.keys(),*attrs.values()])
+                if "2004" not in material:
+                    continue
+                if not any(token in material for token in date_patterns):
+                    continue
+                candidates.append({
+                    "source_file":name,
+                    "tag":tag,
+                    "attributes":attrs,
+                    "text":text[:300],
+                })
+    return {
+        "normalized_date":"2004-04-30",
+        "candidates":candidates,
+    }
+
+
 def locate_sentences(payload: bytes) -> dict:
     matches={key:[] for key in SENTENCES}
     with zipfile.ZipFile(io.BytesIO(payload)) as zf:
@@ -176,6 +208,7 @@ def main() -> int:
     authentic_state=subtree_state(authentic_ast,path)
     initial_state=subtree_state(initial_ast,path)
     spans=locate_sentences(authentic_payload)
+    publication_metadata=publication_date_metadata(authentic_payload)
 
     if authentic_state["text_hash"] != initial_state["text_hash"]:
         raise AssertionError(
@@ -202,6 +235,7 @@ def main() -> int:
             "lineage_inference":False,
         },
         "source_spans":spans,
+        "publication_metadata":publication_metadata,
         "temporal_boundaries":{
             "publication_date":"2004-04-30",
             "entry_into_force_expression":(

@@ -6,6 +6,7 @@ import xml.etree.ElementTree as ET
 from collections import Counter
 from typing import Any
 
+from needle.ast.accounting import XMLTextLedger, aggregate_accounting_reports
 from needle.ast.builder import LegalASTBuilder, normalize_compare_text
 from needle.formex.modifications import parse_modification_markers
 
@@ -41,6 +42,7 @@ STRUCTURAL_KINDS = {
     "ENACTING.TERMS": "ENACTING_TERMS",
     "ENACTING-TERMS": "ENACTING_TERMS",
     "FINAL": "SIGNATURE",
+    "SIGNATURE": "SIGNATURE",
 }
 
 LABEL_TAGS = {
@@ -56,6 +58,16 @@ KNOWN_TEXT_WRAPPERS = {
     "P", "TXT", "DEFINITION", "VISA", "PREAMBLE.INIT", "PREAMBLE.FINAL",
     "REF.DOC", "REF.DOC.OJ", "LINK", "DATE", "PLACE", "NAME", "QUOT.START",
     "QUOT.END", "FORMULA", "MATH", "EXPR",
+}
+
+SOURCE_METADATA_TAGS = {
+    "BIB.DOC", "BIB.INSTANCE", "BIB.INSTANCE.CONS", "NO.CELEX",
+}
+PUBLICATION_NAVIGATION_TAGS = {
+    "CONTENTS", "TOC", "ITEM.REF",
+}
+PROVENANCE_ONLY_TAGS = {
+    "GR.ANNOTATION", "GR.CORRIG", "GR.MOD.ACT", "GR.NOTES",
 }
 
 

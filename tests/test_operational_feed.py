@@ -246,3 +246,22 @@ def test_reobserver_unknowns_survive_into_operational_card():
     assert result["unknowns"] == [unknown]
     card=build_feed_card(result)
     assert card["unknowns"] == [unknown]
+
+
+
+def test_missing_baseline_abstention_explains_comparator_gap():
+    unresolved=build_source_change(
+        EVENT,
+        previous=None,
+        current=FIXTURE["snapshots"]["same"],
+    )
+    result=build_operational_result(EVENT,unresolved)
+    assert result["disposition"] == "ABSTAIN_SOURCE_UNRESOLVED"
+    assert any(
+        "pre-event source snapshot" in item
+        for item in result["unknowns"]
+    )
+    card=build_feed_card(result)
+    assert "cannot compare this update yet" in card["headline"]
+    assert "no pre-event baseline" in card["what_changed"]
+    assert "feed UPDATE is only a hint" in card["why_visible"]

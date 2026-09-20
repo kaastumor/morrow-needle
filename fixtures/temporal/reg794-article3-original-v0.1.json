@@ -48,14 +48,14 @@
           "role": "TEMPORAL_CLAUSE"
         },
         {
-          "source_type": "EUR_LEX",
+          "source_type": "CELLAR",
           "identifier": "CELEX:32004R0794",
-          "locator": "Dates / Date of effect 20/05/2004",
+          "locator": "L_2004140EN.01000101.doc.xml#DATE[ISO=20040430]",
           "language": "ENG",
           "role": "DERIVATION_INPUT"
         }
       ],
-      "notes": "The authentic act supplies the relative force clause; official EUR-Lex metadata independently exposes 20 May 2004 as the date of effect."
+      "notes": "Derived entirely from one immutable authentic Cellar representation: source-native publication metadata (30 April 2004) plus the twentieth-day entry-into-force clause."
     },
     {
       "assertion_id": "reg794-2004-chapter2-application-threshold",
@@ -98,14 +98,21 @@
           "role": "TEMPORAL_CLAUSE"
         },
         {
-          "source_type": "EUR_LEX",
+          "source_type": "CELLAR",
           "identifier": "CELEX:32004R0794",
-          "locator": "Dates / Date of effect 20/05/2004",
+          "locator": "L_2004140EN.01000101.doc.xml#DATE[ISO=20040430]",
+          "language": "ENG",
+          "role": "DERIVATION_INPUT"
+        },
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32004R0794",
+          "locator": "L_2004140EN.01000101.xml#normalized-chars:18221-18361",
           "language": "ENG",
           "role": "DERIVATION_INPUT"
         }
       ],
-      "notes": "The normalized boundary is 20 October 2004 but is exclusive: Chapter II applies only to notifications transmitted more than five months after entry into force."
+      "notes": "The normalized boundary is 20 October 2004 but is exclusive. It is derived from the authentic publication metadata, the Article 13 entry-into-force clause and the separate 'more than five months' Chapter II clause."
     },
     {
       "assertion_id": "reg794-art3-original-paper-notification-end",

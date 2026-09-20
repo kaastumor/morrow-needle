@@ -19,6 +19,12 @@
       "language": "ENG",
       "text": "In the absence of such an agreement, any notification or correspondence in connection with a notification sent to the Commission by a Member State through a communication channel other than those referred to in paragraph 3 shall not be considered as submitted to the Commission.",
       "text_hash": "89db2848597405bd3fe6661af754001e96e292a97bb90d23c0d203095d67e5cd"
+    },
+    "span-alt-channel-permission": {
+      "identifier": "CELEX:32008R0271",
+      "language": "ENG",
+      "text": "In exceptional circumstances and upon the agreement of the Commission and the Member State concerned, an agreed communication channel other than those referred to in paragraph 3 may be used for submission of a notification or any correspondence in connection with a notification.",
+      "text_hash": "c7fc733a71948a5bd1b40fc83e6e0ba18f073803adaa8bd97bbc73a2f55cdb26"
     }
   },
   "atoms": [
@@ -154,6 +160,77 @@
         "human_review": false
       },
       "notes": "Condition is preserved explicitly rather than flattened into an unconditional consequence."
+    },
+    {
+      "atom_id": "reg794-art3-alt-channel-permission-v0.1",
+      "verification_state": "VERIFIED",
+      "source_mutation_ids": [
+        "reg794-article3-live-verified-v0.1"
+      ],
+      "act_id": "CELEX:32004R0794",
+      "provision_refs": [
+        {
+          "provision_instance_id": null,
+          "citation_path": "Article 3 > 4",
+          "language": "ENG"
+        }
+      ],
+      "language_scope": {
+        "languages": [
+          "ENG"
+        ],
+        "cross_language_equivalence_assumed": false
+      },
+      "claim": {
+        "legal_effect": "PERMISSION",
+        "dimensions": [
+          "PROCEDURE",
+          "EXCEPTION",
+          "DIGITAL_CHANNEL"
+        ],
+        "statement": "In exceptional circumstances, and only with agreement between the Commission and the Member State, an alternative agreed communication channel may be used.",
+        "subject": "an agreed alternative communication channel",
+        "action": "may be used",
+        "object": "submission of a notification or related correspondence"
+      },
+      "semantic_basis": {
+        "classification_method": "DETERMINISTIC_LEGAL_LANGUAGE",
+        "trigger_terms": [
+          "may be used"
+        ],
+        "qualifier_terms": [
+          "In exceptional circumstances",
+          "upon the agreement of the Commission and the Member State concerned"
+        ]
+      },
+      "evidence_state": "DIRECT",
+      "source_spans": [
+        {
+          "span_id": "span-alt-channel-permission",
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32008R0271",
+          "locator": "Article 1 replacement of Article 3(4), first sentence",
+          "language": "ENG",
+          "text_hash": "c7fc733a71948a5bd1b40fc83e6e0ba18f073803adaa8bd97bbc73a2f55cdb26",
+          "role": "SEMANTIC_CLAIM"
+        }
+      ],
+      "temporal_assertion_refs": [],
+      "procedure_state_refs": [],
+      "relations": [
+        {
+          "relation": "EXCEPTION_TO",
+          "target_atom_id": "reg794-art3-sani-duty-v0.1"
+        }
+      ],
+      "affected_entities": [],
+      "provenance": {
+        "observed_at": "2026-09-20T15:00:00Z",
+        "extractor_version": "manual-gold-v0.1",
+        "adversary_version": "semantic-adversary-v0.1",
+        "human_review": false
+      },
+      "notes": "Explicit exception permission linked to the primary electronic-channel duty."
     }
   ],
   "negative_atoms": [

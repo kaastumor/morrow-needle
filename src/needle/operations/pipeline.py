@@ -4,6 +4,8 @@ import hashlib
 import json
 from typing import Any
 
+from needle.updates.relevance import classify_event_relevance
+
 
 class OperationalPipelineError(ValueError):
     pass
@@ -26,6 +28,7 @@ _STREAM_BY_DISPOSITION = {
     "NO_MATERIAL_CHANGE":"AUDIT_FEED",
     "ABSTAIN_SOURCE_UNRESOLVED":"ABSTENTION_FEED",
     "ABSTAIN_LEGAL_UNRESOLVED":"ABSTENTION_FEED",
+    "OUT_OF_SCOPE_SOURCE_EVENT":"AUDIT_FEED",
 }
 
 
@@ -64,6 +67,7 @@ def _trigger(event: dict[str, Any], source_change: dict[str, Any]) -> dict[str, 
         "root_cellar_id":event["root_cellar_id"],
         "identifiers":list(event.get("identifiers",[])),
         "refresh_scope":source_change["refresh_scope"],
+        "relevance":classify_event_relevance(event),
     }
 
 
@@ -91,6 +95,7 @@ def build_operational_result(
     source_change: dict[str, Any],
     *,
     downstream: dict[str, Any] | None = None,
+    source_unknowns: list[str] | None = None,
 ) -> dict[str, Any]:
     """Connect feed/source state to downstream legal analysis without conflation."""
     if source_change["event_key"] != event["event_key"]:
@@ -101,14 +106,18 @@ def build_operational_result(
     classification=source_change["classification"]
     canonical_refs=[]
     explanation=None
-    unknowns=[]
+    unknowns=list(source_unknowns or [])
     evidence_refs=[
         f"feed-event:{event['event_key']}",
         *_observation_refs(source_change),
     ]
 
     if downstream is None:
-        if classification in _SOURCE_ONLY_DISPOSITIONS:
+        relevance=classify_event_relevance(event)
+        if relevance == "SOURCE_INFRASTRUCTURE":
+            disposition="OUT_OF_SCOPE_SOURCE_EVENT"
+            unknowns=[]
+        elif classification in _SOURCE_ONLY_DISPOSITIONS:
             disposition=_SOURCE_ONLY_DISPOSITIONS[classification]
         elif classification == "SOURCE_CREATED":
             disposition="SOURCE_CREATED_UNANALYSED"
@@ -227,6 +236,12 @@ def _source_only_copy(result: dict[str, Any]) -> tuple[str,str,str]:
             f"Official source content changed for {label}",
             "Official source bytes changed, but Needle has not yet resolved whether the difference is a legal mutation, non-impact change or representation effect.",
             "Shown as an abstention until legal analysis closes the source-to-law gap.",
+        )
+    if disposition == "OUT_OF_SCOPE_SOURCE_EVENT":
+        return (
+            f"Source infrastructure update — {label}",
+            "The official feed event concerns source/publication infrastructure rather than a CELEX-addressable legal resource candidate.",
+            "Shown in the audit stream so source-infrastructure traffic is measured rather than silently mistaken for legal change.",
         )
     raise OperationalPipelineError(
         f"no source-only copy for disposition {disposition}"

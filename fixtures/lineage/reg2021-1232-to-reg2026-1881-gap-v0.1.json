@@ -46,9 +46,11 @@
     }
   ],
   "foundation_assertion": "Genealogical or thematic succession does not imply uninterrupted applicability; the 118-day 2026 gap is live-verified from official Cellar bytes.",
-  "status": "TEMPORAL_GAP_LIVE_VERIFIED_RULE_LINEAGE_PENDING",
+  "status": "SUPERSEDED_DISCOVERY_PROVENANCE",
   "verification_todo": [
     "Anchor source and target rule-level spans before asserting proposition-by-proposition continuity."
   ],
-  "live_temporal_evidence_fixture": "fixtures/discovery/eprivacy-half-life-live-v0.1.json"
+  "live_temporal_evidence_fixture": "fixtures/discovery/eprivacy-half-life-live-v0.1.json",
+  "canonical_successor": "fixtures/lineage/reg2021-1232-to-reg2026-1881-gap-v0.2.json",
+  "notes": "v0.1 retains the discovery-era duplicated application dates/gap for provenance only. Do not use it as canonical temporal or lineage input; v0.2 references P0-E Temporal Assertions instead."
 }

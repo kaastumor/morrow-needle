@@ -1,0 +1,706 @@
+{
+  "fixture_version": "0.1",
+  "purpose": "Prove that EU procedure/document/legal-effect state cannot be represented by one linear lifecycle status.",
+  "cases": [
+    {
+      "case_id": "gdpr-ordinary-legislative",
+      "procedure_id": "2012/0011(COD)",
+      "events": [
+        {
+          "event_id": "gdpr-proposal-2012-01-25",
+          "procedure_id": "2012/0011(COD)",
+          "procedure_family": "ORDINARY_LEGISLATIVE",
+          "event_kind": "PROPOSAL_ADOPTED",
+          "event_date": "2012-01-25",
+          "actor": [
+            "EUROPEAN_COMMISSION"
+          ],
+          "document_refs": [
+            {
+              "role": "PROPOSAL",
+              "identifier": "CELEX:52012PC0011",
+              "relation": "initiates procedure"
+            }
+          ],
+          "effects": [
+            {
+              "dimension": "PROCEDURE_ACTIVITY",
+              "value": "OPEN"
+            },
+            {
+              "dimension": "PROCEDURE_OUTCOME",
+              "value": "PENDING"
+            },
+            {
+              "dimension": "FORMAL_ACT_ADOPTION",
+              "value": "NOT_ADOPTED"
+            },
+            {
+              "dimension": "FINAL_ACT_PUBLICATION",
+              "value": "NOT_PUBLISHED"
+            }
+          ],
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "OEIL",
+              "identifier": "2012/0011(COD)",
+              "locator": "25/01/2012 Legislative proposal published",
+              "role": "EVENT"
+            },
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "procedure 2012/0011/COD",
+              "locator": "Proposal / Adoption by Commission 25/01/2012",
+              "role": "EVENT"
+            }
+          ],
+          "notes": null
+        },
+        {
+          "event_id": "gdpr-ep-first-reading-2014-03-12",
+          "procedure_id": "2012/0011(COD)",
+          "procedure_family": "ORDINARY_LEGISLATIVE",
+          "event_kind": "PARLIAMENT_POSITION_ADOPTED",
+          "event_date": "2014-03-12",
+          "actor": [
+            "EUROPEAN_PARLIAMENT"
+          ],
+          "document_refs": [
+            {
+              "role": "PARLIAMENT_POSITION",
+              "identifier": "T7-0212/2014",
+              "relation": "first-reading position"
+            }
+          ],
+          "effects": [
+            {
+              "dimension": "PARLIAMENT_POSITION",
+              "value": "FIRST_READING_POSITION_ADOPTED"
+            }
+          ],
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "OEIL",
+              "identifier": "2012/0011(COD)",
+              "locator": "12/03/2014 Decision by Parliament, 1st reading",
+              "role": "EVENT"
+            }
+          ],
+          "notes": null
+        },
+        {
+          "event_id": "gdpr-council-position-2016-04-08",
+          "procedure_id": "2012/0011(COD)",
+          "procedure_family": "ORDINARY_LEGISLATIVE",
+          "event_kind": "COUNCIL_POSITION_ADOPTED",
+          "event_date": "2016-04-08",
+          "actor": [
+            "COUNCIL"
+          ],
+          "document_refs": [
+            {
+              "role": "COUNCIL_POSITION",
+              "identifier": "05419/1/2016",
+              "relation": "Council position"
+            }
+          ],
+          "effects": [
+            {
+              "dimension": "COUNCIL_POSITION",
+              "value": "POSITION_ADOPTED"
+            }
+          ],
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "OEIL",
+              "identifier": "2012/0011(COD)",
+              "locator": "08/04/2016 Council position published",
+              "role": "EVENT"
+            }
+          ],
+          "notes": null
+        },
+        {
+          "event_id": "gdpr-ep-second-reading-2016-04-14",
+          "procedure_id": "2012/0011(COD)",
+          "procedure_family": "ORDINARY_LEGISLATIVE",
+          "event_kind": "PARLIAMENT_POSITION_ADOPTED",
+          "event_date": "2016-04-14",
+          "actor": [
+            "EUROPEAN_PARLIAMENT"
+          ],
+          "document_refs": [
+            {
+              "role": "PARLIAMENT_POSITION",
+              "identifier": "T8-0125/2016",
+              "relation": "second-reading decision"
+            }
+          ],
+          "effects": [
+            {
+              "dimension": "PARLIAMENT_POSITION",
+              "value": "SECOND_READING_POSITION_ADOPTED"
+            }
+          ],
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "OEIL",
+              "identifier": "2012/0011(COD)",
+              "locator": "14/04/2016 Decision by Parliament, 2nd reading",
+              "role": "EVENT"
+            }
+          ],
+          "notes": null
+        },
+        {
+          "event_id": "gdpr-final-signature-2016-04-27",
+          "procedure_id": "2012/0011(COD)",
+          "procedure_family": "ORDINARY_LEGISLATIVE",
+          "event_kind": "FINAL_ACT_SIGNED",
+          "event_date": "2016-04-27",
+          "actor": [
+            "PARLIAMENT_AND_COUNCIL"
+          ],
+          "document_refs": [
+            {
+              "role": "ADOPTED_ACT",
+              "identifier": "CELEX:32016R0679",
+              "relation": "final act"
+            }
+          ],
+          "effects": [
+            {
+              "dimension": "FORMAL_ACT_ADOPTION",
+              "value": "ADOPTED"
+            },
+            {
+              "dimension": "PROCEDURE_OUTCOME",
+              "value": "ADOPTED"
+            },
+            {
+              "dimension": "PROCEDURE_ACTIVITY",
+              "value": "CLOSED"
+            }
+          ],
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "OEIL",
+              "identifier": "2012/0011(COD)",
+              "locator": "27/04/2016 Final act signed / End of procedure in Parliament",
+              "role": "EVENT"
+            }
+          ],
+          "notes": null
+        },
+        {
+          "event_id": "gdpr-oj-publication-2016-05-04",
+          "procedure_id": "2012/0011(COD)",
+          "procedure_family": "ORDINARY_LEGISLATIVE",
+          "event_kind": "FINAL_ACT_PUBLISHED",
+          "event_date": "2016-05-04",
+          "actor": [
+            "PARLIAMENT_AND_COUNCIL"
+          ],
+          "document_refs": [
+            {
+              "role": "ADOPTED_ACT",
+              "identifier": "CELEX:32016R0679",
+              "relation": "Official Journal publication"
+            }
+          ],
+          "effects": [
+            {
+              "dimension": "FINAL_ACT_PUBLICATION",
+              "value": "PUBLISHED"
+            }
+          ],
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "OEIL",
+              "identifier": "2012/0011(COD)",
+              "locator": "04/05/2016 Final act published in Official Journal",
+              "role": "EVENT"
+            }
+          ],
+          "notes": "Entry into force and application remain temporal assertions outside this procedure state machine."
+        }
+      ],
+      "snapshots": [
+        {
+          "date": "2014-03-13",
+          "expect": {
+            "PROCEDURE_ACTIVITY": "OPEN",
+            "PROCEDURE_OUTCOME": "PENDING",
+            "FORMAL_ACT_ADOPTION": "NOT_ADOPTED",
+            "FINAL_ACT_PUBLICATION": "NOT_PUBLISHED",
+            "PARLIAMENT_POSITION": "FIRST_READING_POSITION_ADOPTED"
+          }
+        },
+        {
+          "date": "2016-04-28",
+          "expect": {
+            "PROCEDURE_ACTIVITY": "CLOSED",
+            "PROCEDURE_OUTCOME": "ADOPTED",
+            "FORMAL_ACT_ADOPTION": "ADOPTED",
+            "FINAL_ACT_PUBLICATION": "NOT_PUBLISHED",
+            "PARLIAMENT_POSITION": "SECOND_READING_POSITION_ADOPTED",
+            "COUNCIL_POSITION": "POSITION_ADOPTED"
+          }
+        },
+        {
+          "date": "2016-05-04",
+          "expect": {
+            "FINAL_ACT_PUBLICATION": "PUBLISHED"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "european-private-company-withdrawn",
+      "procedure_id": "2008/0130/APP",
+      "events": [
+        {
+          "event_id": "spe-proposal-2008-06-25",
+          "procedure_id": "2008/0130/APP",
+          "procedure_family": "SPECIAL_LEGISLATIVE",
+          "event_kind": "PROPOSAL_ADOPTED",
+          "event_date": "2008-06-25",
+          "actor": [
+            "EUROPEAN_COMMISSION"
+          ],
+          "document_refs": [
+            {
+              "role": "PROPOSAL",
+              "identifier": "CELEX:52008PC0396",
+              "relation": "initiates proposal"
+            }
+          ],
+          "effects": [
+            {
+              "dimension": "PROCEDURE_ACTIVITY",
+              "value": "OPEN"
+            },
+            {
+              "dimension": "PROCEDURE_OUTCOME",
+              "value": "PENDING"
+            },
+            {
+              "dimension": "FORMAL_ACT_ADOPTION",
+              "value": "NOT_ADOPTED"
+            },
+            {
+              "dimension": "FINAL_ACT_PUBLICATION",
+              "value": "NOT_PUBLISHED"
+            }
+          ],
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:52008PC0396",
+              "locator": "Date of document 25/06/2008",
+              "role": "EVENT"
+            },
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "procedure 2008/0130/APP",
+              "locator": "Proposal for a Council Regulation",
+              "role": "PROCEDURE_FAMILY"
+            }
+          ],
+          "notes": null
+        },
+        {
+          "event_id": "spe-withdrawn-2014-05-21",
+          "procedure_id": "2008/0130/APP",
+          "procedure_family": "SPECIAL_LEGISLATIVE",
+          "event_kind": "PROPOSAL_WITHDRAWN",
+          "event_date": "2014-05-21",
+          "actor": [
+            "EUROPEAN_COMMISSION"
+          ],
+          "document_refs": [
+            {
+              "role": "PROPOSAL",
+              "identifier": "CELEX:52008PC0396",
+              "relation": "withdrawn proposal"
+            }
+          ],
+          "effects": [
+            {
+              "dimension": "PROCEDURE_ACTIVITY",
+              "value": "CLOSED"
+            },
+            {
+              "dimension": "PROCEDURE_OUTCOME",
+              "value": "WITHDRAWN"
+            },
+            {
+              "dimension": "FORMAL_ACT_ADOPTION",
+              "value": "NOT_ADOPTED"
+            },
+            {
+              "dimension": "FINAL_ACT_PUBLICATION",
+              "value": "NOT_PUBLISHED"
+            }
+          ],
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:52008PC0396",
+              "locator": "Date of end of validity 21/05/2014; Withdrawn",
+              "role": "STATUS"
+            },
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "procedure search 2008/0130/APP",
+              "locator": "Procedure status: Withdrawn",
+              "role": "STATUS"
+            }
+          ],
+          "notes": "WITHDRAWN is terminal. It is not equivalent to a pending proposal and never implies an adopted act."
+        }
+      ],
+      "snapshots": [
+        {
+          "date": "2010-01-01",
+          "expect": {
+            "PROCEDURE_ACTIVITY": "OPEN",
+            "PROCEDURE_OUTCOME": "PENDING",
+            "FORMAL_ACT_ADOPTION": "NOT_ADOPTED"
+          }
+        },
+        {
+          "date": "2014-05-22",
+          "expect": {
+            "PROCEDURE_ACTIVITY": "CLOSED",
+            "PROCEDURE_OUTCOME": "WITHDRAWN",
+            "FORMAL_ACT_ADOPTION": "NOT_ADOPTED",
+            "FINAL_ACT_PUBLICATION": "NOT_PUBLISHED"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "esrs-delegated-act",
+      "procedure_id": "DELEGATED:32023R2772",
+      "events": [
+        {
+          "event_id": "esrs-draft-feedback-2023-06-09",
+          "procedure_id": "DELEGATED:32023R2772",
+          "procedure_family": "DELEGATED_ACT",
+          "event_kind": "DRAFT_DELEGATED_ACT_PUBLISHED",
+          "event_date": "2023-06-09",
+          "actor": [
+            "EUROPEAN_COMMISSION"
+          ],
+          "document_refs": [
+            {
+              "role": "DRAFT",
+              "identifier": "Ares(2023)4009405",
+              "relation": "draft delegated regulation"
+            }
+          ],
+          "effects": [
+            {
+              "dimension": "PROCEDURE_ACTIVITY",
+              "value": "OPEN"
+            },
+            {
+              "dimension": "PROCEDURE_OUTCOME",
+              "value": "PENDING"
+            },
+            {
+              "dimension": "FORMAL_ACT_ADOPTION",
+              "value": "NOT_ADOPTED"
+            },
+            {
+              "dimension": "FINAL_ACT_PUBLICATION",
+              "value": "NOT_PUBLISHED"
+            },
+            {
+              "dimension": "DELEGATED_SCRUTINY",
+              "value": "NOT_APPLICABLE"
+            }
+          ],
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32023R2772 internal procedure",
+              "locator": "Publication for feedback 09/06/2023",
+              "role": "EVENT"
+            }
+          ],
+          "notes": null
+        },
+        {
+          "event_id": "esrs-commission-adoption-2023-07-31",
+          "procedure_id": "DELEGATED:32023R2772",
+          "procedure_family": "DELEGATED_ACT",
+          "event_kind": "DELEGATED_ACT_ADOPTED",
+          "event_date": "2023-07-31",
+          "actor": [
+            "EUROPEAN_COMMISSION"
+          ],
+          "document_refs": [
+            {
+              "role": "DELEGATED_ACT",
+              "identifier": "C/2023/5303",
+              "relation": "Commission-adopted delegated regulation"
+            }
+          ],
+          "effects": [
+            {
+              "dimension": "FORMAL_ACT_ADOPTION",
+              "value": "ADOPTED"
+            },
+            {
+              "dimension": "DELEGATED_SCRUTINY",
+              "value": "OPEN"
+            },
+            {
+              "dimension": "PROCEDURE_OUTCOME",
+              "value": "PENDING"
+            }
+          ],
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32023R2772 internal procedure",
+              "locator": "Adoption by Commission 31/07/2023; foreseen end of objection period 30/09/2023",
+              "role": "EVENT"
+            }
+          ],
+          "notes": "Commission adoption does not mean scrutiny has finished or that the act has been published."
+        },
+        {
+          "event_id": "esrs-objection-window-resolved-2023-09-30",
+          "procedure_id": "DELEGATED:32023R2772",
+          "procedure_family": "DELEGATED_ACT",
+          "event_kind": "OBJECTION_PERIOD_ENDED_NO_OBJECTION",
+          "event_date": "2023-09-30",
+          "actor": [
+            "EUROPEAN_PARLIAMENT",
+            "COUNCIL"
+          ],
+          "document_refs": [
+            {
+              "role": "DELEGATED_ACT",
+              "identifier": "C/2023/5303",
+              "relation": "delegated act under scrutiny"
+            }
+          ],
+          "effects": [
+            {
+              "dimension": "DELEGATED_SCRUTINY",
+              "value": "CLOSED_WITHOUT_BLOCKING_OBJECTION"
+            },
+            {
+              "dimension": "PROCEDURE_OUTCOME",
+              "value": "ADOPTED"
+            },
+            {
+              "dimension": "PROCEDURE_ACTIVITY",
+              "value": "CLOSED"
+            }
+          ],
+          "evidence_state": "DERIVED",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32023R2772 internal procedure",
+              "locator": "Foreseen end of objection period 30/09/2023",
+              "role": "CONTEXT"
+            },
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32023R2772",
+              "locator": "Subsequent Official Journal publication 22/12/2023",
+              "role": "STATUS"
+            }
+          ],
+          "notes": "Derived as a non-blocking resolution from the official scrutiny deadline plus later publication; not represented as a legislative reading."
+        },
+        {
+          "event_id": "esrs-oj-publication-2023-12-22",
+          "procedure_id": "DELEGATED:32023R2772",
+          "procedure_family": "DELEGATED_ACT",
+          "event_kind": "FINAL_ACT_PUBLISHED",
+          "event_date": "2023-12-22",
+          "actor": [
+            "EUROPEAN_COMMISSION"
+          ],
+          "document_refs": [
+            {
+              "role": "DELEGATED_ACT",
+              "identifier": "CELEX:32023R2772",
+              "relation": "Official Journal act"
+            }
+          ],
+          "effects": [
+            {
+              "dimension": "FINAL_ACT_PUBLICATION",
+              "value": "PUBLISHED"
+            }
+          ],
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32023R2772",
+              "locator": "OJ L, 2023/2772, 22.12.2023",
+              "role": "EVENT"
+            }
+          ],
+          "notes": null
+        }
+      ],
+      "snapshots": [
+        {
+          "date": "2023-08-15",
+          "expect": {
+            "PROCEDURE_ACTIVITY": "OPEN",
+            "PROCEDURE_OUTCOME": "PENDING",
+            "FORMAL_ACT_ADOPTION": "ADOPTED",
+            "FINAL_ACT_PUBLICATION": "NOT_PUBLISHED",
+            "DELEGATED_SCRUTINY": "OPEN",
+            "PARLIAMENT_POSITION": "NONE",
+            "COUNCIL_POSITION": "NONE"
+          }
+        },
+        {
+          "date": "2023-12-22",
+          "expect": {
+            "PROCEDURE_ACTIVITY": "CLOSED",
+            "PROCEDURE_OUTCOME": "ADOPTED",
+            "FORMAL_ACT_ADOPTION": "ADOPTED",
+            "FINAL_ACT_PUBLICATION": "PUBLISHED",
+            "DELEGATED_SCRUTINY": "CLOSED_WITHOUT_BLOCKING_OBJECTION"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "implementing-regulation-2023-2773",
+      "procedure_id": "IMPLEMENTING:32023R2773",
+      "events": [
+        {
+          "event_id": "impl-2773-adoption-2023-12-13",
+          "procedure_id": "IMPLEMENTING:32023R2773",
+          "procedure_family": "IMPLEMENTING_ACT",
+          "event_kind": "IMPLEMENTING_ACT_ADOPTED",
+          "event_date": "2023-12-13",
+          "actor": [
+            "EUROPEAN_COMMISSION"
+          ],
+          "document_refs": [
+            {
+              "role": "IMPLEMENTING_ACT",
+              "identifier": "C/2023/8545",
+              "relation": "Commission implementing regulation"
+            }
+          ],
+          "effects": [
+            {
+              "dimension": "PROCEDURE_ACTIVITY",
+              "value": "CLOSED"
+            },
+            {
+              "dimension": "PROCEDURE_OUTCOME",
+              "value": "ADOPTED"
+            },
+            {
+              "dimension": "FORMAL_ACT_ADOPTION",
+              "value": "ADOPTED"
+            },
+            {
+              "dimension": "FINAL_ACT_PUBLICATION",
+              "value": "NOT_PUBLISHED"
+            }
+          ],
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32023R2773",
+              "locator": "Date of document 13/12/2023; Form: Implementing regulation",
+              "role": "EVENT"
+            }
+          ],
+          "notes": "No Parliament/Council legislative reading is invented."
+        },
+        {
+          "event_id": "impl-2773-publication-2023-12-14",
+          "procedure_id": "IMPLEMENTING:32023R2773",
+          "procedure_family": "IMPLEMENTING_ACT",
+          "event_kind": "FINAL_ACT_PUBLISHED",
+          "event_date": "2023-12-14",
+          "actor": [
+            "EUROPEAN_COMMISSION"
+          ],
+          "document_refs": [
+            {
+              "role": "IMPLEMENTING_ACT",
+              "identifier": "CELEX:32023R2773",
+              "relation": "Official Journal publication"
+            }
+          ],
+          "effects": [
+            {
+              "dimension": "FINAL_ACT_PUBLICATION",
+              "value": "PUBLISHED"
+            }
+          ],
+          "evidence_state": "DIRECT",
+          "source_refs": [
+            {
+              "source_type": "EUR_LEX",
+              "identifier": "CELEX:32023R2773",
+              "locator": "OJ L, 2023/2773, 14.12.2023",
+              "role": "EVENT"
+            }
+          ],
+          "notes": "Entry into force on 17 December 2023 and retroactive application from 1 January 2023 stay in the temporal subsystem."
+        }
+      ],
+      "snapshots": [
+        {
+          "date": "2023-12-13",
+          "expect": {
+            "PROCEDURE_ACTIVITY": "CLOSED",
+            "PROCEDURE_OUTCOME": "ADOPTED",
+            "FORMAL_ACT_ADOPTION": "ADOPTED",
+            "FINAL_ACT_PUBLICATION": "NOT_PUBLISHED",
+            "PARLIAMENT_POSITION": "NONE",
+            "COUNCIL_POSITION": "NONE",
+            "DELEGATED_SCRUTINY": "NOT_APPLICABLE"
+          }
+        },
+        {
+          "date": "2023-12-14",
+          "expect": {
+            "FINAL_ACT_PUBLICATION": "PUBLISHED"
+          }
+        }
+      ]
+    }
+  ],
+  "forbidden_inferences": [
+    "Representing the entire procedure as one catch-all status string.",
+    "Treating Parliament/Council positions as formal adoption of the final act.",
+    "Treating formal adoption as Official Journal publication.",
+    "Treating publication as entry into force or application.",
+    "Treating a withdrawn proposal as merely 'not yet adopted'.",
+    "Forcing delegated or implementing acts through ordinary legislative reading stages.",
+    "Treating Commission adoption of a delegated act as proof that the objection/scrutiny phase has ended."
+  ]
+}

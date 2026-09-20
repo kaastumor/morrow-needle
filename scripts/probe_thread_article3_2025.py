@@ -22,6 +22,9 @@ BEFORE = "02004R0794-20161222"
 AFTER = "02004R0794-20250703"
 TARGET = "Article 3 > 3"
 SENTENCES = {
+    "amendment-instruction": (
+        "Article 3, paragraph 3 is replaced by the following"
+    ),
     "notification-channel": (
         "Notifications shall be sent electronically, via the electronic "
         "application designated by the Commission."
@@ -29,6 +32,10 @@ SENTENCES = {
     "correspondence-channel": (
         "All correspondence in connection with a notification shall be sent "
         "electronically via the secured electronic system designated by the Commission."
+    ),
+    "entry-into-force": (
+        "This Regulation shall enter into force on the twentieth day following "
+        "that of its publication in the Official Journal of the European Union."
     ),
 }
 
@@ -154,7 +161,8 @@ def main() -> int:
     }]
     reconciled=reconcile_candidate(candidate,corroboration+evidence)
 
-    for span_id,matches in spans.items():
+    for span_id in SENTENCES:
+        matches=spans.get(span_id,[])
         if len(matches)!=1:
             raise AssertionError(
                 f"{span_id}: expected one authentic sentence, got {len(matches)}"
@@ -187,8 +195,12 @@ def main() -> int:
         },
         "candidate":candidate,
         "authentic_instruction":authentic[0],
-        "semantic_spans":{
+        "source_spans":{
             key:value[0] for key,value in spans.items()
+        },
+        "semantic_spans":{
+            key:spans[key][0]
+            for key in ("notification-channel","correspondence-channel")
         },
         "reconciled":reconciled,
         "temporal":{

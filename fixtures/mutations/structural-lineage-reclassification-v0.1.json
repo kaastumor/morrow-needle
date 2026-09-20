@@ -150,6 +150,61 @@
       ],
       "conflicting_source_refs": [],
       "notes": "Negative control: must not promote DELETE+INSERT into MOVE."
+    },
+    {
+      "edge_id": "reg26-art2-2-art2-3-to-reg1184-art2-2",
+      "claim_status": "ASSERTED",
+      "assertion_scope": "STRUCTURAL_LINEAGE",
+      "edge_type": "MERGED_INTO",
+      "rule_anchor": null,
+      "sources": [
+        {
+          "act_id": "CELEX:31962R0026",
+          "eli": "http://data.europa.eu/eli/reg/1962/26/oj",
+          "version": null,
+          "language": "ENG",
+          "structural_path": "Article 2(2)",
+          "text_hash": null
+        },
+        {
+          "act_id": "CELEX:31962R0026",
+          "eli": "http://data.europa.eu/eli/reg/1962/26/oj",
+          "version": null,
+          "language": "ENG",
+          "structural_path": "Article 2(3)",
+          "text_hash": null
+        }
+      ],
+      "targets": [
+        {
+          "act_id": "CELEX:32006R1184",
+          "eli": "http://data.europa.eu/eli/reg/2006/1184/oj",
+          "version": null,
+          "language": "ENG",
+          "structural_path": "Article 2(2)",
+          "text_hash": null
+        }
+      ],
+      "evidence_basis": [
+        "OFFICIAL_CORRELATION_TABLE"
+      ],
+      "evidence_state": "DERIVED",
+      "confidence": {
+        "level": "MEDIUM",
+        "rationale": "Aggregate container-level merge derived from two official correlation rows: old 2(2)→new 2(2) first subparagraph and old 2(3)→new 2(2) second subparagraph.",
+        "conflict_state": "NO_KNOWN_CONFLICT"
+      },
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32006R1184",
+          "locator": "Annex II: Article 2(2) → Article 2(2), first subparagraph; Article 2(3) → Article 2(2), second subparagraph",
+          "language": "ENG",
+          "role": "LINEAGE_EVIDENCE"
+        }
+      ],
+      "conflicting_source_refs": [],
+      "notes": "Aggregate structural container claim. It does not imply semantic merger of every proposition."
     }
   ],
   "expected": [
@@ -172,6 +227,17 @@
       "target_paths": [
         "Article 7",
         "Article 8"
+      ]
+    },
+    {
+      "edge_id": "reg26-art2-2-art2-3-to-reg1184-art2-2",
+      "operation": "MERGE",
+      "source_paths": [
+        "Article 2(2)",
+        "Article 2(3)"
+      ],
+      "target_paths": [
+        "Article 2(2)"
       ]
     }
   ],

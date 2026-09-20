@@ -243,9 +243,17 @@ def test_reobserver_unknowns_survive_into_operational_card():
         unresolved,
         source_unknowns=[unknown],
     )
-    assert result["unknowns"] == [unknown]
+    assert unknown in result["unknowns"]
+    assert any(
+        "pre-event source snapshot" in item
+        for item in result["unknowns"]
+    )
+    assert any(
+        "current official source observation" in item
+        for item in result["unknowns"]
+    )
     card=build_feed_card(result)
-    assert card["unknowns"] == [unknown]
+    assert card["unknowns"] == result["unknowns"]
 
 
 

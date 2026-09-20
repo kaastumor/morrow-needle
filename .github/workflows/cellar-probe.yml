@@ -3,9 +3,10 @@ name: Cellar source probe
 on:
   push:
     paths:
-      - "scripts/probe_cellar.py"
-      - "tests/test_cellar_representation_selection.py"
-      - "schemas/manifestation-selection-v0.1.schema.json"
+      - "scripts/**"
+      - "src/**"
+      - "tests/**"
+      - "schemas/**"
       - ".github/workflows/cellar-probe.yml"
   workflow_dispatch:
 

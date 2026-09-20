@@ -98,7 +98,8 @@
         }
       ],
       "temporal_assertion_refs": [
-        "reg794-art3-p3-sani-application-start"
+        "reg794-art3-p3-sani-application-start",
+        "reg794-art3-p3-legacy-channels-application-end"
       ],
       "procedure_state_refs": [],
       "relations": [],
@@ -109,7 +110,7 @@
         "adversary_version": "semantic-adversary-v0.1",
         "human_review": false
       },
-      "notes": "First verified semantic atom; affected entities deliberately left empty until separately evidenced."
+      "notes": "SANI notification duty starts on its explicit 1 July 2008 qualifier and ends exclusively when Article 3(3) is replaced/applicable on 3 July 2025."
     },
     {
       "atom_id": "reg794-art3-pki-correspondence-duty-v0.1",
@@ -163,7 +164,10 @@
           "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
         }
       ],
-      "temporal_assertion_refs": [],
+      "temporal_assertion_refs": [
+        "reg794-art3-2008-unqualified-rules-application-start",
+        "reg794-art3-p3-legacy-channels-application-end"
+      ],
       "procedure_state_refs": [],
       "relations": [],
       "affected_entities": [],
@@ -173,7 +177,7 @@
         "adversary_version": "semantic-adversary-v0.1",
         "human_review": false
       },
-      "notes": "Positive correspondence-channel duty from the authentic 2008 replacement. No application-date reference is attached because the SANI-specific 1 July 2008 temporal clause must not be silently generalized to this sentence."
+      "notes": "PKI correspondence duty has no SANI-specific deferred qualifier: it starts with Regulation 271/2008's entry into force and ends exclusively with the 2025 paragraph-3 replacement."
     },
     {
       "atom_id": "reg794-art3-invalid-channel-status-v0.1",
@@ -229,7 +233,9 @@
           "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
         }
       ],
-      "temporal_assertion_refs": [],
+      "temporal_assertion_refs": [
+        "reg794-art3-2008-unqualified-rules-application-start"
+      ],
       "procedure_state_refs": [],
       "relations": [],
       "affected_entities": [],
@@ -239,7 +245,7 @@
         "adversary_version": "semantic-adversary-v0.1",
         "human_review": false
       },
-      "notes": "Condition is preserved explicitly rather than flattened into an unconditional consequence."
+      "notes": "The paragraph-4 legal-status consequence starts with the 2008 replacement and is not ended by the 2025 paragraph-3 replacement because paragraph 4 continues unchanged."
     },
     {
       "atom_id": "reg794-art3-alt-channel-permission-v0.1",
@@ -296,7 +302,9 @@
           "artifact_hash": "sha256:c61ea6c41be9c3faf418a80c2ce12fcfb1233b91557eb4157ce2435c40afe5f7"
         }
       ],
-      "temporal_assertion_refs": [],
+      "temporal_assertion_refs": [
+        "reg794-art3-2008-unqualified-rules-application-start"
+      ],
       "procedure_state_refs": [],
       "relations": [
         {
@@ -311,7 +319,7 @@
         "adversary_version": "semantic-adversary-v0.1",
         "human_review": false
       },
-      "notes": "Explicit exception permission linked to the primary electronic-channel duty."
+      "notes": "The paragraph-4 permission starts with the 2008 replacement and continues through 2025 because paragraph 4 itself is textually unchanged; its referenced channel context changes through the separately modeled derived ripple."
     }
   ],
   "negative_atoms": [

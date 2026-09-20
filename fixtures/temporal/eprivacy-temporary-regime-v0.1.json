@@ -1,0 +1,283 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "eprivacy-temporary-regime-temporal-v0.1",
+  "purpose": "Canonical P0-E temporal assertions for the temporary ePrivacy derogation history used by Half-Life. Original planned end and later extension remain separate assertions; regime lineage stores only references.",
+  "assertions": [
+    {
+      "assertion_id": "eprivacy-2021-publication",
+      "subject_ref": {
+        "kind": "LEGAL_ACT",
+        "identifier": "CELEX:32021R1232",
+        "locator": "Official Journal publication"
+      },
+      "dimension": "PUBLICATION",
+      "boundary": "POINT",
+      "inclusive": true,
+      "trigger": {
+        "kind": "ABSOLUTE_DATE",
+        "date": "2021-07-30",
+        "source_expression": "OJ L 274, 30.7.2021"
+      },
+      "normalized_date": "2021-07-30",
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": [
+          "ACT:32021R1232"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_ABSOLUTE",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32021R1232",
+          "locator": "L_2021274EN.01004101.doc.xml#DATE[ISO=20210730]",
+          "language": "ENG",
+          "role": "PUBLICATION_METADATA"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "assertion_id": "eprivacy-2021-application-start",
+      "subject_ref": {
+        "kind": "REGIME",
+        "identifier": "REGIME:2021R1232_AS_EXTENDED",
+        "locator": "Regulation 2021/1232 Article 11"
+      },
+      "dimension": "APPLICATION",
+      "boundary": "START",
+      "inclusive": true,
+      "trigger": {
+        "kind": "ABSOLUTE_DATE",
+        "date": "2021-08-02",
+        "source_expression": "entry into force on the third day following publication; no separate delayed application start"
+      },
+      "normalized_date": "2021-08-02",
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": [
+          "REGIME:2021R1232_AS_EXTENDED"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_RELATIVE",
+      "evidence_state": "DERIVED",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32021R1232",
+          "locator": "L_2021274EN.01004101.xml#normalized-chars:41391-41527",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        },
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32021R1232",
+          "locator": "L_2021274EN.01004101.doc.xml#DATE[ISO=20210730]",
+          "language": "ENG",
+          "role": "DERIVATION_INPUT"
+        }
+      ],
+      "notes": "Application start is derived from the Regulation's entry into force because Article 11 states no later application start and immediately bounds the period through its end date."
+    },
+    {
+      "assertion_id": "eprivacy-2021-original-application-end",
+      "subject_ref": {
+        "kind": "REGIME",
+        "identifier": "REGIME:2021R1232_AS_EXTENDED",
+        "locator": "Regulation 2021/1232 Article 11"
+      },
+      "dimension": "APPLICATION",
+      "boundary": "END",
+      "inclusive": true,
+      "trigger": {
+        "kind": "ABSOLUTE_DATE",
+        "date": "2024-08-03",
+        "source_expression": "It shall apply until 3 August 2024."
+      },
+      "normalized_date": "2024-08-03",
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": [
+          "REGIME:2021R1232_AS_EXTENDED"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_ABSOLUTE",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32021R1232",
+          "locator": "L_2021274EN.01004101.xml#normalized-chars:41527-41562",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        }
+      ],
+      "notes": "Original planned end before the 2024 extension. Retained as historical temporal truth."
+    },
+    {
+      "assertion_id": "eprivacy-2021-extended-application-end",
+      "subject_ref": {
+        "kind": "REGIME",
+        "identifier": "REGIME:2021R1232_AS_EXTENDED",
+        "locator": "Regulation 2024/1307 amendment"
+      },
+      "dimension": "APPLICATION",
+      "boundary": "END",
+      "inclusive": true,
+      "trigger": {
+        "kind": "ABSOLUTE_DATE",
+        "date": "2026-04-03",
+        "source_expression": "It shall apply until 3 April 2026."
+      },
+      "normalized_date": "2026-04-03",
+      "scope": {
+        "mode": "OVERRIDE",
+        "applies_to": [
+          "REGIME:2021R1232_AS_EXTENDED"
+        ],
+        "overrides_assertion_ids": [
+          "eprivacy-2021-original-application-end"
+        ],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_ABSOLUTE",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32024R1307",
+          "locator": "L_202401307EN.000101.fmx.xml#normalized-chars:8749-8783",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        }
+      ],
+      "notes": "Later extension of the same bounded temporary regime."
+    },
+    {
+      "assertion_id": "eprivacy-2026-publication",
+      "subject_ref": {
+        "kind": "LEGAL_ACT",
+        "identifier": "CELEX:32026R1881",
+        "locator": "Official Journal publication"
+      },
+      "dimension": "PUBLICATION",
+      "boundary": "POINT",
+      "inclusive": true,
+      "trigger": {
+        "kind": "ABSOLUTE_DATE",
+        "date": "2026-07-28",
+        "source_expression": "Official publication 28 July 2026"
+      },
+      "normalized_date": "2026-07-28",
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": [
+          "ACT:32026R1881"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_ABSOLUTE",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32026R1881",
+          "locator": "L_202601881EN.doc.fmx.xml#DATE[ISO=20260728]",
+          "language": "ENG",
+          "role": "PUBLICATION_METADATA"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "assertion_id": "eprivacy-2026-application-start",
+      "subject_ref": {
+        "kind": "REGIME",
+        "identifier": "REGIME:2026R1881",
+        "locator": "Regulation 2026/1881 Article 11"
+      },
+      "dimension": "APPLICATION",
+      "boundary": "START",
+      "inclusive": true,
+      "trigger": {
+        "kind": "ABSOLUTE_DATE",
+        "date": "2026-07-31",
+        "source_expression": "third day following publication on 28 July 2026"
+      },
+      "normalized_date": "2026-07-31",
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": [
+          "REGIME:2026R1881"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_RELATIVE",
+      "evidence_state": "DERIVED",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32026R1881",
+          "locator": "L_202601881EN.000101.fmx.xml#normalized-chars:46414-46550",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        },
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32026R1881",
+          "locator": "L_202601881EN.doc.fmx.xml#DATE[ISO=20260728]",
+          "language": "ENG",
+          "role": "DERIVATION_INPUT"
+        }
+      ],
+      "notes": "Successor starts on entry into force; no separate delayed application start is stated."
+    },
+    {
+      "assertion_id": "eprivacy-2026-application-end",
+      "subject_ref": {
+        "kind": "REGIME",
+        "identifier": "REGIME:2026R1881",
+        "locator": "Regulation 2026/1881 Article 11"
+      },
+      "dimension": "APPLICATION",
+      "boundary": "END",
+      "inclusive": true,
+      "trigger": {
+        "kind": "ABSOLUTE_DATE",
+        "date": "2028-04-03",
+        "source_expression": "It shall apply until 3 April 2028."
+      },
+      "normalized_date": "2028-04-03",
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": [
+          "REGIME:2026R1881"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_ABSOLUTE",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "CELLAR",
+          "identifier": "CELEX:32026R1881",
+          "locator": "L_202601881EN.000101.fmx.xml#normalized-chars:46550-46584",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        }
+      ],
+      "notes": null
+    }
+  ],
+  "status": "CANONICAL_TEMPORAL_FIXTURE"
+}

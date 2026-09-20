@@ -277,6 +277,10 @@
             "INSERT",
             "DELETE",
             "REPLACE",
+            "MOVE",
+            "RENUMBER",
+            "SPLIT",
+            "MERGE",
             "UNKNOWN"
           ]
         },

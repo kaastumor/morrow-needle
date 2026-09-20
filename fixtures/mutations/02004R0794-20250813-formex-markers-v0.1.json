@@ -1,0 +1,59 @@
+{
+  "fixture_id": "02004R0794-20250813-formex-mutation-provenance-v0.1",
+  "source": {
+    "celex": "02004R0794-20250813",
+    "language": "ENG",
+    "cellar_work": "e99bb9c5-a385-11f0-97c8-01aa75ed71a1",
+    "expression": "e99bb9c5-a385-11f0-97c8-01aa75ed71a1.0004",
+    "manifestation": "e99bb9c5-a385-11f0-97c8-01aa75ed71a1.0004.01",
+    "format": "fmx4",
+    "workflow_run": 35482334231,
+    "source_entry": "CL2004R0794EN0120020.0001.xml"
+  },
+  "observed_counts": {
+    "clg_mdfo": 48,
+    "clg_mdfc": 48
+  },
+  "representative_markers": [
+    {
+      "description": "Article 3 structure derives from 2008 replacement",
+      "open_id": "O003001M001000",
+      "close_id": "C003001M001000",
+      "action": "REPLACED",
+      "level": "STRUCTURE",
+      "command": "EXPLICIT",
+      "active_doc": "32008R0271",
+      "active_loc": "AR:1;PT:1",
+      "mod_level": 1,
+      "evidence_character": "OFFICIAL_EMBEDDED_CONSOLIDATION_PROVENANCE",
+      "legal_authority_character": "DOCUMENTARY_NON_BINDING"
+    },
+    {
+      "description": "Article 3 paragraph 3 derives from 2025 replacement",
+      "open_id": "O011001M003000",
+      "close_id": "C011001M003000",
+      "action": "REPLACED",
+      "level": "STRUCTURE",
+      "command": "EXPLICIT",
+      "active_doc": "32025R0905",
+      "active_loc": "AR:1;PT:3",
+      "mod_level": 1,
+      "evidence_character": "OFFICIAL_EMBEDDED_CONSOLIDATION_PROVENANCE",
+      "legal_authority_character": "DOCUMENTARY_NON_BINDING"
+    },
+    {
+      "description": "2025 corrigendum nested inside parent 2025 replacement",
+      "open_id": "O012002M001000",
+      "close_id": "C012002M001000",
+      "action": "REPLACED",
+      "level": "TEXT",
+      "command": "EXPLICIT",
+      "active_doc": "32025R0905R(01)",
+      "active_loc": "TO",
+      "mod_level": 2,
+      "evidence_character": "OFFICIAL_EMBEDDED_CONSOLIDATION_PROVENANCE",
+      "legal_authority_character": "DOCUMENTARY_NON_BINDING"
+    }
+  ],
+  "foundation_result": "Current Cellar consolidated FMX4 contains machine-readable, nested mutation provenance that identifies modifying documents and source locations. Needle should ingest it as official documentary evidence and reconcile it with authentic acts, relationship metadata and deterministic state diffs."
+}

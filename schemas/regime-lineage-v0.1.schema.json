@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/regime-lineage-v0.1.json",
+  "title": "Morrow // Needle Regime Lineage Edge v0.1",
+  "description": "Evidence-backed relationship between bounded legal regime instances, preserving genealogical and applicability continuity as separate assertions.",
+  "type": "object",
+  "required": [
+    "edge_id",
+    "relation_type",
+    "genealogical_evidence_state",
+    "applicability_continuity",
+    "sources",
+    "targets",
+    "source_refs"
+  ],
+  "properties": {
+    "edge_id": { "type": "string" },
+    "relation_type": {
+      "type": "string",
+      "enum": [
+        "EXTENDED_BY",
+        "REPLACED_BY",
+        "RECAST_AS",
+        "REENACTED_AS",
+        "SUPERSEDED_BY",
+        "CONCEPTUAL_SUCCESSOR",
+        "EXPIRED_WITHOUT_SUCCESSOR"
+      ]
+    },
+    "genealogical_evidence_state": {
+      "type": "string",
+      "enum": ["DIRECT","DERIVED","CONTEXTUAL","ATTRIBUTED","INTERPRETIVE","UNRESOLVED"]
+    },
+    "applicability_continuity": {
+      "type": "string",
+      "enum": ["CONTINUOUS","GAPPED","OVERLAPPING","PARTIAL_CONTINUITY","UNKNOWN"]
+    },
+    "gap": {
+      "type": ["object","null"],
+      "properties": {
+        "start": { "type": ["string","null"], "format": "date" },
+        "end": { "type": ["string","null"], "format": "date" },
+        "basis": {
+          "type": ["string","null"],
+          "enum": [null,"EXPLICIT_SOURCE","DERIVED_FROM_APPLICATION_DATES","UNKNOWN"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/regime_instance_ref" }
+    },
+    "targets": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/regime_instance_ref" }
+    },
+    "source_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["source_type","identifier","role"],
+        "properties": {
+          "source_type": {
+            "type": "string",
+            "enum": ["OJ","EUR_LEX","CELLAR","OEIL","COUNCIL","COMMISSION","OTHER_OFFICIAL"]
+          },
+          "identifier": { "type": "string" },
+          "locator": { "type": ["string","null"] },
+          "role": {
+            "type": "string",
+            "enum": ["GENEALOGY","APPLICATION_START","APPLICATION_END","STATUS","CONTEXT"]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "notes": { "type": ["string","null"] }
+  },
+  "$defs": {
+    "regime_instance_ref": {
+      "type": "object",
+      "required": ["regime_id"],
+      "properties": {
+        "regime_id": { "type": "string" },
+        "act_ids": { "type": "array", "items": { "type": "string" } },
+        "application_start": { "type": ["string","null"], "format": "date" },
+        "application_end": { "type": ["string","null"], "format": "date" },
+        "scope_note": { "type": ["string","null"] }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

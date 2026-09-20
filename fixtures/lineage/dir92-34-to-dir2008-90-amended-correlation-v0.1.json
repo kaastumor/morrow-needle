@@ -1,0 +1,57 @@
+{
+  "fixture_id": "dir92-34-to-dir2008-90-amended-correlation-v0.1",
+  "purpose": "Falsify the assumption that an official correlation-table mapping implies proposition-level continuity. Directive 2008/90/EC Annex III explicitly labels several mapped successors as amended.",
+  "source_act": {
+    "celex": "31992L0034",
+    "eli": "http://data.europa.eu/eli/dir/1992/34/oj",
+    "title": "Council Directive 92/34/EEC"
+  },
+  "target_act": {
+    "celex": "32008L0090",
+    "eli": "http://data.europa.eu/eli/dir/2008/90/oj",
+    "title": "Council Directive 2008/90/EC"
+  },
+  "official_evidence": [
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32008L0090",
+      "locator": "Annex III — Correlation table",
+      "language": "ENG",
+      "observation": "The authentic act's correlation table maps predecessor provisions to successors while explicitly marking multiple successors 'amended'. Examples include Article 1(3) -> Article 18 amended; Article 3(c)-(f) -> Article 2(5)-(8) amended; Article 4(1) -> Article 4 amended; Article 11 -> Article 9 amended; Article 13 -> Article 11 amended."
+    },
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:52007PC0031R(01)",
+      "locator": "Commission codification proposal markup",
+      "language": "ENG",
+      "observation": "The official proposal distinguishes inherited/adapted text from material explicitly marked 'new', demonstrating that the successor text was not merely renumbered wholesale."
+    }
+  ],
+  "adversarial_claim": "An official correlation-table edge is direct structural-lineage evidence even where the official table itself signals substantive amendment. It is therefore unsafe to infer RULE_CONTINUES from correlation alone.",
+  "expected_structural_edges": [
+    {
+      "source": "Article 4(1)",
+      "target": "Article 4",
+      "assertion_scope": "STRUCTURAL_LINEAGE",
+      "evidence_basis": "OFFICIAL_CORRELATION_TABLE",
+      "official_qualifier": "amended"
+    },
+    {
+      "source": "Article 11",
+      "target": "Article 9",
+      "assertion_scope": "STRUCTURAL_LINEAGE",
+      "evidence_basis": "OFFICIAL_CORRELATION_TABLE",
+      "official_qualifier": "amended"
+    },
+    {
+      "source": "Article 13",
+      "target": "Article 11",
+      "assertion_scope": "STRUCTURAL_LINEAGE",
+      "evidence_basis": "OFFICIAL_CORRELATION_TABLE",
+      "official_qualifier": "amended"
+    }
+  ],
+  "forbidden_inference": "Do not emit RULE_CONTINUES, RULE_NARROWS, RULE_EXPANDS, or conceptual-successor semantics solely from these structural mappings. Proposition-level comparison requires separately anchored authentic-text evidence.",
+  "architecture_result": "Structural lineage and semantic rule lineage remain separate graphs/claims. Official qualifiers attached to correlation entries must be retained as evidence rather than normalized away.",
+  "status": "OFFICIAL_EVIDENCE_CAPTURED_RULE_LEVEL_COMPARISON_PENDING"
+}

@@ -113,3 +113,29 @@ def test_source_cutoff_and_ex_post_text_state_must_not_be_conflated():
     )
     assert eng["observed_correction_markers"] == ["C2"]
     assert BACKPROJECTION["text_state_label_date"] < "2005-01-28"
+
+
+MONEY_FIXTURE = json.loads(
+    Path("fixtures/multilingual/reg2742-1990-english-money-corrigendum-v0.1.json").read_text(encoding="utf-8")
+)
+
+
+def test_english_only_operational_money_corrigendum_is_not_globalized():
+    validator = Draft202012Validator(SCHEMA)
+    errors = [
+        error.message
+        for event in MONEY_FIXTURE["events"]
+        for error in validator.iter_errors(event)
+    ]
+    assert errors == []
+
+    assert [e["event_id"] for e in events_for_language(MONEY_FIXTURE["events"], "ENG")] == [
+        "corr-1990-10-06-en-article4-money"
+    ]
+    assert events_for_language(MONEY_FIXTURE["events"], "DEU") == []
+    assert events_for_language(MONEY_FIXTURE["events"], "FRA") == []
+
+    op = MONEY_FIXTURE["events"][0]["operations"][0]
+    assert op["target_locator"] == "Article 4(1), second line"
+    assert op["before_text"] == "ECU 225"
+    assert op["after_text"] == "ECU 255"

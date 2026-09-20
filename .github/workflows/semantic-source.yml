@@ -1,0 +1,39 @@
+name: Live semantic source contract
+
+on:
+  push:
+    paths:
+      - "scripts/probe_article3_semantic_source.py"
+      - "schemas/change-atom-v0.3.schema.json"
+      - "src/needle/semantic/**"
+      - "tests/test_change_atoms.py"
+      - ".github/workflows/semantic-source.yml"
+      - "pyproject.toml"
+  workflow_dispatch:
+
+concurrency:
+  group: live-semantic-source-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install project and test dependencies
+        run: python -m pip install -e ".[test]"
+      - name: Run Change Atom tests
+        run: python -m pytest -q tests/test_change_atoms.py
+      - name: Verify live authentic semantic span
+        run: python scripts/probe_article3_semantic_source.py
+      - name: Upload semantic source evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: semantic-source-evidence
+          path: artifacts/semantic-source
+          if-no-files-found: error

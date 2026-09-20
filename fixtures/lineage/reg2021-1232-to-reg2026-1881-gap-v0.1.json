@@ -1,0 +1,49 @@
+{
+  "fixture_id": "regime-gap-2021R1232-to-2026R1881-v0.1",
+  "topic": "Temporary derogation from selected ePrivacy Directive provisions",
+  "source_regime": {
+    "regime_id": "temporary-eprivacy-derogation-2021",
+    "act_ids": ["32021R1232","32024R1307"],
+    "application_start": "2021-08-02",
+    "application_end": "2026-04-03"
+  },
+  "target_regime": {
+    "regime_id": "temporary-eprivacy-derogation-2026",
+    "act_ids": ["32026R1881"],
+    "application_start": "2026-07-31",
+    "application_end": "2028-04-03"
+  },
+  "edge": {
+    "relation_type": "REENACTED_AS",
+    "genealogical_evidence_state": "DIRECT",
+    "applicability_continuity": "GAPPED",
+    "gap": {
+      "start": "2026-04-04",
+      "end": "2026-07-30",
+      "basis": "DERIVED_FROM_APPLICATION_DATES"
+    }
+  },
+  "official_evidence": [
+    {
+      "identifier": "32024R1307",
+      "role": "APPLICATION_END",
+      "note": "Extended Regulation 2021/1232 until 3 April 2026."
+    },
+    {
+      "identifier": "Council first-reading reasons 2026/C 3747",
+      "role": "GENEALOGY",
+      "note": "States that the expired Regulation 2021/1232 could no longer be extended and that the Council intended to adopt its full text as a new self-standing Regulation with adaptations."
+    },
+    {
+      "identifier": "32026R1881",
+      "role": "APPLICATION_START",
+      "note": "Published 28 July 2026; Article 11 provides entry into force on the third day following publication and application until 3 April 2028."
+    }
+  ],
+  "foundation_assertion": "Genealogical continuity does not imply uninterrupted applicability.",
+  "status": "CANDIDATE_VERIFIED",
+  "verification_todo": [
+    "Anchor source and target rule-level spans before asserting proposition-by-proposition continuity.",
+    "Confirm machine-readable status/date fields through Cellar during ingestion probe."
+  ]
+}

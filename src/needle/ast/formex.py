@@ -86,9 +86,13 @@ def _native_identifier(element: ET.Element) -> str | None:
     return None
 
 
-def _label_and_heading(element: ET.Element) -> tuple[str | None, str | None]:
+def _label_and_heading(
+    element: ET.Element,
+) -> tuple[str | None, str | None, ET.Element | None, ET.Element | None]:
     label = None
     heading = None
+    label_element = None
+    heading_element = None
     for child in list(element):
         tag = local(child.tag)
         value = text_of(child)
@@ -96,9 +100,24 @@ def _label_and_heading(element: ET.Element) -> tuple[str | None, str | None]:
             continue
         if tag in LABEL_TAGS and label is None:
             label = value
+            label_element = child
         elif tag in HEADING_TAGS and heading is None:
             heading = value
-    return label, heading
+            heading_element = child
+    return label, heading, label_element, heading_element
+
+
+def _classify_unclaimed_atom(atom: dict[str, Any]) -> tuple[str, str]:
+    tags = set(atom.get("native_tags", ()))
+    if tags & OPAQUE_MEDIA_TAGS:
+        return "OPAQUE_OR_EMBEDDED", "text belongs to opaque/embedded source object"
+    if tags & SOURCE_METADATA_TAGS:
+        return "SOURCE_METADATA", "source-native bibliographic/identity metadata"
+    if tags & PUBLICATION_NAVIGATION_TAGS:
+        return "PUBLICATION_NAVIGATION", "source-native contents/navigation material"
+    if tags & PROVENANCE_ONLY_TAGS:
+        return "PROVENANCE_ONLY", "source-native consolidation/provenance material"
+    return "UNEXPLAINED", "no canonical parser disposition assigned"
 
 
 def _has_structural_descendant(element: ET.Element) -> bool:
@@ -153,6 +172,8 @@ class FormexASTParser:
         )
         self.parsed_entries: list[str] = []
         self.tag_counts: Counter[str] = Counter()
+        self.accounting_reports: list[dict[str, Any]] = []
+        self._ledger: XMLTextLedger | None = None
 
     def parse_zip(self, payload: bytes) -> dict[str, Any]:
         with zipfile.ZipFile(io.BytesIO(payload)) as zf:

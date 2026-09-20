@@ -180,3 +180,64 @@ Full tree retrieval remains useful for:
 **Cellar remains the preferred ingestion backbone, with metadata-first manifestation discovery and contract-tested retrieval.**
 
 The simplistic “CELEX → assume one fixed retrieval header forever” path is rejected.
+
+
+---
+
+# Live contract correction — run 6
+
+The current Publications Office retrieval contract was tested directly after correcting the request headers.
+
+## 32004R0794 / English
+
+- `application/list;mtype=fmx4` → **200**
+- selected manifestation: `26f403d1-7656-4c91-9726-c08d466ff8bd.0006.05`
+- content-stream list contains **132 entries**
+- `application/zip;mtype=fmx4` → **200**, approximately 7.99 MB
+- `application/list;mtype=xhtml` → **200**
+- XHTML manifestation: `.0006.03`, one content stream
+- legacy `application/xml;type=fmx4` request → 404
+
+## 31958R0001 / English
+
+- `application/list;mtype=fmx4` → **404** for the resolved English expression `.0008`
+- `application/list;mtype=xhtml` → **404**
+- `application/list;mtype=html` → **200**
+- selected HTML manifestation: `115852e8-30ac-496e-8015-d580366ff059.0008.02`
+- one stream: `31958R0001en.html`
+
+## New invariants
+
+### A manifestation is a bundle, not necessarily a file
+
+The 2004 FMX4 manifestation has 132 content streams. Needle must preserve the WEMI hierarchy:
+
+```
+Work
+  └─ Expression
+      └─ Manifestation
+          ├─ Item / content stream
+          ├─ Item / content stream
+          └─ ...
+```
+
+Parser input cannot assume one source artifact per act or per manifestation.
+
+### Representation capability is expression-scoped
+
+Availability of FMX4/XHTML/HTML must be resolved for the chosen language expression. The presence of an FMX4 manifestation elsewhere in a large notice does not prove FMX4 availability for the target expression.
+
+### Fallback is a normal path, not an error path
+
+For early material, HTML may be the best available official machine-readable expression. That should carry an explicit representation-quality class rather than being treated as an ingestion failure.
+
+Provisional representation classes:
+
+- `STRUCTURED_LEGAL_XML`
+- `STRUCTURED_XHTML`
+- `STRUCTURED_HTML`
+- `PDF_TEXT`
+- `PDF_IMAGE`
+- `OTHER`
+
+The class records parser capability; it is not a judgment about legal authority.

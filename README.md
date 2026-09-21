@@ -44,9 +44,11 @@ The first P2 product projections are now evidenced:
 - **Source Anomaly** — authoritative-source irregularities without confusing source state with legal state;
 - **Legislative X-Ray** — derived dependency effects where local provision text remains unchanged.
 
-The current strategic priority is no longer another ontology or analytic primitive. It is the first **operational Needle loop**: start from a real official update event and carry it through targeted re-observation, verified mutation/non-impact/abstention, semantic and temporal resolution, retrieval, provenance and an evidence-linked public feed card.
+The operational Needle loop is now proven against real official events, and the first product checkpoint has tested verified-change, source-audit and abstention cards.
 
-See `docs/step-back-review-2026-09-20-v0.2.md` and Issue #21.
+The current strategic priority is **Issue #29: the pre-analysis adversarial audit + repository sanitation gate**. Before any new analytic primitive or product expansion, Needle is being attacked from byte/parser assumptions through evidence ownership, operational behavior, product truthfulness, analytical usefulness and its external novelty/public-interest thesis. The same gate reconciles stale code, workflows, docs, issues and backlog state.
+
+See `BACKLOG.md`, `docs/product-checkpoint-v0.1.md`, and Issue #29.
 
 ---
 

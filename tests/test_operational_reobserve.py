@@ -286,3 +286,33 @@ def test_conflicting_publication_metadata_survives_as_reobservation_unknown():
     )
     assert result["temporal_metadata"]["publication"]["state"]=="CONFLICTING"
     assert any("publication-date properties disagree" in item for item in result["unknowns"])
+
+
+def test_content_route_success_does_not_become_false_unavailability_when_metadata_route_fails():
+    session=FakeSession([
+        FakeResponse(
+            503,b"",
+            url="https://example.invalid/meta",
+            content_type="text/plain",
+        ),
+        FakeResponse(
+            200,b"PK\x03\x04FORMEX",
+            url="https://example.invalid/fmx4",
+            content_type="application/zip",
+        ),
+    ])
+    result=reobserve_event(
+        event(),
+        observed_at="2026-09-20T20:10:00+00:00",
+        session=session,
+    )
+    assert result["state"]=="PARTIAL_OBSERVATION"
+    assert result["metadata_observation"] is None
+    assert result["content_observation"] is not None
+    assert result["snapshot"]["available"] is True
+    assert result["snapshot"]["content_hash"] is not None
+    assert result["snapshot"]["metadata_hash"] is None
+    assert any(
+        "without the expected Cellar tree notice" in item
+        for item in result["unknowns"]
+    )

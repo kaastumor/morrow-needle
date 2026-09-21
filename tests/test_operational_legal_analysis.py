@@ -34,6 +34,10 @@ def candidate(**overrides):
     return value
 
 
+def bound_recency(legal,state,refs):
+    return {"state":state,"assertion_refs":refs,"legal_analysis_identity":legal["analysis_identity"]}
+
+
 def test_duplicate_representations_are_one_legal_candidate():
     first=candidate(); second=candidate(evidence_occurrences=["formex-stream:2"])
     collapsed=collapse_evidence_candidates([first,second])
@@ -56,19 +60,29 @@ def test_authentic_cause_positive_is_generic_and_idempotent():
 
 def test_recent_authentic_cause_requires_canonical_recency_evidence():
     legal=analyze_operational_legal(EVENT,CHANGE,candidates=[candidate()])
-    outcome=apply_operational_recency_gate(legal,recency={
-        "state":"CURRENT_RELEVANT","assertion_refs":["temporal-assertion:application-start"]
-    })
+    outcome=apply_operational_recency_gate(legal,recency=bound_recency(
+        legal,"CURRENT_RELEVANT",["temporal-assertion:application-start"]
+    ))
     assert outcome["disposition"] == "LEGAL_CHANGE_VERIFIED"
     assert outcome["recency"]["state"] == "CURRENT_RELEVANT"
     assert "temporal-assertion:application-start" in outcome["evidence_refs"]
 
 
+def test_recency_evidence_for_another_legal_analysis_cannot_cross_bind():
+    legal=analyze_operational_legal(EVENT,CHANGE,candidates=[candidate()])
+    with pytest.raises(OperationalLegalAnalysisError,match="bind to the gated legal_analysis_identity"):
+        apply_operational_recency_gate(legal,recency={
+            "state":"CURRENT_RELEVANT",
+            "assertion_refs":["temporal-assertion:real-but-unrelated"],
+            "legal_analysis_identity":"operational-legal-analysis:another-mutation",
+        })
+
+
 def test_fresh_feed_update_cannot_resurrect_historical_legal_cause():
     legal=analyze_operational_legal(EVENT,CHANGE,candidates=[candidate()])
-    outcome=apply_operational_recency_gate(legal,recency={
-        "state":"HISTORICAL_NOT_CURRENT","assertion_refs":["temporal-assertion:historical-effect"]
-    })
+    outcome=apply_operational_recency_gate(legal,recency=bound_recency(
+        legal,"HISTORICAL_NOT_CURRENT",["temporal-assertion:historical-effect"]
+    ))
     assert outcome["disposition"] == "ABSTAIN_LEGAL_UNRESOLVED"
     assert outcome["canonical_refs"] == legal["canonical_refs"]
     assert "historical rather than newly relevant" in outcome["unknowns"][-1]
@@ -85,7 +99,7 @@ def test_verified_cause_without_recency_evidence_abstains():
 def test_recency_positive_without_evidence_ref_is_rejected():
     legal=analyze_operational_legal(EVENT,CHANGE,candidates=[candidate()])
     with pytest.raises(OperationalLegalAnalysisError,match="requires canonical"):
-        apply_operational_recency_gate(legal,recency={"state":"CURRENT_RELEVANT","assertion_refs":[]})
+        apply_operational_recency_gate(legal,recency=bound_recency(legal,"CURRENT_RELEVANT",[]))
 
 
 def test_no_supported_candidate_abstains_instead_of_inferring_from_update():

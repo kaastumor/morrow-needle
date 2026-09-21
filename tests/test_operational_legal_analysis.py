@@ -1,5 +1,6 @@
 import pytest
 
+from needle.operations.authentic_candidates import candidates_from_reobservation
 from needle.operations.legal_analysis import OperationalLegalAnalysisError, analyze_operational_legal, apply_operational_recency_gate, collapse_evidence_candidates, derive_operational_relevance, should_attempt_legal_analysis
 
 EVENT={"event_key":"evt-1","action":"UPDATE"}; CHANGE={"event_key":"evt-1","change_id":"chg-1","classification":"UNRESOLVED"}
@@ -55,3 +56,72 @@ def test_distinct_verified_candidates_do_not_get_arbitrarily_selected():
 def test_change_and_non_impact_conflict_abstains(): assert analyze_operational_legal(EVENT,CHANGE,candidates=[candidate(),candidate(semantic_key="review:scope-a",outcome="LEGAL_NON_IMPACT_VERIFIED",canonical_refs=[])])["disposition"]=="ABSTAIN_LEGAL_UNRESOLVED"
 def test_unknown_verification_route_is_rejected():
     with pytest.raises(OperationalLegalAnalysisError,match="allowed verification_route"): analyze_operational_legal(EVENT,CHANGE,candidates=[candidate(verification_route="MODEL")])
+
+
+def test_recurring_reobservation_candidate_stays_out_of_change_feed_without_recency():
+    reobservation={
+        "celex":"32026R2104",
+        "analysis_language":"eng",
+        "analysis_text":(
+            "ANNEX Annex V is amended as follows: in Part 1, Section B, in the "
+            "entry for the United States, the following rows for the zones "
+            "US-2.1405 and US-2.1406 are added after the row for the zone "
+            "US-2.1404."
+        ),
+        "content_observation":{
+            "record_id":"src-observation:live-2104",
+            "payload":{
+                "language":"ENG",
+                "retrieval":{"final_uri":"official://reg-2104"},
+            },
+        },
+    }
+    candidates=candidates_from_reobservation(EVENT,reobservation)
+    assert len(candidates)==1
+    assert candidates[0]["evidence_refs"]==["src-observation:live-2104"]
+    legal=analyze_operational_legal(EVENT,CHANGE,candidates=candidates)
+    assert legal["disposition"]=="LEGAL_CHANGE_VERIFIED"
+    withheld=apply_operational_recency_gate(legal,recency=None)
+    assert withheld["disposition"]=="ABSTAIN_LEGAL_UNRESOLVED"
+    assert withheld["verification_route"]=="AUTHENTIC_LEGAL_CAUSE"
+    assert withheld["canonical_refs"]==legal["canonical_refs"]
+    assert withheld["recency"]["state"]=="UNRESOLVED"
+    assert any(
+        "lacks canonical temporal/procedural evidence" in item
+        for item in withheld["unknowns"]
+    )
+
+
+def test_reobservation_without_deterministic_text_produces_no_candidate():
+    reobservation={
+        "celex":"32026R2104",
+        "analysis_language":"eng",
+        "analysis_text":None,
+        "content_observation":{
+            "record_id":"src-observation:sealed-only",
+            "payload":{
+                "language":"ENG",
+                "retrieval":{"final_uri":"official://sealed-only"},
+            },
+        },
+    }
+    assert candidates_from_reobservation(EVENT,reobservation)==[]
+
+
+def test_reobservation_without_source_observation_id_produces_no_candidate():
+    reobservation={
+        "celex":"32026R2104",
+        "analysis_language":"eng",
+        "analysis_text":(
+            "Annex V is amended: in Part 1, Section B, in the entry for the "
+            "United States, the following rows for the zones US-2.1405 and "
+            "US-2.1406 are added after the row for the zone US-2.1404."
+        ),
+        "content_observation":{
+            "payload":{
+                "language":"ENG",
+                "retrieval":{"final_uri":"official://missing-record-id"},
+            },
+        },
+    }
+    assert candidates_from_reobservation(EVENT,reobservation)==[]

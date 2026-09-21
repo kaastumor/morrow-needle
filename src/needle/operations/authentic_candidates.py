@@ -125,3 +125,44 @@ def candidates_from_authentic_text(
             ],
         })
     return output
+
+
+def candidates_from_reobservation(
+    event: dict[str, Any],
+    reobservation: dict[str, Any],
+) -> list[dict[str, Any]]:
+    """Produce legal-analysis candidates from one sealed official re-observation.
+
+    This adapter only bridges operational transport into canonical analyzers. It
+    does not infer recency, applicability, affected entities, or legal effect
+    from a Cellar notification. Missing deterministic analysis text or missing
+    immutable content provenance yields no candidate and therefore abstention.
+    """
+    text=reobservation.get("analysis_text")
+    celex=reobservation.get("celex")
+    content_observation=reobservation.get("content_observation")
+    if not text or not celex or not content_observation:
+        return []
+    evidence_ref=content_observation.get("record_id")
+    if not evidence_ref:
+        return []
+
+    payload=content_observation.get("payload",{})
+    retrieval=payload.get("retrieval",{})
+    language=(
+        reobservation.get("analysis_language")
+        or payload.get("language")
+        or "eng"
+    )
+    source_id=str(celex)
+    if not source_id.upper().startswith("CELEX:"):
+        source_id=f"CELEX:{source_id}"
+
+    return candidates_from_authentic_text(
+        event,
+        text,
+        source_id=source_id,
+        locator=retrieval.get("final_uri"),
+        language=str(language).lower(),
+        evidence_ref=evidence_ref,
+    )

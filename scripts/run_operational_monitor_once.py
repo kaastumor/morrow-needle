@@ -24,6 +24,7 @@ from needle.operations.pipeline import (
 )
 from needle.operations.state import (
     advance_baseline,
+    baseline_seed_eligible,
     complete_poll_window,
     lookup_baseline,
     mark_event_processed,
@@ -161,7 +162,10 @@ def main() -> int:
         result=build_operational_result(representative,change,downstream=downstream,source_unknowns=source_unknowns,related_event_keys=related); card=build_feed_card(result)
         results.append(result); cards.append(card)
         group_records.append({"root_cellar_id":root,"representative_event_key":representative["event_key"],"related_event_keys":related,"event_count":len(group),"baseline_lookup_state":lookup["state"],"reobservation_state":reobservation["state"],"source_change_classification":change["classification"],"legal_analysis_attempted":downstream is not None,"legal_candidate_count":len(candidates),"verification_route":downstream.get("verification_route") if downstream else None,"recency_state":(downstream.get("recency") or {}).get("state") if downstream else None,"disposition":result["disposition"],"stream":card["stream"]})
-        if relevance == "LEGAL_RESOURCE_CANDIDATE" and current is not None and current.get("available") is True and (current.get("content_observation_id") or current.get("metadata_observation_id")):
+        if (
+            relevance == "LEGAL_RESOURCE_CANDIDATE"
+            and baseline_seed_eligible(reobservation)
+        ):
             seed_character="POST_EVENT_REFRESH" if lookup["state"] == "ELIGIBLE" else "COLD_START_SEED"
             next_state=advance_baseline(next_state,representative,reobservation,updated_at=end.isoformat(),seed_character=seed_character,eligible_for_event_ingestion_after=end.isoformat())
         else: next_state=mark_event_processed(next_state,representative["event_key"],updated_at=end.isoformat())

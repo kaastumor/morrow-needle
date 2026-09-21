@@ -66,7 +66,7 @@ def parse_authentic_corrigendum_replacements(text: str, *, source_id: str, locat
 KEYED_ROW_INSERT_RE = re.compile(
     r"in\s+(?P<part>Part\s+[A-Za-z0-9IVXLC.-]+)\s*,\s*"
     r"(?P<section>Section\s+[A-Za-z0-9IVXLC.-]+)\s*,\s*"
-    r"in\s+the\s+entry\s+for\s+the\s+(?P<entry>[^,]+)\s*,\s*"
+    r"in\s+the\s+entry\s+for\s+(?:the\s+)?(?P<entry>[^,]+)\s*,\s*"
     r"the\s+following\s+rows\s+for\s+the\s+zones\s+"
     r"(?P<key1>[A-Z]{2}-[A-Z0-9.]+)\s+and\s+"
     r"(?P<key2>[A-Z]{2}-[A-Z0-9.]+)\s+"

@@ -11,6 +11,7 @@ from typing import Any
 from jsonschema import Draft202012Validator
 import requests
 
+from needle.operations.legal_analysis import analyze_operational_legal
 from needle.operations.pipeline import (
     build_feed_card,
     build_operational_result,
@@ -228,9 +229,30 @@ def main() -> int:
             previous=previous,
             current=current,
         )
+
+        # Crossing from observed source difference into legal effect is an
+        # explicit boundary. A content change with no canonical analyzer
+        # candidate must become a legal abstention; it must never inherit a
+        # source-only disposition that could be mistaken for completed review.
+        downstream=None
+        if (
+            relevance == "LEGAL_RESOURCE_CANDIDATE"
+            and change["classification"] == "CONTENT_CHANGED"
+        ):
+            downstream=analyze_operational_legal(
+                representative,
+                change,
+                candidates=[],
+            )
+            downstream["unknowns"]=[
+                *source_unknowns,
+                *downstream.get("unknowns",[]),
+            ]
+
         result=build_operational_result(
             representative,
             change,
+            downstream=downstream,
             source_unknowns=source_unknowns,
             related_event_keys=related,
         )

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+from datetime import date
 from typing import Any, Iterable
 
 
@@ -12,6 +13,19 @@ class OperationalLegalAnalysisError(ValueError):
 RELEVANCE_DIMENSIONS={
     "PUBLICATION","ENTRY_INTO_FORCE","APPLICATION_START","APPLICATION_END",
     "TRANSITION_BOUNDARY","DEADLINE","PROCEDURAL_MILESTONE","ENTITY_SPECIFIC_TRIGGER",
+}
+
+_TEMPORAL_RELEVANCE = {
+    ("PUBLICATION", "POINT"): "PUBLICATION",
+    ("PUBLICATION", "START"): "PUBLICATION",
+    ("LEGAL_FORCE", "START"): "ENTRY_INTO_FORCE",
+    ("APPLICATION", "START"): "APPLICATION_START",
+    ("APPLICATION", "END"): "APPLICATION_END",
+    ("TRANSITION", "POINT"): "TRANSITION_BOUNDARY",
+    ("TRANSITION", "START"): "TRANSITION_BOUNDARY",
+    ("TRANSITION", "END"): "TRANSITION_BOUNDARY",
+    ("DEADLINE", "POINT"): "DEADLINE",
+    ("DEADLINE", "END"): "DEADLINE",
 }
 
 
@@ -49,6 +63,49 @@ def collapse_evidence_candidates(candidates: Iterable[dict[str, Any]]) -> list[d
         for occurrence in occurrences:
             if occurrence not in existing: existing.append(occurrence)
     return [grouped[key] for key in sorted(grouped)]
+
+
+def derive_operational_relevance(
+    legal_analysis: dict[str, Any], *, temporal_assertions: Iterable[dict[str, Any]],
+    window_start: str, window_end: str,
+) -> dict[str, Any]:
+    """Project already-bound canonical temporal truth into operational relevance.
+
+    Callers must supply only assertions canonically bound to the gated legal analysis;
+    this function never discovers, guesses, or cross-binds legal subjects. The window is
+    half-open [start, end), matching polling semantics.
+    """
+    identity=legal_analysis.get("analysis_identity")
+    if legal_analysis.get("disposition") != "LEGAL_CHANGE_VERIFIED" or not identity:
+        raise OperationalLegalAnalysisError("operational relevance requires a verified legal analysis with analysis_identity")
+    start=date.fromisoformat(window_start); end=date.fromisoformat(window_end)
+    if end <= start: raise OperationalLegalAnalysisError("operational relevance window_end must be after window_start")
+
+    assertions=list(temporal_assertions)
+    if not assertions:
+        return {"state":"UNRESOLVED","assertion_refs":[],"legal_analysis_identity":identity}
+    if any(a.get("resolution_state") == "CONFLICTING" for a in assertions):
+        return {"state":"CONFLICTING","assertion_refs":[a["assertion_id"] for a in assertions],"legal_analysis_identity":identity}
+    if any(a.get("resolution_state") == "CONTEXT_REQUIRED" for a in assertions):
+        return {"state":"CONTEXT_REQUIRED","assertion_refs":[a["assertion_id"] for a in assertions if a.get("resolution_state") == "CONTEXT_REQUIRED"],"legal_analysis_identity":identity}
+
+    resolved=[]
+    for assertion in assertions:
+        dimension=_TEMPORAL_RELEVANCE.get((assertion.get("dimension"),assertion.get("boundary")))
+        value=assertion.get("normalized_date")
+        if dimension and assertion.get("resolution_state") == "RESOLVED_ABSOLUTE" and value:
+            resolved.append((date.fromisoformat(value),dimension,assertion["assertion_id"]))
+    current=[item for item in resolved if start <= item[0] < end]
+    if len(current) == 1:
+        when,dimension,ref=current[0]
+        return {"state":"CURRENT_RELEVANT","assertion_refs":[ref],"legal_analysis_identity":identity,"relevance_dimension":dimension,"relevant_at":when.isoformat()}
+    if len(current) > 1:
+        # Multiple simultaneous legal relevance events are true, but v0.1 has no
+        # precedence rule for choosing the public feed reason. Do not invent one.
+        return {"state":"CONFLICTING","assertion_refs":[item[2] for item in current],"legal_analysis_identity":identity}
+    if resolved and all(item[0] < start for item in resolved):
+        return {"state":"HISTORICAL_NOT_CURRENT","assertion_refs":[item[2] for item in resolved],"legal_analysis_identity":identity}
+    return {"state":"UNRESOLVED","assertion_refs":[item[2] for item in resolved],"legal_analysis_identity":identity}
 
 
 def apply_operational_recency_gate(legal_analysis: dict[str, Any], *, recency: dict[str, Any] | None) -> dict[str, Any]:

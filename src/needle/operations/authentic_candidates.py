@@ -10,20 +10,30 @@ from needle.mutation.instructions import (
 )
 
 
-_ANNEX_RE = re.compile(r"\bAnnex\s+([IVXLC]+)\b", re.IGNORECASE)
+_ANNEX_AMENDMENT_RE = re.compile(
+    r"\bAnnex\s+(?P<annex>[IVXLC]+)\b\s+is\s+amended"
+    r"(?:\s+as\s+follows)?\s*:",
+    re.IGNORECASE,
+)
 
 
-def _nearest_annex(text: str, instruction_start: int) -> str | None:
-    """Resolve an explicit preceding Annex label; never guess one.
+def _nearest_amended_annex(
+    text: str,
+    instruction_start: int,
+) -> str | None:
+    """Resolve only an explicit preceding Annex amendment heading.
 
-    This is deliberately a source-local structural aid, not legal identity.
-    If the authentic text does not expose an Annex label before the command,
-    the producer abstains from this parser family.
+    A bare Annex mention is contextual prose, not an authentic amendment
+    command. Requiring the local "is amended" heading prevents quoted,
+    explanatory, or recital-like text from being promoted merely because an
+    amendment-shaped sentence appears later in the same flattened document.
     """
-    matches=list(_ANNEX_RE.finditer(text, 0, instruction_start))
+    matches=list(
+        _ANNEX_AMENDMENT_RE.finditer(text,0,instruction_start)
+    )
     if not matches:
         return None
-    return f"Annex {matches[-1].group(1).upper()}"
+    return f"Annex {matches[-1].group('annex').upper()}"
 
 
 def _semantic_mutation_id(*, source_id: str, language: str, operation: str, target: str) -> str:
@@ -65,7 +75,7 @@ def candidates_from_authentic_text(
         if start < 0:
             continue
         search_from=start+len(instruction)
-        annex=_nearest_annex(normalized,start)
+        annex=_nearest_amended_annex(normalized,start)
         if annex is None:
             continue
         parsed=parse_authentic_keyed_row_insertions(

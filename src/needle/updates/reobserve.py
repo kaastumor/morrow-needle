@@ -266,23 +266,17 @@ def reobserve_event(
     available=metadata_record is not None or content_record is not None
     if metadata_record is None and content_record is None:
         return {
-            "state":"UNAVAILABLE",
+            "state":"UNRESOLVED_REOBSERVATION",
             "celex":celex,
             "metadata_observation":None,
             "content_observation":None,
-            "snapshot":{
-                "available":False,
-                "content_hash":None,
-                "metadata_hash":None,
-                "content_observation_id":None,
-                "metadata_observation_id":None,
-            },
-            "temporal_metadata":{
-                "publication":publication_metadata,
-            } if publication_metadata is not None else None,
+            "snapshot":None,
+            "temporal_metadata":None,
             "attempts":attempts,
             "unknowns":[
-                "No supported official representation could be re-observed."
+                "No supported official representation was positively "
+                "re-observed. Route or retrieval failure does not establish "
+                "that the source itself is unavailable."
             ],
         }
 

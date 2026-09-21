@@ -53,12 +53,26 @@ def event(
     }
 
 
+def current_baseline():
+    return next(
+        item for item in STATE["baselines"]
+        if item["baseline_key"] == "CELEX:32019R0632|ENG"
+    )
+
+
+def observation(record_id):
+    return next(
+        record for record in STATE["source_observations"]
+        if record["record_id"] == record_id
+    )
+
+
 def test_live_state_and_embedded_provenance_validate_without_freezing_cache_size():
     """The checked-in pilot state is mutable operational cache, not a fixture.
 
     Monitor cycles are expected to add baselines and immutable observations. Tests
-    therefore validate invariants rather than pinning counts that a successful
-    production run is designed to change.
+    therefore validate invariants rather than pinning counts or historical record
+    ids that a successful production run is designed to change.
     """
     assert list(
         Draft202012Validator(STATE_SCHEMA).iter_errors(STATE)
@@ -97,10 +111,7 @@ def test_later_event_gets_current_complete_prior_snapshot():
     later=event()
     lookup=lookup_baseline(STATE,later)
     assert lookup["state"] == "ELIGIBLE"
-    current=next(
-        item for item in STATE["baselines"]
-        if item["baseline_key"] == "CELEX:32019R0632|ENG"
-    )
+    current=current_baseline()
     assert lookup["snapshot"] == {
         "available":current["available"],
         "content_hash":current["content_hash"],
@@ -124,14 +135,9 @@ def test_unknown_celex_has_no_baseline():
 
 def test_advance_baseline_appends_observations_and_moves_pointer():
     later=event()
-    content=deepcopy(next(
-        record for record in STATE["source_observations"]
-        if record["record_id"].startswith("src-operational-content-0204")
-    ))
-    metadata=deepcopy(next(
-        record for record in STATE["source_observations"]
-        if record["record_id"].startswith("src-operational-metadata-b9ce")
-    ))
+    prior=current_baseline()
+    content=deepcopy(observation(prior["content_observation_id"]))
+    metadata=deepcopy(observation(prior["metadata_observation_id"]))
     content["record_id"]="src-operational-content-next"
     metadata["record_id"]="src-operational-metadata-next"
     for record in (content,metadata):
@@ -174,25 +180,18 @@ def test_advance_baseline_appends_observations_and_moves_pointer():
     assert current["metadata_observation_id"] == metadata["record_id"]
     assert current["seed_character"] == "POST_EVENT_REFRESH"
     assert later["event_key"] in advanced["processed_event_keys"]
-    # Prior observation records remain append-only.
-    assert any(
-        record["record_id"]
-        == "src-operational-content-0204a83622f5602f2eefb29ca9f8cd6c"
-        for record in advanced["source_observations"]
-    )
+    # Both observations previously addressed by the baseline remain append-only.
+    advanced_ids={record["record_id"] for record in advanced["source_observations"]}
+    assert prior["content_observation_id"] in advanced_ids
+    assert prior["metadata_observation_id"] in advanced_ids
     assert validate_operational_state(advanced) == []
 
 
 def test_advance_is_idempotent_for_same_event_and_observations():
     later=event()
-    content=next(
-        record for record in STATE["source_observations"]
-        if record["record_id"].startswith("src-operational-content-0204")
-    )
-    metadata=next(
-        record for record in STATE["source_observations"]
-        if record["record_id"].startswith("src-operational-metadata-b9ce")
-    )
+    prior=current_baseline()
+    content=observation(prior["content_observation_id"])
+    metadata=observation(prior["metadata_observation_id"])
     reobservation={
         "state":"OBSERVED",
         "content_observation":content,

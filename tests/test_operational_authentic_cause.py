@@ -41,11 +41,16 @@ def test_missing_baseline_can_emit_change_only_from_independent_authentic_cause(
     result=build_operational_result(EVENT,unresolved,downstream=downstream())
     assert result["stream"] == "CHANGE_FEED"
     assert result["disposition"] == "LEGAL_CHANGE_VERIFIED"
+    assert result["verification_route"] == "AUTHENTIC_LEGAL_CAUSE"
     assert result["source_change"]["classification"] == "UNRESOLVED"
     assert any("verified independently" in item for item in result["unknowns"])
     card=build_feed_card(result)
     assert card["stream"] == "CHANGE_FEED"
     assert card["evidence_character"] == "DIRECT"
+    assert card["verification_route"] == "AUTHENTIC_LEGAL_CAUSE"
+    assert "authentic modifying act" in card["why_visible"]
+    assert "source comparison may remain unresolved" in card["why_visible"]
+    assert "source re-observation led to a verified legal mutation" not in card["why_visible"]
     assert card["source_mode"]["closed"] is True
 
 

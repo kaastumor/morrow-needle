@@ -1,7 +1,7 @@
 import pytest
 
 from needle.operations.authentic_candidates import candidates_from_reobservation
-from needle.operations.legal_analysis import OperationalLegalAnalysisError, analyze_operational_legal, apply_operational_recency_gate, collapse_evidence_candidates, derive_feed_event_relevance, derive_operational_relevance, should_attempt_legal_analysis
+from needle.operations.legal_analysis import OperationalLegalAnalysisError, analyze_operational_legal, apply_operational_recency_gate, collapse_evidence_candidates, derive_feed_event_relevance, derive_operational_relevance, derive_publication_recency_from_reobservation, should_attempt_legal_analysis
 
 EVENT={"event_key":"evt-1","action":"UPDATE"}; CHANGE={"event_key":"evt-1","change_id":"chg-1","classification":"UNRESOLVED"}
 EXPLANATION={"what_changed":"An authentic act inserts two rows.","compared_with":"The placement anchor named by the authentic instruction.","when_it_matters":"As established by the authentic act.","affected":[],"evidence_character":"DIRECT"}
@@ -209,3 +209,78 @@ def test_feed_event_relevance_rejects_naive_ingestion_time():
             ],
             ingestion_time="2026-09-18T10:32:20",
         )
+
+
+def test_publication_recency_binds_same_reobserved_celex_and_metadata_evidence():
+    event={
+        **EVENT,
+        "ingestion_time":"2026-09-18T10:32:20.883+02:00",
+    }
+    legal=analyze_operational_legal(event,{**CHANGE,"event_key":"evt-1"},candidates=[candidate()])
+    assertion={
+        **temporal(
+            "temporal:pub-2104","PUBLICATION","POINT","2026-09-18"
+        ),
+        "subject_ref":{"identifier":"CELEX:32026R2104"},
+    }
+    reobservation={
+        "celex":"32026R2104",
+        "temporal_metadata":{
+            "publication":{
+                "state":"RESOLVED",
+                "assertion":assertion,
+                "evidence_refs":["src-operational-metadata:2104"],
+            },
+        },
+    }
+    recency=derive_publication_recency_from_reobservation(
+        legal,event,reobservation
+    )
+    assert recency["state"]=="CURRENT_RELEVANT"
+    assert recency["evidence_refs"]==["src-operational-metadata:2104"]
+
+
+def test_publication_recency_refuses_cross_bound_celex():
+    event={
+        **EVENT,
+        "ingestion_time":"2026-09-18T10:32:20.883+02:00",
+    }
+    legal=analyze_operational_legal(event,{**CHANGE,"event_key":"evt-1"},candidates=[candidate()])
+    reobservation={
+        "celex":"32026R2104",
+        "temporal_metadata":{
+            "publication":{
+                "state":"RESOLVED",
+                "assertion":{
+                    **temporal(
+                        "temporal:wrong","PUBLICATION","POINT","2026-09-18"
+                    ),
+                    "subject_ref":{"identifier":"CELEX:39999R9999"},
+                },
+                "evidence_refs":["src-operational-metadata:wrong"],
+            },
+        },
+    }
+    recency=derive_publication_recency_from_reobservation(
+        legal,event,reobservation
+    )
+    assert recency["state"]=="UNRESOLVED"
+    assert recency["assertion_refs"]==[]
+
+
+def test_publication_recency_does_not_bind_to_source_diff_route():
+    event={
+        **EVENT,
+        "ingestion_time":"2026-09-18T10:32:20.883+02:00",
+    }
+    legal=analyze_operational_legal(
+        event,
+        {**CHANGE,"event_key":"evt-1"},
+        candidates=[candidate(verification_route="SOURCE_DIFF")],
+    )
+    assert derive_publication_recency_from_reobservation(
+        legal,event,{
+            "celex":"32026R2104",
+            "temporal_metadata":{"publication":{"state":"RESOLVED"}},
+        }
+    ) is None

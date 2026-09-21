@@ -14,6 +14,22 @@ PROVENANCE_SCHEMA=json.loads(
 )
 
 
+def publication_notice(date_value="2025-06-13"):
+    return (
+        '<rdf:RDF '
+        'xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" '
+        'xmlns:cdm="http://publications.europa.eu/ontology/cdm#">'
+        '<rdf:Description>'
+        '<cdm:date_document '
+        'rdf:datatype="http://www.w3.org/2001/XMLSchema#date">'
+        '2025-06-12</cdm:date_document>'
+        '<cdm:official-journal-act_date_publication '
+        'rdf:datatype="http://www.w3.org/2001/XMLSchema#date">'
+        f'{date_value}</cdm:official-journal-act_date_publication>'
+        '</rdf:Description></rdf:RDF>'
+    ).encode("utf-8")
+
+
 class FakeResponse:
     def __init__(self, status, content, *, url, content_type):
         self.status_code=status
@@ -205,3 +221,68 @@ def test_identical_reobservation_inputs_are_deterministic():
         == second["metadata_observation"]["record_id"]
     )
     assert first["snapshot"] == second["snapshot"]
+
+
+def test_reobserver_projects_publication_from_same_sealed_metadata_observation():
+    session=FakeSession([
+        FakeResponse(
+            200,publication_notice(),
+            url="https://example.invalid/meta",
+            content_type="application/rdf+xml",
+        ),
+        FakeResponse(
+            200,b"PK\x03\x04FORMEX",
+            url="https://example.invalid/fmx4",
+            content_type="application/zip",
+        ),
+    ])
+    result=reobserve_event(
+        event(),
+        observed_at="2026-09-20T20:10:00+00:00",
+        session=session,
+    )
+    publication=result["temporal_metadata"]["publication"]
+    assert publication["state"]=="RESOLVED"
+    assert publication["assertion"]["normalized_date"]=="2025-06-13"
+    assert publication["assertion"]["subject_ref"]["identifier"]==(
+        "CELEX:32025R0905"
+    )
+    assert publication["evidence_refs"]==[
+        result["metadata_observation"]["record_id"]
+    ]
+    assert publication["assertion"]["normalized_date"] != (
+        result["metadata_observation"]["payload"]["observed_at"][:10]
+    )
+
+
+def test_conflicting_publication_metadata_survives_as_reobservation_unknown():
+    conflicting=(
+        '<rdf:RDF '
+        'xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" '
+        'xmlns:cdm="http://publications.europa.eu/ontology/cdm#">'
+        '<rdf:Description>'
+        '<cdm:official-journal-act_date_publication>'
+        '2025-06-13</cdm:official-journal-act_date_publication>'
+        '<cdm:date_publication>'
+        '2025-06-14</cdm:date_publication>'
+        '</rdf:Description></rdf:RDF>'
+    ).encode("utf-8")
+    session=FakeSession([
+        FakeResponse(
+            200,conflicting,
+            url="https://example.invalid/meta",
+            content_type="application/rdf+xml",
+        ),
+        FakeResponse(
+            200,b"PK\x03\x04FORMEX",
+            url="https://example.invalid/fmx4",
+            content_type="application/zip",
+        ),
+    ])
+    result=reobserve_event(
+        event(),
+        observed_at="2026-09-20T20:10:00+00:00",
+        session=session,
+    )
+    assert result["temporal_metadata"]["publication"]["state"]=="CONFLICTING"
+    assert any("publication-date properties disagree" in item for item in result["unknowns"])

@@ -106,3 +106,22 @@ def test_reobservation_without_deterministic_text_produces_no_candidate():
         },
     }
     assert candidates_from_reobservation(EVENT,reobservation)==[]
+
+
+def test_reobservation_without_source_observation_id_produces_no_candidate():
+    reobservation={
+        "celex":"32026R2104",
+        "analysis_language":"eng",
+        "analysis_text":(
+            "Annex V is amended: in Part 1, Section B, in the entry for the "
+            "United States, the following rows for the zones US-2.1405 and "
+            "US-2.1406 are added after the row for the zone US-2.1404."
+        ),
+        "content_observation":{
+            "payload":{
+                "language":"ENG",
+                "retrieval":{"final_uri":"official://missing-record-id"},
+            },
+        },
+    }
+    assert candidates_from_reobservation(EVENT,reobservation)==[]

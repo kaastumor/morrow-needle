@@ -2,7 +2,7 @@
   "schema_version": "operational-state-v0.1",
   "state_id": "operational-pilot:live-baselines-v0.1",
   "character": "OPERATIONAL_CACHE",
-  "updated_at": "2026-09-21T12:48:08.897224+00:00",
+  "updated_at": "2026-09-21T12:51:58.072048+00:00",
   "baseline_policy": "PROSPECTIVE_ONLY",
   "processed_event_keys": [
     "cellar:0078b204-a3a3-11ed-b508-01aa75ed71a1.0001.01_2026-09-21T12:24:18.674+02:00",
@@ -2408,6 +2408,55 @@
     "cellar:1ba86aa4-a4ea-11f0-a7c5-01aa75ed71a1.0018_2026-09-21T12:13:37.229+02:00",
     "cellar:1ba86aa4-a4ea-11f0-a7c5-01aa75ed71a1.0019_2026-09-21T12:13:37.229+02:00",
     "cellar:1ba86aa4-a4ea-11f0-a7c5-01aa75ed71a1_2026-09-21T12:13:37.229+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0001.01_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0001_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0002.01_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0002_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0003.01_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0003_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0004.01_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0004_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0005.01_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0005_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0006.01_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0006_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0007.01_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0007_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0008.01_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0008_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0009.01_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0009_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0010.01_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0010_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0011.01_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0011_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0012.01_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0012_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0013.01_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0013_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0014.01_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0014_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0015.01_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0015_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0016.01_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0016_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0017.01_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0017_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0018.01_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0018_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0019.01_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0019_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0020.01_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0020_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0021.01_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0021_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0022.01_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0022_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0023.01_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0023_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0024.01_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1.0024_2026-09-21T14:51:17.864+02:00",
+    "cellar:1bc37feb-43d8-11f1-8095-01aa75ed71a1_2026-09-21T14:51:17.864+02:00",
     "cellar:1bde2258-6bf8-11f1-ae88-01aa75ed71a1.0010.01_2026-09-21T13:40:45.034+02:00",
     "cellar:1bde2258-6bf8-11f1-ae88-01aa75ed71a1.0010.02_2026-09-21T13:40:45.034+02:00",
     "cellar:1bde2258-6bf8-11f1-ae88-01aa75ed71a1.0010_2026-09-21T13:40:45.034+02:00",
@@ -2799,6 +2848,7 @@
     "cellar:1cec45b7-a5eb-11f1-b25c-01aa75ed71a1.0002_2026-09-21T14:23:14.598+02:00",
     "cellar:1cec45b7-a5eb-11f1-b25c-01aa75ed71a1_2026-09-21T14:23:14.598+02:00",
     "cellar:1cec45b7-a5eb-11f1-b25c-01aa75ed71a1_2026-09-21T14:25:47.439+02:00",
+    "cellar:1e0e5f5a-a59e-11f1-b25c-01aa75ed71a1_2026-09-21T14:48:08.994+02:00",
     "cellar:1ec2c20d-76ee-11f1-bf5e-01aa75ed71a1.0001.02_2026-09-21T08:52:28.774+02:00",
     "cellar:1ec2c20d-76ee-11f1-bf5e-01aa75ed71a1.0001.03_2026-09-21T08:52:28.774+02:00",
     "cellar:1ec2c20d-76ee-11f1-bf5e-01aa75ed71a1.0001.04_2026-09-21T08:52:28.774+02:00",
@@ -7050,10 +7100,17 @@
     "cellar:4412cc3c-6bf8-11f1-ae88-01aa75ed71a1.0013.01_2026-09-21T14:31:38.583+02:00",
     "cellar:4412cc3c-6bf8-11f1-ae88-01aa75ed71a1.0013.02_2026-09-21T14:31:38.583+02:00",
     "cellar:4412cc3c-6bf8-11f1-ae88-01aa75ed71a1.0013_2026-09-21T14:31:38.583+02:00",
+    "cellar:4412cc3c-6bf8-11f1-ae88-01aa75ed71a1.0014.01_2026-09-21T14:50:38.026+02:00",
+    "cellar:4412cc3c-6bf8-11f1-ae88-01aa75ed71a1.0014.02_2026-09-21T14:50:38.026+02:00",
+    "cellar:4412cc3c-6bf8-11f1-ae88-01aa75ed71a1.0014_2026-09-21T14:50:38.026+02:00",
+    "cellar:4412cc3c-6bf8-11f1-ae88-01aa75ed71a1.0015.01_2026-09-21T14:50:38.026+02:00",
+    "cellar:4412cc3c-6bf8-11f1-ae88-01aa75ed71a1.0015.02_2026-09-21T14:50:38.026+02:00",
+    "cellar:4412cc3c-6bf8-11f1-ae88-01aa75ed71a1.0015_2026-09-21T14:50:38.026+02:00",
     "cellar:4412cc3c-6bf8-11f1-ae88-01aa75ed71a1_2026-09-21T14:08:16.226+02:00",
     "cellar:4412cc3c-6bf8-11f1-ae88-01aa75ed71a1_2026-09-21T14:12:12.235+02:00",
     "cellar:4412cc3c-6bf8-11f1-ae88-01aa75ed71a1_2026-09-21T14:31:38.583+02:00",
     "cellar:4412cc3c-6bf8-11f1-ae88-01aa75ed71a1_2026-09-21T14:34:21.477+02:00",
+    "cellar:4412cc3c-6bf8-11f1-ae88-01aa75ed71a1_2026-09-21T14:50:38.026+02:00",
     "cellar:443d866b-0daa-11f1-8870-01aa75ed71a1.0022_2026-09-21T11:42:48.394+02:00",
     "cellar:443d866b-0daa-11f1-8870-01aa75ed71a1_2026-09-21T11:42:48.394+02:00",
     "cellar:443d866b-0daa-11f1-8870-01aa75ed71a1_2026-09-21T11:43:38.712+02:00",
@@ -16223,6 +16280,8 @@
     "cellar:82cc72f8-85ce-11f1-bf5e-01aa75ed71a1.0004_2026-09-21T10:42:42.689+02:00",
     "cellar:82cc72f8-85ce-11f1-bf5e-01aa75ed71a1_2026-09-21T10:40:13.617+02:00",
     "cellar:82cc72f8-85ce-11f1-bf5e-01aa75ed71a1_2026-09-21T10:42:42.689+02:00",
+    "cellar:82f05931-6465-11f1-9b18-01aa75ed71a1.0004_2026-09-21T14:48:10.558+02:00",
+    "cellar:82f05931-6465-11f1-9b18-01aa75ed71a1_2026-09-21T14:48:10.558+02:00",
     "cellar:832f750e-650c-4d88-9b20-cf3bd7f8811d.0002.01_2026-09-21T04:04:49.124+02:00",
     "cellar:832f750e-650c-4d88-9b20-cf3bd7f8811d.0002.02_2026-09-21T04:04:49.124+02:00",
     "cellar:832f750e-650c-4d88-9b20-cf3bd7f8811d.0002_2026-09-21T04:04:49.124+02:00",
@@ -24583,6 +24642,9 @@
     "cellar:b8f11f33-6bf7-11f1-ae88-01aa75ed71a1.0014.01_2026-09-21T14:30:51.797+02:00",
     "cellar:b8f11f33-6bf7-11f1-ae88-01aa75ed71a1.0014.02_2026-09-21T14:30:51.797+02:00",
     "cellar:b8f11f33-6bf7-11f1-ae88-01aa75ed71a1.0014_2026-09-21T14:30:51.797+02:00",
+    "cellar:b8f11f33-6bf7-11f1-ae88-01aa75ed71a1.0015.01_2026-09-21T14:50:17.428+02:00",
+    "cellar:b8f11f33-6bf7-11f1-ae88-01aa75ed71a1.0015.02_2026-09-21T14:50:17.428+02:00",
+    "cellar:b8f11f33-6bf7-11f1-ae88-01aa75ed71a1.0015_2026-09-21T14:50:17.428+02:00",
     "cellar:b8f11f33-6bf7-11f1-ae88-01aa75ed71a1_2026-09-21T09:13:55.902+02:00",
     "cellar:b8f11f33-6bf7-11f1-ae88-01aa75ed71a1_2026-09-21T09:14:37.098+02:00",
     "cellar:b8f11f33-6bf7-11f1-ae88-01aa75ed71a1_2026-09-21T10:28:20.578+02:00",
@@ -24591,6 +24653,7 @@
     "cellar:b8f11f33-6bf7-11f1-ae88-01aa75ed71a1_2026-09-21T14:13:19.788+02:00",
     "cellar:b8f11f33-6bf7-11f1-ae88-01aa75ed71a1_2026-09-21T14:30:51.797+02:00",
     "cellar:b8f11f33-6bf7-11f1-ae88-01aa75ed71a1_2026-09-21T14:32:53.887+02:00",
+    "cellar:b8f11f33-6bf7-11f1-ae88-01aa75ed71a1_2026-09-21T14:50:17.428+02:00",
     "cellar:b9525204-6bf7-11f1-ae88-01aa75ed71a1.0012.01_2026-09-21T12:08:55.455+02:00",
     "cellar:b9525204-6bf7-11f1-ae88-01aa75ed71a1.0012.02_2026-09-21T12:08:55.455+02:00",
     "cellar:b9525204-6bf7-11f1-ae88-01aa75ed71a1.0012_2026-09-21T12:08:55.455+02:00",
@@ -31546,12 +31609,16 @@
     "cellar:e758e5da-a6aa-11f1-b25c-01aa75ed71a1.0008.02_2026-09-21T13:54:56.840+02:00",
     "cellar:e758e5da-a6aa-11f1-b25c-01aa75ed71a1.0008.02_2026-09-21T14:18:35.792+02:00",
     "cellar:e758e5da-a6aa-11f1-b25c-01aa75ed71a1.0008.02_2026-09-21T14:36:55.270+02:00",
+    "cellar:e758e5da-a6aa-11f1-b25c-01aa75ed71a1.0008.03_2026-09-21T14:50:26.256+02:00",
+    "cellar:e758e5da-a6aa-11f1-b25c-01aa75ed71a1.0008.04_2026-09-21T14:50:26.256+02:00",
+    "cellar:e758e5da-a6aa-11f1-b25c-01aa75ed71a1.0008.05_2026-09-21T14:50:26.256+02:00",
     "cellar:e758e5da-a6aa-11f1-b25c-01aa75ed71a1.0008_2026-09-21T08:24:38.628+02:00",
     "cellar:e758e5da-a6aa-11f1-b25c-01aa75ed71a1.0008_2026-09-21T12:26:05.116+02:00",
     "cellar:e758e5da-a6aa-11f1-b25c-01aa75ed71a1.0008_2026-09-21T13:32:06.874+02:00",
     "cellar:e758e5da-a6aa-11f1-b25c-01aa75ed71a1.0008_2026-09-21T13:54:56.840+02:00",
     "cellar:e758e5da-a6aa-11f1-b25c-01aa75ed71a1.0008_2026-09-21T14:18:35.792+02:00",
     "cellar:e758e5da-a6aa-11f1-b25c-01aa75ed71a1.0008_2026-09-21T14:36:55.270+02:00",
+    "cellar:e758e5da-a6aa-11f1-b25c-01aa75ed71a1.0008_2026-09-21T14:50:26.256+02:00",
     "cellar:e758e5da-a6aa-11f1-b25c-01aa75ed71a1.0009.01_2026-09-21T08:24:38.628+02:00",
     "cellar:e758e5da-a6aa-11f1-b25c-01aa75ed71a1.0009.01_2026-09-21T12:26:05.116+02:00",
     "cellar:e758e5da-a6aa-11f1-b25c-01aa75ed71a1.0009.01_2026-09-21T13:32:06.874+02:00",
@@ -54715,6 +54782,166 @@
         }
       },
       "record_hash": "sha256:7a46eb5a29cffcfbb9e93765dadc8bf78857ba2dc42c079d3893941aada22694"
+    },
+    {
+      "record_id": "src-operational-metadata-b49881b96b6063fab0f6db414b3a1bc5",
+      "record_type": "SOURCE_OBSERVATION",
+      "created_at": "2026-09-21T12:51:58.072048+00:00",
+      "payload": {
+        "source_type": "CELLAR",
+        "identifier": "CELEX:52026M12082",
+        "resource_uri": "https://publications.europa.eu/resource/celex/52026M12082",
+        "language": null,
+        "representation_class": "CELLAR_RDF_NOTICE_TREE",
+        "observed_at": "2026-09-21T12:51:58.072048+00:00",
+        "artifact_hash": "sha256:3ae4586b5112bd40dcfa9a15c6fa3e90a5a910e7fac6869cbff2e2eeb0336533",
+        "retrieval": {
+          "final_uri": "http://publications.europa.eu/resource/cellar/1e0e5f5a-a59e-11f1-b25c-01aa75ed71a1/rdf/tree/full",
+          "media_type": "application/rdf+xml",
+          "http_status": 200
+        }
+      },
+      "record_hash": "sha256:1a7c253e9a7cd21ba4128550e07c2173a837eb306c145922c825fe92216f35e8"
+    },
+    {
+      "record_id": "src-operational-content-819ffd9448f6868b83eb9bee583f2971",
+      "record_type": "SOURCE_OBSERVATION",
+      "created_at": "2026-09-21T12:51:58.072048+00:00",
+      "payload": {
+        "source_type": "CELLAR",
+        "identifier": "CELEX:52026M12082",
+        "resource_uri": "https://publications.europa.eu/resource/celex/52026M12082",
+        "language": "ENG",
+        "representation_class": "STRUCTURED_LEGAL_XML",
+        "observed_at": "2026-09-21T12:51:58.072048+00:00",
+        "artifact_hash": "sha256:a6b7e4660d4b114840b6653fbeb75c471bb9ed675bfc8eb13bff697257b078b4",
+        "retrieval": {
+          "final_uri": "http://publications.europa.eu/resource/cellar/1e0e5f5a-a59e-11f1-b25c-01aa75ed71a1.0006.02/zip",
+          "media_type": "application/zip",
+          "http_status": 200
+        }
+      },
+      "record_hash": "sha256:574fc8fc10e7ca8b827dc2c86f3afe1f136a020dd0668506428a9e368caa5b66"
+    },
+    {
+      "record_id": "src-operational-metadata-bff1de53ec1e66c696d308e84ac180e5",
+      "record_type": "SOURCE_OBSERVATION",
+      "created_at": "2026-09-21T12:51:58.072048+00:00",
+      "payload": {
+        "source_type": "CELLAR",
+        "identifier": "CELEX:62024CJ0757_SUM",
+        "resource_uri": "https://publications.europa.eu/resource/celex/62024CJ0757_SUM",
+        "language": null,
+        "representation_class": "CELLAR_RDF_NOTICE_TREE",
+        "observed_at": "2026-09-21T12:51:58.072048+00:00",
+        "artifact_hash": "sha256:eb8a45714d67d4dafc7a7804f74d3f2a4ceca974fd989257af86deaf4549ba71",
+        "retrieval": {
+          "final_uri": "http://publications.europa.eu/resource/cellar/4412cc3c-6bf8-11f1-ae88-01aa75ed71a1/rdf/tree/full",
+          "media_type": "application/rdf+xml",
+          "http_status": 200
+        }
+      },
+      "record_hash": "sha256:f17ad175593c7b31eb64f6b2bb75a206eb09e5f0c1ea871e2f4f5fa3083f5970"
+    },
+    {
+      "record_id": "src-operational-content-2554626626a676b49248069aa29a626a",
+      "record_type": "SOURCE_OBSERVATION",
+      "created_at": "2026-09-21T12:51:58.072048+00:00",
+      "payload": {
+        "source_type": "CELLAR",
+        "identifier": "CELEX:62024CJ0757_SUM",
+        "resource_uri": "https://publications.europa.eu/resource/celex/62024CJ0757_SUM",
+        "language": "ENG",
+        "representation_class": "STRUCTURED_HTML",
+        "observed_at": "2026-09-21T12:51:58.072048+00:00",
+        "artifact_hash": "sha256:81730469c2ecf9ca7c269b539e46541eee2733aea4601fb8486e96c3258f153e",
+        "retrieval": {
+          "final_uri": "http://publications.europa.eu/resource/cellar/4412cc3c-6bf8-11f1-ae88-01aa75ed71a1.0009.01/zip",
+          "media_type": "application/zip",
+          "http_status": 200
+        }
+      },
+      "record_hash": "sha256:756c07b7c863b2e7187a7cb0c06b7b0879d5c1215436dcd61649484d24b44745"
+    },
+    {
+      "record_id": "src-operational-metadata-0ac3c54ded06f1a94c3bc9e10126d9f4",
+      "record_type": "SOURCE_OBSERVATION",
+      "created_at": "2026-09-21T12:51:58.072048+00:00",
+      "payload": {
+        "source_type": "CELLAR",
+        "identifier": "CELEX:52026XC03097",
+        "resource_uri": "https://publications.europa.eu/resource/celex/52026XC03097",
+        "language": null,
+        "representation_class": "CELLAR_RDF_NOTICE_TREE",
+        "observed_at": "2026-09-21T12:51:58.072048+00:00",
+        "artifact_hash": "sha256:d4b969036d48a4f2e6ebe7f5d1e47c15a853983bb0c3f92efa1346a479ce2878",
+        "retrieval": {
+          "final_uri": "http://publications.europa.eu/resource/cellar/82f05931-6465-11f1-9b18-01aa75ed71a1/rdf/tree/full",
+          "media_type": "application/rdf+xml",
+          "http_status": 200
+        }
+      },
+      "record_hash": "sha256:d1febbe0eb2567351ea3cc8c039f100500879879c797b3c9a3af4c31a5b72a24"
+    },
+    {
+      "record_id": "src-operational-content-c6bbaa31ba563d7eea62fb8b87971e23",
+      "record_type": "SOURCE_OBSERVATION",
+      "created_at": "2026-09-21T12:51:58.072048+00:00",
+      "payload": {
+        "source_type": "CELLAR",
+        "identifier": "CELEX:52026XC03097",
+        "resource_uri": "https://publications.europa.eu/resource/celex/52026XC03097",
+        "language": "ENG",
+        "representation_class": "STRUCTURED_LEGAL_XML",
+        "observed_at": "2026-09-21T12:51:58.072048+00:00",
+        "artifact_hash": "sha256:eade24503af4a7782f6b5418761b4867d5e8ab68a5426cb45a48a644dcea33a2",
+        "retrieval": {
+          "final_uri": "http://publications.europa.eu/resource/cellar/82f05931-6465-11f1-9b18-01aa75ed71a1.0006.02/zip",
+          "media_type": "application/zip",
+          "http_status": 200
+        }
+      },
+      "record_hash": "sha256:e9a388738a4d26591af905b377e4e5907e405ebf3dd10972dd10af6b4ef67e51"
+    },
+    {
+      "record_id": "src-operational-metadata-773e07b352aa82e259597704c853c38f",
+      "record_type": "SOURCE_OBSERVATION",
+      "created_at": "2026-09-21T12:51:58.072048+00:00",
+      "payload": {
+        "source_type": "CELLAR",
+        "identifier": "CELEX:62024CJ0514_SUM",
+        "resource_uri": "https://publications.europa.eu/resource/celex/62024CJ0514_SUM",
+        "language": null,
+        "representation_class": "CELLAR_RDF_NOTICE_TREE",
+        "observed_at": "2026-09-21T12:51:58.072048+00:00",
+        "artifact_hash": "sha256:8a0a56335bba262421b03244b7142e82c265486c79cdca31742787f6b06c3bcc",
+        "retrieval": {
+          "final_uri": "http://publications.europa.eu/resource/cellar/b8f11f33-6bf7-11f1-ae88-01aa75ed71a1/rdf/tree/full",
+          "media_type": "application/rdf+xml",
+          "http_status": 200
+        }
+      },
+      "record_hash": "sha256:3a9ff6a09028f5979c30ab685d5dbadcfb0b85210e902b29af6fb643deffb6b5"
+    },
+    {
+      "record_id": "src-operational-content-e06be548dcd80561b1ad810897e22dcf",
+      "record_type": "SOURCE_OBSERVATION",
+      "created_at": "2026-09-21T12:51:58.072048+00:00",
+      "payload": {
+        "source_type": "CELLAR",
+        "identifier": "CELEX:62024CJ0514_SUM",
+        "resource_uri": "https://publications.europa.eu/resource/celex/62024CJ0514_SUM",
+        "language": "ENG",
+        "representation_class": "STRUCTURED_HTML",
+        "observed_at": "2026-09-21T12:51:58.072048+00:00",
+        "artifact_hash": "sha256:47ac22692a3fca20138e2dafccc4db0fcd4dec9e1464bba1d268f34762e3c0c0",
+        "retrieval": {
+          "final_uri": "http://publications.europa.eu/resource/cellar/b8f11f33-6bf7-11f1-ae88-01aa75ed71a1.0008.01/zip",
+          "media_type": "application/zip",
+          "http_status": 200
+        }
+      },
+      "record_hash": "sha256:a42d98be95405f4a091038dd7c39ee4c43e2ac7590681c7880b22bf7b01a931f"
     }
   ],
   "baselines": [
@@ -55819,6 +56046,17 @@
       "seed_character": "POST_EVENT_REFRESH"
     },
     {
+      "baseline_key": "CELEX:52026M12082|ENG",
+      "identifier": "CELEX:52026M12082",
+      "language": "ENG",
+      "root_cellar_id": "cellar:1e0e5f5a-a59e-11f1-b25c-01aa75ed71a1",
+      "content_observation_id": "src-operational-content-819ffd9448f6868b83eb9bee583f2971",
+      "metadata_observation_id": "src-operational-metadata-b49881b96b6063fab0f6db414b3a1bc5",
+      "observed_at": "2026-09-21T12:51:58.072048+00:00",
+      "eligible_for_event_ingestion_after": "2026-09-21T12:51:58.072048+00:00",
+      "seed_character": "COLD_START_SEED"
+    },
+    {
       "baseline_key": "CELEX:52026M12213%2801%29|ENG",
       "identifier": "CELEX:52026M12213%2801%29",
       "language": "ENG",
@@ -55981,6 +56219,17 @@
       "metadata_observation_id": "src-operational-metadata-00a7936774a7b034d1f903e44bd63c18",
       "observed_at": "2026-09-21T11:32:09.378814+00:00",
       "eligible_for_event_ingestion_after": "2026-09-21T11:32:09.378814+00:00",
+      "seed_character": "COLD_START_SEED"
+    },
+    {
+      "baseline_key": "CELEX:52026XC03097|ENG",
+      "identifier": "CELEX:52026XC03097",
+      "language": "ENG",
+      "root_cellar_id": "cellar:82f05931-6465-11f1-9b18-01aa75ed71a1",
+      "content_observation_id": "src-operational-content-c6bbaa31ba563d7eea62fb8b87971e23",
+      "metadata_observation_id": "src-operational-metadata-0ac3c54ded06f1a94c3bc9e10126d9f4",
+      "observed_at": "2026-09-21T12:51:58.072048+00:00",
+      "eligible_for_event_ingestion_after": "2026-09-21T12:51:58.072048+00:00",
       "seed_character": "COLD_START_SEED"
     },
     {
@@ -57429,10 +57678,10 @@
       "identifier": "CELEX:62024CJ0514_SUM",
       "language": "ENG",
       "root_cellar_id": "cellar:b8f11f33-6bf7-11f1-ae88-01aa75ed71a1",
-      "content_observation_id": "src-operational-content-0065a5b49971881715df037d0432ff50",
-      "metadata_observation_id": "src-operational-metadata-8b7fb98905147357d3064536fb04c16a",
-      "observed_at": "2026-09-21T12:34:40.954521+00:00",
-      "eligible_for_event_ingestion_after": "2026-09-21T12:34:40.954521+00:00",
+      "content_observation_id": "src-operational-content-e06be548dcd80561b1ad810897e22dcf",
+      "metadata_observation_id": "src-operational-metadata-773e07b352aa82e259597704c853c38f",
+      "observed_at": "2026-09-21T12:51:58.072048+00:00",
+      "eligible_for_event_ingestion_after": "2026-09-21T12:51:58.072048+00:00",
       "seed_character": "POST_EVENT_REFRESH"
     },
     {
@@ -57693,11 +57942,11 @@
       "identifier": "CELEX:62024CJ0757_SUM",
       "language": "ENG",
       "root_cellar_id": "cellar:4412cc3c-6bf8-11f1-ae88-01aa75ed71a1",
-      "content_observation_id": "src-operational-content-1dc170d57eac905e069ef0a98ed2e86b",
-      "metadata_observation_id": "src-operational-metadata-b0fe30419e0e573dc7a12bd780ab41db",
-      "observed_at": "2026-09-21T12:34:40.954521+00:00",
-      "eligible_for_event_ingestion_after": "2026-09-21T12:34:40.954521+00:00",
-      "seed_character": "COLD_START_SEED"
+      "content_observation_id": "src-operational-content-2554626626a676b49248069aa29a626a",
+      "metadata_observation_id": "src-operational-metadata-bff1de53ec1e66c696d308e84ac180e5",
+      "observed_at": "2026-09-21T12:51:58.072048+00:00",
+      "eligible_for_event_ingestion_after": "2026-09-21T12:51:58.072048+00:00",
+      "seed_character": "POST_EVENT_REFRESH"
     },
     {
       "baseline_key": "CELEX:62024CJ0771_SUM|ENG",
@@ -61056,7 +61305,7 @@
     }
   ],
   "poll_cursor": {
-    "last_completed_end": "2026-09-21T12:48:08.897224+00:00",
+    "last_completed_end": "2026-09-21T12:51:58.072048+00:00",
     "overlap_seconds": 300
   }
 }

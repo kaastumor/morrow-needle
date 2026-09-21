@@ -116,10 +116,10 @@ def test_later_event_gets_current_complete_prior_snapshot():
         "available":True,
         "content_hash":observation(
             current["content_observation_id"]
-        )["payload"]["content_hash"],
+        )["payload"]["artifact_hash"],
         "metadata_hash":observation(
             current["metadata_observation_id"]
-        )["payload"]["metadata_hash"],
+        )["payload"]["artifact_hash"],
         "content_observation_id":current["content_observation_id"],
         "metadata_observation_id":current["metadata_observation_id"],
     }
@@ -154,8 +154,8 @@ def test_advance_baseline_appends_observations_and_moves_pointer():
     reobservation={
         "snapshot":{
             "available":True,
-            "content_hash":content["payload"]["content_hash"],
-            "metadata_hash":metadata["payload"]["metadata_hash"],
+            "content_hash":content["payload"]["artifact_hash"],
+            "metadata_hash":metadata["payload"]["artifact_hash"],
             "content_observation_id":content["record_id"],
             "metadata_observation_id":metadata["record_id"],
         },

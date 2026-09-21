@@ -263,7 +263,7 @@ def reobserve_event(
         analysis_text=_analysis_text(response.content,representation_class)
         break
 
-    available=metadata.status_code == 200
+    available=metadata_record is not None or content_record is not None
     if metadata_record is None and content_record is None:
         return {
             "state":"UNAVAILABLE",

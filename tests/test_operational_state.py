@@ -53,13 +53,19 @@ def event(
     }
 
 
-def test_seed_state_and_embedded_provenance_validate():
+def test_live_state_and_embedded_provenance_validate_without_freezing_cache_size():
+    """The checked-in pilot state is mutable operational cache, not a fixture.
+
+    Monitor cycles are expected to add baselines and immutable observations. Tests
+    therefore validate invariants rather than pinning counts that a successful
+    production run is designed to change.
+    """
     assert list(
         Draft202012Validator(STATE_SCHEMA).iter_errors(STATE)
     ) == []
     assert validate_operational_state(STATE) == []
-    assert len(STATE["baselines"]) == 3
-    assert len(STATE["source_observations"]) == 6
+    assert STATE["baselines"]
+    assert STATE["source_observations"]
     for record in STATE["source_observations"]:
         assert verify_record_hash(record)
         assert list(
@@ -87,26 +93,20 @@ def test_cold_start_seed_cannot_retroactively_solve_prior_update():
     assert "cannot be used retroactively" in lookup["reason"]
 
 
-def test_later_event_gets_complete_prior_snapshot():
+def test_later_event_gets_current_complete_prior_snapshot():
     later=event()
     lookup=lookup_baseline(STATE,later)
     assert lookup["state"] == "ELIGIBLE"
+    current=next(
+        item for item in STATE["baselines"]
+        if item["baseline_key"] == "CELEX:32019R0632|ENG"
+    )
     assert lookup["snapshot"] == {
-        "available":True,
-        "content_hash":(
-            "sha256:b2f4fc192ebe69d743c9ee15f1d576b8"
-            "ad87bd83d5de19b3373c8eba4d13d020"
-        ),
-        "metadata_hash":(
-            "sha256:b4ef3683299a2970dae23573ae652ce625"
-            "f17a0ffad65252ae351bbf2c239c51"
-        ),
-        "content_observation_id":(
-            "src-operational-content-0204a83622f5602f2eefb29ca9f8cd6c"
-        ),
-        "metadata_observation_id":(
-            "src-operational-metadata-b9ce44d3eb856b5cb789413f9557e293"
-        ),
+        "available":current["available"],
+        "content_hash":current["content_hash"],
+        "metadata_hash":current["metadata_hash"],
+        "content_observation_id":current["content_observation_id"],
+        "metadata_observation_id":current["metadata_observation_id"],
     }
 
 
@@ -155,6 +155,8 @@ def test_advance_baseline_appends_observations_and_moves_pointer():
             "metadata_observation_id":metadata["record_id"],
         },
     }
+    before_observations=len(STATE["source_observations"])
+    before_baselines=len(STATE["baselines"])
     advanced=advance_baseline(
         STATE,
         later,
@@ -162,8 +164,8 @@ def test_advance_baseline_appends_observations_and_moves_pointer():
         updated_at="2026-09-21T08:01:01+00:00",
         seed_character="POST_EVENT_REFRESH",
     )
-    assert len(advanced["source_observations"]) == 8
-    assert len(advanced["baselines"]) == 3
+    assert len(advanced["source_observations"]) == before_observations + 2
+    assert len(advanced["baselines"]) == before_baselines
     current=next(
         item for item in advanced["baselines"]
         if item["baseline_key"] == "CELEX:32019R0632|ENG"

@@ -65,14 +65,17 @@ def apply_operational_recency_gate(
 ) -> dict[str, Any]:
     """Gate CHANGE_FEED eligibility using separately-owned temporal evidence.
 
-    This function deliberately does not inspect feed ingestion time, source
-    modification time, drafting text, or event chronology. ``recency`` must be
-    the output of canonical temporal/procedural analysis. Legal truth survives
-    internally, but without an evidenced current relationship the operational
-    projection abstains rather than claiming that a historical mutation is new.
+    Recency evidence must explicitly bind itself to this legal-analysis identity.
+    Merely supplying a valid temporal assertion from the same instrument is not
+    sufficient: an unrelated provision/application date must never make another
+    mutation appear current.
     """
     if legal_analysis.get("disposition") != "LEGAL_CHANGE_VERIFIED":
         return legal_analysis
+
+    analysis_identity=legal_analysis.get("analysis_identity")
+    if not analysis_identity:
+        raise OperationalLegalAnalysisError("verified legal analysis requires analysis_identity before recency gating")
 
     if recency is None:
         state="UNRESOLVED"
@@ -80,6 +83,11 @@ def apply_operational_recency_gate(
     else:
         state=recency.get("state")
         assertion_refs=list(recency.get("assertion_refs",[]))
+        bound_identity=recency.get("legal_analysis_identity")
+        if bound_identity != analysis_identity:
+            raise OperationalLegalAnalysisError(
+                "operational recency evidence must bind to the gated legal_analysis_identity"
+            )
 
     if state == "CURRENT_RELEVANT":
         if not assertion_refs:
@@ -90,7 +98,7 @@ def apply_operational_recency_gate(
         result["evidence_refs"]=list(dict.fromkeys([
             *result.get("evidence_refs",[]), *assertion_refs
         ]))
-        result["recency"]={"state":state,"assertion_refs":assertion_refs}
+        result["recency"]={"state":state,"assertion_refs":assertion_refs,"legal_analysis_identity":analysis_identity}
         return result
 
     if state not in {"HISTORICAL_NOT_CURRENT","UNRESOLVED","CONTEXT_REQUIRED","CONFLICTING"}:
@@ -114,8 +122,8 @@ def apply_operational_recency_gate(
         "evidence_refs":list(dict.fromkeys([*legal_analysis.get("evidence_refs",[]),*assertion_refs])),
         "explanation":None,
         "unknowns":[*legal_analysis.get("unknowns",[]),reason],
-        "analysis_identity":legal_analysis.get("analysis_identity"),
-        "recency":{"state":state,"assertion_refs":assertion_refs},
+        "analysis_identity":analysis_identity,
+        "recency":{"state":state,"assertion_refs":assertion_refs,"legal_analysis_identity":analysis_identity},
     }
 
 

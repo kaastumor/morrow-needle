@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import re
 from typing import Any
 
@@ -23,6 +24,12 @@ def _nearest_annex(text: str, instruction_start: int) -> str | None:
     if not matches:
         return None
     return f"Annex {matches[-1].group(1).upper()}"
+
+
+def _semantic_mutation_id(*, source_id: str, language: str, operation: str, target: str) -> str:
+    """Identity for the legal mutation, excluding observation-local provenance."""
+    material="|".join([source_id, language.lower(), operation, target])
+    return f"authentic-mutation:{hashlib.sha256(material.encode('utf-8')).hexdigest()[:20]}"
 
 
 def candidates_from_authentic_text(
@@ -74,6 +81,12 @@ def candidates_from_authentic_text(
             canonical,
             kind="TABLE_ROWS",
             language=language,
+            candidate_id=_semantic_mutation_id(
+                source_id=source_id,
+                language=language,
+                operation=canonical["operation"],
+                target=canonical["target_locator"],
+            ),
         )
         semantic_key=(
             f"{source_id}|{language.lower()}|{mutation['operation']}|"

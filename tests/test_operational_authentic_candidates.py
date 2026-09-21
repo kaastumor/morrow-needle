@@ -137,3 +137,28 @@ def test_reobservation_groups_multiple_explicit_mutations_without_collapsing_tru
         "canonical mutation identities remain separate" in item
         for item in candidate["unknowns"]
     )
+
+
+def test_bare_prior_annex_mention_cannot_authorize_later_amendment_shaped_text():
+    text=(
+        "Recital 7 discusses Annex V in general. A report later reproduces the "
+        "sentence: in Part 1, Section B, in the entry for the United States, "
+        "the following rows for the zones US-2.1405 and US-2.1406 are added "
+        "after the row for the zone US-2.1404."
+    )
+    assert candidates_from_authentic_text(
+        event(),text,source_id="CELEX:32026R2104"
+    )==[]
+
+
+def test_explicit_annex_amendment_heading_still_authorizes_keyed_row_command():
+    text=(
+        "Annex V is amended: in Part 1, Section B, in the entry for the United "
+        "States, the following rows for the zones US-2.1405 and US-2.1406 are "
+        "added after the row for the zone US-2.1404."
+    )
+    candidates=candidates_from_authentic_text(
+        event(),text,source_id="CELEX:32026R2104"
+    )
+    assert len(candidates)==1
+    assert "Annex V" in candidates[0]["semantic_key"]

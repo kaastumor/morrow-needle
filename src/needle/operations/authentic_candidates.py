@@ -107,7 +107,10 @@ def candidates_from_authentic_text(
                 "instruction_text":canonical["instruction_text"],
             }],
             "explanation":{
-                "what_changed":canonical["instruction_text"],
+                "what_changed":(
+                    f"{mutation['target']['citation_path']}: "
+                    f"{canonical['instruction_text']}"
+                ),
                 "compared_with":(
                     "The placement anchor named by the authentic amendment; "
                     "no source-state comparator is implied."
@@ -125,6 +128,102 @@ def candidates_from_authentic_text(
             ],
         })
     return output
+
+
+def _compose_authentic_delivery_candidate(
+    candidates: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Group multiple explicit mutations from one authentic observation.
+
+    This is delivery composition, not truth collapse: every canonical mutation
+    ref remains separate. Grouping is allowed only when every child is a
+    VERIFIED authentic-cause outcome supported by the same immutable source
+    observation. Otherwise the children remain separate and the downstream
+    analyzer preserves its ambiguity abstention.
+    """
+    if len(candidates) <= 1:
+        return candidates
+    if any(
+        item.get("outcome") != "LEGAL_CHANGE_VERIFIED"
+        or item.get("verification_route") != "AUTHENTIC_LEGAL_CAUSE"
+        for item in candidates
+    ):
+        return candidates
+
+    evidence_sets={
+        tuple(sorted(item.get("evidence_refs",[])))
+        for item in candidates
+    }
+    if len(evidence_sets) != 1:
+        return candidates
+
+    child_keys=sorted(item["semantic_key"] for item in candidates)
+    canonical_refs=[]
+    occurrences=[]
+    affected=[]
+    unknowns=[]
+    descriptions=[]
+    evidence_character="DIRECT"
+    for item in sorted(candidates,key=lambda value:value["semantic_key"]):
+        for ref in item.get("canonical_refs",[]):
+            if ref not in canonical_refs:
+                canonical_refs.append(ref)
+        for occurrence in item.get("evidence_occurrences",[]):
+            tagged={
+                **occurrence,
+                "semantic_key":item["semantic_key"],
+            }
+            if tagged not in occurrences:
+                occurrences.append(tagged)
+        explanation=item.get("explanation") or {}
+        changed=explanation.get("what_changed")
+        if changed and changed not in descriptions:
+            descriptions.append(changed)
+        for value in explanation.get("affected",[]):
+            if value not in affected:
+                affected.append(value)
+        if explanation.get("evidence_character") != "DIRECT":
+            evidence_character="MIXED"
+        for value in item.get("unknowns",[]):
+            if value not in unknowns:
+                unknowns.append(value)
+
+    semantic_material="\n".join(child_keys)
+    semantic_key=(
+        "authentic-compound:"
+        +hashlib.sha256(semantic_material.encode("utf-8")).hexdigest()[:24]
+    )
+    unknowns.append(
+        "Multiple explicit mutations from the same authentic act are grouped "
+        "for operational delivery; their canonical mutation identities remain "
+        "separate."
+    )
+    return [{
+        "semantic_key":semantic_key,
+        "outcome":"LEGAL_CHANGE_VERIFIED",
+        "verification_route":"AUTHENTIC_LEGAL_CAUSE",
+        "canonical_refs":canonical_refs,
+        "evidence_refs":list(next(iter(evidence_sets))),
+        "evidence_occurrences":occurrences,
+        "explanation":{
+            "what_changed":(
+                f"{len(canonical_refs)} explicit amendments were verified in "
+                "the authentic act: "+" | ".join(descriptions)
+            ),
+            "compared_with":(
+                "Each amendment is compared with the placement anchor named "
+                "by its authentic instruction; no source-state comparator is "
+                "implied."
+            ),
+            "when_it_matters":(
+                "Legal changes are verified from the authentic amendment; "
+                "temporal applicability requires canonical temporal analysis."
+            ),
+            "affected":affected,
+            "evidence_character":evidence_character,
+        },
+        "unknowns":unknowns,
+    }]
 
 
 def candidates_from_reobservation(
@@ -158,7 +257,7 @@ def candidates_from_reobservation(
     if not source_id.upper().startswith("CELEX:"):
         source_id=f"CELEX:{source_id}"
 
-    return candidates_from_authentic_text(
+    candidates=candidates_from_authentic_text(
         event,
         text,
         source_id=source_id,
@@ -166,3 +265,4 @@ def candidates_from_reobservation(
         language=str(language).lower(),
         evidence_ref=evidence_ref,
     )
+    return _compose_authentic_delivery_candidate(candidates)

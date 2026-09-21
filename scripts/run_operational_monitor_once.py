@@ -15,6 +15,7 @@ from needle.operations.authentic_candidates import candidates_from_reobservation
 from needle.operations.legal_analysis import (
     analyze_operational_legal,
     apply_operational_recency_gate,
+    derive_publication_recency_from_reobservation,
     should_attempt_legal_analysis,
 )
 from needle.operations.pipeline import (
@@ -143,13 +144,15 @@ def main() -> int:
             legal_analysis=analyze_operational_legal(
                 representative,change,candidates=candidates
             )
-            # Authentic legal cause can verify a mutation independently of a
-            # source comparator, but it still cannot prove that the mutation is
-            # newly relevant in this feed window. Until canonical temporal /
-            # procedural evidence is bound, keep verified causes out of
-            # CHANGE_FEED rather than deriving recency from Cellar timestamps.
+            # The feed timestamp establishes only operational novelty. Legal
+            # recency comes from explicit canonical temporal metadata for the
+            # same authentic act; a later refresh of an old act remains
+            # historical rather than being resurrected by Cellar activity.
+            recency=derive_publication_recency_from_reobservation(
+                legal_analysis,representative,reobservation
+            )
             downstream=apply_operational_recency_gate(
-                legal_analysis,recency=None
+                legal_analysis,recency=recency
             )
             downstream["unknowns"]=[
                 *source_unknowns,*downstream.get("unknowns",[])

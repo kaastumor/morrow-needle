@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
-from datetime import date
+from datetime import date, datetime, timedelta
 from typing import Any, Iterable
 
 
@@ -108,17 +108,119 @@ def derive_operational_relevance(
     return {"state":"UNRESOLVED","assertion_refs":[item[2] for item in resolved],"legal_analysis_identity":identity}
 
 
+def derive_feed_event_relevance(
+    legal_analysis: dict[str, Any],
+    *,
+    temporal_assertions: Iterable[dict[str, Any]],
+    ingestion_time: str,
+) -> dict[str, Any]:
+    """Relate day-granular legal timing to one newly processed feed event.
+
+    The source feed timestamp establishes operational novelty only. It is never
+    substituted for a legal publication/application timestamp. The event's own
+    explicit offset determines its source-calendar day; canonical legal dates
+    are then evaluated against that one-day interval.
+
+    This deliberately accepts a conservative false negative for delayed feed
+    delivery: an older publication date is historical even if Needle first sees
+    the source later.
+    """
+    try:
+        observed=datetime.fromisoformat(
+            ingestion_time.replace("Z","+00:00")
+        )
+    except ValueError as exc:
+        raise OperationalLegalAnalysisError(
+            "feed-event ingestion_time must be ISO 8601"
+        ) from exc
+    if observed.tzinfo is None or observed.utcoffset() is None:
+        raise OperationalLegalAnalysisError(
+            "feed-event ingestion_time must be offset-aware"
+        )
+    event_day=observed.date()
+    result=derive_operational_relevance(
+        legal_analysis,
+        temporal_assertions=temporal_assertions,
+        window_start=event_day.isoformat(),
+        window_end=(event_day+timedelta(days=1)).isoformat(),
+    )
+    return {
+        **result,
+        "novelty_basis":"OFFICIAL_FEED_EVENT_DAY",
+        "event_day":event_day.isoformat(),
+        "temporal_precision":"DAY",
+    }
+
+
+def derive_publication_recency_from_reobservation(
+    legal_analysis: dict[str, Any],
+    event: dict[str, Any],
+    reobservation: dict[str, Any],
+) -> dict[str, Any] | None:
+    """Bind publication recency only to an authentic cause from the same CELEX.
+
+    The re-observation supplies both the immutable official bytes used for the
+    authentic legal cause and the explicit publication metadata. That shared
+    source boundary prevents a publication assertion for one act from being
+    cross-bound to another mutation.
+    """
+    if (
+        legal_analysis.get("disposition") != "LEGAL_CHANGE_VERIFIED"
+        or legal_analysis.get("verification_route") != "AUTHENTIC_LEGAL_CAUSE"
+    ):
+        return None
+    publication=(
+        (reobservation.get("temporal_metadata") or {}).get("publication")
+    )
+    if publication is None or publication.get("state") == "NOT_ASSERTED":
+        return None
+
+    identity=legal_analysis["analysis_identity"]
+    evidence_refs=list(publication.get("evidence_refs",[]))
+    if publication.get("state") in {"UNRESOLVED","CONFLICTING"}:
+        return {
+            "state":publication["state"],
+            "assertion_refs":[],
+            "legal_analysis_identity":identity,
+            "evidence_refs":evidence_refs,
+        }
+    if publication.get("state") != "RESOLVED":
+        return None
+
+    assertion=publication.get("assertion")
+    celex=reobservation.get("celex")
+    if not assertion or not celex:
+        return None
+    expected=f"CELEX:{celex}".upper()
+    if assertion["subject_ref"]["identifier"].upper() != expected:
+        return {
+            "state":"UNRESOLVED",
+            "assertion_refs":[],
+            "legal_analysis_identity":identity,
+            "evidence_refs":evidence_refs,
+        }
+
+    recency=derive_feed_event_relevance(
+        legal_analysis,
+        temporal_assertions=[assertion],
+        ingestion_time=event["ingestion_time"],
+    )
+    recency["evidence_refs"]=evidence_refs
+    return recency
+
+
 def apply_operational_recency_gate(legal_analysis: dict[str, Any], *, recency: dict[str, Any] | None) -> dict[str, Any]:
     """Gate CHANGE_FEED eligibility with a typed, separately evidenced relevance event."""
     if legal_analysis.get("disposition") != "LEGAL_CHANGE_VERIFIED": return legal_analysis
     analysis_identity=legal_analysis.get("analysis_identity")
     if not analysis_identity: raise OperationalLegalAnalysisError("verified legal analysis requires analysis_identity before recency gating")
 
-    dimension=None; relevant_at=None
+    dimension=None; relevant_at=None; recency_evidence_refs=[]
     if recency is None:
         state="UNRESOLVED"; assertion_refs=[]
     else:
         state=recency.get("state"); assertion_refs=list(recency.get("assertion_refs",[]))
+        recency_evidence_refs=list(recency.get("evidence_refs",[]))
         if recency.get("legal_analysis_identity") != analysis_identity:
             raise OperationalLegalAnalysisError("operational recency evidence must bind to the gated legal_analysis_identity")
         dimension=recency.get("relevance_dimension"); relevant_at=recency.get("relevant_at")
@@ -130,8 +232,29 @@ def apply_operational_recency_gate(legal_analysis: dict[str, Any], *, recency: d
         if not relevant_at:
             raise OperationalLegalAnalysisError("CURRENT_RELEVANT recency requires an evidenced relevant_at value")
         result=dict(legal_analysis)
-        result["evidence_refs"]=list(dict.fromkeys([*result.get("evidence_refs",[]),*assertion_refs]))
-        result["recency"]={"state":state,"assertion_refs":assertion_refs,"legal_analysis_identity":analysis_identity,"relevance_dimension":dimension,"relevant_at":relevant_at}
+        result["evidence_refs"]=list(dict.fromkeys([
+            *result.get("evidence_refs",[]),
+            *assertion_refs,
+            *recency_evidence_refs,
+        ]))
+        canonical_refs=list(result.get("canonical_refs",[]))
+        for ref in assertion_refs:
+            temporal_ref={"kind":"TEMPORAL_ASSERTION","entity_id":ref}
+            if temporal_ref not in canonical_refs:
+                canonical_refs.append(temporal_ref)
+        result["canonical_refs"]=canonical_refs
+        result["recency"]={
+            "state":state,
+            "assertion_refs":assertion_refs,
+            "legal_analysis_identity":analysis_identity,
+            "relevance_dimension":dimension,
+            "relevant_at":relevant_at,
+            **({
+                "novelty_basis":recency["novelty_basis"],
+                "event_day":recency.get("event_day"),
+                "temporal_precision":recency.get("temporal_precision"),
+            } if recency and recency.get("novelty_basis") else {}),
+        }
         return result
 
     if state not in {"HISTORICAL_NOT_CURRENT","UNRESOLVED","CONTEXT_REQUIRED","CONFLICTING"}:
@@ -144,7 +267,34 @@ def apply_operational_recency_gate(legal_analysis: dict[str, Any], *, recency: d
         "CONTEXT_REQUIRED":"The legal mutation is verified, but operational recency depends on unresolved legal context.",
         "CONFLICTING":"The legal mutation is verified, but canonical temporal/procedural evidence conflicts on operational recency.",
     }[state]
-    return {"disposition":"ABSTAIN_LEGAL_UNRESOLVED","verification_route":legal_analysis.get("verification_route"),"canonical_refs":list(legal_analysis.get("canonical_refs",[])),"evidence_refs":list(dict.fromkeys([*legal_analysis.get("evidence_refs",[]),*assertion_refs])),"explanation":None,"unknowns":[*legal_analysis.get("unknowns",[]),reason],"analysis_identity":analysis_identity,"recency":{"state":state,"assertion_refs":assertion_refs,"legal_analysis_identity":analysis_identity}}
+    canonical_refs=list(legal_analysis.get("canonical_refs",[]))
+    for ref in assertion_refs:
+        temporal_ref={"kind":"TEMPORAL_ASSERTION","entity_id":ref}
+        if temporal_ref not in canonical_refs:
+            canonical_refs.append(temporal_ref)
+    return {
+        "disposition":"ABSTAIN_LEGAL_UNRESOLVED",
+        "verification_route":legal_analysis.get("verification_route"),
+        "canonical_refs":canonical_refs,
+        "evidence_refs":list(dict.fromkeys([
+            *legal_analysis.get("evidence_refs",[]),
+            *assertion_refs,
+            *recency_evidence_refs,
+        ])),
+        "explanation":None,
+        "unknowns":[*legal_analysis.get("unknowns",[]),reason],
+        "analysis_identity":analysis_identity,
+        "recency":{
+            "state":state,
+            "assertion_refs":assertion_refs,
+            "legal_analysis_identity":analysis_identity,
+            **({
+                "novelty_basis":recency["novelty_basis"],
+                "event_day":recency.get("event_day"),
+                "temporal_precision":recency.get("temporal_precision"),
+            } if recency and recency.get("novelty_basis") else {}),
+        },
+    }
 
 
 def analyze_operational_legal(event: dict[str, Any], source_change: dict[str, Any], *, candidates: Iterable[dict[str, Any]]) -> dict[str, Any]:

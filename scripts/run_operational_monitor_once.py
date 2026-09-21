@@ -15,7 +15,7 @@ from needle.operations.authentic_candidates import candidates_from_reobservation
 from needle.operations.legal_analysis import (
     analyze_operational_legal,
     apply_operational_recency_gate,
-    derive_feed_event_relevance,
+    derive_publication_recency_from_reobservation,
     should_attempt_legal_analysis,
 )
 from needle.operations.pipeline import (
@@ -101,55 +101,6 @@ def select_representative(events: list[dict[str,Any]]) -> dict[str,Any]:
     return sorted(events,key=key)[0]
 
 
-def publication_recency_from_reobservation(
-    legal_analysis: dict[str,Any],
-    event: dict[str,Any],
-    reobservation: dict[str,Any],
-) -> dict[str,Any] | None:
-    """Bind publication recency only for an authentic cause from this CELEX."""
-    if (
-        legal_analysis.get("disposition") != "LEGAL_CHANGE_VERIFIED"
-        or legal_analysis.get("verification_route") != "AUTHENTIC_LEGAL_CAUSE"
-    ):
-        return None
-    publication=(
-        (reobservation.get("temporal_metadata") or {}).get("publication")
-    )
-    if publication is None or publication.get("state") == "NOT_ASSERTED":
-        return None
-    identity=legal_analysis["analysis_identity"]
-    evidence_refs=list(publication.get("evidence_refs",[]))
-    if publication.get("state") in {"UNRESOLVED","CONFLICTING"}:
-        return {
-            "state":publication["state"],
-            "assertion_refs":[],
-            "legal_analysis_identity":identity,
-            "evidence_refs":evidence_refs,
-        }
-    if publication.get("state") != "RESOLVED":
-        return None
-
-    assertion=publication.get("assertion")
-    celex=reobservation.get("celex")
-    if not assertion or not celex:
-        return None
-    expected=f"CELEX:{celex}".upper()
-    if assertion["subject_ref"]["identifier"].upper() != expected:
-        return {
-            "state":"UNRESOLVED",
-            "assertion_refs":[],
-            "legal_analysis_identity":identity,
-            "evidence_refs":evidence_refs,
-        }
-    recency=derive_feed_event_relevance(
-        legal_analysis,
-        temporal_assertions=[assertion],
-        ingestion_time=event["ingestion_time"],
-    )
-    recency["evidence_refs"]=evidence_refs
-    return recency
-
-
 def validate_card(card, schema):
     errors=list(Draft202012Validator(schema).iter_errors(card))
     if errors: raise AssertionError("feed card schema errors: "+"; ".join(error.message for error in errors))
@@ -197,7 +148,7 @@ def main() -> int:
             # recency comes from explicit canonical temporal metadata for the
             # same authentic act; a later refresh of an old act remains
             # historical rather than being resurrected by Cellar activity.
-            recency=publication_recency_from_reobservation(
+            recency=derive_publication_recency_from_reobservation(
                 legal_analysis,representative,reobservation
             )
             downstream=apply_operational_recency_gate(

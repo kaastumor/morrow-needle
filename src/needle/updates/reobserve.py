@@ -12,6 +12,7 @@ import requests
 
 from needle.provenance.ledger import seal_record
 from needle.updates.classify import snapshot_from_observations
+from needle.updates.temporal_metadata import extract_cellar_publication_metadata
 
 
 CELLAR_CELEX="https://publications.europa.eu/resource/celex/{celex}"
@@ -180,6 +181,7 @@ def reobserve_event(
             "metadata_observation":None,
             "content_observation":None,
             "snapshot":None,
+            "temporal_metadata":None,
             "attempts":[],
             "unknowns":[
                 "Feed event exposes no CELEX identifier supported by the v0.1 operational reobserver."
@@ -206,6 +208,7 @@ def reobserve_event(
     })
 
     metadata_record=None
+    publication_metadata=None
     if metadata.status_code == 200 and metadata.content:
         metadata_record=_source_record(
             event_key=event["event_key"],
@@ -216,6 +219,11 @@ def reobserve_event(
             representation_class="CELLAR_RDF_NOTICE_TREE",
             observed_at=observed_at,
             response=metadata,
+        )
+        publication_metadata=extract_cellar_publication_metadata(
+            metadata.content,
+            identifier=identifier,
+            evidence_ref=metadata_record["record_id"],
         )
 
     content_record=None
@@ -269,6 +277,9 @@ def reobserve_event(
                 "content_observation_id":None,
                 "metadata_observation_id":None,
             },
+            "temporal_metadata":{
+                "publication":publication_metadata,
+            } if publication_metadata is not None else None,
             "attempts":attempts,
             "unknowns":[
                 "No supported official representation could be re-observed."
@@ -298,6 +309,10 @@ def reobserve_event(
         unknowns.append(
             "Official legal-text bytes were sealed, but no deterministic visible-text projection was available for operational legal analysis."
         )
+    if publication_metadata is not None and publication_metadata["state"] in {
+        "UNRESOLVED","CONFLICTING"
+    }:
+        unknowns.extend(publication_metadata.get("unknowns",[]))
 
     return {
         "state":state,
@@ -305,6 +320,9 @@ def reobserve_event(
         "metadata_observation":metadata_record,
         "content_observation":content_record,
         "snapshot":snapshot,
+        "temporal_metadata":{
+            "publication":publication_metadata,
+        } if publication_metadata is not None else None,
         "selected_representation":selected,
         "analysis_text":analysis_text,
         "analysis_language":language,

@@ -4,6 +4,7 @@ from needle.operations.legal_analysis import (
     OperationalLegalAnalysisError,
     analyze_operational_legal,
     collapse_evidence_candidates,
+    should_attempt_legal_analysis,
 )
 
 EVENT={"event_key":"evt-1","action":"UPDATE"}
@@ -33,8 +34,7 @@ def candidate(**overrides):
 
 
 def test_duplicate_representations_are_one_legal_candidate():
-    first=candidate()
-    second=candidate(evidence_occurrences=["formex-stream:2"])
+    first=candidate(); second=candidate(evidence_occurrences=["formex-stream:2"])
     collapsed=collapse_evidence_candidates([first,second])
     assert len(collapsed) == 1
     assert collapsed[0]["evidence_occurrences"] == ["formex-stream:1","formex-stream:2"]
@@ -46,8 +46,7 @@ def test_same_semantic_key_with_conflicting_truth_fails_closed():
 
 
 def test_authentic_cause_positive_is_generic_and_idempotent():
-    first=analyze_operational_legal(EVENT,CHANGE,candidates=[candidate()])
-    second=analyze_operational_legal(EVENT,CHANGE,candidates=[candidate(evidence_occurrences=["formex-stream:2"])])
+    first=analyze_operational_legal(EVENT,CHANGE,candidates=[candidate()]); second=analyze_operational_legal(EVENT,CHANGE,candidates=[candidate(evidence_occurrences=["formex-stream:2"])])
     assert first["disposition"] == "LEGAL_CHANGE_VERIFIED"
     assert first["verification_route"] == "AUTHENTIC_LEGAL_CAUSE"
     assert first["canonical_refs"][0]["kind"] == "MUTATION"
@@ -61,23 +60,30 @@ def test_no_supported_candidate_abstains_instead_of_inferring_from_update():
     assert outcome["verification_route"] is None
 
 
+def test_cold_start_with_current_observation_reaches_legal_analysis():
+    change={"classification":"UNRESOLVED","classification_basis":["FEED_ACTION","MISSING_BASELINE"]}
+    assert should_attempt_legal_analysis(relevance="LEGAL_RESOURCE_CANDIDATE",source_change=change)
+
+
+def test_missing_current_observation_stays_source_unresolved():
+    change={"classification":"UNRESOLVED","classification_basis":["MISSING_BASELINE","MISSING_OBSERVATION"]}
+    assert not should_attempt_legal_analysis(relevance="LEGAL_RESOURCE_CANDIDATE",source_change=change)
+
+
+def test_non_legal_source_never_reaches_legal_analysis():
+    change={"classification":"CONTENT_CHANGED","classification_basis":["CONTENT_HASH_CHANGED"]}
+    assert not should_attempt_legal_analysis(relevance="SOURCE_INFRASTRUCTURE",source_change=change)
+
+
 def test_distinct_verified_candidates_do_not_get_arbitrarily_selected():
-    other=candidate(
-        semantic_key="mutation:other",
-        canonical_refs=[{"kind":"MUTATION","entity_id":"mutation-2"}],
-        evidence_refs=["authentic-act:2"],
-    )
+    other=candidate(semantic_key="mutation:other",canonical_refs=[{"kind":"MUTATION","entity_id":"mutation-2"}],evidence_refs=["authentic-act:2"])
     outcome=analyze_operational_legal(EVENT,CHANGE,candidates=[candidate(),other])
     assert outcome["disposition"] == "ABSTAIN_LEGAL_UNRESOLVED"
     assert "automatic selection is forbidden" in outcome["unknowns"][0]
 
 
 def test_change_and_non_impact_conflict_abstains():
-    non_impact=candidate(
-        semantic_key="review:scope-a",
-        outcome="LEGAL_NON_IMPACT_VERIFIED",
-        canonical_refs=[],
-    )
+    non_impact=candidate(semantic_key="review:scope-a",outcome="LEGAL_NON_IMPACT_VERIFIED",canonical_refs=[])
     outcome=analyze_operational_legal(EVENT,CHANGE,candidates=[candidate(),non_impact])
     assert outcome["disposition"] == "ABSTAIN_LEGAL_UNRESOLVED"
     assert "conflicting" in outcome["unknowns"][0]

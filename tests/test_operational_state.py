@@ -7,6 +7,7 @@ from jsonschema import Draft202012Validator
 from needle.operations.state import (
     advance_baseline,
     baseline_key,
+    baseline_seed_eligible,
     lookup_baseline,
     validate_operational_state,
 )
@@ -175,3 +176,56 @@ def test_advance_baseline_appends_observations_and_moves_pointer():
     assert moved["metadata_observation_id"] == metadata["record_id"]
     assert later["event_key"] in advanced["processed_event_keys"]
     assert observation(prior["content_observation_id"])
+
+
+def test_partial_observation_cannot_replace_complete_comparator_baseline():
+    partial_content={
+        "state":"PARTIAL_OBSERVATION",
+        "snapshot":{
+            "available":True,
+            "content_hash":"sha256:content",
+            "metadata_hash":None,
+            "content_observation_id":"src-content",
+            "metadata_observation_id":None,
+        },
+    }
+    partial_metadata={
+        "state":"PARTIAL_OBSERVATION",
+        "snapshot":{
+            "available":True,
+            "content_hash":None,
+            "metadata_hash":"sha256:metadata",
+            "content_observation_id":None,
+            "metadata_observation_id":"src-metadata",
+        },
+    }
+    assert baseline_seed_eligible(partial_content) is False
+    assert baseline_seed_eligible(partial_metadata) is False
+
+
+def test_complete_observation_can_replace_comparator_baseline():
+    complete={
+        "state":"OBSERVED",
+        "snapshot":{
+            "available":True,
+            "content_hash":"sha256:content",
+            "metadata_hash":"sha256:metadata",
+            "content_observation_id":"src-content",
+            "metadata_observation_id":"src-metadata",
+        },
+    }
+    assert baseline_seed_eligible(complete) is True
+
+
+def test_partial_state_label_cannot_seed_even_if_snapshot_claims_both_ids():
+    inconsistent={
+        "state":"PARTIAL_OBSERVATION",
+        "snapshot":{
+            "available":True,
+            "content_hash":"sha256:content",
+            "metadata_hash":"sha256:metadata",
+            "content_observation_id":"src-content",
+            "metadata_observation_id":"src-metadata",
+        },
+    }
+    assert baseline_seed_eligible(inconsistent) is False

@@ -152,6 +152,63 @@ def derive_feed_event_relevance(
     }
 
 
+def derive_publication_recency_from_reobservation(
+    legal_analysis: dict[str, Any],
+    event: dict[str, Any],
+    reobservation: dict[str, Any],
+) -> dict[str, Any] | None:
+    """Bind publication recency only to an authentic cause from the same CELEX.
+
+    The re-observation supplies both the immutable official bytes used for the
+    authentic legal cause and the explicit publication metadata. That shared
+    source boundary prevents a publication assertion for one act from being
+    cross-bound to another mutation.
+    """
+    if (
+        legal_analysis.get("disposition") != "LEGAL_CHANGE_VERIFIED"
+        or legal_analysis.get("verification_route") != "AUTHENTIC_LEGAL_CAUSE"
+    ):
+        return None
+    publication=(
+        (reobservation.get("temporal_metadata") or {}).get("publication")
+    )
+    if publication is None or publication.get("state") == "NOT_ASSERTED":
+        return None
+
+    identity=legal_analysis["analysis_identity"]
+    evidence_refs=list(publication.get("evidence_refs",[]))
+    if publication.get("state") in {"UNRESOLVED","CONFLICTING"}:
+        return {
+            "state":publication["state"],
+            "assertion_refs":[],
+            "legal_analysis_identity":identity,
+            "evidence_refs":evidence_refs,
+        }
+    if publication.get("state") != "RESOLVED":
+        return None
+
+    assertion=publication.get("assertion")
+    celex=reobservation.get("celex")
+    if not assertion or not celex:
+        return None
+    expected=f"CELEX:{celex}".upper()
+    if assertion["subject_ref"]["identifier"].upper() != expected:
+        return {
+            "state":"UNRESOLVED",
+            "assertion_refs":[],
+            "legal_analysis_identity":identity,
+            "evidence_refs":evidence_refs,
+        }
+
+    recency=derive_feed_event_relevance(
+        legal_analysis,
+        temporal_assertions=[assertion],
+        ingestion_time=event["ingestion_time"],
+    )
+    recency["evidence_refs"]=evidence_refs
+    return recency
+
+
 def apply_operational_recency_gate(legal_analysis: dict[str, Any], *, recency: dict[str, Any] | None) -> dict[str, Any]:
     """Gate CHANGE_FEED eligibility with a typed, separately evidenced relevance event."""
     if legal_analysis.get("disposition") != "LEGAL_CHANGE_VERIFIED": return legal_analysis

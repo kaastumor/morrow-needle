@@ -1,4 +1,4 @@
-from needle.operations.authentic_candidates import candidates_from_authentic_text
+from needle.operations.authentic_candidates import candidates_from_authentic_text, candidates_from_reobservation
 
 
 def event():
@@ -11,6 +11,15 @@ def instruction_text():
         "for the United States, the following rows for the zones US-2.1405 and "
         "US-2.1406 are added after the row for the zone US-2.1404."
     )
+
+
+def two_annex_text():
+    command=(
+        "in Part 1, Section B, in the entry for the United States, the following "
+        "rows for the zones US-2.1405 and US-2.1406 are added after the row for "
+        "the zone US-2.1404."
+    )
+    return "Annex V is amended as follows: "+command+" Annex XIV is amended as follows: "+command
 
 
 def test_keyed_row_instruction_is_generic_and_evidence_backed():
@@ -85,3 +94,46 @@ def test_near_match_abstains_instead_of_guessing():
     assert candidates_from_authentic_text(
         event(),text,source_id="CELEX:32026R2104"
     )==[]
+
+
+def test_reobservation_groups_multiple_explicit_mutations_without_collapsing_truth():
+    granular=candidates_from_authentic_text(
+        event(),
+        two_annex_text(),
+        source_id="CELEX:32026R2104",
+        locator="official://artifact",
+        evidence_ref="src-observation:one-act",
+    )
+    assert len(granular)==2
+    assert len({
+        ref["entity_id"]
+        for item in granular
+        for ref in item["canonical_refs"]
+    })==2
+
+    grouped=candidates_from_reobservation(
+        event(),
+        {
+            "celex":"32026R2104",
+            "analysis_language":"eng",
+            "analysis_text":two_annex_text(),
+            "content_observation":{
+                "record_id":"src-observation:one-act",
+                "payload":{
+                    "language":"ENG",
+                    "retrieval":{"final_uri":"official://artifact"},
+                },
+            },
+        },
+    )
+    assert len(grouped)==1
+    candidate=grouped[0]
+    assert candidate["semantic_key"].startswith("authentic-compound:")
+    assert len(candidate["canonical_refs"])==2
+    assert candidate["evidence_refs"]==["src-observation:one-act"]
+    assert "Annex V" in candidate["explanation"]["what_changed"]
+    assert "Annex XIV" in candidate["explanation"]["what_changed"]
+    assert any(
+        "canonical mutation identities remain separate" in item
+        for item in candidate["unknowns"]
+    )

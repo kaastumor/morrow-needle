@@ -143,6 +143,9 @@ def candidates_from_reobservation(
     content_observation=reobservation.get("content_observation")
     if not text or not celex or not content_observation:
         return []
+    evidence_ref=content_observation.get("record_id")
+    if not evidence_ref:
+        return []
 
     payload=content_observation.get("payload",{})
     retrieval=payload.get("retrieval",{})
@@ -161,5 +164,5 @@ def candidates_from_reobservation(
         source_id=source_id,
         locator=retrieval.get("final_uri"),
         language=str(language).lower(),
-        evidence_ref=content_observation.get("record_id"),
+        evidence_ref=evidence_ref,
     )

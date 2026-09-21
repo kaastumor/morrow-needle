@@ -2,7 +2,7 @@
   "schema_version": "operational-state-v0.1",
   "state_id": "operational-pilot:live-baselines-v0.1",
   "character": "OPERATIONAL_CACHE",
-  "updated_at": "2026-09-21T23:03:48.840646+00:00",
+  "updated_at": "2026-09-21T23:04:13.929126+00:00",
   "baseline_policy": "PROSPECTIVE_ONLY",
   "processed_event_keys": [
     "cellar:0078b204-a3a3-11ed-b508-01aa75ed71a1.0001.01_2026-09-21T12:24:18.674+02:00",
@@ -96440,7 +96440,7 @@
     }
   ],
   "poll_cursor": {
-    "last_completed_end": "2026-09-21T23:03:48.840646+00:00",
+    "last_completed_end": "2026-09-21T23:04:13.929126+00:00",
     "overlap_seconds": 300
   }
 }

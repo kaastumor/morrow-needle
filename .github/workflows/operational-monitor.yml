@@ -29,7 +29,12 @@ concurrency:
 jobs:
   monitor:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    # A complete cursor window is atomic: the cursor is promoted only after all
+    # roots in the window have been re-observed. Live Cellar latency and a
+    # backlog of roots can legitimately exceed the old 15-minute ceiling. Keep
+    # a finite guardrail, but do not turn normal source latency into a false
+    # operational failure halfway through an otherwise valid window.
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
         with:

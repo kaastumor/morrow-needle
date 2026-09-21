@@ -2,8 +2,11 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 import hashlib
+import io
 import json
 from typing import Any
+import zipfile
+import xml.etree.ElementTree as ET
 
 import requests
 
@@ -29,6 +32,43 @@ def celex_from_event(event: dict[str, Any]) -> str | None:
     for identifier in event.get("identifiers",[]):
         if identifier.lower().startswith("celex:"):
             return identifier.split(":",1)[1]
+    return None
+
+
+def _visible_markup_text(payload: bytes) -> str | None:
+    try:
+        root=ET.fromstring(payload)
+    except (ET.ParseError, ValueError):
+        return None
+    text=" ".join("".join(root.itertext()).split())
+    return text or None
+
+
+def _analysis_text(payload: bytes, representation_class: str) -> str | None:
+    """Return transient visible source text for bounded legal analysis.
+
+    The bytes remain authoritative and are sealed by hash in Source Observation.
+    This projection is intentionally not persisted as a second truth store. If a
+    selected representation cannot be decoded deterministically, callers must
+    abstain rather than infer from metadata or feed action.
+    """
+    if representation_class in {
+        "STRUCTURED_LEGAL_XML","STRUCTURED_XHTML","STRUCTURED_HTML"
+    } and payload.startswith(b"PK"):
+        chunks=[]
+        try:
+            with zipfile.ZipFile(io.BytesIO(payload)) as archive:
+                for name in sorted(archive.namelist()):
+                    if not name.lower().endswith((".xml",".frg",".xhtml",".html")):
+                        continue
+                    text=_visible_markup_text(archive.read(name))
+                    if text:
+                        chunks.append(text)
+        except (zipfile.BadZipFile, OSError, KeyError):
+            return None
+        return " ".join(chunks) or None
+    if representation_class == "STRUCTURED_HTML":
+        return _visible_markup_text(payload)
     return None
 
 
@@ -180,6 +220,7 @@ def reobserve_event(
 
     content_record=None
     selected=None
+    analysis_text=None
     for accept,representation_class in REPRESENTATIONS:
         response=_get(
             session,url,
@@ -211,6 +252,7 @@ def reobserve_event(
             "accept":accept,
             "representation_class":representation_class,
         }
+        analysis_text=_analysis_text(response.content,representation_class)
         break
 
     available=metadata.status_code == 200
@@ -252,6 +294,10 @@ def reobserve_event(
         unknowns.append(
             "Legal-text representation was retrieved without the expected Cellar tree notice."
         )
+    if content_record is not None and analysis_text is None:
+        unknowns.append(
+            "Official legal-text bytes were sealed, but no deterministic visible-text projection was available for operational legal analysis."
+        )
 
     return {
         "state":state,
@@ -260,6 +306,8 @@ def reobserve_event(
         "content_observation":content_record,
         "snapshot":snapshot,
         "selected_representation":selected,
+        "analysis_text":analysis_text,
+        "analysis_language":language,
         "attempts":attempts,
         "unknowns":unknowns,
     }

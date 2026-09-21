@@ -11,8 +11,10 @@ from typing import Any
 from jsonschema import Draft202012Validator
 import requests
 
+from needle.operations.authentic_candidates import candidates_from_reobservation
 from needle.operations.legal_analysis import (
     analyze_operational_legal,
+    apply_operational_recency_gate,
     should_attempt_legal_analysis,
 )
 from needle.operations.pipeline import (
@@ -133,18 +135,29 @@ def main() -> int:
         # branches. A cold-start MISSING_BASELINE state must still cross the
         # legal-analysis boundary because an authentic legal cause can verify a
         # mutation independently. Missing current observation remains closed.
-        downstream=None
+        downstream=None; candidates=[]
         if should_attempt_legal_analysis(relevance=relevance,source_change=change):
-            # Candidate production is intentionally still empty here until the
-            # canonical analyzer service is wired. This produces an explicit
-            # legal abstention rather than falsely treating cold start as a
-            # source-only terminal result.
-            downstream=analyze_operational_legal(representative,change,candidates=[])
-            downstream["unknowns"]=[*source_unknowns,*downstream.get("unknowns",[])]
+            candidates=candidates_from_reobservation(
+                representative,reobservation
+            )
+            legal_analysis=analyze_operational_legal(
+                representative,change,candidates=candidates
+            )
+            # Authentic legal cause can verify a mutation independently of a
+            # source comparator, but it still cannot prove that the mutation is
+            # newly relevant in this feed window. Until canonical temporal /
+            # procedural evidence is bound, keep verified causes out of
+            # CHANGE_FEED rather than deriving recency from Cellar timestamps.
+            downstream=apply_operational_recency_gate(
+                legal_analysis,recency=None
+            )
+            downstream["unknowns"]=[
+                *source_unknowns,*downstream.get("unknowns",[])
+            ]
 
         result=build_operational_result(representative,change,downstream=downstream,source_unknowns=source_unknowns,related_event_keys=related); card=build_feed_card(result)
         results.append(result); cards.append(card)
-        group_records.append({"root_cellar_id":root,"representative_event_key":representative["event_key"],"related_event_keys":related,"event_count":len(group),"baseline_lookup_state":lookup["state"],"reobservation_state":reobservation["state"],"source_change_classification":change["classification"],"legal_analysis_attempted":downstream is not None,"disposition":result["disposition"],"stream":card["stream"]})
+        group_records.append({"root_cellar_id":root,"representative_event_key":representative["event_key"],"related_event_keys":related,"event_count":len(group),"baseline_lookup_state":lookup["state"],"reobservation_state":reobservation["state"],"source_change_classification":change["classification"],"legal_analysis_attempted":downstream is not None,"legal_candidate_count":len(candidates),"verification_route":downstream.get("verification_route") if downstream else None,"recency_state":(downstream.get("recency") or {}).get("state") if downstream else None,"disposition":result["disposition"],"stream":card["stream"]})
         if relevance == "LEGAL_RESOURCE_CANDIDATE" and current is not None and current.get("available") is True and (current.get("content_observation_id") or current.get("metadata_observation_id")):
             seed_character="POST_EVENT_REFRESH" if lookup["state"] == "ELIGIBLE" else "COLD_START_SEED"
             next_state=advance_baseline(next_state,representative,reobservation,updated_at=end.isoformat(),seed_character=seed_character,eligible_for_event_ingestion_after=end.isoformat())

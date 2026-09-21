@@ -16,10 +16,9 @@ Strategic rule from here:
 
 Unless new official/executable evidence reopens a foundation risk:
 
-1. **P2 / Issue #27 — product checkpoint.** Active. Complete the real-card corpus with a positively verified audit/non-change case, then record the product decision from observed comprehension evidence.
-2. **P2 / Issue #29 — pre-analysis adversarial audit + repository sanitation gate. HARD STOP after #27.** Attack Needle from byte/parser assumptions through canonical ownership, operational behavior, product truthfulness, analytical usefulness and the external novelty/thesis claim. In the same run, sanitize the repository, reconcile issues/docs/workflows/backlog, and verify the recurring worker itself. No new analytic primitive may leapfrog this gate unless new official evidence exposes a more severe foundation blocker.
-3. **Post-audit architecture choice.** Do not pre-commit to affected-entity intelligence, Half-Life v0.2, API/retrieval delivery or another analytic layer. Issue #29 must decide which is justified by evidence and which should be deferred or deleted.
-4. Ranking, broader plain-language evaluation, subscriptions and saved monitors remain later-stage candidates only if the audit preserves the underlying product thesis.
+1. **P2 / Issue #29 — pre-analysis adversarial audit + repository sanitation gate. ACTIVE HARD STOP.** Issue #27 is complete with three real operational classes. Attack Needle from byte/parser assumptions through canonical ownership, operational behavior, product truthfulness, analytical usefulness and the external novelty/thesis claim. In the same run, sanitize the repository, reconcile issues/docs/workflows/backlog, and verify the recurring worker itself. No new analytic primitive may leapfrog this gate unless new official evidence exposes a more severe foundation blocker.
+2. **Post-audit architecture choice.** Do not pre-commit to affected-entity intelligence, Half-Life v0.2, API/retrieval delivery or another analytic layer. Product checkpoint evidence provisionally favors a human-readable Source Mode presentation resolver over existing provenance, but Issue #29 must try to falsify that conclusion before implementation.
+3. Ranking, broader plain-language evaluation, subscriptions and saved monitors remain later-stage candidates only if the audit preserves the underlying product thesis.
 
 All P0/P1 ownership boundaries remain explicitly tested. A freeze is reopened only when official or executable adversarial evidence demonstrates failure.
 
@@ -290,8 +289,7 @@ See docs/audits/post-p1-foundation-audit-v0.1.md.
 
 Risk-ordered after the post-P1 audit, the v0.2 strategic step-back review **and completion of the first operational Needle slice**:
 
-1. **Product checkpoint / thin delivery surface (Issue #27):** test real verified, audit and abstention cards for comprehension before expanding the intelligence catalogue.
-2. **Pre-analysis adversarial audit + sanitation gate (Issue #29):** mandatory after #27. Falsify assumptions from source bytes to the project thesis/novelty claim, then clean and reconcile the repository, CI, issues, backlog and scheduled worker before selecting new architecture.
+1. **Pre-analysis adversarial audit + sanitation gate (Issue #29):** ACTIVE. Falsify assumptions from source bytes to the project thesis/novelty claim, then clean and reconcile the repository, CI, issues, backlog and scheduled worker before selecting new architecture.
 3. **Post-audit architecture choice:** affected-entity intelligence, Half-Life v0.2, Source Mode/public projection work, or thin API/retrieval delivery are candidates, not commitments. Let #29's evidence decide.
 4. **Public ranking dimensions + transparent rationale** only if the audit preserves a defensible usefulness/novelty thesis.
 5. **Plain-language explanation evaluation.**
@@ -299,6 +297,7 @@ Risk-ordered after the post-P1 audit, the v0.2 strategic step-back review **and 
 7. **Dark Matter:** known-but-unavailable document representation, coordinated with Source Anomaly rather than conflated with legal absence.
 
 Completed P2 slices:
+- **Product checkpoint v0.1 (Issue #27): COMPLETE.** Three real operational classes — verified legal change, metadata-only audit/non-change, and explicit abstention — passed the first information-hierarchy test. The repeated product gap is human-readable Source Mode presentation over existing provenance; affected-entity truth remains a narrower missing-information gap. No implementation follows until Issue #29 adversarially tests that conclusion.
 - **Operational Needle v0.1 (Issue #21): CLOSED.** Live official events now flow through persistent monitoring, targeted re-observation, immutable provenance, generic authentic-cause analysis, explicit publication relevance and evidence-linked feed projection. The actual 2026/2104 Cellar event replays through the generic path to CHANGE_FEED; the same publication bound to a later source event abstains as HISTORICAL_NOT_CURRENT. Compound authentic acts preserve separate canonical mutation identities while grouping only for delivery.
 - **Legislative X-Ray v0.1 (Issue #20): CLOSED/FROZEN.** Two independent official dependency-ripple cases prove that unchanged local text can have an EVIDENCED + DERIVED cross-reference effect from a VERIFIED upstream mutation, without manufacturing local mutation truth.
 - **Half-Life v0.1 (Issue #10): CLOSED/FROZEN.** Derived, evidence-linked temporary-regime history over canonical Temporal Assertions + genealogy, with repeated extensions, gaps, view horizon and explicit unresolved terminal/rule-continuity coverage.

@@ -31,15 +31,19 @@ def candidates_from_authentic_text(
     *,
     source_id: str,
     locator: str | None = None,
+    language: str = "eng",
+    evidence_ref: str | None = None,
 ) -> list[dict[str, Any]]:
     """Produce bounded operational candidates from explicit authentic commands.
 
-    Parser families are drafting-pattern capabilities, never CELEX dispatch.
-    Unsupported forms return no candidate and therefore preserve abstention.
+    ``source_id`` is the stable legal-source identity (for example CELEX), while
+    ``evidence_ref`` may point at the immutable observation that supplied these
+    bytes. Keeping those identities separate makes repeated observations
+    idempotent without sacrificing provenance. Parser families are drafting-
+    pattern capabilities, never CELEX dispatch. Unsupported forms return no
+    candidate and therefore preserve abstention.
     """
     normalized=" ".join(text.split())
-    # The keyed-row parser needs a parent locator. Discover candidate commands
-    # first with a sentinel, then require an explicit Annex in preceding source.
     provisional=parse_authentic_keyed_row_insertions(
         normalized,
         source_id=source_id,
@@ -69,10 +73,10 @@ def candidates_from_authentic_text(
         mutation=candidate_from_authentic_instruction(
             canonical,
             kind="TABLE_ROWS",
-            language="eng",
+            language=language,
         )
         semantic_key=(
-            f"{source_id}|{mutation['operation']}|"
+            f"{source_id}|{language.lower()}|{mutation['operation']}|"
             f"{mutation['target']['citation_path']}|"
             f"{','.join(canonical.get('inserted_keys',[]))}"
         )
@@ -84,7 +88,7 @@ def candidates_from_authentic_text(
                 "kind":"MUTATION",
                 "entity_id":mutation["candidate_id"],
             }],
-            "evidence_refs":[source_id],
+            "evidence_refs":[evidence_ref or source_id],
             "evidence_occurrences":[{
                 "locator":locator,
                 "instruction_text":canonical["instruction_text"],

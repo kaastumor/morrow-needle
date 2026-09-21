@@ -15,14 +15,7 @@ def _digest(value: Any) -> str:
 
 
 def should_attempt_legal_analysis(*, relevance: str, source_change: dict[str, Any]) -> bool:
-    """Return whether the source state permits a canonical legal-analysis attempt.
-
-    Legal analysis is not synonymous with source diffing. In particular, an
-    authentic amending act can establish a mutation when the operational source
-    comparator is unavailable on cold start. Missing *current* observation is
-    different: there is then no re-observed official source to anchor the event,
-    so the operational path remains source-unresolved.
-    """
+    """Return whether the source state permits a canonical legal-analysis attempt."""
     if relevance != "LEGAL_RESOURCE_CANDIDATE":
         return False
     classification=source_change.get("classification")
@@ -35,7 +28,6 @@ def should_attempt_legal_analysis(*, relevance: str, source_change: dict[str, An
 
 
 def _semantic_key(candidate: dict[str, Any]) -> str:
-    """Identity supplied by canonical analysis, never by representation occurrence."""
     key=candidate.get("semantic_key")
     if not key:
         raise OperationalLegalAnalysisError("legal-analysis candidate requires semantic_key")
@@ -43,12 +35,7 @@ def _semantic_key(candidate: dict[str, Any]) -> str:
 
 
 def collapse_evidence_candidates(candidates: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Collapse duplicate representations while retaining every evidence occurrence.
-
-    A semantic key is produced by the canonical parser/mutation service. This adapter
-    deliberately does not derive semantic identity from CELEX ids, locators or text
-    similarity: doing so here would create a second legal truth model.
-    """
+    """Collapse duplicate representations while retaining every evidence occurrence."""
     grouped: dict[str, dict[str, Any]]={}
     for raw in candidates:
         candidate=dict(raw)
@@ -71,18 +58,74 @@ def collapse_evidence_candidates(candidates: Iterable[dict[str, Any]]) -> list[d
     return [grouped[key] for key in sorted(grouped)]
 
 
+def apply_operational_recency_gate(
+    legal_analysis: dict[str, Any],
+    *,
+    recency: dict[str, Any] | None,
+) -> dict[str, Any]:
+    """Gate CHANGE_FEED eligibility using separately-owned temporal evidence.
+
+    This function deliberately does not inspect feed ingestion time, source
+    modification time, drafting text, or event chronology. ``recency`` must be
+    the output of canonical temporal/procedural analysis. Legal truth survives
+    internally, but without an evidenced current relationship the operational
+    projection abstains rather than claiming that a historical mutation is new.
+    """
+    if legal_analysis.get("disposition") != "LEGAL_CHANGE_VERIFIED":
+        return legal_analysis
+
+    if recency is None:
+        state="UNRESOLVED"
+        assertion_refs=[]
+    else:
+        state=recency.get("state")
+        assertion_refs=list(recency.get("assertion_refs",[]))
+
+    if state == "CURRENT_RELEVANT":
+        if not assertion_refs:
+            raise OperationalLegalAnalysisError(
+                "CURRENT_RELEVANT recency requires canonical temporal/procedural assertion_refs"
+            )
+        result=dict(legal_analysis)
+        result["evidence_refs"]=list(dict.fromkeys([
+            *result.get("evidence_refs",[]), *assertion_refs
+        ]))
+        result["recency"]={"state":state,"assertion_refs":assertion_refs}
+        return result
+
+    if state not in {"HISTORICAL_NOT_CURRENT","UNRESOLVED","CONTEXT_REQUIRED","CONFLICTING"}:
+        raise OperationalLegalAnalysisError(f"unsupported operational recency state: {state}")
+
+    if state == "HISTORICAL_NOT_CURRENT" and not assertion_refs:
+        raise OperationalLegalAnalysisError(
+            "HISTORICAL_NOT_CURRENT recency requires canonical temporal/procedural assertion_refs"
+        )
+
+    reason={
+        "HISTORICAL_NOT_CURRENT":"The legal mutation is verified, but canonical temporal/procedural evidence establishes that it is historical rather than newly relevant to this feed window.",
+        "UNRESOLVED":"The legal mutation is verified, but Needle lacks canonical temporal/procedural evidence that it is newly relevant to this feed window.",
+        "CONTEXT_REQUIRED":"The legal mutation is verified, but operational recency depends on unresolved legal context.",
+        "CONFLICTING":"The legal mutation is verified, but canonical temporal/procedural evidence conflicts on operational recency.",
+    }[state]
+    return {
+        "disposition":"ABSTAIN_LEGAL_UNRESOLVED",
+        "verification_route":legal_analysis.get("verification_route"),
+        "canonical_refs":list(legal_analysis.get("canonical_refs",[])),
+        "evidence_refs":list(dict.fromkeys([*legal_analysis.get("evidence_refs",[]),*assertion_refs])),
+        "explanation":None,
+        "unknowns":[*legal_analysis.get("unknowns",[]),reason],
+        "analysis_identity":legal_analysis.get("analysis_identity"),
+        "recency":{"state":state,"assertion_refs":assertion_refs},
+    }
+
+
 def analyze_operational_legal(
     event: dict[str, Any],
     source_change: dict[str, Any],
     *,
     candidates: Iterable[dict[str, Any]],
 ) -> dict[str, Any]:
-    """Return the bounded downstream outcome consumed by operations.pipeline.
-
-    `candidates` are canonical analyzer outputs. The adapter arbitrates them; it
-    does not parse legislation itself. That keeps the recurring monitor generic
-    and prevents case-specific CELEX dispatch from becoming production logic.
-    """
+    """Return the bounded downstream outcome consumed by operations.pipeline."""
     if source_change.get("event_key") != event.get("event_key"):
         raise OperationalLegalAnalysisError("source change does not belong to event")
 
@@ -92,18 +135,14 @@ def analyze_operational_legal(
 
     if verified and non_impact:
         return {
-            "disposition":"ABSTAIN_LEGAL_UNRESOLVED",
-            "verification_route":None,
-            "canonical_refs":[],
+            "disposition":"ABSTAIN_LEGAL_UNRESOLVED","verification_route":None,"canonical_refs":[],
             "evidence_refs":sorted({ref for c in collapsed for ref in c.get("evidence_refs",[])}),
             "explanation":None,
             "unknowns":["Canonical analyzers produced conflicting verified-change and verified-non-impact outcomes for the same operational event."],
         }
     if len(verified) > 1:
         return {
-            "disposition":"ABSTAIN_LEGAL_UNRESOLVED",
-            "verification_route":None,
-            "canonical_refs":[],
+            "disposition":"ABSTAIN_LEGAL_UNRESOLVED","verification_route":None,"canonical_refs":[],
             "evidence_refs":sorted({ref for c in verified for ref in c.get("evidence_refs",[])}),
             "explanation":None,
             "unknowns":["More than one distinct verified legal mutation candidate remains after representation deduplication; automatic selection is forbidden."],
@@ -112,9 +151,7 @@ def analyze_operational_legal(
     chosen=verified[0] if verified else (non_impact[0] if len(non_impact) == 1 else None)
     if chosen is None:
         return {
-            "disposition":"ABSTAIN_LEGAL_UNRESOLVED",
-            "verification_route":None,
-            "canonical_refs":[],
+            "disposition":"ABSTAIN_LEGAL_UNRESOLVED","verification_route":None,"canonical_refs":[],
             "evidence_refs":sorted({ref for c in collapsed for ref in c.get("evidence_refs",[])}),
             "explanation":None,
             "unknowns":["No unique evidence-backed legal outcome was established by canonical analyzers."],
@@ -124,19 +161,13 @@ def analyze_operational_legal(
     if route not in {"AUTHENTIC_LEGAL_CAUSE","SOURCE_DIFF"}:
         raise OperationalLegalAnalysisError("verified legal outcome requires an allowed verification_route")
     result={
-        "disposition":chosen["outcome"],
-        "verification_route":route,
+        "disposition":chosen["outcome"],"verification_route":route,
         "canonical_refs":list(chosen.get("canonical_refs",[])),
         "evidence_refs":list(dict.fromkeys(chosen.get("evidence_refs",[]))),
-        "explanation":chosen.get("explanation"),
-        "unknowns":list(chosen.get("unknowns",[])),
+        "explanation":chosen.get("explanation"),"unknowns":list(chosen.get("unknowns",[])),
     }
-    # Deterministic audit identity is intentionally not consumed as canonical truth.
     result["analysis_identity"]="operational-legal-analysis:"+_digest({
-        "event_key":event["event_key"],
-        "source_change_id":source_change.get("change_id"),
-        "semantic_key":chosen["semantic_key"],
-        "outcome":chosen["outcome"],
-        "verification_route":route,
+        "event_key":event["event_key"],"source_change_id":source_change.get("change_id"),
+        "semantic_key":chosen["semantic_key"],"outcome":chosen["outcome"],"verification_route":route,
     })
     return result

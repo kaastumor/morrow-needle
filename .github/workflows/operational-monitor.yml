@@ -2,6 +2,8 @@ name: Operational Needle monitor
 
 on:
   push:
+    branches:
+      - main
     paths:
       - "scripts/run_operational_monitor_once.py"
       - "src/needle/operations/**"

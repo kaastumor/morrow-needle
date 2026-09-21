@@ -8,6 +8,7 @@ on:
       - "scripts/run_operational_monitor_once.py"
       - "src/needle/operations/**"
       - "src/needle/updates/reobserve.py"
+      - "src/needle/updates/temporal_metadata.py"
       - "src/needle/updates/relevance.py"
       - "schemas/operational-state-v0.1.schema.json"
       - "schemas/operational-result-v0.1.schema.json"
@@ -15,6 +16,7 @@ on:
       - "tests/test_operational_state.py"
       - "tests/test_operational_feed.py"
       - "tests/test_operational_reobserve.py"
+      - "tests/test_operational_temporal_metadata.py"
       - "tests/test_operational_legal_analysis.py"
       - ".github/workflows/operational-monitor.yml"
   schedule:
@@ -60,6 +62,7 @@ jobs:
             tests/test_operational_state.py \
             tests/test_operational_feed.py \
             tests/test_operational_reobserve.py \
+            tests/test_operational_temporal_metadata.py \
             tests/test_operational_legal_analysis.py
       - name: Process one complete feed window
         run: python scripts/run_operational_monitor_once.py

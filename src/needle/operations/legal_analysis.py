@@ -14,6 +14,26 @@ def _digest(value: Any) -> str:
     return hashlib.sha256(payload).hexdigest()[:32]
 
 
+def should_attempt_legal_analysis(*, relevance: str, source_change: dict[str, Any]) -> bool:
+    """Return whether the source state permits a canonical legal-analysis attempt.
+
+    Legal analysis is not synonymous with source diffing. In particular, an
+    authentic amending act can establish a mutation when the operational source
+    comparator is unavailable on cold start. Missing *current* observation is
+    different: there is then no re-observed official source to anchor the event,
+    so the operational path remains source-unresolved.
+    """
+    if relevance != "LEGAL_RESOURCE_CANDIDATE":
+        return False
+    classification=source_change.get("classification")
+    if classification == "CONTENT_CHANGED":
+        return True
+    if classification != "UNRESOLVED":
+        return False
+    basis=set(source_change.get("classification_basis",[]))
+    return "MISSING_BASELINE" in basis and "MISSING_OBSERVATION" not in basis
+
+
 def _semantic_key(candidate: dict[str, Any]) -> str:
     """Identity supplied by canonical analysis, never by representation occurrence."""
     key=candidate.get("semantic_key")

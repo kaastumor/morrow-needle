@@ -1,6 +1,6 @@
 # Product checkpoint v0.1 — first real-card pass
 
-Status: **ACTIVE EXPERIMENT, NOT A CANONICAL DOMAIN CONTRACT**
+Status: **COMPLETED PRODUCT CHECKPOINT; NOT A CANONICAL DOMAIN CONTRACT**
 
 Issue: #27
 
@@ -22,22 +22,26 @@ Forty-nine WEMI notifications collapse to one root refresh for Cellar `0993d6d0-
 
 ### C. Audit / non-change
 
-**Still required.** Do not invent one for visual completeness. The next checkpoint slice must preserve a real metadata-only or otherwise positively verified no-material-change official update before this corpus is considered complete.
+Source: committed operational cycle `d50b8ee2`, window 2026-09-21 19:29:13Z → 21:31:16Z.
+
+A real Cellar update for `CELEX:62025CJ0322` — the Court judgment in Case C-322/25, *Swedish Match – Fósforos de Portugal v Autoridade Tributária e Aduaneira* — had an **ELIGIBLE prospective baseline** captured before the event. Targeted re-observation completed successfully. The legal-content hash remained unchanged while the official metadata hash changed, so the ordinary pipeline classified the event `METADATA_ONLY` and emitted `SOURCE_METADATA_ONLY → AUDIT_FEED`.
+
+The card therefore makes a positive bounded claim: **the official source metadata changed, but the observed legal text did not.** It does not infer a legal amendment or legal-effect time from the source update.
 
 ## 30-second comprehension rubric
 
 A projection passes only if a reader can answer these without knowing Needle vocabulary:
 
-| Question | Verified case | Abstention case |
-|---|---|---|
-| Why now? | PASS — explicit official publication date | PASS — official update prompted investigation, not a legal-change claim |
-| What changed? | PASS — two separate annex mutations | PASS — explicitly unknown |
-| Compared with what? | PASS — authentic placement anchors; missing source comparator disclosed | PASS — no baseline disclosed |
-| When legally relevant? | PARTIAL — publication known; application intentionally unknown | PASS — no legal time inferred |
-| Who/what is affected? | FAIL/UNKNOWN — engine has no canonical affected-entity claim | N/A |
-| How certain? | PASS — direct official evidence | PASS — unresolved is rendered as a useful state |
-| Can evidence be inspected without XML/internal IDs? | PARTIAL — prototype gives human-readable act/Cellar anchors, but canonical card still exposes opaque refs | PARTIAL |
-| What remains unknown? | PASS | PASS |
+| Question | Verified case | Audit / non-change | Abstention case |
+|---|---|---|---|
+| Why now? | PASS — explicit official publication date | PASS — a real official update triggered comparison against a prior baseline | PASS — official update prompted investigation, not a legal-change claim |
+| What changed? | PASS — two separate annex mutations | PASS — source metadata changed; legal content did not | PASS — explicitly unknown |
+| Compared with what? | PASS — authentic placement anchors; missing source comparator disclosed | PASS — an eligible pre-event source baseline | PASS — no baseline disclosed |
+| When legally relevant? | PARTIAL — publication known; application intentionally unknown | PASS — no legal-effect time is manufactured from metadata activity | PASS — no legal time inferred |
+| Who/what is affected? | FAIL/UNKNOWN — engine has no canonical affected-entity claim | N/A | N/A |
+| How certain? | PASS — direct official evidence | PASS — hash comparison supports a source-only conclusion | PASS — unresolved is rendered as a useful state |
+| Can evidence be inspected without XML/internal IDs? | PARTIAL — prototype gives human-readable act/Cellar anchors, but canonical card still exposes opaque refs | PARTIAL — underlying before/after observations are auditable but raw refs dominate the canonical card | PARTIAL |
+| What remains unknown? | PASS | PASS — metadata semantics themselves are not promoted into legal meaning | PASS |
 
 ## First observations
 
@@ -46,19 +50,25 @@ A projection passes only if a reader can answer these without knowing Needle voc
 3. **Abstention is product content, not an error state.** The real no-CELEX/no-baseline case becomes understandable once it says what was observed, why no claim is possible, and what evidence is missing.
 4. **Source Mode needs a presentation resolver, not a second provenance model.** Users need “Regulation (EU) 2026/2104 — authentic amending instruction” before `src-operational-content-...`. Opaque IDs remain useful for audit/debugging, but should not be the primary public anchor.
 5. **Affected-entity intelligence is the clearest recurring information gap so far.** The legal text visibly mentions the United States, but the engine correctly refuses to promote drafting-text mentions into canonical impact claims. The product should display “not established” rather than quietly infer impact.
-6. **Do not change `feed-card-v0.1` yet.** Two real card classes are insufficient evidence for a contract revision, and the required positive non-change card is still missing.
+6. **The audit card is useful when phrased as an explicit negative conclusion.** “Metadata changed; legal text did not” is informative because it explains why an official update did *not* become legal news.
+7. **Source Mode presentation is the only product gap repeated across all three real classes.** All three are understandable without new canonical truth, but all three benefit from resolving opaque provenance IDs into human-readable official anchors.
+8. **Do not change `feed-card-v0.1` yet.** Three classes justify a presentation resolver and hierarchy rules, not a new canonical product contract.
 
 ## Thin surface
 
 `product/checkpoint-v0.1/index.html` is intentionally static and dependency-free. It tests hierarchy only: scan state, expanded facts, separate timing, explicit unknowns, and human-readable Source Mode. It is not a frontend architecture decision.
 
-## Next falsification
+## Product checkpoint decision
 
-Find a real operational event where Needle has a valid comparator and positively verifies no material legal change (prefer metadata-only noise if observed). Add it unchanged to the evaluation corpus, then test whether the same hierarchy makes “nothing legally changed” useful rather than boring or misleading.
+The three required real classes now exist: verified legal change, positive source audit/non-change, and explicit abstention.
 
-Only after that third case should Issue #27 decide between:
+The product evidence does **not** justify a new analytic primitive or a new canonical feed-card contract. The smallest recurring improvement is a **Source Mode presentation resolver** over existing provenance so official evidence is shown first as human-readable acts, cases, publication facts and source comparisons while internal record IDs remain available for audit.
 
-- affected-entity intelligence;
-- a public-card projection contract;
-- Source Mode presentation resolution;
-- or further delivery/UI work.
+Affected-entity truth remains the clearest missing information in the verified-change case, but it is not yet a repeated cross-class requirement and should not be promoted merely because it is conceptually attractive.
+
+Therefore:
+
+1. Issue #27 is complete.
+2. No Source Mode implementation begins immediately.
+3. Issue #29 is the mandatory next step and must adversarially test this product conclusion together with the larger novelty/thesis claim.
+4. If #29 preserves the conclusion, Source Mode presentation resolution is the current lowest-risk product investment; if the audit overturns it, the backlog follows the evidence.

@@ -90,6 +90,13 @@ def main() -> int:
             "generic authentic analyzer did not yield one verified mutation: "
             +json.dumps({
                 "candidate_count":len(candidates),
+                "candidates":[{
+                    "semantic_key":item.get("semantic_key"),
+                    "canonical_refs":item.get("canonical_refs"),
+                    "what_changed":(
+                        item.get("explanation") or {}
+                    ).get("what_changed"),
+                } for item in candidates],
                 "legal":legal,
             },ensure_ascii=False)
         )

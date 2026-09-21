@@ -88,6 +88,7 @@ def build_operational_result(event: dict[str, Any],source_change: dict[str, Any]
     classification=source_change["classification"]
     canonical_refs=[]
     explanation=None
+    verification_route=None
     unknowns=list(source_unknowns or [])
     related=sorted(set(related_event_keys or []))
     evidence_refs=[f"feed-event:{event['event_key']}",*(f"feed-event:{key}" for key in related),*_observation_refs(source_change)]
@@ -127,6 +128,7 @@ def build_operational_result(event: dict[str, Any],source_change: dict[str, Any]
             raise OperationalPipelineError(f"unsupported downstream disposition: {requested}")
 
         disposition=requested
+        verification_route=downstream.get("verification_route")
         canonical_refs=list(downstream.get("canonical_refs",[]))
         evidence_refs.extend(downstream.get("evidence_refs",[]))
         explanation=downstream.get("explanation")
@@ -136,11 +138,11 @@ def build_operational_result(event: dict[str, Any],source_change: dict[str, Any]
 
     stream=_STREAM_BY_DISPOSITION[disposition]
     evidence_refs=list(dict.fromkeys(evidence_refs))
-    material={"event_key":event["event_key"],"source_change_id":source_change["change_id"],"disposition":disposition,"canonical_refs":canonical_refs,"evidence_refs":evidence_refs}
+    material={"event_key":event["event_key"],"source_change_id":source_change["change_id"],"disposition":disposition,"verification_route":verification_route,"canonical_refs":canonical_refs,"evidence_refs":evidence_refs}
     return {
         "schema_version":"operational-result-v0.1","result_id":f"operational-result:{_stable_digest(material)}","character":"PROCESS_RECORD",
         "trigger":_trigger(event,source_change,related_event_keys=related),"source_change":source_change,"disposition":disposition,
-        "stream":stream,"canonical_refs":canonical_refs,"evidence_refs":evidence_refs,"explanation":explanation,"unknowns":unknowns,
+        "verification_route":verification_route,"stream":stream,"canonical_refs":canonical_refs,"evidence_refs":evidence_refs,"explanation":explanation,"unknowns":unknowns,
     }
 
 
@@ -188,7 +190,11 @@ def build_feed_card(result: dict[str, Any]) -> dict[str, Any]:
             when_it_matters=explanation["when_it_matters"]; affected=list(explanation["affected"])
             evidence_character=explanation["evidence_character"]; label=_identifier_label(result)
             if result["disposition"] == "LEGAL_CHANGE_VERIFIED":
-                headline=f"Verified legal change — {label}"; why_visible="Shown because source re-observation led to a verified legal mutation."
+                headline=f"Verified legal change — {label}"
+                if result.get("verification_route") == "AUTHENTIC_LEGAL_CAUSE":
+                    why_visible="Shown because an official update event led to a legal mutation independently verified from the authentic modifying act; source comparison may remain unresolved."
+                else:
+                    why_visible="Shown because source re-observation led to a verified legal mutation."
             elif result["disposition"] == "LEGAL_NON_IMPACT_VERIFIED":
                 headline=f"Reviewed update with no scoped legal impact — {label}"; why_visible="Shown in the audit stream because a reviewed official update was verified as non-impact for the scoped rule."
             else:
@@ -204,6 +210,6 @@ def build_feed_card(result: dict[str, Any]) -> dict[str, Any]:
         "schema_version":"feed-card-v0.1","card_id":f"feed-card:{_stable_digest(material)}","character":"DERIVED_VIEW",
         "stream":result["stream"],"headline":headline,"why_visible":why_visible,"what_changed":what_changed,
         "compared_with":compared_with,"when_it_matters":when_it_matters,"affected":affected,"evidence_character":evidence_character,
-        "source_mode":{"closed":bool(refs),"refs":refs},"canonical_refs":list(result["canonical_refs"]),
+        "verification_route":result.get("verification_route"),"source_mode":{"closed":bool(refs),"refs":refs},"canonical_refs":list(result["canonical_refs"]),
         "unknowns":list(result["unknowns"]),"operational_result_id":result["result_id"],
     }

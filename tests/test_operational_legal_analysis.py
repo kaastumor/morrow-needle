@@ -3,6 +3,7 @@ import pytest
 from needle.operations.legal_analysis import (
     OperationalLegalAnalysisError,
     analyze_operational_legal,
+    apply_operational_recency_gate,
     collapse_evidence_candidates,
     should_attempt_legal_analysis,
 )
@@ -51,6 +52,40 @@ def test_authentic_cause_positive_is_generic_and_idempotent():
     assert first["verification_route"] == "AUTHENTIC_LEGAL_CAUSE"
     assert first["canonical_refs"][0]["kind"] == "MUTATION"
     assert first["analysis_identity"] == second["analysis_identity"]
+
+
+def test_recent_authentic_cause_requires_canonical_recency_evidence():
+    legal=analyze_operational_legal(EVENT,CHANGE,candidates=[candidate()])
+    outcome=apply_operational_recency_gate(legal,recency={
+        "state":"CURRENT_RELEVANT","assertion_refs":["temporal-assertion:application-start"]
+    })
+    assert outcome["disposition"] == "LEGAL_CHANGE_VERIFIED"
+    assert outcome["recency"]["state"] == "CURRENT_RELEVANT"
+    assert "temporal-assertion:application-start" in outcome["evidence_refs"]
+
+
+def test_fresh_feed_update_cannot_resurrect_historical_legal_cause():
+    legal=analyze_operational_legal(EVENT,CHANGE,candidates=[candidate()])
+    outcome=apply_operational_recency_gate(legal,recency={
+        "state":"HISTORICAL_NOT_CURRENT","assertion_refs":["temporal-assertion:historical-effect"]
+    })
+    assert outcome["disposition"] == "ABSTAIN_LEGAL_UNRESOLVED"
+    assert outcome["canonical_refs"] == legal["canonical_refs"]
+    assert "historical rather than newly relevant" in outcome["unknowns"][-1]
+
+
+def test_verified_cause_without_recency_evidence_abstains():
+    legal=analyze_operational_legal(EVENT,CHANGE,candidates=[candidate()])
+    outcome=apply_operational_recency_gate(legal,recency=None)
+    assert outcome["disposition"] == "ABSTAIN_LEGAL_UNRESOLVED"
+    assert outcome["recency"]["state"] == "UNRESOLVED"
+    assert "lacks canonical temporal/procedural evidence" in outcome["unknowns"][-1]
+
+
+def test_recency_positive_without_evidence_ref_is_rejected():
+    legal=analyze_operational_legal(EVENT,CHANGE,candidates=[candidate()])
+    with pytest.raises(OperationalLegalAnalysisError,match="requires canonical"):
+        apply_operational_recency_gate(legal,recency={"state":"CURRENT_RELEVANT","assertion_refs":[]})
 
 
 def test_no_supported_candidate_abstains_instead_of_inferring_from_update():

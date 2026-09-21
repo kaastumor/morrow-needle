@@ -74,12 +74,19 @@ KEYED_ROW_INSERT_RE = re.compile(
     r"(?P<anchor>[A-Z]{2}-[A-Z0-9.]+)", re.IGNORECASE)
 
 
+def _canonical_row_key(value: str) -> str:
+    # A terminal full stop belongs to the sentence, not the legal row key.
+    # Preserve internal dots (for example US-2.1404) while stripping only
+    # source punctuation outside the identifier.
+    return value.rstrip(".,;:")
+
+
 def parse_authentic_keyed_row_insertions(text: str, *, source_id: str, parent_locator: str, locator: str | None = None) -> list[dict[str, Any]]:
     """Parse explicit keyed-table row insertion commands."""
     normalized=" ".join(text.split()); parsed=[]
     for match in KEYED_ROW_INSERT_RE.finditer(normalized):
-        keys=[match.group("key1"),match.group("key2")]
-        part=" ".join(match.group("part").split()); section=" ".join(match.group("section").split()); entry=" ".join(match.group("entry").split()); anchor=match.group("anchor")
+        keys=[_canonical_row_key(match.group("key1")),_canonical_row_key(match.group("key2"))]
+        part=" ".join(match.group("part").split()); section=" ".join(match.group("section").split()); entry=" ".join(match.group("entry").split()); anchor=_canonical_row_key(match.group("anchor"))
         target=f"{parent_locator} > {part} > {section} > {entry} > rows {keys[0]}, {keys[1]}"
         parsed.append({"operation":"INSERT","target_locator":target,"inserted_keys":keys,"placement_anchor":anchor,"instruction_text":match.group(0),"evidence":{"channel":"AUTHENTIC_ACT","source_id":source_id,"operation":"INSERT","target_locator":target,"authority_character":"CANONICAL_LEGAL_CAUSE","locator":locator}})
     return parsed

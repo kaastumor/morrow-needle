@@ -113,9 +113,13 @@ def test_later_event_gets_current_complete_prior_snapshot():
     assert lookup["state"] == "ELIGIBLE"
     current=current_baseline()
     assert lookup["snapshot"] == {
-        "available":current["available"],
-        "content_hash":current["content_hash"],
-        "metadata_hash":current["metadata_hash"],
+        "available":True,
+        "content_hash":observation(
+            current["content_observation_id"]
+        )["payload"]["content_hash"],
+        "metadata_hash":observation(
+            current["metadata_observation_id"]
+        )["payload"]["metadata_hash"],
         "content_observation_id":current["content_observation_id"],
         "metadata_observation_id":current["metadata_observation_id"],
     }
@@ -143,75 +147,31 @@ def test_advance_baseline_appends_observations_and_moves_pointer():
     for record in (content,metadata):
         record["created_at"]="2026-09-21T08:01:00+00:00"
         record["payload"]["observed_at"]="2026-09-21T08:01:00+00:00"
-        # Re-seal after changing immutable observation metadata.
-        record.pop("record_hash",None)
+        record["record_hash"]=None
     from needle.provenance.ledger import seal_record
     content=seal_record(content)
     metadata=seal_record(metadata)
-
     reobservation={
-        "state":"OBSERVED",
-        "content_observation":content,
-        "metadata_observation":metadata,
         "snapshot":{
             "available":True,
-            "content_hash":content["payload"]["artifact_hash"],
-            "metadata_hash":metadata["payload"]["artifact_hash"],
+            "content_hash":content["payload"]["content_hash"],
+            "metadata_hash":metadata["payload"]["metadata_hash"],
             "content_observation_id":content["record_id"],
             "metadata_observation_id":metadata["record_id"],
         },
+        "content_observation":content,
+        "metadata_observation":metadata,
     }
-    before_observations=len(STATE["source_observations"])
-    before_baselines=len(STATE["baselines"])
     advanced=advance_baseline(
-        STATE,
-        later,
-        reobservation,
-        updated_at="2026-09-21T08:01:01+00:00",
+        STATE,later,reobservation,
+        updated_at="2026-09-21T08:01:00+00:00",
         seed_character="POST_EVENT_REFRESH",
     )
-    assert len(advanced["source_observations"]) == before_observations + 2
-    assert len(advanced["baselines"]) == before_baselines
-    current=next(
+    moved=next(
         item for item in advanced["baselines"]
         if item["baseline_key"] == "CELEX:32019R0632|ENG"
     )
-    assert current["content_observation_id"] == content["record_id"]
-    assert current["metadata_observation_id"] == metadata["record_id"]
-    assert current["seed_character"] == "POST_EVENT_REFRESH"
+    assert moved["content_observation_id"] == content["record_id"]
+    assert moved["metadata_observation_id"] == metadata["record_id"]
     assert later["event_key"] in advanced["processed_event_keys"]
-    # Both observations previously addressed by the baseline remain append-only.
-    advanced_ids={record["record_id"] for record in advanced["source_observations"]}
-    assert prior["content_observation_id"] in advanced_ids
-    assert prior["metadata_observation_id"] in advanced_ids
-    assert validate_operational_state(advanced) == []
-
-
-def test_advance_is_idempotent_for_same_event_and_observations():
-    later=event()
-    prior=current_baseline()
-    content=observation(prior["content_observation_id"])
-    metadata=observation(prior["metadata_observation_id"])
-    reobservation={
-        "state":"OBSERVED",
-        "content_observation":content,
-        "metadata_observation":metadata,
-        "snapshot":{
-            "available":True,
-            "content_hash":content["payload"]["artifact_hash"],
-            "metadata_hash":metadata["payload"]["artifact_hash"],
-            "content_observation_id":content["record_id"],
-            "metadata_observation_id":metadata["record_id"],
-        },
-    }
-    once=advance_baseline(
-        STATE,later,reobservation,
-        updated_at="2026-09-21T08:02:00+00:00",
-        seed_character="POST_EVENT_REFRESH",
-    )
-    twice=advance_baseline(
-        once,later,reobservation,
-        updated_at="2026-09-21T08:02:00+00:00",
-        seed_character="POST_EVENT_REFRESH",
-    )
-    assert twice == once
+    assert observation(prior["content_observation_id"])

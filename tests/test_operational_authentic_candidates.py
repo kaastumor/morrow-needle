@@ -5,14 +5,17 @@ def event():
     return {"event_key":"evt:test","identifiers":["celex:32026R2104"]}
 
 
-def test_keyed_row_instruction_is_generic_and_evidence_backed():
-    text=(
+def instruction_text():
+    return (
         "ANNEX Annex V is amended as follows: in Part 1, Section B, in the entry "
         "for the United States, the following rows for the zones US-2.1405 and "
         "US-2.1406 are added after the row for the zone US-2.1404."
     )
+
+
+def test_keyed_row_instruction_is_generic_and_evidence_backed():
     candidates=candidates_from_authentic_text(
-        event(),text,source_id="CELEX:32026R2104",locator="official://artifact"
+        event(),instruction_text(),source_id="CELEX:32026R2104",locator="official://artifact"
     )
     assert len(candidates)==1
     candidate=candidates[0]
@@ -21,6 +24,32 @@ def test_keyed_row_instruction_is_generic_and_evidence_backed():
     assert "Annex V > Part 1 > Section B > United States" in candidate["semantic_key"]
     assert candidate["evidence_refs"]==["CELEX:32026R2104"]
     assert candidate["explanation"]["affected"]==[]
+
+
+def test_reobservation_changes_provenance_not_semantic_identity():
+    first=candidates_from_authentic_text(
+        event(),instruction_text(),source_id="CELEX:32026R2104",
+        evidence_ref="src-observation:first",language="eng"
+    )[0]
+    second=candidates_from_authentic_text(
+        event(),instruction_text(),source_id="CELEX:32026R2104",
+        evidence_ref="src-observation:second",language="eng"
+    )[0]
+    assert first["semantic_key"] == second["semantic_key"]
+    assert first["canonical_refs"] == second["canonical_refs"]
+    assert first["evidence_refs"] == ["src-observation:first"]
+    assert second["evidence_refs"] == ["src-observation:second"]
+
+
+def test_language_is_part_of_mutation_identity_not_silently_globalized():
+    english=candidates_from_authentic_text(
+        event(),instruction_text(),source_id="CELEX:32026R2104",language="eng"
+    )[0]
+    french=candidates_from_authentic_text(
+        event(),instruction_text(),source_id="CELEX:32026R2104",language="fra"
+    )[0]
+    assert english["semantic_key"] != french["semantic_key"]
+    assert english["canonical_refs"] != french["canonical_refs"]
 
 
 def test_same_drafting_form_is_not_celex_dispatched():

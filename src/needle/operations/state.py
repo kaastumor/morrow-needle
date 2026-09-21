@@ -196,6 +196,27 @@ def lookup_baseline(
     }
 
 
+def baseline_seed_eligible(
+    reobservation: dict[str,Any],
+) -> bool:
+    """Return whether an observation is safe to become the next comparator.
+
+    Availability and comparator completeness are deliberately different.
+    A content-only or metadata-only observation can prove that a source route
+    remains available and can support an operational abstention, but replacing
+    a complete prospective baseline with that partial snapshot would discard a
+    previously known comparison dimension after a transient route failure.
+    """
+    snapshot=reobservation.get("snapshot")
+    return bool(
+        reobservation.get("state")=="OBSERVED"
+        and snapshot
+        and snapshot.get("available") is True
+        and snapshot.get("content_observation_id")
+        and snapshot.get("metadata_observation_id")
+    )
+
+
 def advance_baseline(
     state: dict[str,Any],
     event: dict[str,Any],

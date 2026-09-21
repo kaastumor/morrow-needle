@@ -6,18 +6,20 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-The project remains aligned with the original thesis, but the 2026-09-20 v0.2 step-back review identified **allocation drift**: the legal-change engine is substantially more proven than the operational public product loop.
+The 2026-09-20 v0.2 step-back review identified **allocation drift**: the legal-change engine was substantially more proven than the operational public product loop. Issue #21 has now cleared that first correction gate: a real official event can pass through the generic operational machinery to a verified public card, and later source activity cannot resurrect historical legal change.
+
+The highest-value unknown has therefore moved from **can Needle run the loop?** to **is the loop useful to a person?**
 
 Strategic rule from here:
 
-> After Legislative X-Ray v0.1 freezes, do not add new analytic primitives until Needle proves one operational official-update → verified public-feed-card loop.
+> Do not resume broad analytic expansion until the real operational cards have been tested as a public information product. Let observed comprehension gaps, not ontology curiosity, choose the next architecture.
 
 Unless new official/executable evidence reopens a foundation risk:
 
-1. **P2 / Issue #21 — operational vertical slice.** Active. The first live cold-start cohort has already processed three distinct CELEX roots end-to-end through feed detection, targeted re-observation, sealed provenance, source-change classification and evidence-linked cards. All three correctly abstained because no pre-event baselines existed. Next: persist operational baselines and replay official feed events for known verified amendments to produce the first genuine CHANGE_FEED card.
-2. **P2 — impact / affected-entity intelligence.** Begin with directly evidenced affected entities; preserve derived/interpretive separation.
+1. **P2 / Issue #27 — product checkpoint.** Active. Build the thinnest delivery surface over real verified/audit/abstention cards; test information hierarchy, Source Mode, unknowns and the separation of “why now” from legal-effect timing.
+2. **P2 — impact / affected-entity intelligence.** Begin only where the product checkpoint demonstrates a recurring user need; start with directly evidenced entities and preserve derived/interpretive separation.
 3. **Issue #19 — Half-Life v0.2 research** when official cases support proposition-level rule survival and explicit terminal outcomes without negative-absence inference.
-4. **Product validation / thin delivery surface.** After the operational slice, test feed comprehension, Source Mode, unknown/non-impact presentation and minimal API/UI needs before broad feature expansion.
+4. **Thin API/retrieval delivery work** only where Issue #27 shows a concrete product requirement rather than for hypothetical scale.
 5. Ranking, broader plain-language evaluation, subscriptions and saved monitors follow.
 
 All P0/P1 ownership boundaries remain explicitly tested. A freeze is reopened only when official or executable adversarial evidence demonstrates failure.
@@ -26,7 +28,8 @@ Canonical audit: docs/audits/post-p1-foundation-audit-v0.1.md
 Strategic review: docs/step-back-review-2026-09-20-v0.2.md  
 Half-Life freeze: docs/decisions/half-life-v0.1-interface-freeze.md  
 Source Anomaly freeze: docs/decisions/source-anomaly-v0.1-interface-freeze.md  
-Ownership correction: docs/decisions/regime-lineage-v0.2-temporal-ownership.md
+Ownership correction: docs/decisions/regime-lineage-v0.2-temporal-ownership.md  
+Operational publication recency: docs/decisions/operational-publication-recency-v0.1.md
 
 ## Priority model
 
@@ -286,25 +289,25 @@ See docs/audits/post-p1-foundation-audit-v0.1.md.
 
 ## P2 — Public intelligence
 
-Risk-ordered after the post-P1 audit **and the v0.2 strategic step-back review**:
+Risk-ordered after the post-P1 audit, the v0.2 strategic step-back review **and completion of the first operational Needle slice**:
 
-1. **Legislative X-Ray / dependency ripple (Issue #20):** finish/freeze the now-green two-case product contract.
-2. **Operational Needle vertical slice (Issue #21):** official update → verified/non-impact/abstention result → retrieval → evidence-linked public feed card. This is the next major product proof.
-3. **Impact / affected-entity model:** strict direct-vs-derived-vs-interpretive separation before public use.
-4. **Half-Life v0.2 research (Issue #19):** rule survival and terminal outcomes only after official evidence supports them without negative-absence inference.
-5. **Thin public delivery + user validation:** test feed comprehension, Source Mode and unknown/non-impact presentation before a broad UI build.
-6. **Public ranking dimensions + transparent rationale.**
-7. **Plain-language explanation evaluation.**
-8. **Domain subscriptions and saved monitors.**
-9. **Dark Matter:** known-but-unavailable document representation, coordinated with Source Anomaly rather than conflated with legal absence.
+1. **Product checkpoint / thin delivery surface (Issue #27):** test real verified, audit and abstention cards for comprehension before expanding the intelligence catalogue.
+2. **Impact / affected-entity model:** strict direct-vs-derived-vs-interpretive separation before public use, informed by the product checkpoint rather than assumed in advance.
+3. **Half-Life v0.2 research (Issue #19):** rule survival and terminal outcomes only after official evidence supports them without negative-absence inference.
+4. **Thin API/retrieval delivery:** only what the validated surface actually needs.
+5. **Public ranking dimensions + transparent rationale.**
+6. **Plain-language explanation evaluation.**
+7. **Domain subscriptions and saved monitors.**
+8. **Dark Matter:** known-but-unavailable document representation, coordinated with Source Anomaly rather than conflated with legal absence.
 
 Completed P2 slices:
+- **Operational Needle v0.1 (Issue #21): CLOSED.** Live official events now flow through persistent monitoring, targeted re-observation, immutable provenance, generic authentic-cause analysis, explicit publication relevance and evidence-linked feed projection. The actual 2026/2104 Cellar event replays through the generic path to CHANGE_FEED; the same publication bound to a later source event abstains as HISTORICAL_NOT_CURRENT. Compound authentic acts preserve separate canonical mutation identities while grouping only for delivery.
 - **Legislative X-Ray v0.1 (Issue #20): CLOSED/FROZEN.** Two independent official dependency-ripple cases prove that unchanged local text can have an EVIDENCED + DERIVED cross-reference effect from a VERIFIED upstream mutation, without manufacturing local mutation truth.
 - **Half-Life v0.1 (Issue #10): CLOSED/FROZEN.** Derived, evidence-linked temporary-regime history over canonical Temporal Assertions + genealogy, with repeated extensions, gaps, view horizon and explicit unresolved terminal/rule-continuity coverage.
 - **Source Anomaly v0.1 (Issue #17): CLOSED/FROZEN.** Categorical, evidence-preserving cards for route fallback, source-internal conflict and representation duplication; no source anomaly creates legal-mutation truth.
 
 Strategic constraint:
-- **Do not grow a catalogue of analytic primitives before Issue #21 is operationally green.** The highest-value unknown is now whether Needle can notice real changes continuously and make them useful to a person.
+- **Issue #21 is green; do not interpret that as permission to return to schema accumulation.** Issue #27 must now test whether real operational outputs make sense to a person. The next intelligence investment should follow observed product gaps.
 
 ## P3 — Expansion
 

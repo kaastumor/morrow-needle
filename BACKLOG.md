@@ -16,11 +16,10 @@ Strategic rule from here:
 
 Unless new official/executable evidence reopens a foundation risk:
 
-1. **P2 / Issue #27 — product checkpoint.** Active. Build the thinnest delivery surface over real verified/audit/abstention cards; test information hierarchy, Source Mode, unknowns and the separation of “why now” from legal-effect timing.
-2. **P2 — impact / affected-entity intelligence.** Begin only where the product checkpoint demonstrates a recurring user need; start with directly evidenced entities and preserve derived/interpretive separation.
-3. **Issue #19 — Half-Life v0.2 research** when official cases support proposition-level rule survival and explicit terminal outcomes without negative-absence inference.
-4. **Thin API/retrieval delivery work** only where Issue #27 shows a concrete product requirement rather than for hypothetical scale.
-5. Ranking, broader plain-language evaluation, subscriptions and saved monitors follow.
+1. **P2 / Issue #27 — product checkpoint.** Active. Complete the real-card corpus with a positively verified audit/non-change case, then record the product decision from observed comprehension evidence.
+2. **P2 / Issue #29 — pre-analysis adversarial audit + repository sanitation gate. HARD STOP after #27.** Attack Needle from byte/parser assumptions through canonical ownership, operational behavior, product truthfulness, analytical usefulness and the external novelty/thesis claim. In the same run, sanitize the repository, reconcile issues/docs/workflows/backlog, and verify the recurring worker itself. No new analytic primitive may leapfrog this gate unless new official evidence exposes a more severe foundation blocker.
+3. **Post-audit architecture choice.** Do not pre-commit to affected-entity intelligence, Half-Life v0.2, API/retrieval delivery or another analytic layer. Issue #29 must decide which is justified by evidence and which should be deferred or deleted.
+4. Ranking, broader plain-language evaluation, subscriptions and saved monitors remain later-stage candidates only if the audit preserves the underlying product thesis.
 
 All P0/P1 ownership boundaries remain explicitly tested. A freeze is reopened only when official or executable adversarial evidence demonstrates failure.
 
@@ -292,13 +291,12 @@ See docs/audits/post-p1-foundation-audit-v0.1.md.
 Risk-ordered after the post-P1 audit, the v0.2 strategic step-back review **and completion of the first operational Needle slice**:
 
 1. **Product checkpoint / thin delivery surface (Issue #27):** test real verified, audit and abstention cards for comprehension before expanding the intelligence catalogue.
-2. **Impact / affected-entity model:** strict direct-vs-derived-vs-interpretive separation before public use, informed by the product checkpoint rather than assumed in advance.
-3. **Half-Life v0.2 research (Issue #19):** rule survival and terminal outcomes only after official evidence supports them without negative-absence inference.
-4. **Thin API/retrieval delivery:** only what the validated surface actually needs.
-5. **Public ranking dimensions + transparent rationale.**
-6. **Plain-language explanation evaluation.**
-7. **Domain subscriptions and saved monitors.**
-8. **Dark Matter:** known-but-unavailable document representation, coordinated with Source Anomaly rather than conflated with legal absence.
+2. **Pre-analysis adversarial audit + sanitation gate (Issue #29):** mandatory after #27. Falsify assumptions from source bytes to the project thesis/novelty claim, then clean and reconcile the repository, CI, issues, backlog and scheduled worker before selecting new architecture.
+3. **Post-audit architecture choice:** affected-entity intelligence, Half-Life v0.2, Source Mode/public projection work, or thin API/retrieval delivery are candidates, not commitments. Let #29's evidence decide.
+4. **Public ranking dimensions + transparent rationale** only if the audit preserves a defensible usefulness/novelty thesis.
+5. **Plain-language explanation evaluation.**
+6. **Domain subscriptions and saved monitors.**
+7. **Dark Matter:** known-but-unavailable document representation, coordinated with Source Anomaly rather than conflated with legal absence.
 
 Completed P2 slices:
 - **Operational Needle v0.1 (Issue #21): CLOSED.** Live official events now flow through persistent monitoring, targeted re-observation, immutable provenance, generic authentic-cause analysis, explicit publication relevance and evidence-linked feed projection. The actual 2026/2104 Cellar event replays through the generic path to CHANGE_FEED; the same publication bound to a later source event abstains as HISTORICAL_NOT_CURRENT. Compound authentic acts preserve separate canonical mutation identities while grouping only for delivery.
@@ -306,8 +304,9 @@ Completed P2 slices:
 - **Half-Life v0.1 (Issue #10): CLOSED/FROZEN.** Derived, evidence-linked temporary-regime history over canonical Temporal Assertions + genealogy, with repeated extensions, gaps, view horizon and explicit unresolved terminal/rule-continuity coverage.
 - **Source Anomaly v0.1 (Issue #17): CLOSED/FROZEN.** Categorical, evidence-preserving cards for route fallback, source-internal conflict and representation duplication; no source anomaly creates legal-mutation truth.
 
-Strategic constraint:
-- **Issue #21 is green; do not interpret that as permission to return to schema accumulation.** Issue #27 must now test whether real operational outputs make sense to a person. The next intelligence investment should follow observed product gaps.
+Strategic constraints:
+- **Issue #21 is green; do not interpret that as permission to return to schema accumulation.** Issue #27 must first test whether real operational outputs make sense to a person.
+- **Issue #29 is a mandatory gate after #27.** Even if #27 appears to point clearly toward a next feature, no new analytic primitive should begin until the micro→macro adversarial audit and sanitation pass has tested that conclusion, including the project's external novelty/public-interest thesis.
 
 ## P3 — Expansion
 

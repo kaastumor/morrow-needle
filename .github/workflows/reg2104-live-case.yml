@@ -32,7 +32,10 @@ jobs:
       - name: Probe trigger, authentic cause and target checkpoints
         run: python scripts/probe_reg2104_live_case.py
       - name: Build and validate live CHANGE_FEED card
-        run: python scripts/build_reg2104_live_card.py
+        shell: bash
+        run: |
+          set -o pipefail
+          python scripts/build_reg2104_live_card.py 2>&1 | tee artifacts/reg2104-live-case/card-build.log
       - uses: actions/upload-artifact@v4
         if: always()
         with:

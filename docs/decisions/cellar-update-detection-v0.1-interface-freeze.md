@@ -167,10 +167,50 @@ It contains no legal-effect semantics.
 7. Raw feed quirks survive as provenance.
 8. Metadata-only change remains distinguishable from content change.
 9. Content-byte change remains a source event until normalized legal-text comparison proves mutation.
-10. DELETE changes availability history; prior Source Observations are never erased.
+10. DELETE records a Cellar ingestion-deletion action; it does **not** by itself prove current public-source unavailability. Availability change requires independently observed availability state. Prior Source Observations are never erased.
 
 ## Post-freeze rule
 
 Extend scheduling/storage adapters behind these contracts.
 
 Reopen only if a real Cellar event cannot be represented or replayed without event loss or false legal-change inference.
+
+
+## 2026-09-22 adversarial correction — DELETE is not availability evidence
+
+Issue #29 found an internal contradiction in the frozen v0.1 implementation.
+
+The official Cellar documentation defines CREATE / UPDATE / DELETE as the
+**type of ingestion action** exposed by the notification service. The same
+documentation describes the service as information about ingesting documents
+and a history of performed actions. It does not define a DELETE notification as
+proof that a CELEX-addressable dissemination resource is currently unavailable.
+
+The v0.1 implementation nevertheless returned `AVAILABILITY_CHANGED`
+unconditionally for `feed_action=DELETE`, and the recurring monitor skipped
+targeted re-observation for DELETE events. That promoted a scheduling hint into
+source-state truth and contradicted two already-frozen principles:
+
+- feed events are change hints that schedule re-observation;
+- route failure is not source/law absence.
+
+The contract is therefore **clarified without a schema version change**:
+
+1. `feed_action` preserves the authoritative Cellar ingestion action.
+2. DELETE, like CREATE and UPDATE, triggers targeted re-observation when the
+   resource is addressable.
+3. `AVAILABILITY_CHANGED` requires observed previous/current availability
+   states; the DELETE verb alone is insufficient.
+4. If no supported official representation can be positively re-observed,
+   operational re-observation is unresolved. HTTP/negotiation failure on the
+   preferred Cellar CELEX route does not manufacture `available=false`.
+5. A future adapter may establish confirmed unavailability from stronger,
+   explicitly modelled evidence; v0.1 does not infer it from failed preferred
+   routes.
+
+This correction reopens **classification semantics only**, not the
+`source-change-v0.1` object shape.
+
+Official contract checked 2026-09-22:
+- https://op.europa.eu/en/web/cellar/cellar-data/rss-and-atom-feeds
+- https://op.europa.eu/en/web/cellar/cellar-data

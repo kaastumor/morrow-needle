@@ -29,9 +29,6 @@ def classify_source_change(
     """
     action = action.upper()
 
-    if action == "DELETE":
-        return "AVAILABILITY_CHANGED"
-
     if action == "CREATE":
         if current is None:
             return "UNRESOLVED"

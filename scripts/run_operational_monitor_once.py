@@ -127,9 +127,11 @@ def main() -> int:
         else: previous=lookup["snapshot"]
         if relevance == "SOURCE_INFRASTRUCTURE":
             reobservation={"state":"OUT_OF_SCOPE_SOURCE_INFRASTRUCTURE","snapshot":None,"unknowns":[]}; current=None
-        elif representative["action"] == "DELETE":
-            reobservation={"state":"DELETE_EVENT_NO_CURRENT_REOBSERVATION","snapshot":None,"unknowns":["DELETE notification is an availability hint; no current artifact is assumed."]}; current=None
         else:
+            # CREATE/UPDATE/DELETE are Cellar ingestion actions. None of them
+            # substitutes for current source observation. In particular,
+            # DELETE remains a trigger to re-observe rather than proof that the
+            # public source is unavailable.
             reobservation=reobserve_event(representative,observed_at=end.isoformat()); current=reobservation.get("snapshot"); source_unknowns.extend(reobservation.get("unknowns",[]))
         change=build_source_change(representative,previous=previous,current=current)
 

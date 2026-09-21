@@ -216,6 +216,18 @@ def test_cursor_rejects_skipped_page():
             "DELETE",
             {"available":True,"content_hash":"c1","metadata_hash":"m1"},
             None,
+            "UNRESOLVED",
+        ),
+        (
+            "DELETE",
+            {"available":True,"content_hash":"c1","metadata_hash":"m1"},
+            {"available":True,"content_hash":"c1","metadata_hash":"m1"},
+            "NO_MATERIAL_CHANGE",
+        ),
+        (
+            "DELETE",
+            {"available":True,"content_hash":"c1","metadata_hash":"m1"},
+            {"available":False,"content_hash":None,"metadata_hash":None},
             "AVAILABILITY_CHANGED",
         ),
         (
@@ -473,3 +485,34 @@ def test_source_change_is_not_a_legal_mutation():
     assert change["classification"] == "CONTENT_CHANGED"
     assert "legal_effect" not in change
     assert "mutation" not in change
+
+
+def test_delete_feed_action_alone_cannot_prove_source_unavailability():
+    previous={
+        "available":True,
+        "content_hash":"c1",
+        "metadata_hash":"m1",
+    }
+    assert classify_source_change(
+        action="DELETE",
+        previous=previous,
+        current=None,
+    )=="UNRESOLVED"
+
+
+def test_delete_with_positive_reobservation_is_classified_from_observation():
+    previous={
+        "available":True,
+        "content_hash":"c1",
+        "metadata_hash":"m1",
+    }
+    current={
+        "available":True,
+        "content_hash":"c1",
+        "metadata_hash":"m1",
+    }
+    assert classify_source_change(
+        action="DELETE",
+        previous=previous,
+        current=current,
+    )=="NO_MATERIAL_CHANGE"

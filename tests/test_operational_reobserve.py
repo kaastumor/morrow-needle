@@ -316,3 +316,43 @@ def test_content_route_success_does_not_become_false_unavailability_when_metadat
         "without the expected Cellar tree notice" in item
         for item in result["unknowns"]
     )
+
+
+def test_total_route_failure_is_unresolved_not_confirmed_source_absence():
+    session=FakeSession([
+        FakeResponse(503,b"",url="meta",content_type="text/plain"),
+        FakeResponse(503,b"",url="fmx4",content_type="text/plain"),
+        FakeResponse(503,b"",url="xhtml",content_type="text/plain"),
+        FakeResponse(503,b"",url="htmlzip",content_type="text/plain"),
+        FakeResponse(503,b"",url="html",content_type="text/plain"),
+    ])
+    result=reobserve_event(
+        event(),
+        observed_at="2026-09-20T20:10:00+00:00",
+        session=session,
+    )
+    assert result["state"]=="UNRESOLVED_REOBSERVATION"
+    assert result["snapshot"] is None
+    assert result["metadata_observation"] is None
+    assert result["content_observation"] is None
+    assert any(
+        "does not establish" in item
+        for item in result["unknowns"]
+    )
+
+
+def test_preferred_route_404_and_unsupported_content_do_not_prove_absence():
+    session=FakeSession([
+        FakeResponse(404,b"",url="meta",content_type="text/plain"),
+        FakeResponse(406,b"",url="fmx4",content_type="text/plain"),
+        FakeResponse(406,b"",url="xhtml",content_type="text/plain"),
+        FakeResponse(406,b"",url="htmlzip",content_type="text/plain"),
+        FakeResponse(406,b"",url="html",content_type="text/plain"),
+    ])
+    result=reobserve_event(
+        event(),
+        observed_at="2026-09-20T20:10:00+00:00",
+        session=session,
+    )
+    assert result["state"]=="UNRESOLVED_REOBSERVATION"
+    assert result["snapshot"] is None

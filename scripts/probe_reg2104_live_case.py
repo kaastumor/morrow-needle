@@ -95,6 +95,79 @@ def fetch_celex(celex: str) -> dict:
     return result
 
 
+def fetch_metadata_notice(celex: str) -> dict:
+    """Inventory source-native temporal/publication metadata for discovery.
+
+    This deliberately does not assign legal meaning. It records the RDF
+    properties and date-like values exposed by the official Cellar tree notice
+    so a later generic adapter can bind only evidenced fields.
+    """
+    url=CELLAR.format(celex=celex)
+    response=requests.get(
+        url,
+        headers={
+            "Accept":"application/rdf+xml;notice=tree",
+            "User-Agent":USER_AGENT,
+        },
+        timeout=120,
+        allow_redirects=True,
+    )
+    result={
+        "celex":celex,
+        "status":response.status_code,
+        "final_url":response.url,
+        "content_type":response.headers.get("Content-Type"),
+        "bytes":len(response.content),
+        "artifact_hash":sha(response.content) if response.content else None,
+        "temporal_candidates":[],
+    }
+    if response.status_code != 200 or not response.content:
+        return result
+
+    try:
+        root=ET.fromstring(response.content)
+    except ET.ParseError:
+        result["parse_error"]="RDF tree notice is not well-formed XML"
+        return result
+
+    seen=set()
+    candidates=[]
+    for element in root.iter():
+        tag=local(element.tag)
+        namespace=(
+            element.tag[1:].split("}",1)[0]
+            if element.tag.startswith("{") and "}" in element.tag
+            else None
+        )
+        text=" ".join("".join(element.itertext()).split())
+        attrs={local(str(k)):str(v) for k,v in element.attrib.items()}
+        material=" ".join([tag,text,*attrs.keys(),*attrs.values()])
+        date_like=bool(re.search(
+            r"\b(?:19|20)\d{2}(?:-\d{2}-\d{2}|\d{4})\b",
+            material,
+        ))
+        name_like=any(
+            token in tag.lower()
+            for token in ("date","publication","official-journal")
+        )
+        if not (date_like or name_like):
+            continue
+        item={
+            "namespace":namespace,
+            "tag":tag,
+            "text":text[:240],
+            "attributes":attrs,
+        }
+        identity=json.dumps(item,sort_keys=True,ensure_ascii=False)
+        if identity in seen:
+            continue
+        seen.add(identity)
+        candidates.append(item)
+
+    result["temporal_candidates"]=candidates
+    return result
+
+
 def find_span(text: str, pattern: str) -> dict | None:
     match=re.search(pattern,text,flags=re.I|re.S)
     if not match:
@@ -177,6 +250,7 @@ def scan_checkpoints() -> list[dict]:
 
 def main() -> int:
     event,event_attempts=find_event()
+    metadata=fetch_metadata_notice(CAUSE)
     cause=fetch_celex(CAUSE)
     if cause["status"] != 200 or not cause.get("text"):
         raise AssertionError("authentic 2026/2104 FMX4 unavailable")
@@ -264,6 +338,7 @@ def main() -> int:
         "observed_at":datetime.now(timezone.utc).isoformat(),
         "trigger_event":event,
         "feed_attempts":event_attempts,
+        "authentic_metadata":metadata,
         "authentic_cause":{
             **cause,
             "source_spans":spans,
@@ -323,6 +398,9 @@ def main() -> int:
         "event_key":event["event_key"],
         "root_cellar_id":event["root_cellar_id"],
         "cause_hash":cause["artifact_hash"],
+        "metadata_temporal_candidates":metadata.get(
+            "temporal_candidates",[]
+        ),
         "latest_before":{
             "celex":latest_before["celex"],
             "artifact_hash":latest_before["artifact_hash"],

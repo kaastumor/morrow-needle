@@ -1,126 +1,126 @@
 {
   "cycle_version": "0.1",
   "window": {
-    "start": "2026-09-21T23:55:09+00:00",
-    "previous_completed_end": "2026-09-22T00:00:09.694980+00:00",
-    "end": "2026-09-22T00:03:12+00:00",
+    "start": "2026-09-21T23:58:12+00:00",
+    "previous_completed_end": "2026-09-22T00:03:12.890354+00:00",
+    "end": "2026-09-22T00:08:01+00:00",
     "overlap_seconds": 300
   },
   "feed_observations": [
     {
       "query": {
-        "startDate": "2026-09-21T23:55:09+00:00",
-        "endDate": "2026-09-22T00:03:12+00:00",
+        "startDate": "2026-09-21T23:58:12+00:00",
+        "endDate": "2026-09-22T00:08:01+00:00",
         "type": "UPDATE",
         "wemiClasses": "work",
         "page": "1"
       },
-      "request_url": "https://publications.europa.eu/webapi/notification/ingestion?startDate=2026-09-21T23%3A55%3A09%2B00%3A00&endDate=2026-09-22T00%3A03%3A12%2B00%3A00&type=UPDATE&wemiClasses=work&page=1",
-      "payload_sha256": "24a0fdc324a90d5d37ed6c0b6333f95c2a71762a36084b293546b8bd23c52780",
+      "request_url": "https://publications.europa.eu/webapi/notification/ingestion?startDate=2026-09-21T23%3A58%3A12%2B00%3A00&endDate=2026-09-22T00%3A08%3A01%2B00%3A00&type=UPDATE&wemiClasses=work&page=1",
+      "payload_sha256": "61a02daf86ff1c6a26f3598589417980c415746d5c0b1241b85f9b1c5825aa8c",
       "event_count": 0,
       "more_entries": false
     },
     {
       "query": {
-        "startDate": "2026-09-21T23:55:09+00:00",
-        "endDate": "2026-09-22T00:03:12+00:00",
+        "startDate": "2026-09-21T23:58:12+00:00",
+        "endDate": "2026-09-22T00:08:01+00:00",
         "type": "UPDATE",
         "wemiClasses": "expression",
         "page": "1"
       },
-      "request_url": "https://publications.europa.eu/webapi/notification/ingestion?startDate=2026-09-21T23%3A55%3A09%2B00%3A00&endDate=2026-09-22T00%3A03%3A12%2B00%3A00&type=UPDATE&wemiClasses=expression&page=1",
-      "payload_sha256": "24a0fdc324a90d5d37ed6c0b6333f95c2a71762a36084b293546b8bd23c52780",
+      "request_url": "https://publications.europa.eu/webapi/notification/ingestion?startDate=2026-09-21T23%3A58%3A12%2B00%3A00&endDate=2026-09-22T00%3A08%3A01%2B00%3A00&type=UPDATE&wemiClasses=expression&page=1",
+      "payload_sha256": "61a02daf86ff1c6a26f3598589417980c415746d5c0b1241b85f9b1c5825aa8c",
       "event_count": 0,
       "more_entries": false
     },
     {
       "query": {
-        "startDate": "2026-09-21T23:55:09+00:00",
-        "endDate": "2026-09-22T00:03:12+00:00",
+        "startDate": "2026-09-21T23:58:12+00:00",
+        "endDate": "2026-09-22T00:08:01+00:00",
         "type": "UPDATE",
         "wemiClasses": "manifestation",
         "page": "1"
       },
-      "request_url": "https://publications.europa.eu/webapi/notification/ingestion?startDate=2026-09-21T23%3A55%3A09%2B00%3A00&endDate=2026-09-22T00%3A03%3A12%2B00%3A00&type=UPDATE&wemiClasses=manifestation&page=1",
-      "payload_sha256": "24a0fdc324a90d5d37ed6c0b6333f95c2a71762a36084b293546b8bd23c52780",
+      "request_url": "https://publications.europa.eu/webapi/notification/ingestion?startDate=2026-09-21T23%3A58%3A12%2B00%3A00&endDate=2026-09-22T00%3A08%3A01%2B00%3A00&type=UPDATE&wemiClasses=manifestation&page=1",
+      "payload_sha256": "61a02daf86ff1c6a26f3598589417980c415746d5c0b1241b85f9b1c5825aa8c",
       "event_count": 0,
       "more_entries": false
     },
     {
       "query": {
-        "startDate": "2026-09-21T23:55:09+00:00",
-        "endDate": "2026-09-22T00:03:12+00:00",
+        "startDate": "2026-09-21T23:58:12+00:00",
+        "endDate": "2026-09-22T00:08:01+00:00",
         "type": "CREATE",
         "wemiClasses": "work",
         "page": "1"
       },
-      "request_url": "https://publications.europa.eu/webapi/notification/ingestion?startDate=2026-09-21T23%3A55%3A09%2B00%3A00&endDate=2026-09-22T00%3A03%3A12%2B00%3A00&type=CREATE&wemiClasses=work&page=1",
-      "payload_sha256": "24a0fdc324a90d5d37ed6c0b6333f95c2a71762a36084b293546b8bd23c52780",
+      "request_url": "https://publications.europa.eu/webapi/notification/ingestion?startDate=2026-09-21T23%3A58%3A12%2B00%3A00&endDate=2026-09-22T00%3A08%3A01%2B00%3A00&type=CREATE&wemiClasses=work&page=1",
+      "payload_sha256": "61a02daf86ff1c6a26f3598589417980c415746d5c0b1241b85f9b1c5825aa8c",
       "event_count": 0,
       "more_entries": false
     },
     {
       "query": {
-        "startDate": "2026-09-21T23:55:09+00:00",
-        "endDate": "2026-09-22T00:03:12+00:00",
+        "startDate": "2026-09-21T23:58:12+00:00",
+        "endDate": "2026-09-22T00:08:01+00:00",
         "type": "CREATE",
         "wemiClasses": "expression",
         "page": "1"
       },
-      "request_url": "https://publications.europa.eu/webapi/notification/ingestion?startDate=2026-09-21T23%3A55%3A09%2B00%3A00&endDate=2026-09-22T00%3A03%3A12%2B00%3A00&type=CREATE&wemiClasses=expression&page=1",
-      "payload_sha256": "24a0fdc324a90d5d37ed6c0b6333f95c2a71762a36084b293546b8bd23c52780",
+      "request_url": "https://publications.europa.eu/webapi/notification/ingestion?startDate=2026-09-21T23%3A58%3A12%2B00%3A00&endDate=2026-09-22T00%3A08%3A01%2B00%3A00&type=CREATE&wemiClasses=expression&page=1",
+      "payload_sha256": "61a02daf86ff1c6a26f3598589417980c415746d5c0b1241b85f9b1c5825aa8c",
       "event_count": 0,
       "more_entries": false
     },
     {
       "query": {
-        "startDate": "2026-09-21T23:55:09+00:00",
-        "endDate": "2026-09-22T00:03:12+00:00",
+        "startDate": "2026-09-21T23:58:12+00:00",
+        "endDate": "2026-09-22T00:08:01+00:00",
         "type": "CREATE",
         "wemiClasses": "manifestation",
         "page": "1"
       },
-      "request_url": "https://publications.europa.eu/webapi/notification/ingestion?startDate=2026-09-21T23%3A55%3A09%2B00%3A00&endDate=2026-09-22T00%3A03%3A12%2B00%3A00&type=CREATE&wemiClasses=manifestation&page=1",
-      "payload_sha256": "24a0fdc324a90d5d37ed6c0b6333f95c2a71762a36084b293546b8bd23c52780",
+      "request_url": "https://publications.europa.eu/webapi/notification/ingestion?startDate=2026-09-21T23%3A58%3A12%2B00%3A00&endDate=2026-09-22T00%3A08%3A01%2B00%3A00&type=CREATE&wemiClasses=manifestation&page=1",
+      "payload_sha256": "61a02daf86ff1c6a26f3598589417980c415746d5c0b1241b85f9b1c5825aa8c",
       "event_count": 0,
       "more_entries": false
     },
     {
       "query": {
-        "startDate": "2026-09-21T23:55:09+00:00",
-        "endDate": "2026-09-22T00:03:12+00:00",
+        "startDate": "2026-09-21T23:58:12+00:00",
+        "endDate": "2026-09-22T00:08:01+00:00",
         "type": "DELETE",
         "wemiClasses": "work",
         "page": "1"
       },
-      "request_url": "https://publications.europa.eu/webapi/notification/ingestion?startDate=2026-09-21T23%3A55%3A09%2B00%3A00&endDate=2026-09-22T00%3A03%3A12%2B00%3A00&type=DELETE&wemiClasses=work&page=1",
-      "payload_sha256": "24a0fdc324a90d5d37ed6c0b6333f95c2a71762a36084b293546b8bd23c52780",
+      "request_url": "https://publications.europa.eu/webapi/notification/ingestion?startDate=2026-09-21T23%3A58%3A12%2B00%3A00&endDate=2026-09-22T00%3A08%3A01%2B00%3A00&type=DELETE&wemiClasses=work&page=1",
+      "payload_sha256": "61a02daf86ff1c6a26f3598589417980c415746d5c0b1241b85f9b1c5825aa8c",
       "event_count": 0,
       "more_entries": false
     },
     {
       "query": {
-        "startDate": "2026-09-21T23:55:09+00:00",
-        "endDate": "2026-09-22T00:03:12+00:00",
+        "startDate": "2026-09-21T23:58:12+00:00",
+        "endDate": "2026-09-22T00:08:01+00:00",
         "type": "DELETE",
         "wemiClasses": "expression",
         "page": "1"
       },
-      "request_url": "https://publications.europa.eu/webapi/notification/ingestion?startDate=2026-09-21T23%3A55%3A09%2B00%3A00&endDate=2026-09-22T00%3A03%3A12%2B00%3A00&type=DELETE&wemiClasses=expression&page=1",
-      "payload_sha256": "24a0fdc324a90d5d37ed6c0b6333f95c2a71762a36084b293546b8bd23c52780",
+      "request_url": "https://publications.europa.eu/webapi/notification/ingestion?startDate=2026-09-21T23%3A58%3A12%2B00%3A00&endDate=2026-09-22T00%3A08%3A01%2B00%3A00&type=DELETE&wemiClasses=expression&page=1",
+      "payload_sha256": "61a02daf86ff1c6a26f3598589417980c415746d5c0b1241b85f9b1c5825aa8c",
       "event_count": 0,
       "more_entries": false
     },
     {
       "query": {
-        "startDate": "2026-09-21T23:55:09+00:00",
-        "endDate": "2026-09-22T00:03:12+00:00",
+        "startDate": "2026-09-21T23:58:12+00:00",
+        "endDate": "2026-09-22T00:08:01+00:00",
         "type": "DELETE",
         "wemiClasses": "manifestation",
         "page": "1"
       },
-      "request_url": "https://publications.europa.eu/webapi/notification/ingestion?startDate=2026-09-21T23%3A55%3A09%2B00%3A00&endDate=2026-09-22T00%3A03%3A12%2B00%3A00&type=DELETE&wemiClasses=manifestation&page=1",
-      "payload_sha256": "24a0fdc324a90d5d37ed6c0b6333f95c2a71762a36084b293546b8bd23c52780",
+      "request_url": "https://publications.europa.eu/webapi/notification/ingestion?startDate=2026-09-21T23%3A58%3A12%2B00%3A00&endDate=2026-09-22T00%3A08%3A01%2B00%3A00&type=DELETE&wemiClasses=manifestation&page=1",
+      "payload_sha256": "61a02daf86ff1c6a26f3598589417980c415746d5c0b1241b85f9b1c5825aa8c",
       "event_count": 0,
       "more_entries": false
     }

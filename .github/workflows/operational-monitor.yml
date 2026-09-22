@@ -14,6 +14,7 @@ on:
       - "schemas/operational-result-v0.1.schema.json"
       - "schemas/feed-card-v0.1.schema.json"
       - "tests/test_operational_state.py"
+      - "tests/test_operational_concurrency.py"
       - "tests/test_operational_feed.py"
       - "tests/test_operational_reobserve.py"
       - "tests/test_operational_temporal_metadata.py"
@@ -51,6 +52,7 @@ jobs:
         run: |
           python -m pytest -q \
             tests/test_operational_state.py \
+            tests/test_operational_concurrency.py \
             tests/test_operational_feed.py \
             tests/test_operational_reobserve.py \
             tests/test_operational_temporal_metadata.py \
@@ -73,6 +75,7 @@ jobs:
           set +e
           python - <<'PY'
           import json, subprocess, sys
+          from needle.operations.state import promotion_decision
           generated=json.load(open('artifacts/operational-cycle/state.json'))
           report=json.load(open('artifacts/operational-cycle/report.json'))
           remote=json.loads(subprocess.check_output([
@@ -81,16 +84,16 @@ jobs:
           remote_cursor=remote['poll_cursor']['last_completed_end']
           expected=report['window']['previous_completed_end']
           generated_cursor=generated['poll_cursor']['last_completed_end']
-          if remote_cursor == generated_cursor:
-              print('Operational cycle already promoted by another run.')
+          decision=promotion_decision(
+              remote_cursor=remote_cursor,
+              expected_cursor=expected,
+              generated_cursor=generated_cursor,
+          )
+          print(f'Operational promotion decision: {decision}')
+          if decision in {'ALREADY_PROMOTED','STALE_REMOTE'}:
               sys.exit(20)
-          if remote_cursor != expected:
-              print(
-                  'Stale operational cycle; remote cursor moved from ',
-                  expected,' to ',remote_cursor,'. Skipping promotion.',
-                  sep=''
-              )
-              sys.exit(20)
+          if decision != 'PROMOTE':
+              sys.exit(21)
           PY
           rc=$?
           set -e

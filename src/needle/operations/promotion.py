@@ -23,13 +23,13 @@ def promotion_decision(
     therefore the compare-and-swap token for the complete promoted operational
     snapshot, including baselines, results, cards and provenance observations.
     """
-    remote = _instant(remote_cursor)
+    _instant(remote_cursor)
     expected = _instant(expected_cursor)
     generated = _instant(generated_cursor)
+    if generated <= expected:
+        return "INVALID_GENERATED_CURSOR"
     if remote_cursor == generated_cursor:
         return "ALREADY_PROMOTED"
     if remote_cursor != expected_cursor:
         return "STALE_REMOTE"
-    if generated <= expected:
-        return "INVALID_GENERATED_CURSOR"
     return "PROMOTE"

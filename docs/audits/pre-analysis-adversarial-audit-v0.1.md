@@ -28,6 +28,9 @@ documented negative result if it survives.
 |---|---|---|---|---|---|
 | A-01 | Source observation | Metadata-route failure could project successful legal-text retrieval as source unavailable | High | FIXED `6d0aa94` | No interface reopening |
 | A-02 | Authentic-cause parser | Bare prior Annex mention could authorize later amendment-shaped prose as VERIFIED mutation | High | FIXED `7438a84` | No interface reopening |
+| A-03 | Operational baseline | Partial re-observation could replace a complete comparator baseline | High | FIXED `b05113d` | No interface reopening |
+| A-04 | Source-change semantics | Cellar DELETE was promoted from ingestion action to source availability truth | High | FIXED `ba3f3ae` | Bounded P1-B semantic correction; schema unchanged |
+| A-05 | Authentic source locality | Cross-stream flattened text could combine authority context and amendment prose | High | IN REGRESSION | No schema change expected |
 | S-01 | Repository status | README still named closed Issue #21 as current priority | Medium | FIXED `6d0aa94` | Documentation only |
 | N-01 | Novelty thesis | “EU legal-change monitoring / diff / corroboration / grounded explanation” is not novel | Thesis-level | CLAIM NARROWED | Strategic, not domain contract |
 
@@ -101,20 +104,66 @@ and unit suite remain green.
 Existing evidence contract survives. Operational parser admitted insufficient
 context.
 
-### Open micro-risk M-01 — flattened text still loses structural authority
+### A-03 — partial source observation could poison the next comparator
 
-The recurring authentic-cause adapter works over deterministic visible text
-flattened from structured source files. The A-02 repair strengthens lexical
-authorization, but a sufficiently exact quotation of a full amendment heading
-plus command could still be indistinguishable from operative drafting after
-flattening.
+A-01 correctly established that a content-only or metadata-only observation can
+still prove source availability. The recurring monitor, however, would then have
+advanced its prospective baseline to that partial snapshot.
 
-Do **not** solve this by adding more regex heuristics.
+That meant a transient route outage could discard a previously complete
+comparison dimension and weaken every later source comparison.
 
-Before Issue #29 closes, test whether Formex structural context can be retained
-transiently so a VERIFIED authentic instruction carries a source-local
-structural locator. If not, record this as a bounded residual risk and keep the
-parser family narrow.
+Commit `b05113d` separates availability from comparator eligibility:
+
+- partial observations remain operational evidence;
+- only complete `OBSERVED` re-observations with both immutable content and
+  metadata observations may replace the prospective baseline.
+
+Full unit tests, Operational Needle vertical slice and Post-P1 foundation audit
+passed.
+
+### A-04 — DELETE ingestion action was treated as public availability truth
+
+The official Cellar notification documentation defines CREATE / UPDATE / DELETE
+as **types of ingestion action** and the service as a history of performed
+ingestion actions. The implementation nevertheless returned
+`AVAILABILITY_CHANGED` unconditionally for DELETE and skipped targeted
+re-observation.
+
+That contradicted the same P1-B decision's stronger rule that the feed is a
+change-hint stream which schedules source observation, and the frozen Source
+Anomaly rule that route failure is not source absence.
+
+Commit `ba3f3ae` makes a bounded semantic correction:
+
+- DELETE remains preserved as authoritative Cellar ingestion-history evidence;
+- DELETE now triggers targeted re-observation when addressable;
+- `AVAILABILITY_CHANGED` requires independently observed previous/current
+  availability states;
+- failed preferred-route observation is unresolved, not `available=false`;
+- `source-change-v0.1` schema is unchanged.
+
+The Cellar update-detection decision doc now records the correction explicitly.
+
+### A-05 — source-local authority boundaries (in regression)
+
+A-02 still left one concrete risk: Formex archive entries were flattened into
+one analysis string. An explicit amendment heading in one XML stream could
+therefore authorize amendment-shaped prose in another stream.
+
+The current candidate repair keeps transient analysis segments per archive
+entry and makes authentic candidate generation operate inside those source-local
+boundaries. Positive candidates retain an archive-entry locator.
+
+This finding remains **IN REGRESSION** until unit, operational, foundation and
+live 2026/2104 checks complete.
+
+Residual risk after segmentation: a verbatim quotation of both the authorizing
+heading and command within the same source stream may still be lexically
+indistinguishable from operative drafting. Do not solve that by regex accretion;
+either retain stronger Formex structural authority or keep the parser family
+explicitly bounded.
+
 
 ## 2. Canonical identity / evidence ownership
 
@@ -161,9 +210,10 @@ Still to attack:
 - concurrent monitor/state promotion;
 - duplicate event delivery across poll overlaps;
 - cursor recovery after partial workflow failure;
-- baseline contamination by post-event state;
-- stale branch/workflow semantics;
 - state-file growth and boundedness.
+
+Baseline contamination by partial post-event state was attacked and fixed in
+A-03. DELETE/source-availability conflation was attacked and fixed in A-04.
 
 ## 4. Product truthfulness
 
@@ -360,8 +410,8 @@ prioritise misleading execution semantics over cosmetic reduction.
 
 ## Next attacks
 
-1. preserve source-local structure/locator for authentic-cause verification or
-   explicitly bound the residual flattened-text risk;
+1. finish A-05 source-local authority regressions and bound the remaining
+   same-stream quotation risk;
 2. adversarially test identity and temporal cross-binding beyond the already
    regressed CELEX case;
 3. attack operational state promotion/concurrency and cursor recovery;

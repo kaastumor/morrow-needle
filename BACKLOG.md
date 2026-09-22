@@ -17,6 +17,8 @@ Strategic rule from here:
 Unless new official/executable evidence reopens a foundation risk:
 
 1. **P2 / Issue #29 — pre-analysis adversarial audit + repository sanitation gate. ACTIVE HARD STOP.** Issue #27 is complete with three real operational classes. Attack Needle from byte/parser assumptions through canonical ownership, operational behavior, product truthfulness, analytical usefulness and the external novelty/thesis claim. In the same run, sanitize the repository, reconcile issues/docs/workflows/backlog, and verify the recurring worker itself. No new analytic primitive may leapfrog this gate unless new official evidence exposes a more severe foundation blocker.
+   - Autonomous runway: **#42** cursor/concurrency adversary first, then **#43** workflow/script sanitation classification.
+   - The hourly worker may execute those bounded tasks; novelty verdict, Project Health decision and post-audit architecture choice remain project-level #29 work.
 2. **Post-audit architecture choice.** Do not pre-commit to affected-entity intelligence, Half-Life v0.2, API/retrieval delivery or another analytic layer. Product checkpoint evidence provisionally favors a human-readable Source Mode presentation resolver over existing provenance, but Issue #29 must try to falsify that conclusion before implementation.
 3. Ranking, broader plain-language evaluation, subscriptions and saved monitors remain later-stage candidates only if the audit preserves the underlying product thesis.
 

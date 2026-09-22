@@ -31,6 +31,7 @@ documented negative result if it survives.
 | A-03 | Operational baseline | Partial re-observation could replace a complete comparator baseline | High | FIXED `b05113d` | No interface reopening |
 | A-04 | Source-change semantics | Cellar DELETE was promoted from ingestion action to source availability truth | High | FIXED `ba3f3ae` | Bounded P1-B semantic correction; schema unchanged |
 | A-05 | Authentic source locality | Cross-stream flattened text could combine authority context and amendment prose | High | IN REGRESSION | No schema change expected |
+| A-06 | Operational promotion | Workflow had an inline cursor race guard but no executable ownership-level CAS contract | High | REVISED in #42 | No architecture/interface reopening; guard extracted and tested |
 | S-01 | Repository status | README still named closed Issue #21 as current priority | Medium | FIXED `6d0aa94` | Documentation only |
 | N-01 | Novelty thesis | “EU legal-change monitoring / diff / corroboration / grounded explanation” is not novel | Thesis-level | CLAIM NARROWED | Strategic, not domain contract |
 
@@ -164,7 +165,6 @@ indistinguishable from operative drafting. Do not solve that by regex accretion;
 either retain stronger Formex structural authority or keep the parser family
 explicitly bounded.
 
-
 ## 2. Canonical identity / evidence ownership
 
 ### Survived so far
@@ -188,6 +188,50 @@ remain required.
 
 ## 3. Integration / operational state
 
+### A-06 — cursor promotion/concurrency adversary
+
+**Adversary**
+
+Issue #42 attacked the stateful monitor at its promotion boundary rather than
+assuming workflow serialization was sufficient:
+
+- two cycles derive from the same completed cursor and one promotes first;
+- a stale generated snapshot attempts to overwrite newer remote state;
+- a failed/partial cycle has not advanced the completed boundary;
+- a generated cursor moves backwards;
+- an overlap-window event is redelivered while still replayable;
+- expired dedupe keys are allowed to fall out without dropping still-replayable
+  keys.
+
+**Finding**
+
+The workflow already had an inline compare-and-swap check, so no demonstrated
+production overwrite was found. The weakness was that this consequential state
+ownership rule existed only as workflow glue and was not independently
+executable or regression-tested. That made future edits capable of silently
+weakening cursor monotonicity or idempotence.
+
+**Repair / evidence**
+
+#42 extracts the existing rule into `needle.operations.promotion` and makes the
+workflow call that exact implementation. Focused regressions prove:
+
+- first same-cursor cycle may promote; the second becomes `STALE_REMOTE`;
+- an exact replay is `ALREADY_PROMOTED`;
+- equal/backwards generated boundaries are rejected as
+  `INVALID_GENERATED_CURSOR`, so failure before completion cannot advance state;
+- stale generated state cannot replace a newer remote snapshot;
+- `retain_overlap_event_keys` preserves a processed event throughout the
+  replayable overlap while permitting genuinely expired keys to leave the
+  bounded dedupe set.
+
+Branch Python-unit and Repository-sanitation workflows are green on head
+`58bd926`.
+
+**Disposition: revise.** The file/GitHub operational baseline survives; no
+queue/database/locking architecture is justified by this attack. The correction
+is an enforcement/testability repair at the existing promotion boundary.
+
 ### Survived so far
 
 The product checkpoint recovered a genuine production audit case from operational
@@ -205,15 +249,14 @@ cycle `d50b8ee2`:
 This demonstrates that the pipeline can positively say “official source metadata
 changed while the observed legal text did not” without manufacturing legal news.
 
-Still to attack:
-
-- concurrent monitor/state promotion;
-- duplicate event delivery across poll overlaps;
-- cursor recovery after partial workflow failure;
-- state-file growth and boundedness.
-
 Baseline contamination by partial post-event state was attacked and fixed in
 A-03. DELETE/source-availability conflation was attacked and fixed in A-04.
+Cursor/concurrency, partial-completion and overlap-redelivery semantics were
+attacked in A-06 and survive with the extracted executable CAS guard.
+
+Still to attack:
+
+- state-file growth and boundedness beyond the replay-window dedupe invariant.
 
 ## 4. Product truthfulness
 
@@ -388,7 +431,6 @@ Decision:
 The purpose is to reduce strategic/autonomous drift without turning governance
 into a second project.
 
-
 ### Fixed
 
 - README strategic status was stale and still pointed to Issue #21. Corrected
@@ -436,11 +478,10 @@ prioritise misleading execution semantics over cosmetic reduction.
    same-stream quotation risk;
 2. adversarially test identity and temporal cross-binding beyond the already
    regressed CELEX case;
-3. attack operational state promotion/concurrency and cursor recovery;
-4. classify all workflows/scripts and remove only demonstrably obsolete
+3. classify all workflows/scripts and remove only demonstrably obsolete
    machinery;
-5. compare the candidate narrower differentiators against emendrix and other
+4. compare the candidate narrower differentiators against emendrix and other
    direct substitutes;
-6. test whether Source Mode presentation resolution still deserves to be the
+5. test whether Source Mode presentation resolution still deserves to be the
    next product investment;
-7. rewrite BACKLOG.md only after these attacks decide the next architecture.
+6. rewrite BACKLOG.md only after these attacks decide the next architecture.

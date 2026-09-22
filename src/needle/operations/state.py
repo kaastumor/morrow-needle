@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from copy import deepcopy
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Any
 
 from needle.provenance.ledger import verify_record_hash
@@ -363,6 +363,33 @@ def mark_event_processed(
         | {event_key}
     )
     next_state["updated_at"]=updated_at
+    return next_state
+
+
+def retain_overlap_event_keys(
+    state: dict[str,Any],
+    events: list[dict[str,Any]],
+    *,
+    window_end: str,
+    overlap_seconds: int,
+    updated_at: str,
+) -> dict[str,Any]:
+    """Keep only event keys that can recur in the next overlap query."""
+    end=_instant(window_end)
+    cutoff=end-timedelta(seconds=overlap_seconds)
+    processed=set(state.get("processed_event_keys",[]))
+    keep={
+        event["event_key"]
+        for event in events
+        if event.get("event_key") in processed
+        and cutoff <= _instant(event["ingestion_time"]) <= end
+    }
+    next_state=deepcopy(state)
+    next_state["processed_event_keys"]=sorted(keep)
+    next_state["updated_at"]=updated_at
+    errors=validate_operational_state(next_state)
+    if errors:
+        raise OperationalStateError("; ".join(errors))
     return next_state
 
 

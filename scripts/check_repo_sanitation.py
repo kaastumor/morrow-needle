@@ -44,7 +44,11 @@ TEXT_SUFFIXES = {
     ".css", ".js", ".ts", ".tsx", ".xml", ".csv",
 }
 
-MERGE_MARKERS = ("<<<<<<< ", "=======", ">>>>>>> ")
+MERGE_MARKERS = (
+    "<" * 7 + " ",
+    "=" * 7,
+    ">" * 7 + " ",
+)
 
 
 def tracked_files() -> list[Path]:

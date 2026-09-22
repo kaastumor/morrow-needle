@@ -30,7 +30,9 @@ documented negative result if it survives.
 | A-02 | Authentic-cause parser | Bare prior Annex mention could authorize later amendment-shaped prose as VERIFIED mutation | High | FIXED `7438a84` | No interface reopening |
 | A-03 | Operational baseline | Partial re-observation could replace a complete comparator baseline | High | FIXED `b05113d` | No interface reopening |
 | A-04 | Source-change semantics | Cellar DELETE was promoted from ingestion action to source availability truth | High | FIXED `ba3f3ae` | Bounded P1-B semantic correction; schema unchanged |
-| A-05 | Authentic source locality | Cross-stream flattened text could combine authority context and amendment prose | High | IN REGRESSION | No schema change expected |
+| A-05 | Authentic source locality | Cross-stream flattened text could combine authority context and amendment prose | High | FIXED `dc357bc` | No schema change |
+| A-06 | Source Mode evidence closure | Public card could point to non-persisted Operational Result / partial evidence | High | FIXED `324924f` | Process/provenance persistence only |
+| A-07 | Operational cache | Processed-event dedupe history grew without a retention horizon | Medium | FIXED `b248331`; live verified | Hot-cache policy only |
 | S-01 | Repository status | README still named closed Issue #21 as current priority | Medium | FIXED `6d0aa94` | Documentation only |
 | N-01 | Novelty thesis | “EU legal-change monitoring / diff / corroboration / grounded explanation” is not novel | Thesis-level | CLAIM NARROWED | Strategic, not domain contract |
 
@@ -145,7 +147,7 @@ Commit `ba3f3ae` makes a bounded semantic correction:
 
 The Cellar update-detection decision doc now records the correction explicitly.
 
-### A-05 — source-local authority boundaries (in regression)
+### A-05 — source-local authority boundaries
 
 A-02 still left one concrete risk: Formex archive entries were flattened into
 one analysis string. An explicit amendment heading in one XML stream could
@@ -155,8 +157,13 @@ The current candidate repair keeps transient analysis segments per archive
 entry and makes authentic candidate generation operate inside those source-local
 boundaries. Positive candidates retain an archive-entry locator.
 
-This finding remains **IN REGRESSION** until unit, operational, foundation and
-live 2026/2104 checks complete.
+Commit `dc357bc` keeps transient analysis segmented by archive entry and makes
+authentic candidate generation operate within each source-local segment. A
+heading in `TOC.xml` can no longer authorize a command in `REPORT.xml`.
+Positive evidence retains an exact archive-entry locator.
+
+Unit tests, live Cellar contract, Operational Needle vertical slice, Post-P1
+foundation audit and the live 2026/2104 replay all remained green.
 
 Residual risk after segmentation: a verbatim quotation of both the authorizing
 heading and command within the same source stream may still be lexically
@@ -186,6 +193,33 @@ encountered in this run:
 These are **not final passes**. Dedicated cross-binding / collision attacks
 remain required.
 
+### Identity / temporal cross-binding adversary — current production path survives
+
+The generic `derive_operational_relevance()` helper intentionally assumes its
+caller supplies temporal assertions already bound to the relevant legal
+analysis. That looked like a cross-binding hazard because the helper itself does
+not inspect assertion subject identity.
+
+The current recurring production path does **not** expose that precondition
+directly:
+
+1. publication metadata is projected from the same immutable re-observation as
+   the authentic legal text;
+2. `derive_publication_recency_from_reobservation()` checks the temporal
+   assertion's CELEX subject against the re-observed CELEX;
+3. the resulting recency object is bound to the exact
+   `legal_analysis_identity`;
+4. a recency object for a different legal-analysis identity is rejected;
+5. source-diff verified changes do not inherit the authentic act's publication
+   assertion through this route.
+
+Existing adversaries cover cross-CELEX publication, cross-analysis recency and
+verification-route mismatch.
+
+**Result:** negative finding. The production boundary currently fails closed.
+Do not add a new binding abstraction merely to remove an internal documented
+precondition unless another caller makes that precondition externally unsafe.
+
 ## 3. Integration / operational state
 
 ### Survived so far
@@ -205,12 +239,76 @@ cycle `d50b8ee2`:
 This demonstrates that the pipeline can positively say “official source metadata
 changed while the observed legal text did not” without manufacturing legal news.
 
+### A-06 — latest public card evidence closure was not durable
+
+The monitor built complete Operational Result objects but only committed cards,
+state and the summary report. A card's `operational_result_id` could therefore
+refer to a process object that disappeared when the job ended. In addition,
+partial re-observation Source Observations were dropped unless the observation
+was complete enough to seed a prospective baseline.
+
+Commit `324924f` separates these concerns:
+
+- all valid re-observed Source Observations are retained as provenance even if
+  they cannot seed a baseline;
+- latest Operational Results are persisted and promoted alongside latest cards;
+- baseline advancement remains separately strict under A-03.
+
+The first post-merge main monitor run completed successfully. It had zero new
+events, so latest cards/results were correctly empty while the new promotion
+path itself was exercised.
+
+Product consequence: a human-readable Source Mode resolver was one layer too
+early. Durable evidence closure had to exist before presentation resolution
+could be honest.
+
+### A-07 / S-02 — hot event-dedupe state had no retention horizon
+
+Measured operational state grew from roughly 8 KB at pilot start to 6.86 MB in
+about 28 hours. The dominant avoidable component was 55,143 historical
+`processed_event_keys`, despite the feed poller's overlap being only five
+minutes.
+
+Commit `b248331` bounds dedupe retention to event keys that can legitimately
+recur in the *next* overlap query. It does not prune baselines or immutable
+Source Observations.
+
+First real post-merge monitor cycle:
+
+- processed keys: 55,143 → 0 (the overlap window was empty);
+- compact JSON bytes: 6,216,356 → 1,665,915;
+- checked-in pretty state: ~6.86 MB → ~2.04 MB;
+- baselines: 854 → 854;
+- Source Observations: 1,643 → 1,643.
+
+**Result:** the urgent cache bloat was stale dedupe history, not evidence that
+required a database. Continue measuring before introducing storage
+infrastructure.
+
+### Operational promotion / concurrency adversary — current workflow survives
+
+The stateful monitor:
+
+- runs with one main concurrency group and `cancel-in-progress: false`;
+- begins from fresh `origin/main`;
+- advances the cursor only after a complete processing cycle;
+- checks the remote cursor immediately before promotion;
+- skips stale promotion when another completed cycle has advanced the cursor;
+- lets an ordinary git push conflict fail rather than silently overwrite newer
+  main state.
+
+This is not a transactional database, but under the current single-writer pilot
+it fails toward replay rather than silent event loss.
+
+**Result:** negative finding at current scale. Do not replace the mechanism
+without an observed race or scale requirement.
+
 Still to attack:
 
-- concurrent monitor/state promotion;
-- duplicate event delivery across poll overlaps;
-- cursor recovery after partial workflow failure;
-- state-file growth and boundedness.
+- workflow/script classification and removal of truly obsolete machinery;
+- growth of baseline/provenance state after dedupe compaction;
+- behaviour after a real partial monitor failure rather than only structural
+  inspection.
 
 Baseline contamination by partial post-event state was attacked and fixed in
 A-03. DELETE/source-availability conflation was attacked and fixed in A-04.
@@ -319,6 +417,41 @@ Source checked 2026-09-22:
 Therefore the **core operational loop itself is not a defensible Needle novelty
 claim**.
 
+### Capability-by-capability novelty correction
+
+The audit now rejects several tempting claims individually rather than replacing
+one broad novelty slogan with another.
+
+| Needle capability | External adversary | Audit position |
+|---|---|---|
+| Monitoring / structural legal diff / corroboration / grounded explanation | emendrix, EUR-Lex, vLex and commercial regulatory intelligence | **Not novel** |
+| Source disagreement / no-text / unknown applicability presentation | emendrix already ships these explicitly | **Not novel by itself** |
+| Human-readable evidence links / Source Mode presentation | emendrix already exposes clickable provision evidence and official links | **Necessary product parity, not a moat** |
+| Obligation / permission / prohibition representation | EU Legal Obligation Metadata Ontology (LOMO), LegalRuleML and Rules-as-Code systems | **Not novel as a representation problem** |
+| Point-in-time legislation / temporal validity | long-established legislative information systems and Rules-as-Code work | **Not novel by itself** |
+| Cross-reference dependency graphs / change propagation | legislation drafting systems, regulatory change-propagation models and current Rules-as-Code research | **Not novel as a graph concept** |
+| Multilingual legal discrepancies / aligned EU-language corpora | longstanding EU-law doctrine and DGT multilingual resources | **Not novel as a problem or corpus** |
+
+What may still be differentiated is **the way these dimensions are composed and
+evidence-gated**, especially where Needle refuses to collapse text change,
+semantic rule change, applicability, source state, language scope and indirect
+dependency effect into one generic “regulatory change” object.
+
+Sources added 2026-09-22:
+
+- EU LOMO: https://drpm.pages.code.europa.eu/lomo/latest/
+- LegalRuleML: https://docs.oasis-open.org/legalruleml/
+- OECD Law as Code consultation:
+  https://www.oecd.org/en/events/public-consultations/2026/07/consultation-on-the-digital-provision-of-law-towards-a-shared-reference-framework-for-law-as-code.html
+- Rules-as-Code temporal/norm framework:
+  https://regels.overheid.nl/blog/18/building-a-framework-for-norms-and-rules
+- RegelRecht dependency-graph research:
+  https://docs.regelrecht.rijks.app/research/rules-as-executed
+- EU drafting handbook (cross-reference repercussions):
+  https://www.consilium.europa.eu/media/67390/joint_handbook_en_01-october-2023_clean_def_final.pdf
+- DGT multilingual resources:
+  https://translation.ec.europa.eu/tools-and-resources/resources-language-professionals_en
+
 ### Candidate narrower differentiation — not yet proven novel
 
 Needle currently goes materially beyond the comparison surface above in some
@@ -410,15 +543,17 @@ prioritise misleading execution semantics over cosmetic reduction.
 
 ## Next attacks
 
-1. finish A-05 source-local authority regressions and bound the remaining
-   same-stream quotation risk;
-2. adversarially test identity and temporal cross-binding beyond the already
-   regressed CELEX case;
-3. attack operational state promotion/concurrency and cursor recovery;
-4. classify all workflows/scripts and remove only demonstrably obsolete
-   machinery;
-5. compare the candidate narrower differentiators against emendrix and other
-   direct substitutes;
-6. test whether Source Mode presentation resolution still deserves to be the
-   next product investment;
-7. rewrite BACKLOG.md only after these attacks decide the next architecture.
+1. classify all workflows/scripts and remove only demonstrably obsolete or
+   misleading machinery;
+2. test the remaining candidate differentiators for **incremental user value**,
+   not merely technical distinctness:
+   - Legislative X-Ray / dependency ripple;
+   - Half-Life / temporary-regime history;
+   - multilingual corrigenda state;
+   - semantic Change Atoms over time;
+3. challenge whether Source Mode presentation is merely required parity with
+   emendrix rather than the next strategic investment;
+4. bound the residual same-stream authentic-quotation risk;
+5. observe baseline/provenance growth after A-07 before making any storage
+   architecture decision;
+6. rewrite BACKLOG.md only after these attacks decide the next architecture.

@@ -29,6 +29,7 @@ from needle.operations.state import (
     lookup_baseline,
     mark_event_processed,
     record_reobservation,
+    retain_overlap_event_keys,
     validate_operational_state,
 )
 from needle.updates.cellar_feed import parse_feed
@@ -183,6 +184,13 @@ def main() -> int:
         else: next_state=mark_event_processed(next_state,representative["event_key"],updated_at=end.isoformat())
         for event in group: next_state=mark_event_processed(next_state,event["event_key"],updated_at=end.isoformat())
 
+    next_state=retain_overlap_event_keys(
+        next_state,
+        events,
+        window_end=end.isoformat(),
+        overlap_seconds=cursor["overlap_seconds"],
+        updated_at=end.isoformat(),
+    )
     next_state=complete_poll_window(next_state,window_end=end.isoformat(),updated_at=end.isoformat()); errors=validate_operational_state(next_state)
     if errors: raise AssertionError("invalid next operational state: "+"; ".join(errors))
     card_schema=json.loads(Path("schemas/feed-card-v0.1.schema.json").read_text(encoding="utf-8"))
@@ -191,7 +199,7 @@ def main() -> int:
     (OUT/"state.json").write_text(json.dumps(next_state,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     (OUT/"results.json").write_text(json.dumps(results,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     (OUT/"cards.json").write_text(json.dumps(cards,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
-    report={"cycle_version":"0.1","window":{"start":iso(start),"previous_completed_end":cursor["last_completed_end"],"end":iso(end),"overlap_seconds":cursor["overlap_seconds"]},"feed_observations":feed_observations,"event_count_total":len(events),"event_count_new":len(new_events),"root_group_count":len(grouped),"groups":group_records,"stream_counts":{stream:sum(card["stream"] == stream for card in cards) for stream in ("CHANGE_FEED","AUDIT_FEED","ABSTENTION_FEED")},"disposition_counts":{disposition:sum(result["disposition"] == disposition for result in results) for disposition in sorted({result["disposition"] for result in results})},"baseline_count_before":len(state["baselines"]),"baseline_count_after":len(next_state["baselines"]),"source_observation_count_before":len(state["source_observations"]),"source_observation_count_after":len(next_state["source_observations"])}
+    report={"cycle_version":"0.1","window":{"start":iso(start),"previous_completed_end":cursor["last_completed_end"],"end":iso(end),"overlap_seconds":cursor["overlap_seconds"]},"feed_observations":feed_observations,"event_count_total":len(events),"event_count_new":len(new_events),"root_group_count":len(grouped),"groups":group_records,"stream_counts":{stream:sum(card["stream"] == stream for card in cards) for stream in ("CHANGE_FEED","AUDIT_FEED","ABSTENTION_FEED")},"disposition_counts":{disposition:sum(result["disposition"] == disposition for result in results) for disposition in sorted({result["disposition"] for result in results})},"baseline_count_before":len(state["baselines"]),"baseline_count_after":len(next_state["baselines"]),"source_observation_count_before":len(state["source_observations"]),"source_observation_count_after":len(next_state["source_observations"]),"processed_event_count_before":len(state["processed_event_keys"]),"processed_event_count_after":len(next_state["processed_event_keys"]),"state_json_bytes_before":len(json.dumps(state,separators=(",",":"),ensure_ascii=False).encode("utf-8")),"state_json_bytes_after":len(json.dumps(next_state,separators=(",",":"),ensure_ascii=False).encode("utf-8"))}
     (OUT/"report.json").write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n",encoding="utf-8"); print(json.dumps(report,indent=2,ensure_ascii=False)); return 0
 
 

@@ -10,6 +10,7 @@ from needle.operations.state import (
     baseline_seed_eligible,
     lookup_baseline,
     record_reobservation,
+    retain_overlap_event_keys,
     validate_operational_state,
 )
 from needle.provenance.ledger import verify_record_hash
@@ -263,3 +264,39 @@ def test_partial_reobservation_record_survives_without_moving_baseline():
     )
     assert recorded["baselines"]==STATE["baselines"]
     assert baseline_seed_eligible(partial) is False
+
+
+def test_processed_event_retention_is_scoped_to_next_overlap_window():
+    state=deepcopy(STATE)
+    old_key="cellar:old_2026-09-21T09:50:00+00:00"
+    keep_key="cellar:keep_2026-09-21T09:57:00+00:00"
+    boundary_key="cellar:boundary_2026-09-21T09:55:00+00:00"
+    state["processed_event_keys"]=[old_key,keep_key,boundary_key]
+    events=[
+        {"event_key":old_key,"ingestion_time":"2026-09-21T09:50:00+00:00"},
+        {"event_key":boundary_key,"ingestion_time":"2026-09-21T09:55:00+00:00"},
+        {"event_key":keep_key,"ingestion_time":"2026-09-21T09:57:00+00:00"},
+    ]
+    compact=retain_overlap_event_keys(
+        state,events,
+        window_end="2026-09-21T10:00:00+00:00",
+        overlap_seconds=300,
+        updated_at="2026-09-21T10:00:00+00:00",
+    )
+    assert compact["processed_event_keys"]==[boundary_key,keep_key]
+
+
+def test_overlap_retention_does_not_add_unprocessed_event():
+    state=deepcopy(STATE)
+    state["processed_event_keys"]=[]
+    event={
+        "event_key":"cellar:new_2026-09-21T09:59:00+00:00",
+        "ingestion_time":"2026-09-21T09:59:00+00:00",
+    }
+    compact=retain_overlap_event_keys(
+        state,[event],
+        window_end="2026-09-21T10:00:00+00:00",
+        overlap_seconds=300,
+        updated_at="2026-09-21T10:00:00+00:00",
+    )
+    assert compact["processed_event_keys"]==[]

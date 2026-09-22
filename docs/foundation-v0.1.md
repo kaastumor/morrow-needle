@@ -167,41 +167,41 @@ Historical certainty is field-specific, not one score:
 
 # Architecture baseline
 
+The logical flow remains:
+
 ```
-EU SOURCES
+OFFICIAL EU SOURCES
     ↓
-RAW IMMUTABLE STORE
-(content + source ID + retrieval time + hash)
+IMMUTABLE SOURCE OBSERVATIONS
     ↓
-NORMALISATION
-(Formex/XML/HTML/PDF → canonical structured document)
+NORMALISATION + IDENTITY RESOLUTION
     ↓
-IDENTITY RESOLUTION
-(ELI / CELEX / Cellar / procedure IDs)
+TEXT / STRUCTURE / TEMPORAL / PROCEDURAL TRUTH
     ↓
-DOCUMENT GRAPH + PROVISION GRAPH
+VERIFIED MUTATIONS + SEMANTIC / DERIVED VIEWS
     ↓
-DIFF / MUTATION ENGINE
-    ↓
-TEXTUAL MUTATIONS
-    ↓
-CHANGE ATOM EXTRACTION
-    ↓
-ADVERSARIAL VERIFICATION
-    ↓
-VERIFIED ATOMS / QUARANTINE
-    ↓
-PUBLIC API + NEEDLE + THREAD
+RETRIEVAL + SOURCE MODE + PUBLIC PROJECTIONS
 ```
 
-Proposed baseline:
-- Python for ingestion/parsing/deterministic transformation
-- PostgreSQL as canonical structured store
-- immutable object storage for raw source artifacts
-- queue/workflow layer for ingestion and reprocessing
-- Next.js for public UI
-- full-text search first; embeddings as secondary discovery
-- LLMs for extraction, classification, explanation and adversarial review, never canonical storage
+The **implementation baseline is deliberately smaller than the original
+aspirational stack proposal**:
+
+- Python + standard libraries / small established dependencies for deterministic
+  ingestion and analysis;
+- versioned files, fixtures and GitHub for canonical project evidence and
+  reproducible research assets;
+- bounded JSON operational state for the current monitoring experiment;
+- static/thin product projections while product questions are still being
+  tested;
+- no database, queue, object store, vector store, frontend framework or custom
+  model-training infrastructure until a concrete current-horizon requirement
+  proves the simpler baseline insufficient.
+
+The earlier PostgreSQL/object-storage/queue/Next.js sketch was a hypothesis
+about future scale, not an architectural commitment. It is superseded by the
+lean rule above.
+
+See `docs/project-charter.md` for the current north star and simpler baseline.
 
 ---
 

@@ -21,9 +21,12 @@ def test_exact_generated_cursor_is_idempotent_already_promoted():
     ) == "ALREADY_PROMOTED"
 
 
-def test_cycle_cannot_move_completed_boundary_backwards():
+def test_cycle_must_advance_completed_boundary():
     assert promotion_decision(
         remote_cursor=T1, expected_cursor=T1, generated_cursor=T0
+    ) == "INVALID_GENERATED_CURSOR"
+    assert promotion_decision(
+        remote_cursor=T1, expected_cursor=T1, generated_cursor=T1
     ) == "INVALID_GENERATED_CURSOR"
 
 

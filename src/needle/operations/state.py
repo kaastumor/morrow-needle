@@ -196,6 +196,50 @@ def lookup_baseline(
     }
 
 
+def record_reobservation(
+    state: dict[str,Any],
+    reobservation: dict[str,Any],
+    *,
+    updated_at: str,
+) -> dict[str,Any]:
+    """Persist immutable observations even when they cannot seed a baseline.
+
+    Operational cards may cite a partial re-observation. Dropping its immutable
+    Source Observation merely because it is unsuitable as the next comparator
+    would leave Source Mode with a dangling evidence reference.
+    """
+    next_state=deepcopy(state)
+    existing={
+        record["record_id"]:record
+        for record in next_state.get("source_observations",[])
+    }
+    for name in ("metadata_observation","content_observation"):
+        record=reobservation.get(name)
+        if record is None:
+            continue
+        prior=existing.get(record["record_id"])
+        if prior is not None and prior != record:
+            raise OperationalStateError(
+                f"record_id collision with different content: {record['record_id']}"
+            )
+        if prior is None:
+            if record.get("record_type")!="SOURCE_OBSERVATION":
+                raise OperationalStateError(
+                    "operational state accepts only SOURCE_OBSERVATION records"
+                )
+            if not verify_record_hash(record):
+                raise OperationalStateError(
+                    f"invalid source observation hash: {record['record_id']}"
+                )
+            next_state["source_observations"].append(record)
+            existing[record["record_id"]]=record
+    next_state["updated_at"]=updated_at
+    errors=validate_operational_state(next_state)
+    if errors:
+        raise OperationalStateError("; ".join(errors))
+    return next_state
+
+
 def baseline_seed_eligible(
     reobservation: dict[str,Any],
 ) -> bool:
@@ -258,23 +302,9 @@ def advance_baseline(
             "baseline requires at least one immutable source observation"
         )
 
-    next_state=deepcopy(state)
-    existing={
-        record["record_id"]:record
-        for record in next_state.get("source_observations",[])
-    }
-    for name in ("metadata_observation","content_observation"):
-        record=reobservation.get(name)
-        if record is None:
-            continue
-        prior=existing.get(record["record_id"])
-        if prior is not None and prior != record:
-            raise OperationalStateError(
-                f"record_id collision with different content: {record['record_id']}"
-            )
-        if prior is None:
-            next_state["source_observations"].append(record)
-            existing[record["record_id"]]=record
+    next_state=record_reobservation(
+        state,reobservation,updated_at=updated_at
+    )
 
     key=baseline_key(identifier,language)
     observed_at=(

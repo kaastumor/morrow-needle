@@ -28,6 +28,7 @@ from needle.operations.state import (
     complete_poll_window,
     lookup_baseline,
     mark_event_processed,
+    record_reobservation,
     validate_operational_state,
 )
 from needle.updates.cellar_feed import parse_feed
@@ -133,6 +134,15 @@ def main() -> int:
             # DELETE remains a trigger to re-observe rather than proof that the
             # public source is unavailable.
             reobservation=reobserve_event(representative,observed_at=end.isoformat()); current=reobservation.get("snapshot"); source_unknowns.extend(reobservation.get("unknowns",[]))
+        # Source observations are provenance whether or not they are complete
+        # enough to become the next comparison baseline.
+        if (
+            reobservation.get("metadata_observation") is not None
+            or reobservation.get("content_observation") is not None
+        ):
+            next_state=record_reobservation(
+                next_state,reobservation,updated_at=end.isoformat()
+            )
         change=build_source_change(representative,previous=previous,current=current)
 
         # Source comparison and legal verification are independent evidence
@@ -178,7 +188,9 @@ def main() -> int:
     card_schema=json.loads(Path("schemas/feed-card-v0.1.schema.json").read_text(encoding="utf-8"))
     for card in cards: validate_card(card,card_schema)
     OUT.mkdir(parents=True,exist_ok=True)
-    (OUT/"state.json").write_text(json.dumps(next_state,indent=2,ensure_ascii=False)+"\n",encoding="utf-8"); (OUT/"cards.json").write_text(json.dumps(cards,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
+    (OUT/"state.json").write_text(json.dumps(next_state,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
+    (OUT/"results.json").write_text(json.dumps(results,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
+    (OUT/"cards.json").write_text(json.dumps(cards,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     report={"cycle_version":"0.1","window":{"start":iso(start),"previous_completed_end":cursor["last_completed_end"],"end":iso(end),"overlap_seconds":cursor["overlap_seconds"]},"feed_observations":feed_observations,"event_count_total":len(events),"event_count_new":len(new_events),"root_group_count":len(grouped),"groups":group_records,"stream_counts":{stream:sum(card["stream"] == stream for card in cards) for stream in ("CHANGE_FEED","AUDIT_FEED","ABSTENTION_FEED")},"disposition_counts":{disposition:sum(result["disposition"] == disposition for result in results) for disposition in sorted({result["disposition"] for result in results})},"baseline_count_before":len(state["baselines"]),"baseline_count_after":len(next_state["baselines"]),"source_observation_count_before":len(state["source_observations"]),"source_observation_count_after":len(next_state["source_observations"])}
     (OUT/"report.json").write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n",encoding="utf-8"); print(json.dumps(report,indent=2,ensure_ascii=False)); return 0
 

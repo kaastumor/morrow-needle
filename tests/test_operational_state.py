@@ -9,6 +9,7 @@ from needle.operations.state import (
     baseline_key,
     baseline_seed_eligible,
     lookup_baseline,
+    record_reobservation,
     validate_operational_state,
 )
 from needle.provenance.ledger import verify_record_hash
@@ -229,3 +230,36 @@ def test_partial_state_label_cannot_seed_even_if_snapshot_claims_both_ids():
         },
     }
     assert baseline_seed_eligible(inconsistent) is False
+
+
+def test_partial_reobservation_record_survives_without_moving_baseline():
+    from needle.provenance.ledger import seal_record
+
+    prior=current_baseline()
+    content=deepcopy(observation(prior["content_observation_id"]))
+    content["record_id"]="src-operational-partial-evidence"
+    content["created_at"]="2026-09-21T08:02:00+00:00"
+    content["payload"]["observed_at"]="2026-09-21T08:02:00+00:00"
+    content["record_hash"]=None
+    content=seal_record(content)
+    partial={
+        "state":"PARTIAL_OBSERVATION",
+        "content_observation":content,
+        "metadata_observation":None,
+        "snapshot":{
+            "available":True,
+            "content_hash":content["payload"]["artifact_hash"],
+            "metadata_hash":None,
+            "content_observation_id":content["record_id"],
+            "metadata_observation_id":None,
+        },
+    }
+    recorded=record_reobservation(
+        STATE,partial,updated_at="2026-09-21T08:02:00+00:00"
+    )
+    assert any(
+        item["record_id"]==content["record_id"]
+        for item in recorded["source_observations"]
+    )
+    assert recorded["baselines"]==STATE["baselines"]
+    assert baseline_seed_eligible(partial) is False

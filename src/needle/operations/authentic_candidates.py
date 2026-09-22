@@ -248,9 +248,12 @@ def candidates_from_reobservation(
     immutable content provenance yields no candidate and therefore abstention.
     """
     text=reobservation.get("analysis_text")
+    segments=list(reobservation.get("analysis_segments") or [])
     celex=reobservation.get("celex")
     content_observation=reobservation.get("content_observation")
-    if not text or not celex or not content_observation:
+    if not celex or not content_observation:
+        return []
+    if not segments and not text:
         return []
     evidence_ref=content_observation.get("record_id")
     if not evidence_ref:
@@ -267,12 +270,34 @@ def candidates_from_reobservation(
     if not source_id.upper().startswith("CELEX:"):
         source_id=f"CELEX:{source_id}"
 
-    candidates=candidates_from_authentic_text(
-        event,
-        text,
-        source_id=source_id,
-        locator=retrieval.get("final_uri"),
-        language=str(language).lower(),
-        evidence_ref=evidence_ref,
-    )
+    base_locator=retrieval.get("final_uri")
+    candidates=[]
+    if segments:
+        for segment in segments:
+            segment_text=segment.get("text")
+            if not segment_text:
+                continue
+            source_file=segment.get("source_file")
+            locator=base_locator
+            if source_file and base_locator:
+                locator=f"{base_locator}#archive-entry:{source_file}"
+            elif source_file:
+                locator=f"archive-entry:{source_file}"
+            candidates.extend(candidates_from_authentic_text(
+                event,
+                segment_text,
+                source_id=source_id,
+                locator=locator,
+                language=str(language).lower(),
+                evidence_ref=evidence_ref,
+            ))
+    else:
+        candidates=candidates_from_authentic_text(
+            event,
+            text,
+            source_id=source_id,
+            locator=base_locator,
+            language=str(language).lower(),
+            evidence_ref=evidence_ref,
+        )
     return _compose_authentic_delivery_candidate(candidates)

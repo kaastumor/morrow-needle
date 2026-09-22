@@ -6,7 +6,6 @@ on:
       - main
     paths:
       - "scripts/run_operational_monitor_once.py"
-      - "scripts/prune_operational_state.py"
       - "src/needle/operations/**"
       - "src/needle/updates/reobserve.py"
       - "src/needle/updates/temporal_metadata.py"
@@ -58,8 +57,10 @@ jobs:
             tests/test_operational_legal_analysis.py
       - name: Process one complete feed window
         run: python scripts/run_operational_monitor_once.py
-      - name: Bound hot observation cache
-        run: python scripts/prune_operational_state.py
+      # Do not prune Source Observations here. They are evidence, and the hot
+      # operational state is currently their only promoted durable owner. A
+      # bounded cache is desirable only after each evicted observation has
+      # first been durably appended to the canonical provenance ledger.
       - uses: actions/upload-artifact@v4
         if: always()
         with:

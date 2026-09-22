@@ -45,32 +45,55 @@ def _visible_markup_text(payload: bytes) -> str | None:
     return text or None
 
 
-def _analysis_text(payload: bytes, representation_class: str) -> str | None:
-    """Return transient visible source text for bounded legal analysis.
+def _analysis_segments(
+    payload: bytes,
+    representation_class: str,
+) -> list[dict[str,Any]]:
+    """Return transient visible text with its source-local representation locus.
 
-    The bytes remain authoritative and are sealed by hash in Source Observation.
-    This projection is intentionally not persisted as a second truth store. If a
-    selected representation cannot be decoded deterministically, callers must
-    abstain rather than infer from metadata or feed action.
+    Segment boundaries are evidence boundaries. Keeping archive entries separate
+    prevents an amendment heading in one Formex stream from authorizing
+    amendment-shaped prose in another after flattening. These projections are
+    transient; immutable official bytes remain the authoritative observation.
     """
     if representation_class in {
         "STRUCTURED_LEGAL_XML","STRUCTURED_XHTML","STRUCTURED_HTML"
     } and payload.startswith(b"PK"):
-        chunks=[]
+        segments=[]
         try:
             with zipfile.ZipFile(io.BytesIO(payload)) as archive:
                 for name in sorted(archive.namelist()):
-                    if not name.lower().endswith((".xml",".frg",".xhtml",".html")):
+                    if not name.lower().endswith(
+                        (".xml",".frg",".xhtml",".html")
+                    ):
                         continue
                     text=_visible_markup_text(archive.read(name))
                     if text:
-                        chunks.append(text)
-        except (zipfile.BadZipFile, OSError, KeyError):
-            return None
-        return " ".join(chunks) or None
-    if representation_class == "STRUCTURED_HTML":
-        return _visible_markup_text(payload)
-    return None
+                        segments.append({
+                            "source_file":name,
+                            "text":text,
+                        })
+        except (zipfile.BadZipFile,OSError,KeyError):
+            return []
+        return segments
+    if representation_class=="STRUCTURED_HTML":
+        text=_visible_markup_text(payload)
+        return (
+            [{"source_file":None,"text":text}]
+            if text else []
+        )
+    return []
+
+
+def _analysis_text(
+    segments: list[dict[str,Any]],
+) -> str | None:
+    """Compatibility projection for diagnostics, never authority binding."""
+    text=" ".join(
+        segment["text"] for segment in segments
+        if segment.get("text")
+    )
+    return text or None
 
 
 def _record_id(
@@ -228,6 +251,7 @@ def reobserve_event(
 
     content_record=None
     selected=None
+    analysis_segments=[]
     analysis_text=None
     for accept,representation_class in REPRESENTATIONS:
         response=_get(
@@ -260,7 +284,10 @@ def reobserve_event(
             "accept":accept,
             "representation_class":representation_class,
         }
-        analysis_text=_analysis_text(response.content,representation_class)
+        analysis_segments=_analysis_segments(
+            response.content,representation_class
+        )
+        analysis_text=_analysis_text(analysis_segments)
         break
 
     available=metadata_record is not None or content_record is not None
@@ -318,6 +345,7 @@ def reobserve_event(
             "publication":publication_metadata,
         } if publication_metadata is not None else None,
         "selected_representation":selected,
+        "analysis_segments":analysis_segments,
         "analysis_text":analysis_text,
         "analysis_language":language,
         "attempts":attempts,

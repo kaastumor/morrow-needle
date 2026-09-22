@@ -304,8 +304,9 @@ Completed P2 slices:
 - **Source Anomaly v0.1 (Issue #17): CLOSED/FROZEN.** Categorical, evidence-preserving cards for route fallback, source-internal conflict and representation duplication; no source anomaly creates legal-mutation truth.
 
 Strategic constraints:
-- **Issue #21 is green; do not interpret that as permission to return to schema accumulation.** Issue #27 must first test whether real operational outputs make sense to a person.
-- **Issue #29 is a mandatory gate after #27.** Even if #27 appears to point clearly toward a next feature, no new analytic primitive should begin until the micro→macro adversarial audit and sanitation pass has tested that conclusion, including the project's external novelty/public-interest thesis.
+- **Issue #27 is complete.** Its product conclusion is evidence entering #29, not authorization for immediate implementation.
+- **Issue #29 is the active mandatory gate.** No new analytic primitive or product expansion begins until the micro→macro adversarial audit, repository sanitation, Project Health Check and post-audit architecture decision are complete.
+- The canonical north star and strong simpler baseline are in `docs/project-charter.md`; material provisional beliefs live in `docs/assumptions.md`; autonomous execution rules live in `docs/automation/hourly-worker.md`.
 
 ## P3 — Expansion
 

@@ -367,6 +367,28 @@ novelty.
 
 ## 7. Repository / CI / autonomy sanitation
 
+### G-01 — project operating system deliberately kept lean
+
+The sponsor supplied a broad long-lived-project operating framework during this
+gate. It was treated as an adversary, not copied wholesale.
+
+Decision:
+
+- retain `BACKLOG.md`, GitHub issues, ADRs and audits as the existing project
+  spine;
+- add only a concise project charter, live material-assumptions register,
+  gate-boundary Project Health Check, in-repository hourly-worker runbook and
+  lightweight sanitation check;
+- explicitly reject parallel roadmaps/boards, story points, generic recurring
+  research scans, speculative dependency machinery and infrastructure plans
+  without demonstrated need;
+- demote the original PostgreSQL/object-store/queue/Next.js sketch from
+  “baseline” to superseded future-scale hypothesis.
+
+The purpose is to reduce strategic/autonomous drift without turning governance
+into a second project.
+
+
 ### Fixed
 
 - README strategic status was stale and still pointed to Issue #21. Corrected

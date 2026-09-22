@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "scripts/run_operational_monitor_once.py"
+      - "scripts/prune_operational_state.py"
       - "src/needle/operations/**"
       - "src/needle/updates/reobserve.py"
       - "src/needle/updates/temporal_metadata.py"
@@ -33,11 +34,6 @@ concurrency:
 jobs:
   monitor:
     runs-on: ubuntu-latest
-    # A complete cursor window is atomic: the cursor is promoted only after all
-    # roots in the window have been re-observed. Live Cellar latency and a
-    # backlog of roots can legitimately exceed the old 15-minute ceiling. Keep
-    # a finite guardrail, but do not turn normal source latency into a false
-    # operational failure halfway through an otherwise valid window.
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
@@ -45,10 +41,6 @@ jobs:
           fetch-depth: 0
       - name: Start from latest completed operational state
         run: |
-          # A push-triggered run may wait behind another monitor cycle. Its
-          # event SHA can therefore predate state committed by the run ahead
-          # of it. Never process from that stale checkout: operational cursor
-          # and baselines are monotonic state.
           git fetch origin main
           git checkout -B main origin/main
       - uses: actions/setup-python@v5
@@ -66,6 +58,8 @@ jobs:
             tests/test_operational_legal_analysis.py
       - name: Process one complete feed window
         run: python scripts/run_operational_monitor_once.py
+      - name: Bound hot observation cache
+        run: python scripts/prune_operational_state.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:

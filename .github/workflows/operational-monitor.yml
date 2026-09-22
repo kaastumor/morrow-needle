@@ -107,14 +107,15 @@ jobs:
           fi
           git reset --hard origin/main
           cp artifacts/operational-cycle/state.json data/operational-pilot-state-v0.1.json
+          cp artifacts/operational-cycle/results.json data/operational-pilot-latest-results.json
           cp artifacts/operational-cycle/cards.json data/operational-pilot-latest-cards.json
           cp artifacts/operational-cycle/report.json data/operational-pilot-last-report.json
-          if git diff --quiet -- data/operational-pilot-state-v0.1.json data/operational-pilot-latest-cards.json data/operational-pilot-last-report.json; then
+          if git diff --quiet -- data/operational-pilot-state-v0.1.json data/operational-pilot-latest-results.json data/operational-pilot-latest-cards.json data/operational-pilot-last-report.json; then
             echo "No operational state change."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/operational-pilot-state-v0.1.json data/operational-pilot-latest-cards.json data/operational-pilot-last-report.json
+          git add data/operational-pilot-state-v0.1.json data/operational-pilot-latest-results.json data/operational-pilot-latest-cards.json data/operational-pilot-last-report.json
           git commit -m "Advance operational Needle pilot state"
           git push origin HEAD:main

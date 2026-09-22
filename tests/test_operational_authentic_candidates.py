@@ -162,3 +162,56 @@ def test_explicit_annex_amendment_heading_still_authorizes_keyed_row_command():
     )
     assert len(candidates)==1
     assert "Annex V" in candidates[0]["semantic_key"]
+
+
+def test_source_local_segments_prevent_cross_stream_authorization():
+    command=(
+        "in Part 1, Section B, in the entry for the United States, the following "
+        "rows for the zones US-2.1405 and US-2.1406 are added after the row for "
+        "the zone US-2.1404."
+    )
+    reobservation={
+        "celex":"32026R2104",
+        "analysis_language":"eng",
+        # The compatibility flattening looks dangerous on purpose. Candidate
+        # production must prefer the source-local segments below.
+        "analysis_text":"Annex V is amended: "+command,
+        "analysis_segments":[
+            {"source_file":"TOC.xml","text":"Annex V is amended:"},
+            {"source_file":"REPORT.xml","text":command},
+        ],
+        "content_observation":{
+            "record_id":"src-observation:segmented",
+            "payload":{
+                "language":"ENG",
+                "retrieval":{"final_uri":"official://artifact"},
+            },
+        },
+    }
+    assert candidates_from_reobservation(
+        event(),reobservation
+    )==[]
+
+
+def test_source_local_segment_locator_survives_into_authentic_evidence():
+    segment=instruction_text()
+    reobservation={
+        "celex":"32026R2104",
+        "analysis_language":"eng",
+        "analysis_text":segment,
+        "analysis_segments":[
+            {"source_file":"DOC_1.xml","text":segment},
+        ],
+        "content_observation":{
+            "record_id":"src-observation:segmented-positive",
+            "payload":{
+                "language":"ENG",
+                "retrieval":{"final_uri":"official://artifact"},
+            },
+        },
+    }
+    candidates=candidates_from_reobservation(event(),reobservation)
+    assert len(candidates)==1
+    assert candidates[0]["evidence_occurrences"][0]["locator"]==(
+        "official://artifact#archive-entry:DOC_1.xml"
+    )

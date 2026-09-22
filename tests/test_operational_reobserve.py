@@ -1,3 +1,5 @@
+import io
+import zipfile
 import json
 from pathlib import Path
 
@@ -356,3 +358,41 @@ def test_preferred_route_404_and_unsupported_content_do_not_prove_absence():
     )
     assert result["state"]=="UNRESOLVED_REOBSERVATION"
     assert result["snapshot"] is None
+
+
+def test_reobserver_preserves_archive_entry_boundaries_for_analysis():
+    buffer=io.BytesIO()
+    with zipfile.ZipFile(buffer,"w") as archive:
+        archive.writestr(
+            "DOC_1.xml",
+            "<DOC><P>Annex V is amended:</P></DOC>",
+        )
+        archive.writestr(
+            "DOC_2.xml",
+            "<DOC><P>separate source stream</P></DOC>",
+        )
+    session=FakeSession([
+        FakeResponse(
+            200,b"<rdf>metadata</rdf>",
+            url="https://example.invalid/meta",
+            content_type="application/rdf+xml",
+        ),
+        FakeResponse(
+            200,buffer.getvalue(),
+            url="https://example.invalid/fmx4",
+            content_type="application/zip",
+        ),
+    ])
+    result=reobserve_event(
+        event(),
+        observed_at="2026-09-20T20:10:00+00:00",
+        session=session,
+    )
+    assert result["state"]=="OBSERVED"
+    assert result["analysis_segments"]==[
+        {"source_file":"DOC_1.xml","text":"Annex V is amended:"},
+        {"source_file":"DOC_2.xml","text":"separate source stream"},
+    ]
+    assert result["analysis_text"]==(
+        "Annex V is amended: separate source stream"
+    )

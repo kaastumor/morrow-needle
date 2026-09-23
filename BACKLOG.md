@@ -27,18 +27,23 @@ Research/audit mode rules:
 5. a well-supported “nothing new / baseline already handles this” result is
    successful work.
 
-**Issue #87 is the current bounded value gate, but it is waiting at an external
-execution boundary. The hourly worker should idle rather than simulate
-independent investigators.**
+**Issue #87 remains the current bounded value gate. Its minimum independent
+pilot is complete; full confirmation is waiting at an external execution
+boundary. The hourly worker should idle rather than simulate investigators.**
 
-Issue #87 — **Needle Relay** — is sealed and awaiting genuinely fresh
-investigator runs. It tests whether competent free-form notes, Needle Method,
-or Needle Core best preserve legal understanding across context loss and a
-changed follow-up question. Stage A packets, Stage B follow-ups and the answer
-key were fixed outside GitHub; only their SHA-256 commitments are canonical in
-the repository until independent execution completes. This design session is
-contaminated and cannot count as an investigator. No architecture expansion is
-authorized while #87 waits.
+Issue #87 — **Needle Relay** — completed 3 sealed cases × 3 arms × independent
+A→B handoffs. All 9 Stage-B answers were substantively correct. The useful
+signal is reconstruction burden: Method required less reopening/rediscovery
+than competent free-form notes in the pilot, while Core showed no observed
+advantage over Method.
+
+The first Arm-C attempts failed cleanly with CORE ACCESS MISSING and were
+discarded as preflights. Valid C runs used one frozen Core reference pack
+without changing any case or hidden follow-up.
+
+This is not yet a project-level promotion or shrink decision. Two pre-sealed
+cases remain for full confirmation: battery due-diligence postponement and RoHS
+scope split. No new cases or architecture are authorized.
 
 Issue #86 completed the competing-identities value gate and changed the project
 identity to **Needle Method + Needle Core**. The strong boring baseline answered

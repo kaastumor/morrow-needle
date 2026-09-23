@@ -55,6 +55,14 @@ gaps explicit; future discovery should prefer orthogonal coverage rather than
 post-hoc benchmark difficulty. No standing implementation queue follows from
 this foundation.
 
+Issue #91 is the first discovery selected from that coverage discipline. Fresh
+Mercosur and Mexico agreement-lifecycle evidence establishes a two-case
+`PARALLEL_INSTRUMENT_LIFECYCLE` failure family: interim and comprehensive
+agreements are separate legal identities, so signature, provisional
+application, conclusion, entry into force and replacement cannot be inherited
+through an umbrella deal label. The finding expands the corpus to 21 public
+cases / 13 trap classes without reopening any schema or product surface.
+
 
 
 Needle Relay completed all 5 pre-sealed cases × 3 arms. All 15 Stage-B

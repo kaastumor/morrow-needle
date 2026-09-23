@@ -297,6 +297,44 @@ def apply_operational_recency_gate(legal_analysis: dict[str, Any], *, recency: d
     }
 
 
+def attach_resolved_temporal_context(
+    legal_analysis: dict[str, Any],
+    *,
+    temporal_metadata: dict[str, Any] | None,
+) -> dict[str, Any]:
+    """Attach references to explicit resolved legal-time facts without copying them.
+
+    Publication may already be present because it gated operational recency.
+    Other resolved temporal assertions, such as LEGAL_FORCE, are added only as
+    canonical/evidence references. Unresolved or conflicting metadata remains
+    in the re-observation unknowns and is not promoted.
+    """
+    result=dict(legal_analysis)
+    canonical_refs=list(result.get("canonical_refs",[]))
+    evidence_refs=list(result.get("evidence_refs",[]))
+    for item in (temporal_metadata or {}).values():
+        if not isinstance(item,dict) or item.get("state") != "RESOLVED":
+            continue
+        assertion=item.get("assertion")
+        if not isinstance(assertion,dict) or not assertion.get("assertion_id"):
+            continue
+        ref={
+            "kind":"TEMPORAL_ASSERTION",
+            "entity_id":assertion["assertion_id"],
+        }
+        if ref not in canonical_refs:
+            canonical_refs.append(ref)
+        for evidence_ref in [
+            assertion["assertion_id"],
+            *item.get("evidence_refs",[]),
+        ]:
+            if evidence_ref not in evidence_refs:
+                evidence_refs.append(evidence_ref)
+    result["canonical_refs"]=canonical_refs
+    result["evidence_refs"]=evidence_refs
+    return result
+
+
 def analyze_operational_legal(event: dict[str, Any], source_change: dict[str, Any], *, candidates: Iterable[dict[str, Any]]) -> dict[str, Any]:
     if source_change.get("event_key") != event.get("event_key"): raise OperationalLegalAnalysisError("source change does not belong to event")
     collapsed=collapse_evidence_candidates(candidates)

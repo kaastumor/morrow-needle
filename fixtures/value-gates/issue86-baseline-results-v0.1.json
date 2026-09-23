@@ -1,0 +1,78 @@
+{
+  "gate_version": "0.1",
+  "issue": 86,
+  "protocol_stage": "STRONG_BORING_BASELINE_COMPLETED_BEFORE_NEEDLE_MAPPING",
+  "baseline_definition": "Careful official/primary-source research + search + notes + capable general model. No Needle-specific contract mapping.",
+  "cases": [
+    {
+      "case_id": "ai-act-gpai-systemic-risk-threshold",
+      "baseline_conclusion": "No. Crossing 10^25 FLOPs creates a presumption of high-impact capabilities under Article 51(2), not an irrevocable classification shortcut. Article 52 requires notification; the provider may submit sufficiently substantiated arguments that, exceptionally, the model should not be classified as systemic-risk despite meeting the threshold. If the Commission rejects those arguments, the model is considered systemic-risk. The Commission also has a separate designation route.",
+      "sources_used": [
+        "CELEX:32024R1689 Articles 51-52"
+      ],
+      "tempting_false_inference_caught": true,
+      "uncertainty": "LOW",
+      "manual_burden": "LOW_TO_MODERATE: one primary legal source, but both classification and procedure articles must be read together.",
+      "persistent_project_machinery_required_for_correct_answer": false
+    },
+    {
+      "case_id": "easa-a380-als-mandatory-source",
+      "baseline_conclusion": "No. The Airbus ALS is the referenced private technical document; the public legal mandate comes from the EASA Airworthiness Directive. EASA's own guidance distinguishes a manufacturer's use of the word 'mandatory' from legal mandatory status: where an AD covers the service/technical instruction, compliance is mandatory because of the AD.",
+      "sources_used": [
+        "EASA AD 2026-0154",
+        "EASA FAQ 19494",
+        "Regulation (EU) No 748/2012 / EASA Easy Access Rules, airworthiness-directive definition"
+      ],
+      "tempting_false_inference_caught": true,
+      "uncertainty": "LOW",
+      "manual_burden": "MODERATE: requires distinguishing the referenced Airbus document from the EASA mandate and checking EASA's explicit FAQ/rule context.",
+      "persistent_project_machinery_required_for_correct_answer": false
+    },
+    {
+      "case_id": "schrems-ii-transfer-mechanisms",
+      "baseline_conclusion": "No. The Court declared Commission Implementing Decision (EU) 2016/1250 (Privacy Shield) invalid, while its examination of Decision 2010/87 on Standard Contractual Clauses disclosed nothing affecting that decision's validity. SCC-based transfers were therefore not automatically all invalid, but the judgment requires protection to be ensured in practice and requires a supervisory authority to suspend/prohibit transfers where the clauses cannot be complied with and adequate protection cannot otherwise be ensured.",
+      "sources_used": [
+        "CELEX:62018CJ0311 operative part",
+        "CELEX:62018CJ0311_RES official summary"
+      ],
+      "tempting_false_inference_caught": true,
+      "uncertainty": "LOW",
+      "manual_burden": "LOW_TO_MODERATE: the operative part directly distinguishes the two Commission decisions, but the conditional transfer consequence must not be overgeneralised.",
+      "persistent_project_machinery_required_for_correct_answer": false
+    },
+    {
+      "case_id": "common-charger-laptop-date-control",
+      "baseline_conclusion": "No. On 1 January 2025 the common-charger requirements applied to the listed non-laptop categories from 28 December 2024, but laptops had a later application date of 28 April 2026. The charging-port requirements apply to covered equipment insofar as it is capable of wired charging.",
+      "sources_used": [
+        "CELEX:32022L2380",
+        "CELEX:52024XC02997 Commission guidance",
+        "COM(2026) 329 final"
+      ],
+      "tempting_false_inference_caught": true,
+      "uncertainty": "LOW",
+      "manual_burden": "LOW: straightforward scope/date lookup.",
+      "persistent_project_machinery_required_for_correct_answer": false,
+      "control_result": "BASELINE_EXPECTEDLY_SUFFICIENT"
+    },
+    {
+      "case_id": "ai-act-dutch-recital19-pre-corrigendum",
+      "baseline_conclusion": "Before the 19 December 2025 Dutch corrigendum, the published Dutch wording documented by that corrigendum read 'Onlineruimten vallen onder het toepassingsgebied, omdat het geen fysieke ruimten zijn.' The corrigendum changes this to 'Onlineruimten vallen niet onder het toepassingsgebied, omdat het geen fysieke ruimten zijn.' A current representation by itself is not sufficient evidence of what the authentic Dutch publication said before the correction; the correction event is required to reconstruct that historical source state.",
+      "sources_used": [
+        "CELEX:32024R1689R(02), OJ L 2025/91038, 19 December 2025",
+        "Dutch AI Act publication / ELI reg/2024/1689/oj/nld",
+        "EUR-Lex consolidated-version metadata"
+      ],
+      "tempting_false_inference_caught": true,
+      "uncertainty": "LOW_ON_CORRIGENDUM_WORDING; MODERATE_ON_WHICH_CURRENT_EUR_LEX_SURFACE_VISUALLY_APPLIES_CORRECTIONS",
+      "manual_burden": "MODERATE_TO_HIGH: the historical question requires locating a language-specific corrigendum and resisting current-state substitution.",
+      "persistent_project_machinery_required_for_correct_answer": false
+    }
+  ],
+  "baseline_summary": {
+    "correct_conclusions": 5,
+    "consequential_traps_caught": 5,
+    "cases_requiring_persistent_needle_structure_for_correctness": 0,
+    "provisional_result": "STRONG_BASELINE_SETS_A_HIGH_BAR",
+    "warning": "Later Needle stages receive no value credit for reproducing these conclusions. They must demonstrate safer repeatability, provenance closure, cross-case reconstruction, or reduced manual risk."
+  }
+}

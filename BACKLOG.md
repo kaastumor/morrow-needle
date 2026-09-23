@@ -27,11 +27,12 @@ Research/audit mode rules:
 5. a well-supported “nothing new / baseline already handles this” result is
    successful work.
 
-**Issue #81 is the sole current foundation next pick.** HVMFS 2025:4 proves
-that Temporal v0.1's date-only model cannot represent legally operative
-minute-precision boundaries without wrong answers. Preserve existing date
-semantics, add explicit offset-aware instant precision, and only then resume
-Issue #80's spatial work.
+**Issue #80 is the sole current evidence-backed next pick.** Its geography
+adversary exposed and has now resolved the Temporal v0.1 precision defect:
+Temporal v0.2 preserves DATE semantics while adding explicit offset-aware
+INSTANT boundaries. Resume only the bounded spatial question: test whether the
+HPAI radius zones and the unrelated Skagerrak real-time fishery polygon justify
+a narrow canonical legal-spatial-state owner. Do not build a generic GIS engine.
 
 Issue #77 introduced the authoritative dynamic-set causal owner; Issue #78
 proved set-state time and application time remain separate. Issue #79 then

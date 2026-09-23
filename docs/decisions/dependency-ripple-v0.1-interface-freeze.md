@@ -81,3 +81,34 @@ Reopen only when an official case cannot be represented without either:
 - manufacturing local mutation truth;
 - introducing a new dependency relation that existing semantic evidence cannot carry;
 - or collapsing direct upstream evidence into derived local effect.
+
+
+## Reopen trigger — Issue #77 (2026-09-23)
+
+The v0.1 contract is **reopened narrowly** by the official toy-safety
+harmonised-standard case captured in
+`fixtures/discovery/toy-wave-roller-dynamic-standard-gateway-v0.1.json`.
+
+Directive 2009/48/EC Article 13 is textually unchanged and does not statically
+cite EN 71-1. Instead it confers a presumption of conformity through a moving
+set of harmonised standards or parts whose references are published in the
+Official Journal.
+
+Implementing Decision (EU) 2025/1785 keeps the same
+`EN 71-1:2014+A1:2018` identifier while restricting the presumption for
+specified clauses as regards wave rollers.
+
+Representing that relation as
+`DERIVED_FROM_EVIDENCED_CROSS_REFERENCE_ATOM` would be schema-compatible but
+semantically false. The honest case requires a distinct dynamic-publication
+gateway relation.
+
+This directly satisfies the existing reopen rule: an official case requires a
+new dependency relation that v0.1 cannot carry.
+
+Disposition at this commit:
+- v0.1 remains valid for its frozen cross-reference cases;
+- no v0.2 schema is invented until this representational failure is preserved
+  by regression;
+- Issue #77 is the sole evidence-backed architecture reopen;
+- public-product expansion remains stopped.

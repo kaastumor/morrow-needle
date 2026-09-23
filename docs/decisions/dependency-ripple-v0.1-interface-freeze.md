@@ -112,3 +112,45 @@ Disposition at this commit:
   by regression;
 - Issue #77 is the sole evidence-backed architecture reopen;
 - public-product expansion remains stopped.
+
+
+## Cross-domain confirmation — REACH Candidate List (Issue #77)
+
+The first reopen trigger is **not standards-specific**.
+
+REACH Article 33 conditions communication duties on substances identified under
+Article 59. Article 59(10) requires ECHA to publish and update the Candidate List
+on its website, and ECHA states that only that website list is authentic and that
+inclusion may trigger immediate obligations including Article 33.
+
+The n-hexane inclusion on 4 February 2026
+(D(2025)7771-DC) supplies an orthogonal case:
+
+- Article 33 is not textually amended by the inclusion;
+- n-hexane identity does not change;
+- authoritative Candidate List membership does change;
+- the local legal duty can therefore produce a different result for articles
+  meeting the remaining statutory conditions.
+
+This shows that `DYNAMIC_PUBLICATION_GATEWAY` is too narrow.
+
+The smallest evidenced abstraction is currently:
+
+`AUTHORITATIVE_DYNAMIC_SET_TRANSITION`
+
+with a derived dependency character conceptually equivalent to:
+
+`DERIVED_FROM_AUTHORITATIVE_SET_STATE`
+
+No v0.2 schema is frozen yet. The ownership problem must be solved before
+implementation because:
+
+- Cellar Source Change v0.1 is source-system-specific and cannot own ECHA list
+  membership;
+- Mutation Candidate v0.2 lacks an honest evidence character for an authentic
+  agency register/list;
+- Change Atom v0.3 requires a textual-mutation cause and must not be fed a fake
+  mutation solely to preserve schema compatibility.
+
+The next architecture move must model only this demonstrated dynamic-set causal
+shape. A generic dependency graph remains unjustified.

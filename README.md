@@ -57,9 +57,14 @@ useful only when persistence earns itself.
 6. Treat parity and negative results as successful evidence.
 7. Add durable complexity only after a demonstrated simpler-baseline failure.
 
-There is **no standing feature or implementation queue**. An idle backlog is
-intentional. New work must arise from fresh evidence, a real anomaly, an
-unresolved canonical claim or an explicit sponsor research question.
+The current authorised horizon is **Needle Corpus Explorer v0.1** (#103): a
+static, dependency-free projection over the surviving corpus + protocol. It is a
+bounded product-form experiment, not a revival of the stopped broader legal
+product.
+
+Delivery uses issues #105–#110. After deterministic technical acceptance,
+issues #111–#116 run evidence-only feature discovery. See
+`docs/mvp/v0.1-plan.md` and `docs/way-of-working.md`.
 
 ## Canonical project records
 
@@ -72,6 +77,8 @@ unresolved canonical claim or an explicit sponsor research question.
 - `fixtures/value-gates/issue88-phase-a-results-v0.1.json`
 - `corpus/index-v0.1.json`
 - `docs/evaluations/adversarial-corpus-protocol-v0.1.md`
+- `docs/mvp/v0.1-plan.md`
+- `docs/way-of-working.md`
 
 ---
 

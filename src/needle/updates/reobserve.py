@@ -12,7 +12,10 @@ import requests
 
 from needle.provenance.ledger import seal_record
 from needle.updates.classify import snapshot_from_observations
-from needle.updates.temporal_metadata import extract_cellar_publication_metadata
+from needle.updates.temporal_metadata import (
+    extract_cellar_entry_into_force_metadata,
+    extract_cellar_publication_metadata,
+)
 
 
 CELLAR_CELEX="https://publications.europa.eu/resource/celex/{celex}"
@@ -232,6 +235,7 @@ def reobserve_event(
 
     metadata_record=None
     publication_metadata=None
+    legal_force_metadata=None
     if metadata.status_code == 200 and metadata.content:
         metadata_record=_source_record(
             event_key=event["event_key"],
@@ -244,6 +248,11 @@ def reobserve_event(
             response=metadata,
         )
         publication_metadata=extract_cellar_publication_metadata(
+            metadata.content,
+            identifier=identifier,
+            evidence_ref=metadata_record["record_id"],
+        )
+        legal_force_metadata=extract_cellar_entry_into_force_metadata(
             metadata.content,
             identifier=identifier,
             evidence_ref=metadata_record["record_id"],
@@ -330,10 +339,11 @@ def reobserve_event(
         unknowns.append(
             "Official legal-text bytes were sealed, but no deterministic visible-text projection was available for operational legal analysis."
         )
-    if publication_metadata is not None and publication_metadata["state"] in {
-        "UNRESOLVED","CONFLICTING"
-    }:
-        unknowns.extend(publication_metadata.get("unknowns",[]))
+    for temporal_item in (publication_metadata,legal_force_metadata):
+        if temporal_item is not None and temporal_item["state"] in {
+            "UNRESOLVED","CONFLICTING"
+        }:
+            unknowns.extend(temporal_item.get("unknowns",[]))
 
     return {
         "state":state,
@@ -343,7 +353,11 @@ def reobserve_event(
         "snapshot":snapshot,
         "temporal_metadata":{
             "publication":publication_metadata,
-        } if publication_metadata is not None else None,
+            "legal_force":legal_force_metadata,
+        } if (
+            publication_metadata is not None
+            or legal_force_metadata is not None
+        ) else None,
         "selected_representation":selected,
         "analysis_segments":analysis_segments,
         "analysis_text":analysis_text,

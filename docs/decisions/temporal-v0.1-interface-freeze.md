@@ -109,3 +109,28 @@ Reopen the core temporal contract only when an official source demonstrates a le
 - or a bounded regime/transition assertion.
 
 P0-E no longer blocks downstream work.
+
+
+## Reopen trigger — Issue #81 (2026-09-23)
+
+Temporal v0.1 is **reopened** by the official HVMFS 2025:4 real-time fishery
+closure.
+
+The source fixes legally operative boundaries to the minute:
+
+- start: 18 February 2025 at 01:00 Swedish time;
+- cessation: after 4 March 2025 at 00:59 Swedish time.
+
+Commission Delegated Regulation (EU) 2019/2201 Article 8 expresses the same
+mechanism in UTC: start at 24:00 UTC on the decision day and automatic cessation
+at midnight UTC after 14 days.
+
+The v0.1 schema and resolver are date-only and cannot distinguish legal states
+within one calendar day. Rounding would change answers and is prohibited.
+
+Issue #81 therefore satisfies the post-freeze rule: an official legal-time
+phenomenon cannot be represented through another date-only assertion, scope,
+relative trigger, perspective or bounded transition.
+
+v0.1 remains valid for date-precision cases. The next temporal version must add
+explicit offset-aware instant precision without rewriting historical date truth.

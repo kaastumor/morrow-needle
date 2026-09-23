@@ -45,6 +45,13 @@ This is not yet a project-level promotion or shrink decision. Two pre-sealed
 cases remain for full confirmation: battery due-diligence postponement and RoHS
 scope split. No new cases or architecture are authorized.
 
+The remaining independent runs may be executed by the frozen no-admin
+PowerShell/API harness rather than manual fresh chats. Each investigator must
+still be a separate stateless request with no cross-run context; Stage B gets
+only its matching A artifact plus the pre-sealed follow-up. The runner remains
+outside Git until the blind is complete because it contains the hidden
+follow-ups.
+
 Issue #86 completed the competing-identities value gate and changed the project
 identity to **Needle Method + Needle Core**. The strong boring baseline answered
 5/5 unseen cases correctly. Method added reusable investigation discipline.

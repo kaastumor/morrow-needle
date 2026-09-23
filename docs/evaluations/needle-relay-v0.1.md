@@ -1,7 +1,7 @@
 # Needle Relay v0.1 — independent handoff value gate
 
 **Issue:** #87  
-**Status:** PILOT COMPLETE / FULL CONFIRMATION PENDING  
+**Status:** FULL CONFIRMATION COMPLETE / DECISION: SHRINK DEFAULT IDENTITY  
 **Purpose:** test whether Needle Method and Needle Core preserve legal understanding across context loss and investigator handoff better than competent free-form research notes.
 
 ## Why this gate exists
@@ -317,3 +317,91 @@ repository history.
 
 This amendment reduces sponsor/manual-chat handling without weakening
 investigator independence.
+
+
+## Full-confirmation result — 2026-09-23
+
+The two remaining pre-sealed cases were executed through the protocol-amended
+stateless Responses API boundary.
+
+Execution evidence:
+
+- 6 Stage-A + 6 Stage-B completed requests;
+- all returned `gpt-5.6-sol`;
+- reasoning effort `high`;
+- web search enabled;
+- `store=false`;
+- manifest records stateless requests;
+- all 12 response IDs are unique;
+- the result ZIP contains exactly the 12 result artifacts plus the run manifest.
+
+The uploaded result ZIP SHA-256 is:
+
+`e73c691b9201cf1ca78979a4c0e17191f589f172c6dcdb16a43df3ff0b530fb5`
+
+### Battery due-diligence postponement
+
+R, M and C all correctly concluded that a 1 July 2025 statement describing
+18 August 2025 as the legally scheduled Article 48(1) application date was
+historically accurate, and that Regulation (EU) 2025/1561 later displaced that
+date when it entered into force on 31 July 2025.
+
+All three Stage-A artifacts already preserved the decisive legal facts needed
+for that conclusion. Stage B nevertheless reopened sources and reconstructed
+additional legislative-procedure context in every arm. The persisted Core
+temporal objects therefore did not reduce the observed handoff burden beyond
+Method.
+
+### RoHS 7(a) scope split
+
+R, M and C all correctly rejected generalising the unsuffixed 7(a) expiry date
+to the newly split 7(a)-I through 7(a)-VII entries.
+
+The decisive scope/date distinction was already present in every Stage-A
+artifact. Core explicitly returned `PERSISTENCE_NOT_JUSTIFIED`, which is the
+correct Core behaviour but also means that the useful handoff artifact is the
+Method dossier rather than persistent canonical state.
+
+### Combined result
+
+Across the complete five-case relay:
+
+- 15/15 Stage-B substantive conclusions were correct;
+- no arm had a raw correctness advantage;
+- Method had the lowest observed reconstruction burden in the pilot and no
+  confirmation-case disadvantage;
+- Core produced no observed handoff win over Method;
+- no parked Full-Needle integration earned re-entry.
+
+The Method promotion criterion is satisfied on bounded handoff reproducibility,
+not on superior legal-answer correctness.
+
+The Core promotion criterion is not satisfied. The kill rule applies:
+
+> if Method performs materially as well as Core on the stateful cases, shrink
+> toward Method + corpus/protocol.
+
+Therefore the default project identity becomes **Needle Method +
+corpus/protocol**.
+
+Core is retained only as optional, individually earned persistence. Persistence
+qualifies only when a concrete repeated/historical/provenance-sensitive task or
+an observed Method-only failure shows that canonical state prevents a real
+error or materially reduces reopening, rediscovery or repeated-query cost.
+Schema availability, neatness, hypothetical future reuse, or a one-off fact
+that a competent Method dossier preserves are not sufficient.
+
+No new project horizon is created by this decision.
+
+### Archival acceptance boundary
+
+The pre-execution SHA-256 commitments for the complete five-case Stage-A,
+Stage-B and answer-key artifacts were already verified during the independent
+pilot. The full-confirmation result ZIP does not contain those sealed plaintext
+artifacts.
+
+The protocol also requires the exact previously sealed artifacts to be revealed
+and committed unchanged after execution. That archival step cannot be
+reconstructed from summaries without violating the commitment. Issue #87
+therefore remains open only for exact sealed-artifact archival; the experimental
+result and project-level decision are complete.

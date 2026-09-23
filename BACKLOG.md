@@ -27,15 +27,19 @@ Research/audit mode rules:
 5. a well-supported “nothing new / baseline already handles this” result is
    successful work.
 
-**Next bounded research task: Issue #61 — audit 2026 corrigendum
-back-projection into the consolidated state labelled 13 August 2025.**
+**Next bounded research task: Issue #64 — audit the non-listed Dutch
+expression in the 2025/905 corrigendum.**
 
-Interactive evidence already shows that the current
-`02004R0794-20250813` page contains the corrected phrase “existing aid
-scheme” marked `C4`, while the correcting source was not published until
-17 July 2026. The task must pin and regress the distinction between a current
-ex-post corrected consolidation and official source state as it was knowable on
-the nominal consolidation date.
+Issue #61 independently confirmed the frozen P0-F consolidation-backprojection
+invariant: the current consolidation labelled 13 August 2025 contains wording
+introduced by a corrigendum published on 17 July 2026, so the consolidation
+label is not a source-state-as-of timestamp.
+
+#64 now attacks the adjacent multilingual assumption. The 2026 corrigendum does
+not list Dutch, while the authentic Dutch 2025/905 text already contains the
+“bestaande steunregeling” concept. The task must preserve the distinction
+between **NO_ASSERTION from a non-listed corrigendum** and independent evidence
+that a language expression already had the relevant wording.
 
 Operational Needle remains an evidence generator, regression surface and source
 monitor. Thread, X-Ray, Source Anomaly, Half-Life and public cards remain useful

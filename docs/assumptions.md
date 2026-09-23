@@ -25,6 +25,8 @@ Allowed dispositions: **survives / revise / reject / park / experiment**.
 | H-13 | Needle Core materially reduces handoff reconstruction burden beyond Needle Method on stateful/historical questions. | reject | #87 full relay found no observed Core-over-Method handoff win across five sealed cases. Battery persistence did not prevent reopening/rediscovery behavior; RoHS correctly declined persistence. Core remains available only as optional persistence when a concrete case independently earns it. |
 | H-14 | Needle Method prevents consequential errors or unjustified certainty **after the decisive legal-information trap is surfaced or strongly cued** better than an equally capable source-grounded baseline. | reject | #88 produced six R-pass/M-pass pairs; #95 showed all six sealed questions surfaced/cued the decisive distinction. This rejects a Method advantage for surfaced-trap adjudication only. Latent-trap detection remains untested and receives no positive credit. |
 
+| H-15 | Needle Method materially improves **latent-trap detection** on realistic legal-research requests that do not identify the hidden source/time/scope/authority problem, compared with an equally capable source-grounded baseline. | experiment | #95 proved #88 did not measure this construct. #97 is pre-registered and sealed with 6 fresh adversaries + 2 negative controls before any R/M execution. Untested is not positive evidence. |
+
 ## Register rules
 
 - Add an assumption only if being wrong could change architecture, project

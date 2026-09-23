@@ -234,3 +234,156 @@ def test_card_result_cross_binding_is_rejected():
 
     with pytest.raises(EvidencePresentationError,match="does not belong"):
         build_evidence_view(card,result)
+
+
+def temporal_assertion(
+    assertion_id="temporal-publication:test",
+    *,
+    identifier="CELEX:32026R0001",
+    dimension="PUBLICATION",
+    resolution_state="RESOLVED_ABSOLUTE",
+    normalized_date="2026-09-20",
+):
+    assertion={
+        "assertion_id":assertion_id,
+        "subject_ref":{
+            "kind":"LEGAL_ACT",
+            "identifier":identifier,
+            "locator":"official publication metadata",
+        },
+        "dimension":dimension,
+        "boundary":"POINT",
+        "inclusive":True,
+        "trigger":{
+            "kind":"ABSOLUTE_DATE",
+            "date":normalized_date or "2026-09-20",
+            "source_expression":"test source",
+        },
+        "scope":{
+            "mode":"DEFAULT",
+            "applies_to":["ACT:32026R0001"],
+            "overrides_assertion_ids":[],
+            "entity_condition":None,
+        },
+        "resolution_state":resolution_state,
+        "evidence_state":"DIRECT",
+        "source_refs":[{
+            "source_type":"CELLAR",
+            "identifier":identifier,
+            "locator":"CELLAR_RDF_NOTICE_TREE#publication",
+            "language":None,
+            "role":"PUBLICATION_METADATA",
+        }],
+        "notes":None,
+    }
+    if normalized_date is not None:
+        assertion["normalized_date"]=normalized_date
+    return assertion
+
+
+def test_matching_canonical_temporal_assertion_closes_evidence_ref():
+    change=source_change("content_changed")
+    assertion=temporal_assertion()
+    downstream={
+        "disposition":"LEGAL_CHANGE_VERIFIED",
+        "verification_route":"SOURCE_DIFF",
+        "canonical_refs":[
+            {"kind":"MUTATION","entity_id":"mutation:test"},
+            {"kind":"TEMPORAL_ASSERTION","entity_id":assertion["assertion_id"]},
+        ],
+        "evidence_refs":[assertion["assertion_id"]],
+        "explanation":{
+            "what_changed":"A legal change was verified.",
+            "compared_with":"The prior source.",
+            "when_it_matters":"Publication is 20 September 2026.",
+            "affected":[],
+            "evidence_character":"DIRECT",
+        },
+        "unknowns":[],
+    }
+    result=build_operational_result(EVENT,change,downstream=downstream)
+    card=build_feed_card(result)
+    view=build_evidence_view(
+        card,result,
+        provenance_records=records_for(change),
+        temporal_assertions=[assertion],
+        expected_language="ENG",
+    )
+    item=next(
+        item for item in view["items"]
+        if item["ref"] == assertion["assertion_id"]
+    )
+    assert view["state"] == "CLOSED"
+    assert item["kind"] == "TEMPORAL_ASSERTION"
+    assert item["normalized_date"] == "2026-09-20"
+    assert "Publication does not establish entry into force or application" in item["does_not_establish"]
+
+
+def test_temporal_object_requires_typed_canonical_ref_before_humanizing():
+    change=source_change("content_changed")
+    assertion=temporal_assertion()
+    downstream={
+        "disposition":"LEGAL_CHANGE_VERIFIED",
+        "verification_route":"SOURCE_DIFF",
+        "canonical_refs":[{"kind":"MUTATION","entity_id":"mutation:test"}],
+        "evidence_refs":[assertion["assertion_id"]],
+        "explanation":{
+            "what_changed":"A legal change was verified.",
+            "compared_with":"The prior source.",
+            "when_it_matters":None,
+            "affected":[],
+            "evidence_character":"DIRECT",
+        },
+        "unknowns":[],
+    }
+    result=build_operational_result(EVENT,change,downstream=downstream)
+    card=build_feed_card(result)
+    view=build_evidence_view(
+        card,result,
+        provenance_records=records_for(change),
+        temporal_assertions=[assertion],
+    )
+    assert assertion["assertion_id"] in view["unresolved_refs"]
+    assert view["state"] == "PARTIAL"
+
+
+def test_cross_celex_temporal_assertion_is_rejected():
+    change=source_change("content_changed")
+    assertion=temporal_assertion(identifier="CELEX:39999R9999")
+    downstream={
+        "disposition":"LEGAL_CHANGE_VERIFIED",
+        "verification_route":"SOURCE_DIFF",
+        "canonical_refs":[
+            {"kind":"MUTATION","entity_id":"mutation:test"},
+            {"kind":"TEMPORAL_ASSERTION","entity_id":assertion["assertion_id"]},
+        ],
+        "evidence_refs":[assertion["assertion_id"]],
+        "explanation":{
+            "what_changed":"A legal change was verified.",
+            "compared_with":"The prior source.",
+            "when_it_matters":None,
+            "affected":[],
+            "evidence_character":"DIRECT",
+        },
+        "unknowns":[],
+    }
+    result=build_operational_result(EVENT,change,downstream=downstream)
+    card=build_feed_card(result)
+    with pytest.raises(EvidencePresentationError,match="subject CELEX does not match"):
+        build_evidence_view(
+            card,result,
+            provenance_records=records_for(change),
+            temporal_assertions=[assertion],
+        )
+
+
+def test_conflicting_duplicate_temporal_assertions_fail_closed():
+    first=temporal_assertion()
+    second=deepcopy(first)
+    second["normalized_date"]="2026-09-21"
+    with pytest.raises(EvidencePresentationError,match="conflicting Temporal Assertions"):
+        build_evidence_view(
+            {"operational_result_id":"result","source_mode":{"refs":[]},"evidence_character":"UNRESOLVED","card_id":"card","unknowns":[]},
+            {"result_id":"result","evidence_refs":[],"canonical_refs":[],"trigger":{"identifiers":[],"related_event_keys":[],"event_key":"evt","feed_action":"UPDATE"},"source_change":{"change_id":"source-change:test","classification":"UNRESOLVED"}},
+            temporal_assertions=[first,second],
+        )

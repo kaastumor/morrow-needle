@@ -27,8 +27,24 @@ Research/audit mode rules:
 5. a well-supported “nothing new / baseline already handles this” result is
    successful work.
 
-**Issue #87's experimental work is complete. The project-level decision is
-SHRINK: the default identity is now Needle Method + corpus/protocol.**
+**Issue #88 is now the current sponsor-authorized bounded value gate.**
+
+Issue #87 remains valid evidence for relay/reconstruction burden, but its 15/15
+correct Stage-B result created a ceiling effect for the stronger question:
+whether Needle actually prevents consequential legal-research mistakes.
+
+Issue #88 therefore tests Needle under pre-registered adversarial failure modes.
+The failure strata were fixed before fresh cases were selected. Phase A compares
+only the strong boring baseline (R) with Needle Method (M) using the same
+model/reasoning/source access. Core is excluded unless a later changed follow-up
+creates a genuine persistence job.
+
+This is not an architecture-expansion horizon. A baseline success is valid
+negative evidence against Needle-specific value; R-fail/M-fail is also a valid
+result; R-pass/M-fail counts against Method.
+
+**Issue #87's project-level decision remains in force: the default identity is
+Needle Method + corpus/protocol.**
 
 Needle Relay completed all 5 pre-sealed cases × 3 arms. All 15 Stage-B
 conclusions were substantively correct, so there is no raw correctness

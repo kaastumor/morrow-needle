@@ -1,0 +1,111 @@
+# Morrow // Needle — Adversarial Corpus
+
+Status: **CANONICAL CORPUS ENTRY POINT**
+
+This directory is the smallest durable form of the project after Issue #88.
+
+It does **not** replace the underlying legal fixtures, audits or issues. The
+index records evaluation metadata and points to those existing evidence owners.
+
+Canonical index:
+
+`corpus/index-v0.1.json`
+
+Canonical evaluation protocol:
+
+`docs/evaluations/adversarial-corpus-protocol-v0.1.md`
+
+## What a corpus case is
+
+A corpus case is a concrete legal-information situation capable of producing a
+consequentially wrong conclusion through a specific evidence/reasoning trap.
+
+A case is not admitted because it is complicated, surprising or legally
+interesting. It must preserve a falsifiable failure mechanism.
+
+Each public index entry records only:
+
+- stable case ID;
+- short title/domain/jurisdiction;
+- one or more trap classes;
+- provenance issue;
+- whether it **derived** a hypothesis or was used to **evaluate** one;
+- exposure/reuse status;
+- the decisive trap in one sentence;
+- references to existing durable evidence.
+
+Legal facts remain owned by the referenced fixture/audit/source chain.
+
+## The contamination rule
+
+**Discovery evidence and validation evidence are different things.**
+
+If a case caused us to discover or formulate a failure mechanism, it is
+`DERIVATION` evidence for that mechanism. It must not later be presented as a
+fresh blind validation of the same claim.
+
+If a case was sealed and used in an evaluation, revealing it makes it exposed.
+It can remain excellent regression material, but it is not fresh blind evidence
+again merely because a new session, model version or year arrives.
+
+Every case in the current v0.1 public seed is therefore:
+
+- public/exposed;
+- `blind_reuse=false`;
+- `future_use=REGRESSION_ONLY`.
+
+Fresh evaluation requires a fresh case selected and sealed before arm results
+exist.
+
+## Case lifecycle
+
+1. **DISCOVERED** — a concrete source-backed adversary exists.
+2. **ADMITTED** — trap is falsifiable, consequential and sufficiently supported.
+3. **SEALED** — exact question/answer key and comparator protocol are fixed;
+   Git stores commitments rather than hidden plaintext.
+4. **EXECUTED** — independent runs occur under the frozen boundary.
+5. **REVEALED** — commitments are verified and exact hidden artifacts are made
+   auditable.
+6. **REGRESSION_ONLY** — case remains useful, but no longer counts as fresh
+   blind validation.
+
+A derivation case normally enters the public corpus already exposed and thus
+goes directly to regression-only use.
+
+## Admission guardrails
+
+Prefer cases where:
+
+- the decisive conclusion is objectively checkable against primary/official or
+  otherwise appropriately recognised evidence;
+- the trap reflects a real legal-information failure mode rather than puzzle
+  wording;
+- the wrong answer would be consequential, not merely less elegant;
+- scope, time, language and source roles can be stated precisely;
+- the case is independent of the hypothesis it is meant to validate.
+
+Reject or defer cases that:
+
+- are selected because a baseline is already known to fail them;
+- require proprietary hidden facts for the decisive answer;
+- depend on subjective answer-quality scoring without a pre-registered rubric;
+- merely reward verbosity, source count or a preferred formatting style;
+- duplicate an already exposed case and call that “fresh” validation.
+
+## Validation
+
+Run:
+
+`python scripts/validate_adversarial_corpus.py`
+
+The validator checks structural invariants and referenced repository paths. It
+does not decide whether the legal answer is correct; that remains evidence work.
+
+## Scope discipline
+
+The corpus may point into the repository's older schemas and fixtures because
+those files preserve valuable cases. Their existence does not reactivate the
+architectures they were originally built to test.
+
+Corpus growth does not by itself justify new ontology, infrastructure or product
+surface.

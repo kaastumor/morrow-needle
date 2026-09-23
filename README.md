@@ -1,8 +1,8 @@
 # Morrow // Needle
 
-**Public infrastructure for observing how EU rules change.**
+**Evidence-first research and audit infrastructure for EU legal change.**
 
-Needle is not a document summarizer. It reconstructs, verifies, and explains legal change: what changed, compared with what, who or what it affects, when it matters, and the exact official evidence supporting the claim.
+Needle is not a document summarizer or a general legal-news product. It reconstructs, falsifies, and inspects legal-change claims: what changed, compared with what, when different legal effects matter, which dependencies or corrections alter the picture, what official evidence supports the claim, and what remains unresolved.
 
 ## Core concepts
 
@@ -36,25 +36,33 @@ data/          small reference matrices and controlled datasets
 
 ## Current status
 
-The P0/P1 legal-change foundation is complete and has survived an explicit post-foundation red-team across historical legislation, multilingual corrigenda, temporal edge cases, source anomalies, provision/rule lineage and end-to-end Thread reconstruction.
+The P0/P1 legal-change foundation is complete and remains the canonical
+evidence/identity/temporal/provenance core.
 
-The first P2 product projections are now evidenced:
+Two successive comparative gates changed the project direction:
 
-- **Half-Life** — temporary regimes as extensions, gaps and successor episodes;
-- **Source Anomaly** — authoritative-source irregularities without confusing source state with legal state;
-- **Legislative X-Ray** — derived dependency effects where local provision text remains unchanged.
+- **Issue #49:** the broad live-change/public-feed thesis failed to demonstrate
+  repeated material advantage over EUR-Lex, mature change tooling, direct
+  official sources and a capable LLM.
+- **Issue #59:** the Article 3 Thread proved materially better as an audit
+  package, especially for negative checks and provenance closure, but the same
+  legal history is reconstructible from the strong baseline and one showcase is
+  not recurring product evidence.
 
-The operational Needle loop is now proven against real official events, and the first product checkpoint has tested verified-change, source-audit and abstention cards.
+The project therefore **stops public-product expansion and continues in
+research/audit mode**.
 
-Issue #49's comparative gate concluded **REDIRECT**. Across four real cases, the broad public change-feed thesis did not achieve repeated material advantage over EUR-Lex, mature version tooling, direct official sources and a capable LLM.
+Operational Needle, Thread, Evidence, Legislative X-Ray, Source Anomaly,
+Half-Life and the Gold corpus remain useful tools and regressions. They no longer
+imply a feature roadmap.
 
-The evidence/legal-state engine remains useful, especially for audit safety and indirect dependency discovery. The operational monitor is now treated as evidence infrastructure rather than a presumed product.
+The first explicit research-mode task is **Issue #61**, auditing whether the
+2026 corrigendum to Regulation 2025/905 is back-projected into the EUR-Lex
+consolidation labelled 13 August 2025.
 
-The current strategic priority is **Issue #59: Thread / legal-change audit comparative value gate**. It tests the existing evidence-linked Article 3 rule history against the same strong baseline. No new Thread architecture, analytic primitive or scale infrastructure is authorized during the test.
-
-If Thread also fails to create recurring material understanding advantage, public-product expansion stops and Needle remains a research/audit engine plus regression corpus.
-
-See `BACKLOG.md`, `docs/audits/comparative-value-2026-09-23.md`, `docs/audits/project-health-2026-09-23-post-value.md`, and Issue #59.
+See `BACKLOG.md`,
+`docs/audits/thread-comparative-value-2026-09-23.md`,
+`docs/audits/project-health-2026-09-23-post-thread.md`, and Issue #61.
 
 ---
 

@@ -1,0 +1,128 @@
+{
+  "fixture_id": "reg2022-2576-solidarity-to-reg2017-1938-art13-v0.1",
+  "purpose": "Capture a crisis rule that becomes permanent by being amended and grafted into an older standing Regulation, while preserving the distinction between genealogy, canonical target identity and substantive mutation.",
+  "temporary_source": {
+    "act_id": "CELEX:32022R2576",
+    "provisions": [
+      "Article 27 — Default rules for solidarity measures",
+      "Article 28 — Procedure for solidarity measures in the absence of a solidarity agreement"
+    ],
+    "character": "TEMPORARY_CRISIS_RULES",
+    "application_end": "2024-12-31"
+  },
+  "amending_instrument": {
+    "act_id": "CELEX:32024R1789",
+    "provision": "Article 84(9)",
+    "role": "AMENDS_PERMANENT_HOST",
+    "application_start": "2025-01-01"
+  },
+  "permanent_target": {
+    "act_id": "CELEX:32017R1938",
+    "provision": "Article 13(8a)-(8c)",
+    "character": "PERMANENT_HOSTED_RULE",
+    "identity_note": "The current permanent rule is canonically located in amended Regulation (EU) 2017/1938. Regulation (EU) 2024/1789 is the amending instrument, not a substitute identity for the hosted provision."
+  },
+  "genealogy": {
+    "classification": "PERMANENT_GRAFT_WITH_MUTATION",
+    "genealogical_evidence_state": "DIRECT",
+    "source_evidence": [
+      {
+        "identifier": "CELEX:32024R1789",
+        "locator": "Recital 111",
+        "observation": "The successor legislation expressly states that additional solidarity measures introduced as crisis measures by Regulation (EU) 2022/2576 are among the measures transformed into permanent features."
+      },
+      {
+        "identifier": "CELEX:32024R1789",
+        "locator": "Article 84(9)(c)",
+        "observation": "The act inserts paragraphs 8a, 8b and 8c into Article 13 of Regulation (EU) 2017/1938."
+      }
+    ]
+  },
+  "handoff": {
+    "temporary_last_day": "2024-12-31",
+    "permanent_first_day": "2025-01-01",
+    "calendar_gap": false,
+    "evidence": "Regulation (EU) 2023/2919 extends Regulation (EU) 2022/2576 through 31 December 2024; Regulation (EU) 2024/1789 Article 89(2)(a) makes Article 84 apply from 1 January 2025."
+  },
+  "preserved_core": [
+    {
+      "rule": "default-trigger",
+      "temporary": "Default rules apply where two Member States have not agreed the necessary solidarity arrangements.",
+      "permanent": "Article 13(8a) retains the no-solidarity-agreement trigger.",
+      "continuity": "DIRECT_CORE_CONTINUITY"
+    },
+    {
+      "rule": "compensation-categories",
+      "temporary": [
+        "gas price",
+        "storage and transport costs",
+        "litigation costs",
+        "other indirect costs"
+      ],
+      "permanent": [
+        "gas price",
+        "storage and transport costs",
+        "litigation costs",
+        "other indirect costs"
+      ],
+      "continuity": "DIRECT_CORE_CONTINUITY"
+    },
+    {
+      "rule": "market-price-benchmark",
+      "temporary": "Day-ahead market price in the providing Member State or corresponding closest accessible market/hub.",
+      "permanent": "The same core day-ahead market-price hierarchy is retained.",
+      "continuity": "DIRECT_CORE_CONTINUITY"
+    },
+    {
+      "rule": "solidarity-request-payload",
+      "temporary": "Article 28 requires authority/operator contacts, delivery period and points, volume and gas quality.",
+      "permanent": "Article 13(8b) retains the same core request-data fields.",
+      "continuity": "DIRECT_CORE_CONTINUITY"
+    }
+  ],
+  "substantive_mutations": [
+    {
+      "mutation": "request-lead-time",
+      "temporary": "At least 72 hours before indicated delivery time.",
+      "permanent": "At least 48 hours before indicated delivery time.",
+      "effect": "SHORTER_REQUEST_LEAD"
+    },
+    {
+      "mutation": "response-window",
+      "temporary": "Response within 24 hours.",
+      "permanent": "Response effective within 18 hours.",
+      "effect": "FASTER_RESPONSE"
+    },
+    {
+      "mutation": "confirmation-window",
+      "temporary": "Confirmation within 24 hours of the delivery time needed.",
+      "permanent": "Confirmation within six hours of receipt of the offer and at least 24 hours before indicated delivery.",
+      "effect": "RESTRUCTURED_CONFIRMATION_TIMING"
+    },
+    {
+      "mutation": "indirect-cost-cap",
+      "temporary": "Article 27 limits other indirect costs to 100% of the gas price by default, with a Commission route for a higher amount.",
+      "permanent": "Article 13(8a) retains indirect costs but no longer states that 100% default cap.",
+      "effect": "COMPENSATION_CONTROL_CHANGED"
+    },
+    {
+      "mutation": "ex-post-compensation-control",
+      "temporary": "No equivalent Article 13(8c) regulatory ex-post control layer in the temporary default-rule package.",
+      "permanent": "New Article 13(8c) subjects final compensation to ex-post control by national regulatory authorities, with an ACER role where needed.",
+      "effect": "NEW_PERMANENT_CONTROL_LAYER"
+    }
+  ],
+  "architecture_result": {
+    "decision": "SURVIVES",
+    "new_schema_required": false,
+    "statement": "Direct genealogy, canonical rule identity and textual/substantive continuity remain separate. A temporary rule can be permanently grafted into an older host while being materially revised during transplantation.",
+    "forbidden_shortcuts": [
+      "The permanent solidarity rule is canonically Regulation (EU) 2024/1789 Article 84 rather than the amended Regulation (EU) 2017/1938 Article 13.",
+      "Permanentisation means Regulation (EU) 2022/2576 itself remained in force.",
+      "Direct genealogy means the permanent rule is a verbatim copy.",
+      "Shared compensation categories imply every compensation condition survived unchanged.",
+      "A consolidated current Article 13 reveals its 2022 crisis ancestry without amendment/genealogy evidence."
+    ]
+  },
+  "status": "DISCOVERY_CANONICAL_CANDIDATE"
+}

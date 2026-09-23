@@ -134,3 +134,27 @@ relative trigger, perspective or bounded transition.
 
 v0.1 remains valid for date-precision cases. The next temporal version must add
 explicit offset-aware instant precision without rewriting historical date truth.
+
+
+## Reopen resolution — Temporal v0.2
+
+Issue #81 is resolved by the precision-aware Temporal v0.2 contract:
+
+- `schemas/temporal-assertion-v0.2.schema.json`
+- `schemas/temporal-query-v0.2.schema.json`
+- `src/needle/temporal/resolver_v0_2.py`
+- `docs/decisions/temporal-v0.2-interface-freeze.md`
+
+v0.1 remains valid provenance and a stable representation for DATE-precision
+cases. It is superseded as the canonical interface whenever an official source
+requires sub-day precision.
+
+v0.2 adds only explicit `DATE` versus offset-aware `INSTANT` precision.
+It does not infer timezones or reinterpret legacy dates as midnight instants.
+
+Canonical validation after hardening:
+- 569 Python tests passed;
+- repository sanitation passed;
+- post-P1 foundation audit passed.
+
+The spatial research that exposed the failure may resume.

@@ -31,6 +31,7 @@ Each public index entry records only:
 - provenance issue;
 - whether it **derived** a hypothesis or was used to **evaluate** one;
 - exposure/reuse status;
+- evaluation mode for revealed evaluation cases;
 - the decisive trap in one sentence;
 - references to existing durable evidence.
 
@@ -71,6 +72,25 @@ exist.
 
 A derivation case normally enters the public corpus already exposed and thus
 goes directly to regression-only use.
+
+
+## Evaluation modes
+
+Evaluation provenance and evaluation construct are separate.
+
+Every revealed `EVALUATION` case must record one of:
+
+- `SURFACED_TRAP_ADJUDICATION` — the question identifies or strongly cues the
+  dangerous distinction; the run tests whether it is resolved correctly;
+- `LATENT_TRAP_DETECTION` — the realistic task does not reveal the hidden
+  failure mechanism; the run tests whether the investigator notices it before
+  giving a consequential answer.
+
+All six Issue #88 evaluation cases are
+`SURFACED_TRAP_ADJUDICATION`. They must not be cited as evidence that the
+baseline or Method would independently detect the same traps when latent.
+
+See `docs/audits/issue88-construct-validity-2026-09-23.md`.
 
 ## Admission guardrails
 

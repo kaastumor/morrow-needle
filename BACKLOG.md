@@ -30,6 +30,13 @@ Research/audit mode rules:
 **No preselected research task is currently eligible. The hourly worker should
 idle rather than manufacture work.**
 
+Issue #83 established a narrow `judicial-holding-v0.1` owner from two CJEU
+adversaries: Test-Achats invalidity with an explicitly delayed effect date, and
+Planet49 interpretation with no fabricated judgment-date application start.
+Judicial holdings remain separate from textual Change Atoms, factual
+Authoritative Findings and Temporal consequences. Broader CURIA/case-law
+network work remains parked.
+
 Issue #80 established Authoritative Finding and bounded legal geometry; Issue
 #81 repaired Temporal with explicit DATE/INSTANT precision. Issue #82 then
 proved that official aviation geography is volumetric: UAS zones, prohibited
@@ -398,7 +405,9 @@ Strategic constraints:
 ## P3 — Expansion
 
 - national transposition of directives;
-- CURIA interpretation layer;
+- broader CURIA/case-law network layer (narrow `judicial-holding-v0.1` is
+  canonical; citation graphs, precedent analytics and national follow-on
+  tracking remain parked);
 - agency/regulator guidance;
 - national ELI/N-Lex integration;
 - cross-jurisdiction comparison;

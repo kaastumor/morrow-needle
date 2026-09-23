@@ -273,3 +273,47 @@ The two remaining pre-sealed cases are the full-confirmation boundary:
 battery due-diligence postponement and RoHS scope split.
 
 Do not add cases or change promotion criteria before those runs complete.
+
+
+## Protocol amendment B — stateless API execution for full confirmation
+
+**Date:** 2026-09-23
+
+The remaining Battery/RoHS full-confirmation runs may be executed through a
+local stateless OpenAI Responses API harness instead of manually opening fresh
+ChatGPT conversations.
+
+This is an **execution-boundary change only**. It does not change:
+
+- the two pre-sealed cases;
+- Arm R/M/C instructions;
+- the frozen Core reference pack;
+- the hidden Stage-B questions;
+- evaluation criteria;
+- kill/promotion rules.
+
+Required harness properties:
+
+- one independent API request per investigator;
+- GPT-5.6 Sol for all runs;
+- reasoning effort = high for all runs;
+- web search enabled for all runs;
+- no conversation object;
+- no `previous_response_id`;
+- `store=false`;
+- Stage A receives only its arm/case prompt (+ frozen Core pack for C);
+- Stage B receives only its matching Stage-A artifact + the already-sealed
+  follow-up question;
+- no answer key is supplied to any investigator;
+- result text is saved verbatim;
+- model/response/usage metadata is retained in a run manifest;
+- any request failure stops or retries transparently rather than manufacturing
+  an experimental result.
+
+The local runner may contain the still-sealed Stage-B follow-ups, because they
+are not placed in any Stage-A request. The runner itself remains outside Git
+until the full-confirmation blind is complete, avoiding premature reveal in
+repository history.
+
+This amendment reduces sponsor/manual-chat handling without weakening
+investigator independence.

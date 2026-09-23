@@ -18,7 +18,6 @@ on:
       - "tests/test_retrieval.py"
       - "scripts/build_article3_retrieval_demo.py"
       - ".github/workflows/retrieval.yml"
-      - "pyproject.toml"
   pull_request:
     paths:
       - "schemas/retrieval-*.json"
@@ -36,7 +35,6 @@ on:
       - "tests/test_retrieval.py"
       - "scripts/build_article3_retrieval_demo.py"
       - ".github/workflows/retrieval.yml"
-      - "pyproject.toml"
   workflow_dispatch:
 
 concurrency:

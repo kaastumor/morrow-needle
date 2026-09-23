@@ -7,7 +7,6 @@ on:
       - "tests/test_cellar_representation_selection.py"
       - "schemas/manifestation-selection-v0.1.schema.json"
       - "schemas/source-observation-v0.1.schema.json"
-      - "pyproject.toml"
       - ".github/workflows/cellar-probe.yml"
   workflow_dispatch:
 

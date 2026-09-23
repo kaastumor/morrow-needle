@@ -8,7 +8,6 @@ on:
       - "scripts/probe_authentic_amendment.py"
       - "tests/test_authentic_amendment_instructions.py"
       - ".github/workflows/authentic-amendment.yml"
-      - "pyproject.toml"
   workflow_dispatch:
 
 concurrency:

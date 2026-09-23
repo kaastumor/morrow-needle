@@ -17,7 +17,6 @@ on:
       - "tests/test_gold_money_corrigendum.py"
       - "tests/test_gold_dependency_ripple.py"
       - ".github/workflows/gold-corpus.yml"
-      - "pyproject.toml"
   pull_request:
     paths:
       - "fixtures/gold/**"
@@ -31,7 +30,6 @@ on:
       - "tests/test_gold_mutation_fixture.py"
       - "tests/test_gold_semantic_fixture.py"
       - ".github/workflows/gold-corpus.yml"
-      - "pyproject.toml"
   workflow_dispatch:
 
 concurrency:

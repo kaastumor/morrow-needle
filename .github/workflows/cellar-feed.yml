@@ -8,7 +8,6 @@ on:
       - "scripts/probe_cellar_feed.py"
       - "tests/test_cellar_updates.py"
       - ".github/workflows/cellar-feed.yml"
-      - "pyproject.toml"
   workflow_dispatch:
 
 concurrency:

@@ -17,7 +17,8 @@
     "JUDICIAL_VALIDITY_TEXT_DIVERGENCE": "A judicial holding changes validity or operative legal state while the target text remains printed or textually unchanged.",
     "JUDICIAL_INTERPRETATION_TEMPORAL_OVERCLAIM": "A judicial interpretation supplies authoritative meaning without automatically creating a new prospective application start at judgment date.",
     "PRIVATE_ORIGIN_LEGAL_RECOGNITION": "A private-origin determination has a bounded legal role because public law recognises the actor or output, without converting the source into a public authority.",
-    "PARALLEL_INSTRUMENT_LIFECYCLE": "An umbrella negotiation or political deal is implemented through legally distinct interim and comprehensive agreements whose signature, provisional application, conclusion, entry into force and replacement states must remain attached to the correct instrument."
+    "PARALLEL_INSTRUMENT_LIFECYCLE": "An umbrella negotiation or political deal is implemented through legally distinct interim and comprehensive agreements whose signature, provisional application, conclusion, entry into force and replacement states must remain attached to the correct instrument.",
+    "OFFICIAL_TRACKER_UPDATE_LAG": "A currently accessible official summary/status tracker lags newer primary legal sources, so current access time cannot be substituted for the tracker's observation or update horizon."
   },
   "cases": [
     {
@@ -527,7 +528,53 @@
         "issue:91",
         "path:research/parallel-international-agreement-lifecycle-2026-09-23.md"
       ]
+    },
+    {
+      "id": "nl-nis2-commission-tracker-lag",
+      "title": "Commission NIS2 Netherlands tracker lags later Dutch implementing law",
+      "domain": "cybersecurity / national transposition",
+      "jurisdiction": "EU + Netherlands",
+      "trap_classes": [
+        "OFFICIAL_TRACKER_UPDATE_LAG"
+      ],
+      "provenance": {
+        "issue": 93,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "The currently served Commission country page still exposes the May-2025 enforcement state, while Dutch official law implementing NIS2 has been in force since 15 August 2026; the tracker therefore cannot prove absence of current implementing law.",
+      "evidence_refs": [
+        "issue:93",
+        "path:research/official-tracker-update-lag-2026-09-23.md"
+      ]
+    },
+    {
+      "id": "se-nis2-commission-tracker-lag",
+      "title": "Commission NIS2 Sweden tracker lags later Swedish implementing law",
+      "domain": "cybersecurity / national transposition",
+      "jurisdiction": "EU + Sweden",
+      "trap_classes": [
+        "OFFICIAL_TRACKER_UPDATE_LAG"
+      ],
+      "provenance": {
+        "issue": 93,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "The current Commission country page still shows the May-2025 reasoned-opinion state and a July-2025 update horizon, while Swedish NIS2 implementing law has been in force since 15 January 2026.",
+      "evidence_refs": [
+        "issue:93",
+        "path:research/official-tracker-update-lag-2026-09-23.md"
+      ]
     }
   ],
-  "case_count": 21
+  "case_count": 23
 }

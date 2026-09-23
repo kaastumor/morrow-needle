@@ -63,6 +63,13 @@ application, conclusion, entry into force and replacement cannot be inherited
 through an umbrella deal label. The finding expands the corpus to 21 public
 cases / 13 trap classes without reopening any schema or product surface.
 
+Issue #93 then tested the national-implementation/source-freshness blind spot.
+Current Commission NIS2 country pages for the Netherlands and Sweden still
+surface the May-2025 reasoned-opinion state while newer Dutch and Swedish
+primary law implementing NIS2 is in force. This earns a two-case
+`OFFICIAL_TRACKER_UPDATE_LAG` family and expands the corpus to 23 public cases
+/ 14 trap classes. It does not earn a source monitor or freshness service.
+
 
 
 Needle Relay completed all 5 pre-sealed cases × 3 arms. All 15 Stage-B

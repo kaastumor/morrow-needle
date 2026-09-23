@@ -1,0 +1,246 @@
+{
+  "fixture_version": "0.1",
+  "purpose": "Pin the procedural near-mutation around Regulation 261/2004 compensation without promoting institutional positions into legal state.",
+  "case_id": "air-passenger-rights-2013-0072-near-mutation",
+  "procedure_id": "2013/0072(COD)",
+  "events": [
+    {
+      "event_id": "air-rights-council-first-reading-2025-09-29",
+      "procedure_id": "2013/0072(COD)",
+      "procedure_family": "ORDINARY_LEGISLATIVE",
+      "event_kind": "COUNCIL_POSITION_ADOPTED",
+      "event_date": "2025-09-29",
+      "actor": ["COUNCIL"],
+      "document_refs": [
+        {
+          "role": "COUNCIL_POSITION",
+          "identifier": "10015/1/25 REV 1",
+          "relation": "Council position at first reading"
+        }
+      ],
+      "effects": [
+        {
+          "dimension": "COUNCIL_POSITION",
+          "value": "POSITION_ADOPTED"
+        },
+        {
+          "dimension": "PROCEDURE_ACTIVITY",
+          "value": "OPEN"
+        },
+        {
+          "dimension": "PROCEDURE_OUTCOME",
+          "value": "PENDING"
+        },
+        {
+          "dimension": "FORMAL_ACT_ADOPTION",
+          "value": "NOT_ADOPTED"
+        }
+      ],
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "COUNCIL",
+          "identifier": "ST 11389/26",
+          "locator": "Point 5 records Council first-reading adoption on 29 September 2025; footnote identifies 10015/1/25 REV 1 + ADD 1.",
+          "role": "EVENT"
+        },
+        {
+          "source_type": "COUNCIL",
+          "identifier": "Council press release 5 June 2025",
+          "locator": "Council position described EUR 300 / EUR 500 compensation with four/six-hour delay thresholds.",
+          "role": "DOCUMENT"
+        }
+      ],
+      "notes": "The differing Council rule state remains procedural evidence only."
+    },
+    {
+      "event_id": "air-rights-parliament-second-reading-2026-01-21",
+      "procedure_id": "2013/0072(COD)",
+      "procedure_family": "ORDINARY_LEGISLATIVE",
+      "event_kind": "PARLIAMENT_POSITION_ADOPTED",
+      "event_date": "2026-01-21",
+      "actor": ["EUROPEAN_PARLIAMENT"],
+      "document_refs": [
+        {
+          "role": "PARLIAMENT_POSITION",
+          "identifier": "P10_TA(2026)0009",
+          "relation": "second-reading position"
+        }
+      ],
+      "effects": [
+        {
+          "dimension": "PARLIAMENT_POSITION",
+          "value": "SECOND_READING_POSITION_ADOPTED"
+        },
+        {
+          "dimension": "PROCEDURE_ACTIVITY",
+          "value": "OPEN"
+        },
+        {
+          "dimension": "PROCEDURE_OUTCOME",
+          "value": "PENDING"
+        }
+      ],
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "PARLIAMENT",
+          "identifier": "P10_TA(2026)0009",
+          "locator": "European Parliament second-reading position adopted 21 January 2026.",
+          "role": "EVENT"
+        },
+        {
+          "source_type": "OEIL",
+          "identifier": "2013/0072(COD)",
+          "locator": "Second-reading summary: EUR 300 / 400 / 600 and three-hour compensation trigger.",
+          "role": "DOCUMENT"
+        }
+      ],
+      "notes": "Council later declined to approve these amendments; they do not become legal rule state."
+    },
+    {
+      "event_id": "air-rights-conciliation-agreement-2026-06-15",
+      "procedure_id": "2013/0072(COD)",
+      "procedure_family": "ORDINARY_LEGISLATIVE",
+      "event_kind": "POLITICAL_AGREEMENT_REACHED",
+      "event_date": "2026-06-15",
+      "actor": ["PARLIAMENT_AND_COUNCIL"],
+      "document_refs": [
+        {
+          "role": "AGREED_TEXT",
+          "identifier": "PE-CONS 39/1/26 REV 1",
+          "relation": "joint text approved by Conciliation Committee"
+        }
+      ],
+      "effects": [
+        {
+          "dimension": "NEGOTIATION_STATE",
+          "value": "PROVISIONAL_POLITICAL_AGREEMENT"
+        },
+        {
+          "dimension": "PROCEDURE_ACTIVITY",
+          "value": "OPEN"
+        },
+        {
+          "dimension": "PROCEDURE_OUTCOME",
+          "value": "PENDING"
+        },
+        {
+          "dimension": "FORMAL_ACT_ADOPTION",
+          "value": "NOT_ADOPTED"
+        }
+      ],
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "COUNCIL",
+          "identifier": "ST 11389/26",
+          "locator": "Point 9 records approval of a joint text by the Conciliation Committee on 15 June 2026.",
+          "role": "EVENT"
+        },
+        {
+          "source_type": "COUNCIL",
+          "identifier": "Council press release 15 June 2026",
+          "locator": "Agreement keeps EUR 250 / 400 / 600 compensation levels and a three-hour delay trigger.",
+          "role": "DOCUMENT"
+        }
+      ],
+      "notes": "Agreement is still separated from formal adoption."
+    },
+    {
+      "event_id": "air-rights-parliament-third-reading-2026-07-07",
+      "procedure_id": "2013/0072(COD)",
+      "procedure_family": "ORDINARY_LEGISLATIVE",
+      "event_kind": "PARLIAMENT_POSITION_ADOPTED",
+      "event_date": "2026-07-07",
+      "actor": ["EUROPEAN_PARLIAMENT"],
+      "document_refs": [
+        {
+          "role": "PARLIAMENT_POSITION",
+          "identifier": "2013/0072(COD) third reading 7 July 2026",
+          "relation": "Parliament approval of conciliation joint text"
+        }
+      ],
+      "effects": [
+        {
+          "dimension": "PARLIAMENT_POSITION",
+          "value": "OTHER_POSITION_ADOPTED"
+        },
+        {
+          "dimension": "PROCEDURE_ACTIVITY",
+          "value": "OPEN"
+        },
+        {
+          "dimension": "PROCEDURE_OUTCOME",
+          "value": "PENDING"
+        }
+      ],
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "OEIL",
+          "identifier": "2013/0072(COD)",
+          "locator": "Parliament approved the Conciliation Committee joint text on 7 July 2026.",
+          "role": "EVENT"
+        }
+      ],
+      "notes": "Parliament approval precedes the Council's final clearance."
+    },
+    {
+      "event_id": "air-rights-formal-adoption-2026-07-13",
+      "procedure_id": "2013/0072(COD)",
+      "procedure_family": "ORDINARY_LEGISLATIVE",
+      "event_kind": "FORMAL_ACT_ADOPTED",
+      "event_date": "2026-07-13",
+      "actor": ["COUNCIL"],
+      "document_refs": [
+        {
+          "role": "ADOPTED_ACT",
+          "identifier": "PE-CONS 39/1/26 REV 1",
+          "relation": "joint text receiving final Council clearance"
+        }
+      ],
+      "effects": [
+        {
+          "dimension": "FORMAL_ACT_ADOPTION",
+          "value": "ADOPTED"
+        },
+        {
+          "dimension": "PROCEDURE_OUTCOME",
+          "value": "ADOPTED"
+        },
+        {
+          "dimension": "PROCEDURE_ACTIVITY",
+          "value": "CLOSED"
+        },
+        {
+          "dimension": "NEGOTIATION_STATE",
+          "value": "COMPLETED"
+        }
+      ],
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "COUNCIL",
+          "identifier": "Council press release 13 July 2026",
+          "locator": "Council gives final clearance for stronger air passenger rights.",
+          "role": "EVENT"
+        },
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "ST_11841_2026_REV_1",
+          "locator": "Voting result for adoption of the legislative act on 13 July 2026.",
+          "role": "STATUS"
+        }
+      ],
+      "notes": "Publication and legal application remain separate later states; this fixture does not infer either."
+    }
+  ],
+  "forbidden_inferences": [
+    "Council first-reading amounts are treated as applicable law.",
+    "Parliament second-reading amounts are treated as applicable law.",
+    "Conciliation agreement is treated as formal adoption.",
+    "Final formal adoption is treated as publication, entry into force or application.",
+    "Returning to the baseline amount schedule erases the intervening procedural rule variants."
+  ]
+}

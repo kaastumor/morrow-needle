@@ -1,0 +1,109 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "air-passenger-compensation-near-mutation-v0.1",
+  "question": "Can a rule component remain legally unchanged while its economic context drifts and serious legislative positions propose different values?",
+  "baseline": {
+    "act_id": "CELEX:32004R0261",
+    "provision": "Article 7(1)",
+    "amount_schedule_eur": [250, 400, 600],
+    "distance_structure": [
+      "<=1500 km",
+      "intra-EU >1500 km and other 1500-3500 km",
+      "all other flights"
+    ],
+    "legal_state": "ADOPTED_APPLICABLE_BASELINE"
+  },
+  "contextual_drift": {
+    "source": "European Court of Auditors Special Report 30/2018",
+    "observation": "The fixed air-passenger compensation amounts had not been adjusted for inflation since the Regulation came into force.",
+    "eca_2018_theoretical_inflation_equivalents_eur": [313, 500, 751],
+    "classification": "EXTERNAL_CONTEXT_NOT_LEGAL_MUTATION",
+    "legal_amount_schedule_after_observation_eur": [250, 400, 600]
+  },
+  "procedural_rule_states": [
+    {
+      "stage": "PARLIAMENT_FIRST_READING_2014",
+      "document": "European Parliament position of 5 February 2014",
+      "procedure_id": "2013/0072(COD)",
+      "amount_schedule_eur": [300, 400, 600],
+      "distance_structure": [
+        "<=2500 km",
+        "2500-6000 km",
+        ">=6000 km"
+      ],
+      "canonical_legal_mutation": false,
+      "reason": "Institutional position inside an open legislative procedure."
+    },
+    {
+      "stage": "COUNCIL_FIRST_READING_2025",
+      "document": "Council position at first reading 10015/1/25 REV 1",
+      "procedure_id": "2013/0072(COD)",
+      "amount_schedule_eur": [300, 500],
+      "delay_trigger_hours": [4, 6],
+      "distance_structure": [
+        "<=3500 km and intra-EU",
+        ">3500 km"
+      ],
+      "canonical_legal_mutation": false,
+      "reason": "Council position, not an adopted final act."
+    },
+    {
+      "stage": "PARLIAMENT_SECOND_READING_2026",
+      "document": "P10_TA(2026)0009",
+      "procedure_id": "2013/0072(COD)",
+      "amount_schedule_eur": [300, 400, 600],
+      "delay_trigger_hours": [3],
+      "distance_structure": [
+        "<=1500 km",
+        "1500-3500 km",
+        ">3500 km"
+      ],
+      "canonical_legal_mutation": false,
+      "reason": "Parliament position rejected by Council before conciliation."
+    },
+    {
+      "stage": "CONCILIATION_AND_FINAL_ADOPTION_2026",
+      "documents": [
+        "Conciliation joint text PE-CONS 39/1/26 REV 1",
+        "European Parliament third-reading approval 7 July 2026",
+        "Council final clearance 13 July 2026"
+      ],
+      "procedure_id": "2013/0072(COD)",
+      "amount_schedule_eur": [250, 400, 600],
+      "delay_trigger_hours": [3],
+      "distance_structure": [
+        "<=1500 km",
+        "intra-EU >1500 km and other 1500-3500 km",
+        "all other longer journeys"
+      ],
+      "formal_adoption_complete": true,
+      "amount_component_relation_to_2004": "NOMINAL_AMOUNT_SCHEDULE_UNCHANGED",
+      "whole_rule_relation_to_2004": "NOT_IDENTICAL"
+    }
+  ],
+  "finding": {
+    "classification": "PROCEDURAL_NEAR_MUTATION_WITH_CONTEXTUAL_DRIFT",
+    "amount_component_changed_in_final_adopted_text": false,
+    "serious_intermediate_rule_variants_existed": true,
+    "economic_context_changed_without_text_mutation": true,
+    "whole_compensation_rule_unchanged": false,
+    "statement": "The EUR 250/400/600 amount component survives the reform, but that stability coexists with inflation erosion, rejected institutional variants and changes to surrounding entitlement conditions."
+  },
+  "architecture_result": {
+    "decision": "SURVIVES_WITH_STRICT_LAYER_SEPARATION",
+    "new_schema_required": false,
+    "layers": [
+      "applicable/adopted legal rule state",
+      "procedure-stage institutional position",
+      "external contextual observation"
+    ],
+    "forbidden_inferences": [
+      "A Council or Parliament position is a legal mutation merely because its proposed amounts differ from the applicable act.",
+      "Inflation erosion is a textual or legal mutation of Article 7.",
+      "Final equality of the nominal amounts means the whole compensation rule remained unchanged.",
+      "A failed proposed amount change is irrelevant simply because the final amount schedule returned to the baseline.",
+      "Formal adoption means the amended rule is already applicable."
+    ]
+  },
+  "status": "DISCOVERY_CANONICAL_CANDIDATE"
+}

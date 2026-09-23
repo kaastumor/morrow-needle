@@ -14,6 +14,7 @@ from needle.operations.legal_analysis import (
     should_attempt_legal_analysis,
 )
 from needle.operations.pipeline import build_feed_card, build_operational_result
+from needle.presentation.evidence import build_evidence_view
 from needle.updates.classify import build_source_change
 from needle.updates.relevance import classify_event_relevance
 from needle.updates.reobserve import reobserve_event
@@ -146,6 +147,37 @@ def main() -> int:
             "Source Mode lost authentic legal-text observation provenance"
         )
 
+    evidence_view=build_evidence_view(
+        card,
+        result,
+        provenance_records=[
+            reobservation["metadata_observation"],
+            reobservation["content_observation"],
+        ],
+        expected_language=reobservation.get("analysis_language"),
+    )
+    resolved_refs={item["ref"] for item in evidence_view["items"]}
+    if metadata_ref not in resolved_refs:
+        raise AssertionError(
+            "Evidence view did not resolve official publication metadata"
+        )
+    if content_ref not in resolved_refs:
+        raise AssertionError(
+            "Evidence view did not resolve authentic legal-text observation"
+        )
+    canonical_ids={
+        ref["entity_id"] for ref in result.get("canonical_refs",[])
+    }
+    unexpected_unresolved=[
+        ref for ref in evidence_view["unresolved_refs"]
+        if ref not in canonical_ids
+    ]
+    if unexpected_unresolved:
+        raise AssertionError(
+            "Evidence view left non-canonical evidence refs unresolved: "
+            +json.dumps(unexpected_unresolved,ensure_ascii=False)
+        )
+
     later_event={
         **event,
         "ingestion_time":"2026-09-21T14:00:00+02:00",
@@ -181,6 +213,7 @@ def main() -> int:
         "recency":recency,
         "operational_result":result,
         "feed_card":card,
+        "evidence_view":evidence_view,
         "historical_refresh_adversary":{
             "event_ingestion_time":later_event["ingestion_time"],
             "recency":historical_recency,
@@ -205,6 +238,9 @@ def main() -> int:
         "stream":card["stream"],
         "headline":card["headline"],
         "source_mode_ref_count":len(card["source_mode"]["refs"]),
+        "evidence_view_state":evidence_view["state"],
+        "evidence_view_resolved_count":len(evidence_view["items"]),
+        "evidence_view_unresolved_refs":evidence_view["unresolved_refs"],
         "later_refresh_state":historical_recency["state"],
         "later_refresh_disposition":historical["disposition"],
     },indent=2,ensure_ascii=False))

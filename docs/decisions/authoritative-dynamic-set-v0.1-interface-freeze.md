@@ -139,3 +139,49 @@ Reopen v0.1 only when an official case demonstrates one of:
 - publication authority cannot be captured without collapsing source identity;
 - dependency truth requires a relation other than legal effect conditioned on
   authoritative set state.
+
+
+## Temporal composition adversary — Issue #78
+
+The DSA Stripchat case proves that authoritative set state and downstream legal
+application may intentionally diverge in both directions.
+
+Pinned facts:
+
+- Stripchat was designated as a VLOP on 20 December 2023.
+- Its additional Section 5 obligations became applicable on 21 April 2024.
+- The Commission terminated the designation on 27 May 2025.
+- The Commission states that the VLOP obligations ceased four months later.
+
+Therefore there are valid periods in which:
+
+1. a member is **INCLUDED** but the dependent obligations are not yet applicable;
+2. a member is **NOT_INCLUDED** but the dependent obligations remain applicable
+   during a statutory tail.
+
+### Clarified invariant
+
+`transition.effective_from` means:
+
+> the authoritative set/member state changes from this date.
+
+It does **not** mean:
+
+> every legal effect conditioned on that set state changes from this date.
+
+Application, cessation, transition periods and other temporal consequences remain
+owned by Temporal v0.1.
+
+The dynamic-set contract therefore survives Issue #78 unchanged.
+
+This also sharpens the meaning of
+`LEGAL_EFFECT_CONDITIONED_ON_AUTHORITATIVE_SET_STATE`: set state may be a
+necessary causal predicate without being a sufficient instantaneous resolver of
+current applicability.
+
+Canonical adversary artifacts:
+
+- `fixtures/dependency/dsa-vlop-vlose-authoritative-dynamic-set-v0.1.json`
+- `fixtures/temporal/dsa-stripchat-designation-application-lag-v0.1.json`
+- `research/discovery/dsa-designation-application-lag-v0.1.md`
+- `tests/test_dsa_designation_application_lag.py`

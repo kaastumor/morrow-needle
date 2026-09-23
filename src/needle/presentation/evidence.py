@@ -215,11 +215,108 @@ def _claim_support_item(
     }
 
 
+def _temporal_assertion_map(
+    assertions: Iterable[dict[str, Any]],
+) -> dict[str,dict[str, Any]]:
+    by_id: dict[str,dict[str, Any]]={}
+    for assertion in assertions:
+        assertion_id=assertion.get("assertion_id")
+        if not assertion_id:
+            raise EvidencePresentationError(
+                "temporal presentation object requires assertion_id"
+            )
+        if assertion_id in by_id and by_id[assertion_id] != assertion:
+            raise EvidencePresentationError(
+                f"conflicting Temporal Assertions share assertion_id {assertion_id}"
+            )
+        by_id[assertion_id]=assertion
+    return by_id
+
+
+def _temporal_assertion_item(
+    ref: str,
+    assertion: dict[str, Any],
+    *,
+    result: dict[str, Any],
+) -> dict[str, Any]:
+    subject=assertion.get("subject_ref") or {}
+    subject_identifier=subject.get("identifier")
+    subject_celex=_normalize_celex(subject_identifier)
+    trigger_celexes=_trigger_celexes(result)
+    if (
+        subject.get("kind") == "LEGAL_ACT"
+        and subject_celex
+        and trigger_celexes
+        and subject_celex not in trigger_celexes
+    ):
+        raise EvidencePresentationError(
+            f"{ref}: Temporal Assertion subject CELEX does not match operational trigger"
+        )
+
+    dimension=str(assertion.get("dimension") or "temporal").upper()
+    boundary=str(assertion.get("boundary") or "boundary").upper()
+    resolution=str(assertion.get("resolution_state") or "UNRESOLVED")
+    evidence_state=str(assertion.get("evidence_state") or "UNRESOLVED")
+    normalized_date=assertion.get("normalized_date")
+
+    if resolution == "RESOLVED_ABSOLUTE" and normalized_date:
+        supports=(
+            f"{evidence_state} temporal evidence establishes the {dimension} "
+            f"{boundary.lower()} for {subject_identifier or _subject_label(result)} "
+            f"on {normalized_date}."
+        )
+    else:
+        supports=(
+            f"The canonical Temporal Assertion records the {dimension} "
+            f"{boundary.lower()} for {subject_identifier or _subject_label(result)} "
+            f"as {resolution}; no stronger temporal conclusion is presented."
+        )
+
+    does_not_by_dimension={
+        "PUBLICATION":"Publication does not establish entry into force or application.",
+        "LEGAL_FORCE":"Entry into force does not by itself establish when the rule applies.",
+        "APPLICATION":"Application timing does not by itself establish publication, legal force, or text-state timing.",
+        "TEXT_STATE":"Text-state timing does not by itself establish legal force or application.",
+        "TRANSITION":"A transition boundary does not by itself establish every affected entity's application state.",
+        "DEROGATION":"A derogation boundary does not establish broader application outside its evidenced scope.",
+        "DEADLINE":"A deadline is not an application-start or entry-into-force date.",
+    }
+    source_languages={
+        item.get("language")
+        for item in assertion.get("source_refs",[])
+        if item.get("language") is not None
+    }
+    language=next(iter(source_languages)) if len(source_languages) == 1 else None
+    return {
+        "ref":ref,
+        "kind":"TEMPORAL_ASSERTION",
+        "label":(
+            f"{dimension.replace('_',' ').title()} — "
+            f"{subject_identifier or _subject_label(result)}"
+            + (f" · {normalized_date}" if normalized_date else f" · {resolution}")
+        ),
+        "supports":supports,
+        "does_not_establish":does_not_by_dimension.get(
+            dimension,
+            "This temporal assertion establishes only its named dimension, scope, and resolution state.",
+        ),
+        "evidence_character":evidence_state,
+        "official_uri":None,
+        "language":language,
+        "audit_id":ref,
+        "dimension":dimension,
+        "boundary":boundary,
+        "resolution_state":resolution,
+        "normalized_date":normalized_date,
+    }
+
+
 def build_evidence_view(
     card: dict[str, Any],
     result: dict[str, Any],
     *,
     provenance_records: Iterable[dict[str, Any]] = (),
+    temporal_assertions: Iterable[dict[str, Any]] = (),
     expected_language: str | None = None,
 ) -> dict[str, Any]:
     """Resolve an operational card into human-readable evidence presentation.
@@ -238,6 +335,12 @@ def build_evidence_view(
         )
 
     by_id=_record_map(provenance_records)
+    temporal_by_id=_temporal_assertion_map(temporal_assertions)
+    typed_temporal_refs={
+        item["entity_id"]
+        for item in result.get("canonical_refs",[])
+        if item.get("kind") == "TEMPORAL_ASSERTION"
+    }
     roles=_snapshot_roles(result)
     trigger=result["trigger"]
     event_refs={
@@ -280,7 +383,13 @@ def build_evidence_view(
 
         record=by_id.get(ref)
         if record is None:
-            unresolved.append(ref)
+            assertion=temporal_by_id.get(ref)
+            if assertion is not None and ref in typed_temporal_refs:
+                items.append(_temporal_assertion_item(
+                    ref,assertion,result=result
+                ))
+            else:
+                unresolved.append(ref)
             continue
         if record.get("record_type") == "SOURCE_OBSERVATION":
             items.append(_source_observation_item(

@@ -154,6 +154,7 @@ def main() -> int:
             reobservation["metadata_observation"],
             reobservation["content_observation"],
         ],
+        temporal_assertions=[publication["assertion"]],
         expected_language=reobservation.get("analysis_language"),
     )
     resolved_refs={item["ref"] for item in evidence_view["items"]}
@@ -165,17 +166,26 @@ def main() -> int:
         raise AssertionError(
             "Evidence view did not resolve authentic legal-text observation"
         )
-    canonical_ids={
-        ref["entity_id"] for ref in result.get("canonical_refs",[])
-    }
-    unexpected_unresolved=[
-        ref for ref in evidence_view["unresolved_refs"]
-        if ref not in canonical_ids
-    ]
-    if unexpected_unresolved:
+    if evidence_view["state"] != "CLOSED":
         raise AssertionError(
-            "Evidence view left non-canonical evidence refs unresolved: "
-            +json.dumps(unexpected_unresolved,ensure_ascii=False)
+            "Evidence view did not close over existing canonical/publication evidence: "
+            +json.dumps(evidence_view["unresolved_refs"],ensure_ascii=False)
+        )
+    if evidence_view["unresolved_refs"]:
+        raise AssertionError(
+            "closed Evidence view still exposes unresolved refs"
+        )
+    temporal_rows=[
+        item for item in evidence_view["items"]
+        if item["kind"] == "TEMPORAL_ASSERTION"
+    ]
+    if len(temporal_rows) != 1:
+        raise AssertionError(
+            "expected one human-readable publication Temporal Assertion"
+        )
+    if temporal_rows[0]["normalized_date"] != "2026-09-18":
+        raise AssertionError(
+            "Evidence view lost canonical publication date"
         )
 
     later_event={

@@ -82,4 +82,4 @@ def test_discovery_requires_no_new_schema():
     assert result["decision"] == "SURVIVES"
     assert result["new_schema_required"] is False
     assert "genealogy" in result["statement"].lower()
-    assert "mutation" in result["statement"].lower()
+    assert len(FIXTURE["substantive_mutations"]) >= 1

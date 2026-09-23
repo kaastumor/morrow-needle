@@ -2,7 +2,7 @@ import pytest
 
 from needle.operations.authentic_candidates import candidates_from_reobservation
 from needle.provenance.ledger import seal_record
-from needle.operations.legal_analysis import OperationalLegalAnalysisError, analyze_operational_legal, apply_operational_recency_gate, collapse_evidence_candidates, derive_feed_event_relevance, derive_operational_relevance, derive_publication_recency_from_reobservation, should_attempt_legal_analysis
+from needle.operations.legal_analysis import OperationalLegalAnalysisError, analyze_operational_legal, apply_operational_recency_gate, attach_resolved_temporal_context, collapse_evidence_candidates, derive_feed_event_relevance, derive_operational_relevance, derive_publication_recency_from_reobservation, should_attempt_legal_analysis
 
 EVENT={"event_key":"evt-1","action":"UPDATE","identifiers":["celex:32026R2104"]}; CHANGE={"event_key":"evt-1","change_id":"chg-1","classification":"UNRESOLVED"}
 EXPLANATION={"what_changed":"An authentic act inserts two rows.","compared_with":"The placement anchor named by the authentic instruction.","when_it_matters":"As established by the authentic act.","affected":[],"evidence_character":"DIRECT"}
@@ -297,3 +297,50 @@ def test_publication_recency_does_not_bind_to_source_diff_route():
             "temporal_metadata":{"publication":{"state":"RESOLVED"}},
         }
     ) is None
+
+
+def test_resolved_temporal_context_attaches_refs_without_copying_assertions():
+    legal=analyze_operational_legal(EVENT,CHANGE,candidates=[candidate()])
+    publication={
+        "state":"RESOLVED",
+        "assertion":{
+            "assertion_id":"temporal:publication",
+        },
+        "evidence_refs":["src:metadata"],
+    }
+    force={
+        "state":"RESOLVED",
+        "assertion":{
+            "assertion_id":"temporal:force",
+        },
+        "evidence_refs":["src:metadata"],
+    }
+    outcome=attach_resolved_temporal_context(
+        legal,
+        temporal_metadata={
+            "publication":publication,
+            "legal_force":force,
+        },
+    )
+    assert {"kind":"TEMPORAL_ASSERTION","entity_id":"temporal:publication"} in outcome["canonical_refs"]
+    assert {"kind":"TEMPORAL_ASSERTION","entity_id":"temporal:force"} in outcome["canonical_refs"]
+    assert outcome["evidence_refs"].count("src:metadata")==1
+    assert "temporal:publication" in outcome["evidence_refs"]
+    assert "temporal:force" in outcome["evidence_refs"]
+    assert "temporal_metadata" not in outcome
+
+
+def test_unresolved_temporal_context_is_not_promoted():
+    legal=analyze_operational_legal(EVENT,CHANGE,candidates=[candidate()])
+    outcome=attach_resolved_temporal_context(
+        legal,
+        temporal_metadata={
+            "legal_force":{
+                "state":"CONFLICTING",
+                "assertion":None,
+                "evidence_refs":["src:metadata"],
+            },
+        },
+    )
+    assert outcome["canonical_refs"]==legal["canonical_refs"]
+    assert outcome["evidence_refs"]==legal["evidence_refs"]

@@ -15,6 +15,7 @@ from needle.operations.authentic_candidates import candidates_from_reobservation
 from needle.operations.legal_analysis import (
     analyze_operational_legal,
     apply_operational_recency_gate,
+    attach_resolved_temporal_context,
     derive_publication_recency_from_reobservation,
     should_attempt_legal_analysis,
 )
@@ -167,6 +168,10 @@ def main() -> int:
             )
             downstream=apply_operational_recency_gate(
                 legal_analysis,recency=recency
+            )
+            downstream=attach_resolved_temporal_context(
+                downstream,
+                temporal_metadata=reobservation.get("temporal_metadata"),
             )
             downstream["unknowns"]=[
                 *source_unknowns,*downstream.get("unknowns",[])

@@ -10,6 +10,7 @@ from needle.operations.authentic_candidates import candidates_from_reobservation
 from needle.operations.legal_analysis import (
     analyze_operational_legal,
     apply_operational_recency_gate,
+    attach_resolved_temporal_context,
     derive_publication_recency_from_reobservation,
     should_attempt_legal_analysis,
 )
@@ -58,6 +59,7 @@ def main() -> int:
         )
 
     publication=reobservation["temporal_metadata"]["publication"]
+    legal_force=reobservation["temporal_metadata"]["legal_force"]
     if publication["state"] != "RESOLVED":
         raise AssertionError(
             "expected resolved official publication metadata, got "
@@ -67,6 +69,16 @@ def main() -> int:
         raise AssertionError(
             "unexpected publication date: "
             +str(publication["assertion"]["normalized_date"])
+        )
+    if legal_force["state"] != "RESOLVED":
+        raise AssertionError(
+            "expected resolved official entry-into-force metadata, got "
+            +legal_force["state"]
+        )
+    if legal_force["assertion"]["normalized_date"] != "2026-09-19":
+        raise AssertionError(
+            "unexpected entry-into-force date: "
+            +str(legal_force["assertion"]["normalized_date"])
         )
 
     change=build_source_change(
@@ -114,6 +126,10 @@ def main() -> int:
     downstream=apply_operational_recency_gate(
         legal,recency=recency
     )
+    downstream=attach_resolved_temporal_context(
+        downstream,
+        temporal_metadata=reobservation.get("temporal_metadata"),
+    )
     result=build_operational_result(
         event,
         change,
@@ -154,7 +170,10 @@ def main() -> int:
             reobservation["metadata_observation"],
             reobservation["content_observation"],
         ],
-        temporal_assertions=[publication["assertion"]],
+        temporal_assertions=[
+            publication["assertion"],
+            legal_force["assertion"],
+        ],
         expected_language=reobservation.get("analysis_language"),
     )
     resolved_refs={item["ref"] for item in evidence_view["items"]}
@@ -179,13 +198,30 @@ def main() -> int:
         item for item in evidence_view["items"]
         if item["kind"] == "TEMPORAL_ASSERTION"
     ]
-    if len(temporal_rows) != 1:
+    if len(temporal_rows) != 2:
         raise AssertionError(
-            "expected one human-readable publication Temporal Assertion"
+            "expected publication and legal-force Temporal Assertions"
         )
-    if temporal_rows[0]["normalized_date"] != "2026-09-18":
+    temporal_dates={
+        item["dimension"]:item["normalized_date"]
+        for item in temporal_rows
+    }
+    if temporal_dates != {
+        "PUBLICATION":"2026-09-18",
+        "LEGAL_FORCE":"2026-09-19",
+    }:
         raise AssertionError(
-            "Evidence view lost canonical publication date"
+            "Evidence view lost canonical publication/legal-force dates"
+        )
+    legal_force_row=next(
+        item for item in temporal_rows
+        if item["dimension"] == "LEGAL_FORCE"
+    )
+    if "does not by itself establish when the rule applies" not in (
+        legal_force_row["does_not_establish"]
+    ):
+        raise AssertionError(
+            "Evidence view collapsed legal force into application"
         )
 
     later_event={
@@ -216,6 +252,7 @@ def main() -> int:
             "metadata_observation_id":metadata_ref,
             "content_observation_id":content_ref,
             "publication":publication,
+            "legal_force":legal_force,
         },
         "source_change":change,
         "candidate_count":len(candidates),
@@ -243,6 +280,7 @@ def main() -> int:
         "event_key":event["event_key"],
         "candidate_count":len(candidates),
         "publication_date":publication["assertion"]["normalized_date"],
+        "entry_into_force_date":legal_force["assertion"]["normalized_date"],
         "recency_state":recency["state"],
         "relevance_dimension":recency["relevance_dimension"],
         "stream":card["stream"],

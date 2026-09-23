@@ -3,7 +3,10 @@ from pathlib import Path
 
 from jsonschema import Draft202012Validator
 
-from needle.updates.temporal_metadata import extract_cellar_publication_metadata
+from needle.updates.temporal_metadata import (
+    extract_cellar_entry_into_force_metadata,
+    extract_cellar_publication_metadata,
+)
 
 
 TEMPORAL_SCHEMA=json.loads(
@@ -148,6 +151,89 @@ def test_malformed_rdf_abstains_instead_of_scanning_date_strings():
         b"<rdf>2026-09-18",
         identifier="CELEX:32026R2104",
         evidence_ref="src-metadata:malformed",
+    )
+    assert result["state"]=="UNRESOLVED"
+    assert result["assertion"] is None
+
+
+def test_explicit_entry_into_force_property_projects_legal_force_start():
+    payload=notice(
+        cdm("official-journal-act_date_publication","2026-09-18"),
+        cdm("resource_legal_date_entry-into-force","2026-09-19"),
+        cdm("date_document","2026-09-17"),
+    )
+    result=extract_cellar_entry_into_force_metadata(
+        payload,
+        identifier="CELEX:32026R2104",
+        evidence_ref="src-metadata:2104",
+    )
+    assert result["state"]=="RESOLVED"
+    assert result["evidence_refs"]==["src-metadata:2104"]
+    assert result["source_properties"]==[
+        "resource_legal_date_entry-into-force"
+    ]
+    assertion=result["assertion"]
+    assert assertion["normalized_date"]=="2026-09-19"
+    assert assertion["dimension"]=="LEGAL_FORCE"
+    assert assertion["boundary"]=="START"
+    assert assertion["scope"]["applies_to"]==["ACT:32026R2104"]
+    assert assertion["source_refs"][0]["role"]=="DERIVATION_INPUT"
+    assert "application date" in assertion["notes"]
+    assert list(
+        Draft202012Validator(TEMPORAL_SCHEMA).iter_errors(assertion)
+    )==[]
+
+
+def test_entry_into_force_does_not_fall_back_to_publication_or_document_date():
+    result=extract_cellar_entry_into_force_metadata(
+        notice(
+            cdm("official-journal-act_date_publication","2026-09-18"),
+            cdm("date_publication","2026-09-18"),
+            cdm("date_document","2026-09-17"),
+        ),
+        identifier="CELEX:32026R2104",
+        evidence_ref="src-metadata:no-force",
+    )
+    assert result["state"]=="NOT_ASSERTED"
+    assert result["assertion"] is None
+
+
+def test_duplicate_identical_entry_into_force_occurrences_are_not_corroboration():
+    result=extract_cellar_entry_into_force_metadata(
+        notice(
+            cdm("resource_legal_date_entry-into-force","2026-09-19"),
+            cdm("resource_legal_date_entry-into-force","2026-09-19"),
+        ),
+        identifier="CELEX:32026R2104",
+        evidence_ref="src-metadata:force-duplicate",
+    )
+    assert result["state"]=="RESOLVED"
+    assert len(result["occurrences"])==2
+    assert result["assertion"]["normalized_date"]=="2026-09-19"
+
+
+def test_conflicting_entry_into_force_values_fail_closed():
+    result=extract_cellar_entry_into_force_metadata(
+        notice(
+            cdm("resource_legal_date_entry-into-force","2026-09-19"),
+            cdm("resource_legal_date_entry-into-force","2026-09-20"),
+        ),
+        identifier="CELEX:32026R2104",
+        evidence_ref="src-metadata:force-conflict",
+    )
+    assert result["state"]=="CONFLICTING"
+    assert result["assertion"] is None
+    assert "disagree" in result["unknowns"][0]
+
+
+def test_invalid_entry_into_force_literal_does_not_use_publication_arithmetic():
+    result=extract_cellar_entry_into_force_metadata(
+        notice(
+            cdm("resource_legal_date_entry-into-force","19-09-2026"),
+            cdm("official-journal-act_date_publication","2026-09-18"),
+        ),
+        identifier="CELEX:32026R2104",
+        evidence_ref="src-metadata:force-invalid",
     )
     assert result["state"]=="UNRESOLVED"
     assert result["assertion"] is None

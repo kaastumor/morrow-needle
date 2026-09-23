@@ -1,7 +1,7 @@
 # Needle adversarial failure gate v0.1 — Issue #88
 
 **Date:** 2026-09-23  
-**Status:** PRE-REGISTERED / CANDIDATE DISCOVERY  
+**Status:** SEALED / PHASE A EXECUTION PENDING  
 **Purpose:** determine whether Needle Method prevents consequential legal-research failures on fresh cases selected from failure mechanisms discovered before the gate.
 
 ## Why #87 is insufficient for this claim
@@ -122,3 +122,43 @@ No Full-Needle surface re-enters during this gate. Core contracts are not repair
 The gate succeeds scientifically even if Needle fails.
 
 If R and M remain parity across genuinely adversarial fresh cases, the project must reduce the strength of its Method-distinctiveness claim rather than inventing a harder benchmark after the fact.
+
+
+## Sealed Phase-A suite — 2026-09-23
+
+The six exact cases and R/M prompts were fixed before any investigator run.
+
+Case IDs:
+
+1. `adv-polish-visa-backprojection`
+2. `adv-nis2-italian-heading`
+3. `adv-chatgpt-vlose-applicability`
+4. `adv-harmonised-standard-restriction`
+5. `adv-ets-private-verifier`
+6. `adv-licence-1300-boundary`
+
+The public hash commitments are canonical in:
+
+`fixtures/value-gates/issue88-sealed-manifest-v0.1.json`
+
+Phase A requires exactly 12 stateless requests: six R and six M.
+
+Execution properties are frozen:
+
+- `gpt-5.6-sol`;
+- reasoning effort `high`;
+- web search enabled;
+- `store=false`;
+- one independent request per run;
+- no conversation object;
+- no `previous_response_id`;
+- no repository context;
+- no answer key;
+- no cross-arm outputs.
+
+The no-admin PowerShell runner is intentionally kept outside Git until execution
+because it contains the exact sealed questions. Its SHA-256 is committed in the
+public manifest.
+
+Do not repair Method, replace cases, or add Core before the 12 Phase-A results
+exist.

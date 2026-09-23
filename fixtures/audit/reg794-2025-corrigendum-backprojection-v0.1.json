@@ -1,0 +1,62 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "reg794-2025-article4-corrigendum-backprojection-v0.1",
+  "target_act": "CELEX:32004R0794",
+  "language": "ENG",
+  "question": "Does the current consolidation labelled 2025-08-13 contain wording introduced only by a corrigendum published in 2026?",
+  "observations": [
+    {
+      "observation_id": "obs-amending-act-2025-905-original-wording",
+      "observation_character": "AUTHENTIC_AMENDING_ACT_AS_PUBLISHED",
+      "identifier": "CELEX:32025R0905",
+      "source_uri": "https://eur-lex.europa.eu/eli/reg_impl/2025/905/oj/eng",
+      "source_date": "2025-06-13",
+      "locator": "Article 1(4)(b) replacing Regulation 794/2004 Article 4(1), second sentence",
+      "observed_text": "However an increase in the original budget of an existing aid that is authorised or deemed compatible under Regulation (EU) No 651/2014 by up to 20 % shall not be considered an alteration to existing aid."
+    },
+    {
+      "observation_id": "obs-corrigendum-2026-90591",
+      "observation_character": "AUTHENTIC_CORRIGENDUM",
+      "identifier": "CELEX:32025R0905R(01)",
+      "source_uri": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0905R(01)",
+      "source_date": "2026-07-17",
+      "locator": "Correction to Article 1(4)(b), amendment of Regulation 794/2004 Article 4(1), second sentence",
+      "replaces_text": "However an increase in the original budget of an existing aid that is authorised or deemed compatible under Regulation (EU) No 651/2014 by up to 20 % shall not be considered an alteration to existing aid.",
+      "corrected_text": "However an increase in the original budget of an existing aid scheme that is authorised or deemed compatible under Regulation (EU) No 651/2014 by up to 20 % shall not be considered an alteration to existing aid."
+    },
+    {
+      "observation_id": "obs-current-consolidation-2025-08-13-observed-2026",
+      "observation_character": "OFFICIAL_CONSOLIDATION_CHECKPOINT_OBSERVED_EX_POST",
+      "identifier": "CELEX:02004R0794-20250813",
+      "source_uri": "https://eur-lex.europa.eu/eli/reg/2004/794",
+      "text_state_label_date": "2025-08-13",
+      "observed_after": "2026-07-17",
+      "locator": "Article 4(1), second sentence",
+      "observed_correction_marker": "C4",
+      "observed_text": "However an increase in the original budget of an existing aid scheme that is authorised or deemed compatible under Regulation (EU) No 651/2014 by up to 20 % shall not be considered an alteration to existing aid."
+    }
+  ],
+  "lexical_result": {
+    "original_2025_matches_corrigendum_before": true,
+    "current_consolidation_matches_corrigendum_after": true,
+    "current_consolidation_differs_from_original_2025": true
+  },
+  "temporal_result": {
+    "corrigendum_source_date": "2026-07-17",
+    "consolidation_label_date": "2025-08-13",
+    "ordering": "CONSOLIDATION_LABEL_PRECEDES_CORRIGENDUM_PUBLICATION",
+    "EX_POST_LEGAL_EFFECT": "Current official consolidation may show the corrected wording when reconstructing the corrected historical text state.",
+    "OFFICIAL_SOURCE_STATE_AS_OF_2025_08_13": "UNRESOLVED_FROM_CURRENT_CONSOLIDATION_ALONE"
+  },
+  "finding": "Independent real-world confirmation of the frozen P0-F consolidation-backprojection invariant. A current EUR-Lex consolidation labelled 2025-08-13 can contain wording sourced from a corrigendum published on 2026-07-17.",
+  "forbidden_inferences": [
+    "The 2025-08-13 consolidation label proves that the corrected wording was publicly visible on 2025-08-13.",
+    "The current consolidated representation is a source-state-as-of archive for its label date.",
+    "Every correction is back-projected into every consolidation or language expression."
+  ],
+  "source_notes": [
+    "The original 2025/905 publication is the authentic before source for the corrected phrase.",
+    "The 2026 corrigendum explicitly supplies both the for/read replacement wording.",
+    "The current 2025-08-13 consolidation is observed ex post and is not evidence of contemporaneous source availability."
+  ]
+}

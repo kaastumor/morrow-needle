@@ -220,8 +220,24 @@ Many case-specific workflows rerun deterministic test subsets that are already
 covered by the complete unit suite. Some also build previews or expose optional
 live probes, which may justify keeping them.
 
-The static evidence is enough to call this **CI topology debt**, but not enough
-to safely bulk-delete workflows without run telemetry.
+The static evidence was enough to call this **CI topology debt**. The audit then
+generated direct telemetry: a metadata/health reconciliation touching
+`pyproject.toml` triggered **11 workflows**, including multiple unrelated
+case-specific contracts.
+
+Issue #84 therefore made three bounded CI repairs:
+
+1. removed `pyproject.toml` as a trigger from eight case-specific workflows;
+2. moved network-dependent Semantic Source, Thread and Live AST probe steps to
+   explicit manual dispatch while keeping deterministic regressions on push;
+3. upgraded the former Post-P1 workflow into a current **Foundation adversary
+   audit** that also runs on pull requests and includes the newer dynamic-set,
+   metric, finding, Temporal v0.2, spatial v0.2 and judicial-holding boundary
+   regressions.
+
+The touched case workflows all completed successfully after the change.
+The full Python suite passed **600 tests** after the operational/sanitation
+repair, and the refreshed foundation adversary gate passed **236 tests**.
 
 Future consolidation rule:
 
@@ -232,8 +248,10 @@ If it only reruns a subset of tests already covered globally, prefer the shared
 unit/foundation workflow and retain the case as a fixture/test rather than a
 workflow.
 
-The retired operational schedule is the first concrete application of that
-rule.
+The retired operational schedule and dependency-trigger fan-out reduction are
+the first concrete applications of that rule. The remaining workflow count is
+still intentionally not treated as a target; further removal requires a
+specific redundant responsibility, not aesthetic pressure.
 
 ### GitHub administration limitation
 

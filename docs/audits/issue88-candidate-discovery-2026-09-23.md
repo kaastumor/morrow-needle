@@ -1,7 +1,7 @@
 # Issue #88 candidate discovery — pre-seal audit
 
 **Date:** 2026-09-23  
-**Status:** CANDIDATE DISCOVERY / NOT YET SEALED
+**Status:** SEALED / PHASE A EXECUTION PENDING
 
 This file records candidate selection before any R/M investigator run.
 
@@ -134,69 +134,72 @@ Source:
 
 ## Candidate 5 — source origin != legal authority/recognition
 
-**Candidate:** Philips MDR conformity documentation relying on TÜV SÜD Product
-Service GmbH (NB 0123).
-
-Evidence chain:
-
-- a Philips EU declaration identifies TÜV SÜD Product Service GmbH, NB 0123,
-  and an MDR certificate for a Class II device;
-- TÜV SÜD is a private conformity-assessment body, not an EU institution;
-- NANDO records TÜV SÜD Product Service GmbH as notified body 0123 under
-  Regulation (EU) 2017/745;
-- MDR Article 56 expressly gives notified bodies the role of issuing,
-  restricting, suspending and withdrawing conformity certificates;
-- EUDAMED now publicly records these certificate states.
-
-Candidate question family:
-
-May the TÜV SÜD certification determination be discarded as legally
-non-authoritative merely because its source is private rather than a public EU
-authority?
-
-**Admission assessment:** ADMISSIBLE, BUT MUST STAY NARROW.
-
-The correct result is not that every private certificate proves EU compliance.
-The legally relevant fact is the bounded notified-body role recognised by
-public law. The manufacturer declaration is evidence of the claimed certificate,
-while NANDO/MDR establish the public-law recognition basis. An investigator
-must not silently collapse those two evidence roles.
-
-Sources:
-
-- https://www.documents.philips.com/assets/EU%20Declaration%20of%20conformity/20251014/7b94dbf1c0a64d588e7db37600fd16d6.pdf
-- NANDO notification: Regulation (EU) 2017/745, TÜV SÜD Product Service GmbH,
-  NB 0123
-- https://eur-lex.europa.eu/eli/reg/2017/745/2023-03-11/eng
-- https://health.ec.europa.eu/medical-devices-eudamed/notified-bodies-and-certificates-module_en
-
-## Candidate 6 — temporal precision / boundary loss
-
-**Candidate:** Swedish HVMFS 2025:10 real-time northern-prawn closure in
-Skagerrak.
+**Final candidate:** EU ETS accredited verifier opinion and Union Registry
+verified-emissions/account status.
 
 Official evidence:
 
-- decision/publication date: 20 March 2025;
-- prohibition begins 21 March 2025 at 01:00 Swedish time;
-- prohibition runs through 4 April 2025 at 00:59 Swedish time.
+- Implementing Regulation (EU) 2018/2067 defines a verifier as a legal person
+  carrying out verification activities and accredited by a national
+  accreditation body;
+- Article 27 requires the verifier to issue a verification report and permits
+  the opinion that an emissions report is verified as satisfactory;
+- the Commission's EU ETS MRV guidance states that operators must have their
+  annual report verified by an accredited verifier;
+- Delegated Regulation (EU) 2019/1122 uses satisfactory verification/verified
+  status in the Union Registry and requires blocking of a stationary
+  installation account when preceding-year emissions are not entered and marked
+  verified by 1 April.
 
-Candidate question family:
+Final question family:
 
-At 00:30 Swedish time on 21 March 2025, was the closure already in force? What
-about 00:30 on 4 April 2025?
+Can an operator disregard the absence of satisfactory accredited verification
+on the theory that a private verifier's opinion is legally irrelevant because
+only public-authority determinations matter?
 
-**Admission assessment:** STRONG, WITH DOMAIN-SIMILARITY CAVEAT.
+**Admission assessment:** STRONG.
 
-This is a different legal event from Issue #81 but the same fishery/real-time
-closure family. It cleanly tests the pre-registered precision failure, yet it
-may be easier for Method because the deriving case used the same regulatory
-mechanism. Keep it only if no equally clean different-domain instant-boundary
-case is found before sealing.
+This is materially better than the initial notified-body candidate because the
+private-primary verification output participates in a concrete compliance and
+account-state consequence while public authorities retain their own correction
+and administration powers. It directly tests whether origin and legal
+recognition are collapsed.
+
+Sources:
+
+- Regulation (EU) 2018/2067, especially Articles 3 and 27;
+- Delegated Regulation (EU) 2019/1122, especially Articles 31-32;
+- Commission EU ETS monitoring/reporting/verification guidance.
+
+## Candidate 6 — temporal precision / boundary loss
+
+**Final candidate:** licence-application 13:00 Brussels-time boundary under
+current Implementing Regulation (EU) 2016/1239.
+
+Official evidence:
+
+- Article 3(1) provides that an application received after 13:00 Brussels time
+  on a working day is deemed lodged on the first working day following actual
+  receipt;
+- therefore two applications received on the same calendar day at 12:59 and
+  13:01 can have different legally deemed lodgement days.
+
+Final question family:
+
+Can a date-only case-management record safely treat otherwise valid applications
+received at 12:59 and 13:01 Brussels time on the same working day as lodged on
+the same day?
+
+**Admission assessment:** STRONG.
+
+This replaces the HVMFS candidate before sealing because it tests the same
+pre-registered precision failure in a different legal domain from the fishery
+case that originally exposed Temporal's sub-day limitation.
 
 Source:
 
-- https://www.havochvatten.se/download/18.6d787a77195724ae952cf116/1742461949334/HVMFS%202025-10-ev.pdf
+- current consolidated Commission Implementing Regulation (EU) 2016/1239,
+  Article 3(1).
 
 ## Rejected / deferred candidates
 
@@ -217,12 +220,34 @@ certificate role.
 verification is good practice. #88 scores consequential legal conclusions and
 unsupported certainty, not browsing count.
 
-## Next pre-seal work
+## Final pre-seal disposition
 
-1. adversarially review whether Candidate 2 is consequential enough;
-2. search once more for a different-domain substitute for Candidate 6;
-3. pin a direct public recognition/status path for Candidate 5 if available;
-4. only then freeze the six questions and answer keys;
-5. commit hashes before any R/M execution.
+All six pre-registered strata now have one admitted fresh case.
 
-No investigator run has occurred yet.
+Candidate 2 remains intentionally lower-discrimination rather than being
+replaced merely to make Needle more likely to win. If R and M both recover the
+Italian NIS2 history safely, that is valid parity evidence.
+
+Candidate 5 was replaced by the EU ETS verifier/Union Registry chain because it
+creates a concrete legal consequence from a bounded private-primary
+determination while preserving public-authority roles.
+
+Candidate 6 was replaced by the 13:00 Brussels-time licence boundary because it
+tests temporal precision outside the fishery mechanism that originally exposed
+the issue.
+
+The exact R/M prompts and exact answer key are now sealed outside Git.
+
+Canonical commitments:
+
+- prompts SHA-256:
+  `a8725af696f12eb286a1dec84c6e1df870a2a6ebd3409cee0db97d14f8354659`
+- answer key SHA-256:
+  `8c32ed2c3506b6f508a4093cba171c166b759fb3f475c4956ff84657818cfde0`
+- runner ZIP SHA-256:
+  `d66f9a00ab18599bb77b227eb21dd8c942d2eeea2d5c8af63b638a8ef90496bc`
+
+Public manifest:
+`fixtures/value-gates/issue88-sealed-manifest-v0.1.json`
+
+No R/M investigator run had occurred when these commitments were fixed.

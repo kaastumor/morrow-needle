@@ -68,3 +68,21 @@ def test_unused_trap_class_fails_closed():
 
     with pytest.raises(CorpusValidationError, match="trap classes without cases"):
         validate(data, ROOT)
+
+
+def test_evaluation_case_requires_declared_mode():
+    data = load_index()
+    case = next(c for c in data["cases"] if c["provenance"]["role"] == "EVALUATION")
+    case.pop("evaluation_mode")
+
+    with pytest.raises(CorpusValidationError, match="requires a valid evaluation_mode"):
+        validate(data, ROOT)
+
+
+def test_derivation_case_cannot_claim_evaluation_mode():
+    data = load_index()
+    case = next(c for c in data["cases"] if c["provenance"]["role"] == "DERIVATION")
+    case["evaluation_mode"] = "LATENT_TRAP_DETECTION"
+
+    with pytest.raises(CorpusValidationError, match="must not declare evaluation_mode"):
+        validate(data, ROOT)

@@ -50,8 +50,11 @@ tested the strongest surviving Method-distinctiveness claim.
 
 #88 pre-registered six fresh adversarial failure strata before case execution.
 Across all six cases, the strong source-grounded baseline and Needle Method both
-reached the correct conclusion and preserved the decisive trap. There was no
-R-fail/M-pass rescue.
+reached the correct conclusion. Issue #95 later audited the exact sealed
+questions and found that every one explicitly surfaced or strongly cued its
+decisive trap. #88 therefore establishes parity for
+**SURFACED_TRAP_ADJUDICATION**, not for unprompted **LATENT_TRAP_DETECTION**.
+There was no R-fail/M-pass rescue within the construct actually tested.
 
 That result triggers the pre-registered stop rule. The default identity shrinks
 again to:
@@ -253,11 +256,12 @@ evaluation protocol**.
 
 Issue #87 supports only a bounded Method packaging/handoff contribution. Issue
 #88 then found correctness parity across six fresh, pre-registered adversarial
-failure mechanisms: the strong baseline independently preserved every decisive
-distinction.
+cases **after the relevant distinction was surfaced or strongly cued by the
+question**. Issue #95 confirms that latent-trap detection remains untested.
 
 Accordingly, Method is retained as a convention rather than a primary
-project-specific contribution. The default-Core hypothesis remains rejected;
+project-specific contribution. Untested latent-detection value is not credited
+as positive evidence. The default-Core hypothesis remains rejected;
 persistent canonical state is a case-specific hypothesis that must independently
 earn admission.
 

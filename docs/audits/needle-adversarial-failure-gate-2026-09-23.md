@@ -2,8 +2,8 @@
 
 **Issue:** #88  
 **Date:** 2026-09-23  
-**Status:** COMPLETE  
-**Decision:** parity across all six pre-registered adversarial strata; reject Method correctness-distinctiveness claim.
+**Status:** COMPLETE — construct interpretation corrected by Issue #95  
+**Decision:** parity across all six pre-registered **surfaced-trap adjudication** cases; reject Method correctness-distinctiveness for that construct. Latent-trap detection was not tested.
 
 ## Executive result
 
@@ -13,7 +13,7 @@ Issue #88 was created because #87's 15/15 correct relay result left a ceiling-ef
 
 The answer from Phase A is **not demonstrated**.
 
-All six sealed adversarial pairs ended **R-pass / M-pass**. The strong boring baseline independently caught every pre-registered trap:
+All six sealed adversarial pairs ended **R-pass / M-pass**. The strong boring baseline correctly adjudicated every pre-registered distinction once it was surfaced or strongly cued by the sealed question:
 
 1. ex-post consolidation back-projection;
 2. authentic-language/corrigendum asymmetry;
@@ -25,6 +25,38 @@ All six sealed adversarial pairs ended **R-pass / M-pass**. The strong boring ba
 There was no R-fail/M-pass rescue, no R-fail/M-fail unresolved mechanism, and no R-pass/M-fail Method regression.
 
 Under the gate's pre-registered decision matrix, every case is therefore **parity for correctness**.
+
+
+## Construct-validity addendum — Issue #95
+
+A later audit of the exact revealed prompts found that every #88 question
+explicitly surfaced or strongly cued the decisive failure mechanism.
+
+Examples include instructions to:
+
+- distinguish designation from application;
+- separate historical source state from current corrected consolidation;
+- explain why a date-only system loses the 13:00 boundary;
+- identify the pre-corrigendum authentic Italian wording;
+- explain the bounded role of the private verifier.
+
+Accordingly, #88 did **not** test spontaneous detection of a latent trap from an
+ordinary underspecified task.
+
+The correct construct label is:
+
+`SURFACED_TRAP_ADJUDICATION`
+
+The six R-pass/M-pass outcomes remain valid. Their interpretation is narrower:
+once the dangerous distinction was identified in the question, Method produced
+no correctness rescue over the strong baseline.
+
+`LATENT_TRAP_DETECTION` remains untested. This is not positive evidence for
+Method and does not authorise rerunning the exposed #88 cases with vaguer
+prompts.
+
+Canonical audit:
+`docs/audits/issue88-construct-validity-2026-09-23.md`.
 
 ## Integrity
 
@@ -96,17 +128,22 @@ Core therefore remains optional and does not re-enter the default project identi
 
 ## Project-level interpretation
 
-### H-14 — reject
+### H-14 — reject for surfaced-trap adjudication
 
-The claim that Needle Method prevents consequential errors or unjustified certainty on these adversarial legal questions better than an equally capable source-grounded baseline is **not supported**.
+The claim that Needle Method prevents consequential errors or unjustified
+certainty **after the decisive trap is surfaced or strongly cued** better than
+an equally capable source-grounded baseline is **not supported**.
 
-The strong baseline solved all six fresh adversaries correctly.
+The strong baseline solved all six fresh surfaced-adjudication cases correctly.
+#88 does not measure latent-trap detection.
 
 ### H-12 — narrow further
 
 #87 still supports one bounded fact: structured Method dossiers can improve handoff/reconstruction packaging.
 
-But #88 shows that the substantive distinctions themselves are not demonstrated to require a Needle-specific method. A capable source-grounded investigator can reconstruct them directly.
+But #88 shows that the surfaced substantive distinctions are not demonstrated
+to require a Needle-specific method. Whether Method changes the probability of
+noticing the same distinctions when they are latent remains untested.
 
 Therefore Method should no longer be treated as the primary project contribution. Retain it as an optional handoff/reporting convention where its structure is operationally useful.
 

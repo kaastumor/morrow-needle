@@ -26,10 +26,11 @@ project form.
 - **#87:** all 15 relay conclusions were correct; Method showed a bounded
   reconstruction-packaging benefit, while Core produced no observed
   Core-over-Method handoff advantage.
-- **#88:** six fresh adversarial failure modes were pre-registered and sealed.
-  Every pair was **R-pass / M-pass**. The strong source-grounded baseline caught
-  the same decisive traps as Needle Method. No Method correctness rescue
-  occurred.
+- **#88:** six fresh adversarial cases were pre-registered and sealed.
+  Every pair was **R-pass / M-pass**. A later construct-validity audit (#95)
+  showed that all six questions explicitly surfaced or strongly cued the
+  decisive trap, so #88 establishes **surfaced-trap adjudication parity**. It
+  does not establish parity in unprompted/latent trap detection.
 
 The #88 stop rule therefore applies:
 
@@ -61,6 +62,7 @@ unresolved canonical claim or an explicit sponsor research question.
 - `docs/assumptions.md`
 - `BACKLOG.md`
 - `docs/audits/needle-adversarial-failure-gate-2026-09-23.md`
+- `docs/audits/issue88-construct-validity-2026-09-23.md`
 - `fixtures/value-gates/issue88-phase-a-results-v0.1.json`
 - `corpus/index-v0.1.json`
 - `docs/evaluations/adversarial-corpus-protocol-v0.1.md`

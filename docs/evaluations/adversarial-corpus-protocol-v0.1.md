@@ -38,7 +38,45 @@ It must not count as fresh blind validation of that same mechanism.
 A validation case must be selected independently because it instantiates a
 pre-existing failure class, not because the comparator has already failed it.
 
-## 3. Seal before execution
+## 3. Declare the evaluation mode
+
+Every comparative evaluation must declare one mode **before sealing**.
+
+### SURFACED_TRAP_ADJUDICATION
+
+Use this when the task explicitly identifies or strongly cues the dangerous
+distinction.
+
+This tests whether the investigator can resolve an already surfaced issue
+correctly.
+
+A pass in this mode is evidence about adjudication, not about whether the same
+investigator would have noticed the problem unprompted.
+
+### LATENT_TRAP_DETECTION
+
+Use this when the realistic task does not identify the hidden failure
+mechanism.
+
+This tests whether the investigator notices the issue before giving a
+consequential answer.
+
+For this mode:
+
+- do not name the failure class in the investigator prompt;
+- do not instruct the investigator to make the decisive distinction;
+- do not insert evaluator-authored hints merely to make scoring easier;
+- preserve facts that a real user/task would naturally provide;
+- pre-register what counts as detection, missed detection and safe abstention.
+
+If the question itself reveals the trap, classify the run as
+`SURFACED_TRAP_ADJUDICATION`. Do not retroactively call it latent detection
+because the underlying legal issue was obscure.
+
+Issue #88 is canonical calibration: all six cases are
+`SURFACED_TRAP_ADJUDICATION`.
+
+## 4. Seal before execution
 
 Before any scored/decisive run:
 
@@ -60,7 +98,7 @@ Transport-only repairs are permissible only when:
 - the repair is documented;
 - successful-run prompt hashes can be reconciled to the commitment.
 
-## 4. Use a strong comparator
+## 5. Use a strong comparator
 
 The baseline should be the strongest boring workflow a competent user would
 actually use, not an intentionally weak strawman.
@@ -75,7 +113,7 @@ When testing a method wrapper:
 When capabilities cannot be equalised, record the asymmetry before execution
 and do not attribute the difference solely to the tested method.
 
-## 5. Score consequential behaviour, not aesthetics
+## 6. Score consequential behaviour, not aesthetics
 
 Primary outcomes should be concrete failure events such as:
 
@@ -100,7 +138,7 @@ Do not award a win merely for:
 
 Those may be recorded descriptively if operationally relevant.
 
-## 6. Interpret outcomes before seeing them
+## 7. Interpret outcomes before seeing them
 
 For a two-arm baseline R versus tested method M:
 
@@ -111,7 +149,7 @@ For a two-arm baseline R versus tested method M:
 
 Do not add a new winner metric after seeing the results.
 
-## 7. Stop instead of moving the goalposts
+## 8. Stop instead of moving the goalposts
 
 If the pre-registered suite produces parity, preserve the parity.
 
@@ -121,7 +159,7 @@ append it to the same experiment.
 A later experiment may legitimately target a different hypothesis, but it must
 be pre-registered as a new gate.
 
-## 8. Reveal and retire from blind use
+## 9. Reveal and retire from blind use
 
 After all intended runs:
 
@@ -135,7 +173,7 @@ After all intended runs:
 Time passing, a new conversation, or a new model release does not make a public
 case blind again.
 
-## 9. Legal/source drift
+## 10. Legal/source drift
 
 A case may remain valuable even when the law later changes, but the evaluation
 must identify its temporal perspective.
@@ -148,7 +186,7 @@ Before reusing a regression case:
 
 If the intended question changes materially, create a new case ID.
 
-## 10. Model-version comparisons
+## 11. Model-version comparisons
 
 A corpus run on one model version does not establish performance for another.
 
@@ -159,7 +197,7 @@ For longitudinal comparison:
 - do not call the exercise blind;
 - use fresh sealed cases for new claims of generalised superiority.
 
-## 11. Complexity rule
+## 12. Complexity rule
 
 A corpus failure may justify a method, persistence layer or code repair only if
 the simpler workflow demonstrably cannot preserve the required distinction.

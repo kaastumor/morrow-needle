@@ -6,50 +6,49 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-Issue #49 compared Needle against the strong simpler baseline on four real
-cases. The result did **not** satisfy the charter's requirement for repeated
-material public-product advantage.
+Issues #49 and #59 have now falsified the assumption that the current Needle
+architecture should automatically become a general public legal-change product.
 
-> **REDIRECT. Keep the evidence engine, stop presuming the operational feed is
-> the product, and test the remaining Thread / legal-change-audit proposition
-> before building anything else.**
+> **STOP PUBLIC-PRODUCT EXPANSION. CONTINUE RESEARCH/AUDIT MODE.**
 
-Comparative evidence:
+This is not project abandonment. The evidence engine has repeatedly found real
+source, timing, identity, dependency and provenance traps. What stops is the
+obligation to turn every useful legal-information distinction into a feature or
+marketing claim.
 
-- Regulation (EU) 2026/2104 initially exposed a Needle completeness LOSS:
-  EUR-Lex surfaced entry into force that Needle omitted. The gap was repaired
-  using explicit Cellar metadata and the existing temporal model, yielding
-  parity/semantic clarity rather than a product win.
-- the English-only ECU 225 → 255 corrigendum was PARITY for a careful
-  official-source + capable-LLM reader; Needle mainly adds machine-safe
-  `NO_ASSERTION` discipline;
-- the REACH Article 67 / Annex XVII case produced a PLAUSIBLE ADVANTAGE in
-  automatic discovery of an indirect dependency effect without manufacturing a
-  local textual mutation;
-- the DSA context-dependent application case was PARITY on user understanding,
-  though Needle's `CONTEXT_REQUIRED` representation remains valuable machine
-  safety.
+Research/audit mode rules:
 
-Unless new official/executable evidence reopens a foundation risk:
+1. start from a concrete legal-information question capable of being wrong;
+2. prefer official-source evidence and the smallest existing contract that can
+   answer it;
+3. produce a fixture, finding, regression, or bounded negative result;
+4. do not add schema, infrastructure or product surface unless the question
+   proves the existing baseline cannot represent the finding;
+5. a well-supported “nothing new / baseline already handles this” result is
+   successful work.
 
-1. **Issue #59 — Thread / legal-change audit comparative value gate. ACTIVE NEXT
-   HORIZON.** Test the existing Article 3 Thread against EUR-Lex, emendrix,
-   direct official sources, ordinary search and a capable LLM. Do not add Thread
-   architecture.
-2. **Gate after #59:** CONTINUE the audit/Thread direction, SIMPLIFY further, or
-   STOP public-product expansion. A negative result is a successful gate.
-3. **Parked:** general public change-feed expansion, affected-entity modelling,
-   ranking, subscriptions, Half-Life v0.2, new analytics, scale infrastructure
-   and wider jurisdictions.
+**Next bounded research task: Issue #61 — audit 2026 corrigendum
+back-projection into the consolidated state labelled 13 August 2025.**
+
+Interactive evidence already shows that the current
+`02004R0794-20250813` page contains the corrected phrase “existing aid
+scheme” marked `C4`, while the correcting source was not published until
+17 July 2026. The task must pin and regress the distinction between a current
+ex-post corrected consolidation and official source state as it was knowable on
+the nominal consolidation date.
 
 Operational Needle remains an evidence generator, regression surface and source
-monitor. It is no longer presumed to be the public product.
+monitor. Thread, X-Ray, Source Anomaly, Half-Life and public cards remain useful
+audit projections; none implies an active product roadmap.
 
-All P0/P1 ownership boundaries remain explicitly tested. A freeze is reopened
-only when official or executable adversarial evidence demonstrates failure.
+Public-product work may reopen only from external/user evidence of a recurring
+concrete problem that the strong baseline cannot reliably solve. Architecture
+itself is not such evidence.
 
-Comparative audit: `docs/audits/comparative-value-2026-09-23.md`  
-Post-#49 health decision: `docs/audits/project-health-2026-09-23-post-value.md`  
+Thread comparative audit:
+`docs/audits/thread-comparative-value-2026-09-23.md`  
+Research-mode health decision:
+`docs/audits/project-health-2026-09-23-post-thread.md`  
 Canonical charter: `docs/project-charter.md`  
 Active assumptions: `docs/assumptions.md`  
 Autonomous worker contract: `docs/automation/hourly-worker.md`
@@ -58,8 +57,8 @@ Autonomous worker contract: `docs/automation/hourly-worker.md`
 
 - **P0 — Foundation blocker:** resolve before significant product/application build.
 - **P1 — Core capability:** required for a credible first system once P0 is stable.
-- **P2 — Product intelligence:** improves usefulness, comprehension, and discovery.
-- **P3 — Expansion:** valuable after the legal-change core is trustworthy.
+- **P2 — Research / audit intelligence:** derived analyses used to falsify, inspect, and reconstruct legal-change claims.
+- **P3 — Expansion:** parked unless a concrete research need or externally evidenced user problem earns it.
 
 Within a priority band, prefer the task that:
 1. can falsify the largest architectural assumption;
@@ -310,55 +309,52 @@ Key durable findings:
 
 See docs/audits/post-p1-foundation-audit-v0.1.md.
 
-## P2 — Public intelligence / audit value
+## P2 — Research / audit intelligence
 
-Current horizon after Issue #49:
+Current mode after Issues #49 and #59:
 
-1. **Thread / legal-change audit comparative gate / Issue #59.** Test the
-   already-frozen Article 3 Thread against the strong simpler baseline. No new
-   schema or feature work is authorized.
-2. **Project Health gate.** If Thread does not produce recurring material
-   improvement, stop public-product expansion and retain Needle as a
-   research/audit engine plus regression corpus.
-3. Only a positive gate may authorize a new product experiment.
+1. **Issue #61 — consolidation back-projection audit.** First bounded
+   research-mode task. Test a current official-source trap and leave a fixture
+   and regression; no product feature.
+2. Future work enters the queue only through a concrete audit/research question
+   with authoritative evidence and a falsifiable outcome.
+3. Public-product expansion is stopped. It may reopen only from external/user
+   evidence, not from unused architectural capability.
 
-Completed P2/value slices:
+Completed value gates:
 
-- **Comparative value proof / Issue #49: COMPLETE, direction REDIRECT.** Four
-  real comparisons produced no repeated clear product advantage: one initial
-  loss repaired to parity/semantic clarity, two parity cases, and one plausible
-  advantage in proactive dependency discovery. Evidence presentation survived;
-  the broad general-interest change-feed thesis did not.
-- **Evidence / Why this is shown:** implemented as a disposable read-side
-  projection over existing provenance and canonical temporal references. The
-  real 2026/2104 view closes without a new truth store.
-- **Pre-analysis adversarial audit / Issue #29: COMPLETE, direction SIMPLIFY.**
-  The audit found and repaired source-availability, baseline contamination,
-  DELETE semantics, authentic-context/locality, evidence cross-binding,
-  operational promotion and CI-semantics defects. Broad novelty claims were
-  rejected.
-- **Product checkpoint v0.1 / Issue #27: COMPLETE.** Three real operational
-  classes established evidence presentation as a comprehension gap, while raw
-  audit/abstention output was rejected as default general-interest news.
-- **Operational Needle v0.1 / Issue #21: CLOSED.** Retained as evidence/source
-  infrastructure rather than presumed product destination.
-- **Legislative X-Ray v0.1 / Issue #20: CLOSED/FROZEN.** Retained primarily as
-  dependency-audit capability; its REACH case is the strongest #49 comparative
-  result but not sufficient to rescue a broad feed thesis.
-- **Half-Life v0.1 / Issue #10: CLOSED/FROZEN.** Retained as a valid
-  demonstration; v0.2 remains parked.
-- **Source Anomaly v0.1 / Issue #17: CLOSED/FROZEN.** Retained as trust/audit
-  diagnostics.
+- **Thread comparative gate / Issue #59: COMPLETE — STOP PUBLIC-PRODUCT
+  EXPANSION.** The Article 3 Thread is materially better as an audit package
+  than raw browsing, especially for negative checks and provenance closure, but
+  a careful official-source + capable-LLM baseline can reconstruct the same
+  legal history. One polished Thread does not establish recurring public-product
+  advantage.
+- **Comparative value proof / Issue #49: COMPLETE — REDIRECT.** Four real
+  comparisons produced no repeated clear product advantage.
+- **Pre-analysis adversarial audit / Issue #29: COMPLETE — SIMPLIFY.** The
+  foundation survived after multiple real enforcement repairs and broad novelty
+  claims were rejected.
+
+Retained audit tools:
+
+- **Evidence / Why this is shown** — disposable read-side provenance projection.
+- **Operational Needle** — source monitor and adversarial evidence generator.
+- **Thread** — evidence-linked historical reconstruction when a research
+  question justifies the cost.
+- **Legislative X-Ray** — dependency-ripple detector.
+- **Source Anomaly** — source/audit diagnostics.
+- **Half-Life v0.1** — bounded temporal/genealogical demonstration.
 
 Strategic constraints:
 
-- Do not use machine formalisation itself as evidence of product value.
-- Do not add another analytic primitive to rescue a failed comparative gate.
+- Do not manufacture product demand from architecture.
+- Do not count formalisation alone as user value.
+- Do not add another analytic primitive to rescue a failed product thesis.
 - Do not create infrastructure for hypothetical scale.
-- Do not promote source/audit activity into legal news.
-- Do not assume Thread wins because it is richer; #59 must falsify it.
-- Keep `docs/project-charter.md`, `docs/assumptions.md`, the latest Project
-  Health decision and this backlog aligned with #59 evidence.
+- Keep negative findings, source anomalies, non-impact and abstention as valid
+  research outputs.
+- Keep the charter, assumptions, latest Project Health record and this backlog
+  aligned with evidence.
 
 ## P3 — Expansion
 

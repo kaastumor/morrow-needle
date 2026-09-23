@@ -1,0 +1,79 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "reg794-article3-system-continuity-2025-v0.1",
+  "subject": "CELEX:32004R0794#Article3(3)",
+  "question": "Can the named 2008 SANI/PKI systems be identified with the generic Commission-designated systems after the 2025 rewrite?",
+  "evidence": [
+    {
+      "evidence_id": "legal-pre2025",
+      "date_scope": "2008-07-01 through pre-2025 text state",
+      "character": "AUTHENTIC_LEGAL_TEXT",
+      "source_uri": "https://eur-lex.europa.eu/eli/reg/2004/794/2016-12-22/eng",
+      "notification_system": "State Aid Notification Interactive (SANI)",
+      "correspondence_system": "Public Key Infrastructure (PKI)",
+      "supports": [
+        "LEGAL_TEXT_IDENTITY:SANI",
+        "LEGAL_TEXT_IDENTITY:PKI"
+      ]
+    },
+    {
+      "evidence_id": "legal-2025-rewrite",
+      "date_scope": "2025 amendment",
+      "character": "AUTHENTIC_AMENDING_ACT",
+      "source_uri": "https://eur-lex.europa.eu/eli/reg_impl/2025/905/oj/eng",
+      "recital_fact": "Commission practice has evolved in terms of using electronic notification systems.",
+      "notification_system": "electronic application designated by the Commission",
+      "correspondence_system": "secured electronic system designated by the Commission",
+      "supports": [
+        "LEGAL_TEXT_IDENTITY:GENERIC_NOTIFICATION_APPLICATION",
+        "LEGAL_TEXT_IDENTITY:GENERIC_SECURED_CORRESPONDENCE_SYSTEM"
+      ]
+    },
+    {
+      "evidence_id": "current-commission-notification-docs",
+      "date_scope": "observed 2026-09-23",
+      "character": "CURRENT_OFFICIAL_OPERATIONAL_DOCUMENTATION",
+      "source_uri": "https://competition-policy.ec.europa.eu/state-aid/legislation/forms-notifications-and-reporting_en",
+      "notification_system": "SANI / SANI2",
+      "correspondence_system": null,
+      "supports": [
+        "CURRENT_OPERATIONAL_IDENTIFICATION:NOTIFICATION:SANI2"
+      ],
+      "does_not_support": [
+        "TECHNICAL_CONTINUITY:SANI_2008_TO_SANI2",
+        "CURRENT_OPERATIONAL_IDENTIFICATION:CORRESPONDENCE:PKI"
+      ]
+    },
+    {
+      "evidence_id": "historical-commission-arrangements",
+      "date_scope": "2005/2008 arrangements",
+      "character": "OFFICIAL_OPERATIONAL_DOCUMENTATION",
+      "source_uri": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=oj:JOC_2005_237_R_0003_01",
+      "notification_system": "SANI web application",
+      "correspondence_system": "PKI encrypted e-mail",
+      "supports": [
+        "HISTORICAL_OPERATIONAL_IDENTIFICATION:NOTIFICATION:SANI",
+        "HISTORICAL_OPERATIONAL_IDENTIFICATION:CORRESPONDENCE:PKI"
+      ]
+    }
+  ],
+  "findings": {
+    "notification_current_operational_identification": "SANI2_SUPPORTED",
+    "notification_technical_continuity": "UNRESOLVED",
+    "correspondence_current_operational_identification": "UNRESOLVED",
+    "correspondence_technical_continuity": "UNRESOLVED",
+    "legal_text_after_2025": "GENERIC_BY_DESIGNATION",
+    "thread_unknown_disposition": "SURVIVES_WITH_FINER_EXPLANATION",
+    "current_claim_defect_observed": false
+  },
+  "searched_but_insufficient": [
+    "Current State-aid contact/complaint pages describing registry email or EU Send do not identify the secured Article 3 notification-correspondence system.",
+    "Historical PKI references prove the old system, not post-2025 continuity."
+  ],
+  "forbidden_inferences": [
+    "The string SANI2 proves the current service is technically identical to the 2008 SANI implementation.",
+    "The 2025 generic secured electronic system is PKI solely because the previous legal text named PKI.",
+    "General Commission email or EU Send guidance identifies the Article 3 notification-correspondence channel.",
+    "Proposition-level continuity of electronic notification/correspondence proves technical-system identity."
+  ]
+}

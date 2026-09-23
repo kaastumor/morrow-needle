@@ -63,8 +63,18 @@ again to:
 
 #87 still supports a narrow operational use for structured Method dossiers in
 handoffs. That is retained as a convention, not claimed as a distinct
-substantive research advantage. Core remains optional persistence. Full Needle
-remains parked.
+substantive research advantage.
+
+#97 then tested the remaining latent-detection hypothesis on four fresh
+adversarial classes using eight independent manual Temporary-Chat outputs.
+Every blind grade passed and all four revealed pairs were R-pass/M-pass. The
+pre-registered stop rule fired with zero Method rescues. The submitted answer
+files do not independently machine-verify the requested UI/model settings, so
+that execution-provenance limitation remains explicit.
+
+The project therefore has no unresolved evidence-backed reason to treat Method
+as a correctness layer. Core remains optional persistence. Full Needle remains
+parked.
 
 The burden of proof remains on every Needle-specific layer, not on the baseline.
 

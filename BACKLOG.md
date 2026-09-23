@@ -6,31 +6,34 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-**Issue #97 remains the active value gate, now at v0.3 manual Stage 1.**
+**Issue #97 is complete. The Method-correctness question is closed for the tested workflow.**
 
-Wide-angle review confirmed that the project is the adversarial corpus +
-evaluation protocol; Method is only an optional hypothesis. Therefore #97 must
-use the cheapest experiment capable of falsifying Method value.
+V0.3 used eight independent manual Temporary-Chat outputs across four fresh
+`LATENT_TRAP_DETECTION` adversaries. All eight blind grades were PASS; after
+arm reveal, all four pairs were **R-pass/M-pass**.
 
-Both prior paid-runner versions are retired **unexecuted**. V0.3 uses:
+The pre-registered stop rule therefore fired:
 
-- 4 strongest latent adversaries;
-- 8 total R/M runs;
-- eight separate ChatGPT Temporary Chats;
-- **Unpersonalized** mode for every chat;
-- GPT-5.6 Sol / High reasoning / web search;
-- identical visible R/M output schema;
-- no project context, memory or follow-ups;
-- stop immediately after 8 chats if all four pairs are parity.
+- no matched controls;
+- no replication;
+- no reserve cases;
+- no additional Method value gate.
 
-Matched controls and replication are deferred unless Stage 1 produces a
-discordant signal. Any discordance is only a signal and must be blind-graded
-before further execution is frozen.
+H-15 is rejected for the tested workflow. Together with #87/#88/#95, the
+supported Method role is now bounded to optional handoff/reporting structure,
+not demonstrated correctness advantage. Core and Full Needle remain parked.
 
-Canonical execution boundary:
-`fixtures/value-gates/issue97-manual-manifest-v0.3.json`.
+Execution limitation: the submitted answer files do not machine-verify the
+Temporary/Unpersonalized/model/reasoning UI settings. Preserve that limitation
+in any external claim.
 
-No investigator response has occurred.
+Canonical result:
+`docs/audits/issue97-latent-detection-result-2026-09-24.md`.
+
+**Next research direction:** strengthen the adversarial corpus itself. Prefer
+metamorphic legal-state families and orthogonal source/jurisdiction coverage over
+another attempt to prove Method value. Do not create a standing implementation
+queue from this result.
 
 Issues #49 and #59 have now falsified the assumption that the current Needle
 architecture should automatically become a general public legal-change product.

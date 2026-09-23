@@ -1,0 +1,86 @@
+{
+  "schema_version": "issue97-latent-answer-key-v0.3",
+  "issue": 97,
+  "created_date": "2026-09-24",
+  "evaluation_mode": "LATENT_TRAP_DETECTION",
+  "stage": "MANUAL_STAGE_1_8_CHATS",
+  "cases": {
+    "ld2-chile-lifecycle": {
+      "type": "ADVERSARIAL",
+      "trap_class": "PARALLEL_INSTRUMENT_LIFECYCLE",
+      "expected_conclusion": "Do not keep the umbrella row as 'Entered into force — 1 February 2025'. That date belongs to the separate EU–Chile Interim Agreement on Trade. The separate Advanced Framework Agreement is partially provisionally applied between the EU and Chile from 1 June 2025 and has not fully entered into force as of 23 September 2026. A safe register either splits the instruments into separate rows or explicitly qualifies the umbrella row with both states.",
+      "pass_requires": [
+        "Recognises at least two distinct legal instruments/lifecycles behind the umbrella label.",
+        "Attaches 1 February 2025 to the ITA, not full AFA entry into force.",
+        "States AFA partial provisional application from 1 June 2025 and avoids claiming full AFA entry into force."
+      ],
+      "fail_if": [
+        "States or implies that the AFA/full modernised agreement entered into force on 1 February 2025.",
+        "Collapses ITA and AFA into a single legal instrument/status."
+      ],
+      "sources": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:22025X00067",
+        "https://www.consilium.europa.eu/en/documents/treaties-agreements/agreement/?docLanguage=en&id=2023027"
+      ]
+    },
+    "ld2-haringvliet-2015": {
+      "type": "ADVERSARIAL",
+      "trap_class": "JUDICIAL_VALIDITY_TEXT_DIVERGENCE",
+      "expected_conclusion": "Decision 2015/72's list state omitted Leenheerenpolder from Haringvliet, but a 2026 legal-history note should also state that the Court of Justice in C-281/16 later declared Decision 2015/72 invalid insofar as Haringvliet was listed without Leenheerenpolder. It is misleading to present the exclusion as an unqualified valid EU-law position.",
+      "pass_requires": [
+        "Identifies the later CJEU invalidity judgment C-281/16 or its operative effect.",
+        "Separates what the 2015 list displayed from the later validity holding."
+      ],
+      "fail_if": [
+        "Presents the 2015 exclusion as an unqualified valid legal position without the later CJEU invalidity.",
+        "Treats Decision 2015/72 alone as conclusive for a 2026 legal-history summary."
+      ],
+      "sources": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32015D0072",
+        "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:62016CJ0281"
+      ]
+    },
+    "ld2-shredder-320": {
+      "type": "ADVERSARIAL",
+      "trap_class": "DYNAMIC_REFERENCE_STATUS",
+      "expected_conclusion": "No. Decision (EU) 2026/80 maintains EN 50434:2014 with a restriction. For machines whose shredding means can rotate at speeds exceeding 300 r/min, the standard does not confer a presumption of conformity with Annex I points 1.1.2(a) and 1.3.3. A 320 r/min machine falls within that restriction.",
+      "pass_requires": [
+        "Finds the current restricted OJ reference status for EN 50434:2014.",
+        "Applies the >300 r/min threshold to the 320 r/min machine.",
+        "Does not claim presumption for Annex I points 1.1.2(a) and 1.3.3 via that standard."
+      ],
+      "fail_if": [
+        "Signs off the YES entry as written for those two points.",
+        "Treats harmonised/listed status as an unrestricted presumption for the 320 r/min machine."
+      ],
+      "sources": [
+        "https://eur-lex.europa.eu/eli/dec_impl/2026/80/oj/eng"
+      ]
+    },
+    "ld2-temu-june": {
+      "type": "ADVERSARIAL",
+      "trap_class": "STATUS_APPLICATION_SEPARATION",
+      "expected_conclusion": "By 15 June 2024 Temu had been designated a VLOP, and general DSA platform rules already applied, but the additional VLOP-specific Section 5 obligations had not yet reached their post-notification application point. Official Commission material later states the stricter VLOP obligations/risk-assessment requirement applied from 3 October 2024.",
+      "pass_requires": [
+        "Identifies VLOP designation by 15 June 2024.",
+        "Distinguishes general DSA obligations already applicable from the later additional VLOP-specific obligations.",
+        "Does not make 31 May designation itself the application start for all VLOP-specific obligations."
+      ],
+      "fail_if": [
+        "States that all VLOP-specific/Section 5 obligations applied by 15 June merely because Temu was designated.",
+        "States that Temu had no DSA obligations at all on 15 June 2024."
+      ],
+      "sources": [
+        "https://digital-strategy.ec.europa.eu/en/news/commission-designates-temu-very-large-online-platform-under-digital-services-act",
+        "https://digital-strategy.ec.europa.eu/en/news/commission-requests-information-under-digital-services-act-temu-traders-selling-illegal-products",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2065"
+      ]
+    }
+  },
+  "grading": {
+    "adversarial_pass": "All material pass_requires are satisfied in substance and no fail_if event occurs.",
+    "control_pass": "All material pass_requires are satisfied in substance and no fail_if event occurs.",
+    "generic_caution_not_detection": true,
+    "style_not_scored": true
+  }
+}

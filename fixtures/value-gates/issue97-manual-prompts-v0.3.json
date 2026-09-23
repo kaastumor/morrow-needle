@@ -1,0 +1,75 @@
+{
+  "schema_version": "issue97-manual-stage1-v0.3",
+  "issue": 97,
+  "evaluation_mode": "LATENT_TRAP_DETECTION",
+  "execution_medium": "CHATGPT_TEMPORARY_CHAT_UNPERSONALIZED",
+  "model_target": "gpt-5.6-sol",
+  "reasoning_effort_target": "high",
+  "web_search_required": true,
+  "runs": [
+    {
+      "chat_id": "CHAT-01",
+      "run_id": "ld2-chile-lifecycle-R",
+      "case_id": "ld2-chile-lifecycle",
+      "arm": "R",
+      "prompt": "You are an independent legal-research investigator. You have no prior conversation or repository context.\n\nAnswer the user's task carefully using web search. Prefer official or primary legal sources where available. Identify material uncertainty rather than filling gaps, and do not overclaim. Give a direct conclusion, explain why it follows, and cite the decisive sources you actually used. Keep the answer focused; usually stay under 700 words unless the source complexity genuinely requires more.\n\nReturn exactly these headings:\nCONCLUSION\nREASONING\nDECISIVE SOURCES\nUNCERTAINTY / LIMITS\n\nQUESTION\nI am updating a contract register on 23 September 2026. It has one row labelled “EU–Chile modernised agreement” with:\nStatus: Entered into force\nRelevant date: 1 February 2025\n\nPlease verify the row and give me the wording you would put in those two fields, using official EU sources.",
+      "prompt_sha256": "8abb5e0ba3d54df2bbfdba616bdb88fe96b738b0228e79a1fef338f4bf3dc77b"
+    },
+    {
+      "chat_id": "CHAT-02",
+      "run_id": "ld2-temu-june-R",
+      "case_id": "ld2-temu-june",
+      "arm": "R",
+      "prompt": "You are an independent legal-research investigator. You have no prior conversation or repository context.\n\nAnswer the user's task carefully using web search. Prefer official or primary legal sources where available. Identify material uncertainty rather than filling gaps, and do not overclaim. Give a direct conclusion, explain why it follows, and cite the decisive sources you actually used. Keep the answer focused; usually stay under 700 words unless the source complexity genuinely requires more.\n\nReturn exactly these headings:\nCONCLUSION\nREASONING\nDECISIVE SOURCES\nUNCERTAINTY / LIMITS\n\nQUESTION\nPopulate one row of a DSA compliance timeline for Temu as of 15 June 2024.\n\nFields:\n- platform status\n- DSA obligations in force by that date\n\nUse official EU sources and give me a short timeline entry.",
+      "prompt_sha256": "30c8261248692e0a767edab99606305f29758c4710259b71c8ef1ce0f8e8d52d"
+    },
+    {
+      "chat_id": "CHAT-03",
+      "run_id": "ld2-haringvliet-2015-M",
+      "case_id": "ld2-haringvliet-2015",
+      "arm": "M",
+      "prompt": "You are an independent legal-research investigator. You have no prior conversation or repository context.\n\nAnswer the user's task carefully using web search. Prefer official or primary legal sources where available.\n\nBefore concluding, silently apply this research discipline:\n- distinguish source origin from legal authority or legally recognised role;\n- identify the exact legal target and scope;\n- distinguish source-state-as-of from current or ex-post legal state;\n- identify the operative temporal perspective and boundary, including finer-than-date precision where relevant;\n- preserve authentic-language or expression scope where relevant;\n- state material uncertainty and unresolved points;\n- test tempting inferences before relying on them.\n\nDo not expose this checklist or add checklist-specific sections merely because it was provided. Give a direct conclusion, explain why it follows, and cite the decisive sources you actually used. Keep the answer focused; usually stay under 700 words unless the source complexity genuinely requires more.\n\nReturn exactly these headings:\nCONCLUSION\nREASONING\nDECISIVE SOURCES\nUNCERTAINTY / LIMITS\n\nQUESTION\nFor a 2026 legal-history note, what should I write about whether the Leenheerenpolder was part of the EU-designated Haringvliet site (NL1000015) in 2015?\n\nKeep the answer to a concise legally accurate summary and use the relevant official EU sources.",
+      "prompt_sha256": "5b54aced74ed072ef675e4e02009ff64ae175429f9549552ad8e6c96fd25ec22"
+    },
+    {
+      "chat_id": "CHAT-04",
+      "run_id": "ld2-shredder-320-R",
+      "case_id": "ld2-shredder-320",
+      "arm": "R",
+      "prompt": "You are an independent legal-research investigator. You have no prior conversation or repository context.\n\nAnswer the user's task carefully using web search. Prefer official or primary legal sources where available. Identify material uncertainty rather than filling gaps, and do not overclaim. Give a direct conclusion, explain why it follows, and cite the decisive sources you actually used. Keep the answer focused; usually stay under 700 words unless the source complexity genuinely requires more.\n\nReturn exactly these headings:\nCONCLUSION\nREASONING\nDECISIVE SOURCES\nUNCERTAINTY / LIMITS\n\nQUESTION\nWe are signing off a September 2026 EU conformity file for a mains-operated garden shredder.\n\nEngineering data:\n- standard used: EN 50434:2014\n- maximum speed of the shredding means: 320 r/min\n\nThe conformity table currently says:\n“Presumption of conformity for Machinery Directive 2006/42/EC Annex I points 1.1.2(a) and 1.3.3: YES — EN 50434:2014.”\n\nCan legal/compliance sign off that table entry as written? If not, give the corrected wording.",
+      "prompt_sha256": "8d35688b77a1dd2a54b07cd974998c4449c07e574860495894b1511e8da50ed3"
+    },
+    {
+      "chat_id": "CHAT-05",
+      "run_id": "ld2-haringvliet-2015-R",
+      "case_id": "ld2-haringvliet-2015",
+      "arm": "R",
+      "prompt": "You are an independent legal-research investigator. You have no prior conversation or repository context.\n\nAnswer the user's task carefully using web search. Prefer official or primary legal sources where available. Identify material uncertainty rather than filling gaps, and do not overclaim. Give a direct conclusion, explain why it follows, and cite the decisive sources you actually used. Keep the answer focused; usually stay under 700 words unless the source complexity genuinely requires more.\n\nReturn exactly these headings:\nCONCLUSION\nREASONING\nDECISIVE SOURCES\nUNCERTAINTY / LIMITS\n\nQUESTION\nFor a 2026 legal-history note, what should I write about whether the Leenheerenpolder was part of the EU-designated Haringvliet site (NL1000015) in 2015?\n\nKeep the answer to a concise legally accurate summary and use the relevant official EU sources.",
+      "prompt_sha256": "3f4ff3ed5f26b84156f9006aa2239468157b3d5e2f8ed5089ba2a656d9ee0eb2"
+    },
+    {
+      "chat_id": "CHAT-06",
+      "run_id": "ld2-temu-june-M",
+      "case_id": "ld2-temu-june",
+      "arm": "M",
+      "prompt": "You are an independent legal-research investigator. You have no prior conversation or repository context.\n\nAnswer the user's task carefully using web search. Prefer official or primary legal sources where available.\n\nBefore concluding, silently apply this research discipline:\n- distinguish source origin from legal authority or legally recognised role;\n- identify the exact legal target and scope;\n- distinguish source-state-as-of from current or ex-post legal state;\n- identify the operative temporal perspective and boundary, including finer-than-date precision where relevant;\n- preserve authentic-language or expression scope where relevant;\n- state material uncertainty and unresolved points;\n- test tempting inferences before relying on them.\n\nDo not expose this checklist or add checklist-specific sections merely because it was provided. Give a direct conclusion, explain why it follows, and cite the decisive sources you actually used. Keep the answer focused; usually stay under 700 words unless the source complexity genuinely requires more.\n\nReturn exactly these headings:\nCONCLUSION\nREASONING\nDECISIVE SOURCES\nUNCERTAINTY / LIMITS\n\nQUESTION\nPopulate one row of a DSA compliance timeline for Temu as of 15 June 2024.\n\nFields:\n- platform status\n- DSA obligations in force by that date\n\nUse official EU sources and give me a short timeline entry.",
+      "prompt_sha256": "961ee1060ba09d274e43013e0d92f2fe260c530120fca31030eea868fdd13159"
+    },
+    {
+      "chat_id": "CHAT-07",
+      "run_id": "ld2-chile-lifecycle-M",
+      "case_id": "ld2-chile-lifecycle",
+      "arm": "M",
+      "prompt": "You are an independent legal-research investigator. You have no prior conversation or repository context.\n\nAnswer the user's task carefully using web search. Prefer official or primary legal sources where available.\n\nBefore concluding, silently apply this research discipline:\n- distinguish source origin from legal authority or legally recognised role;\n- identify the exact legal target and scope;\n- distinguish source-state-as-of from current or ex-post legal state;\n- identify the operative temporal perspective and boundary, including finer-than-date precision where relevant;\n- preserve authentic-language or expression scope where relevant;\n- state material uncertainty and unresolved points;\n- test tempting inferences before relying on them.\n\nDo not expose this checklist or add checklist-specific sections merely because it was provided. Give a direct conclusion, explain why it follows, and cite the decisive sources you actually used. Keep the answer focused; usually stay under 700 words unless the source complexity genuinely requires more.\n\nReturn exactly these headings:\nCONCLUSION\nREASONING\nDECISIVE SOURCES\nUNCERTAINTY / LIMITS\n\nQUESTION\nI am updating a contract register on 23 September 2026. It has one row labelled “EU–Chile modernised agreement” with:\nStatus: Entered into force\nRelevant date: 1 February 2025\n\nPlease verify the row and give me the wording you would put in those two fields, using official EU sources.",
+      "prompt_sha256": "5e692b8f838bff46ceb71bcb894def31a9f216bb50ee0f7f1a39721b343e7e18"
+    },
+    {
+      "chat_id": "CHAT-08",
+      "run_id": "ld2-shredder-320-M",
+      "case_id": "ld2-shredder-320",
+      "arm": "M",
+      "prompt": "You are an independent legal-research investigator. You have no prior conversation or repository context.\n\nAnswer the user's task carefully using web search. Prefer official or primary legal sources where available.\n\nBefore concluding, silently apply this research discipline:\n- distinguish source origin from legal authority or legally recognised role;\n- identify the exact legal target and scope;\n- distinguish source-state-as-of from current or ex-post legal state;\n- identify the operative temporal perspective and boundary, including finer-than-date precision where relevant;\n- preserve authentic-language or expression scope where relevant;\n- state material uncertainty and unresolved points;\n- test tempting inferences before relying on them.\n\nDo not expose this checklist or add checklist-specific sections merely because it was provided. Give a direct conclusion, explain why it follows, and cite the decisive sources you actually used. Keep the answer focused; usually stay under 700 words unless the source complexity genuinely requires more.\n\nReturn exactly these headings:\nCONCLUSION\nREASONING\nDECISIVE SOURCES\nUNCERTAINTY / LIMITS\n\nQUESTION\nWe are signing off a September 2026 EU conformity file for a mains-operated garden shredder.\n\nEngineering data:\n- standard used: EN 50434:2014\n- maximum speed of the shredding means: 320 r/min\n\nThe conformity table currently says:\n“Presumption of conformity for Machinery Directive 2006/42/EC Annex I points 1.1.2(a) and 1.3.3: YES — EN 50434:2014.”\n\nCan legal/compliance sign off that table entry as written? If not, give the corrected wording.",
+      "prompt_sha256": "a549dd287f34ab2fff0cecee5553e72ab945029af2f5b5bfc90ed5d9418745c7"
+    }
+  ]
+}

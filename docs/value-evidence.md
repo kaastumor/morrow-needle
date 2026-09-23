@@ -41,6 +41,8 @@ Every entry ends in one disposition:
 
 | #95 Issue #88 construct-validity audit | CONTRADICTION | #88 demonstrated that a strong baseline independently detects latent legal-information traps as reliably as Needle Method | Exact revealed #88 sealed prompts compared with the interpretation recorded in project status | Every #88 question explicitly surfaced or strongly cued its decisive trap. The experiment validly tests surfaced-trap adjudication, not unprompted latent detection; protocol and corpus metadata now require the mode to be declared | SIMPLIFY | `docs/audits/issue88-construct-validity-2026-09-23.md` and Issue #95 |
 
+| #97 latent-trap detection gate | PARITY | The bounded Needle Method checklist improves latent-trap detection over a strong source-grounded baseline on realistic prompts that do not name the hidden legal-information trap | Same consumer ChatGPT workflow in eight separate non-personalized Temporary Chats, R versus M prompt treatment | All four fresh adversarial pairs were R-pass/M-pass; blind grades were all PASS before arm reveal, so the pre-registered stop rule fired with zero Method rescues. Manual result files do not independently verify UI/model settings | SIMPLIFY | `docs/audits/issue97-latent-detection-result-2026-09-24.md` and Issue #97 |
+
 ## Rules
 
 1. Do not add an entry because work was completed.

@@ -580,7 +580,111 @@
         "issue:93",
         "path:research/official-tracker-update-lag-2026-09-23.md"
       ]
+    },
+    {
+      "id": "ld2-chile-lifecycle",
+      "title": "EU–Chile umbrella modernisation label hides separate ITA/AFA lifecycles",
+      "domain": "international agreements / trade",
+      "jurisdiction": "EU + Chile",
+      "trap_classes": [
+        "PARALLEL_INSTRUMENT_LIFECYCLE"
+      ],
+      "provenance": {
+        "issue": 97,
+        "role": "EVALUATION"
+      },
+      "exposure": {
+        "status": "REVEALED_AFTER_SEALED_EVALUATION",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "evaluation_mode": "LATENT_TRAP_DETECTION",
+      "decisive_trap": "A generic modernised-agreement row can incorrectly inherit the ITA's 1 February 2025 entry-into-force date as if the separate AFA had fully entered into force.",
+      "evaluation_result": "R_PASS_M_PASS",
+      "evidence_refs": [
+        "issue:97",
+        "path:fixtures/value-gates/issue97-manual-stage1-results-v0.3.json",
+        "path:docs/audits/issue97-latent-detection-result-2026-09-24.md"
+      ]
+    },
+    {
+      "id": "ld2-haringvliet-2015",
+      "title": "Haringvliet 2015 list state diverges from later judicial validity",
+      "domain": "environment / Natura 2000",
+      "jurisdiction": "EU + Netherlands",
+      "trap_classes": [
+        "JUDICIAL_VALIDITY_TEXT_DIVERGENCE"
+      ],
+      "provenance": {
+        "issue": 97,
+        "role": "EVALUATION"
+      },
+      "exposure": {
+        "status": "REVEALED_AFTER_SEALED_EVALUATION",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "evaluation_mode": "LATENT_TRAP_DETECTION",
+      "decisive_trap": "A 2026 legal-history note using the 2015 list alone can miss the later CJEU ruling that the exclusion of Leenheerenpolder was invalid.",
+      "evaluation_result": "R_PASS_M_PASS",
+      "evidence_refs": [
+        "issue:97",
+        "path:fixtures/value-gates/issue97-manual-stage1-results-v0.3.json",
+        "path:docs/audits/issue97-latent-detection-result-2026-09-24.md"
+      ]
+    },
+    {
+      "id": "ld2-shredder-320",
+      "title": "EN 50434:2014 listing carries a >300 r/min presumption restriction",
+      "domain": "machinery / harmonised standards",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "DYNAMIC_REFERENCE_STATUS"
+      ],
+      "provenance": {
+        "issue": 97,
+        "role": "EVALUATION"
+      },
+      "exposure": {
+        "status": "REVEALED_AFTER_SEALED_EVALUATION",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "evaluation_mode": "LATENT_TRAP_DETECTION",
+      "decisive_trap": "Continued harmonised-standard listing does not confer the claimed presumption for a 320 r/min shredder where the OJ reference is expressly restricted above 300 r/min.",
+      "evaluation_result": "R_PASS_M_PASS",
+      "evidence_refs": [
+        "issue:97",
+        "path:fixtures/value-gates/issue97-manual-stage1-results-v0.3.json",
+        "path:docs/audits/issue97-latent-detection-result-2026-09-24.md"
+      ]
+    },
+    {
+      "id": "ld2-temu-june",
+      "title": "Temu VLOP status preceded additional Section 5 applicability",
+      "domain": "digital services",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "STATUS_APPLICATION_SEPARATION"
+      ],
+      "provenance": {
+        "issue": 97,
+        "role": "EVALUATION"
+      },
+      "exposure": {
+        "status": "REVEALED_AFTER_SEALED_EVALUATION",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "evaluation_mode": "LATENT_TRAP_DETECTION",
+      "decisive_trap": "Temu was already a VLOP on 15 June 2024, while the additional VLOP-specific obligations had not yet reached their post-notification application point.",
+      "evaluation_result": "R_PASS_M_PASS",
+      "evidence_refs": [
+        "issue:97",
+        "path:fixtures/value-gates/issue97-manual-stage1-results-v0.3.json",
+        "path:docs/audits/issue97-latent-detection-result-2026-09-24.md"
+      ]
     }
   ],
-  "case_count": 23
+  "case_count": 27
 }

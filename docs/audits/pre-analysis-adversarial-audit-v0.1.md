@@ -322,135 +322,160 @@ This conclusion is **input to this adversary, not a roadmap decision**.
 
 ## 5. Analytical usefulness
 
-Not yet passed.
+### Decision rule
 
-Every existing or proposed analytic primitive must answer:
+A capability does not survive as active product architecture merely because it
+is correct or interesting. It must answer a recurring user question better than
+the strong simpler baseline in `docs/project-charter.md`, without requiring a
+second truth store or disproportionate permanent machinery.
 
-1. Which recurring user question does it answer?
-2. Can existing canonical objects answer it without another schema?
-3. Does it expose information a normal source/version comparison cannot?
-4. Does its uncertainty model prevent a misleading answer?
-5. Is it useful often enough to justify permanent architecture?
+The audit distinguishes:
 
-Issue #29 may delete or defer analytic surface area that fails this test.
+- **foundation** — required to avoid false legal claims, even if invisible;
+- **product view** — useful recurring question over existing canonical truth;
+- **diagnostic** — valuable for trust/operations, but not a public-product
+  pillar;
+- **parked research** — valid idea without enough current product evidence.
 
-## 6. External novelty adversary
+### P2 / analytical disposition matrix
+
+| Capability | User question | Evidence from Needle | External pressure | Disposition |
+|---|---|---|---|---|
+| Thread | “How did this rule become what it is today?” | Full Article 3 chronology with provenance closure and temporal separation | Legal version history is common; Needle's value is the conservative composition, not versioning itself | **SURVIVES** as core historical product view; no new ontology |
+| Multidimensional Temporal | “When does this actually matter, and for whom?” | Publication / force / application / text-state / transition / derogation / deadline boundaries; gaps, overlap, retroactivity and context-required cases | Temporal legal models and lifecycle standards already exist; emendrix also distinguishes in-force and bounded applies-from | **SURVIVES as foundation + value candidate**, **not a novelty claim** |
+| Change Atoms | “What kind of legal rule changed?” | VERIFIED duty / permission / legal-status atoms tied to mutation and source evidence | Obligation extraction, deontic modelling and text↔rule provenance are established fields | **SURVIVES internally**; reject generic semantic extraction as differentiation; expand taxonomy only from product need |
+| Dependency Ripple / X-Ray | “Did this unchanged provision's operation change because something it relies on changed?” | Two independent official cases with unchanged local text and VERIFIED upstream mutation | Change-propagation/dependency-graph concepts exist in regulatory intelligence | **SURVIVES as optional product view** because the question is materially different from text diff; no v0.2 work now |
+| Source Anomaly | “Is the strange result caused by the source infrastructure rather than the law?” | Route fallback, source-internal conflict, representation duplication | Source disagreement/provenance is already surfaced by strong substitutes such as emendrix | **REVISE** to trust/audit diagnostic; not a headline public-intelligence pillar |
+| Half-Life | “How long has a formally temporary regime persisted through extensions/gaps?” | One strong ePrivacy history with explicit gaps and unresolved terminal/rule continuity | Correct but niche; v0.2 would require additional rule-lineage/terminal machinery before repeated product demand exists | **PARK** after v0.1; close active v0.2 research until a real product case reopens it |
+| Rule/proposition lineage | “Did the same rule survive a structural/replacement change?” | P0 fixtures prove why provision identity and rule continuity differ | Legal rule versioning/provenance is established research territory | **SURVIVES as foundation**; **PARK expansion** unless a Thread/product case requires it |
+| Multilingual / corrigenda | “Did the legally relevant correction happen only in some language expressions?” | Language-scoped corrigenda with material semantic examples | EU multilingualism and AI/LegalXML corrigenda analysis are established research areas; Legalize is English-only and excludes corrigenda, while the current emendrix public methodology does not expose an equivalent language-scoped mutation history | **SURVIVES as correctness requirement + plausible product differentiation**, not proven novelty |
+| Procedural state | “Is this proposal/agreement/adoption/publication actually law yet?” | Orthogonal procedure vector prevents state collapse | OEIL and commercial systems already expose procedure state | **SURVIVES as foundation**; not a novelty/product pillar by itself |
+| Provenance / abstention / non-impact | “Why should I believe this, and what could not be established?” | Immutable observations, claim support, positive non-impact and operational abstention | Evidence-first/citation-gated systems already exist | **SURVIVES as product policy and trust foundation**, not a novelty claim |
+
+### P-01 — operational truth is not automatically public-feed value
+
+The latest committed operational report examined in this audit covers:
+
+- 6,680 source events;
+- 6,425 new events;
+- 343 root groups;
+- 0 `CHANGE_FEED` cards;
+- 10 `AUDIT_FEED` cards;
+- 333 `ABSTENTION_FEED` cards.
+
+That is a positive correctness result: source activity is not laundered into
+legal news. It is also a product warning.
+
+A general-interest product that displayed every audit/abstention card would
+mostly expose ingestion uncertainty rather than legal intelligence.
+
+**Disposition: revise.**
+
+- `CHANGE_FEED` remains the candidate public-news stream.
+- `AUDIT_FEED` and `ABSTENTION_FEED` remain durable/inspectable truth, but
+  default to evidence/debug/subscription context rather than general-interest
+  publication.
+- “abstention is product content” is therefore narrowed to “abstention must be
+  inspectable when a user asked about, monitors, or opens the affected source.”
+- No canonical stream schema changes in this gate; this is a delivery policy for
+  the next product experiment.
+
+### P-02 — Source Mode survives, but the user-facing concept should change
+
+The product checkpoint's repeated gap survives the adversary: all three real
+classes benefit when opaque provenance IDs resolve to human-readable official
+sources and an explicit explanation of **what each source proves**.
+
+However, “Source Mode” is implementation vocabulary. The useful public concept
+is closer to:
+
+> **Evidence — why this is shown, what proves it, and what does not follow.**
+
+This requires no new legal ontology and no new truth store. It is a
+presentation resolver over existing provenance and canonical references.
+
+**Disposition: experiment.** This is the smallest next product investment after
+#29, but it must be evaluated as comprehension/value rather than shipped as a
+new canonical contract.
+
+## 6. External novelty / substitute adversary
 
 ### N-01 — broad novelty claim rejected
 
 A broad claim such as “Needle uniquely watches EU law, detects amendments,
 compares versions, corroborates changes and explains them with traceable
-evidence” does **not** survive current external comparison.
+evidence” does **not** survive external comparison.
 
-#### Official baseline: EUR-Lex / OEIL
+Existing official, commercial, open and research systems cover large parts of
+that surface:
 
-EUR-Lex already supports:
+- EUR-Lex / OEIL: alerts, consolidated versions, document relationships and
+  legislative procedure chronology;
+- vLex / Corlytics / FiscalNote-class products: version comparison, monitoring,
+  horizon scanning and change analysis;
+- Legalize: EU laws as versioned Markdown/Git history plus API/change feeds;
+- emendrix: Publications Office monitoring, Formex structural diff,
+  corroboration against EU metadata and amendment instructions, preserved source
+  disagreement, bounded date handling and citation-gated explanation;
+- Akoma Ntoso: legal-document lifecycle/modification/versioning;
+- LegalRuleML: explicit text↔formal-rule provenance and the need to update rules
+  when legal source text changes;
+- legal-KG research: temporal/versioned legislation and multilingual legal
+  knowledge graphs;
+- EU corrigenda research: hybrid AI, semantic annotation and LegalXML analysis;
+- regulatory-intelligence literature/products: dependency/change propagation
+  and obligation-delta concepts.
 
-- email and RSS alerts for document modifications;
-- subsequent preparatory acts;
-- case-law affecting a document;
-- new consolidated versions;
-- related/legal-basis documents;
-- consolidated-version lists and timelines.
-
-The European Parliament Legislative Observatory already provides procedure
-records, chronology, saved-search subscriptions and update notifications.
-
-Sources checked 2026-09-22:
-
-- https://eur-lex.europa.eu/content/help/my-eurlex/my-email-alerts.html?locale=en
-- https://eur-lex.europa.eu/content/help/my-eurlex/my-rss-feeds.html?locale=en
-- https://eur-lex.europa.eu/content/online-learning/eurlex-content/finding-consolidated-texts.html?locale=en
-- https://oeil.europarl.europa.eu/oeil/en/find-out-more
-
-#### Legal research / regulatory intelligence baseline
-
-vLex already exposes amended versions, side-by-side change comparison and
-amending/amended relationships.
-
-Corlytics provides regulatory monitoring, real-time content, horizon scanning,
-impact-assessment workflow and APIs.
-
-FiscalNote PolicyNote added AI-powered bill comparison for version changes and
-policy implications.
-
-Sources checked 2026-09-22:
-
-- https://support.vlex.com/document-types/legislation/versions-and-amendments
-- https://www.corlytics.com/solutions/regulatory-monitoring/
-- https://fiscalnote.com/newsroom/fiscalnote-introduces-ai-powered-bill-comparison-in-policynote
-
-#### Strongest direct substitute found: emendrix
-
-emendrix is a direct architectural adversary, not a category-level comparison.
-
-Its published methodology says it:
-
-- watches the Publications Office notification feed by identifier;
-- fetches consolidated versions and amending acts as Formex 4 XML;
-- computes structural provision-tree diffs deterministically;
-- cross-checks against EU amendment metadata;
-- parses amending-act instruction prose as another signal;
-- surfaces disagreement between sources instead of hiding it;
-- keeps “first seen” separate from legal dates;
-- records in-force and bounded applies-from information;
-- constrains model explanation to supplied verbatim text;
-- deterministically gates citations;
-- commits results and evaluation artifacts to repositories before rendering.
-
-Source checked 2026-09-22:
+Sources rechecked 2026-09-23:
 
 - https://emendrix.eu/methodology/
-- https://emendrix.eu/about/
+- https://emendrix.eu/dates/
+- https://legalize.dev/eu
+- https://docs.oasis-open.org/legaldocml/akn-core/v1.0/akn-core-v1.0-part1-vocabulary.html
+- https://docs.oasis-open.org/legalruleml/legalruleml-core-spec/v1.0/csprd01/legalruleml-core-spec-v1.0-csprd01.html
+- https://doi.org/10.1016/j.ipm.2025.104082
+- https://doi.org/10.3233/FAIA210319
+- https://doi.org/10.26826/law-in-context.v37i1.129
+- https://doi.org/10.1007/s10506-021-09282-8
 
-Therefore the **core operational loop itself is not a defensible Needle novelty
-claim**.
+### N-02 — individual primitives are mostly not novelty claims either
 
-### Candidate narrower differentiation — not yet proven novel
+Further adversarial comparison rejects several attempted narrower slogans:
 
-Needle currently goes materially beyond the comparison surface above in some
-dimensions:
+- “temporal legal graph” — **not novel**;
+- “multilingual legal knowledge graph” — **not novel**;
+- “corrigenda analysis” — **not novel**;
+- “obligation / duty extraction” — **not novel**;
+- “text-to-rule provenance” — **not novel**;
+- “dependency / change propagation” — **not novel**;
+- “preserve source disagreement / abstain” — **not novel by itself**.
 
-- multidimensional temporal truth: publication, legal force, application,
-  transition, derogation, deadlines and source-as-of are separate;
-- context-required / entity-specific applicability and retroactivity;
-- language-scoped corrigenda and multilingual mutation histories;
-- provision vs proposition/rule lineage;
-- semantic Change Atoms (for example duty / permission / legal-status changes);
-- dependency ripple where local text is unchanged;
-- Source Anomaly as source-state intelligence;
-- explicit operational abstention and non-impact as first-class output;
-- typed procedural state distinct from legal force/application;
-- append-only claim-support provenance rather than only rendered-source links.
+This matters because a project can otherwise survive a failed broad novelty
+claim simply by moving the adjective.
 
-The audit must **not** combine those into a new vague novelty slogan. Each must be
-tested for:
+### N-03 — bounded project-level verdict
 
-1. whether a strong substitute already provides it;
-2. whether Needle has demonstrated it with official evidence;
-3. whether it changes a user decision or understanding;
-4. whether the capability is worth its architectural cost.
+Needle's defensible claim is **not invention of these primitives**.
 
-Current bounded thesis:
+The remaining thesis is narrower and product-oriented:
 
-> Needle is not novel because it tracks EU legal change. Its possible
-> differentiation is an evidence-typed, temporally explicit legal-state model
-> that can explain not only textual version differences but also when a claim is
-> unsupported, source-only, semantically changed, context-dependent, or
-> indirectly affected.
+> Needle may be valuable because it composes established legal-information
+> ideas under unusually strict evidence ownership, legal-time separation and
+> fail-closed delivery, so a difficult EU-law change can be explained without
+> collapsing source activity, text change, rule change, applicability,
+> multilingual correction, derived dependency effect and uncertainty.
 
-That thesis remains **provisional and under attack**.
+Current verdict:
 
-### Particularly important external warning
+- **Core monitoring / diff / explanation novelty: NOT NOVEL.**
+- **Individual legal-informatics primitives: mostly NOT NOVEL.**
+- **Needle's integrated legal-state discipline: DEMONSTRATED technically in
+  several official cases, but only PLAUSIBLE as product differentiation.**
+- **User-value advantage over the strongest baseline: NOT YET PROVEN.**
 
-emendrix already demonstrates an unusually similar epistemic posture: source
-disagreement is preserved, legal dates are distinguished from detection dates,
-model explanation does not decide change truth, and evaluation claims are
-explicitly bounded.
-
-Needle must therefore not claim that “evidence-first”, “deterministic change
-detection”, “grounded explanation”, or “preserving disagreement” alone is its
-novelty.
+Accordingly, Needle must not market a novelty claim at this stage. The next gate
+must test comparative user value, not search for a smaller unoccupied novelty
+phrase.
 
 ## 7. Repository / CI / autonomy sanitation
 

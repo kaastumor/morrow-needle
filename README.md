@@ -46,9 +46,13 @@ The first P2 product projections are now evidenced:
 
 The operational Needle loop is now proven against real official events, and the first product checkpoint has tested verified-change, source-audit and abstention cards.
 
-The current strategic priority is **Issue #29: the pre-analysis adversarial audit + repository sanitation gate**. Before any new analytic primitive or product expansion, Needle is being attacked from byte/parser assumptions through evidence ownership, operational behavior, product truthfulness, analytical usefulness and its external novelty/public-interest thesis. The same gate reconciles stale code, workflows, docs, issues and backlog state.
+Issue #29's adversarial/sanitation gate concluded **SIMPLIFY**: the core evidence/legal-state engine survives, but broad novelty claims and further P2 feature accumulation do not.
 
-See `BACKLOG.md`, `docs/product-checkpoint-v0.1.md`, and Issue #29.
+The current strategic priority is **Issue #49: comparative value proof — Evidence / Why this is shown**. Needle must now demonstrate that its stricter separation of source activity, text mutation, legal timing, semantic effect, multilingual correction, derived effects and uncertainty actually gives a person a materially better understanding than strong existing tools plus direct official sources and an ordinary capable LLM.
+
+No new analytic primitive or scale infrastructure is justified until that value test passes.
+
+See `BACKLOG.md`, `docs/audits/pre-analysis-adversarial-audit-v0.1.md`, `docs/audits/project-health-2026-09-23.md`, and Issue #49.
 
 ---
 

@@ -2,7 +2,7 @@
   "schema_version": "issue97-manual-manifest-v0.3",
   "issue": 97,
   "created_date": "2026-09-24",
-  "status": "COMPLETE_STOP_ON_FULL_PARITY",
+  "status": "COMPLETE_REVEALED_STOP_ON_FULL_PARITY",
   "evaluation_mode": "LATENT_TRAP_DETECTION",
   "execution_medium": "CHATGPT_TEMPORARY_CHAT_UNPERSONALIZED",
   "supersedes": {
@@ -13,12 +13,14 @@
     {
       "filename": "issue97-manual-prompts-v0.3.json",
       "sha256": "23bbab762927c711a998c401e9f72d9186191ef079df3ec813c5650dbf33875e",
-      "repository_contains_plaintext": false
+      "repository_contains_plaintext": true,
+      "repository_path": "fixtures/value-gates/issue97-manual-prompts-v0.3.json"
     },
     {
       "filename": "issue97-manual-answer-key-v0.3.json",
       "sha256": "1b77e98638b03b02f4dde9440abc25a7e7cd8de9e29562ea641e9274ad02fb0d",
-      "repository_contains_plaintext": false
+      "repository_contains_plaintext": true,
+      "repository_path": "fixtures/value-gates/issue97-manual-answer-key-v0.3.json"
     }
   ],
   "user_kit": {
@@ -92,6 +94,7 @@
     "stop_rule_triggered": true,
     "additional_execution_required": false,
     "H15": "REJECT_FOR_TESTED_WORKFLOW",
-    "execution_metadata_limitation": "UI settings are protocol-specified but not machine-verifiable from the submitted result text files."
+    "execution_metadata_limitation": "UI settings are protocol-specified but not machine-verifiable from the submitted result text files.",
+    "reveal_complete": true
   }
 }

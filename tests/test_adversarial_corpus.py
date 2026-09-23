@@ -43,3 +43,20 @@ def test_missing_artifact_path_fails_closed():
 
     with pytest.raises(CorpusValidationError, match="missing referenced path"):
         validate(data, ROOT)
+
+
+def test_case_must_reference_its_provenance_issue():
+    data = load_index()
+    issue = data["cases"][0]["provenance"]["issue"]
+    data["cases"][0]["evidence_refs"].remove(f"issue:{issue}")
+
+    with pytest.raises(CorpusValidationError, match="must include issue"):
+        validate(data, ROOT)
+
+
+def test_artifact_path_cannot_escape_repository():
+    data = load_index()
+    data["cases"][0]["evidence_refs"].append("path:../outside.json")
+
+    with pytest.raises(CorpusValidationError, match="stay inside repository"):
+        validate(data, ROOT)

@@ -1,0 +1,84 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "toy-wave-roller-dynamic-standard-gateway-v0.1",
+  "question": "Can an unchanged legislative gateway and unchanged standard identifier produce a changed legal presumption solely because the status of the published standard reference changes?",
+  "local_gateway": {
+    "act_id": "CELEX:32009L0048",
+    "provision": "Article 13",
+    "rule_character": "DYNAMIC_PUBLICATION_GATEWAY",
+    "normalized_text": "Toys which are in conformity with harmonised standards or parts thereof, the references of which have been published in the Official Journal of the European Union, shall be presumed to be in conformity with the requirements covered by those standards or parts thereof set out in Article 10 and Annex II.",
+    "text_hash": "9d2092b5f4cbbacb71c9d5fd4b3421c05f7cd79297165f5faa48bcebb9e7094b",
+    "text_length": 303,
+    "textual_mutation_at_2025_transition": null
+  },
+  "standard_identity": {
+    "identifier": "EN 71-1:2014+A1:2018",
+    "title": "Safety of toys – Part 1: Mechanical and physical properties",
+    "identity_hash": "a9bf444c10205dbb6b89accec82155c408a4605d41f67b438f929e58dc549884",
+    "identifier_changed_at_2025_transition": false
+  },
+  "reference_states": [
+    {
+      "state_id": "implementing-decision-2023-740-original-row-1",
+      "effective_from": "2023-04-05",
+      "source_id": "CELEX:32023D0740",
+      "reference": "EN 71-1:2014+A1:2018",
+      "wave_roller_restriction": null,
+      "presumption_status_for_wave_roller_clauses": "REFERENCE_PUBLISHED_WITHOUT_WAVE_ROLLER_RESTRICTION"
+    },
+    {
+      "state_id": "implementing-decision-2023-740-row-1-as-amended-by-2025-1785",
+      "effective_from": "2025-09-10",
+      "source_id": "CELEX:32025D1785",
+      "reference": "EN 71-1:2014+A1:2018",
+      "wave_roller_restriction": {
+        "standard_clauses": ["3.19", "4.15.1"],
+        "product_scope": "wave rollers",
+        "essential_requirement": "Directive 2009/48/EC Article 10(2) and Annex II Part I point 3",
+        "effect": "NO_PRESUMPTION_OF_CONFORMITY_FOR_SPECIFIED_SCOPE"
+      },
+      "presumption_status_for_wave_roller_clauses": "REFERENCE_PUBLISHED_WITH_RESTRICTION"
+    }
+  ],
+  "upstream_legal_change": {
+    "act_id": "CELEX:32025D1785",
+    "operation": "REPLACE",
+    "target": "Implementing Decision (EU) 2023/740 > Annex > row 1",
+    "verification_state": "OFFICIAL_TEXT_DIRECT",
+    "statement": "The 2025 implementing decision replaces row 1 while retaining the same EN 71-1:2014+A1:2018 identifier and adding a restriction for wave rollers."
+  },
+  "derived_local_effect": {
+    "local_provision": "Directive 2009/48/EC Article 13",
+    "local_textual_mutation": false,
+    "effect_state": "DERIVED",
+    "statement": "Article 13's unchanged presumption-of-conformity gateway now yields a narrower result for the specified wave-roller clauses because the officially published reference status changed."
+  },
+  "court_context": {
+    "case": "C-588/21 P",
+    "ecli": "ECLI:EU:C:2024:201",
+    "date": "2024-03-05",
+    "bounded_relevance": "The Court held that there was an overriding public interest in disclosure of the harmonised standards at issue and described harmonised standards as forming part of EU law owing to their legal effects. This supports treating reference status as legally material, not mere catalogue metadata."
+  },
+  "architecture_probe": {
+    "contract": "Dependency Ripple v0.1",
+    "current_relation_character": "DERIVED_FROM_EVIDENCED_CROSS_REFERENCE_ATOM",
+    "required_honest_relation_character": "DERIVED_FROM_DYNAMIC_PUBLICATION_GATEWAY",
+    "result": "REPRESENTATIONAL_FAILURE_REOPEN_TRIGGERED",
+    "why_cross_reference_is_inadequate": "Article 13 does not identify EN 71-1 by a static citation. It confers legal effect on a moving class of harmonised standards or parts whose references are published in the Official Journal. The relevant dependency is publication-status-driven.",
+    "new_schema_added_in_this_probe": false
+  },
+  "forbidden_inferences": [
+    "Directive 2009/48/EC Article 13 was textually amended in September 2025.",
+    "EN 71-1:2014+A1:2018 became a different standard identifier in September 2025.",
+    "The 2025 restriction means the harmonised standard ceased to have all presumption-of-conformity effects.",
+    "The dynamic publication gateway can be relabelled as an ordinary explicit cross-reference merely to fit Dependency Ripple v0.1.",
+    "Publication/reference status is non-legal metadata with no effect on the Article 13 presumption."
+  ],
+  "official_sources": [
+    {"identifier": "CELEX:32009L0048", "locator": "Articles 13-14", "role": "GATEWAY_RULE"},
+    {"identifier": "CELEX:32023D0740", "locator": "Annex row 1", "role": "REFERENCE_STATE_BEFORE"},
+    {"identifier": "CELEX:32025D1785", "locator": "Recitals 3-14 and Annex", "role": "REFERENCE_STATUS_MUTATION"},
+    {"identifier": "CELEX:62021CJ0588", "locator": "Judgment of 5 March 2024", "role": "LEGAL_EFFECT_CONTEXT"}
+  ],
+  "status": "OFFICIAL_CASE_PINNED_CONTRACT_REOPENED"
+}

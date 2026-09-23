@@ -24,7 +24,7 @@ project form.
 - **#86:** Full Needle did not materially outperform smaller identities.
 - **#87:** all 15 relay conclusions were correct; Method showed a bounded
   reconstruction-packaging benefit, while Core produced no observed
-  Method-over-Core handoff advantage.
+  Core-over-Method handoff advantage.
 - **#88:** six fresh adversarial failure modes were pre-registered and sealed.
   Every pair was **R-pass / M-pass**. The strong source-grounded baseline caught
   the same decisive traps as Needle Method. No Method correctness rescue

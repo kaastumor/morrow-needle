@@ -1,0 +1,57 @@
+{
+  "gate_version": "0.1",
+  "issue": 86,
+  "protocol_stage": "NEEDLE_CORE_REVIEW",
+  "core_definition": "Canonical ownership/provenance/temporal/identity contracts plus small deterministic helpers; excludes Thread, X-Ray, Source Anomaly, Half-Life and public/product projections.",
+  "cases": [
+    {
+      "case_id": "ai-act-gpai-systemic-risk-threshold",
+      "core_fit": "NO_PERSISTENCE_JUSTIFIED_FOR_THIS_QUESTION",
+      "reason": "The case asks about the law's threshold/procedure abstractly and supplies no concrete model-specific compute observation. Creating an Authoritative Metric Observation would fabricate evidence. Core adds value by refusing that promotion, not by serializing the hypothetical.",
+      "gain_over_method": "NONE_FOR_CURRENT_QUERY",
+      "persistent_structure_earned": false
+    },
+    {
+      "case_id": "easa-a380-als-mandatory-source",
+      "core_fit": "NO_HONEST_EXISTING_RELATION_OWNER",
+      "reason": "Provenance can preserve the private Airbus document and public EASA AD separately, but current Core has no narrow owner for a private technical document incorporated/referenced by a public mandate. Recognized External Determination is not applicable because the ALS is technical content, not a determination.",
+      "gain_over_method": "NONE_UNLESS_THIS_RELATION_RECURS_AS_A_RESEARCH_NEED",
+      "persistent_structure_earned": false,
+      "guardrail": "Do not add a schema during the value gate merely to improve Core's score."
+    },
+    {
+      "case_id": "schrems-ii-transfer-mechanisms",
+      "core_fit": "PARTIAL_WITH_REAL_GAP",
+      "reason": "Judicial Holding v0.1 cleanly represents the Privacy Shield INVALIDITY holding. It cannot honestly represent the Court's separate affirmative validity result for Decision 2010/87 because VALIDITY is not an allowed holding type. Relabelling it INTERPRETATION would distort the holding.",
+      "gain_over_method": "PARTIAL_REPRODUCIBILITY_GAIN_BUT_INCOMPLETE",
+      "persistent_structure_earned": false,
+      "foundation_gap_exposed": "JUDICIAL_HOLDING_POSITIVE_VALIDITY_NOT_REPRESENTABLE"
+    },
+    {
+      "case_id": "common-charger-laptop-date-control",
+      "core_fit": "CLEAN",
+      "reason": "Two scoped APPLICATION START assertions allow deterministic repeated queries: non-laptop categories active on 2025-01-01, laptops inactive until 2026-04-28.",
+      "gain_over_method": "MODEST_REPEATABILITY_AND_QUERY_GAIN",
+      "persistent_structure_earned": "CONDITIONAL_ON_REPEATED_QUERY_NEED",
+      "guardrail": "For one question, encoding costs more than careful reading."
+    },
+    {
+      "case_id": "ai-act-dutch-recital19-pre-corrigendum",
+      "core_fit": "CLEAN_AND_MATERIALLY_USEFUL",
+      "reason": "Language-Scoped Mutation v0.1 preserves the Dutch-only correction event, before/after text, publication date and NO_ASSERTION semantics for non-listed languages. Combined with source/provenance perspective, the historical wording no longer has to be rediscovered manually.",
+      "gain_over_method": "STRONGEST_CORE_GAIN",
+      "persistent_structure_earned": true,
+      "value": "Reproducible historical source-state reconstruction across later sessions/queries."
+    }
+  ],
+  "core_summary": {
+    "clean_fits": 2,
+    "partial_fits": 1,
+    "cases_where_no_core_object_should_be_created": 2,
+    "new_foundation_gap_discovered": 1,
+    "cases_with_material_persistent_value": 1,
+    "cases_with_conditional_repeatability_value": 1,
+    "provisional_result": "CORE_HAS_REAL_BUT_NARROW_VALUE; IT_IS_NOT_REQUIRED_FOR MOST_ONE_OFF_QUESTIONS",
+    "important_negative": "The value gate itself found a Core gap in Judicial Holding v0.1. This is evidence against treating the current ontology as the project contribution."
+  }
+}

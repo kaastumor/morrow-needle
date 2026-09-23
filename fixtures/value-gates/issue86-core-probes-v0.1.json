@@ -1,0 +1,246 @@
+{
+  "gate_version": "0.1",
+  "issue": 86,
+  "protocol_stage": "NEEDLE_CORE_EXECUTABLE_PROBES",
+  "common_charger": {
+    "subject_keys": {
+      "non_laptop": "common-charger:covered-non-laptop",
+      "laptop": "common-charger:laptop"
+    },
+    "assertions": [
+      {
+        "assertion_id": "common-charger-non-laptop-application-start",
+        "subject_ref": {
+          "kind": "REGIME",
+          "identifier": "common-charger",
+          "locator": "Directive (EU) 2022/2380 / RED common-charger requirements"
+        },
+        "dimension": "APPLICATION",
+        "boundary": "START",
+        "inclusive": true,
+        "precision": "DATE",
+        "trigger": {
+          "kind": "ABSOLUTE_DATE",
+          "date": "2024-12-28",
+          "source_expression": "28 December 2024"
+        },
+        "normalized_date": "2024-12-28",
+        "normalized_instant": null,
+        "scope": {
+          "mode": "DEFAULT",
+          "applies_to": ["common-charger:covered-non-laptop"],
+          "overrides_assertion_ids": [],
+          "entity_condition": null
+        },
+        "resolution_state": "RESOLVED_ABSOLUTE",
+        "evidence_state": "DIRECT",
+        "source_refs": [
+          {
+            "source_type": "EUR_LEX",
+            "identifier": "CELEX:32022L2380",
+            "locator": "application provision",
+            "language": "ENG",
+            "role": "TEMPORAL_CLAUSE"
+          }
+        ],
+        "notes": "Covered non-laptop categories only; wired-charging substantive condition remains outside this temporal assertion."
+      },
+      {
+        "assertion_id": "common-charger-laptop-application-start",
+        "subject_ref": {
+          "kind": "REGIME",
+          "identifier": "common-charger",
+          "locator": "Directive (EU) 2022/2380 / laptops"
+        },
+        "dimension": "APPLICATION",
+        "boundary": "START",
+        "inclusive": true,
+        "precision": "DATE",
+        "trigger": {
+          "kind": "ABSOLUTE_DATE",
+          "date": "2026-04-28",
+          "source_expression": "28 April 2026"
+        },
+        "normalized_date": "2026-04-28",
+        "normalized_instant": null,
+        "scope": {
+          "mode": "DEFAULT",
+          "applies_to": ["common-charger:laptop"],
+          "overrides_assertion_ids": [],
+          "entity_condition": null
+        },
+        "resolution_state": "RESOLVED_ABSOLUTE",
+        "evidence_state": "DIRECT",
+        "source_refs": [
+          {
+            "source_type": "EUR_LEX",
+            "identifier": "CELEX:32022L2380",
+            "locator": "laptop application provision",
+            "language": "ENG",
+            "role": "TEMPORAL_CLAUSE"
+          }
+        ],
+        "notes": "Laptop-specific later application date."
+      }
+    ],
+    "queries": [
+      {
+        "query_id": "non-laptop-on-2025-01-01",
+        "subject_key": "common-charger:covered-non-laptop",
+        "date": "2025-01-01",
+        "expected_active": true
+      },
+      {
+        "query_id": "laptop-on-2025-01-01",
+        "subject_key": "common-charger:laptop",
+        "date": "2025-01-01",
+        "expected_active": false
+      },
+      {
+        "query_id": "laptop-on-2026-04-28",
+        "subject_key": "common-charger:laptop",
+        "date": "2026-04-28",
+        "expected_active": true
+      }
+    ]
+  },
+  "dutch_ai_act_corrigendum": {
+    "event_id": "corrigendum:ai-act:nld:2025-12-19:recital19",
+    "event_kind": "CORRIGENDUM",
+    "source_document": {
+      "identifier": "CELEX:32024R1689R(02)",
+      "eli": "http://data.europa.eu/eli/reg/2024/1689/corrigendum/2025-12-19/oj",
+      "document_type": "CORRIGENDUM"
+    },
+    "target_act": "CELEX:32024R1689",
+    "event_date": "2025-12-19",
+    "expression_scope": {
+      "basis": "OFFICIAL_OJ_LANGUAGE_LIST",
+      "languages": ["NLD"],
+      "nonlisted_semantics": "NO_ASSERTION"
+    },
+    "operations": [
+      {
+        "operation_id": "recital19-online-spaces-negation",
+        "operation_type": "REPLACE",
+        "target_kind": "ACT_TEXT",
+        "target_locator": "Recital 19, penultimate sentence",
+        "before_text": "Onlineruimten vallen onder het toepassingsgebied, omdat het geen fysieke ruimten zijn.",
+        "after_text": "Onlineruimten vallen niet onder het toepassingsgebied, omdat het geen fysieke ruimten zijn.",
+        "resulting_act_locator": "Recital 19",
+        "notes": "Historical Dutch source state before publication of this corrigendum must preserve the before-text."
+      }
+    ],
+    "corrects_event_ids": [],
+    "evidence_state": "DIRECT",
+    "source_refs": [
+      {
+        "source_type": "OJ",
+        "identifier": "CELEX:32024R1689R(02)",
+        "locator": "page 1, recital 19 correction",
+        "language": "NLD",
+        "role": "MUTATION_TEXT"
+      },
+      {
+        "source_type": "EUR_LEX",
+        "identifier": "CELEX:32024R1689R(02)",
+        "locator": "language metadata",
+        "language": "NLD",
+        "role": "LANGUAGE_SCOPE"
+      }
+    ],
+    "notes": "Core proof that persistent expression-scoped correction history can preserve historical source-state evidence."
+  },
+  "schrems_ii": {
+    "privacy_shield_invalidity": {
+      "schema_version": "judicial-holding-v0.1",
+      "holding_id": "judicial:C-311-18:privacy-shield-invalidity",
+      "character": "JUDICIAL_HOLDING",
+      "court": {
+        "court_id": "CJEU_COURT_OF_JUSTICE",
+        "label": "Court of Justice of the European Union",
+        "chamber": "Grand Chamber"
+      },
+      "case_ref": {
+        "case_number": "C-311/18",
+        "ecli": "ECLI:EU:C:2020:559",
+        "judgment_date": "2020-07-16"
+      },
+      "holding_type": "INVALIDITY",
+      "target_refs": [
+        {
+          "act_id": "CELEX:32016D1250",
+          "provision": "Commission Implementing Decision (EU) 2016/1250",
+          "target_role": "PRIMARY_TARGET"
+        }
+      ],
+      "proposition": {
+        "statement": "Commission Implementing Decision (EU) 2016/1250 is invalid.",
+        "proposition_character": "DIRECT_JUDICIAL_HOLDING"
+      },
+      "temporal_relation": {
+        "character": "NO_NEW_VALID_TIME_BOUNDARY_ASSERTED",
+        "temporal_assertion_refs": []
+      },
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:62018CJ0311",
+          "locator": "operative part, point 5",
+          "language": "ENG",
+          "role": "JUDGMENT_HOLDING"
+        }
+      ],
+      "guardrails": [
+        "Do not propagate this invalidity to separate transfer mechanisms or Commission decisions."
+      ],
+      "notes": "Fits Judicial Holding v0.1."
+    },
+    "scc_positive_validity_candidate": {
+      "schema_version": "judicial-holding-v0.1",
+      "holding_id": "judicial:C-311-18:scc-positive-validity",
+      "character": "JUDICIAL_HOLDING",
+      "court": {
+        "court_id": "CJEU_COURT_OF_JUSTICE",
+        "label": "Court of Justice of the European Union",
+        "chamber": "Grand Chamber"
+      },
+      "case_ref": {
+        "case_number": "C-311/18",
+        "ecli": "ECLI:EU:C:2020:559",
+        "judgment_date": "2020-07-16"
+      },
+      "holding_type": "VALIDITY",
+      "target_refs": [
+        {
+          "act_id": "CELEX:32010D0087",
+          "provision": "Commission Decision 2010/87/EU",
+          "target_role": "PRIMARY_TARGET"
+        }
+      ],
+      "proposition": {
+        "statement": "Examination of Decision 2010/87/EU disclosed nothing to affect its validity.",
+        "proposition_character": "DIRECT_JUDICIAL_HOLDING"
+      },
+      "temporal_relation": {
+        "character": "NO_NEW_VALID_TIME_BOUNDARY_ASSERTED",
+        "temporal_assertion_refs": []
+      },
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:62018CJ0311",
+          "locator": "operative part, point 4",
+          "language": "ENG",
+          "role": "JUDGMENT_HOLDING"
+        }
+      ],
+      "guardrails": [
+        "Do not call a positive validity holding INTERPRETATION merely to satisfy the current enum."
+      ],
+      "notes": "Intentionally fails v0.1 because VALIDITY is not an allowed holding type."
+    }
+  }
+}

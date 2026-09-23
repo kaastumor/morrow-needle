@@ -37,6 +37,8 @@ Every entry ends in one disposition:
 
 | #91 parallel international-agreement lifecycle | DISCOVERY | The shrunk corpus/protocol project can keep finding orthogonal, reusable legal-information failure families without rebuilding a legal-state product architecture | Existing corpus taxonomy plus direct official-source research | Mercosur and Mexico independently show that interim and comprehensive agreements carry separate lifecycle states; a two-case PARALLEL_INSTRUMENT_LIFECYCLE family was added with no new persistence/schema layer | CONTINUE | `research/parallel-international-agreement-lifecycle-2026-09-23.md` and Issue #91 |
 
+| #93 official tracker update lag | DISCOVERY | Corpus-first discovery can expose source-role/freshness failures across Member-State implementation without rebuilding monitoring infrastructure | Current Commission NIS2 country trackers compared with newer Dutch Staatsblad and Swedish SFS/government primary sources | Netherlands and Sweden independently show that an official currently accessible status tracker can lag newer national implementing law; current access time cannot stand in for source update/observation time | CONTINUE | `research/official-tracker-update-lag-2026-09-23.md` and Issue #93 |
+
 ## Rules
 
 1. Do not add an entry because work was completed.

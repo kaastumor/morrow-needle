@@ -48,10 +48,11 @@ Each discovery run must end in
 
 ### Night schedule
 
-The scheduled worker is authorised for a bounded hourly sprint beginning
-24 September 2026 at 20:00 Europe/Amsterdam. It must resume unfinished work
-before claiming the next issue. Planning slots are not deadlines and may slip
-when a PR needs repair.
+The scheduled worker is authorised for a bounded **10-run hourly sprint from
+01:00 through 10:00 Europe/Amsterdam on 24 September 2026**. It must resume
+unfinished work before claiming the next issue. Planning slots are not deadlines
+and may slip when a PR needs repair. A separate morning review follows after the
+night sprint.
 
 No task may revive the old legal-change product, add a backend/framework, create
 a second corpus truth store, or implement a discovery feature without a later

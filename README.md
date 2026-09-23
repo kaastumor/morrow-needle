@@ -31,14 +31,20 @@ project form.
   showed that all six questions explicitly surfaced or strongly cued the
   decisive trap, so #88 establishes **surfaced-trap adjudication parity**. It
   does not establish parity in unprompted/latent trap detection.
+- **#97:** four fresh latent adversarial cases were run in eight independent
+  manual Temporary Chats. All eight blind grades passed; after arm reveal all
+  four pairs were **R-pass / M-pass**. No latent-detection Method rescue was
+  observed. Manual result files do not independently verify the requested UI
+  settings.
 
 The #88 stop rule therefore applies:
 
 > **Morrow // Needle = adversarial legal-research corpus + evaluation protocol.**
 
 Method remains useful when its dossier structure helps humans or later sessions.
-Core remains useful only when persistence earns itself. Neither is assumed to
-create substantive correctness advantage.
+Across the tested surfaced-adjudication and latent-detection gates, it has not
+demonstrated a correctness advantage over the strong baseline. Core remains
+useful only when persistence earns itself.
 
 ## Research discipline
 

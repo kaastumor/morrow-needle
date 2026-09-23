@@ -13,6 +13,10 @@ EXPOSURE_VALUES = {
     "REVEALED_AFTER_SEALED_EVALUATION",
 }
 FUTURE_USE_VALUES = {"REGRESSION_ONLY"}
+EVALUATION_MODE_VALUES = {
+    "SURFACED_TRAP_ADJUDICATION",
+    "LATENT_TRAP_DETECTION",
+}
 
 
 class CorpusValidationError(ValueError):
@@ -89,10 +93,16 @@ def validate(data: dict, repo_root: Path) -> None:
         if exposure.get("blind_reuse") is not False:
             _fail(f"{case_id}: public/revealed v0.1 cases must set blind_reuse=false")
 
-        if provenance["role"] == "DERIVATION" and exposure["status"] != "PUBLIC_FROM_DISCOVERY":
-            _fail(f"{case_id}: derivation case must be PUBLIC_FROM_DISCOVERY")
-        if provenance["role"] == "EVALUATION" and exposure["status"] != "REVEALED_AFTER_SEALED_EVALUATION":
-            _fail(f"{case_id}: evaluation case must be REVEALED_AFTER_SEALED_EVALUATION")
+        if provenance["role"] == "DERIVATION":
+            if exposure["status"] != "PUBLIC_FROM_DISCOVERY":
+                _fail(f"{case_id}: derivation case must be PUBLIC_FROM_DISCOVERY")
+            if "evaluation_mode" in case:
+                _fail(f"{case_id}: derivation case must not declare evaluation_mode")
+        if provenance["role"] == "EVALUATION":
+            if exposure["status"] != "REVEALED_AFTER_SEALED_EVALUATION":
+                _fail(f"{case_id}: evaluation case must be REVEALED_AFTER_SEALED_EVALUATION")
+            if case.get("evaluation_mode") not in EVALUATION_MODE_VALUES:
+                _fail(f"{case_id}: evaluation case requires a valid evaluation_mode")
 
         refs = case["evidence_refs"]
         if not isinstance(refs, list) or not refs:

@@ -116,6 +116,8 @@ def test_every_v0_1_fixture_query_survives_date_precision_upgrade():
 def test_mixed_precision_fails_closed_instead_of_inventing_midnight():
     date_assertion = upgrade_v0_1_assertion(V01["cases"][0]["assertions"][0])
     date_assertion["scope"]["applies_to"] = [RTC["subject"]]
+    date_assertion["dimension"] = "APPLICATION"
+    date_assertion["boundary"] = "START"
 
     result = status_at(
         RTC["assertions"] + [date_assertion],

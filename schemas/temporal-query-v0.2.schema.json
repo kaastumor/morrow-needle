@@ -12,7 +12,10 @@
     "perspective"
   ],
   "properties": {
-    "query_id": {"type": "string", "minLength": 1},
+    "query_id": {
+      "type": "string",
+      "minLength": 1
+    },
     "dimension": {
       "type": "string",
       "enum": [
@@ -29,39 +32,69 @@
       "type": "array",
       "minItems": 1,
       "uniqueItems": true,
-      "items": {"type": "string"}
+      "items": {
+        "type": "string"
+      }
     },
-    "valid_time": {"$ref": "#/$defs/time_point"},
+    "valid_time": {
+      "$ref": "#/$defs/time_point"
+    },
     "perspective": {
       "type": "string",
-      "enum": ["EX_POST_LEGAL_EFFECT", "OFFICIAL_SOURCE_STATE_AS_OF"]
+      "enum": [
+        "EX_POST_LEGAL_EFFECT",
+        "OFFICIAL_SOURCE_STATE_AS_OF"
+      ]
     },
     "source_cutoff_time": {
       "oneOf": [
-        {"$ref": "#/$defs/time_point"},
-        {"type": "null"}
+        {
+          "$ref": "#/$defs/time_point"
+        },
+        {
+          "type": "null"
+        }
       ]
     },
-    "context": {"type": "object"}
+    "context": {
+      "type": "object"
+    }
   },
   "$defs": {
     "time_point": {
       "oneOf": [
         {
           "type": "object",
-          "required": ["precision", "date"],
+          "required": [
+            "precision",
+            "date"
+          ],
           "properties": {
-            "precision": {"const": "DATE"},
-            "date": {"type": "string", "format": "date"}
+            "precision": {
+              "const": "DATE"
+            },
+            "date": {
+              "type": "string",
+              "format": "date"
+            }
           },
           "additionalProperties": false
         },
         {
           "type": "object",
-          "required": ["precision", "instant"],
+          "required": [
+            "precision",
+            "instant"
+          ],
           "properties": {
-            "precision": {"const": "INSTANT"},
-            "instant": {"type": "string", "format": "date-time"}
+            "precision": {
+              "const": "INSTANT"
+            },
+            "instant": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "(?:Z|[+-][0-9]{2}:[0-9]{2})$"
+            }
           },
           "additionalProperties": false
         }
@@ -72,12 +105,20 @@
     {
       "if": {
         "properties": {
-          "perspective": {"const": "OFFICIAL_SOURCE_STATE_AS_OF"}
+          "perspective": {
+            "const": "OFFICIAL_SOURCE_STATE_AS_OF"
+          }
         }
       },
       "then": {
-        "required": ["source_cutoff_time"],
-        "properties": {"source_cutoff_time": {"type": "object"}}
+        "required": [
+          "source_cutoff_time"
+        ],
+        "properties": {
+          "source_cutoff_time": {
+            "type": "object"
+          }
+        }
       }
     }
   ],

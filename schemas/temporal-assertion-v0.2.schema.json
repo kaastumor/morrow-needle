@@ -17,8 +17,13 @@
     "source_refs"
   ],
   "properties": {
-    "assertion_id": {"type": "string", "minLength": 1},
-    "subject_ref": {"$ref": "#/$defs/subject_ref"},
+    "assertion_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subject_ref": {
+      "$ref": "#/$defs/subject_ref"
+    },
     "dimension": {
       "type": "string",
       "enum": [
@@ -33,23 +38,44 @@
     },
     "boundary": {
       "type": "string",
-      "enum": ["POINT", "START", "END"]
+      "enum": [
+        "POINT",
+        "START",
+        "END"
+      ]
     },
-    "inclusive": {"type": "boolean", "default": true},
+    "inclusive": {
+      "type": "boolean",
+      "default": true
+    },
     "precision": {
       "type": "string",
-      "enum": ["DATE", "INSTANT"]
+      "enum": [
+        "DATE",
+        "INSTANT"
+      ]
     },
-    "trigger": {"$ref": "#/$defs/trigger"},
+    "trigger": {
+      "$ref": "#/$defs/trigger"
+    },
     "normalized_date": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "format": "date"
     },
     "normalized_instant": {
-      "type": ["string", "null"],
-      "format": "date-time"
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time",
+      "pattern": "(?:Z|[+-][0-9]{2}:[0-9]{2})$"
     },
-    "scope": {"$ref": "#/$defs/scope"},
+    "scope": {
+      "$ref": "#/$defs/scope"
+    },
     "resolution_state": {
       "type": "string",
       "enum": [
@@ -74,14 +100,24 @@
     "source_refs": {
       "type": "array",
       "minItems": 1,
-      "items": {"$ref": "#/$defs/source_ref"}
+      "items": {
+        "$ref": "#/$defs/source_ref"
+      }
     },
-    "notes": {"type": ["string", "null"]}
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
   },
   "$defs": {
     "subject_ref": {
       "type": "object",
-      "required": ["kind", "identifier"],
+      "required": [
+        "kind",
+        "identifier"
+      ],
       "properties": {
         "kind": {
           "type": "string",
@@ -94,135 +130,265 @@
             "ENTITY_INSTANCE"
           ]
         },
-        "identifier": {"type": "string"},
-        "locator": {"type": ["string", "null"]}
+        "identifier": {
+          "type": "string"
+        },
+        "locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       },
       "additionalProperties": false
     },
     "trigger": {
       "oneOf": [
-        {"$ref": "#/$defs/absolute_date_trigger"},
-        {"$ref": "#/$defs/absolute_instant_trigger"},
-        {"$ref": "#/$defs/relative_event_trigger"}
+        {
+          "$ref": "#/$defs/absolute_date_trigger"
+        },
+        {
+          "$ref": "#/$defs/absolute_instant_trigger"
+        },
+        {
+          "$ref": "#/$defs/relative_event_trigger"
+        }
       ]
     },
     "absolute_date_trigger": {
       "type": "object",
-      "required": ["kind", "date"],
+      "required": [
+        "kind",
+        "date"
+      ],
       "properties": {
-        "kind": {"const": "ABSOLUTE_DATE"},
-        "date": {"type": "string", "format": "date"},
-        "source_expression": {"type": ["string", "null"]}
+        "kind": {
+          "const": "ABSOLUTE_DATE"
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "source_expression": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       },
       "additionalProperties": false
     },
     "absolute_instant_trigger": {
       "type": "object",
-      "required": ["kind", "instant"],
+      "required": [
+        "kind",
+        "instant"
+      ],
       "properties": {
-        "kind": {"const": "ABSOLUTE_INSTANT"},
-        "instant": {"type": "string", "format": "date-time"},
-        "source_expression": {"type": ["string", "null"]}
+        "kind": {
+          "const": "ABSOLUTE_INSTANT"
+        },
+        "instant": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "(?:Z|[+-][0-9]{2}:[0-9]{2})$"
+        },
+        "source_expression": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       },
       "additionalProperties": false
     },
     "relative_event_trigger": {
       "type": "object",
-      "required": ["kind", "event_key", "offset"],
+      "required": [
+        "kind",
+        "event_key",
+        "offset"
+      ],
       "properties": {
-        "kind": {"const": "RELATIVE_EVENT"},
-        "event_key": {"type": "string", "minLength": 1},
+        "kind": {
+          "const": "RELATIVE_EVENT"
+        },
+        "event_key": {
+          "type": "string",
+          "minLength": 1
+        },
         "event_binding": {
           "type": "string",
-          "enum": ["SUBJECT", "QUERY_ENTITY", "EXTERNAL_CONTEXT"]
-        },
-        "offset": {"$ref": "#/$defs/offset"},
-        "guard": {
-          "oneOf": [
-            {"$ref": "#/$defs/date_guard"},
-            {"$ref": "#/$defs/instant_guard"},
-            {"type": "null"}
+          "enum": [
+            "SUBJECT",
+            "QUERY_ENTITY",
+            "EXTERNAL_CONTEXT"
           ]
         },
-        "source_expression": {"type": ["string", "null"]}
+        "offset": {
+          "$ref": "#/$defs/offset"
+        },
+        "guard": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/date_guard"
+            },
+            {
+              "$ref": "#/$defs/instant_guard"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "source_expression": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       },
       "additionalProperties": false
     },
     "offset": {
       "type": "object",
-      "required": ["value", "unit"],
+      "required": [
+        "value",
+        "unit"
+      ],
       "properties": {
-        "value": {"type": "integer"},
+        "value": {
+          "type": "integer"
+        },
         "unit": {
           "type": "string",
-          "enum": ["MINUTES", "HOURS", "DAYS", "MONTHS", "YEARS"]
+          "enum": [
+            "MINUTES",
+            "HOURS",
+            "DAYS",
+            "MONTHS",
+            "YEARS"
+          ]
         }
       },
       "additionalProperties": false
     },
     "date_guard": {
       "type": "object",
-      "required": ["precision", "operator", "date"],
+      "required": [
+        "precision",
+        "operator",
+        "date"
+      ],
       "properties": {
-        "precision": {"const": "DATE"},
+        "precision": {
+          "const": "DATE"
+        },
         "operator": {
           "type": "string",
-          "enum": ["BEFORE", "ON_OR_BEFORE", "AFTER", "ON_OR_AFTER"]
+          "enum": [
+            "BEFORE",
+            "ON_OR_BEFORE",
+            "AFTER",
+            "ON_OR_AFTER"
+          ]
         },
-        "date": {"type": "string", "format": "date"}
+        "date": {
+          "type": "string",
+          "format": "date"
+        }
       },
       "additionalProperties": false
     },
     "instant_guard": {
       "type": "object",
-      "required": ["precision", "operator", "instant"],
+      "required": [
+        "precision",
+        "operator",
+        "instant"
+      ],
       "properties": {
-        "precision": {"const": "INSTANT"},
+        "precision": {
+          "const": "INSTANT"
+        },
         "operator": {
           "type": "string",
-          "enum": ["BEFORE", "ON_OR_BEFORE", "AFTER", "ON_OR_AFTER"]
+          "enum": [
+            "BEFORE",
+            "ON_OR_BEFORE",
+            "AFTER",
+            "ON_OR_AFTER"
+          ]
         },
-        "instant": {"type": "string", "format": "date-time"}
+        "instant": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "(?:Z|[+-][0-9]{2}:[0-9]{2})$"
+        }
       },
       "additionalProperties": false
     },
     "scope": {
       "type": "object",
-      "required": ["mode", "applies_to", "overrides_assertion_ids"],
+      "required": [
+        "mode",
+        "applies_to",
+        "overrides_assertion_ids"
+      ],
       "properties": {
         "mode": {
           "type": "string",
-          "enum": ["DEFAULT", "OVERRIDE", "CONDITIONAL_OVERRIDE"]
+          "enum": [
+            "DEFAULT",
+            "OVERRIDE",
+            "CONDITIONAL_OVERRIDE"
+          ]
         },
         "applies_to": {
           "type": "array",
           "minItems": 1,
           "uniqueItems": true,
-          "items": {"type": "string"}
+          "items": {
+            "type": "string"
+          }
         },
         "overrides_assertion_ids": {
           "type": "array",
           "uniqueItems": true,
-          "items": {"type": "string"}
+          "items": {
+            "type": "string"
+          }
         },
         "entity_condition": {
           "oneOf": [
             {
               "type": "object",
-              "required": ["attribute", "operator", "values"],
+              "required": [
+                "attribute",
+                "operator",
+                "values"
+              ],
               "properties": {
-                "attribute": {"type": "string"},
-                "operator": {"const": "IN"},
+                "attribute": {
+                  "type": "string"
+                },
+                "operator": {
+                  "const": "IN"
+                },
                 "values": {
                   "type": "array",
                   "minItems": 1,
                   "uniqueItems": true,
-                  "items": {"type": "string"}
+                  "items": {
+                    "type": "string"
+                  }
                 }
               },
               "additionalProperties": false
             },
-            {"type": "null"}
+            {
+              "type": "null"
+            }
           ]
         }
       },
@@ -230,7 +396,11 @@
     },
     "source_ref": {
       "type": "object",
-      "required": ["source_type", "identifier", "role"],
+      "required": [
+        "source_type",
+        "identifier",
+        "role"
+      ],
       "properties": {
         "source_type": {
           "type": "string",
@@ -244,9 +414,21 @@
             "OTHER_OFFICIAL"
           ]
         },
-        "identifier": {"type": "string"},
-        "locator": {"type": ["string", "null"]},
-        "language": {"type": ["string", "null"]},
+        "identifier": {
+          "type": "string"
+        },
+        "locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "language": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "role": {
           "type": "string",
           "enum": [
@@ -263,28 +445,56 @@
   },
   "allOf": [
     {
-      "if": {"properties": {"precision": {"const": "DATE"}}},
+      "if": {
+        "properties": {
+          "precision": {
+            "const": "DATE"
+          }
+        }
+      },
       "then": {
         "properties": {
-          "normalized_instant": {"type": "null"},
+          "normalized_instant": {
+            "type": "null"
+          },
           "trigger": {
             "not": {
-              "properties": {"kind": {"const": "ABSOLUTE_INSTANT"}},
-              "required": ["kind"]
+              "properties": {
+                "kind": {
+                  "const": "ABSOLUTE_INSTANT"
+                }
+              },
+              "required": [
+                "kind"
+              ]
             }
           }
         }
       }
     },
     {
-      "if": {"properties": {"precision": {"const": "INSTANT"}}},
+      "if": {
+        "properties": {
+          "precision": {
+            "const": "INSTANT"
+          }
+        }
+      },
       "then": {
         "properties": {
-          "normalized_date": {"type": "null"},
+          "normalized_date": {
+            "type": "null"
+          },
           "trigger": {
             "not": {
-              "properties": {"kind": {"const": "ABSOLUTE_DATE"}},
-              "required": ["kind"]
+              "properties": {
+                "kind": {
+                  "const": "ABSOLUTE_DATE"
+                }
+              },
+              "required": [
+                "kind"
+              ]
             }
           }
         }
@@ -293,44 +503,80 @@
     {
       "if": {
         "properties": {
-          "precision": {"const": "DATE"},
+          "precision": {
+            "const": "DATE"
+          },
           "resolution_state": {
-            "enum": ["RESOLVED_ABSOLUTE", "RESOLVED_RELATIVE"]
+            "enum": [
+              "RESOLVED_ABSOLUTE",
+              "RESOLVED_RELATIVE"
+            ]
           }
         },
-        "required": ["precision", "resolution_state"]
+        "required": [
+          "precision",
+          "resolution_state"
+        ]
       },
       "then": {
-        "required": ["normalized_date"],
-        "properties": {"normalized_date": {"type": "string"}}
+        "required": [
+          "normalized_date"
+        ],
+        "properties": {
+          "normalized_date": {
+            "type": "string"
+          }
+        }
       }
     },
     {
       "if": {
         "properties": {
-          "precision": {"const": "INSTANT"},
+          "precision": {
+            "const": "INSTANT"
+          },
           "resolution_state": {
-            "enum": ["RESOLVED_ABSOLUTE", "RESOLVED_RELATIVE"]
+            "enum": [
+              "RESOLVED_ABSOLUTE",
+              "RESOLVED_RELATIVE"
+            ]
           }
         },
-        "required": ["precision", "resolution_state"]
+        "required": [
+          "precision",
+          "resolution_state"
+        ]
       },
       "then": {
-        "required": ["normalized_instant"],
-        "properties": {"normalized_instant": {"type": "string"}}
+        "required": [
+          "normalized_instant"
+        ],
+        "properties": {
+          "normalized_instant": {
+            "type": "string"
+          }
+        }
       }
     },
     {
       "if": {
         "properties": {
-          "scope": {"properties": {"mode": {"const": "DEFAULT"}}}
+          "scope": {
+            "properties": {
+              "mode": {
+                "const": "DEFAULT"
+              }
+            }
+          }
         }
       },
       "then": {
         "properties": {
           "scope": {
             "properties": {
-              "overrides_assertion_ids": {"maxItems": 0}
+              "overrides_assertion_ids": {
+                "maxItems": 0
+              }
             }
           }
         }

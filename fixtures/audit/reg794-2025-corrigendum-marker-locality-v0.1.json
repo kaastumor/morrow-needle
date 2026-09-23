@@ -1,0 +1,70 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "reg794-2025-corrigendum-marker-locality-v0.1",
+  "consolidated_work": "CELEX:02004R0794-20250813",
+  "question": "Can EUR-Lex consolidated correction markers such as C4 be used as cross-language corrigendum identities?",
+  "observations": [
+    {
+      "language": "ENG",
+      "marker": "C4",
+      "corrigendum_identifier": "CELEX:32025R0905R(01)",
+      "corrigendum_oj": "OJ L 90591, 17.7.2026, p. 1",
+      "source_uri": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:02004R0794-20250813"
+    },
+    {
+      "language": "FRA",
+      "marker": "C6",
+      "corrigendum_identifier": "CELEX:32025R0905R(01)",
+      "corrigendum_oj": "OJ L 90591, 17.7.2026, p. 1",
+      "source_uri": "https://eur-lex.europa.eu/legal-content/FR/ALL/?uri=CELEX:02004R0794-20250813"
+    },
+    {
+      "language": "ELL",
+      "marker": "C5",
+      "corrigendum_identifier": "CELEX:32025R0905R(01)",
+      "corrigendum_oj": "OJ L 90591, 17.7.2026, p. 1",
+      "source_uri": "https://eur-lex.europa.eu/legal-content/EL/TXT/PDF/?uri=CELEX:02004R0794-20250813"
+    },
+    {
+      "language": "SLK",
+      "marker": "C2",
+      "corrigendum_identifier": "CELEX:32025R0905R(01)",
+      "corrigendum_oj": "OJ L 90591, 17.7.2026, p. 1",
+      "source_uri": "https://eur-lex.europa.eu/eli/reg/2004/794/2025-08-13/slk/pdf"
+    },
+    {
+      "language": "ITA",
+      "marker": "C4",
+      "corrigendum_identifier": "CELEX:32025R0905R(01)",
+      "corrigendum_oj": "OJ L 90591, 17.7.2026, p. 1",
+      "source_uri": "https://eur-lex.europa.eu/legal-content/IT/TXT/PDF/?uri=CELEX:02004R0794-20250813"
+    },
+    {
+      "language": "SPA",
+      "marker": "C4",
+      "corrigendum_identifier": "CELEX:32025R0905R(01)",
+      "corrigendum_oj": "OJ L 90591, 17.7.2026, p. 1",
+      "source_uri": "https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=CELEX:02004R0794-20250813"
+    },
+    {
+      "language": "FIN",
+      "marker": "C4",
+      "corrigendum_identifier": "CORRIGENDUM:REG271-2008:2009-11-17",
+      "corrigendum_oj": "OJ L 302, 17.11.2009, p. 120 (271/2008)",
+      "source_uri": "https://eur-lex.europa.eu/legal-content/FI/TXT/?uri=CELEX:02004R0794-20250813"
+    }
+  ],
+  "finding": {
+    "disposition": "PREVENTIVE_SOURCE_REPRESENTATION_REGRESSION",
+    "marker_semantics": "EXPRESSION_LOCAL_PRESENTATION_ORDINAL",
+    "canonical_cross_expression_key": "OFFICIAL_CORRIGENDUM_IDENTITY_OR_SOURCE_RELATIONSHIP",
+    "statement": "Correction markers such as C4 are not stable cross-language identities. The same 2026 corrigendum receives different markers across expressions, and the same marker can identify a different corrigendum in another expression.",
+    "current_code_defect_observed": false
+  },
+  "forbidden_inferences": [
+    "C4 in one language identifies the same corrigendum as C4 in every other language.",
+    "Different C-labels prove different corrigenda.",
+    "A C-label alone is sufficient evidence to join corrections across expressions.",
+    "Marker numbering can replace CELEX, ELI, OJ citation, source date, or an explicit source relationship."
+  ]
+}

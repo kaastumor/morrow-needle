@@ -118,3 +118,36 @@ Official sources checked 2026-09-23:
 
 - https://eur-lex.europa.eu/legal-content/NL/ALL/?uri=OJ:L_202500905
 - https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0905R(01)
+
+
+## Representation trap — C-labels are expression-local, not corrigendum IDs
+
+Cross-language inspection of the current consolidation
+`02004R0794-20250813` exposes another source-layer trap.
+
+The same 17 July 2026 corrigendum to Regulation 2025/905 is labelled
+differently in different consolidated expressions:
+
+- English: C4;
+- French: C6;
+- Greek: C5;
+- Slovak: C2;
+- Italian: C4;
+- Spanish: C4.
+
+More strongly, the Finnish expression uses C4 for a different corrigendum from
+17 November 2009 concerning Regulation 271/2008.
+
+Therefore a C-label is an **expression-local presentation ordinal**. It is not a
+cross-language corrigendum identifier.
+
+Cross-expression reconciliation must use the underlying official corrigendum
+identity/source relationship — for example CELEX/ELI/OJ citation and date —
+rather than matching marker strings.
+
+Repository inspection found no current code path that treats C-labels as
+canonical identities, so this is a preventive source-representation regression,
+not a defect repair.
+
+Pinned regression:
+`fixtures/audit/reg794-2025-corrigendum-marker-locality-v0.1.json`.

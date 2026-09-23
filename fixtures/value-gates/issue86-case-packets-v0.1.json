@@ -1,0 +1,160 @@
+{
+  "gate_version": "0.1",
+  "issue": 86,
+  "protocol_stage": "CASE_PACKETS_FIXED_BEFORE_BASELINE",
+  "identities_under_test": [
+    "FULL_NEEDLE",
+    "NEEDLE_CORE",
+    "NEEDLE_METHOD",
+    "STRONG_BORING_BASELINE"
+  ],
+  "cases": [
+    {
+      "case_id": "ai-act-gpai-systemic-risk-threshold",
+      "domain": "AI regulation",
+      "question": "If a general-purpose AI model used more than 10^25 FLOPs for training, is it automatically and irrevocably a GPAI model with systemic risk without any further procedural possibility?",
+      "tempting_wrong_answer": "Yes. Crossing 10^25 FLOPs automatically settles the final legal classification.",
+      "source_candidates": [
+        {
+          "identifier": "CELEX:32024R1689",
+          "locator": "Articles 51-52",
+          "role": "PRIMARY_LEGAL_SOURCE"
+        },
+        {
+          "identifier": "European Commission GPAI AI Act Q&A",
+          "locator": "systemic-risk classification",
+          "role": "OFFICIAL_CONTEXT"
+        }
+      ],
+      "required_answer_elements": [
+        "distinguish the Article 51(2) presumption from the Article 52 procedure",
+        "state the provider notification obligation",
+        "preserve the exceptional substantiated-arguments route",
+        "avoid claiming irrevocability"
+      ],
+      "no_needlespecific_mapping_yet": true
+    },
+    {
+      "case_id": "easa-a380-als-mandatory-source",
+      "domain": "aviation safety",
+      "question": "For Airbus A380 ALS Part 1 Revision 14 referenced by EASA AD 2026-0154, is the Airbus document itself the legal source that makes compliance mandatory?",
+      "tempting_wrong_answer": "Yes. Airbus labels/controls the maintenance document, so the manufacturer's document itself creates the mandatory legal obligation.",
+      "source_candidates": [
+        {
+          "identifier": "EASA AD 2026-0154",
+          "locator": "publication and related information / required actions",
+          "role": "PUBLIC_LEGAL_MANDATE"
+        },
+        {
+          "identifier": "Airbus A380 ALS Part 1 Revision 14",
+          "locator": "document referenced by AD",
+          "role": "PRIVATE_TECHNICAL_DOCUMENT"
+        },
+        {
+          "identifier": "EASA FAQ 19494",
+          "locator": "Do I have to comply with a mandatory Service Bulletin?",
+          "role": "OFFICIAL_INTERPRETIVE_CONTEXT"
+        }
+      ],
+      "required_answer_elements": [
+        "separate private technical content from the EASA mandate",
+        "state what changes when an AD covers a manufacturer document",
+        "avoid treating a manufacturer's 'mandatory' label alone as public legal authority"
+      ],
+      "no_needlespecific_mapping_yet": true
+    },
+    {
+      "case_id": "schrems-ii-transfer-mechanisms",
+      "domain": "data protection / judicial review",
+      "question": "Did Schrems II make all EU-to-US personal-data transfers based on Standard Contractual Clauses automatically unlawful on 16 July 2020?",
+      "tempting_wrong_answer": "Yes. The Court invalidated the EU-US transfer framework, so SCC-based transfers were automatically invalid too.",
+      "source_candidates": [
+        {
+          "identifier": "CELEX:62018CJ0311",
+          "locator": "operative part",
+          "role": "CJEU_JUDGMENT"
+        },
+        {
+          "identifier": "CELEX:62018CJ0311_RES",
+          "locator": "official judgment summary",
+          "role": "OFFICIAL_CONTEXT"
+        }
+      ],
+      "required_answer_elements": [
+        "identify Decision 2016/1250 as invalid",
+        "identify Decision 2010/87 on SCCs as surviving validity review",
+        "preserve the separate obligation to suspend/prohibit a transfer where required protection cannot in fact be ensured",
+        "avoid collapsing all transfer mechanisms into one legal state"
+      ],
+      "no_needlespecific_mapping_yet": true
+    },
+    {
+      "case_id": "common-charger-laptop-date-control",
+      "domain": "product regulation",
+      "question": "On 1 January 2025, were laptops already required by the EU common-charger rules to provide the harmonised USB-C charging solution?",
+      "tempting_wrong_answer": "Yes. The common-charger rules applied from 28 December 2024 to all listed device categories including laptops.",
+      "source_candidates": [
+        {
+          "identifier": "CELEX:32022L2380",
+          "locator": "application provisions and Annex Ia",
+          "role": "PRIMARY_LEGAL_SOURCE"
+        },
+        {
+          "identifier": "CELEX:52024XC02997",
+          "locator": "Commission common-charger guidance",
+          "role": "OFFICIAL_CONTEXT"
+        },
+        {
+          "identifier": "COM(2026) 329 final",
+          "locator": "current Commission report",
+          "role": "CURRENT_OFFICIAL_CONFIRMATION"
+        }
+      ],
+      "required_answer_elements": [
+        "state 28 December 2024 for the non-laptop listed categories",
+        "state 28 April 2026 for laptops",
+        "preserve the wired-charging condition",
+        "do not invent extra machinery for a straightforward date/scope question"
+      ],
+      "control_case": true,
+      "no_needlespecific_mapping_yet": true
+    },
+    {
+      "case_id": "ai-act-dutch-recital19-pre-corrigendum",
+      "domain": "multilingual source state / historical provenance",
+      "question": "What did the authentic Dutch publication of AI Act recital 19 say about online spaces before 19 December 2025, and may a current corrected/consolidated text be used by itself to answer that historical-source-state question?",
+      "tempting_wrong_answer": "The Dutch text has always said online spaces are outside scope because the current corrected text says so.",
+      "source_candidates": [
+        {
+          "identifier": "CELEX:32024R1689R(02)",
+          "locator": "Dutch corrigendum published 19 December 2025",
+          "role": "CORRECTION_EVENT"
+        },
+        {
+          "identifier": "ELI reg/2024/1689/oj/nld",
+          "locator": "Dutch authentic publication / recital 19",
+          "role": "LANGUAGE_EXPRESSION"
+        },
+        {
+          "identifier": "CELEX:02024R1689-20240712",
+          "locator": "Dutch consolidated text and version metadata",
+          "role": "CONSOLIDATED_CONTEXT"
+        }
+      ],
+      "required_answer_elements": [
+        "state the pre-corrigendum wording documented by the corrigendum",
+        "state the corrected wording",
+        "distinguish historical authentic source state from current corrected/consolidated representation",
+        "do not infer the historical wording from current text alone"
+      ],
+      "no_needlespecific_mapping_yet": true
+    }
+  ],
+  "gate_guardrails": [
+    "No new canonical schema during case-packet or baseline stages.",
+    "Baseline answers must be written before Needle-specific contract mapping.",
+    "The control case is allowed to show no Needle advantage.",
+    "Full Needle does not receive credit for merely having a matching schema name.",
+    "Any claimed unique value must identify a consequential error prevented, reproducibility gain, or query capability impractical for the smaller identity."
+  ]
+}

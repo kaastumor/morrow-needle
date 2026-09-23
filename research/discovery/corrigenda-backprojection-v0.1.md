@@ -79,3 +79,42 @@ Official sources checked 2026-09-23:
 - https://eur-lex.europa.eu/eli/reg_impl/2025/905/oj/eng
 - https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0905R(01)
 - https://eur-lex.europa.eu/eli/reg/2004/794
+
+
+## Language asymmetry follow-up — Dutch was not corrected by the 2026 event
+
+The 17 July 2026 corrigendum to Implementing Regulation 2025/905 is officially
+published for:
+
+BG, ES, DA, DE, EL, EN, FR, GA, HR, IT, LV, MT, RO and SK.
+
+Dutch is not listed.
+
+The authentic Dutch 2025/905 publication nevertheless already replaces
+Regulation 794/2004 Article 4(1) with wording containing
+`bestaande steunregeling` (“existing aid scheme”), while the authentic English
+2025 text used “existing aid” and the 2026 English corrigendum changes that to
+“existing aid scheme”.
+
+This produces a useful three-part distinction:
+
+1. **ENG:** the 2026 corrigendum directly evidences a textual mutation.
+2. **NLD:** the corrigendum contributes **NO_ASSERTION** because Dutch is not in
+   its official expression scope.
+3. **Independent NLD source state:** the authentic Dutch 2025 publication
+   already evidences the scheme concept before the 2026 corrigendum.
+
+The third fact does not convert the second into a Dutch corrigendum event, and it
+does not establish unrestricted cross-language semantic equivalence.
+
+This is a confirmation of the frozen P0-F expression-scope contract with a
+stronger multilingual asymmetry: different expressions can arrive at similar
+legal concepts through different textual histories.
+
+Pinned regression:
+`fixtures/audit/reg2025-905-corrigendum-nonlisted-nld-v0.1.json`.
+
+Official sources checked 2026-09-23:
+
+- https://eur-lex.europa.eu/legal-content/NL/ALL/?uri=OJ:L_202500905
+- https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0905R(01)

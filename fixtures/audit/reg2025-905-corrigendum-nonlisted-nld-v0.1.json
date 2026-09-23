@@ -1,0 +1,99 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "reg2025-905-corrigendum-nonlisted-nld-v0.1",
+  "target_act": "CELEX:32004R0794",
+  "amending_act": "CELEX:32025R0905",
+  "language_scoped_event": {
+    "event_id": "corr-2026-07-17-reg2025-905-article4p1",
+    "event_kind": "CORRIGENDUM",
+    "source_document": {
+      "identifier": "CELEX:32025R0905R(01)",
+      "eli": "http://data.europa.eu/eli/reg_impl/2025/905/corrigendum/2026-07-17/oj",
+      "document_type": "CORRIGENDUM"
+    },
+    "target_act": "CELEX:32004R0794",
+    "event_date": "2026-07-17",
+    "expression_scope": {
+      "basis": "OFFICIAL_OJ_LANGUAGE_LIST",
+      "languages": [
+        "BUL",
+        "SPA",
+        "DAN",
+        "DEU",
+        "ELL",
+        "ENG",
+        "FRA",
+        "GLE",
+        "HRV",
+        "ITA",
+        "LAV",
+        "MLT",
+        "RON",
+        "SLK"
+      ],
+      "nonlisted_semantics": "NO_ASSERTION"
+    },
+    "operations": [
+      {
+        "operation_id": "reg2025-905-corr-article4p1-existing-aid-scheme",
+        "operation_type": "REPLACE",
+        "target_kind": "ACT_TEXT",
+        "target_locator": "Article 4(1), second sentence",
+        "before_text": "However an increase in the original budget of an existing aid that is authorised or deemed compatible under Regulation (EU) No 651/2014 by up to 20 % shall not be considered an alteration to existing aid.",
+        "after_text": "However an increase in the original budget of an existing aid scheme that is authorised or deemed compatible under Regulation (EU) No 651/2014 by up to 20 % shall not be considered an alteration to existing aid.",
+        "resulting_act_locator": "Regulation (EC) No 794/2004 Article 4(1), second sentence",
+        "notes": "English wording shown because ENG is one of the official corrigendum expressions; operation must not be globalized to non-listed languages."
+      }
+    ],
+    "evidence_state": "DIRECT",
+    "source_refs": [
+      {
+        "source_type": "EUR_LEX",
+        "identifier": "CELEX:32025R0905R(01)",
+        "locator": "Official corrigendum language list",
+        "language": null,
+        "role": "LANGUAGE_SCOPE"
+      },
+      {
+        "source_type": "OJ",
+        "identifier": "CELEX:32025R0905R(01)",
+        "locator": "Article 1(4)(b) correction to Article 4(1), second sentence",
+        "language": "ENG",
+        "role": "MUTATION_TEXT"
+      }
+    ],
+    "notes": "Dutch (NLD) is not listed by the corrigendum. Under the frozen P0-F contract that is NO_ASSERTION from this event, not evidence of a Dutch mutation or non-mutation."
+  },
+  "independent_expression_observations": [
+    {
+      "observation_id": "original-2025-905-eng",
+      "language": "ENG",
+      "source_character": "AUTHENTIC_AMENDING_ACT_AS_PUBLISHED",
+      "source_uri": "https://eur-lex.europa.eu/eli/reg_impl/2025/905/oj/eng",
+      "observed_text": "However an increase in the original budget of an existing aid that is authorised or deemed compatible under Regulation (EU) No 651/2014 by up to 20 % shall not be considered an alteration to existing aid.",
+      "concept_marker": "EXISTING_AID_WITHOUT_SCHEME_NOUN"
+    },
+    {
+      "observation_id": "original-2025-905-nld",
+      "language": "NLD",
+      "source_character": "AUTHENTIC_AMENDING_ACT_AS_PUBLISHED",
+      "source_uri": "https://eur-lex.europa.eu/legal-content/NL/ALL/?uri=OJ:L_202500905",
+      "observed_text": "Een verhoging met maximaal 20 procent van de oorspronkelijke middelen van een bestaande steunregeling die is goedgekeurd of in het kader van Verordening (EU) nr. 651/2014 verenigbaar is verklaard, wordt echter niet als een wijziging van bestaande steun beschouwd.",
+      "concept_marker": "EXISTING_AID_SCHEME_CONCEPT_PRESENT"
+    }
+  ],
+  "finding": {
+    "disposition": "CONFIRMATION_WITH_LANGUAGE_ASYMMETRY",
+    "statement": "The 2026 corrigendum creates no Dutch mutation assertion because NLD is outside its official expression scope. Independent authentic 2025 Dutch text nevertheless shows the 'existing aid scheme' concept was already present in that expression.",
+    "no_assertion_for_nld_from_corrigendum": true,
+    "independent_nld_state_observed": true,
+    "cross_language_equivalence_asserted": false
+  },
+  "forbidden_inferences": [
+    "Dutch was corrected by CELEX:32025R0905R(01).",
+    "Dutch was definitely unaffected by every correction merely because NLD is not listed.",
+    "The English textual mutation can be globalized across all language expressions.",
+    "The Dutch and English sentences are legally or semantically equivalent beyond the bounded concept observation recorded here.",
+    "A correction marker in a current consolidation, without separate language-scoped evidence, proves a Dutch textual mutation."
+  ]
+}

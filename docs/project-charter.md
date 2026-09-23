@@ -37,7 +37,10 @@ The current question is simpler:
 > findings and regressions that expose source, temporal, identity, dependency or
 > provenance traps?
 
-Issue #61 is the first bounded task in this explicit research/audit mode.
+That explicit research/audit runway is now established. Issues #61, #64, #67,
+#69 and #72-#82 demonstrated that the project can produce useful source,
+temporal, dependency, metric, finding and spatial adversaries without reviving
+the stopped public-product roadmap.
 
 ## North star
 
@@ -120,11 +123,24 @@ Especially:
 
 ## Current horizon
 
-Execute Issue #61 as the first explicit research/audit-mode case: test whether a
-2026 corrigendum is back-projected into a consolidated state labelled
-13 August 2025, and preserve the distinction between current ex-post corrected
-text and what was knowable from official source state on the nominal version
-date.
+There is **no standing implementation or product queue**.
 
-After that, choose the next research question from evidence. There is no
-standing product feature queue.
+Select the next task only from fresh official evidence, an operational anomaly,
+an unresolved canonical claim, or an explicit sponsor research question.
+
+Recent discovery work has earned several narrow canonical extensions, including
+authoritative dynamic sets, authoritative numeric observations, authoritative
+categorical findings, precision-aware temporal semantics and bounded legal
+spatial state. Their existence is not a mandate to keep expanding ontology.
+
+The current discipline is:
+
+1. start with a falsifiable legal-information question;
+2. try to represent it with existing contracts;
+3. preserve any failure before redesign;
+4. require independent evidence before generalising a new causal family;
+5. stop when the smallest safe representation is proven;
+6. prefer an idle backlog over manufactured work.
+
+The strongest current architectural risk is **ontology creep from successful
+discovery**, not lack of capability.

@@ -45,3 +45,37 @@ This is exactly the distinction preserved by the frozen temporal query perspecti
 - `fixtures/multilingual/reg794-2004-corrigenda-language-scope-v0.1.json`
 - `fixtures/multilingual/reg794-2004-consolidation-backprojection-v0.1.json`
 - `tests/test_multilingual_corrigenda.py`
+
+
+## Independent confirmation — Regulation 2025/905 corrigendum (2026)
+
+A second, temporally distant case now confirms the same source-state trap.
+
+For Regulation (EC) No 794/2004 Article 4(1):
+
+1. authentic Implementing Regulation (EU) 2025/905, published 13 June 2025,
+   printed “existing aid that is authorised…”;
+2. corrigendum `32025R0905R(01)`, published 17 July 2026, explicitly replaces
+   that wording with “existing aid scheme that is authorised…”;
+3. the currently served EUR-Lex consolidation labelled
+   `02004R0794-20250813` displays the corrected “aid scheme” wording and marks
+   the sentence with correction marker C4.
+
+The current consolidation is therefore a valid witness for an **ex-post
+corrected historical text state**, but its 13 August 2025 label is not proof
+that the corrected wording was available from official sources on that date.
+
+This does not add a new semantic rule. It independently confirms the frozen
+P0-F invariant established by the 2004/2005 back-projection case:
+
+> consolidated text-state date, corrigendum publication/source-availability
+> date, and observation date are separate clocks.
+
+Pinned regression:
+`fixtures/audit/reg794-2025-corrigendum-backprojection-v0.1.json`.
+
+Official sources checked 2026-09-23:
+
+- https://eur-lex.europa.eu/eli/reg_impl/2025/905/oj/eng
+- https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0905R(01)
+- https://eur-lex.europa.eu/eli/reg/2004/794

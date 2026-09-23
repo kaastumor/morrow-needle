@@ -70,12 +70,13 @@ def observation(record_id):
     )
 
 
-def test_live_state_and_embedded_provenance_validate_without_freezing_cache_size():
-    """The checked-in pilot state is mutable operational cache, not a fixture.
+def test_frozen_pilot_state_and_embedded_provenance_validate():
+    """The checked-in pilot state is a frozen historical operational snapshot.
 
-    Monitor cycles are expected to add baselines and immutable observations. Tests
-    therefore validate invariants rather than pinning counts or historical record
-    ids that a successful production run is designed to change.
+    Issue #84 stopped scheduled promotion to Git. The snapshot remains because it
+    contains hash-verified Source Observations that have not yet been migrated to
+    a separate durable ledger. Tests validate its integrity without treating its
+    historical counts as a canonical domain contract.
     """
     assert list(
         Draft202012Validator(STATE_SCHEMA).iter_errors(STATE)

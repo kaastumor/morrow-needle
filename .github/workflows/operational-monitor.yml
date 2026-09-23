@@ -1,48 +1,31 @@
-name: Operational Needle monitor
+name: Operational Needle monitor — frozen pilot
 
+# Issue #84 retired the scheduled Git-backed monitor after the public-product
+# horizon was stopped. The checked-in state remains historical evidence and a
+# regression input. A live cycle is now an explicit diagnostic action and never
+# promotes generated state back to main.
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - "scripts/run_operational_monitor_once.py"
-      - "src/needle/operations/**"
-      - "src/needle/updates/reobserve.py"
-      - "src/needle/updates/temporal_metadata.py"
-      - "src/needle/updates/relevance.py"
-      - "schemas/operational-state-v0.1.schema.json"
-      - "schemas/operational-result-v0.1.schema.json"
-      - "schemas/feed-card-v0.1.schema.json"
-      - "tests/test_operational_state.py"
-      - "tests/test_operational_concurrency.py"
-      - "tests/test_operational_feed.py"
-      - "tests/test_operational_reobserve.py"
-      - "tests/test_operational_temporal_metadata.py"
-      - "tests/test_operational_legal_analysis.py"
-      - ".github/workflows/operational-monitor.yml"
-  schedule:
-    - cron: "17 */6 * * *"
   workflow_dispatch:
+    inputs:
+      run_live_cycle:
+        description: "Run one live feed cycle from the frozen pilot cursor (diagnostic only)"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
-  group: operational-needle-monitor-main
-  cancel-in-progress: false
+  group: operational-needle-frozen-pilot-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  monitor:
+  verify:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Start from latest completed operational state
-        run: |
-          git fetch origin main
-          git checkout -B main origin/main
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -57,60 +40,13 @@ jobs:
             tests/test_operational_reobserve.py \
             tests/test_operational_temporal_metadata.py \
             tests/test_operational_legal_analysis.py
-      - name: Process one complete feed window
+      - name: Process one live feed window
+        if: ${{ inputs.run_live_cycle }}
         run: python scripts/run_operational_monitor_once.py
-      # Do not prune Source Observations here. They are evidence, and the hot
-      # operational state is currently their only promoted durable owner. A
-      # bounded cache is desirable only after each evicted observation has
-      # first been durably appended to the canonical provenance ledger.
-      - uses: actions/upload-artifact@v4
-        if: always()
+      - name: Upload diagnostic cycle
+        if: ${{ inputs.run_live_cycle }}
+        uses: actions/upload-artifact@v4
         with:
-          name: operational-monitor-cycle
+          name: operational-monitor-diagnostic
           path: artifacts/operational-cycle/
-          if-no-files-found: warn
-      - name: Promote completed operational state
-        run: |
-          git fetch origin main
-          set +e
-          python - <<'PY'
-          import json, subprocess, sys
-          from needle.operations.promotion import promotion_decision
-          generated=json.load(open('artifacts/operational-cycle/state.json'))
-          report=json.load(open('artifacts/operational-cycle/report.json'))
-          remote=json.loads(subprocess.check_output([
-              'git','show','origin/main:data/operational-pilot-state-v0.1.json'
-          ]))
-          decision=promotion_decision(
-              remote_cursor=remote['poll_cursor']['last_completed_end'],
-              expected_cursor=report['window']['previous_completed_end'],
-              generated_cursor=generated['poll_cursor']['last_completed_end'],
-          )
-          print(f'Operational promotion decision: {decision}')
-          if decision in {'ALREADY_PROMOTED','STALE_REMOTE'}:
-              sys.exit(20)
-          if decision != 'PROMOTE':
-              sys.exit(21)
-          PY
-          rc=$?
-          set -e
-          if [ "$rc" -eq 20 ]; then
-            exit 0
-          fi
-          if [ "$rc" -ne 0 ]; then
-            exit "$rc"
-          fi
-          git reset --hard origin/main
-          cp artifacts/operational-cycle/state.json data/operational-pilot-state-v0.1.json
-          cp artifacts/operational-cycle/results.json data/operational-pilot-latest-results.json
-          cp artifacts/operational-cycle/cards.json data/operational-pilot-latest-cards.json
-          cp artifacts/operational-cycle/report.json data/operational-pilot-last-report.json
-          if git diff --quiet -- data/operational-pilot-state-v0.1.json data/operational-pilot-latest-results.json data/operational-pilot-latest-cards.json data/operational-pilot-last-report.json; then
-            echo "No operational state change."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/operational-pilot-state-v0.1.json data/operational-pilot-latest-results.json data/operational-pilot-latest-cards.json data/operational-pilot-last-report.json
-          git commit -m "Advance operational Needle pilot state"
-          git push origin HEAD:main
+          if-no-files-found: error

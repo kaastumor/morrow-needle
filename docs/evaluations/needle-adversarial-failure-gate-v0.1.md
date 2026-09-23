@@ -1,7 +1,7 @@
 # Needle adversarial failure gate v0.1 — Issue #88
 
 **Date:** 2026-09-23  
-**Status:** SEALED / PHASE A EXECUTION PENDING  
+**Status:** COMPLETE / PARITY  
 **Purpose:** determine whether Needle Method prevents consequential legal-research failures on fresh cases selected from failure mechanisms discovered before the gate.
 
 ## Why #87 is insufficient for this claim
@@ -162,3 +162,50 @@ public manifest.
 
 Do not repair Method, replace cases, or add Core before the 12 Phase-A results
 exist.
+
+
+## Phase-A result — 2026-09-23
+
+Execution integrity passed:
+
+- 12/12 requests completed;
+- six R and six M;
+- all returned `gpt-5.6-sol`;
+- high reasoning, web search, `store=false`, stateless;
+- 12 unique response IDs;
+- every successful-run `prompt_sha256` matches the exact precommitted sealed prompt packet;
+- revealed prompt and answer-key artifacts match their SHA-256 commitments.
+
+The Windows runner required a transport-only UTF-8 repair after the original
+wrapper failed at HTTP JSON parsing before any investigator response existed.
+No scientific input changed.
+
+Outcome under the pre-registered matrix:
+
+- `adv-polish-visa-backprojection`: R PASS / M PASS;
+- `adv-nis2-italian-heading`: R PASS / M PASS;
+- `adv-chatgpt-vlose-applicability`: R PASS / M PASS;
+- `adv-harmonised-standard-restriction`: R PASS / M PASS;
+- `adv-ets-private-verifier`: R PASS / M PASS;
+- `adv-licence-1300-boundary`: R PASS / M PASS.
+
+No consequential baseline failure, no Method rescue, no Method regression.
+
+Therefore the gate's stop condition applies: do not invent a harder benchmark
+after seeing parity.
+
+Phase B is not run. Issue #87 already tested persistence/handoff and found no
+Core-over-Method win; #88 produced no new evidence warranting Core re-entry.
+
+Project decision:
+
+> **Shrink the default identity to Needle adversarial corpus + evaluation protocol.**
+
+Needle Method remains an optional handoff/reporting convention. Needle Core
+remains optional case-earned persistence. Full Needle remains parked.
+
+Canonical result:
+`fixtures/value-gates/issue88-phase-a-results-v0.1.json`
+
+Canonical audit:
+`docs/audits/needle-adversarial-failure-gate-2026-09-23.md`

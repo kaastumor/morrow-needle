@@ -103,7 +103,10 @@
   "execution": {
     "stage": "STAGE_1",
     "requests": 12,
-    "arms": ["R", "M"],
+    "arms": [
+      "R",
+      "M"
+    ],
     "model": "gpt-5.6-sol",
     "reasoning_effort": "high",
     "web_search": true,
@@ -146,9 +149,24 @@
       "ld2-control-shredder-250-R": "b413d290c121406276684e1779f021abf894e735bb865ba1bfe6e6bbb6e84992",
       "ld2-control-temu-oct-R": "50fd9cd3c2bea9cf1db3c024ee747fa614de37cc0d3f7a39517967271d211d5e",
       "ld2-shredder-320-M": "a549dd287f34ab2fff0cecee5553e72ab945029af2f5b5bfc90ed5d9418745c7"
+    },
+    "external_runner": {
+      "package_filename": "issue97-v02-windows-oneclick-stage1.zip",
+      "package_sha256": "78cc3f9ebe02562e35adc68e62f7547d7ee8082366a1e8dd4b14431e610c0f17",
+      "runner_script_sha256": "bc5d92b979ad1533ce97e46aee1fa6d5ffe2de11d59ae47f1bb43dad3d699c12",
+      "contains_exact_prompt_packet": true,
+      "contains_answer_key": false,
+      "pre_execution_verification": "--verify-only passed locally; exact packet hash and 12 prompt hashes verified; zero API requests made",
+      "stage1_only": true,
+      "confirmation_runner_included": false
     }
   },
-  "common_output_schema": ["CONCLUSION", "REASONING", "DECISIVE SOURCES", "UNCERTAINTY / LIMITS"],
+  "common_output_schema": [
+    "CONCLUSION",
+    "REASONING",
+    "DECISIVE SOURCES",
+    "UNCERTAINTY / LIMITS"
+  ],
   "stage_1_stop_rule": "If all four adversarial pairs are R-pass/M-pass and both matched controls are calibrated parity, stop after 12 calls; H-15 is not demonstrated.",
   "discordance_confirmation_rule": "Every Stage-1 discordant case must receive two additional independent R/M pairs under the exact same frozen prompt/instructions. Confirmed arm outcome is majority of its three responses. A single discordant pair cannot change project interpretation.",
   "blinded_grading_rule": "Grade per-case outputs against the frozen rubric under opaque A/B labels before revealing arm mapping. Style and verbosity are not scored.",

@@ -1,0 +1,109 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "vehicle-co2-bugatti-authoritative-metric-v0.1",
+  "question": "Can an entity-specific official performance determination become the numeric input to a fixed statutory penalty formula without any mutation of that formula?",
+  "governing_rule": {
+    "act_id": "CELEX:32019R0631",
+    "provision": "Article 8",
+    "textual_mutation_at_metric_event": null,
+    "trigger": "manufacturer average specific emissions of CO2 exceed the specific emissions target",
+    "formula": "(excess emissions × EUR 95) × number of newly registered vehicles"
+  },
+  "official_metric_observation": {
+    "source_id": "CELEX:32024D0865",
+    "source_title": "Commission Implementing Decision (EU) 2024/865",
+    "reference_period": "2022",
+    "subject": {
+      "type": "MANUFACTURER",
+      "name": "BUGATTI AUTOMOBILES SAS"
+    },
+    "metrics": [
+      {
+        "metric_name": "number of newly registered passenger cars",
+        "value": 8,
+        "unit": "vehicles"
+      },
+      {
+        "metric_name": "average specific emissions of CO2",
+        "value": 561.375,
+        "unit": "g CO2/km"
+      },
+      {
+        "metric_name": "specific emissions target",
+        "value": 112.629,
+        "unit": "g CO2/km"
+      },
+      {
+        "metric_name": "distance to target",
+        "value": 448.746,
+        "unit": "g CO2/km"
+      }
+    ],
+    "authority_character": "OFFICIAL_DETERMINED_PERFORMANCE"
+  },
+  "rule_evaluation": {
+    "predicate": "distance_to_target > 0",
+    "predicate_result": true,
+    "official_context": "Decision (EU) 2024/865 recital 10 states that one passenger-car manufacturer has a positive distance to target and an excess emissions premium is therefore to be imposed.",
+    "formula": "distance_to_target × 95 × registrations",
+    "inputs": {
+      "distance_to_target": 448.746,
+      "eur_per_g_km": 95,
+      "registrations": 8
+    },
+    "derived_result": {
+      "value": 341046.96,
+      "unit": "EUR",
+      "evidence_state": "DERIVED_FROM_OFFICIAL_METRICS_AND_BINDING_FORMULA"
+    }
+  },
+  "comparison_to_tnac": {
+    "shared_shape": [
+      "unchanged governing rule",
+      "officially determined numeric input",
+      "numeric predicate or band evaluation",
+      "binding deterministic formula",
+      "derived legal consequence",
+      "source metric and rule evaluation remain independently auditable"
+    ],
+    "differences": {
+      "tnac": "system-wide annual computed indicator published by Commission Communication",
+      "vehicle_co2": "entity-specific manufacturer performance values published by Commission Implementing Decision"
+    },
+    "result": "AUTHORITATIVE_METRIC_PATTERN_CONFIRMED_ACROSS_DOMAINS"
+  },
+  "architecture_probe": {
+    "required_direct_object": "AUTHORITATIVE_METRIC_OBSERVATION",
+    "required_derived_object": "METRIC_RULE_EVALUATION",
+    "reason_for_separation": "The same official metric observation may be evaluated under a later amended rule, and the same fixed rule may produce different outputs from future observations.",
+    "dynamic_set_fit": "FAILS_CAUSAL_SHAPE",
+    "temporal_fit": "DATES_ONLY",
+    "change_atom_fit": "FAILS_TEXTUAL_MUTATION_CAUSE_REQUIREMENT",
+    "decision": "TWO_ORTHOGONAL_CASES_NOW_JUSTIFY_A_NARROW_METRIC_CAUSAL_CONTRACT"
+  },
+  "forbidden_inferences": [
+    "Regulation (EU) 2019/631 Article 8 was amended by Decision (EU) 2024/865.",
+    "Bugatti's performance values are set-membership states.",
+    "The derived EUR 341046.96 figure is directly printed in Decision (EU) 2024/865.",
+    "A positive individual manufacturer distance to target implies a premium where compliance is assessed only at pool level.",
+    "Metric observation and rule evaluation should be collapsed into one mutable fact."
+  ],
+  "official_sources": [
+    {
+      "identifier": "CELEX:32019R0631",
+      "locator": "Article 8",
+      "role": "TRIGGER_AND_PREMIUM_FORMULA"
+    },
+    {
+      "identifier": "CELEX:32024D0865",
+      "locator": "Recital 10",
+      "role": "OFFICIAL_POSITIVE_DISTANCE_PREMIUM_CONTEXT"
+    },
+    {
+      "identifier": "CELEX:32024D0865",
+      "locator": "Annex I Table 1, BUGATTI AUTOMOBILES SAS",
+      "role": "OFFICIAL_METRIC_VALUES"
+    }
+  ],
+  "status": "SECOND_ORTHOGONAL_CASE_CONFIRMS_ARCHITECTURE_PATTERN"
+}

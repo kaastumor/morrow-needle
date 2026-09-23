@@ -39,6 +39,7 @@ def validate(data: dict, repo_root: Path) -> None:
         _fail("case_count does not match cases length")
 
     seen_ids: set[str] = set()
+    used_trap_classes: set[str] = set()
 
     for position, case in enumerate(cases):
         label = f"cases[{position}]"
@@ -71,6 +72,7 @@ def validate(data: dict, repo_root: Path) -> None:
         unknown = sorted(set(classes) - set(trap_classes))
         if unknown:
             _fail(f"{case_id}: unknown trap classes: {', '.join(unknown)}")
+        used_trap_classes.update(classes)
 
         provenance = case["provenance"]
         if provenance.get("role") not in ROLE_VALUES:
@@ -122,6 +124,12 @@ def validate(data: dict, repo_root: Path) -> None:
                     _fail(f"{case_id}: issue ref must be positive")
             else:
                 _fail(f"{case_id}: unsupported evidence ref kind {kind!r}")
+
+    unused_trap_classes = sorted(set(trap_classes) - used_trap_classes)
+    if unused_trap_classes:
+        _fail(
+            "trap classes without cases: " + ", ".join(unused_trap_classes)
+        )
 
 
 def main() -> int:

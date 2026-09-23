@@ -30,30 +30,46 @@ Record **2.a** contains:
 The record also says OPEN A1/A2 operations are allowed only up to 30 m AGL and
 A3 is not allowed.
 
-That last rule is important because it proves two vertical facts must not be
-collapsed:
+That proves two vertical facts must not be collapsed:
 
 1. the **published zone volume** is 0–120 m AGL;
-2. an **operational condition within that volume** permits some flights only up
+2. an **operational condition inside that volume** permits some flights only up
    to 30 m AGL.
 
 Legal geometry should own the first, not absorb the second.
 
-## Case 2 — EHP25 DRAKENSTEIJN CASTLE
+## Clean conventional-airspace proof — EHP26
 
-The Dutch AIP defines EHP25 as prohibited airspace:
+The first draft used EHP25. That was intentionally replaced before architecture
+because EHP25's 0.5 NM circle would also pressure the v0.1 circle-radius unit and
+muddy the vertical-only diagnosis.
 
-- circle radius **0.5 NM**;
-- centre **521047N 0051338E**;
-- lower limit **GND**;
-- upper limit **2000 FT AMSL**;
-- active H24.
+**EHP26 ROYAL PALACES AND GOVERNMENT BUILDINGS** is cleaner:
 
-This is not a UAS-format curiosity.
+- horizontal geometry: polygon;
+- lower limit: **GND**;
+- upper limit: **2000 FT AMSL**;
+- H24 prohibited area.
 
-Conventional prohibited airspace has the same fundamental shape:
+A polygon is already a v0.1 horizontal shape.
 
-> horizontal footprint + vertical extent = legal airspace volume.
+The only missing canonical fact is its vertical legal extent.
+
+## Known flight-level proof — EHR3A
+
+The same official AIP already supplies a second vertical semantic class:
+
+**EHR3A OLDEBROEK**
+
+- horizontal geometry: polygon;
+- lower limit: **3000 FT AMSL**;
+- upper limit: **FL185**.
+
+Therefore a repair that knows only AGL/AMSL numeric heights would be knowingly
+incomplete on day one.
+
+A flight level is pressure-based aeronautical semantics. Needle may preserve the
+source value and type; it may not silently turn FL185 into a geometric altitude.
 
 ## Why v0.1 fails
 
@@ -67,7 +83,7 @@ Its geometry definitions contain no vertical extent.
 Because `additionalProperties` is false, adding an honest vertical field makes
 the object invalid.
 
-Dropping the field is worse: a 2D footprint could be read as prohibited at all
+Dropping the field is worse: a 2D footprint could be read as restricted at all
 altitudes.
 
 Storing altitude only in prose would make a legally operative boundary invisible
@@ -75,32 +91,14 @@ to validation and downstream reconstruction.
 
 ## Vertical reference is semantic
 
-The eventual repair may not flatten:
+The repair must preserve distinctions such as:
 
 - AGL;
 - AMSL;
-- MSL;
-- flight levels;
-- GND/surface;
-- unlimited upper boundaries
+- surface/GND;
+- flight level.
 
-into one generic numeric height.
-
-For example:
-
-`120 m AGL`
-
-and
-
-`2000 ft AMSL`
-
-do not become comparable merely because both can be expressed with numbers and
-units.
-
-No terrain model, atmospheric model or datum conversion is justified by these
-two cases.
-
-The contract should preserve source reference semantics first.
+No terrain model, pressure model or datum conversion is justified.
 
 ## Ownership boundaries retained
 
@@ -115,10 +113,12 @@ semantics; they are not geometry.
 
 Evolve only Legal Spatial State.
 
-The smallest viable change is an **optional vertical extent** attached to the
-existing horizontal geometry.
+The smallest viable change is a required v0.2
+`vertical_extent` field that may be null for legacy 2D legal geometry and may
+otherwise preserve typed lower/upper vertical boundaries.
 
-Existing HPAI/fishery 2D objects must remain valid or mechanically upgradeable.
+Existing HPAI/fishery objects should upgrade mechanically by setting
+`vertical_extent: null`.
 
-No 3D GIS engine, volume intersection, terrain conversion or flight-level
-conversion is justified.
+No 3D GIS engine, volume intersection, terrain conversion, pressure-altitude
+conversion or flight-level conversion is justified.

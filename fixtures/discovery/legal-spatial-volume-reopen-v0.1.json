@@ -1,5 +1,5 @@
 {
-  "fixture_version": "0.1",
+  "fixture_version": "0.2",
   "case_id": "legal-spatial-volume-reopen-v0.1",
   "question": "Can Legal Spatial State v0.1 represent official legal airspace whose extent is defined horizontally and vertically?",
   "cases": [
@@ -44,12 +44,14 @@
       },
       "vertical_extent": {
         "lower": {
+          "boundary_character": "ALTITUDE",
           "value": 0,
           "unit": "M",
           "reference": "AGL",
           "source_expression": "lowerLimit 0 M AGL"
         },
         "upper": {
+          "boundary_character": "ALTITUDE",
           "value": 120,
           "unit": "M",
           "reference": "AGL",
@@ -63,32 +65,25 @@
       }
     },
     {
-      "case_id": "nl-ehp25-drakensteijn-castle",
+      "case_id": "nl-ehp26-royal-palaces-government-buildings",
       "source_character": "OFFICIAL_AIP_PROHIBITED_AIRSPACE",
-      "legal_basis": {
-        "identifier": "Dutch eAIP ENR 5.1",
-        "locator": "Prohibited areas / EHP25 DRAKENSTEIJN CASTLE",
-        "statement": "A prohibited area is airspace of defined dimensions within which flight of aircraft is prohibited."
-      },
       "official_source": {
-        "identifier": "EHP25",
-        "name": "DRAKENSTEIJN CASTLE",
+        "identifier": "EHP26",
+        "name": "ROYAL PALACES AND GOVERNMENT BUILDINGS",
         "activity": "H24",
         "restriction": "PROHIBITED"
       },
       "horizontal_extent": {
-        "geometry_type": "CIRCLE",
+        "geometry_type": "POLYGON",
         "coordinate_reference_system": "WGS84",
-        "centre": {
-          "source_latitude": "521047N",
-          "source_longitude": "0051338E",
-          "latitude": 52.17972222222222,
-          "longitude": 5.227222222222222
-        },
-        "radius": {
-          "value": 0.5,
-          "unit": "NM"
-        }
+        "source_vertices": [
+          "520343N 0041820E",
+          "520625N 0042420E",
+          "520737N 0042603E",
+          "520836N 0042350E",
+          "520517N 0041627E",
+          "520343N 0041820E"
+        ]
       },
       "vertical_extent": {
         "lower": {
@@ -102,7 +97,44 @@
           "reference": "AMSL",
           "source_expression": "2000 FT AMSL"
         }
-      }
+      },
+      "isolation_value": "Horizontal POLYGON is already within the v0.1 shape vocabulary; only the vertical legal extent is unrepresentable."
+    },
+    {
+      "case_id": "nl-ehr3a-oldebroek",
+      "source_character": "OFFICIAL_AIP_RESTRICTED_AIRSPACE",
+      "official_source": {
+        "identifier": "EHR3A",
+        "name": "OLDEBROEK",
+        "restriction": "RESTRICTED_WHEN_ACTIVE"
+      },
+      "horizontal_extent": {
+        "geometry_type": "POLYGON",
+        "coordinate_reference_system": "WGS84",
+        "source_vertices": [
+          "522300N 0055000E",
+          "522130N 0055230E",
+          "522430N 0060100E",
+          "522700N 0060000E",
+          "522300N 0055000E"
+        ]
+      },
+      "vertical_extent": {
+        "lower": {
+          "boundary_character": "ALTITUDE",
+          "value": 3000,
+          "unit": "FT",
+          "reference": "AMSL",
+          "source_expression": "3000 FT AMSL"
+        },
+        "upper": {
+          "boundary_character": "FLIGHT_LEVEL",
+          "value": 185,
+          "unit": "FL",
+          "source_expression": "FL 185"
+        }
+      },
+      "guardrail": "A flight level is pressure-based aeronautical vertical semantics and must not be silently converted to geometric altitude."
     }
   ],
   "v0_1_probe": {
@@ -115,7 +147,8 @@
       "vertical lower boundary",
       "vertical upper boundary",
       "vertical datum/reference",
-      "source-preserved altitude/flight-level expression"
+      "flight-level boundary",
+      "source-preserved vertical expression"
     ],
     "result": "LEGAL_SPATIAL_STATE_V0_1_REOPEN_TRIGGERED",
     "new_schema_added_in_failure_commit": false
@@ -124,8 +157,11 @@
     "retain_horizontal_geometry": true,
     "add_optional_vertical_extent": true,
     "preserve_vertical_reference_semantics": true,
+    "support_surface_boundary": true,
+    "support_altitude_boundary": true,
+    "support_flight_level_boundary": true,
     "do_not_convert_agl_to_amsl_without_evidence": true,
-    "do_not_convert_flight_level_to_geometric_altitude_without_evidence": true,
+    "do_not_convert_flight_level_to_altitude_without_evidence": true,
     "keep_temporal_validity_in_temporal_v0_2": true,
     "keep_operational_conditions_outside_geometry": true,
     "preserve_2d_cases": true
@@ -133,6 +169,7 @@
   "forbidden_inferences": [
     "A 2D polygon or circle represents the legal airspace at every altitude.",
     "120 m AGL and 2000 ft AMSL share one interchangeable vertical datum.",
+    "FL185 can be converted to an altitude merely by attaching a length unit.",
     "The UAS zone's 30 m conditional operating ceiling is identical to its published 120 m upper spatial limit.",
     "Vertical extent belongs in Temporal because it uses the words upper and lower.",
     "A note field is sufficient canonical representation of legally operative vertical limits."

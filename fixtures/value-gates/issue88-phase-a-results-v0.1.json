@@ -1,0 +1,55 @@
+{
+  "schema_version": "issue88-phase-a-results-v0.1",
+  "issue": 88,
+  "date": "2026-09-23",
+  "status": "PHASE_A_COMPLETE",
+  "integrity": {
+    "sealed_prompts_sha256": "a8725af696f12eb286a1dec84c6e1df870a2a6ebd3409cee0db97d14f8354659",
+    "sealed_answer_key_sha256": "8c32ed2c3506b6f508a4093cba171c166b759fb3f475c4956ff84657818cfde0",
+    "sealed_artifacts_zip_sha256": "b818cb977ddd4e3759b3689d497c3f35d346ef8088a5ff30dc5d192b56549e33",
+    "uploaded_run_manifest_sha256": "a13c90bf8f6d2d01ae3ddaf5ddf051f621452d447c895b6a89bbefa008fbc869",
+    "successful_runner_zip_sha256": "4c57dc2b45e32fa4b9a47e24b52f58bc9a105d5f632d931ed0281346e7a2f5bb",
+    "precommitted_runner_zip_sha256": "d66f9a00ab18599bb77b227eb21dd8c942d2eeea2d5c8af63b638a8ef90496bc",
+    "transport_repair_note": "The precommitted runner failed at HTTP JSON parsing before any investigator response. The successful v2 wrapper changed only Windows PowerShell UTF-8 request-body transport. Exact sealed prompts and scientific execution settings were unchanged; all 12 executed prompt hashes match the sealed prompt packet.",
+    "requests": 12,
+    "unique_response_ids": 12,
+    "all_completed": true,
+    "returned_model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "web_search": true,
+    "store": false,
+    "stateless": true,
+    "prompt_hash_mismatches": 0
+  },
+  "outcomes": [
+    {"case_id":"adv-polish-visa-backprojection","failure_stratum":"source-state / ex-post back-projection","R":{"outcome":"PASS","consequential_false_claim":false,"unsupported_certainty":false,"output_sha256":"32ade72d5ffb4b34f521b39b9c7e502486adc24afce090fd49930e38d742890f"},"M":{"outcome":"PASS","consequential_false_claim":false,"unsupported_certainty":false,"output_sha256":"1317cad3c611b1e8ac9649490198cdaa8ee5f6ea313efab7975bc6920c9db44b"},"pair_class":"R_PASS_M_PASS","method_specific_value":"NOT_DEMONSTRATED_ON_THIS_CASE"},
+    {"case_id":"adv-nis2-italian-heading","failure_stratum":"language / corrigendum scope asymmetry","R":{"outcome":"PASS","consequential_false_claim":false,"unsupported_certainty":false,"output_sha256":"312b1b5d89ac6b29b3b10569f1645cca0d1d1f8d535c21c9b232557b99e6dcd5"},"M":{"outcome":"PASS","consequential_false_claim":false,"unsupported_certainty":false,"output_sha256":"f06dc9568f2bad5360353b02d2188226b717f50056ec44b3a34b8ad4302833e0"},"pair_class":"R_PASS_M_PASS","method_specific_value":"NOT_DEMONSTRATED_ON_THIS_CASE"},
+    {"case_id":"adv-chatgpt-vlose-applicability","failure_stratum":"status/set-state != legal applicability","R":{"outcome":"PASS","consequential_false_claim":false,"unsupported_certainty":false,"output_sha256":"6379f341276ba0d25e91ad4857bd253d40b7430fbfb2609923639b529e611572"},"M":{"outcome":"PASS","consequential_false_claim":false,"unsupported_certainty":false,"output_sha256":"380fb3703ef940249b641746bcd42c1d470d4383e261167cada93fc07e861939"},"pair_class":"R_PASS_M_PASS","method_specific_value":"NOT_DEMONSTRATED_ON_THIS_CASE"},
+    {"case_id":"adv-harmonised-standard-restriction","failure_stratum":"unchanged text / changed legal effect","R":{"outcome":"PASS","consequential_false_claim":false,"unsupported_certainty":false,"output_sha256":"263a8382f67729d3cc271587d16095b27a4a0512b7cb11e98f79a71ab03399a7"},"M":{"outcome":"PASS","consequential_false_claim":false,"unsupported_certainty":false,"output_sha256":"d541a9e26a41a3e3c083fe22ef98402ec588c5fdd94d9fe6e322d9a7a8852f04"},"pair_class":"R_PASS_M_PASS","method_specific_value":"NOT_DEMONSTRATED_ON_THIS_CASE"},
+    {"case_id":"adv-ets-private-verifier","failure_stratum":"source origin != legal authority/recognition","R":{"outcome":"PASS","consequential_false_claim":false,"unsupported_certainty":false,"output_sha256":"294fa8d3a568bb6defed9fabeb0598ca9028976d2d87411bb045c8e220d42990"},"M":{"outcome":"PASS","consequential_false_claim":false,"unsupported_certainty":false,"output_sha256":"0d10384e6c5c8a919802374057ed77076e2146439498a3575c1a19ce4a3dbe24"},"pair_class":"R_PASS_M_PASS","method_specific_value":"NOT_DEMONSTRATED_ON_THIS_CASE"},
+    {"case_id":"adv-licence-1300-boundary","failure_stratum":"temporal precision / boundary loss","R":{"outcome":"PASS","consequential_false_claim":false,"unsupported_certainty":false,"output_sha256":"be6d9ffca3cdd05d49218684283057381c30dc8526ed339c69200846975d9bf4"},"M":{"outcome":"PASS","consequential_false_claim":false,"unsupported_certainty":false,"output_sha256":"e0d8fad9ab84eaf8f1c6abd27cf095900b29847a6ae88b775f8781da921cbea8"},"pair_class":"R_PASS_M_PASS","method_specific_value":"NOT_DEMONSTRATED_ON_THIS_CASE"}
+  ],
+  "summary": {
+    "pair_classes": {"R_PASS_M_PASS":6,"R_FAIL_M_PASS":0,"R_FAIL_M_FAIL":0,"R_PASS_M_FAIL":0},
+    "baseline_consequential_failures": 0,
+    "method_consequential_failures": 0,
+    "method_rescues": 0,
+    "phase_b_triggered": false,
+    "phase_b_reason": "No Phase-A case demonstrated a Method correctness rescue, and inventing a new harder post-result persistence test would violate the gate's anti-tuning stop condition. Issue #87 already tested handoff persistence and found no Core-over-Method win."
+  },
+  "descriptive_usage": {
+    "R":{"input_tokens":514764,"output_tokens":38652,"reasoning_tokens":29871,"total_tokens":553416},
+    "M":{"input_tokens":616895,"output_tokens":52817,"reasoning_tokens":38539,"total_tokens":669712},
+    "note":"Usage was not a pre-registered winner metric. Web-search and cache variation prevent causal interpretation of total/input tokens. Output-token overhead is preserved descriptively only."
+  },
+  "project_decision": {
+    "H14":"REJECT",
+    "method_correctness_distinctiveness":"NOT_DEMONSTRATED",
+    "H12":"REVISE_NARROWLY",
+    "core":"REMAINS_OPTIONAL_NOT_REOPENED",
+    "default_identity":"NEEDLE_ADVERSARIAL_CORPUS_PLUS_EVALUATION_PROTOCOL",
+    "method_role":"OPTIONAL_HANDOFF_AND_REPORTING_CONVENTION",
+    "full_needle":"PARKED",
+    "new_horizon_created":false
+  }
+}

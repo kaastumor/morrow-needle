@@ -1,9 +1,10 @@
 import pytest
 
 from needle.operations.authentic_candidates import candidates_from_reobservation
+from needle.provenance.ledger import seal_record
 from needle.operations.legal_analysis import OperationalLegalAnalysisError, analyze_operational_legal, apply_operational_recency_gate, collapse_evidence_candidates, derive_feed_event_relevance, derive_operational_relevance, derive_publication_recency_from_reobservation, should_attempt_legal_analysis
 
-EVENT={"event_key":"evt-1","action":"UPDATE"}; CHANGE={"event_key":"evt-1","change_id":"chg-1","classification":"UNRESOLVED"}
+EVENT={"event_key":"evt-1","action":"UPDATE","identifiers":["celex:32026R2104"]}; CHANGE={"event_key":"evt-1","change_id":"chg-1","classification":"UNRESOLVED"}
 EXPLANATION={"what_changed":"An authentic act inserts two rows.","compared_with":"The placement anchor named by the authentic instruction.","when_it_matters":"As established by the authentic act.","affected":[],"evidence_character":"DIRECT"}
 def candidate(**overrides):
     value={"semantic_key":"mutation:annex-v:insert:rows-a-b","outcome":"LEGAL_CHANGE_VERIFIED","verification_route":"AUTHENTIC_LEGAL_CAUSE","canonical_refs":[{"kind":"MUTATION","entity_id":"mutation-1"}],"evidence_refs":["authentic-act:1","authentic-instruction:1"],"evidence_occurrences":["formex-stream:1"],"explanation":EXPLANATION,"unknowns":[]}; value.update(overrides); return value
@@ -68,13 +69,25 @@ def test_recurring_reobservation_candidate_stays_out_of_change_feed_without_rece
             "US-2.1405 and US-2.1406 are added after the row for the zone "
             "US-2.1404."
         ),
-        "content_observation":{
+        "content_observation":seal_record({
             "record_id":"src-observation:live-2104",
+            "record_type":"SOURCE_OBSERVATION",
+            "created_at":"2026-09-18T08:32:20+00:00",
             "payload":{
+                "source_type":"CELLAR",
+                "identifier":"CELEX:32026R2104",
+                "resource_uri":"https://publications.europa.eu/resource/celex/32026R2104",
                 "language":"ENG",
-                "retrieval":{"final_uri":"official://reg-2104"},
+                "representation_class":"STRUCTURED_LEGAL_XML",
+                "observed_at":"2026-09-18T08:32:20+00:00",
+                "artifact_hash":"sha256:"+"b"*64,
+                "retrieval":{
+                    "final_uri":"official://reg-2104",
+                    "media_type":"application/zip",
+                    "http_status":200,
+                },
             },
-        },
+        }),
     }
     candidates=candidates_from_reobservation(EVENT,reobservation)
     assert len(candidates)==1

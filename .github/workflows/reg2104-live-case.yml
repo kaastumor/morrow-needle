@@ -12,6 +12,7 @@ on:
       - "src/needle/updates/reobserve.py"
       - "src/needle/operations/legal_analysis.py"
       - "src/needle/operations/authentic_candidates.py"
+      - "src/needle/presentation/evidence.py"
       - "schemas/mutation-candidate-v0.3.schema.json"
       - "schemas/source-change-v0.1.schema.json"
       - "schemas/operational-result-v0.1.schema.json"

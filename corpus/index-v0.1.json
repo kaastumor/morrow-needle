@@ -351,7 +351,8 @@
         "path:fixtures/value-gates/issue88-phase-a-prompts-v0.1.json",
         "path:fixtures/value-gates/issue88-phase-a-answer-key-v0.1.json",
         "path:fixtures/value-gates/issue88-phase-a-results-v0.1.json"
-      ]
+      ],
+      "evaluation_mode": "SURFACED_TRAP_ADJUDICATION"
     },
     {
       "id": "adv-nis2-italian-heading",
@@ -377,7 +378,8 @@
         "path:fixtures/value-gates/issue88-phase-a-prompts-v0.1.json",
         "path:fixtures/value-gates/issue88-phase-a-answer-key-v0.1.json",
         "path:fixtures/value-gates/issue88-phase-a-results-v0.1.json"
-      ]
+      ],
+      "evaluation_mode": "SURFACED_TRAP_ADJUDICATION"
     },
     {
       "id": "adv-chatgpt-vlose-applicability",
@@ -403,7 +405,8 @@
         "path:fixtures/value-gates/issue88-phase-a-prompts-v0.1.json",
         "path:fixtures/value-gates/issue88-phase-a-answer-key-v0.1.json",
         "path:fixtures/value-gates/issue88-phase-a-results-v0.1.json"
-      ]
+      ],
+      "evaluation_mode": "SURFACED_TRAP_ADJUDICATION"
     },
     {
       "id": "adv-harmonised-standard-restriction",
@@ -429,7 +432,8 @@
         "path:fixtures/value-gates/issue88-phase-a-prompts-v0.1.json",
         "path:fixtures/value-gates/issue88-phase-a-answer-key-v0.1.json",
         "path:fixtures/value-gates/issue88-phase-a-results-v0.1.json"
-      ]
+      ],
+      "evaluation_mode": "SURFACED_TRAP_ADJUDICATION"
     },
     {
       "id": "adv-ets-private-verifier",
@@ -455,7 +459,8 @@
         "path:fixtures/value-gates/issue88-phase-a-prompts-v0.1.json",
         "path:fixtures/value-gates/issue88-phase-a-answer-key-v0.1.json",
         "path:fixtures/value-gates/issue88-phase-a-results-v0.1.json"
-      ]
+      ],
+      "evaluation_mode": "SURFACED_TRAP_ADJUDICATION"
     },
     {
       "id": "adv-licence-1300-boundary",
@@ -481,7 +486,8 @@
         "path:fixtures/value-gates/issue88-phase-a-prompts-v0.1.json",
         "path:fixtures/value-gates/issue88-phase-a-answer-key-v0.1.json",
         "path:fixtures/value-gates/issue88-phase-a-results-v0.1.json"
-      ]
+      ],
+      "evaluation_mode": "SURFACED_TRAP_ADJUDICATION"
     },
     {
       "id": "eu-mercosur-parallel-agreement-lifecycle",

@@ -4,10 +4,14 @@ Status: **CANONICAL PROJECT NORTH STAR**
 
 ## Purpose
 
-Morrow // Needle is an **evidence-first legal research method plus a minimal
-canonical state core for EU legal change**.
+Morrow // Needle is an **evidence-first legal research method plus an
+adversarial corpus/protocol for EU legal change**.
 
-It exists to reconstruct, falsify and inspect legal-change claims without
+Optional canonical persistence remains available, but it is no longer part of
+the default project identity. It must earn itself on a concrete case by
+preventing a demonstrated error or materially reducing reconstruction burden.
+
+Needle exists to reconstruct, falsify and inspect legal-change claims without
 turning source activity, model inference, legal interpretation, consolidation
 state or uncertainty into false certainty.
 
@@ -38,13 +42,17 @@ Method added systematic investigation discipline. Needle Core added material
 persistent value only in the stateful/historical cases. Full Needle added no
 material value over Core.
 
-The current question is therefore:
+Issue #87 tested the remaining default-persistence claim across independent
+A→B handoffs. Across five sealed cases and three arms, all 15 Stage-B
+conclusions were correct. Method showed the lowest observed reconstruction
+burden in the pilot; Core produced no observed handoff win beyond Method in the
+complete relay.
 
-> **When does persistent canonical structure materially improve safety,
-> reproducibility or reconstruction cost over Needle Method + the strongest
-> boring baseline?**
+The resulting project-level decision is to shrink the default identity again:
+**Needle Method + corpus/protocol**. Core is optional persistence, admitted only
+when a concrete case demonstrates material value beyond Method.
 
-The burden of proof now sits on persistence and higher-level machinery, not on
+The burden of proof remains on persistence and higher-level machinery, not on
 the baseline.
 
 ## North star
@@ -145,12 +153,15 @@ There is **no standing implementation or product queue**.
 
 The canonical project identity is now:
 
-**Needle Method + Needle Core.**
+**Needle Method + corpus/protocol.**
 
-Needle Core includes only persistent canonical ownership/provenance/history and
-small deterministic resolvers that repeatedly earn their maintenance cost.
+Needle Core is no longer a default identity layer. Existing canonical
+ownership/provenance/history contracts and small deterministic resolvers remain
+available as optional persistence when a concrete repeated, historical,
+provenance-sensitive or otherwise stateful task demonstrates a material
+advantage over Method alone.
 
-Higher analytical/read-side surfaces are optional experiments.
+Higher analytical/read-side surfaces remain optional experiments.
 
 Select the next task only from fresh official evidence, a manual or operational
 probe anomaly, an unresolved canonical claim, or an explicit sponsor research
@@ -225,19 +236,20 @@ At wide-angle boundaries, keep these distinct:
 
 A change in one does not automatically require a change in the others.
 
-The current project form is **Needle Method + Needle Core**.
+The current project form is **Needle Method + corpus/protocol**.
 
-The current contribution hypotheses are:
+Issue #87 now supports the bounded Method contribution: explicit
+source/authority/state/time/uncertainty discipline improves handoff
+reconstruction consistency even where competent baseline notes reach the same
+legal answer.
 
-1. **Method hypothesis:** explicit source/authority/state/time/uncertainty
-   discipline improves review consistency and repeatability across
-   researchers/sessions.
-2. **Core hypothesis:** persistent canonical state materially helps where legal
-   questions are historical, stateful, provenance-sensitive or repeatedly
-   queried.
+The stronger default-Core hypothesis is rejected by the full relay. Persistent
+canonical state remains a case-specific hypothesis that must independently earn
+admission by preventing a demonstrated Method-only failure or materially
+reducing repeated reconstruction cost.
 
-Both remain falsifiable. The contribution claim must continue to earn itself
-against the strong baseline.
+The contribution claim must continue to earn itself against the strong
+baseline.
 
 ## Analytical method maturity
 

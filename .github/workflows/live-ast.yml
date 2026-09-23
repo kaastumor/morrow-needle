@@ -1,4 +1,4 @@
-name: Live Legal AST contract
+name: Legal AST contract + manual live fixture probe
 
 on:
   push:
@@ -10,7 +10,6 @@ on:
       - "schemas/consolidation-modification-annotation-v0.1.schema.json"
       - "tests/test_legal_ast_parsers.py"
       - "tests/test_ast_completeness.py"
-      - "pyproject.toml"
       - ".github/workflows/live-ast.yml"
   workflow_dispatch:
 
@@ -39,10 +38,11 @@ jobs:
             tests/test_formex_modifications.py
 
       - name: Build and benchmark live official AST fixtures
+        if: github.event_name == 'workflow_dispatch'
         run: python scripts/build_live_ast_fixtures.py --out artifacts/live-ast
 
       - name: Upload live AST evidence
-        if: always()
+        if: github.event_name == 'workflow_dispatch' && always()
         uses: actions/upload-artifact@v4
         with:
           name: live-ast-fixtures

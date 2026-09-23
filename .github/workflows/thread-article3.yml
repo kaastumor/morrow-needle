@@ -18,7 +18,6 @@ on:
       - "fixtures/thread/**"
       - "tests/test_thread_article3.py"
       - ".github/workflows/thread-article3.yml"
-      - "pyproject.toml"
   workflow_dispatch:
 
 concurrency:
@@ -47,10 +46,13 @@ jobs:
       - name: Build public Thread preview
         run: python scripts/build_thread_article3_preview.py
       - name: Verify Article 3 2004 baseline from live official sources
+        if: github.event_name == 'workflow_dispatch'
         run: python scripts/probe_thread_article3_2004.py
       - name: Verify Article 3 2025 transition from live official sources
+        if: github.event_name == 'workflow_dispatch'
         run: python scripts/probe_thread_article3_2025.py
       - name: Observe related corrigendum source availability
+        if: github.event_name == 'workflow_dispatch'
         run: python scripts/probe_thread_article3_corrigendum.py
       - name: Upload Thread evidence
         if: always()

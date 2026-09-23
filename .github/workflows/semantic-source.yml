@@ -1,4 +1,4 @@
-name: Live semantic source contract
+name: Semantic source contract + manual live probe
 
 on:
   push:
@@ -8,7 +8,6 @@ on:
       - "src/needle/semantic/**"
       - "tests/test_change_atoms.py"
       - ".github/workflows/semantic-source.yml"
-      - "pyproject.toml"
   workflow_dispatch:
 
 concurrency:
@@ -29,9 +28,10 @@ jobs:
       - name: Run Change Atom tests
         run: python -m pytest -q tests/test_change_atoms.py
       - name: Verify live authentic semantic span
+        if: github.event_name == 'workflow_dispatch'
         run: python scripts/probe_article3_semantic_source.py
       - name: Upload semantic source evidence
-        if: always()
+        if: github.event_name == 'workflow_dispatch' && always()
         uses: actions/upload-artifact@v4
         with:
           name: semantic-source-evidence

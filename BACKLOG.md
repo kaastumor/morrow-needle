@@ -29,13 +29,17 @@ Research/audit mode rules:
 
 **Issue #88 is complete. Its pre-registered stop rule fired.**
 
-Across six fresh adversarial failure strata, all six pairs were R-pass/M-pass.
-The equally capable source-grounded baseline independently caught the same
-source-state, multilingual, applicability, indirect-effect, private-authority
-and exact-time traps as Needle Method. There was no Method correctness rescue.
+Across six fresh adversarial cases, all six pairs were R-pass/M-pass. Issue #95
+later audited the exact sealed prompts and found that every question explicitly
+surfaced or strongly cued the decisive failure mechanism. #88 therefore proves
+parity for **SURFACED_TRAP_ADJUDICATION**: once the dangerous distinction was
+identified, the equally capable baseline and Needle Method both resolved it
+correctly. It does **not** test unprompted LATENT_TRAP_DETECTION.
 
-Do not invent a harder post-result benchmark. Phase B is not triggered from
-this result; Issue #87 already found no Core-over-Method handoff win.
+Do not invent a harder post-result benchmark or recycle the exposed #88 cases
+with vaguer wording. Any future latent-detection claim would require a new
+pre-registered construct and fresh sealed cases. Phase B is not triggered from
+#88; Issue #87 already found no Core-over-Method handoff win.
 
 The default project identity therefore shrinks again:
 
@@ -69,6 +73,12 @@ surface the May-2025 reasoned-opinion state while newer Dutch and Swedish
 primary law implementing NIS2 is in force. This earns a two-case
 `OFFICIAL_TRACKER_UPDATE_LAG` family and expands the corpus to 23 public cases
 / 14 trap classes. It does not earn a source monitor or freshness service.
+
+Issue #95 then audited the measurement construct itself. Exact #88 prompts show
+that all six cases cued the trap they were meant to test. The evaluation
+protocol now distinguishes `SURFACED_TRAP_ADJUDICATION` from
+`LATENT_TRAP_DETECTION`; #88 belongs to the former. Latent detection remains
+untested, and that gap is not itself an automatic next value gate.
 
 
 

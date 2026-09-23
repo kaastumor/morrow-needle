@@ -1,7 +1,7 @@
 # Needle Relay v0.1 — independent handoff value gate
 
 **Issue:** #87  
-**Status:** SEALED / AWAITING INDEPENDENT EXECUTION  
+**Status:** PILOT COMPLETE / FULL CONFIRMATION PENDING  
 **Purpose:** test whether Needle Method and Needle Core preserve legal understanding across context loss and investigator handoff better than competent free-form research notes.
 
 ## Why this gate exists
@@ -250,3 +250,26 @@ Issue #87 remains open until independent execution evidence exists.
   preserve just as reliably, do not count that as Core value.
 - If no arm advantage survives the control and historical cases, consider
   reducing Needle to the evaluation/adversarial corpus itself.
+
+
+## Pilot checkpoint — 2026-09-23
+
+The minimum pilot is complete.
+
+- 3 cases × 3 arms;
+- 9 fresh Stage-A runs;
+- 9 fresh Stage-B runs;
+- 9/9 Stage-B substantive conclusions correct.
+
+Observed pattern:
+
+- Method had the lowest reconstruction burden.
+- Core showed no observed handoff advantage over Method.
+- No Full-Needle integration earned re-entry.
+- Core preflight access failures were discarded and replaced, before valid C
+  execution, by one frozen reference-pack boundary.
+
+The two remaining pre-sealed cases are the full-confirmation boundary:
+battery due-diligence postponement and RoHS scope split.
+
+Do not add cases or change promotion criteria before those runs complete.

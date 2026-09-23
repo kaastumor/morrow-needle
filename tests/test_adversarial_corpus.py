@@ -60,3 +60,11 @@ def test_artifact_path_cannot_escape_repository():
 
     with pytest.raises(CorpusValidationError, match="stay inside repository"):
         validate(data, ROOT)
+
+
+def test_unused_trap_class_fails_closed():
+    data = load_index()
+    data["trap_classes"]["UNEARNED_FUTURE_CLASS"] = "No case supports this."
+
+    with pytest.raises(CorpusValidationError, match="trap classes without cases"):
+        validate(data, ROOT)

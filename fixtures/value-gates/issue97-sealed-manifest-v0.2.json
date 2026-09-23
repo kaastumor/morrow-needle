@@ -2,7 +2,7 @@
   "schema_version": "issue97-sealed-manifest-v0.2",
   "issue": 97,
   "created_date": "2026-09-23",
-  "status": "SEALED_STAGE_1_READY_FOR_EXECUTION",
+  "status": "RETIRED_UNEXECUTED_AFTER_PROJECT_LEVEL_COST_ALIGNMENT",
   "evaluation_mode": "LATENT_TRAP_DETECTION",
   "supersedes": {
     "version": "v0.1",
@@ -170,5 +170,12 @@
   "stage_1_stop_rule": "If all four adversarial pairs are R-pass/M-pass and both matched controls are calibrated parity, stop after 12 calls; H-15 is not demonstrated.",
   "discordance_confirmation_rule": "Every Stage-1 discordant case must receive two additional independent R/M pairs under the exact same frozen prompt/instructions. Confirmed arm outcome is majority of its three responses. A single discordant pair cannot change project interpretation.",
   "blinded_grading_rule": "Grade per-case outputs against the frozen rubric under opaque A/B labels before revealing arm mapping. Style and verbosity are not scored.",
-  "mutation_rule": "Any scientific-input change after this manifest requires v0.3 or a new gate. Transport-only repairs are allowed only if no model response was produced and prompt hashes remain unchanged."
+  "mutation_rule": "Any scientific-input change after this manifest requires v0.3 or a new gate. Transport-only repairs are allowed only if no model response was produced and prompt hashes remain unchanged.",
+  "retirement": {
+    "date": "2026-09-24",
+    "investigator_responses_produced": 0,
+    "reason": "Wide-angle project review concluded that Method is no longer the project identity. The first latent-detection closure test should therefore use the cheapest discriminating execution boundary: eight non-personalized Temporary Chats on the four adversarial cases, deferring matched controls and replication unless a discordant signal appears.",
+    "successor": "fixtures/value-gates/issue97-manual-manifest-v0.3.json",
+    "scientific_bytes_mutated": false
+  }
 }

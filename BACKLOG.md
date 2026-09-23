@@ -27,8 +27,11 @@ Research/audit mode rules:
 5. a well-supported “nothing new / baseline already handles this” result is
    successful work.
 
-**No preselected research task is currently eligible. The hourly worker should
-idle rather than manufacture work.**
+**Issue #81 is the sole current foundation next pick.** HVMFS 2025:4 proves
+that Temporal v0.1's date-only model cannot represent legally operative
+minute-precision boundaries without wrong answers. Preserve existing date
+semantics, add explicit offset-aware instant precision, and only then resume
+Issue #80's spatial work.
 
 Issue #77 introduced the authoritative dynamic-set causal owner; Issue #78
 proved set-state time and application time remain separate. Issue #79 then

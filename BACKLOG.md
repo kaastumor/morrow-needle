@@ -48,6 +48,12 @@ and its higher projections remain parked.
 The hourly worker should remain idle. #88 creates no replacement implementation
 horizon and no AUTO READY work.
 
+Issue #89 is a bounded foundation task explicitly authorised by the sponsor to
+make the post-#88 identity real: a canonical adversarial corpus index, exposure
+rules and reusable evaluation protocol. It adds no legal ontology or product
+surface. After the corpus contract is merged, autonomous work returns to
+evidence-led idle mode.
+
 
 
 Needle Relay completed all 5 pre-sealed cases × 3 arms. All 15 Stage-B
@@ -165,9 +171,10 @@ research question. Until then, **no AUTO READY issue is intentional**.
 Operational Needle remains a regression surface and manual evidence probe; its
 scheduled Git-backed monitor is frozen.
 
-The **essential identity is Needle Method + corpus/protocol**. Core is optional,
-individually earned persistence. Thread, Retrieval, X-Ray, Source Anomaly,
-Half-Life, public cards and other projections are parked
+The **essential identity is the adversarial legal-research corpus + evaluation
+protocol**. Needle Method is an optional handoff/reporting convention and Core
+is optional, individually earned persistence. Thread, Retrieval, X-Ray, Source
+Anomaly, Half-Life, public cards and other projections are parked
 experimental/historical surfaces. None is part of Core by default and none may
 drive architecture merely to regain relevance.
 

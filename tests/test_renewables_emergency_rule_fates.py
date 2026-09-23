@@ -32,7 +32,7 @@ def test_article_3_1_has_direct_official_promotion_evidence():
     evidence = " ".join(
         item["observation"] for item in rule["official_bridge_evidence"]
     ).lower()
-    assert "does not" in evidence
+    assert "declines to prolong" in evidence
     assert "prolong" in evidence
     assert "same presumption" in evidence
 
@@ -64,7 +64,7 @@ def test_close_analogues_remain_derived_without_provision_specific_genealogy():
         rule = indexed[rule_id]
         assert rule["classification"] == "TEXTUALLY_CLOSE_PERMANENT_ANALOGUE"
         assert rule["genealogical_evidence_state"] == "DERIVED"
-        assert "DIRECT" in rule["caution"] or "direct" in rule["caution"].lower()
+        assert "provision-specific official statement" in rule["caution"].lower()
 
 
 def test_transposition_deadline_is_not_promoted_to_national_application_start():

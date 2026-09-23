@@ -1,0 +1,55 @@
+{
+  "schema_version": "authoritative-metric-observation-v0.1",
+  "observation_id": "metric:skagerrak:prawn-sample:2025-02-16:juvenile-share",
+  "character": "AUTHORITATIVE_METRIC_OBSERVATION",
+  "metric": {
+    "name": "Share of Northern prawn in sample below minimum length",
+    "value": 66.5,
+    "unit": "percent by number"
+  },
+  "subject_ref": {
+    "kind": "CONTROL_SAMPLE",
+    "identifier": "SE_SKAGERRAK_PRAWN_SAMPLE_2025-02-16",
+    "label": "Northern prawn control sample, 16 February 2025"
+  },
+  "reference_period": {
+    "label": "inspection on 16 February 2025",
+    "start_date": "2025-02-16",
+    "end_date": "2025-02-16"
+  },
+  "authority": {
+    "authority_id": "SE_HAV",
+    "label": "Havs- och vattenmyndigheten"
+  },
+  "determination_character": "OFFICIALLY_VERIFIED_VALUE",
+  "evidence_state": "DIRECT",
+  "source_refs": [
+    {
+      "source_type": "OTHER_OFFICIAL",
+      "identifier": "HaV Realtidsstängningar — RTC-resultat 2025",
+      "locator": "2025-02-16 row: 403 sampled, 268 below minimum length, 66.50%",
+      "language": "SWE",
+      "role": "METRIC_VALUE",
+      "authority_character": "AUTHENTIC_OFFICIAL_VALUE"
+    }
+  ],
+  "legal_relevance": {
+    "statement": "Delegated Regulation (EU) 2019/2201 permits control authorities to recommend a real-time closure from one sample when juvenile Northern prawn exceed 40%, and the coastal Member State may close an area on the basis of sampling reports.",
+    "rule_refs": [
+      {
+        "source_type": "EUR_LEX",
+        "identifier": "CELEX:32019R2201",
+        "locator": "Articles 5(2), 6 and 10",
+        "language": "ENG",
+        "role": "LEGAL_RELEVANCE",
+        "authority_character": "BINDING_LEGAL_TEXT"
+      }
+    ]
+  },
+  "forbidden_inferences": [
+    "The 66.50% value is itself the legal closure polygon.",
+    "The sample necessarily and solely caused HVMFS 2025:4 unless a source explicitly binds it to that decision.",
+    "The metric observation owns the duration of any closure."
+  ],
+  "notes": "Direct official metric. Its relation to the specific HVMFS 2025:4 closure is retained as DERIVED in the spatial state, not promoted to direct causation."
+}

@@ -1,0 +1,82 @@
+{
+  "schema_version": "legal-spatial-state-v0.1",
+  "spatial_state_id": "spatial:hpai:NL-HPAI(NON-P)-2026-00174:protection-zone",
+  "character": "LEGAL_SPATIAL_STATE",
+  "legal_character": "PROTECTION_ZONE",
+  "authority": {
+    "authority_id": "NL_LVVN",
+    "label": "Dutch Ministry of Agriculture, Fisheries, Food Security and Nature",
+    "authority_type": "MEMBER_STATE_AUTHORITY"
+  },
+  "geometry": {
+    "geometry_type": "CIRCLE",
+    "coordinate_reference_system": "WGS84",
+    "definition_character": "DIRECT_OFFICIAL_GEOMETRY",
+    "centre": {
+      "latitude": 52.16,
+      "longitude": 4.89,
+      "source_latitude": "52.16",
+      "source_longitude": "4.89"
+    },
+    "radius": {
+      "value": 3,
+      "unit": "KM"
+    }
+  },
+  "causal_input_refs": [
+    {
+      "object_type": "AUTHORITATIVE_FINDING",
+      "object_id": "finding:hpai:NL-HPAI(NON-P)-2026-00174",
+      "relation_character": "TRIGGERING_FINDING",
+      "evidence_state": "DIRECT",
+      "notes": "Official confirmation triggers restricted-zone duties under Regulation (EU) 2016/429; the same outbreak reference is retained in the Union zone decision."
+    }
+  ],
+  "governing_rule_refs": [
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32016R0429",
+      "locator": "Articles 60 and 64",
+      "language": "ENG",
+      "role": "GOVERNING_RULE",
+      "authority_character": "BINDING_LEGAL_TEXT"
+    },
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32020R0687",
+      "locator": "Article 21 and Annex V",
+      "language": "ENG",
+      "role": "GOVERNING_RULE",
+      "authority_character": "BINDING_LEGAL_TEXT"
+    }
+  ],
+  "temporal_assertion_refs": [
+    "hpai-woerdense-protection-start",
+    "hpai-woerdense-protection-end"
+  ],
+  "evidence_state": "DIRECT",
+  "source_refs": [
+    {
+      "source_type": "MEMBER_STATE_OFFICIAL",
+      "identifier": "Rijksoverheid 17 July 2026 Woerdense Verlaat",
+      "locator": "Immediate restriction zone including 3 km protection zone",
+      "language": "NLD",
+      "role": "CONTEXT",
+      "authority_character": "OFFICIAL_CONTEXT"
+    },
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32026D1888",
+      "locator": "Annex Part A, NL-HPAI(NON-P)-2026-00174: 3 km circle centred at WGS84 52.16 / 4.89",
+      "language": "ENG",
+      "role": "GEOMETRY",
+      "authority_character": "AUTHENTIC_OFFICIAL_GEOMETRY"
+    }
+  ],
+  "guardrails": [
+    "The outbreak finding remains owned by Authoritative Finding v0.1.",
+    "The circle geometry does not own its application interval.",
+    "The centre coordinates are location/geometry evidence, not a numeric legal metric.",
+    "This protection-zone object does not implicitly represent the separate surveillance zone."
+  ]
+}

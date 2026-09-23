@@ -1,0 +1,80 @@
+{
+  "fixture_version": "0.2",
+  "case_id": "hpai-woerdense-verlaat-protection-zone-time-v0.2",
+  "assertions": [
+    {
+      "assertion_id": "hpai-woerdense-protection-start",
+      "subject_ref": {
+        "kind": "REGIME",
+        "identifier": "SPATIAL:NL-HPAI-2026-00174:PROTECTION_ZONE",
+        "locator": "Woerdense Verlaat"
+      },
+      "dimension": "APPLICATION",
+      "boundary": "START",
+      "inclusive": true,
+      "precision": "DATE",
+      "trigger": {
+        "kind": "ABSOLUTE_DATE",
+        "date": "2026-07-17",
+        "source_expression": "per direct"
+      },
+      "normalized_date": "2026-07-17",
+      "normalized_instant": null,
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": ["SPATIAL:NL-HPAI-2026-00174:PROTECTION_ZONE"],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_ABSOLUTE",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "OTHER_OFFICIAL",
+          "identifier": "Rijksoverheid 17 July 2026 Woerdense Verlaat",
+          "locator": "Beperkingszone per direct; beschermingszone 3 kilometer",
+          "language": "NLD",
+          "role": "TEMPORAL_CLAUSE"
+        }
+      ],
+      "notes": "Date precision only; the national source states immediate effect but does not provide a clock time in the pinned evidence."
+    },
+    {
+      "assertion_id": "hpai-woerdense-protection-end",
+      "subject_ref": {
+        "kind": "REGIME",
+        "identifier": "SPATIAL:NL-HPAI-2026-00174:PROTECTION_ZONE",
+        "locator": "Woerdense Verlaat"
+      },
+      "dimension": "APPLICATION",
+      "boundary": "END",
+      "inclusive": true,
+      "precision": "DATE",
+      "trigger": {
+        "kind": "ABSOLUTE_DATE",
+        "date": "2026-08-08",
+        "source_expression": "Date until applicable: 8.8.2026"
+      },
+      "normalized_date": "2026-08-08",
+      "normalized_instant": null,
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": ["SPATIAL:NL-HPAI-2026-00174:PROTECTION_ZONE"],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_ABSOLUTE",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32026D1888",
+          "locator": "Annex Part A, Netherlands, NL-HPAI(NON-P)-2026-00174",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        }
+      ],
+      "notes": "Inclusive DATE boundary follows the official 'date until applicable' table."
+    }
+  ]
+}

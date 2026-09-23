@@ -1,6 +1,6 @@
 # Pre-analysis adversarial audit v0.1
 
-Status: **ACTIVE — findings ledger, not final verdict**  
+Status: **COMPLETE — gate direction: SIMPLIFY**  
 Issue: #29  
 Started: 2026-09-22
 
@@ -32,7 +32,7 @@ documented negative result if it survives.
 | A-04 | Source-change semantics | Cellar DELETE was promoted from ingestion action to source availability truth | High | FIXED `ba3f3ae` | Bounded P1-B semantic correction; schema unchanged |
 | A-05 | Authentic source locality | Cross-stream flattened text could combine authority context and amendment prose | High | FIXED `dc357bd` | No schema change; parser remains deliberately bounded |
 | A-06 | Operational promotion | Workflow had an inline cursor race guard but no executable ownership-level CAS contract | High | REVISED in #42 | No architecture/interface reopening; guard extracted and tested |
-| A-07 | Evidence ownership | Event/re-observation identity was not cryptographically/semantically bound to the Source Observation used for VERIFIED authentic-cause analysis | High | FIXED in current #29 branch | No identity-schema reopening; adapter now fails closed |
+| A-07 | Evidence ownership | Event/re-observation identity was not cryptographically/semantically bound to the Source Observation used for VERIFIED authentic-cause analysis | High | FIXED `b7966d8` | No identity-schema reopening; adapter now fails closed |
 | S-01 | Repository status | README still named closed Issue #21 as current priority | Medium | FIXED `6d0aa94` | Documentation only |
 | N-01 | Novelty thesis | “EU legal-change monitoring / diff / corroboration / grounded explanation” is not novel | Thesis-level | CLAIM NARROWED | Strategic, not domain contract |
 
@@ -545,15 +545,69 @@ still have distinct evidence/provenance roles. No scripts were deleted merely
 to improve file-count optics. This is the intended sanitation outcome: remove
 misleading semantics, not historical evidence.
 
-## Next attacks
+## 8. Final gate verdict
 
-1. compare each candidate narrower differentiator against emendrix, Legalize
-   and other strong substitutes rather than defending a bundled novelty claim;
-2. test existing P2 analytics for recurring user value versus the strong simpler
-   baseline, and park/delete future expansion that does not earn its cost;
-3. test whether human-readable Source Mode resolution still deserves to be the
-   next product investment;
-4. run the Project Health Check and choose continue / simplify / redirect /
-   stop;
-5. reconcile BACKLOG.md, assumptions and remaining issues only after that
-   decision.
+### Freeze reconciliation
+
+**P0/P1 frozen contracts survive.** No foundation interface is reopened by this
+audit.
+
+The gate found serious enforcement defects, but the repairs remained at the
+adapter/ownership/operational boundaries:
+
+- source-route availability;
+- comparator eligibility;
+- Cellar DELETE semantics;
+- authentic amendment context and source locality;
+- sealed evidence identity/language binding;
+- operational promotion concurrency;
+- deterministic CI versus live-network evidence.
+
+P1-B received a bounded semantic correction around DELETE handling; its schema
+did not change.
+
+### Residual risks accepted for the next horizon
+
+1. **Same-stream quotation ambiguity.** The bounded authentic-instruction parser
+   can still be fooled by an exact quotation containing both an authorizing
+   heading and matching command in one source stream. The route remains narrow
+   and must not generalize without structural-authority evidence.
+2. **Pilot state growth.** Git/file operational state is already measured in
+   megabytes and grows with Work/language coverage. Current pruning and cursor
+   rules bound hot/replay state, but long-lived baseline coverage is not a
+   forever storage design. No current experiment justifies a database yet.
+3. **Product-value uncertainty.** This is now the largest project risk. Technical
+   correctness has outpaced evidence that a person needs the extra machinery.
+4. **External-substitute pressure.** emendrix, Legalize, official EU tooling,
+   commercial monitoring systems and established legal-informatics standards
+   remove most easy differentiation claims.
+
+### Project-level decision
+
+**SIMPLIFY.**
+
+- Keep the evidence engine and frozen correctness contracts.
+- Keep Thread as the central historical composition.
+- Keep X-Ray as an optional derived view without active expansion.
+- Treat Source Anomaly primarily as audit/trust diagnostics.
+- Keep Half-Life v0.1 as a valid demonstration but park v0.2.
+- Do not add a new analytic primitive.
+- Do not add scale infrastructure.
+- Do not market broad novelty.
+- Move next to Issue #49: comparative value proof through a human-readable
+  **Evidence / Why this is shown** projection over existing provenance.
+
+### Gate completion criteria
+
+- micro→macro adversary: complete;
+- executable regressions for found defects: complete;
+- repository/CI/workflow sanitation: complete;
+- autonomous-worker contract/runway: reconciled;
+- bounded novelty verdict: complete;
+- P2 usefulness dispositions: complete;
+- assumptions/backlog reconciliation: complete;
+- Project Health Check: `docs/audits/project-health-2026-09-23.md`;
+- next horizon chosen from evidence: Issue #49.
+
+Issue #29 may close once this final reconciliation is merged and the recurring
+worker is verified against the new queue.

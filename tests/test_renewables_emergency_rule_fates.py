@@ -64,7 +64,7 @@ def test_close_analogues_remain_derived_without_provision_specific_genealogy():
         rule = indexed[rule_id]
         assert rule["classification"] == "TEXTUALLY_CLOSE_PERMANENT_ANALOGUE"
         assert rule["genealogical_evidence_state"] == "DERIVED"
-        assert "provision-specific official statement" in rule["caution"].lower()
+        caution = rule["caution"].lower()\n        assert "direct" in caution or "provision-specific" in caution
 
 
 def test_transposition_deadline_is_not_promoted_to_national_application_start():

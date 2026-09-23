@@ -1,0 +1,116 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "capri-sp-private-rating-regulatory-input-v0.1",
+  "question": "Can Needle represent a private actor's legally recognized categorical determination as a public-law regulatory input without pretending the private source is an official authority?",
+  "private_determination": {
+    "determination_id": "sp:capri:issuer-rating:2025-02-20",
+    "originator": {
+      "name": "S&P Global Ratings",
+      "legal_character": "PRIVATE_CREDIT_RATING_AGENCY",
+      "eu_recognition_role": "EXTERNAL_CREDIT_ASSESSMENT_INSTITUTION"
+    },
+    "subject": {
+      "kind": "CORPORATE_ISSUER",
+      "name": "Capri Holdings Ltd."
+    },
+    "determination_date": "2025-02-20",
+    "determination_type": "ISSUER_CREDIT_RATING",
+    "before": "BBB-",
+    "after": "BB",
+    "source_character": "PRIVATE_PRIMARY_SOURCE",
+    "source_identifier": "S&P Global Ratings Research Update: Capri Holdings Ltd. Rating Lowered To 'BB' From 'BBB-'",
+    "textual_mutation_of_eu_law": null
+  },
+  "public_law_recognition_chain": [
+    {
+      "act_id": "CELEX:32013R0575",
+      "provision": "Article 135",
+      "role": "RECOGNITION_GATE",
+      "statement": "An external credit assessment may be used to determine the risk weight under the standardized approach only if issued or endorsed by an ECAI in accordance with Regulation (EC) No 1060/2009."
+    },
+    {
+      "act_id": "CELEX:32016R1799",
+      "provision": "Annex III, S&P Global Ratings Europe Limited long-term issuer credit rating scale",
+      "role": "CLASSIFICATION_MAPPING",
+      "mapping": [
+        {
+          "private_rating_band": "BBB",
+          "credit_quality_step": 3
+        },
+        {
+          "private_rating_band": "BB",
+          "credit_quality_step": 4
+        }
+      ]
+    },
+    {
+      "act_id": "CELEX:32013R0575",
+      "provision": "Article 122, corporate exposures",
+      "role": "REGULATORY_OUTPUT_MAPPING",
+      "mapping": [
+        {
+          "credit_quality_step": 3,
+          "risk_weight_percent": 75
+        },
+        {
+          "credit_quality_step": 4,
+          "risk_weight_percent": 100
+        }
+      ]
+    }
+  ],
+  "conditional_evaluation": {
+    "input_transition": "BBB- -> BB",
+    "mapped_transition": "CQS 3 -> CQS 4",
+    "potential_risk_weight_transition": "75% -> 100%",
+    "condition": "Only where an institution has nominated the relevant ECAI and the assessment is directly applicable to the exposure under CRR rules.",
+    "bank_specific_effect_asserted": false,
+    "evidence_state": "CONDITIONAL_DERIVATION"
+  },
+  "architecture_probe": {
+    "source_observation_v0_1": {
+      "fit": "FAILS_SOURCE_VOCABULARY",
+      "reason": "Source Observation permits only official/public source systems; the direct S&P rating action is a private primary source whose legal relevance comes from EU recognition rather than official authorship."
+    },
+    "authoritative_finding_v0_1": {
+      "fit": "SEMANTICALLY_CLOSE_BUT_REJECTS_ORIGINATOR",
+      "reason": "An ordinal rating is a categorical determination, but Authoritative Finding restricts authority types and finding-source vocabulary to public/official authorities and systems."
+    },
+    "authoritative_metric_observation_v0_1": {
+      "fit": "FAILS_VALUE_SHAPE",
+      "reason": "BBB-/BB are ordinal private classifications, not authoritative numeric measurements."
+    },
+    "authoritative_dynamic_set_v0_1": {
+      "fit": "FAILS_CAUSAL_SHAPE",
+      "reason": "The rating is not membership/status in a public authoritative set."
+    },
+    "result": "LEGALLY_RECOGNIZED_PRIVATE_ORIGIN_GAP_PINNED",
+    "provisional_missing_layer": "RECOGNITION_BASIS_FOR_NON_PUBLIC_DETERMINATIONS",
+    "new_schema_added_in_this_probe": false
+  },
+  "forbidden_inferences": [
+    "S&P Global Ratings is an EU institution, agency or other official authority.",
+    "The S&P rating action textually amends the CRR or Implementing Regulation 2016/1799.",
+    "Every EU bank uses S&P for Capri Holdings exposures.",
+    "Every Capri exposure in the EU changed from 75% to 100% risk weight on 20 February 2025.",
+    "The ordinal rating should be coerced into a numeric metric merely to reuse Authoritative Metric Observation.",
+    "EU recognition of a private determination converts the private source itself into an official EU source."
+  ],
+  "official_and_primary_sources": [
+    {
+      "identifier": "S&P Global Ratings, 20 February 2025 Capri Holdings rating action",
+      "role": "PRIVATE_PRIMARY_DETERMINATION"
+    },
+    {
+      "identifier": "CELEX:32013R0575",
+      "locator": "Articles 122, 135 and 136",
+      "role": "EU_LEGAL_RECOGNITION_AND_OUTPUT"
+    },
+    {
+      "identifier": "CELEX:32016R1799",
+      "locator": "Annex III, S&P Global Ratings Europe Limited",
+      "role": "EU_ECAI_MAPPING"
+    }
+  ],
+  "status": "FIRST_PRIVATE_ORIGIN_FAILURE_PINNED"
+}

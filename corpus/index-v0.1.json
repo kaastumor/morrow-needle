@@ -1,0 +1,486 @@
+{
+  "schema_version": "adversarial-corpus-index-v0.1",
+  "status": "CANONICAL_SEED",
+  "created_date": "2026-09-23",
+  "purpose": "Index public adversarial EU legal-research cases without duplicating their underlying legal evidence.",
+  "reuse_policy": "Every case in this public seed is scientifically exposed and is regression-only for future evaluation. Fresh blind validation requires a new independently selected and sealed case.",
+  "trap_classes": {
+    "SOURCE_STATE_BACKPROJECTION": "A current or consolidated representation contains later corrections or information that cannot prove the source state visible at the nominal historical date.",
+    "LANGUAGE_SCOPE_ASYMMETRY": "A correction or legal expression has language-specific scope; another authentic expression cannot be inferred from it without independent evidence.",
+    "REPRESENTATION_LOCAL_MARKER_IDENTITY": "Presentation markers or ordinals are local to a language/expression and are unsafe as cross-expression legal identities.",
+    "DYNAMIC_REFERENCE_STATUS": "Legal effect changes because the authoritative status of a referenced external item changes while the parent rule or external identifier remains unchanged.",
+    "STATUS_APPLICATION_SEPARATION": "Authoritative status or set membership and downstream legal applicability begin or end at different legal boundaries.",
+    "AUTHORITATIVE_METRIC_TRIGGER": "An official numeric observation enters an unchanged legal formula and changes the operative legal output.",
+    "AUTHORITATIVE_FINDING_TO_SPATIAL_EFFECT": "An authoritative categorical real-world finding triggers legal geography under unchanged law.",
+    "SUBDAY_TEMPORAL_BOUNDARY": "A legally material boundary occurs at a time finer than calendar-date granularity.",
+    "VERTICAL_SPATIAL_EXTENT": "Legal geography is volumetric and cannot be represented safely as horizontal geometry alone.",
+    "JUDICIAL_VALIDITY_TEXT_DIVERGENCE": "A judicial holding changes validity or operative legal state while the target text remains printed or textually unchanged.",
+    "JUDICIAL_INTERPRETATION_TEMPORAL_OVERCLAIM": "A judicial interpretation supplies authoritative meaning without automatically creating a new prospective application start at judgment date.",
+    "PRIVATE_ORIGIN_LEGAL_RECOGNITION": "A private-origin determination has a bounded legal role because public law recognises the actor or output, without converting the source into a public authority."
+  },
+  "cases": [
+    {
+      "id": "reg794-consolidation-backprojection",
+      "title": "Regulation 794/2004 consolidation incorporates later corrigenda",
+      "domain": "state-aid procedure",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "SOURCE_STATE_BACKPROJECTION"
+      ],
+      "provenance": {
+        "issue": 61,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "A consolidation date is not proof that every correction now rendered there was officially available on that date.",
+      "evidence_refs": [
+        "issue:61",
+        "path:fixtures/multilingual/reg794-2004-consolidation-backprojection-v0.1.json"
+      ]
+    },
+    {
+      "id": "reg2025-905-dutch-corrigendum-scope",
+      "title": "Dutch expression outside the 2026 corrigendum language list",
+      "domain": "state-aid procedure",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "LANGUAGE_SCOPE_ASYMMETRY"
+      ],
+      "provenance": {
+        "issue": 64,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "A non-listed authentic language is NO_ASSERTION from the corrigendum even when independent source evidence shows equivalent wording already existed.",
+      "evidence_refs": [
+        "issue:64"
+      ]
+    },
+    {
+      "id": "reg794-corrigendum-marker-locality",
+      "title": "EUR-Lex C-markers are expression-local ordinals",
+      "domain": "state-aid procedure",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "REPRESENTATION_LOCAL_MARKER_IDENTITY",
+        "LANGUAGE_SCOPE_ASYMMETRY"
+      ],
+      "provenance": {
+        "issue": 67,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "The same corrigendum can carry different C-labels across language expressions and the same C-label can denote different corrections.",
+      "evidence_refs": [
+        "issue:67",
+        "path:fixtures/multilingual/reg794-2004-consolidation-backprojection-v0.1.json"
+      ]
+    },
+    {
+      "id": "toy-wave-roller-dynamic-standard-gateway",
+      "title": "Toy-safety harmonised-standard restriction changes presumption without parent-text mutation",
+      "domain": "product safety / harmonised standards",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "DYNAMIC_REFERENCE_STATUS"
+      ],
+      "provenance": {
+        "issue": 77,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "The standard identifier and Directive gateway remain unchanged while OJ reference status narrows the presumption of conformity.",
+      "evidence_refs": [
+        "issue:77",
+        "path:fixtures/discovery/toy-wave-roller-dynamic-standard-gateway-v0.1.json"
+      ]
+    },
+    {
+      "id": "dsa-stripchat-status-application-lag",
+      "title": "Stripchat designation and Section 5 applicability diverge",
+      "domain": "digital services",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "STATUS_APPLICATION_SEPARATION"
+      ],
+      "provenance": {
+        "issue": 78,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Designation/removal and the start/end of additional obligations are separated by statutory delay.",
+      "evidence_refs": [
+        "issue:78",
+        "path:fixtures/temporal/dsa-stripchat-designation-application-lag-v0.1.json"
+      ]
+    },
+    {
+      "id": "eu-ets-tnac-metric-trigger",
+      "title": "Published TNAC mechanically changes Market Stability Reserve quantity",
+      "domain": "emissions trading",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "AUTHORITATIVE_METRIC_TRIGGER"
+      ],
+      "provenance": {
+        "issue": 79,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "A new official metric value changes the result of an unchanged statutory formula without a textual mutation.",
+      "evidence_refs": [
+        "issue:79",
+        "path:fixtures/discovery/eu-ets-tnac-authoritative-metric-v0.1.json",
+        "path:fixtures/metrics/eu-ets-tnac-2025-v0.1.json"
+      ]
+    },
+    {
+      "id": "hpai-woerdense-finding-spatial-effect",
+      "title": "Official HPAI finding generates restricted legal geography",
+      "domain": "animal health",
+      "jurisdiction": "EU + Netherlands",
+      "trap_classes": [
+        "AUTHORITATIVE_FINDING_TO_SPATIAL_EFFECT"
+      ],
+      "provenance": {
+        "issue": 80,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "An official real-world disease finding triggers protection/surveillance geography under unchanged law.",
+      "evidence_refs": [
+        "issue:80",
+        "path:fixtures/discovery/hpai-woerdense-verlaat-authoritative-finding-spatial-effect-v0.1.json",
+        "path:fixtures/findings/hpai-woerdense-verlaat-v0.1.json"
+      ]
+    },
+    {
+      "id": "skagerrak-prawn-subday-boundary",
+      "title": "Skagerrak real-time closure requires offset-aware instant precision",
+      "domain": "fisheries",
+      "jurisdiction": "EU + Sweden",
+      "trap_classes": [
+        "SUBDAY_TEMPORAL_BOUNDARY"
+      ],
+      "provenance": {
+        "issue": 81,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Date-only storage cannot answer legal-state queries around a 01:00 local start and 00:59 end.",
+      "evidence_refs": [
+        "issue:81",
+        "path:fixtures/discovery/skagerrak-prawn-rtc-subday-temporal-reopen-v0.1.json",
+        "path:fixtures/temporal/skagerrak-prawn-rtc-v0.2.json"
+      ]
+    },
+    {
+      "id": "dutch-airspace-vertical-extent",
+      "title": "Dutch legal airspace volumes require vertical boundaries",
+      "domain": "aviation / UAS",
+      "jurisdiction": "EU + Netherlands",
+      "trap_classes": [
+        "VERTICAL_SPATIAL_EXTENT"
+      ],
+      "provenance": {
+        "issue": 82,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Horizontal geometry alone overstates or misstates a legally bounded 3D airspace volume.",
+      "evidence_refs": [
+        "issue:82",
+        "path:fixtures/discovery/legal-spatial-volume-reopen-v0.1.json"
+      ]
+    },
+    {
+      "id": "test-achats-validity-text-divergence",
+      "title": "Test-Achats invalidity takes effect while Article 5(2) remains printed",
+      "domain": "equal treatment / insurance",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "JUDICIAL_VALIDITY_TEXT_DIVERGENCE"
+      ],
+      "provenance": {
+        "issue": 83,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Current printed text does not prove continued legal availability where a CJEU invalidity holding imposed a later effect boundary.",
+      "evidence_refs": [
+        "issue:83",
+        "path:fixtures/judicial/test-achats-c236-09-v0.1.json",
+        "path:fixtures/discovery/judicial-holding-gap-v0.1.json"
+      ]
+    },
+    {
+      "id": "planet49-interpretation-no-new-start",
+      "title": "Planet49 interpretation does not create a generic judgment-date application start",
+      "domain": "privacy / electronic communications",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "JUDICIAL_INTERPRETATION_TEMPORAL_OVERCLAIM"
+      ],
+      "provenance": {
+        "issue": 83,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Judgment date is source time; it is not automatically a new prospective start date for the interpreted rule.",
+      "evidence_refs": [
+        "issue:83",
+        "path:fixtures/judicial/planet49-c673-17-v0.1.json",
+        "path:fixtures/discovery/judicial-holding-gap-v0.1.json"
+      ]
+    },
+    {
+      "id": "capri-sp-private-rating",
+      "title": "Private S&P rating enters CRR through public-law recognition",
+      "domain": "prudential banking",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "PRIVATE_ORIGIN_LEGAL_RECOGNITION"
+      ],
+      "provenance": {
+        "issue": 85,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "A private rating can be legally relevant through an ECAI recognition/mapping chain without the rating source becoming official.",
+      "evidence_refs": [
+        "issue:85",
+        "path:fixtures/discovery/capri-sp-private-rating-regulatory-input-v0.1.json",
+        "path:fixtures/determinations/sp-capri-rating-2025-v0.1.json"
+      ]
+    },
+    {
+      "id": "biotrh-szutest-notified-body",
+      "title": "Private notified-body certificate decision has bounded regulatory effect",
+      "domain": "medical devices",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "PRIVATE_ORIGIN_LEGAL_RECOGNITION"
+      ],
+      "provenance": {
+        "issue": 85,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "A notified body's private certificate decision is legally recognised within a bounded conformity role without becoming a public-authority act.",
+      "evidence_refs": [
+        "issue:85",
+        "path:fixtures/discovery/biotrh-szutest-private-notified-body-determination-v0.1.json",
+        "path:fixtures/determinations/szutest-biotrh-suspension-2023-v0.1.json"
+      ]
+    },
+    {
+      "id": "adv-polish-visa-backprojection",
+      "title": "Polish visa-list consolidation back-projects a later corrigendum",
+      "domain": "visas",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "SOURCE_STATE_BACKPROJECTION"
+      ],
+      "provenance": {
+        "issue": 88,
+        "role": "EVALUATION"
+      },
+      "exposure": {
+        "status": "REVEALED_AFTER_SEALED_EVALUATION",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "A current consolidation nominally dated 30 December 2025 incorporates a Polish corrigendum published in February 2026.",
+      "evaluation_result": "R_PASS_M_PASS",
+      "evidence_refs": [
+        "issue:88",
+        "path:fixtures/value-gates/issue88-phase-a-prompts-v0.1.json",
+        "path:fixtures/value-gates/issue88-phase-a-answer-key-v0.1.json",
+        "path:fixtures/value-gates/issue88-phase-a-results-v0.1.json"
+      ]
+    },
+    {
+      "id": "adv-nis2-italian-heading",
+      "title": "Italian NIS2 Article 33 heading before language-specific corrigendum",
+      "domain": "cybersecurity",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "LANGUAGE_SCOPE_ASYMMETRY"
+      ],
+      "provenance": {
+        "issue": 88,
+        "role": "EVALUATION"
+      },
+      "exposure": {
+        "status": "REVEALED_AFTER_SEALED_EVALUATION",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Substantive multilingual interpretation must not erase the historical authentic Italian wording before its later corrigendum.",
+      "evaluation_result": "R_PASS_M_PASS",
+      "evidence_refs": [
+        "issue:88",
+        "path:fixtures/value-gates/issue88-phase-a-prompts-v0.1.json",
+        "path:fixtures/value-gates/issue88-phase-a-answer-key-v0.1.json",
+        "path:fixtures/value-gates/issue88-phase-a-results-v0.1.json"
+      ]
+    },
+    {
+      "id": "adv-chatgpt-vlose-applicability",
+      "title": "ChatGPT VLOSE designation does not equal immediate Section 5 applicability",
+      "domain": "digital services",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "STATUS_APPLICATION_SEPARATION"
+      ],
+      "provenance": {
+        "issue": 88,
+        "role": "EVALUATION"
+      },
+      "exposure": {
+        "status": "REVEALED_AFTER_SEALED_EVALUATION",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Article 33(6) ties the additional-obligation clock to provider notification rather than designation announcement.",
+      "evaluation_result": "R_PASS_M_PASS",
+      "evidence_refs": [
+        "issue:88",
+        "path:fixtures/value-gates/issue88-phase-a-prompts-v0.1.json",
+        "path:fixtures/value-gates/issue88-phase-a-answer-key-v0.1.json",
+        "path:fixtures/value-gates/issue88-phase-a-results-v0.1.json"
+      ]
+    },
+    {
+      "id": "adv-harmonised-standard-restriction",
+      "title": "EN 60335-1 remains listed while a clause-specific presumption is restricted",
+      "domain": "electrical product safety / harmonised standards",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "DYNAMIC_REFERENCE_STATUS"
+      ],
+      "provenance": {
+        "issue": 88,
+        "role": "EVALUATION"
+      },
+      "exposure": {
+        "status": "REVEALED_AFTER_SEALED_EVALUATION",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Continued standard listing does not preserve an unrestricted presumption where a specific new restriction is already operative.",
+      "evaluation_result": "R_PASS_M_PASS",
+      "evidence_refs": [
+        "issue:88",
+        "path:fixtures/value-gates/issue88-phase-a-prompts-v0.1.json",
+        "path:fixtures/value-gates/issue88-phase-a-answer-key-v0.1.json",
+        "path:fixtures/value-gates/issue88-phase-a-results-v0.1.json"
+      ]
+    },
+    {
+      "id": "adv-ets-private-verifier",
+      "title": "EU ETS private verifier has a legally recognised but bounded role",
+      "domain": "emissions trading",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "PRIVATE_ORIGIN_LEGAL_RECOGNITION"
+      ],
+      "provenance": {
+        "issue": 88,
+        "role": "EVALUATION"
+      },
+      "exposure": {
+        "status": "REVEALED_AFTER_SEALED_EVALUATION",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Private origin does not erase a statutorily recognised verification function, while public supervisory powers remain distinct.",
+      "evaluation_result": "R_PASS_M_PASS",
+      "evidence_refs": [
+        "issue:88",
+        "path:fixtures/value-gates/issue88-phase-a-prompts-v0.1.json",
+        "path:fixtures/value-gates/issue88-phase-a-answer-key-v0.1.json",
+        "path:fixtures/value-gates/issue88-phase-a-results-v0.1.json"
+      ]
+    },
+    {
+      "id": "adv-licence-1300-boundary",
+      "title": "13:00 Brussels-time cut-off changes deemed licence lodgement day",
+      "domain": "agricultural import/export licensing",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "SUBDAY_TEMPORAL_BOUNDARY"
+      ],
+      "provenance": {
+        "issue": 88,
+        "role": "EVALUATION"
+      },
+      "exposure": {
+        "status": "REVEALED_AFTER_SEALED_EVALUATION",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "12:59 and 13:01 on the same calendar day can map to different legally deemed lodgement days.",
+      "evaluation_result": "R_PASS_M_PASS",
+      "evidence_refs": [
+        "issue:88",
+        "path:fixtures/value-gates/issue88-phase-a-prompts-v0.1.json",
+        "path:fixtures/value-gates/issue88-phase-a-answer-key-v0.1.json",
+        "path:fixtures/value-gates/issue88-phase-a-results-v0.1.json"
+      ]
+    }
+  ],
+  "case_count": 19
+}

@@ -12,6 +12,11 @@ method. It is the preservation of real legal-information traps, explicit
 failure hypotheses, sealed comparative evaluation, negative/parity evidence and
 reproducible audit discipline.
 
+The public corpus entry point is `corpus/index-v0.1.json`. Its role is only to
+index case/evaluation metadata and point to existing evidence owners; it must
+not become a duplicate legal truth store. The reusable comparison discipline is
+`docs/evaluations/adversarial-corpus-protocol-v0.1.md`.
+
 Needle Method remains available as an optional structured handoff/reporting
 convention. Optional canonical persistence also remains available, but neither
 is part of the default project identity; each must earn use on a concrete task.

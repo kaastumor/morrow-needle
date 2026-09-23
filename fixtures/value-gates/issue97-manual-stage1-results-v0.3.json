@@ -1,0 +1,69 @@
+{
+  "schema_version": "issue97-manual-stage1-results-v0.3",
+  "issue": 97,
+  "date": "2026-09-24",
+  "status": "COMPLETE_STOP_ON_FULL_PARITY",
+  "evaluation_mode": "LATENT_TRAP_DETECTION",
+  "execution_medium": "CHATGPT_TEMPORARY_CHAT_UNPERSONALIZED",
+  "execution_provenance": {
+    "result_files_user_supplied": true,
+    "ui_settings_machine_verifiable_from_result_files": false,
+    "note": "The eight result files contain answer text but no cryptographic/model metadata proving Temporary Chat, Unpersonalized mode, model selection or reasoning setting. Those settings were part of the frozen sponsor execution protocol and are treated as sponsor-executed conditions rather than machine-verified metadata."
+  },
+  "sealed_inputs": {
+    "prompt_packet_sha256": "23bbab762927c711a998c401e9f72d9186191ef079df3ec813c5650dbf33875e",
+    "answer_key_sha256": "1b77e98638b03b02f4dde9440abc25a7e7cd8de9e29562ea641e9274ad02fb0d"
+  },
+  "blind_grading": {
+    "locked_before_arm_reveal": true,
+    "rubric": "Frozen v0.3 answer key; style/verbosity not scored.",
+    "grades": {
+      "RESULT-01.txt": {"grade":"PASS","sha256":"ebb20807346770cd2961daf28256431c6603544ec0a191f61dcaebd53c823e46"},
+      "RESULT-02.txt": {"grade":"PASS","sha256":"24e3d1d9cdae355b78c3ed581fbd7e36be329b91df99b292d7e93e9ee7820431"},
+      "RESULT-03.txt": {"grade":"PASS","sha256":"1b294dbf075b49cf4eee3c503fe6065f55291498bafd8cd8f59d87b80b046d09"},
+      "RESULT-04.txt": {"grade":"PASS","sha256":"dae7c2f8464a2cab40fa0777e5c9f7ff5fcb5ff7f9fd4e02257478b648312cfa"},
+      "RESULT-05.txt": {"grade":"PASS","sha256":"d858427515af7ac56e07136297369f30d4aae400ee6e73853ddc0533be380e58"},
+      "RESULT-06.txt": {"grade":"PASS","sha256":"f4de596fd54cce4abbef23ce1783f696e13c4dbf7e3478574b3672067b33f479"},
+      "RESULT-07.txt": {"grade":"PASS","sha256":"9052d00d4d0dbba4b31c9cafacb36a08fd7dc11707536d90eaa5acf3a7107b58"},
+      "RESULT-08.txt": {"grade":"PASS","sha256":"5a2045169933c260df90efae97c472a436b9a0d0c3faf4cdb99486224cbf3544"}
+    }
+  },
+  "arm_reveal": {
+    "RESULT-01.txt": {"chat_id":"CHAT-01","run_id":"ld2-chile-lifecycle-R","case_id":"ld2-chile-lifecycle","arm":"R"},
+    "RESULT-02.txt": {"chat_id":"CHAT-02","run_id":"ld2-temu-june-R","case_id":"ld2-temu-june","arm":"R"},
+    "RESULT-03.txt": {"chat_id":"CHAT-03","run_id":"ld2-haringvliet-2015-M","case_id":"ld2-haringvliet-2015","arm":"M"},
+    "RESULT-04.txt": {"chat_id":"CHAT-04","run_id":"ld2-shredder-320-R","case_id":"ld2-shredder-320","arm":"R"},
+    "RESULT-05.txt": {"chat_id":"CHAT-05","run_id":"ld2-haringvliet-2015-R","case_id":"ld2-haringvliet-2015","arm":"R"},
+    "RESULT-06.txt": {"chat_id":"CHAT-06","run_id":"ld2-temu-june-M","case_id":"ld2-temu-june","arm":"M"},
+    "RESULT-07.txt": {"chat_id":"CHAT-07","run_id":"ld2-chile-lifecycle-M","case_id":"ld2-chile-lifecycle","arm":"M"},
+    "RESULT-08.txt": {"chat_id":"CHAT-08","run_id":"ld2-shredder-320-M","case_id":"ld2-shredder-320","arm":"M"}
+  },
+  "pairs": {
+    "ld2-chile-lifecycle": {"R":"PASS","M":"PASS","pair_class":"R_PASS_M_PASS"},
+    "ld2-haringvliet-2015": {"R":"PASS","M":"PASS","pair_class":"R_PASS_M_PASS"},
+    "ld2-shredder-320": {"R":"PASS","M":"PASS","pair_class":"R_PASS_M_PASS"},
+    "ld2-temu-june": {"R":"PASS","M":"PASS","pair_class":"R_PASS_M_PASS"}
+  },
+  "summary": {
+    "result_files": 8,
+    "passes": 8,
+    "fails": 0,
+    "pairs": 4,
+    "R_PASS_M_PASS": 4,
+    "R_FAIL_M_PASS": 0,
+    "R_PASS_M_FAIL": 0,
+    "R_FAIL_M_FAIL": 0,
+    "method_rescues": 0,
+    "method_regressions": 0,
+    "stop_rule_triggered": true,
+    "additional_controls_or_replication_required": false
+  },
+  "project_interpretation": {
+    "H15": "REJECT_FOR_TESTED_WORKFLOW",
+    "latent_detection_advantage": "NOT_DEMONSTRATED",
+    "method_status": "OPTIONAL_HANDOFF_REPORTING_CONVENTION_ONLY",
+    "core": "NOT_REOPENED",
+    "default_identity": "ADVERSARIAL_LEGAL_RESEARCH_CORPUS_PLUS_EVALUATION_PROTOCOL",
+    "next_direction": "CORPUS_QUALITY_AND_METAMORPHIC_LEGAL_STATE_TESTING"
+  }
+}

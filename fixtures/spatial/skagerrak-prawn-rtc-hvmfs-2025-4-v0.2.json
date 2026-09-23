@@ -1,0 +1,112 @@
+{
+  "schema_version": "legal-spatial-state-v0.2",
+  "spatial_state_id": "spatial:skagerrak:prawn-rtc:HVMFS-2025-4",
+  "character": "LEGAL_SPATIAL_STATE",
+  "legal_character": "FISHERY_REAL_TIME_CLOSURE",
+  "authority": {
+    "authority_id": "SE_HAV",
+    "label": "Havs- och vattenmyndigheten",
+    "authority_type": "MEMBER_STATE_AUTHORITY"
+  },
+  "geometry": {
+    "geometry_type": "POLYGON",
+    "coordinate_reference_system": "WGS84",
+    "definition_character": "DIRECT_OFFICIAL_GEOMETRY",
+    "vertices": [
+      {
+        "latitude": 58.5917166667,
+        "longitude": 10.4538666667,
+        "source_latitude": "58°35.503'N",
+        "source_longitude": "10°27.232'E"
+      },
+      {
+        "latitude": 58.45905,
+        "longitude": 10.6580833333,
+        "source_latitude": "58°27.543'N",
+        "source_longitude": "10°39.485'E"
+      },
+      {
+        "latitude": 58.3172166667,
+        "longitude": 10.6817166667,
+        "source_latitude": "58°19.033'N",
+        "source_longitude": "10°40.903'E"
+      },
+      {
+        "latitude": 58.2993166667,
+        "longitude": 10.59445,
+        "source_latitude": "58°17.959'N",
+        "source_longitude": "10°35.667'E"
+      },
+      {
+        "latitude": 58.4462833333,
+        "longitude": 10.57515,
+        "source_latitude": "58°26.777'N",
+        "source_longitude": "10°34.509'E"
+      },
+      {
+        "latitude": 58.5733666667,
+        "longitude": 10.3755,
+        "source_latitude": "58°34.402'N",
+        "source_longitude": "10°22.530'E"
+      },
+      {
+        "latitude": 58.5917166667,
+        "longitude": 10.4538666667,
+        "source_latitude": "58°35.503'N",
+        "source_longitude": "10°27.232'E"
+      }
+    ],
+    "closed_ring": true
+  },
+  "causal_input_refs": [
+    {
+      "object_type": "AUTHORITATIVE_METRIC_OBSERVATION",
+      "object_id": "metric:skagerrak:prawn-sample:2025-02-16:juvenile-share",
+      "relation_character": "TRIGGERING_METRIC",
+      "evidence_state": "DERIVED",
+      "notes": "HaV records a 66.50% juvenile sample on 16 February, above the one-sample >40% recommendation threshold, followed by HVMFS 2025:4 on 17 February. The exact sample-to-decision binding is not promoted to DIRECT without an explicit source relation."
+    }
+  ],
+  "governing_rule_refs": [
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32019R2201",
+      "locator": "Articles 5-8 and 10",
+      "language": "ENG",
+      "role": "GOVERNING_RULE",
+      "authority_character": "BINDING_LEGAL_TEXT"
+    },
+    {
+      "source_type": "MEMBER_STATE_OFFICIAL",
+      "identifier": "HVMFS 2025:4",
+      "locator": "Section 1",
+      "language": "SWE",
+      "role": "GOVERNING_RULE",
+      "authority_character": "BINDING_LEGAL_TEXT"
+    }
+  ],
+  "temporal_assertion_refs": [
+    "skagerrak-prawn-rtc-start",
+    "skagerrak-prawn-rtc-end"
+  ],
+  "evidence_state": "DIRECT",
+  "source_refs": [
+    {
+      "source_type": "MEMBER_STATE_OFFICIAL",
+      "identifier": "HVMFS 2025:4",
+      "locator": "Section 1 coordinate table",
+      "language": "SWE",
+      "role": "GEOMETRY",
+      "authority_character": "AUTHENTIC_OFFICIAL_GEOMETRY"
+    }
+  ],
+  "guardrails": [
+    "The polygon is the direct legal geometry from HVMFS 2025:4, not a geometry computed by Needle from the sample.",
+    "The sample-to-specific-decision relation remains DERIVED unless direct source linkage is obtained.",
+    "The closure interval is owned by Temporal v0.2 and is not copied into this spatial object.",
+    "The appendix map is illustrative; the coordinate table is the canonical geometry evidence.",
+    "No point-in-polygon, area, overlap or routing claim is implied by storing the polygon.",
+    "vertical_extent null means this object makes no canonical vertical-extent assertion; it does not mean vertically unbounded."
+  ],
+  "vertical_extent": null
+}

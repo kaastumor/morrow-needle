@@ -191,5 +191,19 @@
     "sealed_answer_key_packet_changed": false,
     "reason": "The public manifest's per-run prompt-hash table was manually transcribed incorrectly for 12 entries. The already-recorded whole-packet SHA-256 commitments and byte lengths were correct. This commit replaces only the derived per-run hash table with hashes recomputed from the unchanged sealed prompt packet.",
     "original_manifest_commit": "5dad65fad23e0865d0a650c15e3e49eb6d686ca4"
+  },
+  "external_runner": {
+    "package_filename": "issue97-latent-runner-v0.1.zip",
+    "package_sha256": "754f34f20ccf8dc09805da066f5ba87ccf826128bb6449ce9a51947c685ddec1",
+    "package_byte_length": 8816,
+    "runner_script_sha256": "d93ace8bbc3a7445d9c31a47287a19f4ac15bcf72d5cd9dcc361c14ac5c415d3",
+    "readme_sha256": "387a8dbb673b840fac42b3e669d579cbf780e3141f95de06ae3ef7b9b43196e7",
+    "contains_exact_prompt_packet": true,
+    "contains_answer_key": false,
+    "api_endpoint": "POST https://api.openai.com/v1/responses",
+    "implementation": "Python standard library urllib; explicit UTF-8 JSON transport; sequential requests",
+    "pre_execution_verification": "--verify-only completed locally: exact packet hash and all 16 prompt hashes verified; zero API requests made",
+    "retry_rule": "Up to three retries only for transport/transient HTTP failures before a successful response exists; a non-completed model response is preserved and stops execution rather than being silently rerun.",
+    "scientific_inputs_changed": false
   }
 }

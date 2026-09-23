@@ -174,3 +174,37 @@ count as fresh validation of the new class.
 
 This is the desired discovery pattern after #88: orthogonal source/lifecycle
 coverage can expand while the architecture stays still.
+
+
+## Post-audit addition — Issue #93
+
+The national-implementation blind spot produced a second orthogonal two-case
+family.
+
+The Netherlands and Sweden both have newer national official NIS2 implementing
+law in force while the Commission's currently accessible country pages still
+display the 7 May 2025 reasoned-opinion state. The Sweden page additionally
+shows a 7 July 2025 last-update marker; the Netherlands page explicitly says
+content is updated progressively as information becomes available.
+
+This supports a new `OFFICIAL_TRACKER_UPDATE_LAG` class:
+
+- official source origin does not imply current factual coverage;
+- current URL accessibility does not imply current observation time;
+- an official summary/status tracker may be superseded for a narrow current-law
+  proposition by newer primary national legal publication;
+- that does not make the historical tracker state false or decide Commission
+  compliance/infringement assessment.
+
+The corpus therefore now contains:
+
+- **23 public cases**;
+- **14 trap classes**;
+- the first dedicated **national transposition / implementation** cases;
+- direct primary legal evidence from Dutch Staatsblad and Swedish SFS in the
+  same failure family.
+
+Both cases are public DERIVATION evidence and regression-only.
+
+This partially addresses the source-system and Member-State bias identified in
+the initial v0.1 audit without requiring monitoring or ingestion architecture.

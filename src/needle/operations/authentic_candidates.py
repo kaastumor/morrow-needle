@@ -8,6 +8,7 @@ from needle.mutation.instructions import (
     candidate_from_authentic_instruction,
     parse_authentic_keyed_row_insertions,
 )
+from needle.provenance.ledger import verify_record_hash
 
 
 _ANNEX_AMENDMENT_RE = re.compile(
@@ -236,6 +237,71 @@ def _compose_authentic_delivery_candidate(
     }]
 
 
+def _normalize_celex(value: Any) -> str | None:
+    if value is None:
+        return None
+    normalized=str(value).strip().upper()
+    if normalized.startswith("CELEX:"):
+        normalized=normalized.split(":",1)[1]
+    return normalized or None
+
+
+def _event_celexes(event: dict[str, Any]) -> set[str]:
+    return {
+        normalized
+        for identifier in event.get("identifiers",[])
+        if str(identifier).lower().startswith("celex:")
+        for normalized in [_normalize_celex(identifier)]
+        if normalized is not None
+    }
+
+
+def _bound_content_observation(
+    event: dict[str, Any],
+    reobservation: dict[str, Any],
+) -> dict[str, Any] | None:
+    """Return immutable content evidence only when identity ownership is proven.
+
+    VERIFIED authentic-cause candidates must not be cross-bound from one Work
+    or language expression to another. The operational adapter therefore
+    requires the event, re-observation and sealed Source Observation to agree
+    on CELEX identity, and any explicit analysis language to agree with the
+    observed content language.
+    """
+    content=reobservation.get("content_observation")
+    if not isinstance(content,dict):
+        return None
+    if content.get("record_type") != "SOURCE_OBSERVATION":
+        return None
+    if not verify_record_hash(content):
+        return None
+
+    payload=content.get("payload")
+    if not isinstance(payload,dict) or payload.get("source_type") != "CELLAR":
+        return None
+
+    reobservation_celex=_normalize_celex(reobservation.get("celex"))
+    observation_celex=_normalize_celex(payload.get("identifier"))
+    event_celexes=_event_celexes(event)
+    if (
+        reobservation_celex is None
+        or observation_celex is None
+        or reobservation_celex != observation_celex
+        or reobservation_celex not in event_celexes
+    ):
+        return None
+
+    analysis_language=reobservation.get("analysis_language")
+    observation_language=payload.get("language")
+    if (
+        analysis_language is not None
+        and observation_language is not None
+        and str(analysis_language).lower() != str(observation_language).lower()
+    ):
+        return None
+    return content
+
+
 def candidates_from_reobservation(
     event: dict[str, Any],
     reobservation: dict[str, Any],
@@ -250,8 +316,8 @@ def candidates_from_reobservation(
     text=reobservation.get("analysis_text")
     segments=list(reobservation.get("analysis_segments") or [])
     celex=reobservation.get("celex")
-    content_observation=reobservation.get("content_observation")
-    if not celex or not content_observation:
+    content_observation=_bound_content_observation(event,reobservation)
+    if not celex or content_observation is None:
         return []
     if not segments and not text:
         return []

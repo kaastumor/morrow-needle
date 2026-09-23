@@ -6,34 +6,56 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-**Issue #97 is complete. The Method-correctness question is closed for the tested workflow.**
+**MVP Gate #103 — Needle Corpus Explorer v0.1 is the active authorised horizon.**
 
-V0.3 used eight independent manual Temporary-Chat outputs across four fresh
-`LATENT_TRAP_DETECTION` adversaries. All eight blind grades were PASS; after
-arm reveal, all four pairs were **R-pass/M-pass**.
+Sponsor direction after #97: crystallize the surviving core into the smallest
+usable MVP, then begin evidence-only discovery for possible new features.
 
-The pre-registered stop rule therefore fired:
+Canonical plan:
+`docs/mvp/v0.1-plan.md`
 
-- no matched controls;
-- no replication;
-- no reserve cases;
-- no additional Method value gate.
+Canonical WoW:
+`docs/way-of-working.md`
 
-H-15 is rejected for the tested workflow. Together with #87/#88/#95, the
-supported Method role is now bounded to optional handoff/reporting structure,
-not demonstrated correctness advantage. Core and Full Needle remain parked.
+### Delivery queue
 
-Execution limitation: the submitted answer files do not machine-verify the
-Temporary/Unpersonalized/model/reasoning UI settings. Preserve that limitation
-in any external claim.
+Execute in dependency order, WIP=1:
 
-Canonical result:
-`docs/audits/issue97-latent-detection-result-2026-09-24.md`.
+1. #105 — MVP-01 static explorer shell and local launch
+2. #106 — MVP-02 corpus projection, validation and summary metrics
+3. #107 — MVP-03 browse, search and filters
+4. #108 — MVP-04 case detail, evidence lineage and deep links
+5. #109 — MVP-05 evaluation/protocol UX, accessibility and responsive pass
+6. #110 — MVP-06 integration gate and technical release candidate
 
-**Next research direction:** strengthen the adversarial corpus itself. Prefer
-metamorphic legal-state families and orthogonal source/jurisdiction coverage over
-another attempt to prove Method value. Do not create a standing implementation
-queue from this result.
+If #110 records `TECHNICAL_MVP_CANDIDATE`, the discovery gate #104 becomes
+eligible. Technical MVP acceptance does not imply sponsor/manual usability
+acceptance.
+
+### Discovery queue
+
+Evidence-only; no feature implementation:
+
+7. #111 — metamorphic legal-state pair discovery
+8. #112 — expert-review/trust-boundary discovery
+9. #113 — corpus authoring/contribution ergonomics
+10. #114 — longitudinal regression/model drift
+11. #115 — source-drift/freshness
+12. #116 — benchmark interoperability
+
+Each discovery run must end in
+`ADOPT_FOR_EXPERIMENT / REVISE / REJECT / PARK`.
+
+### Night schedule
+
+The scheduled worker is authorised for a bounded hourly sprint beginning
+24 September 2026 at 20:00 Europe/Amsterdam. It must resume unfinished work
+before claiming the next issue. Planning slots are not deadlines and may slip
+when a PR needs repair.
+
+No task may revive the old legal-change product, add a backend/framework, create
+a second corpus truth store, or implement a discovery feature without a later
+explicit decision.
 
 Issues #49 and #59 have now falsified the assumption that the current Needle
 architecture should automatically become a general public legal-change product.

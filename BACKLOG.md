@@ -30,12 +30,14 @@ Research/audit mode rules:
 **No preselected research task is currently eligible. The hourly worker should
 idle rather than manufacture work.**
 
-Issue #77 introduced the authoritative dynamic-set causal owner. Issue #78 then
-stress-tested it against the DSA's delayed VLOP application/cessation rule:
-Stripchat can be designated before its special obligations start and can be
-de-designated while those obligations still remain active. The contract
-survives unchanged because set-state time and application time remain separate,
-with Temporal v0.1 owning the latter. No X-Ray v0.2 is queued.
+Issue #77 introduced the authoritative dynamic-set causal owner; Issue #78
+proved set-state time and application time remain separate. Issue #79 then
+confirmed a second non-textual causal family across two domains: authoritative
+numeric observations can feed unchanged binding predicates/formulas. The new
+`authoritative-metric-observation-v0.1` and
+`metric-rule-evaluation-v0.1` contracts now represent EU ETS TNAC and vehicle
+CO2 performance without coercing numbers into set membership, temporal state or
+fake textual mutations. No product projection is queued.
 
 The first explicit research/audit runway is complete:
 

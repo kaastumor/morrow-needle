@@ -1,0 +1,121 @@
+{
+  "fixture_id": "reg2022-2577-to-dir2023-2413-rule-fates-v0.1",
+  "purpose": "Stress-test proposition-level legal genealogy when one temporary emergency act produces divergent rule fates during transition to a permanent framework.",
+  "source_act": {
+    "celex": "32022R2577",
+    "eli": "http://data.europa.eu/eli/reg/2022/2577/oj",
+    "character": "TEMPORARY_EMERGENCY_PERMITTING_REGIME"
+  },
+  "permanent_act": {
+    "celex": "32023L2413",
+    "eli": "http://data.europa.eu/eli/dir/2023/2413/oj",
+    "amends": "32018L2001",
+    "character": "PERMANENT_RENEWABLES_PERMITTING_FRAMEWORK"
+  },
+  "bridge_act": {
+    "celex": "32024R0223",
+    "eli": "http://data.europa.eu/eli/reg/2024/223/oj",
+    "character": "SELECTIVE_EXTENSION_AND_HANDOFF"
+  },
+  "handoff_timing": {
+    "emergency_original_end": "2024-06-30",
+    "red_iii_selected_permitting_transposition_deadline": "2024-07-01",
+    "national_application_continuity": "UNRESOLVED_WITHOUT_MEMBER_STATE_IMPLEMENTATION_EVIDENCE",
+    "warning": "A directive transposition deadline is not itself a national application-start assertion."
+  },
+  "rule_fates": [
+    {
+      "rule_id": "overriding-public-interest-presumption",
+      "source_anchor": "Regulation (EU) 2022/2577 Article 3(1)",
+      "target_anchor": "Directive (EU) 2018/2001 Article 16f, inserted by Directive (EU) 2023/2413",
+      "classification": "PROMOTED_TO_PERMANENT",
+      "genealogical_evidence_state": "DIRECT",
+      "official_bridge_evidence": [
+        {
+          "identifier": "COM(2023) 763 final",
+          "locator": "Proposal discussion of Article 3(1)",
+          "observation": "The Commission proposal expressly declines to prolong Article 3(1) because the same presumption is contained in Directive (EU) 2023/2413."
+        },
+        {
+          "identifier": "CELEX:32024R0223",
+          "locator": "Recital 2",
+          "observation": "The final extension regulation states that some measures introduced by Regulation (EU) 2022/2577 were included in Directive 2018/2001 through Directive (EU) 2023/2413."
+        }
+      ],
+      "caution": "This establishes rule genealogy, not identity of legal instrument or automatic continuity of domestic application."
+    },
+    {
+      "rule_id": "repowering-emergency-deadline",
+      "source_anchor": "Regulation (EU) 2022/2577 Article 5(1)",
+      "target_anchor": "Directive (EU) 2018/2001 permanent permitting provisions as amended by Directive (EU) 2023/2413",
+      "classification": "TEMPORARY_COEXISTENCE_WITH_PERMANENT_REGIME",
+      "genealogical_evidence_state": "DIRECT",
+      "official_bridge_evidence": [
+        {
+          "identifier": "CELEX:32024R0223",
+          "locator": "Recitals concerning Article 5(1)",
+          "observation": "The emergency repowering rule is prolonged in narrowed scope while permanent RED III permitting deadlines apply outside the emergency-designated areas."
+        }
+      ],
+      "caution": "Coexistence is not promotion: the emergency rule retains a bounded legal identity while the permanent framework applies alongside it."
+    },
+    {
+      "rule_id": "dedicated-area-environmental-derogation",
+      "source_anchor": "Regulation (EU) 2022/2577 Article 6",
+      "target_anchor": "Directive (EU) 2018/2001 renewables acceleration-area framework as amended by Directive (EU) 2023/2413",
+      "classification": "TEMPORARY_BRIDGE_ALONGSIDE_PERMANENT_REGIME",
+      "genealogical_evidence_state": "DIRECT",
+      "official_bridge_evidence": [
+        {
+          "identifier": "CELEX:32024R0223",
+          "locator": "Recitals 20-21",
+          "observation": "The legislature says Article 6 can and should coexist for a limited period with the permanent renewables acceleration-area framework because designation under the permanent regime takes longer."
+        }
+      ],
+      "caution": "The bridge exists because implementation timing differs; it is not evidence that the temporary and permanent rules are semantically identical."
+    },
+    {
+      "rule_id": "solar-permitting",
+      "source_anchor": "Regulation (EU) 2022/2577 Article 4",
+      "target_anchor": "Directive (EU) 2018/2001 Article 16d, inserted by Directive (EU) 2023/2413",
+      "classification": "TEXTUALLY_CLOSE_PERMANENT_ANALOGUE",
+      "genealogical_evidence_state": "DERIVED",
+      "official_bridge_evidence": [
+        {
+          "identifier": "CELEX:32022R2577 + CELEX:32023L2413",
+          "locator": "Article 4 compared with Article 16d",
+          "observation": "Both create accelerated solar-equipment permitting rules, including a three-month ceiling for installations on artificial structures."
+        }
+      ],
+      "caution": "Close subject matter and wording do not by themselves justify DIRECT proposition lineage."
+    },
+    {
+      "rule_id": "heat-pump-permitting",
+      "source_anchor": "Regulation (EU) 2022/2577 Article 7",
+      "target_anchor": "Directive (EU) 2018/2001 Article 16e, inserted by Directive (EU) 2023/2413",
+      "classification": "TEXTUALLY_CLOSE_PERMANENT_ANALOGUE",
+      "genealogical_evidence_state": "DERIVED",
+      "official_bridge_evidence": [
+        {
+          "identifier": "CELEX:32022R2577 + CELEX:32023L2413",
+          "locator": "Article 7 compared with Article 16e",
+          "observation": "Both establish accelerated heat-pump permitting and grid-connection treatment with related capacity thresholds."
+        }
+      ],
+      "caution": "No provision-specific official statement equivalent to the Article 3(1) bridge has been pinned in this discovery."
+    }
+  ],
+  "architecture_result": {
+    "decision": "SURVIVES_WITH_PROPOSITION_LEVEL_DECOMPOSITION",
+    "statement": "A single emergency instrument can have multiple rule fates. Needle should model promotion, temporary coexistence and derived analogy at proposition level rather than assign one successor relation to the whole act.",
+    "new_schema_required": false,
+    "forbidden_shortcuts": [
+      "One temporary source act implies one successor regime or one shared fate for all provisions.",
+      "A textually close permanent provision proves DIRECT rule lineage.",
+      "Temporary coexistence with a permanent framework means the two rules are identical.",
+      "The 1 July 2024 RED III transposition deadline proves uninterrupted national application from that date.",
+      "Non-extension of an emergency provision proves it disappeared substantively."
+    ]
+  },
+  "status": "DISCOVERY_CANONICAL_CANDIDATE"
+}

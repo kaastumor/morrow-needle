@@ -23,12 +23,21 @@ what it is today?
 
 ## Current central question
 
-After proving an operational official-update → evidence-linked card loop, the
-project must now determine whether Needle provides enough **additional useful
-understanding** over strong existing EU legal-change tools to justify its extra
-legal-state machinery.
+Issue #49 falsified the assumption that Needle's current live-change feed
+provides repeated material understanding advantage over a strong combination of
+EUR-Lex, mature change tooling, direct official sources and a capable LLM.
 
-Issue #29 is the active gate answering that question.
+The project is therefore **redirected from a presumed general legal-news product
+toward legal-change audit and rule-history reconstruction**.
+
+The remaining high-value question is:
+
+> Does Needle's evidence-linked Thread / audit discipline make a complex rule
+> history materially easier to reconstruct correctly than the strong simpler
+> baseline?
+
+Issue #59 is the active gate. It tests the already-frozen Article 3 Thread; it
+does not authorize new architecture.
 
 ## North star
 
@@ -116,6 +125,14 @@ Especially:
 
 ## Current horizon
 
-Complete Issue #29: adversarially test the system from source bytes to project
-thesis, sanitize the repository and autonomous workflow, then choose
-**continue / simplify / redirect / stop** for the next horizon from evidence.
+Complete Issue #59: adversarially compare the existing Article 3 Thread and its
+audit distinctions against EUR-Lex, emendrix, direct official sources, ordinary
+search and a capable LLM.
+
+No new schema, analytic primitive, product shell or infrastructure is authorized
+during this gate.
+
+At completion choose **continue / simplify / stop public-product expansion**.
+If Thread does not show recurring material advantage, retain Needle as a
+research/audit engine and regression corpus rather than inventing a new public
+product thesis.

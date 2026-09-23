@@ -12,6 +12,9 @@ PUBLICATION_PROPERTIES=(
     "official-journal-act_date_publication",
     "date_publication",
 )
+ENTRY_INTO_FORCE_PROPERTIES=(
+    "resource_legal_date_entry-into-force",
+)
 
 
 def _digest(value: Any) -> str:
@@ -182,5 +185,143 @@ def extract_cellar_publication_metadata(
         "evidence_refs":[evidence_ref],
         "occurrences":occurrences,
         "source_properties":properties,
+        "unknowns":[],
+    }
+
+
+def extract_cellar_entry_into_force_metadata(
+    payload: bytes,
+    *,
+    identifier: str,
+    evidence_ref: str,
+) -> dict[str, Any]:
+    """Project explicit Cellar CDM entry-into-force metadata into P0-E shape.
+
+    The projector accepts only the CDM property whose semantics explicitly
+    state entry into force. Publication, document, ingestion and arbitrary date
+    fields are never used as fallbacks.
+    """
+    try:
+        root=ET.fromstring(payload)
+    except (ET.ParseError,ValueError):
+        return {
+            "state":"UNRESOLVED",
+            "assertion":None,
+            "evidence_refs":[evidence_ref],
+            "occurrences":[],
+            "unknowns":[
+                "Cellar RDF tree notice could not be parsed; entry into force "
+                "was not inferred from publication or source timestamps."
+            ],
+        }
+
+    occurrences=[]
+    invalid=[]
+    for element in root.iter():
+        namespace,local=_tag_parts(element.tag)
+        if namespace != CDM_NAMESPACE or local not in ENTRY_INTO_FORCE_PROPERTIES:
+            continue
+        raw=" ".join("".join(element.itertext()).split())
+        normalized=_date_literal(raw)
+        item={
+            "property":local,
+            "raw_value":raw,
+            "normalized_date":normalized,
+        }
+        occurrences.append(item)
+        if normalized is None:
+            invalid.append(item)
+
+    if not occurrences:
+        return {
+            "state":"NOT_ASSERTED",
+            "assertion":None,
+            "evidence_refs":[evidence_ref],
+            "occurrences":[],
+            "unknowns":[
+                "No explicit Cellar CDM entry-into-force property was present "
+                "in the observed tree notice."
+            ],
+        }
+
+    if invalid:
+        return {
+            "state":"UNRESOLVED",
+            "assertion":None,
+            "evidence_refs":[evidence_ref],
+            "occurrences":occurrences,
+            "unknowns":[
+                "An explicit Cellar entry-into-force property had a value that "
+                "was not an exact ISO calendar date; no date was normalized."
+            ],
+        }
+
+    values={item["normalized_date"] for item in occurrences}
+    if len(values) != 1:
+        return {
+            "state":"CONFLICTING",
+            "assertion":None,
+            "evidence_refs":[evidence_ref],
+            "occurrences":occurrences,
+            "unknowns":[
+                "Explicit Cellar entry-into-force properties disagree; "
+                "automatic legal-force selection is forbidden."
+            ],
+        }
+
+    force_date=next(iter(values))
+    canonical_property="resource_legal_date_entry-into-force"
+    normalized_identifier=identifier.upper()
+    if not normalized_identifier.startswith("CELEX:"):
+        normalized_identifier=f"CELEX:{normalized_identifier}"
+    celex=normalized_identifier.split(":",1)[1]
+
+    assertion={
+        "assertion_id":"temporal-legal-force-start:"+_digest({
+            "identifier":normalized_identifier,
+            "date":force_date,
+        }),
+        "subject_ref":{
+            "kind":"LEGAL_ACT",
+            "identifier":normalized_identifier,
+            "locator":"official entry-into-force metadata",
+        },
+        "dimension":"LEGAL_FORCE",
+        "boundary":"START",
+        "inclusive":True,
+        "trigger":{
+            "kind":"ABSOLUTE_DATE",
+            "date":force_date,
+            "source_expression":"Cellar CDM "+canonical_property,
+        },
+        "normalized_date":force_date,
+        "scope":{
+            "mode":"DEFAULT",
+            "applies_to":[f"ACT:{celex}"],
+            "overrides_assertion_ids":[],
+            "entity_condition":None,
+        },
+        "resolution_state":"RESOLVED_ABSOLUTE",
+        "evidence_state":"DIRECT",
+        "source_refs":[{
+            "source_type":"CELLAR",
+            "identifier":normalized_identifier,
+            "locator":"CELLAR_RDF_NOTICE_TREE#cdm:"+canonical_property,
+            "language":None,
+            "role":"DERIVATION_INPUT",
+        }],
+        "notes":(
+            "Entry into force is projected only from the explicit CDM legal-"
+            "force property. Repeated identical occurrences are representation "
+            "duplication, not independent evidence. This assertion does not "
+            "manufacture a separate application date."
+        ),
+    }
+    return {
+        "state":"RESOLVED",
+        "assertion":assertion,
+        "evidence_refs":[evidence_ref],
+        "occurrences":occurrences,
+        "source_properties":[canonical_property],
         "unknowns":[],
     }

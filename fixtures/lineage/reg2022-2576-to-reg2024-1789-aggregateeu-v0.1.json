@@ -1,0 +1,45 @@
+{
+  "schema_version": "regime-lineage-v0.2",
+  "edge_id": "aggregateeu-crisis-superseded-by-permanent-gas-demand-aggregation",
+  "relation_type": "SUPERSEDED_BY",
+  "genealogical_evidence_state": "DIRECT",
+  "sources": [
+    {
+      "regime_id": "REGIME:AGGREGATEEU_CRISIS_2022_2576",
+      "act_ids": [
+        "CELEX:32022R2576",
+        "CELEX:32023R2919"
+      ],
+      "scope_note": "Temporary emergency demand aggregation and joint purchasing regime, prolonged only through 31 December 2024."
+    }
+  ],
+  "targets": [
+    {
+      "regime_id": "REGIME:GAS_DEMAND_AGGREGATION_PERMANENT_2024_1789",
+      "act_ids": [
+        "CELEX:32024R1789"
+      ],
+      "scope_note": "Permanent demand aggregation and joint purchasing mechanism under Section 5 of Regulation 2024/1789."
+    }
+  ],
+  "temporal_assertion_refs": [
+    "aggregateeu-crisis-application-end",
+    "aggregateeu-permanent-preparatory-transition-start",
+    "aggregateeu-permanent-application-start"
+  ],
+  "source_refs": [
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32024R1789",
+      "locator": "Recital 111: crisis measures transformed into permanent features; expressly includes demand aggregation and joint purchasing and explains timing to avoid overlap.",
+      "role": "GENEALOGY"
+    },
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32023R2919",
+      "locator": "Recitals 24-25 and Article 1(3): temporary prolongation through 31 December 2024.",
+      "role": "STATUS"
+    }
+  ],
+  "notes": "Genealogy only. The edge does not imply that the AggregateEU brand, service-provider contract, IT platform, or every operational feature remained identical across the legal-basis transition."
+}

@@ -1,0 +1,55 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "aggregateeu-operational-afterlife-v0.1",
+  "legal_regime_transition": {
+    "source_regime_id": "REGIME:AGGREGATEEU_CRISIS_2022_2576",
+    "target_regime_id": "REGIME:GAS_DEMAND_AGGREGATION_PERMANENT_2024_1789",
+    "direct_genealogy": true,
+    "substantive_gap_expected": false,
+    "preparatory_overlap_expected": true
+  },
+  "operational_observations": [
+    {
+      "observation_id": "aggregateeu-terms-2025-03-07",
+      "observed_date": "2025-03-07",
+      "character": "SERVICE_TERMS_UNDER_SUCCESSOR_LEGAL_BASIS",
+      "visible_service_name": "AggregateEU",
+      "legal_basis": "Regulation (EU) 2024/1789, Articles 42-51",
+      "source_uri": "https://www.prisma-capacity.eu/aggregateeu-gtcs",
+      "evidence": "PRISMA states it offers AggregateEU on behalf of DG ENER as service provider pursuant to Article 43 of Regulation 2024/1789, and defines AggregateEU as services implementing Articles 42-51."
+    },
+    {
+      "observation_id": "aggregateeu-midterm-round-2025-03-26",
+      "observed_date": "2025-03-26",
+      "character": "OPERATIONAL_CONTINUITY",
+      "visible_service_name": "AggregateEU",
+      "legal_basis": "Permanent 2024/1789 mechanism",
+      "source_uri": "https://energy.ec.europa.eu/news/joint-gas-purchasing-very-good-results-2nd-mid-term-demand-aggregation-round-natural-gas-2025-03-26_en",
+      "evidence": "Commission reports the second 2025 mid-term AggregateEU round and says the permanent joint-purchasing instrument is being established under the Hydrogen and Decarbonised Gases package."
+    },
+    {
+      "observation_id": "energy-raw-materials-platform-launch-2025-07-02",
+      "observed_date": "2025-07-02",
+      "character": "BROADER_PLATFORM_SUCCESSOR_SHELL",
+      "visible_service_name": "EU Energy and Raw Materials Platform",
+      "legal_basis": "Multiple mechanisms and legal mandates, including Regulation (EU) 2024/1789",
+      "source_uri": "https://energy.ec.europa.eu/news/new-eu-energy-and-raw-materials-platform-support-competitiveness-and-decarbonisation-european-2025-07-02_en",
+      "evidence": "Commission launches a broader platform covering hydrogen, raw materials, natural gas and biomethane."
+    }
+  ],
+  "finding": {
+    "legal_regime_genealogy": "DIRECT_TEMPORARY_TO_PERMANENT",
+    "legal_application_continuity": "CONTIGUOUS",
+    "preparatory_transition": "OVERLAPS_TEMPORARY_REGIME",
+    "service_brand_continuity": "AGGREGATEEU_SURVIVES_LEGAL_BASIS_CHANGE",
+    "platform_shell_continuity": "NOT_SAME_IDENTITY",
+    "statement": "AggregateEU is a counterexample to using visible service/brand continuity as proof of legal-regime identity. The temporary emergency legal regime ended, the permanent successor began without a substantive gap, and the AggregateEU service name continued for a time under the successor legal basis before a broader platform shell launched."
+  },
+  "forbidden_inferences": [
+    "AggregateEU in March 2025 was still operating under Regulation 2022/2576 merely because the brand name was unchanged.",
+    "The August 2024 preparatory provisions mean the permanent substantive mechanism overlapped the temporary regime in full.",
+    "The EU Energy and Raw Materials Platform is legally identical to AggregateEU or to the gas demand-aggregation regime.",
+    "Permanent regime succession proves that every operational feature, service-provider implementation, or IT system remained unchanged.",
+    "A continuous visible service proves one continuous legal instrument."
+  ]
+}

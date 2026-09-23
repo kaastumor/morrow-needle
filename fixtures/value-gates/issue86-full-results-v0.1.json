@@ -1,0 +1,66 @@
+{
+  "gate_version": "0.1",
+  "issue": 86,
+  "protocol_stage": "FULL_NEEDLE_REVIEW",
+  "full_definition": "Current repository including canonical Core contracts plus Thread, Retrieval, Dependency Ripple, Source Anomaly, Half-Life, public/read-side projections and retained operational/product-era surfaces.",
+  "observed_integration_state": {
+    "thread_supported_source_kinds": [
+      "BASELINE_EVIDENCE",
+      "CONTINUITY",
+      "RELATED_SOURCE",
+      "MUTATION",
+      "SEMANTIC",
+      "TEMPORAL",
+      "LINEAGE",
+      "PROVENANCE"
+    ],
+    "retrieval_supported_entity_kinds": [
+      "THREAD_EVIDENCE",
+      "MUTATION",
+      "CHANGE_ATOM",
+      "TEMPORAL_ASSERTION",
+      "LINEAGE_EDGE"
+    ],
+    "runtime_consumers_found_for_newer_core_objects": {
+      "JUDICIAL_HOLDING": false,
+      "LANGUAGE_SCOPED_MUTATION_AS_DIRECT_THREAD_KIND": false,
+      "AUTHORITATIVE_METRIC_OBSERVATION": false,
+      "RECOGNIZED_EXTERNAL_DETERMINATION": false
+    },
+    "interpretation": "The broader repository contains these canonical contracts, but existing higher-level projections do not automatically compose them into additional behavior."
+  },
+  "cases": [
+    {
+      "case_id": "ai-act-gpai-systemic-risk-threshold",
+      "full_gain_over_core": "NONE",
+      "reason": "There is no concrete model observation to project. Additional presentation/retrieval machinery does not improve the legal answer."
+    },
+    {
+      "case_id": "easa-a380-als-mandatory-source",
+      "full_gain_over_core": "NONE",
+      "reason": "Core lacks a narrow incorporation/reference owner and Full has no existing projection that repairs that gap without new adapter/schema work."
+    },
+    {
+      "case_id": "schrems-ii-transfer-mechanisms",
+      "full_gain_over_core": "NONE",
+      "reason": "The judicial positive-validity gap remains. Current Thread/Retrieval source-kind vocabularies do not consume Judicial Holding directly, so broader surfaces cannot rescue the missing canonical representation."
+    },
+    {
+      "case_id": "common-charger-laptop-date-control",
+      "full_gain_over_core": "NEGATIVE_OVERHEAD_FOR_ONE_OFF_QUERY",
+      "reason": "Core Temporal already answers the repeated date/scope query deterministically. Wrapping it in Thread/Retrieval would add setup without changing the answer."
+    },
+    {
+      "case_id": "ai-act-dutch-recital19-pre-corrigendum",
+      "full_gain_over_core": "NONE",
+      "reason": "Core language-scoped mutation already preserves the historical correction state. Existing read-side projections do not directly consume that contract as a first-class source kind."
+    }
+  ],
+  "full_summary": {
+    "cases_with_material_gain_over_core": 0,
+    "cases_with_added_overhead": 1,
+    "cases_where_full_repairs_core_gap_without_new_work": 0,
+    "result": "FULL_NEEDLE_DOES_NOT_EARN_DEFAULT_PROJECT_IDENTITY",
+    "important_interpretation": "This does not require deleting historical projections. It removes their presumption of centrality. They must earn future use case by case."
+  }
+}

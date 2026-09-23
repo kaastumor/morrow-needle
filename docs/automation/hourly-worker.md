@@ -127,7 +127,11 @@ from repository state without repeating or guessing prior work.
   green;
 - if GitHub Actions fails before any repository step executes, the narrow
   CI-degraded exception in `docs/way-of-working.md` may be used only after
-  equivalent deterministic checks pass and the PR records the failure mode;
+  equivalent deterministic checks pass in a real runtime and the PR records the
+  commands/evidence;
+- connector/file inspection alone is never sufficient to merge executable MVP
+  changes under degraded CI; if a real runtime is unavailable, leave the PR
+  open/blocked and do not advance the dependency chain;
 - close the AUTO issue after merge;
 - reconcile parent gate/backlog/assumptions/ADR only when evidence changed them.
 

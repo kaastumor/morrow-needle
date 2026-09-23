@@ -30,11 +30,12 @@ Research/audit mode rules:
 **No preselected research task is currently eligible. The hourly worker should
 idle rather than manufacture work.**
 
-Issue #77 is complete. Two independent official cases proved the need for an
-authoritative dynamic-set causal owner, and
-`authoritative-dynamic-set-v0.1` now represents both without widening Change
-Atom, the mutation engine or X-Ray v0.1. A future X-Ray v0.2 is not queued;
-build it only if a concrete audit question needs that projection.
+Issue #77 introduced the authoritative dynamic-set causal owner. Issue #78 then
+stress-tested it against the DSA's delayed VLOP application/cessation rule:
+Stripchat can be designated before its special obligations start and can be
+de-designated while those obligations still remain active. The contract
+survives unchanged because set-state time and application time remain separate,
+with Temporal v0.1 owning the latter. No X-Ray v0.2 is queued.
 
 The first explicit research/audit runway is complete:
 

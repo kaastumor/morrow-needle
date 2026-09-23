@@ -27,38 +27,37 @@ Research/audit mode rules:
 5. a well-supported “nothing new / baseline already handles this” result is
    successful work.
 
-**Issue #87 remains the current bounded value gate. Its minimum independent
-pilot is complete; full confirmation is waiting at an external execution
-boundary. The hourly worker should idle rather than simulate investigators.**
+**Issue #87's experimental work is complete. The project-level decision is
+SHRINK: the default identity is now Needle Method + corpus/protocol.**
 
-Issue #87 — **Needle Relay** — completed 3 sealed cases × 3 arms × independent
-A→B handoffs. All 9 Stage-B answers were substantively correct. The useful
-signal is reconstruction burden: Method required less reopening/rediscovery
-than competent free-form notes in the pilot, while Core showed no observed
-advantage over Method.
+Needle Relay completed all 5 pre-sealed cases × 3 arms. All 15 Stage-B
+conclusions were substantively correct, so there is no raw correctness
+advantage. The useful signal is handoff burden: Method showed the lowest
+observed reconstruction burden in the independent pilot and no disadvantage in
+the two confirmation cases. Core produced no observed handoff win over Method.
 
-The first Arm-C attempts failed cleanly with CORE ACCESS MISSING and were
-discarded as preflights. Valid C runs used one frozen Core reference pack
-without changing any case or hidden follow-up.
+The Issue #87 kill rule therefore applies. Core is no longer a default identity
+layer. Existing Core contracts remain available only as individually earned
+persistence when a concrete repeated/historical/provenance-sensitive task or an
+observed Method-only failure demonstrates that persistence prevents a real
+error or materially reduces reopening/rediscovery. Schema availability,
+neatness or hypothetical reuse do not qualify.
 
-This is not yet a project-level promotion or shrink decision. Two pre-sealed
-cases remain for full confirmation: battery due-diligence postponement and RoHS
-scope split. No new cases or architecture are authorized.
+No Thread, Retrieval, X-Ray, Source Anomaly, Half-Life, feed/cards or other
+parked Full-Needle surface earned re-entry.
 
-The remaining independent runs may be executed by the frozen no-admin
-PowerShell/API harness rather than manual fresh chats. Each investigator must
-still be a separate stateless request with no cross-run context; Stage B gets
-only its matching A artifact plus the pre-sealed follow-up. The runner remains
-outside Git until the blind is complete because it contains the hidden
-follow-ups.
+Issue #87 remains open only for the protocol's exact post-blind archival step:
+the previously sealed Stage-A, Stage-B and answer-key bytes must be committed
+unchanged. Their commitments were already verified during the pilot, but the
+full-confirmation result ZIP does not contain those plaintext files, so they
+must not be reconstructed from summaries.
 
-Issue #86 completed the competing-identities value gate and changed the project
-identity to **Needle Method + Needle Core**. The strong boring baseline answered
-5/5 unseen cases correctly. Method added reusable investigation discipline.
-Core earned material persistent value mainly in the historical Dutch AI Act
-corrigendum case and modest repeated-query value in the common-charger case.
-Full Needle added no material value over Core and is no longer the presumptive
-project form.
+The hourly worker should remain idle. This decision creates no replacement
+implementation horizon and no AUTO READY work.
+
+Issue #86 remains the evidence that Full Needle should not be the presumptive
+project form. Issue #87 is the stronger follow-on evidence that even Core should
+not be part of the default identity merely because its contracts exist.
 
 Thread, Retrieval, X-Ray, Source Anomaly, Half-Life, feed/cards and other
 read-side/product-era surfaces remain preserved experiments/research artifacts.
@@ -146,8 +145,9 @@ research question. Until then, **no AUTO READY issue is intentional**.
 Operational Needle remains a regression surface and manual evidence probe; its
 scheduled Git-backed monitor is frozen.
 
-The **essential identity is Method + Core**. Thread, Retrieval, X-Ray, Source
-Anomaly, Half-Life, public cards and other projections are parked
+The **essential identity is Needle Method + corpus/protocol**. Core is optional,
+individually earned persistence. Thread, Retrieval, X-Ray, Source Anomaly,
+Half-Life, public cards and other projections are parked
 experimental/historical surfaces. None is part of Core by default and none may
 drive architecture merely to regain relevance.
 

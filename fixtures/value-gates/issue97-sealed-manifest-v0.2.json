@@ -1,0 +1,174 @@
+{
+  "schema_version": "issue97-sealed-manifest-v0.2",
+  "issue": 97,
+  "created_date": "2026-09-23",
+  "status": "SEALED_STAGE_1_READY_FOR_EXECUTION",
+  "evaluation_mode": "LATENT_TRAP_DETECTION",
+  "supersedes": {
+    "version": "v0.1",
+    "disposition": "RETIRED_UNEXECUTED_AFTER_PRE_EXECUTION_ADVERSARIAL_AUDIT"
+  },
+  "preregistration": {
+    "path": "docs/evaluations/needle-latent-detection-v0.2.md"
+  },
+  "adversarial_audit": {
+    "path": "docs/audits/issue97-preexecution-adversarial-audit-2026-09-23.md"
+  },
+  "sealed_artifacts": [
+    {
+      "filename": "issue97-latent-prompts-v0.2.json",
+      "sha256": "08c8e9767a144f19e29fb9b2b854d5c595c7ae6530991a4339d08a5bc504b1a5",
+      "byte_length": 17038,
+      "repository_contains_plaintext": false
+    },
+    {
+      "filename": "issue97-latent-answer-key-v0.2.json",
+      "sha256": "5f7e01f63d46324bb813c0d7e2ffe443948ed451e6bc3471a5efb6e2fd9c0fe8",
+      "byte_length": 7602,
+      "repository_contains_plaintext": false
+    }
+  ],
+  "base_instruction_sha256": {
+    "R": "7764cfbe969633de7053de94d8ea76acafae567c69f7f9fad528e2f74ed6134a",
+    "M": "276f643709a00cdcc5a06b1f70f62928567c4dcba229f153e237601e167e3053"
+  },
+  "cases": [
+    {
+      "case_id": "ld2-chile-lifecycle",
+      "kind": "ADVERSARIAL",
+      "trap_class": "PARALLEL_INSTRUMENT_LIFECYCLE",
+      "question_sha256": "0aa9dca8cc0e9fccc51fbaa38efe96f63d17a175294c3a87b33af7d8971d07b1",
+      "answer_key_fragment_sha256": "fef2607339f5899553e6d2c6940aa1b7b2c303ac4f6a2b58b2dd4155be1265a9",
+      "cue_audit": {
+        "verdict": "PASS",
+        "note": "The ordinary register row uses an umbrella label but does not name ITA/AFA, provisional application, or instrument-identity substitution."
+      }
+    },
+    {
+      "case_id": "ld2-haringvliet-2015",
+      "kind": "ADVERSARIAL",
+      "trap_class": "JUDICIAL_VALIDITY_TEXT_DIVERGENCE",
+      "question_sha256": "e1ad5fb1da39c468db3db5c13e337c0b2795a47fcc3e1ed9a7a835eda57a85f3",
+      "answer_key_fragment_sha256": "519c3dc90f21d46032735750984768626f58584e0bb1040d8617ed5fa86347b0",
+      "cue_audit": {
+        "verdict": "PASS",
+        "note": "The historical-status request does not mention litigation, invalidity, C-281/16, or direct the investigator to search for a later judgment."
+      }
+    },
+    {
+      "case_id": "ld2-shredder-320",
+      "kind": "ADVERSARIAL",
+      "trap_class": "DYNAMIC_REFERENCE_STATUS",
+      "question_sha256": "e80ba55182d92522df1ff44f74835d8760788756789ff13701ed1f23521aa712",
+      "answer_key_fragment_sha256": "af22c5a6642e943e023c0867a25556adac2ff02b8257971ae1a1024534b9009c",
+      "cue_audit": {
+        "verdict": "PASS",
+        "note": "Standard and maximum speed are task-native engineering data. The prompt does not mention the >300 r/min restriction or tell the investigator that OJ reference status is qualified."
+      }
+    },
+    {
+      "case_id": "ld2-temu-june",
+      "kind": "ADVERSARIAL",
+      "trap_class": "STATUS_APPLICATION_SEPARATION",
+      "question_sha256": "5cb03b2afdd09924970f2f949c77af8c9f6ef9c3d292909cdc5ad32348164a21",
+      "answer_key_fragment_sha256": "06bdc98d136d4507abbcc061759930eed2eac39175597372c199b02e88b06462",
+      "cue_audit": {
+        "verdict": "PASS",
+        "note": "The prompt supplies only the target date and requested fields. It does not provide the designation date, four-month rule, notification mechanics, or tell the investigator to separate status from application."
+      }
+    },
+    {
+      "case_id": "ld2-control-shredder-250",
+      "kind": "NEGATIVE_CONTROL",
+      "trap_class": null,
+      "question_sha256": "1f43ce0ff2b216da1c865ba0eaf1708682444096d242f5a4c1ebc17db3f83940",
+      "answer_key_fragment_sha256": "db9012a41ed75c099edd42f0bcdcff91124d755f6c37c1c22165596a8c05e1c6",
+      "cue_audit": {
+        "verdict": "CONTROL",
+        "note": "Matched near-miss control; same source family, speed below the restriction threshold."
+      }
+    },
+    {
+      "case_id": "ld2-control-temu-oct",
+      "kind": "NEGATIVE_CONTROL",
+      "trap_class": null,
+      "question_sha256": "fb0ea8b7f19de5d32fdba69b7c906fb41357453b744552f21adb853b8b1c6249",
+      "answer_key_fragment_sha256": "e614f4745eeb15cd1a0dce01c07b5bf12918f2430259fa4591097cdd84b2dd7c",
+      "cue_audit": {
+        "verdict": "CONTROL",
+        "note": "Matched near-miss control; same lifecycle family, date after the stricter VLOP obligations became applicable."
+      }
+    }
+  ],
+  "execution": {
+    "stage": "STAGE_1",
+    "requests": 12,
+    "arms": [
+      "R",
+      "M"
+    ],
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "web_search": true,
+    "store": false,
+    "stateless": true,
+    "conversation": null,
+    "previous_response_id": null,
+    "case_order": [
+      "ld2-chile-lifecycle",
+      "ld2-haringvliet-2015",
+      "ld2-shredder-320",
+      "ld2-temu-june",
+      "ld2-control-shredder-250",
+      "ld2-control-temu-oct"
+    ],
+    "run_order": [
+      "ld2-chile-lifecycle-R",
+      "ld2-control-shredder-250-M",
+      "ld2-temu-june-R",
+      "ld2-haringvliet-2015-M",
+      "ld2-shredder-320-R",
+      "ld2-control-temu-oct-M",
+      "ld2-haringvliet-2015-R",
+      "ld2-temu-june-M",
+      "ld2-chile-lifecycle-M",
+      "ld2-control-shredder-250-R",
+      "ld2-control-temu-oct-R",
+      "ld2-shredder-320-M"
+    ],
+    "run_prompt_sha256": {
+      "ld2-chile-lifecycle-R": "8abb5e0ba3d54df2bbfdba616bdb88fe96b738b0228e79a1fef338f4bf3dc77b",
+      "ld2-control-shredder-250-M": "03cfd0931f6695c33f4d1b0555528fee11ee5e46b8125577090be3547eb10e9f",
+      "ld2-temu-june-R": "30c8261248692e0a767edab99606305f29758c4710259b71c8ef1ce0f8e8d52d",
+      "ld2-haringvliet-2015-M": "5b54aced74ed072ef675e4e02009ff64ae175429f9549552ad8e6c96fd25ec22",
+      "ld2-shredder-320-R": "8d35688b77a1dd2a54b07cd974998c4449c07e574860495894b1511e8da50ed3",
+      "ld2-control-temu-oct-M": "c4cbea72dec2d466221706cb4897ce3c93f2457f7986967eec1c2bd27568d10f",
+      "ld2-haringvliet-2015-R": "3f4ff3ed5f26b84156f9006aa2239468157b3d5e2f8ed5089ba2a656d9ee0eb2",
+      "ld2-temu-june-M": "961ee1060ba09d274e43013e0d92f2fe260c530120fca31030eea868fdd13159",
+      "ld2-chile-lifecycle-M": "5e692b8f838bff46ceb71bcb894def31a9f216bb50ee0f7f1a39721b343e7e18",
+      "ld2-control-shredder-250-R": "b413d290c121406276684e1779f021abf894e735bb865ba1bfe6e6bbb6e84992",
+      "ld2-control-temu-oct-R": "50fd9cd3c2bea9cf1db3c024ee747fa614de37cc0d3f7a39517967271d211d5e",
+      "ld2-shredder-320-M": "a549dd287f34ab2fff0cecee5553e72ab945029af2f5b5bfc90ed5d9418745c7"
+    },
+    "external_runner": {
+      "package_filename": "issue97-v02-windows-oneclick-stage1.zip",
+      "package_sha256": "78cc3f9ebe02562e35adc68e62f7547d7ee8082366a1e8dd4b14431e610c0f17",
+      "runner_script_sha256": "bc5d92b979ad1533ce97e46aee1fa6d5ffe2de11d59ae47f1bb43dad3d699c12",
+      "contains_exact_prompt_packet": true,
+      "contains_answer_key": false,
+      "pre_execution_verification": "--verify-only passed locally; exact packet hash and 12 prompt hashes verified; zero API requests made",
+      "stage1_only": true,
+      "confirmation_runner_included": false
+    }
+  },
+  "common_output_schema": [
+    "CONCLUSION",
+    "REASONING",
+    "DECISIVE SOURCES",
+    "UNCERTAINTY / LIMITS"
+  ],
+  "stage_1_stop_rule": "If all four adversarial pairs are R-pass/M-pass and both matched controls are calibrated parity, stop after 12 calls; H-15 is not demonstrated.",
+  "discordance_confirmation_rule": "Every Stage-1 discordant case must receive two additional independent R/M pairs under the exact same frozen prompt/instructions. Confirmed arm outcome is majority of its three responses. A single discordant pair cannot change project interpretation.",
+  "blinded_grading_rule": "Grade per-case outputs against the frozen rubric under opaque A/B labels before revealing arm mapping. Style and verbosity are not scored.",
+  "mutation_rule": "Any scientific-input change after this manifest requires v0.3 or a new gate. Transport-only repairs are allowed only if no model response was produced and prompt hashes remain unchanged."
+}

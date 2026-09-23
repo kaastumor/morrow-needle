@@ -2,7 +2,7 @@
   "schema_version": "issue97-sealed-manifest-v0.1",
   "issue": 97,
   "created_date": "2026-09-23",
-  "status": "SEALED_READY_FOR_EXECUTION",
+  "status": "RETIRED_UNEXECUTED_AFTER_PRE_EXECUTION_ADVERSARIAL_AUDIT",
   "evaluation_mode": "LATENT_TRAP_DETECTION",
   "preregistration": {
     "path": "docs/evaluations/needle-latent-detection-v0.1.md",
@@ -205,5 +205,13 @@
     "pre_execution_verification": "--verify-only completed locally: exact packet hash and all 16 prompt hashes verified; zero API requests made",
     "retry_rule": "Up to three retries only for transport/transient HTTP failures before a successful response exists; a non-completed model response is preserved and stops execution rather than being silently rerun.",
     "scientific_inputs_changed": false
+  },
+  "retirement": {
+    "date": "2026-09-23",
+    "investigator_responses_produced": 0,
+    "reason": "Sponsor-requested adversarial review found uneven latentness, weak negative controls, arm-visible output-format confounding, no confirmation rule for stochastic discordance, and avoidable fixed execution cost.",
+    "audit": "docs/audits/issue97-preexecution-adversarial-audit-2026-09-23.md",
+    "successor": "fixtures/value-gates/issue97-sealed-manifest-v0.2.json",
+    "scientific_bytes_mutated": false
   }
 }

@@ -1,0 +1,141 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "legal-spatial-volume-reopen-v0.1",
+  "question": "Can Legal Spatial State v0.1 represent official legal airspace whose extent is defined horizontally and vertically?",
+  "cases": [
+    {
+      "case_id": "nl-uas-zone-2a",
+      "source_character": "OFFICIAL_UAS_GEOZONE_DIGITAL_DATASET",
+      "legal_basis": {
+        "identifier": "CELEX:32019R0947",
+        "locator": "Article 15",
+        "statement": "Member States may define UAS geographical zones and must make zone information, including validity period, publicly available in a common unique digital format."
+      },
+      "official_source": {
+        "identifier": "Dutch eAIP ENR 5.3 / linked UAS geographical-zone JSON dataset",
+        "dataset_title": "UASZoneVersion 2024-07-22 09:07",
+        "record_identifier": "2.a",
+        "country": "NLD"
+      },
+      "horizontal_extent": {
+        "geometry_type": "POLYGON",
+        "coordinate_reference_system": "WGS84",
+        "vertices": [
+          [6.72026270898438, 52.073290361593],
+          [6.73487663269043, 52.0746000950834],
+          [6.7455097565918, 52.0808096357122],
+          [6.672732, 52.244087],
+          [6.65438, 52.295054],
+          [6.634967, 52.369852],
+          [6.606921, 52.465686],
+          [6.565098, 52.608146],
+          [6.891604, 52.821013],
+          [7.20963813208008, 53.027606654824],
+          [7.20547930151367, 53.048748458688],
+          [6.86877, 52.830234],
+          [6.536773, 52.615006],
+          [6.534802, 52.608787],
+          [6.582093, 52.460162],
+          [6.608345, 52.365803],
+          [6.62923, 52.2895],
+          [6.647756, 52.239057],
+          [6.72009104760742, 52.073184843659]
+        ]
+      },
+      "vertical_extent": {
+        "lower": {
+          "value": 0,
+          "unit": "M",
+          "reference": "AGL",
+          "source_expression": "lowerLimit 0 M AGL"
+        },
+        "upper": {
+          "value": 120,
+          "unit": "M",
+          "reference": "AGL",
+          "source_expression": "upperLimit 120 M AGL"
+        }
+      },
+      "operational_condition_context": {
+        "restriction": "CONDITIONAL",
+        "message": "OPEN A1/2 allowed up to a maximum height of 30m above ground; A3 not allowed",
+        "guardrail": "The 30 m operational permission ceiling is not the same fact as the 0-120 m published zone volume."
+      }
+    },
+    {
+      "case_id": "nl-ehp25-drakensteijn-castle",
+      "source_character": "OFFICIAL_AIP_PROHIBITED_AIRSPACE",
+      "legal_basis": {
+        "identifier": "Dutch eAIP ENR 5.1",
+        "locator": "Prohibited areas / EHP25 DRAKENSTEIJN CASTLE",
+        "statement": "A prohibited area is airspace of defined dimensions within which flight of aircraft is prohibited."
+      },
+      "official_source": {
+        "identifier": "EHP25",
+        "name": "DRAKENSTEIJN CASTLE",
+        "activity": "H24",
+        "restriction": "PROHIBITED"
+      },
+      "horizontal_extent": {
+        "geometry_type": "CIRCLE",
+        "coordinate_reference_system": "WGS84",
+        "centre": {
+          "source_latitude": "521047N",
+          "source_longitude": "0051338E",
+          "latitude": 52.17972222222222,
+          "longitude": 5.227222222222222
+        },
+        "radius": {
+          "value": 0.5,
+          "unit": "NM"
+        }
+      },
+      "vertical_extent": {
+        "lower": {
+          "boundary_character": "SURFACE",
+          "source_expression": "GND"
+        },
+        "upper": {
+          "boundary_character": "ALTITUDE",
+          "value": 2000,
+          "unit": "FT",
+          "reference": "AMSL",
+          "source_expression": "2000 FT AMSL"
+        }
+      }
+    }
+  ],
+  "v0_1_probe": {
+    "schema": "schemas/legal-spatial-state-v0.1.schema.json",
+    "supported_geometry": [
+      "WGS84 CIRCLE",
+      "WGS84 POLYGON"
+    ],
+    "unsupported_semantics": [
+      "vertical lower boundary",
+      "vertical upper boundary",
+      "vertical datum/reference",
+      "source-preserved altitude/flight-level expression"
+    ],
+    "result": "LEGAL_SPATIAL_STATE_V0_1_REOPEN_TRIGGERED",
+    "new_schema_added_in_failure_commit": false
+  },
+  "required_evolution": {
+    "retain_horizontal_geometry": true,
+    "add_optional_vertical_extent": true,
+    "preserve_vertical_reference_semantics": true,
+    "do_not_convert_agl_to_amsl_without_evidence": true,
+    "do_not_convert_flight_level_to_geometric_altitude_without_evidence": true,
+    "keep_temporal_validity_in_temporal_v0_2": true,
+    "keep_operational_conditions_outside_geometry": true,
+    "preserve_2d_cases": true
+  },
+  "forbidden_inferences": [
+    "A 2D polygon or circle represents the legal airspace at every altitude.",
+    "120 m AGL and 2000 ft AMSL share one interchangeable vertical datum.",
+    "The UAS zone's 30 m conditional operating ceiling is identical to its published 120 m upper spatial limit.",
+    "Vertical extent belongs in Temporal because it uses the words upper and lower.",
+    "A note field is sufficient canonical representation of legally operative vertical limits."
+  ],
+  "status": "FOUNDATION_REOPEN_PINNED"
+}

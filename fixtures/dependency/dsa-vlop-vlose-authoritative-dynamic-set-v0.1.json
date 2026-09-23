@@ -1,0 +1,148 @@
+{
+  "schema_version": "authoritative-dynamic-set-v0.1",
+  "set_id": "dsa:vlop-vlose-designations",
+  "set_character": "AUTHORITATIVE_DYNAMIC_SET",
+  "authority": {
+    "authority_id": "EUROPEAN_COMMISSION",
+    "label": "European Commission",
+    "authority_type": "EU_INSTITUTION"
+  },
+  "publication_surface": {
+    "surface_type": "OFFICIAL_JOURNAL",
+    "identifier": "DSA list of designated VLOPs and VLOSEs",
+    "authenticity_basis": "Regulation (EU) 2022/2065 Article 33(6) requires the Commission to ensure publication of the designated-services list in the Official Journal and keep it up to date.",
+    "source_ref": {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32022R2065",
+      "locator": "Article 33(6), second subparagraph",
+      "language": "ENG",
+      "role": "LEGAL_BASIS",
+      "authority_character": "BINDING_LEGAL_TEXT"
+    }
+  },
+  "legal_basis_refs": [
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32022R2065",
+      "locator": "Article 33(4)-(6)",
+      "language": "ENG",
+      "role": "LEGAL_BASIS",
+      "authority_character": "BINDING_LEGAL_TEXT"
+    }
+  ],
+  "dependencies": [
+    {
+      "dependency_id": "dsa-section5-on-vlop-vlose-designation",
+      "governing_rule": {
+        "act_id": "CELEX:32022R2065",
+        "provision": "Article 33(6), second subparagraph",
+        "language": "ENG"
+      },
+      "relation_character": "LEGAL_EFFECT_CONDITIONED_ON_AUTHORITATIVE_SET_STATE",
+      "condition_statement": "Designation or termination is a necessary set-state predicate for Section 5 obligations, but those obligations apply or cease to apply only four months after the notification specified by Article 33(6). Set state is therefore not itself the application boundary.",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32022R2065",
+          "locator": "Article 33(6)",
+          "language": "ENG",
+          "role": "DEPENDENCY",
+          "authority_character": "BINDING_LEGAL_TEXT"
+        }
+      ]
+    }
+  ],
+  "transitions": [
+    {
+      "transition_id": "dsa-stripchat-designation-2023-12-20",
+      "member": {
+        "label": "Stripchat",
+        "identifiers": [
+          {
+            "scheme": "DESIGNATED_SERVICE",
+            "value": "Stripchat"
+          },
+          {
+            "scheme": "PROVIDER",
+            "value": "Technius Ltd."
+          }
+        ]
+      },
+      "operation": "ADD_MEMBER",
+      "effective_from": "2023-12-20",
+      "before": {
+        "membership": "NOT_INCLUDED",
+        "status": "NOT_APPLICABLE"
+      },
+      "after": {
+        "membership": "INCLUDED",
+        "status": "ACTIVE"
+      },
+      "scope": {
+        "character": "FULL_MEMBER",
+        "statement": "Stripchat is designated as a Very Large Online Platform under Article 33(4)."
+      },
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "OTHER_OFFICIAL",
+          "identifier": "European Commission designation announcement 20 December 2023",
+          "locator": "Commission designates second set of Very Large Online Platforms under the Digital Services Act",
+          "language": "ENG",
+          "role": "TRANSITION",
+          "authority_character": "AUTHENTIC_OFFICIAL_STATE"
+        }
+      ]
+    },
+    {
+      "transition_id": "dsa-stripchat-termination-2025-05-27",
+      "member": {
+        "label": "Stripchat",
+        "identifiers": [
+          {
+            "scheme": "DESIGNATED_SERVICE",
+            "value": "Stripchat"
+          },
+          {
+            "scheme": "PROVIDER",
+            "value": "Technius Ltd."
+          }
+        ]
+      },
+      "operation": "REMOVE_MEMBER",
+      "effective_from": "2025-05-27",
+      "before": {
+        "membership": "INCLUDED",
+        "status": "ACTIVE"
+      },
+      "after": {
+        "membership": "NOT_INCLUDED",
+        "status": "NOT_APPLICABLE"
+      },
+      "scope": {
+        "character": "FULL_MEMBER",
+        "statement": "The Commission adopted a decision terminating Stripchat's VLOP designation."
+      },
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "OTHER_OFFICIAL",
+          "identifier": "European Commission designated-services supervision page",
+          "locator": "Stripchat: termination of designation 27 May 2025",
+          "language": "ENG",
+          "role": "TRANSITION",
+          "authority_character": "AUTHENTIC_OFFICIAL_STATE"
+        }
+      ]
+    }
+  ],
+  "forbidden_inferences": [
+    "Stripchat's Section 5 obligations began on the date of its designation.",
+    "Stripchat's Section 5 obligations ceased on the date its designation was terminated.",
+    "The dynamic-set transition effective_from field is a downstream application date.",
+    "Current VLOP/VLOSE list membership alone resolves whether Section 5 obligations apply on a given date.",
+    "A four-month application or cessation lag should be duplicated into authoritative set membership state."
+  ],
+  "notes": "Issue #78 adversary: direct designation state and downstream legal applicability intentionally diverge during statutory lag windows."
+}

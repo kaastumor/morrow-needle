@@ -1,0 +1,122 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "dsa-stripchat-designation-application-lag-v0.1",
+  "purpose": "Keep direct VLOP designation state separate from the delayed application and cessation of DSA Section 5 obligations.",
+  "assertions": [
+    {
+      "assertion_id": "dsa-stripchat-vlop-obligations-start-2024-04-21",
+      "subject_ref": {
+        "kind": "ENTITY_INSTANCE",
+        "identifier": "service:stripchat:section5-obligations",
+        "locator": "Stripchat / Technius Ltd."
+      },
+      "dimension": "APPLICATION",
+      "boundary": "START",
+      "inclusive": true,
+      "trigger": {
+        "kind": "ABSOLUTE_DATE",
+        "date": "2024-04-21",
+        "source_expression": "These additional provisions will kick in on 21 April for Pornhub and Stripchat."
+      },
+      "normalized_date": "2024-04-21",
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": [
+          "service:stripchat:section5-obligations"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_ABSOLUTE",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "OTHER_OFFICIAL",
+          "identifier": "European Commission notice 19 April 2024",
+          "locator": "Additional obligations for Very Large Online Platforms kick in for Pornhub, Stripchat and XVideos under the DSA",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        },
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32022R2065",
+          "locator": "Article 33(6), second subparagraph",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        }
+      ],
+      "notes": "Application starts after designation; the designation transition itself is not used as the application boundary."
+    },
+    {
+      "assertion_id": "dsa-stripchat-vlop-obligations-end-2025-09-27",
+      "subject_ref": {
+        "kind": "ENTITY_INSTANCE",
+        "identifier": "service:stripchat:section5-obligations",
+        "locator": "Stripchat / Technius Ltd."
+      },
+      "dimension": "APPLICATION",
+      "boundary": "END",
+      "inclusive": false,
+      "trigger": {
+        "kind": "RELATIVE_EVENT",
+        "event_key": "stripchat_termination_decision",
+        "event_binding": "SUBJECT",
+        "offset": {
+          "value": 4,
+          "unit": "MONTHS"
+        },
+        "guard": null,
+        "source_expression": "The DSA's obligations for VLOPs ceased to apply to Stripchat four months after that decision."
+      },
+      "normalized_date": "2025-09-27",
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": [
+          "service:stripchat:section5-obligations"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_RELATIVE",
+      "evidence_state": "DERIVED",
+      "source_refs": [
+        {
+          "source_type": "OTHER_OFFICIAL",
+          "identifier": "European Commission designated-services supervision page",
+          "locator": "Stripchat: termination 27 May 2025; VLOP obligations ceased four months after that decision",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        },
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32022R2065",
+          "locator": "Article 33(6), second subparagraph",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        }
+      ],
+      "notes": "The normalized end date is derived from the Commission's dated termination decision plus its four-month cessation statement. The END is exclusive because obligations cease from that boundary."
+    }
+  ],
+  "event_context": {
+    "stripchat_termination_decision": "2025-05-27"
+  },
+  "expected_windows": [
+    {
+      "window": "DESIGNATED_BUT_SECTION5_NOT_YET_APPLICABLE",
+      "from": "2023-12-20",
+      "through": "2024-04-20"
+    },
+    {
+      "window": "NO_LONGER_DESIGNATED_BUT_SECTION5_STILL_APPLICABLE",
+      "from": "2025-05-27",
+      "through": "2025-09-26"
+    }
+  ],
+  "forbidden_inferences": [
+    "Designation date equals Section 5 application start.",
+    "Termination date equals Section 5 application end.",
+    "Set membership can replace the APPLICATION dimension.",
+    "The four-month lag alters the historical date of the underlying designation transition."
+  ]
+}

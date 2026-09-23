@@ -164,3 +164,60 @@ GitHub is the canonical project record, but it is not an operational database.
 
 Branch-protection/ruleset settings are intentionally treated as **UNVERIFIED**
 when the GitHub integration cannot read repository administration settings.
+
+
+## Value evidence and project thesis
+
+Needle itself is an experiment.
+
+The project must preserve evidence **for and against its reason to exist** in
+`docs/value-evidence.md`.
+
+That ledger records, by reference rather than duplication:
+
+- discovery evidence;
+- contradiction/falsification;
+- parity with the strongest simpler baseline;
+- no-value findings;
+- evidence that justified continuation, simplification, redirect or stop.
+
+A feature, contract or polished integration does not count as project-value
+evidence merely because it works.
+
+### Separate four questions
+
+At wide-angle boundaries, keep these distinct:
+
+1. **Problem** — what real research/user problem exists?
+2. **Contribution** — what does Needle add that the strongest simpler workflow
+   does not?
+3. **Project/product form** — what shape currently delivers that contribution?
+4. **Implementation architecture** — which technologies happen to implement it?
+
+A change in one does not automatically require a change in the others.
+
+The current project form is an evidence-first legal-change research/audit
+engine. That form is revisable. The contribution claim must continue to earn
+itself against alternatives.
+
+## Analytical method maturity
+
+Analytical methods and automated inferences use this default lifecycle:
+
+`IDEA → EXPERIMENTAL → VALIDATED_FOR_VIEW → VALIDATED_FOR_AUTOMATION → RETIRED`
+
+Implementation success is not promotion evidence.
+
+- **IDEA** — plausible method, not yet relied upon.
+- **EXPERIMENTAL** — runnable/prototyped and under adversarial test.
+- **VALIDATED_FOR_VIEW** — safe enough to expose as bounded analytical output
+  with its limits visible.
+- **VALIDATED_FOR_AUTOMATION** — repeated evidence supports unattended use for
+  the stated scope and failure behavior.
+- **RETIRED** — superseded, disproven or no longer worth maintaining.
+
+Promotion requires discriminating evidence appropriate to the next stage.
+A method may remain useful indefinitely at an earlier stage.
+
+Do not weaken a required evaluation because the current agent/session lacks the
+capability to execute it. Move the execution boundary instead.

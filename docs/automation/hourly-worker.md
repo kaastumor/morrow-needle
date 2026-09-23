@@ -50,6 +50,51 @@ Material adversarial findings use one disposition:
 
 Green CI is necessary for merge, not proof that the idea was good.
 
+### Capability-bound acceptance criteria
+
+Acceptance criteria describe the capability/evidence required, not whatever the
+current session happens to be able to execute.
+
+If a required check needs:
+
+- a private environment;
+- browser/manual interaction;
+- sponsor judgment;
+- repository-administration access;
+- an external system unavailable to the worker;
+
+do **not** replace it with an easier proxy and call the criterion satisfied.
+
+Instead:
+
+1. complete everything that is valid in the current execution boundary;
+2. preserve the exact remaining criterion;
+3. record what evidence is missing and why;
+4. move that check to the correct execution boundary;
+5. stop promotion until the required evidence exists.
+
+A narrower executable test may supplement the criterion, never silently weaken
+it.
+
+### Ordered, resumable chunks
+
+For broad audits, tool-heavy research, large file reads or multi-file changes,
+work in coherent dependency-ordered chunks.
+
+Each chunk should end at a verifiable checkpoint such as:
+
+- evidence pinned;
+- failure reproduced;
+- decision recorded;
+- implementation committed;
+- CI checked;
+- canonical state reconciled.
+
+Do not turn this into meaningless micro-steps.
+
+The purpose is to make interruption, tool timeout or context loss recoverable
+from repository state without repeating or guessing prior work.
+
 ## Branch and merge discipline
 
 - branch from current `main`;
@@ -105,6 +150,10 @@ CI fixtures must be synthetic or explicitly public-safe.
 
 A gate cannot promote itself merely because its implementation issues are
 closed.
+
+Likewise, an analytical method cannot jump from EXPERIMENTAL to
+VALIDATED_FOR_AUTOMATION merely because its code works. Promotion follows the
+method-maturity evidence defined in the project charter.
 
 The gate requires:
 

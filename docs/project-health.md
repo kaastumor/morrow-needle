@@ -12,10 +12,28 @@ Record changed state and decisions, not activity volume.
 ## North-star alignment
 
 - What concrete research/user question became easier to answer?
+- What does the current value-evidence ledger say **against** the project thesis,
+  not only for it?
+- Has distinctiveness been re-tested against the strongest boring baseline
+  recently enough for the current project maturity?
 - Did the work outperform or safely complement the strongest simpler baseline?
 - Are we preserving research/audit value, or rebuilding a stopped product
   roadmap through architecture?
 - Would an idle backlog be healthier than the proposed next task?
+
+### Competing project identities
+
+At a wide-angle review, formulate at least three plausible identities:
+
+1. the current/incumbent identity;
+2. a deliberately **smaller** identity that preserves only the demonstrated
+   contribution;
+3. a materially different adjacent identity suggested by the evidence.
+
+Do not give the incumbent home-field advantage.
+
+Ask which identity best explains the accumulated value evidence and which new
+experiment would distinguish them.
 
 ## Canonical freshness
 
@@ -27,6 +45,17 @@ Record changed state and decisions, not activity volume.
 - Does the canonical ownership map still identify one owner per consequential
   fact?
 
+## Problem / contribution / form / implementation
+
+- Are we confusing the real problem with the current project/product form?
+- Is the claimed contribution actually distinct from the integration of existing
+  tools?
+- Could the same contribution survive in a much smaller artifact: a method,
+  fixture corpus, evaluation protocol, convention, prompt set or library?
+- Has implementation architecture become part of the identity merely because
+  it already exists?
+- If the contribution claim changed, did its evaluation protocol change with it?
+
 ## Evidence and adversarial sufficiency
 
 - Which real official case produced the finding?
@@ -37,6 +66,10 @@ Record changed state and decisions, not activity volume.
 - Did the adversary attack ownership/boundaries rather than merely add another
   example?
 - Which claimed capability still lacks a discriminating real-world test?
+- Are acceptance criteria still testing the intended capability, or were they
+  weakened because the current environment could not execute the harder test?
+- Is an implemented method being analytically promoted without evidence for the
+  next maturity stage?
 
 ## Assumptions and risks
 
@@ -45,6 +78,17 @@ Record changed state and decisions, not activity volume.
 - Is ontology creep, infrastructure creep or workflow creep becoming a bigger
   risk than missing capability?
 - Did an old risk disappear enough to delete rather than archive?
+
+## Precedents and subtraction
+
+- Have we searched sideways into adjacent disciplines, products, research
+  methods and terminology rather than only direct category peers?
+- For each strong precedent, choose one disposition:
+  **reuse / benchmark / learn from / remove from our scope**.
+- Did precedent research make the project smaller anywhere? If it only enlarged
+  the backlog, challenge the research value.
+- Is the claimed uniqueness merely that nobody combines the same components, or
+  does the combination enable behavior the components/baseline cannot?
 
 ## Complexity and leanness
 
@@ -57,6 +101,8 @@ Record changed state and decisions, not activity volume.
   provenance record would be safer?
 - Is file/schema/workflow count growing because of evidence, or because previous
   experiments never retired?
+- Can the valuable artifact shrink while preserving the demonstrated
+  contribution?
 
 Do not create a complexity score. Name the concrete surface and decide whether
 it still earns its maintenance cost.
@@ -97,7 +143,11 @@ Choose exactly one:
 A health check may legitimately choose **continue + simplify operations** when
 the research thesis is healthy but old execution machinery no longer serves it.
 
-Then reconcile `BACKLOG.md`, assumptions and any affected decision/runbook.
+Then reconcile `BACKLOG.md`, assumptions, `docs/value-evidence.md` and any
+affected decision/runbook.
+
+Every completed horizon ends with a fresh **continue / simplify / redirect /
+stop** decision. Completing the horizon itself never authorizes the next one.
 
 ## Governance self-check
 

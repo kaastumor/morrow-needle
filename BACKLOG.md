@@ -472,13 +472,28 @@ cluster of roughly **2–3 schema- or architecture-changing discovery runs**,
 perform a wide-angle health/leanliness check before expanding again. Negative
 or no-change discovery runs do not require ceremony.
 
+Discovery routes should include both direct and sideways search.
+
+When reviewing external precedents, use exactly one useful disposition per
+strong precedent:
+
+- **reuse** — adopt the existing solution rather than rebuilding it;
+- **benchmark** — use it as the stronger baseline;
+- **learn from** — borrow a method/control while keeping scope;
+- **remove from our scope** — the precedent already solves that part well enough.
+
+Precedent research that only makes the backlog larger is suspicious.
+
 Examples worth pursuing:
 - temporary exceptions that quietly became permanent;
 - rule ancestry surviving across repeal/recast;
 - numerical thresholds unchanged for decades despite inflation;
 - language-specific corrections with materially different history;
 - provisions whose descendants proliferate into delegated/implementing acts;
-- regulatory concepts that migrate between legal instruments.
+- regulatory concepts that migrate between legal instruments;
+- analogous mechanisms in adjacent disciplines using different terminology;
+- cases where a strong precedent implies Needle should become smaller rather
+  than broader.
 
 ---
 

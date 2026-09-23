@@ -6,36 +6,31 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-**Issue #97 is the active value gate, now at v0.2.**
+**Issue #97 remains the active value gate, now at v0.3 manual Stage 1.**
 
-It tests the one substantive Method question left genuinely unmeasured after
-Issue #95: `LATENT_TRAP_DETECTION` under realistic prompts that do not tell the
-investigator what legal-information trap to look for.
+Wide-angle review confirmed that the project is the adversarial corpus +
+evaluation protocol; Method is only an optional hypothesis. Therefore #97 must
+use the cheapest experiment capable of falsifying Method value.
 
-The original sealed v0.1 packet was **retired unexecuted** after a
-sponsor-requested pre-run adversarial audit. No investigator response existed.
-The audit found uneven latentness, trivial negative controls, arm-visible output
-formatting, no replication requirement for stochastic discordance and avoidable
-fixed cost. The immutable v0.1 hashes remain preserved as evidence of that
-pre-result retirement.
+Both prior paid-runner versions are retired **unexecuted**. V0.3 uses:
 
-V0.2 is now pre-registered and sealed:
-
-- 4 strongest latent adversaries across 4 trap classes;
-- 2 matched near-miss controls;
-- **12 initial R/M requests** instead of 16;
+- 4 strongest latent adversaries;
+- 8 total R/M runs;
+- eight separate ChatGPT Temporary Chats;
+- **Unpersonalized** mode for every chat;
+- GPT-5.6 Sol / High reasoning / web search;
 - identical visible R/M output schema;
-- arm-blind grading procedure;
-- every discordant case must be replicated with two additional R/M pairs before
-  it can count as a rescue/regression;
-- no Core;
-- no investigator run has occurred;
-- commitments are in
-  `fixtures/value-gates/issue97-sealed-manifest-v0.2.json`.
+- no project context, memory or follow-ups;
+- stop immediately after 8 chats if all four pairs are parity.
 
-The next action is verification of the v0.2 external runner and then Stage-1
-execution. Do not run the v0.1 package.
+Matched controls and replication are deferred unless Stage 1 produces a
+discordant signal. Any discordance is only a signal and must be blind-graded
+before further execution is frozen.
 
+Canonical execution boundary:
+`fixtures/value-gates/issue97-manual-manifest-v0.3.json`.
+
+No investigator response has occurred.
 
 Issues #49 and #59 have now falsified the assumption that the current Needle
 architecture should automatically become a general public legal-change product.

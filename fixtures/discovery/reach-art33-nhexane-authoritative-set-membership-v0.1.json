@@ -1,0 +1,95 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "reach-art33-nhexane-authoritative-set-membership-v0.1",
+  "question": "Can an unchanged statutory duty acquire a new subject-matter instance because an authority adds an identified member to an authentic dynamic set published outside EUR-Lex?",
+  "governing_rule": {
+    "act_id": "CELEX:32006R1907",
+    "provision": "Article 33",
+    "condition": "article contains a substance meeting Article 57 criteria and identified in accordance with Article 59(1), above 0.1% w/w",
+    "legal_effect": "DUTY_TO_COMMUNICATE_INFORMATION",
+    "textual_mutation_at_membership_event": null
+  },
+  "set_definition": {
+    "set_id": "REACH_CANDIDATE_LIST_SVHC",
+    "legal_basis": "Regulation (EC) No 1907/2006 Article 59(1) and 59(10)",
+    "authority": "European Chemicals Agency",
+    "publication_surface": "ECHA website",
+    "publication_rule": "Article 59(10) requires ECHA to publish and update the candidate list on its website without delay after a decision on inclusion.",
+    "authenticity_statement": "ECHA states that only the Candidate List published on its website is deemed authentic.",
+    "legal_consequence_statement": "ECHA states that inclusion may create immediate legal obligations, including under Articles 7, 31 and 33."
+  },
+  "member": {
+    "name": "n-hexane",
+    "ec_number": "203-777-6",
+    "cas_number": "110-54-3",
+    "identity_changed_at_event": false
+  },
+  "membership_event": {
+    "event_kind": "ADD_MEMBER",
+    "effective_date": "2026-02-04",
+    "decision": "D(2025)7771-DC",
+    "reason": "Specific target organ toxicity after repeated exposure (Article 57(f) - human health)",
+    "before": "NOT_INCLUDED",
+    "after": "INCLUDED",
+    "source_system": "ECHA_AUTHENTIC_WEB_LIST"
+  },
+  "derived_effect": {
+    "local_rule": "REACH Article 33",
+    "local_textual_mutation": false,
+    "effect_state": "DERIVED",
+    "bounded_statement": "From inclusion onward, Article 33 duties can apply to suppliers of articles containing n-hexane above the statutory concentration threshold, subject to the rule's remaining conditions."
+  },
+  "comparison_to_toy_case": {
+    "shared_shape": [
+      "unchanged governing provision",
+      "stable member identity",
+      "authoritative external set or status surface",
+      "membership/status transition changes the governing provision's output",
+      "derived local effect must not be represented as local textual mutation"
+    ],
+    "important_difference": {
+      "toy_case": "Official Journal reference status is restricted for an already listed harmonised standard.",
+      "reach_case": "An agency adds a substance to an authentic Candidate List published on its own website."
+    },
+    "result": "DYNAMIC_PUBLICATION_GATEWAY_TOO_NARROW"
+  },
+  "architecture_probe": {
+    "required_concept": "AUTHORITATIVE_DYNAMIC_SET_TRANSITION",
+    "dependency_character": "DERIVED_FROM_AUTHORITATIVE_SET_STATE",
+    "source_change_v0_1_fit": "FAILS_SOURCE_SCOPE",
+    "mutation_candidate_v0_2_fit": "FAILS_EVIDENCE_SEMANTICS",
+    "change_atom_v0_3_direct_fit": "FAILS_TEXTUAL_MUTATION_CAUSE_REQUIREMENT",
+    "decision": "DO_NOT_PATCH_EXISTING_ENUMS; DEFINE_CAUSAL_OWNERSHIP_FIRST"
+  },
+  "forbidden_inferences": [
+    "REACH Article 33 was amended on 4 February 2026.",
+    "n-hexane became a different chemical identity when added to the Candidate List.",
+    "All articles containing any n-hexane automatically breach Article 33 regardless of concentration and other statutory conditions.",
+    "The ECHA Candidate List is merely advisory metadata.",
+    "A Cellar Source Change record can honestly represent the ECHA website membership event by inventing Cellar identifiers.",
+    "A verified textual Mutation Candidate must be fabricated solely to satisfy Change Atom v0.3."
+  ],
+  "official_sources": [
+    {
+      "identifier": "CELEX:32006R1907",
+      "locator": "Article 33",
+      "role": "GOVERNING_RULE"
+    },
+    {
+      "identifier": "CELEX:32006R1907",
+      "locator": "Article 59(1), 59(10)",
+      "role": "SET_LEGAL_BASIS"
+    },
+    {
+      "identifier": "ECHA Candidate List",
+      "locator": "Candidate List introductory authenticity note",
+      "role": "AUTHENTICITY_AND_LEGAL_CONSEQUENCE"
+    },
+    {
+      "identifier": "ECHA Candidate List n-hexane entry",
+      "locator": "n-hexane; inclusion date 04-Feb-2026; D(2025)7771-DC",
+      "role": "MEMBERSHIP_EVENT"
+    }
+  ],
+  "status": "SECOND_ORTHOGONAL_CASE_CONFIRMS_GENERAL_PATTERN"
+}

@@ -6,26 +6,35 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-**Issue #97 is the active value gate.**
+**Issue #97 is the active value gate, now at v0.2.**
 
 It tests the one substantive Method question left genuinely unmeasured after
 Issue #95: `LATENT_TRAP_DETECTION` under realistic prompts that do not tell the
 investigator what legal-information trap to look for.
 
-The gate is pre-registered and sealed before execution:
+The original sealed v0.1 packet was **retired unexecuted** after a
+sponsor-requested pre-run adversarial audit. No investigator response existed.
+The audit found uneven latentness, trivial negative controls, arm-visible output
+formatting, no replication requirement for stochastic discordance and avoidable
+fixed cost. The immutable v0.1 hashes remain preserved as evidence of that
+pre-result retirement.
 
-- 6 fresh adversarial cases across 6 trap classes;
-- 2 negative controls;
-- 16 total independent R/M requests;
+V0.2 is now pre-registered and sealed:
+
+- 4 strongest latent adversaries across 4 trap classes;
+- 2 matched near-miss controls;
+- **12 initial R/M requests** instead of 16;
+- identical visible R/M output schema;
+- arm-blind grading procedure;
+- every discordant case must be replicated with two additional R/M pairs before
+  it can count as a rescue/regression;
 - no Core;
-- no investigator run occurred during case discovery or sealing;
-- exact prompt/answer-key packet commitments are in
-  `fixtures/value-gates/issue97-sealed-manifest-v0.1.json`.
+- no investigator run has occurred;
+- commitments are in
+  `fixtures/value-gates/issue97-sealed-manifest-v0.2.json`.
 
-The next action is **execution of the frozen packet**, not additional candidate
-discovery, prompt tuning or architecture work. If execution cannot be performed
-inside the current environment, move only the execution boundary; do not alter
-the scientific inputs.
+The next action is verification of the v0.2 external runner and then Stage-1
+execution. Do not run the v0.1 package.
 
 
 Issues #49 and #59 have now falsified the assumption that the current Needle

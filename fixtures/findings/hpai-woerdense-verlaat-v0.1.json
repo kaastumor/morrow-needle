@@ -1,0 +1,75 @@
+{
+  "schema_version": "authoritative-finding-v0.1",
+  "finding_id": "finding:hpai:NL-HPAI(NON-P)-2026-00174",
+  "character": "AUTHORITATIVE_FINDING",
+  "finding_type": "SCIENTIFIC_CONFIRMATION",
+  "authority": {
+    "authority_id": "NL_LVVN_NVWA",
+    "label": "Dutch competent animal-health authorities",
+    "authority_type": "MEMBER_STATE_AUTHORITY"
+  },
+  "subject_ref": {
+    "kind": "OUTBREAK",
+    "identifier": "NL-HPAI(NON-P)-2026-00174",
+    "label": "Woerdense Verlaat HPAI outbreak"
+  },
+  "location_ref": {
+    "label": "Woerdense Verlaat, Zuid-Holland",
+    "coordinate_system": "WGS84",
+    "latitude": 52.16,
+    "longitude": 4.89,
+    "location_character": "OUTBREAK_CENTRE_AS_LATER_PUBLISHED_AT_UNION_LEVEL"
+  },
+  "finding_date": "2026-07-17",
+  "proposition": {
+    "category": "HPAI_CONFIRMED",
+    "statement": "Highly pathogenic avian influenza was officially confirmed at the affected holding.",
+    "polarity": "AFFIRMED"
+  },
+  "evidence_state": "DIRECT",
+  "source_refs": [
+    {
+      "source_type": "MEMBER_STATE_OFFICIAL",
+      "identifier": "Rijksoverheid 17 July 2026 Woerdense Verlaat",
+      "locator": "Vogelgriep vastgesteld in Woerdense Verlaat, gemeente Nieuwkoop",
+      "language": "NLD",
+      "role": "FINDING",
+      "authority_character": "AUTHENTIC_OFFICIAL_FINDING"
+    },
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32026D1888",
+      "locator": "Annex, Netherlands, NL-HPAI(NON-P)-2026-00174",
+      "language": "ENG",
+      "role": "LOCATION",
+      "authority_character": "OFFICIAL_CONTEXT"
+    }
+  ],
+  "legal_relevance": {
+    "statement": "Regulation (EU) 2016/429 makes official confirmation of a relevant listed disease outbreak the trigger for immediate disease-control measures including declaration of the affected location and establishment of a restricted zone.",
+    "rule_refs": [
+      {
+        "source_type": "EUR_LEX",
+        "identifier": "CELEX:32016R0429",
+        "locator": "Articles 58, 60 and 64",
+        "language": "ENG",
+        "role": "LEGAL_RELEVANCE",
+        "authority_character": "BINDING_LEGAL_TEXT"
+      },
+      {
+        "source_type": "EUR_LEX",
+        "identifier": "CELEX:32020R0687",
+        "locator": "Article 21 and Annex V",
+        "language": "ENG",
+        "role": "LEGAL_RELEVANCE",
+        "authority_character": "BINDING_LEGAL_TEXT"
+      }
+    ]
+  },
+  "forbidden_inferences": [
+    "The finding is a textual mutation of the animal-health rules.",
+    "The location point is itself the derived protection or surveillance zone.",
+    "The finding owns the duration of any disease-control measure."
+  ],
+  "notes": "Direct finding only. The 3 km/10 km spatial derivation remains outside this contract."
+}

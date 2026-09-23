@@ -1,0 +1,59 @@
+{
+  "schema_version": "authoritative-finding-v0.1",
+  "finding_id": "finding:port-state:bahar:2026-07-18:detainable-deficiencies",
+  "character": "AUTHORITATIVE_FINDING",
+  "finding_type": "INSPECTION_DETERMINATION",
+  "authority": {
+    "authority_id": "PARIS_MOU_GREECE_PSC",
+    "label": "Greek Port State Control authority / Paris MoU inspection system",
+    "authority_type": "OFFICIAL_CONTROL_SYSTEM"
+  },
+  "subject_ref": {
+    "kind": "SHIP",
+    "identifier": "IMO:8230156",
+    "label": "BAHAR"
+  },
+  "location_ref": {
+    "label": "Psakhna, Greece",
+    "coordinate_system": null,
+    "latitude": null,
+    "longitude": null,
+    "location_character": "PORT_OF_DETENTION"
+  },
+  "finding_date": "2026-07-18",
+  "proposition": {
+    "category": "DETAINABLE_DEFICIENCIES",
+    "statement": "Thirteen deficiencies were found and all thirteen were grounds for detention.",
+    "polarity": "AFFIRMED"
+  },
+  "evidence_state": "DIRECT",
+  "source_refs": [
+    {
+      "source_type": "OTHER_OFFICIAL",
+      "identifier": "Paris MoU BAHAR IMO 8230156 notice",
+      "locator": "detained in Psakhna on 18 July 2026; 13 deficiencies; all grounds for detention",
+      "language": "ENG",
+      "role": "FINDING",
+      "authority_character": "AUTHENTIC_OFFICIAL_FINDING"
+    }
+  ],
+  "legal_relevance": {
+    "statement": "Directive 2009/16/EC Article 19 and Annex X govern detention where inspection establishes sufficiently serious or clearly hazardous deficiencies.",
+    "rule_refs": [
+      {
+        "source_type": "EUR_LEX",
+        "identifier": "CELEX:32009L0016",
+        "locator": "Article 19 and Annex X",
+        "language": "ENG",
+        "role": "LEGAL_RELEVANCE",
+        "authority_character": "BINDING_LEGAL_TEXT"
+      }
+    ]
+  },
+  "forbidden_inferences": [
+    "The finding is a textual mutation of Directive 2009/16/EC.",
+    "The number 13 converts the case into an authoritative metric observation.",
+    "The finding contract owns the ship's full enforcement or refusal-of-access lifecycle."
+  ],
+  "notes": "Direct categorical inspection determination only."
+}

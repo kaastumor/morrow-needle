@@ -146,3 +146,31 @@ coverage of EU legal-information failure modes generally.
 Its strongest immediate value is that it now makes those limits visible and
 prevents us from confusing a collection of interesting fixtures with a
 scientifically independent benchmark.
+
+
+## Post-audit addition — Issue #91
+
+The first discovery selected from this audit's blind-spot map produced two
+independent international-agreement cases rather than a harder version of an
+existing benchmark.
+
+EU–Mercosur and EU–Mexico both implement an umbrella negotiated outcome through
+a legally distinct interim trade agreement plus a comprehensive mixed
+agreement. Their current lifecycle states differ, but both demonstrate that
+agreement identity, provisional application, internal conclusion, entry into
+force and later replacement cannot safely be collapsed into one umbrella
+status.
+
+The corpus therefore now contains:
+
+- **21 public cases**;
+- **13 trap classes**;
+- a new two-case `PARALLEL_INSTRUMENT_LIFECYCLE` family;
+- one newly represented source/lifecycle domain: international agreements and
+  treaty entry-into-force mechanics.
+
+Both new cases are public DERIVATION evidence and regression-only. They do not
+count as fresh validation of the new class.
+
+This is the desired discovery pattern after #88: orthogonal source/lifecycle
+coverage can expand while the architecture stays still.

@@ -1,0 +1,195 @@
+{
+  "schema_version": "issue97-sealed-manifest-v0.1",
+  "issue": 97,
+  "created_date": "2026-09-23",
+  "status": "SEALED_READY_FOR_EXECUTION",
+  "evaluation_mode": "LATENT_TRAP_DETECTION",
+  "preregistration": {
+    "path": "docs/evaluations/needle-latent-detection-v0.1.md",
+    "blob_sha": "502d3602826777d00bebb93c704bcc25093007a7",
+    "frozen_before_case_selection": true
+  },
+  "candidate_discovery": {
+    "path": "docs/audits/issue97-candidate-discovery-2026-09-23.md",
+    "blob_sha": "67dd593a9f402def8d54723434932cbfb1e1d15f",
+    "arm_runs_during_discovery": 0
+  },
+  "sealed_artifacts": [
+    {
+      "filename": "issue97-latent-prompts-v0.1.json",
+      "sha256": "1956a2a99d0fedbcede162d7763a881f7b9af9e490b9def68c59f5804a54df17",
+      "byte_length": 19889,
+      "repository_contains_plaintext": false
+    },
+    {
+      "filename": "issue97-latent-answer-key-v0.1.json",
+      "sha256": "dee28d2c9f3f77342923f09afc34e04f5cacb5ea3a3ac2aadbdda1b17cbaae61",
+      "byte_length": 9853,
+      "repository_contains_plaintext": false
+    }
+  ],
+  "base_instruction_sha256": {
+    "R": "9bfcbe7f908688358abe5aa1738bf534cfc40030cbf0098958ebdb4a03c8d404",
+    "M": "8a0fad3fc64e8afaec9c8336db72721a6fc09a0cd3671602cdb0d1132adb5a5c"
+  },
+  "cases": [
+    {
+      "case_id": "ld-reg2026-305-archive",
+      "kind": "ADVERSARIAL",
+      "trap_class": "SOURCE_STATE_BACKPROJECTION",
+      "question_sha256": "123f95b84399555b329d64da50b485fccc03d00b73da55a826f21574eb2d9062",
+      "answer_key_fragment_sha256": "76cc33b4d70589caf1be38efba1e4ad14c20d5d04f585c878e646a6f6d071e55",
+      "cue_audit": {
+        "verdict": "PASS",
+        "note": "Ordinary historical archive request names the source found but does not mention a later corrigendum, consolidation back-projection, or the expected historical wording."
+      }
+    },
+    {
+      "case_id": "ld-control-nis2-deadline",
+      "kind": "NEGATIVE_CONTROL",
+      "trap_class": null,
+      "question_sha256": "88344264b704a58c6db08c5910c0cf4fdad53c0fdc387ab9dfdef570798de7de",
+      "answer_key_fragment_sha256": "852d3fcf861f3788443d2c46af11361a64d01a6d1e465873a0a3f5d10500bb23",
+      "cue_audit": {
+        "verdict": "CONTROL",
+        "note": "Straightforward direct-date task; no hidden trap is expected."
+      }
+    },
+    {
+      "case_id": "ld-temu-vlop-june2024",
+      "kind": "ADVERSARIAL",
+      "trap_class": "STATUS_APPLICATION_SEPARATION",
+      "question_sha256": "a14bbea256113945ca3dc6864aac168e1654f9ab1d75f78573ef4c04c6bbb888",
+      "answer_key_fragment_sha256": "c28b3adb35bbb3655bd2cb389f765012e682581cb07deed9ef8c3ec726acbd1c",
+      "cue_audit": {
+        "verdict": "PASS",
+        "note": "The designation date and requested compliance date are task-native facts. The prompt does not mention notification, the four-month rule, or instruct the investigator to distinguish designation from application."
+      }
+    },
+    {
+      "case_id": "ld-shredder-en50434",
+      "kind": "ADVERSARIAL",
+      "trap_class": "DYNAMIC_REFERENCE_STATUS",
+      "question_sha256": "4e7fd8075ecccb2989c4c76963eaf680ea8c0cf0b78e18a5d65152a31da36f85",
+      "answer_key_fragment_sha256": "7199483235331f6604ef401d3852b63414f99b7f7d91d171a69257fd016862d8",
+      "cue_audit": {
+        "verdict": "PASS",
+        "note": "Real product, standard, and speed facts are provided; the prompt does not mention a harmonised-standard restriction or direct the investigator to the restricted OJ row."
+      }
+    },
+    {
+      "case_id": "ld-control-gdpr-application",
+      "kind": "NEGATIVE_CONTROL",
+      "trap_class": null,
+      "question_sha256": "b56c9bd0d73c318ce3250cafa87199c815c7404a05c1742e159f799d20d28aa8",
+      "answer_key_fragment_sha256": "39d74a663bbfa9403d19440496d46bffd83a85e89fd9edeeb8c8a951f8f906a9",
+      "cue_audit": {
+        "verdict": "CONTROL",
+        "note": "Straightforward direct-application-date task; no hidden trap is expected."
+      }
+    },
+    {
+      "case_id": "ld-food-info-nl-art25",
+      "kind": "ADVERSARIAL",
+      "trap_class": "LANGUAGE_SCOPE_ASYMMETRY",
+      "question_sha256": "0f00995a7b5f65a9e87bd7831c1369a815b0a64882b665665bc755b00594720c",
+      "answer_key_fragment_sha256": "c54e538bf08afb1a894be5bb66f31dbe85bc92394555d29649baae913dbc3e29",
+      "cue_audit": {
+        "verdict": "PASS",
+        "note": "The conflicting Dutch/English text is naturally present in the user's policy problem. The prompt does not reveal the later Dutch-only corrigendum or instruct a corrigendum-language-scope analysis."
+      }
+    },
+    {
+      "case_id": "ld-chile-parallel-lifecycle",
+      "kind": "ADVERSARIAL",
+      "trap_class": "PARALLEL_INSTRUMENT_LIFECYCLE",
+      "question_sha256": "39cad295813956e40094bfdd34c9ff00a50a63e9f720bb2df0edefb8a5bc9783",
+      "answer_key_fragment_sha256": "eb27b72e0e6ddd85135c3bb1d340891babeac1fd568015c76d4de9c52a1808f4",
+      "cue_audit": {
+        "verdict": "PASS",
+        "note": "The one-row umbrella-label status task is realistic. It does not tell the investigator that separate ITA/AFA identities or provisional-application states exist."
+      }
+    },
+    {
+      "case_id": "ld-haringvliet-2015",
+      "kind": "ADVERSARIAL",
+      "trap_class": "JUDICIAL_VALIDITY_TEXT_DIVERGENCE",
+      "question_sha256": "9d64c10b78e97c4f772b5f5dd201f0d3bd34f133124e1f6c1020c7ca272f301c",
+      "answer_key_fragment_sha256": "dbba84fcd48e35c7dba1bd6b0f60a9f54628f73e8992f28255cadc3cbb2b670b",
+      "cue_audit": {
+        "verdict": "PASS",
+        "note": "The legal-history request does not mention litigation, invalidity, the CJEU case, or ask whether a court later altered the legal significance of the 2015 listing."
+      }
+    }
+  ],
+  "execution": {
+    "requests": 16,
+    "arms": [
+      "R",
+      "M"
+    ],
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "web_search": true,
+    "store": false,
+    "stateless": true,
+    "conversation": null,
+    "previous_response_id": null,
+    "case_order": [
+      "ld-reg2026-305-archive",
+      "ld-control-nis2-deadline",
+      "ld-temu-vlop-june2024",
+      "ld-shredder-en50434",
+      "ld-control-gdpr-application",
+      "ld-food-info-nl-art25",
+      "ld-chile-parallel-lifecycle",
+      "ld-haringvliet-2015"
+    ],
+    "run_order": [
+      "ld-reg2026-305-archive-R",
+      "ld-reg2026-305-archive-M",
+      "ld-control-nis2-deadline-M",
+      "ld-control-nis2-deadline-R",
+      "ld-temu-vlop-june2024-R",
+      "ld-temu-vlop-june2024-M",
+      "ld-shredder-en50434-M",
+      "ld-shredder-en50434-R",
+      "ld-control-gdpr-application-R",
+      "ld-control-gdpr-application-M",
+      "ld-food-info-nl-art25-M",
+      "ld-food-info-nl-art25-R",
+      "ld-chile-parallel-lifecycle-R",
+      "ld-chile-parallel-lifecycle-M",
+      "ld-haringvliet-2015-M",
+      "ld-haringvliet-2015-R"
+    ],
+    "run_prompt_sha256": {
+      "ld-reg2026-305-archive-R": "d4f4e08049bd6221c2893c4272f796375e2b9add7e82531ae8e49dda5b2d5226",
+      "ld-reg2026-305-archive-M": "ccca5ae8baf3e2e06ea28f79f57ab30cfff28a47bc250ccb5f03460e7923d1b3",
+      "ld-control-nis2-deadline-M": "a92efc1a9271e7e9d16c906d4930cd37dc1a92927b54afa5fe4202612b6f2c1f",
+      "ld-control-nis2-deadline-R": "79a69c35e728dcaeab476ff7ea2c82bb198251f0af442f02342decbd6577902a",
+      "ld-temu-vlop-june2024-R": "ac99a37a890e6dff69248361647f03be9ac99c886559f4ea8e0658ef1e65a143",
+      "ld-temu-vlop-june2024-M": "d8ce3a966b68764dc77e9a1a31c7098636385bca2f803986770ff19ffd3fc3b1",
+      "ld-shredder-en50434-M": "dde910670781757e4c3ffbc9bf0a902cca114b63a62629ad23887fd4c8b3ca20",
+      "ld-shredder-en50434-R": "2fced536aecd9b1ebfa662d1fe5199ce676648117ea02ead0db29c3b110d5d63",
+      "ld-control-gdpr-application-R": "d0b53685a5589793a234dcc1b286f5f237d5858b6ac2b114382f9ebe713af894",
+      "ld-control-gdpr-application-M": "6c65f0edc4fb62fc2d20b54946a1d438adadcd53831d49c8876aa380053418ef",
+      "ld-food-info-nl-art25-M": "bdab9c9513dbfb90ec84672244891bf2f1a621b3d4c3b4cfabb8d0da2c0e17b1",
+      "ld-food-info-nl-art25-R": "f891d9cf983fc4b4fec4af7740a69debbf53733d62e9ab32f64b7bfb6ca2dddf",
+      "ld-chile-parallel-lifecycle-R": "fd62bcb67e830a17bdf027e261dc48cab9a8dade5a5f1edc1495f0e012bc1ec1",
+      "ld-chile-parallel-lifecycle-M": "4962e72a2971e77324a5a787f8c00e0cadce73fdf3a5daa9f5a71af01298863c",
+      "ld-haringvliet-2015-M": "8f140b7aafa1817f44d5ac10511fece2a0712d84aa4b5a99d422e59b60c1f9f3",
+      "ld-haringvliet-2015-R": "6ea679db2c1c26719c25a11d33c10e77c6aa9e0ba3d027700cda1a8a6d5e29e5"
+    }
+  },
+  "blinding_rule": "Investigators receive only their own exact prompt. They receive no answer key, candidate-discovery memo, corpus/repository context, other-arm output, conversation object, or previous_response_id.",
+  "reveal_rule": "After all 16 independent runs complete, verify both sealed packet hashes and all per-run prompt hashes; only then reveal/commit the exact sealed prompt and answer-key files unchanged and evaluate under the pre-registered Issue #97 rules.",
+  "mutation_rule": "Any scientific-input change after this commit requires a new gate version and new commitments. Transport-only repairs are allowed only if no investigator response was produced and exact prompt hashes remain unchanged.",
+  "pre_execution_manifest_repair": {
+    "repaired_before_any_investigator_response": true,
+    "sealed_prompt_packet_changed": false,
+    "sealed_answer_key_packet_changed": false,
+    "reason": "The public manifest's per-run prompt-hash table was manually transcribed incorrectly for 12 entries. The already-recorded whole-packet SHA-256 commitments and byte lengths were correct. This commit replaces only the derived per-run hash table with hashes recomputed from the unchanged sealed prompt packet.",
+    "original_manifest_commit": "5dad65fad23e0865d0a650c15e3e49eb6d686ca4"
+  }
+}

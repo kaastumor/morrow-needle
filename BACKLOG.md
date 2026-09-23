@@ -6,6 +6,28 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
+**Issue #97 is the active value gate.**
+
+It tests the one substantive Method question left genuinely unmeasured after
+Issue #95: `LATENT_TRAP_DETECTION` under realistic prompts that do not tell the
+investigator what legal-information trap to look for.
+
+The gate is pre-registered and sealed before execution:
+
+- 6 fresh adversarial cases across 6 trap classes;
+- 2 negative controls;
+- 16 total independent R/M requests;
+- no Core;
+- no investigator run occurred during case discovery or sealing;
+- exact prompt/answer-key packet commitments are in
+  `fixtures/value-gates/issue97-sealed-manifest-v0.1.json`.
+
+The next action is **execution of the frozen packet**, not additional candidate
+discovery, prompt tuning or architecture work. If execution cannot be performed
+inside the current environment, move only the execution boundary; do not alter
+the scientific inputs.
+
+
 Issues #49 and #59 have now falsified the assumption that the current Needle
 architecture should automatically become a general public legal-change product.
 

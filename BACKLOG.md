@@ -30,12 +30,13 @@ Research/audit mode rules:
 **No preselected research task is currently eligible. The hourly worker should
 idle rather than manufacture work.**
 
-Issue #80 is complete. Two independent categorical-finding cases justified
-`authoritative-finding-v0.1`; the HPAI geography hunt then exposed and resolved
-the separate Temporal v0.1 sub-day defect through Temporal v0.2; finally the
-HPAI 3 km protection circle and Swedish HVMFS 2025:4 Skagerrak polygon justified
-`legal-spatial-state-v0.1`. Geometry owns neither causal truth nor time, and no
-GIS/query engine is queued.
+Issue #80 established Authoritative Finding and bounded legal geometry; Issue
+#81 repaired Temporal with explicit DATE/INSTANT precision. Issue #82 then
+proved that official aviation geography is volumetric: UAS zones, prohibited
+airspace and restricted airspace require source-preserved vertical boundaries.
+`legal-spatial-state-v0.2` now adds null-or-typed vertical extent while keeping
+horizontal geometry, causal truth and Temporal v0.2 separate. No GIS, terrain,
+pressure-altitude, flight-level conversion or aviation rules engine is queued.
 
 Issue #77 introduced the authoritative dynamic-set causal owner; Issue #78
 proved set-state time and application time remain separate. Issue #79 then

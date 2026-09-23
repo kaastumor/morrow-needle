@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from jsonschema import Draft202012Validator
+from jsonschema import Draft202012Validator, FormatChecker
 import pytest
 
 from needle.temporal.resolver import status_on
@@ -65,8 +65,9 @@ def test_v0_1_schema_rejects_exact_offset_aware_instants():
         FIXTURE["official_instance"]["normalized_end_exclusive"],
     )
 
-    start_errors = list(Draft202012Validator(SCHEMA).iter_errors(start))
-    end_errors = list(Draft202012Validator(SCHEMA).iter_errors(end))
+    validator = Draft202012Validator(SCHEMA, format_checker=FormatChecker())
+    start_errors = list(validator.iter_errors(start))
+    end_errors = list(validator.iter_errors(end))
 
     assert start_errors
     assert end_errors

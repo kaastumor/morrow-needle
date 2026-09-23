@@ -1,0 +1,118 @@
+{
+  "schema_version": "authoritative-dynamic-set-v0.1",
+  "set_id": "toy-safety:harmonised-standard-references",
+  "set_character": "AUTHORITATIVE_DYNAMIC_SET",
+  "authority": {
+    "authority_id": "EUROPEAN_COMMISSION",
+    "label": "European Commission",
+    "authority_type": "EU_INSTITUTION"
+  },
+  "publication_surface": {
+    "surface_type": "OFFICIAL_JOURNAL",
+    "identifier": "Official Journal references of harmonised standards supporting Directive 2009/48/EC",
+    "authenticity_basis": "Directive 2009/48/EC Articles 13 and 14 make publication and restriction of harmonised-standard references legally operative.",
+    "source_ref": {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32009L0048",
+      "locator": "Articles 13-14",
+      "language": "ENG",
+      "role": "LEGAL_BASIS",
+      "authority_character": "BINDING_LEGAL_TEXT"
+    }
+  },
+  "legal_basis_refs": [
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32009L0048",
+      "locator": "Articles 13-14",
+      "language": "ENG",
+      "role": "LEGAL_BASIS",
+      "authority_character": "BINDING_LEGAL_TEXT"
+    }
+  ],
+  "dependencies": [
+    {
+      "dependency_id": "toy-art13-on-harmonised-reference-set",
+      "governing_rule": {
+        "act_id": "CELEX:32009L0048",
+        "provision": "Article 13",
+        "language": "ENG"
+      },
+      "relation_character": "LEGAL_EFFECT_CONDITIONED_ON_AUTHORITATIVE_SET_STATE",
+      "condition_statement": "The presumption of conformity depends on conformity with harmonised standards or parts whose references have been published in the Official Journal, subject to any restriction of that reference.",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32009L0048",
+          "locator": "Article 13",
+          "language": "ENG",
+          "role": "DEPENDENCY",
+          "authority_character": "BINDING_LEGAL_TEXT"
+        }
+      ]
+    }
+  ],
+  "transitions": [
+    {
+      "transition_id": "toy-en71-1-wave-roller-restriction-2025-09-10",
+      "member": {
+        "label": "EN 71-1:2014+A1:2018",
+        "identifiers": [
+          {
+            "scheme": "HARMONISED_STANDARD",
+            "value": "EN 71-1:2014+A1:2018"
+          }
+        ]
+      },
+      "operation": "RESTRICT_MEMBER",
+      "effective_from": "2025-09-10",
+      "before": {
+        "membership": "INCLUDED",
+        "status": "ACTIVE"
+      },
+      "after": {
+        "membership": "INCLUDED",
+        "status": "RESTRICTED"
+      },
+      "scope": {
+        "character": "PARTIAL_MEMBER",
+        "statement": "Clauses 3.19 and 4.15.1 as regards wave rollers do not confer a presumption of conformity with Directive 2009/48/EC Article 10(2) and Annex II Part I point 3."
+      },
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32023D0740",
+          "locator": "Annex row 1",
+          "language": "ENG",
+          "role": "CONTEXT",
+          "authority_character": "BINDING_LEGAL_TEXT"
+        },
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32025D1785",
+          "locator": "Annex replacement of row 1; entry into force on publication",
+          "language": "ENG",
+          "role": "TRANSITION",
+          "authority_character": "BINDING_LEGAL_TEXT"
+        },
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32025D1785",
+          "locator": "Recitals concerning wave rollers and clauses 3.19 and 4.15.1",
+          "language": "ENG",
+          "role": "SCOPE",
+          "authority_character": "BINDING_LEGAL_TEXT"
+        }
+      ]
+    }
+  ],
+  "forbidden_inferences": [
+    "The transition is a textual mutation of Directive 2009/48/EC Article 13.",
+    "The harmonised-standard identifier changed when its reference status was restricted.",
+    "The restriction withdraws every legal effect of EN 71-1:2014+A1:2018.",
+    "Official Journal reference status is merely non-legal metadata."
+  ],
+  "notes": "Canonical dynamic-set representation of the Issue #77 toy-safety adversary."
+}

@@ -1,0 +1,123 @@
+{
+  "schema_version": "authoritative-dynamic-set-v0.1",
+  "set_id": "reach:candidate-list-svhc",
+  "set_character": "AUTHORITATIVE_DYNAMIC_SET",
+  "authority": {
+    "authority_id": "ECHA",
+    "label": "European Chemicals Agency",
+    "authority_type": "EU_AGENCY"
+  },
+  "publication_surface": {
+    "surface_type": "OFFICIAL_AUTHORITY_WEBSITE",
+    "identifier": "ECHA Candidate List of substances of very high concern for Authorisation",
+    "authenticity_basis": "REACH Article 59(10) requires ECHA to publish and update the list on its website; ECHA states that only the Candidate List published there is deemed authentic.",
+    "source_ref": {
+      "source_type": "OTHER_OFFICIAL",
+      "identifier": "ECHA Candidate List",
+      "locator": "Candidate List introductory authenticity note",
+      "language": "ENG",
+      "role": "AUTHENTICITY",
+      "authority_character": "AUTHENTIC_OFFICIAL_STATE"
+    }
+  },
+  "legal_basis_refs": [
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32006R1907",
+      "locator": "Article 59(1) and 59(10)",
+      "language": "ENG",
+      "role": "LEGAL_BASIS",
+      "authority_character": "BINDING_LEGAL_TEXT"
+    },
+    {
+      "source_type": "OTHER_OFFICIAL",
+      "identifier": "ECHA Candidate List",
+      "locator": "Authenticity note and immediate legal-obligations note",
+      "language": "ENG",
+      "role": "AUTHENTICITY",
+      "authority_character": "AUTHENTIC_OFFICIAL_STATE"
+    }
+  ],
+  "dependencies": [
+    {
+      "dependency_id": "reach-art33-on-candidate-list-identification",
+      "governing_rule": {
+        "act_id": "CELEX:32006R1907",
+        "provision": "Article 33",
+        "language": "ENG"
+      },
+      "relation_character": "LEGAL_EFFECT_CONDITIONED_ON_AUTHORITATIVE_SET_STATE",
+      "condition_statement": "Article 33 duties are conditioned, among other statutory requirements, on the article containing above 0.1% w/w a substance meeting Article 57 criteria and identified in accordance with Article 59(1).",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32006R1907",
+          "locator": "Article 33",
+          "language": "ENG",
+          "role": "DEPENDENCY",
+          "authority_character": "BINDING_LEGAL_TEXT"
+        }
+      ]
+    }
+  ],
+  "transitions": [
+    {
+      "transition_id": "reach-candidate-list-add-nhexane-2026-02-04",
+      "member": {
+        "label": "n-hexane",
+        "identifiers": [
+          {
+            "scheme": "EC_NUMBER",
+            "value": "203-777-6"
+          },
+          {
+            "scheme": "CAS_NUMBER",
+            "value": "110-54-3"
+          }
+        ]
+      },
+      "operation": "ADD_MEMBER",
+      "effective_from": "2026-02-04",
+      "before": {
+        "membership": "NOT_INCLUDED",
+        "status": "NOT_APPLICABLE"
+      },
+      "after": {
+        "membership": "INCLUDED",
+        "status": "ACTIVE"
+      },
+      "scope": {
+        "character": "FULL_MEMBER",
+        "statement": "n-hexane is included as an SVHC on the Candidate List; downstream duties remain subject to each governing provision's separate conditions."
+      },
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "OTHER_OFFICIAL",
+          "identifier": "ECHA Candidate List n-hexane entry",
+          "locator": "n-hexane; inclusion date 04-Feb-2026; decision D(2025)7771-DC",
+          "language": "ENG",
+          "role": "TRANSITION",
+          "authority_character": "AUTHENTIC_OFFICIAL_STATE"
+        },
+        {
+          "source_type": "OTHER_OFFICIAL",
+          "identifier": "ECHA Candidate List n-hexane entry",
+          "locator": "EC 203-777-6; CAS 110-54-3",
+          "language": "ENG",
+          "role": "MEMBER_IDENTITY",
+          "authority_character": "AUTHENTIC_OFFICIAL_STATE"
+        }
+      ]
+    }
+  ],
+  "forbidden_inferences": [
+    "The Candidate List inclusion is a textual mutation of REACH Article 33.",
+    "n-hexane changes chemical identity when it enters the Candidate List.",
+    "Article 33 applies without its concentration threshold or other statutory conditions.",
+    "The authentic ECHA Candidate List can be replaced with invented Cellar identity.",
+    "An authentic agency-list transition must be mislabeled as an AUTHENTIC_ACT mutation."
+  ],
+  "notes": "Canonical dynamic-set representation of the cross-domain Issue #77 REACH adversary."
+}

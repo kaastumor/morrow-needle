@@ -1,0 +1,361 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/authoritative-dynamic-set-v0.1.json",
+  "title": "Morrow // Needle Authoritative Dynamic Set v0.1",
+  "description": "Canonical owner for legal dependencies whose operative output is conditioned on membership or status in an authoritative set that changes outside the governing rule's own text.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "set_id",
+    "set_character",
+    "authority",
+    "publication_surface",
+    "legal_basis_refs",
+    "dependencies",
+    "transitions",
+    "forbidden_inferences"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "authoritative-dynamic-set-v0.1"
+    },
+    "set_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "set_character": {
+      "const": "AUTHORITATIVE_DYNAMIC_SET"
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authority_id", "label", "authority_type"],
+      "properties": {
+        "authority_id": {"type": "string", "minLength": 1},
+        "label": {"type": "string", "minLength": 1},
+        "authority_type": {
+          "type": "string",
+          "enum": ["EU_INSTITUTION", "EU_AGENCY", "OTHER_OFFICIAL_AUTHORITY"]
+        }
+      }
+    },
+    "publication_surface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "surface_type",
+        "identifier",
+        "authenticity_basis",
+        "source_ref"
+      ],
+      "properties": {
+        "surface_type": {
+          "type": "string",
+          "enum": [
+            "OFFICIAL_JOURNAL",
+            "OFFICIAL_AUTHORITY_WEBSITE",
+            "OTHER_OFFICIAL_SURFACE"
+          ]
+        },
+        "identifier": {"type": "string", "minLength": 1},
+        "authenticity_basis": {"type": "string", "minLength": 1},
+        "source_ref": {"$ref": "#/$defs/source_ref"}
+      }
+    },
+    "legal_basis_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/source_ref"}
+    },
+    "dependencies": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/dependency"}
+    },
+    "transitions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/transition"}
+    },
+    "forbidden_inferences": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "notes": {
+      "type": ["string", "null"]
+    }
+  },
+  "$defs": {
+    "source_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_type",
+        "identifier",
+        "locator",
+        "language",
+        "role",
+        "authority_character"
+      ],
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "enum": ["EUR_LEX", "OFFICIAL_JOURNAL", "OTHER_OFFICIAL"]
+        },
+        "identifier": {"type": "string", "minLength": 1},
+        "locator": {"type": "string", "minLength": 1},
+        "language": {
+          "type": ["string", "null"],
+          "pattern": "^[A-Z]{3}$"
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "LEGAL_BASIS",
+            "AUTHENTICITY",
+            "DEPENDENCY",
+            "TRANSITION",
+            "MEMBER_IDENTITY",
+            "SCOPE",
+            "CONTEXT"
+          ]
+        },
+        "authority_character": {
+          "type": "string",
+          "enum": [
+            "BINDING_LEGAL_TEXT",
+            "AUTHENTIC_OFFICIAL_STATE",
+            "OFFICIAL_CONTEXT"
+          ]
+        }
+      }
+    },
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dependency_id",
+        "governing_rule",
+        "relation_character",
+        "condition_statement",
+        "evidence_state",
+        "source_refs"
+      ],
+      "properties": {
+        "dependency_id": {"type": "string", "minLength": 1},
+        "governing_rule": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["act_id", "provision", "language"],
+          "properties": {
+            "act_id": {"type": "string", "minLength": 1},
+            "provision": {"type": "string", "minLength": 1},
+            "language": {
+              "type": "string",
+              "pattern": "^[A-Z]{3}$"
+            }
+          }
+        },
+        "relation_character": {
+          "const": "LEGAL_EFFECT_CONDITIONED_ON_AUTHORITATIVE_SET_STATE"
+        },
+        "condition_statement": {"type": "string", "minLength": 1},
+        "evidence_state": {
+          "type": "string",
+          "enum": [
+            "DIRECT",
+            "DERIVED",
+            "CONTEXTUAL",
+            "ATTRIBUTED",
+            "INTERPRETIVE",
+            "UNRESOLVED"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/source_ref"}
+        }
+      }
+    },
+    "member_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["membership", "status"],
+      "properties": {
+        "membership": {
+          "type": "string",
+          "enum": ["INCLUDED", "NOT_INCLUDED"]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "ACTIVE",
+            "UNRESTRICTED",
+            "RESTRICTED",
+            "WITHDRAWN",
+            "NOT_APPLICABLE",
+            "OTHER"
+          ]
+        }
+      }
+    },
+    "transition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "transition_id",
+        "member",
+        "operation",
+        "effective_from",
+        "before",
+        "after",
+        "scope",
+        "evidence_state",
+        "source_refs"
+      ],
+      "properties": {
+        "transition_id": {"type": "string", "minLength": 1},
+        "member": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["label", "identifiers"],
+          "properties": {
+            "label": {"type": "string", "minLength": 1},
+            "identifiers": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["scheme", "value"],
+                "properties": {
+                  "scheme": {"type": "string", "minLength": 1},
+                  "value": {"type": "string", "minLength": 1}
+                }
+              }
+            }
+          }
+        },
+        "operation": {
+          "type": "string",
+          "enum": [
+            "ADD_MEMBER",
+            "REMOVE_MEMBER",
+            "RESTRICT_MEMBER",
+            "UNRESTRICT_MEMBER",
+            "STATUS_CHANGE"
+          ]
+        },
+        "effective_from": {
+          "type": "string",
+          "format": "date"
+        },
+        "before": {"$ref": "#/$defs/member_state"},
+        "after": {"$ref": "#/$defs/member_state"},
+        "scope": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["character", "statement"],
+          "properties": {
+            "character": {
+              "type": "string",
+              "enum": ["FULL_MEMBER", "PARTIAL_MEMBER"]
+            },
+            "statement": {"type": "string", "minLength": 1}
+          }
+        },
+        "evidence_state": {
+          "type": "string",
+          "enum": [
+            "DIRECT",
+            "DERIVED",
+            "CONTEXTUAL",
+            "ATTRIBUTED",
+            "INTERPRETIVE",
+            "UNRESOLVED"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/source_ref"}
+        }
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"operation": {"const": "ADD_MEMBER"}}},
+          "then": {
+            "properties": {
+              "before": {
+                "properties": {
+                  "membership": {"const": "NOT_INCLUDED"}
+                }
+              },
+              "after": {
+                "properties": {
+                  "membership": {"const": "INCLUDED"}
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {"properties": {"operation": {"const": "REMOVE_MEMBER"}}},
+          "then": {
+            "properties": {
+              "before": {
+                "properties": {
+                  "membership": {"const": "INCLUDED"}
+                }
+              },
+              "after": {
+                "properties": {
+                  "membership": {"const": "NOT_INCLUDED"}
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {"properties": {"operation": {"const": "RESTRICT_MEMBER"}}},
+          "then": {
+            "properties": {
+              "before": {
+                "properties": {
+                  "membership": {"const": "INCLUDED"}
+                }
+              },
+              "after": {
+                "properties": {
+                  "membership": {"const": "INCLUDED"},
+                  "status": {"const": "RESTRICTED"}
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {"properties": {"operation": {"const": "UNRESTRICT_MEMBER"}}},
+          "then": {
+            "properties": {
+              "before": {
+                "properties": {
+                  "membership": {"const": "INCLUDED"},
+                  "status": {"const": "RESTRICTED"}
+                }
+              },
+              "after": {
+                "properties": {
+                  "membership": {"const": "INCLUDED"}
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
+}

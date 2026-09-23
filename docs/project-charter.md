@@ -4,12 +4,17 @@ Status: **CANONICAL PROJECT NORTH STAR**
 
 ## Purpose
 
-Morrow // Needle is an **evidence-first legal research method plus an
-adversarial corpus/protocol for EU legal change**.
+Morrow // Needle is an **adversarial legal-research corpus + evaluation
+protocol for EU legal change**.
 
-Optional canonical persistence remains available, but it is no longer part of
-the default project identity. It must earn itself on a concrete case by
-preventing a demonstrated error or materially reducing reconstruction burden.
+Its demonstrated project-specific contribution is not a proprietary research
+method. It is the preservation of real legal-information traps, explicit
+failure hypotheses, sealed comparative evaluation, negative/parity evidence and
+reproducible audit discipline.
+
+Needle Method remains available as an optional structured handoff/reporting
+convention. Optional canonical persistence also remains available, but neither
+is part of the default project identity; each must earn use on a concrete task.
 
 Needle exists to reconstruct, falsify and inspect legal-change claims without
 turning source activity, model inference, legal interpretation, consolidation
@@ -35,25 +40,25 @@ requires every finding to become a public feature.
 Public-product expansion is stopped after Issues #49 and #59 failed the
 project's repeated-material-advantage threshold.
 
-Issue #86 then tested the project form itself.
+Issue #86 tested the project form; #87 tested handoff persistence; #88 then
+tested the strongest surviving Method-distinctiveness claim.
 
-The strongest boring baseline answered five unseen questions correctly. Needle
-Method added systematic investigation discipline. Needle Core added material
-persistent value only in the stateful/historical cases. Full Needle added no
-material value over Core.
+#88 pre-registered six fresh adversarial failure strata before case execution.
+Across all six cases, the strong source-grounded baseline and Needle Method both
+reached the correct conclusion and preserved the decisive trap. There was no
+R-fail/M-pass rescue.
 
-Issue #87 tested the remaining default-persistence claim across independent
-A→B handoffs. Across five sealed cases and three arms, all 15 Stage-B
-conclusions were correct. Method showed the lowest observed reconstruction
-burden in the pilot; Core produced no observed handoff win beyond Method in the
-complete relay.
+That result triggers the pre-registered stop rule. The default identity shrinks
+again to:
 
-The resulting project-level decision is to shrink the default identity again:
-**Needle Method + corpus/protocol**. Core is optional persistence, admitted only
-when a concrete case demonstrates material value beyond Method.
+**Needle adversarial legal-research corpus + evaluation protocol.**
 
-The burden of proof remains on persistence and higher-level machinery, not on
-the baseline.
+#87 still supports a narrow operational use for structured Method dossiers in
+handoffs. That is retained as a convention, not claimed as a distinct
+substantive research advantage. Core remains optional persistence. Full Needle
+remains parked.
+
+The burden of proof remains on every Needle-specific layer, not on the baseline.
 
 ## North star
 
@@ -65,8 +70,8 @@ the baseline.
 The preferred order is:
 
 1. strong boring baseline;
-2. Needle Method;
-3. Needle Core only if persistence earns itself;
+2. optional Needle Method dossier only when structured handoff/reporting helps;
+3. Needle Core only if persistence independently earns itself;
 4. higher projection only if a concrete question earns that projection.
 
 The north star is safer/reproducible understanding at minimum durable
@@ -153,13 +158,15 @@ There is **no standing implementation or product queue**.
 
 The canonical project identity is now:
 
-**Needle Method + corpus/protocol.**
+**Needle adversarial legal-research corpus + evaluation protocol.**
 
-Needle Core is no longer a default identity layer. Existing canonical
+Needle Method is no longer a primary identity claim. It remains an optional
+structured dossier convention when handoff/review ergonomics justify it.
+
+Needle Core is also not a default identity layer. Existing canonical
 ownership/provenance/history contracts and small deterministic resolvers remain
 available as optional persistence when a concrete repeated, historical,
-provenance-sensitive or otherwise stateful task demonstrates a material
-advantage over Method alone.
+provenance-sensitive or otherwise stateful task demonstrates material value.
 
 Higher analytical/read-side surfaces remain optional experiments.
 
@@ -236,17 +243,18 @@ At wide-angle boundaries, keep these distinct:
 
 A change in one does not automatically require a change in the others.
 
-The current project form is **Needle Method + corpus/protocol**.
+The current project form is **Needle adversarial legal-research corpus +
+evaluation protocol**.
 
-Issue #87 now supports the bounded Method contribution: explicit
-source/authority/state/time/uncertainty discipline improves handoff
-reconstruction consistency even where competent baseline notes reach the same
-legal answer.
+Issue #87 supports only a bounded Method packaging/handoff contribution. Issue
+#88 then found correctness parity across six fresh, pre-registered adversarial
+failure mechanisms: the strong baseline independently preserved every decisive
+distinction.
 
-The stronger default-Core hypothesis is rejected by the full relay. Persistent
-canonical state remains a case-specific hypothesis that must independently earn
-admission by preventing a demonstrated Method-only failure or materially
-reducing repeated reconstruction cost.
+Accordingly, Method is retained as a convention rather than a primary
+project-specific contribution. The default-Core hypothesis remains rejected;
+persistent canonical state is a case-specific hypothesis that must independently
+earn admission.
 
 The contribution claim must continue to earn itself against the strong
 baseline.

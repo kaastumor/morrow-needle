@@ -30,8 +30,9 @@ documented negative result if it survives.
 | A-02 | Authentic-cause parser | Bare prior Annex mention could authorize later amendment-shaped prose as VERIFIED mutation | High | FIXED `7438a84` | No interface reopening |
 | A-03 | Operational baseline | Partial re-observation could replace a complete comparator baseline | High | FIXED `b05113d` | No interface reopening |
 | A-04 | Source-change semantics | Cellar DELETE was promoted from ingestion action to source availability truth | High | FIXED `ba3f3ae` | Bounded P1-B semantic correction; schema unchanged |
-| A-05 | Authentic source locality | Cross-stream flattened text could combine authority context and amendment prose | High | IN REGRESSION | No schema change expected |
+| A-05 | Authentic source locality | Cross-stream flattened text could combine authority context and amendment prose | High | FIXED `dc357bd` | No schema change; parser remains deliberately bounded |
 | A-06 | Operational promotion | Workflow had an inline cursor race guard but no executable ownership-level CAS contract | High | REVISED in #42 | No architecture/interface reopening; guard extracted and tested |
+| A-07 | Evidence ownership | Event/re-observation identity was not cryptographically/semantically bound to the Source Observation used for VERIFIED authentic-cause analysis | High | FIXED in current #29 branch | No identity-schema reopening; adapter now fails closed |
 | S-01 | Repository status | README still named closed Issue #21 as current priority | Medium | FIXED `6d0aa94` | Documentation only |
 | N-01 | Novelty thesis | “EU legal-change monitoring / diff / corroboration / grounded explanation” is not novel | Thesis-level | CLAIM NARROWED | Strategic, not domain contract |
 
@@ -146,26 +147,69 @@ Commit `ba3f3ae` makes a bounded semantic correction:
 
 The Cellar update-detection decision doc now records the correction explicitly.
 
-### A-05 — source-local authority boundaries (in regression)
+### A-05 — source-local authority boundaries
 
 A-02 still left one concrete risk: Formex archive entries were flattened into
 one analysis string. An explicit amendment heading in one XML stream could
 therefore authorize amendment-shaped prose in another stream.
 
-The current candidate repair keeps transient analysis segments per archive
-entry and makes authentic candidate generation operate inside those source-local
-boundaries. Positive candidates retain an archive-entry locator.
+Commit `dc357bd` keeps transient analysis segments per archive entry and makes
+authentic candidate generation operate inside those source-local boundaries.
+Positive candidates retain an archive-entry locator. The negative cross-stream
+authorization regression, operational slice, foundation audit and live
+Regulation (EU) 2026/2104 path all passed.
 
-This finding remains **IN REGRESSION** until unit, operational, foundation and
-live 2026/2104 checks complete.
+**Disposition: revise / fixed.** The evidence contract survives; the adapter was
+too lossy.
 
-Residual risk after segmentation: a verbatim quotation of both the authorizing
-heading and command within the same source stream may still be lexically
-indistinguishable from operative drafting. Do not solve that by regex accretion;
-either retain stronger Formex structural authority or keep the parser family
-explicitly bounded.
+Residual risk remains explicit: a verbatim quotation of both the authorizing
+heading and command within the same Formex stream may still be lexically
+indistinguishable from operative drafting. This parser family is therefore
+**not** a general legal-instruction recognizer. Do not hide that limitation with
+regex accretion; stronger Formex structural authority would need a separate
+discriminating experiment before broadening the route.
 
 ## 2. Canonical identity / evidence ownership
+
+### A-07 — authentic evidence could be cross-bound across Work/language identity
+
+**Adversary**
+
+Construct an otherwise amendment-shaped re-observation where one or more of the
+following disagree:
+
+- the CELEX identifier carried by the feed event;
+- the re-observation's CELEX field;
+- the immutable Source Observation payload identifier;
+- the analysis language and observed content language;
+- the sealed Source Observation payload and its stored record hash.
+
+Before this attack, `candidates_from_reobservation()` trusted the
+re-observation CELEX plus Source Observation record ID. It did not prove that
+the immutable source record actually belonged to the same Work/language and it
+did not verify the seal before producing a VERIFIED authentic-cause candidate.
+
+**Repair**
+
+The adapter now requires:
+
+1. a sealed `SOURCE_OBSERVATION`;
+2. a valid provenance record hash;
+3. CELLAR source ownership;
+4. equality between event CELEX, re-observation CELEX and Source Observation
+   CELEX;
+5. agreement between explicit analysis language and observed content language.
+
+Any mismatch produces no candidate and therefore preserves operational
+abstention. Regressions cover cross-CELEX source binding, event/re-observation
+mismatch, post-seal payload tampering and language cross-binding.
+
+The full Python suite passes with 418 tests, repository sanitation passes, and
+the unchanged production code passed the live 2026/2104 mutation workflow.
+
+**Disposition: revise / fixed.** This was an enforcement defect at the
+operational adapter boundary. The frozen typed identity/provenance contracts do
+not need reopening.
 
 ### Survived so far
 
@@ -456,32 +500,35 @@ The only intentional recurring GitHub source monitor is
 `Morrow Needle Build Loop` runs hourly and has been explicitly instructed to
 honour Issue #29 as a hard gate.
 
-### Workflow classification still required
+### G-02 — deterministic CI and live probes were mixed
 
-Do not delete merely because a workflow has “discovery” in its name.
+Issue #43 found a concrete CI-semantics defect in
+`cellar-feed.yml`, `cellar-probe.yml` and
+`authentic-amendment.yml`: ordinary push runs mixed deterministic repository
+regressions with current official-network probes. Branch red/green therefore
+partly represented external endpoint availability rather than repository
+correctness.
 
-Classify every workflow into one of:
+Commit `1c8a540` separates those evidence classes:
 
-- **canonical regression** — must run on relevant code/data changes;
-- **live integration regression** — valuable but network-dependent;
-- **manual discovery/probe** — should not masquerade as CI;
-- **stateful production/operational job** — must be main/schedule-safe;
-- **obsolete/superseded** — remove or archive with provenance note.
+- deterministic regressions remain normal push CI;
+- live official-source probes are explicit manual `workflow_dispatch` jobs;
+- workflow/job names state whether evidence is deterministic or live.
 
-Early observation: pure discovery workflows are mostly narrowly path-triggered,
-so they are clutter rather than a current correctness hazard. The audit should
-prioritise misleading execution semantics over cosmetic reduction.
+**Disposition: revise.** Discovery/live scripts were retained because they
+still have distinct evidence/provenance roles. No scripts were deleted merely
+to improve file-count optics. This is the intended sanitation outcome: remove
+misleading semantics, not historical evidence.
 
 ## Next attacks
 
-1. finish A-05 source-local authority regressions and bound the remaining
-   same-stream quotation risk;
-2. adversarially test identity and temporal cross-binding beyond the already
-   regressed CELEX case;
-3. classify all workflows/scripts and remove only demonstrably obsolete
-   machinery;
-4. compare the candidate narrower differentiators against emendrix and other
-   direct substitutes;
-5. test whether Source Mode presentation resolution still deserves to be the
+1. compare each candidate narrower differentiator against emendrix, Legalize
+   and other strong substitutes rather than defending a bundled novelty claim;
+2. test existing P2 analytics for recurring user value versus the strong simpler
+   baseline, and park/delete future expansion that does not earn its cost;
+3. test whether human-readable Source Mode resolution still deserves to be the
    next product investment;
-6. rewrite BACKLOG.md only after these attacks decide the next architecture.
+4. run the Project Health Check and choose continue / simplify / redirect /
+   stop;
+5. reconcile BACKLOG.md, assumptions and remaining issues only after that
+   decision.

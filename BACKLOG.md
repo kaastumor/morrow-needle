@@ -27,19 +27,32 @@ Research/audit mode rules:
 5. a well-supported “nothing new / baseline already handles this” result is
    successful work.
 
-**Next bounded research task: Issue #64 — audit the non-listed Dutch
-expression in the 2025/905 corrigendum.**
+**No preselected research task is currently eligible. The hourly worker should
+idle rather than manufacture work.**
 
-Issue #61 independently confirmed the frozen P0-F consolidation-backprojection
-invariant: the current consolidation labelled 13 August 2025 contains wording
-introduced by a corrigendum published on 17 July 2026, so the consolidation
-label is not a source-state-as-of timestamp.
+The first explicit research/audit runway is complete:
 
-#64 now attacks the adjacent multilingual assumption. The 2026 corrigendum does
-not list Dutch, while the authentic Dutch 2025/905 text already contains the
-“bestaande steunregeling” concept. The task must preserve the distinction
-between **NO_ASSERTION from a non-listed corrigendum** and independent evidence
-that a language expression already had the relevant wording.
+- **#61:** independently confirmed consolidation back-projection: a current
+  consolidation labelled 13 August 2025 can contain wording sourced from a
+  corrigendum published in July 2026;
+- **#64:** confirmed expression-scoped corrigendum semantics with a useful
+  asymmetry: English required the 2026 correction while independent authentic
+  Dutch 2025 text already contained the “bestaande steunregeling” concept;
+- **#67:** proved EUR-Lex `C#` correction markers are expression-local
+  presentation ordinals, not cross-language corrigendum identities;
+- **#69:** narrowed the Article 3 system-identity gap: current Commission
+  documentation supports SANI/SANI2 as the notification application, while
+  SANI technical continuity and post-2025 PKI correspondence identity remain
+  unresolved.
+
+These results reinforce research/audit mode without reopening a frozen
+contract or creating new architecture.
+
+The next task should be selected only when a concrete falsifiable legal-
+information question is identified from fresh source evidence, an operational
+monitor anomaly, an unresolved canonical claim, or an explicit sponsor research
+question. Until then, **no AUTO READY issue is intentional**.
+
 
 Operational Needle remains an evidence generator, regression surface and source
 monitor. Thread, X-Ray, Source Anomaly, Half-Life and public cards remain useful

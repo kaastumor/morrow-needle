@@ -1,0 +1,115 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "eu-ets-tnac-authoritative-metric-v0.1",
+  "question": "Can an unchanged statutory formula acquire a new operative output because an official authority publishes a computed metric value?",
+  "governing_rule": {
+    "act_id": "CELEX:32015D1814",
+    "provision": "Article 1(4)-(6)",
+    "textual_mutation_at_metric_event": null,
+    "metric_name": "Total Number of Allowances in Circulation",
+    "metric_acronym": "TNAC",
+    "publication_rule": "The Commission publishes TNAC annually; the most recent published TNAC determines reserve placement or release under Article 1.",
+    "bands": [
+      {
+        "condition": "TNAC < 400000000",
+        "effect": "RELEASE_FROM_RESERVE",
+        "quantity_rule": "100000000 allowances, or all remaining reserve allowances if fewer"
+      },
+      {
+        "condition": "833000000 <= TNAC <= 1096000000",
+        "effect": "PLACE_IN_RESERVE",
+        "quantity_rule": "TNAC - 833000000"
+      },
+      {
+        "condition": "TNAC > 1096000000",
+        "effect": "PLACE_IN_RESERVE",
+        "quantity_rule": "percentage rule under Article 1(5)"
+      }
+    ]
+  },
+  "official_metric_observation": {
+    "metric_id": "eu-ets:tnac:2025",
+    "authority": "European Commission",
+    "source_id": "CELEX:52026XC02957",
+    "source_title": "Commission Communication C/2026/2957",
+    "publication_date": "2026-06-01",
+    "reference_period": "2025",
+    "unit": "allowances",
+    "value": 1023494202,
+    "authority_character": "OFFICIAL_COMPUTED_INDICATOR",
+    "identity_changed": false
+  },
+  "rule_evaluation": {
+    "matched_band": "833000000 <= TNAC <= 1096000000",
+    "formula": "TNAC - 833000000",
+    "inputs": {
+      "TNAC": 1023494202,
+      "lower_reference": 833000000
+    },
+    "computed_result": 190494202,
+    "official_result": 190494202,
+    "result_matches_official": true
+  },
+  "downstream_effect": {
+    "action": "PLACE_IN_MARKET_STABILITY_RESERVE",
+    "quantity": 190494202,
+    "unit": "allowances",
+    "application_period": {
+      "start": "2026-09-01",
+      "end": "2027-08-31"
+    },
+    "auction_supply_effect": "Auction volumes are reduced to reflect the reserve placement."
+  },
+  "architecture_probe": {
+    "source_observation_v0_1": {
+      "fit": "PARTIAL_ONLY",
+      "reason": "Can preserve official bytes but explicitly forbids inferring legal mutation from artifact observation alone and has no canonical metric-value semantics."
+    },
+    "authoritative_dynamic_set_v0_1": {
+      "fit": "FAILS_CAUSAL_SHAPE",
+      "reason": "The legal input is a scalar computed metric, not member identity, membership or status in a set."
+    },
+    "temporal_v0_1": {
+      "fit": "PARTIAL_ONLY",
+      "reason": "Can own publication/application dates but not the scalar observation, threshold band or arithmetic rule evaluation."
+    },
+    "change_atom_v0_3": {
+      "fit": "FAILS_CAUSAL_REQUIREMENT",
+      "reason": "A verified Change Atom requires at least one source textual mutation, but the governing formula is unchanged and the causal event is an official metric observation."
+    },
+    "result": "REPRESENTATIONAL_FAILURE_PINNED",
+    "provisional_missing_concept": "AUTHORITATIVE_METRIC_OBSERVATION_AND_RULE_EVALUATION",
+    "new_schema_added_in_this_probe": false
+  },
+  "forbidden_inferences": [
+    "Decision (EU) 2015/1814 Article 1 was textually amended by the 2026 TNAC publication.",
+    "TNAC is a member or status inside an authoritative dynamic set.",
+    "The TNAC publication date is the same thing as the September reserve-placement application start.",
+    "The Commission Communication is merely contextual metadata with no role in MSR operation.",
+    "A fake textual mutation should be manufactured to make Change Atom v0.3 accept the downstream effect.",
+    "The arithmetic result may be asserted without preserving both the official metric input and the governing formula."
+  ],
+  "official_sources": [
+    {
+      "identifier": "CELEX:32015D1814",
+      "locator": "Article 1(4)-(6)",
+      "role": "FORMULA_AND_THRESHOLDS"
+    },
+    {
+      "identifier": "CELEX:52026XC02957",
+      "locator": "TNAC calculation and conclusion",
+      "role": "AUTHORITATIVE_METRIC_AND_OFFICIAL_RESULT"
+    },
+    {
+      "identifier": "European Commission Market Stability Reserve page",
+      "locator": "Total number of allowances in circulation",
+      "role": "SOLE_INDICATOR_CONTEXT"
+    },
+    {
+      "identifier": "European Commission auction-calendar update 30 July 2026",
+      "locator": "190 494 202 allowances reflected in revised 2026 and 2027 auction calendars",
+      "role": "DOWNSTREAM_OPERATIONAL_EFFECT"
+    }
+  ],
+  "status": "OFFICIAL_CASE_PINNED_ARCHITECTURE_GAP_UNRESOLVED"
+}

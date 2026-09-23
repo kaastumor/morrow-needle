@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/recognized-external-determination-v0.1.json",
+  "title": "Morrow // Needle Recognized External Determination v0.1",
+  "description": "Canonical state transition decided by a private actor whose bounded output is legally recognized by public law. Source origin and public-law recognition remain distinct.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "determination_id",
+    "character",
+    "originator",
+    "recognition",
+    "subject_ref",
+    "determination_kind",
+    "determination_date",
+    "transition",
+    "evidence_state",
+    "source_refs",
+    "legal_relevance",
+    "guardrails"
+  ],
+  "properties": {
+    "schema_version": {"const": "recognized-external-determination-v0.1"},
+    "determination_id": {"type": "string", "minLength": 1},
+    "character": {"const": "RECOGNIZED_EXTERNAL_DETERMINATION"},
+    "originator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["actor_id", "label", "originator_character"],
+      "properties": {
+        "actor_id": {"type": "string", "minLength": 1},
+        "label": {"type": "string", "minLength": 1},
+        "originator_character": {"const": "PRIVATE_ENTITY"},
+        "external_identifier": {"type": ["string", "null"]}
+      }
+    },
+    "recognition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role_label",
+        "recognition_character",
+        "scope_statement",
+        "public_law_refs"
+      ],
+      "properties": {
+        "role_label": {"type": "string", "minLength": 1},
+        "recognition_character": {
+          "type": "string",
+          "enum": [
+            "REGULATORY_RECOGNITION",
+            "DESIGNATED_CONFORMITY_ASSESSOR"
+          ]
+        },
+        "scope_statement": {"type": "string", "minLength": 1},
+        "public_law_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/legal_ref"}
+        }
+      }
+    },
+    "subject_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "identifier", "label"],
+      "properties": {
+        "kind": {"type": "string", "minLength": 1},
+        "identifier": {"type": "string", "minLength": 1},
+        "label": {"type": "string", "minLength": 1}
+      }
+    },
+    "determination_kind": {
+      "type": "string",
+      "enum": [
+        "ORDINAL_CLASSIFICATION_TRANSITION",
+        "CERTIFICATE_STATUS_TRANSITION"
+      ]
+    },
+    "determination_date": {"type": "string", "format": "date"},
+    "transition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operation", "before", "after"],
+      "properties": {
+        "operation": {
+          "type": "string",
+          "enum": ["RECLASSIFY", "SUSPEND", "WITHDRAW"]
+        },
+        "before": {"type": "string", "minLength": 1},
+        "after": {"type": "string", "minLength": 1}
+      }
+    },
+    "evidence_state": {
+      "type": "string",
+      "enum": ["DIRECT", "ATTRIBUTED"]
+    },
+    "source_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/source_ref"}
+    },
+    "legal_relevance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "statement",
+        "consequence_character",
+        "public_law_refs"
+      ],
+      "properties": {
+        "statement": {"type": "string", "minLength": 1},
+        "consequence_character": {
+          "type": "string",
+          "enum": [
+            "CONDITIONAL_ON_DOWNSTREAM_USE",
+            "DIRECT_WITHIN_RECOGNIZED_ROLE"
+          ]
+        },
+        "public_law_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/legal_ref"}
+        }
+      }
+    },
+    "guardrails": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "notes": {"type": ["string", "null"]}
+  },
+  "$defs": {
+    "legal_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["identifier", "locator", "role"],
+      "properties": {
+        "identifier": {"type": "string", "minLength": 1},
+        "locator": {"type": "string", "minLength": 1},
+        "role": {
+          "type": "string",
+          "enum": [
+            "RECOGNITION_BASIS",
+            "MAPPING",
+            "GOVERNING_RULE",
+            "STATUS_POWER"
+          ]
+        }
+      }
+    },
+    "source_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_origin",
+        "identifier",
+        "locator",
+        "role"
+      ],
+      "properties": {
+        "source_origin": {
+          "type": "string",
+          "enum": ["PRIVATE_PRIMARY", "PUBLIC_OFFICIAL"]
+        },
+        "identifier": {"type": "string", "minLength": 1},
+        "locator": {"type": "string", "minLength": 1},
+        "role": {
+          "type": "string",
+          "enum": [
+            "ORIGINATOR_DETERMINATION",
+            "ATTRIBUTED_DETERMINATION",
+            "CORROBORATION"
+          ]
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

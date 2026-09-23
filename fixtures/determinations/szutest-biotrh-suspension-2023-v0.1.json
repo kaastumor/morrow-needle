@@ -1,0 +1,61 @@
+{
+  "schema_version": "recognized-external-determination-v0.1",
+  "determination_id": "szutest:biotrh:certificate-suspension:2023-03-23",
+  "character": "RECOGNIZED_EXTERNAL_DETERMINATION",
+  "originator": {
+    "actor_id": "szutest-nb-2195",
+    "label": "SZUTEST Uygunluk Değerlendirme A.Ş.",
+    "originator_character": "PRIVATE_ENTITY",
+    "external_identifier": "NB 2195"
+  },
+  "recognition": {
+    "role_label": "Notified Body",
+    "recognition_character": "DESIGNATED_CONFORMITY_ASSESSOR",
+    "scope_statement": "Directive 93/42/EEC gives designated notified bodies bounded conformity-assessment and certificate suspension/withdrawal functions.",
+    "public_law_refs": [
+      {
+        "identifier": "CELEX:31993L0042",
+        "locator": "Article 16(1), (5), (6)",
+        "role": "RECOGNITION_BASIS"
+      }
+    ]
+  },
+  "subject_ref": {
+    "kind": "MEDICAL_DEVICE_CERTIFICATE",
+    "identifier": "biotrh-los-deline-ce-certificate",
+    "label": "BIOTRH Los Deline CE certificate(s)"
+  },
+  "determination_kind": "CERTIFICATE_STATUS_TRANSITION",
+  "determination_date": "2023-03-23",
+  "transition": {
+    "operation": "SUSPEND",
+    "before": "ACTIVE",
+    "after": "SUSPENDED"
+  },
+  "evidence_state": "ATTRIBUTED",
+  "source_refs": [
+    {
+      "source_origin": "PUBLIC_OFFICIAL",
+      "identifier": "Swissmedic-hosted FSN/FSCA-23-002-PR",
+      "locator": "page 2, lines describing NB 2195 suspension",
+      "role": "ATTRIBUTED_DETERMINATION"
+    }
+  ],
+  "legal_relevance": {
+    "statement": "Within the recognized conformity-assessment role, a notified body may suspend a certificate where Directive requirements are no longer met unless corrective measures restore compliance.",
+    "consequence_character": "DIRECT_WITHIN_RECOGNIZED_ROLE",
+    "public_law_refs": [
+      {
+        "identifier": "CELEX:31993L0042",
+        "locator": "Article 16(6)",
+        "role": "STATUS_POWER"
+      }
+    ]
+  },
+  "guardrails": [
+    "The private determination is attributed through the manufacturer field safety notice hosted by a regulator; the underlying NB decision document is not treated as directly observed.",
+    "The later competent-authority corrective-action request and manufacturer recall remain separate events.",
+    "Notified-body status does not make SZUTEST a Member State competent authority."
+  ],
+  "notes": "Private-origin proof case #2a from Issue #85."
+}

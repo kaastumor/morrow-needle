@@ -1,0 +1,504 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/provenance-record-v0.2.json",
+  "title": "Morrow // Needle Provenance Record v0.2",
+  "description": "Append-only audit record with explicit source-origin provenance. Legal recognition remains domain truth, not provenance.",
+  "type": "object",
+  "required": [
+    "record_id",
+    "record_type",
+    "created_at",
+    "record_hash",
+    "payload"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "record_type": {
+      "type": "string",
+      "enum": [
+        "SOURCE_OBSERVATION",
+        "DERIVATION_RUN",
+        "CLAIM_SUPPORT",
+        "SUPERSESSION"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "record_hash": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "payload": {
+      "type": "object"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "record_type": {
+            "const": "SOURCE_OBSERVATION"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "$ref": "#/$defs/source_observation"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "record_type": {
+            "const": "DERIVATION_RUN"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "$ref": "#/$defs/derivation_run"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "record_type": {
+            "const": "CLAIM_SUPPORT"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "$ref": "#/$defs/claim_support"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "record_type": {
+            "const": "SUPERSESSION"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "$ref": "#/$defs/supersession"
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "source_observation": {
+      "type": "object",
+      "required": [
+        "source_type",
+        "source_origin",
+        "identifier",
+        "resource_uri",
+        "language",
+        "representation_class",
+        "observed_at",
+        "artifact_hash",
+        "retrieval"
+      ],
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "CELLAR",
+            "EUR_LEX",
+            "OJ",
+            "ELI",
+            "OEIL",
+            "COUNCIL",
+            "COMMISSION",
+            "OTHER_OFFICIAL",
+            "PRIVATE_PRIMARY"
+          ]
+        },
+        "identifier": {
+          "type": "string"
+        },
+        "resource_uri": {
+          "type": "string"
+        },
+        "language": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "representation_class": {
+          "type": "string"
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "artifact_hash": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "retrieval": {
+          "type": "object",
+          "required": [
+            "final_uri",
+            "media_type"
+          ],
+          "properties": {
+            "final_uri": {
+              "type": "string"
+            },
+            "media_type": {
+              "type": "string"
+            },
+            "http_status": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 100,
+              "maximum": 599
+            }
+          },
+          "additionalProperties": false
+        },
+        "source_origin": {
+          "type": "string",
+          "enum": [
+            "PUBLIC_OFFICIAL",
+            "PRIVATE_PRIMARY"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "source_origin": {
+                "const": "PRIVATE_PRIMARY"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "const": "PRIVATE_PRIMARY"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source_origin": {
+                "const": "PUBLIC_OFFICIAL"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "not": {
+                  "const": "PRIVATE_PRIMARY"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "derivation_run": {
+      "type": "object",
+      "required": [
+        "derivation_kind",
+        "execution_character",
+        "implementation",
+        "input_record_ids",
+        "output_entity_refs",
+        "executed_at"
+      ],
+      "properties": {
+        "derivation_kind": {
+          "type": "string",
+          "enum": [
+            "NORMALIZE_AST",
+            "DIFF",
+            "RECONCILE",
+            "TEMPORAL_RESOLVE",
+            "SEMANTIC_EXTRACT",
+            "HUMAN_REVIEW",
+            "OTHER"
+          ]
+        },
+        "execution_character": {
+          "type": "string",
+          "enum": [
+            "DETERMINISTIC",
+            "MODEL",
+            "HUMAN",
+            "HYBRID"
+          ]
+        },
+        "implementation": {
+          "type": "object",
+          "required": [
+            "name",
+            "version"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            },
+            "config_hash": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^sha256:[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "input_record_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "output_entity_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "entity_type",
+              "entity_id"
+            ],
+            "properties": {
+              "entity_type": {
+                "type": "string",
+                "enum": [
+                  "AST_STATE",
+                  "MUTATION",
+                  "TEMPORAL_ASSERTION",
+                  "PROCEDURE_STATE",
+                  "CHANGE_ATOM",
+                  "RECOGNIZED_EXTERNAL_DETERMINATION",
+                  "OTHER"
+                ]
+              },
+              "entity_id": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "executed_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "additionalProperties": false
+    },
+    "claim_support": {
+      "type": "object",
+      "required": [
+        "claim_ref",
+        "source_observation_id",
+        "source_span",
+        "role",
+        "evidence_state",
+        "derivation_record_id"
+      ],
+      "properties": {
+        "claim_ref": {
+          "type": "object",
+          "required": [
+            "entity_type",
+            "entity_id"
+          ],
+          "properties": {
+            "entity_type": {
+              "type": "string",
+              "enum": [
+                "MUTATION",
+                "TEMPORAL_ASSERTION",
+                "PROCEDURE_STATE",
+                "CHANGE_ATOM",
+                "RECOGNIZED_EXTERNAL_DETERMINATION",
+                "OTHER"
+              ]
+            },
+            "entity_id": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "source_observation_id": {
+          "type": "string"
+        },
+        "source_span": {
+          "type": "object",
+          "required": [
+            "locator",
+            "language",
+            "text_hash",
+            "artifact_hash"
+          ],
+          "properties": {
+            "locator": {
+              "type": "string"
+            },
+            "language": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "text_hash": {
+              "type": "string",
+              "pattern": "^sha256:[0-9a-f]{64}$"
+            },
+            "artifact_hash": {
+              "type": "string",
+              "pattern": "^sha256:[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "CAUSE",
+            "BEFORE",
+            "AFTER",
+            "CORROBORATION",
+            "SEMANTIC_CLAIM",
+            "QUALIFIER",
+            "TEMPORAL",
+            "STATUS",
+            "CONTEXT"
+          ]
+        },
+        "evidence_state": {
+          "type": "string",
+          "enum": [
+            "DIRECT",
+            "DERIVED",
+            "CONTEXTUAL",
+            "ATTRIBUTED",
+            "INTERPRETIVE",
+            "UNRESOLVED"
+          ]
+        },
+        "derivation_record_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "supersession": {
+      "type": "object",
+      "required": [
+        "character",
+        "superseded_record_ids",
+        "replacement_record_ids",
+        "reason"
+      ],
+      "properties": {
+        "character": {
+          "type": "string",
+          "enum": [
+            "CORRECTION",
+            "SUPERSESSION",
+            "RETRACTION"
+          ]
+        },
+        "superseded_record_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "replacement_record_ids": {
+          "type": "array",
+          "minItems": 0,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "character": {
+                "enum": [
+                  "CORRECTION",
+                  "SUPERSESSION"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "replacement_record_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "character": {
+                "const": "RETRACTION"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "replacement_record_ids": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
+}

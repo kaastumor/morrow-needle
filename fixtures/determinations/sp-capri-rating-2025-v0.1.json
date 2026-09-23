@@ -1,0 +1,71 @@
+{
+  "schema_version": "recognized-external-determination-v0.1",
+  "determination_id": "sp:capri:issuer-rating:2025-02-20",
+  "character": "RECOGNIZED_EXTERNAL_DETERMINATION",
+  "originator": {
+    "actor_id": "sp-global-ratings-europe",
+    "label": "S&P Global Ratings",
+    "originator_character": "PRIVATE_ENTITY",
+    "external_identifier": null
+  },
+  "recognition": {
+    "role_label": "External Credit Assessment Institution",
+    "recognition_character": "REGULATORY_RECOGNITION",
+    "scope_statement": "EU prudential law permits qualifying ECAI credit assessments to be used under the standardized approach and maps S&P long-term rating categories to credit quality steps.",
+    "public_law_refs": [
+      {
+        "identifier": "CELEX:32013R0575",
+        "locator": "Articles 135-136",
+        "role": "RECOGNITION_BASIS"
+      },
+      {
+        "identifier": "CELEX:32016R1799",
+        "locator": "Annex III, S&P Global Ratings Europe Limited",
+        "role": "MAPPING"
+      }
+    ]
+  },
+  "subject_ref": {
+    "kind": "CORPORATE_ISSUER",
+    "identifier": "capri-holdings-ltd",
+    "label": "Capri Holdings Ltd."
+  },
+  "determination_kind": "ORDINAL_CLASSIFICATION_TRANSITION",
+  "determination_date": "2025-02-20",
+  "transition": {
+    "operation": "RECLASSIFY",
+    "before": "BBB-",
+    "after": "BB"
+  },
+  "evidence_state": "DIRECT",
+  "source_refs": [
+    {
+      "source_origin": "PRIVATE_PRIMARY",
+      "identifier": "S&P Global Ratings rating action 2025-02-20",
+      "locator": "Rating Action Overview",
+      "role": "ORIGINATOR_DETERMINATION"
+    }
+  ],
+  "legal_relevance": {
+    "statement": "If an institution has nominated the relevant ECAI and the assessment is directly applicable, the BBB-to-BB transition crosses from CQS 3 to CQS 4; current Article 122 maps those corporate steps to 75% and 100% risk weights.",
+    "consequence_character": "CONDITIONAL_ON_DOWNSTREAM_USE",
+    "public_law_refs": [
+      {
+        "identifier": "CELEX:32013R0575",
+        "locator": "Article 122",
+        "role": "GOVERNING_RULE"
+      },
+      {
+        "identifier": "CELEX:32016R1799",
+        "locator": "Annex III",
+        "role": "MAPPING"
+      }
+    ]
+  },
+  "guardrails": [
+    "S&P remains a private source and private originator.",
+    "No bank-specific risk-weight or capital effect is asserted without nomination and applicability evidence.",
+    "The rating transition does not mutate EU legal text."
+  ],
+  "notes": "Private-origin proof case #1 from Issue #85."
+}

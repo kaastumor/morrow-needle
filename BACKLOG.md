@@ -27,8 +27,12 @@ Research/audit mode rules:
 5. a well-supported “nothing new / baseline already handles this” result is
    successful work.
 
-**No preselected research task is currently eligible. The hourly worker should
-idle rather than manufacture work.**
+**Issue #77 is the sole current evidence-backed next pick.** A live official
+toy-safety case has triggered Dependency Ripple v0.1's own reopen rule: the
+Article 13 presumption of conformity depends on a dynamic Official Journal
+publication gateway that cannot honestly be represented as an ordinary static
+cross-reference. Preserve the failure first, then pursue only the smallest
+generalisation that represents this case. Do not create adjacent standards work.
 
 The first explicit research/audit runway is complete:
 
@@ -45,8 +49,11 @@ The first explicit research/audit runway is complete:
   SANI technical continuity and post-2025 PKI correspondence identity remain
   unresolved.
 
-These results reinforce research/audit mode without reopening a frozen
-contract or creating new architecture.
+Those first-run results reinforced research/audit mode without reopening a
+frozen contract. **Issue #77 is the first later discovery to legitimately reopen
+one:** Dependency Ripple v0.1 cannot represent a dynamic harmonised-standard
+publication gateway without misclassifying the relation as an ordinary
+cross-reference.
 
 The next task should be selected only when a concrete falsifiable legal-
 information question is identified from fresh source evidence, an operational

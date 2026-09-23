@@ -35,6 +35,8 @@ Every entry ends in one disposition:
 
 | #88 adversarial failure gate | PARITY | Needle Method prevents consequential errors or unjustified certainty on fresh legal questions drawn from failure mechanisms that previously stressed the project | Equally capable source-grounded GPT-5.6 Sol/high baseline with the same web access | All six sealed pairs were R-pass/M-pass; baseline independently caught every decisive trap, while Method added structure/verbosity but no correctness rescue | SIMPLIFY | `docs/audits/needle-adversarial-failure-gate-2026-09-23.md` and Issue #88 |
 
+| #91 parallel international-agreement lifecycle | DISCOVERY | The shrunk corpus/protocol project can keep finding orthogonal, reusable legal-information failure families without rebuilding a legal-state product architecture | Existing corpus taxonomy plus direct official-source research | Mercosur and Mexico independently show that interim and comprehensive agreements carry separate lifecycle states; a two-case PARALLEL_INSTRUMENT_LIFECYCLE family was added with no new persistence/schema layer | CONTINUE | `research/parallel-international-agreement-lifecycle-2026-09-23.md` and Issue #91 |
+
 ## Rules
 
 1. Do not add an entry because work was completed.

@@ -71,4 +71,5 @@ jobs:
             tests/test_authoritative_finding_contract.py \
             tests/test_temporal_v0_2_precision.py \
             tests/test_legal_spatial_state_v0_2.py \
-            tests/test_judicial_holding_contract.py
+            tests/test_judicial_holding_contract.py \
+            tests/test_recognized_external_determination.py

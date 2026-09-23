@@ -1,0 +1,50 @@
+{
+  "schema_version": "issue97-manual-manifest-v0.3",
+  "issue": 97,
+  "created_date": "2026-09-24",
+  "status": "SEALED_MANUAL_STAGE_READY",
+  "evaluation_mode": "LATENT_TRAP_DETECTION",
+  "execution_medium": "CHATGPT_TEMPORARY_CHAT_UNPERSONALIZED",
+  "supersedes": {
+    "version": "v0.2",
+    "disposition": "RETIRED_UNEXECUTED_AFTER_PROJECT_LEVEL_COST_ALIGNMENT"
+  },
+  "hidden_artifacts": [
+    {
+      "filename": "issue97-manual-prompts-v0.3.json",
+      "sha256": "23bbab762927c711a998c401e9f72d9186191ef079df3ec813c5650dbf33875e",
+      "repository_contains_plaintext": false
+    },
+    {
+      "filename": "issue97-manual-answer-key-v0.3.json",
+      "sha256": "1b77e98638b03b02f4dde9440abc25a7e7cd8de9e29562ea641e9274ad02fb0d",
+      "repository_contains_plaintext": false
+    }
+  ],
+  "user_kit": {
+    "filename": "issue97-v03-manual-8chats.zip",
+    "sha256": "cb294746ee86de9cdd2b12ea9b16cb4924ee41f7c1f34e806365b3abb8768df6"
+  },
+  "settings": {
+    "temporary_chat": true,
+    "personalization": "UNPERSONALIZED",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "web_search_required": true,
+    "project_context": false,
+    "followups_allowed": false
+  },
+  "run_order": [
+    {"chat_id":"CHAT-01","run_id":"ld2-chile-lifecycle-R","prompt_sha256":"8abb5e0ba3d54df2bbfdba616bdb88fe96b738b0228e79a1fef338f4bf3dc77b"},
+    {"chat_id":"CHAT-02","run_id":"ld2-temu-june-R","prompt_sha256":"30c8261248692e0a767edab99606305f29758c4710259b71c8ef1ce0f8e8d52d"},
+    {"chat_id":"CHAT-03","run_id":"ld2-haringvliet-2015-M","prompt_sha256":"5b54aced74ed072ef675e4e02009ff64ae175429f9549552ad8e6c96fd25ec22"},
+    {"chat_id":"CHAT-04","run_id":"ld2-shredder-320-R","prompt_sha256":"8d35688b77a1dd2a54b07cd974998c4449c07e574860495894b1511e8da50ed3"},
+    {"chat_id":"CHAT-05","run_id":"ld2-haringvliet-2015-R","prompt_sha256":"3f4ff3ed5f26b84156f9006aa2239468157b3d5e2f8ed5089ba2a656d9ee0eb2"},
+    {"chat_id":"CHAT-06","run_id":"ld2-temu-june-M","prompt_sha256":"961ee1060ba09d274e43013e0d92f2fe260c530120fca31030eea868fdd13159"},
+    {"chat_id":"CHAT-07","run_id":"ld2-chile-lifecycle-M","prompt_sha256":"5e692b8f838bff46ceb71bcb894def31a9f216bb50ee0f7f1a39721b343e7e18"},
+    {"chat_id":"CHAT-08","run_id":"ld2-shredder-320-M","prompt_sha256":"a549dd287f34ab2fff0cecee5553e72ab945029af2f5b5bfc90ed5d9418745c7"}
+  ],
+  "initial_stop_rule": "If all four adversarial pairs are R-pass/M-pass, stop after 8 chats and conclude latent-detection value is not demonstrated in this stage.",
+  "signal_rule": "Any discordant pair is only a signal. Blind grading occurs before any control/replication stage is frozen or executed.",
+  "mutation_rule": "Any scientific-input or execution-setting change after commit requires a new version."
+}

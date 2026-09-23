@@ -1,0 +1,55 @@
+{
+  "schema_version": "authoritative-metric-observation-v0.1",
+  "observation_id": "metric:eu-ets:tnac:2025",
+  "character": "AUTHORITATIVE_METRIC_OBSERVATION",
+  "metric": {
+    "name": "Total Number of Allowances in Circulation",
+    "value": 1023494202,
+    "unit": "allowances"
+  },
+  "subject_ref": {
+    "kind": "MARKET",
+    "identifier": "EU_ETS1",
+    "label": "EU Emissions Trading System carbon market"
+  },
+  "reference_period": {
+    "label": "calendar year 2025",
+    "start_date": "2025-01-01",
+    "end_date": "2025-12-31"
+  },
+  "authority": {
+    "authority_id": "EUROPEAN_COMMISSION",
+    "label": "European Commission"
+  },
+  "determination_character": "OFFICIAL_COMPUTATION",
+  "evidence_state": "DIRECT",
+  "source_refs": [
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:52026XC02957",
+      "locator": "TNAC section: 2025 TNAC = 1 023 494 202",
+      "language": "ENG",
+      "role": "METRIC_VALUE",
+      "authority_character": "AUTHENTIC_OFFICIAL_VALUE"
+    }
+  ],
+  "legal_relevance": {
+    "statement": "Decision (EU) 2015/1814 makes the most recently published TNAC the numeric input for Market Stability Reserve placement/release rules.",
+    "rule_refs": [
+      {
+        "source_type": "EUR_LEX",
+        "identifier": "CELEX:32015D1814",
+        "locator": "Article 1(4)-(6)",
+        "language": "ENG",
+        "role": "LEGAL_RELEVANCE",
+        "authority_character": "BINDING_LEGAL_TEXT"
+      }
+    ]
+  },
+  "forbidden_inferences": [
+    "The TNAC value is itself a textual mutation of Decision (EU) 2015/1814.",
+    "The observation owns the resulting reserve-placement quantity.",
+    "The publication date of the metric is the downstream application date."
+  ],
+  "notes": "System-wide official metric proof case for Issue #79."
+}

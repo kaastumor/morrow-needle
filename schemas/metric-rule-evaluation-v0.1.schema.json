@@ -1,0 +1,207 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/metric-rule-evaluation-v0.1.json",
+  "title": "Morrow // Needle Metric Rule Evaluation v0.1",
+  "description": "Derived deterministic evaluation of authoritative metric observations against a binding numeric legal predicate or formula. It owns the evaluation, not metric truth and not temporal application.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "evaluation_id",
+    "character",
+    "governing_rule",
+    "metric_input_refs",
+    "predicate",
+    "calculation",
+    "result",
+    "evaluation_method",
+    "evidence_state",
+    "owns_temporal_application",
+    "source_refs",
+    "guardrails"
+  ],
+  "properties": {
+    "schema_version": {"const": "metric-rule-evaluation-v0.1"},
+    "evaluation_id": {"type": "string", "minLength": 1},
+    "character": {"const": "METRIC_RULE_EVALUATION"},
+    "governing_rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["act_id", "provision", "language", "source_refs"],
+      "properties": {
+        "act_id": {"type": "string", "minLength": 1},
+        "provision": {"type": "string", "minLength": 1},
+        "language": {"type": "string", "pattern": "^[A-Z]{3}$"},
+        "source_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/source_ref"}
+        }
+      }
+    },
+    "metric_input_refs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "predicate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operator", "metric_observation_id", "result"],
+      "properties": {
+        "operator": {
+          "type": "string",
+          "enum": [
+            "GREATER_THAN",
+            "GREATER_THAN_OR_EQUAL",
+            "LESS_THAN",
+            "LESS_THAN_OR_EQUAL",
+            "BETWEEN_INCLUSIVE",
+            "EQUAL"
+          ]
+        },
+        "metric_observation_id": {"type": "string", "minLength": 1},
+        "comparison_value": {"type": "number"},
+        "lower_value": {"type": "number"},
+        "upper_value": {"type": "number"},
+        "unit": {"type": "string", "minLength": 1},
+        "result": {"type": "boolean"},
+        "statement": {"type": "string", "minLength": 1}
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {"operator": {"const": "BETWEEN_INCLUSIVE"}}
+          },
+          "then": {"required": ["lower_value", "upper_value"]}
+        },
+        {
+          "if": {
+            "properties": {
+              "operator": {
+                "enum": [
+                  "GREATER_THAN",
+                  "GREATER_THAN_OR_EQUAL",
+                  "LESS_THAN",
+                  "LESS_THAN_OR_EQUAL",
+                  "EQUAL"
+                ]
+              }
+            }
+          },
+          "then": {"required": ["comparison_value"]}
+        }
+      ]
+    },
+    "calculation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["formula_text", "inputs"],
+      "properties": {
+        "formula_text": {"type": "string", "minLength": 1},
+        "inputs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "oneOf": [
+              {"$ref": "#/$defs/metric_input"},
+              {"$ref": "#/$defs/legal_constant_input"}
+            ]
+          }
+        }
+      }
+    },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "value",
+        "unit",
+        "derivation_state",
+        "official_corroboration_refs"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": ["NUMBER", "QUANTITY", "MONEY"]
+        },
+        "value": {"type": "number"},
+        "unit": {"type": "string", "minLength": 1},
+        "derivation_state": {"const": "DERIVED"},
+        "official_corroboration_refs": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/source_ref"}
+        }
+      }
+    },
+    "evaluation_method": {"const": "PINNED_DETERMINISTIC_ARITHMETIC"},
+    "evidence_state": {"const": "DERIVED"},
+    "owns_temporal_application": {"const": false},
+    "source_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/source_ref"}
+    },
+    "guardrails": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "notes": {"type": ["string", "null"]}
+  },
+  "$defs": {
+    "metric_input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "source_kind", "metric_observation_id"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "source_kind": {"const": "METRIC_OBSERVATION"},
+        "metric_observation_id": {"type": "string", "minLength": 1}
+      }
+    },
+    "legal_constant_input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "source_kind", "value", "unit", "source_ref"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "source_kind": {"const": "LEGAL_CONSTANT"},
+        "value": {"type": "number"},
+        "unit": {"type": "string", "minLength": 1},
+        "source_ref": {"$ref": "#/$defs/source_ref"}
+      }
+    },
+    "source_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_type", "identifier", "locator", "role"],
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "EUR_LEX",
+            "OFFICIAL_JOURNAL",
+            "COMMISSION",
+            "OTHER_OFFICIAL"
+          ]
+        },
+        "identifier": {"type": "string", "minLength": 1},
+        "locator": {"type": "string", "minLength": 1},
+        "language": {"type": ["string", "null"]},
+        "role": {
+          "type": "string",
+          "enum": [
+            "GOVERNING_RULE",
+            "PREDICATE",
+            "FORMULA",
+            "OFFICIAL_CORROBORATION",
+            "CONTEXT"
+          ]
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

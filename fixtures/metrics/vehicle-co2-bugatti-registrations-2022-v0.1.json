@@ -1,0 +1,53 @@
+{
+  "schema_version": "authoritative-metric-observation-v0.1",
+  "observation_id": "metric:vehicle-co2:bugatti:2022:registrations",
+  "character": "AUTHORITATIVE_METRIC_OBSERVATION",
+  "metric": {
+    "name": "New passenger car registrations",
+    "value": 8,
+    "unit": "vehicles"
+  },
+  "subject_ref": {
+    "kind": "MANUFACTURER",
+    "identifier": "BUGATTI_AUTOMOBILES_SAS",
+    "label": "BUGATTI AUTOMOBILES SAS"
+  },
+  "reference_period": {
+    "label": "calendar year 2022",
+    "start_date": "2022-01-01",
+    "end_date": "2022-12-31"
+  },
+  "authority": {
+    "authority_id": "EUROPEAN_COMMISSION",
+    "label": "European Commission"
+  },
+  "determination_character": "OFFICIAL_DETERMINATION",
+  "evidence_state": "DIRECT",
+  "source_refs": [
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32024D0865",
+      "locator": "Annex I Table 1, BUGATTI AUTOMOBILES SAS, column C",
+      "language": "ENG",
+      "role": "METRIC_VALUE",
+      "authority_character": "AUTHENTIC_OFFICIAL_VALUE"
+    }
+  ],
+  "legal_relevance": {
+    "statement": "Regulation (EU) 2019/631 Article 8 multiplies excess emissions by the number of newly registered vehicles.",
+    "rule_refs": [
+      {
+        "source_type": "EUR_LEX",
+        "identifier": "CELEX:32019R0631",
+        "locator": "Article 8(2)",
+        "language": "ENG",
+        "role": "LEGAL_RELEVANCE",
+        "authority_character": "BINDING_LEGAL_TEXT"
+      }
+    ]
+  },
+  "forbidden_inferences": [
+    "The registration count is itself a legal penalty.",
+    "The observation owns the monetary premium calculation."
+  ]
+}

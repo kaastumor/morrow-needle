@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/authoritative-metric-observation-v0.1.json",
+  "title": "Morrow // Needle Authoritative Metric Observation v0.1",
+  "description": "Canonical direct observation of an authoritative numeric value that a binding legal rule makes operative. The observation owns numeric truth, not downstream rule evaluation.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "observation_id",
+    "character",
+    "metric",
+    "subject_ref",
+    "reference_period",
+    "authority",
+    "determination_character",
+    "evidence_state",
+    "source_refs",
+    "legal_relevance",
+    "forbidden_inferences"
+  ],
+  "properties": {
+    "schema_version": {"const": "authoritative-metric-observation-v0.1"},
+    "observation_id": {"type": "string", "minLength": 1},
+    "character": {"const": "AUTHORITATIVE_METRIC_OBSERVATION"},
+    "metric": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "value", "unit"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "value": {"type": "number"},
+        "unit": {"type": "string", "minLength": 1}
+      }
+    },
+    "subject_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "identifier"],
+      "properties": {
+        "kind": {"type": "string", "minLength": 1},
+        "identifier": {"type": "string", "minLength": 1},
+        "label": {"type": ["string", "null"]}
+      }
+    },
+    "reference_period": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label"],
+      "properties": {
+        "label": {"type": "string", "minLength": 1},
+        "start_date": {"type": ["string", "null"], "format": "date"},
+        "end_date": {"type": ["string", "null"], "format": "date"}
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authority_id", "label"],
+      "properties": {
+        "authority_id": {"type": "string", "minLength": 1},
+        "label": {"type": "string", "minLength": 1}
+      }
+    },
+    "determination_character": {
+      "type": "string",
+      "enum": [
+        "OFFICIAL_MEASUREMENT",
+        "OFFICIAL_COMPUTATION",
+        "OFFICIAL_DETERMINATION",
+        "OFFICIALLY_VERIFIED_VALUE"
+      ]
+    },
+    "evidence_state": {"const": "DIRECT"},
+    "source_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/source_ref"}
+    },
+    "legal_relevance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["statement", "rule_refs"],
+      "properties": {
+        "statement": {"type": "string", "minLength": 1},
+        "rule_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/source_ref"}
+        }
+      }
+    },
+    "forbidden_inferences": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "notes": {"type": ["string", "null"]}
+  },
+  "$defs": {
+    "source_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_type",
+        "identifier",
+        "locator",
+        "role",
+        "authority_character"
+      ],
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "EUR_LEX",
+            "OFFICIAL_JOURNAL",
+            "COMMISSION",
+            "OTHER_OFFICIAL"
+          ]
+        },
+        "identifier": {"type": "string", "minLength": 1},
+        "locator": {"type": "string", "minLength": 1},
+        "language": {"type": ["string", "null"]},
+        "role": {
+          "type": "string",
+          "enum": [
+            "METRIC_VALUE",
+            "METRIC_METHOD",
+            "LEGAL_RELEVANCE",
+            "CONTEXT"
+          ]
+        },
+        "authority_character": {
+          "type": "string",
+          "enum": [
+            "BINDING_LEGAL_TEXT",
+            "AUTHENTIC_OFFICIAL_VALUE",
+            "OFFICIAL_CONTEXT"
+          ]
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

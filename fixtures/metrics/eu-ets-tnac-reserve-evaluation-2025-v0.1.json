@@ -1,0 +1,93 @@
+{
+  "schema_version": "metric-rule-evaluation-v0.1",
+  "evaluation_id": "metric-eval:eu-ets:tnac:2025:reserve-placement",
+  "character": "METRIC_RULE_EVALUATION",
+  "governing_rule": {
+    "act_id": "CELEX:32015D1814",
+    "provision": "Article 1(5)",
+    "language": "ENG",
+    "source_refs": [
+      {
+        "source_type": "EUR_LEX",
+        "identifier": "CELEX:32015D1814",
+        "locator": "Article 1(5)",
+        "language": "ENG",
+        "role": "GOVERNING_RULE"
+      }
+    ]
+  },
+  "metric_input_refs": [
+    "metric:eu-ets:tnac:2025"
+  ],
+  "predicate": {
+    "operator": "BETWEEN_INCLUSIVE",
+    "metric_observation_id": "metric:eu-ets:tnac:2025",
+    "lower_value": 833000000,
+    "upper_value": 1096000000,
+    "unit": "allowances",
+    "result": true,
+    "statement": "The published 2025 TNAC lies between 833 million and 1 096 million allowances."
+  },
+  "calculation": {
+    "formula_text": "TNAC - 833000000",
+    "inputs": [
+      {
+        "name": "TNAC",
+        "source_kind": "METRIC_OBSERVATION",
+        "metric_observation_id": "metric:eu-ets:tnac:2025"
+      },
+      {
+        "name": "lower_reference",
+        "source_kind": "LEGAL_CONSTANT",
+        "value": 833000000,
+        "unit": "allowances",
+        "source_ref": {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32015D1814",
+          "locator": "Article 1(5)",
+          "language": "ENG",
+          "role": "FORMULA"
+        }
+      }
+    ]
+  },
+  "result": {
+    "kind": "QUANTITY",
+    "value": 190494202,
+    "unit": "allowances",
+    "derivation_state": "DERIVED",
+    "official_corroboration_refs": [
+      {
+        "source_type": "EUR_LEX",
+        "identifier": "CELEX:52026XC02957",
+        "locator": "Conclusion: 190 494 202 allowances placed in reserve",
+        "language": "ENG",
+        "role": "OFFICIAL_CORROBORATION"
+      }
+    ]
+  },
+  "evaluation_method": "PINNED_DETERMINISTIC_ARITHMETIC",
+  "evidence_state": "DERIVED",
+  "owns_temporal_application": false,
+  "source_refs": [
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32015D1814",
+      "locator": "Article 1(5)",
+      "language": "ENG",
+      "role": "FORMULA"
+    },
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:52026XC02957",
+      "locator": "TNAC and conclusion",
+      "language": "ENG",
+      "role": "OFFICIAL_CORROBORATION"
+    }
+  ],
+  "guardrails": [
+    "Metric truth remains owned by the referenced Authoritative Metric Observation.",
+    "The evaluation does not create or imply a textual mutation.",
+    "The evaluation does not own the September 2026 application boundary."
+  ]
+}

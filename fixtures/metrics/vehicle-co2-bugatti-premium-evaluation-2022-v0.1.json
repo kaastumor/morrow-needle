@@ -1,0 +1,91 @@
+{
+  "schema_version": "metric-rule-evaluation-v0.1",
+  "evaluation_id": "metric-eval:vehicle-co2:bugatti:2022:premium",
+  "character": "METRIC_RULE_EVALUATION",
+  "governing_rule": {
+    "act_id": "CELEX:32019R0631",
+    "provision": "Article 8(1)-(2)",
+    "language": "ENG",
+    "source_refs": [
+      {
+        "source_type": "EUR_LEX",
+        "identifier": "CELEX:32019R0631",
+        "locator": "Article 8(1)-(2)",
+        "language": "ENG",
+        "role": "GOVERNING_RULE"
+      }
+    ]
+  },
+  "metric_input_refs": [
+    "metric:vehicle-co2:bugatti:2022:distance-to-target",
+    "metric:vehicle-co2:bugatti:2022:registrations"
+  ],
+  "predicate": {
+    "operator": "GREATER_THAN",
+    "metric_observation_id": "metric:vehicle-co2:bugatti:2022:distance-to-target",
+    "comparison_value": 0,
+    "unit": "g CO2/km",
+    "result": true,
+    "statement": "The official distance to target is positive."
+  },
+  "calculation": {
+    "formula_text": "distance_to_target * 95 * registrations",
+    "inputs": [
+      {
+        "name": "distance_to_target",
+        "source_kind": "METRIC_OBSERVATION",
+        "metric_observation_id": "metric:vehicle-co2:bugatti:2022:distance-to-target"
+      },
+      {
+        "name": "eur_per_excess_g_km_per_vehicle",
+        "source_kind": "LEGAL_CONSTANT",
+        "value": 95,
+        "unit": "EUR per (g CO2/km) per vehicle",
+        "source_ref": {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32019R0631",
+          "locator": "Article 8(2)",
+          "language": "ENG",
+          "role": "FORMULA"
+        }
+      },
+      {
+        "name": "registrations",
+        "source_kind": "METRIC_OBSERVATION",
+        "metric_observation_id": "metric:vehicle-co2:bugatti:2022:registrations"
+      }
+    ]
+  },
+  "result": {
+    "kind": "MONEY",
+    "value": 341046.96,
+    "unit": "EUR",
+    "derivation_state": "DERIVED",
+    "official_corroboration_refs": []
+  },
+  "evaluation_method": "PINNED_DETERMINISTIC_ARITHMETIC",
+  "evidence_state": "DERIVED",
+  "owns_temporal_application": false,
+  "source_refs": [
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32019R0631",
+      "locator": "Article 8(1)-(2)",
+      "language": "ENG",
+      "role": "FORMULA"
+    },
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32024D0865",
+      "locator": "Recital 10 and Annex I Table 1, BUGATTI AUTOMOBILES SAS",
+      "language": "ENG",
+      "role": "CONTEXT"
+    }
+  ],
+  "guardrails": [
+    "EUR 341046.96 is derived from official metrics and the binding formula; it is not represented as a directly published Commission amount.",
+    "Metric observations remain immutable direct evidence objects.",
+    "This evaluation does not manufacture a textual mutation of Article 8.",
+    "This contract does not decide collection timing or payment status."
+  ]
+}

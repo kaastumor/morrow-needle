@@ -1,0 +1,54 @@
+{
+  "schema_version": "authoritative-metric-observation-v0.1",
+  "observation_id": "metric:vehicle-co2:bugatti:2022:distance-to-target",
+  "character": "AUTHORITATIVE_METRIC_OBSERVATION",
+  "metric": {
+    "name": "Distance to specific emissions target",
+    "value": 448.746,
+    "unit": "g CO2/km"
+  },
+  "subject_ref": {
+    "kind": "MANUFACTURER",
+    "identifier": "BUGATTI_AUTOMOBILES_SAS",
+    "label": "BUGATTI AUTOMOBILES SAS"
+  },
+  "reference_period": {
+    "label": "calendar year 2022",
+    "start_date": "2022-01-01",
+    "end_date": "2022-12-31"
+  },
+  "authority": {
+    "authority_id": "EUROPEAN_COMMISSION",
+    "label": "European Commission"
+  },
+  "determination_character": "OFFICIAL_DETERMINATION",
+  "evidence_state": "DIRECT",
+  "source_refs": [
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32024D0865",
+      "locator": "Annex I Table 1, BUGATTI AUTOMOBILES SAS, column G",
+      "language": "ENG",
+      "role": "METRIC_VALUE",
+      "authority_character": "AUTHENTIC_OFFICIAL_VALUE"
+    }
+  ],
+  "legal_relevance": {
+    "statement": "Regulation (EU) 2019/631 Article 8 uses positive excess emissions relative to target as an input to the excess-emissions premium.",
+    "rule_refs": [
+      {
+        "source_type": "EUR_LEX",
+        "identifier": "CELEX:32019R0631",
+        "locator": "Article 8(1)-(2)",
+        "language": "ENG",
+        "role": "LEGAL_RELEVANCE",
+        "authority_character": "BINDING_LEGAL_TEXT"
+      }
+    ]
+  },
+  "forbidden_inferences": [
+    "The performance value is a textual mutation of Regulation (EU) 2019/631.",
+    "The observation owns the monetary premium calculation.",
+    "Individual positive distance may be used where compliance is legally assessed only at pool level."
+  ]
+}

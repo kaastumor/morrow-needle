@@ -13,9 +13,10 @@ At the start of every run inspect, in order:
 2. `docs/project-charter.md`;
 3. `BACKLOG.md`;
 4. `docs/assumptions.md`;
-5. the active gate issue and relevant decision/audit documents;
-6. latest main CI / operational state relevant to the task;
-7. this runbook.
+5. `docs/way-of-working.md`;
+6. the active gate issue and relevant decision/audit documents;
+7. latest main CI / operational state relevant to the task;
+8. this runbook.
 
 Do not use stale chat handoffs as authority over the repository.
 
@@ -29,6 +30,24 @@ highest-priority eligible open issue whose title begins:
 `AUTO READY —`
 
 Dependencies and the active gate must be satisfied.
+
+For the authorised MVP #103 / discovery #104 horizon, use this priority order:
+
+1. #105
+2. #106
+3. #107
+4. #108
+5. #109
+6. #110
+7. #111
+8. #112
+9. #113
+10. #114
+11. #115
+12. #116
+
+Discovery issues #111–#116 are not eligible until #110 records
+`TECHNICAL_MVP_CANDIDATE`.
 
 If no eligible AUTO READY issue exists, do not manufacture work. Inspect for a
 blocker only if the active gate explicitly requires it, then stop the run.
@@ -103,8 +122,12 @@ from repository state without repeating or guessing prior work.
 - add regression tests/fixtures where behavior can regress;
 - run repository sanitation and relevant tests;
 - open a PR;
-- inspect CI and repair failures;
-- squash-merge only when acceptance criteria are satisfied and CI is green;
+- inspect CI and repair real repository failures;
+- normally squash-merge only when acceptance criteria are satisfied and CI is
+  green;
+- if GitHub Actions fails before any repository step executes, the narrow
+  CI-degraded exception in `docs/way-of-working.md` may be used only after
+  equivalent deterministic checks pass and the PR records the failure mode;
 - close the AUTO issue after merge;
 - reconcile parent gate/backlog/assumptions/ADR only when evidence changed them.
 

@@ -1,0 +1,119 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "aggregateeu-crisis-to-permanent-temporal-v0.1",
+  "purpose": "Canonical temporal boundaries for the handoff from the temporary 2022/2576 demand-aggregation crisis regime to the permanent 2024/1789 gas demand-aggregation regime. Preparatory overlap is kept separate from substantive application.",
+  "assertions": [
+    {
+      "assertion_id": "aggregateeu-crisis-application-end",
+      "subject_ref": {
+        "kind": "REGIME",
+        "identifier": "REGIME:AGGREGATEEU_CRISIS_2022_2576",
+        "locator": "Regulation 2022/2576 as extended by Regulation 2023/2919"
+      },
+      "dimension": "APPLICATION",
+      "boundary": "END",
+      "inclusive": true,
+      "trigger": {
+        "kind": "ABSOLUTE_DATE",
+        "date": "2024-12-31",
+        "source_expression": "Regulation (EU) 2022/2576 shall apply until 31 December 2024."
+      },
+      "normalized_date": "2024-12-31",
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": [
+          "REGIME:AGGREGATEEU_CRISIS_2022_2576"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_ABSOLUTE",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32023R2919",
+          "locator": "Article 1(3), replacement of Article 31 second paragraph",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        }
+      ],
+      "notes": "The 2023 amendment preserved the emergency regime as temporary and extended its application only through the end of 2024."
+    },
+    {
+      "assertion_id": "aggregateeu-permanent-preparatory-transition-start",
+      "subject_ref": {
+        "kind": "REGIME",
+        "identifier": "REGIME:GAS_DEMAND_AGGREGATION_PERMANENT_2024_1789",
+        "locator": "Regulation 2024/1789 Section 5 preparatory provisions"
+      },
+      "dimension": "TRANSITION",
+      "boundary": "START",
+      "inclusive": true,
+      "trigger": {
+        "kind": "ABSOLUTE_DATE",
+        "date": "2024-08-04",
+        "source_expression": "Section 5 applies from 1 January 2025, except Articles 42, 43 and 44 which apply from 4 August 2024."
+      },
+      "normalized_date": "2024-08-04",
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": [
+          "REGIME:GAS_DEMAND_AGGREGATION_PERMANENT_2024_1789"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_ABSOLUTE",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32024R1789",
+          "locator": "Article 89(2)(b)",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        }
+      ],
+      "notes": "This is a preparatory transition boundary for establishing the mechanism and selecting/contracting the service provider. It is not treated as the substantive application start of the permanent demand-aggregation regime."
+    },
+    {
+      "assertion_id": "aggregateeu-permanent-application-start",
+      "subject_ref": {
+        "kind": "REGIME",
+        "identifier": "REGIME:GAS_DEMAND_AGGREGATION_PERMANENT_2024_1789",
+        "locator": "Regulation 2024/1789 Section 5 substantive demand aggregation and joint purchasing provisions"
+      },
+      "dimension": "APPLICATION",
+      "boundary": "START",
+      "inclusive": true,
+      "trigger": {
+        "kind": "ABSOLUTE_DATE",
+        "date": "2025-01-01",
+        "source_expression": "Section 5 shall apply from 1 January 2025, except the preparatory Articles 42, 43 and 44."
+      },
+      "normalized_date": "2025-01-01",
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": [
+          "REGIME:GAS_DEMAND_AGGREGATION_PERMANENT_2024_1789"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_ABSOLUTE",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32024R1789",
+          "locator": "Article 89(2)(b), read with Section 5 Articles 45-51",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        }
+      ],
+      "notes": "The permanent regime's substantive service tasks, participation and reporting provisions apply immediately after the temporary regime's final day."
+    }
+  ],
+  "status": "DISCOVERY_CANONICAL_CANDIDATE"
+}

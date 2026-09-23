@@ -1,0 +1,56 @@
+{
+  "schema_version": "judicial-holding-v0.1",
+  "holding_id": "judicial:C-236-09:test-achats:art5-2-invalidity",
+  "character": "JUDICIAL_HOLDING",
+  "court": {
+    "court_id": "CJEU_COURT_OF_JUSTICE",
+    "label": "Court of Justice of the European Union",
+    "chamber": "Grand Chamber"
+  },
+  "case_ref": {
+    "case_number": "C-236/09",
+    "ecli": "ECLI:EU:C:2011:100",
+    "judgment_date": "2011-03-01"
+  },
+  "holding_type": "INVALIDITY",
+  "target_refs": [
+    {
+      "act_id": "CELEX:32004L0113",
+      "provision": "Article 5(2)",
+      "target_role": "PRIMARY_TARGET"
+    }
+  ],
+  "proposition": {
+    "statement": "Article 5(2) of Directive 2004/113/EC is invalid with effect from 21 December 2012.",
+    "proposition_character": "DIRECT_JUDICIAL_HOLDING"
+  },
+  "temporal_relation": {
+    "character": "EXPLICIT_TEMPORAL_CONSEQUENCE",
+    "temporal_assertion_refs": [
+      "test-achats-art5-2-derogation-end"
+    ]
+  },
+  "evidence_state": "DIRECT",
+  "source_refs": [
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:62009CJ0236",
+      "locator": "operative part",
+      "language": "ENG",
+      "role": "JUDGMENT_HOLDING"
+    },
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:52012XC0113(01)",
+      "locator": "points 5-6",
+      "language": "ENG",
+      "role": "TEMPORAL_CONTEXT"
+    }
+  ],
+  "guardrails": [
+    "The holding does not mutate the Directive's text state.",
+    "The current consolidated text may continue to print Article 5(2) while the derogation is unavailable.",
+    "The explicit temporal consequence is owned by Temporal v0.2, not duplicated here."
+  ],
+  "notes": "Proof case for judicial invalidity with an explicit future effect date."
+}

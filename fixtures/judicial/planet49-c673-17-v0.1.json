@@ -1,0 +1,52 @@
+{
+  "schema_version": "judicial-holding-v0.1",
+  "holding_id": "judicial:C-673-17:planet49:prechecked-cookie-consent",
+  "character": "JUDICIAL_HOLDING",
+  "court": {
+    "court_id": "CJEU_COURT_OF_JUSTICE",
+    "label": "Court of Justice of the European Union",
+    "chamber": "Grand Chamber"
+  },
+  "case_ref": {
+    "case_number": "C-673/17",
+    "ecli": "ECLI:EU:C:2019:801",
+    "judgment_date": "2019-10-01"
+  },
+  "holding_type": "INTERPRETATION",
+  "target_refs": [
+    {
+      "act_id": "CELEX:32002L0058",
+      "provision": "Article 5(3)",
+      "target_role": "PRIMARY_TARGET"
+    },
+    {
+      "act_id": "CELEX:32016R0679",
+      "provision": "Articles 4(11) and 6(1)(a)",
+      "target_role": "READ_WITH"
+    }
+  ],
+  "proposition": {
+    "statement": "Consent for cookie storage or access is not validly constituted by a pre-checked checkbox that the user must deselect to refuse.",
+    "proposition_character": "DIRECT_JUDICIAL_HOLDING"
+  },
+  "temporal_relation": {
+    "character": "NO_NEW_VALID_TIME_BOUNDARY_ASSERTED",
+    "temporal_assertion_refs": []
+  },
+  "evidence_state": "DIRECT",
+  "source_refs": [
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:62017CJ0673",
+      "locator": "operative part, point 1",
+      "language": "ENG",
+      "role": "JUDGMENT_HOLDING"
+    }
+  ],
+  "guardrails": [
+    "The judgment is an interpretation, not a textual mutation of Article 5(3).",
+    "The judgment date is not promoted to a new application-start date.",
+    "This holding object does not assert a generic temporal effect for preliminary rulings."
+  ],
+  "notes": "Proof case for authoritative interpretation without a fabricated prospective valid-time boundary."
+}

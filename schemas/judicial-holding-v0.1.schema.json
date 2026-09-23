@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/judicial-holding-v0.1.json",
+  "title": "Morrow // Needle Judicial Holding v0.1",
+  "description": "Canonical direct legal proposition decided by a court judgment. Owns the bounded holding and target provisions while referencing, but not inventing, separate temporal consequences.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "holding_id",
+    "character",
+    "court",
+    "case_ref",
+    "holding_type",
+    "target_refs",
+    "proposition",
+    "temporal_relation",
+    "evidence_state",
+    "source_refs",
+    "guardrails"
+  ],
+  "properties": {
+    "schema_version": {"const": "judicial-holding-v0.1"},
+    "holding_id": {"type": "string", "minLength": 1},
+    "character": {"const": "JUDICIAL_HOLDING"},
+    "court": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["court_id", "label", "chamber"],
+      "properties": {
+        "court_id": {"const": "CJEU_COURT_OF_JUSTICE"},
+        "label": {"type": "string", "minLength": 1},
+        "chamber": {"type": "string", "minLength": 1}
+      }
+    },
+    "case_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["case_number", "ecli", "judgment_date"],
+      "properties": {
+        "case_number": {"type": "string", "minLength": 1},
+        "ecli": {"type": "string", "pattern": "^ECLI:EU:C:[0-9]{4}:[0-9]+$"},
+        "judgment_date": {"type": "string", "format": "date"}
+      }
+    },
+    "holding_type": {
+      "type": "string",
+      "enum": ["INVALIDITY", "INTERPRETATION"]
+    },
+    "target_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["act_id", "provision", "target_role"],
+        "properties": {
+          "act_id": {"type": "string", "minLength": 1},
+          "provision": {"type": "string", "minLength": 1},
+          "target_role": {
+            "type": "string",
+            "enum": ["PRIMARY_TARGET", "READ_WITH"]
+          }
+        }
+      }
+    },
+    "proposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["statement", "proposition_character"],
+      "properties": {
+        "statement": {"type": "string", "minLength": 1},
+        "proposition_character": {"const": "DIRECT_JUDICIAL_HOLDING"}
+      }
+    },
+    "temporal_relation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["character", "temporal_assertion_refs"],
+      "properties": {
+        "character": {
+          "type": "string",
+          "enum": [
+            "EXPLICIT_TEMPORAL_CONSEQUENCE",
+            "NO_NEW_VALID_TIME_BOUNDARY_ASSERTED"
+          ]
+        },
+        "temporal_assertion_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "character": {"const": "EXPLICIT_TEMPORAL_CONSEQUENCE"}
+            }
+          },
+          "then": {
+            "properties": {
+              "temporal_assertion_refs": {"minItems": 1}
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "character": {
+                "const": "NO_NEW_VALID_TIME_BOUNDARY_ASSERTED"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "temporal_assertion_refs": {"maxItems": 0}
+            }
+          }
+        }
+      ]
+    },
+    "evidence_state": {"const": "DIRECT"},
+    "source_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_type",
+          "identifier",
+          "locator",
+          "language",
+          "role"
+        ],
+        "properties": {
+          "source_type": {
+            "type": "string",
+            "enum": ["EUR_LEX", "CURIA"]
+          },
+          "identifier": {"type": "string", "minLength": 1},
+          "locator": {"type": "string", "minLength": 1},
+          "language": {"type": "string", "pattern": "^[A-Z]{3}$"},
+          "role": {
+            "type": "string",
+            "enum": [
+              "JUDGMENT_HOLDING",
+              "TARGET_CONTEXT",
+              "TEMPORAL_CONTEXT"
+            ]
+          }
+        }
+      }
+    },
+    "guardrails": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "notes": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}

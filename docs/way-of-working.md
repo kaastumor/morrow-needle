@@ -98,13 +98,23 @@ The worker may use the exception only when all are true:
 1. the job exposes no executed repository steps (for example steps are null/empty
    or no runner executes the job);
 2. there is no assertion/test/build failure from repository code;
-3. all equivalent deterministic checks available in the current execution
-   boundary are run successfully;
-4. the PR records the exact CI failure mode and local/equivalent evidence;
-5. the change does not require an unavailable manual/browser acceptance criterion.
+3. for any change to executable code, browser JavaScript, test code, scripts or
+   workflow configuration, the required deterministic checks are actually
+   executed in a real runtime and pass; file/connector inspection alone does
+   **not** count as execution evidence;
+4. documentation-only changes may use structural/manual inspection when no
+   executable behavior changed;
+5. the PR records the exact CI failure mode and the commands/runtime evidence
+   used instead;
+6. the change does not require an unavailable manual/browser acceptance criterion.
 
 A workflow that executes project steps and fails is a real red build. It may
 never be waived under this exception.
+
+For MVP implementation issues #105–#110 specifically: if Actions is unavailable
+and the worker cannot execute the relevant repository tests/sanitation in an
+actual runtime, it must leave the PR open/blocked. It may not merge based on
+static inspection and may not advance to the dependent issue.
 
 ## Branch/PR convention
 

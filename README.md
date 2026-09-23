@@ -46,13 +46,15 @@ The first P2 product projections are now evidenced:
 
 The operational Needle loop is now proven against real official events, and the first product checkpoint has tested verified-change, source-audit and abstention cards.
 
-Issue #29's adversarial/sanitation gate concluded **SIMPLIFY**: the core evidence/legal-state engine survives, but broad novelty claims and further P2 feature accumulation do not.
+Issue #49's comparative gate concluded **REDIRECT**. Across four real cases, the broad public change-feed thesis did not achieve repeated material advantage over EUR-Lex, mature version tooling, direct official sources and a capable LLM.
 
-The current strategic priority is **Issue #49: comparative value proof — Evidence / Why this is shown**. Needle must now demonstrate that its stricter separation of source activity, text mutation, legal timing, semantic effect, multilingual correction, derived effects and uncertainty actually gives a person a materially better understanding than strong existing tools plus direct official sources and an ordinary capable LLM.
+The evidence/legal-state engine remains useful, especially for audit safety and indirect dependency discovery. The operational monitor is now treated as evidence infrastructure rather than a presumed product.
 
-No new analytic primitive or scale infrastructure is justified until that value test passes.
+The current strategic priority is **Issue #59: Thread / legal-change audit comparative value gate**. It tests the existing evidence-linked Article 3 rule history against the same strong baseline. No new Thread architecture, analytic primitive or scale infrastructure is authorized during the test.
 
-See `BACKLOG.md`, `docs/audits/pre-analysis-adversarial-audit-v0.1.md`, `docs/audits/project-health-2026-09-23.md`, and Issue #49.
+If Thread also fails to create recurring material understanding advantage, public-product expansion stops and Needle remains a research/audit engine plus regression corpus.
+
+See `BACKLOG.md`, `docs/audits/comparative-value-2026-09-23.md`, `docs/audits/project-health-2026-09-23-post-value.md`, and Issue #59.
 
 ---
 

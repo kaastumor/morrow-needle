@@ -1,0 +1,33 @@
+{
+  "schema_version": "issue87-sealed-manifest-v0.1",
+  "issue": 87,
+  "created_date": "2026-09-23",
+  "status": "SEALED_AWAITING_INDEPENDENT_EXECUTION",
+  "case_ids": [
+    "relay-eudr-double-postponement",
+    "relay-battery-due-diligence-postponement",
+    "relay-dma-designation-vs-compliance",
+    "relay-rohs-scope-split",
+    "relay-gdpr-force-vs-application-control"
+  ],
+  "sealed_artifacts": [
+    {
+      "filename": "issue87-stage-a-packets.json",
+      "sha256": "02611042a611b49fe83b085ec7560a14186e493f6d3951cfb3150f8b1c9d694b",
+      "repository_contains_plaintext": false
+    },
+    {
+      "filename": "issue87-stage-b-packets.json",
+      "sha256": "a98fffcb21a6422b3f0d0fbb3f6edd8391485674587526d2aa876ce7e794f123",
+      "repository_contains_plaintext": false
+    },
+    {
+      "filename": "issue87-sealed-answer-key.json",
+      "sha256": "83c911c8b23b694fac555675c968c7e0c46be771b707fdca4b3ea63034acdc3e",
+      "repository_contains_plaintext": false
+    }
+  ],
+  "blinding_rule": "Do not commit or reveal plaintext Stage B packets or answer key before intended independent execution completes.",
+  "acceptance_boundary": "Fresh investigators/researchers are required. The design session is contaminated and cannot validate H-12.",
+  "reveal_rule": "After independent execution, verify hashes, reveal the sealed files, commit them unchanged, then evaluate."
+}

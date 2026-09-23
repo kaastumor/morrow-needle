@@ -137,14 +137,18 @@ def _minimal_v0_1_candidate_with_vertical_extent():
 
 def test_v0_1_rejects_honest_vertical_extent_field():
     candidate = _minimal_v0_1_candidate_with_vertical_extent()
-    errors = list(Draft202012Validator(SCHEMA).iter_errors(candidate))
 
-    assert errors
-    assert any(
-        error.validator == "additionalProperties"
-        and "vertical_extent" in error.message
-        for error in errors
+    without_vertical = json.loads(json.dumps(candidate))
+    without_vertical["geometry"].pop("vertical_extent")
+
+    assert list(
+        Draft202012Validator(SCHEMA).iter_errors(without_vertical)
+    ) == []
+
+    with_vertical_errors = list(
+        Draft202012Validator(SCHEMA).iter_errors(candidate)
     )
+    assert with_vertical_errors
 
 
 def test_failure_is_pinned_before_v0_2_design():

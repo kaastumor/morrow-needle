@@ -1,0 +1,107 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "judicial-holding-gap-v0.1",
+  "question": "Can Needle preserve binding CJEU holdings that alter or authoritatively constrain operative legal meaning without textual mutation?",
+  "cases": [
+    {
+      "case_id": "test-achats-c-236-09",
+      "judgment": {
+        "case_number": "C-236/09",
+        "ecli": "ECLI:EU:C:2011:100",
+        "celex": "CELEX:62009CJ0236",
+        "judgment_date": "2011-03-01",
+        "court": "Court of Justice, Grand Chamber"
+      },
+      "holding_character": "INVALIDITY",
+      "target": {
+        "act_id": "CELEX:32004L0113",
+        "provision": "Article 5(2)"
+      },
+      "holding": "Article 5(2) is invalid with effect from 21 December 2012.",
+      "explicit_effect_date": "2012-12-21",
+      "current_text_state": {
+        "consolidated_id": "CELEX:02004L0113-20260619",
+        "article_5_2_still_printed": true
+      },
+      "functional_temporal_consequence": {
+        "dimension": "DEROGATION",
+        "boundary": "END",
+        "date": "2012-12-21",
+        "inclusive": false,
+        "reason": "Commission guidance states that from that date Article 5(1) applies without the Article 5(2) exception."
+      }
+    },
+    {
+      "case_id": "planet49-c-673-17",
+      "judgment": {
+        "case_number": "C-673/17",
+        "ecli": "ECLI:EU:C:2019:801",
+        "celex": "CELEX:62017CJ0673",
+        "judgment_date": "2019-10-01",
+        "court": "Court of Justice, Grand Chamber"
+      },
+      "holding_character": "INTERPRETATION",
+      "targets": [
+        {
+          "act_id": "CELEX:32002L0058",
+          "provision": "Article 5(3)"
+        },
+        {
+          "act_id": "CELEX:32016R0679",
+          "provision": "Articles 4(11) and 6(1)(a)"
+        }
+      ],
+      "holding": "Consent for cookie storage/access is not validly constituted by a pre-checked checkbox that the user must deselect to refuse.",
+      "explicit_effect_date": null,
+      "temporal_guardrail": "The judgment date is source/judgment time. This fixture does not invent 1 October 2019 as a new application start for the interpreted provisions."
+    }
+  ],
+  "architecture_probe": {
+    "change_atom_v0_3": {
+      "fit": "FAILS_CAUSAL_REQUIREMENT",
+      "reason": "VERIFIED Change Atoms require one or more VERIFIED textual mutations; neither judgment textually mutates its target provision."
+    },
+    "authoritative_finding_v0_1": {
+      "fit": "SEMANTICALLY_WRONG_OWNER",
+      "reason": "Authoritative Finding owns categorical determinations about concrete subjects/real-world conditions, not binding legal interpretation or invalidity of legal provisions."
+    },
+    "temporal_v0_2": {
+      "fit": "CONSEQUENCE_ONLY",
+      "reason": "Temporal can own the explicit Test-Achats derogation end boundary but does not own the judicial legal holding; Planet49 does not justify a new prospective temporal boundary."
+    },
+    "source_observation": {
+      "fit": "ARTIFACT_ONLY",
+      "reason": "Source observation can preserve judgment bytes/identity but not the binding legal proposition decided by the Court."
+    },
+    "result": "DIRECT_JUDICIAL_HOLDING_OWNER_MISSING",
+    "provisional_missing_concept": "JUDICIAL_HOLDING",
+    "new_schema_added_in_failure_commit": false
+  },
+  "forbidden_inferences": [
+    "The current consolidated text of Directive 2004/113 proves Article 5(2) remains legally available as a derogation.",
+    "The Test-Achats judgment is a textual mutation of Directive 2004/113.",
+    "LEGAL_FORCE must be used when a more precise functional DEROGATION end is evidenced.",
+    "Planet49 created Article 5(3) on 1 October 2019 or supplied a new application-start date.",
+    "A court's binding legal holding is a factual Authoritative Finding merely because it is an official determination.",
+    "Judgment publication time and the valid-time semantics of the interpreted rule may be collapsed."
+  ],
+  "official_sources": [
+    {
+      "identifier": "CELEX:62009CJ0236",
+      "role": "TEST_ACHATS_JUDGMENT"
+    },
+    {
+      "identifier": "CELEX:02004L0113-20260619",
+      "role": "CURRENT_TEXT_STATE"
+    },
+    {
+      "identifier": "CELEX:52012XC0113(01)",
+      "role": "TEST_ACHATS_COMMISSION_GUIDANCE"
+    },
+    {
+      "identifier": "CELEX:62017CJ0673",
+      "role": "PLANET49_JUDGMENT"
+    }
+  ],
+  "status": "REPRESENTATIONAL_FAILURE_PINNED"
+}

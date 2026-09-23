@@ -1,0 +1,53 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "test-achats-derogation-end-v0.2",
+  "subject": "directive-2004-113:article-5-2",
+  "assertions": [
+    {
+      "assertion_id": "test-achats-art5-2-derogation-end",
+      "subject_ref": {
+        "kind": "PROVISION_INSTANCE",
+        "identifier": "directive-2004-113:article-5-2",
+        "locator": "Article 5(2)"
+      },
+      "dimension": "DEROGATION",
+      "boundary": "END",
+      "inclusive": false,
+      "precision": "DATE",
+      "trigger": {
+        "kind": "ABSOLUTE_DATE",
+        "date": "2012-12-21",
+        "source_expression": "invalid with effect from 21 December 2012"
+      },
+      "normalized_date": "2012-12-21",
+      "normalized_instant": null,
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": [
+          "directive-2004-113:article-5-2"
+        ],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_ABSOLUTE",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:62009CJ0236",
+          "locator": "operative part",
+          "language": "ENG",
+          "role": "TEMPORAL_CLAUSE"
+        },
+        {
+          "source_type": "COMMISSION",
+          "identifier": "CELEX:52012XC0113(01)",
+          "locator": "points 5-6",
+          "language": "ENG",
+          "role": "CONTEXT"
+        }
+      ],
+      "notes": "Functional end of the Article 5(2) derogation. The provision wording remains present in later consolidated text."
+    }
+  ]
+}

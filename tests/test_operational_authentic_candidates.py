@@ -1,8 +1,36 @@
 from needle.operations.authentic_candidates import candidates_from_authentic_text, candidates_from_reobservation
+from needle.provenance.ledger import seal_record
 
 
 def event():
     return {"event_key":"evt:test","identifiers":["celex:32026R2104"]}
+
+
+def sealed_content_observation(
+    record_id: str,
+    *,
+    identifier: str = "CELEX:32026R2104",
+    language: str = "ENG",
+):
+    return seal_record({
+        "record_id":record_id,
+        "record_type":"SOURCE_OBSERVATION",
+        "created_at":"2026-09-20T20:10:00+00:00",
+        "payload":{
+            "source_type":"CELLAR",
+            "identifier":identifier,
+            "resource_uri":"https://publications.europa.eu/resource/celex/32026R2104",
+            "language":language,
+            "representation_class":"STRUCTURED_LEGAL_XML",
+            "observed_at":"2026-09-20T20:10:00+00:00",
+            "artifact_hash":"sha256:"+"a"*64,
+            "retrieval":{
+                "final_uri":"official://artifact",
+                "media_type":"application/zip",
+                "http_status":200,
+            },
+        },
+    })
 
 
 def instruction_text():
@@ -117,13 +145,9 @@ def test_reobservation_groups_multiple_explicit_mutations_without_collapsing_tru
             "celex":"32026R2104",
             "analysis_language":"eng",
             "analysis_text":two_annex_text(),
-            "content_observation":{
-                "record_id":"src-observation:one-act",
-                "payload":{
-                    "language":"ENG",
-                    "retrieval":{"final_uri":"official://artifact"},
-                },
-            },
+            "content_observation":sealed_content_observation(
+                "src-observation:one-act"
+            ),
         },
     )
     assert len(grouped)==1
@@ -180,13 +204,9 @@ def test_source_local_segments_prevent_cross_stream_authorization():
             {"source_file":"TOC.xml","text":"Annex V is amended:"},
             {"source_file":"REPORT.xml","text":command},
         ],
-        "content_observation":{
-            "record_id":"src-observation:segmented",
-            "payload":{
-                "language":"ENG",
-                "retrieval":{"final_uri":"official://artifact"},
-            },
-        },
+        "content_observation":sealed_content_observation(
+            "src-observation:segmented"
+        ),
     }
     assert candidates_from_reobservation(
         event(),reobservation
@@ -202,16 +222,75 @@ def test_source_local_segment_locator_survives_into_authentic_evidence():
         "analysis_segments":[
             {"source_file":"DOC_1.xml","text":segment},
         ],
-        "content_observation":{
-            "record_id":"src-observation:segmented-positive",
-            "payload":{
-                "language":"ENG",
-                "retrieval":{"final_uri":"official://artifact"},
-            },
-        },
+        "content_observation":sealed_content_observation(
+            "src-observation:segmented-positive"
+        ),
     }
     candidates=candidates_from_reobservation(event(),reobservation)
     assert len(candidates)==1
     assert candidates[0]["evidence_occurrences"][0]["locator"]==(
         "official://artifact#archive-entry:DOC_1.xml"
     )
+
+
+def test_reobservation_rejects_cross_celex_source_binding():
+    reobservation={
+        "celex":"32026R2104",
+        "analysis_language":"eng",
+        "analysis_text":instruction_text(),
+        "analysis_segments":[
+            {"source_file":"DOC_1.xml","text":instruction_text()},
+        ],
+        "content_observation":sealed_content_observation(
+            "src-observation:wrong-work",
+            identifier="CELEX:39999R9999",
+        ),
+    }
+    assert candidates_from_reobservation(event(),reobservation)==[]
+
+
+def test_reobservation_rejects_event_to_reobservation_celex_mismatch():
+    reobservation={
+        "celex":"39999R9999",
+        "analysis_language":"eng",
+        "analysis_text":instruction_text(),
+        "analysis_segments":[
+            {"source_file":"DOC_1.xml","text":instruction_text()},
+        ],
+        "content_observation":sealed_content_observation(
+            "src-observation:event-mismatch",
+            identifier="CELEX:39999R9999",
+        ),
+    }
+    assert candidates_from_reobservation(event(),reobservation)==[]
+
+
+def test_reobservation_rejects_tampered_source_observation():
+    content=sealed_content_observation("src-observation:tampered")
+    content["payload"]["identifier"]="CELEX:39999R9999"
+    reobservation={
+        "celex":"32026R2104",
+        "analysis_language":"eng",
+        "analysis_text":instruction_text(),
+        "analysis_segments":[
+            {"source_file":"DOC_1.xml","text":instruction_text()},
+        ],
+        "content_observation":content,
+    }
+    assert candidates_from_reobservation(event(),reobservation)==[]
+
+
+def test_reobservation_rejects_analysis_language_cross_binding():
+    reobservation={
+        "celex":"32026R2104",
+        "analysis_language":"fra",
+        "analysis_text":instruction_text(),
+        "analysis_segments":[
+            {"source_file":"DOC_1.xml","text":instruction_text()},
+        ],
+        "content_observation":sealed_content_observation(
+            "src-observation:language-mismatch",
+            language="ENG",
+        ),
+    }
+    assert candidates_from_reobservation(event(),reobservation)==[]

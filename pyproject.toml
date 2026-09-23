@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "morrow-needle"
 version = "0.0.1"
-description = "Public infrastructure for observing how EU rules change"
+description = "Evidence-first research and audit infrastructure for EU legal change"
 requires-python = ">=3.12"
 dependencies = [
   "requests>=2.32,<3",

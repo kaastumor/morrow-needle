@@ -30,6 +30,13 @@ Research/audit mode rules:
 **No preselected research task is currently eligible. The hourly worker should
 idle rather than manufacture work.**
 
+Issue #84 completed a wide-angle project-system audit. The scheduled
+Git-backed operational monitor is frozen after 47 state-promotion commits; its
+current snapshot remains because it still contains unique provenance records.
+Live operational cycles are manual diagnostics only. Sanitation now guards
+common secret/local-path leaks and new large tracked files. The main current
+complexity risk is ontology/CI surface creep, not missing infrastructure.
+
 Issue #83 established a narrow `judicial-holding-v0.1` owner from two CJEU
 adversaries: Test-Achats invalidity with an explicitly delayed effect date, and
 Planet49 interpretation with no fabricated judgment-date application start.
@@ -78,14 +85,15 @@ represent. The gap is now resolved by the separate
 to conventional cross-reference ripples.
 
 The next task should be selected only when a concrete falsifiable legal-
-information question is identified from fresh source evidence, an operational
-monitor anomaly, an unresolved canonical claim, or an explicit sponsor research
-question. Until then, **no AUTO READY issue is intentional**.
+information question is identified from fresh source evidence, a manual or
+operational probe anomaly, an unresolved canonical claim, or an explicit sponsor
+research question. Until then, **no AUTO READY issue is intentional**.
 
 
-Operational Needle remains an evidence generator, regression surface and source
-monitor. Thread, X-Ray, Source Anomaly, Half-Life and public cards remain useful
-audit projections; none implies an active product roadmap.
+Operational Needle remains a regression surface and manual evidence probe; its
+scheduled Git-backed monitor is frozen. Thread, X-Ray, Source Anomaly,
+Half-Life and public cards remain useful audit projections; none implies an
+active product roadmap.
 
 Public-product work may reopen only from external/user evidence of a recurring
 concrete problem that the strong baseline cannot reliably solve. Architecture
@@ -93,8 +101,8 @@ itself is not such evidence.
 
 Thread comparative audit:
 `docs/audits/thread-comparative-value-2026-09-23.md`  
-Research-mode health decision:
-`docs/audits/project-health-2026-09-23-post-thread.md`  
+Latest wide-angle health audit:
+`docs/audits/project-system-wide-angle-2026-09-23.md`  
 Canonical charter: `docs/project-charter.md`  
 Active assumptions: `docs/assumptions.md`  
 Autonomous worker contract: `docs/automation/hourly-worker.md`
@@ -174,10 +182,14 @@ Adapters continue to evolve, but the v0.1 core schema should change only when a 
 
 Status: **FOUNDATION CONTRACT RESOLVED; ISSUE CLOSED.**
 
-Frozen interfaces:
-- `schemas/temporal-assertion-v0.1.schema.json`
-- `schemas/temporal-query-v0.1.schema.json`
-- `src/needle/temporal/resolver.py`
+Date-precision v0.1 remains valid provenance. Current precision-aware
+interfaces also include:
+- `schemas/temporal-assertion-v0.2.schema.json`
+- `schemas/temporal-query-v0.2.schema.json`
+- `src/needle/temporal/resolver_v0_2.py`
+
+v0.2 was earned by Issue #81 when an official minute-specific fishery closure
+proved date-only time could change legal answers.
 
 Established:
 1. publication, force, application, text-state, transition, derogation and deadlines are separate dimensions;
@@ -359,9 +371,8 @@ See docs/audits/post-p1-foundation-audit-v0.1.md.
 
 Current mode after Issues #49 and #59:
 
-1. **Issue #61 — consolidation back-projection audit.** First bounded
-   research-mode task. Test a current official-source trap and leave a fixture
-   and regression; no product feature.
+1. The initial research/audit runway (#61 onward) is complete and has no
+   standing successor task.
 2. Future work enters the queue only through a concrete audit/research question
    with authoritative evidence and a falsifiable outcome.
 3. Public-product expansion is stopped. It may reopen only from external/user
@@ -384,7 +395,8 @@ Completed value gates:
 Retained audit tools:
 
 - **Evidence / Why this is shown** — disposable read-side provenance projection.
-- **Operational Needle** — source monitor and adversarial evidence generator.
+- **Operational Needle** — frozen pilot, regression surface and manual
+  adversarial evidence probe.
 - **Thread** — evidence-linked historical reconstruction when a research
   question justifies the cost.
 - **Legislative X-Ray** — dependency-ripple detector.
@@ -435,7 +447,10 @@ A discovery run must leave behind at least one of:
 
 Interesting-but-unproductive wandering should stop.
 
-A useful default is roughly **one discovery-oriented cycle for every three foundation cycles**, unless a discovery finding becomes a P0 blocker.
+In research mode, do not force a discovery/foundation ratio. Instead, after a
+cluster of roughly **2–3 schema- or architecture-changing discovery runs**,
+perform a wide-angle health/leanliness check before expanding again. Negative
+or no-change discovery runs do not require ceremony.
 
 Examples worth pursuing:
 - temporary exceptions that quietly became permanent;

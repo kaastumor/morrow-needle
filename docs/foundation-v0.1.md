@@ -1,10 +1,21 @@
 # Morrow // Needle — Foundation v0.1
 
-## Product thesis
+> **Direction note (2026-09-23):** the Morrow Constitution and evidence
+> invariants in this document remain canonical. The original product thesis is
+> historical context. The current north star is the research/audit charter in
+> `docs/project-charter.md`.
+
+## Original product thesis (historical context)
 
 Needle is not a document summarizer.
 
-Its canonical object is a **change in rules**: what changed, compared with what, who or what the rule concerns, when the change matters, and the official evidence needed to verify it.
+Its original canonical object was a **change in rules**: what changed, compared
+with what, who or what the rule concerns, when the change matters, and the
+official evidence needed to verify it.
+
+Research-mode adversaries later proved that some operative legal state changes
+without textual mutation. Those facts are now owned by narrow canonical
+contracts rather than being forced into the mutation model.
 
 The system maintains three linked histories:
 
@@ -12,8 +23,10 @@ The system maintains three linked histories:
 - **Rule graph** — what rules and concepts exist at a given time.
 - **Mutation graph** — how one state became another.
 
-Needle answers **what is changing now**.  
-Thread answers **how did this rule become what it is today**.
+The original product framing asked **what is changing now**.
+The current project asks whether a concrete legal-change claim can be
+reconstructed or falsified from official evidence without collapsing distinct
+kinds of truth.
 
 ---
 
@@ -86,31 +99,62 @@ Source lineage, ingestion timestamps, hashes, and claim-support links are audita
 ## C18 — Public-interest ranking is explainable
 Ranking may use explicit dimensions such as breadth, immediacy, financial magnitude, legal force, novelty, or affected sectors. No opaque “importance” score is editorial truth.
 
+## C19 — Canonical ownership is singular
+A consequential fact has one canonical owner. Other contracts and derived views
+reference that truth rather than silently copying or reclassifying it. Text,
+time, identity, factual findings, metrics, spatial extent, judicial holdings,
+procedure and provenance may interact, but interaction is not permission to
+collapse them into one object.
+
 ---
 
-# Core ontology
+# Canonical ownership map
+
+The project no longer treats one object tree as the ontology. The more important
+question is **which contract owns which kind of truth**.
 
 ```
-DOSSIER
-├── PROCEDURE
-│   ├── EVENT
-│   ├── INSTITUTIONAL_POSITION
-│   └── PROCEDURAL_DOCUMENT
-├── LEGAL_ACT
-│   ├── ACT_VERSION
-│   │   ├── PROVISION
-│   │   │   ├── TEXT_STATE
-│   │   │   └── CHANGE_ATOM
-│   │   └── ANNEX
-│   ├── AMENDING_ACT
-│   ├── CORRIGENDUM
-│   └── RELATIONSHIP
-├── LEGAL_CONCEPT
-├── AFFECTED_ENTITY
-├── TEMPORAL_EFFECT
-├── EVIDENCE
-└── PROVENANCE_RECORD
+OFFICIAL SOURCE / EVIDENCE
+├── Source Observation
+└── Provenance Record
+
+DOCUMENT / TEXT
+├── Legal Act / Expression / Manifestation
+├── Provision Instance / AST State
+├── Textual Mutation
+└── Language-scoped Correction
+
+IDENTITY / GENEALOGY
+├── Identifier Graph
+├── Structural Lineage
+├── Rule Lineage
+└── Regime Lineage
+
+LEGAL / PROCEDURAL STATE
+├── Temporal Assertion
+├── Procedure State Event
+├── Authoritative Dynamic Set
+├── Authoritative Metric Observation
+├── Authoritative Finding
+├── Legal Spatial State
+└── Judicial Holding
+
+DERIVED LEGAL CLAIMS / EVALUATIONS
+├── Change Atom
+└── Metric Rule Evaluation
+
+DERIVED AUDIT / PRESENTATION VIEWS
+├── Thread
+├── Dependency Ripple / Legislative X-Ray
+├── Source Anomaly
+├── Half-Life
+├── Retrieval projections
+└── Feed / Evidence projections
 ```
+
+The map is intentionally about ownership, not a universal graph schema. New
+canonical object types are admitted only after an official adversary proves
+that existing owners would distort the fact.
 
 ---
 
@@ -155,8 +199,9 @@ Historical certainty is field-specific, not one score:
 - European Commission Better Regulation / Have Your Say
 - Interinstitutional Register of Delegated Acts
 
-## Tier C — later expansion
-- CURIA / CJEU case law
+## Tier C — bounded/later expansion
+- CURIA / CJEU case law: narrow `judicial-holding-v0.1` is canonical; broader
+  citation/precedent/follow-on modeling remains parked
 - national transposition sources, national ELI, N-Lex
 - EU agencies and regulators
 - impact assessments, evaluations and Staff Working Documents
@@ -190,9 +235,10 @@ aspirational stack proposal**:
   ingestion and analysis;
 - versioned files, fixtures and GitHub for canonical project evidence and
   reproducible research assets;
-- bounded JSON operational state for the current monitoring experiment;
-- static/thin product projections while product questions are still being
-  tested;
+- a frozen JSON operational-pilot snapshot retained only because it still owns
+  historical Source Observations not yet migrated elsewhere;
+- manual/live probes and static projections as research/audit surfaces rather
+  than a scheduled product-delivery loop;
 - no database, queue, object store, vector store, frontend framework or custom
   model-training infrastructure until a concrete current-horizon requirement
   proves the simpler baseline insufficient.

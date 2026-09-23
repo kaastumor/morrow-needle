@@ -38,7 +38,7 @@ The current question is simpler:
 > provenance traps?
 
 That explicit research/audit runway is now established. Issues #61, #64, #67,
-#69 and #72-#82 demonstrated that the project can produce useful source,
+#69 and #72-#83 demonstrated that the project can produce useful source,
 temporal, dependency, metric, finding and spatial adversaries without reviving
 the stopped public-product roadmap.
 
@@ -125,8 +125,9 @@ Especially:
 
 There is **no standing implementation or product queue**.
 
-Select the next task only from fresh official evidence, an operational anomaly,
-an unresolved canonical claim, or an explicit sponsor research question.
+Select the next task only from fresh official evidence, a manual or operational
+probe anomaly, an unresolved canonical claim, or an explicit sponsor research
+question.
 
 Recent discovery work has earned several narrow canonical extensions, including
 authoritative dynamic sets, authoritative numeric observations, authoritative
@@ -144,3 +145,22 @@ The current discipline is:
 
 The strongest current architectural risk is **ontology creep from successful
 discovery**, not lack of capability.
+
+
+## Repository discipline
+
+GitHub is the canonical project record, but it is not an operational database.
+
+- generated live state must not be scheduled to commit directly to `main`
+  unless the active horizon explicitly requires it and canonical evidence has a
+  durable owner;
+- automated autonomous work should use short-lived branches and pull requests
+  where repository permissions support that workflow;
+- deterministic CI and sanitation are necessary merge gates, not evidence that
+  a research conclusion is correct;
+- live official-source probes remain separate from pinned regression truth;
+- substantive project-system changes require backlog/assumption/health
+  reconciliation when they alter direction or operating assumptions.
+
+Branch-protection/ruleset settings are intentionally treated as **UNVERIFIED**
+when the GitHub integration cannot read repository administration settings.

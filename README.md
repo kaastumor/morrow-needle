@@ -31,38 +31,37 @@ docs/          product and architectural foundations
 schemas/       machine-readable domain schemas
 research/      source probes and assumption tests
 fixtures/      verified and candidate historical mutation cases
-data/          small reference matrices and controlled datasets
+data/          small reference data plus a frozen historical operational snapshot
 ```
 
 ## Current status
 
-The P0/P1 legal-change foundation is complete and remains the canonical
-evidence/identity/temporal/provenance core.
+The project is in **research/audit mode**. Public-product expansion remains
+stopped after comparative Issues #49 and #59 failed to demonstrate repeated
+material advantage over the strongest simpler baseline.
 
-Two successive comparative gates changed the project direction:
+The P0/P1 evidence, identity, temporal, provenance and mutation foundation
+remains canonical. Later research adversaries have earned several narrow
+extensions for non-textual legal state, including authoritative dynamic sets,
+metrics, categorical findings, precision-aware time, legal spatial extent and
+judicial holdings.
 
-- **Issue #49:** the broad live-change/public-feed thesis failed to demonstrate
-  repeated material advantage over EUR-Lex, mature change tooling, direct
-  official sources and a capable LLM.
-- **Issue #59:** the Article 3 Thread proved materially better as an audit
-  package, especially for negative checks and provenance closure, but the same
-  legal history is reconstructible from the strong baseline and one showcase is
-  not recurring product evidence.
+There is **no standing feature or implementation queue**. A new task must begin
+from a falsifiable legal-information question, fresh official evidence, an
+unresolved canonical claim or an explicit sponsor research question. An idle
+backlog is intentional.
 
-The project therefore **stops public-product expansion and continues in
-research/audit mode**.
+Issue #84 froze the old scheduled Git-backed operational monitor. Its current
+state snapshot remains as historical evidence/regression input, while live
+cycles are manual diagnostics and no longer commit generated state to
+`main`.
 
-Operational Needle, Thread, Evidence, Legislative X-Ray, Source Anomaly,
-Half-Life and the Gold corpus remain useful tools and regressions. They no longer
-imply a feature roadmap.
+See:
 
-The first explicit research-mode task is **Issue #61**, auditing whether the
-2026 corrigendum to Regulation 2025/905 is back-projected into the EUR-Lex
-consolidation labelled 13 August 2025.
-
-See `BACKLOG.md`,
-`docs/audits/thread-comparative-value-2026-09-23.md`,
-`docs/audits/project-health-2026-09-23-post-thread.md`, and Issue #61.
+- `docs/project-charter.md`
+- `BACKLOG.md`
+- `docs/assumptions.md`
+- `docs/audits/project-system-wide-angle-2026-09-23.md`
 
 ---
 

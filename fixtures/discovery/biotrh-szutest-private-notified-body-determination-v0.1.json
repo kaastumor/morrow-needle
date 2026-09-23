@@ -1,0 +1,96 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "biotrh-szutest-private-notified-body-determination-v0.1",
+  "question": "Does a private notified body's certificate decision create legally relevant state under unchanged EU conformity-assessment law?",
+  "private_determination": {
+    "determination_id": "szutest:biotrh:certificate-status:2023",
+    "originator": {
+      "name": "SZUTEST Uygunluk Değerlendirme A.Ş.",
+      "notified_body_number": "2195",
+      "legal_character": "PRIVATE_NOTIFIED_BODY"
+    },
+    "subject": {
+      "kind": "MEDICAL_DEVICE_CERTIFICATE",
+      "manufacturer": "BIOTRH s.r.o.",
+      "device": "Los Deline 100g"
+    },
+    "transitions": [
+      {
+        "date": "2023-03-23",
+        "operation": "SUSPEND_CERTIFICATE",
+        "before": "ACTIVE",
+        "after": "SUSPENDED",
+        "direct_source_statement": "The manufacturer was informed by Notified Body SZUTEST, NB 2195, about suspension of the CE certificate."
+      },
+      {
+        "date": "2023-05-02",
+        "operation": "WITHDRAW_CERTIFICATE",
+        "before": "SUSPENDED",
+        "after": "WITHDRAWN",
+        "direct_source_statement": "The Notified Body sent the manufacturer its decision regarding withdrawal of BIOTRH's certificates."
+      }
+    ],
+    "source_character": "PRIVATE_DETERMINATION_REPORTED_IN_REGULATORY_FSCA",
+    "textual_mutation_of_eu_law": null
+  },
+  "public_law_recognition": {
+    "act_id": "CELEX:31993L0042",
+    "provision": "Article 16(1), (5) and (6)",
+    "role": "NOTIFIED_BODY_RECOGNITION_AND_CERTIFICATE_POWER",
+    "statement": "Member States designate notified bodies for conformity-assessment tasks; notified bodies report certificate decisions and shall suspend or withdraw certificates where requirements are no longer met unless corrective action restores compliance."
+  },
+  "observed_downstream_effect": {
+    "sales_statement": "The manufacturer states that it had not sold the product on the European market since the certificate suspension date, according to the requirements of the Notified Body.",
+    "field_safety_action": "Manufacturer voluntarily withdrew remaining European supply following competent-authority action; this later regulatory action is distinct from the private certificate decision.",
+    "appeal": "The manufacturer states that it appealed the notified body's decision.",
+    "guardrail": "Do not collapse the notified-body suspension/withdrawal, competent-authority call for corrective action, and manufacturer recall into one event."
+  },
+  "comparison_to_private_rating": {
+    "shared_shape": [
+      "originator is not an EU institution or Member State authority",
+      "EU law recognizes the actor/category for a bounded regulatory role",
+      "the private actor produces a direct legally relevant determination",
+      "public law specifies how that determination may or must be used",
+      "private source provenance must remain private rather than being relabelled official"
+    ],
+    "differences": {
+      "credit_rating": "private ordinal classification is mapped through ECAI/CQS rules and is conditionally used by institutions",
+      "notified_body": "private conformity-assessment body directly changes certificate status within a legally delegated conformity regime"
+    },
+    "result": "LEGALLY_RECOGNIZED_PRIVATE_DETERMINATION_PATTERN_CONFIRMED"
+  },
+  "architecture_probe": {
+    "public_authority_only_model": "FAILS",
+    "private_authority_as_other_official": "REJECTED_AS_FALSE_PROVENANCE",
+    "source_observation_v0_1": "FAILS_NON_OFFICIAL_PRIMARY_SOURCE",
+    "authoritative_finding_v0_1": "TOO_PUBLIC_AND_TOO_FACT_FINDING_SPECIFIC",
+    "recommended_architecture_direction": [
+      "separate source origin from legal recognition",
+      "represent the public-law recognition basis explicitly",
+      "give private legally recognized determinations their own narrow canonical owner",
+      "avoid a universal actor/authority graph"
+    ],
+    "result": "SECOND_ORTHOGONAL_CASE_JUSTIFIES_REPAIR",
+    "new_schema_added_in_this_probe": false
+  },
+  "forbidden_inferences": [
+    "SZUTEST is a Member State competent authority merely because it is a notified body.",
+    "The notified body's withdrawal decision textually amended Directive 93/42/EEC.",
+    "The later competent-authority action and manufacturer recall were the same event as the notified-body certificate decision.",
+    "The manufacturer agreeing with the notified body's reasoning is required for the certificate decision to exist; the cited notice expressly records an appeal.",
+    "All private certification decisions are legally operative; the notified-body designation and scope are the recognition basis."
+  ],
+  "sources": [
+    {
+      "identifier": "Swissmedic-hosted FSN/FSCA-23-002-PR",
+      "locator": "pages 2-3",
+      "role": "CONCRETE_PRIVATE_DETERMINATION_AND_RESPONSE"
+    },
+    {
+      "identifier": "CELEX:31993L0042",
+      "locator": "Article 16(1), (5), (6)",
+      "role": "EU_LEGAL_RECOGNITION"
+    }
+  ],
+  "status": "SECOND_PRIVATE_ORIGIN_PROOF_PINNED"
+}

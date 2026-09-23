@@ -1,0 +1,85 @@
+{
+  "schema_version": "issue87-full-confirmation-results-v0.1",
+  "issue": 87,
+  "date": "2026-09-23",
+  "status": "EXPERIMENT_COMPLETE_ARCHIVAL_REVEAL_PENDING",
+  "execution": {
+    "result_zip_sha256": "e73c691b9201cf1ca78979a4c0e17191f589f172c6dcdb16a43df3ff0b530fb5",
+    "result_artifacts": 12,
+    "stage_a_calls": 6,
+    "stage_b_calls": 6,
+    "model_requested": "gpt-5.6-sol",
+    "model_returned_all": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "web_search": true,
+    "store": false,
+    "stateless_requests_manifest": true,
+    "unique_response_ids": true
+  },
+  "integrity": {
+    "sealed_five_case_hashes_verified_before_pilot_evaluation": true,
+    "sealed_plaintext_present_in_full_confirmation_zip": false,
+    "post_blind_exact_archival_complete": false,
+    "closure_blocker": "Commit the exact previously sealed Stage-A, Stage-B and answer-key bytes unchanged; do not reconstruct them."
+  },
+  "confirmation_cases": [
+    {
+      "case_id": "relay-battery-due-diligence-postponement",
+      "R": {
+        "correct": true,
+        "required_reopening_for_decisive_conclusion": false,
+        "verification_or_context_reopening_observed": true,
+        "rediscovered_material_facts_needed_for_decisive_conclusion": 0
+      },
+      "M": {
+        "correct": true,
+        "required_reopening_for_decisive_conclusion": false,
+        "verification_or_context_reopening_observed": true,
+        "rediscovered_material_facts_needed_for_decisive_conclusion": 0
+      },
+      "C": {
+        "correct": true,
+        "required_reopening_for_decisive_conclusion": false,
+        "verification_or_context_reopening_observed": true,
+        "rediscovered_material_facts_needed_for_decisive_conclusion": 0,
+        "persistence_created": true,
+        "persistence_prevented_real_failure": false
+      },
+      "interpretation": "All Stage-A artifacts preserved the decisive original date, replacement date and amendment force timing. Stage-B runs independently reopened sources and reconstructed additional legislative-procedure context; Core persistence did not reduce the observed burden beyond Method."
+    },
+    {
+      "case_id": "relay-rohs-scope-split",
+      "R": {
+        "correct": true,
+        "required_reopening_for_decisive_conclusion": false,
+        "verification_or_context_reopening_observed": true,
+        "rediscovered_material_facts_needed_for_decisive_conclusion": 0
+      },
+      "M": {
+        "correct": true,
+        "required_reopening_for_decisive_conclusion": false,
+        "verification_or_context_reopening_observed": true,
+        "rediscovered_material_facts_needed_for_decisive_conclusion": 0
+      },
+      "C": {
+        "correct": true,
+        "required_reopening_for_decisive_conclusion": false,
+        "verification_or_context_reopening_observed": true,
+        "rediscovered_material_facts_needed_for_decisive_conclusion": 0,
+        "persistence_created": false,
+        "persistence_decision": "PERSISTENCE_NOT_JUSTIFIED"
+      },
+      "interpretation": "Every Stage-A artifact preserved the decisive 7(a) versus 7(a)-I through VII scope/date split. Core correctly declined persistence, leaving no Core-over-Method handoff advantage."
+    }
+  ],
+  "combined_five_case_result": {
+    "stage_b_correct": 15,
+    "stage_b_total": 15,
+    "raw_correctness_advantage": "NONE",
+    "method_project_level_value": "SUPPORTED_FOR_HANDOFF_REPRODUCIBILITY",
+    "core_over_method_handoff_advantage_observed": false,
+    "full_integration_reentry_earned": false,
+    "decision": "SHRINK_TO_METHOD_PLUS_CORPUS_PROTOCOL",
+    "core_status": "OPTIONAL_INDIVIDUALLY_EARNED_PERSISTENCE"
+  }
+}

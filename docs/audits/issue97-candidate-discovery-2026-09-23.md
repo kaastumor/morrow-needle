@@ -1,7 +1,7 @@
 # Issue #97 — latent-detection candidate discovery
 
 **Date:** 2026-09-23  
-**Status:** CASE SELECTION COMPLETE / NO ARM RUNS  
+**Status:** CASE SELECTION + CUE AUDIT + SEAL COMPLETE / NO ARM RUNS  
 **Gate:** `docs/evaluations/needle-latent-detection-v0.1.md`
 
 ## Firewall statement
@@ -424,3 +424,51 @@ Before sealing:
 6. commit only cryptographic commitments + execution manifest.
 
 No investigator run is permitted before those steps complete.
+
+
+## Sealing completed
+
+The exact eight question packet and exact answer-key packet were frozen after
+the cue audit and before any R/M investigator request.
+
+Public commitments:
+
+- prompt packet SHA-256:
+  `1956a2a99d0fedbcede162d7763a881f7b9af9e490b9def68c59f5804a54df17`;
+- answer-key packet SHA-256:
+  `dee28d2c9f3f77342923f09afc34e04f5cacb5ea3a3ac2aadbdda1b17cbaae61`;
+- public manifest:
+  `fixtures/value-gates/issue97-sealed-manifest-v0.1.json`.
+
+The manifest also pins:
+
+- exact case/run order;
+- per-question commitments;
+- per-answer-key-fragment commitments;
+- R/M base-instruction commitments;
+- all 16 full prompt commitments;
+- `gpt-5.6-sol` / high reasoning / web search / `store=false` /
+  stateless execution;
+- the six adversarial cue-audit verdicts.
+
+### Pre-execution manifest bookkeeping repair
+
+The first public-manifest commit
+(`5dad65fad23e0865d0a650c15e3e49eb6d686ca4`) contained an incorrect manual
+transcription of 12 derived per-run prompt hashes.
+
+The whole prompt-packet and answer-key commitments were already correct.
+
+Before any investigator response existed, commit
+`43f95b5bcf6da5b4b8795abd540ab30c9c63c1fd` replaced only that derived hash
+table with hashes recomputed from the unchanged sealed prompt packet and added
+an explicit repair record.
+
+This does not constitute a re-seal: no scientific input bytes changed.
+
+## Execution readiness
+
+The gate is now ready for the external execution boundary.
+
+Do not alter prompts, keys, arm instructions, case order or scientific settings.
+Any scientific-input change requires a new gate version and new commitments.

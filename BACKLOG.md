@@ -27,29 +27,28 @@ Research/audit mode rules:
 5. a well-supported “nothing new / baseline already handles this” result is
    successful work.
 
-**Issue #88 is now the current sponsor-authorized bounded value gate.**
+**Issue #88 is complete. Its pre-registered stop rule fired.**
 
-Issue #87 remains valid evidence for relay/reconstruction burden, but its 15/15
-correct Stage-B result created a ceiling effect for the stronger question:
-whether Needle actually prevents consequential legal-research mistakes.
+Across six fresh adversarial failure strata, all six pairs were R-pass/M-pass.
+The equally capable source-grounded baseline independently caught the same
+source-state, multilingual, applicability, indirect-effect, private-authority
+and exact-time traps as Needle Method. There was no Method correctness rescue.
 
-Issue #88 therefore tests Needle under pre-registered adversarial failure modes.
-The failure strata were fixed before fresh cases were selected. Phase A compares
-only the strong boring baseline (R) with Needle Method (M) using the same
-model/reasoning/source access. Core is excluded unless a later changed follow-up
-creates a genuine persistence job.
+Do not invent a harder post-result benchmark. Phase B is not triggered from
+this result; Issue #87 already found no Core-over-Method handoff win.
 
-The six Phase-A cases are now sealed and hash-committed. Exact prompts/answer
-key remain outside Git. The next legitimate action is the 12-request stateless
-R/M execution through the frozen no-admin runner. Do not alter cases, Method or
-criteria before those results exist.
+The default project identity therefore shrinks again:
 
-This is not an architecture-expansion horizon. A baseline success is valid
-negative evidence against Needle-specific value; R-fail/M-fail is also a valid
-result; R-pass/M-fail counts against Method.
+> **NEEDLE = ADVERSARIAL LEGAL-RESEARCH CORPUS + EVALUATION PROTOCOL.**
 
-**Issue #87's project-level decision remains in force: the default identity is
-Needle Method + corpus/protocol.**
+Needle Method remains available as an optional structured handoff/reporting
+convention. Needle Core remains optional case-earned persistence. Full Needle
+and its higher projections remain parked.
+
+The hourly worker should remain idle. #88 creates no replacement implementation
+horizon and no AUTO READY work.
+
+
 
 Needle Relay completed all 5 pre-sealed cases × 3 arms. All 15 Stage-B
 conclusions were substantively correct, so there is no raw correctness
@@ -57,12 +56,12 @@ advantage. The useful signal is handoff burden: Method showed the lowest
 observed reconstruction burden in the independent pilot and no disadvantage in
 the two confirmation cases. Core produced no observed handoff win over Method.
 
-The Issue #87 kill rule therefore applies. Core is no longer a default identity
+The Issue #87 Core kill rule remains in force. Core is not a default identity
 layer. Existing Core contracts remain available only as individually earned
-persistence when a concrete repeated/historical/provenance-sensitive task or an
-observed Method-only failure demonstrates that persistence prevents a real
-error or materially reduces reopening/rediscovery. Schema availability,
-neatness or hypothetical reuse do not qualify.
+persistence when a concrete repeated/historical/provenance-sensitive task
+demonstrates that persistence prevents a real error or materially reduces
+reopening/rediscovery. Schema availability, neatness or hypothetical reuse do
+not qualify.
 
 No Thread, Retrieval, X-Ray, Source Anomaly, Half-Life, feed/cards or other
 parked Full-Needle surface earned re-entry.

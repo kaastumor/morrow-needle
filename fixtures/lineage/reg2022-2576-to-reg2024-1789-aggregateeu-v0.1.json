@@ -1,6 +1,6 @@
 {
   "schema_version": "regime-lineage-v0.2",
-  "edge_id": "aggregateeu-crisis-superceded-by-permanent-gas-demand-aggregation",
+  "edge_id": "aggregateeu-crisis-superseded-by-permanent-gas-demand-aggregation",
   "relation_type": "SUPERSEDED_BY",
   "genealogical_evidence_state": "DIRECT",
   "sources": [

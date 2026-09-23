@@ -1,0 +1,75 @@
+{
+  "schema_version": "issue88-phase-a-answer-key-v0.1",
+  "issue": 88,
+  "created_date": "2026-09-23",
+  "cases": [
+    {
+      "case_id": "adv-polish-visa-backprojection",
+      "stratum": "source-state / ex-post back-projection",
+      "correct_conclusion": "The claim is not justified. The original/authentic Polish OJ text omitted Sudan between Saudi Arabia and Sierra Leone. A Polish-only corrigendum published 11 February 2026 inserted Sudan. The current consolidated representation nominally dated 30 December 2025 incorporates that later corrigendum (C1), so it is an ex-post corrected representation and cannot prove what the Polish official/source text displayed on 30 December 2025.",
+      "consequential_failure": "Treating the current corrected consolidation's nominal date as proof of the historical source state.",
+      "decisive_evidence": [
+        "Original Polish Regulation (EU) 2018/1806 OJ text lists Saudi Arabia then Sierra Leone without Sudan.",
+        "Corrigendum 32018R1806R(02), OJ L 2026/90107, 11.2.2026, changes that sequence to insert Sudan.",
+        "Current Polish consolidation CELEX 02018R1806-20251230 records C1 = the 11.2.2026 corrigendum and displays Sudan."
+      ],
+      "grading_notes": "Do not require a claim about whether the corrigendum has ex-tunc substantive legal effect. The tested claim is historical source-state evidence."
+    },
+    {
+      "case_id": "adv-nis2-italian-heading",
+      "stratum": "language / corrigendum scope asymmetry",
+      "correct_conclusion": "The statement is not justified as a historical-source claim. Before 4 April 2025 the authentic Italian Article 33 heading said 'soggetti essenziali'. The Italian-only corrigendum changed it to 'soggetti importanti'. The body of Article 33 and other authentic languages support that the provision concerns important entities, but that interpretive/substantive point does not rewrite what the Italian source displayed on 1 April 2025.",
+      "consequential_failure": "Projecting the corrected/other-language expression backward and erasing a real historical authentic-language discrepancy.",
+      "decisive_evidence": [
+        "Original Italian NIS2 text / historical Article 33 heading.",
+        "Corrigendum 32022L2555R(07), OJ L 2025/90309, 4.4.2025, authentic language IT only, replacing 'soggetti essenziali' with 'soggetti importanti'.",
+        "English Article 33/body concerns important entities."
+      ],
+      "grading_notes": "A good answer should separate historical Italian wording from substantive interpretation; either collapsing them is a failure."
+    },
+    {
+      "case_id": "adv-chatgpt-vlose-applicability",
+      "stratum": "status/set-state != legal applicability",
+      "correct_conclusion": "No. ChatGPT was designated a VLOSE on 31 August 2026, but DSA Article 33(6) provides that Section 5 obligations apply four months after notification to the provider. The Commission press release says the newly designated services have four months, by January 2027, to comply. On 23 September 2026 designation exists, but the additional Section 5 obligations are not yet applicable solely by reason of designation.",
+      "consequential_failure": "Equating authoritative designation/set membership with immediate application of downstream obligations.",
+      "decisive_evidence": [
+        "Commission press release dated 31.8.2026 designating ChatGPT as VLOSE and stating four months/by January 2027.",
+        "Regulation (EU) 2022/2065 Article 33(6): Section 5 obligations apply four months after notification."
+      ],
+      "grading_notes": "Do not require an exact January calendar day unless independently evidenced. Inventing a day from designation rather than notification is an uncertainty failure."
+    },
+    {
+      "case_id": "adv-harmonised-standard-restriction",
+      "stratum": "unchanged text / changed legal effect",
+      "correct_conclusion": "No. Decision (EU) 2025/1457 maintained EN 60335-1:2012 in the OJ but added a restriction: the specified part of clause 20.2 using the test probe similar to test probe B does not confer a presumption of conformity with Annex I point 2(c) of Directive 2014/35/EU. The Decision entered into force on publication (18 July 2025). Article 2 deferred only point (1) of the Annex (the deletions) until 18 January 2027; the new restricted row in point (2) was not deferred. Thus on 21 July 2025 the restricted clause part does not carry the presumption.",
+      "consequential_failure": "Inferring unchanged legal effect from continued standard identifier/listing, or mistakenly applying the deferred date to the restriction.",
+      "decisive_evidence": [
+        "Decision (EU) 2025/1457 recitals 17-19 and Annex row 155a.",
+        "Article 2: Decision enters into force on publication; only point (1) of Annex applies from 18.1.2027."
+      ],
+      "grading_notes": "A merely general statement that restrictions can exist is insufficient; the answer must get the 21 July 2025 effect/timing right."
+    },
+    {
+      "case_id": "adv-ets-private-verifier",
+      "stratum": "source origin != legal authority/recognition",
+      "correct_conclusion": "The reasoning is wrong. EU ETS law expressly assigns an accredited verifier—a legal person accredited under the verification regime—a bounded legally recognised verification role. The verifier issues a verification report and can conclude a report is verified as satisfactory. Under the Union Registry rules, annual emissions must be entered and marked 'verified'; for a stationary installation, if that has not occurred by 1 April, the operator account is set to blocked. Public authorities retain powers including approval/administration and correction of verified or estimated emissions; recognising the private verifier's role does not turn it into a sovereign authority.",
+      "consequential_failure": "Discarding a legally required private-primary verification determination because the actor is private, thereby reaching the wrong account/compliance conclusion.",
+      "decisive_evidence": [
+        "Implementing Regulation (EU) 2018/2067 Article 3 definition of verifier and Article 27 verification report/opinion.",
+        "Commission EU ETS MRV guidance: operator reports must be verified by an accredited verifier.",
+        "Delegated Regulation (EU) 2019/1122 Articles 31-32: satisfactory verification/verified status and account blocking deadline."
+      ],
+      "grading_notes": "Do not credit an answer that says the private verifier alone is the ultimate public authority. The point is bounded recognition plus retained competent-authority powers."
+    },
+    {
+      "case_id": "adv-licence-1300-boundary",
+      "stratum": "temporal precision / boundary loss",
+      "correct_conclusion": "No. Under Article 3(1) of Implementing Regulation (EU) 2016/1239, an application received after 13:00 Brussels time on a working day is deemed lodged on the first working day following actual receipt. Application A at 12:59 is lodged Tuesday. Application B at 13:01 is deemed lodged Wednesday (given the question's assumption that Wednesday is the next working day). A date-only record loses a legally material cut-off.",
+      "consequential_failure": "Collapsing an exact regulatory cut-off into calendar-date granularity and assigning the wrong deemed lodgement day.",
+      "decisive_evidence": [
+        "Current consolidated Implementing Regulation (EU) 2016/1239 Article 3(1): after 13:00 Brussels time is deemed lodged first working day following."
+      ],
+      "grading_notes": "The answer must distinguish 12:59 and 13:01; generic mention of a deadline without the deemed-day consequence is incomplete."
+    }
+  ]
+}

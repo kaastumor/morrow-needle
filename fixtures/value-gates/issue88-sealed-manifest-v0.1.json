@@ -1,0 +1,50 @@
+{
+  "schema_version": "issue88-sealed-manifest-v0.1",
+  "issue": 88,
+  "created_date": "2026-09-23",
+  "status": "SEALED_AWAITING_INDEPENDENT_EXECUTION",
+  "phase": "A",
+  "case_ids": [
+    "adv-polish-visa-backprojection",
+    "adv-nis2-italian-heading",
+    "adv-chatgpt-vlose-applicability",
+    "adv-harmonised-standard-restriction",
+    "adv-ets-private-verifier",
+    "adv-licence-1300-boundary"
+  ],
+  "failure_strata": [
+    "source-state / ex-post back-projection",
+    "language / corrigendum scope asymmetry",
+    "status/set-state != legal applicability",
+    "unchanged text / changed legal effect",
+    "source origin != legal authority/recognition",
+    "temporal precision / boundary loss"
+  ],
+  "sealed_artifacts": [
+    {
+      "filename": "issue88-phase-a-prompts.json",
+      "sha256": "a8725af696f12eb286a1dec84c6e1df870a2a6ebd3409cee0db97d14f8354659",
+      "repository_contains_plaintext": false
+    },
+    {
+      "filename": "issue88-phase-a-answer-key.json",
+      "sha256": "8c32ed2c3506b6f508a4093cba171c166b759fb3f475c4956ff84657818cfde0",
+      "repository_contains_plaintext": false
+    }
+  ],
+  "execution": {
+    "requests": 12,
+    "arms": ["R", "M"],
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "web_search": true,
+    "store": false,
+    "stateless": true,
+    "conversation": null,
+    "previous_response_id": null
+  },
+  "runner_zip_sha256": "d66f9a00ab18599bb77b227eb21dd8c942d2eeea2d5c8af63b638a8ef90496bc",
+  "sealed_artifacts_zip_sha256": "b818cb977ddd4e3759b3689d497c3f35d346ef8088a5ff30dc5d192b56549e33",
+  "blinding_rule": "Investigators receive only their own exact prompt. They receive no answer key, repository context, other-arm output, conversation object, or previous_response_id.",
+  "reveal_rule": "After all 12 independent runs complete, verify both artifact hashes, reveal/commit the exact sealed files unchanged, then evaluate R/M under the pre-registered decision matrix."
+}

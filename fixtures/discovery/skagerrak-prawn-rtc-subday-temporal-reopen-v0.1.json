@@ -1,0 +1,78 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "skagerrak-prawn-rtc-subday-temporal-reopen-v0.1",
+  "question": "Can Temporal v0.1 represent a legal interval whose start and end are specified to the minute with a legally meaningful timezone?",
+  "official_rule": {
+    "eu_act_id": "CELEX:32019R2201",
+    "provision": "Article 8",
+    "decision_date": "2025-02-17",
+    "rule": "The real-time closure enters into force at 24:00 UTC on the day of decision and lasts 14 days, after which it automatically ceases at midnight UTC."
+  },
+  "official_instance": {
+    "source_id": "HVMFS 2025:4",
+    "authority": "Havs- och vattenmyndigheten",
+    "decision_date": "2025-02-17",
+    "source_start_expression": "18 February 2025 at 01:00 Swedish time",
+    "source_end_expression": "through 4 March 2025 at 00:59 Swedish time",
+    "normalized_start": "2025-02-18T01:00:00+01:00",
+    "normalized_end_exclusive": "2025-03-04T01:00:00+01:00",
+    "utc_start": "2025-02-18T00:00:00+00:00",
+    "utc_end_exclusive": "2025-03-04T00:00:00+00:00"
+  },
+  "boundary_adversaries": [
+    {
+      "query_instant": "2025-02-18T00:30:00+01:00",
+      "expected_active": false,
+      "why": "The local calendar date has begun but the closure has not yet started."
+    },
+    {
+      "query_instant": "2025-02-18T01:00:00+01:00",
+      "expected_active": true,
+      "why": "The exact start boundary is inclusive."
+    },
+    {
+      "query_instant": "2025-03-04T00:59:00+01:00",
+      "expected_active": true,
+      "why": "The source expressly includes the final minute through 00:59 Swedish time."
+    },
+    {
+      "query_instant": "2025-03-04T01:00:00+01:00",
+      "expected_active": false,
+      "why": "The EU rule ceases the closure at midnight UTC, equal to 01:00 CET."
+    }
+  ],
+  "v0_1_probe": {
+    "schema_problem": "normalized_date and absolute trigger date are format=date, not date-time.",
+    "resolver_problem": "resolver.py parses legal/query time through datetime.date.fromisoformat and therefore cannot compare offset-aware instants.",
+    "date_rounding_is_forbidden": true,
+    "result": "TEMPORAL_V0_1_REOPEN_TRIGGERED"
+  },
+  "required_evolution": {
+    "support_date_granularity": true,
+    "support_offset_aware_instant_granularity": true,
+    "preserve_inclusive_exclusive_boundaries": true,
+    "preserve_relative_event_offsets": true,
+    "avoid_implicit_local_timezone": true,
+    "no_schema_added_in_failure_commit": true
+  },
+  "forbidden_inferences": [
+    "The closure was active for the entire calendar date 18 February 2025.",
+    "The closure was active for the entire calendar date 4 March 2025.",
+    "Swedish local time can be dropped without changing the legal interval.",
+    "A date-only Temporal assertion is an acceptable approximation of an exact official time boundary.",
+    "The spatial closure should own these times because it is a spatial rule."
+  ],
+  "official_sources": [
+    {
+      "identifier": "CELEX:32019R2201",
+      "locator": "Article 8",
+      "role": "SUBDAY_TEMPORAL_RULE"
+    },
+    {
+      "identifier": "HVMFS 2025:4",
+      "locator": "Sections 1-2",
+      "role": "SUBDAY_TEMPORAL_INSTANCE"
+    }
+  ],
+  "status": "FOUNDATION_REOPEN_PINNED"
+}

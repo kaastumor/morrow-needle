@@ -39,6 +39,11 @@ only the strong boring baseline (R) with Needle Method (M) using the same
 model/reasoning/source access. Core is excluded unless a later changed follow-up
 creates a genuine persistence job.
 
+The six Phase-A cases are now sealed and hash-committed. Exact prompts/answer
+key remain outside Git. The next legitimate action is the 12-request stateless
+R/M execution through the frozen no-admin runner. Do not alter cases, Method or
+criteria before those results exist.
+
 This is not an architecture-expansion horizon. A baseline success is valid
 negative evidence against Needle-specific value; R-fail/M-fail is also a valid
 result; R-pass/M-fail counts against Method.

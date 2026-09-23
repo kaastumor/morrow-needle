@@ -1,0 +1,143 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "hpai-woerdense-verlaat-authoritative-finding-spatial-effect-v0.1",
+  "question": "Can an unchanged legal regime react to an officially confirmed categorical real-world fact by generating a new time-bounded legal geography?",
+  "authoritative_finding": {
+    "finding_id": "finding:hpai:NL-HPAI(NON-P)-2026-00174",
+    "finding_character": "OFFICIAL_DISEASE_CONFIRMATION",
+    "authority_context": "Dutch competent animal-health authorities",
+    "condition": "Highly pathogenic avian influenza confirmed",
+    "subject": {
+      "kind": "AFFECTED_LOCATION",
+      "label": "Woerdense Verlaat hobby bird holding",
+      "member_state": "NOT_APPLICABLE"
+    },
+    "finding_date": "2026-07-17",
+    "outbreak_reference": "NL-HPAI(NON-P)-2026-00174",
+    "location": {
+      "coordinate_system": "WGS84",
+      "latitude": 52.16,
+      "longitude": 4.89,
+      "coordinate_character": "EU_ZONE_CENTRE_AS_LATER_PUBLISHED"
+    },
+    "textual_mutation": null
+  },
+  "governing_rules": [
+    {
+      "act_id": "CELEX:32016R0429",
+      "provision": "Article 60",
+      "effect": "On official confirmation, immediately declare the affected location infected and establish an appropriate restricted zone."
+    },
+    {
+      "act_id": "CELEX:32016R0429",
+      "provision": "Article 64",
+      "effect": "Establish the restricted zone around the affected location, taking the listed epidemiological and geographical criteria into account."
+    },
+    {
+      "act_id": "CELEX:32020R0687",
+      "provision": "Article 21 and Annex V",
+      "effect": "For HPAI, establish at least a 3 km protection zone and a 10 km surveillance zone around the outbreak, subject to the Regulation's qualifications."
+    }
+  ],
+  "spatial_rule_evaluation": {
+    "input_finding_id": "finding:hpai:NL-HPAI(NON-P)-2026-00174",
+    "input_location": {
+      "coordinate_system": "WGS84",
+      "latitude": 52.16,
+      "longitude": 4.89
+    },
+    "outputs": [
+      {
+        "zone_kind": "PROTECTION_ZONE",
+        "geometry_character": "CIRCLE_RADIUS",
+        "radius_km": 3,
+        "centre_source": "finding location",
+        "legal_effect_character": "RESTRICTED_ZONE"
+      },
+      {
+        "zone_kind": "SURVEILLANCE_ZONE",
+        "geometry_character": "CIRCLE_RADIUS",
+        "radius_km": 10,
+        "centre_source": "finding location",
+        "legal_effect_character": "RESTRICTED_ZONE"
+      }
+    ],
+    "evaluation_state": "DERIVED_FROM_FINDING_AND_BINDING_SPATIAL_RULE"
+  },
+  "official_case_confirmation": {
+    "national_source_date": "2026-07-17",
+    "national_statement": "HPAI confirmed in Woerdense Verlaat; a 3 km protection zone and 10 km surveillance zone were imposed immediately, including a transport ban in the 10 km zone.",
+    "eu_source_id": "CELEX:32026D1888",
+    "eu_published_outbreak_reference": "NL-HPAI(NON-P)-2026-00174",
+    "eu_zone_centre": {
+      "latitude": 52.16,
+      "longitude": 4.89
+    },
+    "eu_protection_zone_until": "2026-08-08",
+    "eu_surveillance_zone_until": "2026-08-17"
+  },
+  "temporal_separation": {
+    "finding_time": "2026-07-17",
+    "zone_application": "TIME_BOUNDED_SEPARATE_DIMENSION",
+    "statement": "The finding date, the immediate national control start, and the later published end dates are separate temporal facts; zone geometry does not own duration."
+  },
+  "architecture_probe": {
+    "authoritative_metric_observation_v0_1": {
+      "fit": "FAILS_CAUSAL_SHAPE",
+      "reason": "HPAI confirmation is a categorical official finding, not a scalar numeric observation."
+    },
+    "authoritative_dynamic_set_v0_1": {
+      "fit": "FAILS_DIRECT_CAUSE",
+      "reason": "The outbreak is not an existing member changing membership/status in an authoritative set. A restricted area may later be listed, but that is downstream of the finding."
+    },
+    "temporal_v0_1": {
+      "fit": "DATES_ONLY",
+      "reason": "Temporal assertions can own start/end dates but not disease truth, outbreak location or zone geometry."
+    },
+    "metric_rule_evaluation_v0_1": {
+      "fit": "FAILS_SPATIAL_SEMANTICS",
+      "reason": "Coordinates and radii are not scalar legal metrics whose meaning is captured by the bounded numeric predicate/formula contract."
+    },
+    "change_atom_v0_3": {
+      "fit": "FAILS_TEXTUAL_MUTATION_CAUSE_REQUIREMENT",
+      "reason": "The governing rules are unchanged; the causal input is an official real-world finding."
+    },
+    "result": "REPRESENTATIONAL_FAILURE_PINNED",
+    "provisional_missing_layers": [
+      "AUTHORITATIVE_CATEGORICAL_FINDING",
+      "SPATIAL_RULE_EVALUATION"
+    ],
+    "new_schema_added_in_this_probe": false
+  },
+  "forbidden_inferences": [
+    "The HPAI finding is a textual mutation of Regulation (EU) 2016/429 or Delegated Regulation (EU) 2020/687.",
+    "The outbreak itself is a scalar metric merely because its location has numeric coordinates.",
+    "The outbreak becomes legally real only when the later Commission implementing decision republishes the zones.",
+    "The 3 km and 10 km zones are direct scientific findings rather than legal spatial consequences generated from the finding and binding rules.",
+    "The zone geometry owns its own duration.",
+    "A later EU list entry should overwrite the earlier national official confirmation event."
+  ],
+  "official_sources": [
+    {
+      "identifier": "CELEX:32016R0429",
+      "locator": "Articles 58, 60 and 64",
+      "role": "FINDING_TRIGGER_AND_ZONE_DUTY"
+    },
+    {
+      "identifier": "CELEX:32020R0687",
+      "locator": "Article 21 and Annex V",
+      "role": "SPATIAL_RULE"
+    },
+    {
+      "identifier": "Rijksoverheid 17 July 2026 Woerdense Verlaat",
+      "locator": "official confirmation and immediate 3 km/10 km control measures",
+      "role": "DIRECT_FINDING_AND_NATIONAL_RESPONSE"
+    },
+    {
+      "identifier": "CELEX:32026D1888",
+      "locator": "Annex, Netherlands, NL-HPAI(NON-P)-2026-00174",
+      "role": "EU_ZONE_CONFIRMATION"
+    }
+  ],
+  "status": "OFFICIAL_CASE_PINNED_ARCHITECTURE_GAP_UNRESOLVED"
+}

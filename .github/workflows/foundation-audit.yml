@@ -1,4 +1,4 @@
-name: Post-P1 foundation audit
+name: Foundation adversary audit
 
 on:
   push:
@@ -22,6 +22,14 @@ on:
       - "tests/test_retrieval.py"
       - "tests/test_thread_article3.py"
       - "tests/test_thread_gold.py"
+      - "docs/audits/**"
+      - ".github/workflows/foundation-audit.yml"
+  pull_request:
+    paths:
+      - "src/needle/**"
+      - "schemas/**"
+      - "fixtures/**"
+      - "tests/**"
       - "docs/audits/**"
       - ".github/workflows/foundation-audit.yml"
   workflow_dispatch:
@@ -55,4 +63,12 @@ jobs:
             tests/test_provenance_ledger.py \
             tests/test_retrieval.py \
             tests/test_thread_article3.py \
-            tests/test_thread_gold.py
+            tests/test_thread_gold.py \
+            tests/test_dynamic_standard_gateway_reopen.py \
+            tests/test_authoritative_dynamic_set.py \
+            tests/test_dsa_designation_application_lag.py \
+            tests/test_authoritative_metric_contract.py \
+            tests/test_authoritative_finding_contract.py \
+            tests/test_temporal_v0_2_precision.py \
+            tests/test_legal_spatial_state_v0_2.py \
+            tests/test_judicial_holding_contract.py

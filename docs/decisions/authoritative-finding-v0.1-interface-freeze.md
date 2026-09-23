@@ -127,3 +127,17 @@ Reopen Authoritative Finding v0.1 only when an official case demonstrates that:
 - subject identity and optional point/location context are insufficient;
 - a direct finding cannot remain independent from its downstream legal
   consequence.
+
+
+## Downstream spatial resolution — Issue #80
+
+The spatial question left open by this decision is now resolved separately by:
+
+- `schemas/legal-spatial-state-v0.1.schema.json`
+- `docs/decisions/legal-spatial-state-v0.1-interface-freeze.md`
+
+Authoritative Finding v0.1 remains unchanged.
+
+The HPAI finding owns only the categorical official confirmation and its subject/location context. The downstream 3 km protection-zone geometry is owned by Legal Spatial State v0.1 and its validity boundaries remain in Temporal v0.2.
+
+This preserves the original finding ownership boundary rather than expanding it after the spatial proof cases.

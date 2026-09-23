@@ -33,6 +33,8 @@ Every entry ends in one disposition:
 | #87 Needle Relay — Method | VALUE | Explicit Needle Method handoffs materially improve reproducibility/reconstruction over competent free-form notes | Competent free-form research notes with the same source access | 15/15 Stage-B conclusions were correct across all arms, so there was no raw correctness gain; Method nevertheless had the lowest observed reconstruction burden in the independent pilot and was no worse in the two sealed confirmation cases | CONTINUE | `docs/audits/needle-relay-full-confirmation-2026-09-23.md` and Issue #87 |
 | #87 Needle Relay — Core | PARITY | Persistent Needle Core state materially improves handoff beyond Method on historical/stateful/scope-sensitive questions | Needle Method dossier without canonical persistence | No observed Core-over-Method handoff win across five sealed cases; Battery persisted temporal state but still reopened/rediscovered, while RoHS correctly emitted PERSISTENCE_NOT_JUSTIFIED | SIMPLIFY | `docs/audits/needle-relay-full-confirmation-2026-09-23.md` and Issue #87 |
 
+| #88 adversarial failure gate | PARITY | Needle Method prevents consequential errors or unjustified certainty on fresh legal questions drawn from failure mechanisms that previously stressed the project | Equally capable source-grounded GPT-5.6 Sol/high baseline with the same web access | All six sealed pairs were R-pass/M-pass; baseline independently caught every decisive trap, while Method added structure/verbosity but no correctness rescue | SIMPLIFY | `docs/audits/needle-adversarial-failure-gate-2026-09-23.md` and Issue #88 |
+
 ## Rules
 
 1. Do not add an entry because work was completed.

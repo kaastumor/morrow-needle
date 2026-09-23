@@ -4,8 +4,8 @@ Status: **CANONICAL PROJECT NORTH STAR**
 
 ## Purpose
 
-Morrow // Needle is an **evidence-first EU legal-change research and audit
-engine**.
+Morrow // Needle is an **evidence-first legal research method plus a minimal
+canonical state core for EU legal change**.
 
 It exists to reconstruct, falsify and inspect legal-change claims without
 turning source activity, model inference, legal interpretation, consolidation
@@ -29,28 +29,41 @@ requires every finding to become a public feature.
 ## Current central question
 
 Public-product expansion is stopped after Issues #49 and #59 failed the
-project's own repeated-material-advantage threshold.
+project's repeated-material-advantage threshold.
 
-The current question is simpler:
+Issue #86 then tested the project form itself.
 
-> Can Needle continue to produce trustworthy, reusable legal-change research
-> findings and regressions that expose source, temporal, identity, dependency or
-> provenance traps?
+The strongest boring baseline answered five unseen questions correctly. Needle
+Method added systematic investigation discipline. Needle Core added material
+persistent value only in the stateful/historical cases. Full Needle added no
+material value over Core.
 
-That explicit research/audit runway is now established. Issues #61, #64, #67,
-#69 and #72-#83 demonstrated that the project can produce useful source,
-temporal, dependency, metric, finding and spatial adversaries without reviving
-the stopped public-product roadmap.
+The current question is therefore:
+
+> **When does persistent canonical structure materially improve safety,
+> reproducibility or reconstruction cost over Needle Method + the strongest
+> boring baseline?**
+
+The burden of proof now sits on persistence and higher-level machinery, not on
+the baseline.
 
 ## North star
 
-> Given a concrete EU legal-change question, produce the smallest defensible
-> answer that preserves evidence ownership, legal-time distinctions and
-> uncertainty, and leave enough provenance or regression material for another
-> investigator to reproduce or challenge it.
+> Given a concrete EU legal-information question, first solve it with the
+> strongest defensible research method. Persist canonical state only when doing
+> so materially improves provenance, historical reconstruction, repeatability or
+> later querying.
 
-The north star is research/audit value, not processed-document volume, feature
-count, novelty claims, or product surface.
+The preferred order is:
+
+1. strong boring baseline;
+2. Needle Method;
+3. Needle Core only if persistence earns itself;
+4. higher projection only if a concrete question earns that projection.
+
+The north star is safer/reproducible understanding at minimum durable
+complexity, not processed-document volume, feature count, ontology coverage or
+product surface.
 
 ## Strong simpler baseline
 
@@ -75,17 +88,22 @@ A run is successful when it produces at least one well-supported outcome:
 - temporal or dependency trap;
 - useful negative or non-impact conclusion;
 - regression preventing a demonstrated error;
-- explicit parity showing a proposed distinction adds no material value.
+- explicit parity showing a proposed distinction adds no material value;
+- evidence that a result should remain Method-only rather than be persisted;
+- evidence that a historical projection or subsystem should remain parked.
 
-New complexity is justified only when a concrete investigation cannot be
-represented safely with existing contracts.
+New persistent complexity is justified only when Method + the strong baseline
+cannot preserve the required state safely or repeatably.
 
 ## Public-product status
 
 **STOPPED, not deleted.**
 
-Existing feed cards, Thread, X-Ray, Source Anomaly, Half-Life and Evidence
-projections remain useful audit views and regression surfaces.
+Existing feed cards, Thread, X-Ray, Source Anomaly, Half-Life, Retrieval and
+Evidence projections remain preserved audit/research surfaces.
+
+They are **not part of the essential project identity** merely because they
+exist. Each must re-earn active use from a concrete research question.
 
 Public-product expansion may reopen only when external/user evidence identifies
 a recurring concrete problem for which the strong simpler baseline fails
@@ -125,6 +143,15 @@ Especially:
 
 There is **no standing implementation or product queue**.
 
+The canonical project identity is now:
+
+**Needle Method + Needle Core.**
+
+Needle Core includes only persistent canonical ownership/provenance/history and
+small deterministic resolvers that repeatedly earn their maintenance cost.
+
+Higher analytical/read-side surfaces are optional experiments.
+
 Select the next task only from fresh official evidence, a manual or operational
 probe anomaly, an unresolved canonical claim, or an explicit sponsor research
 question.
@@ -143,8 +170,10 @@ The current discipline is:
 5. stop when the smallest safe representation is proven;
 6. prefer an idle backlog over manufactured work.
 
-The strongest current architectural risk is **ontology creep from successful
-discovery**, not lack of capability.
+The strongest current architectural risk is **re-expanding the smaller identity
+simply because the repository already contains broader machinery**.
+
+Ontology creep remains a secondary form of the same risk.
 
 
 ## Repository discipline
@@ -196,9 +225,19 @@ At wide-angle boundaries, keep these distinct:
 
 A change in one does not automatically require a change in the others.
 
-The current project form is an evidence-first legal-change research/audit
-engine. That form is revisable. The contribution claim must continue to earn
-itself against alternatives.
+The current project form is **Needle Method + Needle Core**.
+
+The current contribution hypotheses are:
+
+1. **Method hypothesis:** explicit source/authority/state/time/uncertainty
+   discipline improves review consistency and repeatability across
+   researchers/sessions.
+2. **Core hypothesis:** persistent canonical state materially helps where legal
+   questions are historical, stateful, provenance-sensitive or repeatedly
+   queried.
+
+Both remain falsifiable. The contribution claim must continue to earn itself
+against the strong baseline.
 
 ## Analytical method maturity
 

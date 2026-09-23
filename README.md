@@ -1,15 +1,33 @@
 # Morrow // Needle
 
-**Evidence-first research and audit infrastructure for EU legal change.**
+**Evidence-first legal research method + minimal canonical state core for EU legal change.**
 
-Needle is not a document summarizer or a general legal-news product. It reconstructs, falsifies, and inspects legal-change claims: what changed, compared with what, when different legal effects matter, which dependencies or corrections alter the picture, what official evidence supports the claim, and what remains unresolved.
+Needle is not a document summarizer or a general legal-news product.
+
+Its current identity is deliberately smaller:
+
+- **Needle Method** — a disciplined way to investigate legal-information claims
+  without collapsing source, authority, text, time, interpretation, uncertainty
+  or historical state;
+- **Needle Core** — a minimal persistent substrate used only when provenance,
+  history, repeated querying or cross-session reconstruction materially benefit
+  from canonical state.
+
+Higher-level projections remain preserved research artifacts, not the default
+project form.
 
 ## Core concepts
 
-- **Needle** — finds significant legal and regulatory change.
-- **Thread** — follows a rule's ancestry and descendants through time.
-- **Change Atom** — the smallest independently defensible legal change.
-- **Morrow Constitution** — project rules governing provenance, legal status, uncertainty, time, and AI use.
+- **Needle Method** — evidence/ownership/adversarial investigation discipline.
+- **Needle Core** — canonical provenance, identity, temporal/state and narrowly
+  evidenced legal-information primitives.
+- **Change Atom** — one canonical semantic path for verified textual mutation;
+  not a universal change object.
+- **Morrow Constitution** — project rules governing provenance, legal status,
+  uncertainty, time and AI use.
+- **Historical projections** — Thread, X-Ray, Source Anomaly, Half-Life,
+  retrieval/feed/public views; retained but non-central unless a concrete
+  question re-earns them.
 
 ## Design principles
 
@@ -36,32 +54,49 @@ data/          small reference data plus a frozen historical operational snapsho
 
 ## Current status
 
-The project is in **research/audit mode**. Public-product expansion remains
-stopped after comparative Issues #49 and #59 failed to demonstrate repeated
-material advantage over the strongest simpler baseline.
+Issue #86 completed a competing-identities value gate on five unseen legal
+questions.
 
-The P0/P1 evidence, identity, temporal, provenance and mutation foundation
-remains canonical. Later research adversaries have earned several narrow
-extensions for non-textual legal state, including authoritative dynamic sets,
-metrics, categorical findings, precision-aware time, legal spatial extent and
-judicial holdings.
+The strong boring baseline answered **5/5 correctly** and caught the main trap
+in **5/5** cases.
+
+The result narrows the project identity:
+
+> **Morrow // Needle = Needle Method + Needle Core**
+
+Needle Method survives as the primary contribution candidate: a reusable
+discipline for making high-risk legal-information distinctions systematic,
+reviewable and repeatable.
+
+Needle Core earns persistence only where the problem is historical, stateful,
+provenance-sensitive, repeated, cross-time/cross-language, or intended for
+later machine querying. In the gate, the strongest Core value came from durable
+historical reconstruction of a language-specific corrigendum; a common-charger
+date query showed smaller repeatability value.
+
+Full Needle added no material value over Core in the five-case gate. Existing
+Thread, Retrieval, X-Ray, Source Anomaly, Half-Life, feed/card and other
+read-side surfaces remain preserved experiments/research artifacts. They are no
+longer presumed to define the project.
+
+Public-product expansion remains stopped.
 
 There is **no standing feature or implementation queue**. A new task must begin
-from a falsifiable legal-information question, fresh official evidence, an
-unresolved canonical claim or an explicit sponsor research question. An idle
-backlog is intentional.
+from a falsifiable legal-information question, fresh evidence, an unresolved
+canonical claim, or an explicit sponsor research question. An idle backlog is
+intentional.
 
-Issue #84 froze the old scheduled Git-backed operational monitor. Its current
-state snapshot remains as historical evidence/regression input, while live
-cycles are manual diagnostics and no longer commit generated state to
-`main`.
+Issue #86 also exposed one parked Core gap: Judicial Holding v0.1 cannot
+honestly represent an affirmative judicial **VALIDITY** holding. It is not
+automatically repaired merely because the gate found it.
 
 See:
 
 - `docs/project-charter.md`
+- `docs/value-evidence.md`
 - `BACKLOG.md`
 - `docs/assumptions.md`
-- `docs/audits/project-system-wide-angle-2026-09-23.md`
+- `docs/audits/competing-identities-value-gate-2026-09-23.md`
 
 ---
 

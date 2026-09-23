@@ -30,6 +30,27 @@ Research/audit mode rules:
 **No preselected research task is currently eligible. The hourly worker should
 idle rather than manufacture work.**
 
+Issue #86 completed the competing-identities value gate and changed the project
+identity to **Needle Method + Needle Core**. The strong boring baseline answered
+5/5 unseen cases correctly. Method added reusable investigation discipline.
+Core earned material persistent value mainly in the historical Dutch AI Act
+corrigendum case and modest repeated-query value in the common-charger case.
+Full Needle added no material value over Core and is no longer the presumptive
+project form.
+
+Thread, Retrieval, X-Ray, Source Anomaly, Half-Life, feed/cards and other
+read-side/product-era surfaces remain preserved experiments/research artifacts.
+They may re-enter active work only when a concrete question earns them.
+
+Issue #86 also exposed two bounded non-auto-ready gaps:
+- Judicial Holding v0.1 cannot honestly represent an affirmative judicial
+  `VALIDITY` holding (Schrems II);
+- Core has no narrow owner for a public legal mandate incorporating/requiring a
+  private technical document (EASA/Airbus ALS case).
+
+Neither gap is an automatic next task. Method currently answers both questions
+safely; persistence must earn the repair.
+
 Issue #85 disproved the assumption that legally relevant external
 determinations must originate with public/official authorities. Two orthogonal
 cases — an S&P ECAI rating and a SZUTEST notified-body certificate decision —
@@ -101,9 +122,12 @@ research question. Until then, **no AUTO READY issue is intentional**.
 
 
 Operational Needle remains a regression surface and manual evidence probe; its
-scheduled Git-backed monitor is frozen. Thread, X-Ray, Source Anomaly,
-Half-Life and public cards remain useful audit projections; none implies an
-active product roadmap.
+scheduled Git-backed monitor is frozen.
+
+The **essential identity is Method + Core**. Thread, Retrieval, X-Ray, Source
+Anomaly, Half-Life, public cards and other projections are parked
+experimental/historical surfaces. None is part of Core by default and none may
+drive architecture merely to regain relevance.
 
 Public-product work may reopen only from external/user evidence of a recurring
 concrete problem that the strong baseline cannot reliably solve. Architecture
@@ -400,6 +424,11 @@ Current mode after Issues #49 and #59:
 
 Completed value gates:
 
+- **Competing identities / Issue #86: COMPLETE — REDIRECT + SIMPLIFY TO
+  METHOD + CORE.** Five unseen cases produced 5/5 correct strong-baseline
+  answers; Method improved discipline; Core showed narrow persistent value;
+  Full added no material value over Core and exposed no rescue for the
+  judicial-validity gap.
 - **Thread comparative gate / Issue #59: COMPLETE — STOP PUBLIC-PRODUCT
   EXPANSION.** The Article 3 Thread is materially better as an audit package
   than raw browsing, especially for negative checks and provenance closure, but
@@ -412,20 +441,31 @@ Completed value gates:
   foundation survived after multiple real enforcement repairs and broad novelty
   claims were rejected.
 
-Retained audit tools:
+Essential current identity:
+
+- **Needle Method** — investigation/evaluation discipline.
+- **Needle Core** — only persistent canonical state that earns itself through
+  provenance, history, repeatability or machine querying.
+
+Preserved optional surfaces:
 
 - **Evidence / Why this is shown** — disposable read-side provenance projection.
-- **Operational Needle** — frozen pilot, regression surface and manual
-  adversarial evidence probe.
-- **Thread** — evidence-linked historical reconstruction when a research
-  question justifies the cost.
-- **Legislative X-Ray** — dependency-ripple detector.
-- **Source Anomaly** — source/audit diagnostics.
+- **Operational Needle** — frozen pilot, regression surface and manual probe.
+- **Thread** — historical reconstruction experiment.
+- **Legislative X-Ray** — dependency-ripple experiment.
+- **Source Anomaly** — source/audit diagnostic experiment.
 - **Half-Life v0.1** — bounded temporal/genealogical demonstration.
+- **Retrieval/feed/public-card layers** — historical/read-side experiments.
+
+These surfaces have no automatic claim on future integration work.
 
 Strategic constraints:
 
 - Do not manufacture product demand from architecture.
+- Do not manufacture **Core demand** from a one-off question Method already
+  answers safely.
+- Do not integrate parked projections merely because newer canonical objects
+  exist.
 - Do not count formalisation alone as user value.
 - Do not add another analytic primitive to rescue a failed product thesis.
 - Do not create infrastructure for hypothetical scale.

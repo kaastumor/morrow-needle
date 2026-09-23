@@ -8,7 +8,8 @@ reasoning method.
 Its current evidence-backed identity is deliberately small:
 
 - **adversarial corpus** — real source, time, language, authority, dependency and
-  legal-state traps preserved as testable cases;
+  legal-state traps preserved as testable cases; canonical entry point:
+  `corpus/index-v0.1.json`;
 - **evaluation protocol** — pre-registration, sealing, independent execution,
   explicit comparators and preservation of parity/negative results;
 - **Needle Method** — optional structured handoff/reporting convention;
@@ -61,6 +62,8 @@ unresolved canonical claim or an explicit sponsor research question.
 - `BACKLOG.md`
 - `docs/audits/needle-adversarial-failure-gate-2026-09-23.md`
 - `fixtures/value-gates/issue88-phase-a-results-v0.1.json`
+- `corpus/index-v0.1.json`
+- `docs/evaluations/adversarial-corpus-protocol-v0.1.md`
 
 ---
 

@@ -27,13 +27,14 @@ Research/audit mode rules:
 5. a well-supported “nothing new / baseline already handles this” result is
    successful work.
 
-**Issue #77 is the sole current evidence-backed next pick.** Two independent
-official cases now confirm the same architecture gap: the toy-safety
-harmonised-standard restriction and REACH Candidate List inclusion both change
-an unchanged rule's operative output through authoritative external set state.
-The next move is to define the smallest canonical owner for an
-`AUTHORITATIVE_DYNAMIC_SET_TRANSITION` and prove both cases through it. Do not
-broaden this into a generic dependency graph, agency framework or product work.
+**No preselected research task is currently eligible. The hourly worker should
+idle rather than manufacture work.**
+
+Issue #77 is complete. Two independent official cases proved the need for an
+authoritative dynamic-set causal owner, and
+`authoritative-dynamic-set-v0.1` now represents both without widening Change
+Atom, the mutation engine or X-Ray v0.1. A future X-Ray v0.2 is not queued;
+build it only if a concrete audit question needs that projection.
 
 The first explicit research/audit runway is complete:
 
@@ -51,11 +52,12 @@ The first explicit research/audit runway is complete:
   unresolved.
 
 Those first-run results reinforced research/audit mode without reopening a
-frozen contract. **Issue #77 is the first later discovery to legitimately reopen
-one:** a toy-safety OJ-reference restriction and an independent REACH Candidate
-List inclusion now show that Dependency Ripple v0.1 cannot represent
-authoritative dynamic-set state without misclassifying it as an ordinary
-cross-reference.
+frozen contract. **Issue #77 later became the first discovery to legitimately
+reopen one:** toy-safety OJ-reference status and REACH Candidate List membership
+proved an authoritative dynamic-set dependency that v0.1 could not honestly
+represent. The gap is now resolved by the separate
+`authoritative-dynamic-set-v0.1` canonical contract; X-Ray v0.1 remains scoped
+to conventional cross-reference ripples.
 
 The next task should be selected only when a concrete falsifiable legal-
 information question is identified from fresh source evidence, an operational

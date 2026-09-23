@@ -96,12 +96,19 @@ def validate(data: dict, repo_root: Path) -> None:
         if not isinstance(refs, list) or not refs:
             _fail(f"{case_id}: evidence_refs must be a non-empty list")
 
+        expected_issue_ref = f"issue:{issue}"
+        if expected_issue_ref not in refs:
+            _fail(f"{case_id}: evidence_refs must include {expected_issue_ref}")
+
         for ref in refs:
             if not isinstance(ref, str) or ":" not in ref:
                 _fail(f"{case_id}: malformed evidence ref {ref!r}")
             kind, value = ref.split(":", 1)
             if kind == "path":
-                target = repo_root / value
+                relative = Path(value)
+                if relative.is_absolute() or ".." in relative.parts:
+                    _fail(f"{case_id}: artifact path must stay inside repository")
+                target = repo_root / relative
                 if not target.is_file():
                     _fail(f"{case_id}: missing referenced path {value}")
             elif kind == "issue":

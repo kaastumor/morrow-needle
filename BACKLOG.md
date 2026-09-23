@@ -30,6 +30,16 @@ Research/audit mode rules:
 **No preselected research task is currently eligible. The hourly worker should
 idle rather than manufacture work.**
 
+Issue #85 disproved the assumption that legally relevant external
+determinations must originate with public/official authorities. Two orthogonal
+cases — an S&P ECAI rating and a SZUTEST notified-body certificate decision —
+show that private-origin determinations can matter because public law recognizes
+the actor/output in a bounded role. `provenance-record-v0.2` now preserves
+PUBLIC_OFFICIAL versus PRIVATE_PRIMARY source origin, while
+`recognized-external-determination-v0.1` owns the private determination and
+its separate public-law recognition basis. No generic actor/accreditation graph
+is queued.
+
 Issue #84 completed a wide-angle project-system audit. The scheduled
 Git-backed operational monitor is frozen after 47 state-promotion commits; its
 current snapshot remains because it still contains unique provenance records.
@@ -306,13 +316,23 @@ Cellar update detection v0.1 is frozen: live RSS/Atom feed normalization, cross-
 See `docs/decisions/cellar-update-detection-v0.1-interface-freeze.md`.
 
 ### P1-C — Provenance ledger
-**Issue #12**
+**Issue #12; source-origin evolution #85**
 
-Status: **CORE INTERFACE RESOLVED; ISSUE CLOSED.**
+Status: **CORE INTERFACE RESOLVED; v0.2 CURRENT.**
 
-Append-only provenance ledger v0.1 is frozen: immutable Source Observations, derivation runs, claim-support edges and correction/supersession/retraction records with deterministic hashes and a derived current view.
+The append-only ledger retains v0.1 hashing, derivation, support and
+supersession semantics. Issue #85 exposed one false assumption in v0.1:
+SOURCE_OBSERVATION was restricted to official/public origins.
 
-See `docs/decisions/provenance-ledger-v0.1-interface-freeze.md`.
+`provenance-record-v0.2` adds explicit `source_origin`:
+`PUBLIC_OFFICIAL | PRIVATE_PRIMARY`. Private-primary evidence remains private
+in provenance; its legal recognition is owned by the relevant domain contract.
+
+v0.1 remains valid historical provenance for existing official-only ledgers.
+
+See:
+- `docs/decisions/provenance-ledger-v0.1-interface-freeze.md`
+- `docs/decisions/provenance-ledger-v0.2-source-origin.md`.
 
 ### P1-D — Search/retrieval
 **Issue #15**

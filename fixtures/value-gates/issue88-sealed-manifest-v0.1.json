@@ -2,7 +2,7 @@
   "schema_version": "issue88-sealed-manifest-v0.1",
   "issue": 88,
   "created_date": "2026-09-23",
-  "status": "SEALED_AWAITING_INDEPENDENT_EXECUTION",
+  "status": "COMPLETE_REVEALED_AND_EVALUATED",
   "phase": "A",
   "case_ids": [
     "adv-polish-visa-backprojection",
@@ -34,7 +34,10 @@
   ],
   "execution": {
     "requests": 12,
-    "arms": ["R", "M"],
+    "arms": [
+      "R",
+      "M"
+    ],
     "model": "gpt-5.6-sol",
     "reasoning_effort": "high",
     "web_search": true,
@@ -46,5 +49,16 @@
   "runner_zip_sha256": "d66f9a00ab18599bb77b227eb21dd8c942d2eeea2d5c8af63b638a8ef90496bc",
   "sealed_artifacts_zip_sha256": "b818cb977ddd4e3759b3689d497c3f35d346ef8088a5ff30dc5d192b56549e33",
   "blinding_rule": "Investigators receive only their own exact prompt. They receive no answer key, repository context, other-arm output, conversation object, or previous_response_id.",
-  "reveal_rule": "After all 12 independent runs complete, verify both artifact hashes, reveal/commit the exact sealed files unchanged, then evaluate R/M under the pre-registered decision matrix."
+  "reveal_rule": "After all 12 independent runs complete, verify both artifact hashes, reveal/commit the exact sealed files unchanged, then evaluate R/M under the pre-registered decision matrix.",
+  "execution_result": {
+    "completed_requests": 12,
+    "unique_response_ids": 12,
+    "prompt_hash_mismatches": 0,
+    "successful_runner_zip_sha256": "4c57dc2b45e32fa4b9a47e24b52f58bc9a105d5f632d931ed0281346e7a2f5bb",
+    "transport_repair": "Initial Windows PowerShell wrapper failed at HTTP JSON parsing before any investigator response. Successful v2 changed only UTF-8 HTTP transport; sealed prompts and scientific settings were unchanged.",
+    "result_fixture": "fixtures/value-gates/issue88-phase-a-results-v0.1.json",
+    "revealed_prompts": "fixtures/value-gates/issue88-phase-a-prompts-v0.1.json",
+    "revealed_answer_key": "fixtures/value-gates/issue88-phase-a-answer-key-v0.1.json",
+    "audit": "docs/audits/needle-adversarial-failure-gate-2026-09-23.md"
+  }
 }

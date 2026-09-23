@@ -154,3 +154,32 @@ implementation because:
 
 The next architecture move must model only this demonstrated dynamic-set causal
 shape. A generic dependency graph remains unjustified.
+
+
+## Resolution of the reopen — canonical owner added, v0.1 scope retained
+
+Issue #77 is resolved at the canonical causal layer by
+`authoritative-dynamic-set-v0.1`.
+
+The two official adversaries now share a validated lower-level contract:
+
+- toy-safety harmonised-reference status;
+- REACH Candidate List membership.
+
+Dependency Ripple v0.1 is **not** widened.
+
+Its scope is now explicit: it is the frozen projection for unchanged local rules
+affected through conventional evidenced cross-references to mutated legal
+locations.
+
+Authoritative dynamic-set dependencies are owned separately by:
+
+- `schemas/authoritative-dynamic-set-v0.1.schema.json`
+- `docs/decisions/authoritative-dynamic-set-v0.1-interface-freeze.md`
+
+A future X-Ray v0.2 may compose those objects if a concrete audit/research
+question requires the projection. No such projection is built merely because the
+canonical capability now exists.
+
+This resolves the representational failure without rewriting the valid v0.1
+cross-reference cases or expanding the public-product roadmap.

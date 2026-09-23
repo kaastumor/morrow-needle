@@ -129,3 +129,32 @@ represented without distortion as:
 Likely future reopen candidates include multipolygons, holes, line/corridor
 geometry, legally defined administrative units or moving/dynamic geometry.
 Those are not added pre-emptively.
+
+
+## Reopen and resolution — Issue #82
+
+The v0.1 contract was legitimately reopened by official Dutch aviation
+sources that define legal airspace as a **volume**, not merely a 2D footprint.
+
+Pinned adversaries:
+
+- an Article 15 UAS geographical zone with a WGS84 polygon and vertical extent
+  0-120 M AGL;
+- EHP26, whose polygon applies from GND to 2000 FT AMSL;
+- EHR3A, whose polygon applies from 3000 FT AMSL to FL185.
+
+Flattening any of these to 2D would project the legal restriction through
+altitudes the official source does not claim.
+
+The gap is resolved by:
+
+- `schemas/legal-spatial-state-v0.2.schema.json`;
+- `docs/decisions/legal-spatial-state-v0.2-interface-freeze.md`.
+
+v0.2 leaves the v0.1 horizontal geometry untouched and adds a separate
+null-or-typed `vertical_extent`.
+
+v0.1 remains valid provenance for the HPAI and Skagerrak 2D proof cases.
+
+No 3D GIS, terrain model, pressure-altitude conversion or aviation rules engine
+was added.

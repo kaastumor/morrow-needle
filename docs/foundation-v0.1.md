@@ -35,8 +35,15 @@ kinds of truth.
 ## C1 — Sources outrank models
 No model output is authoritative merely because a model produced it confidently.
 
-## C2 — Every factual legal claim is traceable
-A public claim must resolve to an official source and, where technically possible, a provision/subdivision and exact supporting span.
+## C2 — Every consequential claim is traceable to the right evidence class
+A claim must resolve to the strongest appropriate primary or official evidence
+and, where technically possible, an exact supporting span.
+
+Claims about **legal authority, recognition, validity or public-law consequence**
+must resolve to authoritative public-law sources.
+
+A private primary source may directly evidence what a private actor determined;
+legal recognition of that determination remains a separate public-law fact.
 
 ## C3 — Legal text and interpretation are different data types
 Interpretation must never silently become “what the law says.”
@@ -114,8 +121,10 @@ The project no longer treats one object tree as the ontology. The more important
 question is **which contract owns which kind of truth**.
 
 ```
-OFFICIAL SOURCE / EVIDENCE
+SOURCE / EVIDENCE
 ├── Source Observation
+│   ├── public-official origin
+│   └── private-primary origin
 └── Provenance Record
 
 DOCUMENT / TEXT
@@ -137,7 +146,8 @@ LEGAL / PROCEDURAL STATE
 ├── Authoritative Metric Observation
 ├── Authoritative Finding
 ├── Legal Spatial State
-└── Judicial Holding
+├── Judicial Holding
+└── Recognized External Determination
 
 DERIVED LEGAL CLAIMS / EVALUATIONS
 ├── Change Atom
@@ -186,7 +196,18 @@ Historical certainty is field-specific, not one score:
 
 ---
 
-# Source hierarchy
+# Source and authority hierarchy
+
+This hierarchy answers two different questions and they must not collapse:
+
+1. **What is legally authoritative?** Public law and official legal/publication
+   sources remain controlling.
+2. **What directly evidences an external determination?** In bounded regimes,
+   a private primary source can be the best evidence of what the recognized
+   private actor decided.
+
+A private primary source never outranks the public law that establishes whether
+its output is legally eligible to matter.
 
 ## Tier A — legal/publication backbone
 - Official Journal / EUR-Lex
@@ -199,7 +220,16 @@ Historical certainty is field-specific, not one score:
 - European Commission Better Regulation / Have Your Say
 - Interinstitutional Register of Delegated Acts
 
-## Tier C — bounded/later expansion
+## Tier C — legally recognized external/private primary sources
+- recognized credit-rating agencies, only for their own rating determinations;
+- notified/conformity-assessment bodies, only for their own bounded decisions;
+- other non-public actors only when public law supplies a concrete recognition
+  basis and a real adversary earns representation.
+
+These sources are primary for the actor's determination, **not legal authority**
+for the public-law consequence.
+
+## Tier D — bounded/later expansion
 - CURIA / CJEU case law: narrow `judicial-holding-v0.1` is canonical; broader
   citation/precedent/follow-on modeling remains parked
 - national transposition sources, national ELI, N-Lex
@@ -215,9 +245,11 @@ Historical certainty is field-specific, not one score:
 The logical flow remains:
 
 ```
-OFFICIAL EU SOURCES
+PUBLIC-OFFICIAL + BOUNDED PRIVATE-PRIMARY SOURCES
     ↓
 IMMUTABLE SOURCE OBSERVATIONS
+    ↓
+PUBLIC-LAW RECOGNITION WHERE REQUIRED
     ↓
 NORMALISATION + IDENTITY RESOLUTION
     ↓
@@ -256,7 +288,7 @@ See `docs/project-charter.md` for the current north star and simpler baseline.
 A Change Atom cannot be VERIFIED unless:
 
 1. comparator exists;
-2. official source is identified;
+2. authoritative legal source is identified;
 3. provision/evidence span is identified where technically possible;
 4. legal/procedural state is known or explicitly UNKNOWN;
 5. publication, force, application and text-validity dates are not collapsed;

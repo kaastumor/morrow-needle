@@ -48,11 +48,12 @@ and its higher projections remain parked.
 The hourly worker should remain idle. #88 creates no replacement implementation
 horizon and no AUTO READY work.
 
-Issue #89 is a bounded foundation task explicitly authorised by the sponsor to
-make the post-#88 identity real: a canonical adversarial corpus index, exposure
-rules and reusable evaluation protocol. It adds no legal ontology or product
-surface. After the corpus contract is merged, autonomous work returns to
-evidence-led idle mode.
+Issue #89 establishes the bounded post-#88 foundation: a canonical adversarial
+corpus index, exposure rules and reusable evaluation protocol. It adds no legal
+ontology or product surface. The accompanying corpus-bias audit makes coverage
+gaps explicit; future discovery should prefer orthogonal coverage rather than
+post-hoc benchmark difficulty. No standing implementation queue follows from
+this foundation.
 
 
 

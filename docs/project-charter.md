@@ -172,45 +172,56 @@ Especially:
 
 ## Current horizon
 
-There is **no standing implementation or product queue**.
+The sponsor has explicitly authorised one new product-form experiment:
 
-The canonical project identity is now:
+> **Needle Corpus Explorer v0.1**
+
+This does **not** reopen the stopped general legal-change product. It tests
+whether the surviving adversarial corpus + evaluation protocol become more
+useful when exposed through the smallest possible inspectable interface.
+
+Parent gate: **#103**  
+Plan: `docs/mvp/v0.1-plan.md`
+
+The default project identity remains:
 
 **Needle adversarial legal-research corpus + evaluation protocol.**
 
-Needle Method is no longer a primary identity claim. It remains an optional
-structured dossier convention when handoff/review ergonomics justify it.
+The MVP is only a thin presentation projection over that identity.
 
-Needle Core is also not a default identity layer. Existing canonical
-ownership/provenance/history contracts and small deterministic resolvers remain
-available as optional persistence when a concrete repeated, historical,
-provenance-sensitive or otherwise stateful task demonstrates material value.
+### MVP constraints
 
-Higher analytical/read-side surfaces remain optional experiments.
+- static HTML/CSS/JavaScript;
+- canonical corpus JSON read directly;
+- no backend/API/database/auth/model calls;
+- no second legal truth store;
+- no framework/dependency unless the browser/stdlib baseline demonstrably fails;
+- no old Thread/X-Ray/Retrieval/feed feature re-entry by default.
 
-Select the next task only from fresh official evidence, a manual or operational
-probe anomaly, an unresolved canonical claim, or an explicit sponsor research
-question.
+### Delivery then discovery
 
-Recent discovery work has earned several narrow canonical extensions, including
-authoritative dynamic sets, authoritative numeric observations, authoritative
-categorical findings, precision-aware temporal semantics and bounded legal
-spatial state. Their existence is not a mandate to keep expanding ontology.
+Issues #105–#110 implement the technical MVP in thin vertical slices.
 
-The current discipline is:
+After #110 records deterministic technical acceptance, discovery gate #104 may
+run issues #111–#116. Discovery work gathers evidence about possible features
+but does not implement them.
 
-1. start with a falsifiable legal-information question;
-2. try to represent it with existing contracts;
-3. preserve any failure before redesign;
-4. require independent evidence before generalising a new causal family;
-5. stop when the smallest safe representation is proven;
-6. prefer an idle backlog over manufactured work.
+The strongest current risks are now:
 
-The strongest current architectural risk is **re-expanding the smaller identity
-simply because the repository already contains broader machinery**.
+1. **product creep** — turning a corpus viewer into the discarded broader legal
+   product;
+2. **ontology creep** — adding relationships/state types because UI makes them
+   tempting;
+3. **process creep** — adding governance/CI/workflow machinery beyond what this
+   small MVP requires.
 
-Ontology creep remains a secondary form of the same risk.
+The operating rule remains:
 
+> expose demonstrated value with minimum durable complexity.
+
+At MVP boundary, run `docs/project-health.md` and decide
+`continue / simplify / redirect / stop`. Technical completion does not
+automatically authorize the next implementation horizon.
 
 ## Repository discipline
 

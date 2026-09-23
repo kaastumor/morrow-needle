@@ -8,6 +8,7 @@ on:
       - "scripts/**"
       - "schemas/**"
       - "corpus/**"
+      - "mvp/**"
       - "pyproject.toml"
       - ".github/workflows/unit-tests.yml"
   pull_request:

@@ -1,0 +1,81 @@
+{
+  "gate_version": "0.1",
+  "issue": 86,
+  "protocol_stage": "NEEDLE_METHOD_REVIEW",
+  "method_definition": "Apply Needle's investigation disciplines without requiring persistent Needle software: source origin vs authority, canonical ownership, temporal perspective, state/effect separation, exact target scoping, forbidden inferences, uncertainty and abstention.",
+  "cases": [
+    {
+      "case_id": "ai-act-gpai-systemic-risk-threshold",
+      "baseline_conclusion_changed": false,
+      "method_checks": [
+        "numeric threshold/presumption is not silently promoted to final classification",
+        "classification state and procedural route are read separately",
+        "provider notification and exceptional rebuttal route remain explicit",
+        "Commission designation power is a separate path"
+      ],
+      "material_gain_over_baseline": "DISCIPLINE_ONLY",
+      "gain": "Makes the threshold->presumption->procedure chain reusable and warns against treating one numeric condition as the entire legal state.",
+      "persistent_software_needed": false
+    },
+    {
+      "case_id": "easa-a380-als-mandatory-source",
+      "baseline_conclusion_changed": false,
+      "method_checks": [
+        "source origin is recorded separately from legal authority",
+        "private technical content is not relabelled public law",
+        "the EASA AD is identified as the mandatory legal mandate",
+        "manufacturer use of 'mandatory' is not treated as dispositive by itself"
+      ],
+      "material_gain_over_baseline": "DISCIPLINE_ONLY",
+      "gain": "Provides a reusable source-origin/authority check, but the competent baseline already performed it.",
+      "persistent_software_needed": false
+    },
+    {
+      "case_id": "schrems-ii-transfer-mechanisms",
+      "baseline_conclusion_changed": false,
+      "method_checks": [
+        "each Commission decision is treated as a separate target",
+        "invalidity of Privacy Shield is not propagated to SCC Decision 2010/87",
+        "validity of SCCs is separated from transfer-specific practical adequacy",
+        "conditional supervisory consequence is not collapsed into automatic universal illegality"
+      ],
+      "material_gain_over_baseline": "DISCIPLINE_ONLY",
+      "gain": "The target/effect checklist reduces over-generalisation risk, but the operative part already makes the distinction accessible.",
+      "persistent_software_needed": false
+    },
+    {
+      "case_id": "common-charger-laptop-date-control",
+      "baseline_conclusion_changed": false,
+      "method_checks": [
+        "product scope and application date are read together",
+        "laptop exception/date is not projected from other categories",
+        "wired-charging condition remains in scope"
+      ],
+      "material_gain_over_baseline": "NO_MATERIAL_GAIN",
+      "gain": "The method restates ordinary careful legal reading. This control case should not be used to justify Needle.",
+      "persistent_software_needed": false
+    },
+    {
+      "case_id": "ai-act-dutch-recital19-pre-corrigendum",
+      "baseline_conclusion_changed": false,
+      "method_checks": [
+        "query perspective is explicitly historical, not current",
+        "language expression is scoped to Dutch",
+        "correction event is evidence of prior wording",
+        "current corrected truth is not substituted for historical published state",
+        "uncertainty about present EUR-Lex rendering is separated from certainty about the corrigendum event"
+      ],
+      "material_gain_over_baseline": "REUSABLE_SAFETY_DISCIPLINE",
+      "gain": "This is the strongest Method case: the perspective/language/correction checklist makes a subtle historical-source trap explicit and repeatable.",
+      "persistent_software_needed": false
+    }
+  ],
+  "method_summary": {
+    "baseline_conclusions_changed": 0,
+    "cases_with_reusable_investigation_discipline": 4,
+    "cases_with_no_material_method_gain": 1,
+    "cases_proving_persistent_software_necessary": 0,
+    "provisional_result": "NEEDLE_METHOD_IS_A_REAL_CONTRIBUTION_CANDIDATE_BUT_NOT_YET_A_SOFTWARE_JUSTIFICATION",
+    "important_negative": "A competent strong baseline can independently apply the same distinctions. The Method earns value only if it measurably improves repeatability, training, review consistency, or performance on less perfectly framed questions."
+  }
+}

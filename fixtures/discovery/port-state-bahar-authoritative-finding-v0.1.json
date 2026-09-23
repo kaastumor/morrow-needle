@@ -1,0 +1,89 @@
+{
+  "fixture_version": "0.1",
+  "case_id": "port-state-bahar-authoritative-finding-v0.1",
+  "question": "Can an authoritative professional inspection determination trigger a legal consequence under unchanged law without being represented as a metric, set state or textual mutation?",
+  "authoritative_finding": {
+    "finding_id": "finding:port-state:bahar:2026-07-18:detainable-deficiencies",
+    "finding_character": "OFFICIAL_INSPECTION_DETERMINATION",
+    "authority_context": "Port State Control authority in Greece / Paris MoU inspection system",
+    "subject": {
+      "kind": "SHIP",
+      "identifier_scheme": "IMO",
+      "identifier": "8230156",
+      "label": "BAHAR"
+    },
+    "finding_date": "2026-07-18",
+    "finding": {
+      "category": "DETAINABLE_DEFICIENCIES",
+      "statement": "Thirteen deficiencies were found and all thirteen were grounds for detention.",
+      "count": 13
+    },
+    "textual_mutation": null
+  },
+  "governing_rule": {
+    "act_id": "CELEX:32009L0016",
+    "provision": "Article 19 and Annex X",
+    "rule_character": "AUTHORITATIVE_INSPECTION_FINDING_WITH_PROFESSIONAL_JUDGMENT",
+    "effect": "Where deficiencies are clearly hazardous to safety, health or the environment, the competent port-State authority shall ensure detention or stoppage; inspectors apply Annex X detention criteria."
+  },
+  "official_case_consequence": {
+    "detention_date": "2026-07-18",
+    "port": "Psakhna",
+    "member_state": "Greece",
+    "result": "DETAINED",
+    "evidence_character": "DIRECT_OFFICIAL_OUTCOME",
+    "later_access_refusal": {
+      "included_for_context_only": true,
+      "statement": "The Paris MoU notice also records that this was the ship's third detention within 36 months and announced a three-month refusal of access after departure.",
+      "not_used_to_define_finding_contract": true
+    }
+  },
+  "comparison_to_hpai": {
+    "shared_shape": [
+      "unchanged governing legal rule",
+      "authoritative categorical determination about a concrete subject",
+      "determination has direct official evidence",
+      "legal consequence is conditioned on the determination",
+      "categorical truth is not scalar metric truth",
+      "categorical truth is not membership in an authoritative dynamic set"
+    ],
+    "differences": {
+      "hpai": "scientific disease confirmation about a location, followed by a separate spatial legal derivation",
+      "bahar": "professional inspection determination about a ship, followed by detention without a spatial derivation"
+    },
+    "result": "AUTHORITATIVE_FINDING_PATTERN_CONFIRMED_ACROSS_DOMAINS"
+  },
+  "architecture_probe": {
+    "required_direct_object": "AUTHORITATIVE_FINDING",
+    "finding_should_not_own": [
+      "derived spatial geometry",
+      "temporal application intervals",
+      "textual mutation",
+      "generic enforcement workflow"
+    ],
+    "metric_fit": "FAILS_CATEGORICAL_SEMANTICS",
+    "dynamic_set_fit": "FAILS_MEMBERSHIP_SEMANTICS",
+    "change_atom_fit": "FAILS_TEXTUAL_MUTATION_CAUSE_REQUIREMENT",
+    "decision": "TWO_ORTHOGONAL_CASES_JUSTIFY_DIRECT_FINDING_CONTRACT_ONLY"
+  },
+  "forbidden_inferences": [
+    "BAHAR's inspection finding is a textual mutation of Directive 2009/16/EC.",
+    "The count of 13 deficiencies makes the finding a metric-triggered case; the legally material fact is the authoritative determination that the deficiencies were grounds for detention.",
+    "A ship becomes a member of a dynamic legal set merely because it is detained.",
+    "The Authoritative Finding contract should own refusal-of-access history or a generic enforcement lifecycle.",
+    "The Paris MoU publication is treated as EU legislation; it is official inspection-system evidence supporting the concrete determination and outcome."
+  ],
+  "official_sources": [
+    {
+      "identifier": "CELEX:32009L0016",
+      "locator": "Article 19 and Annex X",
+      "role": "GOVERNING_DETENTION_RULE"
+    },
+    {
+      "identifier": "Paris MoU BAHAR IMO 8230156 notice",
+      "locator": "detained 18 July 2026; 13 deficiencies; all grounds for detention",
+      "role": "DIRECT_FINDING_AND_OUTCOME"
+    }
+  ],
+  "status": "SECOND_ORTHOGONAL_CASE_CONFIRMS_DIRECT_FINDING_PATTERN"
+}

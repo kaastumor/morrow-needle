@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/temporal-query-v0.2.json",
+  "title": "Morrow // Needle Temporal Query v0.2",
+  "description": "Temporal query with explicit DATE or offset-aware INSTANT precision and explicit legal/source perspective.",
+  "type": "object",
+  "required": [
+    "query_id",
+    "dimension",
+    "subject_keys",
+    "valid_time",
+    "perspective"
+  ],
+  "properties": {
+    "query_id": {"type": "string", "minLength": 1},
+    "dimension": {
+      "type": "string",
+      "enum": [
+        "PUBLICATION",
+        "LEGAL_FORCE",
+        "APPLICATION",
+        "TEXT_STATE",
+        "TRANSITION",
+        "DEROGATION",
+        "DEADLINE"
+      ]
+    },
+    "subject_keys": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "valid_time": {"$ref": "#/$defs/time_point"},
+    "perspective": {
+      "type": "string",
+      "enum": ["EX_POST_LEGAL_EFFECT", "OFFICIAL_SOURCE_STATE_AS_OF"]
+    },
+    "source_cutoff_time": {
+      "oneOf": [
+        {"$ref": "#/$defs/time_point"},
+        {"type": "null"}
+      ]
+    },
+    "context": {"type": "object"}
+  },
+  "$defs": {
+    "time_point": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["precision", "date"],
+          "properties": {
+            "precision": {"const": "DATE"},
+            "date": {"type": "string", "format": "date"}
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["precision", "instant"],
+          "properties": {
+            "precision": {"const": "INSTANT"},
+            "instant": {"type": "string", "format": "date-time"}
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "perspective": {"const": "OFFICIAL_SOURCE_STATE_AS_OF"}
+        }
+      },
+      "then": {
+        "required": ["source_cutoff_time"],
+        "properties": {"source_cutoff_time": {"type": "object"}}
+      }
+    }
+  ],
+  "additionalProperties": false
+}

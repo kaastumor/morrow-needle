@@ -1,0 +1,122 @@
+{
+  "fixture_version": "0.2",
+  "case_id": "skagerrak-prawn-rtc-subday-v0.2",
+  "subject": "REGIME:SKAGERRAK_PRAWN_RTC_HVMFS_2025_4",
+  "assertions": [
+    {
+      "assertion_id": "skagerrak-prawn-rtc-start",
+      "subject_ref": {
+        "kind": "REGIME",
+        "identifier": "REGIME:SKAGERRAK_PRAWN_RTC_HVMFS_2025_4",
+        "locator": "HVMFS 2025:4"
+      },
+      "dimension": "APPLICATION",
+      "boundary": "START",
+      "inclusive": true,
+      "precision": "INSTANT",
+      "trigger": {
+        "kind": "ABSOLUTE_INSTANT",
+        "instant": "2025-02-18T01:00:00+01:00",
+        "source_expression": "from 18 February 2025 at 01:00 Swedish time"
+      },
+      "normalized_date": null,
+      "normalized_instant": "2025-02-18T01:00:00+01:00",
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": ["REGIME:SKAGERRAK_PRAWN_RTC_HVMFS_2025_4"],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_ABSOLUTE",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "OTHER_OFFICIAL",
+          "identifier": "HVMFS 2025:4",
+          "locator": "Section 2",
+          "language": "SWE",
+          "role": "TEMPORAL_CLAUSE"
+        },
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32019R2201",
+          "locator": "Article 8",
+          "language": "ENG",
+          "role": "CONTEXT"
+        }
+      ],
+      "notes": "01:00 Swedish local time in February equals 00:00 UTC."
+    },
+    {
+      "assertion_id": "skagerrak-prawn-rtc-end",
+      "subject_ref": {
+        "kind": "REGIME",
+        "identifier": "REGIME:SKAGERRAK_PRAWN_RTC_HVMFS_2025_4",
+        "locator": "HVMFS 2025:4"
+      },
+      "dimension": "APPLICATION",
+      "boundary": "END",
+      "inclusive": false,
+      "precision": "INSTANT",
+      "trigger": {
+        "kind": "ABSOLUTE_INSTANT",
+        "instant": "2025-03-04T01:00:00+01:00",
+        "source_expression": "through 4 March 2025 at 00:59 Swedish time; ceases at 01:00 CET / midnight UTC"
+      },
+      "normalized_date": null,
+      "normalized_instant": "2025-03-04T01:00:00+01:00",
+      "scope": {
+        "mode": "DEFAULT",
+        "applies_to": ["REGIME:SKAGERRAK_PRAWN_RTC_HVMFS_2025_4"],
+        "overrides_assertion_ids": [],
+        "entity_condition": null
+      },
+      "resolution_state": "RESOLVED_ABSOLUTE",
+      "evidence_state": "DERIVED",
+      "source_refs": [
+        {
+          "source_type": "OTHER_OFFICIAL",
+          "identifier": "HVMFS 2025:4",
+          "locator": "Section 2",
+          "language": "SWE",
+          "role": "TEMPORAL_CLAUSE"
+        },
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32019R2201",
+          "locator": "Article 8",
+          "language": "ENG",
+          "role": "DERIVATION_INPUT"
+        }
+      ],
+      "notes": "Half-open end boundary preserves the source's final included minute while matching automatic cessation at midnight UTC."
+    }
+  ],
+  "queries": [
+    {
+      "query_id": "before-local-start",
+      "instant": "2025-02-18T00:30:00+01:00",
+      "expected_active": false
+    },
+    {
+      "query_id": "exact-local-start",
+      "instant": "2025-02-18T01:00:00+01:00",
+      "expected_active": true
+    },
+    {
+      "query_id": "utc-equivalent-start",
+      "instant": "2025-02-18T00:00:00Z",
+      "expected_active": true
+    },
+    {
+      "query_id": "last-source-minute",
+      "instant": "2025-03-04T00:59:00+01:00",
+      "expected_active": true
+    },
+    {
+      "query_id": "exact-cessation",
+      "instant": "2025-03-04T01:00:00+01:00",
+      "expected_active": false
+    }
+  ]
+}

@@ -6,247 +6,31 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-**Issue #97 is the active value gate, now at v0.2.**
+**Issue #97 remains the active value gate, now at v0.3 manual Stage 1.**
 
-It tests the one substantive Method question left genuinely unmeasured after
-Issue #95: `LATENT_TRAP_DETECTION` under realistic prompts that do not tell the
-investigator what legal-information trap to look for.
+Wide-angle review confirmed that the project is the adversarial corpus +
+evaluation protocol; Method is only an optional hypothesis. Therefore #97 must
+use the cheapest experiment capable of falsifying Method value.
 
-The original sealed v0.1 packet was **retired unexecuted** after a
-sponsor-requested pre-run adversarial audit. No investigator response existed.
-The audit found uneven latentness, trivial negative controls, arm-visible output
-formatting, no replication requirement for stochastic discordance and avoidable
-fixed cost. The immutable v0.1 hashes remain preserved as evidence of that
-pre-result retirement.
+Both prior paid-runner versions are retired **unexecuted**. V0.3 uses:
 
-V0.2 is now pre-registered and sealed:
-
-- 4 strongest latent adversaries across 4 trap classes;
-- 2 matched near-miss controls;
-- **12 initial R/M requests** instead of 16;
+- 4 strongest latent adversaries;
+- 8 total R/M runs;
+- eight separate ChatGPT Temporary Chats;
+- **Unpersonalized** mode for every chat;
+- GPT-5.6 Sol / High reasoning / web search;
 - identical visible R/M output schema;
-- arm-blind grading procedure;
-- every discordant case must be replicated with two additional R/M pairs before
-  it can count as a rescue/regression;
-- no Core;
-- no investigator run has occurred;
-- commitments are in
-  `fixtures/value-gates/issue97-sealed-manifest-v0.2.json`.
+- no project context, memory or follow-ups;
+- stop immediately after 8 chats if all four pairs are parity.
 
-The next action is verification of the v0.2 external runner and then Stage-1
-execution. Do not run the v0.1 package.
+Matched controls and replication are deferred unless Stage 1 produces a
+discordant signal. Any discordance is only a signal and must be blind-graded
+before further execution is frozen.
 
+Canonical execution boundary:
+`fixtures/value-gates/issue97-manual-manifest-v0.3.json`.
 
-Issues #49 and #59 have now falsified the assumption that the current Needle
-architecture should automatically become a general public legal-change product.
-
-> **STOP PUBLIC-PRODUCT EXPANSION. CONTINUE RESEARCH/AUDIT MODE.**
-
-This is not project abandonment. The evidence engine has repeatedly found real
-source, timing, identity, dependency and provenance traps. What stops is the
-obligation to turn every useful legal-information distinction into a feature or
-marketing claim.
-
-Research/audit mode rules:
-
-1. start from a concrete legal-information question capable of being wrong;
-2. prefer official-source evidence and the smallest existing contract that can
-   answer it;
-3. produce a fixture, finding, regression, or bounded negative result;
-4. do not add schema, infrastructure or product surface unless the question
-   proves the existing baseline cannot represent the finding;
-5. a well-supported “nothing new / baseline already handles this” result is
-   successful work.
-
-**Issue #88 is complete. Its pre-registered stop rule fired.**
-
-Across six fresh adversarial cases, all six pairs were R-pass/M-pass. Issue #95
-later audited the exact sealed prompts and found that every question explicitly
-surfaced or strongly cued the decisive failure mechanism. #88 therefore proves
-parity for **SURFACED_TRAP_ADJUDICATION**: once the dangerous distinction was
-identified, the equally capable baseline and Needle Method both resolved it
-correctly. It does **not** test unprompted LATENT_TRAP_DETECTION.
-
-Do not invent a harder post-result benchmark or recycle the exposed #88 cases
-with vaguer wording. Any future latent-detection claim would require a new
-pre-registered construct and fresh sealed cases. Phase B is not triggered from
-#88; Issue #87 already found no Core-over-Method handoff win.
-
-The default project identity therefore shrinks again:
-
-> **NEEDLE = ADVERSARIAL LEGAL-RESEARCH CORPUS + EVALUATION PROTOCOL.**
-
-Needle Method remains available as an optional structured handoff/reporting
-convention. Needle Core remains optional case-earned persistence. Full Needle
-and its higher projections remain parked.
-
-The hourly worker should remain idle. #88 creates no replacement implementation
-horizon and no AUTO READY work.
-
-Issue #89 establishes the bounded post-#88 foundation: a canonical adversarial
-corpus index, exposure rules and reusable evaluation protocol. It adds no legal
-ontology or product surface. The accompanying corpus-bias audit makes coverage
-gaps explicit; future discovery should prefer orthogonal coverage rather than
-post-hoc benchmark difficulty. No standing implementation queue follows from
-this foundation.
-
-Issue #91 is the first discovery selected from that coverage discipline. Fresh
-Mercosur and Mexico agreement-lifecycle evidence establishes a two-case
-`PARALLEL_INSTRUMENT_LIFECYCLE` failure family: interim and comprehensive
-agreements are separate legal identities, so signature, provisional
-application, conclusion, entry into force and replacement cannot be inherited
-through an umbrella deal label. The finding expands the corpus to 21 public
-cases / 13 trap classes without reopening any schema or product surface.
-
-Issue #93 then tested the national-implementation/source-freshness blind spot.
-Current Commission NIS2 country pages for the Netherlands and Sweden still
-surface the May-2025 reasoned-opinion state while newer Dutch and Swedish
-primary law implementing NIS2 is in force. This earns a two-case
-`OFFICIAL_TRACKER_UPDATE_LAG` family and expands the corpus to 23 public cases
-/ 14 trap classes. It does not earn a source monitor or freshness service.
-
-Issue #95 then audited the measurement construct itself. Exact #88 prompts show
-that all six cases cued the trap they were meant to test. The evaluation
-protocol now distinguishes `SURFACED_TRAP_ADJUDICATION` from
-`LATENT_TRAP_DETECTION`; #88 belongs to the former. Latent detection remains
-untested, and that gap is not itself an automatic next value gate.
-
-
-
-Needle Relay completed all 5 pre-sealed cases × 3 arms. All 15 Stage-B
-conclusions were substantively correct, so there is no raw correctness
-advantage. The useful signal is handoff burden: Method showed the lowest
-observed reconstruction burden in the independent pilot and no disadvantage in
-the two confirmation cases. Core produced no observed handoff win over Method.
-
-The Issue #87 Core kill rule remains in force. Core is not a default identity
-layer. Existing Core contracts remain available only as individually earned
-persistence when a concrete repeated/historical/provenance-sensitive task
-demonstrates that persistence prevents a real error or materially reduces
-reopening/rediscovery. Schema availability, neatness or hypothetical reuse do
-not qualify.
-
-No Thread, Retrieval, X-Ray, Source Anomaly, Half-Life, feed/cards or other
-parked Full-Needle surface earned re-entry.
-
-Issue #87 remains open only for the protocol's exact post-blind archival step:
-the previously sealed Stage-A, Stage-B and answer-key bytes must be committed
-unchanged. Their commitments were already verified during the pilot, but the
-full-confirmation result ZIP does not contain those plaintext files, so they
-must not be reconstructed from summaries.
-
-The hourly worker should remain idle. This decision creates no replacement
-implementation horizon and no AUTO READY work.
-
-Issue #86 remains the evidence that Full Needle should not be the presumptive
-project form. Issue #87 is the stronger follow-on evidence that even Core should
-not be part of the default identity merely because its contracts exist.
-
-Thread, Retrieval, X-Ray, Source Anomaly, Half-Life, feed/cards and other
-read-side/product-era surfaces remain preserved experiments/research artifacts.
-They may re-enter active work only when a concrete question earns them.
-
-Issue #86 also exposed two bounded non-auto-ready gaps:
-- Judicial Holding v0.1 cannot honestly represent an affirmative judicial
-  `VALIDITY` holding (Schrems II);
-- Core has no narrow owner for a public legal mandate incorporating/requiring a
-  private technical document (EASA/Airbus ALS case).
-
-Neither gap is an automatic next task. Method currently answers both questions
-safely; persistence must earn the repair.
-
-Issue #85 disproved the assumption that legally relevant external
-determinations must originate with public/official authorities. Two orthogonal
-cases — an S&P ECAI rating and a SZUTEST notified-body certificate decision —
-show that private-origin determinations can matter because public law recognizes
-the actor/output in a bounded role. `provenance-record-v0.2` now preserves
-PUBLIC_OFFICIAL versus PRIVATE_PRIMARY source origin, while
-`recognized-external-determination-v0.1` owns the private determination and
-its separate public-law recognition basis. No generic actor/accreditation graph
-is queued.
-
-Issue #84 completed a wide-angle project-system audit. The scheduled
-Git-backed operational monitor is frozen after 47 state-promotion commits; its
-current snapshot remains because it still contains unique provenance records.
-Live operational cycles are manual diagnostics only. Sanitation now guards
-common secret/local-path leaks and new large tracked files. The main current
-complexity risk is ontology/CI surface creep, not missing infrastructure.
-
-Issue #83 established a narrow `judicial-holding-v0.1` owner from two CJEU
-adversaries: Test-Achats invalidity with an explicitly delayed effect date, and
-Planet49 interpretation with no fabricated judgment-date application start.
-Judicial holdings remain separate from textual Change Atoms, factual
-Authoritative Findings and Temporal consequences. Broader CURIA/case-law
-network work remains parked.
-
-Issue #80 established Authoritative Finding and bounded legal geometry; Issue
-#81 repaired Temporal with explicit DATE/INSTANT precision. Issue #82 then
-proved that official aviation geography is volumetric: UAS zones, prohibited
-airspace and restricted airspace require source-preserved vertical boundaries.
-`legal-spatial-state-v0.2` now adds null-or-typed vertical extent while keeping
-horizontal geometry, causal truth and Temporal v0.2 separate. No GIS, terrain,
-pressure-altitude, flight-level conversion or aviation rules engine is queued.
-
-Issue #77 introduced the authoritative dynamic-set causal owner; Issue #78
-proved set-state time and application time remain separate. Issue #79 then
-confirmed a second non-textual causal family across two domains: authoritative
-numeric observations can feed unchanged binding predicates/formulas. The new
-`authoritative-metric-observation-v0.1` and
-`metric-rule-evaluation-v0.1` contracts now represent EU ETS TNAC and vehicle
-CO2 performance without coercing numbers into set membership, temporal state or
-fake textual mutations. No product projection is queued.
-
-The first explicit research/audit runway is complete:
-
-- **#61:** independently confirmed consolidation back-projection: a current
-  consolidation labelled 13 August 2025 can contain wording sourced from a
-  corrigendum published in July 2026;
-- **#64:** confirmed expression-scoped corrigendum semantics with a useful
-  asymmetry: English required the 2026 correction while independent authentic
-  Dutch 2025 text already contained the “bestaande steunregeling” concept;
-- **#67:** proved EUR-Lex `C#` correction markers are expression-local
-  presentation ordinals, not cross-language corrigendum identities;
-- **#69:** narrowed the Article 3 system-identity gap: current Commission
-  documentation supports SANI/SANI2 as the notification application, while
-  SANI technical continuity and post-2025 PKI correspondence identity remain
-  unresolved.
-
-Those first-run results reinforced research/audit mode without reopening a
-frozen contract. **Issue #77 later became the first discovery to legitimately
-reopen one:** toy-safety OJ-reference status and REACH Candidate List membership
-proved an authoritative dynamic-set dependency that v0.1 could not honestly
-represent. The gap is now resolved by the separate
-`authoritative-dynamic-set-v0.1` canonical contract; X-Ray v0.1 remains scoped
-to conventional cross-reference ripples.
-
-The next task should be selected only when a concrete falsifiable legal-
-information question is identified from fresh source evidence, a manual or
-operational probe anomaly, an unresolved canonical claim, or an explicit sponsor
-research question. Until then, **no AUTO READY issue is intentional**.
-
-
-Operational Needle remains a regression surface and manual evidence probe; its
-scheduled Git-backed monitor is frozen.
-
-The **essential identity is the adversarial legal-research corpus + evaluation
-protocol**. Needle Method is an optional handoff/reporting convention and Core
-is optional, individually earned persistence. Thread, Retrieval, X-Ray, Source
-Anomaly, Half-Life, public cards and other projections are parked
-experimental/historical surfaces. None is part of Core by default and none may
-drive architecture merely to regain relevance.
-
-Public-product work may reopen only from external/user evidence of a recurring
-concrete problem that the strong baseline cannot reliably solve. Architecture
-itself is not such evidence.
-
-Thread comparative audit:
-`docs/audits/thread-comparative-value-2026-09-23.md`  
-Latest wide-angle health audit:
-`docs/audits/project-system-wide-angle-2026-09-23.md`  
-Canonical charter: `docs/project-charter.md`  
-Active assumptions: `docs/assumptions.md`  
-Autonomous worker contract: `docs/automation/hourly-worker.md`
-
+No investigator response has occurred.
 ## Priority model
 
 - **P0 — Foundation blocker:** resolve before significant product/application build.

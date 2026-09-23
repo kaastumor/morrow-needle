@@ -1,0 +1,81 @@
+{
+  "schema_version": "issue87-pilot-results-v0.1",
+  "issue": 87,
+  "status": "PILOT_COMPLETE_FULL_CONFIRMATION_PENDING",
+  "integrity": {
+    "sealed_hashes_verified": true,
+    "core_preflight_failures": 3,
+    "core_preflight_disposition": "INVALID_NOT_EXPERIMENTAL_RUNS",
+    "core_reference_pack_sha256": "1bd242bf1ce04a6c7b01eec77db2e2d933eb577c638cebc8cddef4d8bf4ae895"
+  },
+  "summary": {
+    "stage_b_correct": 9,
+    "stage_b_total": 9,
+    "raw_correctness_advantage": "NONE",
+    "lowest_observed_reconstruction_burden": "METHOD",
+    "observed_core_over_method_advantage": false,
+    "full_integration_reentry_earned": false
+  },
+  "cases": [
+    {
+      "case_id": "relay-eudr-double-postponement",
+      "R": {
+        "correct": true,
+        "required_reopening": true,
+        "rediscovered_material_facts": 2
+      },
+      "M": {
+        "correct": true,
+        "required_reopening": true,
+        "rediscovered_material_facts": 1
+      },
+      "C": {
+        "correct": true,
+        "required_reopening": true,
+        "rediscovered_material_facts": 1
+      }
+    },
+    {
+      "case_id": "relay-dma-designation-vs-compliance",
+      "R": {
+        "correct": true,
+        "required_reopening": false,
+        "unnecessary_reopening_observed": true,
+        "rediscovered_material_facts": 0
+      },
+      "M": {
+        "correct": true,
+        "required_reopening": false,
+        "rediscovered_material_facts": 0
+      },
+      "C": {
+        "correct": true,
+        "required_reopening": false,
+        "rediscovered_material_facts": 0
+      }
+    },
+    {
+      "case_id": "relay-gdpr-force-vs-application-control",
+      "R": {
+        "correct": true,
+        "required_reopening": true,
+        "rediscovered_material_facts": 2
+      },
+      "M": {
+        "correct": true,
+        "required_reopening": false,
+        "rediscovered_material_facts": 0
+      },
+      "C": {
+        "correct": true,
+        "required_reopening": true,
+        "rediscovered_material_facts": 1
+      }
+    }
+  ],
+  "next_boundary": [
+    "relay-battery-due-diligence-postponement",
+    "relay-rohs-scope-split"
+  ],
+  "promotion_status": "NONE_YET"
+}

@@ -191,45 +191,40 @@ The current evidence-backed identity remains:
 
 > **Needle adversarial legal-research corpus + evaluation protocol.**
 
-Discovery Cycle 2 (#155–#160) is complete with **CONTINUE**.
+Discovery Cycle 2 completed with **CONTINUE**.
 
-Active linked discovery proved useful enough to expand the opportunity map
-without authorising feature work:
+Its first selected experiment, #165 scholarly-status protocol transfer, ended:
 
-- Run A found a bounded EU technical-standard authority-handoff candidate;
-- Run B was parked because mature existing methodology already owns most of the
-  observed reproducibility problem;
-- Run C found evidence that official tracker lag may generalise to official
-  derived-view lag;
-- Run D found a materially different scientific document-status setting where
-  Needle's evaluation-construct discipline may transfer.
+> **INDETERMINATE / TRANSPORT_BLOCKED**
 
-#160 selected exactly one next experiment:
+The deterministic four-case sample could not be constructed through the final
+pre-registered transport. No model run occurred, so no scientific/project-
+identity conclusion is drawn from #165.
 
-> **#165 — scholarly-status latent-detection protocol transfer.**
+Explicit sponsor direction still requires active evidence-driven discovery.
 
-The experiment asks a project-level question:
+The current horizon is therefore the already-earned Cycle 2 Run A reserve:
 
-> Is Needle's surviving evaluation protocol fundamentally legal-specific, or
-> can it transfer with minimal adaptation to another consequential
-> document-status domain?
+> **#171 — `TECHNICAL_STANDARD_AUTHORITY_HANDOFF` generality.**
 
-The incumbent identity does **not** change before that experiment.
+#171 is a DERIVATION taxonomy/generality experiment.
 
-A positive result may support an adjacent interpretation:
+Its two RTS chains were already public/exposed during Run A and cannot be
+relabelled as fresh validation.
 
-> reusable adversarial document-status evaluation protocol + legal corpus as the
-> first mature corpus.
+The experiment asks whether a distinct failure mechanism exists when:
 
-A negative result would strengthen the current legal-specific boundary.
+1. an ESA publishes its **final draft RTS**;
+2. the European Commission may substantively amend that draft;
+3. the Commission later adopts the binding delegated regulation;
+4. research incorrectly inherits binding legal effect from the ESA final draft.
 
-#165 receives no product mandate. Crossmark, Crossref, Retraction Watch and
-publisher status notices remain the strong incumbent status-data infrastructure.
+No product, monitor, lifecycle graph or ingestion system is authorised.
 
-No Cycle 3 is authorised before #165 changes the map.
+Run C / `OFFICIAL_DERIVED_VIEW_LAG` remains parked reserve.
 
-Canonical Cycle 2 synthesis:
-`docs/discovery/cycle2-synthesis-2026-09-24.md`
+Canonical #165 health decision:
+`docs/discovery/post-issue165-project-health-2026-09-24.md`
 
 ## Repository discipline
 

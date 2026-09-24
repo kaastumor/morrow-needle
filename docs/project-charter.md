@@ -191,32 +191,41 @@ The evidence-backed identity remains:
 
 > **Needle adversarial legal-research corpus + evaluation protocol.**
 
-#171 expanded the corpus to 29 cases / 15 trap classes with
+The corpus currently contains 29 cases / 15 trap classes after #171 admitted
 `TECHNICAL_STANDARD_AUTHORITY_HANDOFF`.
 
-#174 then ended **INDETERMINATE / SAMPLE_INCOMPLETE** before the broader
-`OFFICIAL_DERIVED_VIEW_LAG` taxonomy claim could be tested fully. The existing
-`OFFICIAL_TRACKER_UPDATE_LAG` class therefore remains unchanged.
+#174 remains **INDETERMINATE / SAMPLE_INCOMPLETE**. Its frozen UK positive pool
+contained no eligible already-in-force unapplied provision-level case; the
+Scoreboard negative control was available. No derived-view taxonomy conclusion
+was earned.
 
-Explicit sponsor direction remains **active evidence-driven discovery**.
+Discovery Cycle 3 (#177–#183) completed with **CONTINUE**:
 
-Current horizon:
+- soft-law effect collapse — PARK / reserve;
+- registry coverage overclaim — PARK / reserve;
+- machine-readable derivative drift — PARK / not distinct;
+- authority handoff generalisation — ADOPT_FOR_EXPERIMENT.
 
-> **Discovery Cycle 3 — source-role and evidence-state mechanisms (#177–#183).**
+Current active horizon:
 
-Cycle 3 searches four new linked areas:
+> **#195 — OFFICIAL AUTHORITY HANDOFF GENERALITY**
 
-1. official guidance/Q&A promoted into binding law;
-2. registry/list absence promoted into proof of legal non-existence;
-3. machine-readable official derivatives diverging from authoritative state;
-4. expert/recommendation stage promoted into final authorization/decision.
+#195 tests whether #171's technical-standard-specific class should be renamed /
+generalised to one broader official authority-handoff mechanism spanning:
 
-WIP=1. #178 is next.
+- ESA final technical drafts → Commission binding acts;
+- CHMP scientific opinions → Commission marketing authorisations;
+- RAC/SEAC opinions → Commission REACH restrictions;
 
-Transport-sensitive follow-up experiments must smoke-test query/API feasibility
-before full sample preregistration, without retaining candidate identities.
+while excluding procedures where the upstream agency act itself owns the legal
+effect.
 
-No feature/product implementation is authorised by discovery alone.
+No product or integration work is authorised.
+
+Success should simplify taxonomy rather than add another class.
+
+No Cycle 4 is authorised before #195 closes and the project runs a fresh health
+check.
 
 ## Repository discipline
 

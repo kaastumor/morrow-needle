@@ -166,6 +166,29 @@ may create only a `SEARCH_HYPOTHESIS`. That hypothesis cannot enter the
 opportunity funnel until target evidence is found through one of the four
 authorised channels.
 
+
+### Transport smoke test for external sample selection
+
+When a bounded experiment depends on an external API/search/index to enumerate a
+deterministic validation sample, verify the transport **before** freezing the
+candidate-selection protocol.
+
+The smoke test may inspect only:
+
+- whether the query/API shape executes;
+- response schema/fields needed by the later selection rule;
+- count/pagination mechanics;
+- access/size/quota constraints.
+
+It must not retain candidate identities, inspect substantive candidate content,
+or tune the future sample.
+
+Discard smoke-test results. Then preregister and rerun the transport under the
+frozen rule.
+
+If transport later fails after sample exposure, preserve the failure rather than
+iteratively redesigning transport until a convenient sample appears.
+
 Keep at most three active search hypotheses; do not create a discovery graph,
 force distant analogies, or turn recombination into feature ideation.
 

@@ -6,40 +6,39 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **#245 ACTIVE RESEARCH — SCOPED THIRD-COUNTRY RECOGNITION**
+# **#253 ACTIVE RESEARCH — CJEU TEMPORAL-EFFECT LIMITATION EXCEPTION**
 
 Sponsor rule #217 remains canonical:
 
 > a hypothesis may stop; the sponsored research program pivots immediately to
 > the next bounded WIP=1 research question.
 
-The latest research batch is reconciled before #245 begins:
+The latest reconciled research batch (#245–#252) produced:
 
-- #243 admitted `DIFFERENTIATED_MEMBER_STATE_PARTICIPATION`;
-- #244 red-teamed the full taxonomy and merged three overlapping class pairs;
-- all **50 cases** were preserved;
-- trap classes reduced from **21 to 18**.
+- #245 REJECT — scoped third-country recognition stayed ordinary decision-scope
+  analysis plus existing dynamic status;
+- #247/#248/#249 — generalised existing cohort, procedural-silence and
+  judicial-operative-state classes;
+- #250 ADMIT — `MEMBER_STATE_OPTION_DIVERGENCE`;
+- #251 ADOPT — current CHMP→Commission medicines chain strengthens
+  `OFFICIAL_AUTHORITY_HANDOFF`;
+- #252 REVISE/ADOPT — Swiss Schengen validates cross-order incorporation outside
+  the EEA.
 
 Canonical corpus:
 
-> **50 cases / 18 trap classes**
+> **57 cases / 19 trap classes**
 
-#245 is the sole active research WIP.
+#253 is the sole active research WIP.
 
-It tests whether EU third-country adequacy/equivalence recognition has a
-distinct representation failure where a country-level label masks narrower
-organisation-, sector-, purpose-, time- or condition-specific scope.
+It tests the exception side of
+`JUDICIAL_INTERPRETATION_TEMPORAL_EFFECT`: find a genuine CJEU judgment that
+actually imposed/preserved a limitation of temporal effects, pin its exact
+beneficiaries/date/scope, and compare it with the declaratory default and a
+refused limitation request.
 
-Initial examples:
-- EU-US Data Privacy Framework adequacy applies to participating/certified U.S.
-  organisations rather than every U.S. recipient;
-- financial-services equivalence decisions can be partial, conditional,
-  legislation-specific and time-limited.
-
-Apply ordinary adequacy/equivalence scope doctrine and existing-class first
-refusal before any taxonomy change.
-
-Do not retry #214, add product scope, or build a registry/equivalence monitor.
+Do not retry #214, manufacture product scope, or add a case merely because the
+doctrine is interesting.
 
 Historical "worker idle", "idle by design" and event-trigger-only wording below
 is superseded by #217 for current execution.

@@ -6,43 +6,46 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **#268 ACTIVE RESEARCH — SECOND COVERAGE GATE**
+# **#282 ACTIVE RESEARCH — POST-#217 RESEARCH RETROSPECTIVE**
 
 Sponsor rule #217 remains canonical:
 
 > a hypothesis may stop; the sponsored research program pivots immediately to
 > the next bounded WIP=1 research question.
 
-The latest reconciled research batch (#264/#266/#267) produced:
+The #270–#280 research batch is reconciled at:
 
-- #264 ADMIT — `CHOICE_OF_LAW_STATE`;
-- #266 ADMIT — `DIRECTIVE_INVOCABILITY_STATE`;
-- #267 RED TEAM — no lossless merge/retirement among the six newest classes.
+> **79 cases / 26 trap classes**
 
-Canonical corpus:
+Recent structural results include:
+- `CROSS_BORDER_RECOGNITION_ACTIVATION_STATE`;
+- `MEMBER_STATE_PERMITTED_DIVERGENCE`;
+- K.L. composition preserving the Directive-invocability / primacy distinction;
+- `CHOICE_OF_FORUM_STATE`;
+- the #277 anti-growth audit and three-run generality/composition lane.
 
-> **70 cases / 24 trap classes**
+#281 selected **#282** as the sole next WIP.
 
-#268 is the sole active research WIP.
+#282 looks backward before another coverage hunt. It audits post-#217 research for:
+- source/evidence quality;
+- independence of supposedly orthogonal support;
+- class-definition drift beyond dedicated evidence;
+- admission-threshold drift;
+- path dependence / selection bias;
+- whether bounded revision or compression is required.
 
-It performs a second coverage-selection gate after filling relational Union
-nexus, choice-of-law and Directive-invocability gaps.
+No new class is allowed in #282, and no net case-count growth is justified merely to
+repair support. #273 is closed as a deferred depth candidate so it cannot compete with
+#282 for WIP=1; it may be reopened only if #282 selects it or its underlying question.
 
-Candidate dimensions include:
-- remedy/enforcement consequence state;
-- mutual recognition/passporting;
-- individual derogation/exemption/authorisation;
-- burden/presumption;
-- minimum-harmonisation national overlay;
-- procedural standing/admissibility.
-
-#268 itself adds no case/class. It must select exactly one next bounded question
-or record that no candidate clears the bar.
+Execution now follows the checkpointed-burst rule in `docs/way-of-working.md`:
+one coherent milestone per turn, early durable checkpoints, narrow reads, one late CI
+check, and GitHub-first recovery after interruptions.
 
 Do not retry #214 or manufacture product scope.
 
-Historical "worker idle", "idle by design" and event-trigger-only wording below
-is superseded by #217 for current execution.
+Historical "worker idle", "idle by design" and event-trigger-only wording below is
+superseded by #217 for current execution.
 
 **Issue #88 is complete. Its pre-registered stop rule fired.**
 

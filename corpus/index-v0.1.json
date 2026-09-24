@@ -23,12 +23,14 @@
     "SOURCE_VIEW_TEMPORAL_DIVERGENCE": "A consolidated, derived, summary or tracker view has its own observation, editorial or update horizon that can diverge from the legal/source state relevant to the query; current accessibility and nominal view date are not substitutes for the view's actual temporal state.",
     "AUTHORITATIVE_EXTERNAL_INPUT_TRIGGER": "An unchanged legal rule delegates an operative result to an authoritative non-normative external factual or data input, such as a quantitative value set or an officially confirmed categorical finding; a new authoritative input can change the legal/compliance output without parent-text mutation.",
     "EXPRESSION_LOCAL_REPRESENTATION_ASYMMETRY": "A language or expression representation can carry local authenticity, corrective scope, labels or ordinals that are not safe cross-expression legal identities or effects; cross-expression use requires the relevant authenticity/scope rule or a canonical underlying identifier.",
-    "MEMBER_STATE_OPTION_DIVERGENCE": "A Union act that otherwise binds or applies across the relevant Member States expressly delegates a bounded legal choice or parameter to national law; the operative result depends on whether and how the relevant Member State exercised that option, so the EU default and another Member State's choice are insufficient.",
     "SUBSTATE_TERRITORIAL_REGIME": "EU-law applicability can differ between territories constitutionally linked to the same sovereign Member State because Treaty or instrument-specific territorial status attaches to the territory rather than the country label; legal scope must preserve the relevant territorial regime instead of inheriting mainland or Member-State status wholesale.",
     "EU_PRIMACY_DISAPPLICATION_STATE": "A national provision can remain formally valid, in force and textually current while directly effective EU law requires it to be disapplied in the relevant dispute or scope; formal validity does not determine operative applicability, and the conflict, direct-effect condition and procedural context must be preserved.",
     "UNION_NEXUS_APPLICABILITY": "EU-law applicability can attach to an actor or conduct outside the Union because the governing rule defines scope through a legally specified Union nexus, such as targeted persons or recipients, a regulated Union market or instrument, or output/use in the Union; actor establishment or physical location alone is insufficient, while incidental or passive Union contact is insufficient where the required nexus is not met.",
     "CHOICE_OF_LAW_STATE": "A legally valid choice by the relevant party or person can select the law governing a relationship or succession instead of the law that would follow from default connecting factors; applicable law cannot be inferred safely from forum, location, habitual residence or nationality alone, and the existence, validity, scope and mandatory limits of the choice must be preserved.",
-    "DIRECTIVE_INVOCABILITY_STATE": "A Directive provision may be in force and its transposition deadline may have expired, yet direct invocability in a dispute depends on whether the provision is sufficiently precise and unconditional and whether the defendant is the State or an emanation of the State; a Directive cannot of itself impose obligations on a private individual."
+    "DIRECTIVE_INVOCABILITY_STATE": "A Directive provision may be in force and its transposition deadline may have expired, yet direct invocability in a dispute depends on whether the provision is sufficiently precise and unconditional and whether the defendant is the State or an emanation of the State; a Directive cannot of itself impose obligations on a private individual.",
+    "CROSS_BORDER_RECOGNITION_ACTIVATION_STATE": "A home-state authorisation, qualification or regulated entitlement can acquire legally effective use in another Member State through a specified Union notification, transmission, recognition or passport procedure; home entitlement alone does not prove host-state activation, while completion of the Union procedure may remove the need for a fresh standalone host authorisation. The activation step, target host/service scope and continuing home entitlement must be preserved.",
+    "MEMBER_STATE_PERMITTED_DIVERGENCE": "A Union rule expressly permits a bounded national option, parameter or more protective national rule, so the operative legal result can legitimately differ by Member State even though the same Union framework applies; the relevant national exercise of that permission must be resolved, and the Union default/floor or another Member State's rule is insufficient.",
+    "CHOICE_OF_FORUM_STATE": "A legally valid jurisdiction agreement can displace default jurisdiction rules by selecting the court or courts competent for a dispute, subject to its scope, exclusivity, formal/substantive validity and mandatory protected-party or exclusive-jurisdiction limits; forum cannot be inferred safely from default connecting factors or from a choice-of-law clause."
   },
   "cases": [
     {
@@ -1283,7 +1285,7 @@
       "domain": "data protection",
       "jurisdiction": "EU + Member States",
       "trap_classes": [
-        "MEMBER_STATE_OPTION_DIVERGENCE"
+        "MEMBER_STATE_PERMITTED_DIVERGENCE"
       ],
       "provenance": {
         "issue": 250,
@@ -1305,7 +1307,7 @@
       "domain": "crypto-assets / financial regulation",
       "jurisdiction": "EU + Member States",
       "trap_classes": [
-        "MEMBER_STATE_OPTION_DIVERGENCE",
+        "MEMBER_STATE_PERMITTED_DIVERGENCE",
         "COHORTED_TRANSITIONAL_APPLICABILITY"
       ],
       "provenance": {
@@ -1651,7 +1653,208 @@
       "evidence_refs": [
         "issue:266"
       ]
+    },
+    {
+      "id": "mifid-cross-border-passport-activation",
+      "title": "MiFID cross-border services require passport activation beyond home authorisation",
+      "domain": "investment services / passporting",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "CROSS_BORDER_RECOGNITION_ACTIVATION_STATE"
+      ],
+      "provenance": {
+        "issue": 270,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "MiFID II Article 34 requires the home-authorised firm to notify its home authority and the home authority to transmit the relevant information before the firm begins the specified services in the host Member State; home authorisation alone is not the cross-border activation state, while the host may not duplicate covered authorisation requirements.",
+      "evidence_refs": [
+        "issue:270"
+      ]
+    },
+    {
+      "id": "professional-card-cross-border-activation",
+      "title": "European Professional Card activates specified temporary cross-border professional rights",
+      "domain": "professional qualifications / temporary services",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "CROSS_BORDER_RECOGNITION_ACTIVATION_STATE"
+      ],
+      "provenance": {
+        "issue": 270,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "For the Article 4c temporary-services route, the home authority verifies, issues and transmits the European Professional Card to the host states concerned; those hosts may not demand a further Article 7 declaration for the stated period, while the card remains tied to the holder's continuing home right and specified host scope.",
+      "evidence_refs": [
+        "issue:270"
+      ]
+    },
+    {
+      "id": "working-time-more-favourable-national-protection",
+      "title": "Working Time Directive permits more favourable national worker protection",
+      "domain": "employment / working time",
+      "jurisdiction": "EU + Member States",
+      "trap_classes": [
+        "MEMBER_STATE_PERMITTED_DIVERGENCE"
+      ],
+      "provenance": {
+        "issue": 272,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Directive 2003/88 Article 15 preserves Member States' right to apply or introduce more favourable worker-protection rules; the Union Directive supplies a floor, not the complete national answer, while full-harmonisation instruments show that such divergence cannot be presumed.",
+      "evidence_refs": [
+        "issue:272"
+      ]
+    },
+    {
+      "id": "kl-x-directive-charter-composition",
+      "title": "K.L. v X separates horizontal Directive invocability from Charter-based disapplication",
+      "domain": "employment / effective judicial protection",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "DIRECTIVE_INVOCABILITY_STATE",
+        "EU_PRIMACY_DISAPPLICATION_STATE"
+      ],
+      "provenance": {
+        "issue": 274,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "In C-715/20 the Directive/framework clause could not itself require disapplication in a dispute between private parties, while Article 47 Charter separately required effective judicial protection including disapplication where necessary; the invocable EU norm and the primacy consequence are distinct state owners.",
+      "evidence_refs": [
+        "issue:274"
+      ]
+    },
+    {
+      "id": "brussels-i-choice-of-forum",
+      "title": "Brussels I jurisdiction agreement can displace default court jurisdiction",
+      "domain": "private international law / civil jurisdiction",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "CHOICE_OF_FORUM_STATE"
+      ],
+      "provenance": {
+        "issue": 276,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Brussels I Recast Article 25 gives effect to a valid jurisdiction agreement, normally exclusively, but protected-party and Article 24 exclusive-jurisdiction limits can defeat or constrain the clause; forum cannot be inferred from default domicile/connectors or clause existence alone.",
+      "evidence_refs": [
+        "issue:276"
+      ]
+    },
+    {
+      "id": "succession-choice-of-court",
+      "title": "Succession parties can choose court separately from deceased's choice of law",
+      "domain": "private international law / succession",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "CHOICE_OF_FORUM_STATE"
+      ],
+      "provenance": {
+        "issue": 276,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Succession Regulation Article 5 allows the parties concerned to choose courts of the Member State whose law the deceased selected under Article 22; governing-law choice and forum choice are separate state dimensions with different actors and validity conditions.",
+      "evidence_refs": [
+        "issue:276"
+      ]
+    },
+    {
+      "id": "ai-act-third-country-output-use-nexus",
+      "title": "AI Act reaches third-country provider/deployer through Union output-use nexus",
+      "domain": "artificial intelligence / territorial scope",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "UNION_NEXUS_APPLICABILITY"
+      ],
+      "provenance": {
+        "issue": 278,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "AI Act Article 2(1)(c) applies to third-country providers/deployers where AI-system output is used in the Union; establishment outside the Union is not dispositive, while the exact statutory nexus and exclusions still control.",
+      "evidence_refs": [
+        "issue:278"
+      ]
+    },
+    {
+      "id": "matrimonial-property-participation-law-forum-composition",
+      "title": "Matrimonial-property regime composes Member-State participation, choice of law and choice of court",
+      "domain": "private international law / matrimonial property",
+      "jurisdiction": "EU enhanced cooperation",
+      "trap_classes": [
+        "DIFFERENTIATED_MEMBER_STATE_PARTICIPATION",
+        "CHOICE_OF_LAW_STATE",
+        "CHOICE_OF_FORUM_STATE"
+      ],
+      "provenance": {
+        "issue": 279,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Regulation 2016/1103 binds only participating enhanced-cooperation Member States, while Article 22 separately permits spouses to choose applicable law and Article 7 separately permits parties to choose court; all three state dimensions can coexist and must not be collapsed.",
+      "evidence_refs": [
+        "issue:279"
+      ]
+    },
+    {
+      "id": "ucits-host-market-passport-activation",
+      "title": "UCITS host-market access follows home-to-host notification activation",
+      "domain": "investment funds / cross-border marketing",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "CROSS_BORDER_RECOGNITION_ACTIVATION_STATE"
+      ],
+      "provenance": {
+        "issue": 280,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "UCITS Article 93 requires a complete home-state notification package and home-to-host regulatory transmission before host-market access begins; this actor-specific activation chain differs from automatic mutual recognition such as EU driving licences.",
+      "evidence_refs": [
+        "issue:280"
+      ]
     }
   ],
-  "case_count": 70
+  "case_count": 79
 }

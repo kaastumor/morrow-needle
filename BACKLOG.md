@@ -6,40 +6,34 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **#212 READY — FRESH 3+1 CASE COMPILER**
+# **#214 EXPERIMENT READY — SEALED 8-RUN EXECUTION**
 
-#210 completed its independent GPT-6 Astra / medium design red team with **REVISE**.
+#212 completed the fresh compiler gate with:
 
-The pilot is now frozen as a practical workflow comparison:
+> `COMPILER_READY — 3+1 SEALED`
 
-> Does offering the exact frozen corpus index + fixed corpus-use instruction
-> improve latent diagnosis and consequential correctness over ordinary
-> source-grounded QA on one sealed challenge set?
+Before any investigator output, the exact compiler return, investigator package,
+sealed evaluator package and execution manifest were committed by SHA-256 in
+#212/#214.
 
-The treatment does **not** isolate corpus analogy from the adversarial framing
-and extra attention induced by being given an adversarial corpus.
+Frozen execution:
 
-Frozen repairs include:
+- GPT-5.6 Sol;
+- High reasoning;
+- fresh non-personalized Temporary Chat per run;
+- ordinary public web/source access;
+- max 12 substantive external source inspections;
+- 4 tasks × R/C = 8 runs;
+- task and arm order frozen before execution;
+- C receives only the frozen corpus index + frozen C instruction;
+- no feedback between runs.
 
-- exact corpus blob `82712a726193f203d4886ef5f925fab322e7c6cc`;
-- index-only use for C;
-- equal model/reasoning/tools/source ceiling;
-- deterministic family queue and bounded first-eligible compiler search;
-- matched negative control;
-- constrained cue audit;
-- strict diagnostic-rescue definition;
-- 2–3 rescues justify replication only, not project-identity promotion;
-- leakage/execution failure is UNINTERPRETABLE;
-- zero rescues permits contraction toward a regression/reference-corpus identity.
+#214 is the sole active item.
 
-#210 is **COMPLETED — FROZEN DESIGN**.
+Do not grade or discuss substantive outputs until all eight are frozen.
 
-#212 is the sole next WIP item and must run in a **fresh non-personalized
-context**. It compiles/seals cases only and may not run R/C.
-
-No scored case has been selected by the design/red-team context.
-
-No Cycle 4, product build, Method/Core expansion or new trap class is authorised.
+No replacement cases, changed prompts, Method/Core additions, Cycle 4 or product
+work is authorised.
 
 **Issue #88 is complete. Its pre-registered stop rule fired.**
 
@@ -646,6 +640,8 @@ against stronger incumbent concepts.
 #210 then completed the Astra-red-teamed design for a distinct question:
 **index-assisted latent diagnostic workflow value**.
 
-#212 now owns fresh case compilation under the frozen #210 rules.
+#212 completed fresh case compilation under the frozen #210 rules.
 
-No Cycle 4 or product implementation is authorised while #212 owns preparation.
+#214 now owns the sealed eight-run investigator execution.
+
+No Cycle 4 or product implementation is authorised while #214 owns execution.

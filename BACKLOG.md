@@ -6,78 +6,58 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-**Discovery Gate #134 — evidence-triggered continuous discovery v0.2 is the
-active sponsor-authorised horizon.**
+**#150 — adversarial audit of public legal benchmark integrity** is the only
+active experiment authorised by the completed Cycle 1 synthesis (#139).
 
-Canonical plan:
-`docs/discovery/evidence-triggered-continuous-discovery-v0.2.md`
+Cycle 1 decision: **CONTINUE** with the same essential identity:
 
-Adversarial review:
-`docs/discovery/evidence-triggered-discovery-red-team-2026-09-24.md`
+> **Needle = adversarial legal-research corpus + evaluation protocol.**
 
-The four discovery sources are evidence channels, not parallel backlogs:
+#150 is a bounded `CORRECTNESS_VALIDITY` transfer test. It asks whether a small
+Needle-style adversarial audit can find a fresh, material benchmark-integrity
+defect or ambiguity that a credible public legal benchmark's own QA/dispute
+baseline has not already surfaced.
 
-1. fresh legal adversary;
-2. real Explorer use;
-3. external research need;
-4. observed failure of the current approach.
+### #150 boundaries
 
-Everything enters one opportunity funnel. WIP=1.
+- freeze exact benchmark/version/commit and sample before inspection;
+- exclude defects already public before sample freeze;
+- compare against the benchmark's own strongest realistic QA baseline;
+- one initial run plus at most one evidence follow-up;
+- contestable legal findings need independent qualified review before being
+  called material;
+- no benchmark platform, adapter, judge, leaderboard, dashboard or standing
+  audit service;
+- negative result is valid and may shrink Needle's transferable-value claim.
 
-### Cycle 1 execution
+### Parked / trigger-bound Cycle 1 results
 
-Autonomous order:
+- #135 judicial-document-role generality test — **PARK**; reopen on an
+  independently encountered second judicial-role contrast.
+- #136 Explorer workflow value — **PARK**; boxed synthetic evidence shows lower
+  mechanical indirection, but human importance/adoption is unknown. H-16 stays
+  unresolved and no human session is required now.
+- #138 evaluation-evidence closure — **PARK / TRIGGERED TECHNIQUE**; use a small
+  commitment → execution → reveal → closure pack only on the next independently
+  justified sealed/execution-sensitive evaluation.
 
-1. #135 — fresh legal-adversary scout;
-2. #137 — external research-needs scan;
-3. #138 — current-approach failure audit.
+There is **no Cycle 2** and no permanent discovery worker.
 
-Interactive track:
+Canonical synthesis:
+`docs/discovery/cycle1-synthesis-project-health-2026-09-24.md`
 
-- #136 — Explorer observed-use round. **INTERACTIVE REQUIRED.** Human evidence
-  may not be replaced by agent/browser simulation. Sponsor dogfood can expose a
-  concrete defect but cannot alone establish general external user value.
-
-Gate:
-
-- #139 — Cycle 1 evidence synthesis / Project Health Check after all four
-  channels have produced evidence or an explicit evidence limitation.
-
-Cycle 1 may finish with zero build candidates. Do not create Cycle 2 before #139.
-Do not implement a discovered feature from #135–#138. Every opportunity ends in
-`ADOPT_FOR_EXPERIMENT / REVISE / REJECT / PARK`; delivery requires a later
-separate decision.
-
-H-16 / #103 remains open and frozen as a technical Explorer candidate until real
-use supplies discriminating evidence.
-
-No task may revive the old legal-change product, add a backend/framework, create
-a second corpus truth store, or convert proxy evidence into claimed user demand.
-
-Issues #49 and #59 have now falsified the assumption that the current Needle
-architecture should automatically become a general public legal-change product.
-
-> **STOP PUBLIC-PRODUCT EXPANSION. CONTINUE RESEARCH/AUDIT MODE.**
-
-This is not project abandonment. The evidence engine has repeatedly found real
-source, timing, identity, dependency and provenance traps. What stops is the
-obligation to turn every useful legal-information distinction into a feature or
-marketing claim.
-
-Research/audit mode rules:
+The standing research/audit rules remain:
 
 1. start from a concrete legal-information question capable of being wrong;
-2. prefer official-source evidence and the smallest existing contract that can
+2. prefer official/source evidence and the smallest existing contract that can
    answer it;
-3. produce a fixture, finding, regression, or bounded negative result;
-4. for correctness, validity and canonical representation, do not add schema or
-   infrastructure unless the question proves the existing baseline cannot
-   preserve the finding safely or repeatably;
-5. a product/workflow surface may still earn itself under correctness parity
-   only through observed relative advantage over the strongest realistic
-   alternative and only above the validity/provenance floor;
-6. a well-supported “nothing new / baseline already handles this” result is
-   successful work.
+3. preserve negative/parity results;
+4. for correctness, validity and canonical representation, add durable
+   complexity only after a simpler baseline materially fails;
+5. for product/workflow surfaces, correctness parity may coexist with value only
+   when observed relative advantage matters enough to change behavior and stays
+   above the validity/provenance floor;
+6. an idle queue is preferable to invented work.
 
 **Issue #88 is complete. Its pre-registered stop rule fired.**
 

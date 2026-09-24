@@ -191,69 +191,38 @@ The core project identity remains:
 
 > **Needle adversarial legal-research corpus + evaluation protocol.**
 
-Corpus Explorer v0.1 (#103) remains a frozen `TECHNICAL_MVP_CANDIDATE`.
-Technical acceptance is complete; H-16 still requires real/manual evidence that
-the Explorer improves actual research use over direct corpus/repository
-inspection.
+Evidence-triggered discovery Cycle 1 (#134–#139) is complete with **CONTINUE**.
 
-After #104 deliberately ended with **SIMPLIFY**, the sponsor authorised one
-bounded process experiment:
+It did not reopen a general product roadmap and did not authorise Cycle 2.
 
-> **Evidence-triggered continuous discovery v0.2 — #134**
+Cycle 1 dispositions:
 
-This does not reopen a feature roadmap. It tests whether active discovery can
-surface decision-changing evidence without recreating product/process creep.
+- #135 judicial-document-role generality test — **PARK**;
+- #136 Explorer workflow value — **PARK**, H-16 unresolved;
+- #137 external legal-benchmark integrity audit — **ADOPT_FOR_EXPERIMENT** as #150;
+- #138 evaluation-evidence closure — **PARK / TRIGGERED TECHNIQUE**.
 
-The discovery outcome is to find recurring or consequential legal-research
-problems where either the strongest boring baseline/current corpus materially
-fails, or a Needle-specific product/workflow response demonstrates meaningful
-relative advantage over a correct existing alternative, and to identify the
-smallest evidence-backed response.
+The only active experiment is:
 
-Four evidence channels may open opportunities:
+> **#150 — adversarial audit of public legal benchmark integrity.**
 
-1. fresh legal adversary;
-2. real Explorer use;
-3. external research need;
-4. observed failure of the current approach.
+Its purpose is to test whether Needle's surviving evaluation discipline can
+transfer to a credible external benchmark and find a fresh material
+validity/reproducibility defect beyond the benchmark's own strong QA baseline.
 
-They feed one WIP=1 funnel. They are not separate product tracks.
+This is a `CORRECTNESS_VALIDITY` experiment. A positive result does not
+authorise a benchmark product, adapter, judge, leaderboard, standing audit
+service or other product surface.
 
-Linked search may operate inside Discover/Diverge from a concrete evidence
-anchor, but it is not a fifth evidence channel. It produces only
-`SEARCH_HYPOTHESIS`; target evidence from an authorised channel is required
-before promotion into the opportunity funnel.
+Corpus Explorer v0.1 remains a frozen derived projection. #136 established only
+a synthetic mechanical indirection advantage; human importance/adoption remains
+unknown and is not currently worth collecting merely for closure.
 
-Cycle 1 is bounded to #135–#139. Human evidence in #136 may not be simulated.
-Public papers/trends may nominate an external-need opportunity but do not count
-as direct demand. Legal adversaries must be selected from source/research value
-before comparator outcomes are known.
+The discovery method remains available as a bounded, evidence-triggered gate.
+It is not a recurring programme, queue generator or scheduled process.
 
-The project uses established discovery principles — Discover/Define before
-Develop/Deliver, outcome/opportunity framing, riskiest-assumption testing and
-value/usability/feasibility/viability risk assessment — with an additional
-Needle-specific validity/evidence-integrity risk.
-
-Canonical plan:
-`docs/discovery/evidence-triggered-continuous-discovery-v0.2.md`
-
-Red-team review:
-`docs/discovery/evidence-triggered-discovery-red-team-2026-09-24.md`
-
-The discovery process itself is experimental. #139 must choose
-`continue / simplify / redirect / stop`. Cycle 2 is not authorised in advance.
-
-The strongest current risks are:
-
-1. **discovery theatre** — agent-generated opportunities masquerading as demand;
-2. **selection bias** — choosing adversaries because they are likely to defeat a
-   comparator;
-3. **process creep** — turning industry frameworks into mandatory ceremony;
-4. **product creep** — interpreting discovery as an obligation to ship.
-
-The operating rule remains:
-
-> expose demonstrated value with minimum durable complexity.
+Canonical Cycle 1 decision:
+`docs/discovery/cycle1-synthesis-project-health-2026-09-24.md`
 
 ## Repository discipline
 

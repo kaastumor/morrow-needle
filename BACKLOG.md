@@ -6,39 +6,47 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **#174 — OFFICIAL DERIVED-VIEW LAG GENERALITY**
+# **DISCOVERY CYCLE 3 — #178 NEXT**
 
-#171 completed with **SUPPORT**.
+#174 completed:
 
-It earned one new DERIVATION trap class:
+> **INDETERMINATE / SAMPLE_INCOMPLETE**
 
-> `TECHNICAL_STANDARD_AUTHORITY_HANDOFF`
+No taxonomy conclusion is drawn. `OFFICIAL_TRACKER_UPDATE_LAG` remains
+unchanged and H-21 is PARKED.
 
-and two public/exposed regression cases. No evaluation or product claim changed.
+Sponsor direction remains **active evidence-driven discovery**.
 
-Active sponsor direction remains evidence-driven discovery.
+Cycle 3 parent: #177.
 
-Next already-earned reserve:
+WIP=1:
 
-> **#174 — test whether `OFFICIAL_TRACKER_UPDATE_LAG` generalises to
-> `OFFICIAL_DERIVED_VIEW_LAG`.**
+1. #178 — official guidance/Q&A bindingness promotion — **NEXT**;
+2. #179 — registry absence as false negative evidence;
+3. #180 — machine-readable official derivative drift;
+4. #181 — expert opinion/recommendation promoted into final decision;
+5. #183 — Cycle 3 synthesis.
 
-### #174 requirements
+### Cycle 3 search discipline
 
-- use fresh cases, not Run C's exposed examples;
-- one EU sanctions-list case;
-- one legislation.gov.uk revised-text case;
-- one negative/snapshot control;
-- freeze candidate selection before substantive inspection;
-- prove a current legal/compliance answer changes;
-- existing tracker class gets first refusal before any rename/new class;
-- no monitoring, ingestion or freshness product.
+Each run must:
 
-Canonical #171 result:
-`docs/experiments/issue171-rts-authority-handoff-result-2026-09-24.md`
+- start from proven Needle evidence;
+- find current independent target evidence;
+- compare against the strongest official/incumbent safeguard;
+- test an explicit boundary/counterexample;
+- distinguish new mechanism from generalisation of an existing class;
+- retain at most one hypothesis;
+- build nothing.
 
-Post-#171 health:
-`docs/discovery/post-issue171-project-health-2026-09-24.md`
+For transport-sensitive follow-up experiments, perform a metadata-only transport
+smoke test **before** full sample preregistration.
+
+Canonical #174 result:
+`docs/experiments/issue174-official-derived-view-lag-result-2026-09-24.md`
+
+Post-#174 health:
+`docs/discovery/post-issue174-project-health-2026-09-24.md`
 
 **Issue #88 is complete. Its pre-registered stop rule fired.**
 

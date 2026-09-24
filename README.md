@@ -256,11 +256,19 @@ Recent results now include both subtraction and new cross-domain mechanisms:
 - #260 RED TEAM — targeted overlap audit found no lossless merge among the new
   jurisdiction/cohort/judicial/primacy classes.
 
-The corpus is now **64 cases / 21 trap classes**.
+#261/#263 then completed one coverage-led discovery batch:
+
+- #261 COVERAGE — selected relational/extraterritorial applicability as the
+  highest-information uncovered state dimension;
+- #263 ADMIT — `UNION_NEXUS_APPLICABILITY` from GDPR targeting/monitoring and
+  Market Abuse Regulation third-country instrument nexus, with DSA/AI Act as
+  supporting boundary evidence.
+
+The corpus is now **66 cases / 22 trap classes**.
 
 Current horizon:
 
-> **ACTIVE RESEARCH — #261: coverage map after 64 cases / 21 classes**
+> **ACTIVE RESEARCH — #264: party choice as applicable-law state**
 
 The smallest surviving identity remains:
 
@@ -307,6 +315,7 @@ work.
 - `docs/discovery/issues245-252-sponsored-discovery-synthesis-2026-09-24.md`
 - `docs/discovery/issues253-256-sponsored-discovery-synthesis-2026-09-24.md`
 - `docs/discovery/issues257-260-sponsored-discovery-synthesis-2026-09-24.md`
+- `docs/discovery/issues261-263-coverage-union-nexus-synthesis-2026-09-24.md`
 - `docs/discovery/post-issue195-project-health-2026-09-24.md`
 - `docs/experiments/issue165-scholarly-status-result-2026-09-24.md`
 - `docs/discovery/post-issue165-project-health-2026-09-24.md`

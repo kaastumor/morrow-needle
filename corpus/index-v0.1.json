@@ -25,7 +25,8 @@
     "EXPRESSION_LOCAL_REPRESENTATION_ASYMMETRY": "A language or expression representation can carry local authenticity, corrective scope, labels or ordinals that are not safe cross-expression legal identities or effects; cross-expression use requires the relevant authenticity/scope rule or a canonical underlying identifier.",
     "MEMBER_STATE_OPTION_DIVERGENCE": "A Union act that otherwise binds or applies across the relevant Member States expressly delegates a bounded legal choice or parameter to national law; the operative result depends on whether and how the relevant Member State exercised that option, so the EU default and another Member State's choice are insufficient.",
     "SUBSTATE_TERRITORIAL_REGIME": "EU-law applicability can differ between territories constitutionally linked to the same sovereign Member State because Treaty or instrument-specific territorial status attaches to the territory rather than the country label; legal scope must preserve the relevant territorial regime instead of inheriting mainland or Member-State status wholesale.",
-    "EU_PRIMACY_DISAPPLICATION_STATE": "A national provision can remain formally valid, in force and textually current while directly effective EU law requires it to be disapplied in the relevant dispute or scope; formal validity does not determine operative applicability, and the conflict, direct-effect condition and procedural context must be preserved."
+    "EU_PRIMACY_DISAPPLICATION_STATE": "A national provision can remain formally valid, in force and textually current while directly effective EU law requires it to be disapplied in the relevant dispute or scope; formal validity does not determine operative applicability, and the conflict, direct-effect condition and procedural context must be preserved.",
+    "UNION_NEXUS_APPLICABILITY": "EU-law applicability can attach to an actor or conduct outside the Union because the governing rule defines scope through a legally specified Union nexus, such as targeted persons or recipients, a regulated Union market or instrument, or output/use in the Union; actor establishment or physical location alone is insufficient, while incidental or passive Union contact is insufficient where the required nexus is not met."
   },
   "cases": [
     {
@@ -1516,7 +1517,51 @@
       "evidence_refs": [
         "issue:259"
       ]
+    },
+    {
+      "id": "gdpr-third-country-targeting-nexus",
+      "title": "GDPR applies to a third-country controller through targeting or monitoring in the Union",
+      "domain": "data protection / territorial scope",
+      "jurisdiction": "EU + third country",
+      "trap_classes": [
+        "UNION_NEXUS_APPLICABILITY"
+      ],
+      "provenance": {
+        "issue": 263,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "GDPR Article 3(2) applies to non-EU controllers/processors where processing relates to offering goods/services to or monitoring people in the Union; establishment country alone is insufficient, while incidental EU travel without Union targeting does not establish the nexus.",
+      "evidence_refs": [
+        "issue:263"
+      ]
+    },
+    {
+      "id": "mar-third-country-instrument-nexus",
+      "title": "Market Abuse Regulation reaches third-country conduct through the regulated-instrument nexus",
+      "domain": "market abuse / financial markets",
+      "jurisdiction": "EU + third country",
+      "trap_classes": [
+        "UNION_NEXUS_APPLICABILITY"
+      ],
+      "provenance": {
+        "issue": 263,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Market Abuse Regulation Article 2(4) applies prohibitions and requirements to actions/omissions in third countries where they concern instruments within Article 2 scope; conduct location alone cannot determine applicability.",
+      "evidence_refs": [
+        "issue:263"
+      ]
     }
   ],
-  "case_count": 64
+  "case_count": 66
 }

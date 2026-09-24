@@ -11,52 +11,68 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **MAINTAIN**
-
-Purposeful successor selected under #288. No discovery/taxonomy work is active.
+# **MAINTAIN — RESULT MERGE PENDING**
 
 ### Sole WIP
 
-# **#290 — retire automatic CI on passive historical surfaces**
+# **#290 — workflow ownership audit / automatic-trigger reduction**
 
-Audit all 25 GitHub Actions workflows under the active/passive ownership rule.
+Result:
 
-Frozen maintenance rule:
+> **SIMPLIFY — 2 KEEP_AUTO / 23 MANUAL_ONLY / 0 RETIRE_WORKFLOW**
 
-- keep automatic repository sanitation;
-- keep automatic full unit/current-corpus validation;
-- retain any additional automatic workflow only if it owns a unique **current** safety
-  or evidence requirement not already protected by the shared suite;
-- historical product/subsystem workflows remain preserved and manually runnable where
-  useful, but do not run automatically merely because their old paths change;
-- no replacement workflow, dashboard, billing monitor, schema or scoring system.
-
-Current audit finding before edits:
-
-> **2 workflows have clear current automatic owners; 23 are passive/manual candidates.**
-
-The two automatic owners are:
+The repository still has 25 workflow files, but automatic current ownership is reduced to:
 
 1. `repository-sanitation.yml` — repository integrity;
-2. `unit-tests.yml` — full Python suite + current adversarial-corpus validator + MVP JS
-   regression.
+2. `unit-tests.yml` — full Python regression suite + current adversarial-corpus validator
+   + MVP JS regression.
 
-`cellar-feed-discovery.yml` and `operational-monitor.yml` are already manual-only.
-The remaining 21 specialist workflows are being tested for demotion to manual-only.
+Two workflows were already manual-only:
+- `cellar-feed-discovery.yml`;
+- `operational-monitor.yml`.
+
+The other 21 specialist workflows are now staged as manual-only. Their tests, probes and
+artifact builders remain preserved for explicit dispatch; passive historical surfaces no
+longer run CI automatically merely because their old paths change.
+
+No cron/scheduled workflows existed, so this run does not claim recurring schedule-cost
+savings. It reduces event-triggered Actions surface and maintenance obligation.
+
+Full audit:
+
+> `docs/reviews/issue290-workflow-ownership-audit-2026-09-25.md`
 
 Accepted scientific state remains:
 
 > **81 cases / 26 classes**
 
-No scientific claim changes in this maintenance run.
+No scientific result or taxonomy changed.
 
-### After #290
+### Successor after #290
 
-Do not preselect another experiment merely because maintenance ends.
+If #290 merges cleanly, select:
 
-At #290 exit, run the ordinary successor-allocation check across
-DISCOVER / CONSOLIDATE / USE / REVIEW-RELEASE / MAINTAIN and record exactly one next mode
-only if the evidence supports it.
+# **REVIEW / RELEASE — corpus reference checkpoint**
+
+Bounded question:
+
+> Can the current **81-case / 26-class** corpus be treated as a coherent reference-release
+> checkpoint using its existing index, evidence links, exposure metadata and validators,
+> without adding cases/classes or reviving product scope?
+
+Purpose:
+- reconcile corpus-facing documentation/metadata with accepted state;
+- verify release/reference integrity and reproducibility;
+- identify any blocking inconsistency;
+- freeze a stable checkpoint if earned.
+
+Not allowed:
+- new legal research to fill perceived coverage gaps;
+- new class/case admission;
+- product/UI work;
+- schema growth unless an existing release-integrity requirement is impossible without it.
+
+This is a review/release successor, not an automatic return to discovery.
 
 ## Historical backlog archive
 

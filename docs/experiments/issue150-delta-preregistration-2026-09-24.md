@@ -214,3 +214,86 @@ At the time this file is first committed:
 - the two already-known public issue families are known derivation evidence;
 - **no selected task's question, criteria, answers or cited authorities have
   been opened for this experiment**.
+
+
+## Sample finalisation — committed before audit conclusions
+
+The metadata-only path enumeration step identified these candidate folders in
+the two selected multi-task practice areas:
+
+### real-estate
+
+- `tasks/real-estate/interpretation-of-notarial-deeds-limited-rights`
+  - SHA-256(`c713132|<path>`) =
+    `2741a663262edddbf903d852730ba0b9ed01cb7032fddfbadae125f10967d332`
+- `tasks/real-estate/ground-rent-revision-and-reasonableness-fairness`
+  - `d1250eee5475b7e006d3cfbabf21ac06d1e4f1f7972be64cddd004f9dc842817`
+
+Selected: **interpretation-of-notarial-deeds-limited-rights**.
+
+### corporate-law
+
+- `tasks/corporate-law/director-and-supervisory-board-conflicts`
+  - `153fdaa32f5c1e11db72705ad36dfe133f94de3301bcee779b7917f16b178757`
+- `tasks/corporate-law/instruction-power-of-the-general-meeting`
+  - `234f1df6cee9ec28b5d2efe66f59992590c7c2f323cd1beea506cc037162d3a6`
+
+Selected: **director-and-supervisory-board-conflicts**.
+
+The two selected single-task practice areas require no within-area choice.
+
+### Frozen four-task sample
+
+1. `tasks/real-estate/interpretation-of-notarial-deeds-limited-rights`
+2. `tasks/competition-law/acm-concentration-notification-requirement`
+3. `tasks/employment-law/inappropriate-conduct-in-the-workplace`
+4. `tasks/corporate-law/director-and-supervisory-board-conflicts`
+
+No replacement is permitted because a selected task looks easy, hard,
+interesting or uninteresting.
+
+## Pre-audit metadata exposure incident
+
+During path enumeration, the GitHub code-search connector returned content
+fragments alongside the requested path metadata.
+
+This occurred:
+
+- **after** the first pre-registration commit;
+- after the four practice areas and within-area hash-selection algorithm were
+  frozen;
+- **before** this exact-path finalisation commit;
+- before any audit finding, materiality decision or retention decision was made.
+
+Some task content may therefore have appeared in analyst context before the
+exact four paths were committed.
+
+### Integrity consequence
+
+This prevents claiming that every selected task remained fully unseen until the
+exact-path commit.
+
+It does **not** permit changing the sample: the selection algorithm already
+fixed which path must win in each selected practice area independently of task
+content.
+
+To reduce interpretation bias:
+
+1. the hash-selected sample above remains binding;
+2. findings must be reconstructed from the canonical selected task artifacts,
+   not from remembered search snippets;
+3. every selected task whose content was present in a search fragment is marked
+   `PREVIEW_EXPOSURE`;
+4. preview exposure cannot count as evidence for a finding or as evidence of
+   audit value;
+5. no sample replacement or expansion is allowed.
+
+If the audit result depends materially on analyst blindness rather than on
+reproducible artifact defects, the experiment must be downgraded or rejected.
+
+## Final pre-content gate
+
+After this commit, the sample is fully frozen.
+
+Only now may the four selected task artifacts and the minimum benchmark
+scorer/harness documentation needed by F1–F5 be opened for substantive audit.

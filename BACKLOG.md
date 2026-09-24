@@ -11,68 +11,62 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **MAINTAIN — RESULT MERGE PENDING**
+# **REVIEW / RELEASE**
 
 ### Sole WIP
 
-# **#290 — workflow ownership audit / automatic-trigger reduction**
+# **#292 — 81-case corpus reference checkpoint**
 
-Result:
+Frozen question:
 
-> **SIMPLIFY — 2 KEEP_AUTO / 23 MANUAL_ONLY / 0 RETIRE_WORKFLOW**
+> Can the accepted **81-case / 26-class** corpus serve as a coherent stable
+> regression/reference checkpoint without new legal research, cases, classes, product
+> scope or schema growth?
 
-The repository still has 25 workflow files, but automatic current ownership is reduced to:
+Release review result:
 
-1. `repository-sanitation.yml` — repository integrity;
-2. `unit-tests.yml` — full Python regression suite + current adversarial-corpus validator
-   + MVP JS regression.
+> **RELEASE_READY — merge gate pending**
 
-Two workflows were already manual-only:
-- `cellar-feed-discovery.yml`;
-- `operational-monitor.yml`.
+Reference candidate:
 
-The other 21 specialist workflows are now staged as manual-only. Their tests, probes and
-artifact builders remain preserved for explicit dispatch; passive historical surfaces no
-longer run CI automatically merely because their old paths change.
+> **NEEDLE_CORPUS_REFERENCE_2026-09-25**
 
-No cron/scheduled workflows existed, so this run does not claim recurring schedule-cost
-savings. It reduces event-triggered Actions surface and maintenance obligation.
+Exact release-candidate index blob:
 
-Full audit:
+> `ecaab3f59fe118b71d2cafa19f05363a65ae49a1`
 
-> `docs/reviews/issue290-workflow-ownership-audit-2026-09-25.md`
+Verified release integrity:
 
-Accepted scientific state remains:
+- 81 declared / 81 actual cases;
+- 26 used classes;
+- no duplicate IDs;
+- no unknown/unused classes;
+- 54/54 unique issue evidence owners resolve and are closed;
+- 32/32 unique repository-path evidence owners exist;
+- all 81 cases remain exposed, `blind_reuse=false`, `REGRESSION_ONLY`;
+- cases and class definitions are unchanged from accepted main;
+- only top-level seed/reference metadata and release-facing documentation are repaired.
+
+The existing validator is tightened to require `CANONICAL_REFERENCE` plus non-empty
+top-level purpose/reuse policy while preserving all prior case/path/exposure checks.
+
+Full result:
+
+> `docs/reviews/issue292-corpus-reference-release-2026-09-25.md`
+
+Accepted scientific content remains:
 
 > **81 cases / 26 classes**
 
-No scientific result or taxonomy changed.
+No product or taxonomy work is authorised by this release.
 
-### Successor after #290
+### Successor allocation
 
-If #290 merges cleanly, select:
+Do not preselect a successor before the reference checkpoint passes its merge gate.
 
-# **REVIEW / RELEASE — corpus reference checkpoint**
-
-Bounded question:
-
-> Can the current **81-case / 26-class** corpus be treated as a coherent reference-release
-> checkpoint using its existing index, evidence links, exposure metadata and validators,
-> without adding cases/classes or reviving product scope?
-
-Purpose:
-- reconcile corpus-facing documentation/metadata with accepted state;
-- verify release/reference integrity and reproducibility;
-- identify any blocking inconsistency;
-- freeze a stable checkpoint if earned.
-
-Not allowed:
-- new legal research to fill perceived coverage gaps;
-- new class/case admission;
-- product/UI work;
-- schema growth unless an existing release-integrity requirement is impossible without it.
-
-This is a review/release successor, not an automatic return to discovery.
+After #292 merges/closes, choose exactly one purposeful mode from
+DISCOVER / CONSOLIDATE / USE / REVIEW-RELEASE / MAINTAIN based on the now-released
+reference state and current project evidence.
 
 ## Historical backlog archive
 

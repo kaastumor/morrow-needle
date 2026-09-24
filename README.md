@@ -184,16 +184,30 @@ Frozen primary result:
 Under #210's pre-registered interpretation, latent corpus-workflow value was
 **not demonstrated**. The project therefore contracts again.
 
+Sponsor direction #217 supersedes the **idle operating conclusion** while
+leaving #214's scientific null intact.
+
+A hypothesis may stop; the sponsored research program pivots to the next bounded
+question under WIP=1.
+
+Post-#214 research has already resumed:
+
+- #218 rejected a new external-reference-version class because mature EU legal
+  drafting practice already owns static/dynamic reference semantics;
+- #219 is active on **time-versioned executable compliance software** under
+  Regulation (EU) 2024/3110.
+
 Current horizon:
 
-> **IDLE BY DESIGN — event-triggered work only**
+> **ACTIVE RESEARCH — #219**
 
-The smallest surviving identity is:
+The smallest surviving identity remains:
 
 > **Needle = adversarial legal-research regression/reference corpus + minimal
 > evaluation discipline.**
 
-No harder replacement experiment, Cycle 4 or product work follows from #214.
+Continuous research does not automatically reopen product, Method/Core or schema
+work.
 
 ## Canonical project records
 
@@ -223,6 +237,8 @@ No harder replacement experiment, Cycle 4 or product work follows from #214.
 - `docs/experiments/issue210-design-red-team-result-2026-09-24.md`
 - `docs/experiments/issue214-latent-corpus-workflow-result-2026-09-24.md`
 - `docs/discovery/post-issue214-project-health-2026-09-24.md`
+- `docs/discovery/sponsor-research-continuity-override-2026-09-24.md`
+- `docs/discovery/issue218-external-reference-version-semantics-result-2026-09-24.md`
 - `docs/discovery/post-issue195-project-health-2026-09-24.md`
 - `docs/experiments/issue165-scholarly-status-result-2026-09-24.md`
 - `docs/discovery/post-issue165-project-health-2026-09-24.md`

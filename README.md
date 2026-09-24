@@ -1,17 +1,18 @@
 # Morrow // Needle
 
-**Adversarial legal-research corpus + evaluation protocol for EU legal change.**
+**Adversarial legal-research regression/reference corpus + minimal evaluation discipline for EU legal change.**
 
 Needle is not a document summarizer, legal-news product, or proprietary legal
 reasoning method.
 
 Its current evidence-backed identity is deliberately small:
 
-- **adversarial corpus** — real source, time, language, authority, dependency and
-  legal-state traps preserved as testable cases; canonical entry point:
-  `corpus/index-v0.1.json`;
-- **evaluation protocol** — pre-registration, sealing, independent execution,
-  explicit comparators and preservation of parity/negative results;
+- **adversarial regression/reference corpus** — real source, time, language,
+  authority, dependency and legal-state traps preserved as exposed examples;
+  canonical entry point: `corpus/index-v0.1.json`;
+- **minimal evaluation discipline** — exposure accounting, pre-registration,
+  sealing, strong comparators and preservation of parity/negative results when a
+  genuinely new claim warrants testing;
 - **Needle Method** — optional structured handoff/reporting convention;
 - **Needle Core** — optional persistence only when a concrete task independently
   demonstrates durable value.
@@ -39,7 +40,7 @@ project form.
 
 The #88 stop rule therefore applies:
 
-> **Morrow // Needle = adversarial legal-research corpus + evaluation protocol.**
+> **Morrow // Needle = adversarial legal-research regression/reference corpus + minimal evaluation discipline.**
 
 Method remains useful when its dossier structure helps humans or later sessions.
 Across the tested surfaced-adjudication and latent-detection gates, it has not
@@ -171,13 +172,28 @@ Two or three rescues would justify independent replication only, not immediate
 project-identity promotion. Zero rescues allows contraction toward an adversarial
 regression/reference corpus + minimal evaluation rules.
 
+#214 completed the sealed index-assisted latent-diagnostic pilot.
+
+All three adversarial R/C pairs were consequentially correct and explicitly
+applied the decisive distinction; the matched control was also pass/pass.
+
+Frozen primary result:
+
+> **0 diagnostic rescues / 0 C-only regressions**
+
+Under #210's pre-registered interpretation, latent corpus-workflow value was
+**not demonstrated**. The project therefore contracts again.
+
 Current horizon:
 
-> **#214 — sealed 8-run investigator execution**
+> **IDLE BY DESIGN — event-triggered work only**
 
-#212 completed with `COMPILER_READY — 3+1 SEALED`. The exact investigator/evaluator packages and execution manifest were committed by SHA-256 before any run. #214 now owns the eight fresh GPT-5.6 Sol / High investigator chats under the frozen order and arm conditions.
+The smallest surviving identity is:
 
-No Cycle 4 or product work is automatic.
+> **Needle = adversarial legal-research regression/reference corpus + minimal
+> evaluation discipline.**
+
+No harder replacement experiment, Cycle 4 or product work follows from #214.
 
 ## Canonical project records
 
@@ -205,6 +221,8 @@ No Cycle 4 or product work is automatic.
 - `docs/discovery/issue209-soft-law-baseline-result-2026-09-24.md`
 - `docs/discovery/post-reserve-baseline-challenges-project-health-2026-09-24.md`
 - `docs/experiments/issue210-design-red-team-result-2026-09-24.md`
+- `docs/experiments/issue214-latent-corpus-workflow-result-2026-09-24.md`
+- `docs/discovery/post-issue214-project-health-2026-09-24.md`
 - `docs/discovery/post-issue195-project-health-2026-09-24.md`
 - `docs/experiments/issue165-scholarly-status-result-2026-09-24.md`
 - `docs/discovery/post-issue165-project-health-2026-09-24.md`

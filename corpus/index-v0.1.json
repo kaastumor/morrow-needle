@@ -1786,7 +1786,75 @@
       "evidence_refs": [
         "issue:276"
       ]
+    },
+    {
+      "id": "ai-act-third-country-output-use-nexus",
+      "title": "AI Act reaches third-country provider/deployer through Union output-use nexus",
+      "domain": "artificial intelligence / territorial scope",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "UNION_NEXUS_APPLICABILITY"
+      ],
+      "provenance": {
+        "issue": 278,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "AI Act Article 2(1)(c) applies to third-country providers/deployers where AI-system output is used in the Union; establishment outside the Union is not dispositive, while the exact statutory nexus and exclusions still control.",
+      "evidence_refs": [
+        "issue:278"
+      ]
+    },
+    {
+      "id": "matrimonial-property-participation-law-forum-composition",
+      "title": "Matrimonial-property regime composes Member-State participation, choice of law and choice of court",
+      "domain": "private international law / matrimonial property",
+      "jurisdiction": "EU enhanced cooperation",
+      "trap_classes": [
+        "DIFFERENTIATED_MEMBER_STATE_PARTICIPATION",
+        "CHOICE_OF_LAW_STATE",
+        "CHOICE_OF_FORUM_STATE"
+      ],
+      "provenance": {
+        "issue": 279,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Regulation 2016/1103 binds only participating enhanced-cooperation Member States, while Article 22 separately permits spouses to choose applicable law and Article 7 separately permits parties to choose court; all three state dimensions can coexist and must not be collapsed.",
+      "evidence_refs": [
+        "issue:279"
+      ]
+    },
+    {
+      "id": "ucits-host-market-passport-activation",
+      "title": "UCITS host-market access follows home-to-host notification activation",
+      "domain": "investment funds / cross-border marketing",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "CROSS_BORDER_RECOGNITION_ACTIVATION_STATE"
+      ],
+      "provenance": {
+        "issue": 280,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "UCITS Article 93 requires a complete home-state notification package and home-to-host regulatory transmission before host-market access begins; this actor-specific activation chain differs from automatic mutual recognition such as EU driving licences.",
+      "evidence_refs": [
+        "issue:280"
+      ]
     }
   ],
-  "case_count": 76
+  "case_count": 79
 }

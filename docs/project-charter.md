@@ -297,18 +297,24 @@ any case.
 #245–#252 completed one bounded sponsored-discovery batch with one new class
 and several in-place generalisations.
 
-#253/#255/#256 then added:
-- one real CJEU temporal-limitation exception under the existing judicial class;
-- one bounded `SUBSTATE_TERRITORIAL_REGIME` class from France/Denmark;
-- one food-law generality case for `PROCEDURAL_CLOCK_SUSPENSION`.
+#253/#255/#256 added one real CJEU temporal-limitation exception, one bounded
+`SUBSTATE_TERRITORIAL_REGIME` class and one food-law clock-suspension
+generality case.
+
+#257/#259/#260 then:
+- generalised the sub-state territorial class to Cyprus Protocol No 10;
+- admitted `EU_PRIMACY_DISAPPLICATION_STATE` from two recent primacy cases
+  with Popławski as the direct-effect boundary;
+- ran a targeted overlap audit that found no lossless merge among the newer
+  jurisdiction/cohort/judicial/primacy classes.
 
 The corpus is now:
 
-> **61 cases / 20 trap classes**
+> **64 cases / 21 trap classes**
 
 Current active research:
 
-> **#257 — Cyprus acquis suspension as substate territorial generality**
+> **#261 — coverage map after 64 cases / 21 classes**
 
 Continuous research does not authorise a retry of #214, product implementation,
 schema growth, monitoring infrastructure or taxonomy expansion without the same

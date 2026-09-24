@@ -1,36 +1,9 @@
 name: Gold Corpus contract
+# Passive historical/research workflow. Manual dispatch only under #290.
 
 on:
-  push:
-    paths:
-      - "fixtures/gold/**"
-      - "fixtures/lineage/**"
-      - "schemas/gold-corpus-case-*.json"
-      - "scripts/validate_gold_corpus.py"
-      - "src/needle/gold.py"
-      - "tests/test_gold_corpus_contract.py"
-      - "tests/test_gold_output_matcher.py"
-      - "tests/test_gold_foundation_fixture.py"
-      - "tests/test_gold_mutation_fixture.py"
-      - "tests/test_gold_semantic_fixture.py"
-      - "tests/test_thread_gold.py"
-      - "tests/test_gold_money_corrigendum.py"
-      - "tests/test_gold_dependency_ripple.py"
-      - ".github/workflows/gold-corpus.yml"
-  pull_request:
-    paths:
-      - "fixtures/gold/**"
-      - "fixtures/lineage/**"
-      - "schemas/gold-corpus-case-*.json"
-      - "scripts/validate_gold_corpus.py"
-      - "src/needle/gold.py"
-      - "tests/test_gold_corpus_contract.py"
-      - "tests/test_gold_output_matcher.py"
-      - "tests/test_gold_foundation_fixture.py"
-      - "tests/test_gold_mutation_fixture.py"
-      - "tests/test_gold_semantic_fixture.py"
-      - ".github/workflows/gold-corpus.yml"
   workflow_dispatch:
+
 
 concurrency:
   group: gold-corpus-${{ github.ref }}

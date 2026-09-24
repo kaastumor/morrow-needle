@@ -58,6 +58,34 @@ A completed work item may end in `REJECT`, `PARK`, `SIMPLIFY` or `STOP`.
 The project-level action is then **PIVOT TO RESEARCH**, unless the sponsor
 explicitly terminates the project.
 
+## Checkpointed burst execution
+
+Autonomous work is executed in **checkpointed bursts** so chat/transport failures do
+not erase or duplicate substantive work.
+
+1. **One coherent milestone per turn.** Examples: research -> durable
+   checkpoint/result, or PR -> one CI check -> merge/resumable SHA. Do not chain
+   several experiments merely because the session is still open.
+2. **Persist important state early.** Before a long research/implementation run, create
+   or confirm the owning issue and branch/checkpoint so GitHub remains the recovery
+   boundary.
+3. **Read narrowly.** Prefer targeted files, line ranges, issue slices and bounded
+   source sets over repeatedly loading large repository payloads.
+4. **Batch compatible reads, not milestones.** Internal retrieval may be batched, while
+   the user-visible turn remains bounded to one milestone.
+5. **Do not poll CI repeatedly.** Inspect CI once near the end. If it is still running,
+   persist the exact PR/head SHA and stop at that resumable boundary.
+6. **Checkpoint after material progress.** After a merge or meaningful discovery result,
+   end with a 2–4 line durable checkpoint. The next `continue` starts from GitHub
+   canonical state, not chat memory.
+7. **Recover from GitHub first.** After a stream/tool failure, inspect current repo,
+   branch, PR and issue state before retrying. Never blindly repeat interrupted writes,
+   experiments or PR creation.
+
+Checkpointing changes execution reliability, not scientific standards. WIP=1,
+pre-registration, incumbent baselines, negative evidence and anti-growth rules remain
+in force.
+
 ## Selective reasoning escalation
 
 Routine project work stays on the current model/capability. Do not escalate merely

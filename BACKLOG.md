@@ -6,33 +6,50 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **#286 ACTIVE DEPTH WIP — GROUNDWATER-BODY VERTICAL EXTENT**
+# **#286 DEPTH RESULT — MERGE PENDING; THEN CHOICE-OF-FORUM DEPTH**
 
 Sponsor rule #217 remains canonical.
 
-#273 completed depth run **1/3** with an informative boundary repair and moved the corpus
-to **80 cases / 26 classes**.
+#286 completed depth run **2/3** with:
 
-The sole WIP is now #286, depth run **2/3**:
+> **REVISE_EXISTING_CLASS — retain `VERTICAL_SPATIAL_EXTENT`, sharpen the vertical
+> differentiation boundary, and add one WFD groundwater-body derivation case.**
 
-> test whether the Water Framework Directive groundwater-body regime requires the same
-> consequential volumetric representation owner as aviation and CO2 storage, or whether
-> “distinct volume” is only physical/object-description language that ordinary object
-> identity can own without `VERTICAL_SPATIAL_EXTENT`.
+Staged corpus:
 
-The candidate and regression consequence were frozen before substantive source research.
+> **81 cases / 26 classes**
 
-Positive admission requires evidence that horizontally overlapping but vertically distinct
-groundwater bodies can carry different legally consequential status/monitoring state such
-that horizontal geometry alone can produce a wrong answer.
+No new class.
 
-A mere use of the word “volume”, physical three-dimensionality, or ordinary depth
-measurement is insufficient. #227 remains the negative boundary.
+Key result:
+- WFD groundwater bodies can be separately delineated in vertically overlying strata
+  where status differs;
+- current EEA reporting acknowledges that groundwater-body polygons are surface
+  projections of 3-D entities and uses horizon/layer state to distinguish overlaps;
+- horizontal x/y alone can therefore conflate legally distinct status units;
+- the class now expressly permits vertical stratification/horizon state, while #227
+  continues to exclude vertical measurements that can be losslessly projected into a 2-D
+  mask.
 
-Allowed: ADOPT_FOR_DERIVATION / REVISE_EXISTING_CLASS / REJECT / PARK.
-No new class; at most one case; no GIS/database/schema/product.
+Depth run 2/3 is **informative** because the definition/boundary changed.
 
-Do not start depth run 3 until #286 is resolved and merged.
+After #286 merges, the preselected depth run **3/3** target is:
+
+> **`CHOICE_OF_FORUM_STATE`**
+
+Selection basis:
+- three corpus cases only;
+- all remain within private international law;
+- one is composition evidence rather than an independent mechanism;
+- it is among the newest classes and therefore high-risk for path dependence;
+- mature jurisdiction-agreement doctrine makes it a direct stress test of #282's
+  incumbent/residual-value rule.
+
+Run 3 must test whether the class has a consequential standalone regression owner beyond
+restating familiar jurisdiction-agreement doctrine. Narrowing, consolidation or retirement
+must remain live outcomes.
+
+Do not begin substantive run-3 research until #286 is merged and closed.
 
 Historical "worker idle", "idle by design" and event-trigger-only wording below is
 superseded by #217 for current execution.

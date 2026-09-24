@@ -126,7 +126,7 @@ The canonical class is now:
 
 > `OFFICIAL_AUTHORITY_HANDOFF`
 
-The corpus remains **29 cases / 15 trap classes**. No fresh #195 case was added
+At that stage the corpus remained **29 cases / 15 trap classes**. No fresh #195 case was added
 merely to increase corpus size, and no product/evaluation-performance claim was
 made.
 
@@ -155,7 +155,7 @@ stronger incumbent concepts before fresh validation:
   doctrine owns the relevant effect analysis, while a more specific class would
   pressure the project toward an unearned effect ontology.
 
-No class was added. The corpus remains **29 cases / 15 trap classes**.
+No class was added at that gate; the later #220 derivation expands the corpus.
 
 #210's independent **GPT-6 Astra / medium** design red team returned
 **REVISE**. The pilot survives, but the claim is narrower:
@@ -190,16 +190,22 @@ leaving #214's scientific null intact.
 A hypothesis may stop; the sponsored research program pivots to the next bounded
 question under WIP=1.
 
-Post-#214 research has already resumed:
+Post-#214 research is now continuous under sponsor rule #217:
 
 - #218 rejected a new external-reference-version class because mature EU legal
   drafting practice already owns static/dynamic reference semantics;
-- #219 is active on **time-versioned executable compliance software** under
-  Regulation (EU) 2024/3110.
+- #219 found that legally prescribed/privileged executable tools create a
+  reusable legal-information mechanism;
+- #220 admitted `EXECUTABLE_COMPLIANCE_ARTIFACT` with two public DERIVATION
+  cases;
+- #221 broadened `PRIVATE_ORIGIN_LEGAL_RECOGNITION` in place rather than
+  creating a parallel private-normative-document class.
+
+The corpus is now **31 cases / 16 trap classes**.
 
 Current horizon:
 
-> **ACTIVE RESEARCH — #219**
+> **ACTIVE RESEARCH — #222: versioned authoritative datasets as legal inputs**
 
 The smallest surviving identity remains:
 
@@ -239,6 +245,9 @@ work.
 - `docs/discovery/post-issue214-project-health-2026-09-24.md`
 - `docs/discovery/sponsor-research-continuity-override-2026-09-24.md`
 - `docs/discovery/issue218-external-reference-version-semantics-result-2026-09-24.md`
+- `docs/discovery/issue219-executable-compliance-software-result-2026-09-24.md`
+- `docs/discovery/issue220-executable-compliance-artifact-result-2026-09-24.md`
+- `docs/discovery/issue221-private-origin-artifact-generality-result-2026-09-24.md`
 - `docs/discovery/post-issue195-project-health-2026-09-24.md`
 - `docs/experiments/issue165-scholarly-status-result-2026-09-24.md`
 - `docs/discovery/post-issue165-project-health-2026-09-24.md`

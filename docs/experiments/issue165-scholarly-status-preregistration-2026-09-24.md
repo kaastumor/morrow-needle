@@ -704,3 +704,119 @@ It does not change:
 - anti-success-search rule.
 
 No candidate content may be used until this amendment is durably committed.
+
+
+## 23. Final pre-candidate transport fallback — fixed public-web notice search
+
+Recorded before any #165 validation candidate has been selected.
+
+### Why this final fallback is necessary
+
+The Scite transport from Section 22 failed before returning any candidate result
+because the connected Scite account reached its monthly MCP call limit.
+
+Therefore:
+
+- no Scite candidate DOI/title/abstract/editorial notice was returned;
+- no candidate could be selected or rejected from Scite;
+- the frozen scientific contract remains untouched.
+
+This section is the final transport amendment for #165.
+
+If this fallback cannot produce a sufficient eligible pool, the experiment is
+reported `INDETERMINATE / TRANSPORT_BLOCKED`; no further transport redesign is
+allowed after candidate searching begins.
+
+### Frozen public-web enumeration
+
+Use the standard web search system as a notice-index transport.
+
+Run exactly these six searches:
+
+#### RETRACTED_CURRENT
+
+1. `site:pubmed.ncbi.nlm.nih.gov "Retraction of" 2026 journal DOI`
+2. `site:pubmed.ncbi.nlm.nih.gov "Retraction of" 2025 journal DOI`
+
+#### MATERIAL_CORRECTION_HISTORICAL
+
+3. `site:pubmed.ncbi.nlm.nih.gov "Published Erratum" 2026 journal DOI`
+4. `site:pubmed.ncbi.nlm.nih.gov "Published Erratum" 2025 journal DOI`
+
+#### CONCERN_CURRENT
+
+5. `site:pubmed.ncbi.nlm.nih.gov "Expression of Concern" 2026 journal DOI`
+6. `site:pubmed.ncbi.nlm.nih.gov "Expression of Concern" 2025 journal DOI`
+
+Use the first returned search-result set for each query. Do not reformulate a
+query because results look unattractive.
+
+### Pool construction
+
+For each status class:
+
+1. aggregate all results from its two frozen queries;
+2. deduplicate by PubMed URL/PMID;
+3. treat each returned result as a **notice candidate**, not automatically as an
+   eligible original article;
+4. open notice pages only as necessary to recover:
+   - original article DOI;
+   - notice type;
+   - notice/publication date;
+   - original journal/year;
+5. retain only original DOI identities whose status-event date satisfies the
+   frozen 2025-01-01..2026-08-31 window;
+6. normalize DOI;
+7. preserve the full retained DOI list and list hash;
+8. apply the already-frozen Needle selection hash;
+9. perform substantive eligibility verification only in ascending selection-hash
+   order.
+
+### Exposure limitation
+
+Public web search results may expose notice/article titles while DOI relations are
+being recovered.
+
+This is classified:
+
+`POOL_METADATA_PREVIEW_EXPOSURE`
+
+It cannot influence selection because all retained DOI identities are sorted by
+the frozen hash before eligibility inspection.
+
+Do not use search snippets as evidence for:
+
+- scientific findings;
+- materiality;
+- status consequence;
+- experiment scoring.
+
+Final status still requires authoritative publisher/PubMed/Crossref/Crossmark/
+Retraction Watch evidence available for the selected DOI.
+
+### Control selection
+
+After RETRACTED_CURRENT is frozen, use two fixed web searches:
+
+1. `site:pubmed.ncbi.nlm.nih.gov "<exact journal name>" "<publication year>"`
+2. `site:pubmed.ncbi.nlm.nih.gov "<exact journal name>" "<publication year>" DOI`
+
+Aggregate returned DOI-bearing articles, exclude any selected status case, apply
+the frozen control hash, then verify no known status update.
+
+If no eligible same-journal/year control is present in those fixed result sets,
+apply the already-frozen fallback order using one corresponding pair of fixed
+searches for each fallback tier.
+
+### Hard stop
+
+After these fixed searches begin:
+
+- no fourth transport mechanism;
+- no hand-picked substitute candidate;
+- no topic-based candidate selection;
+- no widening the status-event window;
+- no extra search query because a selected case seems too easy/hard.
+
+Transport insufficiency is an experiment result, not a reason to redesign the
+sample after exposure.

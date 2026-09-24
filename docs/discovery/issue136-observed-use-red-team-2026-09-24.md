@@ -178,3 +178,38 @@ Proceed with #136 before #139.
 The test is worthwhile only under the bounded evidence label above; do not call
 this direct observation and do not reuse the already-exposed NIS2 task as the
 first discriminating task.
+
+
+## Boxed-first amendment
+
+Sponsor dogfood is no longer the first discriminating step.
+
+Run a boxed synthetic workflow pass first using the actual Explorer in an
+isolated browser session.
+
+This pass may establish only:
+
+- whether expected workflows are mechanically possible;
+- whether search/filter/navigation friction is visible;
+- whether the decisive trap can be preserved through the UI;
+- whether evidence ownership/provenance can still be reached;
+- whether the Explorer introduces obvious interpretation or fail-closed defects;
+- whether a matched direct-corpus route exposes qualitatively different friction.
+
+It may **not** establish:
+
+- human preference;
+- human comprehension quality;
+- adoption;
+- switching behavior;
+- external-user value.
+
+Label all resulting evidence:
+
+`AGENT_SYNTHETIC / BOXED_WORKFLOW`
+
+Human evidence is requested only if #139 still needs it to distinguish competing
+project identities after the boxed result is known.
+
+This amendment reduces sponsor burden without weakening the claim boundary:
+synthetic evidence remains synthetic.

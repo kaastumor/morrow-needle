@@ -6,39 +6,40 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **#264 ACTIVE RESEARCH — PARTY CHOICE AS APPLICABLE-LAW STATE**
+# **#268 ACTIVE RESEARCH — SECOND COVERAGE GATE**
 
 Sponsor rule #217 remains canonical:
 
 > a hypothesis may stop; the sponsored research program pivots immediately to
 > the next bounded WIP=1 research question.
 
-The latest coverage-led batch (#261/#263) produced:
+The latest reconciled research batch (#264/#266/#267) produced:
 
-- #261 COVERAGE — selected relational/extraterritorial applicability as the
-  highest-information uncovered state dimension;
-- #263 ADMIT — `UNION_NEXUS_APPLICABILITY`.
+- #264 ADMIT — `CHOICE_OF_LAW_STATE`;
+- #266 ADMIT — `DIRECTIVE_INVOCABILITY_STATE`;
+- #267 RED TEAM — no lossless merge/retirement among the six newest classes.
 
 Canonical corpus:
 
-> **66 cases / 22 trap classes**
+> **70 cases / 24 trap classes**
 
-#264 is the sole active research WIP.
+#268 is the sole active research WIP.
 
-It tests whether a legally effective party/person choice creates a distinct
-applicable-law state that cannot be inferred safely from forum, location,
-nationality or default connecting factors.
+It performs a second coverage-selection gate after filling relational Union
+nexus, choice-of-law and Directive-invocability gaps.
 
-Primary candidates:
-- Rome I Regulation Article 3;
-- Succession Regulation Article 22.
+Candidate dimensions include:
+- remedy/enforcement consequence state;
+- mutual recognition/passporting;
+- individual derogation/exemption/authorisation;
+- burden/presumption;
+- minimum-harmonisation national overlay;
+- procedural standing/admissibility.
 
-Required controls preserve mandatory consumer/employment protection,
-overriding-mandatory/public-policy limits and default connecting factors where
-no valid choice exists.
+#268 itself adds no case/class. It must select exactly one next bounded question
+or record that no candidate clears the bar.
 
-Do not build a conflict-of-laws engine, contract parser, estate tool, schema or
-product.
+Do not retry #214 or manufacture product scope.
 
 Historical "worker idle", "idle by design" and event-trigger-only wording below
 is superseded by #217 for current execution.

@@ -148,6 +148,7 @@ increase trap-class count. A negative result keeps #171 narrow.
 - `docs/discovery/evidence-triggered-discovery-red-team-2026-09-24.md`
 - `docs/discovery/cycle1-synthesis-project-health-2026-09-24.md`
 - `docs/discovery/cycle2-synthesis-2026-09-24.md`
+- `docs/discovery/cycle3-run-d-authority-handoff-generalisation-2026-09-24.md`
 - `docs/discovery/cycle3-synthesis-2026-09-24.md`
 - `docs/experiments/issue165-scholarly-status-result-2026-09-24.md`
 - `docs/discovery/post-issue165-project-health-2026-09-24.md`

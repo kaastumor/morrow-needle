@@ -239,11 +239,20 @@ Recent results now include both subtraction and new cross-domain mechanisms:
 - #252 REVISE/ADOPT — Swiss Schengen generalised
   `CROSS_ORDER_INCORPORATION_STATE` beyond the EEA.
 
-The corpus is now **57 cases / 19 trap classes**.
+#253/#255/#256 then completed another bounded research batch:
+
+- #253 ADOPT — Barber supplied a genuine temporal-effects limitation case under
+  `JUDICIAL_INTERPRETATION_TEMPORAL_EFFECT`;
+- #255 ADMIT — `SUBSTATE_TERRITORIAL_REGIME` from France and Denmark
+  territorial-regime distinctions;
+- #256 ADOPT — food-safety assessment validated
+  `PROCEDURAL_CLOCK_SUSPENSION` outside merger/medicines procedure.
+
+The corpus is now **61 cases / 20 trap classes**.
 
 Current horizon:
 
-> **ACTIVE RESEARCH — #253: actual CJEU temporal-effect limitation exception**
+> **ACTIVE RESEARCH — #257: Cyprus acquis suspension as substate territorial generality**
 
 The smallest surviving identity remains:
 
@@ -288,6 +297,7 @@ work.
 - `docs/discovery/issue221-private-origin-artifact-generality-result-2026-09-24.md`
 - `docs/discovery/issue244-taxonomy-compression-result-2026-09-24.md`
 - `docs/discovery/issues245-252-sponsored-discovery-synthesis-2026-09-24.md`
+- `docs/discovery/issues253-256-sponsored-discovery-synthesis-2026-09-24.md`
 - `docs/discovery/post-issue195-project-health-2026-09-24.md`
 - `docs/experiments/issue165-scholarly-status-result-2026-09-24.md`
 - `docs/discovery/post-issue165-project-health-2026-09-24.md`

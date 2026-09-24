@@ -6,53 +6,50 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **#273 DEPTH RESULT — MERGE PENDING; THEN VERTICAL-SPATIAL DEPTH**
+# **#286 DEPTH RESULT — MERGE PENDING; THEN CHOICE-OF-FORUM DEPTH**
 
-Sponsor rule #217 remains canonical:
+Sponsor rule #217 remains canonical.
 
-> a hypothesis may stop; the sponsored research program pivots immediately to
-> the next bounded WIP=1 research question.
+#286 completed depth run **2/3** with:
 
-#282 repaired the research rules and returned the project to depth mode.
+> **REVISE_EXISTING_CLASS — retain `VERTICAL_SPATIAL_EXTENT`, sharpen the vertical
+> differentiation boundary, and add one WFD groundwater-body derivation case.**
 
-#273 is depth run **1/3** under the #282 falsifier and resolves:
+Staged corpus:
 
-> **REVISE_EXISTING_CLASS — retain differentiated Member-State participation, sharpen
-> the direct-participation boundary, and add one Protocol 21 derivation case.**
-
-Key result:
-- Protocol 21 Article 4 expressly reuses Article 331(1) TFEU *mutatis mutandis*;
-- Ireland therefore supplies a genuine protocol/opt-in generalisation of the existing
-  participation-state owner;
-- Denmark is not a clean binary negative because Regulation 2024/1351 also routes Parts
-  III, V and VII through separate EU-Denmark agreement machinery;
-- the class now distinguishes participation in the EU act as Union law from equivalent or
-  partial application through a separate agreement/incorporation route.
-
-Staged corpus on the #273 branch:
-
-> **80 cases / 26 classes**
+> **81 cases / 26 classes**
 
 No new class.
 
-This run is **informative**, not confirmation-only, because it sharpens the exclusion
-boundary. The three-run depth falsifier therefore does not trigger.
+Key result:
+- WFD groundwater bodies can be separately delineated in vertically overlying strata
+  where status differs;
+- current EEA reporting acknowledges that groundwater-body polygons are surface
+  projections of 3-D entities and uses horizon/layer state to distinguish overlaps;
+- horizontal x/y alone can therefore conflate legally distinct status units;
+- the class now expressly permits vertical stratification/horizon state, while #227
+  continues to exclude vertical measurements that can be losslessly projected into a 2-D
+  mask.
 
-After #273 merges, the mechanically weakest class is now:
+Depth run 2/3 is **informative** because the definition/boundary changed.
 
-> **`VERTICAL_SPATIAL_EXTENT` — 2 dedicated cases**
+After #286 merges, the preselected depth run **3/3** target is:
 
-That class is the preselected next depth target. The next run must test whether aviation
-vertical limits and subsurface CO2 storage instantiate one reusable legal-volume
-regression owner, or whether the definition is only an analogy between domain-specific
-three-dimensional scope rules.
+> **`CHOICE_OF_FORUM_STATE`**
 
-Do not begin that substantive research until #273 is merged and closed, preserving WIP=1.
+Selection basis:
+- three corpus cases only;
+- all remain within private international law;
+- one is composition evidence rather than an independent mechanism;
+- it is among the newest classes and therefore high-risk for path dependence;
+- mature jurisdiction-agreement doctrine makes it a direct stress test of #282's
+  incumbent/residual-value rule.
 
-Execution follows checkpointed burst rules: substantive bounded work, early durable state,
-one late CI check, and GitHub-first recovery.
+Run 3 must test whether the class has a consequential standalone regression owner beyond
+restating familiar jurisdiction-agreement doctrine. Narrowing, consolidation or retirement
+must remain live outcomes.
 
-Do not retry #214 or manufacture product scope.
+Do not begin substantive run-3 research until #286 is merged and closed.
 
 Historical "worker idle", "idle by design" and event-trigger-only wording below is
 superseded by #217 for current execution.

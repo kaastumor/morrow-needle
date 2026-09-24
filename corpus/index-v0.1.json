@@ -8,7 +8,7 @@
     "DYNAMIC_REFERENCE_STATUS": "Legal effect changes because the authoritative status of a referenced external item changes while the parent rule or external identifier remains unchanged.",
     "STATUS_APPLICATION_SEPARATION": "Authoritative status or set membership and downstream legal applicability begin or end at different legal boundaries.",
     "SUBDAY_TEMPORAL_BOUNDARY": "A legally material boundary occurs at a time finer than calendar-date granularity.",
-    "VERTICAL_SPATIAL_EXTENT": "Legal geography is volumetric and cannot be represented safely as horizontal geometry alone.",
+    "VERTICAL_SPATIAL_EXTENT": "Legal geography has a legally consequential vertical extent or stratification such that horizontal geometry alone can conflate distinct legal spatial states; this includes bounded altitude/volume and stacked legally distinct spatial units, but excludes vertical measurements that can be losslessly projected into a horizontal mask.",
     "JUDICIAL_VALIDITY_TEXT_DIVERGENCE": "A judicial holding changes validity or operative legal state while the target text remains printed or textually unchanged.",
     "PRIVATE_ORIGIN_LEGAL_RECOGNITION": "A private-origin output, technical artifact or determination can have a bounded legal role because public law recognises, approves, incorporates or adopts it, without converting the private source into a public authority.",
     "PARALLEL_INSTRUMENT_LIFECYCLE": "An umbrella negotiation or political deal is implemented through legally distinct interim and comprehensive agreements whose signature, provisional application, conclusion, entry into force and replacement states must remain attached to the correct instrument.",
@@ -1877,7 +1877,30 @@
         "issue:273",
         "path:docs/discovery/issue273-protocol-participation-result-2026-09-25.md"
       ]
+    },
+    {
+      "id": "wfd-groundwater-overlying-status-bodies",
+      "title": "WFD groundwater bodies can be vertically superimposed status units",
+      "domain": "water law / groundwater status",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "VERTICAL_SPATIAL_EXTENT"
+      ],
+      "provenance": {
+        "issue": 286,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Water Framework Directive groundwater bodies may be separately delineated in vertically overlying strata where status differs, while EEA WISE represents their 3-D bodies through 2-D surface projections plus distinct horizon/layer state; a horizontal footprint alone can therefore conflate the groundwater body whose chemical/quantitative status and objectives apply.",
+      "evidence_refs": [
+        "issue:286",
+        "path:docs/discovery/issue286-groundwater-vertical-depth-result-2026-09-25.md"
+      ]
     }
   ],
-  "case_count": 80
+  "case_count": 81
 }

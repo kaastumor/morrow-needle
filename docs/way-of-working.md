@@ -79,6 +79,21 @@ For a taxonomy/corpus candidate:
 - never claim novelty merely because Needle uses a different label;
 - never deny corpus value merely because the underlying doctrine is mature.
 
+Here **lossless** is intentionally narrow. Loss means loss of a **pre-specified
+consequential distinction in a regression question**: for example a different expected
+answer, evidence requirement, state transition, boundary condition or pass/fail outcome.
+Loss of descriptive nuance, doctrinal vocabulary or implementation detail is not enough
+to protect a separate class.
+
+Likewise:
+
+- failure to prove redundancy is **not** evidence of residual value;
+- preserving a useful regression case does **not** automatically justify preserving its
+  current organising class;
+- cases may remain valuable after class consolidation;
+- the burden is symmetric: admission requires positive residual value, while compression
+  requires evidence that the consequential distinction survives under a broader owner.
+
 A coverage gate selecting an uncovered dimension creates **no presumption of
 admission**. The follow-up research run starts from the null that no new class is needed
 and must re-run incumbent/existing-class first refusal.
@@ -92,6 +107,13 @@ superseded.
 Do not silently leave depth, compression, generality or another constrained lane because
 a more interesting candidate appears. Reconcile the mode change first and preserve the
 abandoned/deferred question explicitly.
+
+A depth lane must also earn its continuation. If **three consecutive depth runs**, each
+selected before substantive research begins, produce only additional illustrations and
+none produces a changed definition, sharper exclusion boundary, consequential correction
+to a regression expectation, rejection, retirement or compression signal, the claimed
+information advantage of depth is falsified. Run an explicit direction review before a
+fourth confirmation-style depth run.
 
 ## Checkpointed burst execution
 

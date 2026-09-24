@@ -23,13 +23,13 @@
     "SOURCE_VIEW_TEMPORAL_DIVERGENCE": "A consolidated, derived, summary or tracker view has its own observation, editorial or update horizon that can diverge from the legal/source state relevant to the query; current accessibility and nominal view date are not substitutes for the view's actual temporal state.",
     "AUTHORITATIVE_EXTERNAL_INPUT_TRIGGER": "An unchanged legal rule delegates an operative result to an authoritative non-normative external factual or data input, such as a quantitative value set or an officially confirmed categorical finding; a new authoritative input can change the legal/compliance output without parent-text mutation.",
     "EXPRESSION_LOCAL_REPRESENTATION_ASYMMETRY": "A language or expression representation can carry local authenticity, corrective scope, labels or ordinals that are not safe cross-expression legal identities or effects; cross-expression use requires the relevant authenticity/scope rule or a canonical underlying identifier.",
-    "MEMBER_STATE_OPTION_DIVERGENCE": "A Union act that otherwise binds or applies across the relevant Member States expressly delegates a bounded legal choice or parameter to national law; the operative result depends on whether and how the relevant Member State exercised that option, so the EU default and another Member State's choice are insufficient.",
     "SUBSTATE_TERRITORIAL_REGIME": "EU-law applicability can differ between territories constitutionally linked to the same sovereign Member State because Treaty or instrument-specific territorial status attaches to the territory rather than the country label; legal scope must preserve the relevant territorial regime instead of inheriting mainland or Member-State status wholesale.",
     "EU_PRIMACY_DISAPPLICATION_STATE": "A national provision can remain formally valid, in force and textually current while directly effective EU law requires it to be disapplied in the relevant dispute or scope; formal validity does not determine operative applicability, and the conflict, direct-effect condition and procedural context must be preserved.",
     "UNION_NEXUS_APPLICABILITY": "EU-law applicability can attach to an actor or conduct outside the Union because the governing rule defines scope through a legally specified Union nexus, such as targeted persons or recipients, a regulated Union market or instrument, or output/use in the Union; actor establishment or physical location alone is insufficient, while incidental or passive Union contact is insufficient where the required nexus is not met.",
     "CHOICE_OF_LAW_STATE": "A legally valid choice by the relevant party or person can select the law governing a relationship or succession instead of the law that would follow from default connecting factors; applicable law cannot be inferred safely from forum, location, habitual residence or nationality alone, and the existence, validity, scope and mandatory limits of the choice must be preserved.",
     "DIRECTIVE_INVOCABILITY_STATE": "A Directive provision may be in force and its transposition deadline may have expired, yet direct invocability in a dispute depends on whether the provision is sufficiently precise and unconditional and whether the defendant is the State or an emanation of the State; a Directive cannot of itself impose obligations on a private individual.",
-    "CROSS_BORDER_RECOGNITION_ACTIVATION_STATE": "A home-state authorisation, qualification or regulated entitlement can acquire legally effective use in another Member State through a specified Union notification, transmission, recognition or passport procedure; home entitlement alone does not prove host-state activation, while completion of the Union procedure may remove the need for a fresh standalone host authorisation. The activation step, target host/service scope and continuing home entitlement must be preserved."
+    "CROSS_BORDER_RECOGNITION_ACTIVATION_STATE": "A home-state authorisation, qualification or regulated entitlement can acquire legally effective use in another Member State through a specified Union notification, transmission, recognition or passport procedure; home entitlement alone does not prove host-state activation, while completion of the Union procedure may remove the need for a fresh standalone host authorisation. The activation step, target host/service scope and continuing home entitlement must be preserved.",
+    "MEMBER_STATE_PERMITTED_DIVERGENCE": "A Union rule expressly permits a bounded national option, parameter or more protective national rule, so the operative legal result can legitimately differ by Member State even though the same Union framework applies; the relevant national exercise of that permission must be resolved, and the Union default/floor or another Member State's rule is insufficient."
   },
   "cases": [
     {
@@ -1284,7 +1284,7 @@
       "domain": "data protection",
       "jurisdiction": "EU + Member States",
       "trap_classes": [
-        "MEMBER_STATE_OPTION_DIVERGENCE"
+        "MEMBER_STATE_PERMITTED_DIVERGENCE"
       ],
       "provenance": {
         "issue": 250,
@@ -1306,7 +1306,7 @@
       "domain": "crypto-assets / financial regulation",
       "jurisdiction": "EU + Member States",
       "trap_classes": [
-        "MEMBER_STATE_OPTION_DIVERGENCE",
+        "MEMBER_STATE_PERMITTED_DIVERGENCE",
         "COHORTED_TRANSITIONAL_APPLICABILITY"
       ],
       "provenance": {
@@ -1696,7 +1696,29 @@
       "evidence_refs": [
         "issue:270"
       ]
+    },
+    {
+      "id": "working-time-more-favourable-national-protection",
+      "title": "Working Time Directive permits more favourable national worker protection",
+      "domain": "employment / working time",
+      "jurisdiction": "EU + Member States",
+      "trap_classes": [
+        "MEMBER_STATE_PERMITTED_DIVERGENCE"
+      ],
+      "provenance": {
+        "issue": 272,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Directive 2003/88 Article 15 preserves Member States' right to apply or introduce more favourable worker-protection rules; the Union Directive supplies a floor, not the complete national answer, while full-harmonisation instruments show that such divergence cannot be presumed.",
+      "evidence_refs": [
+        "issue:272"
+      ]
     }
   ],
-  "case_count": 72
+  "case_count": 73
 }

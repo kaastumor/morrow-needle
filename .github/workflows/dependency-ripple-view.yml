@@ -1,24 +1,9 @@
 name: Legislative X-Ray dependency ripple
+# Passive historical/research workflow. Manual dispatch only under #290.
 
 on:
-  push:
-    paths:
-      - "src/needle/analytics/dependency_ripple.py"
-      - "schemas/dependency-ripple-*.schema.json"
-      - "fixtures/analytics/dependency-ripple-first-cohort-v0.1.json"
-      - "fixtures/discovery/reach-art67-annex17-entry78-ripple-v0.1.json"
-      - "fixtures/mutations/reach-annex17-entry78-2023-insert-v0.1.json"
-      - "fixtures/semantic/reach-art67-annex17-entry78-ripple-v0.1.json"
-      - "fixtures/thread/reg794-article3-p4-continuity-v0.1.json"
-      - "fixtures/mutations/reg794-article3-p3-2025-live-verified-v0.1.json"
-      - "fixtures/semantic/reg794-article3-2025-atoms-v0.1.json"
-      - "tests/test_dependency_ripple_view.py"
-      - "tests/test_reach_dependency_ripple.py"
-      - "tests/test_gold_dependency_ripple.py"
-      - "fixtures/gold/dependency-ripple-first-cohort-v0.1.json"
-      - "scripts/build_dependency_ripple_view.py"
-      - ".github/workflows/dependency-ripple-view.yml"
   workflow_dispatch:
+
 
 jobs:
   verify:

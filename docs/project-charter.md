@@ -209,30 +209,40 @@ This is documentary/taxonomy evidence only. It does not show that a model would
 miss the trap, that the mechanism is prevalent, or that a product surface has
 value.
 
-#200 completed the design/readiness gate with one real unresolved
-external benchmark task: contradictory OPP-115 labels in LegalBench issue #56.
-The conflict reproduces at the frozen benchmark revision and has an accessible
-primary-evidence route through the original OPP-115 corpus.
+#203 completed the one allowed two-arm LegalBench OPP-115 diagnostic.
+
+Both workers independently recommended quarantine of the contradictory
+identical-input rows and both reported unresolved primary row provenance.
+Under the frozen #203 rule, both-INDETERMINATE means:
+
+> **UNRESOLVED**
+
+The shared quarantine action is operational convergence, not retroactive
+frozen-score parity. Arm C also reported no decision-changing contribution from
+the Needle treatment. Because the task prompt itself surfaced the conservative
+provenance/quarantine boundary, #203 does not test unprompted discovery of that
+failure mode.
+
+The project-level consequence is deliberately smaller:
+
+- benchmark-diagnostic distinctiveness remains unproven;
+- ordinary source-linked QA remains the default for this surfaced job;
+- no corpus-specific diagnostic wrapper or retry is earned.
 
 The current active horizon is:
 
-> **#203 — consequential corpus-use diagnostic execution**
+> **#207 — registry-absence baseline challenge**
 
-#203 tests the surviving core more directly than another taxonomy cycle:
+#207 attacks the strongest parked Cycle-3 reserve with mature completeness
+semantics before any fresh legal validation. It asks whether
+`OFFICIAL_REGISTRY_COVERAGE_OVERCLAIM` predicts a useful legal boundary beyond
+open/closed-world reasoning, completeness assertions and ordinary source-scope
+checking.
 
-> Does access to the existing adversarial corpus/evaluation discipline change the
-> supported consequential scoring disposition compared with competent ordinary
-> source-linked benchmark QA under equal resources?
+A negative result should delete the proposed distinction.
 
-The experiment has one frozen primary outcome,
-`VERIFIED_SCORING_DISPOSITION`, and requires separate fresh contexts/workers.
-The #200 design session is contaminated and cannot count as either arm.
-
-A parity result is meaningful: for this diagnostic job it supports simplifying
-toward ordinary source-linked cases + behavioral QA rather than expanding the
-corpus wrapper.
-
-No Cycle 4, product implementation or new persistent architecture is authorised.
+No Cycle 4, product implementation, new trap class or persistent architecture is
+authorised by this horizon.
 
 ## Repository discipline
 

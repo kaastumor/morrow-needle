@@ -57,6 +57,8 @@ Every entry ends in one disposition:
 
 | #195 official authority-handoff generality | DISCOVERY | #171's technical-standard-specific failure family is either genuinely narrow or one instance of a reusable cross-domain authority/effect handoff | Existing #171 RTS cases + fresh EMA/CHMP, ECHA RAC/SEAC and direct-effect agency control | Fresh Balversa and N,N-dimethylformamide chains reproduce a material upstream-complete/downstream-binding gap; fresh Candidate List inclusion shows agency action can itself own legal effect. Rename/generalise one class in place; no case/class count growth, model claim or product claim. | SIMPLIFY | `docs/experiments/issue195-official-authority-handoff-generality-result-2026-09-24.md` and Issue #195 |
 
+| #203 OPP-115 corpus-use diagnostic | PARITY | Adding the current Needle corpus/evaluation treatment changes the consequential disposition of a real benchmark conflict over competent ordinary source-linked QA | Fresh Arm R ordinary QA vs fresh Arm C with identical task/access budget plus corpus index, evaluation protocol and #150 calibration | Both arms independently recommended quarantine and no invented relabel; Arm C reported no decision-changing treatment contribution. The frozen experiment score remains **UNRESOLVED**, not formal parity, because both arms reported provenance-level INDETERMINATE. The PARITY character here records observed consequential-action convergence only and must not be promoted into a general equivalence claim. | PARK | `docs/experiments/issue203-opp115-corpus-use-result-2026-09-24.md` and Issue #203 |
+
 ## Rules
 
 1. Do not add an entry because work was completed.

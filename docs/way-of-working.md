@@ -58,6 +58,63 @@ A completed work item may end in `REJECT`, `PARK`, `SIMPLIFY` or `STOP`.
 The project-level action is then **PIVOT TO RESEARCH**, unless the sponsor
 explicitly terminates the project.
 
+## Incumbent and residual-value test
+
+Discovery must distinguish **doctrinal/market existence** from project value.
+
+> **Existing is not useless. Different is not valuable. Novel is not demanded.**
+
+The strongest incumbent doctrine, method, competitor or ordinary research rule is the
+baseline. Its existence is neither an automatic REJECT nor evidence that Needle adds
+value.
+
+For a taxonomy/corpus candidate:
+
+- **REJECT** when the incumbent plus existing Needle classes losslessly predicts and
+  expresses the consequential legal-information failure, leaving no bounded residual
+  regression/reference value;
+- **REVISE/ADMIT** only when a reusable residual state survives, its positive and
+  boundary evidence are explicit, and the label materially helps organise or test
+  regression cases rather than merely renaming known doctrine;
+- never claim novelty merely because Needle uses a different label;
+- never deny corpus value merely because the underlying doctrine is mature.
+
+Here **lossless** is intentionally narrow. Loss means loss of a **pre-specified
+consequential distinction in a regression question**: for example a different expected
+answer, evidence requirement, state transition, boundary condition or pass/fail outcome.
+Loss of descriptive nuance, doctrinal vocabulary or implementation detail is not enough
+to protect a separate class.
+
+Likewise:
+
+- failure to prove redundancy is **not** evidence of residual value;
+- preserving a useful regression case does **not** automatically justify preserving its
+  current organising class;
+- cases may remain valuable after class consolidation;
+- the burden is symmetric: admission requires positive residual value, while compression
+  requires evidence that the consequential distinction survives under a broader owner.
+
+A coverage gate selecting an uncovered dimension creates **no presumption of
+admission**. The follow-up research run starts from the null that no new class is needed
+and must re-run incumbent/existing-class first refusal.
+
+## Research-mode binding
+
+A Project Health, coverage or red-team gate that selects a research mode or sole next
+WIP is binding until that work completes or a later explicit gate records why it is
+superseded.
+
+Do not silently leave depth, compression, generality or another constrained lane because
+a more interesting candidate appears. Reconcile the mode change first and preserve the
+abandoned/deferred question explicitly.
+
+A depth lane must also earn its continuation. If **three consecutive depth runs**, each
+selected before substantive research begins, produce only additional illustrations and
+none produces a changed definition, sharper exclusion boundary, consequential correction
+to a regression expectation, rejection, retirement or compression signal, the claimed
+information advantage of depth is falsified. Run an explicit direction review before a
+fourth confirmation-style depth run.
+
 ## Checkpointed burst execution
 
 Autonomous work is executed in **checkpointed bursts** so chat/transport failures do

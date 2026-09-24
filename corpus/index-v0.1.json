@@ -10,7 +10,6 @@
     "REPRESENTATION_LOCAL_MARKER_IDENTITY": "Presentation markers or ordinals are local to a language/expression and are unsafe as cross-expression legal identities.",
     "DYNAMIC_REFERENCE_STATUS": "Legal effect changes because the authoritative status of a referenced external item changes while the parent rule or external identifier remains unchanged.",
     "STATUS_APPLICATION_SEPARATION": "Authoritative status or set membership and downstream legal applicability begin or end at different legal boundaries.",
-    "AUTHORITATIVE_METRIC_TRIGGER": "An official numeric observation enters an unchanged legal formula and changes the operative legal output.",
     "AUTHORITATIVE_FINDING_TO_SPATIAL_EFFECT": "An authoritative categorical real-world finding triggers legal geography under unchanged law.",
     "SUBDAY_TEMPORAL_BOUNDARY": "A legally material boundary occurs at a time finer than calendar-date granularity.",
     "VERTICAL_SPATIAL_EXTENT": "Legal geography is volumetric and cannot be represented safely as horizontal geometry alone.",
@@ -20,7 +19,8 @@
     "PARALLEL_INSTRUMENT_LIFECYCLE": "An umbrella negotiation or political deal is implemented through legally distinct interim and comprehensive agreements whose signature, provisional application, conclusion, entry into force and replacement states must remain attached to the correct instrument.",
     "OFFICIAL_TRACKER_UPDATE_LAG": "A currently accessible official summary/status tracker lags newer primary legal sources, so current access time cannot be substituted for the tracker's observation or update horizon.",
     "OFFICIAL_AUTHORITY_HANDOFF": "An official specialist artifact may be complete or final within its upstream role while a different institution owns the downstream binding decision; legal effect must remain attached to the procedure's actual decision owner and binding act rather than inherited from upstream authority, finality or practical importance.",
-    "EXECUTABLE_COMPLIANCE_ARTIFACT": "A legal calculation, declaration or verification outcome depends on a prescribed, privileged or certified executable tool; the artifact identity, version or regulatory status is legally relevant evidence, so substituting another/current executable can change the accepted result or verification consequence without parent-text mutation."
+    "EXECUTABLE_COMPLIANCE_ARTIFACT": "A legal calculation, declaration or verification outcome depends on a prescribed, privileged or certified executable tool; the artifact identity, version or regulatory status is legally relevant evidence, so substituting another/current executable can change the accepted result or verification consequence without parent-text mutation.",
+    "AUTHORITATIVE_DATA_INPUT_TRIGGER": "An authoritative quantitative observation, value set or versioned reference dataset enters an unchanged legal formula or method and changes the operative calculation/compliance output without parent-text mutation; historical reconstruction must preserve the authoritative data version and its application state."
   },
   "cases": [
     {
@@ -145,7 +145,7 @@
       "domain": "emissions trading",
       "jurisdiction": "EU",
       "trap_classes": [
-        "AUTHORITATIVE_METRIC_TRIGGER"
+        "AUTHORITATIVE_DATA_INPUT_TRIGGER"
       ],
       "provenance": {
         "issue": 79,
@@ -780,7 +780,30 @@
         "issue:220",
         "path:docs/discovery/issue220-executable-compliance-artifact-result-2026-09-24.md"
       ]
+    },
+    {
+      "id": "eu-ecolabel-did-list-data-input",
+      "title": "EU Ecolabel calculations depend on the current Detergent Ingredient Database",
+      "domain": "EU Ecolabel / detergents and cosmetics",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "AUTHORITATIVE_DATA_INPUT_TRIGGER"
+      ],
+      "provenance": {
+        "issue": 222,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "EU Ecolabel criteria require the DID list as the quantitative source for CDV and biodegradability/toxicity calculations and direct users to the latest version; historical or current calculations cannot silently substitute an arbitrary dataset vintage while treating the unchanged criteria text as the whole legal input.",
+      "evidence_refs": [
+        "issue:222",
+        "path:docs/discovery/issue222-authoritative-data-input-result-2026-09-24.md"
+      ]
     }
   ],
-  "case_count": 31
+  "case_count": 32
 }

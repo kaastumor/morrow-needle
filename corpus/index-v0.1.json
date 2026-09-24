@@ -22,7 +22,8 @@
     "JUDICIAL_INTERPRETATION_TEMPORAL_EFFECT": "A preliminary ruling normally clarifies the interpreted EU rule from that rule's own entry into force; the judgment date is not a default new prospective start, while any express Court-imposed limitation of temporal effects is an exceptional legal boundary that must be preserved.",
     "LANGUAGE_AUTHENTICITY_SCOPE_ASYMMETRY": "Officially available language expressions can differ in legal authenticity or corrective scope; the existence, wording or legal effect of one language expression must not be projected onto another without evidence of the relevant authenticity/scope rule.",
     "PROCEDURAL_SILENCE_LEGAL_EFFECT": "A legally specified period can expire without an affirmative administrative act and the governing rule itself assigns a legal consequence to that non-action; the resulting state cannot be reconstructed safely by searching only for positive decision documents.",
-    "COHORTED_TRANSITIONAL_APPLICABILITY": "Current legal applicability depends on an object's qualifying historical cohort event or legacy state, such as placement on market, putting into service, certificate/declaration status or significant change; similar current objects can therefore have different legal treatment unless the cohort-defining history is preserved."
+    "COHORTED_TRANSITIONAL_APPLICABILITY": "Current legal applicability depends on an object's qualifying historical cohort event or legacy state, such as placement on market, putting into service, certificate/declaration status or significant change; similar current objects can therefore have different legal treatment unless the cohort-defining history is preserved.",
+    "PROCEDURAL_CLOCK_SUSPENSION": "A legally defined decision or assessment period can be suspended and later resumed by specified procedural events; nominal elapsed calendar or working time is not equivalent to elapsed legal clock time unless suspension intervals are preserved."
   },
   "cases": [
     {
@@ -1072,7 +1073,51 @@
       "evidence_refs": [
         "issue:239"
       ]
+    },
+    {
+      "id": "eu-merger-procedural-clock-suspension",
+      "title": "EU merger decision clock pauses while legally specified information remains outstanding",
+      "domain": "merger control",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "PROCEDURAL_CLOCK_SUSPENSION"
+      ],
+      "provenance": {
+        "issue": 241,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Merger decision periods can be suspended by specified information-request events; a nominal 25/90-working-day deadline cannot be reconstructed from the start date alone once a valid clock stop occurs.",
+      "evidence_refs": [
+        "issue:241"
+      ]
+    },
+    {
+      "id": "medicines-assessment-clock-suspension",
+      "title": "Medicinal-product assessment period pauses for supplementary information",
+      "domain": "medicinal products",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "PROCEDURAL_CLOCK_SUSPENSION"
+      ],
+      "provenance": {
+        "issue": 241,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "EU medicines procedures suspend the assessment period while requested supplementary information or explanations are outstanding; elapsed wall-clock time is not the operative legal assessment time.",
+      "evidence_refs": [
+        "issue:241"
+      ]
     }
   ],
-  "case_count": 44
+  "case_count": 46
 }

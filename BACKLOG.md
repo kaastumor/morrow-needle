@@ -6,65 +6,48 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **IDLE BY DESIGN**
+# **ACTIVE DISCOVERY — CYCLE 2**
 
-#150 is complete with **REVISE**.
+Sponsor explicitly requires continued action and discovery.
 
-The post-#150 Project Health Check retains the essential identity:
+The prior post-#150 `IDLE BY DESIGN` state is superseded as the current
+operating choice. Its evidence conclusions remain valid; its queue decision does
+not.
 
-> **Needle = adversarial legal-research corpus + evaluation protocol.**
+Active parent: **#155 — linked discovery from proven Needle mechanisms**.
 
-The experiment found one fresh mechanical inconsistency in DELTA v1.1.0's
-public third-party harness/reproducibility contract, while three selected tasks
-produced no confirmed defect and one Dutch-law candidate remained unconfirmed.
+WIP=1 execution order:
 
-That is useful external-transfer evidence for Needle's evaluation-integrity /
-evidence-closure discipline, but it does not earn:
+1. #156 — document-role / authority / lifecycle transfer scan;
+2. #157 — provenance / evidence-closure transfer scan;
+3. #158 — official-summary / primary-source divergence scan;
+4. #159 — adversarial corpus/protocol transfer scan;
+5. #160 — Cycle 2 synthesis.
 
-- another benchmark audit;
-- a benchmark product/service;
-- a new discovery cycle;
-- Explorer promotion;
-- new infrastructure;
-- a replacement autonomous queue.
+This cycle is active search, not passive waiting and not feature brainstorming.
 
-There is **no AUTO READY work**.
+Each run must:
 
-### Evidence triggers that may reopen work
+- start from a proven Needle evidence anchor;
+- search existing solutions and strong alternatives before inventing;
+- test structural correspondence rather than surface similarity;
+- include a boundary/counterexample;
+- produce at most one falsifiable transfer hypothesis;
+- end in `REJECT / PARK / REVISE / ADOPT_FOR_EXPERIMENT`;
+- authorise no product implementation by itself.
 
-A new task may be selected only from a concrete trigger such as:
+Cycle 2 may expand the opportunity map even when the strong baseline remains
+correct. For product/workflow claims, test:
 
-1. a fresh falsifiable legal-information question grounded in authoritative
-   evidence;
-2. an independently encountered adversary that may add/challenge a corpus
-   failure mechanism;
-3. real intended-user Explorer use that makes H-16 decision-relevant;
-4. a named external legal-evaluation artifact with concrete integrity or
-   reproduction friction;
-5. an independently justified sealed/execution-sensitive evaluation that
-   naturally triggers the #138 closure technique;
-6. a direct external/user job with a falsifiable Needle relative-value claim.
+> difference → importance → behavioral consequence → switching/adoption friction.
 
-A linked-search hypothesis alone is not a trigger.
+For correctness/validity claims, the strong baseline must still materially fail.
 
-Do not run another benchmark merely to establish generality after #150's
-positive finding.
+Sponsor authorisation means an empty queue is **not** currently the desired
+operating mode. Anti-theatre remains a quality constraint, not a reason to stop
+discovery.
 
-Canonical post-#150 decision:
-`docs/discovery/post-issue150-project-health-2026-09-24.md`
-
-The standing research/audit rules remain:
-
-1. start from a concrete legal-information question capable of being wrong;
-2. prefer official/source evidence and the smallest existing contract that can
-   answer it;
-3. preserve negative/parity results;
-4. for correctness, validity and canonical representation, add durable
-   complexity only after a simpler baseline materially fails;
-5. for product/workflow surfaces, correctness parity may coexist with value only
-   when observed relative advantage matters enough to change behavior and stays
-   above the validity/provenance floor;
-6. an idle queue is preferable to invented work.
+Canonical parent: #155.
 
 **Issue #88 is complete. Its pre-registered stop rule fired.**
 

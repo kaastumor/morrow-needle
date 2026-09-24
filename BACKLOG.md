@@ -6,37 +6,41 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **#222 ACTIVE RESEARCH — VERSIONED AUTHORITATIVE DATASETS AS LEGAL INPUTS**
+# **#230 ACTIVE RESEARCH — JUDICIAL INTERPRETATION TIME SEMANTICS**
 
-Sponsor rule #217 permanently supersedes `IDLE BY DESIGN` as a project
-operating state.
+Sponsor rule #217 is canonical:
 
-A hypothesis may stop. The sponsored research program immediately pivots to the
-next bounded WIP=1 research question.
+> a hypothesis may stop; the sponsored research program pivots immediately to
+> the next bounded WIP=1 research question.
 
-#214's zero-rescue scientific result remains binding for the tested diagnostic
-workflow. It is not being retried.
+#214's zero-rescue result remains binding and is not being retried.
 
-Post-#214 research now shows the intended cadence:
+Post-correction research has now produced both subtraction and bounded corpus
+generality:
 
-- **#218 — REJECT.** Static/dynamic external-reference version semantics are
-  already owned by mature legal-reference doctrine.
-- **#219 — ADOPT_FOR_DERIVATION.** Legally prescribed/privileged executable
-  tools can be a distinct legal-information owner.
-- **#220 — ADMIT_DERIVATION_CLASS.** Added
-  `EXECUTABLE_COMPLIANCE_ARTIFACT` with two exposed regression/reference
-  cases.
-- **#221 — REVISE_EXISTING_CLASS.** Broadened
-  `PRIVATE_ORIGIN_LEGAL_RECOGNITION` in place; no parallel normative-document
-  class.
+- #218 REJECT — static/dynamic external-reference semantics already owned by
+  mature doctrine;
+- #220 ADMIT/DERIVE — machine-actionable compliance artifacts;
+- #221 REVISE — broadened private-origin legal recognition in place;
+- #222 REVISE — metric trigger -> authoritative data-input trigger;
+- #224 ADOPT — eIDAS trusted-list status validates dynamic reference status
+  cross-domain;
+- #225 REVISE — executable artifact -> machine compliance artifact;
+- #226 ADOPT — plant-health official findings generate legal geography;
+- #227 REJECT — marine depth is not automatically volumetric legal extent;
+- #228 REJECT — cryptographic proof scope is ordinary evidentiary-scope
+  analysis, not a new class.
 
 Canonical corpus:
 
-> **31 cases / 16 trap classes**
+> **35 cases / 16 trap classes**
 
-#222 now tests whether versioned official datasets are a distinct legal-input
-mechanism or whether `AUTHORITATIVE_METRIC_TRIGGER` should simply be
-generalised.
+#230 is the sole active WIP item.
+
+It tests whether `JUDICIAL_INTERPRETATION_TEMPORAL_OVERCLAIM` genuinely adds a
+reusable legal-information distinction beyond settled CJEU doctrine that
+preliminary rulings are declaratory and normally clarify the interpreted rule
+from its own entry into force, subject to exceptional temporal limitation.
 
 Do not retry #214, manufacture product scope, or equate research continuity with
 feature growth.

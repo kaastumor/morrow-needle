@@ -1449,7 +1449,29 @@
       "evidence_refs": [
         "issue:256"
       ]
+    },
+    {
+      "id": "cyprus-protocol10-acquis-suspension",
+      "title": "Cyprus Protocol No 10 suspends the acquis within part of one Member State",
+      "domain": "Treaty territorial scope / Cyprus",
+      "jurisdiction": "EU + Cyprus",
+      "trap_classes": [
+        "SUBSTATE_TERRITORIAL_REGIME"
+      ],
+      "provenance": {
+        "issue": 257,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Protocol No 10 suspends the acquis in areas of the Republic of Cyprus outside effective government control while the whole island remains part of the Member State/EU; country identity alone cannot determine territorial applicability, and the Green Line is a special interface regime rather than an external EU border.",
+      "evidence_refs": [
+        "issue:257"
+      ]
     }
   ],
-  "case_count": 61
+  "case_count": 62
 }

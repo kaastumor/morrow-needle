@@ -1,11 +1,9 @@
 name: Operational legal-change replay discovery
+# Passive historical/research workflow. Manual dispatch only under #290.
 
 on:
-  push:
-    paths:
-      - "scripts/discover_operational_replay_events.py"
-      - ".github/workflows/operational-replay-discovery.yml"
   workflow_dispatch:
+
 
 jobs:
   discover:

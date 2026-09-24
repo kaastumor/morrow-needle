@@ -270,27 +270,43 @@ The smallest evidence-backed identity remains:
 > **Needle adversarial legal-research regression/reference corpus + minimal
 > evaluation discipline.**
 
-Post-#214 sponsored research has now produced both subtraction and one bounded
-taxonomy addition:
+Post-#214 sponsored research now shows a stable WIP=1 discovery pattern:
+strong incumbent doctrine first, subtraction where possible, bounded admission
+only where a distinct representation failure survives.
 
-- #218 rejected a new static/dynamic-reference class;
-- #219/#220 established `EXECUTABLE_COMPLIANCE_ARTIFACT`;
-- #221 broadened `PRIVATE_ORIGIN_LEGAL_RECOGNITION` in place rather than
-  multiplying private-origin classes.
+Current results include:
 
-The corpus is now **31 cases / 16 trap classes**.
+- in-place revisions for authoritative data inputs, machine compliance
+  artifacts, judicial interpretation timing, language authenticity/scope and
+  local identifier mapping;
+- clean rejections where ordinary doctrine already owns the question
+  (#227, #228, #232, #236, #240);
+- cross-domain derivation support for judicial-validity divergence, sub-day
+  timing, volumetric legal geography and finding-generated geography;
+- new bounded classes for procedural silence, cohorted transitional
+  applicability, procedural clock suspension and cross-order incorporation
+  state.
+
+#243 then added one bounded territorial-scope mechanism for differentiated
+Member-State participation.
+
+#244 immediately red-teamed the resulting 50-case / 21-class taxonomy rather
+than rewarding taxonomy growth. Three class pairs were merged without deleting
+any case, leaving:
+
+> **50 cases / 18 trap classes**
+
+The compression keeps distinct causal owners for procedural timing,
+jurisdiction/order scope, machine artifacts, judicial effects and source roles
+while removing direction/output/representation-specific duplicate labels.
 
 Current active research:
 
-> **#222 — versioned authoritative datasets as legal inputs**
+> **#245 — scoped third-country adequacy/equivalence recognition**
 
-#222 asks whether official multi-value dataset state needs a distinct owner or
-whether `AUTHORITATIVE_METRIC_TRIGGER` should generalise from individual
-metrics to authoritative data inputs.
-
-Continuous research does not authorise investigator reruns, harder #214
-replacement cases, product implementation, new trap classes or persistent
-architecture without separate evidence.
+Continuous research does not authorise a retry of #214, product implementation,
+schema growth, monitoring infrastructure or taxonomy expansion without the same
+strong-baseline and negative-control discipline.
 
 ## Repository discipline
 

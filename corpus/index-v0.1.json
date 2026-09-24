@@ -5,22 +5,24 @@
   "purpose": "Index public adversarial EU legal-research cases without duplicating their underlying legal evidence.",
   "reuse_policy": "Every case in this public seed is scientifically exposed and is regression-only for future evaluation. Fresh blind validation requires a new independently selected and sealed case.",
   "trap_classes": {
-    "SOURCE_STATE_BACKPROJECTION": "A current or consolidated representation contains later corrections or information that cannot prove the source state visible at the nominal historical date.",
-    "LANGUAGE_SCOPE_ASYMMETRY": "A correction or legal expression has language-specific scope; another authentic expression cannot be inferred from it without independent evidence.",
-    "REPRESENTATION_LOCAL_MARKER_IDENTITY": "Presentation markers or ordinals are local to a language/expression and are unsafe as cross-expression legal identities.",
     "DYNAMIC_REFERENCE_STATUS": "Legal effect changes because the authoritative status of a referenced external item changes while the parent rule or external identifier remains unchanged.",
     "STATUS_APPLICATION_SEPARATION": "Authoritative status or set membership and downstream legal applicability begin or end at different legal boundaries.",
-    "AUTHORITATIVE_FINDING_TO_SPATIAL_EFFECT": "An authoritative categorical real-world finding triggers legal geography under unchanged law.",
     "SUBDAY_TEMPORAL_BOUNDARY": "A legally material boundary occurs at a time finer than calendar-date granularity.",
     "VERTICAL_SPATIAL_EXTENT": "Legal geography is volumetric and cannot be represented safely as horizontal geometry alone.",
     "JUDICIAL_VALIDITY_TEXT_DIVERGENCE": "A judicial holding changes validity or operative legal state while the target text remains printed or textually unchanged.",
-    "JUDICIAL_INTERPRETATION_TEMPORAL_OVERCLAIM": "A judicial interpretation supplies authoritative meaning without automatically creating a new prospective application start at judgment date.",
     "PRIVATE_ORIGIN_LEGAL_RECOGNITION": "A private-origin output, technical artifact or determination can have a bounded legal role because public law recognises, approves, incorporates or adopts it, without converting the private source into a public authority.",
     "PARALLEL_INSTRUMENT_LIFECYCLE": "An umbrella negotiation or political deal is implemented through legally distinct interim and comprehensive agreements whose signature, provisional application, conclusion, entry into force and replacement states must remain attached to the correct instrument.",
-    "OFFICIAL_TRACKER_UPDATE_LAG": "A currently accessible official summary/status tracker lags newer primary legal sources, so current access time cannot be substituted for the tracker's observation or update horizon.",
     "OFFICIAL_AUTHORITY_HANDOFF": "An official specialist artifact may be complete or final within its upstream role while a different institution owns the downstream binding decision; legal effect must remain attached to the procedure's actual decision owner and binding act rather than inherited from upstream authority, finality or practical importance.",
-    "AUTHORITATIVE_DATA_INPUT_TRIGGER": "An authoritative quantitative observation, value set or versioned reference dataset enters an unchanged legal formula or method and changes the operative calculation/compliance output without parent-text mutation; historical reconstruction must preserve the authoritative data version and its application state.",
-    "MACHINE_COMPLIANCE_ARTIFACT": "A legally consequential calculation, declaration, submission or verification depends on a prescribed, authoritative, privileged or certified machine-actionable artifact such as an executable tool, ruleset, schema or semantic profile; artifact identity, version or regulatory status is legally relevant evidence, so substituting another/current artifact can change the accepted result or validation consequence without parent-text mutation."
+    "MACHINE_COMPLIANCE_ARTIFACT": "A legally consequential calculation, declaration, submission or verification depends on a prescribed, authoritative, privileged or certified machine-actionable artifact such as an executable tool, ruleset, schema or semantic profile; artifact identity, version or regulatory status is legally relevant evidence, so substituting another/current artifact can change the accepted result or validation consequence without parent-text mutation.",
+    "JUDICIAL_INTERPRETATION_TEMPORAL_EFFECT": "A preliminary ruling normally clarifies the interpreted EU rule from that rule's own entry into force; the judgment date is not a default new prospective start, while any express Court-imposed limitation of temporal effects is an exceptional legal boundary that must be preserved.",
+    "PROCEDURAL_SILENCE_LEGAL_EFFECT": "A legally specified period can expire without an affirmative administrative act and the governing rule itself assigns a legal consequence to that non-action; the resulting state cannot be reconstructed safely by searching only for positive decision documents.",
+    "COHORTED_TRANSITIONAL_APPLICABILITY": "Current legal applicability depends on an object's qualifying historical cohort event or legacy state, such as placement on market, putting into service, certificate/declaration status or significant change; similar current objects can therefore have different legal treatment unless the cohort-defining history is preserved.",
+    "PROCEDURAL_CLOCK_SUSPENSION": "A legally defined decision or assessment period can be suspended and later resumed by specified procedural events; nominal elapsed calendar or working time is not equivalent to elapsed legal clock time unless suspension intervals are preserved.",
+    "CROSS_ORDER_INCORPORATION_STATE": "A legal act can be operative in one legal order while remaining only relevant, under scrutiny, incorporated-but-not-yet-effective or otherwise non-operative in a linked legal order until a separate incorporation instrument and its entry-into-force conditions are satisfied; legal state, dates and adaptations must remain attached to the target legal order.",
+    "DIFFERENTIATED_MEMBER_STATE_PARTICIPATION": "An EU act can bind or apply only in a legally defined subset of Member States because of enhanced cooperation, opt-ins or Treaty protocols, and that participation set can change over time; applicability must be resolved against the act's participation regime and relevant date rather than inferred from the EU act label or today's participant list.",
+    "SOURCE_VIEW_TEMPORAL_DIVERGENCE": "A consolidated, derived, summary or tracker view has its own observation, editorial or update horizon that can diverge from the legal/source state relevant to the query; current accessibility and nominal view date are not substitutes for the view's actual temporal state.",
+    "AUTHORITATIVE_EXTERNAL_INPUT_TRIGGER": "An unchanged legal rule delegates an operative result to an authoritative non-normative external factual or data input, such as a quantitative value set or an officially confirmed categorical finding; a new authoritative input can change the legal/compliance output without parent-text mutation.",
+    "EXPRESSION_LOCAL_REPRESENTATION_ASYMMETRY": "A language or expression representation can carry local authenticity, corrective scope, labels or ordinals that are not safe cross-expression legal identities or effects; cross-expression use requires the relevant authenticity/scope rule or a canonical underlying identifier."
   },
   "cases": [
     {
@@ -29,7 +31,7 @@
       "domain": "state-aid procedure",
       "jurisdiction": "EU",
       "trap_classes": [
-        "SOURCE_STATE_BACKPROJECTION"
+        "SOURCE_VIEW_TEMPORAL_DIVERGENCE"
       ],
       "provenance": {
         "issue": 61,
@@ -52,7 +54,7 @@
       "domain": "state-aid procedure",
       "jurisdiction": "EU",
       "trap_classes": [
-        "LANGUAGE_SCOPE_ASYMMETRY"
+        "EXPRESSION_LOCAL_REPRESENTATION_ASYMMETRY"
       ],
       "provenance": {
         "issue": 64,
@@ -74,8 +76,7 @@
       "domain": "state-aid procedure",
       "jurisdiction": "EU",
       "trap_classes": [
-        "REPRESENTATION_LOCAL_MARKER_IDENTITY",
-        "LANGUAGE_SCOPE_ASYMMETRY"
+        "EXPRESSION_LOCAL_REPRESENTATION_ASYMMETRY"
       ],
       "provenance": {
         "issue": 67,
@@ -145,7 +146,7 @@
       "domain": "emissions trading",
       "jurisdiction": "EU",
       "trap_classes": [
-        "AUTHORITATIVE_DATA_INPUT_TRIGGER"
+        "AUTHORITATIVE_EXTERNAL_INPUT_TRIGGER"
       ],
       "provenance": {
         "issue": 79,
@@ -169,7 +170,7 @@
       "domain": "animal health",
       "jurisdiction": "EU + Netherlands",
       "trap_classes": [
-        "AUTHORITATIVE_FINDING_TO_SPATIAL_EFFECT"
+        "AUTHORITATIVE_EXTERNAL_INPUT_TRIGGER"
       ],
       "provenance": {
         "issue": 80,
@@ -264,7 +265,7 @@
       "domain": "privacy / electronic communications",
       "jurisdiction": "EU",
       "trap_classes": [
-        "JUDICIAL_INTERPRETATION_TEMPORAL_OVERCLAIM"
+        "JUDICIAL_INTERPRETATION_TEMPORAL_EFFECT"
       ],
       "provenance": {
         "issue": 83,
@@ -336,7 +337,7 @@
       "domain": "visas",
       "jurisdiction": "EU",
       "trap_classes": [
-        "SOURCE_STATE_BACKPROJECTION"
+        "SOURCE_VIEW_TEMPORAL_DIVERGENCE"
       ],
       "provenance": {
         "issue": 88,
@@ -363,7 +364,7 @@
       "domain": "cybersecurity",
       "jurisdiction": "EU",
       "trap_classes": [
-        "LANGUAGE_SCOPE_ASYMMETRY"
+        "EXPRESSION_LOCAL_REPRESENTATION_ASYMMETRY"
       ],
       "provenance": {
         "issue": 88,
@@ -544,7 +545,7 @@
       "domain": "cybersecurity / national transposition",
       "jurisdiction": "EU + Netherlands",
       "trap_classes": [
-        "OFFICIAL_TRACKER_UPDATE_LAG"
+        "SOURCE_VIEW_TEMPORAL_DIVERGENCE"
       ],
       "provenance": {
         "issue": 93,
@@ -567,7 +568,7 @@
       "domain": "cybersecurity / national transposition",
       "jurisdiction": "EU + Sweden",
       "trap_classes": [
-        "OFFICIAL_TRACKER_UPDATE_LAG"
+        "SOURCE_VIEW_TEMPORAL_DIVERGENCE"
       ],
       "provenance": {
         "issue": 93,
@@ -787,7 +788,7 @@
       "domain": "EU Ecolabel / detergents and cosmetics",
       "jurisdiction": "EU",
       "trap_classes": [
-        "AUTHORITATIVE_DATA_INPUT_TRIGGER"
+        "AUTHORITATIVE_EXTERNAL_INPUT_TRIGGER"
       ],
       "provenance": {
         "issue": 222,
@@ -856,7 +857,7 @@
       "domain": "plant health",
       "jurisdiction": "EU",
       "trap_classes": [
-        "AUTHORITATIVE_FINDING_TO_SPATIAL_EFFECT"
+        "AUTHORITATIVE_EXTERNAL_INPUT_TRIGGER"
       ],
       "provenance": {
         "issue": 226,
@@ -872,7 +873,337 @@
         "issue:226",
         "path:docs/discovery/issue226-plant-finding-spatial-generality-result-2026-09-24.md"
       ]
+    },
+    {
+      "id": "c360-25-interpretation-temporal-effect",
+      "title": "CJEU interpretation remains declaratory despite requested prospective limitation",
+      "domain": "state aid / taxation",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "JUDICIAL_INTERPRETATION_TEMPORAL_EFFECT"
+      ],
+      "provenance": {
+        "issue": 230,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "In Case C-360/25 the Court repeated that Article 267 interpretation clarifies the rule from its own entry into force and refused a requested temporal limitation; judgment date is not the default application start, while an express Court-imposed limitation would be a separate operative boundary.",
+      "evidence_refs": [
+        "issue:230"
+      ]
+    },
+    {
+      "id": "commission-state-aid-single-authentic-language",
+      "title": "Multilingual Official Journal publication does not make every language text authentic",
+      "domain": "state aid",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "EXPRESSION_LOCAL_REPRESENTATION_ASYMMETRY"
+      ],
+      "provenance": {
+        "issue": 231,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Commission Decision (EU) 2025/892 is published across the Official Journal language set while expressly stating that only the French text is authentic; multilingual availability must not be promoted into equal legal authenticity.",
+      "evidence_refs": [
+        "issue:231"
+      ]
+    },
+    {
+      "id": "meta-dma-partial-annulment-validity",
+      "title": "Meta DMA designation remains visible while Marketplace provision is judicially annulled",
+      "domain": "digital markets",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "JUDICIAL_VALIDITY_TEXT_DIVERGENCE"
+      ],
+      "provenance": {
+        "issue": 234,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "The 2023 Commission designation decision remains publicly visible, but the General Court annulled Article 2(f) concerning Marketplace while leaving the remainder intact; current validity cannot be inferred from printed source text alone, and the pending C-909/26 P appeal must remain explicit.",
+      "evidence_refs": [
+        "issue:234"
+      ]
+    },
+    {
+      "id": "fsr-digital-notification-cutoff",
+      "title": "FSR digital filing cut-off changes legally attributed notification day",
+      "domain": "foreign subsidies / merger control",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "SUBDAY_TEMPORAL_BOUNDARY"
+      ],
+      "provenance": {
+        "issue": 235,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Current Commission FSR filing instructions assign same-day notification status only before the 17:00 CET weekday cut-off (16:00 Fridays/pre-holidays); later submissions move to the next working day, which shifts the statutory review clock despite the same calendar-date submission attempt.",
+      "evidence_refs": [
+        "issue:235"
+      ]
+    },
+    {
+      "id": "ccs-storage-site-vertical-volume",
+      "title": "CO2 storage permit governs a defined subsurface volume rather than a 2D footprint",
+      "domain": "carbon capture and storage",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "VERTICAL_SPATIAL_EXTENT"
+      ],
+      "provenance": {
+        "issue": 237,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Directive 2009/31/EC defines the storage site as a defined volume area within a geological formation and requires volumetric 3-D characterisation including areal and vertical extent; a horizontal polygon alone cannot represent the legally bounded storage object.",
+      "evidence_refs": [
+        "issue:237"
+      ]
+    },
+    {
+      "id": "merger-deemed-compatible-silence",
+      "title": "EU merger can become deemed compatible without a positive Commission decision",
+      "domain": "merger control",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "PROCEDURAL_SILENCE_LEGAL_EFFECT"
+      ],
+      "provenance": {
+        "issue": 238,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Article 10(6) of Regulation 139/2004 assigns compatibility when the Commission fails to take the required decision within the statutory time limit; absence of a decision document can therefore be the legally causal fact.",
+      "evidence_refs": [
+        "issue:238"
+      ]
+    },
+    {
+      "id": "staff-regulations-publication-silence",
+      "title": "Staff publication request acquires deemed no-objection after institutional silence",
+      "domain": "EU civil service / freedom of expression",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "PROCEDURAL_SILENCE_LEGAL_EFFECT"
+      ],
+      "provenance": {
+        "issue": 238,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Staff Regulations Article 17a deems the appointing authority to have no objections if it fails to notify a decision within 30 working days; Fleig shows that the silence effect depends on the exact governing procedure and cannot be inferred from delay alone.",
+      "evidence_refs": [
+        "issue:238"
+      ]
+    },
+    {
+      "id": "ai-act-legacy-cohort-applicability",
+      "title": "AI Act current obligations depend on model/system placement cohort",
+      "domain": "artificial intelligence",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "COHORTED_TRANSITIONAL_APPLICABILITY"
+      ],
+      "provenance": {
+        "issue": 239,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "AI Act Article 111 gives different current transition paths to systems and GPAI models based on when they were placed on the market/put into service and, for some systems, whether significant later changes occurred; today's date alone cannot determine applicability.",
+      "evidence_refs": [
+        "issue:239"
+      ]
+    },
+    {
+      "id": "mdr-legacy-device-cohort-applicability",
+      "title": "MDR legacy-device transition depends on historical certificate and market cohort",
+      "domain": "medical devices",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "COHORTED_TRANSITIONAL_APPLICABILITY"
+      ],
+      "provenance": {
+        "issue": 239,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "MDR Article 120 transitional access depends on legacy certificate/declaration history plus continuing conditions such as absence of significant changes and later conformity milestones; similar current devices can fall under different regimes because of their cohort history.",
+      "evidence_refs": [
+        "issue:239"
+      ]
+    },
+    {
+      "id": "eu-merger-procedural-clock-suspension",
+      "title": "EU merger decision clock pauses while legally specified information remains outstanding",
+      "domain": "merger control",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "PROCEDURAL_CLOCK_SUSPENSION"
+      ],
+      "provenance": {
+        "issue": 241,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Merger decision periods can be suspended by specified information-request events; a nominal 25/90-working-day deadline cannot be reconstructed from the start date alone once a valid clock stop occurs.",
+      "evidence_refs": [
+        "issue:241"
+      ]
+    },
+    {
+      "id": "medicines-assessment-clock-suspension",
+      "title": "Medicinal-product assessment period pauses for supplementary information",
+      "domain": "medicinal products",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "PROCEDURAL_CLOCK_SUSPENSION"
+      ],
+      "provenance": {
+        "issue": 241,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "EU medicines procedures suspend the assessment period while requested supplementary information or explanations are outstanding; elapsed wall-clock time is not the operative legal assessment time.",
+      "evidence_refs": [
+        "issue:241"
+      ]
+    },
+    {
+      "id": "ai-act-eea-incorporation-pending",
+      "title": "AI Act is EEA-relevant while EEA incorporation remains pending",
+      "domain": "artificial intelligence / EEA law",
+      "jurisdiction": "EU + EEA EFTA",
+      "trap_classes": [
+        "CROSS_ORDER_INCORPORATION_STATE"
+      ],
+      "provenance": {
+        "issue": 242,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Regulation 2024/1689 is operative under EU law and marked EEA relevant, while EEA-Lex still records scrutiny/JCD entry into force as pending; EEA relevance cannot be promoted into present EEA applicability.",
+      "evidence_refs": [
+        "issue:242"
+      ]
+    },
+    {
+      "id": "gdpr-eu-eea-application-gap",
+      "title": "GDPR EU and EEA application dates diverged until Joint Committee incorporation",
+      "domain": "data protection / EEA law",
+      "jurisdiction": "EU + EEA EFTA",
+      "trap_classes": [
+        "CROSS_ORDER_INCORPORATION_STATE"
+      ],
+      "provenance": {
+        "issue": 242,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "GDPR applied in the EU from 25 May 2018 but only entered the EEA legal order on 20 July 2018 after JCD 154/2018 and constitutional requirements; one EU act had different operative states across linked legal orders.",
+      "evidence_refs": [
+        "issue:242"
+      ]
+    },
+    {
+      "id": "eppo-time-varying-participation",
+      "title": "EPPO territorial applicability follows a time-varying participating Member-State set",
+      "domain": "criminal justice / enhanced cooperation",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "DIFFERENTIATED_MEMBER_STATE_PARTICIPATION"
+      ],
+      "provenance": {
+        "issue": 243,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Regulation 2017/1939 initially bound only enhanced-cooperation participants; later Member States joined at different dates and Hungary's 2026 entry changed the regime again, so today's participant set cannot be back-projected to an earlier date.",
+      "evidence_refs": [
+        "issue:243"
+      ]
+    },
+    {
+      "id": "rome-iii-participating-member-states",
+      "title": "Rome III Regulation applies only in participating Member States",
+      "domain": "private international law / divorce",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "DIFFERENTIATED_MEMBER_STATE_PARTICIPATION"
+      ],
+      "provenance": {
+        "issue": 243,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Regulation 1259/2010 is an EU Regulation but expressly operates through enhanced cooperation and defines participating Member States; EU instrument form alone does not prove EU-wide Member-State applicability.",
+      "evidence_refs": [
+        "issue:243"
+      ]
     }
   ],
-  "case_count": 35
+  "case_count": 50
 }

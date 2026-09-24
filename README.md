@@ -192,25 +192,46 @@ question under WIP=1.
 
 Post-#214 research is continuous under sponsor rule #217.
 
-Recent results:
+Recent results now include both subtraction and new cross-domain mechanisms:
 
-- #218 rejected redundant static/dynamic-reference taxonomy;
-- #219/#220 admitted a bounded machine-artifact mechanism;
-- #221 broadened `PRIVATE_ORIGIN_LEGAL_RECOGNITION` in place;
-- #222 generalised scalar metrics and versioned datasets into
+- #218 REJECT — static/dynamic external-reference semantics stay with mature
+  reference doctrine;
+- #219/#220 ADMIT — machine-actionable compliance artifacts;
+- #221 REVISE — broadened `PRIVATE_ORIGIN_LEGAL_RECOGNITION` in place;
+- #222 REVISE — scalar metrics + versioned datasets ->
   `AUTHORITATIVE_DATA_INPUT_TRIGGER`;
-- #224 validated `DYNAMIC_REFERENCE_STATUS` cross-domain through eIDAS;
-- #225 broadened the machine class to `MACHINE_COMPLIANCE_ARTIFACT`;
-- #226 validated finding-generated legal geography in plant health;
-- #227 rejected a superficial marine-depth analogue for true 3D legal extent;
-- #228 rejected a cryptography-specific proof-scope class in favour of ordinary
-  evidentiary-scope analysis.
+- #224 ADOPT — eIDAS validated `DYNAMIC_REFERENCE_STATUS` cross-domain;
+- #225 REVISE — executable artifact -> `MACHINE_COMPLIANCE_ARTIFACT`;
+- #226 ADOPT — plant-health findings validated finding-generated legal geography;
+- #227 REJECT — marine depth did not qualify as true volumetric legal extent;
+- #228 REJECT — cryptographic proof scope stayed ordinary evidentiary analysis;
+- #230 REVISE — judicial interpretation timing now preserves both the
+  declaratory default and exceptional temporal-limit boundary;
+- #231 REVISE — language availability/authenticity/scope unified in one class;
+- #232 REJECT — notification-vs-publication timing stayed ordinary Article 297
+  instrument analysis;
+- #233 REVISE — local markers generalised to canonical-identifier mapping, with
+  no corpus inflation;
+- #234 ADOPT — partial DMA annulment strengthened judicial-validity divergence;
+- #235 ADOPT — FSR filing cut-off strengthened sub-day temporal generality;
+- #236 REJECT — AI Act rebuttable threshold classification stayed ordinary
+  presumption doctrine;
+- #237 ADOPT — CCS supplied a true subsurface volumetric legal-geography case;
+- #238 ADMIT — `PROCEDURAL_SILENCE_LEGAL_EFFECT`;
+- #239 ADMIT — `COHORTED_TRANSITIONAL_APPLICABILITY`;
+- #240 REJECT — generic ownership/control graph scope was too broad to be a
+  discriminating Needle class;
+- #241 ADMIT — `PROCEDURAL_CLOCK_SUSPENSION`;
+- #242 ADMIT — `CROSS_ORDER_INCORPORATION_STATE`;
+- #243 ADMIT — `DIFFERENTIATED_MEMBER_STATE_PARTICIPATION`;
+- #244 RED TEAM — preserved all 50 cases while compressing three overlapping
+  class pairs, reducing the taxonomy from 21 to **18** classes.
 
-The corpus is now **35 cases / 16 trap classes**.
+The corpus is now **50 cases / 18 trap classes**.
 
 Current horizon:
 
-> **ACTIVE RESEARCH — #230: judicial interpretation time semantics beyond Planet49**
+> **ACTIVE RESEARCH — #245: scoped third-country recognition**
 
 The smallest surviving identity remains:
 
@@ -253,6 +274,7 @@ work.
 - `docs/discovery/issue219-executable-compliance-software-result-2026-09-24.md`
 - `docs/discovery/issue220-executable-compliance-artifact-result-2026-09-24.md`
 - `docs/discovery/issue221-private-origin-artifact-generality-result-2026-09-24.md`
+- `docs/discovery/issue244-taxonomy-compression-result-2026-09-24.md`
 - `docs/discovery/post-issue195-project-health-2026-09-24.md`
 - `docs/experiments/issue165-scholarly-status-result-2026-09-24.md`
 - `docs/discovery/post-issue165-project-health-2026-09-24.md`

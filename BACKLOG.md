@@ -6,47 +6,43 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **#230 ACTIVE RESEARCH — JUDICIAL INTERPRETATION TIME SEMANTICS**
+# **#245 ACTIVE RESEARCH — SCOPED THIRD-COUNTRY RECOGNITION**
 
-Sponsor rule #217 is canonical:
+Sponsor rule #217 remains canonical:
 
 > a hypothesis may stop; the sponsored research program pivots immediately to
 > the next bounded WIP=1 research question.
 
-#214's zero-rescue result remains binding and is not being retried.
+The latest research batch is reconciled before #245 begins:
 
-Post-correction research has now produced both subtraction and bounded corpus
-generality:
-
-- #218 REJECT — static/dynamic external-reference semantics already owned by
-  mature doctrine;
-- #220 ADMIT/DERIVE — machine-actionable compliance artifacts;
-- #221 REVISE — broadened private-origin legal recognition in place;
-- #222 REVISE — metric trigger -> authoritative data-input trigger;
-- #224 ADOPT — eIDAS trusted-list status validates dynamic reference status
-  cross-domain;
-- #225 REVISE — executable artifact -> machine compliance artifact;
-- #226 ADOPT — plant-health official findings generate legal geography;
-- #227 REJECT — marine depth is not automatically volumetric legal extent;
-- #228 REJECT — cryptographic proof scope is ordinary evidentiary-scope
-  analysis, not a new class.
+- #243 admitted `DIFFERENTIATED_MEMBER_STATE_PARTICIPATION`;
+- #244 red-teamed the full taxonomy and merged three overlapping class pairs;
+- all **50 cases** were preserved;
+- trap classes reduced from **21 to 18**.
 
 Canonical corpus:
 
-> **35 cases / 16 trap classes**
+> **50 cases / 18 trap classes**
 
-#230 is the sole active WIP item.
+#245 is the sole active research WIP.
 
-It tests whether `JUDICIAL_INTERPRETATION_TEMPORAL_OVERCLAIM` genuinely adds a
-reusable legal-information distinction beyond settled CJEU doctrine that
-preliminary rulings are declaratory and normally clarify the interpreted rule
-from its own entry into force, subject to exceptional temporal limitation.
+It tests whether EU third-country adequacy/equivalence recognition has a
+distinct representation failure where a country-level label masks narrower
+organisation-, sector-, purpose-, time- or condition-specific scope.
 
-Do not retry #214, manufacture product scope, or equate research continuity with
-feature growth.
+Initial examples:
+- EU-US Data Privacy Framework adequacy applies to participating/certified U.S.
+  organisations rather than every U.S. recipient;
+- financial-services equivalence decisions can be partial, conditional,
+  legislation-specific and time-limited.
 
-**Any historical "worker idle", "idle by design" or event-trigger-only wording
-below is superseded by #217 for current execution.**
+Apply ordinary adequacy/equivalence scope doctrine and existing-class first
+refusal before any taxonomy change.
+
+Do not retry #214, add product scope, or build a registry/equivalence monitor.
+
+Historical "worker idle", "idle by design" and event-trigger-only wording below
+is superseded by #217 for current execution.
 
 **Issue #88 is complete. Its pre-registered stop rule fired.**
 

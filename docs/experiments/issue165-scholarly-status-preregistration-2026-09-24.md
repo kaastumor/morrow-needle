@@ -512,3 +512,91 @@ At the first commit of this file:
 
 Candidate retrieval may begin only after this preregistration is durably
 committed.
+
+
+## 21. Pre-candidate transport amendment — PubMed status-notice index
+
+Recorded before any #165 validation candidate content is inspected.
+
+### Why the transport changed
+
+The frozen Crossref scientific source remains valid, but the current execution
+environment cannot retrieve the Crossref REST result payloads directly.
+
+The official Retraction Watch GitLab CSV was also reachable only as a raw file
+too large for the available web retrieval layer.
+
+No candidate DOI, paper title, notice content or model output was inspected
+before this amendment.
+
+### Replacement enumeration transport
+
+Use PubMed's indexed post-publication notice relationships to enumerate the
+candidate pools.
+
+Status-event window remains unchanged:
+
+`2025-01-01 <= notice_publication_date <= 2026-08-31`
+
+Status notice queries:
+
+- RETRACTED_CURRENT:
+  `Retraction of Publication[Publication Type]`
+- MATERIAL_CORRECTION_HISTORICAL:
+  `Published Erratum[Publication Type]`
+- CONCERN_CURRENT:
+  `Expression of Concern[Publication Type]`
+
+For each class:
+
+1. PubMed ESearch retrieves at most 200 notice PMIDs, sorted by publication date
+   descending, inside the frozen notice-date window;
+2. PubMed EFetch/record relations identify the original article;
+3. only original articles with DOI identity qualify;
+4. normalize the original DOI to lowercase;
+5. compute the already-frozen hash:
+   `SHA256("needle165|<status-class>|<doi>")`;
+6. sort ascending and inspect only in hash order until eligibility is met.
+
+PubMed is used here as an **enumeration/index transport**, not as the sole final
+status authority.
+
+Selected status must still be verified against one or more of:
+
+- publisher notice;
+- Crossref/Crossmark metadata where individually accessible;
+- Retraction Watch/Crossref record where individually accessible.
+
+### Correction / concern semantics remain unchanged
+
+A Published Erratum does not automatically qualify as material.
+
+The frozen material-correction eligibility rule still applies.
+
+An Expression of Concern candidate must still be verified as an operative
+warning not superseded by retraction/removal.
+
+### Control selection remains unchanged in substance
+
+After the retracted article is selected, enumerate DOI-bearing PubMed articles
+from the same journal and publication year.
+
+Apply the existing control hash and no-known-update verification rules.
+
+### Scientific-input integrity
+
+This amendment changes only candidate-list transport.
+
+It does not change:
+
+- four status classes;
+- status-event window;
+- DOI identity;
+- hash rule;
+- eligibility/materiality rules;
+- derivation exclusions;
+- evaluation `as_of`;
+- prompts;
+- model/arms;
+- scoring;
+- success/kill rules.

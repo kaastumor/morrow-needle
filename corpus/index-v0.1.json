@@ -19,8 +19,8 @@
     "PARALLEL_INSTRUMENT_LIFECYCLE": "An umbrella negotiation or political deal is implemented through legally distinct interim and comprehensive agreements whose signature, provisional application, conclusion, entry into force and replacement states must remain attached to the correct instrument.",
     "OFFICIAL_TRACKER_UPDATE_LAG": "A currently accessible official summary/status tracker lags newer primary legal sources, so current access time cannot be substituted for the tracker's observation or update horizon.",
     "OFFICIAL_AUTHORITY_HANDOFF": "An official specialist artifact may be complete or final within its upstream role while a different institution owns the downstream binding decision; legal effect must remain attached to the procedure's actual decision owner and binding act rather than inherited from upstream authority, finality or practical importance.",
-    "EXECUTABLE_COMPLIANCE_ARTIFACT": "A legal calculation, declaration or verification outcome depends on a prescribed, privileged or certified executable tool; the artifact identity, version or regulatory status is legally relevant evidence, so substituting another/current executable can change the accepted result or verification consequence without parent-text mutation.",
-    "AUTHORITATIVE_DATA_INPUT_TRIGGER": "An authoritative quantitative observation, value set or versioned reference dataset enters an unchanged legal formula or method and changes the operative calculation/compliance output without parent-text mutation; historical reconstruction must preserve the authoritative data version and its application state."
+    "AUTHORITATIVE_DATA_INPUT_TRIGGER": "An authoritative quantitative observation, value set or versioned reference dataset enters an unchanged legal formula or method and changes the operative calculation/compliance output without parent-text mutation; historical reconstruction must preserve the authoritative data version and its application state.",
+    "MACHINE_COMPLIANCE_ARTIFACT": "A legally consequential calculation, declaration, submission or verification depends on a prescribed, authoritative, privileged or certified machine-actionable artifact such as an executable tool, ruleset, schema or semantic profile; artifact identity, version or regulatory status is legally relevant evidence, so substituting another/current artifact can change the accepted result or validation consequence without parent-text mutation."
   },
   "cases": [
     {
@@ -740,7 +740,7 @@
       "domain": "construction products / environmental sustainability",
       "jurisdiction": "EU",
       "trap_classes": [
-        "EXECUTABLE_COMPLIANCE_ARTIFACT",
+        "MACHINE_COMPLIANCE_ARTIFACT",
         "STATUS_APPLICATION_SEPARATION"
       ],
       "provenance": {
@@ -764,7 +764,7 @@
       "domain": "transport services / greenhouse-gas accounting",
       "jurisdiction": "EU",
       "trap_classes": [
-        "EXECUTABLE_COMPLIANCE_ARTIFACT"
+        "MACHINE_COMPLIANCE_ARTIFACT"
       ],
       "provenance": {
         "issue": 220,
@@ -803,7 +803,76 @@
         "issue:222",
         "path:docs/discovery/issue222-authoritative-data-input-result-2026-09-24.md"
       ]
+    },
+    {
+      "id": "eidas-anf-trusted-list-status",
+      "title": "eIDAS trusted-list status changes qualified legal effect for the same service",
+      "domain": "electronic identification / trust services",
+      "jurisdiction": "EU + Spain",
+      "trap_classes": [
+        "DYNAMIC_REFERENCE_STATUS"
+      ],
+      "provenance": {
+        "issue": 224,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "The same ANF validation-service identity moved from Granted to Withdrawn status in the national trusted list; under eIDAS, qualified status and its legal effects follow the authoritative list status rather than provider identity or mere list presence.",
+      "evidence_refs": [
+        "issue:224",
+        "path:docs/discovery/issue224-eidas-dynamic-reference-status-result-2026-09-24.md"
+      ]
+    },
+    {
+      "id": "dpp-semantic-profile-version",
+      "title": "Digital Product Passport conformity depends on a versioned authoritative semantic profile",
+      "domain": "ecodesign / digital product passports",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "MACHINE_COMPLIANCE_ARTIFACT"
+      ],
+      "provenance": {
+        "issue": 225,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Implementing Regulation (EU) 2026/1778 requires DPP data to follow versioned Commission-published data models and semantic definitions from the authoritative machine-readable repository; validating historical or current passport data against the wrong profile version can change machine conformity without any parent-text amendment.",
+      "evidence_refs": [
+        "issue:225",
+        "path:docs/discovery/issue225-machine-compliance-artifact-result-2026-09-24.md"
+      ]
+    },
+    {
+      "id": "anoplophora-finding-demarcated-area",
+      "title": "Official Asian longhorn beetle finding generates plant-health demarcated geography",
+      "domain": "plant health",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "AUTHORITATIVE_FINDING_TO_SPATIAL_EFFECT"
+      ],
+      "provenance": {
+        "issue": 226,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Under Implementing Regulation (EU) 2025/1952, official confirmation of Anoplophora glabripennis triggers infected/buffer geography under unchanged law, subject to an isolated-finding/non-establishment derogation; surveillance or suspicion alone does not create the ordinary demarcated area.",
+      "evidence_refs": [
+        "issue:226",
+        "path:docs/discovery/issue226-plant-finding-spatial-generality-result-2026-09-24.md"
+      ]
     }
   ],
-  "case_count": 32
+  "case_count": 35
 }

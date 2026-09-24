@@ -248,11 +248,19 @@ Recent results now include both subtraction and new cross-domain mechanisms:
 - #256 ADOPT — food-safety assessment validated
   `PROCEDURAL_CLOCK_SUSPENSION` outside merger/medicines procedure.
 
-The corpus is now **61 cases / 20 trap classes**.
+#257/#259/#260 then completed another bounded research batch:
+
+- #257 ADOPT — Cyprus Protocol No 10 strengthened
+  `SUBSTATE_TERRITORIAL_REGIME`;
+- #259 ADMIT — `EU_PRIMACY_DISAPPLICATION_STATE`;
+- #260 RED TEAM — targeted overlap audit found no lossless merge among the new
+  jurisdiction/cohort/judicial/primacy classes.
+
+The corpus is now **64 cases / 21 trap classes**.
 
 Current horizon:
 
-> **ACTIVE RESEARCH — #257: Cyprus acquis suspension as substate territorial generality**
+> **ACTIVE RESEARCH — #261: coverage map after 64 cases / 21 classes**
 
 The smallest surviving identity remains:
 
@@ -298,6 +306,7 @@ work.
 - `docs/discovery/issue244-taxonomy-compression-result-2026-09-24.md`
 - `docs/discovery/issues245-252-sponsored-discovery-synthesis-2026-09-24.md`
 - `docs/discovery/issues253-256-sponsored-discovery-synthesis-2026-09-24.md`
+- `docs/discovery/issues257-260-sponsored-discovery-synthesis-2026-09-24.md`
 - `docs/discovery/post-issue195-project-health-2026-09-24.md`
 - `docs/experiments/issue165-scholarly-status-result-2026-09-24.md`
 - `docs/discovery/post-issue165-project-health-2026-09-24.md`

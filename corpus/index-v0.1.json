@@ -19,7 +19,7 @@
     "COHORTED_TRANSITIONAL_APPLICABILITY": "Current legal applicability depends on a regulated subject, asset, data set or object's qualifying historical cohort event or legacy state, such as placement on market, putting into service, receipt while qualifying status existed, certificate/declaration status or significant change; similar current states can therefore receive different legal treatment unless cohort-defining history is preserved.",
     "PROCEDURAL_CLOCK_SUSPENSION": "A legally defined decision or assessment period can be suspended and later resumed by specified procedural events; nominal elapsed calendar or working time is not equivalent to elapsed legal clock time unless suspension intervals are preserved.",
     "CROSS_ORDER_INCORPORATION_STATE": "A legal act can be operative in one legal order while remaining only relevant, notified, under scrutiny, accepted-but-not-yet-effective or otherwise non-operative in a linked legal order until that order's required acceptance or incorporation mechanism and entry-into-effect conditions are satisfied; legal state, dates and adaptations must remain attached to the target legal order.",
-    "DIFFERENTIATED_MEMBER_STATE_PARTICIPATION": "An EU act can bind or apply only in a legally defined subset of Member States because of enhanced cooperation, opt-ins or Treaty protocols, and that participation set can change over time; applicability must be resolved against the act's participation regime and relevant date rather than inferred from the EU act label or today's participant list.",
+    "DIFFERENTIATED_MEMBER_STATE_PARTICIPATION": "An EU act can bind or apply as Union law only in a legally defined subset of Member States because of enhanced cooperation, opt-ins or Treaty protocols, and that participation set can change over time; applicability must be resolved against the act's participation regime and relevant date rather than inferred from the EU act label or today's participant list. A separate agreement or incorporation route that makes equivalent or partial content operative does not by itself make a non-participating Member State a participant in the EU act.",
     "SOURCE_VIEW_TEMPORAL_DIVERGENCE": "A consolidated, derived, summary or tracker view has its own observation, editorial or update horizon that can diverge from the legal/source state relevant to the query; current accessibility and nominal view date are not substitutes for the view's actual temporal state.",
     "AUTHORITATIVE_EXTERNAL_INPUT_TRIGGER": "An unchanged legal rule delegates an operative result to an authoritative non-normative external factual or data input, such as a quantitative value set or an officially confirmed categorical finding; a new authoritative input can change the legal/compliance output without parent-text mutation.",
     "EXPRESSION_LOCAL_REPRESENTATION_ASYMMETRY": "A language or expression representation can carry local authenticity, corrective scope, labels or ordinals that are not safe cross-expression legal identities or effects; cross-expression use requires the relevant authenticity/scope rule or a canonical underlying identifier.",
@@ -1854,7 +1854,30 @@
       "evidence_refs": [
         "issue:280"
       ]
+    },
+    {
+      "id": "ireland-aamm-protocol21-post-adoption-opt-in",
+      "title": "Ireland joins the Asylum and Migration Management Regulation after a Protocol 21 post-adoption opt-in",
+      "domain": "asylum and migration / Protocol 21",
+      "jurisdiction": "EU / Ireland",
+      "trap_classes": [
+        "DIFFERENTIATED_MEMBER_STATE_PARTICIPATION"
+      ],
+      "provenance": {
+        "issue": 273,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Regulation (EU) 2024/1351 recorded Ireland as non-participating and not bound at adoption, but Protocol 21 Article 4 allowed a later opt-in and Commission Decision (EU) 2024/2088 confirmed participation; applicability must resolve Ireland's participation state at the relevant date rather than freeze either the adoption-state recital or the current participant list.",
+      "evidence_refs": [
+        "issue:273",
+        "path:docs/discovery/issue273-protocol-participation-result-2026-09-25.md"
+      ]
     }
   ],
-  "case_count": 79
+  "case_count": 80
 }

@@ -6,47 +6,40 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **#230 ACTIVE RESEARCH — JUDICIAL INTERPRETATION TIME SEMANTICS**
+# **#243 ACTIVE RESEARCH — DIFFERENTIATED MEMBER-STATE PARTICIPATION**
 
 Sponsor rule #217 is canonical:
 
 > a hypothesis may stop; the sponsored research program pivots immediately to
 > the next bounded WIP=1 research question.
 
-#214's zero-rescue result remains binding and is not being retried.
+#214's zero-rescue workflow result remains binding and is not being retried.
 
-Post-correction research has now produced both subtraction and bounded corpus
-generality:
+The current research batch has preserved both positive and negative outcomes:
 
-- #218 REJECT — static/dynamic external-reference semantics already owned by
-  mature doctrine;
-- #220 ADMIT/DERIVE — machine-actionable compliance artifacts;
-- #221 REVISE — broadened private-origin legal recognition in place;
-- #222 REVISE — metric trigger -> authoritative data-input trigger;
-- #224 ADOPT — eIDAS trusted-list status validates dynamic reference status
-  cross-domain;
-- #225 REVISE — executable artifact -> machine compliance artifact;
-- #226 ADOPT — plant-health official findings generate legal geography;
-- #227 REJECT — marine depth is not automatically volumetric legal extent;
-- #228 REJECT — cryptographic proof scope is ordinary evidentiary-scope
-  analysis, not a new class.
+- #230/#231/#233 revised existing classes instead of multiplying taxonomy;
+- #232, #236 and #240 were rejected by stronger ordinary doctrine;
+- #234, #235 and #237 added cross-domain derivation evidence to existing classes;
+- #238 admitted `PROCEDURAL_SILENCE_LEGAL_EFFECT`;
+- #239 admitted `COHORTED_TRANSITIONAL_APPLICABILITY`;
+- #241 admitted `PROCEDURAL_CLOCK_SUSPENSION`;
+- #242 admitted `CROSS_ORDER_INCORPORATION_STATE`.
 
 Canonical corpus:
 
-> **35 cases / 16 trap classes**
+> **48 cases / 20 trap classes**
 
-#230 is the sole active WIP item.
+#243 is the sole active research WIP.
 
-It tests whether `JUDICIAL_INTERPRETATION_TEMPORAL_OVERCLAIM` genuinely adds a
-reusable legal-information distinction beyond settled CJEU doctrine that
-preliminary rulings are declaratory and normally clarify the interpreted rule
-from its own entry into force, subject to exceptional temporal limitation.
+It tests whether EU acts that bind only participating Member States through
+enhanced cooperation / protocol participation need a distinct representation
+owner, using EPPO and Rome III as primary candidates.
 
 Do not retry #214, manufacture product scope, or equate research continuity with
 feature growth.
 
-**Any historical "worker idle", "idle by design" or event-trigger-only wording
-below is superseded by #217 for current execution.**
+Historical "worker idle", "idle by design" and event-trigger-only wording below
+is superseded by #217 for current execution.
 
 **Issue #88 is complete. Its pre-registered stop rule fired.**
 

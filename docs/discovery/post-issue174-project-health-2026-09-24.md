@@ -9,48 +9,59 @@ Decision: **CONTINUE — CYCLE 3 ACTIVE**
 
 `INDETERMINATE / SAMPLE_INCOMPLETE`
 
-The fresh generality sample could not be completed because the pre-registered
-negative-control search produced no usable Scoreboard candidate.
+The experiment did **not** fail because the negative control was unavailable.
 
-No taxonomy change is allowed.
+The frozen Scoreboard search produced a usable declared-snapshot control.
 
-`OFFICIAL_TRACKER_UPDATE_LAG` remains unchanged.
+The hard stop fired because the frozen legislation.gov.uk first-result pool
+contained no eligible positive case with an already-in-force, editorally
+unapplied change to the selected provision that materially changed a current-law
+answer.
 
-H-21 is parked, not rejected.
+No second query or replacement system was permitted after exposure.
+
+Consequences:
+
+- no taxonomy change;
+- `OFFICIAL_TRACKER_UPDATE_LAG` remains unchanged;
+- H-21 remains PARKED / UNRESOLVED;
+- no sanctions/UK corpus case is admitted.
+
+Sample incompleteness is an execution result, not a negative mechanism result.
 
 ## Partial evidence retained without promotion
 
-- the deterministic fresh UIF 23 September 2026 sanctions delisting candidate
-  was structurally consistent with legal-state-before-derived-list-update;
-- the frozen UK search yielded a deterministic hash-selected revised-text
-  candidate;
-- neither may substitute for the missing negative control.
+- the deterministic 23 September 2026 UIF sanctions de-listing candidate remains
+  directionally consistent with legal-state-before-derived-list-update;
+- the frozen UK candidate pool was real but did not contain an eligible positive;
+- the Scoreboard control behaved as intended: an explicitly bounded reporting
+  snapshot is not defective merely because it is not real-time.
 
-The missing control is material to construct validity because the proposed
-broader class must not misclassify honest historical/reporting snapshots as
-defective.
+None substitutes for the required complete fresh sample.
 
 ## Operational learning
 
-#165 and #174 both exposed a recurring execution risk:
+#165 and #174 exposed the same project-level execution risk:
 
-> scientifically useful hypotheses can be lost after full preregistration
-> because the runtime cannot execute the required candidate-enumeration shape.
+> a scientifically sound sample rule can fail because the external
+> query/enumeration transport cannot deterministically produce the required
+> candidate set.
 
-Future transport-sensitive experiments therefore add one pre-prereg guard:
+Future transport-sensitive experiments therefore add one pre-preregistration
+guard:
 
 ### Metadata-only transport smoke test
 
-Before freezing deterministic candidate-selection rules:
+Before freezing candidate-selection rules:
 
-- verify that the intended API/query/search shape can execute;
-- inspect only transport/schema/count/pagination success;
-- do not preserve candidate identities;
+- verify intended API/query/search shape;
+- inspect only transport success, schema/count and pagination;
+- do not retain candidate identities;
 - do not inspect candidate content;
-- discard smoke-test results;
-- then preregister and rerun under the frozen selection rule.
+- discard the smoke-test result;
+- then preregister and rerun under the frozen rule.
 
-This does not permit sample tuning after candidate exposure.
+This is not permission to tune samples after exposure.
 
 ## Active-discovery state
 
@@ -63,25 +74,22 @@ Cycle 2 reserves are now exhausted or parked behind stronger triggers:
 - Run C → #174 INDETERMINATE / SAMPLE_INCOMPLETE;
 - Run D → #165 INDETERMINATE / TRANSPORT_BLOCKED.
 
-Therefore begin a new linked-discovery cycle rather than idling or repairing the
-same transport failures.
+The correct response is not to repair #174 until it yields a positive.
+
+It is to move to a fresh active linked-discovery cycle with the transport lesson
+embedded.
 
 ## Cycle 3
 
 Parent: #177
 
-Runs:
+WIP=1:
 
-- #178 — official guidance/Q&A bindingness promotion;
-- #179 — registry absence as false negative evidence;
-- #180 — machine-readable official derivative drift;
-- #181 — expert opinion/recommendation promoted into final decision;
+- #178 — official guidance/Q&A promoted into binding law;
+- #179 — registry/list absence promoted into proof of legal non-existence;
+- #180 — machine-readable official derivative diverges from authoritative state;
+- #181 — expert/recommendation stage promoted into final authorization/decision;
 - #183 — synthesis.
-
-These search for new source-role/evidence-state mechanisms from proven Needle
-anchors.
-
-WIP remains 1.
 
 No feature implementation is authorised.
 
@@ -89,4 +97,4 @@ No feature implementation is authorised.
 
 # **CONTINUE**
 
-Next: #178.
+Next: **#178**.

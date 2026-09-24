@@ -1,24 +1,9 @@
 name: Live 2026/2104 mutation case
+# Passive historical/research workflow. Manual dispatch only under #290.
 
 on:
-  push:
-    paths:
-      - "scripts/probe_reg2104_live_case.py"
-      - "scripts/build_reg2104_live_card.py"
-      - "scripts/replay_reg2104_operational_path.py"
-      - "src/needle/mutation/instructions.py"
-      - "src/needle/operations/pipeline.py"
-      - "src/needle/updates/temporal_metadata.py"
-      - "src/needle/updates/reobserve.py"
-      - "src/needle/operations/legal_analysis.py"
-      - "src/needle/operations/authentic_candidates.py"
-      - "src/needle/presentation/evidence.py"
-      - "schemas/mutation-candidate-v0.3.schema.json"
-      - "schemas/source-change-v0.1.schema.json"
-      - "schemas/operational-result-v0.1.schema.json"
-      - "schemas/feed-card-v0.1.schema.json"
-      - ".github/workflows/reg2104-live-case.yml"
   workflow_dispatch:
+
 
 concurrency:
   group: reg2104-live-case-main

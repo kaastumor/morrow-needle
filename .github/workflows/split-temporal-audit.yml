@@ -1,16 +1,9 @@
 name: Split temporal audit probe
+# Passive historical/research workflow. Manual dispatch only under #290.
 
 on:
-  push:
-    paths:
-      - "fixtures/audit/dir2008-7-split-temporal-source-v0.1.json"
-      - "fixtures/temporal/dir2008-7-split-temporal-v0.1.json"
-      - "fixtures/mutations/structural-lineage-reclassification-v0.1.json"
-      - "src/needle/mutation/structural.py"
-      - "src/needle/temporal/**"
-      - "tests/test_split_temporal_audit.py"
-      - ".github/workflows/split-temporal-audit.yml"
   workflow_dispatch:
+
 
 jobs:
   verify-pinned-evidence:

@@ -1,18 +1,9 @@
 name: Operational Needle vertical slice
+# Passive historical/research workflow. Manual dispatch only under #290.
 
 on:
-  push:
-    paths:
-      - "src/needle/operations/**"
-      - "src/needle/updates/reobserve.py"
-      - "src/needle/updates/relevance.py"
-      - "schemas/operational-result-v0.1.schema.json"
-      - "schemas/feed-card-v0.1.schema.json"
-      - "tests/test_operational_feed.py"
-      - "tests/test_operational_reobserve.py"
-      - "scripts/probe_operational_feed_sample.py"
-      - ".github/workflows/operational-pilot.yml"
   workflow_dispatch:
+
 
 concurrency:
   group: operational-needle-pilot-${{ github.ref }}

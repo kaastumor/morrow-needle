@@ -1,14 +1,9 @@
 name: Cellar source regression + live probe
+# Passive historical/research workflow. Manual dispatch only under #290.
 
 on:
-  push:
-    paths:
-      - "scripts/probe_cellar.py"
-      - "tests/test_cellar_representation_selection.py"
-      - "schemas/manifestation-selection-v0.1.schema.json"
-      - "schemas/source-observation-v0.1.schema.json"
-      - ".github/workflows/cellar-probe.yml"
   workflow_dispatch:
+
 
 concurrency:
   group: cellar-source-${{ github.ref }}

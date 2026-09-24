@@ -1,38 +1,9 @@
 name: Foundation adversary audit
+# Passive historical/research workflow. Manual dispatch only under #290.
 
 on:
-  push:
-    paths:
-      - "src/needle/**"
-      - "schemas/**"
-      - "fixtures/**"
-      - "tests/test_post_p1_foundation_audit.py"
-      - "tests/test_half_life_discovery.py"
-      - "tests/test_money_corrigendum_fixture.py"
-      - "tests/test_money_corrigendum_semantics.py"
-      - "tests/test_gold_money_corrigendum.py"
-      - "tests/test_split_temporal_audit.py"
-      - "tests/test_regime_lineage_v02.py"
-      - "tests/test_temporal_semantics.py"
-      - "tests/test_multilingual_corrigenda.py"
-      - "tests/test_identifier_graph.py"
-      - "tests/test_procedure_state.py"
-      - "tests/test_cellar_updates.py"
-      - "tests/test_provenance_ledger.py"
-      - "tests/test_retrieval.py"
-      - "tests/test_thread_article3.py"
-      - "tests/test_thread_gold.py"
-      - "docs/audits/**"
-      - ".github/workflows/foundation-audit.yml"
-  pull_request:
-    paths:
-      - "src/needle/**"
-      - "schemas/**"
-      - "fixtures/**"
-      - "tests/**"
-      - "docs/audits/**"
-      - ".github/workflows/foundation-audit.yml"
   workflow_dispatch:
+
 
 jobs:
   audit:

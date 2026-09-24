@@ -1,12 +1,10 @@
 name: Recent CREATE amendment discovery
+# Passive historical/research workflow. Manual dispatch only under #290.
 # Discovery is non-authoritative; amendment-language hits are candidate hints only.
 
 on:
-  push:
-    paths:
-      - "scripts/discover_recent_create_amendments.py"
-      - ".github/workflows/recent-create-amendment-discovery.yml"
   workflow_dispatch:
+
 
 concurrency:
   group: recent-create-amendment-discovery-main

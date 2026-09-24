@@ -11,68 +11,68 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **CONSOLIDATE**
-
-The 2026-09-25 constitutional audit found that Needle's scientific controls are healthy,
-but its active governance surface did not shrink with the project identity.
-
-Sponsor decisions:
-
-- `IDLE BY DESIGN` remains rejected;
-- continuity means purposeful operation, **not automatically another experiment**;
-- valid modes are DISCOVER / CONSOLIDATE / USE / REVIEW-RELEASE / MAINTAIN;
-- historical machinery is passive unless a current owner reactivates it.
+# **MAINTAIN — RESULT MERGE PENDING**
 
 ### Sole WIP
 
-# **#288 — constitutional compression and live-state ownership**
+# **#290 — workflow ownership audit / automatic-trigger reduction**
 
-Required outcome:
+Result:
 
-- one mutable owner for current mode/WIP/priority (this file);
-- README and charter orientation/durable purpose only;
-- smaller binding epistemic constitution;
-- Way of Working owns standing execution/discovery rules;
-- discovery v0.2 becomes reference method;
-- scheduled worker executes authorised work but does not manufacture successors;
-- #87 closes as scientifically complete with its archival gap preserved;
-- no new governance framework, score, register, workflow or product surface.
+> **SIMPLIFY — 2 KEEP_AUTO / 23 MANUAL_ONLY / 0 RETIRE_WORKFLOW**
 
-### Accepted scientific state
+The repository still has 25 workflow files, but automatic current ownership is reduced to:
 
-#286 / PR #287 is merged.
+1. `repository-sanitation.yml` — repository integrity;
+2. `unit-tests.yml` — full Python regression suite + current adversarial-corpus validator
+   + MVP JS regression.
 
-Accepted corpus:
+Two workflows were already manual-only:
+- `cellar-feed-discovery.yml`;
+- `operational-monitor.yml`.
+
+The other 21 specialist workflows are now staged as manual-only. Their tests, probes and
+artifact builders remain preserved for explicit dispatch; passive historical surfaces no
+longer run CI automatically merely because their old paths change.
+
+No cron/scheduled workflows existed, so this run does not claim recurring schedule-cost
+savings. It reduces event-triggered Actions surface and maintenance obligation.
+
+Full audit:
+
+> `docs/reviews/issue290-workflow-ownership-audit-2026-09-25.md`
+
+Accepted scientific state remains:
 
 > **81 cases / 26 classes**
 
-`VERTICAL_SPATIAL_EXTENT` now includes consequential vertical stratification as well as
-bounded altitude/volume, while #227 remains the negative boundary for vertical
-measurements that can be losslessly projected into a horizontal mask.
+No scientific result or taxonomy changed.
 
-The previously preselected depth run 3 on `CHOICE_OF_FORUM_STATE` is **DEFERRED BY
-EXPLICIT OWNER GOVERNANCE DECISION**, not scientifically rejected. Mode binding is
-therefore reconciled rather than silently abandoned.
+### Successor after #290
 
-### Successor after #288
+If #290 merges cleanly, select:
 
-Do **not** resume a taxonomy/depth experiment automatically.
+# **REVIEW / RELEASE — corpus reference checkpoint**
 
-The next mode is preselected as:
+Bounded question:
 
-> **MAINTAIN — reduce the active GitHub Actions/legacy maintenance surface without
-> deleting historical evidence**
+> Can the current **81-case / 26-class** corpus be treated as a coherent reference-release
+> checkpoint using its existing index, evidence links, exposure metadata and validators,
+> without adding cases/classes or reviving product scope?
 
-Bounded purpose:
+Purpose:
+- reconcile corpus-facing documentation/metadata with accepted state;
+- verify release/reference integrity and reproducibility;
+- identify any blocking inconsistency;
+- freeze a stable checkpoint if earned.
 
-- inspect the 25 workflow files against the new active/passive ownership rule;
-- retain shared integrity CI and every workflow with a unique current safety/evidence
-  owner;
-- demote unnecessary automatic triggers on passive historical surfaces where safe;
-- do not add a dashboard, scoring system or replacement workflow;
-- preserve manually runnable historical probes where they still have evidentiary value.
+Not allowed:
+- new legal research to fill perceived coverage gaps;
+- new class/case admission;
+- product/UI work;
+- schema growth unless an existing release-integrity requirement is impossible without it.
 
-Create that maintenance issue only after #288 merges and closes, preserving WIP=1.
+This is a review/release successor, not an automatic return to discovery.
 
 ## Historical backlog archive
 

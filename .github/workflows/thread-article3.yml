@@ -1,24 +1,9 @@
 name: Thread Article 3 2025 contract
+# Passive historical/research workflow. Manual dispatch only under #290.
 
 on:
-  push:
-    paths:
-      - "scripts/probe_thread_article3_2004.py"
-      - "scripts/probe_thread_article3_2025.py"
-      - "scripts/probe_thread_article3_corrigendum.py"
-      - "scripts/build_article3_thread_provenance.py"
-      - "src/needle/ast/**"
-      - "src/needle/mutation/**"
-      - "src/needle/thread/**"
-      - "scripts/build_thread_article3_preview.py"
-      - "tests/test_thread_gold.py"
-      - "tests/test_thread_render.py"
-      - "fixtures/gold/reg794-article3-thread-v0.1.json"
-      - "schemas/thread-v0.1.schema.json"
-      - "fixtures/thread/**"
-      - "tests/test_thread_article3.py"
-      - ".github/workflows/thread-article3.yml"
   workflow_dispatch:
+
 
 concurrency:
   group: thread-article3-v1-${{ github.ref }}

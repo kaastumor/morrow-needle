@@ -23,7 +23,8 @@
     "LANGUAGE_AUTHENTICITY_SCOPE_ASYMMETRY": "Officially available language expressions can differ in legal authenticity or corrective scope; the existence, wording or legal effect of one language expression must not be projected onto another without evidence of the relevant authenticity/scope rule.",
     "PROCEDURAL_SILENCE_LEGAL_EFFECT": "A legally specified period can expire without an affirmative administrative act and the governing rule itself assigns a legal consequence to that non-action; the resulting state cannot be reconstructed safely by searching only for positive decision documents.",
     "COHORTED_TRANSITIONAL_APPLICABILITY": "Current legal applicability depends on an object's qualifying historical cohort event or legacy state, such as placement on market, putting into service, certificate/declaration status or significant change; similar current objects can therefore have different legal treatment unless the cohort-defining history is preserved.",
-    "PROCEDURAL_CLOCK_SUSPENSION": "A legally defined decision or assessment period can be suspended and later resumed by specified procedural events; nominal elapsed calendar or working time is not equivalent to elapsed legal clock time unless suspension intervals are preserved."
+    "PROCEDURAL_CLOCK_SUSPENSION": "A legally defined decision or assessment period can be suspended and later resumed by specified procedural events; nominal elapsed calendar or working time is not equivalent to elapsed legal clock time unless suspension intervals are preserved.",
+    "CROSS_ORDER_INCORPORATION_STATE": "A legal act can be operative in one legal order while remaining only relevant, under scrutiny, incorporated-but-not-yet-effective or otherwise non-operative in a linked legal order until a separate incorporation instrument and its entry-into-force conditions are satisfied; legal state, dates and adaptations must remain attached to the target legal order."
   },
   "cases": [
     {
@@ -1117,7 +1118,51 @@
       "evidence_refs": [
         "issue:241"
       ]
+    },
+    {
+      "id": "ai-act-eea-incorporation-pending",
+      "title": "AI Act is EEA-relevant while EEA incorporation remains pending",
+      "domain": "artificial intelligence / EEA law",
+      "jurisdiction": "EU + EEA EFTA",
+      "trap_classes": [
+        "CROSS_ORDER_INCORPORATION_STATE"
+      ],
+      "provenance": {
+        "issue": 242,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Regulation 2024/1689 is operative under EU law and marked EEA relevant, while EEA-Lex still records scrutiny/JCD entry into force as pending; EEA relevance cannot be promoted into present EEA applicability.",
+      "evidence_refs": [
+        "issue:242"
+      ]
+    },
+    {
+      "id": "gdpr-eu-eea-application-gap",
+      "title": "GDPR EU and EEA application dates diverged until Joint Committee incorporation",
+      "domain": "data protection / EEA law",
+      "jurisdiction": "EU + EEA EFTA",
+      "trap_classes": [
+        "CROSS_ORDER_INCORPORATION_STATE"
+      ],
+      "provenance": {
+        "issue": 242,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "GDPR applied in the EU from 25 May 2018 but only entered the EEA legal order on 20 July 2018 after JCD 154/2018 and constitutional requirements; one EU act had different operative states across linked legal orders.",
+      "evidence_refs": [
+        "issue:242"
+      ]
     }
   ],
-  "case_count": 46
+  "case_count": 48
 }

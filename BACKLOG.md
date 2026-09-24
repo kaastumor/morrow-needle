@@ -6,55 +6,51 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **#207 NEXT — REGISTRY-ABSENCE BASELINE CHALLENGE**
+# **#210 DESIGN — LATENT CORPUS-ASSISTED TRAP DETECTION**
 
-#203 has completed its one allowed two-arm execution.
+#207 and #209 have completed the post-#203 reserve red team.
 
-Canonical score:
+Results:
 
-> **UNRESOLVED — BOTH ARMS INDETERMINATE**
+- #207 `OFFICIAL_REGISTRY_COVERAGE_OVERCLAIM` -> **REJECT**:
+  predicate-scoped completeness / partial closed-world semantics plus ordinary
+  registry-scope reading already owns the mechanism;
+- #209 `OFFICIAL_SOFT_LAW_EFFECT_COLLAPSE` -> **REJECT**:
+  established EU soft-law doctrine owns the effect analysis; a useful shared
+  class would require unearned effect-ontology complexity.
 
-Both fresh workers independently recommended the same safe operational action:
-quarantine the six contradictory identical-input OPP-115 rows, preserve their
-labels/provenance and do not invent a winning label.
-
-That agreement is operational convergence, not upgraded frozen-score parity.
-Both workers reported that primary OPP-115 row provenance could not be
-reconstructed reliably, and #203's preregistered rule maps both-INDETERMINATE to
-unresolved.
-
-The red team further narrows the result:
-
-- the prompt itself surfaced the conservative quarantine rule;
-- exact public source choices differed within the equal 12-inspection budget;
-- consumer UI/model settings are not independently machine-attested;
-- Arm C explicitly reported no decision-changing contribution from the Needle
-  treatment.
-
-#203 disposition:
-
-> **PARK**
-
-No repaired retry, easier LegalBench defect, product build or corpus-specific
-benchmark workflow is authorised.
-
-Project health direction:
-
-> **CONTINUE — SIMPLIFY DIAGNOSTIC AMBITION; ACTIVATE #207**
-
-#207 reopens the strongest Cycle-3 reserve (#179) only to attack it with a
-stronger adjacent baseline before fresh validation:
-
-> Is `OFFICIAL_REGISTRY_COVERAGE_OVERCLAIM` a useful legal-information failure
-> family, or is it simply ordinary open/closed-world completeness reasoning plus
-> source-scope checking?
-
-#207 is evidence-only. It may reject or sharpen the proposed family but may not
-add a corpus class, schema, registry ontology, product or monitoring surface.
+The two strongest parked Cycle-3 new-family reserves are therefore retired as
+Needle-specific taxonomy candidates.
 
 The corpus remains **29 cases / 15 trap classes**.
 
-No Cycle 4 is authorised.
+The highest-information unresolved project question is now about the corpus
+itself, not more taxonomy:
+
+> Does access to the adversarial corpus materially improve **latent trap
+> detection** on a fresh realistic legal-research task when the task does not
+> name or strongly cue the trap?
+
+#210 owns experiment design only.
+
+Important distinction:
+
+- #97 tested a Needle **Method checklist**, not corpus access;
+- #203 tested corpus/protocol assistance on a task whose conservative provenance
+  rule was already surfaced and ended frozen-score UNRESOLVED.
+
+#210 must not repeat either construct.
+
+**No scored case selection is authorised yet.**
+
+Before case selection:
+
+1. independent GPT-6 Astra / medium review of the design;
+2. resolve or accept major construct objections;
+3. freeze treatment, sample shape, thresholds and contamination firewall;
+4. only then create a separate fresh case-compiler task.
+
+No Cycle 4, product build, Method/Core expansion or new class is authorised.
 
 **Issue #88 is complete. Its pre-registered stop rule fired.**
 

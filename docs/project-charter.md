@@ -229,20 +229,34 @@ The project-level consequence is deliberately smaller:
 - ordinary source-linked QA remains the default for this surfaced job;
 - no corpus-specific diagnostic wrapper or retry is earned.
 
+The two remaining Cycle-3 new-family reserves have now been removed after
+stronger-baseline challenge:
+
+- #207 rejected `OFFICIAL_REGISTRY_COVERAGE_OVERCLAIM` because
+  predicate-scoped completeness / partial closed-world reasoning plus ordinary
+  source-scope analysis fully explains the mechanism;
+- #209 rejected `OFFICIAL_SOFT_LAW_EFFECT_COLLAPSE` because mature EU soft-law
+  doctrine already supplies the relevant effect analysis and a more specific
+  family would require unearned effect-ontology complexity.
+
+The corpus remains **29 cases / 15 trap classes**.
+
 The current active horizon is:
 
-> **#207 — registry-absence baseline challenge**
+> **#210 — latent corpus-assisted trap-detection experiment design**
 
-#207 attacks the strongest parked Cycle-3 reserve with mature completeness
-semantics before any fresh legal validation. It asks whether
-`OFFICIAL_REGISTRY_COVERAGE_OVERCLAIM` predicts a useful legal boundary beyond
-open/closed-world reasoning, completeness assertions and ordinary source-scope
-checking.
+The remaining project-identity question is narrower and more direct:
 
-A negative result should delete the proposed distinction.
+> Does access to the adversarial corpus materially improve detection of a hidden
+> consequential legal-information failure on a fresh realistic task when the
+> task itself does not surface the trap?
 
-No Cycle 4, product implementation, new trap class or persistent architecture is
-authorised by this horizon.
+#210 is design-only until independent GPT-6 Astra / medium red teaming is
+preserved and the final treatment/sample/threshold/contamination rules are
+frozen.
+
+No scored case selection, Cycle 4, product implementation, new trap class or
+persistent architecture is authorised yet.
 
 ## Repository discipline
 

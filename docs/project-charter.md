@@ -270,27 +270,32 @@ The smallest evidence-backed identity remains:
 > **Needle adversarial legal-research regression/reference corpus + minimal
 > evaluation discipline.**
 
-Post-#214 sponsored research has now produced both subtraction and one bounded
-taxonomy addition:
+Post-#214 sponsored research now shows a stable WIP=1 discovery pattern:
+strong incumbent doctrine first, subtraction where possible, bounded admission
+only where a distinct representation failure survives.
 
-- #218 rejected a new static/dynamic-reference class;
-- #219/#220 established `EXECUTABLE_COMPLIANCE_ARTIFACT`;
-- #221 broadened `PRIVATE_ORIGIN_LEGAL_RECOGNITION` in place rather than
-  multiplying private-origin classes.
+Current results include:
 
-The corpus is now **31 cases / 16 trap classes**.
+- in-place revisions for authoritative data inputs, machine compliance
+  artifacts, judicial interpretation timing, language authenticity/scope and
+  local identifier mapping;
+- clean rejections where ordinary doctrine already owns the question
+  (#227, #228, #232, #236, #240);
+- cross-domain derivation support for judicial-validity divergence, sub-day
+  timing, volumetric legal geography and finding-generated geography;
+- new bounded classes for procedural silence, cohorted transitional
+  applicability, procedural clock suspension and cross-order incorporation
+  state.
+
+The corpus is now **48 cases / 20 trap classes**.
 
 Current active research:
 
-> **#222 — versioned authoritative datasets as legal inputs**
+> **#243 — differentiated Member-State participation in EU acts**
 
-#222 asks whether official multi-value dataset state needs a distinct owner or
-whether `AUTHORITATIVE_METRIC_TRIGGER` should generalise from individual
-metrics to authoritative data inputs.
-
-Continuous research does not authorise investigator reruns, harder #214
-replacement cases, product implementation, new trap classes or persistent
-architecture without separate evidence.
+Continuous research does not authorise a retry of #214, product implementation,
+schema growth, monitoring infrastructure or taxonomy expansion without the same
+strong-baseline and negative-control discipline.
 
 ## Repository discipline
 

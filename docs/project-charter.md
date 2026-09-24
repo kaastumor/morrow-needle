@@ -209,19 +209,28 @@ This is documentary/taxonomy evidence only. It does not show that a model would
 miss the trap, that the mechanism is prevalent, or that a product surface has
 value.
 
+#200 completed the design/readiness gate with one real unresolved
+external benchmark task: contradictory OPP-115 labels in LegalBench issue #56.
+The conflict reproduces at the frozen benchmark revision and has an accessible
+primary-evidence route through the original OPP-115 corpus.
+
 The current active horizon is:
 
-> **#200 — consequential corpus-use test design**
+> **#203 — consequential corpus-use diagnostic execution**
 
-#200 tests the surviving core more directly than another taxonomy cycle: can
-access to the existing adversarial corpus produce an independently checkable
-consequential diagnostic/review benefit over ordinary source-linked cases and
-behavioral QA under equal resources?
+#203 tests the surviving core more directly than another taxonomy cycle:
 
-#200 may only design and decide readiness for one bounded test. A separate
-execution issue requires frozen task, comparator, primary outcome/materiality,
-exposure/verification plan and stop rule. If no real consequential task is
-available, PARK is preferred to manufactured demand.
+> Does access to the existing adversarial corpus/evaluation discipline change the
+> supported consequential scoring disposition compared with competent ordinary
+> source-linked benchmark QA under equal resources?
+
+The experiment has one frozen primary outcome,
+`VERIFIED_SCORING_DISPOSITION`, and requires separate fresh contexts/workers.
+The #200 design session is contaminated and cannot count as either arm.
+
+A parity result is meaningful: for this diagnostic job it supports simplifying
+toward ordinary source-linked cases + behavioral QA rather than expanding the
+corpus wrapper.
 
 No Cycle 4, product implementation or new persistent architecture is authorised.
 

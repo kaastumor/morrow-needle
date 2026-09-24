@@ -145,6 +145,12 @@ Discovery starts from evidence, not from a feature list.
 Active plan:
 `docs/discovery/evidence-triggered-continuous-discovery-v0.2.md`
 
+Start at section 0 for the routine execution path and compact result record.
+It owns progressive context loading, search budgets and exploration versus
+confirmation. Read detailed sections as applicable; long review prompts are not
+mandatory per-scout deliverables. Start from the supported evidence level, not
+an assumed externally validated core.
+
 Evidence may enter through:
 
 - a fresh legal adversary;
@@ -186,6 +192,11 @@ or tune the future sample.
 Discard smoke-test results. Then preregister and rerun the transport under the
 frozen rule.
 
+This metadata-only check is distinct from an explicitly exploratory eligibility
+pilot. A pilot may inspect content, but must retain its exposure record and its
+cases cannot become fresh validation. Choose the mode before inspection. This
+option applies to future designs and never overrides a frozen experiment.
+
 If transport later fails after sample exposure, preserve the failure rather than
 iteratively redesigning transport until a convenient sample appears.
 
@@ -214,8 +225,10 @@ Every discovery issue ends in exactly one:
 `ADOPT_FOR_EXPERIMENT / REVISE / REJECT / PARK`
 
 An ADOPT_FOR_EXPERIMENT result does not create implementation permission. A later
-delivery candidate needs a separate gate and evidence that the strong baseline
-actually failed for a recurring or consequential problem.
+delivery candidate needs a separate gate and the discovery plan's section 13
+claim-specific evidence: baseline failure for correctness/validity superiority,
+or meaningful relative workflow advantage for a recurring or consequential job
+under the validity floor. Equal correctness does not rule out workflow value.
 
 Human-evidence claims remain human. Browser automation cannot substitute for
 observed usability, and public trends cannot be relabelled as direct external

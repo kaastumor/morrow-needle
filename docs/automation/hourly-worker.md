@@ -20,34 +20,25 @@ At the start of every run inspect, in order:
 
 Do not use stale chat handoffs as authority over the repository.
 
+For discovery, start at section 0 of
+`docs/discovery/evidence-triggered-continuous-discovery-v0.2.md`. On a new session,
+read the governing documents above. Within the same resumed task, compare their
+SHAs and reload changed rules/state plus task-relevant evidence; do not repeatedly
+load the entire history. A new task or changed gate requires a fresh scope check.
+Use the compact issue/result record there for resumable checkpoints. The worker's
+AUTO READY eligibility boundary still applies; a model choice does not expand it.
+
 ## Selection rule
 
-First resume, repair, or finish an unfinished automation pull request.
+First inspect unfinished automation PRs and their active ownership. Resume,
+repair or finish work owned by this worker or explicitly handed off or confirmed
+abandoned. An unfinished PR is not permission to take over another live session.
 
-Only when no unfinished automation PR exists may the worker select **one**
-highest-priority eligible open issue whose title begins:
-
-`AUTO READY —`
-
-Dependencies and the active gate must be satisfied.
-
-For the authorised MVP #103 / discovery #104 horizon, use this priority order:
-
-1. #105
-2. #106
-3. #107
-4. #108
-5. #109
-6. #110
-7. #111
-8. #112
-9. #113
-10. #114
-11. #115
-12. #116
-
-Discovery issues #111–#116 are not eligible until #110 records
-`TECHNICAL_MVP_CANDIDATE`.
+Select at most **one** eligible open issue whose title begins `AUTO READY —`.
+Use the current `BACKLOG.md` priority order and the active parent gate's scope;
+dependencies must be satisfied. Historical completed queues, including
+#105–#116, are not an active task list. Resolve or record dependencies on live
+work before selecting a separate task.
 
 If no eligible AUTO READY issue exists, do not manufacture work. Inspect for a
 blocker only if the active gate explicitly requires it, then stop the run.
@@ -135,6 +126,26 @@ from repository state without repeating or guessing prior work.
 - close the AUTO issue after merge;
 - reconcile parent gate/backlog/assumptions/ADR only when evidence changed them.
 
+### Concurrent sessions
+
+Record task ownership, intended file scope and inspected base SHA in the existing
+issue or PR. Before writing or merging, inspect the latest main, PR head and
+changed files. Preserve unrelated newer edits; never force over unexplained
+changes. If another session owns overlapping work, use a separate scope or
+record the dependency. Age alone does not establish abandonment. These records
+coordinate work; they are advisory, not an atomic lock.
+
+## Actions cost discipline
+
+- Run relevant deterministic checks locally before publishing when a checkout is available.
+- Batch coherent file changes into one commit before opening the PR; avoid
+  one commit per file and repeated pushes merely to narrate progress.
+- Sanitation and unit tests run on PRs and main pushes, not feature-branch
+  pushes. Keep the final PR check and main verification.
+- Do not dispatch live probes or rerun successful workflows without a concrete
+  evidence need. Repair the cause before retrying a failed run.
+- No eligible task means stop; it does not justify a diagnostic Actions run.
+
 ## Scope restrictions
 
 The worker may not silently:
@@ -201,3 +212,4 @@ Record only:
 - next eligible AUTO READY issue, if one exists.
 
 Activity volume is not progress.
+

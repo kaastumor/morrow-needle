@@ -6,32 +6,37 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **#257 ACTIVE RESEARCH — CYPRUS ACQUIS SUSPENSION**
+# **#261 ACTIVE RESEARCH — COVERAGE MAP AFTER 64 CASES / 21 CLASSES**
 
 Sponsor rule #217 remains canonical:
 
 > a hypothesis may stop; the sponsored research program pivots immediately to
 > the next bounded WIP=1 research question.
 
-The latest reconciled research batch (#253/#255/#256) produced:
+The latest reconciled research batch (#257/#259/#260) produced:
 
-- #253 ADOPT — Barber supplied a genuine judicial temporal-effect limitation;
-- #255 ADMIT — `SUBSTATE_TERRITORIAL_REGIME`;
-- #256 ADOPT — food-safety procedure strengthened
-  `PROCEDURAL_CLOCK_SUSPENSION`.
+- #257 ADOPT — Cyprus Protocol No 10 strengthened
+  `SUBSTATE_TERRITORIAL_REGIME`;
+- #259 ADMIT — `EU_PRIMACY_DISAPPLICATION_STATE`;
+- #260 RED TEAM — no lossless merge among the new jurisdiction/cohort/judicial/
+  primacy classes.
 
 Canonical corpus:
 
-> **61 cases / 20 trap classes**
+> **64 cases / 21 trap classes**
 
-#257 is the sole active research WIP.
+#261 is the sole active research WIP.
 
-It tests whether Protocol No 10 on Cyprus — suspension of the acquis in areas
-where the Republic of Cyprus does not exercise effective control — fits the new
-sub-state territorial-regime class or exposes an over-broad abstraction.
+It performs a wide-lens coverage map across temporal, procedural, authority,
+source, language, jurisdiction, territorial, cohort, machine/input, judicial,
+norm-conflict, spatial, lifecycle and evidentiary dimensions.
 
-Do not retry #214, manufacture product scope, or add territorial cases merely
-because they are unusual.
+The task is to select exactly one next high-information research question from a
+real under-covered dimension, or conclude that remaining gaps are too generic
+to justify another bounded run.
+
+Do not add a case/class inside #261.
+Do not retry #214 or manufacture product scope.
 
 Historical "worker idle", "idle by design" and event-trigger-only wording below
 is superseded by #217 for current execution.

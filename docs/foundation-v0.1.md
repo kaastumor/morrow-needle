@@ -1,9 +1,22 @@
 # Morrow // Needle — Foundation v0.1
 
-> **Direction note (2026-09-23):** the Morrow Constitution and evidence
-> invariants in this document remain canonical. The original product thesis is
-> historical context. The current north star is the research/audit charter in
-> `docs/project-charter.md`.
+> **Constitutional scope (reconciled 2026-09-25):** this file preserves both the
+> project's binding epistemic invariants and historical legal-change architecture.
+> It is **not** a second owner of current scope, queue or architecture.
+>
+> Binding across current Needle work: **C1–C8, C11–C17 and C19**.
+>
+> Conditional when the task actually concerns legal change/mutation:
+> **C9–C10**.
+>
+> Historical/product-specific unless explicitly reactivated:
+> **C18**, the detailed canonical ownership map, historical reconstruction protocol,
+> architecture flow, Change Atom gate and Gold Corpus design.
+>
+> Historical/conditional material remains valuable evidence and may still govern the
+> old subsystem it documents. Its presence does not make that subsystem part of the
+> current project form. The durable north star is `docs/project-charter.md`; live
+> mode/WIP is owned by `BACKLOG.md`.
 
 ## Original product thesis (historical context)
 

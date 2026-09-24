@@ -41,6 +41,8 @@ Allowed dispositions: **survives / revise / reject / park / experiment**.
 
 | H-23 | `OFFICIAL_AUTHORITY_HANDOFF` is a reusable failure family in which an upstream official specialist artifact can be complete/final within its role while a different institution owns the downstream binding legal decision; legal effect must follow the actual procedural decision owner. | survives | #195 fresh validation found material as-of handoffs in Balversa (CHMP→Commission) and N,N-dimethylformamide (RAC/SEAC→Commission), while a fresh ECHA Candidate List inclusion cleanly excludes procedures where agency action itself triggers the tested legal effect. #171's two RTS cases now sit under this broader class. This is documentary generality evidence, not prevalence or model-detection evidence. |
 
+| H-24 | Offering the frozen adversarial corpus index as an optional analogy/reference aid, with its explicit adversarial framing, materially improves latent diagnosis and consequential correctness over ordinary source-grounded QA on fresh realistic legal-research challenge tasks. | experiment | #210 Astra review narrowed the claim: the treatment is the full index-assisted workflow package, not corpus-analogy causality. #212 must compile 3 fresh adversarial tasks + 1 matched control under a deterministic bounded firewall before any R/C execution. Zero diagnostic rescues supports contraction toward a regression/reference-corpus identity; 2–3 rescues justify replication only. |
+
 ## Register rules
 
 - Add an assumption only if being wrong could change architecture, project

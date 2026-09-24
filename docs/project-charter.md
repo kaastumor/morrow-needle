@@ -4,18 +4,20 @@ Status: **CANONICAL PROJECT NORTH STAR**
 
 ## Purpose
 
-Morrow // Needle is an **adversarial legal-research corpus + evaluation
-protocol for EU legal change**.
+Morrow // Needle is an **adversarial legal-research regression/reference corpus +
+minimal evaluation discipline for EU legal change**.
 
 Its demonstrated project-specific contribution is not a proprietary research
 method. It is the preservation of real legal-information traps, explicit
 failure hypotheses, sealed comparative evaluation, negative/parity evidence and
 reproducible audit discipline.
 
-The public corpus entry point is `corpus/index-v0.1.json`. Its role is only to
-index case/evaluation metadata and point to existing evidence owners; it must
-not become a duplicate legal truth store. The reusable comparison discipline is
-`docs/evaluations/adversarial-corpus-protocol-v0.1.md`.
+The public corpus entry point is `corpus/index-v0.1.json`. Its role is to
+preserve exposed failure mechanisms as regression/reference material and point
+to existing evidence owners; it must not become a duplicate legal truth store.
+The minimal evaluation discipline remains
+`docs/evaluations/adversarial-corpus-protocol-v0.1.md`, used when a genuinely
+new claim earns a sealed comparison rather than as a standing experiment engine.
 
 Needle Method remains available as an optional structured handoff/reporting
 convention. Optional canonical persistence also remains available, but neither
@@ -241,19 +243,33 @@ stronger-baseline challenge:
 
 The corpus remains **29 cases / 15 trap classes**.
 
-The current active horizon is:
+#214 completed the frozen index-assisted latent diagnostic pilot.
 
-> **#212 — fresh 3+1 case compilation**
+All three adversarial R/C pairs were consequentially correct and explicitly
+applied the decisive distinction; the matched control was also pass/pass.
 
-The remaining project-identity question is narrower and more direct:
+The frozen primary result is:
 
-> Does access to the adversarial corpus materially improve detection of a hidden
-> consequential legal-information failure on a fresh realistic task when the
-> task itself does not surface the trap?
+> **0 diagnostic rescues / 0 C-only regressions**
 
-#210 completed its independent GPT-6 Astra / medium review with REVISE and the corrected workflow-pilot design is frozen. #212 now compiles the sealed 3+1 set in a fresh context under those rules.
+Under #210's pre-registered interpretation, the offered index-assisted workflow
+did not demonstrate added latent diagnostic value on the sealed challenge set.
 
-No investigator execution, Cycle 4, product implementation, new trap class or persistent architecture is authorised yet.
+The current project state is therefore:
+
+> **IDLE BY DESIGN — EVENT-TRIGGERED WORK ONLY**
+
+The smallest evidence-backed identity is:
+
+> **Needle adversarial legal-research regression/reference corpus + minimal
+> evaluation discipline.**
+
+This does not claim universal equivalence or corpus uselessness. It does remove
+the evidence-backed reason for a standing diagnostic-workflow experiment
+program.
+
+No investigator rerun, harder replacement case, Cycle 4, product implementation,
+new trap class or persistent architecture is authorised.
 
 ## Repository discipline
 
@@ -304,8 +320,7 @@ At wide-angle boundaries, keep these distinct:
 
 A change in one does not automatically require a change in the others.
 
-The current project form is **Needle adversarial legal-research corpus +
-evaluation protocol**.
+The current project form is **Needle adversarial legal-research regression/reference corpus + minimal evaluation discipline**.
 
 Issue #87 supports only a bounded Method packaging/handoff contribution. Issue
 #88 then found correctness parity across six fresh, pre-registered adversarial

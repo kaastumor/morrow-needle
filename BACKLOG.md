@@ -11,68 +11,52 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **CONSOLIDATE**
+# **MAINTAIN**
 
-The 2026-09-25 constitutional audit found that Needle's scientific controls are healthy,
-but its active governance surface did not shrink with the project identity.
-
-Sponsor decisions:
-
-- `IDLE BY DESIGN` remains rejected;
-- continuity means purposeful operation, **not automatically another experiment**;
-- valid modes are DISCOVER / CONSOLIDATE / USE / REVIEW-RELEASE / MAINTAIN;
-- historical machinery is passive unless a current owner reactivates it.
+Purposeful successor selected under #288. No discovery/taxonomy work is active.
 
 ### Sole WIP
 
-# **#288 — constitutional compression and live-state ownership**
+# **#290 — retire automatic CI on passive historical surfaces**
 
-Required outcome:
+Audit all 25 GitHub Actions workflows under the active/passive ownership rule.
 
-- one mutable owner for current mode/WIP/priority (this file);
-- README and charter orientation/durable purpose only;
-- smaller binding epistemic constitution;
-- Way of Working owns standing execution/discovery rules;
-- discovery v0.2 becomes reference method;
-- scheduled worker executes authorised work but does not manufacture successors;
-- #87 closes as scientifically complete with its archival gap preserved;
-- no new governance framework, score, register, workflow or product surface.
+Frozen maintenance rule:
 
-### Accepted scientific state
+- keep automatic repository sanitation;
+- keep automatic full unit/current-corpus validation;
+- retain any additional automatic workflow only if it owns a unique **current** safety
+  or evidence requirement not already protected by the shared suite;
+- historical product/subsystem workflows remain preserved and manually runnable where
+  useful, but do not run automatically merely because their old paths change;
+- no replacement workflow, dashboard, billing monitor, schema or scoring system.
 
-#286 / PR #287 is merged.
+Current audit finding before edits:
 
-Accepted corpus:
+> **2 workflows have clear current automatic owners; 23 are passive/manual candidates.**
+
+The two automatic owners are:
+
+1. `repository-sanitation.yml` — repository integrity;
+2. `unit-tests.yml` — full Python suite + current adversarial-corpus validator + MVP JS
+   regression.
+
+`cellar-feed-discovery.yml` and `operational-monitor.yml` are already manual-only.
+The remaining 21 specialist workflows are being tested for demotion to manual-only.
+
+Accepted scientific state remains:
 
 > **81 cases / 26 classes**
 
-`VERTICAL_SPATIAL_EXTENT` now includes consequential vertical stratification as well as
-bounded altitude/volume, while #227 remains the negative boundary for vertical
-measurements that can be losslessly projected into a horizontal mask.
+No scientific claim changes in this maintenance run.
 
-The previously preselected depth run 3 on `CHOICE_OF_FORUM_STATE` is **DEFERRED BY
-EXPLICIT OWNER GOVERNANCE DECISION**, not scientifically rejected. Mode binding is
-therefore reconciled rather than silently abandoned.
+### After #290
 
-### Successor after #288
+Do not preselect another experiment merely because maintenance ends.
 
-Do **not** resume a taxonomy/depth experiment automatically.
-
-The next mode is preselected as:
-
-> **MAINTAIN — reduce the active GitHub Actions/legacy maintenance surface without
-> deleting historical evidence**
-
-Bounded purpose:
-
-- inspect the 25 workflow files against the new active/passive ownership rule;
-- retain shared integrity CI and every workflow with a unique current safety/evidence
-  owner;
-- demote unnecessary automatic triggers on passive historical surfaces where safe;
-- do not add a dashboard, scoring system or replacement workflow;
-- preserve manually runnable historical probes where they still have evidentiary value.
-
-Create that maintenance issue only after #288 merges and closes, preserving WIP=1.
+At #290 exit, run the ordinary successor-allocation check across
+DISCOVER / CONSOLIDATE / USE / REVIEW-RELEASE / MAINTAIN and record exactly one next mode
+only if the evidence supports it.
 
 ## Historical backlog archive
 

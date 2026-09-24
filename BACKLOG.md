@@ -641,3 +641,19 @@ Examples worth pursuing:
 Morrow may reorder tasks when new evidence changes risk.
 
 When it does, the reason must be recorded here or in the relevant issue. The backlog must reflect actual project priorities rather than preserving stale plans.
+
+
+## Follow-up selected by review implementation #199
+
+**#200 — consequential corpus-use test design — BLOCKED by #183/#195.**
+
+After current Cycle 3 work and its selected generality experiment are reconciled,
+prepare one concrete evaluation/review task comparing existing corpus use with
+ordinary source-linked cases and behavioral QA. #200 owns design acceptance and
+the readiness decision; it is not yet an AUTO READY execution task. Prefer this
+decision-use test before an automatic new broad taxonomy cycle. If the design
+cannot become feasible, record why and select another evidence-backed question.
+
+This additive follow-up does not take over PR #197's current-state reconciliation
+or change #195's criteria. Routine discovery starts at section 0 of the discovery
+operating plan; the active parent and current queue still govern execution.

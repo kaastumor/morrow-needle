@@ -6,6 +6,92 @@ Supersedes: the intentionally idle post-#104 state only for the bounded discover
 cycle defined here. It does **not** supersede the project charter, evidence rules,
 or stopped public-product decision.
 
+## 0. Routine execution path
+
+Use this section as the entry point for repeated discovery sessions, including
+5.6 sessions. It reduces repeated reading and output; it is not evidence that a
+particular model performs better. Sections below remain the detailed rules.
+Use the original long prompts for horizon reviews, not as per-run output quotas.
+
+### Load the decision context
+
+Read current main/PR state, the current backlog entry, active parent/child issue,
+and this section. On a new session read the charter, way-of-working and applicable
+evidence/exposure rules; on resumption check their SHAs and reload changes. Then
+read only the relevant source records and detailed sections below. Never reuse
+an old queue or skip a governing rule to save context. If state disagrees with a
+live PR, resolve ownership/dependency before selecting work; do not take it over.
+
+### Select one question
+
+Start from what the evidence actually supports: an existing asset, internal
+use, technical feasibility or demonstrated external value. Do not assume a
+validated useful core merely because the prompt calls it proven.
+
+Name the decision that support and rejection would change. Prefer a consequential
+uncertainty with accessible evidence and a cheap discriminating observation.
+Existing useful distinctions qualify; novelty and a new class are not required.
+Choose at most three search hypotheses, then pursue one. Creative structural,
+failure-led and distant analogies are welcome when they predict a testable
+boundary; they need target evidence before becoming opportunities.
+
+### Choose the evidence mode before testing
+
+- **Exploration:** search, map mechanisms and inspect feasibility. Record exposed
+  candidates and failed routes. Findings can earn derivation evidence or a later
+  test, not independent confirmation of themselves. A short exposed pilot may
+  check full eligibility when metadata alone is insufficient; keep its record
+  and exclude it from later fresh validation.
+- **Confirmation/comparison:** first freeze task/sample selection, claim type,
+  strongest realistic comparator, resource budget, primary outcome/materiality,
+  exposure controls and failure rule. Use the evaluation protocol where relevant.
+  Do not change these after decisive evidence. Existing frozen experiments keep
+  their original rules; this pathway cannot repair them retrospectively.
+
+A documentary mechanism test need not claim that a model failed. A superiority
+claim needs comparator evidence. A workflow claim may succeed with the same
+correct answer, but must include setup/switching burden and preserve validity.
+
+### Search, challenge, decide
+
+For a routine scout, default to two purposeful search batches, each addressing
+at most three explicit questions. Inspect the decisive sources; search snippets
+are not verification. Batch independent reads. Avoid repeating a query/failed
+transport unless new evidence or a changed condition makes it informative.
+An authorised task may set a different budget before substantive work.
+
+After each batch ask whether the new evidence changes the decision. Stop a
+branch on saturation, inaccessible decisive evidence or an untestable connection.
+At the budget boundary record a disposition or a justified bounded continuation;
+do not silently renew the budget. Keep the existing one-follow-up limit. Tool
+failure/sample incompleteness is indeterminate, not evidence against the claim.
+
+Before concluding, test the strongest rival and nearest counterexample. Ask:
+would an equally resourced ordinary workflow explain or achieve the same result?
+Did selection, cueing, prior exposure or unequal access produce the advantage?
+Can another reader check the decisive evidence? Label self-review honestly.
+
+### Leave one resumable record
+
+Use the existing issue or its existing result document, not both as duplicate
+narratives. Keep this compact structure; expand only where the evidence needs it:
+
+> Decision / supported premise; claim and evidence mode; source links and exposure;
+> strongest alternative and budget; falsifier/primary outcome; new evidence and
+> strongest rival; disposition and inference limit; exact next action or re-entry
+> trigger, with ownership and inspected SHA.
+
+Use `ADOPT_FOR_EXPERIMENT / REVISE / REJECT / PARK`; separately state incomplete
+execution if applicable. Link unchanged evidence instead of rewriting it. A
+blocked task may be parked while Morrow selects another authorised evidence-led
+question; the scheduled executor may select only eligible AUTO READY work.
+Do not equate one exhausted branch with a project-wide idle state.
+
+Update canonical state only where the decision changes it. Batch coherent files
+in one commit/PR; preserve sanitation and relevant tests. No live dispatch or
+paid evaluation just to show activity. At horizon synthesis use the full health
+review; do not repeat it after every scout.
+
 ## 1. Purpose
 
 Needle will actively pursue discovery again, but it will not return to
@@ -127,7 +213,7 @@ https://www.producttalk.org/glossary-discovery-risky-assumption/
 
 ### 3.5 Product risks before implementation
 
-SVPG's four product risks are used as a mandatory risk lens:
+SVPG's four product risks are considered when material to the claim:
 
 - **value** — will the user/researcher choose or benefit from this;
 - **usability** — can the intended user use it successfully;

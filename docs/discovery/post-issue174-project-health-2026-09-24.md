@@ -9,8 +9,12 @@ Decision: **CONTINUE — CYCLE 3 ACTIVE**
 
 `INDETERMINATE / SAMPLE_INCOMPLETE`
 
-The fresh generality sample could not be completed because the pre-registered
-negative-control search produced no usable Scoreboard candidate.
+The fresh generality sample could not be completed because the frozen
+legislation.gov.uk first-result pool contained no eligible positive case with an
+already-in-force but editorially unapplied change to the selected provision that
+materially changed a current-law answer.
+
+The frozen Scoreboard negative control was available and behaved as intended.
 
 No taxonomy change is allowed.
 
@@ -22,13 +26,11 @@ H-21 is parked, not rejected.
 
 - the deterministic fresh UIF 23 September 2026 sanctions delisting candidate
   was structurally consistent with legal-state-before-derived-list-update;
-- the frozen UK search yielded a deterministic hash-selected revised-text
-  candidate;
-- neither may substitute for the missing negative control.
+- the frozen UK pool was deterministic but contained no eligible positive;
+- the Scoreboard control demonstrated the intended boundary: an explicitly
+  dated reporting snapshot is not defective merely because it is not real-time.
 
-The missing control is material to construct validity because the proposed
-broader class must not misclassify honest historical/reporting snapshots as
-defective.
+The missing element was the fresh UK positive case, not the control.
 
 ## Operational learning
 

@@ -6,47 +6,48 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **DISCOVERY CYCLE 3 — #178 NEXT**
+# **#195 ACTIVE — OFFICIAL AUTHORITY HANDOFF GENERALITY**
 
-#174 completed:
+Discovery Cycle 3 (#177–#183) completed with **CONTINUE**.
 
-> **INDETERMINATE / SAMPLE_INCOMPLETE**
+Cycle 3 map:
 
-No taxonomy conclusion is drawn. `OFFICIAL_TRACKER_UPDATE_LAG` remains
-unchanged and H-21 is PARKED.
+- #178 `OFFICIAL_SOFT_LAW_EFFECT_COLLAPSE` — **PARK / RESERVE**;
+- #179 `OFFICIAL_REGISTRY_COVERAGE_OVERCLAIM` — **PARK / STRONGEST NEW-FAMILY RESERVE**;
+- #180 machine-readable derivative drift — **PARK / NO DISTINCT FAMILY**;
+- #181 `OFFICIAL_AUTHORITY_HANDOFF` — **ADOPT_FOR_EXPERIMENT**;
+- #183 selected exactly one experiment: **#195**.
+
+#195 tests whether the existing
+`TECHNICAL_STANDARD_AUTHORITY_HANDOFF` class is too narrow and should be
+generalised to `OFFICIAL_AUTHORITY_HANDOFF`.
+
+This is a taxonomy-subtraction experiment:
+
+- success → one broader class, no trap-count increase;
+- failure → keep #171 narrow and do not automatically create a parallel class.
+
+Fresh validation requires:
+
+1. one fresh EMA/CHMP → Commission authorisation chain;
+2. one fresh ECHA RAC/SEAC → Commission restriction chain;
+3. one control where upstream agency action itself owns the legal effect.
+
+Orphacol and all Run-3D/#171 examples are DERIVATION only.
+
+Transport-sensitive selection must use the metadata-only smoke-test guard before
+full preregistration.
+
+#174 remains **INDETERMINATE / SAMPLE_INCOMPLETE** for the corrected reason: the
+frozen UK positive pool yielded no eligible already-in-force unapplied case. The
+Scoreboard negative control was available.
 
 Sponsor direction remains **active evidence-driven discovery**.
 
-Cycle 3 parent: #177.
+No Cycle 4 is authorised before #195 result + health check.
 
-WIP=1:
-
-1. #178 — official guidance/Q&A bindingness promotion — **NEXT**;
-2. #179 — registry absence as false negative evidence;
-3. #180 — machine-readable official derivative drift;
-4. #181 — expert opinion/recommendation promoted into final decision;
-5. #183 — Cycle 3 synthesis.
-
-### Cycle 3 search discipline
-
-Each run must:
-
-- start from proven Needle evidence;
-- find current independent target evidence;
-- compare against the strongest official/incumbent safeguard;
-- test an explicit boundary/counterexample;
-- distinguish new mechanism from generalisation of an existing class;
-- retain at most one hypothesis;
-- build nothing.
-
-For transport-sensitive follow-up experiments, perform a metadata-only transport
-smoke test **before** full sample preregistration.
-
-Canonical #174 result:
-`docs/experiments/issue174-official-derived-view-lag-result-2026-09-24.md`
-
-Post-#174 health:
-`docs/discovery/post-issue174-project-health-2026-09-24.md`
+Canonical Cycle 3 synthesis:
+`docs/discovery/cycle3-synthesis-2026-09-24.md`
 
 **Issue #88 is complete. Its pre-registered stop rule fired.**
 

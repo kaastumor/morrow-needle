@@ -113,18 +113,23 @@ The corpus is now 29 cases / 15 trap classes. This adds no fresh evaluation or
 product claim.
 
 #174 ended **INDETERMINATE / SAMPLE_INCOMPLETE** because the frozen
-negative-control search could not produce the required fresh Scoreboard control.
-The proposed broader derived-view class is therefore neither supported nor
-rejected; `OFFICIAL_TRACKER_UPDATE_LAG` remains unchanged.
+legislation.gov.uk positive pool contained no eligible already-in-force,
+editorially unapplied provision-level case. The Scoreboard negative control was
+available. The broader derived-view class is therefore neither supported nor
+rejected.
+
+Discovery Cycle 3 (#177–#183) then completed with **CONTINUE**. It retained
+soft-law-effect and registry-coverage candidates as reserves, rejected a
+machine-readable-specific family as non-distinct, and selected one taxonomy-
+simplification experiment.
 
 Current horizon:
 
-> **Discovery Cycle 3 (#177–#183) — active search for new source-role and
-> evidence-state mechanisms.**
+> **#195 — test `OFFICIAL_AUTHORITY_HANDOFF` as a generalisation of
+> `TECHNICAL_STANDARD_AUTHORITY_HANDOFF`.**
 
-Cycle 3 starts with #178 and then tests registry-absence, machine-readable
-derivative and expert-opinion/final-decision mechanisms before one synthesis
-gate.
+A positive result should rename/generalise one existing trap class rather than
+increase trap-class count. A negative result keeps #171 narrow.
 
 ## Canonical project records
 
@@ -143,6 +148,8 @@ gate.
 - `docs/discovery/evidence-triggered-discovery-red-team-2026-09-24.md`
 - `docs/discovery/cycle1-synthesis-project-health-2026-09-24.md`
 - `docs/discovery/cycle2-synthesis-2026-09-24.md`
+- `docs/discovery/cycle3-run-d-authority-handoff-generalisation-2026-09-24.md`
+- `docs/discovery/cycle3-synthesis-2026-09-24.md`
 - `docs/experiments/issue165-scholarly-status-result-2026-09-24.md`
 - `docs/discovery/post-issue165-project-health-2026-09-24.md`
 - `docs/experiments/issue171-rts-authority-handoff-result-2026-09-24.md`

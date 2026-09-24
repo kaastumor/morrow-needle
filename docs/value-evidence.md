@@ -53,6 +53,8 @@ Every entry ends in one disposition:
 
 | #171 RTS authority-handoff generality | DISCOVERY | The corpus has a distinct failure family for institutional authority handoff in delegated technical-standard rulemaking | Existing 14 trap classes + full official ESA→Commission lifecycle | Two exposed independent chains (fixed overheads and crowdfunding) both contain material Commission changes after EBA final draft RTS; four existing classes fail first-refusal without semantic distortion. New `TECHNICAL_STANDARD_AUTHORITY_HANDOFF` class admitted with two DERIVATION regression cases only. | CONTINUE | `docs/experiments/issue171-rts-authority-handoff-result-2026-09-24.md` and Issue #171 |
 
+| #177 Cycle 3 linked discovery | DISCOVERY | Active linked search can find genuinely distinct source-role/evidence-state mechanisms while also killing attractive non-distinct abstractions | Strong official/incumbent safeguards + WIP=1 + explicit boundaries + one synthesis gate | Runs A/B retained soft-law-effect and registry-coverage reserves; Run C rejected a machine-readable-specific family as ordinary freshness/version-state mechanics; Run D found that #171 may generalise across EMA/ECHA authority handoffs. #183 selected only #195 because it can simplify taxonomy instead of multiplying classes. | CONTINUE | `docs/discovery/cycle3-synthesis-2026-09-24.md` and Issues #177–#183 |
+
 ## Rules
 
 1. Do not add an entry because work was completed.

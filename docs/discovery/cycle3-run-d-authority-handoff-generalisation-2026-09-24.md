@@ -60,22 +60,37 @@ A favourable CHMP opinion changes the probability/trajectory of authorisation.
 
 It does **not** itself grant the EU marketing authorisation.
 
-At the interval:
+Current EMA pages make this state visible in practice: September 2026 CHMP
+recommendations such as Pepaxti are explicitly labelled **pending EC decision**.
 
-```text
-CHMP favourable opinion
-    ↓
-Commission decision not yet adopted
-```
+The distinction is also historically outcome-consequential, not merely a formal
+waiting period.
 
-the answers differ:
+#### Orphacol
 
-- "Has CHMP recommended authorisation?" → YES
-- "Does this medicine already hold the centralised EU marketing authorisation?"
-  → NO
+CHMP adopted a positive opinion for Orphacol on 16 December 2010 recommending a
+marketing authorisation.
 
-This is a legally consequential role distinction even if the Commission later
-follows the scientific recommendation without changing scientific content.
+The European Commission nevertheless adopted Implementing Decision C(2012) 3306
+final on 25 May 2012 **refusing** that marketing authorisation.
+
+The General Court later annulled the refusal in Case T-301/12. EMA records the
+marketing authorisation as issued only on 12 September 2013.
+
+Sources:
+
+- https://www.ema.europa.eu/en/documents/smop-initial/chmp-summary-positive-opinion-orphacol_en.pdf
+- https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=celex:62012TJ0301
+- https://www.ema.europa.eu/en/medicines/human/EPAR/orphacol
+- https://www.ema.europa.eu/en/news/meeting-highlights-committee-medicinal-products-human-use-chmp-14-17-september-2026
+
+Therefore the two propositions are genuinely independent:
+
+- "Has CHMP recommended authorisation?" can be YES;
+- "Has the Commission granted the marketing authorisation?" can still be NO.
+
+This is direct evidence that legal effect cannot be inherited from the upstream
+scientific recommendation.
 
 ## Pipeline 2 — ECHA RAC/SEAC opinions → Commission REACH restriction
 

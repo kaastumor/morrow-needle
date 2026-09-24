@@ -23,6 +23,37 @@ without rebuilding the discarded architecture.
 8. **Stop is a valid outcome.** A rejected feature hypothesis is successful
    discovery.
 
+## Selective reasoning escalation
+
+Routine project work stays on the current model/capability. Do not escalate merely
+because a task is important, long, novel or uncomfortable.
+
+During **project analysis, wide-lens review or red teaming**, proactively suggest
+**GPT-6 Astra at medium reasoning** when a specific difficult question is both:
+
+1. consequential enough that a weak answer could materially change project
+   direction, architecture, experiment design or interpretation of evidence; and
+2. reasoning-limited enough that deeper synthesis, adversarial comparison,
+   abstraction or multi-constraint analysis could plausibly improve the decision.
+
+An escalation suggestion must stay focused. Briefly state:
+
+- the exact unresolved question;
+- why deeper reasoning is warranted for that question;
+- what decision/output Astra should produce; and
+- a compact handover prompt that preserves the relevant evidence, alternatives,
+  constraints and falsifier.
+
+Prefer one bounded Astra task over handing over an entire project or review.
+
+Do **not** suggest Astra for routine retrieval, repository inspection, mechanical
+implementation, formatting, status reconciliation, ordinary source checking or
+work already decided by clear evidence.
+
+Astra is an analysis resource, not evidence. Its output remains subject to the
+same source, exposure, comparator, falsification and Project Health rules as any
+other model-assisted analysis.
+
 ## Work item types
 
 ### MVP GATE

@@ -1718,7 +1718,30 @@
       "evidence_refs": [
         "issue:272"
       ]
+    },
+    {
+      "id": "kl-x-directive-charter-composition",
+      "title": "K.L. v X separates horizontal Directive invocability from Charter-based disapplication",
+      "domain": "employment / effective judicial protection",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "DIRECTIVE_INVOCABILITY_STATE",
+        "EU_PRIMACY_DISAPPLICATION_STATE"
+      ],
+      "provenance": {
+        "issue": 274,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "In C-715/20 the Directive/framework clause could not itself require disapplication in a dispute between private parties, while Article 47 Charter separately required effective judicial protection including disapplication where necessary; the invocable EU norm and the primacy consequence are distinct state owners.",
+      "evidence_refs": [
+        "issue:274"
+      ]
     }
   ],
-  "case_count": 73
+  "case_count": 74
 }

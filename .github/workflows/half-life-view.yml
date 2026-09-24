@@ -1,17 +1,9 @@
 name: Half-Life derived view
+# Passive historical/research workflow. Manual dispatch only under #290.
 
 on:
-  push:
-    paths:
-      - "src/needle/analytics/**"
-      - "schemas/half-life-*.schema.json"
-      - "fixtures/analytics/**"
-      - "fixtures/temporal/eprivacy-temporary-regime-v0.1.json"
-      - "fixtures/lineage/reg2021-1232-to-reg2026-1881-gap-v0.2.json"
-      - "tests/test_half_life_view.py"
-      - "scripts/build_eprivacy_half_life_view.py"
-      - ".github/workflows/half-life-view.yml"
   workflow_dispatch:
+
 
 jobs:
   verify:

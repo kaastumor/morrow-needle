@@ -29,7 +29,8 @@
     "CHOICE_OF_LAW_STATE": "A legally valid choice by the relevant party or person can select the law governing a relationship or succession instead of the law that would follow from default connecting factors; applicable law cannot be inferred safely from forum, location, habitual residence or nationality alone, and the existence, validity, scope and mandatory limits of the choice must be preserved.",
     "DIRECTIVE_INVOCABILITY_STATE": "A Directive provision may be in force and its transposition deadline may have expired, yet direct invocability in a dispute depends on whether the provision is sufficiently precise and unconditional and whether the defendant is the State or an emanation of the State; a Directive cannot of itself impose obligations on a private individual.",
     "CROSS_BORDER_RECOGNITION_ACTIVATION_STATE": "A home-state authorisation, qualification or regulated entitlement can acquire legally effective use in another Member State through a specified Union notification, transmission, recognition or passport procedure; home entitlement alone does not prove host-state activation, while completion of the Union procedure may remove the need for a fresh standalone host authorisation. The activation step, target host/service scope and continuing home entitlement must be preserved.",
-    "MEMBER_STATE_PERMITTED_DIVERGENCE": "A Union rule expressly permits a bounded national option, parameter or more protective national rule, so the operative legal result can legitimately differ by Member State even though the same Union framework applies; the relevant national exercise of that permission must be resolved, and the Union default/floor or another Member State's rule is insufficient."
+    "MEMBER_STATE_PERMITTED_DIVERGENCE": "A Union rule expressly permits a bounded national option, parameter or more protective national rule, so the operative legal result can legitimately differ by Member State even though the same Union framework applies; the relevant national exercise of that permission must be resolved, and the Union default/floor or another Member State's rule is insufficient.",
+    "CHOICE_OF_FORUM_STATE": "A legally valid jurisdiction agreement can displace default jurisdiction rules by selecting the court or courts competent for a dispute, subject to its scope, exclusivity, formal/substantive validity and mandatory protected-party or exclusive-jurisdiction limits; forum cannot be inferred safely from default connecting factors or from a choice-of-law clause."
   },
   "cases": [
     {
@@ -1741,7 +1742,51 @@
       "evidence_refs": [
         "issue:274"
       ]
+    },
+    {
+      "id": "brussels-i-choice-of-forum",
+      "title": "Brussels I jurisdiction agreement can displace default court jurisdiction",
+      "domain": "private international law / civil jurisdiction",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "CHOICE_OF_FORUM_STATE"
+      ],
+      "provenance": {
+        "issue": 276,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Brussels I Recast Article 25 gives effect to a valid jurisdiction agreement, normally exclusively, but protected-party and Article 24 exclusive-jurisdiction limits can defeat or constrain the clause; forum cannot be inferred from default domicile/connectors or clause existence alone.",
+      "evidence_refs": [
+        "issue:276"
+      ]
+    },
+    {
+      "id": "succession-choice-of-court",
+      "title": "Succession parties can choose court separately from deceased's choice of law",
+      "domain": "private international law / succession",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "CHOICE_OF_FORUM_STATE"
+      ],
+      "provenance": {
+        "issue": 276,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Succession Regulation Article 5 allows the parties concerned to choose courts of the Member State whose law the deceased selected under Article 22; governing-law choice and forum choice are separate state dimensions with different actors and validity conditions.",
+      "evidence_refs": [
+        "issue:276"
+      ]
     }
   ],
-  "case_count": 74
+  "case_count": 76
 }

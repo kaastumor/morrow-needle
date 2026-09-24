@@ -1,14 +1,9 @@
 name: Semantic source contract + manual live probe
+# Passive historical/research workflow. Manual dispatch only under #290.
 
 on:
-  push:
-    paths:
-      - "scripts/probe_article3_semantic_source.py"
-      - "schemas/change-atom-v0.3.schema.json"
-      - "src/needle/semantic/**"
-      - "tests/test_change_atoms.py"
-      - ".github/workflows/semantic-source.yml"
   workflow_dispatch:
+
 
 concurrency:
   group: live-semantic-source-v2-${{ github.ref }}

@@ -149,6 +149,13 @@ For a two-arm baseline R versus tested method M:
 
 Do not add a new winner metric after seeing the results.
 
+These are case-level observations under the frozen execution conditions.
+All-pass pairs do not establish population equivalence, general reliability or
+results for another model/tool setup. A preregistered investment stop remains
+valid without claiming statistical equivalence. State sample-selection,
+independence and blinding limits separately; a fresh session does not establish
+that a case was unseen during training.
+
 ## 8. Stop instead of moving the goalposts
 
 If the pre-registered suite produces parity, preserve the parity.
@@ -206,3 +213,4 @@ A difficult case alone is not permission to expand architecture.
 
 The preferred project outcome is the smallest claim and smallest machinery that
 survive the evidence.
+

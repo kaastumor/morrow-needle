@@ -62,23 +62,31 @@ useful only when persistence earns itself.
    over the strongest realistic alternative, provided correctness, provenance,
    uncertainty handling and evidence integrity do not regress.
 
-Needle Corpus Explorer v0.1 (#103) has reached
+Needle Corpus Explorer v0.1 (#103) reached
 `TECHNICAL_MVP_CANDIDATE`: a static, dependency-free projection over the
-surviving corpus + protocol. Real/manual usability value remains unproven, so
-#103 and H-16 stay open as an experiment rather than a release claim.
+surviving corpus + protocol. Cycle 1 #136 found a synthetic mechanical
+case-discovery/provenance advantage without a validity regression, but human
+importance/adoption remains unproven. H-16 is therefore **PARKED** and the
+Explorer remains a frozen derived projection rather than part of the essential
+identity.
 
 The bounded post-MVP discovery gate #104 completed with **SIMPLIFY** and no
 feature implementation authorization.
 
-The sponsor has now authorised one further bounded discovery experiment:
-**evidence-triggered continuous discovery v0.2** (#134). It accepts opportunity
-evidence only through four channels — fresh legal adversary, real Explorer use,
-external research need, or observed failure of the current approach — while
-keeping one shared WIP=1 funnel. An optional bounded linked-search operator may
-generate `SEARCH_HYPOTHESIS` items from proven evidence, but those do not enter
-the opportunity funnel without new target evidence from an authorised channel.
-Cycle 1 is limited to #135–#139 and does not pre-authorise a second cycle or any
-feature build.
+Evidence-triggered continuous discovery v0.2 (#134) completed one bounded
+Cycle 1 (#135–#139) with **CONTINUE**. It did not authorise a product horizon or
+a second discovery cycle.
+
+The core identity remains corpus + evaluation protocol. The Explorer is parked;
+the judicial-document-role opportunity is parked; evaluation-evidence closure is
+trigger-bound. Exactly one high-information next experiment is authorised:
+
+> **#150 — adversarial audit of public legal benchmark integrity.**
+
+This tests whether Needle's surviving evaluation discipline transfers to an
+external legal benchmark strongly enough to find a fresh material integrity
+defect beyond the benchmark's own credible QA baseline. It does not authorise a
+benchmark platform, adapter, leaderboard or standing audit service.
 
 ## Canonical project records
 
@@ -95,6 +103,7 @@ feature build.
 - `docs/discovery/post-mvp-gate-review-2026-09-24.md`
 - `docs/discovery/evidence-triggered-continuous-discovery-v0.2.md`
 - `docs/discovery/evidence-triggered-discovery-red-team-2026-09-24.md`
+- `docs/discovery/cycle1-synthesis-project-health-2026-09-24.md`
 - `docs/way-of-working.md`
 
 ---

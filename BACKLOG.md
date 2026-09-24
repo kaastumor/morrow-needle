@@ -6,41 +6,42 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **#282 ACTIVE RESEARCH — POST-#217 RESEARCH RETROSPECTIVE**
+# **#273 NEXT DEPTH WIP — PROTOCOL 21/22 PARTICIPATION GENERALITY**
 
 Sponsor rule #217 remains canonical:
 
 > a hypothesis may stop; the sponsored research program pivots immediately to
 > the next bounded WIP=1 research question.
 
-The #270–#280 research batch is reconciled at:
+#282 completed the post-#217 retrospective with:
 
-> **79 cases / 26 trap classes**
+> **REVISE — keep 79 cases / 26 classes; repair research rules, not taxonomy.**
 
-Recent structural results include:
-- `CROSS_BORDER_RECOGNITION_ACTIVATION_STATE`;
-- `MEMBER_STATE_PERMITTED_DIVERGENCE`;
-- K.L. composition preserving the Directive-invocability / primacy distinction;
-- `CHOICE_OF_FORUM_STATE`;
-- the #277 anti-growth audit and three-run generality/composition lane.
+The frozen source sample found no fatal primary-source defect and no current lossless
+merge. It did find two process defects:
 
-#281 selected **#282** as the sole next WIP.
+- incumbent doctrine had sometimes been treated too close to an automatic novelty/value
+  rejection (#218), despite later research correctly separating doctrinal ownership from
+  residual regression/reference value;
+- #271's depth-mode decision was not explicitly superseded before later coverage work,
+  leaving #273 stale while breadth resumed.
 
-#282 looks backward before another coverage hunt. It audits post-#217 research for:
-- source/evidence quality;
-- independence of supposedly orthogonal support;
-- class-definition drift beyond dedicated evidence;
-- admission-threshold drift;
-- path dependence / selection bias;
-- whether bounded revision or compression is required.
+Canonical rule now:
 
-No new class is allowed in #282, and no net case-count growth is justified merely to
-repair support. #273 is closed as a deferred depth candidate so it cannot compete with
-#282 for WIP=1; it may be reopened only if #282 selects it or its underlying question.
+> **Existing is not useless. Different is not valuable. Novel is not demanded.**
 
-Execution now follows the checkpointed-burst rule in `docs/way-of-working.md`:
-one coherent milestone per turn, early durable checkpoints, narrow reads, one late CI
-check, and GitHub-first recovery after interruptions.
+A candidate is rejected when the incumbent plus existing classes losslessly expresses
+the consequential failure, not merely because the legal concept already exists.
+
+After #282 merges, reopen **#273** as the sole WIP. The
+`DIFFERENTIATED_MEMBER_STATE_PARTICIPATION` class now has three canonical cases, but
+all are enhanced-cooperation mechanisms. Its definition still claims opt-ins / Treaty
+protocols, so Protocol 21/22 generality remains the clearest definition-to-evidence test.
+
+#273 may add at most one case and no new class.
+
+Execution follows checkpointed burst rules: bounded but substantive bursts, early durable
+state, narrow reads, one late CI check, and GitHub-first recovery.
 
 Do not retry #214 or manufacture product scope.
 

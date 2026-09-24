@@ -1,14 +1,9 @@
 name: Authentic amendment regression + live probe
+# Passive historical/research workflow. Manual dispatch only under #290.
 
 on:
-  push:
-    paths:
-      - "src/needle/mutation/instructions.py"
-      - "src/needle/mutation/reconcile.py"
-      - "scripts/probe_authentic_amendment.py"
-      - "tests/test_authentic_amendment_instructions.py"
-      - ".github/workflows/authentic-amendment.yml"
   workflow_dispatch:
+
 
 concurrency:
   group: authentic-amendment-${{ github.ref }}

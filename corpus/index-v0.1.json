@@ -15,7 +15,7 @@
     "OFFICIAL_AUTHORITY_HANDOFF": "An official specialist artifact may be complete or final within its upstream role while a different institution owns the downstream binding decision; legal effect must remain attached to the procedure's actual decision owner and binding act rather than inherited from upstream authority, finality or practical importance.",
     "MACHINE_COMPLIANCE_ARTIFACT": "A legally consequential calculation, declaration, submission or verification depends on a prescribed, authoritative, privileged or certified machine-actionable artifact such as an executable tool, ruleset, schema or semantic profile; artifact identity, version or regulatory status is legally relevant evidence, so substituting another/current artifact can change the accepted result or validation consequence without parent-text mutation.",
     "JUDICIAL_INTERPRETATION_TEMPORAL_EFFECT": "A preliminary ruling normally clarifies the interpreted EU rule from that rule's own entry into force; the judgment date is not a default new prospective start, while any express Court-imposed limitation of temporal effects is an exceptional legal boundary that must be preserved.",
-    "PROCEDURAL_SILENCE_LEGAL_EFFECT": "A legally specified period can expire without an affirmative administrative act and the governing rule itself assigns a legal consequence to that non-action; the resulting state cannot be reconstructed safely by searching only for positive decision documents.",
+    "PROCEDURAL_SILENCE_LEGAL_EFFECT": "A legally specified period can expire without an affirmative decision, objection or other required institutional action and the governing rule itself assigns a legal consequence to that non-action; the resulting state cannot be reconstructed safely by searching only for positive acts.",
     "COHORTED_TRANSITIONAL_APPLICABILITY": "Current legal applicability depends on a regulated subject, asset, data set or object's qualifying historical cohort event or legacy state, such as placement on market, putting into service, receipt while qualifying status existed, certificate/declaration status or significant change; similar current states can therefore receive different legal treatment unless cohort-defining history is preserved.",
     "PROCEDURAL_CLOCK_SUSPENSION": "A legally defined decision or assessment period can be suspended and later resumed by specified procedural events; nominal elapsed calendar or working time is not equivalent to elapsed legal clock time unless suspension intervals are preserved.",
     "CROSS_ORDER_INCORPORATION_STATE": "A legal act can be operative in one legal order while remaining only relevant, under scrutiny, incorporated-but-not-yet-effective or otherwise non-operative in a linked legal order until a separate incorporation instrument and its entry-into-force conditions are satisfied; legal state, dates and adaptations must remain attached to the target legal order.",
@@ -1226,7 +1226,51 @@
       "evidence_refs": [
         "issue:247"
       ]
+    },
+    {
+      "id": "delegated-act-non-objection-entry-into-force",
+      "title": "Delegated act depends on Parliament/Council non-objection period",
+      "domain": "EU delegated legislation",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "PROCEDURAL_SILENCE_LEGAL_EFFECT"
+      ],
+      "provenance": {
+        "issue": 248,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Article 290 TFEU and the basic act can make delegated-act entry into force depend on expiry of a Parliament/Council objection period without objection; Commission adoption alone is not the whole operative-state chain.",
+      "evidence_refs": [
+        "issue:248"
+      ]
+    },
+    {
+      "id": "qs-interim-suspension-operative-state",
+      "title": "Interim judicial order changes operative effect while source decision remains visible",
+      "domain": "EU administrative litigation",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "JUDICIAL_VALIDITY_TEXT_DIVERGENCE"
+      ],
+      "provenance": {
+        "issue": 249,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "In QS v Commission the General Court suspended operation of part of a Commission exclusion decision pending the main action; the source act remained visible while its operative legal state changed through a separate interim order.",
+      "evidence_refs": [
+        "issue:249"
+      ]
     }
   ],
-  "case_count": 51
+  "case_count": 53
 }

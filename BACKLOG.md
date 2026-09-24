@@ -6,42 +6,51 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **#273 NEXT DEPTH WIP — PROTOCOL 21/22 PARTICIPATION GENERALITY**
+# **#273 DEPTH RESULT — MERGE PENDING; THEN VERTICAL-SPATIAL DEPTH**
 
 Sponsor rule #217 remains canonical:
 
 > a hypothesis may stop; the sponsored research program pivots immediately to
 > the next bounded WIP=1 research question.
 
-#282 completed the post-#217 retrospective with:
+#282 repaired the research rules and returned the project to depth mode.
 
-> **REVISE — keep 79 cases / 26 classes; repair research rules, not taxonomy.**
+#273 is depth run **1/3** under the #282 falsifier and resolves:
 
-The frozen source sample found no fatal primary-source defect and no current lossless
-merge. It did find two process defects:
+> **REVISE_EXISTING_CLASS — retain differentiated Member-State participation, sharpen
+> the direct-participation boundary, and add one Protocol 21 derivation case.**
 
-- incumbent doctrine had sometimes been treated too close to an automatic novelty/value
-  rejection (#218), despite later research correctly separating doctrinal ownership from
-  residual regression/reference value;
-- #271's depth-mode decision was not explicitly superseded before later coverage work,
-  leaving #273 stale while breadth resumed.
+Key result:
+- Protocol 21 Article 4 expressly reuses Article 331(1) TFEU *mutatis mutandis*;
+- Ireland therefore supplies a genuine protocol/opt-in generalisation of the existing
+  participation-state owner;
+- Denmark is not a clean binary negative because Regulation 2024/1351 also routes Parts
+  III, V and VII through separate EU-Denmark agreement machinery;
+- the class now distinguishes participation in the EU act as Union law from equivalent or
+  partial application through a separate agreement/incorporation route.
 
-Canonical rule now:
+Staged corpus on the #273 branch:
 
-> **Existing is not useless. Different is not valuable. Novel is not demanded.**
+> **80 cases / 26 classes**
 
-A candidate is rejected when the incumbent plus existing classes losslessly expresses
-the consequential failure, not merely because the legal concept already exists.
+No new class.
 
-After #282 merges, reopen **#273** as the sole WIP. The
-`DIFFERENTIATED_MEMBER_STATE_PARTICIPATION` class now has three canonical cases, but
-all are enhanced-cooperation mechanisms. Its definition still claims opt-ins / Treaty
-protocols, so Protocol 21/22 generality remains the clearest definition-to-evidence test.
+This run is **informative**, not confirmation-only, because it sharpens the exclusion
+boundary. The three-run depth falsifier therefore does not trigger.
 
-#273 may add at most one case and no new class.
+After #273 merges, the mechanically weakest class is now:
 
-Execution follows checkpointed burst rules: bounded but substantive bursts, early durable
-state, narrow reads, one late CI check, and GitHub-first recovery.
+> **`VERTICAL_SPATIAL_EXTENT` — 2 dedicated cases**
+
+That class is the preselected next depth target. The next run must test whether aviation
+vertical limits and subsurface CO2 storage instantiate one reusable legal-volume
+regression owner, or whether the definition is only an analogy between domain-specific
+three-dimensional scope rules.
+
+Do not begin that substantive research until #273 is merged and closed, preserving WIP=1.
+
+Execution follows checkpointed burst rules: substantive bounded work, early durable state,
+one late CI check, and GitHub-first recovery.
 
 Do not retry #214 or manufacture product scope.
 

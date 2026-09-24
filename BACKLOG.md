@@ -6,37 +6,39 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **#261 ACTIVE RESEARCH — COVERAGE MAP AFTER 64 CASES / 21 CLASSES**
+# **#264 ACTIVE RESEARCH — PARTY CHOICE AS APPLICABLE-LAW STATE**
 
 Sponsor rule #217 remains canonical:
 
 > a hypothesis may stop; the sponsored research program pivots immediately to
 > the next bounded WIP=1 research question.
 
-The latest reconciled research batch (#257/#259/#260) produced:
+The latest coverage-led batch (#261/#263) produced:
 
-- #257 ADOPT — Cyprus Protocol No 10 strengthened
-  `SUBSTATE_TERRITORIAL_REGIME`;
-- #259 ADMIT — `EU_PRIMACY_DISAPPLICATION_STATE`;
-- #260 RED TEAM — no lossless merge among the new jurisdiction/cohort/judicial/
-  primacy classes.
+- #261 COVERAGE — selected relational/extraterritorial applicability as the
+  highest-information uncovered state dimension;
+- #263 ADMIT — `UNION_NEXUS_APPLICABILITY`.
 
 Canonical corpus:
 
-> **64 cases / 21 trap classes**
+> **66 cases / 22 trap classes**
 
-#261 is the sole active research WIP.
+#264 is the sole active research WIP.
 
-It performs a wide-lens coverage map across temporal, procedural, authority,
-source, language, jurisdiction, territorial, cohort, machine/input, judicial,
-norm-conflict, spatial, lifecycle and evidentiary dimensions.
+It tests whether a legally effective party/person choice creates a distinct
+applicable-law state that cannot be inferred safely from forum, location,
+nationality or default connecting factors.
 
-The task is to select exactly one next high-information research question from a
-real under-covered dimension, or conclude that remaining gaps are too generic
-to justify another bounded run.
+Primary candidates:
+- Rome I Regulation Article 3;
+- Succession Regulation Article 22.
 
-Do not add a case/class inside #261.
-Do not retry #214 or manufacture product scope.
+Required controls preserve mandatory consumer/employment protection,
+overriding-mandatory/public-policy limits and default connecting factors where
+no valid choice exists.
+
+Do not build a conflict-of-laws engine, contract parser, estate tool, schema or
+product.
 
 Historical "worker idle", "idle by design" and event-trigger-only wording below
 is superseded by #217 for current execution.

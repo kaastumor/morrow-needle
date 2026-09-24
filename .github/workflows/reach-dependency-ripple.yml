@@ -1,11 +1,9 @@
 name: REACH dependency ripple discovery
+# Passive historical/research workflow. Manual dispatch only under #290.
 
 on:
-  push:
-    paths:
-      - "scripts/probe_reach_dependency_ripple.py"
-      - ".github/workflows/reach-dependency-ripple.yml"
   workflow_dispatch:
+
 
 jobs:
   verify:

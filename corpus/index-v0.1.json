@@ -6,7 +6,7 @@
   "reuse_policy": "Every case in this public seed is scientifically exposed and is regression-only for future evaluation. Fresh blind validation requires a new independently selected and sealed case.",
   "trap_classes": {
     "SOURCE_STATE_BACKPROJECTION": "A current or consolidated representation contains later corrections or information that cannot prove the source state visible at the nominal historical date.",
-    "REPRESENTATION_LOCAL_MARKER_IDENTITY": "Presentation markers or ordinals are local to a language/expression and are unsafe as cross-expression legal identities.",
+    "REPRESENTATION_LOCAL_MARKER_IDENTITY": "Human-facing markers, subdivision labels or ordinals can be local to a language or expression and are unsafe as cross-expression legal identities unless mapped to a canonical underlying identifier.",
     "DYNAMIC_REFERENCE_STATUS": "Legal effect changes because the authoritative status of a referenced external item changes while the parent rule or external identifier remains unchanged.",
     "STATUS_APPLICATION_SEPARATION": "Authoritative status or set membership and downstream legal applicability begin or end at different legal boundaries.",
     "AUTHORITATIVE_FINDING_TO_SPATIAL_EFFECT": "An authoritative categorical real-world finding triggers legal geography under unchanged law.",
@@ -916,7 +916,51 @@
       "evidence_refs": [
         "issue:231"
       ]
+    },
+    {
+      "id": "meta-dma-partial-annulment-validity",
+      "title": "Meta DMA designation remains visible while Marketplace provision is judicially annulled",
+      "domain": "digital markets",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "JUDICIAL_VALIDITY_TEXT_DIVERGENCE"
+      ],
+      "provenance": {
+        "issue": 234,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "The 2023 Commission designation decision remains publicly visible, but the General Court annulled Article 2(f) concerning Marketplace while leaving the remainder intact; current validity cannot be inferred from printed source text alone, and the pending C-909/26 P appeal must remain explicit.",
+      "evidence_refs": [
+        "issue:234"
+      ]
+    },
+    {
+      "id": "fsr-digital-notification-cutoff",
+      "title": "FSR digital filing cut-off changes legally attributed notification day",
+      "domain": "foreign subsidies / merger control",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "SUBDAY_TEMPORAL_BOUNDARY"
+      ],
+      "provenance": {
+        "issue": 235,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Current Commission FSR filing instructions assign same-day notification status only before the 17:00 CET weekday cut-off (16:00 Fridays/pre-holidays); later submissions move to the next working day, which shifts the statutory review clock despite the same calendar-date submission attempt.",
+      "evidence_refs": [
+        "issue:235"
+      ]
     }
   ],
-  "case_count": 37
+  "case_count": 39
 }

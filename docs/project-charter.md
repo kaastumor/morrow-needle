@@ -292,17 +292,23 @@ Member-State participation.
 
 #244 immediately red-teamed the resulting 50-case / 21-class taxonomy rather
 than rewarding taxonomy growth. Three class pairs were merged without deleting
-any case, leaving:
+any case.
 
-> **50 cases / 18 trap classes**
+#245–#252 then completed one bounded sponsored-discovery batch:
 
-The compression keeps distinct causal owners for procedural timing,
-jurisdiction/order scope, machine artifacts, judicial effects and source roles
-while removing direction/output/representation-specific duplicate labels.
+- scoped third-country recognition was rejected as redundant;
+- cohort, procedural-silence and judicial operative-state classes generalised;
+- `MEMBER_STATE_OPTION_DIVERGENCE` was admitted from GDPR + MiCA;
+- `OFFICIAL_AUTHORITY_HANDOFF` gained a current medicines case;
+- `CROSS_ORDER_INCORPORATION_STATE` generalised from EEA to Swiss Schengen.
+
+The corpus is now:
+
+> **57 cases / 19 trap classes**
 
 Current active research:
 
-> **#245 — scoped third-country adequacy/equivalence recognition**
+> **#253 — actual CJEU temporal-effect limitation exception**
 
 Continuous research does not authorise a retry of #214, product implementation,
 schema growth, monitoring infrastructure or taxonomy expansion without the same

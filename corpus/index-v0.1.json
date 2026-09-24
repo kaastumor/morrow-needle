@@ -18,7 +18,8 @@
     "JUDICIAL_INTERPRETATION_TEMPORAL_OVERCLAIM": "A judicial interpretation supplies authoritative meaning without automatically creating a new prospective application start at judgment date.",
     "PRIVATE_ORIGIN_LEGAL_RECOGNITION": "A private-origin determination has a bounded legal role because public law recognises the actor or output, without converting the source into a public authority.",
     "PARALLEL_INSTRUMENT_LIFECYCLE": "An umbrella negotiation or political deal is implemented through legally distinct interim and comprehensive agreements whose signature, provisional application, conclusion, entry into force and replacement states must remain attached to the correct instrument.",
-    "OFFICIAL_TRACKER_UPDATE_LAG": "A currently accessible official summary/status tracker lags newer primary legal sources, so current access time cannot be substituted for the tracker's observation or update horizon."
+    "OFFICIAL_TRACKER_UPDATE_LAG": "A currently accessible official summary/status tracker lags newer primary legal sources, so current access time cannot be substituted for the tracker's observation or update horizon.",
+    "TECHNICAL_STANDARD_AUTHORITY_HANDOFF": "A document can be final within an upstream technical authority's drafting stage without owning the downstream binding legal rule; where a later institution has formal amendment/adoption power, authority and legal effect must remain attached to the exact institutional stage and adopted artifact."
   },
   "cases": [
     {
@@ -684,7 +685,53 @@
         "path:fixtures/value-gates/issue97-manual-stage1-results-v0.3.json",
         "path:docs/audits/issue97-latent-detection-result-2026-09-24.md"
       ]
+    },
+    {
+      "id": "eba-fixed-overheads-rts-authority-handoff",
+      "title": "EBA final draft fixed-overheads RTS differs from binding Commission market-maker rule",
+      "domain": "investment-firm prudential requirements / regulatory technical standards",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "TECHNICAL_STANDARD_AUTHORITY_HANDOFF"
+      ],
+      "provenance": {
+        "issue": 171,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "EBA's December-2020 final draft was final only at the EBA drafting stage; the Commission later added a substantive market-maker trading-fee deduction before adopting the binding Delegated Regulation (EU) 2022/1455.",
+      "evidence_refs": [
+        "issue:171",
+        "path:docs/experiments/issue171-rts-authority-handoff-result-2026-09-24.md"
+      ]
+    },
+    {
+      "id": "eba-crowdfunding-rts-authority-handoff",
+      "title": "EBA final draft crowdfunding RTS differs from binding Commission personal-data retention rule",
+      "domain": "crowdfunding / credit-risk assessment / regulatory technical standards",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "TECHNICAL_STANDARD_AUTHORITY_HANDOFF"
+      ],
+      "provenance": {
+        "issue": 171,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "EBA's May-2022 final draft imposed a minimum documentation-retention rule, but the Commission later added a substantive maximum five-year boundary for personal data before adopting Delegated Regulation (EU) 2024/358.",
+      "evidence_refs": [
+        "issue:171",
+        "path:docs/experiments/issue171-rts-authority-handoff-result-2026-09-24.md"
+      ]
     }
   ],
-  "case_count": 27
+  "case_count": 29
 }

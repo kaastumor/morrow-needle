@@ -6,53 +6,40 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-**MVP Gate #103 — Needle Corpus Explorer v0.1 is the active authorised horizon.**
+**IDLE BY DESIGN — no AUTO READY implementation or discovery issue is currently
+authorised.**
 
-Sponsor direction after #97: crystallize the surviving core into the smallest
-usable MVP, then begin evidence-only discovery for possible new features.
+MVP #103 has reached `TECHNICAL_MVP_CANDIDATE`, but real/manual usability
+evidence remains outstanding. The Explorer is therefore frozen as a thin
+experiment; autonomous work must not simulate user acceptance or add features to
+make the experiment look more complete.
 
-Canonical plan:
-`docs/mvp/v0.1-plan.md`
+Post-MVP discovery gate #104 is complete. Gate review:
+`docs/discovery/post-mvp-gate-review-2026-09-24.md`
 
-Canonical WoW:
-`docs/way-of-working.md`
+Disposition summary:
 
-### Delivery queue
+- #111 — **ADOPT_FOR_EXPERIMENT**, dormant until a fresh controlled-contrast
+  evaluation question exists;
+- #112 — **ADOPT_FOR_EXPERIMENT**, dormant until a stronger benchmark/answer-key
+  validity claim is actually contemplated;
+- #113 — **REJECT** authoring UI/generator/workflow;
+- #114 — **REVISE** to event-triggered, question-led regression replay only;
+- #115 — **REJECT** source-freshness monitoring;
+- #116 — **PARK** generic benchmark interoperability.
 
-Execute in dependency order, WIP=1:
+The gate decision is **SIMPLIFY**. It creates no implementation horizon and no
+replacement scheduled worker.
 
-1. #105 — MVP-01 static explorer shell and local launch
-2. #106 — MVP-02 corpus projection, validation and summary metrics
-3. #107 — MVP-03 browse, search and filters
-4. #108 — MVP-04 case detail, evidence lineage and deep links
-5. #109 — MVP-05 evaluation/protocol UX, accessibility and responsive pass
-6. #110 — MVP-06 integration gate and technical release candidate
+New autonomous work requires evidence from at least one of:
 
-If #110 records `TECHNICAL_MVP_CANDIDATE`, the discovery gate #104 becomes
-eligible. Technical MVP acceptance does not imply sponsor/manual usability
-acceptance.
+1. a fresh falsifiable legal-information question;
+2. real/manual Explorer use capable of resolving H-16;
+3. a concrete trigger for the conditional #111 or #112 experiment;
+4. a named external reproducibility need matching the narrow #116 boundary;
+5. a directly observed project-system failure.
 
-### Discovery queue
-
-Evidence-only; no feature implementation:
-
-7. #111 — metamorphic legal-state pair discovery
-8. #112 — expert-review/trust-boundary discovery
-9. #113 — corpus authoring/contribution ergonomics
-10. #114 — longitudinal regression/model drift
-11. #115 — source-drift/freshness
-12. #116 — benchmark interoperability
-
-Each discovery run must end in
-`ADOPT_FOR_EXPERIMENT / REVISE / REJECT / PARK`.
-
-### Night schedule
-
-The scheduled worker is authorised for a bounded **10-run hourly sprint from
-01:00 through 10:00 Europe/Amsterdam on 24 September 2026**. It must resume
-unfinished work before claiming the next issue. Planning slots are not deadlines
-and may slip when a PR needs repair. A separate morning review follows after the
-night sprint.
+Until then, an empty queue is intentional.
 
 No task may revive the old legal-change product, add a backend/framework, create
 a second corpus truth store, or implement a discovery feature without a later

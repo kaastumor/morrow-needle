@@ -57,14 +57,16 @@ useful only when persistence earns itself.
 6. Treat parity and negative results as successful evidence.
 7. Add durable complexity only after a demonstrated simpler-baseline failure.
 
-The current authorised horizon is **Needle Corpus Explorer v0.1** (#103): a
-static, dependency-free projection over the surviving corpus + protocol. It is a
-bounded product-form experiment, not a revival of the stopped broader legal
-product.
+Needle Corpus Explorer v0.1 (#103) has reached
+`TECHNICAL_MVP_CANDIDATE`: a static, dependency-free projection over the
+surviving corpus + protocol. Real/manual usability value remains unproven, so
+#103 and H-16 stay open as an experiment rather than a release claim.
 
-Delivery uses issues #105–#110. After deterministic technical acceptance,
-issues #111–#116 run evidence-only feature discovery. See
-`docs/mvp/v0.1-plan.md` and `docs/way-of-working.md`.
+The bounded post-MVP discovery gate #104 is complete. Across #111–#116 it
+authorised **no new feature implementation**: two ideas remain conditional
+experiments, one was narrowed to an event-triggered manual technique, two were
+rejected and one was parked. The gate decision is **SIMPLIFY**. There is
+intentionally no replacement AUTO READY queue.
 
 ## Canonical project records
 
@@ -78,6 +80,7 @@ issues #111–#116 run evidence-only feature discovery. See
 - `corpus/index-v0.1.json`
 - `docs/evaluations/adversarial-corpus-protocol-v0.1.md`
 - `docs/mvp/v0.1-plan.md`
+- `docs/discovery/post-mvp-gate-review-2026-09-24.md`
 - `docs/way-of-working.md`
 
 ---

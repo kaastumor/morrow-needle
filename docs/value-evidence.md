@@ -43,6 +43,8 @@ Every entry ends in one disposition:
 
 | #97 latent-trap detection gate | PARITY | The bounded Needle Method checklist improves latent-trap detection over a strong source-grounded baseline on realistic prompts that do not name the hidden legal-information trap | Same consumer ChatGPT workflow in eight separate non-personalized Temporary Chats, R versus M prompt treatment | All four fresh adversarial pairs were R-pass/M-pass; blind grades were all PASS before arm reveal, so the pre-registered stop rule fired with zero Method rescues. Manual result files do not independently verify UI/model settings | SIMPLIFY | `docs/audits/issue97-latent-detection-result-2026-09-24.md` and Issue #97 |
 
+| #104 post-MVP feature-discovery gate | NO_VALUE | A technically complete Corpus Explorer naturally justifies another feature/tooling horizon | Existing corpus/protocol + repository/manual baselines and adjacent benchmark/evaluation practice | Six plausible themes produced two conditional experiments, one revised event-triggered technique, two feature rejections and one parked integration; none justified implementation | SIMPLIFY | `docs/discovery/post-mvp-gate-review-2026-09-24.md` and Issue #104 |
+
 ## Rules
 
 1. Do not add an entry because work was completed.

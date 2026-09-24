@@ -1,17 +1,9 @@
 name: Legal AST contract + manual live fixture probe
+# Passive historical/research workflow. Manual dispatch only under #290.
 
 on:
-  push:
-    paths:
-      - "src/needle/ast/**"
-      - "src/needle/formex/modifications.py"
-      - "scripts/build_live_ast_fixtures.py"
-      - "schemas/legal-ast-v0.1.schema.json"
-      - "schemas/consolidation-modification-annotation-v0.1.schema.json"
-      - "tests/test_legal_ast_parsers.py"
-      - "tests/test_ast_completeness.py"
-      - ".github/workflows/live-ast.yml"
   workflow_dispatch:
+
 
 concurrency:
   group: live-legal-ast-${{ github.ref }}

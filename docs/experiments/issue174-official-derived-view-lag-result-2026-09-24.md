@@ -4,7 +4,7 @@ Date: 2026-09-24
 Issue: #174  
 Disposition: **INDETERMINATE / SAMPLE_INCOMPLETE**
 
-## Scientific/taxonomy result
+## Decision
 
 No taxonomy conclusion is permitted.
 
@@ -14,173 +14,143 @@ The pre-registered sample required:
 2. one fresh legislation.gov.uk revised-text lag case;
 3. one declared-snapshot negative control.
 
-The frozen control search returned no usable Single Market Scoreboard candidate.
+The negative control was available.
 
-The hard stop therefore fired before the full three-part sample existed.
+The hard stop fired because the **frozen UK revised-text candidate pool contained
+no eligible positive case**: no selected page established an already-in-force,
+editorially unapplied amendment to the displayed provision that materially
+changed a current-law answer.
 
-Do not rename `OFFICIAL_TRACKER_UPDATE_LAG`.
+The preregistration prohibits a second search or replacement system after
+exposure.
 
-Do not add fresh corpus cases from this experiment.
+Therefore:
 
-## Positive A — sanctions candidate selection
+- do not rename `OFFICIAL_TRACKER_UPDATE_LAG`;
+- do not add fresh corpus cases;
+- do not treat sample incompleteness as evidence against
+  `OFFICIAL_DERIVED_VIEW_LAG`.
 
-The frozen chronological rule was:
+## EU sanctions branch
 
-> earliest eligible UIF Sanzioni Alert after 7 August 2026 and no later than
-> 23 September 2026.
+The frozen chronological rule selected the 23 September 2026 UIF targeted-
+sanctions de-listing alert as the first post-7-August candidate.
 
-UIF's official news index shows:
+The corresponding operative event was identifiable as Council Implementing
+Regulation (EU) 2026/2160 of 22 September 2026, amending Regulation
+(EU) No 269/2014 and entering into force on publication.
 
-- 7 August 2026 — listing;
-- next displayed targeted-sanctions alert: 23 September 2026 — de-listing.
-
-The 23 September alert was therefore the deterministic first candidate.
-
-Official UIF evidence:
-https://uif.bancaditalia.it/pubblicazioni/avvisi/2026/sanzioni-alert-2026.09.23/index.html
-
-The alert states:
-
-- the latest update to Regulation (EU) No 269/2014 is in the Official Journal,
-  L series, 22 September 2026;
-- subjects whose designation was revoked **will be removed** from the EU
-  consolidated list.
-
-That is structurally consistent with the proposed mechanism:
+This is structurally consistent with:
 
 ```text
 binding primary legal state changes
     ↓
-official derived list requires later update
+official derived list requires subsequent update
 ```
 
-However, because the complete preregistered sample failed, this candidate is
-not promoted into a #174 positive-case result.
+Because the full three-part sample became impossible on the UK branch, this
+candidate is not admitted as a #174 positive case.
 
 Status:
 
 `FRESH_CANDIDATE / NOT_ADMITTED`
 
-## Positive B — UK candidate pool
+## UK frozen pool
 
-The exact frozen search was executed once:
+Exact search, run once:
 
 `site:legislation.gov.uk/ukpga "outstanding changes not yet made" "section"`
 
-The exposed Run C section 17 page was excluded.
+The Run C exposed section 17 page was excluded.
 
-Distinct eligible-shape URLs returned by the first result set included:
+The frozen hash order was inspected without a second query.
 
-- `/ukpga/1981/66/section/10`
-- `/ukpga/2011/13/section/157`
-- `/ukpga/1981/66/section/4`
-- `/ukpga/1981/66/section/5A`
-- `/ukpga/1981/66/section/5B`
-- `/ukpga/1981/66/section/7`
-- `/ukpga/1981/66/section/8`
-- `/ukpga/1981/66/section/11`
-- `/ukpga/1981/66/section/12`
+Findings:
 
-Applying the frozen hash:
+- Police Reform and Social Responsibility Act 2011 s.157: outstanding 2026
+  changes shown on the Act page concern other provisions, not s.157;
+- several 1981 Act section pages exposed wider Act-level outstanding effects but
+  no eligible already-in-force unapplied textual amendment to the selected
+  displayed provision;
+- the Land Compensation Act section 9 result was a historical point-in-time
+  view, not the required latest revised positive;
+- 1981 Act section 11 directly exposed 2026 Wales amendments, but the relevant
+  Schedule 2 changes were prospective / not yet in force at experiment freeze.
 
-`SHA256("needle174|UK_REVISED_VIEW|<canonical-url>")`
+Thus no frozen candidate satisfied all eligibility conditions.
 
-puts first:
+The preregistration says:
 
-`https://www.legislation.gov.uk/ukpga/2011/13/section/157`
-
-hash:
-
-`173f35adb5fd16e6e6f5beb62456bcb0773279adf4f5afd14aae8f52197060d3`
-
-The search result itself confirms that the page is a "Latest available
-(Revised)" view with outstanding changes not yet made by the editorial team.
-
-Because the negative-control pool had already failed, #174 stopped before
-substantive eligibility inspection of the hash-selected UK candidate.
-
-Status:
-
-`HASH_SELECTED / NOT_INSPECTED_FOR_ELIGIBILITY`
-
-## Negative control — failed frozen pool
-
-The exact frozen query was executed once:
-
-`site:single-market-scoreboard.ec.europa.eu "reporting period" "notifications" "2025"`
-
-The first returned result set contained no usable Single Market Scoreboard URL
-from which the pre-registered hash-selected control could be frozen.
-
-The preregistration states:
-
-> if the frozen searches/candidate rules cannot yield both positive cases and
-> one control: INDETERMINATE / SAMPLE_INCOMPLETE.
-
-It also prohibits replacement systems or additional queries after exposure.
-
-Therefore no broader/reworded Scoreboard search is allowed.
-
-## Why this is not REJECT
-
-The proposed `OFFICIAL_DERIVED_VIEW_LAG` mechanism was not falsified.
-
-The experiment failed earlier at complete fresh-sample construction.
-
-The sanctions candidate is directionally supportive and the UK pool exists, but
-partial evidence cannot substitute for the required negative control.
+> do not issue a second search because the first pool is inconvenient.
 
 Therefore:
 
-> sample incompleteness ≠ taxonomy rejection.
+> **UK positive case B = SAMPLE UNAVAILABLE UNDER FROZEN RULE.**
 
-## Why this is not SUPPORT
+This alone triggers:
 
-The negative control is part of construct validity.
+`INDETERMINATE / SAMPLE_INCOMPLETE`
 
-Without it, a broader "derived view lag" class could accidentally label honest
-historical/reporting snapshots as defective merely because they are not
-real-time.
+## Negative control — available
 
-That distinction was important enough to pre-register and cannot be waived
-after the search result is known.
+Exact frozen query:
+
+`site:single-market-scoreboard.ec.europa.eu "reporting period" "notifications" "2025"`
+
+After excluding the Run C Finland page, the first result set still contained the
+Commission page:
+
+> **Notifications in the field of technical regulations (TRIS) and services
+> (IMI)**
+
+It explicitly declares reporting period:
+
+`10/2024 – 09/2025`
+
+and presents itself as a reporting/performance snapshot.
+
+That is consistent with the pre-registered control:
+
+> a derived view with an explicit historical/reporting cutoff is not defective
+> merely because it is not real-time.
+
+The experiment therefore did **not** fail because the control was unavailable.
+
+## Interpretation
+
+This is not `REJECT`.
+
+The proposed broader mechanism was not falsified; fresh sample construction
+failed first.
+
+This is not `SUPPORT`.
+
+Both fresh positive systems plus the control were required. Partial directional
+evidence cannot waive a frozen sample requirement.
 
 ## Operational learning
 
-#165 and #174 both lost otherwise credible hypotheses to transport/query-shape
-limitations rather than substantive evidence.
+#165 and #174 exposed a common execution risk:
 
-Future bounded experiments should therefore perform a **transport smoke test
-before full sample preregistration**:
+> a sound sample-selection rule can still fail because external
+> search/enumeration transport does not reliably produce the required candidate
+> pool.
 
-- test whether the runtime can execute the intended query/API shape;
-- inspect only transport success/schema/count, not candidate content;
-- do not preserve candidate identities from the smoke test;
-- only then freeze the deterministic candidate-selection rule.
+Future transport-sensitive experiments should perform a
+**metadata-only transport smoke test before full sample preregistration**:
 
-This is an execution-integrity improvement, not permission to tune samples after
-seeing candidates.
+1. verify query/API shape;
+2. verify result count/schema/pagination only;
+3. do not retain candidate identities or inspect substantive candidate content;
+4. then freeze the deterministic selection rule.
 
-## Assumption consequence
+Cycle 3 (#177) adopts this guard.
 
-H-21 remains unresolved and should be **PARKED**.
+## Consequence
 
-Run C remains good DERIVATION evidence that the broader mechanism is plausible.
+H-21 remains **PARKED / UNRESOLVED**.
 
-No new class/cases are admitted.
+No corpus or taxonomy change.
 
-## Active-discovery consequence
-
-Sponsor direction remains active discovery.
-
-The Cycle 2 reserves are now:
-
-- Run A — consumed successfully by #171;
-- Run B — parked behind a specific compliant-yet-unreconstructable trigger;
-- Run C — #174 sample-incomplete; H-21 parked;
-- Run D — #165 transport-blocked; H-19 parked.
-
-The existing reserve queue is exhausted.
-
-The correct next action is a fresh active linked-discovery cycle, with transport
-feasibility checked before any transport-sensitive experiment is frozen.
+Proceed to sponsor-authorised active Discovery Cycle 3 rather than repairing the
+sample after exposure.

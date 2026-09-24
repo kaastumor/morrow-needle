@@ -264,11 +264,18 @@ Recent results now include both subtraction and new cross-domain mechanisms:
   Market Abuse Regulation third-country instrument nexus, with DSA/AI Act as
   supporting boundary evidence.
 
-The corpus is now **66 cases / 22 trap classes**.
+#264/#266/#267 then completed another bounded research batch:
+
+- #264 ADMIT — `CHOICE_OF_LAW_STATE`;
+- #266 ADMIT — `DIRECTIVE_INVOCABILITY_STATE`;
+- #267 RED TEAM — newest-class anti-growth audit found no lossless merge or
+  retirement among the six newest scope/conflict classes.
+
+The corpus is now **70 cases / 24 trap classes**.
 
 Current horizon:
 
-> **ACTIVE RESEARCH — #264: party choice as applicable-law state**
+> **ACTIVE RESEARCH — #268: second coverage gate after 70 cases / 24 classes**
 
 The smallest surviving identity remains:
 
@@ -316,6 +323,7 @@ work.
 - `docs/discovery/issues253-256-sponsored-discovery-synthesis-2026-09-24.md`
 - `docs/discovery/issues257-260-sponsored-discovery-synthesis-2026-09-24.md`
 - `docs/discovery/issues261-263-coverage-union-nexus-synthesis-2026-09-24.md`
+- `docs/discovery/issues264-267-applicable-law-directive-synthesis-2026-09-24.md`
 - `docs/discovery/post-issue195-project-health-2026-09-24.md`
 - `docs/experiments/issue165-scholarly-status-result-2026-09-24.md`
 - `docs/discovery/post-issue165-project-health-2026-09-24.md`

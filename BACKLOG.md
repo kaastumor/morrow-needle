@@ -70,9 +70,13 @@ Research/audit mode rules:
 2. prefer official-source evidence and the smallest existing contract that can
    answer it;
 3. produce a fixture, finding, regression, or bounded negative result;
-4. do not add schema, infrastructure or product surface unless the question
-   proves the existing baseline cannot represent the finding;
-5. a well-supported “nothing new / baseline already handles this” result is
+4. for correctness, validity and canonical representation, do not add schema or
+   infrastructure unless the question proves the existing baseline cannot
+   preserve the finding safely or repeatably;
+5. a product/workflow surface may still earn itself under correctness parity
+   only through observed relative advantage over the strongest realistic
+   alternative and only above the validity/provenance floor;
+6. a well-supported “nothing new / baseline already handles this” result is
    successful work.
 
 **Issue #88 is complete. Its pre-registered stop rule fired.**
@@ -253,8 +257,11 @@ experimental/historical surfaces. None is part of Core by default and none may
 drive architecture merely to regain relevance.
 
 Public-product work may reopen only from external/user evidence of a recurring
-concrete problem that the strong baseline cannot reliably solve. Architecture
-itself is not such evidence.
+concrete job where either the strong baseline cannot reliably solve the relevant
+correctness/validity problem, or a smaller Needle surface shows a meaningful
+relative workflow advantage over the strongest realistic alternative that is
+important enough to plausibly change behavior without weakening correctness,
+provenance or evidence integrity. Architecture itself is not such evidence.
 
 Thread comparative audit:
 `docs/audits/thread-comparative-value-2026-09-23.md`  

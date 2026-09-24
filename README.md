@@ -55,7 +55,12 @@ useful only when persistence earns itself.
 4. Preserve uncertainty and abstention.
 5. Compare Needle-specific machinery against the simpler workflow.
 6. Treat parity and negative results as successful evidence.
-7. Add durable complexity only after a demonstrated simpler-baseline failure.
+7. For correctness, validity and canonical-representation claims, add durable
+   complexity only after a demonstrated simpler-baseline failure. For
+   product/workflow surfaces, correctness parity does not by itself prove value
+   parity: a surface may earn itself through a meaningful relative advantage
+   over the strongest realistic alternative, provided correctness, provenance,
+   uncertainty handling and evidence integrity do not regress.
 
 Needle Corpus Explorer v0.1 (#103) has reached
 `TECHNICAL_MVP_CANDIDATE`: a static, dependency-free projection over the
@@ -66,11 +71,14 @@ The bounded post-MVP discovery gate #104 completed with **SIMPLIFY** and no
 feature implementation authorization.
 
 The sponsor has now authorised one further bounded discovery experiment:
-**evidence-triggered continuous discovery v0.2** (#134). It actively searches
-for opportunities only through four evidence channels — fresh legal adversary,
-real Explorer use, external research need, or observed failure of the current
-approach — while keeping one shared WIP=1 funnel. Cycle 1 is limited to #135–#139
-and does not pre-authorise a second cycle or any feature build.
+**evidence-triggered continuous discovery v0.2** (#134). It accepts opportunity
+evidence only through four channels — fresh legal adversary, real Explorer use,
+external research need, or observed failure of the current approach — while
+keeping one shared WIP=1 funnel. An optional bounded linked-search operator may
+generate `SEARCH_HYPOTHESIS` items from proven evidence, but those do not enter
+the opportunity funnel without new target evidence from an authorised channel.
+Cycle 1 is limited to #135–#139 and does not pre-authorise a second cycle or any
+feature build.
 
 ## Canonical project records
 

@@ -106,8 +106,11 @@ baseline:
 3. direct reading of authentic sources;
 4. ordinary search plus a capable source-grounded LLM.
 
-If that baseline already answers a question safely, Needle should record parity
-rather than invent a distinction.
+If that baseline already answers a question safely, Needle should record
+**correctness parity** rather than invent a correctness distinction. Do not infer
+from that alone that product/workflow value is also at parity: any separate
+workflow claim must be predeclared and supported by evidence of meaningful
+relative advantage over the strongest realistic alternative.
 
 ## Research-mode success condition
 
@@ -123,8 +126,14 @@ A run is successful when it produces at least one well-supported outcome:
 - evidence that a result should remain Method-only rather than be persisted;
 - evidence that a historical projection or subsystem should remain parked.
 
-New persistent complexity is justified only when Method + the strong baseline
-cannot preserve the required state safely or repeatably.
+New persistent canonical/research complexity is justified only when Method + the
+strong baseline cannot preserve the required state safely or repeatably.
+
+A product/workflow projection can instead earn a bounded surface under
+correctness parity when observed evidence shows a meaningful relative advantage
+in the real user job, the advantage is important enough to plausibly change
+behavior despite adoption friction, and the surface remains above the project's
+correctness/provenance/evidence-integrity validity floor.
 
 ## Public-product status
 
@@ -137,8 +146,11 @@ They are **not part of the essential project identity** merely because they
 exist. Each must re-earn active use from a concrete research question.
 
 Public-product expansion may reopen only when external/user evidence identifies
-a recurring concrete problem for which the strong simpler baseline fails
-materially. The existence of unused architecture is not evidence of demand.
+a recurring concrete job for which either the strong simpler baseline fails
+materially on correctness/validity, or a smaller Needle surface demonstrates a
+meaningful relative workflow advantage over the strongest realistic alternative.
+Correctness parity alone is neither a product rejection nor a product
+justification. The existence of unused architecture is not evidence of demand.
 
 ## Invariants
 
@@ -155,7 +167,10 @@ Especially:
 - derived views are not competing truth stores;
 - canonical claims remain traceable to official evidence;
 - source-state-as-of and ex-post legal effect remain distinct;
-- new complexity must be earned by a demonstrated failure of a simpler design.
+- new canonical/research complexity must be earned by a demonstrated failure of
+  a simpler design; product/workflow complexity may instead be earned by
+  observed relative advantage, but never by novelty alone and never below the
+  validity/provenance floor.
 
 ## Explicit non-goals
 
@@ -190,9 +205,10 @@ This does not reopen a feature roadmap. It tests whether active discovery can
 surface decision-changing evidence without recreating product/process creep.
 
 The discovery outcome is to find recurring or consequential legal-research
-problems where the strongest boring baseline or current
-corpus/protocol/Explorer demonstrably falls short, and to identify the smallest
-evidence-backed response.
+problems where either the strongest boring baseline/current corpus materially
+fails, or a Needle-specific product/workflow response demonstrates meaningful
+relative advantage over a correct existing alternative, and to identify the
+smallest evidence-backed response.
 
 Four evidence channels may open opportunities:
 
@@ -202,6 +218,11 @@ Four evidence channels may open opportunities:
 4. observed failure of the current approach.
 
 They feed one WIP=1 funnel. They are not separate product tracks.
+
+Linked search may operate inside Discover/Diverge from a concrete evidence
+anchor, but it is not a fifth evidence channel. It produces only
+`SEARCH_HYPOTHESIS`; target evidence from an authorised channel is required
+before promotion into the opportunity funnel.
 
 Cycle 1 is bounded to #135–#139. Human evidence in #136 may not be simulated.
 Public papers/trends may nominate an external-need opportunity but do not count

@@ -305,22 +305,25 @@ generality case.
 `EU_PRIMACY_DISAPPLICATION_STATE`, and preserved a negative overlap-audit
 result rather than forcing compression.
 
-#261 then mapped corpus coverage before any further mechanism hunt. It found
-temporal/procedural and jurisdiction-membership dimensions comparatively dense
-and selected one under-covered state dimension: relational/extraterritorial
-applicability.
+#261 mapped corpus coverage and selected relational/extraterritorial
+applicability as the highest-information uncovered state dimension.
 
-#263 admitted `UNION_NEXUS_APPLICABILITY` from GDPR and Market Abuse
-Regulation cases, with DSA/AI Act supporting the boundary between a legally
-specified Union nexus and mere incidental/passive contact.
+#263 admitted `UNION_NEXUS_APPLICABILITY`.
+
+#264/#266 then filled two further under-covered state dimensions:
+- `CHOICE_OF_LAW_STATE`;
+- `DIRECTIVE_INVOCABILITY_STATE`.
+
+#267 immediately attacked the newest classes for redundancy and found no
+lossless merge/retirement.
 
 The corpus is now:
 
-> **66 cases / 22 trap classes**
+> **70 cases / 24 trap classes**
 
 Current active research:
 
-> **#264 — party choice as applicable-law state**
+> **#268 — second coverage gate after 70 cases / 24 classes**
 
 Continuous research does not authorise a retry of #214, product implementation,
 schema growth, monitoring infrastructure or taxonomy expansion without the same

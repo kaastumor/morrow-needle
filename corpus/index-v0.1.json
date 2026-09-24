@@ -16,7 +16,7 @@
     "MACHINE_COMPLIANCE_ARTIFACT": "A legally consequential calculation, declaration, submission or verification depends on a prescribed, authoritative, privileged or certified machine-actionable artifact such as an executable tool, ruleset, schema or semantic profile; artifact identity, version or regulatory status is legally relevant evidence, so substituting another/current artifact can change the accepted result or validation consequence without parent-text mutation.",
     "JUDICIAL_INTERPRETATION_TEMPORAL_EFFECT": "A preliminary ruling normally clarifies the interpreted EU rule from that rule's own entry into force; the judgment date is not a default new prospective start, while any express Court-imposed limitation of temporal effects is an exceptional legal boundary that must be preserved.",
     "PROCEDURAL_SILENCE_LEGAL_EFFECT": "A legally specified period can expire without an affirmative administrative act and the governing rule itself assigns a legal consequence to that non-action; the resulting state cannot be reconstructed safely by searching only for positive decision documents.",
-    "COHORTED_TRANSITIONAL_APPLICABILITY": "Current legal applicability depends on an object's qualifying historical cohort event or legacy state, such as placement on market, putting into service, certificate/declaration status or significant change; similar current objects can therefore have different legal treatment unless the cohort-defining history is preserved.",
+    "COHORTED_TRANSITIONAL_APPLICABILITY": "Current legal applicability depends on a regulated subject, asset, data set or object's qualifying historical cohort event or legacy state, such as placement on market, putting into service, receipt while qualifying status existed, certificate/declaration status or significant change; similar current states can therefore receive different legal treatment unless cohort-defining history is preserved.",
     "PROCEDURAL_CLOCK_SUSPENSION": "A legally defined decision or assessment period can be suspended and later resumed by specified procedural events; nominal elapsed calendar or working time is not equivalent to elapsed legal clock time unless suspension intervals are preserved.",
     "CROSS_ORDER_INCORPORATION_STATE": "A legal act can be operative in one legal order while remaining only relevant, under scrutiny, incorporated-but-not-yet-effective or otherwise non-operative in a linked legal order until a separate incorporation instrument and its entry-into-force conditions are satisfied; legal state, dates and adaptations must remain attached to the target legal order.",
     "DIFFERENTIATED_MEMBER_STATE_PARTICIPATION": "An EU act can bind or apply only in a legally defined subset of Member States because of enhanced cooperation, opt-ins or Treaty protocols, and that participation set can change over time; applicability must be resolved against the act's participation regime and relevant date rather than inferred from the EU act label or today's participant list.",
@@ -1203,7 +1203,30 @@
       "evidence_refs": [
         "issue:243"
       ]
+    },
+    {
+      "id": "dpf-historical-data-cohort-after-exit",
+      "title": "DPF exit ends new-transfer benefit but preserves obligations for historical data cohort",
+      "domain": "data protection / international transfers",
+      "jurisdiction": "EU + United States",
+      "trap_classes": [
+        "COHORTED_TRANSITIONAL_APPLICABILITY",
+        "DYNAMIC_REFERENCE_STATUS"
+      ],
+      "provenance": {
+        "issue": 247,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Removal from the DPF List ends entitlement to rely on the adequacy decision for new transfers, while data received during the organisation's earlier participation remains subject to the Principles unless another adequate mechanism is supplied or the data are returned/deleted; current list status alone cannot determine treatment of the historical data cohort.",
+      "evidence_refs": [
+        "issue:247"
+      ]
     }
   ],
-  "case_count": 50
+  "case_count": 51
 }

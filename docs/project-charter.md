@@ -301,20 +301,26 @@ and several in-place generalisations.
 `SUBSTATE_TERRITORIAL_REGIME` class and one food-law clock-suspension
 generality case.
 
-#257/#259/#260 then:
-- generalised the sub-state territorial class to Cyprus Protocol No 10;
-- admitted `EU_PRIMACY_DISAPPLICATION_STATE` from two recent primacy cases
-  with Popławski as the direct-effect boundary;
-- ran a targeted overlap audit that found no lossless merge among the newer
-  jurisdiction/cohort/judicial/primacy classes.
+#257/#259/#260 generalised sub-state territorial scope, admitted
+`EU_PRIMACY_DISAPPLICATION_STATE`, and preserved a negative overlap-audit
+result rather than forcing compression.
+
+#261 then mapped corpus coverage before any further mechanism hunt. It found
+temporal/procedural and jurisdiction-membership dimensions comparatively dense
+and selected one under-covered state dimension: relational/extraterritorial
+applicability.
+
+#263 admitted `UNION_NEXUS_APPLICABILITY` from GDPR and Market Abuse
+Regulation cases, with DSA/AI Act supporting the boundary between a legally
+specified Union nexus and mere incidental/passive contact.
 
 The corpus is now:
 
-> **64 cases / 21 trap classes**
+> **66 cases / 22 trap classes**
 
 Current active research:
 
-> **#261 — coverage map after 64 cases / 21 classes**
+> **#264 — party choice as applicable-law state**
 
 Continuous research does not authorise a retry of #214, product implementation,
 schema growth, monitoring infrastructure or taxonomy expansion without the same

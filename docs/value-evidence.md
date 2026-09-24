@@ -45,6 +45,8 @@ Every entry ends in one disposition:
 
 | #104 post-MVP feature-discovery gate | NO_VALUE | A technically complete Corpus Explorer naturally justifies another feature/tooling horizon | Existing corpus/protocol + repository/manual baselines and adjacent benchmark/evaluation practice | Six plausible themes produced two conditional experiments, one revised event-triggered technique, two feature rejections and one parked integration; none justified implementation | SIMPLIFY | `docs/discovery/post-mvp-gate-review-2026-09-24.md` and Issue #104 |
 
+| #134 Cycle 1 evidence-triggered discovery | DISCOVERY | A bounded evidence-triggered cycle can find decision-relevant next experiments without recreating a feature roadmap | Four evidence channels, strong alternatives, relative-value/validity guards and anti-theatre stop rules | #135/#137/#138 produced bounded research opportunities; #136 found only synthetic mechanical Explorer advantage. #139 kept the corpus + protocol identity, parked lower-information branches and selected exactly one external benchmark-integrity experiment (#150). Standing continuous discovery was not earned. | CONTINUE | `docs/discovery/cycle1-synthesis-project-health-2026-09-24.md` and Issues #134–#139 |
+
 ## Rules
 
 1. Do not add an entry because work was completed.

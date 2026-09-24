@@ -140,17 +140,55 @@ For Corpus Explorer v0.1:
 
 ## Discovery rule
 
-After MVP technical acceptance, discovery asks whether a feature deserves an
-experiment.
+Discovery starts from evidence, not from a feature list.
+
+Active plan:
+`docs/discovery/evidence-triggered-continuous-discovery-v0.2.md`
+
+Evidence may enter through:
+
+- a fresh legal adversary;
+- real Explorer use;
+- a concrete external research need;
+- an observed failure of the current approach.
+
+These are sourcing channels into one WIP=1 opportunity funnel.
 
 Discovery follows:
 
-> user/research problem → precedent/baseline → falsifiable hypothesis → smallest
-> evidence test → counterargument → disposition
+> evidence signal → discover/diverge → define opportunity → strongest baseline →
+> riskiest assumption → smallest evidence test → counterargument → disposition
 
-A discovery note does not create implementation permission by itself. A future
-feature requires an explicit sponsor/project decision or a separately authorised
-experiment gate.
+Use established product-discovery risks where material:
+
+- value;
+- usability;
+- feasibility;
+- viability/operations;
+
+plus Needle's explicit validity/evidence-integrity risk.
+
+Do not mechanically fill every risk category. Test the assumptions that are both
+important and weakly evidenced.
+
+Every discovery issue ends in exactly one:
+
+`ADOPT_FOR_EXPERIMENT / REVISE / REJECT / PARK`
+
+An ADOPT_FOR_EXPERIMENT result does not create implementation permission. A later
+delivery candidate needs a separate gate and evidence that the strong baseline
+actually failed for a recurring or consequential problem.
+
+Human-evidence claims remain human. Browser automation cannot substitute for
+observed usability, and public trends cannot be relabelled as direct external
+demand.
+
+Disposable prototypes are permitted only when they are the cheapest credible
+test. They must not silently become maintained product architecture.
+
+Per opportunity, use one initial discovery run and at most one follow-up before
+mandatory disposition unless genuinely new external/source evidence changes the
+decision boundary.
 
 ## Gate review
 

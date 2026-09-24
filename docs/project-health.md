@@ -21,7 +21,7 @@ Record changed state and decisions, not activity volume.
   observed relative advantage that mattered enough to plausibly change behavior?
 - Are we preserving research/audit value, or rebuilding a stopped product
   roadmap through architecture?
-- Would an idle backlog be healthier than the proposed next task?
+- Is the proposed next task a bounded research question with real information gain, or merely activity? If delivery is not earned, select one research question rather than manufacturing delivery scope.
 
 ### Competing project identities
 
@@ -145,8 +145,7 @@ Choose exactly one:
 - **continue** — the thesis survived and another experiment is justified;
 - **simplify** — keep the purpose but retire machinery;
 - **redirect** — evidence supports a different central question;
-- **stop** — the strong baseline wins often enough that further cost is not
-  justified.
+- **stop** — stop the tested hypothesis/direction because the strong baseline wins; then pivot the sponsored program to a different bounded research question.
 
 A health check may legitimately choose **continue + simplify operations** when
 the research thesis is healthy but old execution machinery no longer serves it.
@@ -155,7 +154,10 @@ Then reconcile `BACKLOG.md`, assumptions, `docs/value-evidence.md` and any
 affected decision/runbook.
 
 Every completed horizon ends with a fresh **continue / simplify / redirect /
-stop** decision. Completing the horizon itself never authorizes the next one.
+stop** decision for that horizon. Completing the horizon does not authorize new
+delivery scope, but under the Research continuity rule the sponsored program
+then selects exactly one bounded research question unless the sponsor explicitly
+terminates the project.
 
 ## Governance self-check
 
@@ -168,7 +170,7 @@ Prefer:
 - a regression over a checklist;
 - a single invariant over a score;
 - a current canonical document over another status document;
-- an explicit idle state over a manufactured roadmap.
+- one bounded evidence-driven research question over either a manufactured roadmap or a project-level idle state.
 
 Delete or merge governance that becomes ritual, stale, duplicative or more
 expensive than the failure it prevents.

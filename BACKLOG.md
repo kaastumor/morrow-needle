@@ -6,34 +6,44 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **#214 EXPERIMENT READY — SEALED 8-RUN EXECUTION**
+# **IDLE BY DESIGN — EVENT-TRIGGERED WORK ONLY**
 
-#212 completed the fresh compiler gate with:
+#214 completed the sealed index-assisted latent-diagnostic pilot.
 
-> `COMPILER_READY — 3+1 SEALED`
+Frozen result:
 
-Before any investigator output, the exact compiler return, investigator package,
-sealed evaluator package and execution manifest were committed by SHA-256 in
-#212/#214.
+- adversarial tasks: **3/3 R-pass / C-pass**, with both arms explicitly applying
+  the decisive distinction;
+- matched control: **R-pass / C-pass**;
+- diagnostic rescues: **0**;
+- correctness-only C advantages: **0**;
+- consequential C-only regressions: **0**.
 
-Frozen execution:
+Under #210's pre-registered rule:
 
-- GPT-5.6 Sol;
-- High reasoning;
-- fresh non-personalized Temporary Chat per run;
-- ordinary public web/source access;
-- max 12 substantive external source inspections;
-- 4 tasks × R/C = 8 runs;
-- task and arm order frozen before execution;
-- C receives only the frozen corpus index + frozen C instruction;
-- no feedback between runs.
+> **0 diagnostic rescues -> latent corpus-workflow value not demonstrated in this
+> stage; stop and allow contraction toward adversarial regression/reference
+> corpus + minimal evaluation rules.**
 
-#214 is the sole active item.
+That contraction is now canonical.
 
-Do not grade or discuss substantive outputs until all eight are frozen.
+Current identity:
 
-No replacement cases, changed prompts, Method/Core additions, Cycle 4 or product
-work is authorised.
+> **NEEDLE = ADVERSARIAL LEGAL-RESEARCH REGRESSION/REFERENCE CORPUS + MINIMAL
+> EVALUATION DISCIPLINE.**
+
+Do not create a harder replacement experiment, third arm, Cycle 4, product
+horizon, new Method/Core layer or standing corpus-growth hunt.
+
+The next issue enters the queue only from a real external trigger, such as:
+
+- a concrete legal-research failure discovered during ordinary work;
+- real user/investigator evidence that a corpus example prevented a consequential
+  error;
+- a recurring handoff/review job with demonstrated reconstruction cost;
+- external adoption/use exposing a concrete unmet need.
+
+Until such a trigger exists, the hourly/autonomous worker stays idle.
 
 **Issue #88 is complete. Its pre-registered stop rule fired.**
 
@@ -632,16 +642,13 @@ When it does, the reason must be recorded here or in the relevant issue. The bac
 
 ## Current research handoff
 
-#203 is complete and PARKED / UNRESOLVED under its frozen grading.
+#214 is complete.
 
-#207 and #209 subsequently rejected both remaining Cycle-3 new-family reserves
-against stronger incumbent concepts.
+The sealed 3+1 pilot produced zero diagnostic rescues and zero C-only
+regressions. Under the pre-frozen rule, the active diagnostic-workflow claim did
+not earn continuation.
 
-#210 then completed the Astra-red-teamed design for a distinct question:
-**index-assisted latent diagnostic workflow value**.
+The project is now **IDLE BY DESIGN** with an event-triggered-only discovery
+lane.
 
-#212 completed fresh case compilation under the frozen #210 rules.
-
-#214 now owns the sealed eight-run investigator execution.
-
-No Cycle 4 or product implementation is authorised while #214 owns execution.
+No Cycle 4, replacement value gate or product implementation is queued.

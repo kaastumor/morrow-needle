@@ -104,16 +104,20 @@ No cross-domain protocol conclusion is drawn from that transport failure.
 
 Active sponsor direction remains evidence-driven action.
 
+#171 completed with **SUPPORT**. Two exposed EBA→Commission RTS chains earned a
+new DERIVATION trap class:
+
+> `TECHNICAL_STANDARD_AUTHORITY_HANDOFF`
+
+The corpus is now 29 cases / 15 trap classes. This adds no fresh evaluation or
+product claim.
+
 Current horizon:
 
-> **#171 — `TECHNICAL_STANDARD_AUTHORITY_HANDOFF` generality.**
+> **#174 — `OFFICIAL_DERIVED_VIEW_LAG` generality.**
 
-This reopens the Cycle 2 Run A reserve. The experiment tests whether two already
-exposed ESA→Commission RTS chains justify a distinct DERIVATION failure family
-around institutional authority handoff. It is not fresh latent validation and
-does not authorise RTS monitoring/product work.
-
-Run C (`OFFICIAL_DERIVED_VIEW_LAG`) remains the next parked reserve.
+Unlike #171, #174 requires fresh sanctions-list and legislation.gov.uk cases
+because Run C's motivating examples are already exposed.
 
 ## Canonical project records
 
@@ -134,6 +138,8 @@ Run C (`OFFICIAL_DERIVED_VIEW_LAG`) remains the next parked reserve.
 - `docs/discovery/cycle2-synthesis-2026-09-24.md`
 - `docs/experiments/issue165-scholarly-status-result-2026-09-24.md`
 - `docs/discovery/post-issue165-project-health-2026-09-24.md`
+- `docs/experiments/issue171-rts-authority-handoff-result-2026-09-24.md`
+- `docs/discovery/post-issue171-project-health-2026-09-24.md`
 - `docs/experiments/issue150-delta-audit-result-2026-09-24.md`
 - `docs/discovery/post-issue150-project-health-2026-09-24.md`
 - `docs/way-of-working.md`

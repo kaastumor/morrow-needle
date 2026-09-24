@@ -35,7 +35,9 @@ Allowed dispositions: **survives / revise / reject / park / experiment**.
 
 | H-19 | Needle's surviving adversarial-corpus evaluation protocol can transfer with minimal domain adaptation from legal research to latent scholarly-status evaluation while preserving exposure, time and surfaced-vs-latent construct validity. | park | #165 ended INDETERMINATE / TRANSPORT_BLOCKED before a four-case sample or model run existed. This supplies no evidence for or against the claim; do not repair the transport after the preregistered hard stop. |
 
-| H-20 | `TECHNICAL_STANDARD_AUTHORITY_HANDOFF` is a distinct reusable legal-information failure family: an ESA final draft RTS can differ materially from the later binding Commission delegated regulation, so authority/legal effect cannot be inherited from the upstream "final" draft. | experiment | Cycle 2 Run A found two exposed completed chains (fixed-overheads and crowdfunding) plus current recurrence. #171 tests taxonomy/generality only; the exposed chains are DERIVATION, not fresh validation. |
+| H-20 | `TECHNICAL_STANDARD_AUTHORITY_HANDOFF` is a distinct reusable legal-information failure family: an ESA final draft RTS can differ materially from the later binding Commission delegated regulation, so authority/legal effect cannot be inherited from the upstream "final" draft. | survives | #171 confirmed the same material authority-handoff mechanism in fixed-overheads and crowdfunding RTS chains, rejected four existing trap classes as semantically insufficient, and admitted two DERIVATION regression cases. This remains exposed derivation evidence, not latent/model validation. |
+
+| H-21 | `OFFICIAL_TRACKER_UPDATE_LAG` is one instance of a broader `OFFICIAL_DERIVED_VIEW_LAG` family spanning official consolidated lists, revised legislation and other derived legal-state views with independent update horizons. | experiment | Cycle 2 Run C found exposed sanctions-list and legislation.gov.uk examples plus a snapshot control. #174 requires fresh sanctions/revised-legislation cases before any taxonomy generalisation. |
 
 ## Register rules
 

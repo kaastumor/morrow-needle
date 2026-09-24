@@ -6,56 +6,39 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **#171 — TECHNICAL-STANDARD AUTHORITY HANDOFF GENERALITY**
+# **#174 — OFFICIAL DERIVED-VIEW LAG GENERALITY**
 
-#165 completed as:
+#171 completed with **SUPPORT**.
 
-> **INDETERMINATE / TRANSPORT_BLOCKED**
+It earned one new DERIVATION trap class:
 
-No scholarly-status scientific claim was executed. The result supplies no
-evidence for or against cross-domain protocol transfer.
+> `TECHNICAL_STANDARD_AUTHORITY_HANDOFF`
 
-Sponsor direction remains **active evidence-driven discovery**.
+and two public/exposed regression cases. No evaluation or product claim changed.
 
-The post-#165 Project Health Check therefore selects the already-earned Cycle 2
-Run A reserve:
+Active sponsor direction remains evidence-driven discovery.
 
-> **#171 — does `TECHNICAL_STANDARD_AUTHORITY_HANDOFF` deserve a distinct
-> failure family?**
+Next already-earned reserve:
 
-### #171 evidence boundary
+> **#174 — test whether `OFFICIAL_TRACKER_UPDATE_LAG` generalises to
+> `OFFICIAL_DERIVED_VIEW_LAG`.**
 
-The two target RTS chains were already exposed in Cycle 2 Run A.
+### #174 requirements
 
-They are:
+- use fresh cases, not Run C's exposed examples;
+- one EU sanctions-list case;
+- one legislation.gov.uk revised-text case;
+- one negative/snapshot control;
+- freeze candidate selection before substantive inspection;
+- prove a current legal/compliance answer changes;
+- existing tracker class gets first refusal before any rename/new class;
+- no monitoring, ingestion or freshness product.
 
-`DERIVATION / PUBLIC_EXPOSED`
+Canonical #171 result:
+`docs/experiments/issue171-rts-authority-handoff-result-2026-09-24.md`
 
-#171 is therefore a taxonomy/generality experiment, **not** fresh validation.
-
-It may establish only whether:
-
-- one mechanism explains both independent ESA→Commission chains;
-- a substantive proposition changes across the authority handoff;
-- treating the ESA final draft as binding final law can change a realistic
-  legal-research conclusion;
-- existing corpus classes cannot represent the mechanism without distortion.
-
-A positive result may add DERIVATION corpus cases / a bounded trap class.
-
-It cannot establish:
-
-- latent detection;
-- model correctness advantage;
-- user/product value.
-
-Run C's `OFFICIAL_DERIVED_VIEW_LAG` remains the next parked reserve.
-
-Canonical #165 result:
-`docs/experiments/issue165-scholarly-status-result-2026-09-24.md`
-
-Post-#165 health check:
-`docs/discovery/post-issue165-project-health-2026-09-24.md`
+Post-#171 health:
+`docs/discovery/post-issue171-project-health-2026-09-24.md`
 
 **Issue #88 is complete. Its pre-registered stop rule fired.**
 

@@ -51,6 +51,8 @@ Every entry ends in one disposition:
 
 | #155 Cycle 2 active linked discovery | DISCOVERY | Active evidence-anchored linked search can expand Needle's opportunity map without reverting to feature brainstorming | Strong existing alternatives, structural-boundary tests, WIP=1 and a single synthesis gate | Run B was parked behind mature incumbent methodology; Runs A/C became legal reserves; Run D surfaced a cross-domain scholarly-status protocol-transfer question. #160 selected only #165 because it has the highest project-identity information gain. No features were built. | CONTINUE | `docs/discovery/cycle2-synthesis-2026-09-24.md` and Issues #155–#160 |
 
+| #171 RTS authority-handoff generality | DISCOVERY | The corpus has a distinct failure family for institutional authority handoff in delegated technical-standard rulemaking | Existing 14 trap classes + full official ESA→Commission lifecycle | Two exposed independent chains (fixed overheads and crowdfunding) both contain material Commission changes after EBA final draft RTS; four existing classes fail first-refusal without semantic distortion. New `TECHNICAL_STANDARD_AUTHORITY_HANDOFF` class admitted with two DERIVATION regression cases only. | CONTINUE | `docs/experiments/issue171-rts-authority-handoff-result-2026-09-24.md` and Issue #171 |
+
 ## Rules
 
 1. Do not add an entry because work was completed.

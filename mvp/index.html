@@ -1,35 +1,7 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Needle Corpus Explorer</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <main>
-    <header>
-      <p class="eyebrow">Morrow // Needle</p>
-      <h1>Needle Corpus Explorer</h1>
-      <p>Inspect the adversarial EU legal-research corpus and follow its durable evidence owners.</p>
-    </header>
-
-    <section aria-labelledby="corpus-status-heading">
-      <h2 id="corpus-status-heading">Corpus</h2>
-      <p id="corpus-status" role="status" aria-live="polite">Loading canonical corpus…</p>
-      <div id="corpus-root" hidden>
-        <dl class="summary" aria-label="Corpus summary">
-          <div><dt>Cases</dt><dd id="summary-total">—</dd></div>
-          <div><dt>Trap classes</dt><dd id="summary-traps">—</dd></div>
-          <div><dt>Derivation</dt><dd id="summary-derivation">—</dd></div>
-          <div><dt>Evaluation</dt><dd id="summary-evaluation">—</dd></div>
-          <div><dt>Surfaced-trap evaluations</dt><dd id="summary-surfaced">—</dd></div>
-          <div><dt>Latent-trap evaluations</dt><dd id="summary-latent">—</dd></div>
-          <div><dt>Evaluation mode unspecified</dt><dd id="summary-unspecified">—</dd></div>
-        </dl>
-      </div>
-    </section>
-  </main>
-  <script src="app.js" defer></script>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Needle Corpus Explorer</title><link rel="stylesheet" href="styles.css"></head>
+<body><main><header><p class="eyebrow">Morrow // Needle</p><h1>Needle Corpus Explorer</h1><p>Inspect the adversarial EU legal-research corpus and follow its durable evidence owners.</p></header>
+<section aria-labelledby="corpus-status-heading"><h2 id="corpus-status-heading">Corpus</h2><p id="corpus-status" role="status" aria-live="polite">Loading canonical corpus…</p><div id="corpus-root" hidden>
+<dl class="summary" aria-label="Corpus summary"><div><dt>Cases</dt><dd id="summary-total">—</dd></div><div><dt>Trap classes</dt><dd id="summary-traps">—</dd></div><div><dt>Derivation</dt><dd id="summary-derivation">—</dd></div><div><dt>Evaluation</dt><dd id="summary-evaluation">—</dd></div><div><dt>Surfaced-trap evaluations</dt><dd id="summary-surfaced">—</dd></div><div><dt>Latent-trap evaluations</dt><dd id="summary-latent">—</dd></div><div><dt>Evaluation mode unspecified</dt><dd id="summary-unspecified">—</dd></div></dl>
+<section aria-labelledby="browse-heading"><h2 id="browse-heading">Browse cases</h2><form id="case-filters" class="filters"><label>Search<input type="search" name="query" placeholder="Title, domain, jurisdiction or decisive trap"></label><label>Trap class<select name="trap"><option value="">All</option></select></label><label>Domain<select name="domain"><option value="">All</option></select></label><label>Jurisdiction<select name="jurisdiction"><option value="">All</option></select></label><label>Provenance role<select name="role"><option value="">All</option></select></label><label>Evaluation mode<select name="evaluationMode"><option value="">All</option></select></label><button type="reset">Clear filters</button></form><p id="result-count" role="status" aria-live="polite"></p><p id="empty-results" hidden>No cases match these filters. Clear filters or broaden the search.</p><ul id="case-list" class="case-list"></ul></section>
+</div></section></main><script src="app.js" defer></script></body></html>

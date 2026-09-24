@@ -159,6 +159,21 @@ Discovery follows:
 > evidence signal → discover/diverge → define opportunity → strongest baseline →
 > riskiest assumption → smallest evidence test → counterargument → disposition
 
+
+Optional linked discovery search may run inside `discover/diverge` from a
+concrete evidence anchor or proven mechanism. It is not an evidence channel and
+may create only a `SEARCH_HYPOTHESIS`. That hypothesis cannot enter the
+opportunity funnel until target evidence is found through one of the four
+authorised channels.
+
+Keep at most three active search hypotheses; do not create a discovery graph,
+force distant analogies, or turn recombination into feature ideation.
+
+Before a discriminating test, freeze the claim as
+`CORRECTNESS_VALIDITY` or `PRODUCT_WORKFLOW`. A failed correctness claim may
+not be rescued post hoc as workflow value. Workflow value also cannot override a
+material correctness/provenance/evidence-integrity regression.
+
 Use established product-discovery risks where material:
 
 - value;

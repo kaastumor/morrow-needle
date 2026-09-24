@@ -162,7 +162,7 @@ The relevant comparator is the **real alternative used for the job**, which may
 be direct official-source research, repository inspection, search, a capable
 LLM, another product, a manual workflow, an expert, or doing nothing.
 
-For a material product/workflow opportunity, keep three questions separate:
+For a material product/workflow opportunity, keep four questions separate:
 
 1. **Difference** — is the proposed experience actually different from the
    current alternative?
@@ -170,7 +170,9 @@ For a material product/workflow opportunity, keep three questions separate:
    relevant circumstance?
 3. **Behavioural consequence** — is the advantage large enough to influence
    adoption, switching, repeated use, willingness to continue, or another
-   meaningful behaviour despite the friction of changing workflow?
+   meaningful behaviour?
+4. **Adoption/switching friction** — is the advantage still meaningful after
+   accounting for the cost and inconvenience of changing behavior?
 
 A difference that is real but unimportant is not strategic value. A useful
 difference that is too small to overcome adoption/switching friction may also not
@@ -187,12 +189,93 @@ testable.
 Do not turn this into a mandatory strategy-canvas exercise. Use the lens only
 where user/product value is actually at stake.
 
+
+### 3.7 Claim type, validity floor and linked discovery search
+
+Before collecting discriminating evidence, declare the claim type:
+
+- `CORRECTNESS_VALIDITY` — claims that Needle produces safer, more correct,
+  better-grounded or more reproducible research/evaluation outcomes;
+- `PRODUCT_WORKFLOW` — claims that Needle improves how a user completes a job
+  even when the substantive answer may match the incumbent alternative.
+
+Do not rescue a failed correctness claim by relabelling it as workflow value
+after results are known. A later workflow claim requires its own hypothesis and
+evidence.
+
+A product/workflow advantage also has a **validity floor**. It cannot be promoted
+when it materially worsens correctness, uncertainty handling, provenance,
+evidence lineage or evaluation integrity.
+
+#### Optional linked discovery search
+
+After an evidence signal or sufficiently proven mechanism exists, Discover /
+Diverge may use a bounded linked-search operator to ask:
+
+> What does the evidence we already possess make newly investigable?
+
+This is **not a fifth evidence channel**.
+
+Linked search may inspect, when useful:
+
+- near transfer to closely related cases or artifacts;
+- functional/workflow adjacency;
+- failure-led and boundary cases;
+- evidence-backed recombinations;
+- structural or distant analogues sharing the same causal/relational mechanism.
+
+Its output is only a `SEARCH_HYPOTHESIS`.
+
+A `SEARCH_HYPOTHESIS` enters the ordinary opportunity funnel only after
+**target evidence** is found through an authorised evidence channel. An analogy,
+transfer story or recombination is not itself target-context evidence.
+
+For non-near transfers, record only enough to falsify the connection:
+
+- source mechanism;
+- target mechanism;
+- shared causal/relational structure;
+- material non-transferable differences;
+- nearest predicted boundary/failure;
+- observation that would falsify the transfer.
+
+If the abstraction cannot predict both a plausible positive transfer and a
+nearest boundary, it is too vague to drive search.
+
+#### Search budget
+
+- no permanent discovery graph or ontology;
+- at most **three active search hypotheses** at once;
+- the cap is a ceiling, not a quota;
+- distant search is optional, not required for portfolio diversity;
+- stop a branch when repeated searches add examples rather than mechanisms,
+  connection to proven evidence becomes indirect, no cheap discriminating test
+  exists, or the branch requires multiple unproven assumptions.
+
+Recombination is allowed only when existing evidence supports a concrete
+interaction: one element removes a demonstrated limitation of another, or the
+combination enables an observed job neither handles alone.
+
+A successful technical/research transfer establishes transferability only. It
+must still pass the ordinary user/job, alternatives, relative-value, adoption
+and strategic-fit tests before it becomes a product hypothesis.
+
+Dedicated adversarial review:
+`docs/discovery/discovery-method-amendments-red-team-2026-09-24.md`.
+
 ## 4. One opportunity funnel
 
-The four evidence channels feed a single funnel:
+The four evidence channels feed a single funnel. Optional linked search may
+generate a hypothesis, but cannot bypass the evidence gate:
 
 ```text
 EVIDENCE SIGNAL
+    ↓
+OPTIONAL LINKED SEARCH
+    ↓
+SEARCH_HYPOTHESIS
+    ↓
+TARGET EVIDENCE REQUIRED
     ↓
 CANDIDATE OPPORTUNITY
     ↓
@@ -229,7 +312,20 @@ Every discovery opportunity must contain:
 - channel: `LEGAL_ADVERSARY | EXPLORER_USE | EXTERNAL_NEED | CURRENT_FAILURE`;
 - concrete observation/source;
 - date and context;
-- whether the evidence is direct or proxy.
+- whether the evidence is direct or proxy;
+- if linked search preceded the signal, the originating `SEARCH_HYPOTHESIS`
+  and the target evidence that converted it into a real opportunity.
+
+A search hypothesis without target evidence is not an opportunity.
+
+### Claim type
+
+Declare one before the discriminating test:
+
+- `CORRECTNESS_VALIDITY`; or
+- `PRODUCT_WORKFLOW`.
+
+Do not reinterpret the claim type after results to preserve a favored idea.
 
 ### User/research job
 
@@ -475,6 +571,10 @@ Collect enough evidence to understand:
 
 Do not brainstorm implementations first.
 
+Optional linked search may be used here only from a concrete evidence anchor or
+proven mechanism. It produces `SEARCH_HYPOTHESIS` records, not opportunities.
+No target evidence means no promotion into Define.
+
 ### Step 2 — Define / converge
 
 Write one falsifiable problem statement.
@@ -595,7 +695,9 @@ unresolved. Do not substitute agent/browser testing for human evidence.
 
 `ADOPT_FOR_EXPERIMENT` requires:
 
-- evidence-backed problem/opportunity;
+- evidence-backed problem/opportunity; a linked-search hypothesis alone is
+  insufficient;
+- claim type frozen before the discriminating test;
 - explicit alternative explanation;
 - strongest baseline documented;
 - one or two riskiest assumptions;
@@ -614,11 +716,13 @@ A later experiment may propose delivery only when:
    demonstrates a meaningful relative advantage over the real alternative,
    including evidence that the difference matters to the user and is plausibly
    large enough to affect behaviour despite adoption/switching friction;
-4. usability risk has evidence if humans must operate it;
-5. feasibility is known for the smallest useful slice;
-6. operational/viability cost is acceptable;
-7. evidence validity/provenance remains intact;
-8. the implementation can stay smaller than the problem it solves.
+4. no material correctness, provenance, uncertainty-handling or
+   evidence-integrity regression falls below the validity floor;
+5. usability risk has evidence if humans must operate it;
+6. feasibility is known for the smallest useful slice;
+7. operational/viability cost is acceptable;
+8. evidence validity/provenance remains intact;
+9. the implementation can stay smaller than the problem it solves.
 
 A delivery candidate still requires a separate project decision/issue.
 

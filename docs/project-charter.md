@@ -172,56 +172,49 @@ Especially:
 
 ## Current horizon
 
-The sponsor has explicitly authorised one new product-form experiment:
+The Corpus Explorer v0.1 parent gate #103 has reached a
+`TECHNICAL_MVP_CANDIDATE`. The static HTML/CSS/JavaScript projection satisfies
+its deterministic technical contract without a backend, database, framework,
+model call, analytics layer, duplicate corpus or new dependency.
 
-> **Needle Corpus Explorer v0.1**
+That is not yet user-value evidence.
 
-This does **not** reopen the stopped general legal-change product. It tests
-whether the surviving adversarial corpus + evaluation protocol become more
-useful when exposed through the smallest possible inspectable interface.
+H-16 remains **experiment** because the discriminating question is whether a
+real user finds the Explorer materially more useful/inspectable than the
+smaller corpus + protocol form. Real/manual browser evidence has not yet been
+observed. The Explorer is therefore frozen rather than extended.
 
-Parent gate: **#103**  
-Plan: `docs/mvp/v0.1-plan.md`
+Post-MVP discovery gate #104 is complete. Its six evidence-only runs ended in:
 
-The default project identity remains:
+- two conditional `ADOPT_FOR_EXPERIMENT` results (#111, #112);
+- one `REVISE` to a manual/event-triggered technique (#114);
+- two `REJECT` results (#113, #115);
+- one `PARK` result (#116);
+- **zero implementation authorizations**.
 
-**Needle adversarial legal-research corpus + evaluation protocol.**
+The gate-level Project Health Check chose **SIMPLIFY**. Canonical review:
+`docs/discovery/post-mvp-gate-review-2026-09-24.md`.
 
-The MVP is only a thin presentation projection over that identity.
+No new implementation horizon follows automatically.
 
-### MVP constraints
+The current project state is intentionally allowed to be idle. New work must
+begin from a fresh falsifiable legal-information question, real Explorer
+usability evidence, a concrete trigger for one of the conditional experiments,
+a named external reproducibility requirement, or a directly observed
+project-system failure.
 
-- static HTML/CSS/JavaScript;
-- canonical corpus JSON read directly;
-- no backend/API/database/auth/model calls;
-- no second legal truth store;
-- no framework/dependency unless the browser/stdlib baseline demonstrably fails;
-- no old Thread/X-Ray/Retrieval/feed feature re-entry by default.
+The strongest current risks remain:
 
-### Delivery then discovery
-
-Issues #105–#110 implement the technical MVP in thin vertical slices.
-
-After #110 records deterministic technical acceptance, discovery gate #104 may
-run issues #111–#116. Discovery work gathers evidence about possible features
-but does not implement them.
-
-The strongest current risks are now:
-
-1. **product creep** — turning a corpus viewer into the discarded broader legal
-   product;
-2. **ontology creep** — adding relationships/state types because UI makes them
-   tempting;
-3. **process creep** — adding governance/CI/workflow machinery beyond what this
-   small MVP requires.
+1. **product creep** — treating a technically complete Explorer as permission to
+   rebuild the stopped legal product;
+2. **benchmark/process creep** — converting conditional research controls into
+   standing workflows, scores or review machinery;
+3. **ontology/integration creep** — adding schema or adapters because adjacent
+   benchmarks/tools make them possible rather than necessary.
 
 The operating rule remains:
 
 > expose demonstrated value with minimum durable complexity.
-
-At MVP boundary, run `docs/project-health.md` and decide
-`continue / simplify / redirect / stop`. Technical completion does not
-automatically authorize the next implementation horizon.
 
 ## Repository discipline
 

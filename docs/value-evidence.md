@@ -49,6 +49,8 @@ Every entry ends in one disposition:
 
 | #150 DELTA external benchmark audit | DISCOVERY | Needle's evaluation-integrity/evidence-closure discipline transfers beyond its own corpus and can expose a material defect beyond a mature external benchmark's QA baseline | DELTA v1.1.0 public task/review, validation, judge, harness and dispute controls | Pre-registered four-task audit found one fresh mechanical F4 inconsistency between required run provenance and the advertised minimal record; three tasks had no confirmed F1–F5 defect, one Dutch-law F2 remained unconfirmed, and DELTA's official report narrowed the finding away from its leaderboard. External transfer is supported once; general distinctiveness/product value is not. | CONTINUE | `docs/experiments/issue150-delta-audit-result-2026-09-24.md` and `docs/discovery/post-issue150-project-health-2026-09-24.md` |
 
+| #155 Cycle 2 active linked discovery | DISCOVERY | Active evidence-anchored linked search can expand Needle's opportunity map without reverting to feature brainstorming | Strong existing alternatives, structural-boundary tests, WIP=1 and a single synthesis gate | Run B was parked behind mature incumbent methodology; Runs A/C became legal reserves; Run D surfaced a cross-domain scholarly-status protocol-transfer question. #160 selected only #165 because it has the highest project-identity information gain. No features were built. | CONTINUE | `docs/discovery/cycle2-synthesis-2026-09-24.md` and Issues #155–#160 |
+
 ## Rules
 
 1. Do not add an entry because work was completed.

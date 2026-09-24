@@ -20,6 +20,14 @@ At the start of every run inspect, in order:
 
 Do not use stale chat handoffs as authority over the repository.
 
+For discovery, start at section 0 of
+`docs/discovery/evidence-triggered-continuous-discovery-v0.2.md`. On a new session,
+read the governing documents above. Within the same resumed task, compare their
+SHAs and reload changed rules/state plus task-relevant evidence; do not repeatedly
+load the entire history. A new task or changed gate requires a fresh scope check.
+Use the compact issue/result record there for resumable checkpoints. The worker's
+AUTO READY eligibility boundary still applies; a model choice does not expand it.
+
 ## Selection rule
 
 First inspect unfinished automation PRs and their active ownership. Resume,

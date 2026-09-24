@@ -227,11 +227,23 @@ Recent results now include both subtraction and new cross-domain mechanisms:
 - #244 RED TEAM — preserved all 50 cases while compressing three overlapping
   class pairs, reducing the taxonomy from 21 to **18** classes.
 
-The corpus is now **50 cases / 18 trap classes**.
+#245–#252 then completed one bounded sponsored-discovery batch:
+
+- #245 REJECT — scoped recognition stayed ordinary decision-scope analysis plus
+  existing dynamic status;
+- #247/#248/#249 generalised cohort, procedural-silence and judicial-operative-
+  state classes without adding taxonomy;
+- #250 ADMIT — `MEMBER_STATE_OPTION_DIVERGENCE`;
+- #251 ADOPT — CHMP→Commission strengthened
+  `OFFICIAL_AUTHORITY_HANDOFF`;
+- #252 REVISE/ADOPT — Swiss Schengen generalised
+  `CROSS_ORDER_INCORPORATION_STATE` beyond the EEA.
+
+The corpus is now **57 cases / 19 trap classes**.
 
 Current horizon:
 
-> **ACTIVE RESEARCH — #245: scoped third-country recognition**
+> **ACTIVE RESEARCH — #253: actual CJEU temporal-effect limitation exception**
 
 The smallest surviving identity remains:
 
@@ -275,6 +287,7 @@ work.
 - `docs/discovery/issue220-executable-compliance-artifact-result-2026-09-24.md`
 - `docs/discovery/issue221-private-origin-artifact-generality-result-2026-09-24.md`
 - `docs/discovery/issue244-taxonomy-compression-result-2026-09-24.md`
+- `docs/discovery/issues245-252-sponsored-discovery-synthesis-2026-09-24.md`
 - `docs/discovery/post-issue195-project-health-2026-09-24.md`
 - `docs/experiments/issue165-scholarly-status-result-2026-09-24.md`
 - `docs/discovery/post-issue165-project-health-2026-09-24.md`

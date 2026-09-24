@@ -113,9 +113,11 @@ The corpus is now 29 cases / 15 trap classes. This adds no fresh evaluation or
 product claim.
 
 #174 ended **INDETERMINATE / SAMPLE_INCOMPLETE** because the frozen
-negative-control search could not produce the required fresh Scoreboard control.
-The proposed broader derived-view class is therefore neither supported nor
-rejected; `OFFICIAL_TRACKER_UPDATE_LAG` remains unchanged.
+legislation.gov.uk first-result pool contained no eligible positive case with an
+already-in-force but editorally unapplied amendment to the selected provision.
+The frozen Scoreboard control was available. The proposed broader derived-view
+class is therefore neither supported nor rejected;
+`OFFICIAL_TRACKER_UPDATE_LAG` remains unchanged.
 
 Current horizon:
 

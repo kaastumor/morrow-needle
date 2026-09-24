@@ -6,44 +6,46 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **IDLE BY DESIGN — EVENT-TRIGGERED WORK ONLY**
+# **#219 ACTIVE RESEARCH — EXECUTABLE COMPLIANCE SOFTWARE AS LEGAL INPUT**
 
-#214 completed the sealed index-assisted latent-diagnostic pilot.
+Sponsor direction #217 permanently supersedes `IDLE BY DESIGN` as a project
+operating state.
 
-Frozen result:
+A hypothesis may stop. The sponsored research program pivots to the next
+bounded question under **WIP=1**.
 
-- adversarial tasks: **3/3 R-pass / C-pass**, with both arms explicitly applying
-  the decisive distinction;
-- matched control: **R-pass / C-pass**;
-- diagnostic rescues: **0**;
-- correctness-only C advantages: **0**;
-- consequential C-only regressions: **0**.
+#214's scientific result remains unchanged:
 
-Under #210's pre-registered rule:
+- 3/3 adversarial R/C pairs were correct with demonstrated detection;
+- matched control was pass/pass;
+- diagnostic rescues: 0;
+- C-only regressions: 0.
 
-> **0 diagnostic rescues -> latent corpus-workflow value not demonstrated in this
-> stage; stop and allow contraction toward adversarial regression/reference
-> corpus + minimal evaluation rules.**
-
-That contraction is now canonical.
-
-Current identity:
+That result still rejects H-24 and keeps the project identity small:
 
 > **NEEDLE = ADVERSARIAL LEGAL-RESEARCH REGRESSION/REFERENCE CORPUS + MINIMAL
 > EVALUATION DISCIPLINE.**
 
-Do not create a harder replacement experiment, third arm, Cycle 4, product
-horizon, new Method/Core layer or standing corpus-growth hunt.
+It does **not** put research on hold.
 
-The next issue enters the queue only from a real external trigger, such as:
+Post-#214 research:
 
-- a concrete legal-research failure discovered during ordinary work;
-- real user/investigator evidence that a corpus example prevented a consequential
-  error;
-- a recurring handoff/review job with demonstrated reconstruction cost;
-- external adoption/use exposing a concrete unmet need.
+- **#218 — COMPLETE / REJECT.** Static versus dynamic external-reference version
+  semantics are already cleanly owned by mature EU legal-drafting/reference
+  practice. No new class; do not broaden `DYNAMIC_REFERENCE_STATUS`.
+- **#219 — ACTIVE.** Investigate Regulation (EU) 2024/3110's use of
+  Commission-provided compliance software whose updates move from publication to
+  voluntary use to mandatory use over time. Test whether executable software is
+  a distinct legally consequential source mechanism or a composition of existing
+  status/application/provenance classes.
 
-Until such a trigger exists, the hourly/autonomous worker stays idle.
+Do not retry #214, create harder replacement cases, or manufacture product
+scope.
+
+Research continues even when #219 is rejected.
+
+**Any historical "worker idle", "idle by design" or event-trigger-only wording
+below is superseded by #217 for current execution.**
 
 **Issue #88 is complete. Its pre-registered stop rule fired.**
 
@@ -642,13 +644,17 @@ When it does, the reason must be recorded here or in the relevant issue. The bac
 
 ## Current research handoff
 
-#214 is complete.
+#214 is complete and its zero-rescue result remains binding for the tested
+workflow claim.
 
-The sealed 3+1 pilot produced zero diagnostic rescues and zero C-only
-regressions. Under the pre-frozen rule, the active diagnostic-workflow claim did
-not earn continuation.
+Sponsor direction #217 supersedes only the **idle operating conclusion**, not
+the scientific result.
 
-The project is now **IDLE BY DESIGN** with an event-triggered-only discovery
-lane.
+#218 has already completed with REJECT / taxonomy subtraction.
 
-No Cycle 4, replacement value gate or product implementation is queued.
+#219 is the current WIP=1 research question.
+
+When #219 completes, reconcile it and immediately select the next bounded
+research question from the surviving evidence and external precedent.
+
+No product implementation is implied by continuous research.

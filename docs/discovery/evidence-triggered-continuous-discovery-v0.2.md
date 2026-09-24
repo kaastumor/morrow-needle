@@ -30,10 +30,20 @@ which problems, if any, deserve a Needle-specific intervention.
 
 The discovery outcome is:
 
-> **Find recurring or consequential legal-research problems where the strongest
-> boring baseline or the current corpus/protocol/Explorer demonstrably falls
-> short, and identify the smallest evidence-backed response without rebuilding
-> the stopped broader product.**
+> **Find recurring or consequential legal-research problems where either the
+> strongest boring baseline/current corpus materially fails, or where a
+> Needle-specific response demonstrates a meaningful relative advantage over a
+> correct existing alternative, and identify the smallest evidence-backed
+> response without rebuilding the stopped broader product.**
+
+For correctness, validity and legal-research claims, "relative advantage" cannot
+substitute for correctness: the simpler baseline must materially fail the claim
+being tested before Needle-specific correctness machinery earns value.
+
+For product/workflow claims, the incumbent alternative may reach the same correct
+answer. Value may instead come from a demonstrated reduction in time, effort,
+expertise, reconstruction, navigation or verification burden that is important
+enough to change behaviour.
 
 This outcome deliberately permits three successful end states:
 
@@ -139,6 +149,44 @@ Needle adds one project-specific risk:
 This fifth risk is not presented as an industry standard. It is a Needle
 constraint derived from the project's research purpose.
 
+
+### 3.6 Alternatives, relative advantage and adoption
+
+Discovery must not infer:
+
+- competitor/alternative exists → no opportunity;
+- feature is different/novel → opportunity;
+- baseline reaches the same answer → no product value.
+
+The relevant comparator is the **real alternative used for the job**, which may
+be direct official-source research, repository inspection, search, a capable
+LLM, another product, a manual workflow, an expert, or doing nothing.
+
+For a material product/workflow opportunity, keep three questions separate:
+
+1. **Difference** — is the proposed experience actually different from the
+   current alternative?
+2. **Importance** — does the intended user care about that difference in the
+   relevant circumstance?
+3. **Behavioural consequence** — is the advantage large enough to influence
+   adoption, switching, repeated use, willingness to continue, or another
+   meaningful behaviour despite the friction of changing workflow?
+
+A difference that is real but unimportant is not strategic value. A useful
+difference that is too small to overcome adoption/switching friction may also not
+be enough.
+
+Novelty is therefore descriptive evidence, not a promotion criterion.
+
+Value may arise from an activity system around otherwise ordinary capabilities:
+workflow fit, combination, integration, trust/governance, delivery, or
+complementarity with the proven core. Do not require every individual feature to
+be unique; do require the combined advantage to be observed or falsifiably
+testable.
+
+Do not turn this into a mandatory strategy-canvas exercise. Use the lens only
+where user/product value is actually at stake.
+
 ## 4. One opportunity funnel
 
 The four evidence channels feed a single funnel:
@@ -192,14 +240,22 @@ Describe the job/problem without proposing a solution:
 For non-user research opportunities, replace "user" with the concrete research
 task/system obligation.
 
-### Existing behaviour / strongest baseline
+### Existing behaviour / strongest baseline / real alternative
 
 Record:
 
 - how the job is done now;
+- the alternative the actor would realistically choose, including manual work or
+  doing nothing;
 - official-source/manual/repository/tool workflow used;
 - what is already good enough;
-- why the current baseline may be insufficient.
+- whether the opportunity claims **correctness/validity improvement** or
+  **product/workflow relative advantage**;
+- for product/workflow claims: the concrete difference, why the user might care,
+  and what behavioural consequence would make that difference material;
+- relevant adoption or switching friction;
+- why the current alternative may still be insufficient even when it reaches
+  the correct substantive answer.
 
 ### Consequence
 
@@ -421,18 +477,34 @@ Do not brainstorm implementations first.
 
 ### Step 2 — Define / converge
 
-Write one falsifiable problem statement:
+Write one falsifiable problem statement.
+
+For correctness / evidence-integrity claims:
 
 > In [context], [actor] cannot reliably [job] using [strong baseline] because
 > [observed failure], causing [consequence].
 
-If this cannot be written from evidence, park or reject.
+For product / workflow claims where the alternative may still be correct:
 
-### Step 3 — Risk map
+> In [context], [actor] can accomplish [job] using [current alternative], but
+> [observed burden/friction] creates [consequence]. Needle may create
+> [specific relative advantage] large enough to change [relevant behaviour].
 
-Identify which of the five risk dimensions could invalidate the response.
+If neither statement can be written from evidence, park or reject.
 
-Then select the riskiest assumption(s) by importance × evidence weakness.
+### Step 3 — Relative-value check and risk map
+
+For product/workflow opportunities, explicitly separate:
+
+1. difference;
+2. user importance;
+3. behavioural consequence;
+4. adoption/switching friction.
+
+Do not treat correctness parity as automatic product-value parity.
+
+Then identify which of the five risk dimensions could invalidate the response
+and select the riskiest assumption(s) by importance × evidence weakness.
 
 ### Step 4 — Smallest evidence test
 
@@ -536,8 +608,12 @@ unresolved. Do not substitute agent/browser testing for human evidence.
 A later experiment may propose delivery only when:
 
 1. the observed problem is recurring or materially consequential;
-2. the strong baseline materially fails for the tested context;
-3. the proposed Needle intervention creates a meaningful improvement;
+2. **for correctness/validity claims:** the strong baseline materially fails for
+   the tested context;
+3. **for product/workflow claims:** either the baseline fails or Needle
+   demonstrates a meaningful relative advantage over the real alternative,
+   including evidence that the difference matters to the user and is plausibly
+   large enough to affect behaviour despite adoption/switching friction;
 4. usability risk has evidence if humans must operate it;
 5. feasibility is known for the smallest useful slice;
 6. operational/viability cost is acceptable;
@@ -554,7 +630,12 @@ At synthesis ask:
 
 - Did evidence change a decision?
 - Did any attractive idea get rejected or reduced?
-- Was the strongest baseline genuinely tested?
+- Was the real alternative / strongest baseline genuinely tested?
+- Where did the baseline fail on correctness or evidence integrity?
+- Where did it remain substantively correct but Needle show a meaningful
+  workflow/product relative advantage?
+- For any claimed advantage: was the difference real, important to the user and
+  large enough to plausibly change behaviour despite adoption/switching costs?
 - Did we learn about a real user/research job rather than collect opinions?
 - Did we preserve negative evidence?
 - Did any proposed complexity earn itself?

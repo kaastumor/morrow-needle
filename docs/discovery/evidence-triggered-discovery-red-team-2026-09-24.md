@@ -342,3 +342,42 @@ aligned with Needle's current project thesis.
 Run exactly one bounded Cycle 1 under v0.2, then perform a Project Health Check.
 
 Do not schedule Cycle 2 in advance.
+
+
+## Amendment — parity is not one-dimensional
+
+### Attack 16 — correctness parity is misread as product-value parity
+
+**Attack:** the discovery plan can become too conservative if "strong baseline
+did not fail" is interpreted as a universal no-value result.
+
+A manual/repository/official-source workflow may reach the same correct answer
+while imposing materially greater time, navigation, expertise, verification or
+reconstruction burden. Rejecting a product/workflow opportunity solely because
+the substantive conclusion matches would confuse **correctness parity** with
+**workflow/value parity**.
+
+The inverse error is equally dangerous: a faster or nicer experience is not
+valuable merely because it differs.
+
+**Revision:** keep two gates distinct.
+
+For correctness, validity and legal-research advantage claims, the strong
+baseline must materially fail the tested claim before Needle-specific correctness
+machinery earns value.
+
+For product/workflow claims, compare the real current alternative on:
+
+1. actual difference;
+2. importance to the intended user;
+3. behavioural consequence;
+4. adoption/switching friction.
+
+A product claim survives only when the observed relative advantage is important
+enough to plausibly change behaviour. Competitor existence, novelty and feature
+difference are evidence about the landscape, not verdicts.
+
+This revision applies immediately to #136 and #139.
+
+**Red-team disposition:** survives. The change makes the discovery model less
+likely to create false negatives without weakening the evidence burden.

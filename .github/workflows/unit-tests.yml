@@ -1,4 +1,4 @@
-name: Python unit tests
+name: Unit tests
 
 on:
   push:
@@ -24,7 +24,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: python-unit-${{ github.ref }}
+  group: unit-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -36,7 +36,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
       - name: Install project and test dependencies
         run: python -m pip install -e ".[test]"
-      - name: Run unit tests
+      - name: Run Python unit tests
         run: python -m pytest -q
+      - name: Run browser projection unit tests
+        run: node --test mvp/app.test.js

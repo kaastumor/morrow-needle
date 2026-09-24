@@ -29,6 +29,8 @@ Allowed dispositions: **survives / revise / reject / park / experiment**.
 
 | H-16 | A thin static browser projection of the adversarial corpus materially improves the usefulness/inspectability of Needle's surviving core without requiring a broader legal product or new canonical truth layer. | experiment | #110 reached `TECHNICAL_MVP_CANDIDATE` with the thin architecture intact; #104 completed without earning another feature horizon. H-16 remains unresolved because real/manual usability value versus direct corpus/repository inspection has not yet been observed. |
 
+| H-17 | An evidence-triggered continuous-discovery cycle can surface decision-changing opportunities more reliably than feature ideation or passive idling without recreating roadmap/process creep. | experiment | Sponsor authorised #134 after adversarial review. Cycle 1 (#135–#139) must be allowed to end with no build; success is changed confidence/decisions, not opportunity or backlog volume. |
+
 ## Register rules
 
 - Add an assumption only if being wrong could change architecture, project

@@ -39,13 +39,19 @@ experiment would distinguish them.
 
 ## Canonical freshness
 
-- Do README, project charter, backlog, assumptions and package metadata describe
-  the same current direction?
-- Does any closed issue or historical gate still appear as the current horizon?
-- Are historical documents clearly marked when later decisions supersede their
-  product or architecture framing?
-- Does the canonical ownership map still identify one owner per consequential
-  fact?
+`BACKLOG.md` is the **sole mutable owner** of current mode, WIP and immediate
+priority.
+
+- Does BACKLOG match accepted main plus any explicitly pending active PR?
+- Do README and the project charter avoid copying live issue numbers, corpus counts or
+  queue state?
+- Does any historical plan still present itself as standing operating authority?
+- Are historical documents clearly marked when later decisions supersede their product,
+  architecture or operating framing?
+- Does every mutable concern have one live owner rather than several files that must move
+  in lockstep?
+- Does the canonical legal/evidence ownership map still identify one owner per
+  consequential fact?
 
 ## Problem / contribution / form / implementation
 
@@ -102,8 +108,12 @@ experiment would distinguish them.
 - For product/workflow complexity under correctness parity: what observed
   relative advantage over the strongest realistic alternative earned the
   surface, and did it remain above the validity/provenance floor?
-- Can any workflow, schema, projection or process now be demoted to historical
+- Can any workflow, schema, projection or process now be demoted to passive historical
   provenance or manual diagnostics?
+- For every non-core maintained surface, what **current owner** requires it: current
+  identity, corpus evidence, live/release gate or explicit reactivation?
+- If there is no owner, can its automatic triggers/maintenance obligation be retired
+  while preserving the artifact?
 - Is a one-case workflow rerunning tests already covered by the global suite?
 - Are generated files or snapshots accumulating in Git when an artifact or
   provenance record would be safer?
@@ -153,11 +163,15 @@ the research thesis is healthy but old execution machinery no longer serves it.
 Then reconcile `BACKLOG.md`, assumptions, `docs/value-evidence.md` and any
 affected decision/runbook.
 
-Every completed horizon ends with a fresh **continue / simplify / redirect /
-stop** decision for that horizon. Completing the horizon does not authorize new
-delivery scope, but under the Research continuity rule the sponsored program
-then selects exactly one bounded research question unless the sponsor explicitly
-terminates the project.
+Every completed horizon ends with a fresh **continue / simplify / redirect / stop**
+decision for that horizon.
+
+That decision does not automatically authorize a new experiment or delivery surface.
+Under the purposeful-continuity rule, the programme then selects exactly one bounded
+successor mode: **DISCOVER / CONSOLIDATE / USE / REVIEW-RELEASE / MAINTAIN**.
+
+The successor should address the largest consequential uncertainty or obligation, not
+merely the easiest next question.
 
 ## Governance self-check
 
@@ -170,7 +184,7 @@ Prefer:
 - a regression over a checklist;
 - a single invariant over a score;
 - a current canonical document over another status document;
-- one bounded evidence-driven research question over either a manufactured roadmap or a project-level idle state.
+- one bounded purposeful task over either a manufactured roadmap, an automatic experiment conveyor or a project-level idle state.
 
 Delete or merge governance that becomes ritual, stale, duplicative or more
 expensive than the failure it prevents.

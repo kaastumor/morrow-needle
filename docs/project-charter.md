@@ -270,12 +270,23 @@ The smallest evidence-backed identity remains:
 > **Needle adversarial legal-research regression/reference corpus + minimal
 > evaluation discipline.**
 
+Post-#214 sponsored research has now produced both subtraction and one bounded
+taxonomy addition:
+
+- #218 rejected a new static/dynamic-reference class;
+- #219/#220 established `EXECUTABLE_COMPLIANCE_ARTIFACT`;
+- #221 broadened `PRIVATE_ORIGIN_LEGAL_RECOGNITION` in place rather than
+  multiplying private-origin classes.
+
+The corpus is now **31 cases / 16 trap classes**.
+
 Current active research:
 
-> **#219 — executable compliance software as a time-versioned legal input**
+> **#222 — versioned authoritative datasets as legal inputs**
 
-#218 already supplied the first post-correction negative result by rejecting a
-new static/dynamic-reference class in favour of mature legal-reference doctrine.
+#222 asks whether official multi-value dataset state needs a distinct owner or
+whether `AUTHORITATIVE_METRIC_TRIGGER` should generalise from individual
+metrics to authoritative data inputs.
 
 Continuous research does not authorise investigator reruns, harder #214
 replacement cases, product implementation, new trap classes or persistent

@@ -10,23 +10,25 @@ state overrides chat memory and the scheduler prompt.
 At the start of every run inspect, in order:
 
 1. open pull requests, especially any `auto/*` work;
-2. `docs/project-charter.md`;
-3. `BACKLOG.md`;
-4. `docs/assumptions.md`;
-5. `docs/way-of-working.md`;
-6. the active gate issue and relevant decision/audit documents;
+2. `BACKLOG.md` — sole mutable owner of current mode/WIP/priority;
+3. `docs/project-charter.md`;
+4. `docs/way-of-working.md`;
+5. `docs/assumptions.md`;
+6. the active issue and relevant decision/audit documents;
 7. latest main CI / operational state relevant to the task;
 8. this runbook.
 
 Do not use stale chat handoffs as authority over the repository.
 
-For discovery, start at section 0 of
-`docs/discovery/evidence-triggered-continuous-discovery-v0.2.md`. On a new session,
-read the governing documents above. Within the same resumed task, compare their
-SHAs and reload changed rules/state plus task-relevant evidence; do not repeatedly
-load the entire history. A new task or changed gate requires a fresh scope check.
-Use the compact issue/result record there for resumable checkpoints. The worker's
-AUTO READY eligibility boundary still applies; a model choice does not expand it.
+For discovery, the standing rules are in `docs/way-of-working.md` plus the active issue.
+`docs/discovery/evidence-triggered-continuous-discovery-v0.2.md` is a reference method:
+use its detailed search/confirmation guidance only when the active task needs it.
+
+On a new session, read the governing documents above. Within the same resumed task,
+compare their SHAs and reload changed rules/state plus task-relevant evidence; do not
+repeatedly load the entire history. A new task or changed gate requires a fresh scope
+check. The worker's AUTO READY eligibility boundary still applies; a model choice does
+not expand it.
 
 ## Selection rule
 
@@ -40,8 +42,13 @@ dependencies must be satisfied. Historical completed queues, including
 #105–#116, are not an active task list. Resolve or record dependencies on live
 work before selecting a separate task.
 
-If no eligible AUTO READY issue exists, do not manufacture work. Inspect for a
-blocker only if the active gate explicitly requires it, then stop the run.
+If no eligible AUTO READY issue exists, do not manufacture work. Inspect for a blocker
+only if the active gate explicitly requires it, then stop the **worker run**.
+
+Sponsor continuity is a project-level allocation rule, not permission for the scheduled
+executor to invent a successor. Selecting DISCOVER / CONSOLIDATE / USE / REVIEW-RELEASE /
+MAINTAIN scope belongs to the owner/governing project process and must appear in BACKLOG
+before this worker executes it.
 
 ## Method
 

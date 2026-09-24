@@ -1,17 +1,23 @@
 # Evidence-triggered continuous discovery v0.2
 
-Status: **SPONSOR-AUTHORISED DISCOVERY OPERATING PLAN**  
+Status: **REFERENCE DISCOVERY METHOD — NOT STANDING QUEUE AUTHORITY**  
 Date: 2026-09-24  
-Supersedes: the intentionally idle post-#104 state only for the bounded discovery
-cycle defined here. It does **not** supersede the project charter, evidence rules,
-or stopped public-product decision.
+Governance scope revised: 2026-09-25
 
-## 0. Routine execution path
+This document preserves the detailed discovery method developed during the bounded
+post-MVP cycles. It remains useful when the current BACKLOG selects **DISCOVER** mode,
+but it no longer owns the standing project mode, queue or constitutional transition.
+Those are governed by `docs/way-of-working.md` and `BACKLOG.md`.
 
-Use this section as the entry point for repeated discovery sessions, including
-5.6 sessions. It reduces repeated reading and output; it is not evidence that a
-particular model performs better. Sections below remain the detailed rules.
-Use the original long prompts for horizon reviews, not as per-run output quotas.
+Frozen historical experiments retain their original protocols; this status change does
+not rewrite their scientific inputs or results.
+
+## 0. Discovery execution reference
+
+Use this section when the active issue is in **DISCOVER** mode and needs the more detailed
+method below. It is not the project-wide default successor path. Sections below remain
+reference guidance; frozen task-specific protocols override this document where they
+conflict.
 
 ### Load the decision context
 
@@ -857,10 +863,10 @@ Human evidence channels remain human:
 
 ## 16. Canonical ownership
 
-- this document owns the discovery operating plan;
-- the active parent GitHub issue owns the bounded cycle;
-- child issues own concrete sensing/discovery work;
-- `BACKLOG.md` owns current execution order;
+- `docs/way-of-working.md` owns standing discovery/execution rules;
+- this document is the detailed discovery reference method;
+- the active GitHub issue owns its bounded question and frozen criteria;
+- `BACKLOG.md` owns current mode, WIP and execution order;
 - `docs/assumptions.md` owns only material live beliefs;
 - `docs/value-evidence.md` changes only when discovery changes the project
   thesis/direction;

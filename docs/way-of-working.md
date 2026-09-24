@@ -20,43 +20,57 @@ without rebuilding the discarded architecture.
    approximated.
 7. **Delivery and discovery are different tracks.** Delivery implements accepted
    scope. Discovery produces evidence about possible scope.
-8. **Stop is a valid outcome for a hypothesis, not for the sponsored research program.** A rejected feature hypothesis is successful discovery; when no delivery horizon is earned, the project pivots to the next bounded research question under WIP=1.
+8. **Stop is a valid outcome for a hypothesis, not for the sponsored program.** A rejected hypothesis is successful evidence. The programme then moves to one bounded purposeful mode under WIP=1; that mode need not be another experiment.
 
-## Research continuity
+## Purposeful continuity
 
-Morrow // Needle is sponsor-funded research. It must not enter an
-`IDLE BY DESIGN` operating state.
+Morrow // Needle is sponsor-funded and must not use `IDLE BY DESIGN` as a default
+project state.
 
-When an implementation, feature, experiment or product hypothesis stops, the
-default transition is:
+That sponsor constraint does **not** create an automatic discovery or experiment
+conveyor.
 
-> **reconcile -> wide-lens scan -> select one bounded research question -> continue**
+When a bounded horizon ends, reconcile the result and choose exactly one purposeful mode
+that best serves the current evidence:
 
-This is not permission to keep retrying the failed hypothesis.
+- **DISCOVER** — investigate one consequential unresolved question;
+- **CONSOLIDATE** — reconcile, compress, retire or simplify accumulated state;
+- **USE** — apply accepted assets to a real task within their supported scope;
+- **REVIEW / RELEASE** — assess or prepare a coherent finished deliverable;
+- **MAINTAIN** — preserve correctness, evidence validity, integrity, cost or operability.
 
-Research continuity must preserve:
+The canonical transition is:
 
-- WIP = 1;
+> **finish -> reconcile -> choose one purposeful mode -> WIP=1**
+
+not:
+
+> **finish -> automatically invent another experiment**
+
+and not:
+
+> **finish -> leave the project indefinitely idle**
+
+Selection must be grounded in the current evidence and sponsor constraints. Local WIP
+discipline does not prove that the selected mode is the best project-level allocation.
+
+Continuity preserves:
+
+- WIP = 1 for active execution;
 - strongest boring/incumbent baseline first;
-- explicit falsifiers and negative outcomes;
+- explicit falsifiers and negative outcomes where a claim is tested;
 - no post-hoc harder replacement cases;
 - no feature, ontology or schema growth merely to stay busy;
-- no standing expensive monitoring/CI work when source research is enough;
-- one bounded run and, at most, one follow-up unless genuinely new evidence
-  changes the boundary.
+- no standing expensive monitoring/CI work when a cheaper mode is sufficient;
+- explicit completion/re-entry criteria.
 
-If the immediately previous direction is exhausted, prefer an orthogonal
-question from:
+A completed work item may end in `ADOPT`, `REVISE`, `REJECT`, `PARK`,
+`SIMPLIFY` or `STOP`, with a subtype where useful. The project-level successor is
+chosen separately.
 
-- fresh official-source anomalies;
-- adjacent-discipline literature/precedent;
-- unresolved internal evidence tensions;
-- under-covered legal-information mechanisms;
-- real external use or adoption signals.
-
-A completed work item may end in `REJECT`, `PARK`, `SIMPLIFY` or `STOP`.
-The project-level action is then **PIVOT TO RESEARCH**, unless the sponsor
-explicitly terminates the project.
+`BACKLOG.md` is the sole mutable owner of the current mode, WIP and immediate
+priority. Orientation and constitutional documents must link to it rather than copy its
+live state.
 
 ## Incumbent and residual-value test
 
@@ -98,15 +112,18 @@ A coverage gate selecting an uncovered dimension creates **no presumption of
 admission**. The follow-up research run starts from the null that no new class is needed
 and must re-run incumbent/existing-class first refusal.
 
-## Research-mode binding
+## Mode binding
 
-A Project Health, coverage or red-team gate that selects a research mode or sole next
+A Project Health, coverage, red-team or owner decision that selects a mode or sole next
 WIP is binding until that work completes or a later explicit gate records why it is
 superseded.
 
-Do not silently leave depth, compression, generality or another constrained lane because
-a more interesting candidate appears. Reconcile the mode change first and preserve the
-abandoned/deferred question explicitly.
+Do not silently leave discovery, depth, compression, consolidation, use, release or
+maintenance because a more interesting task appears. Reconcile the mode change first and
+preserve any abandoned/deferred question explicitly.
+
+A sponsor/owner decision may explicitly supersede a previously selected successor. That
+is governance, not evidence that the earlier candidate was scientifically wrong.
 
 A depth lane must also earn its continuation. If **three consecutive depth runs**, each
 selected before substantive research begins, produce only additional illustrations and
@@ -233,8 +250,9 @@ For a discovery issue:
 - relevant internal evidence and external precedent inspected;
 - smallest useful experiment/research performed;
 - limitations/counterargument recorded;
-- disposition is exactly one of:
-  `ADOPT_FOR_EXPERIMENT / REVISE / REJECT / PARK`;
+- disposition records one primary family: `ADOPT / REVISE / REJECT / PARK`, with a
+  subtype where it changes meaning (for example `ADOPT_FOR_EXPERIMENT`,
+  `ADOPT_FOR_DERIVATION` or `REVISE_EXISTING_CLASS`);
 - no feature implementation slipped into the discovery PR.
 
 ## CI-degraded exception
@@ -293,14 +311,14 @@ For Corpus Explorer v0.1:
 
 Discovery starts from evidence, not from a feature list.
 
-Active plan:
+Detailed reference method:
 `docs/discovery/evidence-triggered-continuous-discovery-v0.2.md`
 
-Start at section 0 for the routine execution path and compact result record.
-It owns progressive context loading, search budgets and exploration versus
-confirmation. Read detailed sections as applicable; long review prompts are not
-mandatory per-scout deliverables. Start from the supported evidence level, not
-an assumed externally validated core.
+That document is a **reference method**, not a second standing source of current queue or
+constitutional authority. Ordinary discovery execution is governed here plus the active
+issue. Use the reference method's search budgets, exploration/confirmation distinctions
+and compact result pattern when they fit the task. Frozen historical experiments retain
+their own exact rules.
 
 Evidence may enter through:
 
@@ -396,9 +414,11 @@ decision boundary.
 
 At the end of a meaningful horizon:
 
-- run `docs/project-health.md`;
-- reconcile README, charter, backlog, assumptions and value evidence;
-- choose `continue / simplify / redirect / stop`;
-- if no delivery horizon is earned, pivot to exactly one bounded research question under the Research continuity rule; never use an idle-by-design project state.
+- run `docs/project-health.md` when its trigger applies;
+- reconcile the live owner (`BACKLOG.md`) plus any durable owner whose meaning actually
+  changed; do not update README/charter merely to copy current queue state;
+- choose `continue / simplify / redirect / stop` for the horizon;
+- then choose exactly one purposeful successor mode under the continuity rule. The
+  successor may be discovery, consolidation, use, review/release or maintenance.
 
 Activity count, commits and issue throughput are never project-value evidence.

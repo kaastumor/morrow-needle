@@ -91,12 +91,22 @@ The result supports a narrow external-transfer claim for Needle's
 evaluation-integrity/evidence-closure discipline. It does **not** establish a
 general benchmark-audit capability or invalidate DELTA's official leaderboard.
 
-The post-#150 Project Health Check therefore chooses:
+The post-#150 Project Health Check initially chose:
 
 > **CONTINUE — IDLE BY DESIGN.**
 
-There is no active experiment, Cycle 2, feature horizon or replacement AUTO READY
-work. New work requires a concrete evidence trigger.
+That queue choice has since been superseded by explicit sponsor direction to
+continue active discovery.
+
+Current horizon:
+
+> **Discovery Cycle 2 (#155–#160): active linked discovery from proven Needle
+> mechanisms.**
+
+Cycle 2 searches for new evidence-backed transfer areas; it is not a feature
+roadmap. Four WIP=1 discovery runs cover document-role/lifecycle confusion,
+evidence closure, official-summary divergence, and adversarial corpus/protocol
+transfer, followed by one synthesis gate.
 
 ## Canonical project records
 

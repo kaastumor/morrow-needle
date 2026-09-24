@@ -191,42 +191,41 @@ The core project identity remains:
 
 > **Needle adversarial legal-research corpus + evaluation protocol.**
 
-Discovery Cycle 1 (#134–#139) completed with **CONTINUE** and selected exactly one
-external transfer experiment, #150.
+#150 remains valid evidence: one narrow external transfer of the
+evaluation-integrity/evidence-closure discipline was demonstrated, without
+earning a general benchmark-audit product or another benchmark programme.
 
-#150 is now complete with **REVISE**.
+The post-#150 `CONTINUE — IDLE BY DESIGN` queue decision has now been
+**superseded by explicit sponsor direction to continue active discovery**.
 
-Its four-task pre-registered DELTA v1.1.0 audit found one fresh mechanical
-reproducibility-contract inconsistency in the public open-source harness and
-preserved substantial negative/counterevidence. It did not establish a general
-benchmark-audit capability, user demand or product need.
+Current horizon:
 
-The revised external-transfer claim is:
+> **Discovery Cycle 2 — active linked discovery from proven Needle mechanisms
+> (#155–#160).**
 
-> **Needle's evaluation-integrity and evidence-closure discipline can transfer
-> usefully to external legal evaluation artifacts, particularly around public
-> reproducibility/provenance contracts; general distinctiveness beyond strong
-> benchmark QA remains unproven.**
+Cycle 2 is not a feature roadmap.
 
-Current project direction:
+It actively searches from proven mechanisms into nearby, functional and
+structural target areas:
 
-> **CONTINUE — IDLE BY DESIGN.**
+1. document-role / authority / lifecycle confusion;
+2. provenance / evidence-closure failure;
+3. official-summary / primary-source divergence;
+4. adversarial corpus/evaluation-protocol transfer.
 
-There is no active implementation or discovery horizon.
+Each run must search the strongest existing alternative, test a boundary, and
+produce at most one falsifiable transfer hypothesis. At most one experiment may
+be authorised at Cycle 2 synthesis.
 
-Parked/trigger-bound state remains:
+The relative-value correction remains in force:
 
-- Explorer / H-16 — **PARK**;
-- judicial-document-role generality — **PARK**;
-- evaluation evidence closure — **TRIGGERED TECHNIQUE ONLY**;
-- another benchmark audit — **NOT AUTHORISED**;
-- Cycle 2 / standing discovery — **NOT AUTHORISED**.
+- competitor existence does not kill an opportunity;
+- correctness parity does not equal workflow-value parity;
+- workflow value must show a meaningful difference with plausible behavioral
+  consequence and switching/adoption logic;
+- correctness/validity claims still require material baseline failure.
 
-The discovery method remains available only as a bounded evidence-triggered gate,
-not a recurring programme or queue generator.
-
-Canonical post-#150 health decision:
-`docs/discovery/post-issue150-project-health-2026-09-24.md`
+No feature implementation is authorised by discovery alone.
 
 ## Repository discipline
 

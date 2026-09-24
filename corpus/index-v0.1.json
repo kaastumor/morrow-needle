@@ -19,7 +19,8 @@
     "PRIVATE_ORIGIN_LEGAL_RECOGNITION": "A private-origin determination has a bounded legal role because public law recognises the actor or output, without converting the source into a public authority.",
     "PARALLEL_INSTRUMENT_LIFECYCLE": "An umbrella negotiation or political deal is implemented through legally distinct interim and comprehensive agreements whose signature, provisional application, conclusion, entry into force and replacement states must remain attached to the correct instrument.",
     "OFFICIAL_TRACKER_UPDATE_LAG": "A currently accessible official summary/status tracker lags newer primary legal sources, so current access time cannot be substituted for the tracker's observation or update horizon.",
-    "OFFICIAL_AUTHORITY_HANDOFF": "An official specialist artifact may be complete or final within its upstream role while a different institution owns the downstream binding decision; legal effect must remain attached to the procedure's actual decision owner and binding act rather than inherited from upstream authority, finality or practical importance."
+    "OFFICIAL_AUTHORITY_HANDOFF": "An official specialist artifact may be complete or final within its upstream role while a different institution owns the downstream binding decision; legal effect must remain attached to the procedure's actual decision owner and binding act rather than inherited from upstream authority, finality or practical importance.",
+    "EXECUTABLE_COMPLIANCE_ARTIFACT": "A legal calculation, declaration or verification outcome depends on a prescribed, privileged or certified executable tool; the artifact identity, version or regulatory status is legally relevant evidence, so substituting another/current executable can change the accepted result or verification consequence without parent-text mutation."
   },
   "cases": [
     {
@@ -731,7 +732,54 @@
         "issue:171",
         "path:docs/experiments/issue171-rts-authority-handoff-result-2026-09-24.md"
       ]
+    },
+    {
+      "id": "construction-products-commission-software-version",
+      "title": "Construction-product environmental declaration depends on Commission software version",
+      "domain": "construction products / environmental sustainability",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "EXECUTABLE_COMPLIANCE_ARTIFACT",
+        "STATUS_APPLICATION_SEPARATION"
+      ],
+      "provenance": {
+        "issue": 220,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Regulation (EU) 2024/3110 makes Commission software part of the environmental-performance calculation, requires the declaration to identify the software version, and allows a published update voluntarily before it becomes mandatory one year later; today's executable cannot silently stand in for the legally permitted version at an earlier declaration date.",
+      "evidence_refs": [
+        "issue:220",
+        "path:docs/discovery/issue220-executable-compliance-artifact-result-2026-09-24.md"
+      ]
+    },
+    {
+      "id": "transport-ghg-calculation-tool-effect",
+      "title": "Transport-emissions calculation-tool identity changes verification consequences",
+      "domain": "transport services / greenhouse-gas accounting",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "EXECUTABLE_COMPLIANCE_ARTIFACT"
+      ],
+      "provenance": {
+        "issue": 220,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Regulation (EU) 2026/1030 gives the Commission calculation tool a privileged verification effect and requires external calculation tools to carry a certification lifecycle and be identified in supporting evidence; tool identity/status is therefore part of the legally relevant calculation record.",
+      "evidence_refs": [
+        "issue:220",
+        "path:docs/discovery/issue220-executable-compliance-artifact-result-2026-09-24.md"
+      ]
     }
   ],
-  "case_count": 29
+  "case_count": 31
 }

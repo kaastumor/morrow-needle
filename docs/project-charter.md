@@ -287,11 +287,22 @@ Current results include:
   applicability, procedural clock suspension and cross-order incorporation
   state.
 
-The corpus is now **48 cases / 20 trap classes**.
+#243 then added one bounded territorial-scope mechanism for differentiated
+Member-State participation.
+
+#244 immediately red-teamed the resulting 50-case / 21-class taxonomy rather
+than rewarding taxonomy growth. Three class pairs were merged without deleting
+any case, leaving:
+
+> **50 cases / 18 trap classes**
+
+The compression keeps distinct causal owners for procedural timing,
+jurisdiction/order scope, machine artifacts, judicial effects and source roles
+while removing direction/output/representation-specific duplicate labels.
 
 Current active research:
 
-> **#243 — differentiated Member-State participation in EU acts**
+> **#245 — scoped third-country adequacy/equivalence recognition**
 
 Continuous research does not authorise a retry of #214, product implementation,
 schema growth, monitoring infrastructure or taxonomy expansion without the same

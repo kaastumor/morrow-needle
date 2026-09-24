@@ -58,6 +58,41 @@ A completed work item may end in `REJECT`, `PARK`, `SIMPLIFY` or `STOP`.
 The project-level action is then **PIVOT TO RESEARCH**, unless the sponsor
 explicitly terminates the project.
 
+## Incumbent and residual-value test
+
+Discovery must distinguish **doctrinal/market existence** from project value.
+
+> **Existing is not useless. Different is not valuable. Novel is not demanded.**
+
+The strongest incumbent doctrine, method, competitor or ordinary research rule is the
+baseline. Its existence is neither an automatic REJECT nor evidence that Needle adds
+value.
+
+For a taxonomy/corpus candidate:
+
+- **REJECT** when the incumbent plus existing Needle classes losslessly predicts and
+  expresses the consequential legal-information failure, leaving no bounded residual
+  regression/reference value;
+- **REVISE/ADMIT** only when a reusable residual state survives, its positive and
+  boundary evidence are explicit, and the label materially helps organise or test
+  regression cases rather than merely renaming known doctrine;
+- never claim novelty merely because Needle uses a different label;
+- never deny corpus value merely because the underlying doctrine is mature.
+
+A coverage gate selecting an uncovered dimension creates **no presumption of
+admission**. The follow-up research run starts from the null that no new class is needed
+and must re-run incumbent/existing-class first refusal.
+
+## Research-mode binding
+
+A Project Health, coverage or red-team gate that selects a research mode or sole next
+WIP is binding until that work completes or a later explicit gate records why it is
+superseded.
+
+Do not silently leave depth, compression, generality or another constrained lane because
+a more interesting candidate appears. Reconcile the mode change first and preserve the
+abandoned/deferred question explicitly.
+
 ## Checkpointed burst execution
 
 Autonomous work is executed in **checkpointed bursts** so chat/transport failures do

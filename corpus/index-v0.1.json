@@ -1360,7 +1360,29 @@
       "evidence_refs": [
         "issue:252"
       ]
+    },
+    {
+      "id": "barber-temporal-limitation-exception",
+      "title": "Barber judgment imposes an express temporal limit on declaratory interpretation",
+      "domain": "equal pay / occupational pensions",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "JUDICIAL_INTERPRETATION_TEMPORAL_EFFECT"
+      ],
+      "provenance": {
+        "issue": 253,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Barber exceptionally limited reliance on Article 119 for occupational-pension equality to service after 17 May 1990, while preserving earlier proceedings/equivalent claims; judgment date matters here only because the Court expressly made it an operative temporal boundary.",
+      "evidence_refs": [
+        "issue:253"
+      ]
     }
   ],
-  "case_count": 57
+  "case_count": 58
 }

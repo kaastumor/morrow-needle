@@ -1427,7 +1427,29 @@
       "evidence_refs": [
         "issue:255"
       ]
+    },
+    {
+      "id": "smoke-flavouring-efsa-clock-suspension",
+      "title": "EFSA smoke-flavouring opinion clock pauses for supplementary information",
+      "domain": "food safety / smoke flavourings",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "PROCEDURAL_CLOCK_SUSPENSION"
+      ],
+      "provenance": {
+        "issue": 256,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Regulation 2065/2003 Article 8 separately permits extension of EFSA's six-month opinion period and suspension while requested supplementary information or explanations are outstanding; elapsed calendar time is not the legal assessment clock.",
+      "evidence_refs": [
+        "issue:256"
+      ]
     }
   ],
-  "case_count": 60
+  "case_count": 61
 }

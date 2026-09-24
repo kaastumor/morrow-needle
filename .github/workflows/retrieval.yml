@@ -1,41 +1,9 @@
 name: Structured retrieval contract
+# Passive historical/research workflow. Manual dispatch only under #290.
 
 on:
-  push:
-    paths:
-      - "schemas/retrieval-*.json"
-      - "src/needle/retrieval/**"
-      - "src/needle/identity/**"
-      - "src/needle/temporal/**"
-      - "src/needle/provenance/**"
-      - "src/needle/thread/**"
-      - "fixtures/retrieval/**"
-      - "fixtures/identity/**"
-      - "fixtures/thread/**"
-      - "fixtures/semantic/**"
-      - "fixtures/temporal/**"
-      - "fixtures/provenance/reg794-article3-dag-v0.1.json"
-      - "tests/test_retrieval.py"
-      - "scripts/build_article3_retrieval_demo.py"
-      - ".github/workflows/retrieval.yml"
-  pull_request:
-    paths:
-      - "schemas/retrieval-*.json"
-      - "src/needle/retrieval/**"
-      - "src/needle/identity/**"
-      - "src/needle/temporal/**"
-      - "src/needle/provenance/**"
-      - "src/needle/thread/**"
-      - "fixtures/retrieval/**"
-      - "fixtures/identity/**"
-      - "fixtures/thread/**"
-      - "fixtures/semantic/**"
-      - "fixtures/temporal/**"
-      - "fixtures/provenance/reg794-article3-dag-v0.1.json"
-      - "tests/test_retrieval.py"
-      - "scripts/build_article3_retrieval_demo.py"
-      - ".github/workflows/retrieval.yml"
   workflow_dispatch:
+
 
 concurrency:
   group: structured-retrieval-${{ github.ref }}

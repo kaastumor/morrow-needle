@@ -6,48 +6,55 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **#203 EXPERIMENT READY — CONSEQUENTIAL CORPUS-USE DIAGNOSTIC**
+# **#207 NEXT — REGISTRY-ABSENCE BASELINE CHALLENGE**
 
-#200 completed its design/readiness gate and selected one real unresolved external
-task rather than launching another taxonomy cycle:
+#203 has completed its one allowed two-arm execution.
 
-> HazyResearch/legalbench#56 — OPP-115 identical scored inputs carrying
-> contradictory labels.
+Canonical score:
 
-Readiness reproduced the three published conflicts at the frozen LegalBench
-revision and verified a primary-evidence route through the original downloadable
-OPP-115 corpus/annotations.
+> **UNRESOLVED — BOTH ARMS INDETERMINATE**
 
-#203 now owns exactly one two-arm comparison:
+Both fresh workers independently recommended the same safe operational action:
+quarantine the six contradictory identical-input OPP-115 rows, preserve their
+labels/provenance and do not invent a winning label.
 
-- **R:** competent ordinary source-linked benchmark QA;
-- **C:** the same task/resources plus the existing Needle corpus/evaluation
-  discipline.
+That agreement is operational convergence, not upgraded frozen-score parity.
+Both workers reported that primary OPP-115 row provenance could not be
+reconstructed reliably, and #203's preregistered rule maps both-INDETERMINATE to
+unresolved.
 
-Primary outcome:
+The red team further narrows the result:
 
-> `VERIFIED_SCORING_DISPOSITION`
+- the prompt itself surfaced the conservative quarantine rule;
+- exact public source choices differed within the equal 12-inspection budget;
+- consumer UI/model settings are not independently machine-attested;
+- Arm C explicitly reported no decision-changing contribution from the Needle
+  treatment.
 
-The experiment asks whether corpus access changes the consequential disposition
-of the contradictory benchmark items, not whether it produces nicer prose.
+#203 disposition:
 
-Execution requires **separate fresh contexts/workers**. The #200 design session is
-contaminated by feasibility inspection and may not count as either arm.
+> **PARK**
 
-Frozen guards:
+No repaired retry, easier LegalBench defect, product build or corpus-specific
+benchmark workflow is authorised.
 
-- same capability/source access and bounded resource budget;
-- no paid batch;
-- no switching to easier SSLA/SARA/citation bugs;
-- no new cases after parity;
-- no product build or Cycle 4;
-- parity supports simplifying toward ordinary source-linked cases + behavioral QA
-  for this job.
+Project health direction:
 
-#200: **COMPLETED — READY FOR SEPARATE EXECUTION**.
-#203: **EXPERIMENT READY**.
+> **CONTINUE — SIMPLIFY DIAGNOSTIC AMBITION; ACTIVATE #207**
 
-No assumptions/value-evidence update is earned until #203 produces a result.
+#207 reopens the strongest Cycle-3 reserve (#179) only to attack it with a
+stronger adjacent baseline before fresh validation:
+
+> Is `OFFICIAL_REGISTRY_COVERAGE_OVERCLAIM` a useful legal-information failure
+> family, or is it simply ordinary open/closed-world completeness reasoning plus
+> source-scope checking?
+
+#207 is evidence-only. It may reject or sharpen the proposed family but may not
+add a corpus class, schema, registry ontology, product or monitoring surface.
+
+The corpus remains **29 cases / 15 trap classes**.
+
+No Cycle 4 is authorised.
 
 **Issue #88 is complete. Its pre-registered stop rule fired.**
 

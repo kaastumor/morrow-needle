@@ -129,22 +129,33 @@ The corpus remains **29 cases / 15 trap classes**. No fresh #195 case was added
 merely to increase corpus size, and no product/evaluation-performance claim was
 made.
 
-#200 completed its design/readiness gate on one real unresolved
-LegalBench OPP-115 scoring conflict. The cited contradictory identical-text
-pairs were reproduced at the frozen benchmark revision and a primary-evidence
-route through the original OPP-115 corpus was verified.
+#203 completed its one allowed two-arm OPP-115 diagnostic.
+
+Both fresh workers independently recommended quarantine of the contradictory
+identical-input rows and both reported unresolved primary row provenance.
+Because #203's frozen rule maps both-INDETERMINATE to unresolved, the canonical
+score is:
+
+> **UNRESOLVED — BOTH ARMS INDETERMINATE**
+
+Arm C reported no decision-changing contribution from the Needle treatment.
+The red team also found that the prompt itself surfaced the conservative
+quarantine rule, so the result must not be promoted into a general corpus-vs-QA
+parity claim.
+
+#203 is therefore **PARKED**. No benchmark-diagnostic product or retry is earned.
 
 Current horizon:
 
-> **#203 — consequential corpus-use diagnostic execution**
+> **#207 — registry-absence baseline challenge**
 
-#203 compares ordinary source-linked benchmark QA against the same task with
-access to Needle's existing corpus/evaluation discipline. The primary outcome is
-the supported scoring/repository disposition, not explanation quality.
+#207 attacks the strongest parked Cycle-3 reserve before any fresh validation:
+does `OFFICIAL_REGISTRY_COVERAGE_OVERCLAIM` add a useful legal boundary beyond
+mature open/closed-world completeness semantics and ordinary registry-scope
+checking?
 
-Execution requires separate fresh contexts/workers; the design session is
-contaminated and may not count as either arm. No Cycle 4 or product work is
-automatic.
+The preferred outcome may be subtraction. No new class, Cycle 4 or product work
+is automatic.
 
 ## Canonical project records
 
@@ -166,6 +177,8 @@ automatic.
 - `docs/discovery/cycle3-run-d-authority-handoff-generalisation-2026-09-24.md`
 - `docs/discovery/cycle3-synthesis-2026-09-24.md`
 - `docs/experiments/issue195-official-authority-handoff-generality-result-2026-09-24.md`
+- `docs/experiments/issue203-opp115-corpus-use-result-2026-09-24.md`
+- `docs/discovery/post-issue203-project-health-2026-09-24.md`
 - `docs/discovery/post-issue195-project-health-2026-09-24.md`
 - `docs/experiments/issue165-scholarly-status-result-2026-09-24.md`
 - `docs/discovery/post-issue165-project-health-2026-09-24.md`

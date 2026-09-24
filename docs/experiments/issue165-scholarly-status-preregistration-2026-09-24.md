@@ -600,3 +600,107 @@ It does not change:
 - model/arms;
 - scoring;
 - success/kill rules.
+
+
+## 22. Pre-candidate transport amendment — Scite editorial-notice index
+
+Recorded before any #165 validation candidate is selected or inspected.
+
+### Why a second transport amendment is necessary
+
+The PubMed transport declared in Section 21 is valid in principle, but this
+runtime cannot retrieve PubMed ESearch/EFetch result payloads through the
+available web/runtime interfaces.
+
+No candidate DOI, article title, abstract, notice content or model output was
+inspected through PubMed before this amendment.
+
+### Replacement enumeration transport
+
+Use Scite's scholarly index only to enumerate DOI-identified original papers
+carrying editorial notices.
+
+Frozen status filters:
+
+- RETRACTED_CURRENT: `has_retraction=true`
+- MATERIAL_CORRECTION_HISTORICAL: `has_correction=true`
+- CONCERN_CURRENT: `has_concern=true`
+
+The original article DOI remains the selection identity.
+
+### Frozen enumeration procedure
+
+For each status class:
+
+1. call the status filter with no topical search term;
+2. retrieve results in provider-returned order in pages of at most 200 records;
+3. inspect **metadata only** during pool construction:
+   - DOI;
+   - journal;
+   - publication year;
+   - `editorialNotices.status`;
+   - `editorialNotices.noticeDoi`;
+   - `editorialNotices.date`;
+4. retain only records with at least one matching editorial notice whose notice
+   date falls inside the already-frozen event window:
+   `2025-01-01 <= event_date <= 2026-08-31`;
+5. normalize original DOI to lowercase and deduplicate;
+6. stop enumeration once either:
+   - 200 DOI-bearing in-window records have been retained for that status class;
+     or
+   - the provider returns no further records;
+7. preserve exact returned DOI list and SHA-256 of the normalized retained list;
+8. apply the already-frozen selection hash:
+   `SHA256("needle165|<status-class>|<doi>")`;
+9. inspect candidate content/status evidence only in ascending selection-hash
+   order until one satisfies eligibility.
+
+Provider relevance/order is **not** treated as scientific evidence; it only
+bounds the candidate pool before Needle's DOI hash is applied.
+
+If fewer than 200 in-window records are available, the complete retained pool is
+used rather than expanding the event window.
+
+### Final status verification remains independent
+
+Scite is an enumeration transport, not the sole authority for final case status.
+
+A selected case still requires authoritative confirmation from at least one of:
+
+- publisher notice/current article page;
+- Crossref/Crossmark when individually accessible;
+- Retraction Watch/Crossref record when individually accessible;
+- PubMed indexed notice when individually accessible.
+
+### Control selection
+
+After RETRACTED_CURRENT is frozen:
+
+1. enumerate same-journal + same-year DOI-bearing articles through Scite;
+2. apply the already-frozen control DOI hash;
+3. inspect in hash order;
+4. exclude any article with a retraction, correction, concern or erratum notice
+   in Scite and perform the already-required external no-known-update check.
+
+If same-journal/year produces no eligible control, use the existing preregistered
+fallback order.
+
+### Unchanged scientific contract
+
+This amendment changes only candidate enumeration transport.
+
+It does not change:
+
+- status classes;
+- event window;
+- DOI identity;
+- derivation exclusions;
+- eligibility/materiality rules;
+- evaluation `as_of`;
+- L/S prompts;
+- model/access parity;
+- scoring;
+- P165-A/P165-B decision rules;
+- anti-success-search rule.
+
+No candidate content may be used until this amendment is durably committed.

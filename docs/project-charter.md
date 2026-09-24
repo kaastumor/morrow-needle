@@ -294,21 +294,21 @@ Member-State participation.
 than rewarding taxonomy growth. Three class pairs were merged without deleting
 any case.
 
-#245–#252 then completed one bounded sponsored-discovery batch:
+#245–#252 completed one bounded sponsored-discovery batch with one new class
+and several in-place generalisations.
 
-- scoped third-country recognition was rejected as redundant;
-- cohort, procedural-silence and judicial operative-state classes generalised;
-- `MEMBER_STATE_OPTION_DIVERGENCE` was admitted from GDPR + MiCA;
-- `OFFICIAL_AUTHORITY_HANDOFF` gained a current medicines case;
-- `CROSS_ORDER_INCORPORATION_STATE` generalised from EEA to Swiss Schengen.
+#253/#255/#256 then added:
+- one real CJEU temporal-limitation exception under the existing judicial class;
+- one bounded `SUBSTATE_TERRITORIAL_REGIME` class from France/Denmark;
+- one food-law generality case for `PROCEDURAL_CLOCK_SUSPENSION`.
 
 The corpus is now:
 
-> **57 cases / 19 trap classes**
+> **61 cases / 20 trap classes**
 
 Current active research:
 
-> **#253 — actual CJEU temporal-effect limitation exception**
+> **#257 — Cyprus acquis suspension as substate territorial generality**
 
 Continuous research does not authorise a retry of #214, product implementation,
 schema growth, monitoring infrastructure or taxonomy expansion without the same

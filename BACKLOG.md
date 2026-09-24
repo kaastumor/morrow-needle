@@ -6,39 +6,32 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **#253 ACTIVE RESEARCH — CJEU TEMPORAL-EFFECT LIMITATION EXCEPTION**
+# **#257 ACTIVE RESEARCH — CYPRUS ACQUIS SUSPENSION**
 
 Sponsor rule #217 remains canonical:
 
 > a hypothesis may stop; the sponsored research program pivots immediately to
 > the next bounded WIP=1 research question.
 
-The latest reconciled research batch (#245–#252) produced:
+The latest reconciled research batch (#253/#255/#256) produced:
 
-- #245 REJECT — scoped third-country recognition stayed ordinary decision-scope
-  analysis plus existing dynamic status;
-- #247/#248/#249 — generalised existing cohort, procedural-silence and
-  judicial-operative-state classes;
-- #250 ADMIT — `MEMBER_STATE_OPTION_DIVERGENCE`;
-- #251 ADOPT — current CHMP→Commission medicines chain strengthens
-  `OFFICIAL_AUTHORITY_HANDOFF`;
-- #252 REVISE/ADOPT — Swiss Schengen validates cross-order incorporation outside
-  the EEA.
+- #253 ADOPT — Barber supplied a genuine judicial temporal-effect limitation;
+- #255 ADMIT — `SUBSTATE_TERRITORIAL_REGIME`;
+- #256 ADOPT — food-safety procedure strengthened
+  `PROCEDURAL_CLOCK_SUSPENSION`.
 
 Canonical corpus:
 
-> **57 cases / 19 trap classes**
+> **61 cases / 20 trap classes**
 
-#253 is the sole active research WIP.
+#257 is the sole active research WIP.
 
-It tests the exception side of
-`JUDICIAL_INTERPRETATION_TEMPORAL_EFFECT`: find a genuine CJEU judgment that
-actually imposed/preserved a limitation of temporal effects, pin its exact
-beneficiaries/date/scope, and compare it with the declaratory default and a
-refused limitation request.
+It tests whether Protocol No 10 on Cyprus — suspension of the acquis in areas
+where the Republic of Cyprus does not exercise effective control — fits the new
+sub-state territorial-regime class or exposes an over-broad abstraction.
 
-Do not retry #214, manufacture product scope, or add a case merely because the
-doctrine is interesting.
+Do not retry #214, manufacture product scope, or add territorial cases merely
+because they are unusual.
 
 Historical "worker idle", "idle by design" and event-trigger-only wording below
 is superseded by #217 for current execution.

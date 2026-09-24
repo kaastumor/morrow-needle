@@ -27,7 +27,7 @@ Allowed dispositions: **survives / revise / reject / park / experiment**.
 
 | H-15 | The bounded Needle Method checklist materially improves **latent-trap detection** on realistic legal-research requests that do not identify the hidden source/time/scope/authority problem, compared with an equally capable source-grounded GPT-5.6-Sol/high/web baseline. | reject | #97 v0.3 produced 4/4 R-pass/M-pass pairs across four fresh latent adversarial classes, so the pre-registered stop rule fired after eight manual Temporary-Chat runs. No Method rescue occurred. The result is bounded by manual execution provenance: submitted files preserve answer text but do not machine-verify UI/model settings. |
 
-| H-16 | A thin static browser projection of the adversarial corpus materially improves the usefulness/inspectability of Needle's surviving core without requiring a broader legal product or new canonical truth layer. | experiment | Sponsor explicitly authorised MVP Gate #103. The test is Corpus Explorer v0.1 under the constraints in `docs/mvp/v0.1-plan.md`; technical completion alone is not user-value proof. |
+| H-16 | A thin static browser projection of the adversarial corpus materially improves the usefulness/inspectability of Needle's surviving core without requiring a broader legal product or new canonical truth layer. | experiment | #110 reached `TECHNICAL_MVP_CANDIDATE` with the thin architecture intact; #104 completed without earning another feature horizon. H-16 remains unresolved because real/manual usability value versus direct corpus/repository inspection has not yet been observed. |
 
 ## Register rules
 

@@ -6,43 +6,40 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **#219 ACTIVE RESEARCH — EXECUTABLE COMPLIANCE SOFTWARE AS LEGAL INPUT**
+# **#222 ACTIVE RESEARCH — VERSIONED AUTHORITATIVE DATASETS AS LEGAL INPUTS**
 
-Sponsor direction #217 permanently supersedes `IDLE BY DESIGN` as a project
+Sponsor rule #217 permanently supersedes `IDLE BY DESIGN` as a project
 operating state.
 
-A hypothesis may stop. The sponsored research program pivots to the next
-bounded question under **WIP=1**.
+A hypothesis may stop. The sponsored research program immediately pivots to the
+next bounded WIP=1 research question.
 
-#214's scientific result remains unchanged:
+#214's zero-rescue scientific result remains binding for the tested diagnostic
+workflow. It is not being retried.
 
-- 3/3 adversarial R/C pairs were correct with demonstrated detection;
-- matched control was pass/pass;
-- diagnostic rescues: 0;
-- C-only regressions: 0.
+Post-#214 research now shows the intended cadence:
 
-That result still rejects H-24 and keeps the project identity small:
+- **#218 — REJECT.** Static/dynamic external-reference version semantics are
+  already owned by mature legal-reference doctrine.
+- **#219 — ADOPT_FOR_DERIVATION.** Legally prescribed/privileged executable
+  tools can be a distinct legal-information owner.
+- **#220 — ADMIT_DERIVATION_CLASS.** Added
+  `EXECUTABLE_COMPLIANCE_ARTIFACT` with two exposed regression/reference
+  cases.
+- **#221 — REVISE_EXISTING_CLASS.** Broadened
+  `PRIVATE_ORIGIN_LEGAL_RECOGNITION` in place; no parallel normative-document
+  class.
 
-> **NEEDLE = ADVERSARIAL LEGAL-RESEARCH REGRESSION/REFERENCE CORPUS + MINIMAL
-> EVALUATION DISCIPLINE.**
+Canonical corpus:
 
-It does **not** put research on hold.
+> **31 cases / 16 trap classes**
 
-Post-#214 research:
+#222 now tests whether versioned official datasets are a distinct legal-input
+mechanism or whether `AUTHORITATIVE_METRIC_TRIGGER` should simply be
+generalised.
 
-- **#218 — COMPLETE / REJECT.** Static versus dynamic external-reference version
-  semantics are already cleanly owned by mature EU legal-drafting/reference
-  practice. No new class; do not broaden `DYNAMIC_REFERENCE_STATUS`.
-- **#219 — ACTIVE.** Investigate Regulation (EU) 2024/3110's use of
-  Commission-provided compliance software whose updates move from publication to
-  voluntary use to mandatory use over time. Test whether executable software is
-  a distinct legally consequential source mechanism or a composition of existing
-  status/application/provenance classes.
-
-Do not retry #214, create harder replacement cases, or manufacture product
-scope.
-
-Research continues even when #219 is rejected.
+Do not retry #214, manufacture product scope, or equate research continuity with
+feature growth.
 
 **Any historical "worker idle", "idle by design" or event-trigger-only wording
 below is superseded by #217 for current execution.**
@@ -644,17 +641,9 @@ When it does, the reason must be recorded here or in the relevant issue. The bac
 
 ## Current research handoff
 
-#214 is complete and its zero-rescue result remains binding for the tested
-workflow claim.
+Sponsor rule #217 is canonical: completed hypotheses pivot to the next bounded
+research question rather than idling the project.
 
-Sponsor direction #217 supersedes only the **idle operating conclusion**, not
-the scientific result.
-
-#218 has already completed with REJECT / taxonomy subtraction.
-
-#219 is the current WIP=1 research question.
-
-When #219 completes, reconcile it and immediately select the next bounded
-research question from the surviving evidence and external precedent.
+#218–#221 are complete. #222 is the current WIP=1 research question.
 
 No product implementation is implied by continuous research.

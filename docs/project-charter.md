@@ -191,34 +191,32 @@ The evidence-backed identity remains:
 
 > **Needle adversarial legal-research corpus + evaluation protocol.**
 
-#171 completed with **SUPPORT** and added one bounded DERIVATION failure family:
+#171 expanded the corpus to 29 cases / 15 trap classes with
+`TECHNICAL_STANDARD_AUTHORITY_HANDOFF`.
 
-> `TECHNICAL_STANDARD_AUTHORITY_HANDOFF`
+#174 then ended **INDETERMINATE / SAMPLE_INCOMPLETE** before the broader
+`OFFICIAL_DERIVED_VIEW_LAG` taxonomy claim could be tested fully. The existing
+`OFFICIAL_TRACKER_UPDATE_LAG` class therefore remains unchanged.
 
-Two exposed EBA→Commission RTS chains show that an upstream "final draft" can
-still be substantively changed by the downstream institution that owns binding
-adoption.
-
-The corpus now contains 29 cases across 15 trap classes.
-
-No evaluation/model/product claim changed.
-
-Explicit sponsor direction remains active evidence-driven discovery.
+Explicit sponsor direction remains **active evidence-driven discovery**.
 
 Current horizon:
 
-> **#174 — official derived-view lag generality.**
+> **Discovery Cycle 3 — source-role and evidence-state mechanisms (#177–#183).**
 
-#174 tests with fresh cases whether the existing
-`OFFICIAL_TRACKER_UPDATE_LAG` mechanism generalises across:
+Cycle 3 searches four new linked areas:
 
-- EU sanctions consolidated-list lag; and
-- legislation.gov.uk revised-text editorial lag.
+1. official guidance/Q&A promoted into binding law;
+2. registry/list absence promoted into proof of legal non-existence;
+3. machine-readable official derivatives diverging from authoritative state;
+4. expert/recommendation stage promoted into final authorization/decision.
 
-A negative snapshot/control is mandatory.
+WIP=1. #178 is next.
 
-No sanctions monitor, UK-law ingestion, source freshness service or product
-surface is authorised.
+Transport-sensitive follow-up experiments must smoke-test query/API feasibility
+before full sample preregistration, without retaining candidate identities.
+
+No feature/product implementation is authorised by discovery alone.
 
 ## Repository discipline
 

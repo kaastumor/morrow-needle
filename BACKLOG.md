@@ -6,44 +6,53 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-**IDLE BY DESIGN — no AUTO READY implementation or discovery issue is currently
-authorised.**
+**Discovery Gate #134 — evidence-triggered continuous discovery v0.2 is the
+active sponsor-authorised horizon.**
 
-MVP #103 has reached `TECHNICAL_MVP_CANDIDATE`, but real/manual usability
-evidence remains outstanding. The Explorer is therefore frozen as a thin
-experiment; autonomous work must not simulate user acceptance or add features to
-make the experiment look more complete.
+Canonical plan:
+`docs/discovery/evidence-triggered-continuous-discovery-v0.2.md`
 
-Post-MVP discovery gate #104 is complete. Gate review:
-`docs/discovery/post-mvp-gate-review-2026-09-24.md`
+Adversarial review:
+`docs/discovery/evidence-triggered-discovery-red-team-2026-09-24.md`
 
-Disposition summary:
+The four discovery sources are evidence channels, not parallel backlogs:
 
-- #111 — **ADOPT_FOR_EXPERIMENT**, dormant until a fresh controlled-contrast
-  evaluation question exists;
-- #112 — **ADOPT_FOR_EXPERIMENT**, dormant until a stronger benchmark/answer-key
-  validity claim is actually contemplated;
-- #113 — **REJECT** authoring UI/generator/workflow;
-- #114 — **REVISE** to event-triggered, question-led regression replay only;
-- #115 — **REJECT** source-freshness monitoring;
-- #116 — **PARK** generic benchmark interoperability.
+1. fresh legal adversary;
+2. real Explorer use;
+3. external research need;
+4. observed failure of the current approach.
 
-The gate decision is **SIMPLIFY**. It creates no implementation horizon and no
-replacement scheduled worker.
+Everything enters one opportunity funnel. WIP=1.
 
-New autonomous work requires evidence from at least one of:
+### Cycle 1 execution
 
-1. a fresh falsifiable legal-information question;
-2. real/manual Explorer use capable of resolving H-16;
-3. a concrete trigger for the conditional #111 or #112 experiment;
-4. a named external reproducibility need matching the narrow #116 boundary;
-5. a directly observed project-system failure.
+Autonomous order:
 
-Until then, an empty queue is intentional.
+1. #135 — fresh legal-adversary scout;
+2. #137 — external research-needs scan;
+3. #138 — current-approach failure audit.
+
+Interactive track:
+
+- #136 — Explorer observed-use round. **INTERACTIVE REQUIRED.** Human evidence
+  may not be replaced by agent/browser simulation. Sponsor dogfood can expose a
+  concrete defect but cannot alone establish general external user value.
+
+Gate:
+
+- #139 — Cycle 1 evidence synthesis / Project Health Check after all four
+  channels have produced evidence or an explicit evidence limitation.
+
+Cycle 1 may finish with zero build candidates. Do not create Cycle 2 before #139.
+Do not implement a discovered feature from #135–#138. Every opportunity ends in
+`ADOPT_FOR_EXPERIMENT / REVISE / REJECT / PARK`; delivery requires a later
+separate decision.
+
+H-16 / #103 remains open and frozen as a technical Explorer candidate until real
+use supplies discriminating evidence.
 
 No task may revive the old legal-change product, add a backend/framework, create
-a second corpus truth store, or implement a discovery feature without a later
-explicit decision.
+a second corpus truth store, or convert proxy evidence into claimed user demand.
 
 Issues #49 and #59 have now falsified the assumption that the current Needle
 architecture should automatically become a general public legal-change product.

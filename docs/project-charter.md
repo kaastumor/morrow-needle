@@ -243,7 +243,7 @@ The corpus remains **29 cases / 15 trap classes**.
 
 The current active horizon is:
 
-> **#210 — latent corpus-assisted trap-detection experiment design**
+> **#212 — fresh 3+1 case compilation**
 
 The remaining project-identity question is narrower and more direct:
 
@@ -251,12 +251,9 @@ The remaining project-identity question is narrower and more direct:
 > consequential legal-information failure on a fresh realistic task when the
 > task itself does not surface the trap?
 
-#210 is design-only until independent GPT-6 Astra / medium red teaming is
-preserved and the final treatment/sample/threshold/contamination rules are
-frozen.
+#210 completed its independent GPT-6 Astra / medium review with REVISE and the corrected workflow-pilot design is frozen. #212 now compiles the sealed 3+1 set in a fresh context under those rules.
 
-No scored case selection, Cycle 4, product implementation, new trap class or
-persistent architecture is authorised yet.
+No investigator execution, Cycle 4, product implementation, new trap class or persistent architecture is authorised yet.
 
 ## Repository discipline
 

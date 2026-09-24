@@ -156,16 +156,27 @@ stronger incumbent concepts before fresh validation:
 
 No class was added. The corpus remains **29 cases / 15 trap classes**.
 
+#210's independent **GPT-6 Astra / medium** design red team returned
+**REVISE**. The pilot survives, but the claim is narrower:
+
+> it tests the practical package of **offering the frozen corpus index +
+> adversarial framing/instruction**, not whether corpus analogy itself causes an
+> improvement.
+
+The exact index bytes, arm instructions, equal-resource rule, deterministic
+family queue, bounded compiler search, cue-audit limits and diagnostic-rescue
+definition are now frozen.
+
+Two or three rescues would justify independent replication only, not immediate
+project-identity promotion. Zero rescues allows contraction toward an adversarial
+regression/reference corpus + minimal evaluation rules.
+
 Current horizon:
 
-> **#210 — latent corpus-assisted trap-detection experiment design**
+> **#212 — fresh 3+1 case compiler**
 
-#210 asks whether corpus access itself improves detection of a hidden
-consequential failure mechanism on fresh realistic tasks. It is distinct from
-#97's Method-checklist test and from #203's surfaced provenance task.
-
-No scored cases may be selected until an independent **GPT-6 Astra / medium**
-design red team has reviewed the construct and the final design is frozen.
+#212 runs in a fresh non-personalized context and may only compile/seal tasks.
+The design/red-team context has selected no scored case.
 
 No Cycle 4 or product work is automatic.
 
@@ -194,6 +205,7 @@ No Cycle 4 or product work is automatic.
 - `docs/discovery/issue207-registry-completeness-result-2026-09-24.md`
 - `docs/discovery/issue209-soft-law-baseline-result-2026-09-24.md`
 - `docs/discovery/post-reserve-baseline-challenges-project-health-2026-09-24.md`
+- `docs/experiments/issue210-design-red-team-result-2026-09-24.md`
 - `docs/discovery/post-issue195-project-health-2026-09-24.md`
 - `docs/experiments/issue165-scholarly-status-result-2026-09-24.md`
 - `docs/discovery/post-issue165-project-health-2026-09-24.md`

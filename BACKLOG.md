@@ -6,51 +6,40 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **#210 DESIGN — LATENT CORPUS-ASSISTED TRAP DETECTION**
+# **#212 READY — FRESH 3+1 CASE COMPILER**
 
-#207 and #209 have completed the post-#203 reserve red team.
+#210 completed its independent GPT-6 Astra / medium design red team with **REVISE**.
 
-Results:
+The pilot is now frozen as a practical workflow comparison:
 
-- #207 `OFFICIAL_REGISTRY_COVERAGE_OVERCLAIM` -> **REJECT**:
-  predicate-scoped completeness / partial closed-world semantics plus ordinary
-  registry-scope reading already owns the mechanism;
-- #209 `OFFICIAL_SOFT_LAW_EFFECT_COLLAPSE` -> **REJECT**:
-  established EU soft-law doctrine owns the effect analysis; a useful shared
-  class would require unearned effect-ontology complexity.
+> Does offering the exact frozen corpus index + fixed corpus-use instruction
+> improve latent diagnosis and consequential correctness over ordinary
+> source-grounded QA on one sealed challenge set?
 
-The two strongest parked Cycle-3 new-family reserves are therefore retired as
-Needle-specific taxonomy candidates.
+The treatment does **not** isolate corpus analogy from the adversarial framing
+and extra attention induced by being given an adversarial corpus.
 
-The corpus remains **29 cases / 15 trap classes**.
+Frozen repairs include:
 
-The highest-information unresolved project question is now about the corpus
-itself, not more taxonomy:
+- exact corpus blob `82712a726193f203d4886ef5f925fab322e7c6cc`;
+- index-only use for C;
+- equal model/reasoning/tools/source ceiling;
+- deterministic family queue and bounded first-eligible compiler search;
+- matched negative control;
+- constrained cue audit;
+- strict diagnostic-rescue definition;
+- 2–3 rescues justify replication only, not project-identity promotion;
+- leakage/execution failure is UNINTERPRETABLE;
+- zero rescues permits contraction toward a regression/reference-corpus identity.
 
-> Does access to the adversarial corpus materially improve **latent trap
-> detection** on a fresh realistic legal-research task when the task does not
-> name or strongly cue the trap?
+#210 is **COMPLETED — FROZEN DESIGN**.
 
-#210 owns experiment design only.
+#212 is the sole next WIP item and must run in a **fresh non-personalized
+context**. It compiles/seals cases only and may not run R/C.
 
-Important distinction:
+No scored case has been selected by the design/red-team context.
 
-- #97 tested a Needle **Method checklist**, not corpus access;
-- #203 tested corpus/protocol assistance on a task whose conservative provenance
-  rule was already surfaced and ended frozen-score UNRESOLVED.
-
-#210 must not repeat either construct.
-
-**No scored case selection is authorised yet.**
-
-Before case selection:
-
-1. independent GPT-6 Astra / medium review of the design;
-2. resolve or accept major construct objections;
-3. freeze treatment, sample shape, thresholds and contamination firewall;
-4. only then create a separate fresh case-compiler task.
-
-No Cycle 4, product build, Method/Core expansion or new class is authorised.
+No Cycle 4, product build, Method/Core expansion or new trap class is authorised.
 
 **Issue #88 is complete. Its pre-registered stop rule fired.**
 
@@ -647,18 +636,16 @@ Morrow may reorder tasks when new evidence changes risk.
 When it does, the reason must be recorded here or in the relevant issue. The backlog must reflect actual project priorities rather than preserving stale plans.
 
 
-## Follow-up selected by review implementation #199
+## Current research handoff
 
-**#200 — consequential corpus-use test design — COMPLETED.**
+#203 is complete and PARKED / UNRESOLVED under its frozen grading.
 
-#200 found one feasible real task, froze comparator/outcome/materiality,
-reproduced the public conflict, verified the primary-evidence route, and created
-the separate execution issue #203.
+#207 and #209 subsequently rejected both remaining Cycle-3 new-family reserves
+against stronger incumbent concepts.
 
-**#203 — OPP-115 corpus-use diagnostic — EXPERIMENT READY.**
+#210 then completed the Astra-red-teamed design for a distinct question:
+**index-assisted latent diagnostic workflow value**.
 
-#203 requires separate fresh contexts/workers. It compares ordinary source-linked
-benchmark QA with the same task plus Needle corpus/protocol access under one
-frozen primary outcome and stop rule.
+#212 now owns fresh case compilation under the frozen #210 rules.
 
-No Cycle 4 or product implementation is authorised while #203 owns the decision.
+No Cycle 4 or product implementation is authorised while #212 owns preparation.

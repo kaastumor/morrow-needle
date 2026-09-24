@@ -191,41 +191,39 @@ The evidence-backed identity remains:
 
 > **Needle adversarial legal-research corpus + evaluation protocol.**
 
-The corpus currently contains 29 cases / 15 trap classes after #171 admitted
-`TECHNICAL_STANDARD_AUTHORITY_HANDOFF`.
+The corpus contains **29 cases / 15 trap classes**.
 
-#174 remains **INDETERMINATE / SAMPLE_INCOMPLETE**. Its frozen UK positive pool
-contained no eligible already-in-force unapplied provision-level case; the
-Scoreboard negative control was available. No derived-view taxonomy conclusion
-was earned.
+#195 generalised #171's technical-standard-specific family without adding a
+class. The canonical failure family is now:
 
-Discovery Cycle 3 (#177–#183) completed with **CONTINUE**:
+> `OFFICIAL_AUTHORITY_HANDOFF`
 
-- soft-law effect collapse — PARK / reserve;
-- registry coverage overclaim — PARK / reserve;
-- machine-readable derivative drift — PARK / not distinct;
-- authority handoff generalisation — ADOPT_FOR_EXPERIMENT.
+It covers the bounded error where an official specialist artifact is final or
+complete within its upstream role while another institution owns the downstream
+binding decision. Legal effect must remain attached to the actual procedural
+decision owner. Fresh EMA and REACH-restriction chains support the generalisation;
+a fresh ECHA Candidate List inclusion supplies the boundary where agency action
+itself owns the tested legal effect.
 
-Current active horizon:
+This is documentary/taxonomy evidence only. It does not show that a model would
+miss the trap, that the mechanism is prevalent, or that a product surface has
+value.
 
-> **#195 — OFFICIAL AUTHORITY HANDOFF GENERALITY**
+The current active horizon is:
 
-#195 tests whether #171's technical-standard-specific class should be renamed /
-generalised to one broader official authority-handoff mechanism spanning:
+> **#200 — consequential corpus-use test design**
 
-- ESA final technical drafts → Commission binding acts;
-- CHMP scientific opinions → Commission marketing authorisations;
-- RAC/SEAC opinions → Commission REACH restrictions;
+#200 tests the surviving core more directly than another taxonomy cycle: can
+access to the existing adversarial corpus produce an independently checkable
+consequential diagnostic/review benefit over ordinary source-linked cases and
+behavioral QA under equal resources?
 
-while excluding procedures where the upstream agency act itself owns the legal
-effect.
+#200 may only design and decide readiness for one bounded test. A separate
+execution issue requires frozen task, comparator, primary outcome/materiality,
+exposure/verification plan and stop rule. If no real consequential task is
+available, PARK is preferred to manufactured demand.
 
-No product or integration work is authorised.
-
-Success should simplify taxonomy rather than add another class.
-
-No Cycle 4 is authorised before #195 closes and the project runs a fresh health
-check.
+No Cycle 4, product implementation or new persistent architecture is authorised.
 
 ## Repository discipline
 

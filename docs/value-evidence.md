@@ -55,6 +55,8 @@ Every entry ends in one disposition:
 
 | #177 Cycle 3 linked discovery | DISCOVERY | Active linked search can find genuinely distinct source-role/evidence-state mechanisms while also killing attractive non-distinct abstractions | Strong official/incumbent safeguards + WIP=1 + explicit boundaries + one synthesis gate | Runs A/B retained soft-law-effect and registry-coverage reserves; Run C rejected a machine-readable-specific family as ordinary freshness/version-state mechanics; Run D found that #171 may generalise across EMA/ECHA authority handoffs. #183 selected only #195 because it can simplify taxonomy instead of multiplying classes. | CONTINUE | `docs/discovery/cycle3-synthesis-2026-09-24.md` and Issues #177–#183 |
 
+| #195 official authority-handoff generality | DISCOVERY | #171's technical-standard-specific failure family is either genuinely narrow or one instance of a reusable cross-domain authority/effect handoff | Existing #171 RTS cases + fresh EMA/CHMP, ECHA RAC/SEAC and direct-effect agency control | Fresh Balversa and N,N-dimethylformamide chains reproduce a material upstream-complete/downstream-binding gap; fresh Candidate List inclusion shows agency action can itself own legal effect. Rename/generalise one class in place; no case/class count growth, model claim or product claim. | SIMPLIFY | `docs/experiments/issue195-official-authority-handoff-generality-result-2026-09-24.md` and Issue #195 |
+
 ## Rules
 
 1. Do not add an entry because work was completed.

@@ -104,32 +104,38 @@ No cross-domain protocol conclusion is drawn from that transport failure.
 
 Active sponsor direction remains evidence-driven action.
 
-#171 completed with **SUPPORT**. Two exposed EBA→Commission RTS chains earned a
-new DERIVATION trap class:
-
-> `TECHNICAL_STANDARD_AUTHORITY_HANDOFF`
-
-The corpus is now 29 cases / 15 trap classes. This adds no fresh evaluation or
-product claim.
+#171 originally admitted the narrow DERIVATION class
+`TECHNICAL_STANDARD_AUTHORITY_HANDOFF` from two exposed EBA→Commission RTS
+chains.
 
 #174 ended **INDETERMINATE / SAMPLE_INCOMPLETE** because the frozen
 legislation.gov.uk positive pool contained no eligible already-in-force,
 editorially unapplied provision-level case. The Scoreboard negative control was
-available. The broader derived-view class is therefore neither supported nor
-rejected.
+available. No derived-view taxonomy conclusion was earned.
 
-Discovery Cycle 3 (#177–#183) then completed with **CONTINUE**. It retained
-soft-law-effect and registry-coverage candidates as reserves, rejected a
-machine-readable-specific family as non-distinct, and selected one taxonomy-
-simplification experiment.
+Discovery Cycle 3 (#177–#183) completed with **CONTINUE** and selected one
+taxonomy-subtraction experiment.
+
+#195 then completed with **SUPPORT — GENERALISE / RENAME IN PLACE**. Fresh
+Balversa and N,N-dimethylformamide chains reproduced the consequential
+upstream-specialist → downstream-binding-act boundary, while a fresh ECHA
+Candidate List inclusion proved that agency action can itself own legal effect.
+
+The canonical class is now:
+
+> `OFFICIAL_AUTHORITY_HANDOFF`
+
+The corpus remains **29 cases / 15 trap classes**. No fresh #195 case was added
+merely to increase corpus size, and no product/evaluation-performance claim was
+made.
 
 Current horizon:
 
-> **#195 — test `OFFICIAL_AUTHORITY_HANDOFF` as a generalisation of
-> `TECHNICAL_STANDARD_AUTHORITY_HANDOFF`.**
+> **#200 — consequential corpus-use test design**
 
-A positive result should rename/generalise one existing trap class rather than
-increase trap-class count. A negative result keeps #171 narrow.
+#200 asks whether Needle should retain a corpus-specific diagnostic workflow or
+simplify toward ordinary source-linked cases plus behavioral QA. It owns design
+and readiness only; no Cycle 4 or execution task is automatic.
 
 ## Canonical project records
 
@@ -150,6 +156,8 @@ increase trap-class count. A negative result keeps #171 narrow.
 - `docs/discovery/cycle2-synthesis-2026-09-24.md`
 - `docs/discovery/cycle3-run-d-authority-handoff-generalisation-2026-09-24.md`
 - `docs/discovery/cycle3-synthesis-2026-09-24.md`
+- `docs/experiments/issue195-official-authority-handoff-generality-result-2026-09-24.md`
+- `docs/discovery/post-issue195-project-health-2026-09-24.md`
 - `docs/experiments/issue165-scholarly-status-result-2026-09-24.md`
 - `docs/discovery/post-issue165-project-health-2026-09-24.md`
 - `docs/experiments/issue171-rts-authority-handoff-result-2026-09-24.md`

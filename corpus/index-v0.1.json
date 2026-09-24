@@ -22,7 +22,8 @@
     "DIFFERENTIATED_MEMBER_STATE_PARTICIPATION": "An EU act can bind or apply only in a legally defined subset of Member States because of enhanced cooperation, opt-ins or Treaty protocols, and that participation set can change over time; applicability must be resolved against the act's participation regime and relevant date rather than inferred from the EU act label or today's participant list.",
     "SOURCE_VIEW_TEMPORAL_DIVERGENCE": "A consolidated, derived, summary or tracker view has its own observation, editorial or update horizon that can diverge from the legal/source state relevant to the query; current accessibility and nominal view date are not substitutes for the view's actual temporal state.",
     "AUTHORITATIVE_EXTERNAL_INPUT_TRIGGER": "An unchanged legal rule delegates an operative result to an authoritative non-normative external factual or data input, such as a quantitative value set or an officially confirmed categorical finding; a new authoritative input can change the legal/compliance output without parent-text mutation.",
-    "EXPRESSION_LOCAL_REPRESENTATION_ASYMMETRY": "A language or expression representation can carry local authenticity, corrective scope, labels or ordinals that are not safe cross-expression legal identities or effects; cross-expression use requires the relevant authenticity/scope rule or a canonical underlying identifier."
+    "EXPRESSION_LOCAL_REPRESENTATION_ASYMMETRY": "A language or expression representation can carry local authenticity, corrective scope, labels or ordinals that are not safe cross-expression legal identities or effects; cross-expression use requires the relevant authenticity/scope rule or a canonical underlying identifier.",
+    "MEMBER_STATE_OPTION_DIVERGENCE": "A Union act that otherwise binds or applies across the relevant Member States expressly delegates a bounded legal choice or parameter to national law; the operative result depends on whether and how the relevant Member State exercised that option, so the EU default and another Member State's choice are insufficient."
   },
   "cases": [
     {
@@ -1270,7 +1271,52 @@
       "evidence_refs": [
         "issue:249"
       ]
+    },
+    {
+      "id": "gdpr-child-consent-national-option",
+      "title": "GDPR child-consent threshold varies by Member-State option",
+      "domain": "data protection",
+      "jurisdiction": "EU + Member States",
+      "trap_classes": [
+        "MEMBER_STATE_OPTION_DIVERGENCE"
+      ],
+      "provenance": {
+        "issue": 250,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "GDPR Article 8 sets a 16-year baseline but lets Member States lower the threshold to not below 13; current legality cannot be resolved from the Union text alone without the relevant Member State's exercised option.",
+      "evidence_refs": [
+        "issue:250"
+      ]
+    },
+    {
+      "id": "mica-grandfathering-member-state-option",
+      "title": "MiCA transitional period depends on Member-State option",
+      "domain": "crypto-assets / financial regulation",
+      "jurisdiction": "EU + Member States",
+      "trap_classes": [
+        "MEMBER_STATE_OPTION_DIVERGENCE",
+        "COHORTED_TRANSITIONAL_APPLICABILITY"
+      ],
+      "provenance": {
+        "issue": 250,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "MiCA Article 143(3) lets Member States disapply or shorten the CASP grandfathering regime, while provider eligibility separately depends on pre-30-December-2024 activity; both the national option and the provider cohort must be resolved.",
+      "evidence_refs": [
+        "issue:250"
+      ]
     }
   ],
-  "case_count": 53
+  "case_count": 55
 }

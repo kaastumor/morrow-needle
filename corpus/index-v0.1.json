@@ -6,7 +6,6 @@
   "reuse_policy": "Every case in this public seed is scientifically exposed and is regression-only for future evaluation. Fresh blind validation requires a new independently selected and sealed case.",
   "trap_classes": {
     "SOURCE_STATE_BACKPROJECTION": "A current or consolidated representation contains later corrections or information that cannot prove the source state visible at the nominal historical date.",
-    "LANGUAGE_SCOPE_ASYMMETRY": "A correction or legal expression has language-specific scope; another authentic expression cannot be inferred from it without independent evidence.",
     "REPRESENTATION_LOCAL_MARKER_IDENTITY": "Presentation markers or ordinals are local to a language/expression and are unsafe as cross-expression legal identities.",
     "DYNAMIC_REFERENCE_STATUS": "Legal effect changes because the authoritative status of a referenced external item changes while the parent rule or external identifier remains unchanged.",
     "STATUS_APPLICATION_SEPARATION": "Authoritative status or set membership and downstream legal applicability begin or end at different legal boundaries.",
@@ -20,7 +19,8 @@
     "OFFICIAL_AUTHORITY_HANDOFF": "An official specialist artifact may be complete or final within its upstream role while a different institution owns the downstream binding decision; legal effect must remain attached to the procedure's actual decision owner and binding act rather than inherited from upstream authority, finality or practical importance.",
     "AUTHORITATIVE_DATA_INPUT_TRIGGER": "An authoritative quantitative observation, value set or versioned reference dataset enters an unchanged legal formula or method and changes the operative calculation/compliance output without parent-text mutation; historical reconstruction must preserve the authoritative data version and its application state.",
     "MACHINE_COMPLIANCE_ARTIFACT": "A legally consequential calculation, declaration, submission or verification depends on a prescribed, authoritative, privileged or certified machine-actionable artifact such as an executable tool, ruleset, schema or semantic profile; artifact identity, version or regulatory status is legally relevant evidence, so substituting another/current artifact can change the accepted result or validation consequence without parent-text mutation.",
-    "JUDICIAL_INTERPRETATION_TEMPORAL_EFFECT": "A preliminary ruling normally clarifies the interpreted EU rule from that rule's own entry into force; the judgment date is not a default new prospective start, while any express Court-imposed limitation of temporal effects is an exceptional legal boundary that must be preserved."
+    "JUDICIAL_INTERPRETATION_TEMPORAL_EFFECT": "A preliminary ruling normally clarifies the interpreted EU rule from that rule's own entry into force; the judgment date is not a default new prospective start, while any express Court-imposed limitation of temporal effects is an exceptional legal boundary that must be preserved.",
+    "LANGUAGE_AUTHENTICITY_SCOPE_ASYMMETRY": "Officially available language expressions can differ in legal authenticity or corrective scope; the existence, wording or legal effect of one language expression must not be projected onto another without evidence of the relevant authenticity/scope rule."
   },
   "cases": [
     {
@@ -52,7 +52,7 @@
       "domain": "state-aid procedure",
       "jurisdiction": "EU",
       "trap_classes": [
-        "LANGUAGE_SCOPE_ASYMMETRY"
+        "LANGUAGE_AUTHENTICITY_SCOPE_ASYMMETRY"
       ],
       "provenance": {
         "issue": 64,
@@ -75,7 +75,7 @@
       "jurisdiction": "EU",
       "trap_classes": [
         "REPRESENTATION_LOCAL_MARKER_IDENTITY",
-        "LANGUAGE_SCOPE_ASYMMETRY"
+        "LANGUAGE_AUTHENTICITY_SCOPE_ASYMMETRY"
       ],
       "provenance": {
         "issue": 67,
@@ -363,7 +363,7 @@
       "domain": "cybersecurity",
       "jurisdiction": "EU",
       "trap_classes": [
-        "LANGUAGE_SCOPE_ASYMMETRY"
+        "LANGUAGE_AUTHENTICITY_SCOPE_ASYMMETRY"
       ],
       "provenance": {
         "issue": 88,
@@ -894,7 +894,29 @@
       "evidence_refs": [
         "issue:230"
       ]
+    },
+    {
+      "id": "commission-state-aid-single-authentic-language",
+      "title": "Multilingual Official Journal publication does not make every language text authentic",
+      "domain": "state aid",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "LANGUAGE_AUTHENTICITY_SCOPE_ASYMMETRY"
+      ],
+      "provenance": {
+        "issue": 231,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Commission Decision (EU) 2025/892 is published across the Official Journal language set while expressly stating that only the French text is authentic; multilingual availability must not be promoted into equal legal authenticity.",
+      "evidence_refs": [
+        "issue:231"
+      ]
     }
   ],
-  "case_count": 36
+  "case_count": 37
 }

@@ -1,58 +1,84 @@
 # Morrow // Needle — Backlog
 
-This is the canonical execution order for autonomous work.
+Status: **SOLE MUTABLE OWNER OF CURRENT MODE / WIP / IMMEDIATE PRIORITY**
 
-The backlog is a **risk register**, not a feature wishlist. Early work is ranked by how badly a wrong assumption could poison later architecture.
+This file owns live project allocation. It is a **risk register**, not a feature wishlist.
 
-## Autonomous Next Pick
+README, charter, assumptions, audit documents and historical plans must not copy this
+queue as if they were co-equal live state.
 
-# **#286 DEPTH RESULT — MERGE PENDING; THEN CHOICE-OF-FORUM DEPTH**
+## Current operating state
 
-Sponsor rule #217 remains canonical.
+### Mode
 
-#286 completed depth run **2/3** with:
+# **CONSOLIDATE**
 
-> **REVISE_EXISTING_CLASS — retain `VERTICAL_SPATIAL_EXTENT`, sharpen the vertical
-> differentiation boundary, and add one WFD groundwater-body derivation case.**
+The 2026-09-25 constitutional audit found that Needle's scientific controls are healthy,
+but its active governance surface did not shrink with the project identity.
 
-Staged corpus:
+Sponsor decisions:
+
+- `IDLE BY DESIGN` remains rejected;
+- continuity means purposeful operation, **not automatically another experiment**;
+- valid modes are DISCOVER / CONSOLIDATE / USE / REVIEW-RELEASE / MAINTAIN;
+- historical machinery is passive unless a current owner reactivates it.
+
+### Sole WIP
+
+# **#288 — constitutional compression and live-state ownership**
+
+Required outcome:
+
+- one mutable owner for current mode/WIP/priority (this file);
+- README and charter orientation/durable purpose only;
+- smaller binding epistemic constitution;
+- Way of Working owns standing execution/discovery rules;
+- discovery v0.2 becomes reference method;
+- scheduled worker executes authorised work but does not manufacture successors;
+- #87 closes as scientifically complete with its archival gap preserved;
+- no new governance framework, score, register, workflow or product surface.
+
+### Accepted scientific state
+
+#286 / PR #287 is merged.
+
+Accepted corpus:
 
 > **81 cases / 26 classes**
 
-No new class.
+`VERTICAL_SPATIAL_EXTENT` now includes consequential vertical stratification as well as
+bounded altitude/volume, while #227 remains the negative boundary for vertical
+measurements that can be losslessly projected into a horizontal mask.
 
-Key result:
-- WFD groundwater bodies can be separately delineated in vertically overlying strata
-  where status differs;
-- current EEA reporting acknowledges that groundwater-body polygons are surface
-  projections of 3-D entities and uses horizon/layer state to distinguish overlaps;
-- horizontal x/y alone can therefore conflate legally distinct status units;
-- the class now expressly permits vertical stratification/horizon state, while #227
-  continues to exclude vertical measurements that can be losslessly projected into a 2-D
-  mask.
+The previously preselected depth run 3 on `CHOICE_OF_FORUM_STATE` is **DEFERRED BY
+EXPLICIT OWNER GOVERNANCE DECISION**, not scientifically rejected. Mode binding is
+therefore reconciled rather than silently abandoned.
 
-Depth run 2/3 is **informative** because the definition/boundary changed.
+### Successor after #288
 
-After #286 merges, the preselected depth run **3/3** target is:
+Do **not** resume a taxonomy/depth experiment automatically.
 
-> **`CHOICE_OF_FORUM_STATE`**
+The next mode is preselected as:
 
-Selection basis:
-- three corpus cases only;
-- all remain within private international law;
-- one is composition evidence rather than an independent mechanism;
-- it is among the newest classes and therefore high-risk for path dependence;
-- mature jurisdiction-agreement doctrine makes it a direct stress test of #282's
-  incumbent/residual-value rule.
+> **MAINTAIN — reduce the active GitHub Actions/legacy maintenance surface without
+> deleting historical evidence**
 
-Run 3 must test whether the class has a consequential standalone regression owner beyond
-restating familiar jurisdiction-agreement doctrine. Narrowing, consolidation or retirement
-must remain live outcomes.
+Bounded purpose:
 
-Do not begin substantive run-3 research until #286 is merged and closed.
+- inspect the 25 workflow files against the new active/passive ownership rule;
+- retain shared integrity CI and every workflow with a unique current safety/evidence
+  owner;
+- demote unnecessary automatic triggers on passive historical surfaces where safe;
+- do not add a dashboard, scoring system or replacement workflow;
+- preserve manually runnable historical probes where they still have evidentiary value.
 
-Historical "worker idle", "idle by design" and event-trigger-only wording below is
-superseded by #217 for current execution.
+Create that maintenance issue only after #288 merges and closes, preserving WIP=1.
+
+## Historical backlog archive
+
+Everything below this line is retained for project history. It may contain old queue
+language, counts, horizons and operating states. **It is not current execution authority.**
+
 
 **Issue #88 is complete. Its pre-registered stop rule fired.**
 

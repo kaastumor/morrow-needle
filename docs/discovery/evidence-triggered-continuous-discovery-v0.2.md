@@ -298,7 +298,9 @@ An `ADOPT_FOR_EXPERIMENT` result still does not authorize production
 implementation.
 
 A later experiment may propose a delivery candidate. Delivery requires a
-separate gate/issue and evidence that the simpler baseline actually failed.
+separate gate/issue and the claim-specific evidence in section 13: demonstrated
+baseline failure for correctness/validity claims, or meaningful relative workflow
+advantage under the validity floor for product/workflow claims.
 
 ## 5. Opportunity record
 
@@ -730,6 +732,13 @@ A delivery candidate still requires a separate project decision/issue.
 
 Do not create discovery KPIs.
 
+When selecting a future follow-up, name the research decision that support or
+rejection would change and what existing evidence cannot already decide. A
+consequence may be improved coverage, scoring, diagnosis or a regression case;
+it need not be commercial demand. A new class is neither necessary nor
+sufficient. Do not reject a useful case solely because an existing class explains
+it. This check does not amend already frozen experiment criteria.
+
 At synthesis ask:
 
 - Did evidence change a decision?
@@ -787,3 +796,4 @@ After Cycle 1, stop or simplify this discovery model if:
 
 The discovery process is itself an experiment and does not receive permanent
 status merely because it is industry-informed.
+

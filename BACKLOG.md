@@ -6,53 +6,33 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **#273 DEPTH RESULT — MERGE PENDING; THEN VERTICAL-SPATIAL DEPTH**
+# **#286 ACTIVE DEPTH WIP — GROUNDWATER-BODY VERTICAL EXTENT**
 
-Sponsor rule #217 remains canonical:
+Sponsor rule #217 remains canonical.
 
-> a hypothesis may stop; the sponsored research program pivots immediately to
-> the next bounded WIP=1 research question.
+#273 completed depth run **1/3** with an informative boundary repair and moved the corpus
+to **80 cases / 26 classes**.
 
-#282 repaired the research rules and returned the project to depth mode.
+The sole WIP is now #286, depth run **2/3**:
 
-#273 is depth run **1/3** under the #282 falsifier and resolves:
+> test whether the Water Framework Directive groundwater-body regime requires the same
+> consequential volumetric representation owner as aviation and CO2 storage, or whether
+> “distinct volume” is only physical/object-description language that ordinary object
+> identity can own without `VERTICAL_SPATIAL_EXTENT`.
 
-> **REVISE_EXISTING_CLASS — retain differentiated Member-State participation, sharpen
-> the direct-participation boundary, and add one Protocol 21 derivation case.**
+The candidate and regression consequence were frozen before substantive source research.
 
-Key result:
-- Protocol 21 Article 4 expressly reuses Article 331(1) TFEU *mutatis mutandis*;
-- Ireland therefore supplies a genuine protocol/opt-in generalisation of the existing
-  participation-state owner;
-- Denmark is not a clean binary negative because Regulation 2024/1351 also routes Parts
-  III, V and VII through separate EU-Denmark agreement machinery;
-- the class now distinguishes participation in the EU act as Union law from equivalent or
-  partial application through a separate agreement/incorporation route.
+Positive admission requires evidence that horizontally overlapping but vertically distinct
+groundwater bodies can carry different legally consequential status/monitoring state such
+that horizontal geometry alone can produce a wrong answer.
 
-Staged corpus on the #273 branch:
+A mere use of the word “volume”, physical three-dimensionality, or ordinary depth
+measurement is insufficient. #227 remains the negative boundary.
 
-> **80 cases / 26 classes**
+Allowed: ADOPT_FOR_DERIVATION / REVISE_EXISTING_CLASS / REJECT / PARK.
+No new class; at most one case; no GIS/database/schema/product.
 
-No new class.
-
-This run is **informative**, not confirmation-only, because it sharpens the exclusion
-boundary. The three-run depth falsifier therefore does not trigger.
-
-After #273 merges, the mechanically weakest class is now:
-
-> **`VERTICAL_SPATIAL_EXTENT` — 2 dedicated cases**
-
-That class is the preselected next depth target. The next run must test whether aviation
-vertical limits and subsurface CO2 storage instantiate one reusable legal-volume
-regression owner, or whether the definition is only an analogy between domain-specific
-three-dimensional scope rules.
-
-Do not begin that substantive research until #273 is merged and closed, preserving WIP=1.
-
-Execution follows checkpointed burst rules: substantive bounded work, early durable state,
-one late CI check, and GitHub-first recovery.
-
-Do not retry #214 or manufacture product scope.
+Do not start depth run 3 until #286 is resolved and merged.
 
 Historical "worker idle", "idle by design" and event-trigger-only wording below is
 superseded by #217 for current execution.

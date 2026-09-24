@@ -62,11 +62,15 @@ Needle Corpus Explorer v0.1 (#103) has reached
 surviving corpus + protocol. Real/manual usability value remains unproven, so
 #103 and H-16 stay open as an experiment rather than a release claim.
 
-The bounded post-MVP discovery gate #104 is complete. Across #111–#116 it
-authorised **no new feature implementation**: two ideas remain conditional
-experiments, one was narrowed to an event-triggered manual technique, two were
-rejected and one was parked. The gate decision is **SIMPLIFY**. There is
-intentionally no replacement AUTO READY queue.
+The bounded post-MVP discovery gate #104 completed with **SIMPLIFY** and no
+feature implementation authorization.
+
+The sponsor has now authorised one further bounded discovery experiment:
+**evidence-triggered continuous discovery v0.2** (#134). It actively searches
+for opportunities only through four evidence channels — fresh legal adversary,
+real Explorer use, external research need, or observed failure of the current
+approach — while keeping one shared WIP=1 funnel. Cycle 1 is limited to #135–#139
+and does not pre-authorise a second cycle or any feature build.
 
 ## Canonical project records
 
@@ -81,6 +85,8 @@ intentionally no replacement AUTO READY queue.
 - `docs/evaluations/adversarial-corpus-protocol-v0.1.md`
 - `docs/mvp/v0.1-plan.md`
 - `docs/discovery/post-mvp-gate-review-2026-09-24.md`
+- `docs/discovery/evidence-triggered-continuous-discovery-v0.2.md`
+- `docs/discovery/evidence-triggered-discovery-red-team-2026-09-24.md`
 - `docs/way-of-working.md`
 
 ---

@@ -24,7 +24,8 @@
     "AUTHORITATIVE_EXTERNAL_INPUT_TRIGGER": "An unchanged legal rule delegates an operative result to an authoritative non-normative external factual or data input, such as a quantitative value set or an officially confirmed categorical finding; a new authoritative input can change the legal/compliance output without parent-text mutation.",
     "EXPRESSION_LOCAL_REPRESENTATION_ASYMMETRY": "A language or expression representation can carry local authenticity, corrective scope, labels or ordinals that are not safe cross-expression legal identities or effects; cross-expression use requires the relevant authenticity/scope rule or a canonical underlying identifier.",
     "MEMBER_STATE_OPTION_DIVERGENCE": "A Union act that otherwise binds or applies across the relevant Member States expressly delegates a bounded legal choice or parameter to national law; the operative result depends on whether and how the relevant Member State exercised that option, so the EU default and another Member State's choice are insufficient.",
-    "SUBSTATE_TERRITORIAL_REGIME": "EU-law applicability can differ between territories constitutionally linked to the same sovereign Member State because Treaty or instrument-specific territorial status attaches to the territory rather than the country label; legal scope must preserve the relevant territorial regime instead of inheriting mainland or Member-State status wholesale."
+    "SUBSTATE_TERRITORIAL_REGIME": "EU-law applicability can differ between territories constitutionally linked to the same sovereign Member State because Treaty or instrument-specific territorial status attaches to the territory rather than the country label; legal scope must preserve the relevant territorial regime instead of inheriting mainland or Member-State status wholesale.",
+    "EU_PRIMACY_DISAPPLICATION_STATE": "A national provision can remain formally valid, in force and textually current while directly effective EU law requires it to be disapplied in the relevant dispute or scope; formal validity does not determine operative applicability, and the conflict, direct-effect condition and procedural context must be preserved."
   },
   "cases": [
     {
@@ -1471,7 +1472,51 @@
       "evidence_refs": [
         "issue:257"
       ]
+    },
+    {
+      "id": "rfc-seraing-primacy-disapplication",
+      "title": "National rule remains in force but must be disapplied to preserve effective EU judicial protection",
+      "domain": "sports arbitration / effective judicial protection",
+      "jurisdiction": "EU + Belgium",
+      "trap_classes": [
+        "EU_PRIMACY_DISAPPLICATION_STATE"
+      ],
+      "provenance": {
+        "issue": 259,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Royal Football Club Seraing requires the competent national court to disapply national provisions that hinder directly effective EU judicial-protection requirements where conforming interpretation cannot cure the conflict; the national rule is not thereby repealed or annulled.",
+      "evidence_refs": [
+        "issue:259"
+      ]
+    },
+    {
+      "id": "petlichev-primacy-disapplication",
+      "title": "National procedural constraints can remain formally valid yet yield to EU primacy in the dispute",
+      "domain": "criminal procedure / constitutional review",
+      "jurisdiction": "EU + Bulgaria",
+      "trap_classes": [
+        "EU_PRIMACY_DISAPPLICATION_STATE"
+      ],
+      "provenance": {
+        "issue": 259,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Petlichev confirms that national procedural and higher-court constraints cannot block the national court's EU-law role; where necessary, inconsistent national rules/rulings must be disregarded without waiting for repeal or constitutional invalidation.",
+      "evidence_refs": [
+        "issue:259"
+      ]
     }
   ],
-  "case_count": 62
+  "case_count": 64
 }

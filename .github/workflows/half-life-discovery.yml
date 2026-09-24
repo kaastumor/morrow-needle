@@ -1,17 +1,9 @@
 name: Half-Life discovery contract
+# Passive historical/research workflow. Manual dispatch only under #290.
 
 on:
-  push:
-    paths:
-      - "fixtures/discovery/eprivacy-half-life-live-v0.1.json"
-      - "fixtures/temporal/eprivacy-temporary-regime-v0.1.json"
-      - "fixtures/lineage/reg2021-1232-to-reg2026-1881-gap-v0.2.json"
-      - "schemas/regime-lineage-v0.2.schema.json"
-      - "fixtures/lineage/reg2021-1232-to-reg2026-1881-gap-v0.1.json"
-      - "tests/test_half_life_discovery.py"
-      - "tests/test_regime_lineage_v02.py"
-      - ".github/workflows/half-life-discovery.yml"
   workflow_dispatch:
+
 
 jobs:
   verify-pinned-evidence:

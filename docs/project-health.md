@@ -17,6 +17,8 @@ Record changed state and decisions, not activity volume.
 - Has distinctiveness been re-tested against the strongest boring baseline
   recently enough for the current project maturity?
 - Did the work outperform or safely complement the strongest simpler baseline?
+  If correctness was at parity, did any separate product/workflow claim show an
+  observed relative advantage that mattered enough to plausibly change behavior?
 - Are we preserving research/audit value, or rebuilding a stopped product
   roadmap through architecture?
 - Would an idle backlog be healthier than the proposed next task?
@@ -81,6 +83,8 @@ experiment would distinguish them.
 
 ## Precedents and subtraction
 
+- Where linked search was used, was it anchored in proven evidence and kept as a
+  search hypothesis until target evidence arrived?
 - Have we searched sideways into adjacent disciplines, products, research
   methods and terminology rather than only direct category peers?
 - For each strong precedent, choose one disposition:
@@ -93,7 +97,11 @@ experiment would distinguish them.
 ## Complexity and leanness
 
 - What permanent code/schema/workflow/process was added?
-- What simpler baseline demonstrably failed and justified it?
+- For correctness, validity or canonical representation: what simpler baseline
+  demonstrably failed and justified the complexity?
+- For product/workflow complexity under correctness parity: what observed
+  relative advantage over the strongest realistic alternative earned the
+  surface, and did it remain above the validity/provenance floor?
 - Can any workflow, schema, projection or process now be demoted to historical
   provenance or manual diagnostics?
 - Is a one-case workflow rerunning tests already covered by the global suite?

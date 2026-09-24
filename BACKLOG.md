@@ -6,71 +6,56 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **#165 — SCHOLARLY-STATUS PROTOCOL TRANSFER**
+# **#171 — TECHNICAL-STANDARD AUTHORITY HANDOFF GENERALITY**
 
-Discovery Cycle 2 (#155–#160) is complete with **CONTINUE**.
+#165 completed as:
 
-The four linked-discovery runs ended:
+> **INDETERMINATE / TRANSPORT_BLOCKED**
 
-- #156 Run A — `TECHNICAL_STANDARD_AUTHORITY_HANDOFF` — **PARK / RESERVE**;
-- #157 Run B — evidence-closure transfer — **PARK**;
-- #158 Run C — `OFFICIAL_DERIVED_VIEW_LAG` — **PARK / RESERVE**;
-- #159 Run D — `SCHOLARLY_STATUS_LATENT_DETECTION` — **ADOPT_FOR_EXPERIMENT**.
+No scholarly-status scientific claim was executed. The result supplies no
+evidence for or against cross-domain protocol transfer.
 
-#160 selected Run D because it has the highest information gain for the **project
-identity**, not because it is the easiest positive result.
+Sponsor direction remains **active evidence-driven discovery**.
 
-Active experiment:
+The post-#165 Project Health Check therefore selects the already-earned Cycle 2
+Run A reserve:
 
-> **#165 — can Needle's surviving evaluation protocol transfer with minimal
-> adaptation to latent scholarly-status failures outside legal research?**
+> **#171 — does `TECHNICAL_STANDARD_AUTHORITY_HANDOFF` deserve a distinct
+> failure family?**
 
-This is a `CORRECTNESS_VALIDITY / EVALUATION_CONSTRUCT` experiment.
+### #171 evidence boundary
 
-### #165 boundaries
+The two target RTS chains were already exposed in Cycle 2 Run A.
 
-- pre-register four fresh status cases before decisive execution:
-  retracted / materially corrected / concern-state / unchanged control;
-- freeze status `as_of` time and authoritative status evidence;
-- primary mode = `LATENT_TRAP_DETECTION`;
-- surfaced-status calibration, if used, remains separate;
-- comparator receives equivalent current web/source access;
-- no credit for merely retrieving Crossmark/Crossref/Retraction Watch data;
-- no retraction tool, science product, generic benchmark platform or new
-  ontology;
-- a negative result is valuable: it would show the surviving protocol remains
-  substantially legal-specific.
+They are:
 
-### Parked evidence-backed reserves
+`DERIVATION / PUBLIC_EXPOSED`
 
-Run A and Run C remain real candidates, but neither is allowed to compete with
-#165 in parallel.
+#171 is therefore a taxonomy/generality experiment, **not** fresh validation.
 
-Reopen A only if #165 completes or a concrete RTS research question independently
-makes the authority-handoff mechanism decision-critical.
+It may establish only whether:
 
-Reopen C only if #165 completes or a fresh official-derived-view case makes the
-taxonomy question independently consequential.
+- one mechanism explains both independent ESA→Commission chains;
+- a substantive proposition changes across the authority handoff;
+- treating the ESA final draft as binding final law can change a realistic
+  legal-research conclusion;
+- existing corpus classes cannot represent the mechanism without distortion.
 
-Run B requires a stronger trigger: an existing-method-compliant artifact that
-still fails reconstruction because of a genuinely unowned closure dimension.
+A positive result may add DERIVATION corpus cases / a bounded trap class.
 
-No Cycle 3 is pre-authorised.
+It cannot establish:
 
-Canonical synthesis:
-`docs/discovery/cycle2-synthesis-2026-09-24.md`
+- latent detection;
+- model correctness advantage;
+- user/product value.
 
-The standing research/audit rules remain:
+Run C's `OFFICIAL_DERIVED_VIEW_LAG` remains the next parked reserve.
 
-1. start from a concrete falsifiable evidence question;
-2. search the strongest existing alternative before inventing;
-3. preserve negative/parity outcomes;
-4. distinguish structural transfer from surface similarity;
-5. for correctness/validity, require material baseline failure or a cleaner
-   evaluation construct that changes what can validly be concluded;
-6. for product/workflow claims, test real relative advantage and behavioral
-   consequence separately;
-7. active discovery is expected by sponsor direction, but WIP remains 1.
+Canonical #165 result:
+`docs/experiments/issue165-scholarly-status-result-2026-09-24.md`
+
+Post-#165 health check:
+`docs/discovery/post-issue165-project-health-2026-09-24.md`
 
 **Issue #88 is complete. Its pre-registered stop rule fired.**
 

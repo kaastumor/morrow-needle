@@ -1,16 +1,9 @@
 name: Money corrigendum audit probe
+# Passive historical/research workflow. Manual dispatch only under #290.
 
 on:
-  push:
-    paths:
-      - "scripts/probe_reg2742_money_corrigendum.py"
-      - "fixtures/audit/reg2742-money-corrigendum-source-v0.1.json"
-      - "fixtures/mutations/reg2742-art4p1-eng-money-corrigendum-v0.1.json"
-      - "fixtures/semantic/reg2742-art4p1-eng-money-atom-v0.1.json"
-      - "tests/test_money_corrigendum_fixture.py"
-      - "tests/test_money_corrigendum_semantics.py"
-      - ".github/workflows/money-corrigendum-audit.yml"
   workflow_dispatch:
+
 
 jobs:
   verify-pinned-evidence:

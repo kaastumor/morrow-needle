@@ -100,13 +100,26 @@ continue active discovery.
 
 Current horizon:
 
-> **Discovery Cycle 2 (#155–#160): active linked discovery from proven Needle
-> mechanisms.**
+> **#165 — scholarly-status latent-detection protocol transfer.**
 
-Cycle 2 searches for new evidence-backed transfer areas; it is not a feature
-roadmap. Four WIP=1 discovery runs cover document-role/lifecycle confusion,
-evidence closure, official-summary divergence, and adversarial corpus/protocol
-transfer, followed by one synthesis gate.
+Discovery Cycle 2 (#155–#160) has completed with **CONTINUE**. Four active
+linked-discovery runs produced one parked negative transfer, two evidence-backed
+legal reserves, and one cross-domain protocol candidate.
+
+#160 selected `SCHOLARLY_STATUS_LATENT_DETECTION` because it tests the project
+identity itself: whether the surviving evaluation protocol is legal-specific or
+can transfer with minimal adaptation to scientific document-status evaluation.
+
+Existing scholarly-status infrastructure (Crossmark, Crossref, Retraction Watch,
+publisher notices) remains the strong baseline. Needle gets no credit for
+retrieving status data. The experiment tests construct discipline: latent versus
+surfaced detection, exposure, `as_of` time and fair source access.
+
+Run A (`TECHNICAL_STANDARD_AUTHORITY_HANDOFF`) and Run C
+(`OFFICIAL_DERIVED_VIEW_LAG`) remain parked evidence-backed reserves. Run B
+remains parked behind a stronger trigger.
+
+No feature or Cycle 3 is pre-authorised.
 
 ## Canonical project records
 
@@ -124,6 +137,7 @@ transfer, followed by one synthesis gate.
 - `docs/discovery/evidence-triggered-continuous-discovery-v0.2.md`
 - `docs/discovery/evidence-triggered-discovery-red-team-2026-09-24.md`
 - `docs/discovery/cycle1-synthesis-project-health-2026-09-24.md`
+- `docs/discovery/cycle2-synthesis-2026-09-24.md`
 - `docs/experiments/issue150-delta-audit-result-2026-09-24.md`
 - `docs/discovery/post-issue150-project-health-2026-09-24.md`
 - `docs/way-of-working.md`

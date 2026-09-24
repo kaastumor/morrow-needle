@@ -191,38 +191,42 @@ The core project identity remains:
 
 > **Needle adversarial legal-research corpus + evaluation protocol.**
 
-Evidence-triggered discovery Cycle 1 (#134–#139) is complete with **CONTINUE**.
+Discovery Cycle 1 (#134–#139) completed with **CONTINUE** and selected exactly one
+external transfer experiment, #150.
 
-It did not reopen a general product roadmap and did not authorise Cycle 2.
+#150 is now complete with **REVISE**.
 
-Cycle 1 dispositions:
+Its four-task pre-registered DELTA v1.1.0 audit found one fresh mechanical
+reproducibility-contract inconsistency in the public open-source harness and
+preserved substantial negative/counterevidence. It did not establish a general
+benchmark-audit capability, user demand or product need.
 
-- #135 judicial-document-role generality test — **PARK**;
-- #136 Explorer workflow value — **PARK**, H-16 unresolved;
-- #137 external legal-benchmark integrity audit — **ADOPT_FOR_EXPERIMENT** as #150;
-- #138 evaluation-evidence closure — **PARK / TRIGGERED TECHNIQUE**.
+The revised external-transfer claim is:
 
-The only active experiment is:
+> **Needle's evaluation-integrity and evidence-closure discipline can transfer
+> usefully to external legal evaluation artifacts, particularly around public
+> reproducibility/provenance contracts; general distinctiveness beyond strong
+> benchmark QA remains unproven.**
 
-> **#150 — adversarial audit of public legal benchmark integrity.**
+Current project direction:
 
-Its purpose is to test whether Needle's surviving evaluation discipline can
-transfer to a credible external benchmark and find a fresh material
-validity/reproducibility defect beyond the benchmark's own strong QA baseline.
+> **CONTINUE — IDLE BY DESIGN.**
 
-This is a `CORRECTNESS_VALIDITY` experiment. A positive result does not
-authorise a benchmark product, adapter, judge, leaderboard, standing audit
-service or other product surface.
+There is no active implementation or discovery horizon.
 
-Corpus Explorer v0.1 remains a frozen derived projection. #136 established only
-a synthetic mechanical indirection advantage; human importance/adoption remains
-unknown and is not currently worth collecting merely for closure.
+Parked/trigger-bound state remains:
 
-The discovery method remains available as a bounded, evidence-triggered gate.
-It is not a recurring programme, queue generator or scheduled process.
+- Explorer / H-16 — **PARK**;
+- judicial-document-role generality — **PARK**;
+- evaluation evidence closure — **TRIGGERED TECHNIQUE ONLY**;
+- another benchmark audit — **NOT AUTHORISED**;
+- Cycle 2 / standing discovery — **NOT AUTHORISED**.
 
-Canonical Cycle 1 decision:
-`docs/discovery/cycle1-synthesis-project-health-2026-09-24.md`
+The discovery method remains available only as a bounded evidence-triggered gate,
+not a recurring programme or queue generator.
+
+Canonical post-#150 health decision:
+`docs/discovery/post-issue150-project-health-2026-09-24.md`
 
 ## Repository discipline
 

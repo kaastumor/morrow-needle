@@ -47,6 +47,8 @@ Every entry ends in one disposition:
 
 | #134 Cycle 1 evidence-triggered discovery | DISCOVERY | A bounded evidence-triggered cycle can find decision-relevant next experiments without recreating a feature roadmap | Four evidence channels, strong alternatives, relative-value/validity guards and anti-theatre stop rules | #135/#137/#138 produced bounded research opportunities; #136 found only synthetic mechanical Explorer advantage. #139 kept the corpus + protocol identity, parked lower-information branches and selected exactly one external benchmark-integrity experiment (#150). Standing continuous discovery was not earned. | CONTINUE | `docs/discovery/cycle1-synthesis-project-health-2026-09-24.md` and Issues #134–#139 |
 
+| #150 DELTA external benchmark audit | DISCOVERY | Needle's evaluation-integrity/evidence-closure discipline transfers beyond its own corpus and can expose a material defect beyond a mature external benchmark's QA baseline | DELTA v1.1.0 public task/review, validation, judge, harness and dispute controls | Pre-registered four-task audit found one fresh mechanical F4 inconsistency between required run provenance and the advertised minimal record; three tasks had no confirmed F1–F5 defect, one Dutch-law F2 remained unconfirmed, and DELTA's official report narrowed the finding away from its leaderboard. External transfer is supported once; general distinctiveness/product value is not. | CONTINUE | `docs/experiments/issue150-delta-audit-result-2026-09-24.md` and `docs/discovery/post-issue150-project-health-2026-09-24.md` |
+
 ## Rules
 
 1. Do not add an entry because work was completed.

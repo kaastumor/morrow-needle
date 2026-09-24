@@ -77,16 +77,26 @@ Evidence-triggered continuous discovery v0.2 (#134) completed one bounded
 Cycle 1 (#135–#139) with **CONTINUE**. It did not authorise a product horizon or
 a second discovery cycle.
 
-The core identity remains corpus + evaluation protocol. The Explorer is parked;
-the judicial-document-role opportunity is parked; evaluation-evidence closure is
-trigger-bound. Exactly one high-information next experiment is authorised:
+The core identity remains corpus + evaluation protocol.
 
-> **#150 — adversarial audit of public legal benchmark integrity.**
+#150 has now completed with **REVISE**. A pre-registered four-task audit of DELTA
+v1.1.0 found one fresh mechanical reproducibility-contract inconsistency in the
+public open-source harness: its normative rules require execution parameters,
+timestamps and sources to be retained, while its advertised minimal record omits
+those fields. Three selected tasks produced no confirmed defect and one
+corporate-law finding remains intentionally unconfirmed pending independent
+qualified review.
 
-This tests whether Needle's surviving evaluation discipline transfers to an
-external legal benchmark strongly enough to find a fresh material integrity
-defect beyond the benchmark's own credible QA baseline. It does not authorise a
-benchmark platform, adapter, leaderboard or standing audit service.
+The result supports a narrow external-transfer claim for Needle's
+evaluation-integrity/evidence-closure discipline. It does **not** establish a
+general benchmark-audit capability or invalidate DELTA's official leaderboard.
+
+The post-#150 Project Health Check therefore chooses:
+
+> **CONTINUE — IDLE BY DESIGN.**
+
+There is no active experiment, Cycle 2, feature horizon or replacement AUTO READY
+work. New work requires a concrete evidence trigger.
 
 ## Canonical project records
 
@@ -104,6 +114,8 @@ benchmark platform, adapter, leaderboard or standing audit service.
 - `docs/discovery/evidence-triggered-continuous-discovery-v0.2.md`
 - `docs/discovery/evidence-triggered-discovery-red-team-2026-09-24.md`
 - `docs/discovery/cycle1-synthesis-project-health-2026-09-24.md`
+- `docs/experiments/issue150-delta-audit-result-2026-09-24.md`
+- `docs/discovery/post-issue150-project-health-2026-09-24.md`
 - `docs/way-of-working.md`
 
 ---

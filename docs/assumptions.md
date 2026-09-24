@@ -31,7 +31,7 @@ Allowed dispositions: **survives / revise / reject / park / experiment**.
 
 | H-17 | Bounded evidence-triggered discovery is useful when a real trigger exists, but should not become a standing continuous programme or self-filling queue. | revise | #134 Cycle 1 stayed build-free and surfaced one high-information external transfer experiment (#150), but most evidence was source/proxy rather than direct user demand and the method added non-trivial process overhead. No Cycle 2 or permanent discovery automation is justified. |
 
-| H-18 | Needle's adversarial corpus/evaluation discipline can expose a material, previously unrecorded integrity defect in a credible external legal benchmark beyond that benchmark's own mature QA/dispute baseline. | experiment | #137 found repeated public benchmark-integrity friction despite strong baseline controls. #139 selected #150 as the highest-information transfer test; known public defects are derivation only and do not count as success. |
+| H-18 | Needle's evaluation-integrity/evidence-closure discipline can transfer usefully to external legal evaluation artifacts, especially public reproducibility/provenance contracts; general distinctiveness beyond strong benchmark QA remains unproven. | revise | #150's frozen four-task DELTA v1.1.0 audit found one fresh mechanical F4 harness-record inconsistency, three tasks with no confirmed defect, one unconfirmed legal candidate, and strong DELTA controls/counterevidence. One bounded positive transfer does not justify a general benchmark-audit identity or another audit. |
 
 ## Register rules
 

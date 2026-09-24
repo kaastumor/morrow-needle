@@ -18,7 +18,7 @@
     "PROCEDURAL_SILENCE_LEGAL_EFFECT": "A legally specified period can expire without an affirmative decision, objection or other required institutional action and the governing rule itself assigns a legal consequence to that non-action; the resulting state cannot be reconstructed safely by searching only for positive acts.",
     "COHORTED_TRANSITIONAL_APPLICABILITY": "Current legal applicability depends on a regulated subject, asset, data set or object's qualifying historical cohort event or legacy state, such as placement on market, putting into service, receipt while qualifying status existed, certificate/declaration status or significant change; similar current states can therefore receive different legal treatment unless cohort-defining history is preserved.",
     "PROCEDURAL_CLOCK_SUSPENSION": "A legally defined decision or assessment period can be suspended and later resumed by specified procedural events; nominal elapsed calendar or working time is not equivalent to elapsed legal clock time unless suspension intervals are preserved.",
-    "CROSS_ORDER_INCORPORATION_STATE": "A legal act can be operative in one legal order while remaining only relevant, under scrutiny, incorporated-but-not-yet-effective or otherwise non-operative in a linked legal order until a separate incorporation instrument and its entry-into-force conditions are satisfied; legal state, dates and adaptations must remain attached to the target legal order.",
+    "CROSS_ORDER_INCORPORATION_STATE": "A legal act can be operative in one legal order while remaining only relevant, notified, under scrutiny, accepted-but-not-yet-effective or otherwise non-operative in a linked legal order until that order's required acceptance or incorporation mechanism and entry-into-effect conditions are satisfied; legal state, dates and adaptations must remain attached to the target legal order.",
     "DIFFERENTIATED_MEMBER_STATE_PARTICIPATION": "An EU act can bind or apply only in a legally defined subset of Member States because of enhanced cooperation, opt-ins or Treaty protocols, and that participation set can change over time; applicability must be resolved against the act's participation regime and relevant date rather than inferred from the EU act label or today's participant list.",
     "SOURCE_VIEW_TEMPORAL_DIVERGENCE": "A consolidated, derived, summary or tracker view has its own observation, editorial or update horizon that can diverge from the legal/source state relevant to the query; current accessibility and nominal view date are not substitutes for the view's actual temporal state.",
     "AUTHORITATIVE_EXTERNAL_INPUT_TRIGGER": "An unchanged legal rule delegates an operative result to an authoritative non-normative external factual or data input, such as a quantitative value set or an officially confirmed categorical finding; a new authoritative input can change the legal/compliance output without parent-text mutation.",
@@ -1316,7 +1316,51 @@
       "evidence_refs": [
         "issue:250"
       ]
+    },
+    {
+      "id": "chmp-positive-opinion-pending-commission-decision",
+      "title": "Positive CHMP opinion remains pending the Commission's marketing-authorisation decision",
+      "domain": "medicinal products",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "OFFICIAL_AUTHORITY_HANDOFF"
+      ],
+      "provenance": {
+        "issue": 251,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "EMA/CHMP can issue a positive specialist opinion and mark a medicine pending EC decision, while Regulation 726/2004 Article 10 assigns the final marketing-authorisation decision to the Commission; upstream official scientific finality is not downstream legal authorisation.",
+      "evidence_refs": [
+        "issue:251"
+      ]
+    },
+    {
+      "id": "swiss-schengen-borders-code-adoption",
+      "title": "Swiss Schengen state follows separate acceptance and implementation of an EU acquis development",
+      "domain": "Schengen / border law",
+      "jurisdiction": "EU + Switzerland",
+      "trap_classes": [
+        "CROSS_ORDER_INCORPORATION_STATE"
+      ],
+      "provenance": {
+        "issue": 252,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Regulation (EU) 2024/1717 existed as an EU Schengen development before Switzerland completed its own acceptance/implementation path; Swiss legislative and ordinance changes entered into force on 12 June 2026, so EU act existence alone did not establish Swiss operative state.",
+      "evidence_refs": [
+        "issue:252"
+      ]
     }
   ],
-  "case_count": 55
+  "case_count": 57
 }

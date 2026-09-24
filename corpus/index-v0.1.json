@@ -16,7 +16,7 @@
     "VERTICAL_SPATIAL_EXTENT": "Legal geography is volumetric and cannot be represented safely as horizontal geometry alone.",
     "JUDICIAL_VALIDITY_TEXT_DIVERGENCE": "A judicial holding changes validity or operative legal state while the target text remains printed or textually unchanged.",
     "JUDICIAL_INTERPRETATION_TEMPORAL_OVERCLAIM": "A judicial interpretation supplies authoritative meaning without automatically creating a new prospective application start at judgment date.",
-    "PRIVATE_ORIGIN_LEGAL_RECOGNITION": "A private-origin determination has a bounded legal role because public law recognises the actor or output, without converting the source into a public authority.",
+    "PRIVATE_ORIGIN_LEGAL_RECOGNITION": "A private-origin output, technical artifact or determination can have a bounded legal role because public law recognises, approves, incorporates or adopts it, without converting the private source into a public authority.",
     "PARALLEL_INSTRUMENT_LIFECYCLE": "An umbrella negotiation or political deal is implemented through legally distinct interim and comprehensive agreements whose signature, provisional application, conclusion, entry into force and replacement states must remain attached to the correct instrument.",
     "OFFICIAL_TRACKER_UPDATE_LAG": "A currently accessible official summary/status tracker lags newer primary legal sources, so current access time cannot be substituted for the tracker's observation or update horizon.",
     "OFFICIAL_AUTHORITY_HANDOFF": "An official specialist artifact may be complete or final within its upstream role while a different institution owns the downstream binding decision; legal effect must remain attached to the procedure's actual decision owner and binding act rather than inherited from upstream authority, finality or practical importance.",
@@ -98,7 +98,8 @@
       "domain": "product safety / harmonised standards",
       "jurisdiction": "EU",
       "trap_classes": [
-        "DYNAMIC_REFERENCE_STATUS"
+        "DYNAMIC_REFERENCE_STATUS",
+        "PRIVATE_ORIGIN_LEGAL_RECOGNITION"
       ],
       "provenance": {
         "issue": 77,

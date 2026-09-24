@@ -112,12 +112,19 @@ new DERIVATION trap class:
 The corpus is now 29 cases / 15 trap classes. This adds no fresh evaluation or
 product claim.
 
+#174 ended **INDETERMINATE / SAMPLE_INCOMPLETE** because the frozen
+negative-control search could not produce the required fresh Scoreboard control.
+The proposed broader derived-view class is therefore neither supported nor
+rejected; `OFFICIAL_TRACKER_UPDATE_LAG` remains unchanged.
+
 Current horizon:
 
-> **#174 — `OFFICIAL_DERIVED_VIEW_LAG` generality.**
+> **Discovery Cycle 3 (#177–#183) — active search for new source-role and
+> evidence-state mechanisms.**
 
-Unlike #171, #174 requires fresh sanctions-list and legislation.gov.uk cases
-because Run C's motivating examples are already exposed.
+Cycle 3 starts with #178 and then tests registry-absence, machine-readable
+derivative and expert-opinion/final-decision mechanisms before one synthesis
+gate.
 
 ## Canonical project records
 
@@ -140,6 +147,8 @@ because Run C's motivating examples are already exposed.
 - `docs/discovery/post-issue165-project-health-2026-09-24.md`
 - `docs/experiments/issue171-rts-authority-handoff-result-2026-09-24.md`
 - `docs/discovery/post-issue171-project-health-2026-09-24.md`
+- `docs/experiments/issue174-official-derived-view-lag-result-2026-09-24.md`
+- `docs/discovery/post-issue174-project-health-2026-09-24.md`
 - `docs/experiments/issue150-delta-audit-result-2026-09-24.md`
 - `docs/discovery/post-issue150-project-health-2026-09-24.md`
 - `docs/way-of-working.md`

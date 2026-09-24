@@ -172,45 +172,63 @@ Especially:
 
 ## Current horizon
 
-The Corpus Explorer v0.1 parent gate #103 has reached a
-`TECHNICAL_MVP_CANDIDATE`. The static HTML/CSS/JavaScript projection satisfies
-its deterministic technical contract without a backend, database, framework,
-model call, analytics layer, duplicate corpus or new dependency.
+The core project identity remains:
 
-That is not yet user-value evidence.
+> **Needle adversarial legal-research corpus + evaluation protocol.**
 
-H-16 remains **experiment** because the discriminating question is whether a
-real user finds the Explorer materially more useful/inspectable than the
-smaller corpus + protocol form. Real/manual browser evidence has not yet been
-observed. The Explorer is therefore frozen rather than extended.
+Corpus Explorer v0.1 (#103) remains a frozen `TECHNICAL_MVP_CANDIDATE`.
+Technical acceptance is complete; H-16 still requires real/manual evidence that
+the Explorer improves actual research use over direct corpus/repository
+inspection.
 
-Post-MVP discovery gate #104 is complete. Its six evidence-only runs ended in:
+After #104 deliberately ended with **SIMPLIFY**, the sponsor authorised one
+bounded process experiment:
 
-- two conditional `ADOPT_FOR_EXPERIMENT` results (#111, #112);
-- one `REVISE` to a manual/event-triggered technique (#114);
-- two `REJECT` results (#113, #115);
-- one `PARK` result (#116);
-- **zero implementation authorizations**.
+> **Evidence-triggered continuous discovery v0.2 — #134**
 
-The gate-level Project Health Check chose **SIMPLIFY**. Canonical review:
-`docs/discovery/post-mvp-gate-review-2026-09-24.md`.
+This does not reopen a feature roadmap. It tests whether active discovery can
+surface decision-changing evidence without recreating product/process creep.
 
-No new implementation horizon follows automatically.
+The discovery outcome is to find recurring or consequential legal-research
+problems where the strongest boring baseline or current
+corpus/protocol/Explorer demonstrably falls short, and to identify the smallest
+evidence-backed response.
 
-The current project state is intentionally allowed to be idle. New work must
-begin from a fresh falsifiable legal-information question, real Explorer
-usability evidence, a concrete trigger for one of the conditional experiments,
-a named external reproducibility requirement, or a directly observed
-project-system failure.
+Four evidence channels may open opportunities:
 
-The strongest current risks remain:
+1. fresh legal adversary;
+2. real Explorer use;
+3. external research need;
+4. observed failure of the current approach.
 
-1. **product creep** — treating a technically complete Explorer as permission to
-   rebuild the stopped legal product;
-2. **benchmark/process creep** — converting conditional research controls into
-   standing workflows, scores or review machinery;
-3. **ontology/integration creep** — adding schema or adapters because adjacent
-   benchmarks/tools make them possible rather than necessary.
+They feed one WIP=1 funnel. They are not separate product tracks.
+
+Cycle 1 is bounded to #135–#139. Human evidence in #136 may not be simulated.
+Public papers/trends may nominate an external-need opportunity but do not count
+as direct demand. Legal adversaries must be selected from source/research value
+before comparator outcomes are known.
+
+The project uses established discovery principles — Discover/Define before
+Develop/Deliver, outcome/opportunity framing, riskiest-assumption testing and
+value/usability/feasibility/viability risk assessment — with an additional
+Needle-specific validity/evidence-integrity risk.
+
+Canonical plan:
+`docs/discovery/evidence-triggered-continuous-discovery-v0.2.md`
+
+Red-team review:
+`docs/discovery/evidence-triggered-discovery-red-team-2026-09-24.md`
+
+The discovery process itself is experimental. #139 must choose
+`continue / simplify / redirect / stop`. Cycle 2 is not authorised in advance.
+
+The strongest current risks are:
+
+1. **discovery theatre** — agent-generated opportunities masquerading as demand;
+2. **selection bias** — choosing adversaries because they are likely to defeat a
+   comparator;
+3. **process creep** — turning industry frameworks into mandatory ceremony;
+4. **product creep** — interpreting discovery as an obligation to ship.
 
 The operating rule remains:
 

@@ -365,14 +365,48 @@ Therefore the definition still outruns its mechanism diversity. #273 should test
 clean Protocol 21/22 participation path, add at most one case, create no new class, and
 narrow the definition if the protocol mechanism does not fit losslessly.
 
+## Independent Astra red-team
+
+After the retrospective result was drafted, the sponsor supplied one bounded GPT-6
+Astra / medium project-level red team. Astra was used as **analysis, not evidence**.
+
+Its verdict was **CONTINUE DEPTH**, but it identified an important failure mode in the
+draft rule:
+
+> requiring “lossless” decomposition can create an asymmetric burden of proof that
+> protects taxonomy, because almost every legal distinction contains some nuance.
+
+That criticism is accepted.
+
+The canonical repair therefore defines loss only as loss of a **pre-specified
+consequential regression distinction**. Descriptive nuance does not protect a class.
+Failure to prove redundancy is not positive evidence of class value, and useful cases can
+survive class consolidation.
+
+Astra also supplied a useful depth-lane falsifier: if #273 and the next two depth runs,
+each selected before substantive research, yield only further illustrations and no
+definition change, sharper boundary, consequential regression correction, rejection,
+retirement or compression signal, depth has failed to show higher information value and
+must return to explicit direction review.
+
+Astra independently selected #273 as the best-supported first depth target. It also
+cautioned that Ireland and Denmark inside one Protocol 21/22 setting are contrasting
+states, not two independent validations, and that a positive #273 result cannot validate
+all Treaty protocols.
+
+These points tighten #273's acceptance criteria; they do not alter the source evidence
+or the 79-case / 26-class corpus.
+
 ## Astra checkpoint
 
-Not triggered.
+Completed as a bounded independent red team after the initial retrospective draft.
 
-The project-level choice between repair and compression is no longer genuinely tied:
-the sampled source claims are sound, no sampled merge is lossless, and the process
-inconsistency has a bounded rule repair. Astra would add review cost without resolving
-an active ambiguity.
+Result:
+
+> **CONTINUE DEPTH**, with a stricter symmetric burden of proof and explicit three-run
+> falsifier.
+
+No Astra output is treated as legal evidence.
 
 ## Final
 

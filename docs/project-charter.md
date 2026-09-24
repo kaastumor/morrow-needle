@@ -187,45 +187,49 @@ Especially:
 
 ## Current horizon
 
-The core project identity remains:
+The current evidence-backed identity remains:
 
 > **Needle adversarial legal-research corpus + evaluation protocol.**
 
-#150 remains valid evidence: one narrow external transfer of the
-evaluation-integrity/evidence-closure discipline was demonstrated, without
-earning a general benchmark-audit product or another benchmark programme.
+Discovery Cycle 2 (#155–#160) is complete with **CONTINUE**.
 
-The post-#150 `CONTINUE — IDLE BY DESIGN` queue decision has now been
-**superseded by explicit sponsor direction to continue active discovery**.
+Active linked discovery proved useful enough to expand the opportunity map
+without authorising feature work:
 
-Current horizon:
+- Run A found a bounded EU technical-standard authority-handoff candidate;
+- Run B was parked because mature existing methodology already owns most of the
+  observed reproducibility problem;
+- Run C found evidence that official tracker lag may generalise to official
+  derived-view lag;
+- Run D found a materially different scientific document-status setting where
+  Needle's evaluation-construct discipline may transfer.
 
-> **Discovery Cycle 2 — active linked discovery from proven Needle mechanisms
-> (#155–#160).**
+#160 selected exactly one next experiment:
 
-Cycle 2 is not a feature roadmap.
+> **#165 — scholarly-status latent-detection protocol transfer.**
 
-It actively searches from proven mechanisms into nearby, functional and
-structural target areas:
+The experiment asks a project-level question:
 
-1. document-role / authority / lifecycle confusion;
-2. provenance / evidence-closure failure;
-3. official-summary / primary-source divergence;
-4. adversarial corpus/evaluation-protocol transfer.
+> Is Needle's surviving evaluation protocol fundamentally legal-specific, or
+> can it transfer with minimal adaptation to another consequential
+> document-status domain?
 
-Each run must search the strongest existing alternative, test a boundary, and
-produce at most one falsifiable transfer hypothesis. At most one experiment may
-be authorised at Cycle 2 synthesis.
+The incumbent identity does **not** change before that experiment.
 
-The relative-value correction remains in force:
+A positive result may support an adjacent interpretation:
 
-- competitor existence does not kill an opportunity;
-- correctness parity does not equal workflow-value parity;
-- workflow value must show a meaningful difference with plausible behavioral
-  consequence and switching/adoption logic;
-- correctness/validity claims still require material baseline failure.
+> reusable adversarial document-status evaluation protocol + legal corpus as the
+> first mature corpus.
 
-No feature implementation is authorised by discovery alone.
+A negative result would strengthen the current legal-specific boundary.
+
+#165 receives no product mandate. Crossmark, Crossref, Retraction Watch and
+publisher status notices remain the strong incumbent status-data infrastructure.
+
+No Cycle 3 is authorised before #165 changes the map.
+
+Canonical Cycle 2 synthesis:
+`docs/discovery/cycle2-synthesis-2026-09-24.md`
 
 ## Repository discipline
 

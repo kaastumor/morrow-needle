@@ -26,7 +26,8 @@
     "MEMBER_STATE_OPTION_DIVERGENCE": "A Union act that otherwise binds or applies across the relevant Member States expressly delegates a bounded legal choice or parameter to national law; the operative result depends on whether and how the relevant Member State exercised that option, so the EU default and another Member State's choice are insufficient.",
     "SUBSTATE_TERRITORIAL_REGIME": "EU-law applicability can differ between territories constitutionally linked to the same sovereign Member State because Treaty or instrument-specific territorial status attaches to the territory rather than the country label; legal scope must preserve the relevant territorial regime instead of inheriting mainland or Member-State status wholesale.",
     "EU_PRIMACY_DISAPPLICATION_STATE": "A national provision can remain formally valid, in force and textually current while directly effective EU law requires it to be disapplied in the relevant dispute or scope; formal validity does not determine operative applicability, and the conflict, direct-effect condition and procedural context must be preserved.",
-    "UNION_NEXUS_APPLICABILITY": "EU-law applicability can attach to an actor or conduct outside the Union because the governing rule defines scope through a legally specified Union nexus, such as targeted persons or recipients, a regulated Union market or instrument, or output/use in the Union; actor establishment or physical location alone is insufficient, while incidental or passive Union contact is insufficient where the required nexus is not met."
+    "UNION_NEXUS_APPLICABILITY": "EU-law applicability can attach to an actor or conduct outside the Union because the governing rule defines scope through a legally specified Union nexus, such as targeted persons or recipients, a regulated Union market or instrument, or output/use in the Union; actor establishment or physical location alone is insufficient, while incidental or passive Union contact is insufficient where the required nexus is not met.",
+    "CHOICE_OF_LAW_STATE": "A legally valid choice by the relevant party or person can select the law governing a relationship or succession instead of the law that would follow from default connecting factors; applicable law cannot be inferred safely from forum, location, habitual residence or nationality alone, and the existence, validity, scope and mandatory limits of the choice must be preserved."
   },
   "cases": [
     {
@@ -1561,7 +1562,51 @@
       "evidence_refs": [
         "issue:263"
       ]
+    },
+    {
+      "id": "rome-i-contract-choice-of-law",
+      "title": "Rome I party choice displaces default contractual connecting factors within mandatory limits",
+      "domain": "private international law / contracts",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "CHOICE_OF_LAW_STATE"
+      ],
+      "provenance": {
+        "issue": 264,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Rome I Article 3 lets parties select the governing law for all or part of a contract, while Article 4 supplies defaults only where no valid choice governs and Articles 6/8/9 preserve mandatory protections; forum or residence alone can therefore identify the wrong applicable law.",
+      "evidence_refs": [
+        "issue:264"
+      ]
+    },
+    {
+      "id": "succession-professio-juris-choice",
+      "title": "Succession law follows valid nationality-based choice instead of habitual-residence default",
+      "domain": "private international law / succession",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "CHOICE_OF_LAW_STATE"
+      ],
+      "provenance": {
+        "issue": 264,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Succession Regulation Article 22 permits a person to choose a nationality law to govern succession as a whole, displacing Article 21's habitual-residence default subject to validity/form and public-policy limits; residence alone is not a sufficient applicable-law key.",
+      "evidence_refs": [
+        "issue:264"
+      ]
     }
   ],
-  "case_count": 66
+  "case_count": 68
 }

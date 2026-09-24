@@ -173,10 +173,9 @@ regression/reference corpus + minimal evaluation rules.
 
 Current horizon:
 
-> **#212 — fresh 3+1 case compiler**
+> **#214 — sealed 8-run investigator execution**
 
-#212 runs in a fresh non-personalized context and may only compile/seal tasks.
-The design/red-team context has selected no scored case.
+#212 completed with `COMPILER_READY — 3+1 SEALED`. The exact investigator/evaluator packages and execution manifest were committed by SHA-256 before any run. #214 now owns the eight fresh GPT-5.6 Sol / High investigator chats under the frozen order and arm conditions.
 
 No Cycle 4 or product work is automatic.
 

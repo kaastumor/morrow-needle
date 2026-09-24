@@ -1,14 +1,9 @@
 name: Cellar ingestion feed regression + live probe
+# Passive historical/research workflow. Manual dispatch only under #290.
 
 on:
-  push:
-    paths:
-      - "schemas/cellar-ingestion-event-v0.1.schema.json"
-      - "src/needle/updates/**"
-      - "scripts/probe_cellar_feed.py"
-      - "tests/test_cellar_updates.py"
-      - ".github/workflows/cellar-feed.yml"
   workflow_dispatch:
+
 
 concurrency:
   group: cellar-feed-v1-${{ github.ref }}

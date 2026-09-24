@@ -6,48 +6,71 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **ACTIVE DISCOVERY — CYCLE 2**
+# **#165 — SCHOLARLY-STATUS PROTOCOL TRANSFER**
 
-Sponsor explicitly requires continued action and discovery.
+Discovery Cycle 2 (#155–#160) is complete with **CONTINUE**.
 
-The prior post-#150 `IDLE BY DESIGN` state is superseded as the current
-operating choice. Its evidence conclusions remain valid; its queue decision does
-not.
+The four linked-discovery runs ended:
 
-Active parent: **#155 — linked discovery from proven Needle mechanisms**.
+- #156 Run A — `TECHNICAL_STANDARD_AUTHORITY_HANDOFF` — **PARK / RESERVE**;
+- #157 Run B — evidence-closure transfer — **PARK**;
+- #158 Run C — `OFFICIAL_DERIVED_VIEW_LAG` — **PARK / RESERVE**;
+- #159 Run D — `SCHOLARLY_STATUS_LATENT_DETECTION` — **ADOPT_FOR_EXPERIMENT**.
 
-WIP=1 execution order:
+#160 selected Run D because it has the highest information gain for the **project
+identity**, not because it is the easiest positive result.
 
-1. #156 — document-role / authority / lifecycle transfer scan;
-2. #157 — provenance / evidence-closure transfer scan;
-3. #158 — official-summary / primary-source divergence scan;
-4. #159 — adversarial corpus/protocol transfer scan;
-5. #160 — Cycle 2 synthesis.
+Active experiment:
 
-This cycle is active search, not passive waiting and not feature brainstorming.
+> **#165 — can Needle's surviving evaluation protocol transfer with minimal
+> adaptation to latent scholarly-status failures outside legal research?**
 
-Each run must:
+This is a `CORRECTNESS_VALIDITY / EVALUATION_CONSTRUCT` experiment.
 
-- start from a proven Needle evidence anchor;
-- search existing solutions and strong alternatives before inventing;
-- test structural correspondence rather than surface similarity;
-- include a boundary/counterexample;
-- produce at most one falsifiable transfer hypothesis;
-- end in `REJECT / PARK / REVISE / ADOPT_FOR_EXPERIMENT`;
-- authorise no product implementation by itself.
+### #165 boundaries
 
-Cycle 2 may expand the opportunity map even when the strong baseline remains
-correct. For product/workflow claims, test:
+- pre-register four fresh status cases before decisive execution:
+  retracted / materially corrected / concern-state / unchanged control;
+- freeze status `as_of` time and authoritative status evidence;
+- primary mode = `LATENT_TRAP_DETECTION`;
+- surfaced-status calibration, if used, remains separate;
+- comparator receives equivalent current web/source access;
+- no credit for merely retrieving Crossmark/Crossref/Retraction Watch data;
+- no retraction tool, science product, generic benchmark platform or new
+  ontology;
+- a negative result is valuable: it would show the surviving protocol remains
+  substantially legal-specific.
 
-> difference → importance → behavioral consequence → switching/adoption friction.
+### Parked evidence-backed reserves
 
-For correctness/validity claims, the strong baseline must still materially fail.
+Run A and Run C remain real candidates, but neither is allowed to compete with
+#165 in parallel.
 
-Sponsor authorisation means an empty queue is **not** currently the desired
-operating mode. Anti-theatre remains a quality constraint, not a reason to stop
-discovery.
+Reopen A only if #165 completes or a concrete RTS research question independently
+makes the authority-handoff mechanism decision-critical.
 
-Canonical parent: #155.
+Reopen C only if #165 completes or a fresh official-derived-view case makes the
+taxonomy question independently consequential.
+
+Run B requires a stronger trigger: an existing-method-compliant artifact that
+still fails reconstruction because of a genuinely unowned closure dimension.
+
+No Cycle 3 is pre-authorised.
+
+Canonical synthesis:
+`docs/discovery/cycle2-synthesis-2026-09-24.md`
+
+The standing research/audit rules remain:
+
+1. start from a concrete falsifiable evidence question;
+2. search the strongest existing alternative before inventing;
+3. preserve negative/parity outcomes;
+4. distinguish structural transfer from surface similarity;
+5. for correctness/validity, require material baseline failure or a cleaner
+   evaluation construct that changes what can validly be concluded;
+6. for product/workflow claims, test real relative advantage and behavioral
+   consequence separately;
+7. active discovery is expected by sponsor direction, but WIP remains 1.
 
 **Issue #88 is complete. Its pre-registered stop rule fired.**
 

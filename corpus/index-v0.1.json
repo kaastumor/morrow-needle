@@ -19,7 +19,7 @@
     "PRIVATE_ORIGIN_LEGAL_RECOGNITION": "A private-origin determination has a bounded legal role because public law recognises the actor or output, without converting the source into a public authority.",
     "PARALLEL_INSTRUMENT_LIFECYCLE": "An umbrella negotiation or political deal is implemented through legally distinct interim and comprehensive agreements whose signature, provisional application, conclusion, entry into force and replacement states must remain attached to the correct instrument.",
     "OFFICIAL_TRACKER_UPDATE_LAG": "A currently accessible official summary/status tracker lags newer primary legal sources, so current access time cannot be substituted for the tracker's observation or update horizon.",
-    "TECHNICAL_STANDARD_AUTHORITY_HANDOFF": "A document can be final within an upstream technical authority's drafting stage without owning the downstream binding legal rule; where a later institution has formal amendment/adoption power, authority and legal effect must remain attached to the exact institutional stage and adopted artifact."
+    "OFFICIAL_AUTHORITY_HANDOFF": "An official specialist artifact may be complete or final within its upstream role while a different institution owns the downstream binding decision; legal effect must remain attached to the procedure's actual decision owner and binding act rather than inherited from upstream authority, finality or practical importance."
   },
   "cases": [
     {
@@ -692,7 +692,7 @@
       "domain": "investment-firm prudential requirements / regulatory technical standards",
       "jurisdiction": "EU",
       "trap_classes": [
-        "TECHNICAL_STANDARD_AUTHORITY_HANDOFF"
+        "OFFICIAL_AUTHORITY_HANDOFF"
       ],
       "provenance": {
         "issue": 171,
@@ -715,7 +715,7 @@
       "domain": "crowdfunding / credit-risk assessment / regulatory technical standards",
       "jurisdiction": "EU",
       "trap_classes": [
-        "TECHNICAL_STANDARD_AUTHORITY_HANDOFF"
+        "OFFICIAL_AUTHORITY_HANDOFF"
       ],
       "provenance": {
         "issue": 171,

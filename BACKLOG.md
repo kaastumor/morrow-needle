@@ -6,48 +6,49 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **#195 ACTIVE — OFFICIAL AUTHORITY HANDOFF GENERALITY**
+# **#200 ACTIVE — CONSEQUENTIAL CORPUS-USE TEST DESIGN**
 
-Discovery Cycle 3 (#177–#183) completed with **CONTINUE**.
+#195 completed with:
 
-Cycle 3 map:
+> **SUPPORT — GENERALISE / RENAME IN PLACE**
 
-- #178 `OFFICIAL_SOFT_LAW_EFFECT_COLLAPSE` — **PARK / RESERVE**;
-- #179 `OFFICIAL_REGISTRY_COVERAGE_OVERCLAIM` — **PARK / STRONGEST NEW-FAMILY RESERVE**;
-- #180 machine-readable derivative drift — **PARK / NO DISTINCT FAMILY**;
-- #181 `OFFICIAL_AUTHORITY_HANDOFF` — **ADOPT_FOR_EXPERIMENT**;
-- #183 selected exactly one experiment: **#195**.
+The corpus class formerly named `TECHNICAL_STANDARD_AUTHORITY_HANDOFF` is now:
 
-#195 tests whether the existing
-`TECHNICAL_STANDARD_AUTHORITY_HANDOFF` class is too narrow and should be
-generalised to `OFFICIAL_AUTHORITY_HANDOFF`.
+> `OFFICIAL_AUTHORITY_HANDOFF`
 
-This is a taxonomy-subtraction experiment:
+Fresh documentary validation reproduced the same consequential authority/effect
+handoff in:
 
-- success → one broader class, no trap-count increase;
-- failure → keep #171 narrow and do not automatically create a parallel class.
+- Balversa: CHMP positive opinion → later Commission marketing authorisation;
+- N,N-dimethylformamide: RAC/SEAC opinions → later Commission REACH restriction.
 
-Fresh validation requires:
+A fresh Candidate List inclusion supplied the boundary: ECHA inclusion itself can
+trigger legal obligations, so the rule is not "agency output is merely advisory".
+Legal effect follows the exact procedural decision owner.
 
-1. one fresh EMA/CHMP → Commission authorisation chain;
-2. one fresh ECHA RAC/SEAC → Commission restriction chain;
-3. one control where upstream agency action itself owns the legal effect.
+The change is subtractive:
 
-Orphacol and all Run-3D/#171 examples are DERIVATION only.
+- corpus remains **29 cases / 15 trap classes**;
+- the two existing #171 RTS regression cases are relabelled under the broader class;
+- the fresh #195 cases remain validation evidence in the experiment record rather
+  than inflating the corpus;
+- no product, integration, monitor, lifecycle graph or authority ontology is earned.
 
-Transport-sensitive selection must use the metadata-only smoke-test guard before
-full preregistration.
+The attempted metadata-only transport smoke test exposed substantive ECHA
+identities and is preserved as a failed guard. Those candidates were excluded
+rather than silently reused.
 
-#174 remains **INDETERMINATE / SAMPLE_INCOMPLETE** for the corrected reason: the
-frozen UK positive pool yielded no eligible already-in-force unapplied case. The
-Scoreboard negative control was available.
+Post-#195 Project Health chooses **CONTINUE** with #200 next. #200 is a bounded
+**design** task testing whether the existing corpus-specific diagnostic workflow
+adds consequential practical value over ordinary source-linked cases and
+behavioral QA. It is not yet an AUTO READY execution task.
 
-Sponsor direction remains **active evidence-driven discovery**.
+No Cycle 4 is authorised while #200 owns the next decision.
 
-No Cycle 4 is authorised before #195 result + health check.
+Canonical records:
 
-Canonical Cycle 3 synthesis:
-`docs/discovery/cycle3-synthesis-2026-09-24.md`
+- `docs/experiments/issue195-official-authority-handoff-generality-result-2026-09-24.md`
+- `docs/discovery/post-issue195-project-health-2026-09-24.md`
 
 **Issue #88 is complete. Its pre-registered stop rule fired.**
 
@@ -646,15 +647,16 @@ When it does, the reason must be recorded here or in the relevant issue. The bac
 
 ## Follow-up selected by review implementation #199
 
-**#200 — consequential corpus-use test design — BLOCKED by #183/#195.**
+**#200 — consequential corpus-use test design — ACTIVE after #195.**
 
-After current Cycle 3 work and its selected generality experiment are reconciled,
-prepare one concrete evaluation/review task comparing existing corpus use with
-ordinary source-linked cases and behavioral QA. #200 owns design acceptance and
-the readiness decision; it is not yet an AUTO READY execution task. Prefer this
-decision-use test before an automatic new broad taxonomy cycle. If the design
-cannot become feasible, record why and select another evidence-backed question.
+#195 is reconciled. #200 now owns the next bounded decision: prepare one
+consequential corpus-use evaluation/review design comparing the existing corpus
+workflow with ordinary source-linked cases and behavioral QA.
 
-This additive follow-up does not take over PR #197's current-state reconciliation
-or change #195's criteria. Routine discovery starts at section 0 of the discovery
-operating plan; the active parent and current queue still govern execution.
+This remains a design/readiness issue, not an AUTO READY execution task. It may
+authorise a separate execution issue only if one real task, comparator, primary
+outcome/materiality threshold, exposure plan and stop rule can be frozen without
+inventing demand. Prefer PARK to a synthetic task if no consequential real task
+is available within the bounded search.
+
+No Cycle 4 or product implementation is authorised by this handoff.

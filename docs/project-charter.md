@@ -255,21 +255,31 @@ The frozen primary result is:
 Under #210's pre-registered interpretation, the offered index-assisted workflow
 did not demonstrate added latent diagnostic value on the sealed challenge set.
 
-The current project state is therefore:
+#214's scientific conclusion remains unchanged: the sealed index-assisted
+workflow pilot produced zero diagnostic rescues and did not demonstrate added
+latent diagnostic value.
 
-> **IDLE BY DESIGN — EVENT-TRIGGERED WORK ONLY**
+Sponsor direction #217 changes the **operating state**, not that result.
 
-The smallest evidence-backed identity is:
+Morrow // Needle is a sponsored research program and must not enter
+`IDLE BY DESIGN`. When one hypothesis stops, the project pivots to the next
+bounded research question under WIP=1.
+
+The smallest evidence-backed identity remains:
 
 > **Needle adversarial legal-research regression/reference corpus + minimal
 > evaluation discipline.**
 
-This does not claim universal equivalence or corpus uselessness. It does remove
-the evidence-backed reason for a standing diagnostic-workflow experiment
-program.
+Current active research:
 
-No investigator rerun, harder replacement case, Cycle 4, product implementation,
-new trap class or persistent architecture is authorised.
+> **#219 — executable compliance software as a time-versioned legal input**
+
+#218 already supplied the first post-correction negative result by rejecting a
+new static/dynamic-reference class in favour of mature legal-reference doctrine.
+
+Continuous research does not authorise investigator reruns, harder #214
+replacement cases, product implementation, new trap classes or persistent
+architecture without separate evidence.
 
 ## Repository discipline
 

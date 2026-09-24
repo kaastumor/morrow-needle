@@ -1,162 +1,110 @@
-# #150 result — adversarial audit of DELTA v1.1.0
+# #150 result — DELTA v1.1.0 benchmark-integrity audit
 
 Date: 2026-09-24  
 Issue: #150  
 Claim type: `CORRECTNESS_VALIDITY`  
-Benchmark: `legalbenchmarks/delta`  
-Frozen release: `v1.1.0`  
-Frozen commit: `c713132`  
+Target: `legalbenchmarks/delta` `v1.1.0` / `c713132`  
 Pre-registration: `docs/experiments/issue150-delta-preregistration-2026-09-24.md`
 
-## Executive result
+## Decision
 
-**Final disposition: REVISE**
+**REVISE**
 
-The bounded audit found one fresh, mechanically reproducible
-`F4 — result-sensitive execution configuration / reproducibility` defect in the
-open-source DELTA harness contract:
+The frozen four-task audit found one fresh, mechanically reproducible
+`F4 — reproducibility/configuration` defect in DELTA's public v1.1.0 harness
+contract.
 
-> the normative harness rules require parameters, applied parameters, timestamps
-> and sources to be retained, while the repository's own "Suggested record" and
-> "minimal harness pattern" omit those fields even though the suggested record is
-> introduced as containing enough metadata to reproduce the run.
+It also found one Dutch-law F2 candidate that remains deliberately unconfirmed
+because the preregistration requires independent qualified legal review.
 
-A user following the provided minimal record cannot reconstruct the exact
-evaluation boundary that the same document says must be preserved.
+The result supports a narrow transfer claim:
 
-No public GitHub issue/PR or external web result found during the freshness check
-had already recorded this specific inconsistency.
+> Needle's evaluation-integrity / evidence-closure discipline can expose useful
+> gaps in an external legal benchmark's public reproducibility contract.
 
-This is a real external transfer of Needle's evidence-closure discipline, but it
-does **not** justify the broad claim that Needle has discovered a new benchmark
-auditing category or that DELTA's published leaderboard is invalid.
+It does **not** establish:
 
-A second selected finding remains only:
+- a general benchmark-audit capability;
+- superiority over expert benchmark maintainers;
+- user demand for an audit product;
+- invalidity of DELTA's published leaderboard.
 
-`CANDIDATE_LEGAL_FINDING`
+No second benchmark audit or product work is authorised by this result.
 
-because confirming its material legal status would require independent qualified
-Dutch-law review under the pre-registered boundary.
+## Frozen sample
 
-The appropriate project conclusion is therefore narrower:
+1. `real-estate/interpretation-of-notarial-deeds-limited-rights`
+2. `competition-law/acm-concentration-notification-requirement`
+3. `employment-law/inappropriate-conduct-in-the-workplace`
+4. `corporate-law/director-and-supervisory-board-conflicts`
 
-> Needle's evaluation/provenance discipline can usefully expose gaps in an
-> external benchmark's public reproducibility contract, but one documentation-
-> level defect does not yet establish a distinctive general benchmark-audit
-> capability.
+Property-law and family-law were excluded before sampling because #137 had
+already used known public disputes from those areas.
 
-No follow-up benchmark product or recurring audit is authorised.
+The exact sample was selected by the committed SHA-256 path rule.
 
----
+### Preview-exposure incident
 
-## 1. Frozen sample
+During path enumeration, GitHub search returned content fragments along with
+metadata after the first preregistration commit but before exact-path freeze.
 
-The sample was fixed by the pre-registered hash rule before audit conclusions:
+The event was recorded before audit.
 
-1. `tasks/real-estate/interpretation-of-notarial-deeds-limited-rights`
-2. `tasks/competition-law/acm-concentration-notification-requirement`
-3. `tasks/employment-law/inappropriate-conduct-in-the-workplace`
-4. `tasks/corporate-law/director-and-supervisory-board-conflicts`
+The already-frozen selection algorithm remained binding, so content could not be
+used to replace tasks. Real-estate and corporate-law are conservatively marked
+`PREVIEW_EXPOSURE`; preview text receives zero evidentiary credit.
 
-Practice areas `property-law` and `family-law` were excluded because the
-#137 derivation scan had already used public disputes from those areas.
+## Strong baseline
 
-### Preview-exposure note
+Inspected at frozen commit:
 
-The path-enumeration connector returned content fragments while exact paths were
-being listed.
+- four selected `task.json` files;
+- `README.md`;
+- `CONTRIBUTING.md`;
+- `docs/harness.md`;
+- `docs/judge.md`;
+- `scripts/validate.py`;
+- `scripts/build_index.py`;
+- `.github/workflows/validate.yml`;
+- `CHANGELOG.md`.
 
-The incident was committed before substantive audit and could not alter the
-already-frozen practice-area or hash-selection rules.
+DELTA's baseline is strong.
 
-The selected real-estate and corporate-law tasks are conservatively marked
-`PREVIEW_EXPOSURE`.
+Its validator enforces structure, task/path identity, `law_as_of`, bilingual
+content, criterion IDs/types/dimensions, `lawyer_validated: true`, and
+byte-for-byte agreement between canonical task files and
+`data/tasks.jsonl`. CI runs that validator.
 
-The preview fragments receive zero evidentiary credit.
+Contribution rules require self-contained practitioner tasks, binary criteria,
+defensible alternatives, answer-text verifiability, legal review and semantic
+versioning.
 
----
+These controls are explicit counterevidence against a weak-baseline story.
 
-## 2. Benchmark baseline inspected
-
-The audit inspected DELTA's own strong public controls at the frozen commit:
-
-- `README.md`
-- `CONTRIBUTING.md`
-- `docs/harness.md`
-- `docs/judge.md`
-- `scripts/validate.py`
-- `scripts/build_index.py`
-- `.github/workflows/validate.yml`
-- `CHANGELOG.md`
-- the four frozen task files.
-
-The baseline is materially stronger than a loose benchmark dataset.
-
-### Confirmed baseline strengths
-
-The validator enforces, among other things:
-
-- task/schema structure;
-- task ID ↔ directory identity;
-- ISO `law_as_of`;
-- normative Dutch + English completeness;
-- criterion ID/type consistency;
-- criterion dimension rules;
-- `lawyer_validated: true`;
-- citation-authority warnings;
-- **byte-for-byte agreement between `data/tasks.jsonl` and the canonical task
-  files**.
-
-CI runs that validator on push and pull request.
-
-This rules out a tempting stale-generated-index finding.
-
-The contribution contract also explicitly requires:
-
-- self-contained practitioner tasks;
-- binary criteria;
-- defensible-alternative handling;
-- criteria verifiable from answer text;
-- legal review for task/criterion changes;
-- semantic versioning.
-
-The judge contract explicitly separates substance/form and requires disagreement
-escalation and practitioner spot-checking for publishable results.
-
-These controls are counter-evidence against any claim that ordinary QA is absent.
-
----
-
-## 3. Finding F4-01 — public harness record contradicts its own reproducibility rule
+## Confirmed finding F4-01 — minimal run record violates the stated provenance contract
 
 Status: **CONFIRMED MECHANICAL FINDING**  
 Class: `F4`  
-Freshness: **no prior disclosure found in searched public issues/PRs/web**  
-Legal expert review required: **no**
+Independent legal review: not required  
+Prior public disclosure found: no
 
-### Normative rule
+### Internal contradiction
 
-`docs/harness.md` states that reproducibility means another party can run the
-same evaluation.
+`docs/harness.md` says a run must be attributable, auditable and reproducible.
 
-Its Rule 6 requires every attempt to retain:
+Rule 6 requires preserving:
 
 - verbatim answer;
-- parameters requested;
-- parameters actually applied;
+- requested parameters;
+- actually applied parameters;
 - timestamps;
-- sources seen by the system.
+- sources seen.
 
-Rule 5 additionally says time/token limits must be identical and limit-stopped
-or truncated answers must preserve their stop reason.
+Rule 5 additionally requires identical limits and explicit stop/truncation
+reasons.
 
-### Conflicting public example
-
-The same file introduces its suggested JSON record as:
-
-> one answer per line, with enough metadata to reproduce the run.
-
-But the record contains only:
+But the same document's "Suggested record" — introduced as carrying enough
+metadata to reproduce the run — stores only:
 
 - `task_id`;
 - `dataset_version`;
@@ -166,476 +114,231 @@ But the record contains only:
 
 The published minimal Python harness writes the same five fields.
 
-It does not write:
-
-- requested parameters;
-- applied parameters;
-- time/token limits;
-- stop reason;
-- timestamps;
-- source set;
-- model/provider execution metadata beyond an arbitrary `system` label.
-
-### Why this is an integrity defect rather than style
-
-The omitted fields are not additions invented by this audit.
-
-They are fields the benchmark's **own preceding normative rules** say must be
-recorded.
-
-Therefore two reasonable implementations of the same public documentation can
-diverge:
-
-1. a reader implements Rule 6 and preserves the full execution boundary;
-2. a reader copies the advertised minimal harness/suggested record and does not.
-
-The second record cannot establish whether result-sensitive configuration was
-identical or reconstruct which sources/limits were applied.
-
-That directly affects the repository's stated reproducibility contract.
+It therefore omits information the normative rule itself says is required,
+including execution parameters, limits, timestamps and source set.
 
 ### Materiality
 
-**Material for third-party use of the open-source benchmark.**
+This crosses the pre-registered F4 materiality threshold for **third-party use of
+the open-source benchmark**.
 
-It can prevent a competent third party from reconstructing the relevant
-evaluation boundary, satisfying the pre-registered materiality rule.
+A user can reasonably follow the supplied minimal record yet be unable later to
+reconstruct whether result-sensitive configuration or sources were identical.
 
-The finding does **not** establish that any published DELTA leaderboard score is
-wrong.
+This is not a preference invented by Needle; it is a mismatch inside DELTA's own
+public reproducibility contract.
 
 ### Strongest counterargument
 
-The prose rule is clear and should control over the intentionally small example.
+The prose rule is explicit and should control over an intentionally minimal code
+example. A sophisticated user may also version configuration elsewhere.
 
-A sophisticated user may also encode configuration behind a versioned `system`
-identifier or maintain run metadata elsewhere.
+That lowers severity.
 
-That reduces severity.
-
-It does not remove the documentation contradiction because the example is
-explicitly presented as containing enough metadata for reproduction while
-omitting data the same page requires.
+It does not remove the contradiction because the example is itself presented as
+having enough metadata for reproduction while omitting fields the same page
+requires.
 
 ### Smallest repair
 
-No new platform is needed.
-
 Either:
 
-- expand the suggested record/minimal harness with the required execution
-  metadata; or
-- label the example explicitly as incomplete and point to a required
-  run-manifest schema/checklist.
+- expand the example with the required run metadata; or
+- mark it explicitly incomplete and require a separate run manifest.
 
-This audit does not propose implementing that repair in Needle.
+Needle does not implement that repair.
 
----
+## Critical scope boundary — official DELTA leaderboard
 
-## 4. Official DELTA report — important counter-evidence and scope boundary
+After F4-01 was identified, the current public DELTA Benchmark Report was
+inspected as counterevidence.
 
-After the repository finding was identified, the current public DELTA Benchmark
-Report was inspected as the strongest alternative explanation.
+It describes a larger official evaluation with a different/refined execution
+boundary, including:
 
-The report describes a larger official evaluation that is **not identical to the
-open-source v1.1.0 reproduction contract**.
+- shared research/search/source-reading setup;
+- fixed time/tool limits;
+- one completed answer per model/question;
+- specified judge models and human-review logic;
+- public questions included in the larger evaluation;
+- public criteria explicitly stated to be **not identical** to the leaderboard
+  criteria.
 
-It states, among other things:
-
-- every model receives the same research instruction, search/source-reading
-  tools, time and tool limit;
-- a single completed answer per model/question is scored;
-- failed/incomplete runs may be repeated;
-- GPT-5.6 Sol grades legal/citation criteria in the published evaluation;
-- lawyer rulings and approved transfers are applied where available;
-- the open-source questions are included, but the public criteria have since
-  been refined and **are not identical** to the leaderboard criteria.
-
-Public report:
+Source:
 https://www.legalbenchmarks.ai/research/delta-dutch-legal-research-benchmark
 
-### Consequence
+Therefore F4-01 must **not** be interpreted as evidence that the official
+leaderboard used the incomplete GitHub sample record or that its published
+scores are invalid.
 
-This disclosure prevents an overclaim.
+The finding is bounded to the public v1.1.0 repository's third-party harness
+contract.
 
-The open-source harness inconsistency cannot honestly be used to say:
+## Four-task result
 
-> DELTA's published leaderboard is unreproducible because its official runs used
-> exactly the incomplete GitHub sample record.
+### Real estate
 
-The report uses a different/refined evaluation boundary and explicitly says so.
+`PREVIEW_EXPOSURE`
 
-The fresh finding therefore remains bounded to:
+Prompt/criteria alignment, cutoff, binary gradability and internal consistency
+were inspected.
 
-> the public v1.1.0 repository's third-party harness/reproducibility contract.
+**No confirmed F1–F5 finding.**
 
-This boundary materially narrows, but does not erase, F4-01.
+The current DELTA report also uses this task to illustrate the unresolved
+same-day-deed question, supporting rather than contradicting its core criterion
+design.
 
----
+### Competition law
 
-## 5. Task-by-task audit
+Current statutory/ACM materials were checked for the Article 29 thresholds and
+notification/standstill structure.
 
-### 5.1 Real estate — interpretation of notarial deeds
+Potential overbreadth around sector-specific calculation detail and compressed
+standstill wording did not cross the frozen materiality threshold.
 
-Exposure: `PREVIEW_EXPOSURE`
+**No confirmed F1–F5 finding.**
 
-Checks:
+### Employment law
 
-- prompt ↔ criteria responsiveness;
-- binary/gradeable criteria;
-- temporal cutoff;
-- internal criterion consistency;
-- published DELTA report treatment.
+Potential pressure around contextual factors, employer guidance and the
+criterion requiring nuance/criticism of the case-law line was inspected.
 
-Result:
+Given DELTA's explicit open-ended completeness/legal-judgment construct, the
+evidence was insufficient to call these defects.
 
-**NO CONFIRMED F1–F5 DEFECT.**
+**No confirmed F1–F5 finding.**
 
-The task asks directly about:
+### Corporate law
 
-- objective interpretation;
-- factual situation at execution;
-- address designation at execution;
-- same-day deeds.
+`PREVIEW_EXPOSURE`
 
-The detailed criteria elaborate those dimensions.
+One F2 candidate survives:
 
-The current DELTA report independently highlights this same task as an example
-of the need to preserve unsettled law around same-day deeds, which supports the
-criterion design rather than contradicting it.
+`CANDIDATE_LEGAL_FINDING — fallback decision maker omits statutory exception`
 
-No fresh finding retained.
+Public criteria describe the general-meeting fallback when conflicts block board
+or supervisory-board decision-making.
 
----
-
-### 5.2 Competition law — ACM concentration notification
-
-Exposure: no pre-sample content exposure recorded.
-
-Checks included current authoritative/public material for:
-
-- Article 29 thresholds;
-- concentration definition;
-- Article 34 notification/standstill structure;
-- current ACM published threshold summary.
-
-Current public materials support the main €150m / €30m threshold structure.
-
-The audit considered whether:
-
-- the generic task should require every sector-specific turnover calculation
-  example;
-- Article 29 versus Article 34 wording creates a citation mismatch;
-- standstill wording is overcompressed.
-
-### Result
-
-**NO CONFIRMED F1–F5 DEFECT.**
-
-Some criteria are demanding for a generic question, but DELTA explicitly
-benchmarks completeness and legal taste.
-
-The inspected wording did not cross the pre-registered materiality boundary with
-sufficient confidence.
-
-No finding retained merely because a shorter competent answer might omit a
-benchmark preference.
-
----
-
-### 5.3 Employment law — inappropriate workplace conduct / transition payment
-
-Exposure: no pre-sample content exposure recorded.
-
-Potential pressure points included:
-
-- the breadth of the `seriously culpable` contextual factors;
-- the requirement to address recognisability/employer guidance;
-- the criterion requiring acknowledgement that the case-law line is contested
-  or requires nuance.
-
-### Result
-
-**NO CONFIRMED F1–F5 DEFECT.**
-
-The task expressly asks whether employer duty-of-care failure affects the
-transition-payment analysis.
-
-The criteria are broad, but that breadth aligns with the stated open-ended
-research/completeness design.
-
-Calling them defective would require a legal/professional-judgment conclusion
-stronger than the available evidence.
-
-No speculative F1 is promoted.
-
----
-
-### 5.4 Corporate law — director/supervisory-board conflicts
-
-Exposure: `PREVIEW_EXPOSURE`
-
-#### Candidate F2-01 — fallback decision maker omits statutory exception
-
-Status: `CANDIDATE_LEGAL_FINDING`  
-Class: `F2`  
-Confirmed material: **NO — independent legal review required**
-
-Public criteria S-010/S-011 state, in substance, that when conflict prevents a
-board decision the supervisory board decides, and if the supervisory board is
-absent / conflicted the general meeting decides.
-
-Current official Book 2 BW text provides the same default chain but expressly
-adds:
+Current Book 2 BW text contains the express exception:
 
 > `tenzij de statuten anders bepalen`
 
-for the general-meeting fallback.
+for the relevant general-meeting fallback.
 
-Authoritative references inspected:
+That means a categorical answer can satisfy the public criterion while omitting
+a statutory qualification.
 
-- Book 2 BW Article 2:129(6) / NV management-board conflict route;
-- Book 2 BW Article 2:239(6) / BV management-board conflict route;
-- Article 2:140(5) / NV supervisory-board conflict route;
-- Article 2:250(5) / BV supervisory-board conflict route.
+This could be material, but the preregistration requires independent qualified
+Dutch-law review before a contestable F2/F5 issue is called confirmed.
 
-The relevant current text is available via Wetten.nl / Overheid.nl.
+No such review was manufactured for this experiment.
 
-### Potential materiality
+Result remains **candidate only** and does not count toward success.
 
-As written, the public criterion can pass an answer that states the general
-meeting fallback categorically while omitting the statutory articles-of-
-association exception.
+## Rejected audit branches
 
-That could reward a materially incomplete proposition about who decides.
+### Generated index drift
 
-### Why it is not counted as experiment success
+**REJECTED.**
 
-The pre-registration requires independent qualified Dutch-law review before a
-contestable F2/F5 finding is called a confirmed material defect.
+`scripts/validate.py` reconstructs the expected JSONL and requires byte-for-byte
+equality with `data/tasks.jsonl`; CI runs it.
 
-No such independent review was obtained in this run.
+### Generic judge-setup incompleteness
 
-The statutory text is strong evidence, but this experiment does not relabel
-Morrow's own legal interpretation as independent review.
+**NOT RETAINED.**
 
-Result remains:
+The public judge document intentionally describes a judge contract rather than a
+single implementation, and requires publishers to describe their setup.
 
-`CANDIDATE_LEGAL_FINDING`
+The official report additionally discloses the judge models/human-resolution
+logic for its leaderboard.
 
-No follow-up legal-review request is manufactured merely to produce a second
-positive result.
+### Temporal cutoff
 
----
+All four selected tasks use `law_as_of = 2026-08-30`.
 
-## 6. F3 / generated-data audit
+No sufficiently evidenced criterion using a later or contradictory legal state
+was found.
 
-Potential issue:
+**No F5 finding.**
 
-> derived `data/tasks.jsonl` could drift from the canonical task files.
+## Freshness check
 
-Result:
-
-**REJECTED AS A FINDING.**
-
-`scripts/validate.py` reconstructs the expected JSONL from all task files and
-requires **byte-for-byte equality** with `data/tasks.jsonl`.
-
-The GitHub validation workflow runs that validator on PR and push.
-
-This is a strong boring-baseline control and is recorded as negative evidence.
-
----
-
-## 7. F4 / judge-setup audit
-
-Potential issue:
-
-> no exact universal judge implementation is fixed in the open repository.
-
-Result:
-
-**NOT RETAINED AS A SEPARATE DEFECT.**
-
-The public judge document intentionally describes a judging contract and requires
-publishers to report their judge setup.
-
-The current official DELTA report additionally documents the actual judge models
-and human-resolution logic used for its leaderboard.
-
-The existence of a configurable judge setup is therefore not itself a fresh
-defect.
-
-Only the narrower harness-record contradiction F4-01 survives.
-
----
-
-## 8. F5 / temporal-cutoff audit
-
-All four selected tasks record:
-
-`law_as_of = 2026-08-30`.
-
-No selected task produced a sufficiently evidenced fresh case where:
-
-- a required authority post-dated the cutoff;
-- a criterion silently used a later legal state; or
-- the cutoff was internally contradictory.
-
-### Result
-
-**NO F5 FINDING.**
-
-Do not infer that all 15 DELTA tasks are temporally validated; this result is
-limited to the frozen four-task audit.
-
----
-
-## 9. Freshness check
-
-Before promoting F4-01, public disclosure was searched through:
+Before retaining F4-01, searches covered:
 
 - open DELTA GitHub issues;
 - closed DELTA GitHub issues;
 - DELTA pull requests;
-- web search for combinations of:
-  - harness metadata;
-  - reproducibility parameters;
-  - record everything;
-  - timestamps/sources;
-  - token/model settings;
-  - judge prompt.
+- web search around harness metadata, parameters, timestamps, sources,
+  reproducibility and judge prompts.
 
-No matching prior public report of F4-01 was found.
+No prior public disclosure of this exact harness-record inconsistency was found.
 
-This is an absence-of-found-evidence statement, not proof that no private or
-unindexed discussion exists.
+This means **no prior disclosure found**, not proof that no private or unindexed
+discussion exists.
 
-The known property-law and family-law disputes remain excluded derivation
-evidence and receive no fresh-value credit.
+Known property/family disputes retain zero fresh-value credit.
 
----
+## Pre-registered success / kill test
 
-## 10. Pre-registered success / kill evaluation
+Success required at least one fresh, reproducible, materially consequential
+defect/ambiguity capable of affecting grading, interpretation, reproducibility
+or validity.
 
-### Success condition
+**Met narrowly by F4-01.**
 
-At least one fresh, reproducible, material defect/ambiguity that can alter
-grading, interpretation, reproducibility or validity.
+Why not call this a broad win?
 
-### Result
+The strongest counterargument survives:
 
-**MET, narrowly, by F4-01.**
+> this is careful documentation QA, not proof of a distinctive Needle audit
+> capability.
 
-F4-01 is:
+Needle's demonstrated contribution here is the **discipline**:
 
-- fresh under the performed public search;
-- mechanically reproducible from the frozen repository;
-- directly tied to DELTA's own reproducibility requirements;
-- capable of preventing faithful reconstruction of a third-party run boundary;
-- independent of subjective Dutch-law judgment.
+- pre-registered failure classes;
+- frozen sample;
+- strongest-baseline inspection;
+- provenance/execution treated as first-class;
+- negative findings retained;
+- legal candidate not self-validated;
+- official-report counterevidence used to narrow the claim.
 
-### Kill-rule attack
+One instance is insufficient to generalise.
 
-Could this simply be normal benchmark QA rather than distinct Needle value?
+## Final disposition — REVISE
 
-**Yes — this is the strongest counterargument.**
-
-The defect is discoverable by careful documentation review. It does not require a
-proprietary Needle method.
-
-What Needle contributed here is narrower:
-
-- the pre-registered audit started from evaluation-integrity failure classes;
-- it forced preservation of negative findings;
-- it treated execution provenance as a first-class audit target;
-- it did not shift to model winners or easier tasks after sample freeze;
-- it downgraded the legal finding rather than self-validating it.
-
-That is useful discipline.
-
-One successful documentation/provenance finding does not demonstrate a durable
-competitive advantage or a new product category.
-
----
-
-## 11. Final disposition — REVISE
-
-The broad experimental assumption was:
+Original H-18-style claim:
 
 > Needle's adversarial corpus/evaluation discipline can expose a material,
 > previously unrecorded integrity defect in a credible external legal benchmark
-> beyond that benchmark's own mature QA/dispute baseline.
+> beyond its mature QA baseline.
 
-The experiment provides one bounded positive instance.
+Observed:
 
-The claim should be revised to:
+- one bounded positive F4 instance;
+- three selected tasks with no confirmed issue;
+- one unconfirmed F2 candidate;
+- strong DELTA controls that falsified several tempting findings.
+
+Revise to:
 
 > **Needle's evaluation-integrity and evidence-closure discipline can transfer
-> usefully to external legal evaluation artifacts, particularly for public
+> usefully to external legal evaluation artifacts, particularly around public
 > reproducibility/provenance contracts; general distinctiveness beyond strong
 > benchmark QA remains unproven.**
 
-### Why not ADOPT_FOR_EXPERIMENT again?
+Do not run another benchmark merely to seek generality.
 
-A second benchmark audit would mainly test generality.
+## Project consequence
 
-There is currently no independent target signal making that the highest-value
-next task.
-
-Running another benchmark merely because this one produced a finding would turn
-the experiment into a programme.
-
-### Why not REJECT?
-
-The pre-registered materiality threshold was actually crossed once.
-
-Rejecting the transfer entirely would discard real contrary evidence.
-
-### Why not promote a product?
-
-Nothing here establishes:
-
-- user demand for a benchmark-audit service;
-- repeated advantage over expert benchmark maintainers;
-- willingness to adopt/pay/switch;
-- need for audit tooling;
-- a general benchmark QA platform.
-
-No product response is earned.
-
----
-
-## 12. Project consequence
-
-The result strengthens the surviving **protocol/research discipline** identity,
-not a product projection.
-
-Recommended canonical state:
-
-- corpus + evaluation protocol remain essential;
-- H-18 → `REVISE`;
-- keep F4-01 as external evidence of transferability;
-- preserve F2-01 as unconfirmed candidate only;
-- no new scheduled discovery;
-- no benchmark product;
-- return to an idle/evidence-triggered state unless Project Health Check finds a
-  stronger next question.
-
-## 13. What should happen next
-
-Run the mandatory post-#150 Project Health Check.
-
-Its key question is no longer:
-
-> can Needle find anything in another benchmark?
-
-That received a narrow positive answer.
-
-The next question is:
-
-> does this narrow transfer evidence change the project identity or justify
-> further work now?
-
-The default answer should be **no** unless the health check finds concrete
-decision-changing evidence.
+- corpus + evaluation protocol remain the essential identity;
+- H-18 should move to `REVISE`;
+- F4-01 is retained as external transfer evidence;
+- F2 candidate remains explicitly unconfirmed;
+- no benchmark product/service/tooling;
+- no scheduled discovery;
+- run the mandatory post-#150 Project Health Check;
+- absent stronger evidence, prefer **idle by design** over another experiment.

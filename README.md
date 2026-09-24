@@ -145,17 +145,29 @@ parity claim.
 
 #203 is therefore **PARKED**. No benchmark-diagnostic product or retry is earned.
 
+The two remaining Cycle-3 new-family reserves were then challenged against
+stronger incumbent concepts before fresh validation:
+
+- #207 rejected `OFFICIAL_REGISTRY_COVERAGE_OVERCLAIM`; predicate-scoped
+  completeness / partial closed-world semantics already owns the mechanism.
+- #209 rejected `OFFICIAL_SOFT_LAW_EFFECT_COLLAPSE`; established EU soft-law
+  doctrine owns the relevant effect analysis, while a more specific class would
+  pressure the project toward an unearned effect ontology.
+
+No class was added. The corpus remains **29 cases / 15 trap classes**.
+
 Current horizon:
 
-> **#207 — registry-absence baseline challenge**
+> **#210 — latent corpus-assisted trap-detection experiment design**
 
-#207 attacks the strongest parked Cycle-3 reserve before any fresh validation:
-does `OFFICIAL_REGISTRY_COVERAGE_OVERCLAIM` add a useful legal boundary beyond
-mature open/closed-world completeness semantics and ordinary registry-scope
-checking?
+#210 asks whether corpus access itself improves detection of a hidden
+consequential failure mechanism on fresh realistic tasks. It is distinct from
+#97's Method-checklist test and from #203's surfaced provenance task.
 
-The preferred outcome may be subtraction. No new class, Cycle 4 or product work
-is automatic.
+No scored cases may be selected until an independent **GPT-6 Astra / medium**
+design red team has reviewed the construct and the final design is frozen.
+
+No Cycle 4 or product work is automatic.
 
 ## Canonical project records
 
@@ -179,6 +191,9 @@ is automatic.
 - `docs/experiments/issue195-official-authority-handoff-generality-result-2026-09-24.md`
 - `docs/experiments/issue203-opp115-corpus-use-result-2026-09-24.md`
 - `docs/discovery/post-issue203-project-health-2026-09-24.md`
+- `docs/discovery/issue207-registry-completeness-result-2026-09-24.md`
+- `docs/discovery/issue209-soft-law-baseline-result-2026-09-24.md`
+- `docs/discovery/post-reserve-baseline-challenges-project-health-2026-09-24.md`
 - `docs/discovery/post-issue195-project-health-2026-09-24.md`
 - `docs/experiments/issue165-scholarly-status-result-2026-09-24.md`
 - `docs/discovery/post-issue165-project-health-2026-09-24.md`

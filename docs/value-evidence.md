@@ -59,6 +59,8 @@ Every entry ends in one disposition:
 
 | #203 OPP-115 corpus-use diagnostic | PARITY | Adding the current Needle corpus/evaluation treatment changes the consequential disposition of a real benchmark conflict over competent ordinary source-linked QA | Fresh Arm R ordinary QA vs fresh Arm C with identical task/access budget plus corpus index, evaluation protocol and #150 calibration | Both arms independently recommended quarantine and no invented relabel; Arm C reported no decision-changing treatment contribution. The frozen experiment score remains **UNRESOLVED**, not formal parity, because both arms reported provenance-level INDETERMINATE. The PARITY character here records observed consequential-action convergence only and must not be promoted into a general equivalence claim. | PARK | `docs/experiments/issue203-opp115-corpus-use-result-2026-09-24.md` and Issue #203 |
 
+| #207/#209 Cycle-3 reserve baseline challenges | CONTRADICTION | The two parked Cycle-3 new-family reserves represent distinct Needle failure mechanisms worth fresh validation | Predicate-scoped completeness / partial closed-world semantics for #179; established EU soft-law doctrine and ordinary source-role/effect analysis for #178 | Both proposed families were rejected before fresh validation. Registry absence reduces to predicate completeness; soft-law collapse reduces to established effect doctrine plus generic coarse-representation loss, with specificity requiring unearned ontology. No class/case/schema/product was added. | SIMPLIFY | `docs/discovery/issue207-registry-completeness-result-2026-09-24.md`, `docs/discovery/issue209-soft-law-baseline-result-2026-09-24.md`, Issues #207/#209 |
+
 ## Rules
 
 1. Do not add an entry because work was completed.

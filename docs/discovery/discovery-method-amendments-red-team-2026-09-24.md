@@ -1,512 +1,239 @@
-# Red-team — discovery method amendments from strategy/linked-search prompts
+# Red-team — discovery method amendments
 
 Date: 2026-09-24  
-Parent: #134  
-Target: the two proposed discovery-method amendments:
+Parent: #134
 
-1. **relative value / alternatives / adoption**;
-2. **linked discovery search from proven evidence**.
+Targets:
 
-## Decision standard
+1. relative value / alternatives / adoption;
+2. linked discovery search from proven evidence.
 
-The amendments survive only if they improve information quality **without**
-creating a route around Needle's existing anti-theatre rules.
+The amendments survive only if they improve information gain without giving the
+project a new route to rationalise expansion.
 
-The project must remain able to say:
+## Decision
 
-- correctness parity can coexist with product/workflow value;
-- workflow advantage cannot excuse a correctness or evidence-integrity regression;
-- a linked hypothesis is not yet an opportunity;
-- an interesting analogy is not evidence of transfer;
-- a successful transfer is not evidence of customer value;
-- empty discovery remains acceptable.
+| Amendment | Decision |
+|---|---|
+| Relative value / alternatives | **ADOPT — HARDENED** |
+| Linked discovery search | **ADOPT AS OPTIONAL BOUNDED SEARCH OPERATOR — HARDENED** |
 
----
+Cycle 1 scope remains #135–#139. Neither amendment authorises Cycle 2 or product
+delivery.
 
-# Amendment A — relative value / alternatives / adoption
+## A. Relative-value amendment
 
-## Attack A1 — relabel a failed correctness claim as workflow value
+### A1 — post-hoc claim switching
 
-### Failure mode
+**Attack:** a failed Needle correctness claim is preserved by relabelling it
+"workflow value".
 
-A Needle-specific correctness layer fails to outperform the strong baseline, then
-the project preserves it by saying it is "faster", "clearer" or "better
-packaged".
-
-This would defeat the value gates that already rejected Method/Core/Full claims.
-
-### Required boundary
-
-Every experiment must declare the **claim type before execution**:
+**Guard:** freeze the primary claim before discriminating evidence:
 
 - `CORRECTNESS_VALIDITY`; or
 - `PRODUCT_WORKFLOW`.
 
-A failed `CORRECTNESS_VALIDITY` claim cannot be rescued by a post-hoc
-`PRODUCT_WORKFLOW` reinterpretation.
+A failed correctness claim cannot be rescued post hoc. A later workflow claim
+needs a separate hypothesis and evidence. Secondary observations may be
+recorded, but they do not change the frozen primary claim.
 
-A separate workflow claim may later be tested, but it requires its own job,
-alternative, hypothesis and evidence.
+### A2 — faster but less trustworthy
 
-### Disposition
+**Attack:** speed or convenience hides weaker correctness, uncertainty handling,
+provenance or evidence lineage.
 
-**SURVIVES WITH HARDENING.**
+**Guard:** product/workflow value has a **validity floor**. A material
+correctness, provenance, evidence-integrity or uncertainty-handling regression
+blocks promotion.
 
----
+### A3 — comparator gaming
 
-## Attack A2 — speed/effort gains launder an unsafe result
+**Attack:** Needle is compared with an artificially awkward baseline.
 
-### Failure mode
+**Guard:** compare against the strongest realistic alternative the intended
+actor would actually choose. Record why the comparator is realistic.
 
-A faster route appears valuable while silently losing provenance, nuance,
-uncertainty or correctness.
+### A4 — preference becomes behavior
 
-### Required boundary
+**Attack:** "I would use this" is treated as adoption evidence.
 
-Product/workflow value has a **validity floor**.
+**Guard:** keep evidence strength explicit. Observed repeated choice/reuse is
+stronger than observed one-off task behavior, which is stronger than stated
+intention, which is stronger than internal inference.
 
-A workflow advantage cannot be promoted when it introduces a material:
+Sponsor dogfood can expose a real defect or friction advantage; it cannot alone
+establish broad adoption.
 
-- correctness regression;
-- unsupported certainty;
-- evidence-lineage loss;
-- evaluation contamination;
-- provenance weakening.
+### A5 — system value resurrects Full Needle
 
-"Faster but less trustworthy" is not a Needle advantage unless the exact
-trade-off is the tested user job and is itself safe.
+**Attack:** ordinary capabilities are recombined into a large product under an
+"activity system" argument.
 
-### Disposition
+**Guard:** compare any combination against the strongest smaller identity. The
+combination must create an interaction advantage the smaller form does not.
 
-**SURVIVES WITH HARDENING.**
+### A6 — switching-cost prose becomes pseudo-evidence
 
----
+**Attack:** plausible stories about habits, trust or learning costs become facts.
 
-## Attack A3 — choose a weak comparator to manufacture relative advantage
+**Guard:** adoption/switching factors remain hypotheses unless behavior supports
+them. Record only frictions capable of killing the specific opportunity.
 
-### Failure mode
+### A conclusion
 
-Explorer is compared only with raw JSON, or another intervention with an
-artificially clumsy baseline, making ordinary usability look distinctive.
+The amendment corrects a real false-negative risk:
 
-### Required boundary
+> correctness parity is not automatically product/workflow-value parity.
 
-Use the **strongest realistic alternative the intended actor would actually
-choose**, not merely the smallest technical baseline.
+It survives only with:
 
-For Explorer this may include repository inspection, GitHub search, direct JSON,
-or another realistic path depending on the task and user.
+1. frozen claim type;
+2. validity floor;
+3. realistic strong alternative;
+4. behavior/preference distinction;
+5. smaller-identity comparator for system claims.
 
-Record why the comparator is realistic.
+## B. Linked discovery search
 
-### Disposition
+### B1 — becomes a fifth evidence channel
 
-**SURVIVES WITH HARDENING.**
+**Attack:** the agent can always derive another analogy from existing knowledge,
+making discovery self-fueling.
 
----
+**Guard:** linked search is not an evidence channel. Its only output is
+`SEARCH_HYPOTHESIS`.
 
-## Attack A4 — stated preference becomes behavioural consequence
-
-### Failure mode
-
-A participant says "yes, I would use this" and the project upgrades that to
-adoption evidence.
-
-### Required boundary
-
-Evidence strength remains explicit:
-
-1. observed repeated choice / real reuse;
-2. observed task behavior with a clear friction difference;
-3. concrete commitment/action;
-4. stated preference/intention;
-5. internal inference.
-
-A sponsor saying they would use the Explorer again is useful but remains weak
-behavioral evidence until actual repeated choice occurs.
-
-### Disposition
-
-**SURVIVES WITH HARDENING.**
-
----
-
-## Attack A5 — system-level value resurrects Full Needle
-
-### Failure mode
-
-Because combinations may create value, old parked surfaces are recombined into a
-large product without each additional dependency earning itself.
-
-### Required boundary
-
-A system-level claim must compare:
-
-- the proposed combination;
-- the strongest smaller identity containing only already-earned elements.
-
-The combination earns value only when the interaction creates an observed or
-falsifiably testable advantage that neither smaller component produces alone.
-
-"More coherent" is not enough.
-
-### Disposition
-
-**SURVIVES WITH HARDENING.**
-
----
-
-## Attack A6 — adoption/switching analysis becomes speculative strategy prose
-
-### Failure mode
-
-The project writes plausible stories about habits, learning costs, trust or
-switching without observing any of them.
-
-### Required boundary
-
-Switching/adoption factors are hypotheses unless behavior supports them.
-
-Do not require full market strategy analysis during early discovery. Record only
-the friction capable of killing the specific opportunity.
-
-### Disposition
-
-**SURVIVES.**
-
----
-
-## Amendment A conclusion
-
-Retain the amendment.
-
-It corrects a real false-negative risk: **correctness parity is not necessarily
-workflow/product-value parity**.
-
-But the following rules are mandatory:
-
-1. declare claim type before evidence collection;
-2. workflow value never overrides a validity regression;
-3. compare with a realistic strong alternative;
-4. distinguish observed behavior from stated intention;
-5. system-level value must beat the strongest smaller identity.
-
----
-
-# Amendment B — linked discovery search from proven evidence
-
-## Attack B1 — linked search becomes a fifth evidence channel
-
-### Failure mode
-
-The agent can always derive another analogy or transfer from existing project
-knowledge. Discovery becomes self-fueling even when no new evidence exists.
-
-That directly violates the four-channel evidence-trigger rule.
-
-### Required boundary
-
-Linked search is **not an evidence channel** and does not directly create a
-candidate opportunity.
-
-It may create only a:
-
-> `SEARCH_HYPOTHESIS`
-
-A search hypothesis enters the ordinary opportunity funnel only after target
-evidence is found through an authorised evidence channel.
+A search hypothesis enters the ordinary funnel only after **target evidence** is
+found through one of the authorised channels.
 
 Example:
 
-- "tracker lag may generalise to other derived official registers" is a search
-  hypothesis;
-- a real current register/source mismatch found through official-source research
-  is a legal-adversary evidence signal.
+- "tracker lag may generalise to other derived registers" = search hypothesis;
+- a real current register/source mismatch = legal-adversary evidence signal.
 
-### Disposition
+### B2 — analogy becomes evidence by eloquence
 
-**SURVIVES ONLY WITH THIS BOUNDARY.**
+**Attack:** a convincing analogy is mistaken for target evidence.
 
----
-
-## Attack B2 — analogy becomes evidence by eloquence
-
-### Failure mode
-
-A distant field uses similar language or an attractive method, and the quality of
-the analogy narrative is mistaken for evidence.
-
-### Required boundary
-
-For non-near transfers record only:
+**Guard:** for non-near transfers capture only:
 
 - source mechanism;
 - target mechanism;
 - shared causal/relational structure;
 - material non-transferable differences;
+- nearest predicted boundary/failure;
 - falsifier.
-
-If this cannot be stated narrowly, park it as speculative inspiration.
 
 No analogy counts as target-context evidence.
 
-### Disposition
+### B3 — abstraction becomes so vague that everything fits
 
-**SURVIVES WITH HARDENING.**
+**Attack:** the proven core becomes "finding hidden relationships", making almost
+anything analogous.
 
----
+**Guard:** use the smallest abstraction that explains observed value. A
+transferable principle must predict both a plausible positive transfer and a
+nearest boundary/failure.
 
-## Attack B3 — search explosion creates discovery theatre
+If it cannot, it is too vague to drive search.
 
-### Failure mode
+### B4 — search explosion
 
-Near, adjacent, structural, distant, failure-led and recombination search create
-an effectively infinite graph.
+**Attack:** near, adjacent, failure-led, recombination and distant search create
+an infinite discovery graph.
 
-### Required boundary
+**Guard:**
 
-No permanent discovery graph, ontology or branch inventory is created.
+- no permanent discovery graph or ontology;
+- at most three active `SEARCH_HYPOTHESIS` items;
+- three is a ceiling, never a quota;
+- zero is valid;
+- distant search is optional;
+- stop when searches add examples rather than mechanisms, the evidence link
+  becomes indirect, no cheap discriminating test exists, or multiple unproven
+  assumptions stack up.
 
-A linked-search pass is bounded to **at most three active search hypotheses**.
+### B5 — recombination is feature ideation
 
-Stop a branch when:
+**Attack:** A + B is proposed because the combination sounds useful.
 
-- two consecutive search steps produce only examples of an already-understood
-  mechanism;
-- connection to proven evidence becomes indirect;
-- no cheap discriminating test or target-evidence search exists;
-- the branch depends on multiple unproven assumptions;
-- another question has higher expected information gain.
+**Guard:** recombination is admissible only when existing evidence supports a
+specific interaction: one element removes a demonstrated limitation of another,
+or the interaction enables an observed job neither handles alone.
 
-The three-hypothesis cap is an operational ceiling, not a quota. Zero or one is
-often correct.
+### B6 — technical transfer becomes customer value
 
-### Disposition
+**Attack:** because a mechanism generalises, it is treated as a product
+opportunity.
 
-**SURVIVES WITH HARDENING.**
-
----
-
-## Attack B4 — recombination is feature brainstorming in disguise
-
-### Failure mode
-
-Known elements A and B are combined because the combination sounds useful.
-
-### Required boundary
-
-Recombination is permitted only when existing evidence supports a specific
-interaction:
-
-- A removes a demonstrated limitation of B;
-- B removes a demonstrated limitation of A; or
-- their interaction enables a currently observed job neither handles alone.
-
-Otherwise it is ordinary ideation and is rejected from discovery.
-
-### Disposition
-
-**SURVIVES WITH HARDENING.**
-
----
-
-## Attack B5 — successful technical transfer is mistaken for customer value
-
-### Failure mode
-
-A mechanism works in another context, therefore the project treats it as a
-product opportunity.
-
-### Required boundary
-
-Transferability and product value remain separate gates.
-
-A successful target-context transfer proves only that the mechanism generalises
-for the tested construct.
-
-It must then pass the ordinary value lens:
+**Guard:** successful transfer proves only transferability for the tested
+construct. Product relevance still requires:
 
 - user/job;
 - real alternative;
 - difference;
 - importance;
-- behavioral consequence;
+- behavioural consequence;
 - adoption/switching friction;
 - strategic fit;
 - validity floor.
 
-### Disposition
+### B7 — distant search rewards cleverness
 
-**SURVIVES WITH HARDENING.**
+**Attack:** unrelated domains are searched because the analogy is interesting.
 
----
+**Guard:** search distance is not quality. Distant search is optional and
+normally justified only when the mechanism is understood, nearer search is
+saturated or the distant field has a mature relevant practice, and transfer is
+cheaply falsifiable.
 
-## Attack B6 — "proven core" is abstracted until everything fits
+### B8 — bypasses Cycle 1 bounds
 
-### Failure mode
+**Attack:** the operator spawns new work before #139.
 
-The core is described as something vague such as "find hidden relationships" and
-then almost any domain becomes structurally analogous.
+**Guard:** Cycle 1 remains unchanged. Linked search may inform #139, but does not
+authorise a new sensing issue or Cycle 2.
 
-### Required boundary
+### B conclusion
 
-A transferable principle must remain falsifiable and mechanically tied to project
-evidence.
+Linked search fills a real gap: active creativity can be anchored in existing
+evidence rather than feature brainstorming.
 
-Use the smallest abstraction that explains the observed value.
+It survives only as an optional bounded operator, never as a work generator.
 
-If a principle cannot predict both:
+## C. Combined-system attack
 
-- a positive transfer; and
-- a plausible nearest boundary/failure,
+The dangerous combination is:
 
-it is too vague to drive linked search.
+> linked search generates many attractive hypotheses + relative-value analysis
+> supplies a plausible advantage for each.
 
-### Disposition
-
-**SURVIVES WITH HARDENING.**
-
----
-
-## Attack B7 — distant search rewards cleverness rather than evidence
-
-### Failure mode
-
-The project spends effort on forensics, medicine, intelligence or other domains
-because the analogy is intellectually attractive.
-
-### Required boundary
-
-Search distance is not quality.
-
-Distant search is optional and should normally occur only when:
-
-- the mechanism is already sufficiently understood;
-- nearer search is saturated or a distant domain offers a clearly relevant
-  mature practice;
-- there is a cheap way to falsify transfer.
-
-Do not force portfolio diversity.
-
-### Disposition
-
-**SURVIVES WITH HARDENING.**
-
----
-
-## Attack B8 — internal search quietly bypasses Cycle 1 bounds
-
-### Failure mode
-
-The new operator is used immediately to spawn new Cycle 1 issues before #139.
-
-### Required boundary
-
-Cycle 1 remains unchanged.
-
-Linked search may inform #139's interpretation and possible future experiment,
-but **no new Cycle 1 sensing task or Cycle 2 queue is authorised by this
-amendment**.
-
-### Disposition
-
-**SURVIVES WITH HARDENING.**
-
----
-
-# Combined-system attacks
-
-## Attack C1 — the two amendments amplify each other into rationalised expansion
-
-Linked search can generate many hypotheses, while the relative-value lens can
-find some plausible workflow advantage for nearly any hypothesis.
-
-### Required boundary
-
-The sequence is asymmetric:
+The required asymmetric sequence is:
 
 ```text
 EVIDENCE SIGNAL
   -> optional linked search
   -> SEARCH_HYPOTHESIS
-  -> target evidence
+  -> target evidence required
   -> candidate opportunity
-  -> relative-value / validity assessment
-  -> smallest experiment
+  -> frozen claim type
+  -> validity / relative-value assessment
+  -> smallest discriminating experiment
 ```
 
-**No target evidence = no opportunity.**
+Hard stops:
 
-**No observed/credible value difference = no product hypothesis.**
+- **no target evidence = no opportunity**;
+- **no credible user/research consequence = no product hypothesis**;
+- **validity regression = no workflow promotion**;
+- **documentation volume = no value evidence**.
 
-The relative-value lens is a filter, not a justification engine.
+No new mandatory artifact is created by this method. Ordinary issue text or a
+short research note is sufficient when the search changes a decision.
 
----
+## Final operating decision
 
-## Attack C2 — documentation becomes the product
+Adopt both amendments in the canonical discovery method with the guards above.
 
-The project can now produce sophisticated search maps, alternative maps and
-red-team notes indefinitely.
-
-### Required boundary
-
-No new mandatory artifact is created.
-
-Use ordinary issue text or a short research note only when the search materially
-changes a decision.
-
-The anti-theatre kill rule remains controlling.
-
----
-
-# Final decision
-
-## Relative-value amendment
-
-**ADOPT — HARDENED**
-
-It corrects a real conceptual defect and directly improves #136/#139.
-
-## Linked-search amendment
-
-**ADOPT AS AN OPTIONAL BOUNDED SEARCH OPERATOR — HARDENED**
-
-It fills a real gap: the project can now deliberately ask what existing evidence
-makes newly investigable without returning to feature ideation.
-
-It does **not** become:
-
-- a fifth evidence channel;
-- a discovery graph/ontology;
-- a recurring scheduled process;
-- a requirement to search every distance band;
-- a source of automatic backlog;
-- permission for Cycle 2.
-
-## Final operating model
-
-```text
-EVIDENCE TRIGGER
-    ↓
-OPTIONAL LINKED SEARCH
-    ↓
-SEARCH HYPOTHESIS
-    ↓
-TARGET EVIDENCE REQUIRED
-    ↓
-CANDIDATE OPPORTUNITY
-    ↓
-CLAIM TYPE
-  ├─ CORRECTNESS / VALIDITY
-  └─ PRODUCT / WORKFLOW
-    ↓
-REAL ALTERNATIVE + RELATIVE-VALUE / VALIDITY CHECK
-    ↓
-RISKIEST ASSUMPTION
-    ↓
-SMALLEST DISCRIMINATING EXPERIMENT
-    ↓
-REJECT / PARK / REVISE / ADOPT_FOR_EXPERIMENT
-```
-
-This is a refinement of v0.2, not a new discovery bureaucracy.
+This is a refinement of evidence-triggered discovery v0.2, not a new framework,
+roadmap, ontology or recurring process.

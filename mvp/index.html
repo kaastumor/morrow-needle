@@ -17,7 +17,17 @@
     <section aria-labelledby="corpus-status-heading">
       <h2 id="corpus-status-heading">Corpus</h2>
       <p id="corpus-status" role="status" aria-live="polite">Loading canonical corpus…</p>
-      <div id="corpus-root" hidden></div>
+      <div id="corpus-root" hidden>
+        <dl class="summary" aria-label="Corpus summary">
+          <div><dt>Cases</dt><dd id="summary-total">—</dd></div>
+          <div><dt>Trap classes</dt><dd id="summary-traps">—</dd></div>
+          <div><dt>Derivation</dt><dd id="summary-derivation">—</dd></div>
+          <div><dt>Evaluation</dt><dd id="summary-evaluation">—</dd></div>
+          <div><dt>Surfaced-trap evaluations</dt><dd id="summary-surfaced">—</dd></div>
+          <div><dt>Latent-trap evaluations</dt><dd id="summary-latent">—</dd></div>
+          <div><dt>Evaluation mode unspecified</dt><dd id="summary-unspecified">—</dd></div>
+        </dl>
+      </div>
     </section>
   </main>
   <script src="app.js" defer></script>

@@ -6,44 +6,47 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **IDLE BY DESIGN — EVENT-TRIGGERED WORK ONLY**
+# **#230 ACTIVE RESEARCH — JUDICIAL INTERPRETATION TIME SEMANTICS**
 
-#214 completed the sealed index-assisted latent-diagnostic pilot.
+Sponsor rule #217 is canonical:
 
-Frozen result:
+> a hypothesis may stop; the sponsored research program pivots immediately to
+> the next bounded WIP=1 research question.
 
-- adversarial tasks: **3/3 R-pass / C-pass**, with both arms explicitly applying
-  the decisive distinction;
-- matched control: **R-pass / C-pass**;
-- diagnostic rescues: **0**;
-- correctness-only C advantages: **0**;
-- consequential C-only regressions: **0**.
+#214's zero-rescue result remains binding and is not being retried.
 
-Under #210's pre-registered rule:
+Post-correction research has now produced both subtraction and bounded corpus
+generality:
 
-> **0 diagnostic rescues -> latent corpus-workflow value not demonstrated in this
-> stage; stop and allow contraction toward adversarial regression/reference
-> corpus + minimal evaluation rules.**
+- #218 REJECT — static/dynamic external-reference semantics already owned by
+  mature doctrine;
+- #220 ADMIT/DERIVE — machine-actionable compliance artifacts;
+- #221 REVISE — broadened private-origin legal recognition in place;
+- #222 REVISE — metric trigger -> authoritative data-input trigger;
+- #224 ADOPT — eIDAS trusted-list status validates dynamic reference status
+  cross-domain;
+- #225 REVISE — executable artifact -> machine compliance artifact;
+- #226 ADOPT — plant-health official findings generate legal geography;
+- #227 REJECT — marine depth is not automatically volumetric legal extent;
+- #228 REJECT — cryptographic proof scope is ordinary evidentiary-scope
+  analysis, not a new class.
 
-That contraction is now canonical.
+Canonical corpus:
 
-Current identity:
+> **35 cases / 16 trap classes**
 
-> **NEEDLE = ADVERSARIAL LEGAL-RESEARCH REGRESSION/REFERENCE CORPUS + MINIMAL
-> EVALUATION DISCIPLINE.**
+#230 is the sole active WIP item.
 
-Do not create a harder replacement experiment, third arm, Cycle 4, product
-horizon, new Method/Core layer or standing corpus-growth hunt.
+It tests whether `JUDICIAL_INTERPRETATION_TEMPORAL_OVERCLAIM` genuinely adds a
+reusable legal-information distinction beyond settled CJEU doctrine that
+preliminary rulings are declaratory and normally clarify the interpreted rule
+from its own entry into force, subject to exceptional temporal limitation.
 
-The next issue enters the queue only from a real external trigger, such as:
+Do not retry #214, manufacture product scope, or equate research continuity with
+feature growth.
 
-- a concrete legal-research failure discovered during ordinary work;
-- real user/investigator evidence that a corpus example prevented a consequential
-  error;
-- a recurring handoff/review job with demonstrated reconstruction cost;
-- external adoption/use exposing a concrete unmet need.
-
-Until such a trigger exists, the hourly/autonomous worker stays idle.
+**Any historical "worker idle", "idle by design" or event-trigger-only wording
+below is superseded by #217 for current execution.**
 
 **Issue #88 is complete. Its pre-registered stop rule fired.**
 
@@ -642,13 +645,9 @@ When it does, the reason must be recorded here or in the relevant issue. The bac
 
 ## Current research handoff
 
-#214 is complete.
+Sponsor rule #217 is canonical: completed hypotheses pivot to the next bounded
+research question rather than idling the project.
 
-The sealed 3+1 pilot produced zero diagnostic rescues and zero C-only
-regressions. Under the pre-frozen rule, the active diagnostic-workflow claim did
-not earn continuation.
+#218–#221 are complete. #222 is the current WIP=1 research question.
 
-The project is now **IDLE BY DESIGN** with an event-triggered-only discovery
-lane.
-
-No Cycle 4, replacement value gate or product implementation is queued.
+No product implementation is implied by continuous research.

@@ -10,16 +10,17 @@
     "REPRESENTATION_LOCAL_MARKER_IDENTITY": "Presentation markers or ordinals are local to a language/expression and are unsafe as cross-expression legal identities.",
     "DYNAMIC_REFERENCE_STATUS": "Legal effect changes because the authoritative status of a referenced external item changes while the parent rule or external identifier remains unchanged.",
     "STATUS_APPLICATION_SEPARATION": "Authoritative status or set membership and downstream legal applicability begin or end at different legal boundaries.",
-    "AUTHORITATIVE_METRIC_TRIGGER": "An official numeric observation enters an unchanged legal formula and changes the operative legal output.",
     "AUTHORITATIVE_FINDING_TO_SPATIAL_EFFECT": "An authoritative categorical real-world finding triggers legal geography under unchanged law.",
     "SUBDAY_TEMPORAL_BOUNDARY": "A legally material boundary occurs at a time finer than calendar-date granularity.",
     "VERTICAL_SPATIAL_EXTENT": "Legal geography is volumetric and cannot be represented safely as horizontal geometry alone.",
     "JUDICIAL_VALIDITY_TEXT_DIVERGENCE": "A judicial holding changes validity or operative legal state while the target text remains printed or textually unchanged.",
     "JUDICIAL_INTERPRETATION_TEMPORAL_OVERCLAIM": "A judicial interpretation supplies authoritative meaning without automatically creating a new prospective application start at judgment date.",
-    "PRIVATE_ORIGIN_LEGAL_RECOGNITION": "A private-origin determination has a bounded legal role because public law recognises the actor or output, without converting the source into a public authority.",
+    "PRIVATE_ORIGIN_LEGAL_RECOGNITION": "A private-origin output, technical artifact or determination can have a bounded legal role because public law recognises, approves, incorporates or adopts it, without converting the private source into a public authority.",
     "PARALLEL_INSTRUMENT_LIFECYCLE": "An umbrella negotiation or political deal is implemented through legally distinct interim and comprehensive agreements whose signature, provisional application, conclusion, entry into force and replacement states must remain attached to the correct instrument.",
     "OFFICIAL_TRACKER_UPDATE_LAG": "A currently accessible official summary/status tracker lags newer primary legal sources, so current access time cannot be substituted for the tracker's observation or update horizon.",
-    "OFFICIAL_AUTHORITY_HANDOFF": "An official specialist artifact may be complete or final within its upstream role while a different institution owns the downstream binding decision; legal effect must remain attached to the procedure's actual decision owner and binding act rather than inherited from upstream authority, finality or practical importance."
+    "OFFICIAL_AUTHORITY_HANDOFF": "An official specialist artifact may be complete or final within its upstream role while a different institution owns the downstream binding decision; legal effect must remain attached to the procedure's actual decision owner and binding act rather than inherited from upstream authority, finality or practical importance.",
+    "AUTHORITATIVE_DATA_INPUT_TRIGGER": "An authoritative quantitative observation, value set or versioned reference dataset enters an unchanged legal formula or method and changes the operative calculation/compliance output without parent-text mutation; historical reconstruction must preserve the authoritative data version and its application state.",
+    "MACHINE_COMPLIANCE_ARTIFACT": "A legally consequential calculation, declaration, submission or verification depends on a prescribed, authoritative, privileged or certified machine-actionable artifact such as an executable tool, ruleset, schema or semantic profile; artifact identity, version or regulatory status is legally relevant evidence, so substituting another/current artifact can change the accepted result or validation consequence without parent-text mutation."
   },
   "cases": [
     {
@@ -97,7 +98,8 @@
       "domain": "product safety / harmonised standards",
       "jurisdiction": "EU",
       "trap_classes": [
-        "DYNAMIC_REFERENCE_STATUS"
+        "DYNAMIC_REFERENCE_STATUS",
+        "PRIVATE_ORIGIN_LEGAL_RECOGNITION"
       ],
       "provenance": {
         "issue": 77,
@@ -143,7 +145,7 @@
       "domain": "emissions trading",
       "jurisdiction": "EU",
       "trap_classes": [
-        "AUTHORITATIVE_METRIC_TRIGGER"
+        "AUTHORITATIVE_DATA_INPUT_TRIGGER"
       ],
       "provenance": {
         "issue": 79,
@@ -731,7 +733,146 @@
         "issue:171",
         "path:docs/experiments/issue171-rts-authority-handoff-result-2026-09-24.md"
       ]
+    },
+    {
+      "id": "construction-products-commission-software-version",
+      "title": "Construction-product environmental declaration depends on Commission software version",
+      "domain": "construction products / environmental sustainability",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "MACHINE_COMPLIANCE_ARTIFACT",
+        "STATUS_APPLICATION_SEPARATION"
+      ],
+      "provenance": {
+        "issue": 220,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Regulation (EU) 2024/3110 makes Commission software part of the environmental-performance calculation, requires the declaration to identify the software version, and allows a published update voluntarily before it becomes mandatory one year later; today's executable cannot silently stand in for the legally permitted version at an earlier declaration date.",
+      "evidence_refs": [
+        "issue:220",
+        "path:docs/discovery/issue220-executable-compliance-artifact-result-2026-09-24.md"
+      ]
+    },
+    {
+      "id": "transport-ghg-calculation-tool-effect",
+      "title": "Transport-emissions calculation-tool identity changes verification consequences",
+      "domain": "transport services / greenhouse-gas accounting",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "MACHINE_COMPLIANCE_ARTIFACT"
+      ],
+      "provenance": {
+        "issue": 220,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Regulation (EU) 2026/1030 gives the Commission calculation tool a privileged verification effect and requires external calculation tools to carry a certification lifecycle and be identified in supporting evidence; tool identity/status is therefore part of the legally relevant calculation record.",
+      "evidence_refs": [
+        "issue:220",
+        "path:docs/discovery/issue220-executable-compliance-artifact-result-2026-09-24.md"
+      ]
+    },
+    {
+      "id": "eu-ecolabel-did-list-data-input",
+      "title": "EU Ecolabel calculations depend on the current Detergent Ingredient Database",
+      "domain": "EU Ecolabel / detergents and cosmetics",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "AUTHORITATIVE_DATA_INPUT_TRIGGER"
+      ],
+      "provenance": {
+        "issue": 222,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "EU Ecolabel criteria require the DID list as the quantitative source for CDV and biodegradability/toxicity calculations and direct users to the latest version; historical or current calculations cannot silently substitute an arbitrary dataset vintage while treating the unchanged criteria text as the whole legal input.",
+      "evidence_refs": [
+        "issue:222",
+        "path:docs/discovery/issue222-authoritative-data-input-result-2026-09-24.md"
+      ]
+    },
+    {
+      "id": "eidas-anf-trusted-list-status",
+      "title": "eIDAS trusted-list status changes qualified legal effect for the same service",
+      "domain": "electronic identification / trust services",
+      "jurisdiction": "EU + Spain",
+      "trap_classes": [
+        "DYNAMIC_REFERENCE_STATUS"
+      ],
+      "provenance": {
+        "issue": 224,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "The same ANF validation-service identity moved from Granted to Withdrawn status in the national trusted list; under eIDAS, qualified status and its legal effects follow the authoritative list status rather than provider identity or mere list presence.",
+      "evidence_refs": [
+        "issue:224",
+        "path:docs/discovery/issue224-eidas-dynamic-reference-status-result-2026-09-24.md"
+      ]
+    },
+    {
+      "id": "dpp-semantic-profile-version",
+      "title": "Digital Product Passport conformity depends on a versioned authoritative semantic profile",
+      "domain": "ecodesign / digital product passports",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "MACHINE_COMPLIANCE_ARTIFACT"
+      ],
+      "provenance": {
+        "issue": 225,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Implementing Regulation (EU) 2026/1778 requires DPP data to follow versioned Commission-published data models and semantic definitions from the authoritative machine-readable repository; validating historical or current passport data against the wrong profile version can change machine conformity without any parent-text amendment.",
+      "evidence_refs": [
+        "issue:225",
+        "path:docs/discovery/issue225-machine-compliance-artifact-result-2026-09-24.md"
+      ]
+    },
+    {
+      "id": "anoplophora-finding-demarcated-area",
+      "title": "Official Asian longhorn beetle finding generates plant-health demarcated geography",
+      "domain": "plant health",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "AUTHORITATIVE_FINDING_TO_SPATIAL_EFFECT"
+      ],
+      "provenance": {
+        "issue": 226,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Under Implementing Regulation (EU) 2025/1952, official confirmation of Anoplophora glabripennis triggers infected/buffer geography under unchanged law, subject to an isolated-finding/non-establishment derogation; surveillance or suspicion alone does not create the ordinary demarcated area.",
+      "evidence_refs": [
+        "issue:226",
+        "path:docs/discovery/issue226-plant-finding-spatial-generality-result-2026-09-24.md"
+      ]
     }
   ],
-  "case_count": 29
+  "case_count": 35
 }

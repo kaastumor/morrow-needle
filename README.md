@@ -126,7 +126,7 @@ The canonical class is now:
 
 > `OFFICIAL_AUTHORITY_HANDOFF`
 
-The corpus remains **29 cases / 15 trap classes**. No fresh #195 case was added
+At that stage the corpus remained **29 cases / 15 trap classes**. No fresh #195 case was added
 merely to increase corpus size, and no product/evaluation-performance claim was
 made.
 
@@ -155,7 +155,7 @@ stronger incumbent concepts before fresh validation:
   doctrine owns the relevant effect analysis, while a more specific class would
   pressure the project toward an unearned effect ontology.
 
-No class was added. The corpus remains **29 cases / 15 trap classes**.
+No class was added at that gate; the later #220 derivation expands the corpus.
 
 #210's independent **GPT-6 Astra / medium** design red team returned
 **REVISE**. The pilot survives, but the claim is narrower:
@@ -184,16 +184,41 @@ Frozen primary result:
 Under #210's pre-registered interpretation, latent corpus-workflow value was
 **not demonstrated**. The project therefore contracts again.
 
+Sponsor direction #217 supersedes the **idle operating conclusion** while
+leaving #214's scientific null intact.
+
+A hypothesis may stop; the sponsored research program pivots to the next bounded
+question under WIP=1.
+
+Post-#214 research is continuous under sponsor rule #217.
+
+Recent results:
+
+- #218 rejected redundant static/dynamic-reference taxonomy;
+- #219/#220 admitted a bounded machine-artifact mechanism;
+- #221 broadened `PRIVATE_ORIGIN_LEGAL_RECOGNITION` in place;
+- #222 generalised scalar metrics and versioned datasets into
+  `AUTHORITATIVE_DATA_INPUT_TRIGGER`;
+- #224 validated `DYNAMIC_REFERENCE_STATUS` cross-domain through eIDAS;
+- #225 broadened the machine class to `MACHINE_COMPLIANCE_ARTIFACT`;
+- #226 validated finding-generated legal geography in plant health;
+- #227 rejected a superficial marine-depth analogue for true 3D legal extent;
+- #228 rejected a cryptography-specific proof-scope class in favour of ordinary
+  evidentiary-scope analysis.
+
+The corpus is now **35 cases / 16 trap classes**.
+
 Current horizon:
 
-> **IDLE BY DESIGN — event-triggered work only**
+> **ACTIVE RESEARCH — #230: judicial interpretation time semantics beyond Planet49**
 
-The smallest surviving identity is:
+The smallest surviving identity remains:
 
 > **Needle = adversarial legal-research regression/reference corpus + minimal
 > evaluation discipline.**
 
-No harder replacement experiment, Cycle 4 or product work follows from #214.
+Continuous research does not automatically reopen product, Method/Core or schema
+work.
 
 ## Canonical project records
 
@@ -223,6 +248,11 @@ No harder replacement experiment, Cycle 4 or product work follows from #214.
 - `docs/experiments/issue210-design-red-team-result-2026-09-24.md`
 - `docs/experiments/issue214-latent-corpus-workflow-result-2026-09-24.md`
 - `docs/discovery/post-issue214-project-health-2026-09-24.md`
+- `docs/discovery/sponsor-research-continuity-override-2026-09-24.md`
+- `docs/discovery/issue218-external-reference-version-semantics-result-2026-09-24.md`
+- `docs/discovery/issue219-executable-compliance-software-result-2026-09-24.md`
+- `docs/discovery/issue220-executable-compliance-artifact-result-2026-09-24.md`
+- `docs/discovery/issue221-private-origin-artifact-generality-result-2026-09-24.md`
 - `docs/discovery/post-issue195-project-health-2026-09-24.md`
 - `docs/experiments/issue165-scholarly-status-result-2026-09-24.md`
 - `docs/discovery/post-issue165-project-health-2026-09-24.md`

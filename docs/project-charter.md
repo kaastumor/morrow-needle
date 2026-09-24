@@ -187,44 +187,38 @@ Especially:
 
 ## Current horizon
 
-The current evidence-backed identity remains:
+The evidence-backed identity remains:
 
 > **Needle adversarial legal-research corpus + evaluation protocol.**
 
-Discovery Cycle 2 completed with **CONTINUE**.
+#171 completed with **SUPPORT** and added one bounded DERIVATION failure family:
 
-Its first selected experiment, #165 scholarly-status protocol transfer, ended:
+> `TECHNICAL_STANDARD_AUTHORITY_HANDOFF`
 
-> **INDETERMINATE / TRANSPORT_BLOCKED**
+Two exposed EBA→Commission RTS chains show that an upstream "final draft" can
+still be substantively changed by the downstream institution that owns binding
+adoption.
 
-The deterministic four-case sample could not be constructed through the final
-pre-registered transport. No model run occurred, so no scientific/project-
-identity conclusion is drawn from #165.
+The corpus now contains 29 cases across 15 trap classes.
 
-Explicit sponsor direction still requires active evidence-driven discovery.
+No evaluation/model/product claim changed.
 
-The current horizon is therefore the already-earned Cycle 2 Run A reserve:
+Explicit sponsor direction remains active evidence-driven discovery.
 
-> **#171 — `TECHNICAL_STANDARD_AUTHORITY_HANDOFF` generality.**
+Current horizon:
 
-#171 is a DERIVATION taxonomy/generality experiment.
+> **#174 — official derived-view lag generality.**
 
-Its two RTS chains were already public/exposed during Run A and cannot be
-relabelled as fresh validation.
+#174 tests with fresh cases whether the existing
+`OFFICIAL_TRACKER_UPDATE_LAG` mechanism generalises across:
 
-The experiment asks whether a distinct failure mechanism exists when:
+- EU sanctions consolidated-list lag; and
+- legislation.gov.uk revised-text editorial lag.
 
-1. an ESA publishes its **final draft RTS**;
-2. the European Commission may substantively amend that draft;
-3. the Commission later adopts the binding delegated regulation;
-4. research incorrectly inherits binding legal effect from the ESA final draft.
+A negative snapshot/control is mandatory.
 
-No product, monitor, lifecycle graph or ingestion system is authorised.
-
-Run C / `OFFICIAL_DERIVED_VIEW_LAG` remains parked reserve.
-
-Canonical #165 health decision:
-`docs/discovery/post-issue165-project-health-2026-09-24.md`
+No sanctions monitor, UK-law ingestion, source freshness service or product
+surface is authorised.
 
 ## Repository discipline
 

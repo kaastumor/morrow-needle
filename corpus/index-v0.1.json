@@ -28,7 +28,8 @@
     "EU_PRIMACY_DISAPPLICATION_STATE": "A national provision can remain formally valid, in force and textually current while directly effective EU law requires it to be disapplied in the relevant dispute or scope; formal validity does not determine operative applicability, and the conflict, direct-effect condition and procedural context must be preserved.",
     "UNION_NEXUS_APPLICABILITY": "EU-law applicability can attach to an actor or conduct outside the Union because the governing rule defines scope through a legally specified Union nexus, such as targeted persons or recipients, a regulated Union market or instrument, or output/use in the Union; actor establishment or physical location alone is insufficient, while incidental or passive Union contact is insufficient where the required nexus is not met.",
     "CHOICE_OF_LAW_STATE": "A legally valid choice by the relevant party or person can select the law governing a relationship or succession instead of the law that would follow from default connecting factors; applicable law cannot be inferred safely from forum, location, habitual residence or nationality alone, and the existence, validity, scope and mandatory limits of the choice must be preserved.",
-    "DIRECTIVE_INVOCABILITY_STATE": "A Directive provision may be in force and its transposition deadline may have expired, yet direct invocability in a dispute depends on whether the provision is sufficiently precise and unconditional and whether the defendant is the State or an emanation of the State; a Directive cannot of itself impose obligations on a private individual."
+    "DIRECTIVE_INVOCABILITY_STATE": "A Directive provision may be in force and its transposition deadline may have expired, yet direct invocability in a dispute depends on whether the provision is sufficiently precise and unconditional and whether the defendant is the State or an emanation of the State; a Directive cannot of itself impose obligations on a private individual.",
+    "CROSS_BORDER_RECOGNITION_ACTIVATION_STATE": "A home-state authorisation, qualification or regulated entitlement can acquire legally effective use in another Member State through a specified Union notification, transmission, recognition or passport procedure; home entitlement alone does not prove host-state activation, while completion of the Union procedure may remove the need for a fresh standalone host authorisation, so the activation step, target host or service scope and continuing home entitlement must be preserved."
   },
   "cases": [
     {
@@ -1651,7 +1652,51 @@
       "evidence_refs": [
         "issue:266"
       ]
+    },
+    {
+      "id": "mifid-cross-border-passport-activation",
+      "title": "MiFID cross-border services require passport activation beyond home authorisation",
+      "domain": "investment services / passporting",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "CROSS_BORDER_RECOGNITION_ACTIVATION_STATE"
+      ],
+      "provenance": {
+        "issue": 270,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "MiFID II Article 34 requires the home-authorised firm to notify its home authority and the home authority to transmit the relevant information before the firm begins the specified services in the host Member State; home authorisation alone is not the cross-border activation state, while the host may not duplicate covered authorisation requirements.",
+      "evidence_refs": [
+        "issue:270"
+      ]
+    },
+    {
+      "id": "professional-card-cross-border-activation",
+      "title": "European Professional Card activates specified temporary cross-border professional rights",
+      "domain": "professional qualifications / temporary services",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "CROSS_BORDER_RECOGNITION_ACTIVATION_STATE"
+      ],
+      "provenance": {
+        "issue": 270,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "For the Article 4c temporary-services route, the home authority verifies, issues and transmits the European Professional Card to the host states concerned; those hosts may not demand a further Article 7 declaration for the stated period, while the card remains tied to the holder's continuing home right and specified host scope.",
+      "evidence_refs": [
+        "issue:270"
+      ]
     }
   ],
-  "case_count": 70
+  "case_count": 72
 }

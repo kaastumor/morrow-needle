@@ -2,6 +2,8 @@
 
 const test = require("node:test");
 const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
 const { projectCorpus } = require("./app.js");
 
 function caseRecord(overrides = {}) {
@@ -17,9 +19,16 @@ function caseRecord(overrides = {}) {
   };
 }
 
-function corpus(cases) {
-  return { trap_classes: { TRAP: "Trap description" }, cases };
-}
+function corpus(cases) { return { trap_classes: { TRAP: "Trap description" }, cases }; }
+
+test("projects every current canonical corpus case", () => {
+  const file = path.join(__dirname, "..", "corpus", "index-v0.1.json");
+  const input = JSON.parse(fs.readFileSync(file, "utf8"));
+  const projection = projectCorpus(input);
+  assert.equal(projection.summary.totalCases, input.cases.length);
+  assert.equal(projection.summary.trapClasses, Object.keys(input.trap_classes).length);
+  assert.equal(projection.summary.roleCounts.DERIVATION + projection.summary.roleCounts.EVALUATION, input.cases.length);
+});
 
 test("projects summary without mutating canonical input", () => {
   const input = corpus([

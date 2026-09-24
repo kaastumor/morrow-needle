@@ -2,10 +2,13 @@
 
 Status: **CANONICAL CORPUS ENTRY POINT**
 
-This directory is the smallest durable form of the project after Issue #88.
+This directory is the canonical public regression/reference corpus for the project's
+current minimal form.
 
-It does **not** replace the underlying legal fixtures, audits or issues. The
-index records evaluation metadata and points to those existing evidence owners.
+It does **not** replace the underlying legal fixtures, audits or issues. The index owns
+current corpus membership/classification and records evaluation metadata pointing to
+those existing evidence owners. Historical reference checkpoints are recorded separately;
+do not copy their counts back into this README as live state.
 
 Canonical index:
 
@@ -49,7 +52,7 @@ If a case was sealed and used in an evaluation, revealing it makes it exposed.
 It can remain excellent regression material, but it is not fresh blind evidence
 again merely because a new session, model version or year arrives.
 
-Every case in the current v0.1 public seed is therefore:
+Every case in the current v0.1 public reference corpus is therefore:
 
 - public/exposed;
 - `blind_reuse=false`;
@@ -111,6 +114,20 @@ Reject or defer cases that:
 - depend on subjective answer-quality scoring without a pre-registered rubric;
 - merely reward verbosity, source count or a preferred formatting style;
 - duplicate an already exposed case and call that “fresh” validation.
+
+## Reference-release boundary
+
+`status=CANONICAL_REFERENCE` means the public index is coherent enough to serve as a
+versioned regression/reference checkpoint. It does **not** mean:
+
+- the taxonomy is complete or final;
+- every legal mechanism is covered;
+- the corpus has demonstrated a model/workflow advantage;
+- exposed cases become fresh blind validation;
+- historical product surfaces are reactivated.
+
+Exact checkpoint evidence belongs in the owning release-review record; the index remains
+the live corpus owner.
 
 ## Validation
 

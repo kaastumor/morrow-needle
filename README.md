@@ -190,22 +190,27 @@ leaving #214's scientific null intact.
 A hypothesis may stop; the sponsored research program pivots to the next bounded
 question under WIP=1.
 
-Post-#214 research is now continuous under sponsor rule #217:
+Post-#214 research is continuous under sponsor rule #217.
 
-- #218 rejected a new external-reference-version class because mature EU legal
-  drafting practice already owns static/dynamic reference semantics;
-- #219 found that legally prescribed/privileged executable tools create a
-  reusable legal-information mechanism;
-- #220 admitted `EXECUTABLE_COMPLIANCE_ARTIFACT` with two public DERIVATION
-  cases;
-- #221 broadened `PRIVATE_ORIGIN_LEGAL_RECOGNITION` in place rather than
-  creating a parallel private-normative-document class.
+Recent results:
 
-The corpus is now **31 cases / 16 trap classes**.
+- #218 rejected redundant static/dynamic-reference taxonomy;
+- #219/#220 admitted a bounded machine-artifact mechanism;
+- #221 broadened `PRIVATE_ORIGIN_LEGAL_RECOGNITION` in place;
+- #222 generalised scalar metrics and versioned datasets into
+  `AUTHORITATIVE_DATA_INPUT_TRIGGER`;
+- #224 validated `DYNAMIC_REFERENCE_STATUS` cross-domain through eIDAS;
+- #225 broadened the machine class to `MACHINE_COMPLIANCE_ARTIFACT`;
+- #226 validated finding-generated legal geography in plant health;
+- #227 rejected a superficial marine-depth analogue for true 3D legal extent;
+- #228 rejected a cryptography-specific proof-scope class in favour of ordinary
+  evidentiary-scope analysis.
+
+The corpus is now **35 cases / 16 trap classes**.
 
 Current horizon:
 
-> **ACTIVE RESEARCH — #222: versioned authoritative datasets as legal inputs**
+> **ACTIVE RESEARCH — #230: judicial interpretation time semantics beyond Planet49**
 
 The smallest surviving identity remains:
 

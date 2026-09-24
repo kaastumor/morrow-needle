@@ -6,49 +6,48 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **#200 ACTIVE — CONSEQUENTIAL CORPUS-USE TEST DESIGN**
+# **#203 EXPERIMENT READY — CONSEQUENTIAL CORPUS-USE DIAGNOSTIC**
 
-#195 completed with:
+#200 completed its design/readiness gate and selected one real unresolved external
+task rather than launching another taxonomy cycle:
 
-> **SUPPORT — GENERALISE / RENAME IN PLACE**
+> HazyResearch/legalbench#56 — OPP-115 identical scored inputs carrying
+> contradictory labels.
 
-The corpus class formerly named `TECHNICAL_STANDARD_AUTHORITY_HANDOFF` is now:
+Readiness reproduced the three published conflicts at the frozen LegalBench
+revision and verified a primary-evidence route through the original downloadable
+OPP-115 corpus/annotations.
 
-> `OFFICIAL_AUTHORITY_HANDOFF`
+#203 now owns exactly one two-arm comparison:
 
-Fresh documentary validation reproduced the same consequential authority/effect
-handoff in:
+- **R:** competent ordinary source-linked benchmark QA;
+- **C:** the same task/resources plus the existing Needle corpus/evaluation
+  discipline.
 
-- Balversa: CHMP positive opinion → later Commission marketing authorisation;
-- N,N-dimethylformamide: RAC/SEAC opinions → later Commission REACH restriction.
+Primary outcome:
 
-A fresh Candidate List inclusion supplied the boundary: ECHA inclusion itself can
-trigger legal obligations, so the rule is not "agency output is merely advisory".
-Legal effect follows the exact procedural decision owner.
+> `VERIFIED_SCORING_DISPOSITION`
 
-The change is subtractive:
+The experiment asks whether corpus access changes the consequential disposition
+of the contradictory benchmark items, not whether it produces nicer prose.
 
-- corpus remains **29 cases / 15 trap classes**;
-- the two existing #171 RTS regression cases are relabelled under the broader class;
-- the fresh #195 cases remain validation evidence in the experiment record rather
-  than inflating the corpus;
-- no product, integration, monitor, lifecycle graph or authority ontology is earned.
+Execution requires **separate fresh contexts/workers**. The #200 design session is
+contaminated by feasibility inspection and may not count as either arm.
 
-The attempted metadata-only transport smoke test exposed substantive ECHA
-identities and is preserved as a failed guard. Those candidates were excluded
-rather than silently reused.
+Frozen guards:
 
-Post-#195 Project Health chooses **CONTINUE** with #200 next. #200 is a bounded
-**design** task testing whether the existing corpus-specific diagnostic workflow
-adds consequential practical value over ordinary source-linked cases and
-behavioral QA. It is not yet an AUTO READY execution task.
+- same capability/source access and bounded resource budget;
+- no paid batch;
+- no switching to easier SSLA/SARA/citation bugs;
+- no new cases after parity;
+- no product build or Cycle 4;
+- parity supports simplifying toward ordinary source-linked cases + behavioral QA
+  for this job.
 
-No Cycle 4 is authorised while #200 owns the next decision.
+#200: **COMPLETED — READY FOR SEPARATE EXECUTION**.
+#203: **EXPERIMENT READY**.
 
-Canonical records:
-
-- `docs/experiments/issue195-official-authority-handoff-generality-result-2026-09-24.md`
-- `docs/discovery/post-issue195-project-health-2026-09-24.md`
+No assumptions/value-evidence update is earned until #203 produces a result.
 
 **Issue #88 is complete. Its pre-registered stop rule fired.**
 
@@ -647,16 +646,16 @@ When it does, the reason must be recorded here or in the relevant issue. The bac
 
 ## Follow-up selected by review implementation #199
 
-**#200 — consequential corpus-use test design — ACTIVE after #195.**
+**#200 — consequential corpus-use test design — COMPLETED.**
 
-#195 is reconciled. #200 now owns the next bounded decision: prepare one
-consequential corpus-use evaluation/review design comparing the existing corpus
-workflow with ordinary source-linked cases and behavioral QA.
+#200 found one feasible real task, froze comparator/outcome/materiality,
+reproduced the public conflict, verified the primary-evidence route, and created
+the separate execution issue #203.
 
-This remains a design/readiness issue, not an AUTO READY execution task. It may
-authorise a separate execution issue only if one real task, comparator, primary
-outcome/materiality threshold, exposure plan and stop rule can be frozen without
-inventing demand. Prefer PARK to a synthetic task if no consequential real task
-is available within the bounded search.
+**#203 — OPP-115 corpus-use diagnostic — EXPERIMENT READY.**
 
-No Cycle 4 or product implementation is authorised by this handoff.
+#203 requires separate fresh contexts/workers. It compares ordinary source-linked
+benchmark QA with the same task plus Needle corpus/protocol access under one
+frozen primary outcome and stop rule.
+
+No Cycle 4 or product implementation is authorised while #203 owns the decision.

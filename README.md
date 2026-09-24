@@ -129,13 +129,22 @@ The corpus remains **29 cases / 15 trap classes**. No fresh #195 case was added
 merely to increase corpus size, and no product/evaluation-performance claim was
 made.
 
+#200 completed its design/readiness gate on one real unresolved
+LegalBench OPP-115 scoring conflict. The cited contradictory identical-text
+pairs were reproduced at the frozen benchmark revision and a primary-evidence
+route through the original OPP-115 corpus was verified.
+
 Current horizon:
 
-> **#200 — consequential corpus-use test design**
+> **#203 — consequential corpus-use diagnostic execution**
 
-#200 asks whether Needle should retain a corpus-specific diagnostic workflow or
-simplify toward ordinary source-linked cases plus behavioral QA. It owns design
-and readiness only; no Cycle 4 or execution task is automatic.
+#203 compares ordinary source-linked benchmark QA against the same task with
+access to Needle's existing corpus/evaluation discipline. The primary outcome is
+the supported scoring/repository disposition, not explanation quality.
+
+Execution requires separate fresh contexts/workers; the design session is
+contaminated and may not count as either arm. No Cycle 4 or product work is
+automatic.
 
 ## Canonical project records
 

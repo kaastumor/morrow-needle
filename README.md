@@ -222,13 +222,16 @@ Recent results now include both subtraction and new cross-domain mechanisms:
 - #240 REJECT — generic ownership/control graph scope was too broad to be a
   discriminating Needle class;
 - #241 ADMIT — `PROCEDURAL_CLOCK_SUSPENSION`;
-- #242 ADMIT — `CROSS_ORDER_INCORPORATION_STATE`.
+- #242 ADMIT — `CROSS_ORDER_INCORPORATION_STATE`;
+- #243 ADMIT — `DIFFERENTIATED_MEMBER_STATE_PARTICIPATION`;
+- #244 RED TEAM — preserved all 50 cases while compressing three overlapping
+  class pairs, reducing the taxonomy from 21 to **18** classes.
 
-The corpus is now **48 cases / 20 trap classes**.
+The corpus is now **50 cases / 18 trap classes**.
 
 Current horizon:
 
-> **ACTIVE RESEARCH — #243: differentiated Member-State participation**
+> **ACTIVE RESEARCH — #245: scoped third-country recognition**
 
 The smallest surviving identity remains:
 
@@ -271,6 +274,7 @@ work.
 - `docs/discovery/issue219-executable-compliance-software-result-2026-09-24.md`
 - `docs/discovery/issue220-executable-compliance-artifact-result-2026-09-24.md`
 - `docs/discovery/issue221-private-origin-artifact-generality-result-2026-09-24.md`
+- `docs/discovery/issue244-taxonomy-compression-result-2026-09-24.md`
 - `docs/discovery/post-issue195-project-health-2026-09-24.md`
 - `docs/experiments/issue165-scholarly-status-result-2026-09-24.md`
 - `docs/discovery/post-issue165-project-health-2026-09-24.md`

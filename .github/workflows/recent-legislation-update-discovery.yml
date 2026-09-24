@@ -1,11 +1,9 @@
 name: Recent legislation update discovery
+# Passive historical/research workflow. Manual dispatch only under #290.
 
 on:
-  push:
-    paths:
-      - "scripts/discover_recent_legislation_updates.py"
-      - ".github/workflows/recent-legislation-update-discovery.yml"
   workflow_dispatch:
+
 
 concurrency:
   group: recent-legislation-update-discovery-main

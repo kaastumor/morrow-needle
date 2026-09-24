@@ -1,18 +1,9 @@
 name: Source Anomaly derived view
+# Passive historical/research workflow. Manual dispatch only under #290.
 
 on:
-  push:
-    paths:
-      - "src/needle/analytics/source_anomaly.py"
-      - "schemas/source-anomaly-*.schema.json"
-      - "fixtures/analytics/source-anomaly-first-cohort-v0.1.json"
-      - "fixtures/audit/reg2742-money-corrigendum-source-v0.1.json"
-      - "fixtures/audit/dir2008-7-split-temporal-source-v0.1.json"
-      - "fixtures/audit/reg905-2025-formex-publication-duplication-v0.1.json"
-      - "tests/test_source_anomaly_view.py"
-      - "scripts/build_source_anomaly_view.py"
-      - ".github/workflows/source-anomaly-view.yml"
   workflow_dispatch:
+
 
 jobs:
   verify:

@@ -79,7 +79,7 @@ Selected as the first eligible fresh result from the frozen ECHA primary search.
 
 Official sources:
 
-- https://echa.europa.eu/registry-of-restriction-intentions/-/dislist/details/0b0236e18051b53c
+- https://echa.europa.eu/registry-of-restriction-intentions/-/dislist/details/0b0236e18213ec9e
 - https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32021R2030
 - https://echa.europa.eu/de/-/echa-s-committees-conclude-on-two-restrictions-and-15-harmonised-classification-and-labelling-opinions
 

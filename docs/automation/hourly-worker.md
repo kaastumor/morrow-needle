@@ -135,6 +135,17 @@ from repository state without repeating or guessing prior work.
 - close the AUTO issue after merge;
 - reconcile parent gate/backlog/assumptions/ADR only when evidence changed them.
 
+## Actions cost discipline
+
+- Run relevant deterministic checks locally before publishing when a checkout is available.
+- Batch coherent file changes into one commit before opening the PR; avoid
+  one commit per file and repeated pushes merely to narrate progress.
+- Sanitation and unit tests run on PRs and main pushes, not feature-branch
+  pushes. Keep the final PR check and main verification.
+- Do not dispatch live probes or rerun successful workflows without a concrete
+  evidence need. Repair the cause before retrying a failed run.
+- No eligible task means stop; it does not justify a diagnostic Actions run.
+
 ## Scope restrictions
 
 The worker may not silently:

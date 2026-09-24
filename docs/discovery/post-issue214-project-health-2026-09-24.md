@@ -1,5 +1,13 @@
 # Post-#214 Project Health Check
 
+> **SUPERSEDED OPERATING DIRECTION — scientific result retained.**
+>
+> Sponsor direction #217 rejects `IDLE BY DESIGN` as a project state.
+> The #214 zero-rescue result and contraction of the project identity remain
+> canonical, but the research program now pivots continuously to bounded WIP=1
+> discovery. See
+> `docs/discovery/sponsor-research-continuity-override-2026-09-24.md`.
+>
 Date: 2026-09-24  
 Gate: #214 index-assisted latent diagnostic workflow pilot
 

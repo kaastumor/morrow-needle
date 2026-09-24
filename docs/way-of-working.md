@@ -20,8 +20,43 @@ without rebuilding the discarded architecture.
    approximated.
 7. **Delivery and discovery are different tracks.** Delivery implements accepted
    scope. Discovery produces evidence about possible scope.
-8. **Stop is a valid outcome.** A rejected feature hypothesis is successful
-   discovery.
+8. **Stop is a valid outcome for a hypothesis, not for the sponsored research program.** A rejected feature hypothesis is successful discovery; when no delivery horizon is earned, the project pivots to the next bounded research question under WIP=1.
+
+## Research continuity
+
+Morrow // Needle is sponsor-funded research. It must not enter an
+`IDLE BY DESIGN` operating state.
+
+When an implementation, feature, experiment or product hypothesis stops, the
+default transition is:
+
+> **reconcile -> wide-lens scan -> select one bounded research question -> continue**
+
+This is not permission to keep retrying the failed hypothesis.
+
+Research continuity must preserve:
+
+- WIP = 1;
+- strongest boring/incumbent baseline first;
+- explicit falsifiers and negative outcomes;
+- no post-hoc harder replacement cases;
+- no feature, ontology or schema growth merely to stay busy;
+- no standing expensive monitoring/CI work when source research is enough;
+- one bounded run and, at most, one follow-up unless genuinely new evidence
+  changes the boundary.
+
+If the immediately previous direction is exhausted, prefer an orthogonal
+question from:
+
+- fresh official-source anomalies;
+- adjacent-discipline literature/precedent;
+- unresolved internal evidence tensions;
+- under-covered legal-information mechanisms;
+- real external use or adoption signals.
+
+A completed work item may end in `REJECT`, `PARK`, `SIMPLIFY` or `STOP`.
+The project-level action is then **PIVOT TO RESEARCH**, unless the sponsor
+explicitly terminates the project.
 
 ## Selective reasoning escalation
 
@@ -279,6 +314,6 @@ At the end of a meaningful horizon:
 - run `docs/project-health.md`;
 - reconcile README, charter, backlog, assumptions and value evidence;
 - choose `continue / simplify / redirect / stop`;
-- prefer an idle queue to invented work.
+- if no delivery horizon is earned, pivot to exactly one bounded research question under the Research continuity rule; never use an idle-by-design project state.
 
 Activity count, commits and issue throughput are never project-value evidence.

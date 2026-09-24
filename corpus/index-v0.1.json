@@ -24,7 +24,8 @@
     "PROCEDURAL_SILENCE_LEGAL_EFFECT": "A legally specified period can expire without an affirmative administrative act and the governing rule itself assigns a legal consequence to that non-action; the resulting state cannot be reconstructed safely by searching only for positive decision documents.",
     "COHORTED_TRANSITIONAL_APPLICABILITY": "Current legal applicability depends on an object's qualifying historical cohort event or legacy state, such as placement on market, putting into service, certificate/declaration status or significant change; similar current objects can therefore have different legal treatment unless the cohort-defining history is preserved.",
     "PROCEDURAL_CLOCK_SUSPENSION": "A legally defined decision or assessment period can be suspended and later resumed by specified procedural events; nominal elapsed calendar or working time is not equivalent to elapsed legal clock time unless suspension intervals are preserved.",
-    "CROSS_ORDER_INCORPORATION_STATE": "A legal act can be operative in one legal order while remaining only relevant, under scrutiny, incorporated-but-not-yet-effective or otherwise non-operative in a linked legal order until a separate incorporation instrument and its entry-into-force conditions are satisfied; legal state, dates and adaptations must remain attached to the target legal order."
+    "CROSS_ORDER_INCORPORATION_STATE": "A legal act can be operative in one legal order while remaining only relevant, under scrutiny, incorporated-but-not-yet-effective or otherwise non-operative in a linked legal order until a separate incorporation instrument and its entry-into-force conditions are satisfied; legal state, dates and adaptations must remain attached to the target legal order.",
+    "DIFFERENTIATED_MEMBER_STATE_PARTICIPATION": "An EU act can bind or apply only in a legally defined subset of Member States because of enhanced cooperation, opt-ins or Treaty protocols, and that participation set can change over time; applicability must be resolved against the act's participation regime and relevant date rather than inferred from the EU act label or today's participant list."
   },
   "cases": [
     {
@@ -1162,7 +1163,51 @@
       "evidence_refs": [
         "issue:242"
       ]
+    },
+    {
+      "id": "eppo-time-varying-participation",
+      "title": "EPPO territorial applicability follows a time-varying participating Member-State set",
+      "domain": "criminal justice / enhanced cooperation",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "DIFFERENTIATED_MEMBER_STATE_PARTICIPATION"
+      ],
+      "provenance": {
+        "issue": 243,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Regulation 2017/1939 initially bound only enhanced-cooperation participants; later Member States joined at different dates and Hungary's 2026 entry changed the regime again, so today's participant set cannot be back-projected to an earlier date.",
+      "evidence_refs": [
+        "issue:243"
+      ]
+    },
+    {
+      "id": "rome-iii-participating-member-states",
+      "title": "Rome III Regulation applies only in participating Member States",
+      "domain": "private international law / divorce",
+      "jurisdiction": "EU",
+      "trap_classes": [
+        "DIFFERENTIATED_MEMBER_STATE_PARTICIPATION"
+      ],
+      "provenance": {
+        "issue": 243,
+        "role": "DERIVATION"
+      },
+      "exposure": {
+        "status": "PUBLIC_FROM_DISCOVERY",
+        "blind_reuse": false,
+        "future_use": "REGRESSION_ONLY"
+      },
+      "decisive_trap": "Regulation 1259/2010 is an EU Regulation but expressly operates through enhanced cooperation and defines participating Member States; EU instrument form alone does not prove EU-wide Member-State applicability.",
+      "evidence_refs": [
+        "issue:243"
+      ]
     }
   ],
-  "case_count": 48
+  "case_count": 50
 }

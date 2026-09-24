@@ -636,18 +636,16 @@ Morrow may reorder tasks when new evidence changes risk.
 When it does, the reason must be recorded here or in the relevant issue. The backlog must reflect actual project priorities rather than preserving stale plans.
 
 
-## Follow-up selected by review implementation #199
+## Current research handoff
 
-**#200 — consequential corpus-use test design — COMPLETED.**
+#203 is complete and PARKED / UNRESOLVED under its frozen grading.
 
-#200 found one feasible real task, froze comparator/outcome/materiality,
-reproduced the public conflict, verified the primary-evidence route, and created
-the separate execution issue #203.
+#207 and #209 subsequently rejected both remaining Cycle-3 new-family reserves
+against stronger incumbent concepts.
 
-**#203 — OPP-115 corpus-use diagnostic — EXPERIMENT READY.**
+#210 then completed the Astra-red-teamed design for a distinct question:
+**index-assisted latent diagnostic workflow value**.
 
-#203 requires separate fresh contexts/workers. It compares ordinary source-linked
-benchmark QA with the same task plus Needle corpus/protocol access under one
-frozen primary outcome and stop rule.
+#212 now owns fresh case compilation under the frozen #210 rules.
 
-No Cycle 4 or product implementation is authorised while #203 owns the decision.
+No Cycle 4 or product implementation is authorised while #212 owns preparation.

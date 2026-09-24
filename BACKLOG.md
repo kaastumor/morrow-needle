@@ -6,7 +6,7 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-# **DISCOVERY CYCLE 3 — #178 NEXT**
+# **DISCOVERY CYCLE 3 — #179 ACTIVE**
 
 #174 completed:
 
@@ -21,8 +21,8 @@ Cycle 3 parent: #177.
 
 WIP=1:
 
-1. #178 — official guidance/Q&A bindingness promotion — **NEXT**;
-2. #179 — registry absence as false negative evidence;
+1. #178 — official guidance/Q&A bindingness promotion — **ADOPT_FOR_EXPERIMENT**;
+2. #179 — registry absence as false negative evidence — **ACTIVE**;
 3. #180 — machine-readable official derivative drift;
 4. #181 — expert opinion/recommendation promoted into final decision;
 5. #183 — Cycle 3 synthesis.

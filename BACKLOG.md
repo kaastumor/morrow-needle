@@ -6,45 +6,52 @@ The backlog is a **risk register**, not a feature wishlist. Early work is ranked
 
 ## Autonomous Next Pick
 
-**#150 — adversarial audit of public legal benchmark integrity** is the only
-active experiment authorised by the completed Cycle 1 synthesis (#139).
+# **IDLE BY DESIGN**
 
-Cycle 1 decision: **CONTINUE** with the same essential identity:
+#150 is complete with **REVISE**.
+
+The post-#150 Project Health Check retains the essential identity:
 
 > **Needle = adversarial legal-research corpus + evaluation protocol.**
 
-#150 is a bounded `CORRECTNESS_VALIDITY` transfer test. It asks whether a small
-Needle-style adversarial audit can find a fresh, material benchmark-integrity
-defect or ambiguity that a credible public legal benchmark's own QA/dispute
-baseline has not already surfaced.
+The experiment found one fresh mechanical inconsistency in DELTA v1.1.0's
+public third-party harness/reproducibility contract, while three selected tasks
+produced no confirmed defect and one Dutch-law candidate remained unconfirmed.
 
-### #150 boundaries
+That is useful external-transfer evidence for Needle's evaluation-integrity /
+evidence-closure discipline, but it does not earn:
 
-- freeze exact benchmark/version/commit and sample before inspection;
-- exclude defects already public before sample freeze;
-- compare against the benchmark's own strongest realistic QA baseline;
-- one initial run plus at most one evidence follow-up;
-- contestable legal findings need independent qualified review before being
-  called material;
-- no benchmark platform, adapter, judge, leaderboard, dashboard or standing
-  audit service;
-- negative result is valid and may shrink Needle's transferable-value claim.
+- another benchmark audit;
+- a benchmark product/service;
+- a new discovery cycle;
+- Explorer promotion;
+- new infrastructure;
+- a replacement autonomous queue.
 
-### Parked / trigger-bound Cycle 1 results
+There is **no AUTO READY work**.
 
-- #135 judicial-document-role generality test — **PARK**; reopen on an
-  independently encountered second judicial-role contrast.
-- #136 Explorer workflow value — **PARK**; boxed synthetic evidence shows lower
-  mechanical indirection, but human importance/adoption is unknown. H-16 stays
-  unresolved and no human session is required now.
-- #138 evaluation-evidence closure — **PARK / TRIGGERED TECHNIQUE**; use a small
-  commitment → execution → reveal → closure pack only on the next independently
-  justified sealed/execution-sensitive evaluation.
+### Evidence triggers that may reopen work
 
-There is **no Cycle 2** and no permanent discovery worker.
+A new task may be selected only from a concrete trigger such as:
 
-Canonical synthesis:
-`docs/discovery/cycle1-synthesis-project-health-2026-09-24.md`
+1. a fresh falsifiable legal-information question grounded in authoritative
+   evidence;
+2. an independently encountered adversary that may add/challenge a corpus
+   failure mechanism;
+3. real intended-user Explorer use that makes H-16 decision-relevant;
+4. a named external legal-evaluation artifact with concrete integrity or
+   reproduction friction;
+5. an independently justified sealed/execution-sensitive evaluation that
+   naturally triggers the #138 closure technique;
+6. a direct external/user job with a falsifiable Needle relative-value claim.
+
+A linked-search hypothesis alone is not a trigger.
+
+Do not run another benchmark merely to establish generality after #150's
+positive finding.
+
+Canonical post-#150 decision:
+`docs/discovery/post-issue150-project-health-2026-09-24.md`
 
 The standing research/audit rules remain:
 

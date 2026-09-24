@@ -14,9 +14,12 @@ The pre-registered sample required:
 2. one fresh legislation.gov.uk revised-text lag case;
 3. one declared-snapshot negative control.
 
-The frozen control search returned no usable Single Market Scoreboard candidate.
+The frozen Single Market Scoreboard control was available.
 
-The hard stop therefore fired before the full three-part sample existed.
+The hard stop fired because the frozen legislation.gov.uk first-result pool
+contained no eligible positive case with an already-in-force, editorially
+unapplied change to the selected provision that materially changed a current-law
+answer.
 
 Do not rename `OFFICIAL_TRACKER_UPDATE_LAG`.
 
@@ -96,30 +99,30 @@ hash:
 The search result itself confirms that the page is a "Latest available
 (Revised)" view with outstanding changes not yet made by the editorial team.
 
-Because the negative-control pool had already failed, #174 stopped before
-substantive eligibility inspection of the hash-selected UK candidate.
+The frozen UK pool was inspected in hash order. No candidate satisfied all
+positive-case eligibility conditions. The strongest direct candidate, section
+11 of the 1981 Act, exposed 2026 Wales amendments that were prospective / not
+yet in force at experiment freeze.
 
 Status:
 
-`HASH_SELECTED / NOT_INSPECTED_FOR_ELIGIBILITY`
+`FROZEN_POOL_EXHAUSTED / NO_ELIGIBLE_POSITIVE`
 
-## Negative control — failed frozen pool
+## Negative control — available
 
 The exact frozen query was executed once:
 
 `site:single-market-scoreboard.ec.europa.eu "reporting period" "notifications" "2025"`
 
-The first returned result set contained no usable Single Market Scoreboard URL
-from which the pre-registered hash-selected control could be frozen.
+After excluding the Run C Finland page, the first result set still contained
+the Commission page "Notifications in the field of technical regulations (TRIS)
+and services (IMI)".
 
-The preregistration states:
+It explicitly declares reporting period `10/2024 – 09/2025` and presents its
+figures as a reporting/performance snapshot.
 
-> if the frozen searches/candidate rules cannot yield both positive cases and
-> one control: INDETERMINATE / SAMPLE_INCOMPLETE.
-
-It also prohibits replacement systems or additional queries after exposure.
-
-Therefore no broader/reworded Scoreboard search is allowed.
+That is a valid negative-control shape: an explicitly bounded reporting view is
+not defective merely because it is not real-time.
 
 ## Why this is not REJECT
 
@@ -127,8 +130,9 @@ The proposed `OFFICIAL_DERIVED_VIEW_LAG` mechanism was not falsified.
 
 The experiment failed earlier at complete fresh-sample construction.
 
-The sanctions candidate is directionally supportive and the UK pool exists, but
-partial evidence cannot substitute for the required negative control.
+The sanctions candidate is directionally supportive and the negative control
+worked, but the required fresh UK positive case could not be constructed under
+the frozen rule.
 
 Therefore:
 
@@ -136,14 +140,8 @@ Therefore:
 
 ## Why this is not SUPPORT
 
-The negative control is part of construct validity.
-
-Without it, a broader "derived view lag" class could accidentally label honest
-historical/reporting snapshots as defective merely because they are not
-real-time.
-
-That distinction was important enough to pre-register and cannot be waived
-after the search result is known.
+Both fresh positive systems were required. The frozen UK pool did not yield an
+eligible positive, and the sample cannot be repaired after exposure.
 
 ## Operational learning
 

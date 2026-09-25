@@ -18,6 +18,7 @@ MANIFEST = OUTPUT_DIR / "manifest.json"
 CASES = OUTPUT_DIR / "cases.jsonl"
 CLASSES = OUTPUT_DIR / "classes.json"
 EVIDENCE_MAP = OUTPUT_DIR / "evidence-map.json"
+CATALOG = OUTPUT_DIR / "catalog.md"
 
 PACK_VERSION = "needle-reference-pack-v0.1"
 REFERENCE_NAME = "NEEDLE_CORPUS_REFERENCE_2026-09-25"
@@ -171,6 +172,83 @@ def build_evidence_map(source: dict, cases: list[dict]) -> dict:
     }
 
 
+def class_anchor(class_id: str) -> str:
+    return "class-" + class_id.lower().replace("_", "-")
+
+
+def build_catalog(source: dict, cases: list[dict]) -> str:
+    lines = [
+        "# Needle Reference Pack v0.1 — Corpus Catalog",
+        "",
+        (
+            "> **Derived reference layer.** Generated from the frozen canonical corpus "
+            "index. Do not edit this catalog as legal truth; legal facts remain owned "
+            "by the referenced evidence chains."
+        ),
+        "",
+        f"Source reference: `{REFERENCE_NAME}`  ",
+        f"Reference commit: `{REFERENCE_COMMIT}`  ",
+        f"Canonical index blob: `{INDEX_BLOB}`  ",
+        (
+            "Exposure rule: **all cases are exposed and REGRESSION_ONLY; none is "
+            "fresh blind validation.**"
+        ),
+        "",
+        "## Class index",
+        "",
+    ]
+
+    for class_id in sorted(source["trap_classes"]):
+        member_count = sum(
+            class_id in case["trap_classes"] for case in cases
+        )
+        lines.extend(
+            [
+                f'<a id="{class_anchor(class_id)}"></a>',
+                f"### `{class_id}`",
+                "",
+                source["trap_classes"][class_id],
+                "",
+                f"Case count: **{member_count}**",
+                "",
+            ]
+        )
+
+    lines.extend(["## Cases", ""])
+    for case in cases:
+        classes = ", ".join(
+            f"[`{class_id}`](#{class_anchor(class_id)})"
+            for class_id in case["trap_classes"]
+        )
+        provenance = case["provenance"]["role"]
+        issue_number = case["provenance"].get("issue")
+        if issue_number is not None:
+            provenance += f" (issue:{issue_number})"
+        exposure = case["exposure"]
+        refs = ", ".join(f"`{ref}`" for ref in case["evidence_refs"])
+        lines.extend(
+            [
+                f'<a id="case-{case["id"]}"></a>',
+                f"### `{case['id']}` — {case['title']}",
+                "",
+                f"- **Domain:** {case['domain']}",
+                f"- **Jurisdiction:** {case['jurisdiction']}",
+                f"- **Trap classes:** {classes}",
+                f"- **Provenance:** {provenance}",
+                (
+                    f"- **Exposure / reuse:** {exposure['status']}; "
+                    f"blind reuse = `{str(exposure['blind_reuse']).lower()}`; "
+                    f"future use = **{exposure['future_use']}**"
+                ),
+                f"- **Decisive trap:** {case['decisive_trap']}",
+                f"- **Evidence refs:** {refs}",
+                "",
+            ]
+        )
+
+    return "\n".join(lines) + "\n"
+
+
 def build_manifest(source: dict, evidence_map: dict) -> dict:
     exposures = {
         (
@@ -221,6 +299,11 @@ def build_manifest(source: dict, evidence_map: dict) -> dict:
                 "issue_owners": evidence_map["counts"]["issue_owners"],
                 "path_owners": evidence_map["counts"]["path_owners"],
             },
+            "catalog.md": {
+                "record_type": "human_catalog",
+                "case_entries": EXPECTED_CASES,
+                "class_entries": EXPECTED_CLASSES,
+            },
         },
         "generation_contract": {
             "builder": "scripts/build_reference_pack.py",
@@ -264,6 +347,7 @@ def main() -> None:
     write_jsonl(CASES, cases)
     write_json(CLASSES, build_classes(source, cases))
     write_json(EVIDENCE_MAP, evidence_map)
+    CATALOG.write_text(build_catalog(source, cases), encoding="utf-8", newline="\n")
     write_json(MANIFEST, build_manifest(source, evidence_map))
 
 

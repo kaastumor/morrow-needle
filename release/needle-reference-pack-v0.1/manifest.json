@@ -17,6 +17,11 @@
       "record_type": "case",
       "records": 81
     },
+    "catalog.md": {
+      "case_entries": 81,
+      "class_entries": 26,
+      "record_type": "human_catalog"
+    },
     "classes.json": {
       "record_type": "trap_class",
       "records": 26

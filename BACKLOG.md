@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — REGRESSION CONTRACT**
+# **DISCOVER — METAMORPHIC REGRESSION**
 
 Frozen scientific source:
 
@@ -23,44 +23,47 @@ Released use surface:
 
 ### Current WIP
 
-# **#311 — executable regression corpus vs reference catalog**
+# **#313 — metamorphic regression derivation**
 
 Result:
 
-> **KEEP_REGRESSION_REFERENCE_LABEL**
+> **ADOPT_METAMORPHIC_DERIVATION**
 
-Boundary established:
+Strict rule:
 
-- Reference Pack v0.1 is a complete reference catalog/navigation layer;
-- all 81 cases are exposed regression/reference material;
-- pack case records do not themselves contain a uniform task + expected-answer + pass/fail
-  execution contract;
-- the 10 EVALUATION cases preserve genuine exposed executable contracts at repository
-  level through the #88/#97 prompts/answer keys/results;
-- DERIVATION cases preserve heterogeneous fixtures/issues/evidence suitable for known-case
-  regression, but not one standardized 71-case executable suite;
-- do not synthesize post-hoc prompts/answer keys and present them as historical scientific
-  inputs.
+> A valid metamorphic regression must reuse an accepted exposed case, hold the scenario
+> sufficiently fixed, change one named legally material state variable, and have an
+> evidence-backed expected relation on both sides. Same-class analogy is not enough.
 
-Durable wording:
+Bounded derived relations:
 
-> **Regression/reference corpus** means exposed, source-backed failure cases suitable for
-> known-case regression and reference use. It does not mean every case ships as a
-> standardized runnable prompt/oracle or that the corpus is a representative benchmark.
+1. #88 licence 13:00 boundary — 12:59 vs 13:01 changes deemed lodgement day;
+2. Stripchat DSA application start — designation held constant while application state
+   flips at the adjacent boundary;
+3. toy harmonised-standard gateway — parent text and standard identifier held constant
+   while OJ reference restriction changes the derived presumption;
+4. Ireland Protocol 21 — same act/member state, participation state changes through the
+   preserved post-adoption opt-in route.
 
-Audit:
+Negative controls reject same-class analogy, multi-dimensional composition and
+counterfactuals invented from trap text.
 
-> `docs/audits/regression-contract-boundary-2026-09-25.md`
+Derived artifact:
 
-### Next eligible discovery after #311 merge
+> `fixtures/regression/frozen-reference-metamorphic-v0.1.json`
 
-# **#313 — metamorphic regression derivation**
+Scientific corpus remains exactly 81/26; all derived relations are exposed
+`REGRESSION_ONLY`.
 
-#313 tests whether existing frozen cases contain evidence-backed one-variable legal-state
-transformations that can improve regression discipline without adding cases, model runs,
-taxonomy or fresh-evaluation claims.
+### Next eligible discovery after #313 merge
 
-WIP=1 remains binding: #313 execution starts only after #311 merges/closes.
+# **#315 — frozen source-system diversity profile**
+
+#315 tests whether the old EUR-Lex/Commission source-system concentration warning can be
+re-measured honestly across the frozen corpus using existing evidence owners, without
+adding source metadata to the canonical schema or doing new legal research.
+
+WIP=1 remains binding: #315 execution starts only after #313 merges/closes.
 
 ## Historical backlog archive
 

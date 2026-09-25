@@ -58,6 +58,20 @@ Do not synthesize post-hoc prompts/answer keys from `decisive_trap` and present 
 historical scientific inputs. See
 `docs/audits/regression-contract-boundary-2026-09-25.md`.
 
+## Derived metamorphic regressions
+
+A small post-hoc regression layer records evidence-backed cases where one legally material
+state variable changes while the controlled scenario remains sufficiently fixed:
+
+`fixtures/regression/frozen-reference-metamorphic-v0.1.json`
+
+These relations test known state-transition properties (for example adjacent temporal or
+application boundaries). They add **zero** scientific cases and remain exposed
+`REGRESSION_ONLY` material. Same-class analogy is not enough; each relation must already
+be supported on both sides by an existing evidence owner.
+
+See `docs/audits/metamorphic-regression-derivation-2026-09-25.md`.
+
 ## The contamination rule
 
 **Discovery evidence and validation evidence are different things.**

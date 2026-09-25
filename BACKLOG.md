@@ -21,41 +21,47 @@ Released use surface remains:
 
 > **Needle Reference Pack v0.1 — REFERENCE_PACK_READY**
 
-### WIP = 1
+### Current WIP
 
 # **#306 — issue-owner drift / archival integrity**
 
-Question:
+Result:
 
-> Can issue-backed evidence navigation be made drift-detectable or release-verifiable
-> without copying mutable GitHub issue content into a second legal-truth store?
+> **ADOPT_DOC_ONLY**
+
+Measured exposure:
+
+- 45/81 cases (55.6%) are issue-only in the Reference Pack;
+- 32/54 unique issue owners serve only issue-only cases;
+- stable issue identity/navigation does not freeze mutable body/comment content;
+- content fingerprints can detect drift but cannot recover prior evidence and would add a
+  network-dependent release input;
+- Git-backed snapshots would provide recovery but duplicate evidence ownership without a
+  demonstrated need.
+
+Durable rule:
+
+> Treat issue-only refs as mutable navigation owners. If exact as-of-release issue content
+> is required, preserve it deliberately in Git-backed state or state the limitation.
+
+Reference Pack v0.1 remains frozen and unchanged.
+
+### Next eligible discovery after #306 merge
+
+# **#307 — external reuse rights and citation contract**
 
 Trigger:
 
-- repository-path owners are pinned to the frozen source commit;
-- GitHub issue bodies/comments remain mutable;
-- **45/81 cases (55.6%) currently have only issue-backed evidence refs in the pack**;
-- #306 tests documentation-only, identity-metadata, fingerprint-attestation and
-  Git-backed-snapshot approaches against the strongest boring baseline.
+- repository is public;
+- GitHub reports no repository license;
+- no root `LICENSE` / `COPYING` or `CITATION.cff`;
+- `pyproject.toml` declares no license metadata.
 
-Guardrails:
+#307 will separate view/fork permission, reuse/distribution permission, third-party legal
+source material, citation metadata and software-package metadata. It must not select or
+apply a legal license without explicit owner authorization.
 
-- no corpus/taxonomy change;
-- no new legal research;
-- no product/workflow claim;
-- #214 remains a hard null;
-- Reference Pack remains a derived navigation/reference layer;
-- no new network-dependent release artifact without a separate earned implementation
-  decision;
-- WIP=1: complete #306 before selecting another project question.
-
-Expected disposition:
-
-> `ADOPT_DOC_ONLY` / `ADOPT_ATTESTATION` / `PARK` / `REJECT`
-
-The issue's falsifier is binding: if extra machinery only detects drift but cannot
-preserve/recover the earlier evidence state, prefer explicit limitation documentation
-over a false archival guarantee.
+WIP=1 remains binding: #307 execution starts only after #306 is merged/closed.
 
 ## Historical backlog archive
 

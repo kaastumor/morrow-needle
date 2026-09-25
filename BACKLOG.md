@@ -21,28 +21,55 @@ Released use surface:
 
 > **Needle Reference Pack v0.1 — REFERENCE_PACK_READY**
 
-### WIP = 1
+### Current WIP
 
 # **#315 — frozen source-system diversity profile**
 
-Question:
+Result:
 
-> Can the frozen corpus's source-system diversity and concentration be measured honestly
-> from existing accepted evidence owners, without changing canonical metadata or reopening
-> legal research?
+> **REVISE_METHOD**
 
-Method constraints:
+What survived:
 
-- classify only from accepted evidence-owner content;
-- use a small derived source-family vocabulary;
-- multi-family cases are allowed;
-- use `UNKNOWN` rather than infer from case domain/jurisdiction;
-- issue-only evidence retains #306's mutability caveat;
-- no canonical `source_system` field follows from this audit.
+- accepted evidence now clearly spans more than ordinary EUR-Lex/Commission text:
+  Member-State official sources, private legally recognised sources, EU agencies/bodies,
+  official registers/datasets/machine artifacts and linked-order/international-agreement
+  evidence are all present;
+- the 19/23-case seed warning that domain diversity exceeded source-system diversity has
+  therefore been partially reduced.
 
-Expected disposition:
+What did **not** survive:
 
-> `ADOPT_SOURCE_PROFILE` / `REVISE_METHOD` / `NO_RELIABLE_MEASUREMENT` / `PARK`
+- the canonical corpus does not encode a per-case source-system inventory;
+- 34 cases can be read from substantive frozen Git-backed owners;
+- 45 cases are issue-only;
+- 2 nominally path-backed cases point to placeholder result files and require issue
+  fallback;
+- shared issues and evaluation packets contain sources for several cases, so owner-level
+  family hits cannot be promoted into exact case-level percentages without semantic
+  annotation.
+
+Durable conclusion:
+
+> source-family variety broadened, but exact frozen corpus-wide source-system
+> concentration is **not reproducibly measured** by current canonical metadata.
+
+Audit:
+
+> `docs/audits/frozen-source-system-diversity-2026-09-25.md`
+
+No canonical `source_system` field or derived 81-row source inventory was created merely
+to make the metric available.
+
+### Next eligible discovery after #315 merge
+
+# **#317 — negative/null evidence discoverability**
+
+#317 tests whether the polished positive-case corpus/reference surfaces make binding null,
+parity, REJECT and PARK evidence too hard to discover, or whether README/value-evidence/
+assumption owners already prevent claim resurrection without another registry.
+
+WIP=1 remains binding: #317 execution starts only after #315 merges/closes.
 
 ## Historical backlog archive
 

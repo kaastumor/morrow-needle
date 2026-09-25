@@ -1,0 +1,125 @@
+{
+  "artifact_role": "POST_HOC_DERIVED_REGRESSION_MAP",
+  "warning": "Derived after the underlying cases were exposed. This file adds no scientific cases, is REGRESSION_ONLY, and must not be treated as fresh validation or historical experimental design.",
+  "source_reference": {
+    "name": "NEEDLE_CORPUS_REFERENCE_2026-09-25",
+    "commit": "c3416514e054e8c3c61ca4d42c4534eca21e1cc5",
+    "cases": 81,
+    "classes": 26
+  },
+  "definition": {
+    "metamorphic_relation": "A controlled known-case regression relation in which the scenario is held sufficiently fixed, one named legally material state variable changes, and the consequential expected outcome/relation is already supported on both sides by existing evidence.",
+    "exclusions": [
+      "Same trap class alone is not a metamorphic relation.",
+      "Analogous cases with different instruments, actors, facts or procedures are not treated as controlled pairs.",
+      "No counterfactual expected answer may be invented from a trap-class label.",
+      "A relation requiring new legal research is excluded."
+    ]
+  },
+  "relations": [
+    {
+      "id": "MR-01-LICENCE-1300-BOUNDARY",
+      "case_id": "adv-licence-1300-boundary",
+      "relation_kind": "ADJACENT_TEMPORAL_BOUNDARY",
+      "controlled_scenario": "Two otherwise valid licence applications received by the same issuing authority on the same working Tuesday; Wednesday is also a working day.",
+      "invariant_state": [
+        "same governing rule: Implementing Regulation (EU) 2016/1239 Article 3(1)",
+        "same issuing authority",
+        "same calendar day and validity assumptions"
+      ],
+      "mutation": {
+        "variable": "receipt_time_brussels",
+        "from": "12:59",
+        "to": "13:01"
+      },
+      "expected_relation": {
+        "before": "deemed lodged Tuesday",
+        "after": "deemed lodged Wednesday",
+        "consequence": "A two-minute crossing of the 13:00 boundary changes the legally deemed lodgement day."
+      },
+      "evidence_refs": [
+        "issue:88",
+        "path:fixtures/value-gates/issue88-phase-a-prompts-v0.1.json",
+        "path:fixtures/value-gates/issue88-phase-a-answer-key-v0.1.json"
+      ]
+    },
+    {
+      "id": "MR-02-STRIPCHAT-APPLICATION-START",
+      "case_id": "dsa-stripchat-status-application-lag",
+      "relation_kind": "ADJACENT_APPLICATION_BOUNDARY",
+      "controlled_scenario": "Stripchat remains in the same designation state across the adjacent dates around the preserved Section 5 application start.",
+      "invariant_state": [
+        "same service: Stripchat / Technius Ltd.",
+        "same DSA Section 5 obligation target",
+        "designation remains in force across the selected adjacent dates"
+      ],
+      "mutation": {
+        "variable": "query_date",
+        "from": "2024-04-20",
+        "to": "2024-04-21"
+      },
+      "expected_relation": {
+        "before": "designated, but Section 5 additional obligations not yet applicable",
+        "after": "designated, and Section 5 additional obligations applicable",
+        "consequence": "Designation state can remain unchanged while application state flips at its own legal boundary."
+      },
+      "evidence_refs": [
+        "issue:78",
+        "path:fixtures/temporal/dsa-stripchat-designation-application-lag-v0.1.json"
+      ]
+    },
+    {
+      "id": "MR-03-TOY-STANDARD-REFERENCE-STATUS",
+      "case_id": "toy-wave-roller-dynamic-standard-gateway",
+      "relation_kind": "DYNAMIC_EXTERNAL_STATUS_MUTATION",
+      "controlled_scenario": "The Toy Safety Directive Article 13 gateway and EN 71-1:2014+A1:2018 standard identity remain unchanged.",
+      "invariant_state": [
+        "Directive 2009/48/EC Article 13 text hash unchanged",
+        "standard identifier EN 71-1:2014+A1:2018 unchanged",
+        "target product scope remains the specified wave-roller clauses"
+      ],
+      "mutation": {
+        "variable": "official_OJ_reference_status_for_wave_roller_scope",
+        "from": "REFERENCE_PUBLISHED_WITHOUT_WAVE_ROLLER_RESTRICTION",
+        "to": "REFERENCE_PUBLISHED_WITH_RESTRICTION",
+        "transition_effective_from": "2025-09-10"
+      },
+      "expected_relation": {
+        "before": "published reference has no wave-roller-specific restriction",
+        "after": "specified wave-roller clauses no longer confer the same presumption of conformity for the restricted scope",
+        "consequence": "An external authoritative status mutation narrows legal effect without parent-gateway or standard-identifier mutation."
+      },
+      "evidence_refs": [
+        "issue:77",
+        "path:fixtures/discovery/toy-wave-roller-dynamic-standard-gateway-v0.1.json"
+      ]
+    },
+    {
+      "id": "MR-04-IRELAND-PROTOCOL21-PARTICIPATION",
+      "case_id": "ireland-aamm-protocol21-post-adoption-opt-in",
+      "relation_kind": "PARTICIPATION_STATE_MUTATION",
+      "controlled_scenario": "Same Member State (Ireland) and same Regulation (EU) 2024/1351; compare the preserved adoption-state participation position with the later confirmed post-adoption opt-in state.",
+      "invariant_state": [
+        "same Member State: Ireland",
+        "same Union act: Regulation (EU) 2024/1351",
+        "same participation regime family: Protocol 21 Article 4 route"
+      ],
+      "mutation": {
+        "variable": "legally_confirmed_participation_state",
+        "from": "not participating / not bound at adoption under the preserved Protocol 21 state",
+        "to": "participation confirmed after Ireland's notification and Commission Decision (EU) 2024/2088",
+        "confirmation_decision_entry_into_force": "2024-08-22"
+      },
+      "expected_relation": {
+        "before": "the adoption-state recital cannot be read as Ireland participating in the Regulation",
+        "after": "Ireland participates following the legally operative post-adoption route",
+        "consequence": "Participation in the same EU act is time-varying and cannot be inferred from either the adoption recital or today's participant state alone."
+      },
+      "evidence_refs": [
+        "issue:273",
+        "path:docs/discovery/issue273-protocol-participation-result-2026-09-25.md"
+      ],
+      "limitation": "This relation concerns participation/binding state. It does not assert that every substantive provision of the Regulation was already applicable on 22 August 2024."
+    }
+  ]
+}

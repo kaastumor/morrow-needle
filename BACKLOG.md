@@ -21,35 +21,46 @@ Released use surface:
 
 > **Needle Reference Pack v0.1 — REFERENCE_PACK_READY**
 
-### WIP = 1
+### Current WIP
 
 # **#311 — executable regression corpus vs reference catalog**
 
-Question:
+Result:
 
-> Is Needle's current "regression/reference corpus" identity operationally accurate for
-> an external consumer, or does the released pack primarily preserve reference material
-> while executable regression contracts exist only for a subset/deeper repository owners?
+> **KEEP_REGRESSION_REFERENCE_LABEL**
 
-Required distinction:
+Boundary established:
 
-- reference catalog;
-- regression fixture/material;
-- executable regression suite;
-- benchmark/evaluation suite.
+- Reference Pack v0.1 is a complete reference catalog/navigation layer;
+- all 81 cases are exposed regression/reference material;
+- pack case records do not themselves contain a uniform task + expected-answer + pass/fail
+  execution contract;
+- the 10 EVALUATION cases preserve genuine exposed executable contracts at repository
+  level through the #88/#97 prompts/answer keys/results;
+- DERIVATION cases preserve heterogeneous fixtures/issues/evidence suitable for known-case
+  regression, but not one standardized 71-case executable suite;
+- do not synthesize post-hoc prompts/answer keys and present them as historical scientific
+  inputs.
 
-Guardrails:
+Durable wording:
 
-- no new cases/classes or model runs;
-- no synthesized historical tasks/answer keys;
-- exposed cases remain REGRESSION_ONLY;
-- #214 remains a hard null;
-- strongest boring description wins over new machinery.
+> **Regression/reference corpus** means exposed, source-backed failure cases suitable for
+> known-case regression and reference use. It does not mean every case ships as a
+> standardized runnable prompt/oracle or that the corpus is a representative benchmark.
 
-Expected disposition:
+Audit:
 
-> `KEEP_REGRESSION_REFERENCE_LABEL` / `NARROW_TO_REFERENCE_CORPUS` /
-> `ADOPT_MINIMAL_REGRESSION_CONTRACT` / `PARK`
+> `docs/audits/regression-contract-boundary-2026-09-25.md`
+
+### Next eligible discovery after #311 merge
+
+# **#313 — metamorphic regression derivation**
+
+#313 tests whether existing frozen cases contain evidence-backed one-variable legal-state
+transformations that can improve regression discipline without adding cases, model runs,
+taxonomy or fresh-evaluation claims.
+
+WIP=1 remains binding: #313 execution starts only after #311 merges/closes.
 
 ## Historical backlog archive
 

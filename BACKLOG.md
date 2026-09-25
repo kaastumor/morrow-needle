@@ -11,58 +11,53 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — EXTERNAL REUSE CONTRACT**
+# **DISCOVER — FROZEN CORPUS LIMITATIONS**
 
-Frozen scientific source remains unchanged:
+Frozen scientific source:
 
 > **NEEDLE_CORPUS_REFERENCE_2026-09-25 — 81 cases / 26 classes**
 
-Released use surface remains:
+Released use surface:
 
 > **Needle Reference Pack v0.1 — REFERENCE_PACK_READY**
 
 ### Current WIP
 
-# **#307 — external reuse rights and citation contract**
+# **#309 — frozen corpus concentration and regression-misuse audit**
 
 Result:
 
-> **OWNER_LICENSE_DECISION_REQUIRED**
+> **ADOPT_LIMITATIONS_PROFILE**
 
-Measured repository state:
+Frozen-state findings:
 
-- repository visibility is public;
-- GitHub license detection is null;
-- no root `LICENSE` / `COPYING`;
-- no root `CITATION.cff`;
-- `pyproject.toml` declares no license metadata;
-- the frozen Reference Pack contains derived project metadata/navigation and no raw
-  source-text field.
+- 71/81 cases are DERIVATION; 10/81 are EVALUATION;
+- all 10 evaluation cases come from two evaluation programmes (#88 and #97);
+- only 8/26 classes have any EVALUATION case; 18/26 remain derivation-only;
+- every class now has 3–5 cases, eliminating the seed's singleton classes but creating a
+  curated near-flat support profile that must not be read as prevalence;
+- 75/81 cases are single-class; 6 are explicitly multi-class;
+- exact domain labels are broad but highly granular (68 labels, mostly singletons);
+- exact `EU` jurisdiction remains 53/81 cases;
+- source-system diversity is not a first-class corpus field and cannot be honestly
+  quantified without reopening evidence owners;
+- older-digitised-source coverage remains unsupported from canonical metadata.
 
-Interpretation:
+Durable output:
 
-- public visibility makes the project inspectable but is not itself a project grant for
-  broad reproduction/modification/distribution;
-- citation metadata would improve attribution but does not grant reuse permission;
-- the strongest boring open-reuse solution is likely one standard project license plus a
-  third-party-material caveat, but selecting terms is an explicit owner decision;
-- until then, describe the project/pack as publicly inspectable reference material, not
-  openly licensed reusable material.
+> `docs/audits/frozen-corpus-concentration-misuse-2026-09-25.md`
 
-Bounded repair:
+No case/class, taxonomy or pack-byte change was made.
 
-- root README now states the current rights/citation status;
-- frozen Reference Pack v0.1 bytes remain unchanged.
+### Next eligible discovery after #309 merge
 
-### Next eligible discovery after #307 merge
+# **#311 — executable regression corpus vs reference catalog**
 
-# **#309 — frozen corpus concentration and regression-misuse audit**
+#311 tests whether the canonical "regression/reference corpus" identity is operationally
+accurate for an external consumer, given that most case records preserve decisive traps
+and evidence refs but not a standardized executable question/oracle.
 
-The existing bias audit owns the 19-case seed with additions only through 23 cases. #309
-will re-measure the final frozen **81-case / 26-class** state without changing taxonomy,
-adding cases, scoring difficulty or manufacturing a new benchmark claim.
-
-WIP=1 remains binding: #309 execution starts only after #307 merges/closes.
+WIP=1 remains binding: #311 execution starts only after #309 merges/closes.
 
 ## Historical backlog archive
 

@@ -129,6 +129,15 @@ versioned regression/reference checkpoint. It does **not** mean:
 Exact checkpoint evidence belongs in the owning release-review record; the index remains
 the live corpus owner.
 
+## Current limitations profile
+
+The current frozen-state concentration, provenance and misuse-risk audit is:
+
+`docs/audits/frozen-corpus-concentration-misuse-2026-09-25.md`
+
+Use it when interpreting coverage. Class support counts describe curated regression
+coverage, not prevalence, importance, representativeness or fresh validation.
+
 ## Validation
 
 Run:

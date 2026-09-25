@@ -11,58 +11,45 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — EXTERNAL REUSE CONTRACT**
+# **DISCOVER — FROZEN CORPUS LIMITATIONS**
 
-Frozen scientific source remains unchanged:
+Frozen scientific source:
 
 > **NEEDLE_CORPUS_REFERENCE_2026-09-25 — 81 cases / 26 classes**
 
-Released use surface remains:
+Released use surface:
 
 > **Needle Reference Pack v0.1 — REFERENCE_PACK_READY**
 
-### Current WIP
-
-# **#307 — external reuse rights and citation contract**
-
-Result:
-
-> **OWNER_LICENSE_DECISION_REQUIRED**
-
-Measured repository state:
-
-- repository visibility is public;
-- GitHub license detection is null;
-- no root `LICENSE` / `COPYING`;
-- no root `CITATION.cff`;
-- `pyproject.toml` declares no license metadata;
-- the frozen Reference Pack contains derived project metadata/navigation and no raw
-  source-text field.
-
-Interpretation:
-
-- public visibility makes the project inspectable but is not itself a project grant for
-  broad reproduction/modification/distribution;
-- citation metadata would improve attribution but does not grant reuse permission;
-- the strongest boring open-reuse solution is likely one standard project license plus a
-  third-party-material caveat, but selecting terms is an explicit owner decision;
-- until then, describe the project/pack as publicly inspectable reference material, not
-  openly licensed reusable material.
-
-Bounded repair:
-
-- root README now states the current rights/citation status;
-- frozen Reference Pack v0.1 bytes remain unchanged.
-
-### Next eligible discovery after #307 merge
+### WIP = 1
 
 # **#309 — frozen corpus concentration and regression-misuse audit**
 
-The existing bias audit owns the 19-case seed with additions only through 23 cases. #309
-will re-measure the final frozen **81-case / 26-class** state without changing taxonomy,
-adding cases, scoring difficulty or manufacturing a new benchmark claim.
+Question:
 
-WIP=1 remains binding: #309 execution starts only after #307 merges/closes.
+> What concentration, imbalance and provenance structure does the final frozen 81-case
+> corpus actually have, and what misuse risks should a regression/reference consumer
+> understand?
+
+Trigger:
+
+- maintained corpus-bias audit was written for the 19-case seed and appended only through
+  23 cases;
+- the frozen corpus is now 81/26;
+- the polished Reference Pack increases the chance that consumers mistake curated
+  regression coverage for representative benchmark coverage.
+
+Guardrails:
+
+- no new cases/classes or taxonomy change;
+- no difficulty/model scoring;
+- all cases remain exposed and REGRESSION_ONLY;
+- #214 remains a hard null;
+- coverage gaps do not become an automatic case-hunting queue.
+
+Expected disposition:
+
+> `ADOPT_LIMITATIONS_PROFILE` / `REVISE_PACK_GUIDANCE` / `NO_MATERIAL_CHANGE`
 
 ## Historical backlog archive
 

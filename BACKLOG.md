@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — SOURCE-SYSTEM DIVERSITY**
+# **DISCOVER — NEGATIVE EVIDENCE DISCOVERABILITY**
 
 Frozen scientific source:
 
@@ -21,55 +21,34 @@ Released use surface:
 
 > **Needle Reference Pack v0.1 — REFERENCE_PACK_READY**
 
-### Current WIP
-
-# **#315 — frozen source-system diversity profile**
-
-Result:
-
-> **REVISE_METHOD**
-
-What survived:
-
-- accepted evidence now clearly spans more than ordinary EUR-Lex/Commission text:
-  Member-State official sources, private legally recognised sources, EU agencies/bodies,
-  official registers/datasets/machine artifacts and linked-order/international-agreement
-  evidence are all present;
-- the 19/23-case seed warning that domain diversity exceeded source-system diversity has
-  therefore been partially reduced.
-
-What did **not** survive:
-
-- the canonical corpus does not encode a per-case source-system inventory;
-- 34 cases can be read from substantive frozen Git-backed owners;
-- 45 cases are issue-only;
-- 2 nominally path-backed cases point to placeholder result files and require issue
-  fallback;
-- shared issues and evaluation packets contain sources for several cases, so owner-level
-  family hits cannot be promoted into exact case-level percentages without semantic
-  annotation.
-
-Durable conclusion:
-
-> source-family variety broadened, but exact frozen corpus-wide source-system
-> concentration is **not reproducibly measured** by current canonical metadata.
-
-Audit:
-
-> `docs/audits/frozen-source-system-diversity-2026-09-25.md`
-
-No canonical `source_system` field or derived 81-row source inventory was created merely
-to make the metric available.
-
-### Next eligible discovery after #315 merge
+### WIP = 1
 
 # **#317 — negative/null evidence discoverability**
 
-#317 tests whether the polished positive-case corpus/reference surfaces make binding null,
-parity, REJECT and PARK evidence too hard to discover, or whether README/value-evidence/
-assumption owners already prevent claim resurrection without another registry.
+Question:
 
-WIP=1 remains binding: #317 execution starts only after #315 merges/closes.
+> Do current orientation/value-evidence owners make binding null, parity, REJECT and PARK
+> outcomes discoverable enough to prevent future claim resurrection, or does the polished
+> positive-case corpus need a minimal negative-evidence navigation repair?
+
+Materiality rule:
+
+- include only outcomes that constrain current project claims, identity, evaluation
+  interpretation or future reuse;
+- do not index every ordinary dead end;
+- distinguish current binding negative evidence from superseded historical rationale.
+
+Guardrails:
+
+- no rewriting historical outcomes;
+- no corpus/class/product change;
+- #214 remains a hard null;
+- prefer repairing an existing owner over creating a second truth registry.
+
+Expected disposition:
+
+> `CURRENT_OWNERS_SUFFICIENT` / `ADOPT_NEGATIVE_EVIDENCE_NAVIGATION` /
+> `REVISE_EXISTING_OWNER` / `PARK`
 
 ## Historical backlog archive
 

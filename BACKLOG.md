@@ -21,32 +21,49 @@ Released use surface:
 
 > **Needle Reference Pack v0.1 — REFERENCE_PACK_READY**
 
-### WIP = 1
+### Current WIP
 
 # **#313 — metamorphic regression derivation**
 
-Question:
+Result:
 
-> Can already-frozen, exposed corpus evidence support rigorous one-variable legal-state
-> transformations that strengthen known-case regression without adding scientific cases
-> or manufacturing fresh evaluation claims?
+> **ADOPT_METAMORPHIC_DERIVATION**
 
-Candidate families are drawn only from existing evidence owners. A valid relation must
-hold the scenario sufficiently fixed, change one named legally material variable, and
-have an evidence-backed expected relation/outcome.
+Strict rule:
 
-Guardrails:
+> A valid metamorphic regression must reuse an accepted exposed case, hold the scenario
+> sufficiently fixed, change one named legally material state variable, and have an
+> evidence-backed expected relation on both sides. Same-class analogy is not enough.
 
-- no new cases/classes or legal research;
-- no model runs/performance claim;
-- no exhaustive pair generator;
-- post-hoc derivation must remain explicit;
-- all resulting material remains exposed / REGRESSION_ONLY;
-- #214 remains a hard null.
+Bounded derived relations:
 
-Expected disposition:
+1. #88 licence 13:00 boundary — 12:59 vs 13:01 changes deemed lodgement day;
+2. Stripchat DSA application start — designation held constant while application state
+   flips at the adjacent boundary;
+3. toy harmonised-standard gateway — parent text and standard identifier held constant
+   while OJ reference restriction changes the derived presumption;
+4. Ireland Protocol 21 — same act/member state, participation state changes through the
+   preserved post-adoption opt-in route.
 
-> `ADOPT_METAMORPHIC_DERIVATION` / `REVISE_CONCEPT` / `PARK` / `REJECT`
+Negative controls reject same-class analogy, multi-dimensional composition and
+counterfactuals invented from trap text.
+
+Derived artifact:
+
+> `fixtures/regression/frozen-reference-metamorphic-v0.1.json`
+
+Scientific corpus remains exactly 81/26; all derived relations are exposed
+`REGRESSION_ONLY`.
+
+### Next eligible discovery after #313 merge
+
+# **#315 — frozen source-system diversity profile**
+
+#315 tests whether the old EUR-Lex/Commission source-system concentration warning can be
+re-measured honestly across the frozen corpus using existing evidence owners, without
+adding source metadata to the canonical schema or doing new legal research.
+
+WIP=1 remains binding: #315 execution starts only after #313 merges/closes.
 
 ## Historical backlog archive
 

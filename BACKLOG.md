@@ -21,35 +21,42 @@ Released use surface:
 
 > **Needle Reference Pack v0.1 — REFERENCE_PACK_READY**
 
-### WIP = 1
+### Current WIP
 
 # **#319 — frozen trap-class boundary / negative-control audit**
 
-Question:
+Result:
 
-> Do the 26 frozen classes have real source-backed limiting evidence, or are some merely
-> well-populated positive-example families whose definitions outrun their tested boundary?
+> **BOUNDARIES_ADEQUATE**
 
-Allowed support labels:
+Frozen taxonomy boundary profile:
 
-- `EXPLICIT_NEGATIVE_CONTROL`;
-- `EXPLICIT_BOUNDARY_RULE`;
-- `COMPOSITION_ANTI_MERGE`;
-- `POSITIVE_ONLY`;
-- `UNKNOWN`.
+- 26/26 classes have at least one explicit source-backed boundary rule;
+- 14/26 also have an explicit negative/opposite control;
+- 5/26 have composition evidence that directly resists an adjacent-class merge;
+- 0/26 are positive-only;
+- 0/26 are unresolved for boundary ownership.
 
-Guardrails:
+Important limitation:
 
-- frozen corpus remains 81/26;
-- no new legal research/cases/classes/model runs;
-- missing packaging is not automatically missing evidence;
-- no artificial one-control-per-class quota;
-- #214 remains unchanged.
+> adequate class boundaries do **not** erase #309's evaluation imbalance. A class can be
+> well bounded while still lacking an independent EVALUATION case.
 
-Expected disposition:
+Audit:
 
-> `BOUNDARIES_ADEQUATE` / `ADOPT_BOUNDARY_PROFILE` /
-> `REVISE_NAMED_CLASS_BOUNDARIES` / `PARK`
+> `docs/audits/frozen-class-boundary-evidence-2026-09-25.md`
+
+No class definition, corpus case, Reference Pack byte or scientific result changed.
+
+### Next eligible discovery after #319 merge
+
+# **#321 — frozen class-support independence audit**
+
+#321 tests whether the apparent 3–5 cases behind each class represent genuinely
+orthogonal generality evidence or whether some support collapses into same-chain
+replication, composition evidence or one evaluation suite.
+
+WIP=1 remains binding: #321 execution starts only after #319 merges/closes.
 
 ## Historical backlog archive
 

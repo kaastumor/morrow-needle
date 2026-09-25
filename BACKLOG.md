@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — NEGATIVE EVIDENCE DISCOVERABILITY**
+# **DISCOVER — CLASS BOUNDARY EVIDENCE**
 
 Frozen scientific source:
 
@@ -23,43 +23,40 @@ Released use surface:
 
 ### Current WIP
 
-# **#317 — negative/null evidence discoverability**
+# **#319 — frozen trap-class boundary / negative-control audit**
 
 Result:
 
-> **CURRENT_OWNERS_SUFFICIENT**
+> **BOUNDARIES_ADEQUATE**
 
-Fixed-sample result:
+Frozen taxonomy boundary profile:
 
-- #214 hard null is directly visible from README, charter, Reference Pack, value-evidence
-  and assumptions;
-- #88/#95 preserve surfaced-parity plus the construct-validity correction;
-- #97 preserves latent-detection parity and its execution limitation;
-- #207/#209 and #245 preserve current taxonomy/base-line REJECT logic;
-- #282 explicitly prevents #218's historical incumbent-as-sufficiency rationale from
-  becoming a reusable rejection rule.
+- 26/26 classes have at least one explicit source-backed boundary rule;
+- 14/26 also have an explicit negative/opposite control;
+- 5/26 have composition evidence that directly resists an adjacent-class merge;
+- 0/26 are positive-only;
+- 0/26 are unresolved for boundary ownership.
 
-The current navigation architecture is sufficient:
+Important limitation:
 
-> README -> `docs/value-evidence.md` -> exact issue/audit/fixture.
-
-A second negative-evidence registry would duplicate the canonical project-thesis evidence
-ledger and increase staleness/supersession risk.
+> adequate class boundaries do **not** erase #309's evaluation imbalance. A class can be
+> well bounded while still lacking an independent EVALUATION case.
 
 Audit:
 
-> `docs/audits/negative-evidence-discoverability-2026-09-25.md`
+> `docs/audits/frozen-class-boundary-evidence-2026-09-25.md`
 
-No Reference Pack or corpus change was made.
+No class definition, corpus case, Reference Pack byte or scientific result changed.
 
-### Next eligible discovery after #317 merge
+### Next eligible discovery after #319 merge
 
-# **#319 — frozen class boundary / negative-control audit**
+# **#321 — frozen class-support independence audit**
 
-#319 tests whether the 26 frozen classes have real source-backed limiting evidence and
-negative controls, rather than merely 3–5 positive examples each.
+#321 tests whether the apparent 3–5 cases behind each class represent genuinely
+orthogonal generality evidence or whether some support collapses into same-chain
+replication, composition evidence or one evaluation suite.
 
-WIP=1 remains binding: #319 execution starts only after #317 merges/closes.
+WIP=1 remains binding: #321 execution starts only after #319 merges/closes.
 
 ## Historical backlog archive
 

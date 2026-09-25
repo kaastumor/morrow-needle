@@ -239,6 +239,23 @@ The taxonomy has broad derivation support, but 18/26 classes have no evaluation 
 all evaluation cases derive from two programmes. More cases per class did not make the
 corpus a representative or statistically calibrated benchmark.
 
+## Class boundaries versus class counts
+
+Issue #319 separately audited the accepted boundary evidence behind all 26 frozen classes.
+
+Result:
+
+- 26/26 have at least one explicit source-backed boundary rule;
+- 14/26 also have an explicit negative/opposite control;
+- 5/26 have composition evidence that directly resists an adjacent-class merge;
+- 0 classes were found to be positive-only or unbounded in the accepted record.
+
+This strengthens the taxonomy's **falsifiability for regression/reference use**. It does
+not change the evaluation-coverage imbalance above: most classes still have no independent
+EVALUATION case.
+
+See `docs/audits/frozen-class-boundary-evidence-2026-09-25.md`.
+
 ## Regression/reference use versus benchmark use
 
 The frozen corpus is well suited to:

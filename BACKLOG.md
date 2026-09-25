@@ -11,81 +11,51 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **USE / RELEASE — REFERENCE PACK FROZEN**
+# **DISCOVER — REFERENCE INTEGRITY**
 
-The scientific reference checkpoint remains canonical and unchanged:
+Frozen scientific source remains unchanged:
 
-> **NEEDLE_CORPUS_REFERENCE_2026-09-25**
+> **NEEDLE_CORPUS_REFERENCE_2026-09-25 — 81 cases / 26 classes**
 
-Reference commit:
+Released use surface remains:
 
-> `c3416514e054e8c3c61ca4d42c4534eca21e1cc5`
+> **Needle Reference Pack v0.1 — REFERENCE_PACK_READY**
 
-Exact canonical index blob:
+### WIP = 1
 
-> `ecaab3f59fe118b71d2cafa19f05363a65ae49a1`
+# **#306 — issue-owner drift / archival integrity**
 
-Accepted scientific content:
+Question:
 
-> **81 cases / 26 classes**
+> Can issue-backed evidence navigation be made drift-detectable or release-verifiable
+> without copying mutable GitHub issue content into a second legal-truth store?
 
-### Released use surface
+Trigger:
 
-# **Needle Reference Pack v0.1**
+- repository-path owners are pinned to the frozen source commit;
+- GitHub issue bodies/comments remain mutable;
+- **45/81 cases (55.6%) currently have only issue-backed evidence refs in the pack**;
+- #306 tests documentation-only, identity-metadata, fingerprint-attestation and
+  Git-backed-snapshot approaches against the strongest boring baseline.
 
-Parent programme: **#294**. Final integration: **#302**.
+Guardrails:
 
-The pack is a deterministic **derived reference layer** over the frozen corpus. It is
-not a new legal truth owner, standalone evidence bundle, product claim or new scientific
-claim.
+- no corpus/taxonomy change;
+- no new legal research;
+- no product/workflow claim;
+- #214 remains a hard null;
+- Reference Pack remains a derived navigation/reference layer;
+- no new network-dependent release artifact without a separate earned implementation
+  decision;
+- WIP=1: complete #306 before selecting another project question.
 
-Included release files:
+Expected disposition:
 
-- `release/needle-reference-pack-v0.1/README.md`;
-- `manifest.json`;
-- `cases.jsonl`;
-- `classes.json`;
-- `evidence-map.json`;
-- `catalog.md`;
-- `checksums.sha256`.
+> `ADOPT_DOC_ONLY` / `ADOPT_ATTESTATION` / `PARK` / `REJECT`
 
-Supporting release code:
-
-- `scripts/build_reference_pack.py`;
-- `scripts/validate_reference_pack.py`;
-- `tests/test_reference_pack.py`.
-
-All programme children **#295–#301** are complete. #301's instruction-bounded synthetic
-cold-start audit returned **PASS**. It is not human usability evidence.
-
-### Release gate
-
-This state becomes canonical only when the single #302 integration PR passes the normal
-repository sanitation and unit-test gates and is merged to `main`.
-
-The final #302 closeout must record the exact merged commit and pack checksums. If the
-required executable rebuild, canonical corpus validation or Reference Pack tests fail,
-the PR must not merge and the result is `REVISE` or `BLOCKED`, not
-`REFERENCE_PACK_READY`.
-
-On a green merged #302 PR the programme result is:
-
-> **REFERENCE_PACK_READY**
-
-Exposure remains unchanged:
-
-> **all 81 cases are exposed / blind_reuse=false / REGRESSION_ONLY**
-
-Fresh blind validation still requires a new independently selected and sealed case.
-Issue #214 remains a hard null: the frozen challenge-set pilot produced zero diagnostic
-rescues and does not support a model/workflow superiority claim.
-
-### Current allocation
-
-No successor horizon is allocated by this release. Do not invent task #9.
-
-After #302 closeout, the backlog returns to event-triggered allocation: future work must
-be earned by a concrete falsifiable research/use question or explicit owner allocation.
+The issue's falsifier is binding: if extra machinery only detects drift but cannot
+preserve/recover the earlier evidence state, prefer explicit limitation documentation
+over a false archival guarantee.
 
 ## Historical backlog archive
 

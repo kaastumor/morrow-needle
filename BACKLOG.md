@@ -58,13 +58,16 @@ Ordered queue:
 
 Selection rule for the scheduled worker:
 
-1. resume an unfinished automation-owned PR first;
-2. otherwise select the lowest-numbered open `AUTO READY — NIGHT` issue above whose
+1. use the programme integration branch `auto/294-reference-pack-night`;
+2. resume an unfinished child checkpoint on that branch first;
+3. otherwise select the lowest-numbered open `AUTO READY — NIGHT` issue above whose
    dependencies are satisfied;
-3. work at most one child issue per run;
-4. merge only after relevant CI is green;
-5. never skip a blocked dependency merely to consume a scheduled run;
-6. never invent task #9.
+4. work at most one child issue per run;
+5. commit the child checkpoint to the programme branch, run the smallest relevant deterministic checks, and close the child when its checkpoint is complete;
+6. do **not** open or merge a child PR;
+7. #302 opens the single final integration PR and requires the normal green CI/release gate;
+8. never skip a blocked dependency merely to consume a scheduled run;
+9. never invent task #9.
 
 Current first eligible child:
 
@@ -73,6 +76,8 @@ Current first eligible child:
 ### Night constraints
 
 - one recurring scheduled worker performs all eight runs;
+- one programme integration branch/PR is used across the eight runs to limit Actions cost;
+- the parent #294 owner-authorised exception supersedes the ordinary per-child branch/PR rule only for this night programme;
 - no new legal research;
 - no case/class admission, merge or redefinition;
 - no new scientific performance/value claim;

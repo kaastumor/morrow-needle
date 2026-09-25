@@ -11,81 +11,57 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **USE / RELEASE — REFERENCE PACK FROZEN**
+# **DISCOVER — REFERENCE INTEGRITY**
 
-The scientific reference checkpoint remains canonical and unchanged:
+Frozen scientific source remains unchanged:
 
-> **NEEDLE_CORPUS_REFERENCE_2026-09-25**
+> **NEEDLE_CORPUS_REFERENCE_2026-09-25 — 81 cases / 26 classes**
 
-Reference commit:
+Released use surface remains:
 
-> `c3416514e054e8c3c61ca4d42c4534eca21e1cc5`
+> **Needle Reference Pack v0.1 — REFERENCE_PACK_READY**
 
-Exact canonical index blob:
+### Current WIP
 
-> `ecaab3f59fe118b71d2cafa19f05363a65ae49a1`
+# **#306 — issue-owner drift / archival integrity**
 
-Accepted scientific content:
+Result:
 
-> **81 cases / 26 classes**
+> **ADOPT_DOC_ONLY**
 
-### Released use surface
+Measured exposure:
 
-# **Needle Reference Pack v0.1**
+- 45/81 cases (55.6%) are issue-only in the Reference Pack;
+- 32/54 unique issue owners serve only issue-only cases;
+- stable issue identity/navigation does not freeze mutable body/comment content;
+- content fingerprints can detect drift but cannot recover prior evidence and would add a
+  network-dependent release input;
+- Git-backed snapshots would provide recovery but duplicate evidence ownership without a
+  demonstrated need.
 
-Parent programme: **#294**. Final integration: **#302**.
+Durable rule:
 
-The pack is a deterministic **derived reference layer** over the frozen corpus. It is
-not a new legal truth owner, standalone evidence bundle, product claim or new scientific
-claim.
+> Treat issue-only refs as mutable navigation owners. If exact as-of-release issue content
+> is required, preserve it deliberately in Git-backed state or state the limitation.
 
-Included release files:
+Reference Pack v0.1 remains frozen and unchanged.
 
-- `release/needle-reference-pack-v0.1/README.md`;
-- `manifest.json`;
-- `cases.jsonl`;
-- `classes.json`;
-- `evidence-map.json`;
-- `catalog.md`;
-- `checksums.sha256`.
+### Next eligible discovery after #306 merge
 
-Supporting release code:
+# **#307 — external reuse rights and citation contract**
 
-- `scripts/build_reference_pack.py`;
-- `scripts/validate_reference_pack.py`;
-- `tests/test_reference_pack.py`.
+Trigger:
 
-All programme children **#295–#301** are complete. #301's instruction-bounded synthetic
-cold-start audit returned **PASS**. It is not human usability evidence.
+- repository is public;
+- GitHub reports no repository license;
+- no root `LICENSE` / `COPYING` or `CITATION.cff`;
+- `pyproject.toml` declares no license metadata.
 
-### Release gate
+#307 will separate view/fork permission, reuse/distribution permission, third-party legal
+source material, citation metadata and software-package metadata. It must not select or
+apply a legal license without explicit owner authorization.
 
-This state becomes canonical only when the single #302 integration PR passes the normal
-repository sanitation and unit-test gates and is merged to `main`.
-
-The final #302 closeout must record the exact merged commit and pack checksums. If the
-required executable rebuild, canonical corpus validation or Reference Pack tests fail,
-the PR must not merge and the result is `REVISE` or `BLOCKED`, not
-`REFERENCE_PACK_READY`.
-
-On a green merged #302 PR the programme result is:
-
-> **REFERENCE_PACK_READY**
-
-Exposure remains unchanged:
-
-> **all 81 cases are exposed / blind_reuse=false / REGRESSION_ONLY**
-
-Fresh blind validation still requires a new independently selected and sealed case.
-Issue #214 remains a hard null: the frozen challenge-set pilot produced zero diagnostic
-rescues and does not support a model/workflow superiority claim.
-
-### Current allocation
-
-No successor horizon is allocated by this release. Do not invent task #9.
-
-After #302 closeout, the backlog returns to event-triggered allocation: future work must
-be earned by a concrete falsifiable research/use question or explicit owner allocation.
+WIP=1 remains binding: #307 execution starts only after #306 is merged/closed.
 
 ## Historical backlog archive
 

@@ -21,36 +21,48 @@ Released use surface remains:
 
 > **Needle Reference Pack v0.1 — REFERENCE_PACK_READY**
 
-### WIP = 1
+### Current WIP
 
 # **#307 — external reuse rights and citation contract**
 
-Question:
+Result:
 
-> What minimum rights/citation/distribution metadata is required before the Reference
-> Pack can honestly be called externally reusable, and which parts are mechanical versus
-> owner/legal decisions?
+> **OWNER_LICENSE_DECISION_REQUIRED**
 
-Observed trigger:
+Measured repository state:
 
 - repository visibility is public;
-- GitHub reports repository license = null;
+- GitHub license detection is null;
 - no root `LICENSE` / `COPYING`;
-- no `CITATION.cff` or equivalent root citation file;
-- `pyproject.toml` has no license metadata.
+- no root `CITATION.cff`;
+- `pyproject.toml` declares no license metadata;
+- the frozen Reference Pack contains derived project metadata/navigation and no raw
+  source-text field.
 
-Guardrails:
+Interpretation:
 
-- public visibility must not be conflated with permission to reproduce/modify/distribute;
-- no legal license is selected/applied without explicit owner authorization;
-- distinguish project-authored pack material from linked/public legal-source material;
-- citation metadata must not imply reuse permission;
-- no product claim or corpus/taxonomy change;
-- #214 remains unchanged.
+- public visibility makes the project inspectable but is not itself a project grant for
+  broad reproduction/modification/distribution;
+- citation metadata would improve attribution but does not grant reuse permission;
+- the strongest boring open-reuse solution is likely one standard project license plus a
+  third-party-material caveat, but selecting terms is an explicit owner decision;
+- until then, describe the project/pack as publicly inspectable reference material, not
+  openly licensed reusable material.
 
-Expected disposition:
+Bounded repair:
 
-> `ADOPT_METADATA` / `OWNER_LICENSE_DECISION_REQUIRED` / `PARK` / `REJECT`
+- root README now states the current rights/citation status;
+- frozen Reference Pack v0.1 bytes remain unchanged.
+
+### Next eligible discovery after #307 merge
+
+# **#309 — frozen corpus concentration and regression-misuse audit**
+
+The existing bias audit owns the 19-case seed with additions only through 23 cases. #309
+will re-measure the final frozen **81-case / 26-class** state without changing taxonomy,
+adding cases, scoring difficulty or manufacturing a new benchmark claim.
+
+WIP=1 remains binding: #309 execution starts only after #307 merges/closes.
 
 ## Historical backlog archive
 

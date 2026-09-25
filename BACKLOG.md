@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — REFERENCE INTEGRITY**
+# **DISCOVER — EXTERNAL REUSE CONTRACT**
 
 Frozen scientific source remains unchanged:
 
@@ -23,45 +23,46 @@ Released use surface remains:
 
 ### Current WIP
 
-# **#306 — issue-owner drift / archival integrity**
+# **#307 — external reuse rights and citation contract**
 
 Result:
 
-> **ADOPT_DOC_ONLY**
+> **OWNER_LICENSE_DECISION_REQUIRED**
 
-Measured exposure:
+Measured repository state:
 
-- 45/81 cases (55.6%) are issue-only in the Reference Pack;
-- 32/54 unique issue owners serve only issue-only cases;
-- stable issue identity/navigation does not freeze mutable body/comment content;
-- content fingerprints can detect drift but cannot recover prior evidence and would add a
-  network-dependent release input;
-- Git-backed snapshots would provide recovery but duplicate evidence ownership without a
-  demonstrated need.
+- repository visibility is public;
+- GitHub license detection is null;
+- no root `LICENSE` / `COPYING`;
+- no root `CITATION.cff`;
+- `pyproject.toml` declares no license metadata;
+- the frozen Reference Pack contains derived project metadata/navigation and no raw
+  source-text field.
 
-Durable rule:
+Interpretation:
 
-> Treat issue-only refs as mutable navigation owners. If exact as-of-release issue content
-> is required, preserve it deliberately in Git-backed state or state the limitation.
+- public visibility makes the project inspectable but is not itself a project grant for
+  broad reproduction/modification/distribution;
+- citation metadata would improve attribution but does not grant reuse permission;
+- the strongest boring open-reuse solution is likely one standard project license plus a
+  third-party-material caveat, but selecting terms is an explicit owner decision;
+- until then, describe the project/pack as publicly inspectable reference material, not
+  openly licensed reusable material.
 
-Reference Pack v0.1 remains frozen and unchanged.
+Bounded repair:
 
-### Next eligible discovery after #306 merge
+- root README now states the current rights/citation status;
+- frozen Reference Pack v0.1 bytes remain unchanged.
 
-# **#307 — external reuse rights and citation contract**
+### Next eligible discovery after #307 merge
 
-Trigger:
+# **#309 — frozen corpus concentration and regression-misuse audit**
 
-- repository is public;
-- GitHub reports no repository license;
-- no root `LICENSE` / `COPYING` or `CITATION.cff`;
-- `pyproject.toml` declares no license metadata.
+The existing bias audit owns the 19-case seed with additions only through 23 cases. #309
+will re-measure the final frozen **81-case / 26-class** state without changing taxonomy,
+adding cases, scoring difficulty or manufacturing a new benchmark claim.
 
-#307 will separate view/fork permission, reuse/distribution permission, third-party legal
-source material, citation metadata and software-package metadata. It must not select or
-apply a legal license without explicit owner authorization.
-
-WIP=1 remains binding: #307 execution starts only after #306 is merged/closed.
+WIP=1 remains binding: #309 execution starts only after #307 merges/closes.
 
 ## Historical backlog archive
 

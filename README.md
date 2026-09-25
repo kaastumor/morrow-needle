@@ -39,6 +39,21 @@ regressions**. That scientific null remains binding for its tested claim.
 
 Negative and parity findings are part of the asset, not failed work.
 
+## Reuse and citation status
+
+This repository is public, but it currently has **no project license** and no root
+`CITATION.cff`. Public visibility should not be interpreted as a general project grant
+to reproduce, redistribute or modify Needle material beyond rights that otherwise apply.
+
+The Reference Pack is therefore currently best treated as **publicly inspectable
+reference material**, not as an openly licensed dataset/software distribution. Linked or
+third-party legal-source material remains subject to its own rights and is not relicensed
+by Needle.
+
+Selecting a project license and preferred citation authorship is an explicit owner
+decision. See
+`docs/audits/reference-pack-external-reuse-contract-2026-09-25.md`.
+
 ## Operating posture
 
 Sponsor direction rejects `IDLE BY DESIGN` for the research programme, but this does

@@ -260,7 +260,7 @@ def build_manifest(source: dict, evidence_map: dict) -> dict:
     }
     expected_exposure = {
         ("PUBLIC_FROM_DISCOVERY", False, "REGRESSION_ONLY"),
-        ("PUBLIC_AFTER_EVALUATION", False, "REGRESSION_ONLY"),
+        ("REVEALED_AFTER_SEALED_EVALUATION", False, "REGRESSION_ONLY"),
     }
     if not exposures or not exposures.issubset(expected_exposure):
         raise SystemExit("unexpected exposure/reuse state in frozen corpus")
@@ -303,6 +303,10 @@ def build_manifest(source: dict, evidence_map: dict) -> dict:
                 "record_type": "human_catalog",
                 "case_entries": EXPECTED_CASES,
                 "class_entries": EXPECTED_CLASSES,
+            },
+            "checksums.sha256": {
+                "record_type": "sha256_payload_checksums",
+                "payload_files": 6,
             },
         },
         "generation_contract": {

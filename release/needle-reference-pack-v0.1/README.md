@@ -147,12 +147,13 @@ From a clean checkout at a compatible Python 3 version, the release path is:
 
 ```bash
 python3 scripts/build_reference_pack.py
+python3 scripts/validate_reference_pack.py --write-checksums
 python3 scripts/validate_reference_pack.py
 ```
 
 The builder requires no network access and uses only the Python standard library. It fails closed if the canonical source blob, reference status or frozen 81/26 shape changes.
 
-The validation step owns pack membership, cross-file consistency, referential integrity, source identity, exposure policy, deterministic rebuild checks and `checksums.sha256`.
+The validation step owns pack membership, cross-file consistency, referential integrity, source identity, exposure policy and `checksums.sha256`. The focused unit test executes the builder twice and requires byte-identical generated outputs.
 
 To verify a frozen released pack after checksums exist:
 

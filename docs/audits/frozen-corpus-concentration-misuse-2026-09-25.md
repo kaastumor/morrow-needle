@@ -256,6 +256,26 @@ EVALUATION case.
 
 See `docs/audits/frozen-class-boundary-evidence-2026-09-25.md`.
 
+## Support independence
+
+Issue #321 audited whether the 3–5 cases behind each class collapse into same-chain or
+composition-only support.
+
+Result:
+
+- every class retains at least two single-class positive cases;
+- semantic review found materially distinct legal settings/instruments for every frozen
+  class's stated scope;
+- same-issue sibling cases are common, but many were deliberately selected as orthogonal
+  positives before class admission;
+- composition cases strengthen anti-merge evidence and are not treated as independent
+  experimental replications.
+
+This is adequate for **regression/reference generality**, not experimental independence.
+The ten EVALUATION cases remain concentrated in only #88 and #97.
+
+See `docs/audits/frozen-class-support-independence-2026-09-25.md`.
+
 ## Regression/reference use versus benchmark use
 
 The frozen corpus is well suited to:

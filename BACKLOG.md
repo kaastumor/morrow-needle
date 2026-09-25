@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — REGRESSION CONTRACT**
+# **DISCOVER — METAMORPHIC REGRESSION**
 
 Frozen scientific source:
 
@@ -21,46 +21,32 @@ Released use surface:
 
 > **Needle Reference Pack v0.1 — REFERENCE_PACK_READY**
 
-### Current WIP
-
-# **#311 — executable regression corpus vs reference catalog**
-
-Result:
-
-> **KEEP_REGRESSION_REFERENCE_LABEL**
-
-Boundary established:
-
-- Reference Pack v0.1 is a complete reference catalog/navigation layer;
-- all 81 cases are exposed regression/reference material;
-- pack case records do not themselves contain a uniform task + expected-answer + pass/fail
-  execution contract;
-- the 10 EVALUATION cases preserve genuine exposed executable contracts at repository
-  level through the #88/#97 prompts/answer keys/results;
-- DERIVATION cases preserve heterogeneous fixtures/issues/evidence suitable for known-case
-  regression, but not one standardized 71-case executable suite;
-- do not synthesize post-hoc prompts/answer keys and present them as historical scientific
-  inputs.
-
-Durable wording:
-
-> **Regression/reference corpus** means exposed, source-backed failure cases suitable for
-> known-case regression and reference use. It does not mean every case ships as a
-> standardized runnable prompt/oracle or that the corpus is a representative benchmark.
-
-Audit:
-
-> `docs/audits/regression-contract-boundary-2026-09-25.md`
-
-### Next eligible discovery after #311 merge
+### WIP = 1
 
 # **#313 — metamorphic regression derivation**
 
-#313 tests whether existing frozen cases contain evidence-backed one-variable legal-state
-transformations that can improve regression discipline without adding cases, model runs,
-taxonomy or fresh-evaluation claims.
+Question:
 
-WIP=1 remains binding: #313 execution starts only after #311 merges/closes.
+> Can already-frozen, exposed corpus evidence support rigorous one-variable legal-state
+> transformations that strengthen known-case regression without adding scientific cases
+> or manufacturing fresh evaluation claims?
+
+Candidate families are drawn only from existing evidence owners. A valid relation must
+hold the scenario sufficiently fixed, change one named legally material variable, and
+have an evidence-backed expected relation/outcome.
+
+Guardrails:
+
+- no new cases/classes or legal research;
+- no model runs/performance claim;
+- no exhaustive pair generator;
+- post-hoc derivation must remain explicit;
+- all resulting material remains exposed / REGRESSION_ONLY;
+- #214 remains a hard null.
+
+Expected disposition:
+
+> `ADOPT_METAMORPHIC_DERIVATION` / `REVISE_CONCEPT` / `PARK` / `REJECT`
 
 ## Historical backlog archive
 

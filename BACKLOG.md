@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — REFERENCE INTEGRITY**
+# **DISCOVER — EXTERNAL REUSE CONTRACT**
 
 Frozen scientific source remains unchanged:
 
@@ -21,47 +21,36 @@ Released use surface remains:
 
 > **Needle Reference Pack v0.1 — REFERENCE_PACK_READY**
 
-### Current WIP
-
-# **#306 — issue-owner drift / archival integrity**
-
-Result:
-
-> **ADOPT_DOC_ONLY**
-
-Measured exposure:
-
-- 45/81 cases (55.6%) are issue-only in the Reference Pack;
-- 32/54 unique issue owners serve only issue-only cases;
-- stable issue identity/navigation does not freeze mutable body/comment content;
-- content fingerprints can detect drift but cannot recover prior evidence and would add a
-  network-dependent release input;
-- Git-backed snapshots would provide recovery but duplicate evidence ownership without a
-  demonstrated need.
-
-Durable rule:
-
-> Treat issue-only refs as mutable navigation owners. If exact as-of-release issue content
-> is required, preserve it deliberately in Git-backed state or state the limitation.
-
-Reference Pack v0.1 remains frozen and unchanged.
-
-### Next eligible discovery after #306 merge
+### WIP = 1
 
 # **#307 — external reuse rights and citation contract**
 
-Trigger:
+Question:
 
-- repository is public;
-- GitHub reports no repository license;
-- no root `LICENSE` / `COPYING` or `CITATION.cff`;
-- `pyproject.toml` declares no license metadata.
+> What minimum rights/citation/distribution metadata is required before the Reference
+> Pack can honestly be called externally reusable, and which parts are mechanical versus
+> owner/legal decisions?
 
-#307 will separate view/fork permission, reuse/distribution permission, third-party legal
-source material, citation metadata and software-package metadata. It must not select or
-apply a legal license without explicit owner authorization.
+Observed trigger:
 
-WIP=1 remains binding: #307 execution starts only after #306 is merged/closed.
+- repository visibility is public;
+- GitHub reports repository license = null;
+- no root `LICENSE` / `COPYING`;
+- no `CITATION.cff` or equivalent root citation file;
+- `pyproject.toml` has no license metadata.
+
+Guardrails:
+
+- public visibility must not be conflated with permission to reproduce/modify/distribute;
+- no legal license is selected/applied without explicit owner authorization;
+- distinguish project-authored pack material from linked/public legal-source material;
+- citation metadata must not imply reuse permission;
+- no product claim or corpus/taxonomy change;
+- #214 remains unchanged.
+
+Expected disposition:
+
+> `ADOPT_METADATA` / `OWNER_LICENSE_DECISION_REQUIRED` / `PARK` / `REJECT`
 
 ## Historical backlog archive
 

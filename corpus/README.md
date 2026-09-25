@@ -40,6 +40,24 @@ Each public index entry records only:
 
 Legal facts remain owned by the referenced fixture/audit/source chain.
 
+## What "regression/reference" means
+
+Needle is a **regression/reference corpus**, not a uniform executable test suite.
+
+- **Reference:** every accepted case preserves a stable case identity, failure mechanism,
+  provenance/exposure state and evidence owner.
+- **Regression material:** exposed known failure cases may be reused to check that an
+  already understood consequential error does not recur.
+- **Executable regression:** only use this stronger term when the evidence owner actually
+  preserves a concrete task plus expected outcome/pass-fail rule. The revealed evaluation
+  suites do; derivation cases do not share one uniform executable contract.
+- **Benchmark/evaluation:** the full public corpus is not a representative benchmark and
+  must not be treated as one merely because cases are machine-readable.
+
+Do not synthesize post-hoc prompts/answer keys from `decisive_trap` and present them as
+historical scientific inputs. See
+`docs/audits/regression-contract-boundary-2026-09-25.md`.
+
 ## The contamination rule
 
 **Discovery evidence and validation evidence are different things.**

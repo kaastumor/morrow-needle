@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — FROZEN CORPUS LIMITATIONS**
+# **DISCOVER — REGRESSION CONTRACT**
 
 Frozen scientific source:
 
@@ -23,41 +23,44 @@ Released use surface:
 
 ### Current WIP
 
-# **#309 — frozen corpus concentration and regression-misuse audit**
+# **#311 — executable regression corpus vs reference catalog**
 
 Result:
 
-> **ADOPT_LIMITATIONS_PROFILE**
+> **KEEP_REGRESSION_REFERENCE_LABEL**
 
-Frozen-state findings:
+Boundary established:
 
-- 71/81 cases are DERIVATION; 10/81 are EVALUATION;
-- all 10 evaluation cases come from two evaluation programmes (#88 and #97);
-- only 8/26 classes have any EVALUATION case; 18/26 remain derivation-only;
-- every class now has 3–5 cases, eliminating the seed's singleton classes but creating a
-  curated near-flat support profile that must not be read as prevalence;
-- 75/81 cases are single-class; 6 are explicitly multi-class;
-- exact domain labels are broad but highly granular (68 labels, mostly singletons);
-- exact `EU` jurisdiction remains 53/81 cases;
-- source-system diversity is not a first-class corpus field and cannot be honestly
-  quantified without reopening evidence owners;
-- older-digitised-source coverage remains unsupported from canonical metadata.
+- Reference Pack v0.1 is a complete reference catalog/navigation layer;
+- all 81 cases are exposed regression/reference material;
+- pack case records do not themselves contain a uniform task + expected-answer + pass/fail
+  execution contract;
+- the 10 EVALUATION cases preserve genuine exposed executable contracts at repository
+  level through the #88/#97 prompts/answer keys/results;
+- DERIVATION cases preserve heterogeneous fixtures/issues/evidence suitable for known-case
+  regression, but not one standardized 71-case executable suite;
+- do not synthesize post-hoc prompts/answer keys and present them as historical scientific
+  inputs.
 
-Durable output:
+Durable wording:
 
-> `docs/audits/frozen-corpus-concentration-misuse-2026-09-25.md`
+> **Regression/reference corpus** means exposed, source-backed failure cases suitable for
+> known-case regression and reference use. It does not mean every case ships as a
+> standardized runnable prompt/oracle or that the corpus is a representative benchmark.
 
-No case/class, taxonomy or pack-byte change was made.
+Audit:
 
-### Next eligible discovery after #309 merge
+> `docs/audits/regression-contract-boundary-2026-09-25.md`
 
-# **#311 — executable regression corpus vs reference catalog**
+### Next eligible discovery after #311 merge
 
-#311 tests whether the canonical "regression/reference corpus" identity is operationally
-accurate for an external consumer, given that most case records preserve decisive traps
-and evidence refs but not a standardized executable question/oracle.
+# **#313 — metamorphic regression derivation**
 
-WIP=1 remains binding: #311 execution starts only after #309 merges/closes.
+#313 tests whether existing frozen cases contain evidence-backed one-variable legal-state
+transformations that can improve regression discipline without adding cases, model runs,
+taxonomy or fresh-evaluation claims.
+
+WIP=1 remains binding: #313 execution starts only after #311 merges/closes.
 
 ## Historical backlog archive
 

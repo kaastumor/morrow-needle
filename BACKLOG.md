@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — CLASS SUPPORT INDEPENDENCE**
+# **DISCOVER — CHOICE-OF-FORUM DEPTH**
 
 Frozen scientific source:
 
@@ -23,44 +23,49 @@ Released use surface:
 
 ### Current WIP
 
-# **#321 — frozen class-support independence audit**
+# **#323 — CHOICE_OF_FORUM_STATE residual-value depth test**
 
 Result:
 
-> **INDEPENDENCE_ADEQUATE**
+> **KEEP_CLASS**
 
-Findings:
+Reason:
 
-- every class retains at least 2 single-class positive cases after composition cases are
-  removed;
-- 18/26 classes contain at least one same-issue sibling pair, but accepted research often
-  selected those pairs deliberately as orthogonal positives;
-- semantic review finds materially distinct legal settings/instruments behind every
-  class's stated narrow scope;
-- 5 classes have direct composition/anti-merge support;
-- 8 classes have exposed EVALUATION support;
-- all 10 EVALUATION cases still come from only #88/#97.
+- competent jurisdiction-agreement doctrine fully owns the law;
+- the class nevertheless preserves one consequential regression state:
+  **selected-court state is independent from both default jurisdiction connectors and
+  governing-law choice**;
+- merging with `CHOICE_OF_LAW_STATE` loses different actors, evidence, validity
+  conditions and expected court outcomes;
+- keeping only unclassified prose cases would preserve examples but lose the explicit
+  reusable regression owner;
+- the class survives for corpus organisation/testing value, not novelty or doctrinal
+  importance.
 
-Durable distinction:
+No definition, corpus or Reference Pack change follows.
 
-> generality support for regression/reference use is adequate; experimental independence,
-> prevalence and benchmark representativeness remain unproved.
+Depth lane status:
+
+- #273 — REVISE_EXISTING_CLASS;
+- #286 — REVISE_EXISTING_CLASS;
+- #323 — KEEP_CLASS.
+
+The #282 three-confirmation falsifier does not fire, but the preselected three-run depth
+lane is complete.
 
 Audit:
 
-> `docs/audits/frozen-class-support-independence-2026-09-25.md`
+> `docs/discovery/issue323-choice-of-forum-depth-result-2026-09-26.md`
 
-No maintained independence registry, corpus mutation or taxonomy change was created.
+### Next eligible work after #323 merge
 
-### Next eligible discovery after #321 merge
+# **#325 — post-depth project direction review**
 
-# **#323 — CHOICE_OF_FORUM_STATE residual-value depth test**
+Do not assume another depth run. #325 must compare DISCOVER / CONSOLIDATE / USE /
+REVIEW-RELEASE / MAINTAIN and select one bounded next WIP, with explicit attention to
+whether recent internal corpus audits are producing diminishing external information.
 
-This reactivates the exact depth target preselected by #286 and deferred—not rejected—by
-#288. It asks whether the class preserves a consequential regression distinction beyond
-mature ordinary jurisdiction-agreement doctrine under #282's revised rejection burden.
-
-WIP=1 remains binding: #323 execution starts only after #321 merges/closes.
+WIP=1 remains binding: #325 starts only after #323 is merged/closed.
 
 ## Historical backlog archive
 

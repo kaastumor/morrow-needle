@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — CLASS SUPPORT INDEPENDENCE**
+# **DISCOVER — CLASS RESIDUAL VALUE**
 
 Frozen scientific source:
 
@@ -21,46 +21,31 @@ Released use surface:
 
 > **Needle Reference Pack v0.1 — REFERENCE_PACK_READY**
 
-### Current WIP
-
-# **#321 — frozen class-support independence audit**
-
-Result:
-
-> **INDEPENDENCE_ADEQUATE**
-
-Findings:
-
-- every class retains at least 2 single-class positive cases after composition cases are
-  removed;
-- 18/26 classes contain at least one same-issue sibling pair, but accepted research often
-  selected those pairs deliberately as orthogonal positives;
-- semantic review finds materially distinct legal settings/instruments behind every
-  class's stated narrow scope;
-- 5 classes have direct composition/anti-merge support;
-- 8 classes have exposed EVALUATION support;
-- all 10 EVALUATION cases still come from only #88/#97.
-
-Durable distinction:
-
-> generality support for regression/reference use is adequate; experimental independence,
-> prevalence and benchmark representativeness remain unproved.
-
-Audit:
-
-> `docs/audits/frozen-class-support-independence-2026-09-25.md`
-
-No maintained independence registry, corpus mutation or taxonomy change was created.
-
-### Next eligible discovery after #321 merge
+### WIP = 1
 
 # **#323 — CHOICE_OF_FORUM_STATE residual-value depth test**
 
-This reactivates the exact depth target preselected by #286 and deferred—not rejected—by
-#288. It asks whether the class preserves a consequential regression distinction beyond
-mature ordinary jurisdiction-agreement doctrine under #282's revised rejection burden.
+This is the depth target preselected by #286 and deferred by #288, not a newly invented
+coverage hunt.
 
-WIP=1 remains binding: #323 execution starts only after #321 merges/closes.
+Question:
+
+> Does `CHOICE_OF_FORUM_STATE` preserve a consequential regression distinction beyond
+> competent ordinary EU jurisdiction-agreement doctrine, or can the class be retired while
+> keeping its cases?
+
+Decision burden follows #282:
+
+- mature doctrine is not automatic rejection;
+- failure to prove redundancy is not positive evidence;
+- KEEP requires a pre-specified consequential regression distinction lost under the
+  strongest simpler representation.
+
+Allowed outcomes:
+
+> `KEEP_CLASS` / `NARROW_CLASS` / `MERGE_CLASS` / `RETIRE_CLASS_KEEP_CASES`
+
+No new case/class, product, model run or #214 reinterpretation.
 
 ## Historical backlog archive
 

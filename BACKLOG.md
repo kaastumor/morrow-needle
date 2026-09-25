@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — SOURCE-SYSTEM DIVERSITY**
+# **DISCOVER — NEGATIVE EVIDENCE DISCOVERABILITY**
 
 Frozen scientific source:
 
@@ -23,53 +23,43 @@ Released use surface:
 
 ### Current WIP
 
-# **#315 — frozen source-system diversity profile**
+# **#317 — negative/null evidence discoverability**
 
 Result:
 
-> **REVISE_METHOD**
+> **CURRENT_OWNERS_SUFFICIENT**
 
-What survived:
+Fixed-sample result:
 
-- accepted evidence now clearly spans more than ordinary EUR-Lex/Commission text:
-  Member-State official sources, private legally recognised sources, EU agencies/bodies,
-  official registers/datasets/machine artifacts and linked-order/international-agreement
-  evidence are all present;
-- the 19/23-case seed warning that domain diversity exceeded source-system diversity has
-  therefore been partially reduced.
+- #214 hard null is directly visible from README, charter, Reference Pack, value-evidence
+  and assumptions;
+- #88/#95 preserve surfaced-parity plus the construct-validity correction;
+- #97 preserves latent-detection parity and its execution limitation;
+- #207/#209 and #245 preserve current taxonomy/base-line REJECT logic;
+- #282 explicitly prevents #218's historical incumbent-as-sufficiency rationale from
+  becoming a reusable rejection rule.
 
-What did **not** survive:
+The current navigation architecture is sufficient:
 
-- the canonical corpus does not encode a per-case source-system inventory;
-- 34 cases can be read from substantive frozen Git-backed owners;
-- 45 cases are issue-only;
-- 2 nominally path-backed cases point to placeholder result files and require issue
-  fallback;
-- shared issues and evaluation packets contain sources for several cases, so owner-level
-  family hits cannot be promoted into exact case-level percentages without semantic
-  annotation.
+> README -> `docs/value-evidence.md` -> exact issue/audit/fixture.
 
-Durable conclusion:
-
-> source-family variety broadened, but exact frozen corpus-wide source-system
-> concentration is **not reproducibly measured** by current canonical metadata.
+A second negative-evidence registry would duplicate the canonical project-thesis evidence
+ledger and increase staleness/supersession risk.
 
 Audit:
 
-> `docs/audits/frozen-source-system-diversity-2026-09-25.md`
+> `docs/audits/negative-evidence-discoverability-2026-09-25.md`
 
-No canonical `source_system` field or derived 81-row source inventory was created merely
-to make the metric available.
+No Reference Pack or corpus change was made.
 
-### Next eligible discovery after #315 merge
+### Next eligible discovery after #317 merge
 
-# **#317 — negative/null evidence discoverability**
+# **#319 — frozen class boundary / negative-control audit**
 
-#317 tests whether the polished positive-case corpus/reference surfaces make binding null,
-parity, REJECT and PARK evidence too hard to discover, or whether README/value-evidence/
-assumption owners already prevent claim resurrection without another registry.
+#319 tests whether the 26 frozen classes have real source-backed limiting evidence and
+negative controls, rather than merely 3–5 positive examples each.
 
-WIP=1 remains binding: #317 execution starts only after #315 merges/closes.
+WIP=1 remains binding: #319 execution starts only after #317 merges/closes.
 
 ## Historical backlog archive
 

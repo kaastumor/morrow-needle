@@ -410,6 +410,33 @@ Per opportunity, use one initial discovery run and at most one follow-up before
 mandatory disposition unless genuinely new external/source evidence changes the
 decision boundary.
 
+## Frozen-reference owner integrity
+
+When a frozen or released artifact links to GitHub Issues, distinguish **stable object
+identity/navigation** from **frozen evidence content**.
+
+A GitHub issue number, URL, database ID, node ID, timestamp or content hash does not by
+itself make the issue body/comments historically recoverable. Issue and comment content
+can change independently of repository Git history.
+
+Therefore:
+
+- commit-pinned repository paths may support a frozen/recoverable Git evidence claim;
+- an `issue:` ref without a Git-backed evidence artifact is a mutable navigation owner,
+  not frozen issue-content bytes;
+- checksums over a release pack do not extend immutability to external/live issue content;
+- do not add network fingerprints merely to create an archival appearance: a digest that
+  detects drift but cannot recover the prior evidence state is not a substitute for a
+  preserved snapshot;
+- if an exact-as-of-release issue state is required by a real archival/reproducibility
+  job, preserve that state in a Git-backed artifact with an explicit ownership role, or
+  state the limitation honestly.
+
+Do not backfill historical issue-only cases solely to improve a coverage metric. Exact
+issue snapshots must earn their maintenance cost from a concrete use/integrity need.
+
+See `docs/audits/reference-pack-issue-owner-integrity-2026-09-25.md`.
+
 ## Gate review
 
 At the end of a meaningful horizon:

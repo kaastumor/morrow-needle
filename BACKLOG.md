@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — CLASS BOUNDARY EVIDENCE**
+# **DISCOVER — CLASS SUPPORT INDEPENDENCE**
 
 Frozen scientific source:
 
@@ -23,40 +23,44 @@ Released use surface:
 
 ### Current WIP
 
-# **#319 — frozen trap-class boundary / negative-control audit**
+# **#321 — frozen class-support independence audit**
 
 Result:
 
-> **BOUNDARIES_ADEQUATE**
+> **INDEPENDENCE_ADEQUATE**
 
-Frozen taxonomy boundary profile:
+Findings:
 
-- 26/26 classes have at least one explicit source-backed boundary rule;
-- 14/26 also have an explicit negative/opposite control;
-- 5/26 have composition evidence that directly resists an adjacent-class merge;
-- 0/26 are positive-only;
-- 0/26 are unresolved for boundary ownership.
+- every class retains at least 2 single-class positive cases after composition cases are
+  removed;
+- 18/26 classes contain at least one same-issue sibling pair, but accepted research often
+  selected those pairs deliberately as orthogonal positives;
+- semantic review finds materially distinct legal settings/instruments behind every
+  class's stated narrow scope;
+- 5 classes have direct composition/anti-merge support;
+- 8 classes have exposed EVALUATION support;
+- all 10 EVALUATION cases still come from only #88/#97.
 
-Important limitation:
+Durable distinction:
 
-> adequate class boundaries do **not** erase #309's evaluation imbalance. A class can be
-> well bounded while still lacking an independent EVALUATION case.
+> generality support for regression/reference use is adequate; experimental independence,
+> prevalence and benchmark representativeness remain unproved.
 
 Audit:
 
-> `docs/audits/frozen-class-boundary-evidence-2026-09-25.md`
+> `docs/audits/frozen-class-support-independence-2026-09-25.md`
 
-No class definition, corpus case, Reference Pack byte or scientific result changed.
+No maintained independence registry, corpus mutation or taxonomy change was created.
 
-### Next eligible discovery after #319 merge
+### Next eligible discovery after #321 merge
 
-# **#321 — frozen class-support independence audit**
+# **#323 — CHOICE_OF_FORUM_STATE residual-value depth test**
 
-#321 tests whether the apparent 3–5 cases behind each class represent genuinely
-orthogonal generality evidence or whether some support collapses into same-chain
-replication, composition evidence or one evaluation suite.
+This reactivates the exact depth target preselected by #286 and deferred—not rejected—by
+#288. It asks whether the class preserves a consequential regression distinction beyond
+mature ordinary jurisdiction-agreement doctrine under #282's revised rejection burden.
 
-WIP=1 remains binding: #321 execution starts only after #319 merges/closes.
+WIP=1 remains binding: #323 execution starts only after #321 merges/closes.
 
 ## Historical backlog archive
 

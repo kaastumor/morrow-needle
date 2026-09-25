@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — NEGATIVE EVIDENCE DISCOVERABILITY**
+# **DISCOVER — CLASS BOUNDARY EVIDENCE**
 
 Frozen scientific source:
 
@@ -21,45 +21,35 @@ Released use surface:
 
 > **Needle Reference Pack v0.1 — REFERENCE_PACK_READY**
 
-### Current WIP
+### WIP = 1
 
-# **#317 — negative/null evidence discoverability**
+# **#319 — frozen trap-class boundary / negative-control audit**
 
-Result:
+Question:
 
-> **CURRENT_OWNERS_SUFFICIENT**
+> Do the 26 frozen classes have real source-backed limiting evidence, or are some merely
+> well-populated positive-example families whose definitions outrun their tested boundary?
 
-Fixed-sample result:
+Allowed support labels:
 
-- #214 hard null is directly visible from README, charter, Reference Pack, value-evidence
-  and assumptions;
-- #88/#95 preserve surfaced-parity plus the construct-validity correction;
-- #97 preserves latent-detection parity and its execution limitation;
-- #207/#209 and #245 preserve current taxonomy/base-line REJECT logic;
-- #282 explicitly prevents #218's historical incumbent-as-sufficiency rationale from
-  becoming a reusable rejection rule.
+- `EXPLICIT_NEGATIVE_CONTROL`;
+- `EXPLICIT_BOUNDARY_RULE`;
+- `COMPOSITION_ANTI_MERGE`;
+- `POSITIVE_ONLY`;
+- `UNKNOWN`.
 
-The current navigation architecture is sufficient:
+Guardrails:
 
-> README -> `docs/value-evidence.md` -> exact issue/audit/fixture.
+- frozen corpus remains 81/26;
+- no new legal research/cases/classes/model runs;
+- missing packaging is not automatically missing evidence;
+- no artificial one-control-per-class quota;
+- #214 remains unchanged.
 
-A second negative-evidence registry would duplicate the canonical project-thesis evidence
-ledger and increase staleness/supersession risk.
+Expected disposition:
 
-Audit:
-
-> `docs/audits/negative-evidence-discoverability-2026-09-25.md`
-
-No Reference Pack or corpus change was made.
-
-### Next eligible discovery after #317 merge
-
-# **#319 — frozen class boundary / negative-control audit**
-
-#319 tests whether the 26 frozen classes have real source-backed limiting evidence and
-negative controls, rather than merely 3–5 positive examples each.
-
-WIP=1 remains binding: #319 execution starts only after #317 merges/closes.
+> `BOUNDARIES_ADEQUATE` / `ADOPT_BOUNDARY_PROFILE` /
+> `REVISE_NAMED_CLASS_BOUNDARIES` / `PARK`
 
 ## Historical backlog archive
 

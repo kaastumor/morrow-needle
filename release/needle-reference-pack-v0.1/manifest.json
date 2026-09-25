@@ -2,6 +2,8 @@
   "artifact_role": "DERIVED_REFERENCE_LAYER",
   "counts": {
     "cases": 81,
+    "evidence_issue_owners": 54,
+    "evidence_path_owners": 32,
     "trap_classes": 26
   },
   "exposure_policy": {
@@ -18,6 +20,11 @@
     "classes.json": {
       "record_type": "trap_class",
       "records": 26
+    },
+    "evidence-map.json": {
+      "issue_owners": 54,
+      "path_owners": 32,
+      "record_type": "evidence_owner_map"
     }
   },
   "generation_contract": {

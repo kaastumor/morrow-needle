@@ -1,0 +1,1308 @@
+{
+  "artifact_role": "DERIVED_REFERENCE_LAYER",
+  "case_links": [
+    {
+      "case_id": "adv-chatgpt-vlose-applicability",
+      "evidence_refs": [
+        "issue:88",
+        "path:fixtures/value-gates/issue88-phase-a-prompts-v0.1.json",
+        "path:fixtures/value-gates/issue88-phase-a-answer-key-v0.1.json",
+        "path:fixtures/value-gates/issue88-phase-a-results-v0.1.json"
+      ]
+    },
+    {
+      "case_id": "adv-ets-private-verifier",
+      "evidence_refs": [
+        "issue:88",
+        "path:fixtures/value-gates/issue88-phase-a-prompts-v0.1.json",
+        "path:fixtures/value-gates/issue88-phase-a-answer-key-v0.1.json",
+        "path:fixtures/value-gates/issue88-phase-a-results-v0.1.json"
+      ]
+    },
+    {
+      "case_id": "adv-harmonised-standard-restriction",
+      "evidence_refs": [
+        "issue:88",
+        "path:fixtures/value-gates/issue88-phase-a-prompts-v0.1.json",
+        "path:fixtures/value-gates/issue88-phase-a-answer-key-v0.1.json",
+        "path:fixtures/value-gates/issue88-phase-a-results-v0.1.json"
+      ]
+    },
+    {
+      "case_id": "adv-licence-1300-boundary",
+      "evidence_refs": [
+        "issue:88",
+        "path:fixtures/value-gates/issue88-phase-a-prompts-v0.1.json",
+        "path:fixtures/value-gates/issue88-phase-a-answer-key-v0.1.json",
+        "path:fixtures/value-gates/issue88-phase-a-results-v0.1.json"
+      ]
+    },
+    {
+      "case_id": "adv-nis2-italian-heading",
+      "evidence_refs": [
+        "issue:88",
+        "path:fixtures/value-gates/issue88-phase-a-prompts-v0.1.json",
+        "path:fixtures/value-gates/issue88-phase-a-answer-key-v0.1.json",
+        "path:fixtures/value-gates/issue88-phase-a-results-v0.1.json"
+      ]
+    },
+    {
+      "case_id": "adv-polish-visa-backprojection",
+      "evidence_refs": [
+        "issue:88",
+        "path:fixtures/value-gates/issue88-phase-a-prompts-v0.1.json",
+        "path:fixtures/value-gates/issue88-phase-a-answer-key-v0.1.json",
+        "path:fixtures/value-gates/issue88-phase-a-results-v0.1.json"
+      ]
+    },
+    {
+      "case_id": "ai-act-eea-incorporation-pending",
+      "evidence_refs": [
+        "issue:242"
+      ]
+    },
+    {
+      "case_id": "ai-act-legacy-cohort-applicability",
+      "evidence_refs": [
+        "issue:239"
+      ]
+    },
+    {
+      "case_id": "ai-act-third-country-output-use-nexus",
+      "evidence_refs": [
+        "issue:278"
+      ]
+    },
+    {
+      "case_id": "anoplophora-finding-demarcated-area",
+      "evidence_refs": [
+        "issue:226",
+        "path:docs/discovery/issue226-plant-finding-spatial-generality-result-2026-09-24.md"
+      ]
+    },
+    {
+      "case_id": "barber-temporal-limitation-exception",
+      "evidence_refs": [
+        "issue:253"
+      ]
+    },
+    {
+      "case_id": "biotrh-szutest-notified-body",
+      "evidence_refs": [
+        "issue:85",
+        "path:fixtures/discovery/biotrh-szutest-private-notified-body-determination-v0.1.json",
+        "path:fixtures/determinations/szutest-biotrh-suspension-2023-v0.1.json"
+      ]
+    },
+    {
+      "case_id": "brussels-i-choice-of-forum",
+      "evidence_refs": [
+        "issue:276"
+      ]
+    },
+    {
+      "case_id": "c360-25-interpretation-temporal-effect",
+      "evidence_refs": [
+        "issue:230"
+      ]
+    },
+    {
+      "case_id": "capri-sp-private-rating",
+      "evidence_refs": [
+        "issue:85",
+        "path:fixtures/discovery/capri-sp-private-rating-regulatory-input-v0.1.json",
+        "path:fixtures/determinations/sp-capri-rating-2025-v0.1.json"
+      ]
+    },
+    {
+      "case_id": "ccs-storage-site-vertical-volume",
+      "evidence_refs": [
+        "issue:237"
+      ]
+    },
+    {
+      "case_id": "chmp-positive-opinion-pending-commission-decision",
+      "evidence_refs": [
+        "issue:251"
+      ]
+    },
+    {
+      "case_id": "commission-state-aid-single-authentic-language",
+      "evidence_refs": [
+        "issue:231"
+      ]
+    },
+    {
+      "case_id": "construction-products-commission-software-version",
+      "evidence_refs": [
+        "issue:220",
+        "path:docs/discovery/issue220-executable-compliance-artifact-result-2026-09-24.md"
+      ]
+    },
+    {
+      "case_id": "cyprus-protocol10-acquis-suspension",
+      "evidence_refs": [
+        "issue:257"
+      ]
+    },
+    {
+      "case_id": "delegated-act-non-objection-entry-into-force",
+      "evidence_refs": [
+        "issue:248"
+      ]
+    },
+    {
+      "case_id": "denmark-greenland-faroe-territorial-regime",
+      "evidence_refs": [
+        "issue:255"
+      ]
+    },
+    {
+      "case_id": "dpf-historical-data-cohort-after-exit",
+      "evidence_refs": [
+        "issue:247"
+      ]
+    },
+    {
+      "case_id": "dpp-semantic-profile-version",
+      "evidence_refs": [
+        "issue:225",
+        "path:docs/discovery/issue225-machine-compliance-artifact-result-2026-09-24.md"
+      ]
+    },
+    {
+      "case_id": "dsa-stripchat-status-application-lag",
+      "evidence_refs": [
+        "issue:78",
+        "path:fixtures/temporal/dsa-stripchat-designation-application-lag-v0.1.json"
+      ]
+    },
+    {
+      "case_id": "dutch-airspace-vertical-extent",
+      "evidence_refs": [
+        "issue:82",
+        "path:fixtures/discovery/legal-spatial-volume-reopen-v0.1.json"
+      ]
+    },
+    {
+      "case_id": "eba-crowdfunding-rts-authority-handoff",
+      "evidence_refs": [
+        "issue:171",
+        "path:docs/experiments/issue171-rts-authority-handoff-result-2026-09-24.md"
+      ]
+    },
+    {
+      "case_id": "eba-fixed-overheads-rts-authority-handoff",
+      "evidence_refs": [
+        "issue:171",
+        "path:docs/experiments/issue171-rts-authority-handoff-result-2026-09-24.md"
+      ]
+    },
+    {
+      "case_id": "eidas-anf-trusted-list-status",
+      "evidence_refs": [
+        "issue:224",
+        "path:docs/discovery/issue224-eidas-dynamic-reference-status-result-2026-09-24.md"
+      ]
+    },
+    {
+      "case_id": "eppo-time-varying-participation",
+      "evidence_refs": [
+        "issue:243"
+      ]
+    },
+    {
+      "case_id": "eu-ecolabel-did-list-data-input",
+      "evidence_refs": [
+        "issue:222",
+        "path:docs/discovery/issue222-authoritative-data-input-result-2026-09-24.md"
+      ]
+    },
+    {
+      "case_id": "eu-ets-tnac-metric-trigger",
+      "evidence_refs": [
+        "issue:79",
+        "path:fixtures/discovery/eu-ets-tnac-authoritative-metric-v0.1.json",
+        "path:fixtures/metrics/eu-ets-tnac-2025-v0.1.json"
+      ]
+    },
+    {
+      "case_id": "eu-mercosur-parallel-agreement-lifecycle",
+      "evidence_refs": [
+        "issue:91",
+        "path:research/parallel-international-agreement-lifecycle-2026-09-23.md"
+      ]
+    },
+    {
+      "case_id": "eu-merger-procedural-clock-suspension",
+      "evidence_refs": [
+        "issue:241"
+      ]
+    },
+    {
+      "case_id": "eu-mexico-parallel-agreement-lifecycle",
+      "evidence_refs": [
+        "issue:91",
+        "path:research/parallel-international-agreement-lifecycle-2026-09-23.md"
+      ]
+    },
+    {
+      "case_id": "farrell-emanation-state-invocability",
+      "evidence_refs": [
+        "issue:266"
+      ]
+    },
+    {
+      "case_id": "france-outermost-oct-territorial-regime",
+      "evidence_refs": [
+        "issue:255"
+      ]
+    },
+    {
+      "case_id": "fsr-digital-notification-cutoff",
+      "evidence_refs": [
+        "issue:235"
+      ]
+    },
+    {
+      "case_id": "gdpr-child-consent-national-option",
+      "evidence_refs": [
+        "issue:250"
+      ]
+    },
+    {
+      "case_id": "gdpr-eu-eea-application-gap",
+      "evidence_refs": [
+        "issue:242"
+      ]
+    },
+    {
+      "case_id": "gdpr-third-country-targeting-nexus",
+      "evidence_refs": [
+        "issue:263"
+      ]
+    },
+    {
+      "case_id": "hpai-woerdense-finding-spatial-effect",
+      "evidence_refs": [
+        "issue:80",
+        "path:fixtures/discovery/hpai-woerdense-verlaat-authoritative-finding-spatial-effect-v0.1.json",
+        "path:fixtures/findings/hpai-woerdense-verlaat-v0.1.json"
+      ]
+    },
+    {
+      "case_id": "ireland-aamm-protocol21-post-adoption-opt-in",
+      "evidence_refs": [
+        "issue:273",
+        "path:docs/discovery/issue273-protocol-participation-result-2026-09-25.md"
+      ]
+    },
+    {
+      "case_id": "kl-x-directive-charter-composition",
+      "evidence_refs": [
+        "issue:274"
+      ]
+    },
+    {
+      "case_id": "ld2-chile-lifecycle",
+      "evidence_refs": [
+        "issue:97",
+        "path:fixtures/value-gates/issue97-manual-stage1-results-v0.3.json",
+        "path:docs/audits/issue97-latent-detection-result-2026-09-24.md"
+      ]
+    },
+    {
+      "case_id": "ld2-haringvliet-2015",
+      "evidence_refs": [
+        "issue:97",
+        "path:fixtures/value-gates/issue97-manual-stage1-results-v0.3.json",
+        "path:docs/audits/issue97-latent-detection-result-2026-09-24.md"
+      ]
+    },
+    {
+      "case_id": "ld2-shredder-320",
+      "evidence_refs": [
+        "issue:97",
+        "path:fixtures/value-gates/issue97-manual-stage1-results-v0.3.json",
+        "path:docs/audits/issue97-latent-detection-result-2026-09-24.md"
+      ]
+    },
+    {
+      "case_id": "ld2-temu-june",
+      "evidence_refs": [
+        "issue:97",
+        "path:fixtures/value-gates/issue97-manual-stage1-results-v0.3.json",
+        "path:docs/audits/issue97-latent-detection-result-2026-09-24.md"
+      ]
+    },
+    {
+      "case_id": "mar-third-country-instrument-nexus",
+      "evidence_refs": [
+        "issue:263"
+      ]
+    },
+    {
+      "case_id": "marshall-directive-vertical-invocability",
+      "evidence_refs": [
+        "issue:266"
+      ]
+    },
+    {
+      "case_id": "matrimonial-property-participation-law-forum-composition",
+      "evidence_refs": [
+        "issue:279"
+      ]
+    },
+    {
+      "case_id": "mdr-legacy-device-cohort-applicability",
+      "evidence_refs": [
+        "issue:239"
+      ]
+    },
+    {
+      "case_id": "medicines-assessment-clock-suspension",
+      "evidence_refs": [
+        "issue:241"
+      ]
+    },
+    {
+      "case_id": "merger-deemed-compatible-silence",
+      "evidence_refs": [
+        "issue:238"
+      ]
+    },
+    {
+      "case_id": "meta-dma-partial-annulment-validity",
+      "evidence_refs": [
+        "issue:234"
+      ]
+    },
+    {
+      "case_id": "mica-grandfathering-member-state-option",
+      "evidence_refs": [
+        "issue:250"
+      ]
+    },
+    {
+      "case_id": "mifid-cross-border-passport-activation",
+      "evidence_refs": [
+        "issue:270"
+      ]
+    },
+    {
+      "case_id": "nl-nis2-commission-tracker-lag",
+      "evidence_refs": [
+        "issue:93",
+        "path:research/official-tracker-update-lag-2026-09-23.md"
+      ]
+    },
+    {
+      "case_id": "petlichev-primacy-disapplication",
+      "evidence_refs": [
+        "issue:259"
+      ]
+    },
+    {
+      "case_id": "planet49-interpretation-no-new-start",
+      "evidence_refs": [
+        "issue:83",
+        "path:fixtures/judicial/planet49-c673-17-v0.1.json",
+        "path:fixtures/discovery/judicial-holding-gap-v0.1.json"
+      ]
+    },
+    {
+      "case_id": "professional-card-cross-border-activation",
+      "evidence_refs": [
+        "issue:270"
+      ]
+    },
+    {
+      "case_id": "qs-interim-suspension-operative-state",
+      "evidence_refs": [
+        "issue:249"
+      ]
+    },
+    {
+      "case_id": "reg2025-905-dutch-corrigendum-scope",
+      "evidence_refs": [
+        "issue:64"
+      ]
+    },
+    {
+      "case_id": "reg794-consolidation-backprojection",
+      "evidence_refs": [
+        "issue:61",
+        "path:fixtures/multilingual/reg794-2004-consolidation-backprojection-v0.1.json"
+      ]
+    },
+    {
+      "case_id": "reg794-corrigendum-marker-locality",
+      "evidence_refs": [
+        "issue:67",
+        "path:fixtures/multilingual/reg794-2004-consolidation-backprojection-v0.1.json"
+      ]
+    },
+    {
+      "case_id": "rfc-seraing-primacy-disapplication",
+      "evidence_refs": [
+        "issue:259"
+      ]
+    },
+    {
+      "case_id": "rome-i-contract-choice-of-law",
+      "evidence_refs": [
+        "issue:264"
+      ]
+    },
+    {
+      "case_id": "rome-iii-participating-member-states",
+      "evidence_refs": [
+        "issue:243"
+      ]
+    },
+    {
+      "case_id": "se-nis2-commission-tracker-lag",
+      "evidence_refs": [
+        "issue:93",
+        "path:research/official-tracker-update-lag-2026-09-23.md"
+      ]
+    },
+    {
+      "case_id": "skagerrak-prawn-subday-boundary",
+      "evidence_refs": [
+        "issue:81",
+        "path:fixtures/discovery/skagerrak-prawn-rtc-subday-temporal-reopen-v0.1.json",
+        "path:fixtures/temporal/skagerrak-prawn-rtc-v0.2.json"
+      ]
+    },
+    {
+      "case_id": "smoke-flavouring-efsa-clock-suspension",
+      "evidence_refs": [
+        "issue:256"
+      ]
+    },
+    {
+      "case_id": "staff-regulations-publication-silence",
+      "evidence_refs": [
+        "issue:238"
+      ]
+    },
+    {
+      "case_id": "succession-choice-of-court",
+      "evidence_refs": [
+        "issue:276"
+      ]
+    },
+    {
+      "case_id": "succession-professio-juris-choice",
+      "evidence_refs": [
+        "issue:264"
+      ]
+    },
+    {
+      "case_id": "swiss-schengen-borders-code-adoption",
+      "evidence_refs": [
+        "issue:252"
+      ]
+    },
+    {
+      "case_id": "test-achats-validity-text-divergence",
+      "evidence_refs": [
+        "issue:83",
+        "path:fixtures/judicial/test-achats-c236-09-v0.1.json",
+        "path:fixtures/discovery/judicial-holding-gap-v0.1.json"
+      ]
+    },
+    {
+      "case_id": "toy-wave-roller-dynamic-standard-gateway",
+      "evidence_refs": [
+        "issue:77",
+        "path:fixtures/discovery/toy-wave-roller-dynamic-standard-gateway-v0.1.json"
+      ]
+    },
+    {
+      "case_id": "transport-ghg-calculation-tool-effect",
+      "evidence_refs": [
+        "issue:220",
+        "path:docs/discovery/issue220-executable-compliance-artifact-result-2026-09-24.md"
+      ]
+    },
+    {
+      "case_id": "ucits-host-market-passport-activation",
+      "evidence_refs": [
+        "issue:280"
+      ]
+    },
+    {
+      "case_id": "wfd-groundwater-overlying-status-bodies",
+      "evidence_refs": [
+        "issue:286",
+        "path:docs/discovery/issue286-groundwater-vertical-depth-result-2026-09-25.md"
+      ]
+    },
+    {
+      "case_id": "working-time-more-favourable-national-protection",
+      "evidence_refs": [
+        "issue:272"
+      ]
+    }
+  ],
+  "counts": {
+    "cases_with_evidence": 81,
+    "issue_owners": 54,
+    "path_owners": 32
+  },
+  "owners": {
+    "issues": [
+      {
+        "case_ids": [
+          "reg794-consolidation-backprojection"
+        ],
+        "issue": 61,
+        "ref": "issue:61",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/61"
+      },
+      {
+        "case_ids": [
+          "reg2025-905-dutch-corrigendum-scope"
+        ],
+        "issue": 64,
+        "ref": "issue:64",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/64"
+      },
+      {
+        "case_ids": [
+          "reg794-corrigendum-marker-locality"
+        ],
+        "issue": 67,
+        "ref": "issue:67",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/67"
+      },
+      {
+        "case_ids": [
+          "toy-wave-roller-dynamic-standard-gateway"
+        ],
+        "issue": 77,
+        "ref": "issue:77",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/77"
+      },
+      {
+        "case_ids": [
+          "dsa-stripchat-status-application-lag"
+        ],
+        "issue": 78,
+        "ref": "issue:78",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/78"
+      },
+      {
+        "case_ids": [
+          "eu-ets-tnac-metric-trigger"
+        ],
+        "issue": 79,
+        "ref": "issue:79",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/79"
+      },
+      {
+        "case_ids": [
+          "hpai-woerdense-finding-spatial-effect"
+        ],
+        "issue": 80,
+        "ref": "issue:80",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/80"
+      },
+      {
+        "case_ids": [
+          "skagerrak-prawn-subday-boundary"
+        ],
+        "issue": 81,
+        "ref": "issue:81",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/81"
+      },
+      {
+        "case_ids": [
+          "dutch-airspace-vertical-extent"
+        ],
+        "issue": 82,
+        "ref": "issue:82",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/82"
+      },
+      {
+        "case_ids": [
+          "planet49-interpretation-no-new-start",
+          "test-achats-validity-text-divergence"
+        ],
+        "issue": 83,
+        "ref": "issue:83",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/83"
+      },
+      {
+        "case_ids": [
+          "biotrh-szutest-notified-body",
+          "capri-sp-private-rating"
+        ],
+        "issue": 85,
+        "ref": "issue:85",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/85"
+      },
+      {
+        "case_ids": [
+          "adv-chatgpt-vlose-applicability",
+          "adv-ets-private-verifier",
+          "adv-harmonised-standard-restriction",
+          "adv-licence-1300-boundary",
+          "adv-nis2-italian-heading",
+          "adv-polish-visa-backprojection"
+        ],
+        "issue": 88,
+        "ref": "issue:88",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/88"
+      },
+      {
+        "case_ids": [
+          "eu-mercosur-parallel-agreement-lifecycle",
+          "eu-mexico-parallel-agreement-lifecycle"
+        ],
+        "issue": 91,
+        "ref": "issue:91",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/91"
+      },
+      {
+        "case_ids": [
+          "nl-nis2-commission-tracker-lag",
+          "se-nis2-commission-tracker-lag"
+        ],
+        "issue": 93,
+        "ref": "issue:93",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/93"
+      },
+      {
+        "case_ids": [
+          "ld2-chile-lifecycle",
+          "ld2-haringvliet-2015",
+          "ld2-shredder-320",
+          "ld2-temu-june"
+        ],
+        "issue": 97,
+        "ref": "issue:97",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/97"
+      },
+      {
+        "case_ids": [
+          "eba-crowdfunding-rts-authority-handoff",
+          "eba-fixed-overheads-rts-authority-handoff"
+        ],
+        "issue": 171,
+        "ref": "issue:171",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/171"
+      },
+      {
+        "case_ids": [
+          "construction-products-commission-software-version",
+          "transport-ghg-calculation-tool-effect"
+        ],
+        "issue": 220,
+        "ref": "issue:220",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/220"
+      },
+      {
+        "case_ids": [
+          "eu-ecolabel-did-list-data-input"
+        ],
+        "issue": 222,
+        "ref": "issue:222",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/222"
+      },
+      {
+        "case_ids": [
+          "eidas-anf-trusted-list-status"
+        ],
+        "issue": 224,
+        "ref": "issue:224",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/224"
+      },
+      {
+        "case_ids": [
+          "dpp-semantic-profile-version"
+        ],
+        "issue": 225,
+        "ref": "issue:225",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/225"
+      },
+      {
+        "case_ids": [
+          "anoplophora-finding-demarcated-area"
+        ],
+        "issue": 226,
+        "ref": "issue:226",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/226"
+      },
+      {
+        "case_ids": [
+          "c360-25-interpretation-temporal-effect"
+        ],
+        "issue": 230,
+        "ref": "issue:230",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/230"
+      },
+      {
+        "case_ids": [
+          "commission-state-aid-single-authentic-language"
+        ],
+        "issue": 231,
+        "ref": "issue:231",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/231"
+      },
+      {
+        "case_ids": [
+          "meta-dma-partial-annulment-validity"
+        ],
+        "issue": 234,
+        "ref": "issue:234",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/234"
+      },
+      {
+        "case_ids": [
+          "fsr-digital-notification-cutoff"
+        ],
+        "issue": 235,
+        "ref": "issue:235",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/235"
+      },
+      {
+        "case_ids": [
+          "ccs-storage-site-vertical-volume"
+        ],
+        "issue": 237,
+        "ref": "issue:237",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/237"
+      },
+      {
+        "case_ids": [
+          "merger-deemed-compatible-silence",
+          "staff-regulations-publication-silence"
+        ],
+        "issue": 238,
+        "ref": "issue:238",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/238"
+      },
+      {
+        "case_ids": [
+          "ai-act-legacy-cohort-applicability",
+          "mdr-legacy-device-cohort-applicability"
+        ],
+        "issue": 239,
+        "ref": "issue:239",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/239"
+      },
+      {
+        "case_ids": [
+          "eu-merger-procedural-clock-suspension",
+          "medicines-assessment-clock-suspension"
+        ],
+        "issue": 241,
+        "ref": "issue:241",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/241"
+      },
+      {
+        "case_ids": [
+          "ai-act-eea-incorporation-pending",
+          "gdpr-eu-eea-application-gap"
+        ],
+        "issue": 242,
+        "ref": "issue:242",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/242"
+      },
+      {
+        "case_ids": [
+          "eppo-time-varying-participation",
+          "rome-iii-participating-member-states"
+        ],
+        "issue": 243,
+        "ref": "issue:243",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/243"
+      },
+      {
+        "case_ids": [
+          "dpf-historical-data-cohort-after-exit"
+        ],
+        "issue": 247,
+        "ref": "issue:247",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/247"
+      },
+      {
+        "case_ids": [
+          "delegated-act-non-objection-entry-into-force"
+        ],
+        "issue": 248,
+        "ref": "issue:248",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/248"
+      },
+      {
+        "case_ids": [
+          "qs-interim-suspension-operative-state"
+        ],
+        "issue": 249,
+        "ref": "issue:249",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/249"
+      },
+      {
+        "case_ids": [
+          "gdpr-child-consent-national-option",
+          "mica-grandfathering-member-state-option"
+        ],
+        "issue": 250,
+        "ref": "issue:250",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/250"
+      },
+      {
+        "case_ids": [
+          "chmp-positive-opinion-pending-commission-decision"
+        ],
+        "issue": 251,
+        "ref": "issue:251",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/251"
+      },
+      {
+        "case_ids": [
+          "swiss-schengen-borders-code-adoption"
+        ],
+        "issue": 252,
+        "ref": "issue:252",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/252"
+      },
+      {
+        "case_ids": [
+          "barber-temporal-limitation-exception"
+        ],
+        "issue": 253,
+        "ref": "issue:253",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/253"
+      },
+      {
+        "case_ids": [
+          "denmark-greenland-faroe-territorial-regime",
+          "france-outermost-oct-territorial-regime"
+        ],
+        "issue": 255,
+        "ref": "issue:255",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/255"
+      },
+      {
+        "case_ids": [
+          "smoke-flavouring-efsa-clock-suspension"
+        ],
+        "issue": 256,
+        "ref": "issue:256",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/256"
+      },
+      {
+        "case_ids": [
+          "cyprus-protocol10-acquis-suspension"
+        ],
+        "issue": 257,
+        "ref": "issue:257",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/257"
+      },
+      {
+        "case_ids": [
+          "petlichev-primacy-disapplication",
+          "rfc-seraing-primacy-disapplication"
+        ],
+        "issue": 259,
+        "ref": "issue:259",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/259"
+      },
+      {
+        "case_ids": [
+          "gdpr-third-country-targeting-nexus",
+          "mar-third-country-instrument-nexus"
+        ],
+        "issue": 263,
+        "ref": "issue:263",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/263"
+      },
+      {
+        "case_ids": [
+          "rome-i-contract-choice-of-law",
+          "succession-professio-juris-choice"
+        ],
+        "issue": 264,
+        "ref": "issue:264",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/264"
+      },
+      {
+        "case_ids": [
+          "farrell-emanation-state-invocability",
+          "marshall-directive-vertical-invocability"
+        ],
+        "issue": 266,
+        "ref": "issue:266",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/266"
+      },
+      {
+        "case_ids": [
+          "mifid-cross-border-passport-activation",
+          "professional-card-cross-border-activation"
+        ],
+        "issue": 270,
+        "ref": "issue:270",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/270"
+      },
+      {
+        "case_ids": [
+          "working-time-more-favourable-national-protection"
+        ],
+        "issue": 272,
+        "ref": "issue:272",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/272"
+      },
+      {
+        "case_ids": [
+          "ireland-aamm-protocol21-post-adoption-opt-in"
+        ],
+        "issue": 273,
+        "ref": "issue:273",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/273"
+      },
+      {
+        "case_ids": [
+          "kl-x-directive-charter-composition"
+        ],
+        "issue": 274,
+        "ref": "issue:274",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/274"
+      },
+      {
+        "case_ids": [
+          "brussels-i-choice-of-forum",
+          "succession-choice-of-court"
+        ],
+        "issue": 276,
+        "ref": "issue:276",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/276"
+      },
+      {
+        "case_ids": [
+          "ai-act-third-country-output-use-nexus"
+        ],
+        "issue": 278,
+        "ref": "issue:278",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/278"
+      },
+      {
+        "case_ids": [
+          "matrimonial-property-participation-law-forum-composition"
+        ],
+        "issue": 279,
+        "ref": "issue:279",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/279"
+      },
+      {
+        "case_ids": [
+          "ucits-host-market-passport-activation"
+        ],
+        "issue": 280,
+        "ref": "issue:280",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/280"
+      },
+      {
+        "case_ids": [
+          "wfd-groundwater-overlying-status-bodies"
+        ],
+        "issue": 286,
+        "ref": "issue:286",
+        "url": "https://github.com/kaastumor/morrow-needle/issues/286"
+      }
+    ],
+    "paths": [
+      {
+        "case_ids": [
+          "ld2-chile-lifecycle",
+          "ld2-haringvliet-2015",
+          "ld2-shredder-320",
+          "ld2-temu-june"
+        ],
+        "path": "docs/audits/issue97-latent-detection-result-2026-09-24.md",
+        "ref": "path:docs/audits/issue97-latent-detection-result-2026-09-24.md",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/docs/audits/issue97-latent-detection-result-2026-09-24.md"
+      },
+      {
+        "case_ids": [
+          "construction-products-commission-software-version",
+          "transport-ghg-calculation-tool-effect"
+        ],
+        "path": "docs/discovery/issue220-executable-compliance-artifact-result-2026-09-24.md",
+        "ref": "path:docs/discovery/issue220-executable-compliance-artifact-result-2026-09-24.md",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/docs/discovery/issue220-executable-compliance-artifact-result-2026-09-24.md"
+      },
+      {
+        "case_ids": [
+          "eu-ecolabel-did-list-data-input"
+        ],
+        "path": "docs/discovery/issue222-authoritative-data-input-result-2026-09-24.md",
+        "ref": "path:docs/discovery/issue222-authoritative-data-input-result-2026-09-24.md",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/docs/discovery/issue222-authoritative-data-input-result-2026-09-24.md"
+      },
+      {
+        "case_ids": [
+          "eidas-anf-trusted-list-status"
+        ],
+        "path": "docs/discovery/issue224-eidas-dynamic-reference-status-result-2026-09-24.md",
+        "ref": "path:docs/discovery/issue224-eidas-dynamic-reference-status-result-2026-09-24.md",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/docs/discovery/issue224-eidas-dynamic-reference-status-result-2026-09-24.md"
+      },
+      {
+        "case_ids": [
+          "dpp-semantic-profile-version"
+        ],
+        "path": "docs/discovery/issue225-machine-compliance-artifact-result-2026-09-24.md",
+        "ref": "path:docs/discovery/issue225-machine-compliance-artifact-result-2026-09-24.md",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/docs/discovery/issue225-machine-compliance-artifact-result-2026-09-24.md"
+      },
+      {
+        "case_ids": [
+          "anoplophora-finding-demarcated-area"
+        ],
+        "path": "docs/discovery/issue226-plant-finding-spatial-generality-result-2026-09-24.md",
+        "ref": "path:docs/discovery/issue226-plant-finding-spatial-generality-result-2026-09-24.md",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/docs/discovery/issue226-plant-finding-spatial-generality-result-2026-09-24.md"
+      },
+      {
+        "case_ids": [
+          "ireland-aamm-protocol21-post-adoption-opt-in"
+        ],
+        "path": "docs/discovery/issue273-protocol-participation-result-2026-09-25.md",
+        "ref": "path:docs/discovery/issue273-protocol-participation-result-2026-09-25.md",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/docs/discovery/issue273-protocol-participation-result-2026-09-25.md"
+      },
+      {
+        "case_ids": [
+          "wfd-groundwater-overlying-status-bodies"
+        ],
+        "path": "docs/discovery/issue286-groundwater-vertical-depth-result-2026-09-25.md",
+        "ref": "path:docs/discovery/issue286-groundwater-vertical-depth-result-2026-09-25.md",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/docs/discovery/issue286-groundwater-vertical-depth-result-2026-09-25.md"
+      },
+      {
+        "case_ids": [
+          "eba-crowdfunding-rts-authority-handoff",
+          "eba-fixed-overheads-rts-authority-handoff"
+        ],
+        "path": "docs/experiments/issue171-rts-authority-handoff-result-2026-09-24.md",
+        "ref": "path:docs/experiments/issue171-rts-authority-handoff-result-2026-09-24.md",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/docs/experiments/issue171-rts-authority-handoff-result-2026-09-24.md"
+      },
+      {
+        "case_ids": [
+          "capri-sp-private-rating"
+        ],
+        "path": "fixtures/determinations/sp-capri-rating-2025-v0.1.json",
+        "ref": "path:fixtures/determinations/sp-capri-rating-2025-v0.1.json",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/fixtures/determinations/sp-capri-rating-2025-v0.1.json"
+      },
+      {
+        "case_ids": [
+          "biotrh-szutest-notified-body"
+        ],
+        "path": "fixtures/determinations/szutest-biotrh-suspension-2023-v0.1.json",
+        "ref": "path:fixtures/determinations/szutest-biotrh-suspension-2023-v0.1.json",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/fixtures/determinations/szutest-biotrh-suspension-2023-v0.1.json"
+      },
+      {
+        "case_ids": [
+          "biotrh-szutest-notified-body"
+        ],
+        "path": "fixtures/discovery/biotrh-szutest-private-notified-body-determination-v0.1.json",
+        "ref": "path:fixtures/discovery/biotrh-szutest-private-notified-body-determination-v0.1.json",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/fixtures/discovery/biotrh-szutest-private-notified-body-determination-v0.1.json"
+      },
+      {
+        "case_ids": [
+          "capri-sp-private-rating"
+        ],
+        "path": "fixtures/discovery/capri-sp-private-rating-regulatory-input-v0.1.json",
+        "ref": "path:fixtures/discovery/capri-sp-private-rating-regulatory-input-v0.1.json",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/fixtures/discovery/capri-sp-private-rating-regulatory-input-v0.1.json"
+      },
+      {
+        "case_ids": [
+          "eu-ets-tnac-metric-trigger"
+        ],
+        "path": "fixtures/discovery/eu-ets-tnac-authoritative-metric-v0.1.json",
+        "ref": "path:fixtures/discovery/eu-ets-tnac-authoritative-metric-v0.1.json",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/fixtures/discovery/eu-ets-tnac-authoritative-metric-v0.1.json"
+      },
+      {
+        "case_ids": [
+          "hpai-woerdense-finding-spatial-effect"
+        ],
+        "path": "fixtures/discovery/hpai-woerdense-verlaat-authoritative-finding-spatial-effect-v0.1.json",
+        "ref": "path:fixtures/discovery/hpai-woerdense-verlaat-authoritative-finding-spatial-effect-v0.1.json",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/fixtures/discovery/hpai-woerdense-verlaat-authoritative-finding-spatial-effect-v0.1.json"
+      },
+      {
+        "case_ids": [
+          "planet49-interpretation-no-new-start",
+          "test-achats-validity-text-divergence"
+        ],
+        "path": "fixtures/discovery/judicial-holding-gap-v0.1.json",
+        "ref": "path:fixtures/discovery/judicial-holding-gap-v0.1.json",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/fixtures/discovery/judicial-holding-gap-v0.1.json"
+      },
+      {
+        "case_ids": [
+          "dutch-airspace-vertical-extent"
+        ],
+        "path": "fixtures/discovery/legal-spatial-volume-reopen-v0.1.json",
+        "ref": "path:fixtures/discovery/legal-spatial-volume-reopen-v0.1.json",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/fixtures/discovery/legal-spatial-volume-reopen-v0.1.json"
+      },
+      {
+        "case_ids": [
+          "skagerrak-prawn-subday-boundary"
+        ],
+        "path": "fixtures/discovery/skagerrak-prawn-rtc-subday-temporal-reopen-v0.1.json",
+        "ref": "path:fixtures/discovery/skagerrak-prawn-rtc-subday-temporal-reopen-v0.1.json",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/fixtures/discovery/skagerrak-prawn-rtc-subday-temporal-reopen-v0.1.json"
+      },
+      {
+        "case_ids": [
+          "toy-wave-roller-dynamic-standard-gateway"
+        ],
+        "path": "fixtures/discovery/toy-wave-roller-dynamic-standard-gateway-v0.1.json",
+        "ref": "path:fixtures/discovery/toy-wave-roller-dynamic-standard-gateway-v0.1.json",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/fixtures/discovery/toy-wave-roller-dynamic-standard-gateway-v0.1.json"
+      },
+      {
+        "case_ids": [
+          "hpai-woerdense-finding-spatial-effect"
+        ],
+        "path": "fixtures/findings/hpai-woerdense-verlaat-v0.1.json",
+        "ref": "path:fixtures/findings/hpai-woerdense-verlaat-v0.1.json",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/fixtures/findings/hpai-woerdense-verlaat-v0.1.json"
+      },
+      {
+        "case_ids": [
+          "planet49-interpretation-no-new-start"
+        ],
+        "path": "fixtures/judicial/planet49-c673-17-v0.1.json",
+        "ref": "path:fixtures/judicial/planet49-c673-17-v0.1.json",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/fixtures/judicial/planet49-c673-17-v0.1.json"
+      },
+      {
+        "case_ids": [
+          "test-achats-validity-text-divergence"
+        ],
+        "path": "fixtures/judicial/test-achats-c236-09-v0.1.json",
+        "ref": "path:fixtures/judicial/test-achats-c236-09-v0.1.json",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/fixtures/judicial/test-achats-c236-09-v0.1.json"
+      },
+      {
+        "case_ids": [
+          "eu-ets-tnac-metric-trigger"
+        ],
+        "path": "fixtures/metrics/eu-ets-tnac-2025-v0.1.json",
+        "ref": "path:fixtures/metrics/eu-ets-tnac-2025-v0.1.json",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/fixtures/metrics/eu-ets-tnac-2025-v0.1.json"
+      },
+      {
+        "case_ids": [
+          "reg794-consolidation-backprojection",
+          "reg794-corrigendum-marker-locality"
+        ],
+        "path": "fixtures/multilingual/reg794-2004-consolidation-backprojection-v0.1.json",
+        "ref": "path:fixtures/multilingual/reg794-2004-consolidation-backprojection-v0.1.json",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/fixtures/multilingual/reg794-2004-consolidation-backprojection-v0.1.json"
+      },
+      {
+        "case_ids": [
+          "dsa-stripchat-status-application-lag"
+        ],
+        "path": "fixtures/temporal/dsa-stripchat-designation-application-lag-v0.1.json",
+        "ref": "path:fixtures/temporal/dsa-stripchat-designation-application-lag-v0.1.json",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/fixtures/temporal/dsa-stripchat-designation-application-lag-v0.1.json"
+      },
+      {
+        "case_ids": [
+          "skagerrak-prawn-subday-boundary"
+        ],
+        "path": "fixtures/temporal/skagerrak-prawn-rtc-v0.2.json",
+        "ref": "path:fixtures/temporal/skagerrak-prawn-rtc-v0.2.json",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/fixtures/temporal/skagerrak-prawn-rtc-v0.2.json"
+      },
+      {
+        "case_ids": [
+          "adv-chatgpt-vlose-applicability",
+          "adv-ets-private-verifier",
+          "adv-harmonised-standard-restriction",
+          "adv-licence-1300-boundary",
+          "adv-nis2-italian-heading",
+          "adv-polish-visa-backprojection"
+        ],
+        "path": "fixtures/value-gates/issue88-phase-a-answer-key-v0.1.json",
+        "ref": "path:fixtures/value-gates/issue88-phase-a-answer-key-v0.1.json",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/fixtures/value-gates/issue88-phase-a-answer-key-v0.1.json"
+      },
+      {
+        "case_ids": [
+          "adv-chatgpt-vlose-applicability",
+          "adv-ets-private-verifier",
+          "adv-harmonised-standard-restriction",
+          "adv-licence-1300-boundary",
+          "adv-nis2-italian-heading",
+          "adv-polish-visa-backprojection"
+        ],
+        "path": "fixtures/value-gates/issue88-phase-a-prompts-v0.1.json",
+        "ref": "path:fixtures/value-gates/issue88-phase-a-prompts-v0.1.json",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/fixtures/value-gates/issue88-phase-a-prompts-v0.1.json"
+      },
+      {
+        "case_ids": [
+          "adv-chatgpt-vlose-applicability",
+          "adv-ets-private-verifier",
+          "adv-harmonised-standard-restriction",
+          "adv-licence-1300-boundary",
+          "adv-nis2-italian-heading",
+          "adv-polish-visa-backprojection"
+        ],
+        "path": "fixtures/value-gates/issue88-phase-a-results-v0.1.json",
+        "ref": "path:fixtures/value-gates/issue88-phase-a-results-v0.1.json",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/fixtures/value-gates/issue88-phase-a-results-v0.1.json"
+      },
+      {
+        "case_ids": [
+          "ld2-chile-lifecycle",
+          "ld2-haringvliet-2015",
+          "ld2-shredder-320",
+          "ld2-temu-june"
+        ],
+        "path": "fixtures/value-gates/issue97-manual-stage1-results-v0.3.json",
+        "ref": "path:fixtures/value-gates/issue97-manual-stage1-results-v0.3.json",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/fixtures/value-gates/issue97-manual-stage1-results-v0.3.json"
+      },
+      {
+        "case_ids": [
+          "nl-nis2-commission-tracker-lag",
+          "se-nis2-commission-tracker-lag"
+        ],
+        "path": "research/official-tracker-update-lag-2026-09-23.md",
+        "ref": "path:research/official-tracker-update-lag-2026-09-23.md",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/research/official-tracker-update-lag-2026-09-23.md"
+      },
+      {
+        "case_ids": [
+          "eu-mercosur-parallel-agreement-lifecycle",
+          "eu-mexico-parallel-agreement-lifecycle"
+        ],
+        "path": "research/parallel-international-agreement-lifecycle-2026-09-23.md",
+        "ref": "path:research/parallel-international-agreement-lifecycle-2026-09-23.md",
+        "url": "https://github.com/kaastumor/morrow-needle/blob/c3416514e054e8c3c61ca4d42c4534eca21e1cc5/research/parallel-international-agreement-lifecycle-2026-09-23.md"
+      }
+    ]
+  },
+  "source": {
+    "index_blob_sha1": "ecaab3f59fe118b71d2cafa19f05363a65ae49a1",
+    "reference_commit": "c3416514e054e8c3c61ca4d42c4534eca21e1cc5"
+  },
+  "warning": "Navigation only. This file does not copy or reinterpret legal evidence; legal facts remain owned by the referenced evidence chains."
+}

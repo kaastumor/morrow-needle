@@ -17,6 +17,7 @@ OUTPUT_DIR = ROOT / "release" / "needle-reference-pack-v0.1"
 MANIFEST = OUTPUT_DIR / "manifest.json"
 CASES = OUTPUT_DIR / "cases.jsonl"
 CLASSES = OUTPUT_DIR / "classes.json"
+EVIDENCE_MAP = OUTPUT_DIR / "evidence-map.json"
 
 PACK_VERSION = "needle-reference-pack-v0.1"
 REFERENCE_NAME = "NEEDLE_CORPUS_REFERENCE_2026-09-25"
@@ -24,6 +25,9 @@ REFERENCE_COMMIT = "c3416514e054e8c3c61ca4d42c4534eca21e1cc5"
 INDEX_BLOB = "ecaab3f59fe118b71d2cafa19f05363a65ae49a1"
 EXPECTED_CASES = 81
 EXPECTED_CLASSES = 26
+EXPECTED_ISSUE_OWNERS = 54
+EXPECTED_PATH_OWNERS = 32
+GITHUB_REPO = "kaastumor/morrow-needle"
 WARNING = (
     "Generated from corpus/index-v0.1.json. Do not edit this pack as legal truth; "
     "legal facts remain owned by referenced evidence chains."
@@ -89,7 +93,85 @@ def build_classes(source: dict, cases: list[dict]) -> dict:
     }
 
 
-def build_manifest(source: dict) -> dict:
+def build_evidence_map(source: dict, cases: list[dict]) -> dict:
+    issue_owners: dict[str, dict] = {}
+    path_owners: dict[str, dict] = {}
+    case_links = []
+
+    for case in cases:
+        refs = []
+        for ref in case["evidence_refs"]:
+            if ref.startswith("issue:"):
+                raw_issue = ref.removeprefix("issue:")
+                if not raw_issue.isdigit():
+                    raise SystemExit(f"unresolvable issue evidence ref: {ref}")
+                issue_number = int(raw_issue)
+                owner_ref = f"issue:{issue_number}"
+                owner = issue_owners.setdefault(
+                    owner_ref,
+                    {
+                        "ref": owner_ref,
+                        "issue": issue_number,
+                        "url": f"https://github.com/{GITHUB_REPO}/issues/{issue_number}",
+                        "case_ids": [],
+                    },
+                )
+                owner["case_ids"].append(case["id"])
+                refs.append(owner_ref)
+            elif ref.startswith("path:"):
+                path = ref.removeprefix("path:")
+                if not path or path.startswith("/") or ".." in Path(path).parts:
+                    raise SystemExit(f"unresolvable repository-path evidence ref: {ref}")
+                owner_ref = f"path:{path}"
+                owner = path_owners.setdefault(
+                    owner_ref,
+                    {
+                        "ref": owner_ref,
+                        "path": path,
+                        "url": (
+                            f"https://github.com/{GITHUB_REPO}/blob/"
+                            f"{REFERENCE_COMMIT}/{path}"
+                        ),
+                        "case_ids": [],
+                    },
+                )
+                owner["case_ids"].append(case["id"])
+                refs.append(owner_ref)
+            else:
+                raise SystemExit(f"unsupported evidence ref: {ref}")
+        case_links.append({"case_id": case["id"], "evidence_refs": refs})
+
+    issues = sorted(issue_owners.values(), key=lambda owner: owner["issue"])
+    paths = sorted(path_owners.values(), key=lambda owner: owner["path"])
+    for owner in issues + paths:
+        owner["case_ids"] = sorted(set(owner["case_ids"]))
+
+    if len(issues) != EXPECTED_ISSUE_OWNERS:
+        raise SystemExit("unexpected unique issue-owner count")
+    if len(paths) != EXPECTED_PATH_OWNERS:
+        raise SystemExit("unexpected unique repository-path-owner count")
+
+    return {
+        "artifact_role": "DERIVED_REFERENCE_LAYER",
+        "warning": (
+            "Navigation only. This file does not copy or reinterpret legal evidence; "
+            "legal facts remain owned by the referenced evidence chains."
+        ),
+        "source": {
+            "reference_commit": REFERENCE_COMMIT,
+            "index_blob_sha1": INDEX_BLOB,
+        },
+        "counts": {
+            "cases_with_evidence": len(case_links),
+            "issue_owners": len(issues),
+            "path_owners": len(paths),
+        },
+        "owners": {"issues": issues, "paths": paths},
+        "case_links": case_links,
+    }
+
+
+def build_manifest(source: dict, evidence_map: dict) -> dict:
     exposures = {
         (
             case.get("exposure", {}).get("status"),
@@ -120,6 +202,8 @@ def build_manifest(source: dict) -> dict:
         "counts": {
             "cases": len(source["cases"]),
             "trap_classes": len(source["trap_classes"]),
+            "evidence_issue_owners": evidence_map["counts"]["issue_owners"],
+            "evidence_path_owners": evidence_map["counts"]["path_owners"],
         },
         "exposure_policy": {
             "all_cases_exposed": True,
@@ -132,6 +216,11 @@ def build_manifest(source: dict) -> dict:
         "generated_outputs": {
             "cases.jsonl": {"record_type": "case", "records": EXPECTED_CASES},
             "classes.json": {"record_type": "trap_class", "records": EXPECTED_CLASSES},
+            "evidence-map.json": {
+                "record_type": "evidence_owner_map",
+                "issue_owners": evidence_map["counts"]["issue_owners"],
+                "path_owners": evidence_map["counts"]["path_owners"],
+            },
         },
         "generation_contract": {
             "builder": "scripts/build_reference_pack.py",
@@ -171,9 +260,11 @@ def write_jsonl(path: Path, rows: list[dict]) -> None:
 def main() -> None:
     source, _ = load_source()
     cases = sorted_cases(source)
+    evidence_map = build_evidence_map(source, cases)
     write_jsonl(CASES, cases)
     write_json(CLASSES, build_classes(source, cases))
-    write_json(MANIFEST, build_manifest(source))
+    write_json(EVIDENCE_MAP, evidence_map)
+    write_json(MANIFEST, build_manifest(source, evidence_map))
 
 
 if __name__ == "__main__":

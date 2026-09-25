@@ -10,10 +10,20 @@
     "fresh_blind_validation": "Requires a new independently selected and sealed case.",
     "future_use": "REGRESSION_ONLY"
   },
+  "generated_outputs": {
+    "cases.jsonl": {
+      "record_type": "case",
+      "records": 81
+    },
+    "classes.json": {
+      "record_type": "trap_class",
+      "records": 26
+    }
+  },
   "generation_contract": {
     "builder": "scripts/build_reference_pack.py",
     "canonical_membership_owner": "corpus/index-v0.1.json",
-    "determinism": "UTF-8, LF text, JSON keys sorted where object order is not semantic, stable source-derived ordering, no timestamps or environment data.",
+    "determinism": "UTF-8, LF text, JSON object keys sorted, case/class IDs sorted, no timestamps or environment data.",
     "network_required": false,
     "planned_pack_files": [
       "README.md",

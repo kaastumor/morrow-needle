@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — CLASS BOUNDARY EVIDENCE**
+# **DISCOVER — CLASS SUPPORT INDEPENDENCE**
 
 Frozen scientific source:
 
@@ -21,42 +21,35 @@ Released use surface:
 
 > **Needle Reference Pack v0.1 — REFERENCE_PACK_READY**
 
-### Current WIP
-
-# **#319 — frozen trap-class boundary / negative-control audit**
-
-Result:
-
-> **BOUNDARIES_ADEQUATE**
-
-Frozen taxonomy boundary profile:
-
-- 26/26 classes have at least one explicit source-backed boundary rule;
-- 14/26 also have an explicit negative/opposite control;
-- 5/26 have composition evidence that directly resists an adjacent-class merge;
-- 0/26 are positive-only;
-- 0/26 are unresolved for boundary ownership.
-
-Important limitation:
-
-> adequate class boundaries do **not** erase #309's evaluation imbalance. A class can be
-> well bounded while still lacking an independent EVALUATION case.
-
-Audit:
-
-> `docs/audits/frozen-class-boundary-evidence-2026-09-25.md`
-
-No class definition, corpus case, Reference Pack byte or scientific result changed.
-
-### Next eligible discovery after #319 merge
+### WIP = 1
 
 # **#321 — frozen class-support independence audit**
 
-#321 tests whether the apparent 3–5 cases behind each class represent genuinely
-orthogonal generality evidence or whether some support collapses into same-chain
-replication, composition evidence or one evaluation suite.
+Question:
 
-WIP=1 remains binding: #321 execution starts only after #319 merges/closes.
+> Do the 3–5 accepted cases behind each frozen class provide genuinely independent
+> generality evidence, or does raw case count overstate support through same-chain
+> replication, composition cases or one evaluation suite?
+
+Method:
+
+- first measure provenance-issue concentration mechanically;
+- then apply bounded semantic review where issue/domain labels are insufficient;
+- distinguish orthogonal generality from replication, composition, evaluation and
+  boundary-only support;
+- do not turn weak independence into an automatic case-hunting queue.
+
+Guardrails:
+
+- frozen corpus remains 81/26;
+- no new legal research/cases/classes/model runs;
+- exposed evaluation cases remain regression-only;
+- #214 remains unchanged.
+
+Expected disposition:
+
+> `INDEPENDENCE_ADEQUATE` / `ADOPT_INDEPENDENCE_PROFILE` /
+> `NAMED_CLASSES_WEAKLY_GENERALISED` / `PARK`
 
 ## Historical backlog archive
 

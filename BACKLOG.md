@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — FROZEN CORPUS LIMITATIONS**
+# **DISCOVER — REGRESSION CONTRACT**
 
 Frozen scientific source:
 
@@ -21,43 +21,35 @@ Released use surface:
 
 > **Needle Reference Pack v0.1 — REFERENCE_PACK_READY**
 
-### Current WIP
-
-# **#309 — frozen corpus concentration and regression-misuse audit**
-
-Result:
-
-> **ADOPT_LIMITATIONS_PROFILE**
-
-Frozen-state findings:
-
-- 71/81 cases are DERIVATION; 10/81 are EVALUATION;
-- all 10 evaluation cases come from two evaluation programmes (#88 and #97);
-- only 8/26 classes have any EVALUATION case; 18/26 remain derivation-only;
-- every class now has 3–5 cases, eliminating the seed's singleton classes but creating a
-  curated near-flat support profile that must not be read as prevalence;
-- 75/81 cases are single-class; 6 are explicitly multi-class;
-- exact domain labels are broad but highly granular (68 labels, mostly singletons);
-- exact `EU` jurisdiction remains 53/81 cases;
-- source-system diversity is not a first-class corpus field and cannot be honestly
-  quantified without reopening evidence owners;
-- older-digitised-source coverage remains unsupported from canonical metadata.
-
-Durable output:
-
-> `docs/audits/frozen-corpus-concentration-misuse-2026-09-25.md`
-
-No case/class, taxonomy or pack-byte change was made.
-
-### Next eligible discovery after #309 merge
+### WIP = 1
 
 # **#311 — executable regression corpus vs reference catalog**
 
-#311 tests whether the canonical "regression/reference corpus" identity is operationally
-accurate for an external consumer, given that most case records preserve decisive traps
-and evidence refs but not a standardized executable question/oracle.
+Question:
 
-WIP=1 remains binding: #311 execution starts only after #309 merges/closes.
+> Is Needle's current "regression/reference corpus" identity operationally accurate for
+> an external consumer, or does the released pack primarily preserve reference material
+> while executable regression contracts exist only for a subset/deeper repository owners?
+
+Required distinction:
+
+- reference catalog;
+- regression fixture/material;
+- executable regression suite;
+- benchmark/evaluation suite.
+
+Guardrails:
+
+- no new cases/classes or model runs;
+- no synthesized historical tasks/answer keys;
+- exposed cases remain REGRESSION_ONLY;
+- #214 remains a hard null;
+- strongest boring description wins over new machinery.
+
+Expected disposition:
+
+> `KEEP_REGRESSION_REFERENCE_LABEL` / `NARROW_TO_REFERENCE_CORPUS` /
+> `ADOPT_MINIMAL_REGRESSION_CONTRACT` / `PARK`
 
 ## Historical backlog archive
 

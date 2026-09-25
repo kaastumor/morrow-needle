@@ -197,13 +197,21 @@ upstream-authority/downstream-decision cases broaden procedural-state coverage.
 
 **Source-system diversity**
 
-The case index does not encode a controlled source-system field. Evidence refs point to
-issues/paths rather than a normalized source-origin inventory.
+Issue #315 re-opened the accepted evidence owners without doing new legal research.
 
-Therefore the frozen corpus cannot honestly support a numerical claim such as "N source
-systems covered" without reopening evidence owners and creating a new classification.
-The old EUR-Lex/Commission concentration concern may have been reduced, but the canonical
-index does not measure it.
+It confirms that source-family variety materially broadened beyond the seed: accepted
+evidence now includes Member-State official material, private legally recognised sources,
+EU agency/body material, official registers/datasets/machine artifacts and linked-order /
+international-agreement evidence in addition to EUR-Lex/Commission material.
+
+However, the canonical index still does not encode a controlled per-case source inventory.
+Shared issues and shared evaluation packets also make owner-level keyword/family counts
+unsafe to promote into exact case-level percentages.
+
+Therefore the project can claim broader **source-family variety**, but not a reproducible
+numerical source-system distribution.
+
+See `docs/audits/frozen-source-system-diversity-2026-09-25.md`.
 
 **National court/application coverage**
 

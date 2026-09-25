@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — METAMORPHIC REGRESSION**
+# **DISCOVER — SOURCE-SYSTEM DIVERSITY**
 
 Frozen scientific source:
 
@@ -23,47 +23,53 @@ Released use surface:
 
 ### Current WIP
 
-# **#313 — metamorphic regression derivation**
+# **#315 — frozen source-system diversity profile**
 
 Result:
 
-> **ADOPT_METAMORPHIC_DERIVATION**
+> **REVISE_METHOD**
 
-Strict rule:
+What survived:
 
-> A valid metamorphic regression must reuse an accepted exposed case, hold the scenario
-> sufficiently fixed, change one named legally material state variable, and have an
-> evidence-backed expected relation on both sides. Same-class analogy is not enough.
+- accepted evidence now clearly spans more than ordinary EUR-Lex/Commission text:
+  Member-State official sources, private legally recognised sources, EU agencies/bodies,
+  official registers/datasets/machine artifacts and linked-order/international-agreement
+  evidence are all present;
+- the 19/23-case seed warning that domain diversity exceeded source-system diversity has
+  therefore been partially reduced.
 
-Bounded derived relations:
+What did **not** survive:
 
-1. #88 licence 13:00 boundary — 12:59 vs 13:01 changes deemed lodgement day;
-2. Stripchat DSA application start — designation held constant while application state
-   flips at the adjacent boundary;
-3. toy harmonised-standard gateway — parent text and standard identifier held constant
-   while OJ reference restriction changes the derived presumption;
-4. Ireland Protocol 21 — same act/member state, participation state changes through the
-   preserved post-adoption opt-in route.
+- the canonical corpus does not encode a per-case source-system inventory;
+- 34 cases can be read from substantive frozen Git-backed owners;
+- 45 cases are issue-only;
+- 2 nominally path-backed cases point to placeholder result files and require issue
+  fallback;
+- shared issues and evaluation packets contain sources for several cases, so owner-level
+  family hits cannot be promoted into exact case-level percentages without semantic
+  annotation.
 
-Negative controls reject same-class analogy, multi-dimensional composition and
-counterfactuals invented from trap text.
+Durable conclusion:
 
-Derived artifact:
+> source-family variety broadened, but exact frozen corpus-wide source-system
+> concentration is **not reproducibly measured** by current canonical metadata.
 
-> `fixtures/regression/frozen-reference-metamorphic-v0.1.json`
+Audit:
 
-Scientific corpus remains exactly 81/26; all derived relations are exposed
-`REGRESSION_ONLY`.
+> `docs/audits/frozen-source-system-diversity-2026-09-25.md`
 
-### Next eligible discovery after #313 merge
+No canonical `source_system` field or derived 81-row source inventory was created merely
+to make the metric available.
 
-# **#315 — frozen source-system diversity profile**
+### Next eligible discovery after #315 merge
 
-#315 tests whether the old EUR-Lex/Commission source-system concentration warning can be
-re-measured honestly across the frozen corpus using existing evidence owners, without
-adding source metadata to the canonical schema or doing new legal research.
+# **#317 — negative/null evidence discoverability**
 
-WIP=1 remains binding: #315 execution starts only after #313 merges/closes.
+#317 tests whether the polished positive-case corpus/reference surfaces make binding null,
+parity, REJECT and PARK evidence too hard to discover, or whether README/value-evidence/
+assumption owners already prevent claim resurrection without another registry.
+
+WIP=1 remains binding: #317 execution starts only after #315 merges/closes.
 
 ## Historical backlog archive
 

@@ -11,62 +11,85 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **REVIEW / RELEASE**
+# **USE / RELEASE — NIGHT PROGRAM**
 
-### Sole WIP
-
-# **#292 — 81-case corpus reference checkpoint**
-
-Frozen question:
-
-> Can the accepted **81-case / 26-class** corpus serve as a coherent stable
-> regression/reference checkpoint without new legal research, cases, classes, product
-> scope or schema growth?
-
-Release review result:
-
-> **RELEASE_READY — merge gate pending**
-
-Reference candidate:
+The frozen reference checkpoint is canonical:
 
 > **NEEDLE_CORPUS_REFERENCE_2026-09-25**
 
-Exact release-candidate index blob:
+Reference commit:
+
+> `c3416514e054e8c3c61ca4d42c4534eca21e1cc5`
+
+Exact canonical index blob:
 
 > `ecaab3f59fe118b71d2cafa19f05363a65ae49a1`
 
-Verified release integrity:
-
-- 81 declared / 81 actual cases;
-- 26 used classes;
-- no duplicate IDs;
-- no unknown/unused classes;
-- 54/54 unique issue evidence owners resolve and are closed;
-- 32/32 unique repository-path evidence owners exist;
-- all 81 cases remain exposed, `blind_reuse=false`, `REGRESSION_ONLY`;
-- cases and class definitions are unchanged from accepted main;
-- only top-level seed/reference metadata and release-facing documentation are repaired.
-
-The existing validator is tightened to require `CANONICAL_REFERENCE` plus non-empty
-top-level purpose/reuse policy while preserving all prior case/path/exposure checks.
-
-Full result:
-
-> `docs/reviews/issue292-corpus-reference-release-2026-09-25.md`
-
-Accepted scientific content remains:
+Accepted scientific content:
 
 > **81 cases / 26 classes**
 
-No product or taxonomy work is authorised by this release.
+### Active programme
 
-### Successor allocation
+# **#294 — external Needle Reference Pack v0.1**
 
-Do not preselect a successor before the reference checkpoint passes its merge gate.
+Real goal:
 
-After #292 merges/closes, choose exactly one purposeful mode from
-DISCOVER / CONSOLIDATE / USE / REVIEW-RELEASE / MAINTAIN based on the now-released
-reference state and current project evidence.
+> By morning, turn the frozen reference corpus into a self-contained external reference
+> package that a fresh researcher can inspect and use without reconstructing the
+> project's issue history.
+
+This is a packaging/use horizon, not taxonomy discovery and not a new product claim.
+
+### Execution WIP
+
+WIP=1 applies to child execution.
+
+Ordered queue:
+
+1. **#295** — Reference Pack contract + deterministic builder;
+2. **#296** — machine-readable case/class exports;
+3. **#297** — evidence-navigation map;
+4. **#298** — human-readable catalog;
+5. **#299** — external consumer quickstart / safe-use guide;
+6. **#300** — pack validator, determinism tests and checksums;
+7. **#301** — synthetic cold-start use audit;
+8. **#302** — final integration and freeze.
+
+Selection rule for the scheduled worker:
+
+1. resume an unfinished automation-owned PR first;
+2. otherwise select the lowest-numbered open `AUTO READY — NIGHT` issue above whose
+   dependencies are satisfied;
+3. work at most one child issue per run;
+4. merge only after relevant CI is green;
+5. never skip a blocked dependency merely to consume a scheduled run;
+6. never invent task #9.
+
+Current first eligible child:
+
+> **#295**
+
+### Night constraints
+
+- one recurring scheduled worker performs all eight runs;
+- no new legal research;
+- no case/class admission, merge or redefinition;
+- no new scientific performance/value claim;
+- no service/database/framework/model call;
+- Python standard library and existing repository capabilities first;
+- normal PR CI only; do not manually dispatch historical workflows;
+- #214 remains a hard null;
+- generated pack artifacts must remain derived views, not competing legal truth owners.
+
+### Programme completion
+
+Parent #294 closes only if #302 records:
+
+> **REFERENCE_PACK_READY**
+
+If eight runs are insufficient, preserve the exact active child/PR/blocker for morning
+continuation. Throughput is not a reason to weaken dependencies or acceptance criteria.
 
 ## Historical backlog archive
 

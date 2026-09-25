@@ -21,35 +21,46 @@ Released use surface:
 
 > **Needle Reference Pack v0.1 — REFERENCE_PACK_READY**
 
-### WIP = 1
+### Current WIP
 
 # **#321 — frozen class-support independence audit**
 
-Question:
+Result:
 
-> Do the 3–5 accepted cases behind each frozen class provide genuinely independent
-> generality evidence, or does raw case count overstate support through same-chain
-> replication, composition cases or one evaluation suite?
+> **INDEPENDENCE_ADEQUATE**
 
-Method:
+Findings:
 
-- first measure provenance-issue concentration mechanically;
-- then apply bounded semantic review where issue/domain labels are insufficient;
-- distinguish orthogonal generality from replication, composition, evaluation and
-  boundary-only support;
-- do not turn weak independence into an automatic case-hunting queue.
+- every class retains at least 2 single-class positive cases after composition cases are
+  removed;
+- 18/26 classes contain at least one same-issue sibling pair, but accepted research often
+  selected those pairs deliberately as orthogonal positives;
+- semantic review finds materially distinct legal settings/instruments behind every
+  class's stated narrow scope;
+- 5 classes have direct composition/anti-merge support;
+- 8 classes have exposed EVALUATION support;
+- all 10 EVALUATION cases still come from only #88/#97.
 
-Guardrails:
+Durable distinction:
 
-- frozen corpus remains 81/26;
-- no new legal research/cases/classes/model runs;
-- exposed evaluation cases remain regression-only;
-- #214 remains unchanged.
+> generality support for regression/reference use is adequate; experimental independence,
+> prevalence and benchmark representativeness remain unproved.
 
-Expected disposition:
+Audit:
 
-> `INDEPENDENCE_ADEQUATE` / `ADOPT_INDEPENDENCE_PROFILE` /
-> `NAMED_CLASSES_WEAKLY_GENERALISED` / `PARK`
+> `docs/audits/frozen-class-support-independence-2026-09-25.md`
+
+No maintained independence registry, corpus mutation or taxonomy change was created.
+
+### Next eligible discovery after #321 merge
+
+# **#323 — CHOICE_OF_FORUM_STATE residual-value depth test**
+
+This reactivates the exact depth target preselected by #286 and deferred—not rejected—by
+#288. It asks whether the class preserves a consequential regression distinction beyond
+mature ordinary jurisdiction-agreement doctrine under #282's revised rejection burden.
+
+WIP=1 remains binding: #323 execution starts only after #321 merges/closes.
 
 ## Historical backlog archive
 

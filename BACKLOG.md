@@ -21,35 +21,43 @@ Released use surface:
 
 > **Needle Reference Pack v0.1 — REFERENCE_PACK_READY**
 
-### WIP = 1
+### Current WIP
 
 # **#309 — frozen corpus concentration and regression-misuse audit**
 
-Question:
+Result:
 
-> What concentration, imbalance and provenance structure does the final frozen 81-case
-> corpus actually have, and what misuse risks should a regression/reference consumer
-> understand?
+> **ADOPT_LIMITATIONS_PROFILE**
 
-Trigger:
+Frozen-state findings:
 
-- maintained corpus-bias audit was written for the 19-case seed and appended only through
-  23 cases;
-- the frozen corpus is now 81/26;
-- the polished Reference Pack increases the chance that consumers mistake curated
-  regression coverage for representative benchmark coverage.
+- 71/81 cases are DERIVATION; 10/81 are EVALUATION;
+- all 10 evaluation cases come from two evaluation programmes (#88 and #97);
+- only 8/26 classes have any EVALUATION case; 18/26 remain derivation-only;
+- every class now has 3–5 cases, eliminating the seed's singleton classes but creating a
+  curated near-flat support profile that must not be read as prevalence;
+- 75/81 cases are single-class; 6 are explicitly multi-class;
+- exact domain labels are broad but highly granular (68 labels, mostly singletons);
+- exact `EU` jurisdiction remains 53/81 cases;
+- source-system diversity is not a first-class corpus field and cannot be honestly
+  quantified without reopening evidence owners;
+- older-digitised-source coverage remains unsupported from canonical metadata.
 
-Guardrails:
+Durable output:
 
-- no new cases/classes or taxonomy change;
-- no difficulty/model scoring;
-- all cases remain exposed and REGRESSION_ONLY;
-- #214 remains a hard null;
-- coverage gaps do not become an automatic case-hunting queue.
+> `docs/audits/frozen-corpus-concentration-misuse-2026-09-25.md`
 
-Expected disposition:
+No case/class, taxonomy or pack-byte change was made.
 
-> `ADOPT_LIMITATIONS_PROFILE` / `REVISE_PACK_GUIDANCE` / `NO_MATERIAL_CHANGE`
+### Next eligible discovery after #309 merge
+
+# **#311 — executable regression corpus vs reference catalog**
+
+#311 tests whether the canonical "regression/reference corpus" identity is operationally
+accurate for an external consumer, given that most case records preserve decisive traps
+and evidence refs but not a standardized executable question/oracle.
+
+WIP=1 remains binding: #311 execution starts only after #309 merges/closes.
 
 ## Historical backlog archive
 

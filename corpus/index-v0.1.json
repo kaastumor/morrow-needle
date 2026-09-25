@@ -1,9 +1,9 @@
 {
   "schema_version": "adversarial-corpus-index-v0.1",
-  "status": "CANONICAL_SEED",
+  "status": "CANONICAL_REFERENCE",
   "created_date": "2026-09-23",
   "purpose": "Index public adversarial EU legal-research cases without duplicating their underlying legal evidence.",
-  "reuse_policy": "Every case in this public seed is scientifically exposed and is regression-only for future evaluation. Fresh blind validation requires a new independently selected and sealed case.",
+  "reuse_policy": "Every case in this public reference corpus is scientifically exposed and is regression-only for future evaluation. Fresh blind validation requires a new independently selected and sealed case.",
   "trap_classes": {
     "DYNAMIC_REFERENCE_STATUS": "Legal effect changes because the authoritative status of a referenced external item changes while the parent rule or external identifier remains unchanged.",
     "STATUS_APPLICATION_SEPARATION": "Authoritative status or set membership and downstream legal applicability begin or end at different legal boundaries.",

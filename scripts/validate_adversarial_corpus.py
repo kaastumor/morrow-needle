@@ -30,6 +30,13 @@ def _fail(message: str) -> None:
 def validate(data: dict, repo_root: Path) -> None:
     if data.get("schema_version") != "adversarial-corpus-index-v0.1":
         _fail("unexpected schema_version")
+    if data.get("status") != "CANONICAL_REFERENCE":
+        _fail("unexpected corpus status")
+
+    for field in ("purpose", "reuse_policy"):
+        value = data.get(field)
+        if not isinstance(value, str) or not value.strip():
+            _fail(f"{field} must be a non-empty string")
 
     trap_classes = data.get("trap_classes")
     if not isinstance(trap_classes, dict) or not trap_classes:

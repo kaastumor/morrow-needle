@@ -1,0 +1,65 @@
+{
+  "artifact_role": "DERIVED_REFERENCE_LAYER",
+  "counts": {
+    "cases": 81,
+    "evidence_issue_owners": 54,
+    "evidence_path_owners": 32,
+    "trap_classes": 26
+  },
+  "exposure_policy": {
+    "all_cases_exposed": true,
+    "blind_reuse": false,
+    "fresh_blind_validation": "Requires a new independently selected and sealed case.",
+    "future_use": "REGRESSION_ONLY"
+  },
+  "generated_outputs": {
+    "cases.jsonl": {
+      "record_type": "case",
+      "records": 81
+    },
+    "catalog.md": {
+      "case_entries": 81,
+      "class_entries": 26,
+      "record_type": "human_catalog"
+    },
+    "checksums.sha256": {
+      "payload_files": 6,
+      "record_type": "sha256_payload_checksums"
+    },
+    "classes.json": {
+      "record_type": "trap_class",
+      "records": 26
+    },
+    "evidence-map.json": {
+      "issue_owners": 54,
+      "path_owners": 32,
+      "record_type": "evidence_owner_map"
+    }
+  },
+  "generation_contract": {
+    "builder": "scripts/build_reference_pack.py",
+    "canonical_membership_owner": "corpus/index-v0.1.json",
+    "determinism": "UTF-8, LF text, JSON object keys sorted, case/class IDs sorted, no timestamps or environment data.",
+    "network_required": false,
+    "planned_pack_files": [
+      "README.md",
+      "manifest.json",
+      "cases.jsonl",
+      "classes.json",
+      "evidence-map.json",
+      "catalog.md",
+      "checksums.sha256"
+    ],
+    "runtime": "Python standard library only"
+  },
+  "pack_version": "needle-reference-pack-v0.1",
+  "source": {
+    "index_blob_sha1": "ecaab3f59fe118b71d2cafa19f05363a65ae49a1",
+    "index_path": "corpus/index-v0.1.json",
+    "reference_commit": "c3416514e054e8c3c61ca4d42c4534eca21e1cc5",
+    "reference_name": "NEEDLE_CORPUS_REFERENCE_2026-09-25",
+    "schema_version": "adversarial-corpus-index-v0.1",
+    "status": "CANONICAL_REFERENCE"
+  },
+  "warning": "Generated from corpus/index-v0.1.json. Do not edit this pack as legal truth; legal facts remain owned by referenced evidence chains."
+}

@@ -11,9 +11,9 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **USE / RELEASE — NIGHT PROGRAM**
+# **USE / RELEASE — REFERENCE PACK FROZEN**
 
-The frozen reference checkpoint is canonical:
+The scientific reference checkpoint remains canonical and unchanged:
 
 > **NEEDLE_CORPUS_REFERENCE_2026-09-25**
 
@@ -29,72 +29,63 @@ Accepted scientific content:
 
 > **81 cases / 26 classes**
 
-### Active programme
+### Released use surface
 
-# **#294 — external Needle Reference Pack v0.1**
+# **Needle Reference Pack v0.1**
 
-Real goal:
+Parent programme: **#294**. Final integration: **#302**.
 
-> By morning, turn the frozen reference corpus into a self-contained external reference
-> package that a fresh researcher can inspect and use without reconstructing the
-> project's issue history.
+The pack is a deterministic **derived reference layer** over the frozen corpus. It is
+not a new legal truth owner, standalone evidence bundle, product claim or new scientific
+claim.
 
-This is a packaging/use horizon, not taxonomy discovery and not a new product claim.
+Included release files:
 
-### Execution WIP
+- `release/needle-reference-pack-v0.1/README.md`;
+- `manifest.json`;
+- `cases.jsonl`;
+- `classes.json`;
+- `evidence-map.json`;
+- `catalog.md`;
+- `checksums.sha256`.
 
-WIP=1 applies to child execution.
+Supporting release code:
 
-Ordered queue:
+- `scripts/build_reference_pack.py`;
+- `scripts/validate_reference_pack.py`;
+- `tests/test_reference_pack.py`.
 
-1. **#295** — Reference Pack contract + deterministic builder;
-2. **#296** — machine-readable case/class exports;
-3. **#297** — evidence-navigation map;
-4. **#298** — human-readable catalog;
-5. **#299** — external consumer quickstart / safe-use guide;
-6. **#300** — pack validator, determinism tests and checksums;
-7. **#301** — synthetic cold-start use audit;
-8. **#302** — final integration and freeze.
+All programme children **#295–#301** are complete. #301's instruction-bounded synthetic
+cold-start audit returned **PASS**. It is not human usability evidence.
 
-Selection rule for the scheduled worker:
+### Release gate
 
-1. use the programme integration branch `auto/294-reference-pack-night`;
-2. resume an unfinished child checkpoint on that branch first;
-3. otherwise select the lowest-numbered open `AUTO READY — NIGHT` issue above whose
-   dependencies are satisfied;
-4. work at most one child issue per run;
-5. commit the child checkpoint to the programme branch, run the smallest relevant deterministic checks, and close the child when its checkpoint is complete;
-6. do **not** open or merge a child PR;
-7. #302 opens the single final integration PR and requires the normal green CI/release gate;
-8. never skip a blocked dependency merely to consume a scheduled run;
-9. never invent task #9.
+This state becomes canonical only when the single #302 integration PR passes the normal
+repository sanitation and unit-test gates and is merged to `main`.
 
-Current first eligible child:
+The final #302 closeout must record the exact merged commit and pack checksums. If the
+required executable rebuild, canonical corpus validation or Reference Pack tests fail,
+the PR must not merge and the result is `REVISE` or `BLOCKED`, not
+`REFERENCE_PACK_READY`.
 
-> **#295**
-
-### Night constraints
-
-- one recurring scheduled worker performs all eight runs;
-- one programme integration branch/PR is used across the eight runs to limit Actions cost;
-- the parent #294 owner-authorised exception supersedes the ordinary per-child branch/PR rule only for this night programme;
-- no new legal research;
-- no case/class admission, merge or redefinition;
-- no new scientific performance/value claim;
-- no service/database/framework/model call;
-- Python standard library and existing repository capabilities first;
-- normal PR CI only; do not manually dispatch historical workflows;
-- #214 remains a hard null;
-- generated pack artifacts must remain derived views, not competing legal truth owners.
-
-### Programme completion
-
-Parent #294 closes only if #302 records:
+On a green merged #302 PR the programme result is:
 
 > **REFERENCE_PACK_READY**
 
-If eight runs are insufficient, preserve the exact active child/PR/blocker for morning
-continuation. Throughput is not a reason to weaken dependencies or acceptance criteria.
+Exposure remains unchanged:
+
+> **all 81 cases are exposed / blind_reuse=false / REGRESSION_ONLY**
+
+Fresh blind validation still requires a new independently selected and sealed case.
+Issue #214 remains a hard null: the frozen challenge-set pilot produced zero diagnostic
+rescues and does not support a model/workflow superiority claim.
+
+### Current allocation
+
+No successor horizon is allocated by this release. Do not invent task #9.
+
+After #302 closeout, the backlog returns to event-triggered allocation: future work must
+be earned by a concrete falsifiable research/use question or explicit owner allocation.
 
 ## Historical backlog archive
 

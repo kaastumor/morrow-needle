@@ -57,25 +57,15 @@
       }
     }
   ],
-  "repair": {
-    "actions": [
-      "Revise C-040 from USD 119.5 million to USD 126.4 million for the task's 2025 time state.",
-      "Revise C-039 from USD 160,000 to USD 105,000 for the USD 425 million transaction."
-    ],
-    "status": "PROPOSED"
-  },
   "result_impact": {
     "comparability": "UNKNOWN",
     "existing_outputs_action": "HUMAN_DECISION_REQUIRED",
     "scope": "Any result scored against C-039/C-040 at the pinned defective task revision under the task's 2025 transaction dates.",
     "reason": "Authoritative 2025 values can be falsely rejected while stale rubric values can pass; historical raw outputs must be inspected to decide whether re-judging is sufficient."
   },
-  "open_questions": [
-    "Whether historical raw outputs for the affected task revision remain available for re-judging.",
-    "Whether the upstream maintainer accepts the proposed legal correction."
-  ],
   "adjudication": {
     "status": "PENDING",
     "note": "Needle has not received upstream maintainer or qualified external adjudication of the proposed repair."
-  }
+  },
+  "repair_status": "PROPOSED"
 }

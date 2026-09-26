@@ -211,94 +211,95 @@ Before trusting a benchmark, regression result or comparative score, validate th
 A legally plausible answer key is not enough. The task, criteria, evidence, execution path and
 version must jointly support the meaning assigned to PASS/FAIL.
 
-At minimum check:
+Use five working groups.
 
-1. **Task-to-criterion coverage**
-   - every decision-critical deliverable or proposition requested by the task has an
-     observable criterion;
-   - a response that omits the central requested work must not be able to all-pass merely by
-     satisfying peripheral criteria;
-   - where practical, use a deletion/mutation check: remove a required central element from
-     an otherwise acceptable answer and confirm that at least one criterion fails.
+### 12.1 Contract adequacy
 
-2. **Criterion evidence correctness**
-   - legal criteria must be supported by the exact controlling authority/evidence owner they
-     claim to test;
-   - verify article/paragraph/subparagraph identity where the distinction changes the rule;
-   - do not treat a nearby correct source as support for the wrong proposition.
+Check coverage in **both directions**:
 
-3. **Activation and gradability**
-   - every criterion must have a determinate result for the outputs the task permits;
-   - if a criterion is conditional, specify what happens when its trigger does not occur;
-   - a criterion that is substantively true but vacuous for the task is not a valid grading
-     contract until its inactive case is defined.
+- every decision-critical deliverable or proposition requested by the task must affect at
+  least one observable criterion;
+- an otherwise acceptable answer must not fail merely because the key encodes one
+  unnecessarily narrow formulation when the task permits professionally valid alternatives;
+- where practical, use deletion/mutation checks in both directions: remove central requested
+  work from an acceptable answer and confirm something fails; vary a legally acceptable
+  formulation and confirm it does not fail for irrelevant wording/structure reasons;
+- conditional criteria must define what happens when their trigger does not occur;
+- counts, denominators, allowlists, thresholds, required/optional/negative sets and shared
+  facts must reconcile across criteria.
 
-4. **Cross-criterion consistency**
-   - counts, denominators, allowlists, thresholds, required/optional/negative sets and other
-     shared facts must reconcile across criteria;
-   - where several criteria derive from the same underlying truth, prefer one typed owner or
-     an explicit consistency check over duplicated hand-maintained literals.
+This group owns task-to-criterion coverage, activation/gradability and cross-criterion
+consistency. It is as concerned with **false rejection of valid answers** as with bad answers
+passing.
 
-5. **Execution validity before subject failure**
-   - extraction, conversion, tool, harness or judge-input failures must surface as
-     `INVALID_RUN`, `UNSCORABLE` or an equivalent explicit evaluation failure;
-   - infrastructure failure must not be silently converted into a confident FAIL for the
-     evaluated subject.
+### 12.2 Evidence and temporal scope
 
-6. **Semantic revision control**
-   - changes to instructions, criteria, answer keys, required deliverables or other
-     score-bearing fields are changes to the effective task contract;
-   - pin the exact contract version/commit for every result;
-   - do not compare scores across materially changed contracts as though only the evaluated
-     system changed.
+For every score-bearing proposition:
 
-7. **Legal-time ownership**
-   - when law, fees, thresholds, deadlines, source state, authority or applicability can
-     change, give the task an explicit `law_as_of`, controlling event date or equally
-     unambiguous legal-time perspective;
-   - every score-bearing mutable legal literal must preserve its authoritative evidence
-     owner and effective date/period;
-   - do not let a bare threshold, fee, date or legal status become evaluator truth without
-     a temporal owner;
-   - historical tasks may remain valid after later legal change when their historical
-     perspective is explicit; current-law tasks must be revalidated/versioned when the
-     score-bearing legal state changes.
+- require proposition-level support from the evidence owner the criterion actually depends
+  on;
+- distinguish legal authority from facts in supplied matter documents;
+- verify article/paragraph/subparagraph identity where the distinction changes the rule;
+- do not treat a nearby correct source as support for the wrong proposition;
+- when law, fees, thresholds, deadlines, source state, authority or applicability can change,
+  reconstruct the governing legal-time contract from an explicit `law_as_of`, a controlling
+  transaction/filing/closing/event date, or an equally unambiguous temporal owner;
+- do **not** infer a temporal defect merely because a dedicated `law_as_of` field is absent;
+- preserve authoritative source and effective period for mutable score-bearing legal
+  literals.
 
-8. **Stability decomposition when the decision is sensitive**
-   - distinguish answer/system variance from judge variance;
-   - where a small score difference could change a project or release decision, freeze an
-     identical output and repeat judging before attributing the delta to the subject;
-   - preserve judge disagreements and human adjudication rather than averaging instability
-     into false certainty.
+A single global cutoff does not replace event-specific timing rules where different events
+own different legal states.
 
-### Post-reveal preservation
+### 12.3 Execution validity
 
-After a blinded/sealed evaluation is complete, preserve enough of the revealed execution
-record for an independent future audit.
+Declare the evaluated-system boundary before interpreting failures.
 
-Subject to legitimate confidentiality constraints, archive:
+- extraction, conversion, harness, transport or judge-input failures **outside** the tested
+  subject must surface as `INVALID_RUN`, `UNSCORABLE` or an equivalent evaluation failure;
+- if document ingestion, conversion, retrieval or another tool capability is deliberately
+  part of the tested system, failure of that capability may legitimately be a subject
+  failure;
+- never silently convert evaluator infrastructure failure into a confident subject FAIL.
 
-- exact task prompts;
-- exact answer/evaluator keys;
-- raw evaluated outputs;
-- score/adjudication records;
-- exact decisive source/evidence owners;
-- task-contract version/commit.
+The question is not whether infrastructure was involved; it is **who owned the failed
+capability under the frozen evaluation contract**.
 
-If raw material cannot live in the repository, record the immutable archive location,
-access boundary and identifying hash, and state which claims cannot be independently
-re-audited without that archive.
+### 12.4 Versioned audit record
+
+Instructions, criteria, answer keys, required deliverables and other score-bearing fields
+are effective task state.
+
+- pin the exact task/contract version or commit for every result;
+- a legitimate contract revision is not itself a defect;
+- do not compare scores across materially changed contracts as though only the evaluated
+  system changed;
+- after reveal, preserve exact prompts, evaluator/answer keys, raw outputs,
+  score/adjudication records and decisive evidence owners;
+- if confidentiality prevents repository storage, record the immutable archive location,
+  access boundary and identifying hash, plus which claims cannot be independently audited
+  without that archive.
 
 A hash commitment proves later bytes match earlier bytes only when the committed bytes are
-eventually available to the authorised auditor. A hash plus a prose summary is not by itself
-a fully reproducible evaluation record.
+eventually available to the authorised auditor. A hash plus prose summary is not by itself a
+fully reproducible evaluation record.
+
+### 12.5 Decision-sensitive uncertainty
+
+Where uncertainty could change the project/release decision:
+
+- distinguish subject-output variance from judge variance;
+- freeze an identical subject output and repeat judging to measure judge variability before
+  attributing a small delta to the subject;
+- preserve disagreements and human adjudication where material;
+- do not treat repeated judging as proof of correctness or as a cure for shared judge bias.
 
 These checks are **evaluation hygiene**, not a Needle superiority claim.
 
-They were added after public legal-benchmark defects demonstrated that strong modern
-benchmarks can still suffer from criterion/source misalignment, vacuous criteria,
-cross-criterion inconsistency, rubric undercoverage, execution failures that masquerade as
-subject failures and unresolved judge/run variance.
+They were added after public legal-benchmark maintenance evidence demonstrated that strong
+modern benchmarks can still suffer from criterion/source misalignment, vacuous or
+undercovering criteria, internal inconsistency, evaluation-path failures, contract drift and
+unresolved judge/run variance.
 
 Passing this gate does not prove a benchmark is representative or a model is reliable. It
 only establishes that the evaluation contract is coherent enough for its score to mean what

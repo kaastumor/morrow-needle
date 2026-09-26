@@ -1,0 +1,119 @@
+{
+  "schema_version": "authoritative-dynamic-set-v0.1",
+  "set_id": "lvd:harmonised-standard-references",
+  "set_character": "AUTHORITATIVE_DYNAMIC_SET",
+  "authority": {
+    "authority_id": "EUROPEAN_COMMISSION",
+    "label": "European Commission",
+    "authority_type": "EU_INSTITUTION"
+  },
+  "publication_surface": {
+    "surface_type": "OFFICIAL_JOURNAL",
+    "identifier": "Official Journal references of harmonised standards supporting Directive 2014/35/EU",
+    "authenticity_basis": "Directive 2014/35/EU Article 12 makes publication of a harmonised-standard reference in the Official Journal the condition for presumption of conformity with covered safety objectives.",
+    "source_ref": {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32014L0035",
+      "locator": "Article 12",
+      "language": "ENG",
+      "role": "LEGAL_BASIS",
+      "authority_character": "BINDING_LEGAL_TEXT"
+    }
+  },
+  "legal_basis_refs": [
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32014L0035",
+      "locator": "Article 12",
+      "language": "ENG",
+      "role": "LEGAL_BASIS",
+      "authority_character": "BINDING_LEGAL_TEXT"
+    },
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32025D1457",
+      "locator": "Article 2 and Annex point (1)",
+      "language": "ENG",
+      "role": "TRANSITION",
+      "authority_character": "BINDING_LEGAL_TEXT"
+    }
+  ],
+  "dependencies": [
+    {
+      "dependency_id": "lvd-art12-on-harmonised-reference-set",
+      "governing_rule": {
+        "act_id": "CELEX:32014L0035",
+        "provision": "Article 12",
+        "language": "ENG"
+      },
+      "relation_character": "LEGAL_EFFECT_CONDITIONED_ON_AUTHORITATIVE_SET_STATE",
+      "condition_statement": "Presumption of conformity under Directive 2014/35/EU Article 12 depends on conformity with harmonised standards or parts whose references have been published in the Official Journal.",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32014L0035",
+          "locator": "Article 12",
+          "language": "ENG",
+          "role": "DEPENDENCY",
+          "authority_character": "BINDING_LEGAL_TEXT"
+        }
+      ]
+    }
+  ],
+  "transitions": [
+    {
+      "transition_id": "lvd-en60335-2-60-withdrawal-2027-01-18",
+      "member": {
+        "label": "EN 60335-2-60:2003",
+        "identifiers": [
+          {
+            "scheme": "HARMONISED_STANDARD",
+            "value": "EN 60335-2-60:2003"
+          }
+        ]
+      },
+      "operation": "REMOVE_MEMBER",
+      "effective_from": "2027-01-18",
+      "before": {
+        "membership": "INCLUDED",
+        "status": "ACTIVE"
+      },
+      "after": {
+        "membership": "NOT_INCLUDED",
+        "status": "WITHDRAWN"
+      },
+      "scope": {
+        "character": "FULL_MEMBER",
+        "statement": "Commission Implementing Decision (EU) 2025/1457 schedules withdrawal of the OJ reference to EN 60335-2-60:2003 and its listed amendments/corrigenda from 18 January 2027."
+      },
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32025D1457",
+          "locator": "Article 2 — Annex point (1) applies from 18 January 2027",
+          "language": "ENG",
+          "role": "TRANSITION",
+          "authority_character": "BINDING_LEGAL_TEXT"
+        },
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32025D1457",
+          "locator": "Recital 16 — withdrawal of EN 60335-2-60:2003 reference is deferred to give manufacturers time to adapt",
+          "language": "ENG",
+          "role": "SCOPE",
+          "authority_character": "BINDING_LEGAL_TEXT"
+        }
+      ]
+    }
+  ],
+  "forbidden_inferences": [
+    "Adoption of the 2025 withdrawal decision means the OJ reference disappeared immediately in July 2025.",
+    "A scheduled future withdrawal may be treated as current non-citation before 18 January 2027.",
+    "Withdrawal of the OJ reference means the underlying European standard ceases to exist.",
+    "Loss of presumption of conformity means compliance with Directive 2014/35/EU becomes impossible by other technical means.",
+    "The withdrawal is a textual mutation of Directive 2014/35/EU Article 12."
+  ],
+  "notes": "Candidate-B scheduled-future-state regression. The binding decision exists from 2025 while its OJ-reference withdrawal takes effect only on 18 January 2027."
+}

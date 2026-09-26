@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **REVIEW — CANDIDATE A CORE READY / EXTERNAL VALUE TEST OWNER GATE**
+# **REVIEW — CANDIDATE B REVISED / STANDARDS-STATUS CORE READY**
 
 Frozen scientific source:
 
@@ -27,252 +27,210 @@ Current released reference surface remains:
 
 ### Sponsor objective
 
-The sponsor's current strategic objective remains:
+The sponsor's strategic objective remains:
 
 > **work toward an MVP that demonstrates actual added value on a real job**
 
-The sponsor also explicitly required:
+The sponsor explicitly reopened Candidate B to investigate whether old Needle legal-state capability
+could create value for smaller/lean organisations even where enterprise-grade capability exists.
 
-> **select candidate -> consolidate -> extract smallest MVP core -> harden -> internal replay/red-team -> pre-partner readiness -> external validation**
+### Issue #409 result
 
-#402 completes the internal Candidate-A consolidation/hardening phase.
+# **CANDIDATE_B_REVISE**
 
-### Issue #402 final disposition
+The original access hypothesis was too coarse.
 
-# **CORE_READY_FOR_EXTERNAL_VALUE_TEST**
+Public research found that lean teams are not limited to spreadsheets:
 
-This means only:
+- low-cost CBAM tools;
+- self-serve MDR/IVDR platforms;
+- SME-targeted BSI Compliance Navigator;
+- small-team regulatory-intelligence plans;
+- general CE/product-compliance tools;
+- emerging standards-watch products.
 
-> Candidate A is internally coherent and small enough that an external evaluator can test its
-> value without first helping Needle design the intervention.
+Therefore:
 
-It does **not** mean:
+> **competitor existence removes novelty claims and strengthens the comparator; it does not by
+> itself eliminate product value.**
 
-- external value is proven;
-- Needle is distinct from mature private maintainer practice;
-- expert time is reduced;
-- product-market fit exists;
-- software build is earned;
-- outreach is authorised.
+Durable method correction:
 
-Durable readiness review:
+> `docs/discovery/issue409-competitor-presence-correction-2026-09-26.md`
 
-> `docs/reviews/issue402-candidate-a-core-readiness-2026-09-26.md`
+### Revised Candidate-B hypothesis
 
-### Candidate A core after subtraction
+> **A small, evidence-first EU product-compliance state surface may create value for lean
+> manufacturers by turning official OJ/reference transitions into decision-ready, historically
+> queryable product state. Existing products are the comparator, not a disqualifier.**
 
-The larger #400 maintenance packet was rejected.
+This is narrower than generic regulatory intelligence.
 
-Strong incumbents already own most static evaluation hygiene:
+It does not claim enterprise or small-team competitors lack the capability.
 
-- task/instruction contracts;
-- legal sources / answer contracts;
-- criteria;
-- legal cut-offs;
-- defensible-alternative handling;
-- all-pass / non-compensatory semantics;
-- human adjudication;
-- task/dataset versioning and changelogs.
+### Immediate internal wedge
 
-Those receive **zero differentiation credit**.
+# **HARMONISED-STANDARD OPERATIVE STATUS**
 
-The surviving core is:
+Selected because:
 
-# **MAINTENANCE DELTA CONTRACT v0.1**
+- a real 2026 official event exists;
+- the official answer key is authoritative;
+- free Commission/OJ monitoring is already strong;
+- commercial standards-monitoring competitors already exist;
+- old Needle has an already-earned canonical owner for the exact state shape;
+- the smallest treatment can be tested without reactivating Full Needle.
 
-> **change -> evidence/time owner -> affected score-bearing contract -> revised state -> prior-result consequence -> adjudication state**
+Current proof case:
 
-Human-facing artifact:
+> GAR / EN 497:2022 — Commission Implementing Decision (EU) 2026/1750 formally decides not to
+> publish the OJ reference.
 
-> `docs/mvp/candidate-a-maintenance-delta-card-template.md`
+Strong free baseline:
 
-Structured internal contract:
+- Commission harmonised-standard pages;
+- formal-objection page;
+- EUR-Lex/OJ;
+- RSS feeds.
 
-> `docs/mvp/candidate-a-maintenance-delta-core-v0.1.md`
+Candidate B gets **zero credit** for generic alerting.
 
-Executable support:
+### Historical Needle component reactivated narrowly
 
-- `schemas/maintenance-delta-v0.1.schema.json`;
-- `scripts/validate_maintenance_delta.py`;
-- three fixtures under `fixtures/mvp/maintenance-delta/`;
-- `tests/test_maintenance_delta_contract.py`.
+The existing:
 
-The structured layer is internal reproducibility machinery, **not the product**.
+> `authoritative-dynamic-set-v0.1`
 
-### Internal replay result
+fits the Candidate-B standards state without schema expansion.
 
-Three already-known events were replayed:
+Existing historical proofs:
 
-1. Harvey HSR stale 2025 score-bearing literals;
-2. DELTA S-009 activation ambiguity;
-3. Harvey firm-knowledge v3 semantic revision as a no-defect control.
+- Toy Safety — cited reference becomes restricted;
+- REACH — authoritative agency-list member is added.
 
-Disposition:
+#409 adds:
 
-> **CORE_COHERENT — MINIMAL STRUCTURAL VALIDATION EARNED**
+- GAR EN 497:2022 — formal decision not to publish an OJ reference;
+- LVD EN 60335-2-60:2003 — cited today with a binding future withdrawal on 18 January 2027.
 
-The negative control forced an important distinction:
+This is a **narrow technical reactivation**, not Full Needle.
 
-> **owner-adopted change != accepted repair**
+### Disposable Candidate-B core
 
-The replays establish representation/field stability only.
+Human-facing contract:
 
-They do **not** establish user value, time savings, correctness advantage or prevalence.
+> `docs/mvp/candidate-b-harmonised-standard-status-core-v0.1.md`
 
-### Strongest remaining Candidate-A risk
+Disposable renderer:
 
-# **THE CORE MAY OPTIMIZE THE CHEAP PART**
+> `scripts/render_harmonised_standard_status.py`
 
-The Maintenance Delta Card begins after a maintenance trigger exists.
+Regression fixtures/tests:
 
-The expensive part of real work may instead be:
+- `fixtures/dependency/gar-en497-authoritative-dynamic-set-v0.1.json`;
+- `fixtures/dependency/lvd-en60335-2-60-scheduled-withdrawal-v0.1.json`;
+- updated `tests/test_authoritative_dynamic_set.py`;
+- `tests/test_harmonised_standard_status_card.py`.
 
-- detecting the legal/source change;
-- understanding the new law;
-- establishing the correct legal answer;
-- resolving contested professional judgment.
+The status card exposes:
 
-Therefore any external pilot must measure **full end-to-end qualified-expert effort**, not
-only time spent producing/reviewing the card.
+- OJ-reference state;
+- presumption consequence;
+- latest owning event;
+- restriction/scope;
+- next scheduled future transition;
+- official evidence;
+- historical `as_of` state;
+- forbidden inferences.
 
-If propagation/documentation savings are small relative to legal detection/adjudication,
-Candidate A should fail rather than expand.
+No LLM is required for the final status projection once authoritative transition state is encoded.
 
-### Frozen external value-test contract
+### Strongest Candidate-B red team
 
-Prepared only:
+A known-standard status card may simply repackage an answer a competent user can obtain from the
+Commission/OJ quickly.
 
-> `docs/mvp/candidate-a-external-value-test-contract-v0.1.md`
+Commercial products such as Certivo, Foresight, ComplyMatrix and Grecta publicly claim overlapping
+standards-monitoring/product-relevance/evidence capabilities.
 
-Required external test properties:
+Therefore the internal technical core does **not** establish commercial differentiation.
 
-- evaluator-owned real maintenance event;
-- evaluator's actual incumbent workflow;
-- predeclared accepted-quality floor;
-- predeclared burden reduction material enough to change behavior;
-- full qualified-expert time;
-- correction/rework burden;
-- historical-result handling;
-- turnaround and material hidden costs;
-- repeat-use / second-real-item signal.
+Candidate B becomes interesting only if it demonstrates one or more of:
 
-Preferred design:
+- portfolio-level usefulness;
+- historical/future state advantage;
+- better handling of restrictions/non-publication/withdrawal semantics;
+- lower setup/operating friction;
+- better source transparency;
+- materially better price/scope fit;
+- or a product-specific decision advantage.
 
-> two owner-supplied reasonably matched real maintenance events, one incumbent and one
-> Needle-assisted.
+### Retained verticals
 
-### Candidate preservation
+**MDR / IVDR**
 
-Candidate C remains:
+> **PRODUCT_ACCESS_REQUIRED — retain high-value occupied verticals**
+
+Do not downgrade them; next evidence requires actual product/user capability comparison.
+
+**CPR-2024**
+
+> **NOT_YET_EVENTFUL — retain strong forward vertical**
+
+Product families will migrate individually as new CPR-2024 performance harmonised standards are
+cited/made mandatory. The first major migrations are expected from 2027.
+
+This may become a stronger commercial reuse of the same state machinery.
+
+### Candidate A
+
+Remains:
+
+> **CORE_READY_FOR_EXTERNAL_VALUE_TEST**
+
+Paused, not rejected.
+
+### Candidate C
+
+Remains:
 
 > **SECONDARY_CANDIDATE — known failure/postmortem -> reusable regression/oracle**
 
-#402 shows that `FAILURE_POSTMORTEM` may be the most natural **entry trigger/wedge** into the
-same maintenance-delta core.
+### Next Candidate-B gate
 
-Candidate C is not rejected and is not yet promoted over A.
+The next useful evidence does **not** require partner outreach.
 
-Candidate B remains:
+Prepare a frozen **standards-status product-capability challenge** using real official formal-
+objection/reference-state cases and compare accessible/self-serve products where feasible.
 
-> **SECONDARY_CANDIDATE — EU operative-state reconstruction across authoritative owners**
+Questions should test:
 
-No EU-specific machinery was embedded in Candidate A.
+- current OJ-reference status;
+- restriction scope;
+- effective date;
+- scheduled future transition;
+- historical as-of answer;
+- official evidence.
 
-EU state enters only when an actual maintenance delta needs a specific evidence owner.
+This is a product-capability comparison, not a user-value test.
 
-### Kill rules
-
-Do not build Candidate A if external evidence shows:
-
-- accepted quality degrades;
-- material expert-burden reduction is not achieved;
-- savings are shifted into later adjudication;
-- incumbent maintenance already provides equivalent state at equal/lower burden;
-- the card records decisions but does not reduce reopening/rework;
-- the evaluator does not choose a second real use.
-
-Do not rescue Candidate A by adding fields, taxonomy, ontology or UI.
-
-A Candidate-A failure does not falsify Candidates B/C.
-
-### Historical operational-Core reassessment — Issue #407
-
-The sponsor authorised one bounded test of whether the old persistent operational machinery had
-been under-tested by the earlier one-shot value gates.
-
-Seven chronology-selected historical operational cycles were replayed against a strong
-**HASH-AWARE MAINTAINED BASELINE**.
-
-Observed:
-
-- 67,911 new feed events across the frozen cycles;
-- 264 eligible maintained-resource observations;
-- 135 metadata-only / 99 content-changed / 30 source-unresolved;
-- 42 repeated eligible roots;
-- lightweight baseline classification matched Needle **264/264**;
-- repeated known-content state chains were equally preservable by the lightweight ledger;
-- Needle attempted 99 legal analyses and established **0 legal candidates/outcomes**.
-
-Disposition:
-
-# **LIGHTWEIGHT_BASELINE_SUFFICIENT**
-
-Consequences:
-
-- historical operational Core remains **parked**;
-- no fresh prospective operational experiment is earned;
-- generic source monitoring / snapshots / hash comparison remain valid technical capability but
-  receive no Needle-specific value credit;
-- do not revive Full Needle or a generic EU monitoring product from historical capability;
-- Candidate B may reuse narrow old components only when a concrete practitioner-owned operative-state
-  job earns them.
-
-Durable result:
-
-> `docs/uses/issue407-longitudinal-operational-value-probe-2026-09-26.md`
-
-### Owner gate
-
-No external contact has been authorised.
-
-The next **decisive Candidate-A value evidence** requires a real evaluator/job owner, but
-the project must not confuse that fact with automatic permission to contact one.
-
-Current owner choice:
-
-# **AUTHORISE ONE BOUNDED EXTERNAL MVP VALUE TEST OR KEEP OUTREACH CLOSED**
-
-If outreach remains closed:
-
-> enter **EVIDENCE_GATED / COMPLETED_FOR_CURRENT_EVIDENCE** for Candidate A rather than
-> manufacturing another benchmark hunt.
-
-If authorised:
-
-- seek one pilot owner, not mass outreach;
-- share the maintenance-value question and compact card, not Needle's historical machinery;
-- do not claim superiority;
-- let the owner supply the real workload, incumbent and acceptance threshold.
+Do not build a monitoring UI or general compliance platform before that gate.
 
 ### Existing evidence remains binding
 
 Preserve:
 
-- #214 strong bounded negative;
-- #327 generic-use null;
-- #362 directional allocation evidence only;
-- #366 retirement of standing artifact-value proof;
-- #377 EU prevalence park;
-- #381 representation-validity repair;
-- #385 public-evidence insufficiency;
-- #390 trajectory narrowing;
-- #392 external evidence gate;
-- #395 official-model narrowing;
-- `EU_ONLY_EXTERNAL_GATES_REMAIN`;
+- #97 Method latent-detection null;
+- #214 strong bounded corpus-assisted diagnostic negative;
+- #327 generic Reference Pack use null;
+- #366 standing artifact-value proof retired;
+- #377 EU-state existence supported / prevalence not supported;
+- #395 official-stack narrowing;
+- #407 lightweight maintained baseline sufficient for generic source monitoring;
 - Reference Pack v0.2 frozen/current;
 - **INSPECTABLE_ONLY_FOR_NOW** licensing.
 
-No product UI, v0.3, corpus/taxonomy growth, new ontology or license change follows from #402.
+No external outreach is authorised.
 
 WIP=1 remains binding whenever active work exists.
 

@@ -21,16 +21,23 @@ REACH = json.loads(
         "reach-candidate-list-authoritative-dynamic-set-v0.1.json"
     ).read_text(encoding="utf-8")
 )
+GAR = json.loads(
+    Path(
+        "fixtures/dependency/"
+        "gar-en497-authoritative-dynamic-set-v0.1.json"
+    ).read_text(encoding="utf-8")
+)
 
 
 def validate(document):
     return list(Draft202012Validator(SCHEMA).iter_errors(document))
 
 
-def test_both_orthogonal_cases_fit_same_canonical_contract():
+def test_three_orthogonal_cases_fit_same_canonical_contract():
     assert validate(TOY) == []
     assert validate(REACH) == []
-    assert TOY["set_character"] == REACH["set_character"] == (
+    assert validate(GAR) == []
+    assert TOY["set_character"] == REACH["set_character"] == GAR["set_character"] == (
         "AUTHORITATIVE_DYNAMIC_SET"
     )
 
@@ -123,3 +130,25 @@ def test_operation_specific_constraints_reject_false_restriction():
         error.validator == "const" and error.validator_value == "INCLUDED"
         for error in errors
     )
+
+
+def test_gar_case_preserves_formal_nonpublication_without_fake_membership():
+    transition = GAR["transitions"][0]
+
+    assert transition["operation"] == "STATUS_CHANGE"
+    assert transition["member"]["identifiers"] == [
+        {"scheme": "HARMONISED_STANDARD", "value": "EN 497:2022"}
+    ]
+    assert transition["before"]["membership"] == "NOT_INCLUDED"
+    assert transition["after"]["membership"] == "NOT_INCLUDED"
+    assert transition["effective_from"] == "2026-07-24"
+    assert "does not acquire Article 13 presumption-of-conformity status" in (
+        transition["scope"]["statement"]
+    )
+
+
+def test_gar_case_does_not_infer_standard_is_forbidden():
+    forbidden = GAR["forbidden_inferences"]
+
+    assert any("alternative conformity route" in item for item in forbidden)
+    assert any("standards organisation" in item for item in forbidden)

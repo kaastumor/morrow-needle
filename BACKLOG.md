@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **USE — COMPLEXITY-STRATIFIED FAILURE ANALYSIS**
+# **DIRECTION REVIEW — POST-CONDITIONAL PACKET VALUE**
 
 Frozen scientific source:
 
@@ -27,78 +27,52 @@ Supported reference job:
 
 ### Current WIP
 
-# **#353 — complexity-stratified packet-value test on case-treatment failures**
-
-Results:
-
-> **CONDITIONAL_PACKET_VALUE_SUPPORTED**
-
-> **V0.2_NAVIGATION = SUCCESS**
-
-> **STRUCTURED_LAYER_SIGNAL = INDETERMINATE**
-
-Mechanical selection from the independently defined `Treatment (Doctrinal Agreement)`
-stratum chose the first complete author-labelled Hallucination:
-
-> Westlaw on `Reid v. Fargo, 241 U.S. 544 (1916)` / `Irvine v. The Hesper,
-> 122 U.S. 256`.
-
-The response claimed Reid did not mention or treat Irvine.
-
-Reid expressly states that the de novo admiralty-appeal right **authoritatively resulted
-from Irvine**.
-
-The external query separately misdates Irvine as 1916; the actual decision year is 1887.
-That metadata defect was preserved without inventing it as the cause of the hallucination.
-
-The strong ordinary postmortem already recovered the relationship and useful boundary.
-
-v0.2 then added material reusable structure:
-- `NO_EXISTING_CLASS_MATCH`;
-- known/public reuse status;
-- proposition-specific treatment boundary;
-- stable handling of the malformed year without losing the reporter-citation identity;
-- a non-trivial regression PASS/FAIL contract.
-
-Unlike #349, the external row did not itself provide an obvious reusable oracle. Correct
-treatment had to be reconstructed from the legal authority relationship.
-
-Accepted bounded value boundary:
-
-> **Needle adds material packet value where the strong ordinary postmortem still leaves
-> consequential legal relationship/state/boundary/reuse structure to formalize.**
-
-When ground truth and the future regression oracle are already explicit and trivial, the
-ordinary postmortem may remain sufficient.
-
-This is a use-allocation boundary, not a population/performance claim.
-
-v0.2 required no broad repository archaeology.
-
-Structured external-failure data remains unearned:
-- recurrent fields exist;
-- their materiality is conditional;
-- no canonical external-analysis membership owner exists yet.
+# **#355 — direction review after conditional packet-value support**
 
 Result:
 
-> `docs/uses/issue353-conditional-packet-value-use-2026-09-26.md`
+> **SELECT CONSOLIDATE — CONDITIONAL USE CONTRACT**
 
-### Next eligible work after #353 merge
+Accepted bounded use evidence now supports:
 
-# **#355 — direction review after conditional packet-value support**
+> **Strong ordinary/source-linked postmortem first. Full Needle packet work is earned only
+> when consequential reusable legal relationship/state/boundary/reuse structure remains
+> to formalize.**
 
-#355 must decide whether:
-- the conditional value contract should now be consolidated into current public/use
-  guidance;
-- a falsifying boundary USE has higher information gain;
-- a small derived navigation index over accepted USE results is now earned;
-- another mode dominates.
+Evidence:
+- #339 — material packet value;
+- #349 — postmortem baseline sufficient;
+- #353 — material packet value on an inter-authority relationship.
 
-No v0.3, structured external-failure database, corpus growth, product revival or
-superiority claim is authorised.
+This is an allocation/use boundary, not a population or superiority claim.
 
-WIP=1 remains binding: #355 starts only after #353 merges/closes.
+A fourth USE may later falsify/refine the boundary, but current public/durable guidance
+should first stop implying that every known legal failure warrants full Needle treatment.
+
+Structured external-failure data remains unearned:
+
+> **STRUCTURED_LAYER_SIGNAL = INDETERMINATE**
+
+Review:
+
+> `docs/reviews/issue355-post-conditional-value-direction-review-2026-09-26.md`
+
+### Next eligible work after #355 merge
+
+# **#357 — consolidate conditional failure-analysis use contract**
+
+#357 must:
+- preserve strongest-postmortem first refusal;
+- state when full packet work earns itself;
+- explicitly allow stopping at a sufficient postmortem;
+- preserve `NO_EXISTING_CLASS_MATCH` and omission discipline;
+- update only the correct durable owners;
+- leave frozen Reference Pack v0.2 bytes unchanged.
+
+No v0.3, structured external-failure database, new case/class, new USE experiment,
+product revival or superiority claim is authorised.
+
+WIP=1 remains binding: #357 starts only after #355 merges/closes.
 
 ## Historical backlog archive
 

@@ -33,7 +33,7 @@ The smallest supported form is:
 
 The canonical corpus entry point is `corpus/index-v0.1.json`.
 
-The 81-case whole is a **known-failure reference corpus**. Executable regression status is
+The corpus as a whole is a **known-failure reference corpus**. Executable regression status is
 case/fixture-specific and requires a preserved runnable task plus an expected/evaluator
 contract; exposure does not disqualify a case from regression reuse, but a failure record
 without that contract is reference/debugging material rather than a turnkey regression

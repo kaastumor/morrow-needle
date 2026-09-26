@@ -11,16 +11,16 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — PROPRIETARY / COMMERCIAL OPTION-SPACE EXHAUSTION**
+# **REVIEW — PRE-PARTNER HONING COMPLETE / EXTERNAL VALIDATION OWNER GATE**
 
 Frozen scientific source:
 
 > **NEEDLE_CORPUS_REFERENCE_2026-09-25 — 81 cases / 26 classes**
 
-Primary supported identity remains:
+Primary supported identity:
 
-> **known-failure reference corpus + exposed regression fixtures + minimal evaluation
-> discipline**
+> **known-failure legal-research reference corpus + exposed regression fixtures + minimal
+> evaluation discipline**
 
 Current released reference surface:
 
@@ -28,147 +28,80 @@ Current released reference surface:
 
 ### Owner rights decision
 
-On 2026-09-26 the sponsor explicitly selected:
+The sponsor's 2026-09-26 decision remains:
 
 > **INSPECTABLE_ONLY_FOR_NOW**
 
+Do not add an open-source/open-data license. Citation remains pending only on the sponsor's
+exact public creator string; creator order remains **Morrow first, sponsor/owner second**.
+
+### #375 final readiness disposition
+
+# **READY_FOR_EXTERNAL_VALIDATION**
+
+Durable handoff:
+
+> `docs/reviews/issue375-pre-partner-readiness-red-team-2026-09-26.md`
+
+The pre-partner phase earned useful evaluation-integrity repairs, but its final red team
+places a firm endpoint on internally controlled honing.
+
+Corrections that now bind:
+
+- #214 remains a strong project-allocation negative, but with material repository
+  reproducibility limits; avoid unqualified **hard null** wording in current interpretation;
+- #362 is directional allocation evidence, not a high-grade independently adjudicated
+  falsifier;
+- the DELTA replay arm was already project-exposed through #150 and therefore supplies repeat
+  applicability, not fresh transfer evidence;
+- the Harvey replay preserves the source-checkable C-039/C-040 numerical contract mismatch;
+  absence of a dedicated `law_as_of` field is not independently a defect when controlling
+  event dates own legal time;
+- no Harvey harness/judge execution occurred, so the finding is a written contract defect,
+  not an observed production scoring failure;
+- the evaluation-integrity gate is ordinary hygiene, compressed into five groups: contract
+  adequacy; evidence/temporal scope; execution validity; versioned audit record;
+  decision-sensitive uncertainty.
+
+### Next substantive evidence source
+
+The remaining commercial question is fixed as **DELIVERY**:
+
+> Can a Needle-derived workflow produce an already acceptable legal evaluation/oracle
+> package with materially lower total qualified-expert effort, rework, maintenance burden
+> or turnaround than the evaluator's actual alternative?
+
+That question cannot be answered credibly by another internally selected public benchmark.
+
+A future external validation requires:
+- independently supplied workload;
+- actual evaluator alternative/workflow;
+- qualified independent acceptance;
+- fixed quality threshold;
+- total expert effort including briefing/checking/correction/adjudication;
+- other labour/model/tool cost;
+- rework/disputes/turnaround.
+
+### Owner gate
+
+The sponsor explicitly deferred partner outreach.
+
 Therefore:
-- keep the public repository without a project open-source/open-data license;
-- do not add MIT, Apache-2.0, CC BY 4.0 or another broad reuse grant;
-- treat this as deliberate option preservation, not a permanent anti-open-source position;
-- reopen licensing only from a concrete external reuse/distribution need or materially changed project identity/value boundary;
-- third-party/linked evidence remains outside any future project-authored license grant.
 
-Citation is independent and remains pending only on the sponsor's exact public creator string.
-The agreed creator order is **Morrow first, sponsor/owner second**. Do not create
-`CITATION.cff` until the exact second creator string is supplied explicitly.
+> **NO AUTONOMOUS SUCCESSOR RESEARCH ISSUE IS AUTHORISED WHILE THAT OUTREACH DEFERRAL
+> REMAINS IN FORCE.**
 
-### Current WIP
+This is not permission to invent another benchmark hunt, corpus audit, v0.3, software build
+or product surface merely to preserve momentum.
 
-# **#375 — external evaluation job + pre-partner reality honing**
+When the sponsor reopens external contact, partner/evaluator validation becomes the next
+substantive project mode.
 
-Commercial-job result remains:
+Until then, only correctness/source-integrity maintenance triggered by new evidence is
+eligible; no standing activity queue is created.
 
-> **VENDOR_EVALUATION_JOB_EARNS_TEST**
-
-Future commercial claim type remains:
-
-> **DELIVERY**
-
-Immediate partner outreach remains explicitly deferred by sponsor decision.
-
-Current mode:
-
-> **REVIEW — PRE-PARTNER READINESS RED TEAM**
-
-Durable records:
-- `docs/discovery/issue375-external-evaluation-job-2026-09-26.md`
-- `docs/discovery/issue375-pre-partner-external-reality-honing-2026-09-26.md`
-- `docs/audits/issue375-historical-evaluation-contract-integrity-2026-09-26.md`
-- `docs/discovery/issue375-external-workflow-replay-2026-09-26.md`
-
-### Completed honing checkpoints
-
-#### 1. External benchmark reality
-
-Strong DELTA/Harvey practice established the incumbent. Public maintenance defects earned
-a canonical **evaluation-contract integrity** gate rather than a new Needle class.
-
-#### 2. Historical Needle self-audit
-
-- **#88:** preserved after #95's construct repair; raw output archival incomplete.
-- **#214:** binding bounded negative for allocation, with material repository
-  reproducibility limits.
-- **#362:** preserved as directional allocation evidence, downweighted from high-grade
-  falsifier status.
-
-No old product/workflow thesis reopened.
-
-#### 3. Mechanically selected external workflow replay
-
-The sample was frozen before task inspection:
-
-- DELTA commit `c7131327d24e3167b6c3f9f06a7c5d41e25ac7df`, first published task;
-- Harvey LAB commit `1dd81403b2fbb60596f7aea3fcecafad7bf73143`, first lexicographic public
-  task directory containing `task.json`.
-
-Results:
-
-> **DELTA — CLEAN_CORE_WITH_SCOPE_BOUNDARY**
-
-The explicit `law_as_of` contract kept the ordinary Dutch concentration-notification
-criteria temporally coherent. A limited boundary remains around special regimes, but no
-result-breaking defect was established.
-
-> **Harvey LAB — MATERIAL_EVALUATION_CONTRACT_DEFECT**
-
-The selected 2025 HSR task's rubric:
-- incorrectly calls USD 119.5 million the 2025 size-of-transaction threshold, although the
-  FTC's threshold effective 21 February 2025 was USD 126.4 million;
-- requires a USD 160,000 filing fee for a USD 425 million transaction, while the applicable
-  2025 FTC fee band was USD 105,000;
-- has no explicit legal-time owner despite score-bearing rules that change over time.
-
-A legally correct answer can therefore fail while stale evaluator numbers can pass.
-
-This was not selected from a known defect. Post-discovery issue search found no existing
-Harvey LAB issue for the task/criteria.
-
-### Canonical honing earned
-
-The evaluation protocol now requires **legal-time ownership**:
-
-- explicit `law_as_of`, controlling event date or equivalent legal-time perspective when
-  mutable legal state can change the score;
-- authoritative source + effective period for mutable score-bearing thresholds, fees,
-  deadlines, statuses and dates;
-- revalidation/versioning when current-law score-bearing state changes;
-- historical tasks remain valid only when their historical perspective is explicit.
-
-This is ordinary evaluation hygiene, not a Needle superiority claim.
-
-Frozen scientific state remains **81 cases / 26 classes**.
-Reference Pack v0.2 remains current.
-Owner licensing posture remains **INSPECTABLE_ONLY_FOR_NOW**.
-
-### Current final step inside #375
-
-# **REVIEW — pre-partner readiness red team**
-
-Do not run another benchmark hunt.
-
-Attack Needle as an external evaluator would encounter it **now**.
-
-At minimum inspect:
-- current project identity and claims;
-- Reference Pack v0.2 as the external-facing reference surface;
-- canonical evaluation protocol after #375;
-- evidence hierarchy after #88/#214/#362 reweighting;
-- the vendor-evaluation DELIVERY hypothesis;
-- what an external evaluator could understand and use without project archaeology.
-
-Ask:
-
-1. Is Needle now coherent enough to show externally without overstating what is proven?
-2. Does the current public surface expose the newly earned evaluation-integrity discipline,
-   or is that capability only buried in governance/history?
-3. Is one additional pre-partner improvement externally earned, or would more honing become
-   self-directed product polishing?
-4. What exactly should be shown to an evaluator, and what should remain internal/history?
-5. What claims must **not** be made in a future external conversation?
-
-End with exactly one:
-- `READY_FOR_EXTERNAL_VALIDATION`
-- `HONE_ONE_SPECIFIC_GAP`
-- `NOT_READY_NO_EARNED_HONING`
-
-If `HONE_ONE_SPECIFIC_GAP`, name exactly one gap with a bounded acceptance condition.
-Do not create a feature roadmap.
-
-Partner outreach remains deferred until this readiness red team completes.
-
-No product implementation, corpus growth, v0.3, structured external-failure database,
-license change or standing experiment programme is authorized.
+No product implementation, corpus growth, taxonomy growth, v0.3, structured
+external-failure database, license change or standing experiment programme is authorised.
 
 WIP=1 remains binding.
 

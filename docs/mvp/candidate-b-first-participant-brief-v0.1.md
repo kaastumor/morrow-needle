@@ -60,14 +60,14 @@ Its timing is not counted in the primary comparison.
 
 ## Scored tasks
 
-### Official-source workflow
-
-1. Machinery — **EN 50434:2014**
-2. Low Voltage Directive — **EN 60335-2-60:2003**
-
 ### Candidate-B card
 
 1. Toy Safety — **EN 71-1:2014+A1:2018**
+2. Low Voltage Directive — **EN 60335-2-60:2003**
+
+### Official-source workflow
+
+1. Machinery — **EN 50434:2014**
 2. Low Voltage Directive — **EN 60335-2-14:2006**
 
 The case allocation is fixed before the session and will not be changed based on performance.

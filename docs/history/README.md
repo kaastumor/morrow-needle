@@ -20,6 +20,8 @@ This reconstruction combines:
 
 When these sources disagree, accepted GitHub state wins.
 
+The chat reconstruction uses the available project-conversation history and should not be treated as proof that every historical chat byte was indexed or recoverable. Missing chat material therefore cannot override accepted repository evidence.
+
 Recovered chat framing is historical context, not a new project claim.
 
 ## The one-paragraph history

@@ -1,400 +1,586 @@
-# Issue #373 — proprietary/commercial option-space exhaustion
+# Issue #373 — proprietary/commercial option-space review
 
 Date: 2026-09-26  
-Mode: **DISCOVER — PROPRIETARY / COMMERCIAL OPTION-SPACE EXHAUSTION**
+Mode: **DISCOVER — PROPRIETARY / COMMERCIAL OPTION-SPACE**
 
-## Executive result
+## Final disposition after adversarial review
 
-Needle does **not** currently support a proprietary moat around:
+# **COMMERCIAL_JOB_EXISTS_BUT_NEEDLE_SPECIFIC_VALUE_UNPROVEN**
 
-- the already-public 81-case / 26-class corpus;
-- a general legal-research assistant;
-- generic legal citation/currentness checking;
-- a broad regulatory-change platform;
-- generic AI assurance/governance consulting;
-- generic benchmark infrastructure or hosted eval tooling;
-- the retired external Needle packet/artifact thesis.
+The initial #373 pass correctly found that Needle has **not earned a proprietary product
+thesis**. It also identified a real adjacent commercial category: private legal-AI
+evaluation, maintained benchmark/oracle work and recurring regression assurance.
 
-One materially different commercial boundary survives as a **testable service/maintenance hypothesis**:
+However, the first pass closed the commercial option space too aggressively.
 
-> **fresh/private adversarial legal-state evaluation + maintained legal oracles + customer-specific regression sets for legal-AI systems**
+It conflated three different questions:
 
-The potentially valuable object is not the frozen public corpus by itself. It is the ongoing work needed to create, seal, maintain, re-verify and rerun fresh legal-state tests as:
+1. does Needle add methodological knowledge beyond excellent professional practice?
+2. could someone commercially deliver useful work using that knowledge **or ordinary
+   excellent practice**?
+3. would exclusive intellectual property protect that business?
 
-- law changes;
-- source state changes;
-- model versions change;
-- application/harness behavior changes;
-- customer workflows and jurisdictions change.
+A negative answer to (1) does not settle (2).  
+A weak answer to (3) does not settle either (1) or (2).
 
-This boundary does not contradict #214, #327 or #362 because it does not claim that consulting the exposed Needle corpus improves ordinary legal research answers. It asks whether Needle's accumulated failure knowledge helps design and maintain **better hidden tests** for systems whose outputs must remain legally reliable.
+Therefore this review now distinguishes:
 
-However, Needle-specific advantage in that job is **not yet demonstrated**. Strong incumbents already provide private legal evaluation, benchmark infrastructure, certification and maintained task sets.
+- **claims contradicted by Needle evidence**;
+- **crowded/unsupported commercial directions**;
+- **weak exclusivity / no secrecy moat**;
+- **commercial jobs that remain untested**.
 
-Primary disposition:
+The smaller scientific identity remains unchanged:
 
-# **ONLY_SERVICE_OR_MAINTENANCE_VALUE_SURVIVES**
+> **known-failure reference corpus + exposed regression fixtures + minimal evaluation
+> discipline**
 
-This means "survives as a falsifiable commercial boundary", not "commercial value proven".
+Frozen state remains **81 cases / 26 classes**.  
+Reference Pack v0.2 remains current.
+
+No product, corpus growth, v0.3, structured database or superiority claim is authorized.
 
 ---
 
 ## Binding internal evidence
 
-This review preserves:
+Preserve without reinterpretation:
 
 - **#214** — hard null for corpus-assisted latent diagnostic/correctness advantage;
 - **#327** — generic legal-research companion use returned `BASELINE_SUFFICIENT`;
 - **#339** — bounded positive failure-analysis packet observation;
 - **#349** — strong-postmortem null + Reference Pack v0.2 navigation success;
 - **#353** — bounded conditional-use positive;
-- **#359/#361** — evaluator/oracle-maintenance discipline has credible conditional relevance, while the full Needle artifact/job remained unproven;
-- **#362** — `CONDITIONAL_HYPOTHESIS_NOT_SUPPORTED`, `DISCIPLINE_DELTA = NO`, `ARTIFACT_DELTA = NO`;
-- **#364** — do not rescue that line by searching for a friendlier complexity proxy;
-- **#366** — smaller identity primary and standing external artifact-value proof line retired.
+- **#359/#361** — evaluator/oracle-maintenance discipline has credible conditional
+  relevance, while the full Needle artifact/job remained unproven;
+- **#362** — `CONDITIONAL_HYPOTHESIS_NOT_SUPPORTED`,
+  `DISCIPLINE_DELTA = NO`, `ARTIFACT_DELTA = NO`;
+- **#364** — do not rescue that line by searching for another favorable complexity proxy;
+- **#366** — smaller identity primary; standing external artifact-value proof programme
+  retired.
 
-Frozen scientific state remains **81 cases / 26 classes**.  
-Reference Pack v0.2 remains current.
+Important nuance:
 
----
+> #339 and #353 both returned `NO_EXISTING_CLASS_MATCH`.
 
-## External market facts
+Their positive contribution concerned analysis/evaluation structure, not evidence that
+Needle's 26-class vocabulary itself creates superior challenge distributions.
 
-### Paid/private legal evaluation is a real job
-
-Legal Benchmarks offers:
-
-- a paid public application benchmark;
-- custom-priced private evaluation;
-- quarterly certification;
-- confidential per-task/failure-mode reporting.
-
-Source:
-https://www.legalbenchmarks.ai/benchmarks
-
-Vals AI explicitly treats private test data as an anti-leakage requirement. Its model includes:
-
-- a public validation set;
-- a larger privately held validation set licensed to companies;
-- a private test set retained for published proprietary benchmark results.
-
-Vals also describes an evaluation platform that can test models, agents and end-user applications.
-
-Source:
-https://www.vals.ai/about
-
-Harvey's Legal Agent Benchmark work uses an expert-curated hold-out set that mirrors the public task distribution and scores tasks against detailed rubrics.
-
-Sources:
-https://www.harvey.ai/blog/legal-agent-benchmark-initial-results  
-https://www.harvey.ai/blog/introducing-harveys-legal-agent-benchmark
-
-Therefore:
-
-> private/fresh benchmark data, expert oracle construction and repeated evaluation are already recognized as value-bearing activities.
-
-This validates the **job category**, not Needle's right to win it.
-
-### Legal-AI buyers report real reliability pain
-
-The 2026 Dutch Legal AI Adoption Survey reports that:
-
-- 63.5% of its 115 respondents use AI for legal research daily;
-- 67.8% say the first answer is usable half the time or less;
-- invented/incorrect law, facts or citations were rated among the most serious failures;
-- outdated, irrelevant or wrong-jurisdiction sources were also rated highly serious.
-
-Source:
-https://www.legalbenchmarks.ai/research/dutch-legal-ai-adoption-survey
-
-This supports a real reliability problem. It does not by itself prove willingness to buy Needle.
-
-### The benchmark field already covers important parts of Needle's old differentiation
-
-Current legal-AI evaluation is not limited to generic hallucination counts.
-
-Examples include:
-
-- DELTA: realistic Dutch legal-research tasks with substantive, form and citation criteria;
-- Vals Legal Research Bench: agentic legal research over statutes, regulations and case law;
-- Harvey LAB: long-horizon legal work products;
-- MiAI Law Civil Benchmark: point-in-time legislation, amendment tracking, current authority, hierarchy/good-law status and negative findings;
-- 2026 temporal-law research such as LexKairos and other time-sensitive applicable-law benchmarks.
-
-Sources:
-https://www.legalbenchmarks.ai/research/delta-dutch-legal-research-benchmark  
-https://www.vals.ai/benchmarks  
-https://www.harvey.ai/blog/introducing-harveys-legal-agent-benchmark  
-https://miai.law/wp-content/uploads/2026/05/1.-MiAI-Law-Civil-Benchmark-for-Australian-Legal-Research-AI-26-May-2026.pdf  
-https://arxiv.org/abs/2608.09106
-
-Therefore:
-
-> "law changes over time" or "legal sources can be wrong/outdated" is not a Needle moat.
-
-### Continuous regression itself is not novel
-
-Legal-AI vendors already describe continuous regression testing as ordinary product QA. For example, Mage describes running its benchmark suite against model updates before production and blocking releases on threshold regressions.
-
-Source:
-https://magelegal.com/blog/how-we-test-legal-ai-accuracy-benchmarking
-
-Therefore Needle cannot claim continuous regression as a unique mechanism.
-
-### Broad adjacent product categories are mature
-
-Regulatory-change and obligation-management platforms already exist at significant scale.
-
-Examples:
-
-- Thomson Reuters Regulatory Intelligence;
-- CUBE RegPlatform;
-- Bloomberg Regology.
-
-Sources:
-https://legalsolutions.thomsonreuters.co.uk/en/products-services/regulatory-intelligence.html/  
-https://www.cube.global/products/regplatform/regulatory-change-management  
-https://regology.com/regulatory-change-agent
-
-General AI-assurance services also exist from major firms and specialist providers.
-
-Examples:
-https://kpmg.com/nl/en/services/advisory/trusted-enterprise/responsible-ai/ai-assurance.html  
-https://www.deloitte.com/nl/en/services/audit-assurance/services/algorithm-ai-assurance.html
-
-This makes a broad "Needle regulatory intelligence" or "Needle AI assurance" revival especially weak unless a sharply different owner emerges.
+#362 already tested evaluator/oracle-maintenance work. Merely relabelling another
+maintenance comparison as "private evaluation" would not create a genuinely new boundary.
 
 ---
 
-## Option-space map
+## What #373 got right
 
-| Candidate | Buyer / job | Strong baseline | Needle residual | Disposition |
-|---|---|---|---|---|
-| Sell/license frozen public corpus | evaluators, researchers | public corpus + public benchmark datasets | little defensible exclusivity; content already visible | **NO_PROPRIETARY_MOAT** |
-| General legal-research assistant | lawyers/legal teams | frontier web research + Lexis/TR/vLex/Harvey/Legora etc. | #214/#327 directly weaken the intended advantage | **CONTRADICTED_BY_NEEDLE_EVIDENCE** |
-| Generic citation/currentness checker | lawyers/legal teams | mature citators, legal RAG, benchmark currency tests | no demonstrated unique owner | **ABSORBED_BY_BASELINE** |
-| Broad regulatory-change platform | regulated enterprises | TR Regulatory Intelligence, CUBE, Regology and others | would revive broad architecture without evidence | **ABSORBED_BY_BASELINE** |
-| Generic AI assurance/governance consulting | enterprises | Big Four / specialist AI assurance | Needle contributes legal examples, not a general assurance moat | **OUTSIDE_NEEDLE** |
-| Generic eval harness/platform | AI vendors/teams | Vals platform, open harnesses, generic eval stacks | infrastructure is not Needle-specific | **ABSORBED_BY_BASELINE** |
-| Public leaderboard/certification | vendors/buyers | Legal Benchmarks, Vals, other benchmark organizations | strong incumbents; current exposed corpus is gameable | **EVIDENCE_REQUIRED** |
-| Proprietary expanded static dataset | vendors/researchers | existing private benchmark estates | secrecy can matter, but arbitrary growth is not evidence | **EVIDENCE_REQUIRED** |
-| Bespoke one-off failure analysis | vendors/legal teams | strong expert postmortem | #349/#362 show baseline often absorbs it | **ABSORBED_BY_BASELINE** |
-| Training/support around frozen pack | legal/research teams | ordinary expert training/benchmark guidance | no demonstrated project-specific residual | **NO_PROPRIETARY_MOAT** |
-| **Fresh/private adversarial legal-state evaluation** | legal-AI vendors, legal innovation/eval teams | private benchmark providers + expert task authors | possible cross-mechanism EU legal-state challenge design | **LIVE_CANDIDATE** |
-| **Maintained legal oracles + customer-specific regression gates** | teams shipping/using legal AI | internal regression suites + benchmark vendors | possible value in continual point-in-time/source/authority maintenance | **LIVE_CANDIDATE** |
+### General Needle legal-research companion revival remains closed
 
-The last two are one underlying commercial owner:
+The tested proposition that supplying Needle material creates a broad latent diagnostic or
+correctness advantage is contradicted by #214 and weakened further by #327.
 
-> **maintained private evaluation**, not a static proprietary Needle artifact.
+This does **not** prove that no legal product can ever be commercially useful. It does mean
+that a Needle-led revival based on the old inference-time advantage is not supported.
+
+Disposition:
+
+> **CONTRADICTED_BY_NEEDLE_EVIDENCE**
+
+### Broad product architecture remains unjustified
+
+Earlier Needle product/architecture work repeatedly expanded faster than demonstrated
+relative value.
+
+Therefore broad regulatory-intelligence architecture, generic legal-information workflow
+software or generic evaluation infrastructure should not be rebuilt merely because adjacent
+markets exist.
+
+Disposition:
+
+> **NO CURRENT NEEDLE CASE FOR BUILDING**
+
+### Generic AI assurance is outside present demonstrated capability
+
+Needle has legal failure cases and evaluation discipline. It has not demonstrated the
+institutional, governance, certification or broad technical assurance capability needed to
+claim a general AI-assurance position.
+
+Disposition:
+
+> **OUTSIDE_PRESENT_NEEDLE_CAPABILITY**
+
+### Artifact superiority remains unsupported
+
+#349 and #362 show that excellent ordinary postmortem/evaluator practice can absorb much of
+the work.
+
+Needle should not claim that customers must adopt the Reference Pack/corpus/artifact to do
+good failure analysis or oracle maintenance.
+
+Disposition:
+
+> **NEEDLE_ARTIFACT_ADVANTAGE_UNPROVEN**
 
 ---
 
-## Why the surviving boundary is genuinely different
+## Where the first #373 pass overreached
 
-The old proposition was roughly:
+### Current public corpus
 
-> give the user/model more Needle structure and legal failure knowledge, and the legal research result or failure-analysis artifact improves.
+Exposure defeats the 81-case corpus as a **secret** test set.
 
-That proposition repeatedly weakened or failed.
+It does not prove that:
 
-The surviving proposition is different:
+- curated distribution has no value;
+- permission to reuse has no value;
+- support has no value;
+- training has no value;
+- a public reference estate cannot support a paid service.
 
-> use accumulated failure knowledge to design and maintain hidden challenge cases and legal oracles against which someone else's changing system is tested.
+No buyer evidence currently establishes those benefits either.
 
-The corpus need not improve the system's answer at inference time.
+Correct disposition:
 
-Instead, its possible role is upstream in:
+> **WEAK_SECRECY_DEFENSIBILITY; COMMERCIAL_USEFULNESS_UNTESTED**
 
-- challenge design;
-- coverage selection;
-- opposite-error construction;
-- oracle versioning;
-- source-state verification;
-- regression preservation.
+### Citation/currentness checking
 
-That avoids rationalising #214 away.
+Strong incumbents exist.
+
+That raises the competitive bar but does not prove every specific customer need is
+satisfied.
+
+No concrete Needle gap has been demonstrated.
+
+Correct disposition:
+
+> **CROWDED_AND_UNSUPPORTED**
+
+### Regulatory-change software
+
+The broad Needle revival remains unjustified.
+
+A narrower customer problem, integration or operational service is logically still
+possible if external evidence independently identifies it.
+
+Correct disposition:
+
+> **BROAD_REVIVAL_UNJUSTIFIED; NARROW_JOB_UNTESTED**
+
+### One-off specialist failure analysis
+
+Needle artifact superiority is unsupported.
+
+But that is not equivalent to proving that nobody will pay experts to perform the work.
+
+Correct disposition:
+
+> **METHOD_ADVANTAGE_UNPROVEN; OUTSOURCED_EXECUTION_UNTESTED**
+
+### Training/support
+
+Exclusive scientific knowledge is not required for a training or support business.
+
+No current evidence establishes a payer, learning benefit or adoption benefit.
+
+Correct disposition:
+
+> **EVIDENCE_REQUIRED**
+
+### Future private datasets
+
+Freshness, quality, customer relevance, secrecy and production economics are all untested.
+
+The current public corpus does not dispose of future private work.
+
+Correct disposition:
+
+> **SEPARATE_UNPROVEN_OPTION**
+
+### Independent evaluation/certification
+
+Trust, independence and buyer acceptance can be value owners independently of novel
+methodology.
+
+Needle has not earned that institutional trust.
+
+Correct disposition:
+
+> **EVIDENCE_REQUIRED_HIGH_BAR**
 
 ---
 
-## What might Needle contribute
+## External commercial signal
 
-The current 26 failure classes include mechanisms that are broader than simple citation fabrication or current-vs-old statute checks, for example:
+Public evidence supports the existence of a **real commercial evaluation job**, not demand
+for Needle specifically.
 
-- status versus applicability;
-- source-view temporal divergence;
-- authority handoff;
+Examples reviewed during #373 include:
+
+- Legal Benchmarks offering paid public/private legal-AI assessments and certification;
+- Vals using licensed private validation sets and retained private test sets;
+- Harvey using expert-curated hold-out tasks and detailed rubrics;
+- legal organisations performing recurring QA against manually prepared ground truth;
+- benchmark consortia identifying expert-reference-answer production as a real capacity
+  constraint.
+
+This supports:
+
+> **private/fresh legal evaluation, expert oracle construction and repeated QA are real
+> activities with commercial or operational value.**
+
+It does not establish:
+
+- sales volume or profitability;
+- a coverage gap in incumbent private suites;
+- a preference to outsource;
+- willingness to buy Needle;
+- Needle-specific methodology advantage.
+
+---
+
+## The maintained-private-evaluation hypothesis
+
+A still-coherent hypothesis is:
+
+> Needle's accumulated examples may make some consequential legal-state dependencies easier
+> to anticipate or cheaper to encode correctly in customer-relevant tests.
+
+Possible mechanisms include:
+
+- changed external status with unchanged parent text;
+- status/application separation;
 - procedural silence;
 - suspended procedural clocks;
-- cohort-specific transitional applicability;
+- cohort-specific transitional states;
 - cross-order incorporation;
-- differentiated Member-State participation;
-- EU primacy/disapplication state;
-- Union-nexus applicability;
-- choice-of-law / choice-of-forum state;
-- cross-border recognition activation;
-- permitted Member-State divergence;
-- private-origin outputs with public-law recognition.
+- differentiated territorial/Member-State participation;
+- authority handoffs;
+- private-origin outputs with public-law recognition;
+- source-view temporal divergence.
 
-That gives Needle a plausible **challenge-design vocabulary**.
+This could matter if ordinary benchmark distributions systematically under-sample
+low-frequency/high-consequence legal-state failures.
 
-But the review cannot establish from public benchmark documentation that private incumbent test sets omit these mechanisms.
+But the opposite explanation remains fully credible:
+
+> these distinctions are ordinary expert legal/benchmark work that competent evaluators can
+> reconstruct without Needle.
+
+The taxonomy is retrospective, not sampled from customer workloads. Frequency, severity,
+existing mitigation and production relevance are unmeasured.
 
 Therefore:
 
-> taxonomy breadth is a hypothesis generator, not evidence of benchmark superiority.
+> **PRIVATE EVALUATION IS A PLAUSIBLE COMMERCIAL JOB, NOT YET A PROVEN NEEDLE VALUE OWNER.**
 
 ---
 
-## What cannot be the moat
+## Additional commercial mechanisms left genuinely open
 
-### 1. The 81 current cases
+The first #373 pass compressed too many possible delivery mechanisms into "maintained
+private evaluation".
 
-They are exposed.
+Distinct hypotheses include:
 
-No-license status preserves copyright permission boundaries, but it does not make facts, ideas, failure concepts or publicly observable case structure secret.
+### Specialist input to an established evaluator
 
-### 2. The 26 class names alone
+Potential job:
+- provide EU-law cases;
+- review legal oracles;
+- adjudicate difficult source/state questions;
+- contribute to another evaluator's distribution and platform.
 
-The classes are public and can be independently recreated from the underlying legal phenomena.
+Potential value owner:
+> specialist legal research/execution rather than infrastructure.
 
-### 3. Generic provenance discipline
+Current state:
+> **UNTESTED; SUPPLIER DEMAND UNKNOWN**
 
-#362 showed excellent ordinary evaluator practice can absorb consequential work.
+### Customer-owned evaluation estate
 
-### 4. "Temporal law"
+Potential job:
+- construct and maintain tests owned by a legal-AI vendor, law firm or enterprise;
+- integrate them into the customer's own release process.
 
-Temporal evaluation is now an active benchmark/research area.
+Potential value owner:
+> continuity, expertise and execution rather than exclusive Needle IP.
 
-### 5. Software wrapper/infrastructure
+Current state:
+> **UNTESTED**
 
-Benchmark orchestration, harnesses, private sets and regression pipelines already exist.
+### Buyer-side procurement assessment
+
+Potential job:
+- independently compare legal-AI systems on the buyer's own matters before purchase or
+  rollout.
+
+Potential value owner:
+> independent decision support rather than vendor QA.
+
+Current state:
+> **UNTESTED**
+
+### Independent adjudication of disputed evaluation results
+
+Potential job:
+- determine whether a model answer, answer key, judge or grader is wrong;
+- preserve authority/version/source-state evidence.
+
+Potential value owner:
+> expert adjudication and evidence discipline.
+
+Current state:
+> **UNTESTED; REQUIRES REAL DISPUTE/TRUST**
+
+### Narrow maintenance / audit tooling
+
+Potential job:
+- reduce recurring verification or oracle-maintenance burden inside a concrete workflow.
+
+Potential value owner:
+> automation of a measured bottleneck.
+
+Current state:
+> **NO MEASURED BURDEN; DO NOT BUILD**
+
+### Publishing, training or consortium work
+
+Potential job:
+- sell curation, education, sponsored research or coordinated evaluation work.
+
+Potential value owner:
+> interpretation, teaching, coordination or reputation rather than exclusive science.
+
+Current state:
+> **AUDIENCE/PAYER UNPROVEN**
+
+These options are not promoted to product hypotheses. Their existence means only that
+"one remaining value owner" was an overstatement.
 
 ---
 
-## Where proprietary value could actually live
+## Why the original taxonomy-first falsifier is not accepted
 
-If the surviving hypothesis proves real, the protectable/scarce part would be mostly future operational work:
+The original proposed next experiment selected 4–6 Needle failure classes first and then
+asked whether Needle-informed test design beats an ordinary benchmark baseline.
 
-1. **fresh sealed cases**
-   - not previously published;
-   - sampled or authored under a predeclared process;
-   - kept out of public training/retrieval surfaces.
+That design has material confounds:
 
-2. **maintained legal oracles**
-   - rechecked against authoritative sources;
-   - versioned when law/source state changes;
-   - explicit legal cut-off and applicability assumptions.
+1. **selection bias**
+   - Needle's own taxonomy determines the test territory before customer workload exists.
 
-3. **customer-specific cases**
-   - derived from actual workflows, jurisdictions and failure history;
-   - potentially confidential.
+2. **contamination**
+   - a researcher who already knows Needle cannot create a clean independent baseline by
+     temporarily avoiding Needle files.
 
-4. **evaluation operations**
-   - reproducible execution;
-   - blind scoring/review;
-   - regression comparison between product versions.
+3. **unequal effort / second-pass advantage**
+   - Needle treatment would naturally receive additional hindsight and structure.
 
-5. **independence / trust**
-   - if earned in practice.
+4. **self-grading**
+   - "better challenge quality" is subjective unless independent legal adjudication ties the
+     difference to a real decision.
 
-The current public corpus can seed methodology and demonstrate provenance discipline, but it would not itself be the secret asset.
+5. **commercial mismatch**
+   - even a taxonomy advantage would not establish buyer need or willingness to pay.
+
+6. **wrong sequencing**
+   - the project would run another internally selected experiment before learning whether the
+     outcome matters to a real external user.
+
+Therefore:
+
+> **DO NOT RUN THE ORIGINAL SEALED TAXONOMY-FIRST FALSIFIER.**
+
+---
+
+## Correct next evidence sequence
+
+The next serious allocation should start with an **external job**, not an internally chosen
+Needle class.
+
+### Stage 1 — buyer/job evidence
+
+Identify an actual evaluator, legal-AI vendor/team, law firm/enterprise buyer or adjacent
+operator with:
+
+- a recurring evaluation/QA/procurement/adjudication task;
+- a current solution or workaround;
+- a consequential gap, capacity constraint or cost;
+- a decision that better evaluation/execution would change.
+
+Competitor/product existence alone is insufficient.
+
+Do not claim demand until this evidence exists.
+
+### Stage 2 — select the value claim before testing
+
+Choose exactly one:
+
+#### Method claim
+
+> Needle produces more decision-relevant testing than excellent ordinary benchmark practice
+> at the same resource budget.
+
+or:
+
+#### Delivery claim
+
+> Needle can deliver an accepted result at materially better total cost, turnaround,
+> maintenance burden or reliability.
+
+Do not switch claims after observing a null.
+
+A service can be commercially valuable even if its method is not novel.
+
+### Stage 3 — bounded comparison tied to the real job
+
+If the method claim is selected:
+
+- start from independently supplied workload briefs;
+- freeze jurisdiction, task scope, target systems, consequences and budgets before Needle
+  class inspection;
+- use separate comparably qualified designers;
+- use equal tools/resources;
+- blind independent legal adjudicators to treatment;
+- freeze suites/oracles before target outputs;
+- run against the same preselected systems;
+- count consequential customer-relevant defects, oracle errors, duplicated findings and
+  full production/review cost.
+
+No additional valid consequential finding across the frozen pilot should stop the tested
+method-advantage claim.
+
+If the delivery claim is selected:
+
+- define a buyer-set minimum improvement in cost, turnaround, maintenance burden or
+  reliability;
+- include legal review, disputes and rework;
+- equivalent methodology is acceptable if delivery economics are the purchased value.
+
+### Stage 4 — willingness to pay
+
+Before maintained product development require:
+
+> a paid pilot or concrete budget-backed procurement commitment at a price capable of
+> covering delivery costs.
+
+Praise, benchmark participation or informal interest are not enough.
+
+### Stage 5 — implementation
+
+Fulfil the narrow service/job first.
+
+Software or maintained infrastructure is earned only when repeated delivery exposes a
+specific operational bottleneck.
 
 ---
 
 ## Licensing implication
 
-The sponsor's current **INSPECTABLE_ONLY_FOR_NOW** decision remains rational.
+The owner decision remains:
 
-It preserves optionality while this boundary is unresolved.
+> **INSPECTABLE_ONLY_FOR_NOW**
 
-However, #373 does **not** establish that keeping the existing repository unlicensed creates a strong commercial moat.
+This still makes sense as temporary option preservation.
 
-Most plausible future proprietary value would live in **new private/fresh work**, not in clawing exclusivity out of already-public case concepts.
+But the first #373 pass overstated how much commercial value that status protects.
 
-Therefore:
+### Current corpus/docs/code
 
-> inspectable-only currently preserves useful option value, but the option is mostly about future private evaluation assets and services rather than the static frozen corpus.
+No broad grant preserves control over permissions in copyrightable project-authored
+material.
 
-If this service boundary later fails, the strategic argument for broad open reuse becomes stronger.
+It does not restore secrecy or ownership of underlying facts, legal concepts or methods.
+
+### Future private datasets
+
+Their option value depends primarily on:
+
+- confidentiality;
+- contractual rights;
+- new authored material;
+- operational secrecy;
+- customer arrangements.
+
+The current public repository's license status is not their main protection.
+
+### Future software
+
+Future software can have separately chosen terms. Open licensing an earlier reference
+artifact would not automatically require all future software to be open.
+
+### Services
+
+Expertise/execution can be sold whether the reference material is open or closed.
+
+### Brand/trust
+
+Reputation, buyer confidence and applicable trademark rights are separate from copyright
+licensing.
+
+### Customer-specific work
+
+Ownership, confidentiality and reuse depend mainly on customer agreements.
+
+Therefore the best current statement is:
+
+> **Inspectable-only preserves limited but real temporary option value, with no demonstrated
+> substantial proprietary moat.**
+
+No license change follows from #373.
+
+---
+
+## Anti-rescue check
+
+This correction does not reopen the failed scientific/product claims.
+
+- **#214 remains binding:** no claim that supplying Needle improves latent legal diagnosis.
+- **#327 remains binding:** no generic research-companion revival.
+- **#362 remains binding:** no replacement complexity proxy or friendly oracle-maintenance
+  case.
+- **#366 remains binding:** no standing external artifact-value proof programme.
+
+Any successor work must have an independently evidenced external reason to exist.
+
+"Private", "commercial", "service" and "customer-specific" are not sufficient boundaries on
+their own.
 
 ---
 
-## Cheapest credible falsifier
+## Option-space conclusion
 
-Do **not** build a service, grow the corpus or contact buyers first.
+The corrected conclusion is deliberately less dramatic than the initial #373 result.
 
-Run one **sealed-evaluation residual-value test**:
+Needle has **not** demonstrated:
 
-### Question
+- a proprietary product;
+- a commercial moat;
+- a Needle-specific evaluation advantage;
+- demand for a Needle service.
 
-Can Needle's existing failure knowledge produce a small fresh hidden legal-state challenge suite that exposes consequential failures **not already captured by a strongest ordinary benchmark-design baseline**?
+But the project also has **not** demonstrated that every commercial descendant is dead.
 
-### Design boundary
+What is externally supported is:
 
-1. Freeze 4–6 materially different risk owners from the current 26 classes before sourcing cases.
-2. Baseline first:
-   - use modern legal-benchmark design principles without consulting Needle case details;
-   - construct the strongest ordinary challenge/evaluation specification for those owners.
-3. Needle second:
-   - use the corpus/class evidence to construct the competing sealed specification.
-4. Obtain fresh cases not in the 81-case corpus.
-5. Independent scoring must ask whether Needle changes:
-   - challenge validity;
-   - opposite-error coverage;
-   - oracle/source-state correctness;
-   - consequential PASS/FAIL criteria;
-   - ability to catch a system failure the baseline suite misses.
-6. Do not count labels, formatting or extra provenance fields already captured by the baseline.
-7. Preserve nulls.
+> **a real commercial/operational legal-AI evaluation job exists.**
 
-### Kill rule
+What remains unsupported is:
 
-If excellent ordinary benchmark design produces the same consequential test/oracle contract, then Needle-specific commercial evaluation value is absorbed by baseline practice.
+> **Needle-specific value in that job.**
 
-If Needle produces a real residual, only then proceed to external buyer/demand validation.
+Several delivery mechanisms remain logically open, but none earns implementation.
 
-This is intentionally a **method-value falsifier before market-building**.
+The next allocation question is therefore not:
 
----
+> which Needle experiment should we run?
 
-## Saturation check
+It is:
 
-The review covered the materially distinct value owners:
-
-- static corpus/IP;
-- research product;
-- source/citation verification;
-- regulatory-change software;
-- generic assurance;
-- generic benchmark infrastructure;
-- private datasets;
-- certification;
-- bespoke analysis;
-- maintained/fresh private evaluation;
-- service/support.
-
-Further obvious candidates reduce to combinations of:
-
-- data;
-- software;
-- maintenance;
-- expertise;
-- independence/trust;
-- distribution.
-
-No additional distinct owner emerged from the orthogonal search.
-
-Therefore the option-space review is saturated enough to stop ideation and test the one residual boundary.
-
----
+> **is there a concrete external buyer/evaluator job, with acceptance criteria and a
+> consequential gap, for which a Needle-derived method or delivery capability is worth
+> testing?**
 
 ## Final disposition
 
-# **ONLY_SERVICE_OR_MAINTENANCE_VALUE_SURVIVES**
-
-More precisely:
-
-> Needle has not earned a proprietary product thesis.  
-> It has earned one final, materially different hypothesis: its accumulated adversarial legal-state knowledge may improve the design and maintenance of private/fresh regression evaluations for legal-AI systems.
-
-That hypothesis is falsifiable and does not require reviving the failed inference-time corpus advantage.
+# **COMMERCIAL_JOB_EXISTS_BUT_NEEDLE_SPECIFIC_VALUE_UNPROVEN**

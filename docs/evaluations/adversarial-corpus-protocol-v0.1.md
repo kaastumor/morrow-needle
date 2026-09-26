@@ -204,6 +204,72 @@ For longitudinal comparison:
 - do not call the exercise blind;
 - use fresh sealed cases for new claims of generalised superiority.
 
+## 13. Evaluation-contract integrity
+
+Before trusting a benchmark, regression result or comparative score, validate the **evaluation contract itself**.
+
+A legally plausible answer key is not enough. The task, criteria, evidence, execution path and
+version must jointly support the meaning assigned to PASS/FAIL.
+
+At minimum check:
+
+1. **Task-to-criterion coverage**
+   - every decision-critical deliverable or proposition requested by the task has an
+     observable criterion;
+   - a response that omits the central requested work must not be able to all-pass merely by
+     satisfying peripheral criteria;
+   - where practical, use a deletion/mutation check: remove a required central element from
+     an otherwise acceptable answer and confirm that at least one criterion fails.
+
+2. **Criterion evidence correctness**
+   - legal criteria must be supported by the exact controlling authority/evidence owner they
+     claim to test;
+   - verify article/paragraph/subparagraph identity where the distinction changes the rule;
+   - do not treat a nearby correct source as support for the wrong proposition.
+
+3. **Activation and gradability**
+   - every criterion must have a determinate result for the outputs the task permits;
+   - if a criterion is conditional, specify what happens when its trigger does not occur;
+   - a criterion that is substantively true but vacuous for the task is not a valid grading
+     contract until its inactive case is defined.
+
+4. **Cross-criterion consistency**
+   - counts, denominators, allowlists, thresholds, required/optional/negative sets and other
+     shared facts must reconcile across criteria;
+   - where several criteria derive from the same underlying truth, prefer one typed owner or
+     an explicit consistency check over duplicated hand-maintained literals.
+
+5. **Execution validity before subject failure**
+   - extraction, conversion, tool, harness or judge-input failures must surface as
+     `INVALID_RUN`, `UNSCORABLE` or an equivalent explicit evaluation failure;
+   - infrastructure failure must not be silently converted into a confident FAIL for the
+     evaluated subject.
+
+6. **Semantic revision control**
+   - changes to instructions, criteria, answer keys, required deliverables or other
+     score-bearing fields are changes to the effective task contract;
+   - pin the exact contract version/commit for every result;
+   - do not compare scores across materially changed contracts as though only the evaluated
+     system changed.
+
+7. **Stability decomposition when the decision is sensitive**
+   - distinguish answer/system variance from judge variance;
+   - where a small score difference could change a project or release decision, freeze an
+     identical output and repeat judging before attributing the delta to the subject;
+   - preserve judge disagreements and human adjudication rather than averaging instability
+     into false certainty.
+
+These checks are **evaluation hygiene**, not a Needle superiority claim.
+
+They were added after public legal-benchmark defects demonstrated that strong modern
+benchmarks can still suffer from criterion/source misalignment, vacuous criteria,
+cross-criterion inconsistency, rubric undercoverage, execution failures that masquerade as
+subject failures and unresolved judge/run variance.
+
+Passing this gate does not prove a benchmark is representative or a model is reliable. It
+only establishes that the evaluation contract is coherent enough for its score to mean what
+the project says it means.
+
 ## 12. Complexity rule
 
 A corpus failure may justify a method, persistence layer or code repair only if

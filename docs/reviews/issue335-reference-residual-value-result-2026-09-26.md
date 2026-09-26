@@ -364,6 +364,14 @@ Operationally:
 - it is not a turnkey regression suite;
 - Reference Pack v0.1 remains a navigation layer, not the full evidence bundle.
 
+## Ownership refinement
+
+The supported external job is owned by the project charter/root orientation, not duplicated
+into `corpus/README.md`. That corpus document continues to own corpus semantics such as
+reference-vs-regression status. This avoids a second mutable purpose owner and prevents a
+documentation-only use-contract change under `corpus/**` from unnecessarily triggering the
+full unit-test workflow.
+
 ## What does not change
 
 No change to:

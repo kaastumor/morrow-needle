@@ -26,7 +26,7 @@ SCHEMA_VALIDATOR = Draft202012Validator(SCHEMA)
 def schema_errors(record: dict[str, Any]) -> list[str]:
     return [
         f"{'.'.join(str(part) for part in error.path) or '<root>'}: {error.message}"
-        for error in sorted(SCHEMA_VALIDATOR.iter_errors(record), key=lambda e: list(e.path))
+        for error in sorted(SCHEMA_VALIDATOR.iter_errors(record), key=lambda e: tuple(str(part) for part in e.path))
     ]
 
 

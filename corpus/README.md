@@ -2,8 +2,9 @@
 
 Status: **CANONICAL CORPUS ENTRY POINT**
 
-This directory is the canonical public regression/reference corpus for the project's
-current minimal form.
+This directory is the canonical public **known-failure reference corpus** for the
+project's current minimal form. It also points to case-specific exposed regression fixtures
+where the evidence owner preserves an executable check.
 
 It does **not** replace the underlying legal fixtures, audits or issues. The index owns
 current corpus membership/classification and records evaluation metadata pointing to
@@ -40,23 +41,29 @@ Each public index entry records only:
 
 Legal facts remain owned by the referenced fixture/audit/source chain.
 
-## What "regression/reference" means
+## Reference, fixture and regression status
 
-Needle is a **regression/reference corpus**, not a uniform executable test suite.
+**Reference status is corpus-wide. Regression status is case/fixture-specific.**
 
-- **Reference:** every accepted case preserves a stable case identity, failure mechanism,
-  provenance/exposure state and evidence owner.
-- **Regression material:** exposed known failure cases may be reused to check that an
-  already understood consequential error does not recur.
-- **Executable regression:** only use this stronger term when the evidence owner actually
-  preserves a concrete task plus expected outcome/pass-fail rule. The revealed evaluation
-  suites do; derivation cases do not share one uniform executable contract.
+- **Known-failure reference:** every accepted case preserves a stable case identity,
+  consequential failure mechanism, provenance/exposure state and evidence owner.
+- **Regression source / debugging fixture:** any exposed known failure can inform future
+  regression engineering or help inspect recurrence of an understood error.
+- **Executable regression case:** use this term only when the evidence owner preserves a
+  concrete runnable task/input plus expected behavior and an evaluator/pass condition.
+  The ten revealed evaluation cases clearly satisfy this at repository level; derivation
+  cases do not share one uniform executable contract.
 - **Benchmark/evaluation:** the full public corpus is not a representative benchmark and
   must not be treated as one merely because cases are machine-readable.
 
+External legal benchmark and LLM-evaluation practice strengthens this boundary: known
+production failures are normal regression inputs, but they become repeatable regression
+tests by pairing the failure with an executable input and expected/evaluator contract.
+
 Do not synthesize post-hoc prompts/answer keys from `decisive_trap` and present them as
 historical scientific inputs. See
-`docs/audits/regression-contract-boundary-2026-09-25.md`.
+`docs/audits/regression-contract-boundary-2026-09-25.md` and
+`docs/reviews/issue331-external-regression-role-result-2026-09-26.md`.
 
 ## Derived metamorphic regressions
 

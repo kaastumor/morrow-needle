@@ -115,11 +115,16 @@ Vals' legal-AI consortium report records that:
 
 - consortium firms supplied questions, source documents, ideal responses and correctness
   criteria;
-- manually scoring all outputs would have required **more than 400 hours** for one person;
+- Vals estimated that **fully manual** scoring of all outputs would have required more than
+  **400 hours** for one person, while its actual process already used automated evaluation;
 - firms were constrained in their capacity to provide detailed/complex reference answers;
 - prior work product was difficult to reuse because of confidentiality/ethical constraints;
 - the report explicitly says richer benchmark tasks were limited by appropriate data and
   contributor capacity.
+
+These facts establish production difficulty and scarce-expert dependence. They do **not**
+by themselves establish an unmet purchasable gap or that Needle would reduce total delivery
+cost.
 
 Source:
 https://www.vals.ai/industry-reports/vlair-2-27-25
@@ -165,10 +170,13 @@ The 26 class labels themselves are **not** the value claim.
 - #362 gave excellent ordinary evaluator practice full credit and found no Needle discipline
   or artifact delta on its selected oracle-maintenance pair.
 
-Therefore #362 blocks a new claim that Needle intrinsically creates **better oracles**.
+#362 therefore supplies directional counterevidence to an intrinsic **better-oracle** story,
+but its #375 audit limitations mean it should not be described as universally blocking that
+possibility by itself.
 
-It does **not** measure whether a delivery workflow can produce an already accepted oracle
-with less qualified-expert burden.
+More importantly, no current evidence positively establishes an intrinsic better-oracle
+claim. The downstream DELIVERY question is different: whether an already accepted oracle can
+be produced with less total qualified-expert burden.
 
 The new claim must therefore remain **DELIVERY**, not METHOD.
 
@@ -324,6 +332,16 @@ preserving accepted legal quality, stop this commercial delivery hypothesis.
 Do not convert a null into a METHOD claim.
 
 ---
+
+## Interpretation after the #375 readiness red team
+
+The job remains real and the DELIVERY question remains legitimate, but the residual
+commercial gap is **unproven until an external evaluator defines the workload, alternative
+and acceptance bar**. Internal benchmark reconstruction cannot establish buyer demand or
+delivery savings.
+
+Sponsor governance later deferred partner contact while one bounded pre-partner honing phase
+completed. That honing is now interpreted separately in the #375 readiness review.
 
 ## Immediate allocation consequence
 

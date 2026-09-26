@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — EU LEGAL-STATE OUTSIDE-IN**
+# **DISCOVER — LEGAL EVALUATION REPRESENTATION VALIDITY**
 
 Frozen scientific source:
 
@@ -26,264 +26,146 @@ Current released reference surface remains:
 
 > **Needle Reference Pack v0.2 — navigation/reference surface**
 
-### Sponsor research allocation
+### Completed EU-specific lane — Issue #377
 
-The sponsor explicitly reopened an **EU-legislation-specific research lane** on 2026-09-26.
+Final disposition:
 
-This does not remove or demote the separate broader research front identified in the
-preceding strategic review:
+> **EU_LEGAL_STATE_EXISTENCE_SUPPORTED — PREVALENCE_NOT_SUPPORTED**
 
-> **legal-AI evaluation science / evaluation-contract assurance**
+The EU-specific investigation is parked after three bounded phases:
 
-The two lanes answer different questions:
+- Phase 2 stratified structural stress sample: 7/24 strong residuals after anti-inflation;
+- Phase 3A official implementation Q&A: 0/16;
+- Phase 3B mechanically selected CJEU matter-specific disputes: 1/12.
 
-1. **EU legal-state research** — whether consequential EU-law answers repeatedly depend on
-   independently moving legal states that current-text/change-monitoring representations do
-   not losslessly preserve;
-2. **evaluation science** — whether the legal-AI evaluation contract itself validly measures
-   the quality it claims to measure.
+Do not pool those denominators. The source populations differ materially.
 
-WIP remains 1. The EU legal-state lane is current WIP; the evaluation-science lane is
-preserved as a separate future research front, not cancelled.
+Supported interpretation:
 
-### Current WIP — Issue #377
+> some EU-law questions genuinely depend on independently moving operative state that
+> cannot be reduced to current parent text plus ordinary amendment/cross-instrument
+> interpretation.
 
-> **DISCOVER — EU legal-state outside-in investigation**
+Unsupported interpretation:
 
-Issue #377 starts outside the Needle taxonomy. It freezes current EU regimes/questions
-before class mapping and gives the strongest ordinary official-source research and mature
-regulatory-intelligence alternatives full credit.
+> that residual is common across ordinary EU-law research or implementation work.
 
-Phase 1 quick tranche:
+The frozen corpus remains an intentionally adversarial/enriched known-failure reference
+asset, not a frequency map of legal work.
 
-- AI Act;
-- NIS2;
-- DORA;
-- EUDR;
-- CBAM;
-- gas-appliance harmonised-standard citation state.
+Reopen EU prevalence research only from a materially different external trigger, not by
+selecting another likely-positive case family.
+
+Durable owners:
+
+- `docs/discovery/issue377-eu-legal-state-phase2-2026-09-26.md`;
+- `docs/discovery/issue377-eu-real-task-prevalence-2026-09-26.md`;
+- `docs/discovery/issue377-matter-specific-cjeu-contrast-2026-09-26.md`;
+- `docs/reviews/issue377-post-implementation-null-direction-2026-09-26.md`.
+
+### Current WIP — Issue #381
+
+> **DISCOVER — legal evaluation representation validity**
+
+The active question now attacks the project's surviving **minimal evaluation discipline**:
+
+> **When is an atomic criterion/rubric contract a valid representation of expert legal
+> quality, and when does comparative judgment, hierarchical issue structure, qualified
+> holistic adjudication or a hybrid preserve the decision-relevant signal better?**
+
+Current external tension:
+
+- JudgmentBench directly compares rubric scoring and pairwise comparative judgment on the
+  same legal tasks with the same expert population and reports a large ranking-fidelity /
+  annotation-cost advantage for comparative judgment;
+- PLawBench and LexRubric intentionally use large expert-written atomic-rubric estates for
+  fine-grained diagnosis;
+- LEGIT uses hierarchical legal issue trees to separate issue coverage from correctness;
+- Legal Benchmarks uses fixed binary substantive criteria with cross-family judges and
+  qualified-lawyer escalation when disagreement can change pass/fail.
+
+No representation is presumed globally superior.
+
+Phase 1 must separate:
+
+- measurement validity;
+- ranking fidelity;
+- false acceptance;
+- false rejection;
+- diagnostic localisation;
+- issue coverage;
+- annotation/review cost;
+- release/pass-fail suitability.
+
+Needle's current evaluation-integrity gate has now been reviewed.
 
 Phase 1 disposition:
 
-# **EU_LEGAL_STATE_SIGNAL**
+# **REPRESENTATION_CHOICE_MATTERS**
 
-Observed descriptive profile:
+External evidence does not identify one globally superior representation. It supports a
+conditional map:
 
-- **1/6 TEXT_SUFFICIENT**;
-- **5/6 MULTI_OWNER_STATE_REQUIRED**.
+- **atomic/conjunctive criteria** — strongest fit for mandatory requirements, regression,
+  fatal-error vetoes and diagnostic localisation;
+- **comparative judgment** — strongest observed fit for holistic relative quality ranking in
+  JudgmentBench, but not by itself an absolute release gate;
+- **hierarchical issue structures** — useful when issue coverage and correctness must remain
+  separate;
+- **qualified holistic adjudication** — maps directly to professional acceptability but is
+  expensive and difficult to standardise;
+- **hybrids** — eligible when roles and non-compensatory rules are frozen in advance.
 
-This is **not a prevalence estimate** and is not evidence that Needle improves research.
+Important red-team evidence:
 
-The important red-team result is that **multi-owner state is not itself a Needle
-mechanism**. DORA supplied a negative control: ordinary Level-1 -> Level-2 delegated-law
-research can require multiple legal instruments without exposing a residual representation
-problem.
+- JudgmentBench's 0.908 vs 0.150 rank-fidelity result strongly challenges the presumption
+  that atomic rubrics capture holistic expert quality;
+- JudgmentBench itself notes that comparative judgments are harder to decompose/audit;
+- CalibratedRubric reports that filtering/calibrating rubric items materially improves
+  agreement on JudgmentBench, showing that "rubrics" are not one fixed measurement form;
+- PLawBench/LexRubric remain strong evidence for diagnostic value of fine-grained criteria;
+- LEGIT shows issue coverage and correctness can move differently.
 
-The stronger candidate boundary for Phase 2 is:
+Minimal protocol repair is earned and implemented on the active branch:
 
-> an operative answer depends on an independently moving state whose change is not safely
-> reducible to ordinary parent-text amendment/version tracking and whose omission can change
-> the legal answer.
-
-Durable Phase 1 result:
-
-> `docs/discovery/issue377-eu-legal-state-phase1-2026-09-26.md`
-
-### Phase 2 result
-
-Phase 2 froze a 24-question cross-domain stress sample before detailed source reconstruction
-and before Needle class mapping.
-
-Disposition:
-
-# **EU_LEGAL_STATE_BOUNDARY_SUPPORTED — PREVALENCE UNESTABLISHED**
-
-Observed profile in this **stress sample only**:
-
-- **10/24 TEXT_SUFFICIENT**;
-- **2/24 CHANGE_HISTORY_SUFFICIENT**;
-- **12/24 MULTI_OWNER_STATE_REQUIRED**.
-
-After the anti-inflation red team, only **7/24** survive the stronger residual boundary:
-
-> omission of an independently moving operative state can change the answer, and that state
-> is not losslessly reducible to ordinary parent-text amendment/version tracking.
-
-The other five multi-owner cases are ordinary delegated-law or national-implementation
-research and do **not** count as a distinct Needle-shaped residual.
-
-Strong residual families observed:
-
-- dynamic authoritative calculation input (CBAM);
-- authoritative entity-identification state (CER);
-- EU-permitted Member-State divergence (CSRD FY2025–2026);
-- device/cohort + notified-body transition state (MDR / IVDR);
-- product-family migration driven by harmonised technical-specification state (CPR);
-- OJ citation/non-citation state for a private standard (Gas Appliances / EN 497:2022).
-
-Phase 2 also revises the Phase 1 EUDR classification downward from multi-owner to
-**CHANGE_HISTORY_SUFFICIENT**: Delegated Regulation 2026/2102 is an ordinary amending act
-whose provision-specific future application dates can be represented by competent
-amendment/effect tracking.
-
-Every strong residual has a plausible post-hoc owner in the frozen 26-class taxonomy, but
-that is **not independent validation** because the operator already knows Needle.
+> every consequential evaluation must first declare its **decision objective, representation,
+> non-compensatory constraints, valid-alternative policy and aggregation semantics** before
+> representation-specific integrity checks are applied.
 
 Durable result:
 
-> `docs/discovery/issue377-eu-legal-state-phase2-2026-09-26.md`
+> `docs/discovery/issue381-evaluation-representation-phase1-2026-09-26.md`
 
-### Phase 3A — externally sourced implementation-Q&A prevalence pilot
+### #381 next gate
 
-Phase 3A froze 16 real questions from official EU implementation-Q&A / FAQ channels before
-detailed answer reconstruction:
+A genuine paired representation experiment is scientifically earned, but **cannot be
+credibly self-graded**.
 
-- EBA DORA Q&A;
-- ESMA MiCA Q&A;
-- Commission EUDR FAQ;
-- Commission MDR Annex XVI transitional Q&A.
+The discriminating design needs qualified independent legal adjudication on the same frozen
+work products and at least two task families:
 
-Disposition:
+1. a **fatal-error / conjunctive** task where one legal defect should veto otherwise strong
+   work;
+2. a **multiple-defensible-strategies** task where a narrow answer key risks false rejection.
 
-# **IMPLEMENTATION_QA_RESIDUAL_NULL — MATTER_SPECIFIC_PREVALENCE_UNRESOLVED**
+Until qualified adjudication is available, do not manufacture the experiment with model
+self-labels or rubric-derived "ground truth".
 
-Observed profile:
+#381 may therefore complete after the protocol repair and evidence synthesis, with the
+empirical representation comparison recorded as an external-adjudication-dependent future
+gate.
 
-- **12/16 TEXT_SUFFICIENT**;
-- **4/16 ORDINARY_CROSS_INSTRUMENT**;
-- **0/16 CHANGE_HISTORY_SUFFICIENT**;
-- **0/16 INDEPENDENT_OPERATIVE_STATE**;
-- **0/16 INDETERMINATE**.
+### Separate commercial boundary
 
-This is a binding negative result for a broad prevalence claim.
-
-The difficult questions in this official implementation-Q&A frame were difficult because of
-interpretation, definitions or ordinary cross-instrument legal research. None required the
-stronger Phase-2 residual:
-
-> an independently moving operative state whose omission can reverse or materially distort
-> the answer and which cannot be reduced to ordinary text/amendment/version research.
-
-Phase 2 therefore survives as an **existence/boundary** result, not as evidence that the
-residual is common in generic implementation work.
-
-Important source-frame limitation:
-
-> official Q&A systems naturally publish general interpretation questions and can
-> under-sample full matter-specific actor/date/cohort/designation/certificate/status facts.
-
-Therefore 0/16 does **not** establish zero prevalence across real EU-law work.
-
-Durable result:
-
-> `docs/discovery/issue377-eu-real-task-prevalence-2026-09-26.md`
-
-### Phase 3B — CJEU matter-specific contrast
-
-After the Phase 3A null, the project did **not** hand-pick a favorable matter set.
-
-A direction review found one reproducible matter-specific source frame: 2026 Court of Justice
-preliminary references selected mechanically by ascending case number, subject to a frozen
-public-English-request and named-secondary-legislation rule.
-
-The first 12 qualifying cases produced:
-
-- **5/12 TEXT_SUFFICIENT**;
-- **6/12 ORDINARY_CROSS_INSTRUMENT**;
-- **1/12 INDEPENDENT_OPERATIVE_STATE**;
-- **0/12 CHANGE_HISTORY_SUFFICIENT**;
-- **0/12 INDETERMINATE**.
-
-The sole strong residual is **C-15/26, Boehringer Ingelheim Vetmedica**: Article 3(d) of the
-SPC Regulation turns on the identity/sequence of separately created human and veterinary
-marketing-authorisation states. The authorisation history can change the legal result while
-the parent SPC rule remains unchanged.
-
-This is evidence about legal-state **structure**, not Needle research advantage. The issue is
-surfaced by the referral itself.
-
-Durable result:
-
-> `docs/discovery/issue377-matter-specific-cjeu-contrast-2026-09-26.md`
-
-Direction review:
-
-> `docs/reviews/issue377-post-implementation-null-direction-2026-09-26.md`
-
-### #377 synthesis and allocation
-
-Final EU-specific research disposition:
-
-# **EU_LEGAL_STATE_EXISTENCE_SUPPORTED — PREVALENCE_NOT_SUPPORTED**
-
-Evidence by phase:
-
-- Phase 2 stratified structural stress sample: **7/24** residuals;
-- Phase 3A official implementation Q&A: **0/16** residuals;
-- Phase 3B mechanically selected CJEU matter-specific disputes: **1/12** residual.
-
-Do not combine these denominators into a population estimate. The sampling frames differ
-materially.
-
-The correct interpretation is:
-
-> independently moving operative EU legal state is a real and consequential failure
-> structure, but Needle has **not demonstrated that it is common across real EU-law research
-> or implementation work**.
-
-The frozen corpus is therefore better understood as intentionally adversarial/enriched
-failure memory, not as a frequency map of ordinary EU-law work.
-
-### EU prevalence programme status
-
-# **PARK**
-
-Further prevalence sampling would now risk serial result-seeking.
-
-Reopen only from a materially new external trigger, for example:
-
-- measured reconstruction burden in a real legal/regulatory workflow;
-- a verified regulatory-intelligence product contract that omits a consequential state;
-- an independently observed wrong answer caused by current-text/change-only representation;
-- a genuinely different public source population that becomes available for mechanical
-  sampling.
-
-Do not reopen merely by choosing another case family likely to contain stateful examples.
-
-No corpus/class, Reference Pack, schema, software or product change is earned.
-
-### Next WIP — Issue #381
-
-With #377 complete, WIP returns to the preserved broader research front:
-
-> **legal-AI evaluation science / evaluation-contract assurance**
-
-Queued successor:
-
-> **#381 — DISCOVER: legal evaluation representation validity**
-
-Core question:
-
-> when are atomic rubric/criterion contracts a valid representation of expert legal quality,
-> and when do alternative representations such as comparative judgment, hierarchical issue
-> structures or qualified holistic adjudication measure the task more faithfully?
-
-#381 is an orthogonal scientific question, not a commercial DELIVERY test and not a revival
-of corpus-assisted legal-research superiority. It activates after the #377 completion
-branch is accepted.
-
-### Commercial / external-validation boundary
-
-The #375 disposition **READY_FOR_EXTERNAL_VALIDATION** remains valid for the separate
-commercial DELIVERY hypothesis:
+The #375 disposition **READY_FOR_EXTERNAL_VALIDATION** remains valid for the commercial
+DELIVERY hypothesis:
 
 > Can a Needle-derived workflow produce an already acceptable legal evaluation/oracle
 > package with materially lower total qualified-expert effort, rework, maintenance burden
 > or turnaround than the evaluator's actual alternative?
 
-The sponsor's earlier deferral of partner outreach still governs that commercial test.
-
-It no longer blocks the separately authorized EU legal-state scientific research lane.
+That commercial question remains behind the sponsor's external-outreach gate and is not
+being answered by #381.
 
 ### Binding guardrails
 
@@ -294,13 +176,11 @@ Preserve:
 - #362 as directional allocation evidence, not a high-grade falsifier;
 - #366's retirement of the standing attempt to prove distinct Needle artifact/workflow
   advantage;
+- #377's EU prevalence nulls and park decision;
 - Reference Pack v0.2 as frozen/current;
 - **INSPECTABLE_ONLY_FOR_NOW** licensing;
 - no v0.3, product implementation, corpus growth, taxonomy growth or software surface merely
-  because Phase 1 found multi-owner legal states.
-
-Research may change confidence in Needle's EU-law identity. It may not convert an interesting
-state transition into product scope by default.
+  because a research representation looks promising.
 
 WIP=1 remains binding.
 

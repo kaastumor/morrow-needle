@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — LEGAL-AGENT TRAJECTORY CONSEQUENTIALITY**
+# **REVIEW — EXTERNAL EVIDENCE GATE / OWNER OUTREACH DEFERRED**
 
 Frozen scientific source:
 
@@ -26,119 +26,184 @@ Current released reference surface remains:
 
 > **Needle Reference Pack v0.2 — navigation/reference surface**
 
-### Recent research sequence
+### Post-#375 research frontier review
+
+The sponsor's challenge to the earlier "external reality now / no more internal proof"
+assumption was correct.
+
+The project then executed additional bounded public research:
 
 - #377 — **EU_LEGAL_STATE_EXISTENCE_SUPPORTED — PREVALENCE_NOT_SUPPORTED**
 - #381 — **REPRESENTATION_CHOICE_MATTERS**
 - #385 — **PUBLIC_EVIDENCE_INSUFFICIENT** for demonstrated legal-rubric false rejection
-- #388 — **SELECT_AGENT_TRAJECTORY**
+- #390 — **TRAJECTORY_IS_DIAGNOSTIC_ONLY_FOR_NEEDLE_SCOPE**
 
-### Current WIP — Issue #390
+Those runs materially changed project understanding and are preserved as evidence rather
+than treated as failed momentum.
 
-> **DISCOVER — legal-agent trajectory consequentiality**
+Final direction review #392:
 
-Result:
+# **CONSOLIDATE_THEN_EXTERNAL_GATE**
 
-# **TRAJECTORY_IS_DIAGNOSTIC_ONLY_FOR_NEEDLE_SCOPE**
+Durable owner:
 
-Public evidence clearly shows that legal-agent traces are useful and that some agent
-trajectories are legally constitutive.
+> `docs/reviews/issue392-research-frontier-external-evidence-gate-2026-09-26.md`
 
-But those are different claims.
+### What is now externally gated
 
-Harvey LAB:
+Do not collapse all external validation into one generic partner exercise.
 
-- records complete run transcripts/tool activity;
-- grades final deliverables separately;
-- reports associations between research/validation/revision behavior and output performance.
+#### Gate 1 — evaluator DELIVERY
 
-For ordinary legal-work tasks, those path features are:
+Question:
 
-> **TRAJECTORY_DIAGNOSTIC**
+> Can a Needle-derived workflow deliver an already acceptable legal evaluation/oracle
+> package with materially lower total qualified-expert burden than the evaluator's actual
+> alternative?
 
-They help explain quality and improve agents, but the legal deliverable does not become
-invalid merely because the agent followed an unusual sequence.
+Needs:
 
-Aithos LARA supplies a true:
+- evaluator-owned workload;
+- incumbent workflow;
+- independent acceptance threshold;
+- total expert time;
+- rework/correction/adjudication;
+- model/tool/other labor cost;
+- turnaround.
 
-> **TRAJECTORY_CONSTITUTIVE**
+This remains the #375 commercial hypothesis.
 
-class because an agent can take a legally prohibited action during the interaction itself.
-A later benign final answer cannot erase an unlawful data-processing/manipulation/action
-event.
+#### Gate 2 — qualified evaluation-science adjudication
 
-That is evidence for agent compliance/governance, not for a new Needle legal-research layer.
+Questions:
 
-### Needle-specific falsifier
+- does evaluation representation materially change expert legal quality decisions?
+- do criterion contracts reject professionally valid alternatives?
 
-Needle's surviving source/time/authority requirements are primarily checkable from:
+Needs:
 
-- final legal propositions;
-- citations/evidence owners;
-- legal/source time;
-- provenance/evaluation record.
+- qualified independent legal reviewers;
+- same frozen work products;
+- fatal-error and multiple-defensible-strategy task families;
+- preserved disagreement;
+- reference decisions not derived from the representation under test.
 
-The project has no accepted evidence owner showing:
+#### Gate 3 — product-capability access
 
-> a final legal/evidence output passes every current consequential check, yet the hidden
-> research path itself violates a Needle-owned requirement.
+Question:
 
-Candidate constitutive path requirements such as:
+> Do mature regulatory-intelligence/evaluation systems already preserve the legal-state,
+> maintenance and evidence contracts Needle considers interesting?
 
-- prohibited data/tool access;
-- confidentiality/privacy breach;
-- mandatory human approval;
-- binding workflow/security policy;
+Needs one or more of:
 
-are real when independently owned, but their owner is compliance/security/client policy.
+- product demo/trial;
+- sandbox access;
+- detailed technical/procurement documentation;
+- frozen comparison workload;
+- operator/practitioner evidence.
 
-Generic tracing/trajectory infrastructure is already well occupied by systems such as
-Arize/Phoenix.
+Public absence from marketing/docs is not evidence of missing capability.
 
-No Needle trajectory layer, product or corpus expansion is earned.
+#### Gate 4 — real workflow / incident evidence
 
-Durable result:
+Questions:
 
-> `docs/discovery/issue390-legal-agent-trajectory-consequentiality-2026-09-26.md`
+- how prevalent are Needle-type failure structures in actual legal work?
+- when is an agent trajectory independently consequential?
+- what is real oracle-maintenance burden?
 
-### Allocation consequence
+Needs:
 
-Close #390 without implementation.
+- real task/output/failure population;
+- production incident/postmortem logs;
+- workflow policies;
+- production traces;
+- maintenance history.
 
-The remaining serious questions increasingly require evidence unavailable from another
-internally selected public artifact:
+### Why no new internal public lane is queued
 
-- actual customer/evaluator workflow contracts;
-- private product behavior;
-- qualified independent adjudication;
-- measured total expert effort / rework / turnaround;
-- real incident traces or buyer acceptance.
+#### Temporal/oracle maintenance
 
-A final allocation review should now test whether the **external evidence gate** has genuinely
-been reached rather than automatically opening another discovery lane.
+The construct is real and already represented in #375/#377/protocol repairs.
 
-### Separate commercial boundary
+Another public mutable-law benchmark hunt could find another stale criterion, but would not
+credibly measure frequency, repair burden or Needle-specific savings.
 
-The #375 commercial DELIVERY hypothesis remains valid and external.
+#### Failure ecology
 
-### Binding guardrails
+The frozen corpus is enriched by design.
 
-Preserve:
+Current public legal benchmark/task surfaces do not provide a sufficiently neutral raw
+failure population for another taxonomy-prevalence claim without generating project-authored
+outputs or selecting a biased hard set.
 
-- #214 strong bounded negative;
-- #327 generic-use null;
-- #362 directional allocation evidence only;
-- #366 retirement of standing artifact-value proof;
-- #377 prevalence park;
-- #381 representation-validity repair;
-- #385 public-evidence insufficiency;
-- #390 trajectory narrowing;
-- Reference Pack v0.2 frozen/current;
-- **INSPECTABLE_ONLY_FOR_NOW** licensing.
+#### Commercial contract map
 
-No v0.3, product implementation, corpus/taxonomy growth or trajectory infrastructure follows.
+Public product documentation established strong incumbents and claimed capabilities, but is
+too shallow to prove capability **absence**.
 
-WIP=1 remains binding.
+#### Customer-specific evaluation estates
+
+The job is plausible, but value, burden, confidentiality constraints and willingness to
+outsource/pay require real buyer workflow evidence.
+
+#### Evaluation science / trajectory
+
+The next discriminating evidence requires independent legal adjudicators or externally
+owned workflow/process contracts.
+
+### Owner gate
+
+The sponsor previously deferred partner/evaluator outreach.
+
+That deferral remains binding.
+
+> **DO NOT INITIATE EXTERNAL PARTNER OUTREACH WITHOUT EXPLICIT SPONSOR AUTHORISATION.**
+
+The project is ready to execute an external evidence gate when the sponsor chooses which one
+to open.
+
+### Internally eligible work while the owner gate remains closed
+
+Only bounded work with a concrete trigger:
+
+- correctness/source-integrity maintenance;
+- repair of newly demonstrated evidence defects;
+- consolidation that removes stale/duplicated interpretation;
+- release-integrity maintenance of v0.2;
+- response to genuinely new public evidence.
+
+Do not open another internally selected benchmark/corpus/product experiment merely to avoid
+the owner gate.
+
+### Claims that remain parked even after external access
+
+External contact does not automatically reopen:
+
+- generic corpus-assisted latent correctness/diagnostic superiority;
+- generic legal-research companion advantage;
+- broad product/platform build;
+- proprietary legal-reasoning method;
+- representative 26-class coverage;
+- taxonomy/corpus growth for aesthetics;
+- generic trajectory infrastructure/product;
+- generic regulatory-intelligence product;
+- license/open-source change.
+
+#214/#327/#366 remain binding unless materially new evidence directly changes their scope.
+
+### Binding project state
+
+- frozen corpus: **81 cases / 26 classes**
+- Reference Pack: **v0.2**
+- licensing: **INSPECTABLE_ONLY_FOR_NOW**
+- no v0.3
+- no product build
+- no corpus/taxonomy growth
+- no autonomous successor experiment
+- WIP=1 remains the governance rule; there is currently **no active experimental WIP**
+  beyond this owner evidence gate.
 
 ## Historical backlog archive
 

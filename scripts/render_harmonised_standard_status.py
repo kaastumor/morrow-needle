@@ -20,7 +20,7 @@ def parse_date(value: str) -> date:
 
 def matching_transition(
     record: dict[str, Any], standard: str, as_of: date
-) -> tuple[dict[str, Any] | None, dict[str, str]]:
+) -> tuple[dict[str, Any] | None, dict[str, str], dict[str, Any] | None]:
     transitions = []
     for transition in record["transitions"]:
         identifiers = transition["member"]["identifiers"]
@@ -41,12 +41,18 @@ def matching_transition(
         if parse_date(item["effective_from"]) <= as_of
     ]
 
+    future = [
+        item for item in transitions
+        if parse_date(item["effective_from"]) > as_of
+    ]
+    next_transition = future[0] if future else None
+
     if applicable:
         latest = applicable[-1]
-        return latest, latest["after"]
+        return latest, latest["after"], next_transition
 
     first = transitions[0]
-    return None, first["before"]
+    return None, first["before"], next_transition
 
 
 def view_state(member_state: dict[str, str]) -> tuple[str, str]:
@@ -65,7 +71,7 @@ def view_state(member_state: dict[str, str]) -> tuple[str, str]:
 def render_card(
     record: dict[str, Any], standard: str, as_of: date
 ) -> str:
-    transition, state = matching_transition(record, standard, as_of)
+    transition, state, next_transition = matching_transition(record, standard, as_of)
     oj_state, consequence = view_state(state)
 
     dependency = record["dependencies"][0]
@@ -106,6 +112,18 @@ def render_card(
                 f"- {source['identifier']} — {source['locator']}"
             )
         lines.append("")
+
+    if next_transition is not None:
+        lines += [
+            (
+                "**Next scheduled owning event:** "
+                f"{next_transition['transition_id']} "
+                f"(effective {next_transition['effective_from']})"
+            ),
+            "",
+            f"**Scheduled scope:** {next_transition['scope']['statement']}",
+            "",
+        ]
 
     lines += [
         "**Non-implications:**",

@@ -18,6 +18,7 @@ The repository has deliberately separate owners:
 - **project-thesis evidence:** `docs/value-evidence.md`
 - **material live assumptions:** `docs/assumptions.md`
 - **comparative-evaluation discipline:** `docs/evaluations/adversarial-corpus-protocol-v0.1.md`
+- **current #375 evidence/readiness interpretation:** `docs/reviews/issue375-pre-partner-readiness-red-team-2026-09-26.md`
 
 Do not copy live issue numbers, corpus counts or queue state into orientation documents.
 Read the owners above instead.
@@ -74,9 +75,10 @@ answer is already supplied, the future regression oracle is nearly tautological,
 extra packet would add only labels/governance metadata.
 
 This boundary is supported by the bounded #339, #349 and #353 uses and challenged by
-the predeclared #362 falsifier. It is a practical **first-refusal discipline**, not a
-population claim, model-performance claim, or validated selector for when Needle will add
-incremental value.
+#362's predeclared pair, which #375 later downweighted to **directional allocation evidence**
+rather than a high-grade independently adjudicated falsifier. It is a practical
+**first-refusal discipline**, not a population claim, model-performance claim, or validated
+selector for when Needle will add incremental value.
 
 The standing effort to prove a distinct external Needle packet/artifact job is retired.
 Reopen that question only from a materially changed boundary such as repeated real external
@@ -91,7 +93,9 @@ The first mechanically selected real post-answer use test (#327) returned
 `BASELINE_SUFFICIENT`.
 
 Reference Pack v0.2 remains the current compact navigation/method surface.
-Reference Pack v0.1 remains preserved as its historical predecessor. The pack points to
+Reference Pack v0.1 remains preserved as its historical predecessor. The frozen v0.2 README
+still uses the historical phrase **hard null** for #214; the current canonical interpretation
+is the qualified bounded-negative wording recorded in the #375 readiness review. The pack points to
 truth owners rather than self-containing every legal boundary, source-state or regression
 artifact. Its existence is not evidence of separate product demand or artifact-level
 incremental value. See

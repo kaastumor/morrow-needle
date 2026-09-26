@@ -41,24 +41,6 @@ Each public index entry records only:
 
 Legal facts remain owned by the referenced fixture/audit/source chain.
 
-## Primary reference use
-
-The corpus is primarily a **failure-analysis / evaluation-design / debugging reference**.
-
-Use a case to:
-- reconstruct the consequential legal-information distinction;
-- inspect the evidence and historical/source-state owner;
-- understand the accepted boundary of the failure family;
-- preserve derivation/evaluation/exposure status;
-- derive or rerun a regression only when a concrete executable contract exists.
-
-Do not assume corpus consultation improves an ordinary legal-research answer merely because
-a case is analogous. Issue #327's first mechanically selected real-use test returned
-`BASELINE_SUFFICIENT`.
-
-The compact Reference Pack is a navigation surface. Detailed boundary, negative-control and
-source-state evidence may still live in the referenced repository owners.
-
 ## Reference, fixture and regression status
 
 **Reference status is corpus-wide. Regression status is case/fixture-specific.**

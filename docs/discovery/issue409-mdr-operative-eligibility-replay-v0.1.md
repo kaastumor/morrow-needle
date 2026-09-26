@@ -1,8 +1,22 @@
 # Issue #409 — MDR legacy-device operative-eligibility replay v0.1
 
-Status: **FROZEN BEFORE WORKFLOW REPLAY**
+Status: **RETIRED_UNEXECUTED — accessible product publicly claims the full Article-120 condition job**
 
 Date: 2026-09-26
+
+## Retirement note
+
+Before execution, #409 located a self-serve medical-device compliance platform publicly claiming per-device Article 120 transition-condition tracking, including no-significant-change, application, QMS and surveillance state.
+
+The spreadsheet/checklist baseline was therefore no longer the strongest realistic lean-team comparator.
+
+Canonical correction:
+
+> `docs/discovery/issue409-mdr-accessible-incumbent-correction-2026-09-26.md`
+
+This replay remains as a frozen future **product-capability test workload**, but must not be interpreted as an executed Candidate-B comparison.
+
+---
 
 ## Purpose
 

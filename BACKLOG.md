@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **REVIEW — CANDIDATE B STANDARDS-STATUS / DIRECT PRODUCT-ACCESS GATE**
+# **USE / REVIEW — CANDIDATE B DISPOSABLE USABILITY MVP**
 
 Frozen scientific source:
 
@@ -31,171 +31,217 @@ The sponsor's strategic objective remains:
 
 > **work toward an MVP that demonstrates actual added value on a real job**
 
-The sponsor explicitly reopened Candidate B and challenged the assumption that a strong monitoring
-baseline is realistically available to every smaller/lean entity.
+The sponsor explicitly reopened Candidate B and challenged the assumption that sophisticated
+maintained regulatory-state capability is practically available to every smaller/lean organisation.
 
-That challenge was useful.
-
-#409 then corrected the Candidate-B framing again:
-
-> **competitor presence removes novelty claims and strengthens the baseline; it does not itself
-> eliminate product value.**
+That challenge has now produced a bounded user/job wedge without reviving Full Needle.
 
 ### Candidate B current wedge
 
-# **HARMONISED-STANDARD OPERATIVE STATUS**
+# **HARMONISED-STANDARD OPERATIVE STATUS FOR LEAN PRODUCT TEAMS**
 
-Current disposable core:
+The current question is not novelty.
 
-> `docs/mvp/candidate-b-harmonised-standard-status-core-v0.1.md`
+It is:
 
-Canonical owner reused:
+> **Can a lean manufacturer/compliance user understand and maintain decision-relevant OJ-reference
+> status more easily/safely than by repeatedly reconstructing fragmented official sources?**
 
-> `authoritative-dynamic-set-v0.1`
+### #409 correction
 
-No new ontology was required.
+#409 rejected the coarse assumption that smaller teams only have spreadsheets and no products.
 
-The card answers, for one standard/regime/date:
+Accessible incumbents exist.
 
-- current OJ-reference state;
-- presumption-of-conformity consequence;
-- restriction/scope;
-- owning legal event;
-- current effective date;
-- already-fixed future transition;
-- historical state;
-- official evidence;
-- important non-implications.
+Canonical product-discovery rule:
 
-### Issue #411 capability result
+> **competitor presence kills novelty claims and strengthens the baseline; it does not by itself
+> eliminate user value.**
+
+Durable correction:
+
+> `docs/discovery/issue409-competitor-presence-correction-2026-09-26.md`
+
+### #411 capability boundary
+
+#411 concluded:
 
 # **DIRECT_PRODUCT_ACCESS_REQUIRED_BEFORE_COMPARISON**
 
-Public market research shows that Candidate B is **not** entering an empty capability space.
+Publicly documented products already occupy substantial standards-monitoring/status capability.
 
-Publicly documented incumbents already cover substantial parts of the job:
+Candidate B receives zero novelty credit for:
 
-- **Grecta Standards Watch** — product-mapped standard stages, OJ citation, supersession dates,
-  source evidence and requirement impact;
-- **Certivo** — OJ sync, harmonised-standard validation, revision/withdrawal alerts, historical
-  version tracking and portfolio reassessment;
-- **ComplyMatrix** — harmonised-status fields, change history, product matching and change alerts;
-- **BSI Compliance Navigator** — in medical devices/IVD, product profiles, standards alerts,
-  current-to-withdrawn status, tracked changes and SME-oriented access;
-- **Foresight / SmartCert-type tools** — standards activity/relevance/change monitoring.
+- standards monitoring;
+- OJ citation alerts;
+- product/profile relevance;
+- standard withdrawal/revision tracking;
+- generic change management.
 
-Therefore Candidate B has **no earned novelty claim** for standards monitoring, status alerts,
-product relevance or withdrawal tracking.
+Public product contracts are not detailed enough to prove or disprove equivalence on the difficult
+combination:
 
-However, public documentation is not sufficient to determine whether one of these products already
-provides the full difficult state combination:
+> **formal non-publication / restriction scope + exact legal-effect consequence + owning event +
+> historical as-of state + already-fixed future transition + unsafe-inference boundary**
 
-> **formal non-publication / restriction scope + exact legal-effect consequence + owning OJ event +
-> historical as-of state + already-adopted future transition + unsafe-inference boundary**
+The frozen five-case direct-product workload remains preserved:
 
-Public silence is UNKNOWN, not absence.
+> `docs/mvp/candidate-b-direct-product-access-contract-v0.1.md`
+
+No purchase/vendor outreach is authorised.
+
+### #413 public job evidence
+
+#413 now supports:
+
+# **LEAN_TEAM_STANDARDS_MAINTENANCE_JOB_SUPPORTED**
+
+Independent Commission evidence shows that:
+
+- familiarisation with Union product legislation/standards is a recurring manufacturer task;
+- frequent legislation/standards changes create adaptation and documentation-maintenance cost;
+- SMEs carry disproportionate compliance burden and are less likely to maintain dedicated
+  specialised compliance capacity;
+- changes to standards can trigger redesign, retesting, technical-file and declaration updates.
+
+Named small-team customer stories published by BSI provide directional workflow evidence that:
+
+- standards tracking can be postponed behind daily work;
+- upcoming-change visibility matters;
+- manually checking standards sources is burdensome;
+- late discovery can create expensive redesign/retest work.
+
+Those customer stories are vendor-hosted and receive no neutral treatment-effect weight.
 
 Durable result:
 
-> `docs/discovery/issue411-standards-status-capability-challenge-2026-09-27.md`
+> `docs/discovery/issue413-lean-team-standards-maintenance-job-2026-09-27.md`
 
-### Frozen five-case direct-access workload
+### Strong boundary
 
-Do not create another internal benchmark.
+The status wedge is **not full conformity assessment**.
 
-Use exactly:
+It does not replace:
+
+- the technical standard text;
+- technical interpretation;
+- testing/labs;
+- notified bodies;
+- supplier evidence;
+- product design work;
+- technical files / declarations;
+- applicable-legislation discovery.
+
+The MVP may only answer:
+
+> **what OJ-reference/presumption state applies to this known standard/regime/date, why, and what
+> future transition is already fixed?**
+
+If target users mainly need the broader tasks above, Candidate B must revise rather than inflate.
+
+### Existing Needle component reactivated narrowly
+
+Candidate B reuses:
+
+> **Authoritative Dynamic Set v0.1**
+
+No new ontology was required.
+
+The five frozen official status cases are now represented by canonical fixtures:
 
 1. GAR — EN 497:2022 — formal non-publication;
-2. Machinery — EN 50434:2014 — maintained with restriction;
+2. Machinery — EN 50434:2014 — citation maintained with restriction;
 3. Toy Safety — EN 71-1:2014+A1:2018 — restricted citation;
 4. LVD — EN 60335-2-14:2006 — formal non-publication;
 5. LVD — EN 60335-2-60:2003 — current citation + future withdrawal on 18 January 2027.
 
-Frozen comparison contract:
+### Disposable MVP surface
 
-> `docs/mvp/candidate-b-direct-product-access-contract-v0.1.md`
+Current internal usability surface:
 
-Priority is actual rendered product behavior, not feature-page wording.
+> `mvp/candidate-b/`
 
-No purchase/vendor outreach is authorised.
+Properties:
 
-Public demos, public sample outputs or self-serve/free access may be used only when available through
-authorised tooling/account access.
+- static HTML/CSS/JavaScript only;
+- reads the canonical five fixtures directly;
+- case selector;
+- date-sensitive status;
+- current presumption consequence;
+- latest owning legal event;
+- next already-fixed future event;
+- direct EUR-Lex evidence links;
+- source-backed restriction scope;
+- explicit forbidden/non-implication statements;
+- **frozen evidence-window guardrail** — unsupported dates are refused rather than invented.
 
-### What #407 still means
+It has:
 
-#407 remains binding:
+- no backend;
+- no database;
+- no account;
+- no monitor;
+- no notifications;
+- no AI chat;
+- no standards-text copy;
+- no general CE-marking workflow.
 
-> once the baseline already has a maintained source/hash ledger, the old richer operational Core
-> showed no incremental value on its frozen longitudinal workload.
+This is deliberately disposable.
 
-Candidate B therefore does **not** reopen generic monitoring or Full Needle.
+### Next value gate
 
-The possible product value is narrower:
+The prototype is prepared for a bounded target-user usability comparison against the **free official
+source workflow**.
 
-> turn fragmented official harmonised-standard legal events into a maintained decision-ready state
-> for a bounded product/compliance job.
+Frozen contract:
 
-### Candidate-B strongest red team
+> `docs/mvp/candidate-b-usability-test-contract-v0.1.md`
 
-The card may simply be a convenient rendering of free Commission/OJ information.
+Test:
 
-If so, convenience may still have product value, but it is not scientific distinctiveness.
+- same five cases;
+- free Commission/EUR-Lex sources vs Candidate-B card;
+- correctness first;
+- time-to-confident-answer;
+- source openings/reopenings;
+- confusion/corrections;
+- workflow preference.
 
-A stronger incumbent may also already provide the exact view privately.
+A positive result would **not** establish superiority over commercial competitors.
 
-Do not add fields to manufacture differentiation after product access.
+After a usability win, #411 still requires direct product comparison before a capability/residual
+claim.
 
-### Candidate status
+### Candidate preservation
 
 Candidate A remains:
 
 > **CORE_READY_FOR_EXTERNAL_VALUE_TEST**
 
-It is paused/intact, not rejected.
+paused/intact, not rejected.
 
 Candidate C remains:
 
 > **SECONDARY_CANDIDATE — known failure/postmortem -> reusable regression/oracle**
 
-Candidate B remains live but externally/product-access gated on its current wedge.
+Candidate B is the active sponsor-authorised MVP-discovery lane.
 
-MDR/IVDR remain potentially high-pain occupied verticals; CPR remains a forward-looking possible
-vertical. None becomes active while #411's product-access boundary owns WIP.
-
-### Re-entry / next evidence
-
-Candidate B progresses when one of these becomes available:
-
-- public product sample exposing standard-level legal state;
-- authorised self-serve/free product access;
-- product trial/demo access through an authorised environment;
-- real user workflow evidence showing that the missing state distinction matters.
-
-If an incumbent is exact-equivalent:
-
-> move Candidate B to **user preference / price / workflow / source-transparency value**, not another
-> capability hunt.
-
-If a concrete state distinction survives:
-
-> freeze only that residual for a usability/value test.
-
-### Existing evidence remains binding
+### Binding negatives / constraints
 
 Preserve:
 
 - #214 strong bounded negative;
 - #327 generic-use null;
 - #366 standing artifact-value proof retired;
-- #377 EU legal-state existence supported / prevalence not supported;
+- #377 EU legal-state existence supported / broad prevalence not supported;
 - #395 official-model narrowing;
 - #407 lightweight maintained baseline sufficient for generic operational monitoring;
+- #411 no earned standards-monitoring novelty;
 - Reference Pack v0.2 frozen/current;
 - **INSPECTABLE_ONLY_FOR_NOW** licensing.
 
-No Full Needle revival, generic monitor, corpus growth, ontology, product platform or outreach follows
-from #411.
+No Full Needle revival, generic regulatory monitor, corpus growth, new ontology or broad compliance
+platform follows from #413.
 
 WIP=1 remains binding whenever active work exists.
 

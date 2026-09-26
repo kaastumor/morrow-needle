@@ -11,16 +11,11 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — EXTERNAL REFERENCE-CORPUS RESIDUAL VALUE**
+# **DIRECTION REVIEW — POST-REFERENCE-CONTRACT REVISION**
 
 Frozen scientific source:
 
 > **NEEDLE_CORPUS_REFERENCE_2026-09-25 — 81 cases / 26 classes**
-
-Current identity:
-
-> **known-failure reference corpus + exposed regression fixtures + minimal evaluation
-> discipline**
 
 Supported reference job:
 
@@ -28,69 +23,49 @@ Supported reference job:
 
 ### Current WIP
 
-# **#335 — residual value of a provenance-rich legal known-failure corpus**
-
-Result:
-
-> **REVISE_REFERENCE_CONTRACT**
-
-Strong external substitutes materially constrain the claim:
-
-- LegalBench, KCL and DELTA are stronger capability/evaluation contracts;
-- legal-hallucination studies preserve queries, outputs, labels, source/citation metadata
-  and error typologies;
-- AI Incident Database already provides searchable failure memory, provenance,
-  classifications, citations and point-in-time snapshots;
-- competent source-linked postmortems can preserve one failure in depth.
-
-Therefore "failure memory + provenance" is not a Needle-specific residual.
-
-A narrower repository-level residual survives:
-
-> standardize the consequential **legal-state failure mechanism** across cases while
-> preserving evidence/source-state lineage, derivation/evaluation/exposure provenance,
-> accepted family boundaries and a safe path into case-specific regression engineering.
-
-That job is primarily for evaluators, debugging/failure analysis, benchmark/test designers
-and maintainers.
-
-It is **not demonstrated as a generic companion during ordinary legal research**; #327
-remains `BASELINE_SUFFICIENT`.
-
-Reference Pack v0.1 remains a navigation layer into the evidence estate, not a
-self-contained failure-analysis dataset.
-
-Result:
-
-> `docs/reviews/issue335-reference-residual-value-result-2026-09-26.md`
-
-### Next eligible work after #335 merge
-
 # **#337 — direction review after reference-contract revision**
 
-#337 must compare purposeful modes with special attention to a real USE test of the revised
-contract:
+Result:
 
-> apply Needle to one independently observed external legal-AI failure, against a strong
-> ordinary source-linked failure postmortem baseline.
+> **SELECT USE — FAILURE ANALYSIS**
 
-The comparison must test **relative packet quality**, not novelty:
-- can Needle preserve the failure more completely, reconstructably or usefully?
-- does its combined legal-state/evidence/boundary/exposure packet reduce material loss?
-- does the repository-level packet add value even where incumbents already provide some
-  of the same components?
+Reason:
 
-If repository-level Needle value is observed but Reference Pack v0.1 cannot surface the
-same value without substantial reconstruction, that is evidence that a future pack
-improvement may be earned.
+- #335 defined a differentiated failure-analysis packet but direct relative value remains
+  untested;
+- #327 already rules out treating generic legal-research companion use as demonstrated;
+- another external literature pass has lower information gain than applying the packet to
+  an independently observed failure;
+- pack v0.2 is a consequence hypothesis, not an earned deliverable;
+- the next test can directly compare Needle against a strong ordinary source-linked
+  postmortem without requiring novelty.
 
-Any such USE must use mechanical/predeclared selection and may not cherry-pick a failure
-because it visibly matches a Needle class.
+Review:
+
+> `docs/reviews/issue337-post-reference-contract-direction-review-2026-09-26.md`
+
+### Next eligible work after #337 merge
+
+# **#339 — external legal-AI failure packet versus strong postmortem baseline**
+
+#339 must:
+- mechanically select the first author-labeled hallucinated/materially ungrounded response
+  from the preselected public `Hallucination-Free?` dataset;
+- freeze a strong source-linked failure postmortem before consulting Needle;
+- then test full repository-level Needle packet value;
+- then test whether Reference Pack v0.1 surfaces any observed Needle value;
+- evaluate relative packet quality, not component novelty;
+- preserve a null if the ordinary postmortem is sufficient.
+
+Possible pack consequence:
+
+> repository-level value + material v0.1 reconstruction burden may earn a future pack
+> improvement hypothesis.
 
 No automatic pack v0.2, executable suite, corpus growth, product revival or model
 superiority claim is authorised.
 
-WIP=1 remains binding: #337 starts only after #335 merges/closes.
+WIP=1 remains binding: #339 starts only after #337 merges/closes.
 
 ## Historical backlog archive
 

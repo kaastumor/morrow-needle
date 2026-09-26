@@ -58,7 +58,7 @@ The delta contract links to them by stable identifiers.
 Required:
 
 - `record_id` — stable maintenance-delta identifier;
-- `core_version` — this contract version;
+- `schema_version` — this contract version;
 - `subject.task_id` — incumbent task/evaluation item identifier;
 - `subject.baseline_contract_ref` — immutable version/commit/release of the contract being changed.
 
@@ -113,7 +113,7 @@ Each unit contains:
 - `before` — exact or concise prior score-bearing state;
 - `after` — proposed/revised state, or `UNRESOLVED`;
 - `affected_contract_refs` — criterion IDs / answer-key fields / deliverable IDs / task fields actually affected;
-- `risk` — zero or more of:
+- `risk` — one or more of:
   - `FALSE_REJECT`
   - `FALSE_ACCEPT`
   - `AMBIGUOUS_GRADING`
@@ -216,7 +216,7 @@ A delta record is structurally invalid if any of these fail:
 1. at least one delta unit exists;
 2. every delta unit either identifies affected score-bearing contract refs or explicitly records `NO_KNOWN_SCORE_IMPACT`;
 3. a legal/factual correction has an evidence owner or is marked `UNRESOLVED`;
-4. a time-varying legal proposition has a governing-time owner or is marked `UNRESOLVED`;
+4. every `LEGAL_PROPOSITION` delta records governing-time state; time-varying propositions identify the owner or are marked `UNRESOLVED`;
 5. an accepted repair has an immutable candidate-contract reference and owner-adopted change state;
 6. a legitimate adopted revision may record `repair_status: NOT_REQUIRED` without being mislabeled a defect;
 7. any potential historical-score effect has an explicit comparability decision;
@@ -250,8 +250,8 @@ Every machine/human record should be renderable as one **Maintenance Delta Card*
 ### Existing results
 `comparable / rejudge / rerun / human decision required`
 
-### Open questions
-`none` or explicit unresolved items.
+### Adjudication / unresolved state
+`not required / pending / accepted / rejected / split`, with the owning note where needed.
 
 The card should remain understandable without Needle taxonomy knowledge.
 

@@ -1,0 +1,54 @@
+{
+  "schema_version": "maintenance-delta-v0.1",
+  "record_id": "harvey-firm-knowledge-v3-semantic-revision-control",
+  "change_status": "ADOPTED_BY_OWNER",
+  "subject": {
+    "task_id": "firm-knowledge/*",
+    "baseline_contract_ref": "harveyai/harvey-labs@55510f0e609ffa5cf6f5df17d9a813ce4bb33d0c",
+    "candidate_contract_ref": "harveyai/harvey-labs@60071cc424d6479569626b8c76d90b958fe2d6c0"
+  },
+  "trigger": {
+    "kind": "TASK_OR_RUBRIC_REVISION",
+    "summary": "The v3 rubric update changed effective input/target contract fields across 250 firm-knowledge tasks while the shared DMS inventory remained stable.",
+    "reference": "harveyai/harvey-labs#143"
+  },
+  "delta_units": [
+    {
+      "id": "HV3-01",
+      "kind": "RESULT_INTERPRETATION",
+      "before": "Baseline firm-knowledge effective input/target task contracts.",
+      "after": "Owner-adopted v3 effective input/target task contracts.",
+      "affected_contract_refs": [
+        "firm-knowledge/*"
+      ],
+      "risk": [
+        "NON_COMPARABLE_RESULTS"
+      ],
+      "evidence": {
+        "owner_ref": "Immutable baseline/candidate Git revisions and public comparison referenced in Harvey LAB issue #143",
+        "proposition": "The effective score-bearing task contracts changed across all 250 firm-knowledge tasks in the compared revisions.",
+        "status": "SUPPORTED"
+      },
+      "governing_time": {
+        "kind": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "repair": {
+    "actions": [],
+    "status": "NOT_REQUIRED"
+  },
+  "result_impact": {
+    "comparability": "UNKNOWN",
+    "existing_outputs_action": "HUMAN_DECISION_REQUIRED",
+    "scope": "Any comparison of firm-knowledge scores across the two effective task-contract revisions.",
+    "reason": "Semantic task contracts changed, but public history alone does not establish the maintainer's intended score-comparability semantics."
+  },
+  "open_questions": [
+    "Whether Harvey maintainers consider scores across these revisions comparable for any use."
+  ],
+  "adjudication": {
+    "status": "PENDING",
+    "note": "The revision is owner-adopted; Needle does not characterize the revision itself as a defect or accepted repair."
+  }
+}

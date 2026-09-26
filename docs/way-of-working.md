@@ -72,6 +72,44 @@ chosen separately.
 priority. Orientation and constitutional documents must link to it rather than copy its
 live state.
 
+## Failure-analysis USE first refusal
+
+For a known external or internal legal-information failure, do **not** begin by filling a
+Needle packet.
+
+Use this order:
+
+1. build and freeze the strongest ordinary source-linked postmortem;
+2. ask whether that postmortem already preserves the consequential truth, evidence,
+   boundary and future regression oracle;
+3. if yes, `POSTMORTEM_BASELINE_SUFFICIENT` is a valid endpoint;
+4. if material reusable structure still remains, apply the Needle failure-analysis packet;
+5. use an existing class only when its causal owner genuinely fits;
+6. `NO_EXISTING_CLASS_MATCH` is a valid result;
+7. omit unsupported source-state, boundary or PASS/FAIL elements rather than synthesizing
+   them for structural neatness.
+
+Full packet work is most plausibly earned when the postmortem still leaves consequential
+structure such as:
+
+- multi-authority or legal-state reconstruction;
+- material historical/source-identity handling;
+- a consequential boundary/opposite-error control;
+- scientific/exposure status that materially affects future reuse;
+- a non-trivial regression-conversion / PASS-FAIL contract.
+
+These are **signals, not necessary or sufficient criteria**. Do not create a numeric
+complexity score from them.
+
+Do not count labels, governance metadata or a class name as material value if the source
+and task already make the correct answer and future regression oracle obvious.
+
+The comparator is always the strongest competent postmortem, not a deliberately thin note.
+
+This rule is supported by bounded USE evidence (#339, #349, #353) and may be revised by a
+future falsifier. It does not establish population prevalence, model superiority or a
+general workflow advantage.
+
 ## Incumbent and residual-value test
 
 Discovery must distinguish **doctrinal/market existence** from project value.

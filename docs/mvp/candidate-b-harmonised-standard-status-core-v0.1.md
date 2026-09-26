@@ -88,6 +88,13 @@ One of:
 
 `<decision/publication + effective date>`
 
+### Next scheduled owning event
+
+`<future withdrawal/restriction/publication event + effective date, if already legally fixed>`
+
+This is first-class because an adopted legal decision can create a future transition without
+changing today's OJ-reference state.
+
 ### Scope / reason
 
 `<direct official scope statement>`
@@ -126,9 +133,18 @@ v0.1 does **not** invent separate canonical enum values for those subtypes.
 
 The card must accept an `as_of` date and apply only transitions effective on/before that date.
 
+It must also expose the next already-known future transition when one exists.
+
+This preserves three distinct questions:
+
+- what is the state now?;
+- what was the state at a historical date?;
+- has an authoritative future transition already been fixed?
+
 This is a core Needle distinction:
 
-> current status must not overwrite historical status.
+> current status must not overwrite historical status, and an adopted future transition must not be
+> mistaken for a current state change.
 
 ## Strong baseline
 
@@ -145,6 +161,24 @@ The card earns product relevance only if users prefer its decision-ready/history
 enough to matter.
 
 ## Current examples
+
+### LVD — EN 60335-2-60:2003
+
+On 26 September 2026:
+
+> `CITED / AVAILABLE_WITHIN_COVERED_SCOPE`
+
+with a visible next scheduled event:
+
+> OJ-reference withdrawal effective **18 January 2027** under Decision (EU) 2025/1457.
+
+From 18 January 2027:
+
+> `NOT_CITED / NOT_AVAILABLE_VIA_THIS_OJ_REFERENCE`
+
+This control prevents a future withdrawal from being applied prematurely.
+
+
 
 ### Toy Safety — EN 71-1:2014+A1:2018
 

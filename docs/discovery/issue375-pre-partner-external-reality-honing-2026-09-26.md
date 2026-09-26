@@ -206,19 +206,21 @@ Earned gate:
 Harness/extraction/conversion failure must surface as `INVALID_RUN`, `UNSCORABLE` or
 equivalent, not as a model failure.
 
-### Derivation case F — Harvey LAB #143: semantic task-contract drift
+### Maintenance case F — Harvey LAB #143: semantic task-contract drift
 
 Issue:
 https://github.com/harveyai/harvey-labs/issues/143
 
 A rubric update changed effective input/target contracts across 250 tasks.
 
-Earned gate:
+This is **not itself a defect**. It is evidence that legal-evaluation contracts can change
+semantically and therefore supports a version-control rule:
 
 > **semantic revision control**
 
-Instructions, rubrics, answer keys and required deliverables are score-bearing task state and
-must be pinned/reconciled when results are compared.
+Instructions, rubrics, answer keys and required deliverables are score-bearing task state
+and must be pinned/reconciled when results are compared. The failure condition is undisclosed
+or invalid comparison across changed contracts, not legitimate maintenance.
 
 ### Derivation case G — Harvey LAB #158: answer variance versus judge variance
 
@@ -275,15 +277,13 @@ It is:
 ## Implemented repair
 
 The canonical evaluation protocol now contains an explicit evaluation-contract integrity
-gate covering:
+gate compressed into five working groups:
 
-1. task-to-criterion coverage;
-2. criterion evidence correctness;
-3. activation and gradability;
-4. cross-criterion consistency;
-5. execution validity before subject failure;
-6. semantic revision control;
-7. stability decomposition when the decision is sensitive.
+1. contract adequacy, including both undercoverage and false rejection of valid answers;
+2. evidence and temporal scope;
+3. execution validity with an explicit evaluated-system boundary;
+4. versioned audit record, including post-reveal preservation;
+5. decision-sensitive uncertainty / stability decomposition.
 
 The Way of Working now makes this a first-refusal gate before interpreting benchmark,
 regression or comparative scores.
@@ -296,26 +296,26 @@ Reference Pack v0.2 remains unchanged.
 
 ---
 
-## Holdout check after the gate was frozen
+## Post-gate applicability example
 
-After writing the gate, one additional Harvey LAB item was mechanically selected by
-issue/PR metadata before its substance was read:
+After writing the gate, Harvey LAB PR #135 was inspected:
 
 > harveyai/harvey-labs #135 — `fix(tasks): align market-definition rubric with source matter`
 
 Source:
 https://github.com/harveyai/harvey-labs/pull/135
 
-The substantive report then showed:
+Its title already announces a rubric/source repair. It is therefore **defect-cued** and
+cannot serve as an unbiased holdout, fresh-detection or false-alarm check.
+
+It remains a useful applicability example. The substantive report showed:
 
 - the rubric graded a different transaction from the packaged source corpus;
 - unsupported people, dates, figures, documents and theories remained in criteria;
 - source-data conflicts existed and could not safely be silently resolved;
 - the repair required a criterion-to-source evidence matrix.
 
-This was **not** one of the defects used to formulate the gate.
-
-The new integrity gate would flag it through:
+The new integrity gate would flag the documented repair through:
 
 - **criterion evidence correctness**;
 - **cross-criterion consistency**;
@@ -323,9 +323,10 @@ The new integrity gate would flag it through:
 
 Disposition:
 
-> **HOLDOUT_CONSISTENT_WITH_GATE**
+> **ILLUSTRATIVE_APPLICABILITY_ONLY — NOT A HOLDOUT**
 
-This is one bounded public maintenance example, not population validation.
+This is one bounded public maintenance example. It supplies no unbiased detection-rate,
+false-alarm or population-validation evidence.
 
 ---
 

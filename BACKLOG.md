@@ -137,6 +137,24 @@ Promotion trigger:
 
 C remains preserved and is not rejected.
 
+### Binding constraints still in force
+
+Preserve without reinterpretation:
+
+- #214 — bounded corpus-assisted latent-diagnostic/correctness null;
+- #327 — generic legal-research companion baseline sufficient;
+- #366 — standing external packet/artifact-value proof line retired;
+- #377 — EU legal-state existence supported / broad prevalence not supported;
+- #392 — serious remaining value questions require externally owned evidence when internal proxies become self-grading;
+- #395 — official EU information/model narrowing remains binding;
+- #407 — lightweight maintained baseline sufficient for generic operational monitoring;
+- #411 — no earned standards-monitoring novelty; direct product access required for capability comparison;
+- Reference Pack v0.2 remains frozen/current;
+- frozen scientific corpus remains **81 cases / 26 classes**;
+- licensing remains **INSPECTABLE_ONLY_FOR_NOW**;
+- no outreach, purchase or vendor account without explicit sponsor authorisation;
+- WIP=1 whenever active work exists.
+
 ### Immediate priority / owner decision
 
 No outreach, participant contact, purchase or vendor account is authorised by current governance.

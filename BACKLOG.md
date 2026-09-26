@@ -51,11 +51,11 @@ Commercial-job result remains:
 
 > **VENDOR_EVALUATION_JOB_EARNS_TEST**
 
-Claim type remains:
+Future commercial claim type remains:
 
 > **DELIVERY**
 
-But the sponsor explicitly superseded immediate partner outreach.
+But immediate partner outreach remains explicitly deferred by sponsor decision.
 
 Current mode:
 
@@ -64,78 +64,85 @@ Current mode:
 Durable records:
 - `docs/discovery/issue375-external-evaluation-job-2026-09-26.md`
 - `docs/discovery/issue375-pre-partner-external-reality-honing-2026-09-26.md`
+- `docs/audits/issue375-historical-evaluation-contract-integrity-2026-09-26.md`
 
-### External-reality finding
+### Completed honing checkpoints
 
-Strong public legal benchmarks already provide:
-- lawyer-authored criteria;
-- legal research cut-offs;
-- controlling-authority citations;
-- blind grading and human escalation;
-- realistic work-product tasks;
-- semantic/versioned benchmark maintenance.
+#### 1. External benchmark reality
 
-Therefore these are **incumbent practice**, not Needle differentiation.
+Public DELTA/Harvey practice establishes that lawyer-authored criteria, legal cut-offs,
+source citation, realistic work-product tasks, human escalation and versioning are strong
+incumbent practice rather than Needle differentiation.
 
-However, public DELTA and Harvey LAB maintenance defects expose a real weakness in Needle's
-own minimal evaluation discipline:
+Public maintenance defects nevertheless exposed a real gap in Needle's own minimal
+evaluation discipline.
 
-> Needle did not explicitly verify that an evaluation contract itself is complete,
-> source-correct, gradable, internally consistent, executable and stable enough for its
-> PASS/FAIL result to mean what the project says it means.
+The canonical protocol now includes **evaluation-contract integrity** checks for:
+- task-to-criterion coverage;
+- exact criterion/evidence correctness;
+- activation/gradability;
+- cross-criterion consistency;
+- execution validity before subject failure;
+- semantic revision control;
+- stability decomposition when decision-sensitive;
+- post-reveal preservation of prompts, keys, raw outputs and score/adjudication records.
 
-Observed external defects included:
-- wrong statutory paragraph in a grading criterion;
-- a legally true but vacuous conditional criterion;
-- a rubric that can all-pass while omitting the task's central requested work;
-- contradictory counts/allowlists across criteria;
-- conversion/harness failure scored as subject failure;
-- semantic drift in score-bearing task contracts;
-- answer variance and judge variance being conflated.
+These are ordinary evaluation hygiene, not a Needle superiority claim.
 
-The canonical evaluation protocol and Way of Working now include an
-**evaluation-contract integrity gate** covering:
-1. task-to-criterion coverage;
-2. exact criterion/evidence correctness;
-3. activation and gradability;
-4. cross-criterion consistency;
-5. execution validity before subject failure;
-6. semantic revision control;
-7. stability decomposition when decision-sensitive.
+#### 2. Historical Needle self-audit
 
-These rules are **ordinary evaluation hygiene**, not a Needle superiority claim.
+Preselected #88/#214/#362 were audited without reruns.
 
-A holdout public Harvey task repair (#135), selected after the gate was written, was
-consistent with the new gate: its rubric referenced the wrong source matter and contained
-unresolved source conflicts.
+Result:
+- **#88:** result preserved; #95 construct repair remains correct; raw output archive is
+  incomplete;
+- **#214:** remains a binding bounded negative for project allocation, but exact hidden
+  evaluator-package plaintext/raw outputs are not preserved in GitHub and one-run/single-
+  grading execution limits repository reproducibility;
+- **#362:** preserve as directionally useful allocation evidence, but downweight from a
+  high-grade falsifier because decisive source citations are not durably preserved and the
+  "more residual structure" endpoint lacks independent executable adjudication.
 
-Reference Pack v0.2 remains unchanged.
-The frozen corpus remains **81 cases / 26 classes**.
+No old product/workflow thesis is reopened by these corrections.
+
+Frozen scientific state remains **81 cases / 26 classes**.
+Reference Pack v0.2 remains current.
+Owner licensing posture remains **INSPECTABLE_ONLY_FOR_NOW**.
 
 ### Current next step inside #375
 
-# **REVIEW — dogfood the integrity gate on Needle's own evaluation estate**
+# **USE / REVIEW — externally defined workflow replay**
 
-Apply the newly earned gate without rerunning experiments to a bounded preselected sample:
+Use a small preselected public benchmark sample whose task and acceptance contract were
+defined outside Needle.
 
-- #88 surfaced-trap suite;
-- #214 latent corpus-assisted diagnostic pilot;
-- #362 paired evaluator/oracle-maintenance falsifier.
+Purpose:
 
-Ask only whether their task/criterion/evidence contracts meet the standard Needle now
-expects from external benchmarks.
+> test whether the new evaluation-contract integrity gate produces a consequential
+> maintenance/evaluation improvement over the benchmark's own strong ordinary process.
 
-Repair provenance/contract hygiene only when earned.
+Selection must be external-first and non-Needle:
+- no Needle class used to choose a task;
+- no search for a known benchmark defect after selection;
+- preferably one DELTA task and one materially different Harvey LAB task;
+- freeze exact public task/version before review.
 
-Do **not** change a historical scientific result unless a defect is genuinely
-result-material.
+For each selected task:
+1. reconstruct the benchmark's own task/criterion contract first;
+2. apply the integrity gate without Needle taxonomy;
+3. record only consequential defects or maintenance burden;
+4. if no defect exists, preserve that null;
+5. do not rewrite the external benchmark or submit upstream PRs.
 
-Partner outreach remains deferred until this readiness audit is complete.
+Stop after the bounded sample.
+
+The goal is **Needle readiness**, not competitor auditing or proof of superiority.
+
+Partner outreach remains deferred until the pre-partner honing campaign reaches a clean
+readiness decision.
 
 No product implementation, corpus growth, v0.3, structured external-failure database,
 license change or standing experiment programme is authorized.
-
-Owner licensing posture remains **INSPECTABLE_ONLY_FOR_NOW**.
 
 WIP=1 remains binding.
 

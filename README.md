@@ -55,13 +55,38 @@ It preserves source-backed failure mechanisms so an evaluator or maintainer can 
 the consequential legal-state distinction, inspect provenance/exposure, challenge family
 boundaries and—where an executable contract exists—reuse the case as an exposed regression.
 
-It is **not demonstrated as a generic companion for ordinary legal research**. The first
-mechanically selected real post-answer use test (#327) returned
+### Use-allocation rule
+
+Start with the **strongest ordinary source-linked postmortem**.
+
+A sufficient postmortem is a valid endpoint. Apply the fuller Needle packet only when
+consequential reusable structure remains to formalize, for example:
+
+- a multi-authority or legal-state relationship that must be reconstructed;
+- a material historical/source-identity distinction;
+- a consequential boundary or opposite-error control;
+- scientific/exposure status that changes what future reuse can claim;
+- a non-trivial regression conversion or PASS/FAIL contract.
+
+Do **not** add Needle ceremony when the truth is explicit in one stable source, the expected
+answer is already supplied, the future regression oracle is nearly tautological, or the
+extra packet would add only labels/governance metadata.
+
+This boundary is supported by the bounded #339, #349 and #353 uses. It is a practical
+allocation rule, not a population or model-performance claim.
+
+`NO_EXISTING_CLASS_MATCH` remains valid, and omission is preferred over synthetic packet
+fields.
+
+Needle is still **not demonstrated as a generic companion for ordinary legal research**.
+The first mechanically selected real post-answer use test (#327) returned
 `BASELINE_SUFFICIENT`.
 
-Reference Pack v0.1 remains a compact navigation layer into the repository evidence estate;
-it does not self-contain every boundary or source-state artifact. See
-`docs/reviews/issue335-reference-residual-value-result-2026-09-26.md`.
+Reference Pack v0.2 is the current compact failure-analysis navigation/method surface.
+Reference Pack v0.1 remains preserved as its historical predecessor. The pack points to
+truth owners rather than self-containing every legal boundary, source-state or regression
+artifact. See `docs/reviews/issue335-reference-residual-value-result-2026-09-26.md` and
+`docs/uses/issue353-conditional-packet-value-use-2026-09-26.md`.
 
 ## Reuse and citation status
 

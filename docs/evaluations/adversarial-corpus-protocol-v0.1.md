@@ -208,10 +208,60 @@ For longitudinal comparison:
 
 Before trusting a benchmark, regression result or comparative score, validate the **evaluation contract itself**.
 
-A legally plausible answer key is not enough. The task, criteria, evidence, execution path and
-version must jointly support the meaning assigned to PASS/FAIL.
+A legally plausible answer key is not enough. The task, representation, evidence, execution
+path and version must jointly support the meaning assigned to the result.
 
-Use five working groups.
+### 12.0 Declare the evaluation decision and representation
+
+Do this **before** applying rubric/criterion-specific integrity checks.
+
+Every consequential evaluation must state:
+
+1. **decision objective** — what the evaluation is meant to decide, for example:
+   - ranking two or more outputs;
+   - minimum acceptance / release safety;
+   - regression or known-failure detection;
+   - diagnostic failure localisation;
+   - issue coverage and correctness;
+   - professional usefulness / readiness for use;
+
+2. **representation** — how expert quality is being encoded:
+   - atomic rubric/checklist;
+   - comparative judgment;
+   - hierarchical issue structure;
+   - qualified holistic adjudication;
+   - hybrid;
+
+3. **non-compensatory constraints** — whether any fatal error or mandatory requirement must
+   veto an otherwise strong output;
+
+4. **valid-alternative policy** — whether multiple professionally defensible strategies are
+   expected and how the representation avoids falsely rejecting them;
+
+5. **aggregation semantics** — what a total score, preference ordering or PASS/FAIL means,
+   including which dimensions may and may not compensate for one another.
+
+Do not assume that a representation is valid merely because it is reliable or convenient.
+
+Examples:
+
+- pairwise preference can be appropriate for holistic ranking while remaining insufficient
+  for absolute release gating;
+- atomic criteria can be appropriate for known-failure regression or mandatory legal
+  requirements while remaining incomplete for tacit/holistic professional quality;
+- an issue tree can preserve coverage/correctness structure while still requiring qualified
+  judgment about strategic or stylistic quality.
+
+When the representation is a hybrid, freeze the role of each component before execution and
+avoid double-counting the same quality signal.
+
+After this declaration, apply the integrity checks that actually fit the chosen
+representation.
+
+Use the five working groups below for criterion/rubric contracts. For other representations,
+apply their analogous checks and preserve the same representation-agnostic governance rules:
+pre-registration, strong comparators, execution validity, versioned records, and
+decision-sensitive uncertainty.
 
 ### 12.1 Contract adequacy
 

@@ -41,6 +41,8 @@ Allowed dispositions: **survives / revise / reject / park / experiment**.
 
 | H-24 | Offering the frozen adversarial corpus index as an optional analogy/reference aid, with its explicit adversarial framing, materially improves latent diagnosis and consequential correctness over ordinary source-grounded QA on fresh realistic legal-research challenge tasks. | reject | #214's sealed 3+1 execution produced 3/3 adversarial R-pass/C-pass pairs with demonstrated decisive-distinction parity and a pass/pass matched control: 0 diagnostic rescues, 0 correctness-only C advantages and 0 consequential C-only regressions. Under the frozen #210 rule, latent corpus-workflow value was not demonstrated; do not append harder cases or replace the null with secondary-efficiency claims. |
 
+| H-25 | Needle-style failure-analysis discipline provides material **incremental** value beyond excellent ordinary evaluator/postmortem practice on predeclared legally complex oracle-maintenance tasks, and that value depends on consequential legal-state/authority/boundary/reuse structure rather than post-hoc case selection. | experiment | #359/#361 supports conditional method-level value but leaves artifact-level value and the complexity explanation vulnerable to selection bias/good-practice substitution. #362 predeclares a paired `Shifted` vs `Stable` temporal-oracle test to separate those explanations. |
+
 ## Register rules
 
 - Add an assumption only if being wrong could change architecture, project

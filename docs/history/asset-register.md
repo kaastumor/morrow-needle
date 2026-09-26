@@ -51,6 +51,7 @@ Nothing here is automatically authorised for new work.
 | Needle Method | protocol/charter/evaluation docs | structured source/authority/time/uncertainty handoff | **OPTIONAL convention** | concrete workflow demonstrates handoff/review benefit |
 | Needle Core | old canonical state contracts | persistence can aid repeated/historical state | **CASE-EARNED ONLY** | real error/reopening cost prevented beyond Method |
 | Full Needle | combined historical system | integrated engine existed; no 5-case gain over Core | **REJECTED AS DEFAULT IDENTITY** | only concrete external job needing multiple parked subsystems could reopen subset; not by nostalgia |
+| Thin feed/product checkpoint v0.1 | `product/checkpoint-v0.1/` | early public-facing delivery prototype from the live-change/feed phase | **HISTORICAL PRODUCT PROTOTYPE / PARKED** | external recurring public change-intelligence job that first survives the stronger incumbent/value gates |
 | Corpus Explorer v0.1 | `mvp/` | complete thin static corpus browser | **PARKED technical MVP** | real human browsing/distribution job or observed repeated use |
 | Reference Pack v0.1/v0.2 | `release/` | current external navigation/reference surface | **CURRENT** | maintain only for accepted reference role / concrete user need |
 | Evaluation integrity protocol | `docs/evaluations/adversarial-corpus-protocol-v0.1.md` | task/representation/evidence/execution/version/uncertainty discipline | **CURRENT when evaluations are run** | any consequential comparative evaluation |

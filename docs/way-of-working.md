@@ -78,21 +78,25 @@ Before interpreting a benchmark, regression or comparative score, apply the cano
 evaluation-contract integrity gate in
 `docs/evaluations/adversarial-corpus-protocol-v0.1.md`.
 
-In particular, distinguish:
+Use its five working groups:
 
-- legal truth from whether the rubric actually covers the task;
-- a true proposition from whether a conditional criterion is gradable;
-- subject failure from harness/extraction/judge-input failure;
-- task-contract revision from model/system change;
-- answer variance from judge variance.
+1. **contract adequacy** — central requested work must matter, valid alternatives must not be
+   falsely rejected, conditional criteria must be gradable and shared facts must reconcile;
+2. **evidence and temporal scope** — score-bearing propositions need the right evidence owner
+   and an unambiguous governing time/event;
+3. **execution validity** — distinguish evaluator infrastructure failure from failure of a
+   capability deliberately included in the tested system;
+4. **versioned audit record** — pin effective task state and preserve the revealed execution
+   record;
+5. **decision-sensitive uncertainty** — separate answer/system variance from judge variance
+   when it could change the decision.
 
-A benchmark with a sophisticated harness or lawyer-written rubrics is not exempt from these
-checks. Public 2026 legal-benchmark maintenance defects show that criterion/source mistakes,
-vacuous conditions, incomplete rubrics, internally inconsistent counts and silent execution
-failures can survive otherwise strong processes.
+A benchmark with a sophisticated harness or lawyer-written rubrics is not exempt. Passing
+the gate does not establish correctness, representativeness or Needle-specific value; it
+only makes the score contract interpretable.
 
-This gate is ordinary evaluation hygiene. Do not claim it as a Needle-specific advantage
-unless an independent comparison demonstrates operational value.
+This is ordinary evaluation hygiene. Do not claim it as a Needle-specific advantage unless
+an independent comparison demonstrates operational value.
 
 ## Failure-analysis USE first refusal
 

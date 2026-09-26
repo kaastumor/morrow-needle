@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **CONSOLIDATE — EU-SPECIFIC RESEARCH EXHAUSTION MAP**
+# **REVIEW — EXTERNAL EVIDENCE GATE / EU PUBLIC RESEARCH EXHAUSTED FOR CURRENT CLAIMS**
 
 Frozen scientific source:
 
@@ -26,89 +26,137 @@ Current released reference surface remains:
 
 > **Needle Reference Pack v0.2 — navigation/reference surface**
 
-### Sponsor instruction
+### Sponsor EU-specific research instruction
 
-The sponsor explicitly requires that EU-specific research remain a serious project front and
-be **exhausted deliberately rather than silently displaced** by the broader legal-AI /
-evaluation programme.
+The sponsor required that EU-specific research be exhausted deliberately rather than silently
+displaced by the broader legal-AI / evaluation programme.
 
-Therefore:
+That requirement has now been taken through an explicit exhaustion sequence:
 
-> **#377's prevalence park is not equivalent to EU research exhaustion.**
+- #377 — legal-state existence/boundary + two outside-in prevalence contrasts;
+- #394 — EU-specific exhaustion matrix;
+- #395 — official EU information-model sufficiency against the seven frozen #377 residuals.
 
-### Research frontier already reached
+Final current EU disposition:
 
-#392 remains valid for the broader programme:
+# **EU_ONLY_EXTERNAL_GATES_REMAIN**
 
-> **CONSOLIDATE_THEN_EXTERNAL_GATE**
+This means:
 
-Most remaining commercial/value questions require:
+> the currently available internally selected **public EU-source** research programme has
+> reached its evidence boundary for the supported claims.
 
-- evaluator/buyer workflow evidence;
-- qualified independent legal adjudication;
-- product/demo access;
-- real task/failure/incident populations.
+It does **not** mean EU research is permanently closed.
 
-Partner/evaluator outreach remains owner-gated and is not authorised by this consolidation.
+Reopen from genuinely new public EU evidence or through one of the named external gates
+below.
 
-### Current consolidation — Issue #394
+### #395 official-stack result
 
 Disposition:
 
-# **EU_PUBLIC_RESEARCH_NOT_EXHAUSTED**
+# **OFFICIAL_STACK_PARTIAL_WITH_EXTERNAL_STATE_OWNERS**
+
+The stronger incumbent baseline now includes:
+
+- ELI v1.5;
+- ELI-Impact;
+- Cellar / Common Data Model;
+- LOMO 1.0;
+- EUR-Lex / national-transposition metadata;
+- domain-specific official state owners such as EUDAMED and Commission status/value
+  publications.
+
+Frozen seven-residual result:
+
+- **3/7 OFFICIAL_MODEL_LINKED_OWNER**;
+- **4/7 LEGAL_INFERENCE_REQUIRED**;
+- **0/7 MODEL_GAP_CONFIRMED**;
+- **0/7 OFFICIAL_MODEL_DIRECT**;
+- **0/7 INDETERMINATE**.
+
+Therefore the project has **not** demonstrated that a new integrated EU legal-state ontology
+is needed.
+
+The surviving EU-specific scientific observation is narrower:
+
+> operative legal state can require composition across legal-resource metadata, interpreted
+> legal rules and specialised authoritative state owners, followed by legal inference.
+
+That is not a Needle-specific advantage.
 
 Durable owner:
 
+> `docs/discovery/issue395-official-eu-model-sufficiency-2026-09-26.md`
+
+EU exhaustion owner:
+
 > `docs/reviews/issue394-eu-research-exhaustion-matrix-2026-09-26.md`
 
-The exhaustion matrix distinguishes:
+### EU lanes at their current public boundary
 
-- public claims already tested to their current boundary;
-- negative/prevalence lanes that should stay parked;
-- questions that now require real workflow/product/adjudication evidence;
-- one EU-specific public question that has **not** yet been tested.
+Publicly tested / parked:
 
-### One remaining public EU lane — Issue #395
+- legal-state existence and anti-inflation boundary;
+- generic official implementation prevalence;
+- matter-specific CJEU prevalence;
+- delegated / implementing / authority-handoff existence;
+- private-origin / standards legal-recognition existence;
+- official EU information-model sufficiency;
+- legal-resource / change / effect representation;
+- major external-owner patterns.
 
-Queued successor:
+Do **not** reopen these by selecting another likely-positive case family.
 
-> **DISCOVER — official EU legal-information representation sufficiency**
+### EU-specific external gates
 
-Question:
+The following remain legitimate research questions, but their next discriminating evidence is
+external:
 
-> Can the current official EU information stack — ELI v1.5, ELI-Impact, Cellar/CDM,
-> EUR-Lex metadata and national-transposition metadata — represent the seven surviving #377
-> legal-state structures losslessly, or does the decisive state necessarily live in an
-> external owner / legal-inference layer?
+1. **real practitioner burden / prevalence**
+   - real EU-law task/output/failure populations;
+   - reconstruction time / reopening burden;
+   - incident histories;
 
-This is a direct falsification test of Needle's information-model distinctiveness.
+2. **regulatory-intelligence product capability**
+   - demo/trial/sandbox;
+   - detailed technical/procurement contract;
+   - observed behavior on frozen EU state questions;
 
-It is **not**:
+3. **EU evaluation/oracle maintenance**
+   - maintained benchmark/evaluation estate;
+   - legal-update history;
+   - qualified repair/adjudication effort;
+   - downstream scoring consequences;
 
-- another prevalence sample;
-- a new case/class hunt;
-- a product build;
-- a commercial capability claim.
+4. **buyer/customer value**
+   - actual workflow;
+   - incumbent alternative;
+   - confidentiality constraints;
+   - acceptance;
+   - total qualified effort / cost / turnaround.
 
-Strong anti-Needle result is welcome:
+A genuinely new public EU ontology, dataset, official registry contract or independently
+observed failure can also reopen one bounded public question.
 
-> if the official stack already represents or cleanly delegates most/all seven residual
-> states, a separate Needle-style state abstraction is much less distinctive.
+### Broader project frontier
 
-After #395, rerun the EU exhaustion matrix. No other EU public experiment is authorised merely
-to keep research active.
+#392 remains binding:
 
-### EU-specific lanes already at boundary
+# **CONSOLIDATE_THEN_EXTERNAL_GATE**
 
-- legal-state existence/boundary — supported;
-- generic implementation prevalence — negative / parked;
-- matter-specific CJEU prevalence — negative / parked;
-- delegated/authority-handoff existence — sufficiently represented;
-- private-origin/standards legal-recognition existence — sufficiently represented;
-- real-work prevalence / burden — real workflow evidence required;
-- EU evaluation/oracle maintenance — qualified adjudication + maintenance history required;
-- commercial regulatory-intelligence capability — product access required;
-- practitioner/customer value — real workflow evidence required.
+The four broader external evidence gates remain distinct:
+
+1. evaluator DELIVERY;
+2. qualified evaluation-science adjudication;
+3. product-capability access;
+4. real workflow / incident evidence.
+
+The sponsor's earlier external partner/evaluator outreach deferral remains binding:
+
+> **DO NOT INITIATE EXTERNAL PARTNER OUTREACH WITHOUT EXPLICIT SPONSOR AUTHORISATION.**
+
+There is currently **no active experimental WIP**.
 
 ### Binding guardrails
 
@@ -123,11 +171,12 @@ Preserve:
 - #385 public-evidence insufficiency;
 - #390 trajectory narrowing;
 - #392 external evidence gate;
+- #395 official-model narrowing;
 - Reference Pack v0.2 frozen/current;
 - **INSPECTABLE_ONLY_FOR_NOW** licensing.
 
-No v0.3, product implementation, corpus/taxonomy growth or software surface follows from
-#394/#395.
+No v0.3, product implementation, corpus/taxonomy growth, new ontology or software surface
+follows from the EU exhaustion programme.
 
 WIP=1 remains binding.
 

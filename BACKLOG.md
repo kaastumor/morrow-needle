@@ -89,23 +89,70 @@ Durable Phase 1 result:
 
 > `docs/discovery/issue377-eu-legal-state-phase1-2026-09-26.md`
 
-### Phase 2 gate
+### Phase 2 result
 
-A larger 20–30 question outside-in sample is eligible because Phase 1 produced a non-trivial
-signal, but it must test **prevalence and boundary**, not Needle advantage.
+Phase 2 froze a 24-question cross-domain stress sample before detailed source reconstruction
+and before Needle class mapping.
 
-Requirements:
+Disposition:
 
-- mechanically or externally selected contemporary EU-law application questions;
-- questions frozen before reconstruction;
-- strongest boring official-source research first;
-- text-only controls;
-- no Needle class labels until legal-state ownership is characterized;
-- a concrete answer-changing omission before a case counts as residual;
-- `NO_EXISTING_CLASS_MATCH` remains a valid result;
-- commercial capability that cannot be verified publicly is **unknown**, not absent.
+# **EU_LEGAL_STATE_BOUNDARY_SUPPORTED — PREVALENCE UNESTABLISHED**
 
-No corpus/class growth follows automatically from the study.
+Observed profile in this **stress sample only**:
+
+- **10/24 TEXT_SUFFICIENT**;
+- **2/24 CHANGE_HISTORY_SUFFICIENT**;
+- **12/24 MULTI_OWNER_STATE_REQUIRED**.
+
+After the anti-inflation red team, only **7/24** survive the stronger residual boundary:
+
+> omission of an independently moving operative state can change the answer, and that state
+> is not losslessly reducible to ordinary parent-text amendment/version tracking.
+
+The other five multi-owner cases are ordinary delegated-law or national-implementation
+research and do **not** count as a distinct Needle-shaped residual.
+
+Strong residual families observed:
+
+- dynamic authoritative calculation input (CBAM);
+- authoritative entity-identification state (CER);
+- EU-permitted Member-State divergence (CSRD FY2025–2026);
+- device/cohort + notified-body transition state (MDR / IVDR);
+- product-family migration driven by harmonised technical-specification state (CPR);
+- OJ citation/non-citation state for a private standard (Gas Appliances / EN 497:2022).
+
+Phase 2 also revises the Phase 1 EUDR classification downward from multi-owner to
+**CHANGE_HISTORY_SUFFICIENT**: Delegated Regulation 2026/2102 is an ordinary amending act
+whose provision-specific future application dates can be represented by competent
+amendment/effect tracking.
+
+Every strong residual has a plausible post-hoc owner in the frozen 26-class taxonomy, but
+that is **not independent validation** because the operator already knows Needle.
+
+Durable result:
+
+> `docs/discovery/issue377-eu-legal-state-phase2-2026-09-26.md`
+
+### Next research question inside #377
+
+The stress sample establishes a boundary, not prevalence.
+
+The next eligible EU-specific question is therefore:
+
+> **REAL-TASK PREVALENCE:** how often does the independently-moving-state residual occur in
+> externally sourced real EU-law work rather than in a deliberately stratified stress
+> sample, and how often does omission actually reverse/materially distort the answer?
+
+Any continuation must:
+
+- source tasks independently of Needle classes;
+- preserve text-only and ordinary-change controls;
+- separate ordinary transposition/delegated-law research from stronger state residuals;
+- treat strong official/commercial research as the baseline;
+- keep public commercial capability that cannot be verified as **unknown**, not absent;
+- allow a clean result that residual prevalence is low or that ordinary practice absorbs it.
+
+No product, schema, class or corpus work is earned yet.
 
 ### Commercial / external-validation boundary
 

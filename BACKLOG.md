@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — LEGAL RUBRIC ACCEPTANCE-BOUNDARY AUDIT**
+# **REVIEW — LAST PUBLIC RESEARCH LANE CHECK**
 
 Frozen scientific source:
 
@@ -26,129 +26,97 @@ Current released reference surface remains:
 
 > **Needle Reference Pack v0.2 — navigation/reference surface**
 
-### Recently completed research
+### Completed evidence sequence
 
-Issue #377:
+- #377 — **EU_LEGAL_STATE_EXISTENCE_SUPPORTED — PREVALENCE_NOT_SUPPORTED**
+- #381 — **REPRESENTATION_CHOICE_MATTERS**
+- #385 — **PUBLIC_EVIDENCE_INSUFFICIENT** for demonstrated legal-rubric false rejection
 
-> **EU_LEGAL_STATE_EXISTENCE_SUPPORTED — PREVALENCE_NOT_SUPPORTED**
+The project has repeatedly narrowed plausible gaps rather than promoting them from structural
+possibility alone.
 
-Issue #381:
+### Direction review — Issue #388
 
-> **REPRESENTATION_CHOICE_MATTERS**
+Disposition:
 
-Issue #384 direction review:
+# **SELECT_AGENT_TRAJECTORY**
 
-> **SELECT_FALSE_REJECTION**
+New public evidence makes one more bounded lane worth testing.
 
-### Current WIP — Issue #385
+Harvey LAB now explicitly:
 
-> **DISCOVER — legal rubric acceptance-boundary audit**
+- records full legal-agent traces;
+- separates trace capture from final-deliverable scoring;
+- reports trajectory behaviors correlated with task outcomes;
+- argues that trajectory is an important measurement unit for long-horizon professional
+  work.
 
-Phase 1 result:
+Aithos LARA supplies a different and stronger type of case:
 
-# **PUBLIC_EVIDENCE_INSUFFICIENT**
+> agent behavior during the trajectory can itself constitute the legal violation, regardless
+> of any benign final summary.
 
-The audit distinguishes incomplete acceptable-set authoring from other evaluation defects.
+Generic trace/trajectory infrastructure is already strongly occupied by Arize/Phoenix,
+LangSmith and similar systems.
 
-A qualifying positive would require:
+Therefore the research question is **not** whether trajectories can be traced or scored.
 
-- an independently supportable professionally valid legal answer;
-- rejection by the evaluation contract;
-- rejection caused specifically by an omitted acceptable route/formulation;
-- task instructions that permit that route;
-- a narrow repair that admits the valid answer without admitting a paired materially wrong
-  answer.
+It is:
 
-Clean public legal positives located under that definition:
+> **Which trajectory properties in legal-agent work are independently consequential, rather
+> than merely diagnostic correlates of a good final output?**
 
-> **0**
+Use three categories:
 
-Do not interpret zero as a prevalence estimate.
+- **OUTCOME_ONLY** — path has no independent consequence once final work is correct/supported;
+- **TRAJECTORY_DIAGNOSTIC** — path predicts/explains quality, cost or reliability;
+- **TRAJECTORY_CONSTITUTIVE** — the path itself must satisfy an independently justified
+  legal/professional constraint.
 
-### Evidence that weakens the hypothesis
+Potential constitutive examples require their own owner:
 
-Strong current legal benchmarks already contain explicit safeguards.
+- prohibited data access/processing;
+- privilege/confidentiality breach;
+- legally prohibited tool action;
+- required approval/escalation bypass;
+- binding process/verification obligation;
+- prohibited source/tool use;
+- auditable provenance chain where the process record itself is part of the contract.
 
-DELTA:
+Do **not** turn preferred research style into a legal requirement.
 
-- requires criteria to accommodate professionally defensible approaches;
-- routes potentially defensible unhandled approaches to qualified human review rather than
-  failing novelty alone;
-- revises accepted omissions in later dataset versions;
-- escalates pass-changing judge disagreement to qualified lawyers;
-- mechanically exposes semantic/flexible criterion language across the public set.
+Durable review:
 
-The public DELTA release has 15 tasks / 273 criteria. A simple high-recall English-text scan
-found 90 criteria using semantic verbs and 40 criteria containing an obvious heuristic
-flexibility marker such as alternatives, "or otherwise", "or equivalent" or example-based
-formulation. This is not a quality score, but it is strong evidence that the contract is not
-a naive single-reference-answer matcher.
+> `docs/reviews/issue388-agent-trajectory-direction-2026-09-26.md`
 
-Legal Benchmarks' public methodology likewise states that criteria should accommodate
-professionally defensible approaches.
+### Next WIP
 
-### Evidence that preserves structural risk
+Create and execute one bounded Phase-1 study:
 
-PLawBench publicly describes strict literal/item-by-item matching against finite expert
-rubrics.
+> **DISCOVER — legal-agent trajectory consequentiality**
 
-LexRubric represents ideal-answer quality through a finite set of 12,337 expert-written
-atomic criteria.
+The study must:
 
-Those designs can create an acceptance-boundary risk in principle when a professionally
-valid strategy is not represented.
+1. map public legal-agent evaluation contracts;
+2. separate diagnostic from constitutive trajectory requirements;
+3. require an independent legal/professional owner for every constitutive claim;
+4. test whether a supposed process requirement is already losslessly observable from the
+   final deliverable;
+5. give generic trace infrastructure full incumbent credit;
+6. determine whether Needle contributes anything beyond domain-specific hypotheses.
 
-But the bounded audit did not locate a clean independently adjudicated legal example where
-that mechanism actually caused false rejection.
+Eligible outcomes:
 
-### Defects explicitly excluded from #385 positive evidence
+- `LEGAL_TRAJECTORY_CONTRACT_EXISTS`
+- `TRAJECTORY_IS_DIAGNOSTIC_ONLY_FOR_NEEDLE_SCOPE`
+- `PUBLIC_EVIDENCE_INSUFFICIENT`
+- `EXTERNAL_GATE_REACHED`
 
-- DELTA #1 — wrong legal oracle;
-- DELTA #2 — activation/gradability ambiguity;
-- Harvey LAB #146 — internal count/allowlist inconsistency;
-- Harvey LAB #147 — rubric undercoverage causing false acceptance;
-- #375 Harvey HSR values — stale/wrong legal oracle;
-- JudgmentBench holistic-ranking gap — representation validity, owned by #381.
-
-Generic 2026 work such as `Judging Is Not Enumerating` and `Rubrics on Trial` supports the
-general mechanism but not legal-domain prevalence.
-
-Durable result:
-
-> `docs/discovery/issue385-legal-rubric-acceptance-boundary-2026-09-26.md`
-
-### Protocol consequence
-
-No new protocol layer is earned.
-
-The existing post-#375/#381 protocol already owns the minimal defense:
-
-- valid-alternative policy;
-- positive formulation/mutation checks where practical;
-- non-compensatory fatal requirements;
-- qualified adjudication;
-- versioned evaluation contracts.
-
-Adding another named acceptance-boundary layer would duplicate existing discipline.
-
-### #385 allocation consequence
-
-Close #385 without implementation.
-
-Do not create synthetic "valid alternatives" and grade them with the same system merely to
-manufacture a legal false-rejection result.
-
-A future external observation may reopen the question if it supplies:
-
-1. qualified independent acceptance of an answer;
-2. rubric rejection;
-3. a task that clearly permits the alternative;
-4. a narrow acceptance-boundary repair;
-5. a paired invalid answer that still fails.
+No model run, harness build, corpus/class growth or product work.
 
 ### Separate commercial boundary
 
-The #375 commercial DELIVERY question remains external and unchanged.
+The #375 commercial DELIVERY hypothesis remains external and unchanged.
 
 ### Binding guardrails
 
@@ -163,8 +131,6 @@ Preserve:
 - #385 public-evidence insufficiency;
 - Reference Pack v0.2 frozen/current;
 - **INSPECTABLE_ONLY_FOR_NOW** licensing.
-
-No v0.3, product implementation, corpus/taxonomy growth or new protocol layer follows.
 
 WIP=1 remains binding.
 

@@ -93,3 +93,23 @@ Before reactivating a parked historical asset, require all four:
 
 Historical existence lowers implementation uncertainty. It does **not** lower the evidence threshold
 for user value.
+
+## Candidate portfolio / market-access rule
+
+Competitor capability and user value are separate questions.
+
+A mature enterprise product may already provide a capability while a narrower/leaner target segment
+still lacks practical access, proportionate workflow or economical implementation.
+
+Therefore:
+
+- competitor presence removes novelty credit, not automatically candidate value;
+- compare against the strongest **realistic target-segment baseline**;
+- never cripple that baseline;
+- preserve non-selected candidates as live when evidence still supports potential;
+- run one deep candidate learning loop at a time under WIP=1;
+- after each candidate gate, revisit the portfolio before choosing the next deep lane.
+
+Current sequencing rationale is preserved at:
+
+> `docs/reviews/candidate-portfolio-sequencing-2026-09-27.md`

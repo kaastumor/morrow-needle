@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DIRECTION REVIEW — POST-PACKET-VALUE / PACK-GAP**
+# **REVIEW / RELEASE — REFERENCE PACK v0.2 DESIGN**
 
 Frozen scientific source:
 
@@ -23,48 +23,75 @@ Supported reference job:
 
 ### Current WIP
 
-# **#341 — direction review after observed packet value + Reference Pack gap**
+# **#343 — minimum Reference Pack v0.2 failure-analysis surface**
 
 Result:
 
-> **SELECT REVIEW / RELEASE — DESIGN ONLY**
+> **V02_DOC_NAV_ONLY**
+
+The design review compared four options.
+
+Selected:
+
+> self-contained v0.2 over the same frozen corpus views + one
+> `failure-analysis-guide.md`.
+
+The guide exposes the demonstrated packet contract and exact owner navigation without
+creating a second legal truth store.
+
+Rejected for v0.2:
+- generalized `failure-analysis-packets.jsonl`;
+- new boundary registry;
+- new external-failure database;
+- new canonical packet object/schema.
 
 Reason:
 
-- #339 directly observed material repository-level packet value on a mechanically selected
-  independent legal-AI failure;
-- #339 also identified concrete Reference Pack v0.1 surface gaps;
-- one positive case is enough to earn a cheap/reversible design investigation;
-- one case is not enough to justify implementation/release of a broad new structured
-  packet schema;
-- designing the minimum candidate first makes an orthogonal replication more
-  discriminating;
-- implementation remains blocked until #343 determines what is truthfully derivable and
-  what requires replication.
+- the corpus already canonically owns identity/classes/provenance/exposure/traps;
+- #339's most valuable boundary/source-state/regression fields are case-specific and owned
+  by exact accepted result/evidence owners;
+- copying them into a generalized v0.2 data row would create new truth/maintenance
+  obligations after only one positive external use;
+- a guide can surface the method and direct consumer to the exact owner without broad
+  history reconstruction.
 
-Review:
+Implementation does **not** require orthogonal replication because it only exposes accepted
+project rules and owner navigation.
 
-> `docs/reviews/issue341-post-packet-value-direction-review-2026-09-26.md`
+Any machine-readable external failure packet layer **does** require orthogonal replication
+first.
 
-### Next eligible work after #341 merge
+Rights constraint remains:
 
-# **#343 — minimum Reference Pack v0.2 failure-analysis surface**
+> #307 `OWNER_LICENSE_DECISION_REQUIRED`; no project license currently exists.
 
-#343 is **design only**.
+v0.2 may be publicly inspectable/reference material but must not claim open licensing
+without an owner decision.
 
-It must:
-- derive requirements only from demonstrated #339 gaps;
-- compare docs/navigation-only, derived packet index, separate external-analysis layer and
-  new canonical packet-object options;
-- identify one canonical owner for every proposed field;
-- reject fields that would become copied/competing legal truth;
-- replay #339 without admitting it into the corpus;
-- state which parts, if any, require orthogonal replication before implementation.
+Result:
 
-No release directory changes, builder/schema implementation, new corpus case/class,
-external-failure admission or superiority claim are authorised.
+> `docs/reviews/issue343-reference-pack-v02-design-2026-09-26.md`
 
-WIP=1 remains binding: #343 starts only after #341 merges/closes.
+### Next eligible work after #343 merge
+
+# **#345 — implement Reference Pack v0.2 failure-analysis navigation surface**
+
+#345 is authorised to:
+- create a new v0.2 release directory;
+- preserve the same frozen corpus source/data semantics;
+- add exactly one substantive new guide: `failure-analysis-guide.md`;
+- update v0.2 README/manifest/checksum/build-validation machinery as required;
+- use a thin additive builder approach;
+- prove v0.1 remains byte-identical.
+
+#345 is **not** authorised to:
+- create structured external failure records;
+- create a boundary registry;
+- add corpus cases/classes;
+- choose a license;
+- claim model/workflow/product superiority.
+
+WIP=1 remains binding: #345 starts only after #343 merges/closes.
 
 ## Historical backlog archive
 

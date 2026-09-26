@@ -19,6 +19,7 @@ The repository has deliberately separate owners:
 - **material live assumptions:** `docs/assumptions.md`
 - **comparative-evaluation discipline:** `docs/evaluations/adversarial-corpus-protocol-v0.1.md`
 - **current #375 evidence/readiness interpretation:** `docs/reviews/issue375-pre-partner-readiness-red-team-2026-09-26.md`
+- **historical project memory / parked-capability register:** `docs/history/README.md`
 
 Do not copy live issue numbers, corpus counts or queue state into orientation documents.
 Read the owners above instead.

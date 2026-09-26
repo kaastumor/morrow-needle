@@ -218,6 +218,7 @@ One concern has one live owner:
 - **accepted cases/classes:** `corpus/index-v0.1.json`;
 - **project-thesis evidence:** `docs/value-evidence.md`;
 - **material live beliefs:** `docs/assumptions.md`.
+- **historical capability memory / reactivation register:** `docs/history/README.md`.
 
 Other audits, result documents, plans and decision records are evidence/history unless a
 live owner explicitly incorporates them.

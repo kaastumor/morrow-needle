@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DIRECTION REVIEW — POST-CONDITIONAL PACKET VALUE**
+# **CONSOLIDATE — CONDITIONAL FAILURE-ANALYSIS USE CONTRACT**
 
 Frozen scientific source:
 
@@ -21,58 +21,72 @@ Current released reference surface:
 
 > **Needle Reference Pack v0.2 — failure-analysis navigation surface**
 
-Supported reference job:
-
-> **legal failure analysis / evaluation design / debugging / regression-fixture derivation**
-
 ### Current WIP
-
-# **#355 — direction review after conditional packet-value support**
-
-Result:
-
-> **SELECT CONSOLIDATE — CONDITIONAL USE CONTRACT**
-
-Accepted bounded use evidence now supports:
-
-> **Strong ordinary/source-linked postmortem first. Full Needle packet work is earned only
-> when consequential reusable legal relationship/state/boundary/reuse structure remains
-> to formalize.**
-
-Evidence:
-- #339 — material packet value;
-- #349 — postmortem baseline sufficient;
-- #353 — material packet value on an inter-authority relationship.
-
-This is an allocation/use boundary, not a population or superiority claim.
-
-A fourth USE may later falsify/refine the boundary, but current public/durable guidance
-should first stop implying that every known legal failure warrants full Needle treatment.
-
-Structured external-failure data remains unearned:
-
-> **STRUCTURED_LAYER_SIGNAL = INDETERMINATE**
-
-Review:
-
-> `docs/reviews/issue355-post-conditional-value-direction-review-2026-09-26.md`
-
-### Next eligible work after #355 merge
 
 # **#357 — consolidate conditional failure-analysis use contract**
 
-#357 must:
-- preserve strongest-postmortem first refusal;
-- state when full packet work earns itself;
-- explicitly allow stopping at a sufficient postmortem;
-- preserve `NO_EXISTING_CLASS_MATCH` and omission discipline;
-- update only the correct durable owners;
-- leave frozen Reference Pack v0.2 bytes unchanged.
+Result:
 
-No v0.3, structured external-failure database, new case/class, new USE experiment,
-product revival or superiority claim is authorised.
+> **CONSOLIDATED**
 
-WIP=1 remains binding: #357 starts only after #355 merges/closes.
+Durable rule:
+
+> **Strong source-linked postmortem first. Full Needle packet work is earned only when
+> consequential reusable legal relationship/state/boundary/reuse structure remains to
+> formalize.**
+
+A sufficient postmortem is a valid endpoint.
+
+Full packet work should not be added ceremonially when:
+- truth is explicit in one stable source;
+- the expected answer is already supplied;
+- the future regression oracle is nearly tautological;
+- the additional artifact would add only labels/governance metadata.
+
+Signals that packet work may earn itself include:
+- multi-authority or legal-state reconstruction;
+- material historical/source-identity handling;
+- consequential boundary/opposite-error preservation;
+- scientific/exposure status that materially affects future reuse;
+- non-trivial regression conversion / PASS-FAIL design.
+
+These are signals, not a numeric threshold or necessary/sufficient criteria.
+
+Owners reconciled:
+- README — public orientation;
+- project charter — durable conditional external-use boundary;
+- Way of Working — executable failure-analysis first-refusal procedure.
+
+Reference Pack v0.2 remains frozen and unchanged.
+
+`NO_EXISTING_CLASS_MATCH` and omission-over-synthesis remain binding.
+
+`STRUCTURED_LAYER_SIGNAL = INDETERMINATE`; no external-failure database or v0.3 is
+authorised.
+
+Result:
+
+> `docs/reviews/issue357-conditional-use-contract-consolidation-2026-09-26.md`
+
+### Next eligible work after #357 merge
+
+# **#359 — direction review after conditional-use consolidation**
+
+#359 must take a wide lens and test whether the recent chain has become too packet-centric.
+
+It must explicitly compare:
+- an external consumer/job discovery question;
+- a genuine falsifier USE of the conditional boundary;
+- further release/navigation work;
+- consolidation/maintenance only with a concrete trigger.
+
+The next allocation should prefer new external information over further self-description
+where the evidence supports it.
+
+No v0.3, structured external-failure database, corpus growth, product revival or superiority
+claim is authorised.
+
+WIP=1 remains binding: #359 starts only after #357 merges/closes.
 
 ## Historical backlog archive
 

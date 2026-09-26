@@ -417,6 +417,26 @@ A scheduled Git-backed monitor later accumulated dozens of state-promotion commi
 This is a critical historical distinction: the loop was not retired because it could not work.
 It was retired because repeated value gates did not justify the product/operations cost.
 
+## 15. Thin public product checkpoint
+
+Before the later Corpus Explorer, Needle also built an earlier thin delivery/product checkpoint around
+the operational feed/card thesis.
+
+### Current repository
+
+- `product/checkpoint-v0.1/index.html`.
+
+### Why it matters historically
+
+This artifact belongs to the phase where the project was still asking whether the trustworthy
+official-update pipeline could become a useful public legal-change product. It should not be
+confused with the later corpus-browsing MVP, which served a different user job after the public
+change-feed thesis had already contracted.
+
+### Status
+
+**HISTORICAL PRODUCT PROTOTYPE / PARKED.**
+
 ## 15. Gold Corpus -> adversarial corpus -> frozen 81/26 corpus
 
 ### Gold Corpus origin
@@ -448,7 +468,7 @@ All exposed cases are `REGRESSION_ONLY`; blind re-use is false.
 
 **CURRENT CORE ASSET.**
 
-## 16. Corpus Explorer v0.1
+## 17. Corpus Explorer v0.1
 
 ### Built
 
@@ -473,7 +493,7 @@ A deliberately thin static browser:
 
 Cycle-1 synthetic use showed a mechanical discovery/provenance advantage but did not establish adoption or important human value.
 
-## 17. Reference Pack v0.1/v0.2
+## 18. Reference Pack v0.1/v0.2
 
 ### Purpose
 
@@ -499,7 +519,7 @@ Make the frozen corpus usable without repository archaeology.
 
 **CURRENT RELEASED REFERENCE SURFACE.**
 
-## 18. Maintenance Delta Contract v0.1
+## 19. Maintenance Delta Contract v0.1
 
 ### Origin
 

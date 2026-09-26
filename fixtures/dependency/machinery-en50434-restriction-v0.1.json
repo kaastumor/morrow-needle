@@ -1,0 +1,102 @@
+{
+  "schema_version": "authoritative-dynamic-set-v0.1",
+  "set_id": "machinery:harmonised-standard-references",
+  "set_character": "AUTHORITATIVE_DYNAMIC_SET",
+  "authority": {
+    "authority_id": "EUROPEAN_COMMISSION",
+    "label": "European Commission",
+    "authority_type": "EU_INSTITUTION"
+  },
+  "publication_surface": {
+    "surface_type": "OFFICIAL_JOURNAL",
+    "identifier": "Official Journal references of harmonised standards supporting Directive 2006/42/EC",
+    "authenticity_basis": "Directive 2006/42/EC Article 7(2)-(3) makes OJ publication of harmonised-standard references legally operative for presumption of conformity.",
+    "source_ref": {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32006L0042",
+      "locator": "Article 7(2)-(3)",
+      "language": "ENG",
+      "role": "LEGAL_BASIS",
+      "authority_character": "BINDING_LEGAL_TEXT"
+    }
+  },
+  "legal_basis_refs": [
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32006L0042",
+      "locator": "Article 7(2)-(3)",
+      "language": "ENG",
+      "role": "LEGAL_BASIS",
+      "authority_character": "BINDING_LEGAL_TEXT"
+    }
+  ],
+  "dependencies": [
+    {
+      "dependency_id": "machinery-art7-on-harmonised-reference-set",
+      "governing_rule": {
+        "act_id": "CELEX:32006L0042",
+        "provision": "Article 7(2)",
+        "language": "ENG"
+      },
+      "relation_character": "LEGAL_EFFECT_CONDITIONED_ON_AUTHORITATIVE_SET_STATE",
+      "condition_statement": "Presumption of conformity under Directive 2006/42/EC Article 7(2) depends on conformity with harmonised standards whose references are published in the Official Journal, subject to any published restriction.",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32006L0042",
+          "locator": "Article 7(2)-(3)",
+          "language": "ENG",
+          "role": "DEPENDENCY",
+          "authority_character": "BINDING_LEGAL_TEXT"
+        }
+      ]
+    }
+  ],
+  "transitions": [
+    {
+      "transition_id": "machinery-en50434-restriction-2026-01-13",
+      "member": {
+        "label": "EN 50434:2014",
+        "identifiers": [
+          {
+            "scheme": "HARMONISED_STANDARD",
+            "value": "EN 50434:2014"
+          }
+        ]
+      },
+      "operation": "RESTRICT_MEMBER",
+      "effective_from": "2026-01-13",
+      "before": {
+        "membership": "INCLUDED",
+        "status": "ACTIVE"
+      },
+      "after": {
+        "membership": "INCLUDED",
+        "status": "RESTRICTED"
+      },
+      "scope": {
+        "character": "PARTIAL_MEMBER",
+        "statement": "For shredder and chipper machines whose shredding means can rotate above 300 r·min−1, EN 50434:2014 does not confer presumption of conformity with Directive 2006/42/EC Annex I points 1.1.2(a) and 1.3.3 in the scope stated by Decision (EU) 2026/80."
+      },
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32026D0080",
+          "locator": "Recitals 8-11 and Annex row 622a; OJ L 13.1.2026",
+          "language": "ENG",
+          "role": "TRANSITION",
+          "authority_character": "BINDING_LEGAL_TEXT"
+        }
+      ]
+    }
+  ],
+  "forbidden_inferences": [
+    "The restriction removes EN 50434:2014 from the Official Journal entirely.",
+    "The restriction removes presumption of conformity for machinery outside the stated high-speed shredder/chipper scope.",
+    "The restriction is a textual mutation of Directive 2006/42/EC Article 7.",
+    "Loss of presumption for the restricted requirements means conformity with Directive 2006/42/EC is impossible by another route."
+  ],
+  "notes": "Issue #411 frozen product-capability workload case: maintained OJ citation with a scoped formal-objection restriction."
+}

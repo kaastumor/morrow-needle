@@ -21,7 +21,7 @@ Record changed state and decisions, not activity volume.
   observed relative advantage that mattered enough to plausibly change behavior?
 - Are we preserving research/audit value, or rebuilding a stopped product
   roadmap through architecture?
-- Is the proposed next task a bounded research question with real information gain, or merely activity? If delivery is not earned, select one research question rather than manufacturing delivery scope.
+- Is the proposed next task a bounded question with real information gain, or merely activity? If delivery is not earned, select a research question only when current evidence actually earns one; otherwise record an explicit evidence-gated state rather than manufacturing either delivery or research scope.
 
 ### Competing project identities
 
@@ -155,7 +155,7 @@ Choose exactly one:
 - **continue** — the thesis survived and another experiment is justified;
 - **simplify** — keep the purpose but retire machinery;
 - **redirect** — evidence supports a different central question;
-- **stop** — stop the tested hypothesis/direction because the strong baseline wins; then pivot the sponsored program to a different bounded research question.
+- **stop** — stop the tested hypothesis/direction because the strong baseline wins. A different bounded question is selected only when current evidence or an explicit sponsor objective earns it; otherwise the programme may enter an evidence-gated state with named re-entry conditions.
 
 A health check may legitimately choose **continue + simplify operations** when
 the research thesis is healthy but old execution machinery no longer serves it.
@@ -167,11 +167,13 @@ Every completed horizon ends with a fresh **continue / simplify / redirect / sto
 decision for that horizon.
 
 That decision does not automatically authorize a new experiment or delivery surface.
-Under the purposeful-continuity rule, the programme then selects exactly one bounded
-successor mode: **DISCOVER / CONSOLIDATE / USE / REVIEW-RELEASE / MAINTAIN**.
+Under the purposeful-continuity rule, the programme then selects either one bounded
+successor mode — **DISCOVER / CONSOLIDATE / USE / REVIEW-RELEASE / MAINTAIN** — or an
+explicit **EVIDENCE_GATED / COMPLETED_FOR_CURRENT_EVIDENCE** state.
 
-The successor should address the largest consequential uncertainty or obligation, not
-merely the easiest next question.
+The successor should address the largest consequential uncertainty or obligation. An
+evidence-gated state is preferred when no active task is earned; it records re-entry
+conditions rather than requiring recurring reviews to fill time.
 
 ## Governance self-check
 
@@ -184,7 +186,7 @@ Prefer:
 - a regression over a checklist;
 - a single invariant over a score;
 - a current canonical document over another status document;
-- one bounded purposeful task over either a manufactured roadmap, an automatic experiment conveyor or a project-level idle state.
+- one bounded purposeful task when it is earned, otherwise an explicit evidence-gated state, over a manufactured roadmap, automatic experiment conveyor or ambiguous project-level inactivity.
 
 Delete or merge governance that becomes ritual, stale, duplicative or more
 expensive than the failure it prevents.

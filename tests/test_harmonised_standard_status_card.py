@@ -20,6 +20,16 @@ LVD_WITHDRAWAL = json.loads(
         "fixtures/dependency/lvd-en60335-2-60-scheduled-withdrawal-v0.1.json"
     ).read_text(encoding="utf-8")
 )
+MACHINERY_RESTRICTION = json.loads(
+    Path(
+        "fixtures/dependency/machinery-en50434-restriction-v0.1.json"
+    ).read_text(encoding="utf-8")
+)
+LVD_NONPUBLICATION = json.loads(
+    Path(
+        "fixtures/dependency/lvd-en60335-2-14-nonpublication-v0.1.json"
+    ).read_text(encoding="utf-8")
+)
 
 
 def test_toy_status_changes_from_cited_to_restricted():
@@ -75,3 +85,36 @@ def test_card_applies_withdrawal_after_effective_date():
     assert "**OJ-reference state:** NOT_CITED" in card
     assert "**Presumption consequence:** NOT_AVAILABLE_VIA_THIS_OJ_REFERENCE" in card
     assert "lvd-en60335-2-60-withdrawal-2027-01-18" in card
+
+
+def test_machinery_restriction_renders_partial_presumption_loss():
+    card = render_card(
+        MACHINERY_RESTRICTION,
+        "EN 50434:2014",
+        date(2026, 9, 26),
+    )
+
+    assert "**OJ-reference state:** CITED_WITH_RESTRICTION" in card
+    assert "**Presumption consequence:** RESTRICTED_TO_STATED_SCOPE" in card
+    assert "300" in card
+    assert "another route" in card
+
+
+def test_lvd_formal_nonpublication_changes_reason_not_high_level_state():
+    before = render_card(
+        LVD_NONPUBLICATION,
+        "EN 60335-2-14:2006",
+        date(2025, 7, 17),
+    )
+    after = render_card(
+        LVD_NONPUBLICATION,
+        "EN 60335-2-14:2006",
+        date(2026, 9, 26),
+    )
+
+    assert "**OJ-reference state:** NOT_CITED" in before
+    assert "**OJ-reference state:** NOT_CITED" in after
+    assert "none in this record before the query date" in before
+    assert "lvd-en60335-2-14-formal-nonpublication-2025-07-18" in after
+    assert "could no longer be a presumption" not in after
+    assert "another technical route" in after

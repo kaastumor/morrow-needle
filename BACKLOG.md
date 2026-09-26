@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DIRECTION REVIEW — POST-INCREMENTAL-VALUE FALSIFIER**
+# **CONSOLIDATE — RETIRE EXTERNAL ARTIFACT-VALUE PROOF LINE**
 
 Frozen scientific source:
 
@@ -19,59 +19,65 @@ Frozen scientific source:
 
 Current released reference surface:
 
-> **Needle Reference Pack v0.2 — failure-analysis navigation surface**
+> **Needle Reference Pack v0.2 — navigation/reference surface**
 
 ### Current WIP
 
-# **#364 — direction review after paired incremental-value falsifier**
+# **#366 — retire standing external artifact-value proof line**
 
 Result:
 
-> **SELECT CONSOLIDATE / REDIRECT**
+> **SMALLER_IDENTITY_PRIMARY**
 
-Reason:
+Primary supported identity:
 
-- #339/#353 remain bounded positive observations;
-- #349/#362 show that excellent ordinary postmortem/evaluator practice can fully absorb
-  the consequential work;
-- #359/#361 supports a real external evaluator/oracle-maintenance problem but not a
-  demonstrated need for the full Needle artifact;
-- #362 invalidated the tested changed-law/stable-law proxy and lowered confidence that a
-  preselectable "complexity" condition predicts Needle value;
-- a case-selection-independent operational test is not currently measurable without
-  self-grading;
-- direct external adoption/demand evidence is absent;
-- no release or maintenance trigger dominates.
+> **known-failure reference corpus + exposed regression fixtures + minimal evaluation
+> discipline**
 
-Do not search for a friendlier complexity proxy.
+Failure-analysis first-refusal remains useful project practice.
 
-Review:
+It is no longer a standing external Needle value claim.
 
-> `docs/reviews/issue364-post-incremental-value-falsifier-direction-2026-09-26.md`
+Preserved separately:
+- #339/#353 bounded positives;
+- #349/#362 strong-baseline nulls;
+- #359/#361 external discipline signal + full artifact job unproven;
+- #214/#327 binding nulls.
 
-### Next eligible work after #364 merge
+H-25 has been removed from the live assumption register so the retired proof line cannot
+silently recreate an experiment queue.
 
-# **#366 — retire standing external artifact-value proof line**
+External artifact-value research may reopen only from a materially changed boundary:
+- repeated actual external use/request;
+- independently measured reconstruction/handoff burden ordinary practice fails to solve;
+- changed intended use;
+- independently measurable operational comparison;
+- material comparator change.
 
-#366 must reconcile the smaller project identity:
+No new "complexity proxy" search is authorised.
 
-> known-failure reference corpus + exposed regression fixtures + minimal evaluation
-> discipline.
+No v0.3, structured external-failure database, issue-owner snapshot programme, corpus growth,
+product revival or superiority claim is earned.
 
-Useful failure-analysis practice remains in the Way of Working, but distinct external
-Needle artifact value is no longer a standing proof programme.
+Result:
 
-#366 must:
-- preserve #339/#353 positives and #349/#362 nulls independently;
-- revise H-25 so it creates no automatic experiment queue;
-- preserve v0.2 and the 81/26 frozen corpus unchanged;
-- record explicit re-entry triggers;
-- select a next project mode without starting another external packet-value experiment.
+> `docs/reviews/issue366-retire-external-artifact-value-proof-2026-09-26.md`
 
-No v0.3, structured external-failure database, corpus growth, product revival or superiority
-claim is authorised.
+### Next eligible work after #366 merge
 
-WIP=1 remains binding: #366 starts only after #364 merges/closes.
+# **#368 — REVIEW / RELEASE: owner license and citation decision package**
+
+The remaining concrete release boundary is owner-controlled:
+
+- public repository;
+- no project license;
+- no root CITATION.cff;
+- public visibility does not grant broad reuse permission.
+
+#368 may prepare the decision package but must not select/apply a license without explicit
+owner approval.
+
+WIP=1 remains binding: #368 starts only after #366 merges/closes.
 
 ## Historical backlog archive
 

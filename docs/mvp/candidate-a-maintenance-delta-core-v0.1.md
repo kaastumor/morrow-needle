@@ -66,7 +66,18 @@ Optional until a repair is accepted:
 
 - `subject.candidate_contract_ref` — immutable revised version/commit/release.
 
-### 3.2 Trigger
+### 3.2 Change status
+
+Required:
+
+- `change_status` — one of:
+  - `OBSERVED` — a candidate change/defect/revision has been identified but not adopted by the contract owner;
+  - `ADOPTED_BY_OWNER` — the contract owner has adopted the revised contract state;
+  - `SUPERSEDED` — this delta record has been replaced by a later maintenance decision.
+
+An adopted repository revision is evidence of `ADOPTED_BY_OWNER` for that revision. It is **not** automatically evidence that Needle's characterization of the revision as a defect/repair was accepted.
+
+### 3.3 Trigger
 
 Required:
 
@@ -87,7 +98,7 @@ Optional:
 
 - `trigger.observed_at` — timestamp/date when operationally useful.
 
-### 3.3 Delta units
+### 3.4 Delta units
 
 At least one delta unit is required.
 
@@ -114,7 +125,7 @@ Each unit contains:
   - `NO_KNOWN_SCORE_IMPACT`
   - `UNKNOWN`.
 
-### 3.4 Evidence owner
+### 3.5 Evidence owner
 
 Required for a delta that asserts a factual/legal correction:
 
@@ -126,9 +137,9 @@ For purely evaluative contract changes, the evidence owner may be the task instr
 rubric contract, adjudication decision or reproducible internal inconsistency rather than
 external law.
 
-### 3.5 Governing time
+### 3.6 Governing time
 
-Required only when the corrected proposition can vary over time.
+For every `LEGAL_PROPOSITION` delta, record governing-time state explicitly. Use `NOT_APPLICABLE` for a genuinely time-invariant proposition and `UNRESOLVED` when the temporal owner is not yet established.
 
 Use:
 
@@ -143,16 +154,18 @@ Use:
 Do not require a standalone law-as-of field when a transaction, filing, closing or other
 event unambiguously owns legal time.
 
-### 3.6 Repair
+### 3.7 Repair
 
 Required:
 
 - `repair.actions` — the minimal changes needed to restore a coherent evaluation contract;
-- `repair.status` — `PROPOSED`, `ACCEPTED`, `REJECTED`, or `PARTIAL`.
+- `repair.status` — `NOT_REQUIRED`, `PROPOSED`, `ACCEPTED`, `REJECTED`, or `PARTIAL`.
 
-An accepted repair must point to `subject.candidate_contract_ref`.
+An accepted repair must point to `subject.candidate_contract_ref` and requires `change_status: ADOPTED_BY_OWNER`.
 
-### 3.7 Prior-result consequence
+A legitimate semantic revision that is not being characterized as a defect may use `repair.status: NOT_REQUIRED`.
+
+### 3.8 Prior-result consequence
 
 Required:
 
@@ -181,7 +194,7 @@ The contract must distinguish:
 - change where existing raw outputs can be re-judged without rerunning the subject;
 - change that requires a fresh subject run.
 
-### 3.8 Open questions / adjudication
+### 3.9 Open questions / adjudication
 
 Optional but explicit when needed:
 
@@ -202,12 +215,14 @@ A delta record is structurally invalid if any of these fail:
 2. every delta unit either identifies affected score-bearing contract refs or explicitly records `NO_KNOWN_SCORE_IMPACT`;
 3. a legal/factual correction has an evidence owner or is marked `UNRESOLVED`;
 4. a time-varying legal proposition has a governing-time owner or is marked `UNRESOLVED`;
-5. an accepted repair has an immutable candidate-contract reference;
-6. any potential historical-score effect has an explicit comparability decision;
-7. `NOT_COMPARABLE` or `UNKNOWN` may not silently pair with `existing_outputs_action: NONE`;
-8. unresolved evidence may not support `repair.status: ACCEPTED` without explicit qualified adjudication;
-9. the delta record may not silently add unrelated rubric requirements;
-10. taxonomy/class labels are never required.
+5. an accepted repair has an immutable candidate-contract reference and owner-adopted change state;
+6. a legitimate adopted revision may record `repair.status: NOT_REQUIRED` without being mislabeled a defect;
+7. any potential historical-score effect has an explicit comparability decision;
+8. `NOT_COMPARABLE` or `UNKNOWN` may not silently pair with `existing_outputs_action: NONE`;
+9. unresolved evidence may not support `repair.status: ACCEPTED` without explicit qualified adjudication;
+10. `NO_KNOWN_SCORE_IMPACT` may not be combined with a contradictory failure-risk label;
+11. the delta record may not silently add unrelated rubric requirements;
+12. taxonomy/class labels are never required.
 
 ---
 
@@ -240,18 +255,21 @@ The card should remain understandable without Needle taxonomy knowledge.
 
 ---
 
-## 6. Why there is no JSON Schema yet
+## 6. Structural validation
 
-Phase #402 deliberately freezes semantics before implementation.
+The three bounded #402 replays used the same field groups and exposed one semantic distinction (`change_status` versus `repair.status`) without requiring a new top-level concept.
 
-A schema/validator is earned only if the three bounded replays show that:
+That is enough to earn a **small structural schema + semantic validator**.
 
-- the same fields recur;
-- deterministic checks catch real mistakes;
-- the contract does not need immediate restructuring;
-- validation does not create more maintenance burden than it removes.
+The validator may check only contract mechanics such as required identity, enum values, evidence presence, governing-time state for legal propositions, accepted-repair ownership and result-comparability actions.
 
-Until then, schema work would be premature hardening.
+It must **not** decide:
+
+- whether a legal proposition is substantively correct;
+- whether a source is authoritative enough;
+- whether results are actually comparable;
+- what the repair should be;
+- whether the record creates user value.
 
 ---
 

@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **USE — REAL-TASK REFERENCE PACK TEST**
+# **DIRECTION REVIEW — POST-USE NULL**
 
 Frozen scientific source:
 
@@ -23,51 +23,44 @@ Released use surface:
 
 ### Current WIP
 
-# **#327 — real-task post-answer Reference Pack value test**
-
-Result:
-
-> **BASELINE_SUFFICIENT**
-
-One mechanically selected OJ-L task — Commission Implementing Regulation (EU) 2026/2101
-on definitive anti-dumping duties for Chinese pea protein — was solved and frozen from
-ordinary official sources before any Needle consultation.
-
-The ordinary record already preserved:
-
-- legal scope and rates;
-- 26 September 2026 entry into force;
-- provisional-to-definitive transition;
-- collection/release of secured provisional amounts;
-- no additional retroactive collection;
-- documentary conditions;
-- new-exporter route;
-- Basic Regulation review/expiry horizon;
-- authoritative source/version state.
-
-The later Reference Pack pass found only approximate class analogies. It added no missing
-source, state, transition, uncertainty, provenance repair or reconstruction fact.
-
-This is one bounded real-use null. It does not generalise to all pack uses and may not be
-replaced by a friendlier task.
-
-Result:
-
-> `docs/uses/issue327-real-task-reference-pack-use-2026-09-26.md`
-
-#214 remains unchanged.
-
-### Next eligible work after #327 merge
-
 # **#329 — direction review after first real USE null**
 
-#329 must decide the next purposeful mode without:
-- replacing #327 with a more favourable use task;
-- assuming a second USE run is warranted;
-- returning automatically to internal corpus audits;
-- opening pack v0.2 or corpus growth by default.
+Result:
 
-WIP=1 remains binding: #329 starts only after #327 merges/closes.
+> **SELECT DISCOVER — EXTERNAL PRECEDENT / ROLE TEST**
+
+Reason:
+
+- #327's `BASELINE_SUFFICIENT` is one bounded null and must not be replaced by a
+  friendlier immediate USE task;
+- another internal corpus audit has lower expected information gain;
+- current legal-AI practice is rich in public capability benchmarks;
+- general LLM engineering also has a distinct known-failure / reusable regression-dataset
+  practice;
+- #311 shows Needle only partially matches an executable regression contract;
+- the highest-value next uncertainty is therefore whether Needle's surviving
+  `regression/reference corpus` identity maps honestly to established external practice.
+
+Review:
+
+> `docs/reviews/issue329-post-use-null-direction-review-2026-09-26.md`
+
+### Next eligible work after #329 merge
+
+# **#331 — does external eval practice support Needle's regression-corpus role?**
+
+#331 must compare:
+- public legal capability/evaluation benchmarks;
+- production-style LLM regression/eval datasets;
+- Needle's actual 81-case execution/provenance contract.
+
+It must be able to narrow Needle to reference/fixture language if external regression
+practice requires stronger executable contracts than most Needle cases provide.
+
+No harness build, corpus growth, product revival, #214 reinterpretation or #327 retry is
+authorised.
+
+WIP=1 remains binding: #331 starts only after #329 merges/closes.
 
 ## Historical backlog archive
 

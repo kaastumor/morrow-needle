@@ -56,15 +56,13 @@ def test_owner_adopted_change_requires_candidate_contract_reference():
 
 def test_accepted_repair_requires_owner_adoption_candidate_and_action():
     record = copy.deepcopy(FIXTURES["delta-s009-activation"])
-    record["repair"]["status"] = "ACCEPTED"
-    record["repair"]["actions"] = []
+    record["repair_status"] = "ACCEPTED"
     record["change_status"] = "OBSERVED"
 
     errors = semantic_errors(record)
 
     assert any("accepted repair requires subject.candidate_contract_ref" in error for error in errors)
     assert any("accepted repair requires change_status ADOPTED_BY_OWNER" in error for error in errors)
-    assert any("accepted repair requires at least one repair action" in error for error in errors)
 
 
 def test_unknown_or_noncomparable_results_cannot_silently_do_nothing():
@@ -87,14 +85,11 @@ def test_no_known_score_impact_is_exclusive():
     )
 
 
-def test_not_required_repair_cannot_smuggle_repair_actions():
+def test_schema_rejects_removed_repair_action_bucket():
     record = copy.deepcopy(FIXTURES["harvey-v3-semantic-revision-control"])
-    record["repair"]["actions"] = ["Rewrite the rubric."]
+    record["repair_actions"] = ["Rewrite the rubric."]
 
-    assert any(
-        "NOT_REQUIRED repair must not contain repair actions" in error
-        for error in semantic_errors(record)
-    )
+    assert schema_errors(record)
 
 
 def test_schema_rejects_needle_taxonomy_metadata():
@@ -108,7 +103,7 @@ def test_control_records_adopted_revision_without_calling_it_a_repair():
     record = FIXTURES["harvey-v3-semantic-revision-control"]
 
     assert record["change_status"] == "ADOPTED_BY_OWNER"
-    assert record["repair"]["status"] == "NOT_REQUIRED"
+    assert record["repair_status"] == "NOT_REQUIRED"
     assert record["subject"]["candidate_contract_ref"]
 
 

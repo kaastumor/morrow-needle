@@ -5,7 +5,7 @@ const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
 
-const {CASES, projectStatus, sourceHref} = require("./app.js");
+const {CASES, assertSupportedDate, projectStatus, sourceHref} = require("./app.js");
 
 const ROOT = path.join(__dirname, "..", "..");
 
@@ -89,4 +89,22 @@ test("prototype is responsive and keyboard-focus visible", () => {
   assert.match(html, /class="skip-link"/);
   assert.match(css, /:focus-visible/);
   assert.match(css, /@media \(max-width: 42rem\)/);
+});
+
+
+test("each case exposes a bounded frozen evidence window", () => {
+  for (const meta of CASES) {
+    assert.ok(meta.supportedFrom);
+    assert.ok(meta.supportedThrough);
+    assert.doesNotThrow(() => assertSupportedDate(meta, meta.supportedFrom));
+    assert.doesNotThrow(() => assertSupportedDate(meta, meta.supportedThrough));
+  }
+});
+
+test("prototype refuses unsupported historical dates instead of inventing state", () => {
+  const meta = CASES.find(entry => entry.id === "toy-en71");
+  assert.throws(
+    () => assertSupportedDate(meta, "2020-01-01"),
+    /outside frozen evidence window/
+  );
 });

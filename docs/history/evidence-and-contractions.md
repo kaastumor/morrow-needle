@@ -351,6 +351,75 @@ Strongest remaining red-team:
 
 That is now an explicit external kill path rather than something to hide.
 
+## 16. #406/#407 — historical contraction re-audited against longitudinal operations
+
+After the historical-memory reconstruction, the sponsor challenged whether the earlier contraction
+had over-weighted one-shot legal-answer comparisons and under-tested the workload the old machinery
+was originally built for.
+
+#406 plus an independent Astra review concluded:
+
+> **HISTORICAL_CONTRACTION_STILL_WELL_SUPPORTED**
+
+while preserving a narrower unresolved construct:
+
+> longitudinal operational value across sequential source updates, persistent state and repeated
+> resource encounters.
+
+The sponsor authorised one bounded retrospective probe (#407).
+
+### #407 frozen workload
+
+Seven operational state-promotion cycles were mechanically selected by chronology after the old
+product checkpoint.
+
+Across them:
+
+- 67,911 new official feed events;
+- 5,877 root groups;
+- 264 eligible maintained-resource observations / 217 unique roots;
+- 135 metadata-only observations;
+- 99 content-changed observations;
+- 30 unresolved source observations;
+- 42 repeated eligible roots.
+
+A strong lightweight comparator was allowed the ordinary monitoring primitives:
+
+- root/work grouping;
+- prior/current source snapshots;
+- content and metadata hashes;
+- maintained notes/state;
+- ordinary legal review when content actually changed.
+
+Using only those fields, the comparator reproduced Needle's source-change classification:
+
+> **264 / 264**
+
+with zero mismatches.
+
+For repeated resources, all 43 transitions with known content state preserved exact hash-chain
+continuity that the same lightweight ledger could maintain directly.
+
+Most importantly, the historical Needle treatment attempted legal analysis on all 99 content-change
+observations but established:
+
+> **0 legal candidates / 0 legal outcomes / 0 CHANGE_FEED items**.
+
+Result:
+
+> **LIGHTWEIGHT_BASELINE_SUFFICIENT**
+
+This does not erase the known successful 2026/2104 operational slice or deny that Needle built a
+working source monitor. It means the richer persistent legal-state Core did not show incremental
+operational value over a much smaller competent monitoring/state ledger on the chronology-selected
+workload.
+
+Historical operational Core therefore remains parked.
+
+Candidate-B EU operative-state work may still reuse narrow historical components when a real
+practitioner-owned job earns them; #407 specifically argues against reviving the generic monitoring
+stack merely because it exists.
+
 ## Bottom line
 
 Needle did not 'lose everything'.

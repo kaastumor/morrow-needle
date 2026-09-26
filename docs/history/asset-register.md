@@ -45,7 +45,7 @@ Nothing here is automatically authorised for new work.
 | Half-Life | `src/needle/analytics/half_life.py` | temporary regime extension/gap/reenactment history | **PARKED analytic** | repeated temporary-regime analysis demand |
 | Source Anomaly | `src/needle/analytics/source_anomaly.py` | source availability/conflict/fallback without legal overclaim | **PARKED analytic** | source fragility itself becomes a recurring job |
 | Evidence / Why this is shown | presentation/provenance code | human-readable support/limits | **HISTORICAL VALID discipline** | any external artifact needing inspectable claims |
-| Operational update pipeline | `src/needle/operations`, `updates` | live official event -> verified/non-impact projection | **PARKED operations** | externally evidenced live-monitoring job |
+| Operational update pipeline | `src/needle/operations`, `updates` | live official event -> maintained source state / verified-or-abstained projection | **PARKED operations — #407 lightweight baseline sufficient** | concrete job that needs more than root grouping + source snapshots + hash comparison + ordinary legal review; do not revive generic monitoring by default |
 | Frozen operational snapshot | `data/` historical state | unique Source Observations / provenance | **PRESERVE** | migrate unique observations before deleting snapshot |
 | Gold/adversarial corpus | `corpus`, fixtures, evaluation protocol | known failure mechanisms + negative controls | **CURRENT** | default reference/regression role |
 | Needle Method | protocol/charter/evaluation docs | structured source/authority/time/uncertainty handoff | **OPTIONAL convention** | concrete workflow demonstrates handoff/review benefit |

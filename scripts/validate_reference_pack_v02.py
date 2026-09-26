@@ -6,7 +6,13 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import sys
 from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from scripts import build_reference_pack as v01_builder
 from scripts import build_reference_pack_v02 as builder
@@ -16,7 +22,6 @@ from scripts.validate_reference_pack import (
 )
 
 
-ROOT = Path(__file__).resolve().parents[1]
 PACK_DIR_REL = Path("release") / "needle-reference-pack-v0.2"
 PAYLOAD_FILES = sorted(
     [

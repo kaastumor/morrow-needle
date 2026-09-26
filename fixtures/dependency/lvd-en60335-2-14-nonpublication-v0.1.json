@@ -1,0 +1,102 @@
+{
+  "schema_version": "authoritative-dynamic-set-v0.1",
+  "set_id": "lvd:harmonised-standard-references",
+  "set_character": "AUTHORITATIVE_DYNAMIC_SET",
+  "authority": {
+    "authority_id": "EUROPEAN_COMMISSION",
+    "label": "European Commission",
+    "authority_type": "EU_INSTITUTION"
+  },
+  "publication_surface": {
+    "surface_type": "OFFICIAL_JOURNAL",
+    "identifier": "Official Journal references of harmonised standards supporting Directive 2014/35/EU",
+    "authenticity_basis": "Directive 2014/35/EU Article 12 makes OJ publication of a harmonised-standard reference the condition for presumption of conformity with covered safety objectives.",
+    "source_ref": {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32014L0035",
+      "locator": "Article 12",
+      "language": "ENG",
+      "role": "LEGAL_BASIS",
+      "authority_character": "BINDING_LEGAL_TEXT"
+    }
+  },
+  "legal_basis_refs": [
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32014L0035",
+      "locator": "Article 12",
+      "language": "ENG",
+      "role": "LEGAL_BASIS",
+      "authority_character": "BINDING_LEGAL_TEXT"
+    }
+  ],
+  "dependencies": [
+    {
+      "dependency_id": "lvd-art12-on-harmonised-reference-set",
+      "governing_rule": {
+        "act_id": "CELEX:32014L0035",
+        "provision": "Article 12",
+        "language": "ENG"
+      },
+      "relation_character": "LEGAL_EFFECT_CONDITIONED_ON_AUTHORITATIVE_SET_STATE",
+      "condition_statement": "Presumption of conformity under Directive 2014/35/EU Article 12 depends on conformity with harmonised standards whose references are published in the Official Journal.",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32014L0035",
+          "locator": "Article 12",
+          "language": "ENG",
+          "role": "DEPENDENCY",
+          "authority_character": "BINDING_LEGAL_TEXT"
+        }
+      ]
+    }
+  ],
+  "transitions": [
+    {
+      "transition_id": "lvd-en60335-2-14-formal-nonpublication-2025-07-18",
+      "member": {
+        "label": "EN 60335-2-14:2006",
+        "identifiers": [
+          {
+            "scheme": "HARMONISED_STANDARD",
+            "value": "EN 60335-2-14:2006"
+          }
+        ]
+      },
+      "operation": "STATUS_CHANGE",
+      "effective_from": "2025-07-18",
+      "before": {
+        "membership": "NOT_INCLUDED",
+        "status": "NOT_APPLICABLE"
+      },
+      "after": {
+        "membership": "NOT_INCLUDED",
+        "status": "OTHER"
+      },
+      "scope": {
+        "character": "FULL_MEMBER",
+        "statement": "Decision (EU) 2025/1464 formally decides not to publish the EN 60335-2-14:2006 reference under Directive 2014/35/EU; it had already not been included in the 2016 LVD harmonised-standard publication, so the high-level Article 12 presumption state remains unavailable but now has a direct formal Commission decision."
+      },
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32025D1464",
+          "locator": "Recitals 5 and 8-9; Articles 1-2; OJ L 18.7.2025",
+          "language": "ENG",
+          "role": "TRANSITION",
+          "authority_character": "BINDING_LEGAL_TEXT"
+        }
+      ]
+    }
+  ],
+  "forbidden_inferences": [
+    "The July 2025 non-publication decision newly removed an Article 12 presumption that had remained available under Directive 2014/35/EU immediately before the decision.",
+    "The existence or prior citation of EN 60335-2-14:2006 under the predecessor low-voltage directive creates current presumption of conformity under Directive 2014/35/EU.",
+    "Formal non-publication means the European standard itself is prohibited or ceases to exist.",
+    "Lack of Article 12 presumption means conformity with Directive 2014/35/EU is impossible through another technical route."
+  ],
+  "notes": "Issue #411 frozen product-capability workload case: formal non-publication where the high-level current LVD citation state was already NOT_INCLUDED."
+}

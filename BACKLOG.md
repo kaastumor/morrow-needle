@@ -74,6 +74,16 @@ contract:
 > apply Needle to one independently observed external legal-AI failure, against a strong
 > ordinary source-linked failure postmortem baseline.
 
+The comparison must test **relative packet quality**, not novelty:
+- can Needle preserve the failure more completely, reconstructably or usefully?
+- does its combined legal-state/evidence/boundary/exposure packet reduce material loss?
+- does the repository-level packet add value even where incumbents already provide some
+  of the same components?
+
+If repository-level Needle value is observed but Reference Pack v0.1 cannot surface the
+same value without substantial reconstruction, that is evidence that a future pack
+improvement may be earned.
+
 Any such USE must use mechanical/predeclared selection and may not cherry-pick a failure
 because it visibly matches a Needle class.
 

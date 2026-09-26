@@ -34,22 +34,38 @@ LVD_WITHDRAWAL = json.loads(
     ).read_text(encoding="utf-8")
 )
 
+MACHINERY_RESTRICTION = json.loads(
+    Path(
+        "fixtures/dependency/"
+        "machinery-en50434-restriction-v0.1.json"
+    ).read_text(encoding="utf-8")
+)
+LVD_NONPUBLICATION = json.loads(
+    Path(
+        "fixtures/dependency/"
+        "lvd-en60335-2-14-formal-nonpublication-v0.1.json"
+    ).read_text(encoding="utf-8")
+)
+
 
 def validate(document):
     return list(Draft202012Validator(SCHEMA).iter_errors(document))
 
 
-def test_three_orthogonal_cases_fit_same_canonical_contract():
-    assert validate(TOY) == []
-    assert validate(REACH) == []
-    assert validate(GAR) == []
-    assert validate(LVD_WITHDRAWAL) == []
-    assert (
-        TOY["set_character"]
-        == REACH["set_character"]
-        == GAR["set_character"]
-        == LVD_WITHDRAWAL["set_character"]
-        == "AUTHORITATIVE_DYNAMIC_SET"
+def test_all_current_dynamic_set_regressions_fit_same_canonical_contract():
+    documents = (
+        TOY,
+        REACH,
+        GAR,
+        LVD_WITHDRAWAL,
+        MACHINERY_RESTRICTION,
+        LVD_NONPUBLICATION,
+    )
+
+    assert all(validate(document) == [] for document in documents)
+    assert all(
+        document["set_character"] == "AUTHORITATIVE_DYNAMIC_SET"
+        for document in documents
     )
 
 
@@ -173,3 +189,25 @@ def test_lvd_case_preserves_future_withdrawal_effective_date():
     assert transition["after"]["membership"] == "NOT_INCLUDED"
     assert transition["after"]["status"] == "WITHDRAWN"
     assert transition["effective_from"] == "2027-01-18"
+
+
+def test_machinery_case_preserves_partial_restriction_without_fake_withdrawal():
+    transition = MACHINERY_RESTRICTION["transitions"][0]
+
+    assert transition["operation"] == "RESTRICT_MEMBER"
+    assert transition["before"]["membership"] == "INCLUDED"
+    assert transition["after"]["membership"] == "INCLUDED"
+    assert transition["after"]["status"] == "RESTRICTED"
+    assert transition["effective_from"] == "2026-01-13"
+    assert transition["scope"]["character"] == "PARTIAL_MEMBER"
+    assert "300 r/min" in transition["scope"]["statement"]
+
+
+def test_lvd_kitchen_machine_case_preserves_formal_nonpublication():
+    transition = LVD_NONPUBLICATION["transitions"][0]
+
+    assert transition["operation"] == "STATUS_CHANGE"
+    assert transition["before"]["membership"] == "NOT_INCLUDED"
+    assert transition["after"]["membership"] == "NOT_INCLUDED"
+    assert transition["effective_from"] == "2025-07-18"
+    assert "does not publish" in transition["scope"]["statement"]

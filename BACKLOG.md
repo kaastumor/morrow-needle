@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DIRECTION REVIEW — POST-REFERENCE-PACK-v0.2 RELEASE**
+# **USE — ORTHOGONAL REFERENCE PACK v0.2 REPLICATION**
 
 Frozen scientific source:
 
@@ -27,46 +27,71 @@ Supported reference job:
 
 ### Current WIP
 
-# **#348 — direction review after Reference Pack v0.2 release**
+# **#349 — orthogonal external failure replication through Reference Pack v0.2**
+
+Results:
+
+> **POSTMORTEM_BASELINE_SUFFICIENT**
+
+> **V0.2 NAVIGATION SUCCESS**
+
+> **STRUCTURED_LAYER_SIGNAL = NO**
+
+Mechanical selection from the independent `Large Legal Fictions` dataset chose the first
+complete author-labelled hallucination:
+
+> `Crawford v. United States`, 375 F.2d 332 — model answered `reverse`, while the
+> reported D.C. Circuit opinion formally says `Affirmed`.
+
+The strong ordinary postmortem already preserved:
+- exact external row/ground truth;
+- direct opinion;
+- binary disposition-inversion mechanism;
+- consequence;
+- corrective rule;
+- sufficient boundary.
+
+Reference Pack v0.2 then:
+- correctly supported `NO_EXISTING_CLASS_MATCH`;
+- supplied exposed/known-case scientific-reuse discipline;
+- prevented synthetic source-state complexity via `Omit rather than synthesize`;
+- supplied regression/boundary ownership rules;
+- required **no broad repository archaeology**.
+
+That validates the v0.2 navigation improvement.
+
+It does **not** replicate #339's material packet-value gain. For this simple binary
+single-source task, governance/reuse metadata does not materially improve the failure
+analysis over the strong postmortem.
+
+Emerging hypothesis, not yet accepted conclusion:
+
+> Needle packet value is conditional and may be highest where the failure requires
+> non-trivial source-state, boundary, provenance/reuse or regression-conversion reasoning.
+
+Structured external-failure data remains unearned.
 
 Result:
 
-> **SELECT USE — ORTHOGONAL FAILURE-ANALYSIS REPLICATION**
+> `docs/uses/issue349-v02-orthogonal-failure-replication-2026-09-26.md`
 
-Reason:
+### Next eligible work after #349 merge
 
-- #339 observed one positive failure-analysis packet result;
-- #343 made structured external-failure data explicitly replication-gated;
-- v0.2 was built specifically to reduce the repository reconstruction burden observed in
-  #339;
-- another release/design pass now has lower information gain than testing the released
-  surface;
-- the next use can simultaneously test packet-value recurrence, v0.2 navigation quality
-  and structured-field recurrence.
+# **#351 — direction review after orthogonal v0.2 packet-value null**
 
-Review:
+#351 must preserve both:
+- #339 positive packet value;
+- #349 postmortem-baseline null + v0.2 navigation success.
 
-> `docs/reviews/issue348-post-v02-direction-review-2026-09-26.md`
+It must not average these into a vague mixed result.
 
-### Next eligible work after #348 merge
-
-# **#349 — orthogonal external failure replication through Reference Pack v0.2**
-
-#349 must:
-- use the preselected `Large Legal Fictions` public dataset;
-- mechanically choose one complete author-labelled hallucinated response in published
-  order, excluding only the #339 patent-obviousness question type to enforce orthogonality;
-- freeze the strongest ordinary postmortem first;
-- use Reference Pack v0.2 before broad repository history;
-- preserve a null if packet value does not replicate;
-- measure any residual repository archaeology;
-- compare packet-field recurrence with #339;
-- report `STRUCTURED_LAYER_SIGNAL = YES / NO / INDETERMINATE`.
+The central candidate question is whether the **conditional-value boundary** should now be
+tested directly.
 
 No v0.3, structured external-failure layer, corpus growth, product revival or superiority
 claim is authorised.
 
-WIP=1 remains binding: #349 starts only after #348 merges/closes.
+WIP=1 remains binding: #351 starts only after #349 merges/closes.
 
 ## Historical backlog archive
 

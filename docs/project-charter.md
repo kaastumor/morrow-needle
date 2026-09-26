@@ -46,6 +46,21 @@ lineage, provenance/exposure and accepted boundaries needed to reconstruct and c
 known failure. A compact release/navigation layer may point to that evidence without
 becoming the evidence itself.
 
+This contract is **conditional, not ceremonial**:
+
+> **Strong source-linked postmortem first. Full Needle packet work is earned only when
+> consequential reusable legal relationship/state/boundary/reuse structure remains to
+> formalize.**
+
+A competent postmortem is a valid endpoint when it already preserves the material truth,
+boundary and future regression oracle. Needle should add the fuller packet only when doing
+so materially improves later reconstruction, scientific/reuse handling, boundary safety or
+regression conversion. Evidence from #339/#349/#353 supports this as an allocation rule,
+not as a population-performance model or numeric complexity threshold.
+
+`NO_EXISTING_CLASS_MATCH` is valid. Missing packet elements should be omitted rather than
+invented merely to make failures look structurally uniform.
+
 The canonical comparative-evaluation protocol is
 `docs/evaluations/adversarial-corpus-protocol-v0.1.md`, used only when a new claim earns
 a sealed comparison. It is not a standing experiment engine.

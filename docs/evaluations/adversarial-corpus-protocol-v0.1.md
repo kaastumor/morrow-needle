@@ -259,6 +259,28 @@ At minimum check:
    - preserve judge disagreements and human adjudication rather than averaging instability
      into false certainty.
 
+### Post-reveal preservation
+
+After a blinded/sealed evaluation is complete, preserve enough of the revealed execution
+record for an independent future audit.
+
+Subject to legitimate confidentiality constraints, archive:
+
+- exact task prompts;
+- exact answer/evaluator keys;
+- raw evaluated outputs;
+- score/adjudication records;
+- exact decisive source/evidence owners;
+- task-contract version/commit.
+
+If raw material cannot live in the repository, record the immutable archive location,
+access boundary and identifying hash, and state which claims cannot be independently
+re-audited without that archive.
+
+A hash commitment proves later bytes match earlier bytes only when the committed bytes are
+eventually available to the authorised auditor. A hash plus a prose summary is not by itself
+a fully reproducible evaluation record.
+
 These checks are **evaluation hygiene**, not a Needle superiority claim.
 
 They were added after public legal-benchmark defects demonstrated that strong modern

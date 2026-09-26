@@ -210,4 +210,4 @@ def test_lvd_kitchen_machine_case_preserves_formal_nonpublication():
     assert transition["before"]["membership"] == "NOT_INCLUDED"
     assert transition["after"]["membership"] == "NOT_INCLUDED"
     assert transition["effective_from"] == "2025-07-18"
-    assert "does not publish" in transition["scope"]["statement"]
+    assert "not to publish" in transition["scope"]["statement"]

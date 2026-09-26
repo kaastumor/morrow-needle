@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — CANDIDATE B / LEAN-TEAM EU OPERATIVE STATE**
+# **REVIEW — CANDIDATE B REVISED / STANDARDS-STATUS CORE READY**
 
 Frozen scientific source:
 
@@ -31,158 +31,190 @@ The sponsor's strategic objective remains:
 
 > **work toward an MVP that demonstrates actual added value on a real job**
 
-The sponsor has explicitly reopened Candidate B because #407's strong comparator already possessed
-generic maintained monitoring/state capability that may be realistic for enterprise compliance teams
-but not for smaller/lean legal-compliance functions.
+The sponsor explicitly reopened Candidate B to investigate whether old Needle legal-state capability
+could create value for smaller/lean organisations even where enterprise-grade capability exists.
 
-### Current WIP — Issue #409
+### Issue #409 result
 
-> **DISCOVER — Candidate B for lean-team EU operative-state maintenance**
+# **CANDIDATE_B_REVISE**
 
-New hypothesis:
+The original access hypothesis was too coarse.
 
-> **A lean legal/compliance team without enterprise regulatory-intelligence infrastructure may
-> benefit from a small Needle-derived workflow that maintains the operative legal state relevant
-> to its own products/activities across multiple authoritative owners, with less manual reopening,
-> filtering and reconstruction than its realistic lightweight alternative.**
+Public research found that lean teams are not limited to spreadsheets:
 
-This is an **access / operational-economics** hypothesis, not a novelty claim.
+- low-cost CBAM tools;
+- self-serve MDR/IVDR platforms;
+- SME-targeted BSI Compliance Navigator;
+- small-team regulatory-intelligence plans;
+- general CE/product-compliance tools;
+- emerging standards-watch products.
 
-### What #407 still proves
+Therefore:
 
-#407 remains binding:
+> **competitor existence removes novelty claims and strengthens the comparator; it does not by
+> itself eliminate product value.**
 
-> when the comparator already has root/work grouping, prior/current source snapshots, hashes,
-> ordinary maintained notes and capable legal review, the historical richer operational Core showed
-> no incremental value on the frozen seven-cycle workload.
+Durable method correction:
 
-Therefore #409 does **not** revive:
+> `docs/discovery/issue409-competitor-presence-correction-2026-09-26.md`
 
-- Full Needle;
-- generic EU monitoring;
-- generic source-hash infrastructure as proprietary value;
-- a claim that enterprise regtech lacks the capability.
+### Revised Candidate-B hypothesis
 
-### Phase 1 result — capability exists, access question remains
+> **A small, evidence-first EU product-compliance state surface may create value for lean
+> manufacturers by turning official OJ/reference transitions into decision-ready, historically
+> queryable product state. Existing products are the comparator, not a disqualifier.**
 
-Enterprise capability receives full credit:
+This is narrower than generic regulatory intelligence.
 
-- Thomson Reuters Regulatory Intelligence;
-- CUBE RegPlatform;
-- Bloomberg Regology;
-- mature official EU information/registry systems.
+It does not claim enterprise or small-team competitors lack the capability.
 
-Public/official evidence also supports a real smaller-entity burden question:
+### Immediate internal wedge
 
-- Commission material reports regulatory burden disproportionately affecting SMEs;
-- Commission reporting says 28% of EU SMEs report >10% of staff engaged in assessing/compliance
-  with regulatory requirements/standards;
-- 2025 SME survey material identifies regulatory complexity as a leading concern;
-- vendor-sponsored 2026 compliance survey evidence suggests many lean teams remain heavily manual.
+# **HARMONISED-STANDARD OPERATIVE STATUS**
 
-Disposition:
+Selected because:
 
-> **CAPABILITY_EXISTS — ACCESS / OPERATING-BURDEN QUESTION REMAINS OPEN**
+- a real 2026 official event exists;
+- the official answer key is authoritative;
+- free Commission/OJ monitoring is already strong;
+- commercial standards-monitoring competitors already exist;
+- old Needle has an already-earned canonical owner for the exact state shape;
+- the smallest treatment can be tested without reactivating Full Needle.
 
-Durable analysis:
+Current proof case:
 
-> `docs/discovery/issue409-lean-team-capability-access-map-2026-09-26.md`
+> GAR / EN 497:2022 — Commission Implementing Decision (EU) 2026/1750 formally decides not to
+> publish the OJ reference.
 
-### Phase 2 result — accessible-incumbent correction before execution
+Strong free baseline:
 
-CBAM was initially the first eligible residual under the frozen #377 order.
+- Commission harmonised-standard pages;
+- formal-objection page;
+- EUR-Lex/OJ;
+- RSS feeds.
 
-Before executing the replay, a stronger small-team incumbent was found:
+Candidate B gets **zero credit** for generic alerting.
 
-- niche CBAM products publicly market threshold tracking;
-- maintained certificate-price/default-value state;
-- audit trails / reporting;
-- small-importer plans with published prices.
+### Historical Needle component reactivated narrowly
 
-Therefore the planned CBAM spreadsheet-vs-Needle replay would have become a strawman.
+The existing:
 
-Disposition:
+> `authoritative-dynamic-set-v0.1`
 
-# **CBAM REPLAY RETIRED_UNEXECUTED**
+fits the Candidate-B standards state without schema expansion.
 
-This is not evidence that every CBAM tool is good.
+Existing historical proofs:
 
-It is enough to reject the assumption that maintained CBAM state is available only through an
-enterprise regulatory-intelligence stack.
+- Toy Safety — cited reference becomes restricted;
+- REACH — authoritative agency-list member is added.
 
-Durable correction:
+#409 adds:
 
-> `docs/discovery/issue409-accessible-incumbent-correction-2026-09-26.md`
+- GAR EN 497:2022 — formal decision not to publish an OJ reference;
+- LVD EN 60335-2-60:2003 — cited today with a binding future withdrawal on 18 January 2027.
 
-The lean-team selection rule is now strengthened:
+This is a **narrow technical reactivation**, not Full Needle.
 
-> **accessible vertical point solutions receive full incumbent credit before a Candidate-B residual
-> is accepted.**
+### Disposable Candidate-B core
 
-Re-running the frozen #377 order:
+Human-facing contract:
 
-- CBAM — access residual not established;
-- CER — lean/smaller target population not independently established;
-- CSRD — current mandatory core target is >EUR450m turnover + >1,000 employees, not the first lean wedge;
-- **MDR — proceeds to detailed residual audit.**
+> `docs/mvp/candidate-b-harmonised-standard-status-core-v0.1.md`
 
-### MDR residual audit
+Disposable renderer:
 
-Independent official evidence makes MDR materially relevant to Candidate B:
+> `scripts/render_harmonised_standard_status.py`
 
-- the EU medical-device sector is strongly SME-shaped;
-- Commission evaluation material reports SMEs bearing disproportionate MDR/IVDR compliance cost;
-- legacy-device eligibility depends on a conjunction of device/cohort, prior-law compliance,
-  no-significant-change, risk, QMS/application/written-agreement milestones and
-  notified-body/certificate state;
-- EUDAMED is now a mandatory live owner for key actor/device/certificate state.
+Regression fixtures/tests:
 
-Affordable EUDAMED point tools also exist and receive full credit.
+- `fixtures/dependency/gar-en497-authoritative-dynamic-set-v0.1.json`;
+- `fixtures/dependency/lvd-en60335-2-60-scheduled-withdrawal-v0.1.json`;
+- updated `tests/test_authoritative_dynamic_set.py`;
+- `tests/test_harmonised_standard_status_card.py`.
 
-Their public contracts visibly cover registry preparation, certificate/status monitoring and alerts,
-but the current public scan does not establish whether affordable tools already compose the full
-**operative transition-eligibility conclusion**.
+The status card exposes:
 
-Disposition:
+- OJ-reference state;
+- presumption consequence;
+- latest owning event;
+- restriction/scope;
+- next scheduled future transition;
+- official evidence;
+- historical `as_of` state;
+- forbidden inferences.
 
-# **MDR RESIDUAL PLAUSIBLE — DETAILED WORKFLOW TEST EARNED**
+No LLM is required for the final status projection once authoritative transition state is encoded.
 
-Durable analysis:
+### Strongest Candidate-B red team
 
-> `docs/discovery/issue409-mdr-lean-team-residual-audit-2026-09-26.md`
+A known-standard status card may simply repackage an answer a competent user can obtain from the
+Commission/OJ quickly.
 
-### Candidate A status
+Commercial products such as Certivo, Foresight, ComplyMatrix and Grecta publicly claim overlapping
+standards-monitoring/product-relevance/evidence capabilities.
 
-Candidate A remains:
+Therefore the internal technical core does **not** establish commercial differentiation.
+
+Candidate B becomes interesting only if it demonstrates one or more of:
+
+- portfolio-level usefulness;
+- historical/future state advantage;
+- better handling of restrictions/non-publication/withdrawal semantics;
+- lower setup/operating friction;
+- better source transparency;
+- materially better price/scope fit;
+- or a product-specific decision advantage.
+
+### Retained verticals
+
+**MDR / IVDR**
+
+> **PRODUCT_ACCESS_REQUIRED — retain high-value occupied verticals**
+
+Do not downgrade them; next evidence requires actual product/user capability comparison.
+
+**CPR-2024**
+
+> **NOT_YET_EVENTFUL — retain strong forward vertical**
+
+Product families will migrate individually as new CPR-2024 performance harmonised standards are
+cited/made mandatory. The first major migrations are expected from 2027.
+
+This may become a stronger commercial reuse of the same state machinery.
+
+### Candidate A
+
+Remains:
 
 > **CORE_READY_FOR_EXTERNAL_VALUE_TEST**
 
-but is **paused**, not rejected, while sponsor-authorised Candidate-B discovery is active.
+Paused, not rejected.
 
-The Maintenance Delta core and external test contract remain intact.
+### Candidate C
 
-### Candidate C status
-
-Candidate C remains:
+Remains:
 
 > **SECONDARY_CANDIDATE — known failure/postmortem -> reusable regression/oracle**
 
-### Next #409 step
+### Next Candidate-B gate
 
-Freeze one **MDR legacy-device operative-eligibility replay**.
+The next useful evidence does **not** require partner outreach.
 
-The strong lean comparator must include:
+Prepare a frozen **standards-status product-capability challenge** using real official formal-
+objection/reference-state cases and compare accessible/self-serve products where feasible.
 
-- official MDR / MDCG guidance;
-- EUDAMED public state;
-- ordinary maintained notes/checklist;
-- general source-grounded AI;
-- affordable point-tool capability for EUDAMED preparation/monitoring where publicly available.
+Questions should test:
 
-Candidate B gets credit only for the **cross-owner legal-state composition** that remains after those
-incumbents are subtracted.
+- current OJ-reference status;
+- restriction scope;
+- effective date;
+- scheduled future transition;
+- historical as-of answer;
+- official evidence.
 
-No new schema or UI before the replay demonstrates recurring residual structure.
+This is a product-capability comparison, not a user-value test.
+
+Do not build a monitoring UI or general compliance platform before that gate.
 
 ### Existing evidence remains binding
 
@@ -193,14 +225,14 @@ Preserve:
 - #327 generic Reference Pack use null;
 - #366 standing artifact-value proof retired;
 - #377 EU-state existence supported / prevalence not supported;
-- #395 official-stack narrowing / no model-gap claim;
-- #407 lightweight maintained baseline sufficient on generic operational monitoring;
+- #395 official-stack narrowing;
+- #407 lightweight maintained baseline sufficient for generic source monitoring;
 - Reference Pack v0.2 frozen/current;
 - **INSPECTABLE_ONLY_FOR_NOW** licensing.
 
-No outreach is authorised.
+No external outreach is authorised.
 
-WIP=1 remains binding.
+WIP=1 remains binding whenever active work exists.
 
 ## Historical backlog archive
 

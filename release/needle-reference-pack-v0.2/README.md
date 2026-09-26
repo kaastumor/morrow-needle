@@ -6,7 +6,7 @@ It keeps the frozen corpus/data semantics unchanged and adds one new navigation 
 
 - `failure-analysis-guide.md` — how to use Needle for legal failure analysis, evaluation design, debugging and regression-fixture derivation without forcing taxonomy or creating a second legal truth store.
 
-The pack is **publicly inspectable/reference material**. The repository currently has no project license, so public visibility must **not** be read as a grant making this openly licensed reusable material. Linked or third-party legal evidence remains under its own rights.
+The pack is **publicly inspectable/reference material**. It is **not openly licensed reusable material**: the repository currently has no project license, so public visibility must not be read as a general grant to copy, modify or redistribute project-authored material. Linked or third-party legal evidence remains under its own rights.
 
 ## Frozen source
 

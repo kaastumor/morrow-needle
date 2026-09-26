@@ -208,6 +208,35 @@ to a regression expectation, rejection, retirement or compression signal, the cl
 information advantage of depth is falsified. Run an explicit direction review before a
 fourth confirmation-style depth run.
 
+## Historical memory and contraction discipline
+
+Evidence-driven contraction must shrink claims **without erasing capability memory**.
+
+Before a project-wide direction review, product revival, architecture replacement or claim that
+Needle 'never built' a capability, inspect:
+
+- `docs/history/README.md`;
+- `docs/history/asset-register.md`;
+- the relevant interface/decision record;
+- the value evidence that parked/rejected the asset;
+- current `BACKLOG.md` and charter.
+
+When a gate retires or parks a direction, record separately:
+
+1. **claim rejected** — what proposition the evidence actually falsified;
+2. **capability preserved** — what code/model/method remains technically valid;
+3. **default status** — current / case-earned / parked / historical-only;
+4. **reactivation condition** — what concrete evidence would justify use again.
+
+Do not use a single word such as `retired` when the evidence only shows that a technically valid
+surface lacks current incremental value.
+
+Historical memory is not a second backlog. It prevents false amnesia; it never authorises reactivation
+by itself.
+
+After any major identity shift, release, retirement programme or MVP gate, update the historical
+asset register when interpretation/status materially changes.
+
 ## Checkpointed burst execution
 
 Autonomous work is executed in **checkpointed bursts** so chat/transport failures do

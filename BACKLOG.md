@@ -178,25 +178,99 @@ Durable result:
 
 > `docs/discovery/issue377-eu-real-task-prevalence-2026-09-26.md`
 
-### Direction gate after the Phase 3A null
+### Phase 3B — CJEU matter-specific contrast
 
-Do **not** immediately pick a more favorable matter-specific sample.
+After the Phase 3A null, the project did **not** hand-pick a favorable matter set.
 
-A direction review must first compare:
+A direction review found one reproducible matter-specific source frame: 2026 Court of Justice
+preliminary references selected mechanically by ascending case number, subject to a frozen
+public-English-request and named-secondary-legislation rule.
 
-1. **PARK** — preserve the residual as a bounded EU-law phenomenon but stop prevalence work;
-2. **DISCOVER SOURCE FRAME** — only if a mechanically selectable external corpus of real
-   matter-specific EU-law problems can be identified before seeing whether it contains
-   Needle-shaped states;
-3. **COMMERCIAL CONTRACT REVIEW** — inspect strong regulatory-intelligence product contracts
-   deeply enough to learn whether the residual is already operationally represented;
-4. **SWITCH FRONT** — return current WIP to the preserved legal-AI evaluation-science /
-   evaluation-contract programme.
+The first 12 qualifying cases produced:
 
-A matter-specific continuation is permitted only if the source frame itself exists
-independently of the desired result.
+- **5/12 TEXT_SUFFICIENT**;
+- **6/12 ORDINARY_CROSS_INSTRUMENT**;
+- **1/12 INDEPENDENT_OPERATIVE_STATE**;
+- **0/12 CHANGE_HISTORY_SUFFICIENT**;
+- **0/12 INDETERMINATE**.
 
-No class hunt, bespoke case construction, product build or corpus growth is authorised.
+The sole strong residual is **C-15/26, Boehringer Ingelheim Vetmedica**: Article 3(d) of the
+SPC Regulation turns on the identity/sequence of separately created human and veterinary
+marketing-authorisation states. The authorisation history can change the legal result while
+the parent SPC rule remains unchanged.
+
+This is evidence about legal-state **structure**, not Needle research advantage. The issue is
+surfaced by the referral itself.
+
+Durable result:
+
+> `docs/discovery/issue377-matter-specific-cjeu-contrast-2026-09-26.md`
+
+Direction review:
+
+> `docs/reviews/issue377-post-implementation-null-direction-2026-09-26.md`
+
+### #377 synthesis and allocation
+
+Final EU-specific research disposition:
+
+# **EU_LEGAL_STATE_EXISTENCE_SUPPORTED — PREVALENCE_NOT_SUPPORTED**
+
+Evidence by phase:
+
+- Phase 2 stratified structural stress sample: **7/24** residuals;
+- Phase 3A official implementation Q&A: **0/16** residuals;
+- Phase 3B mechanically selected CJEU matter-specific disputes: **1/12** residual.
+
+Do not combine these denominators into a population estimate. The sampling frames differ
+materially.
+
+The correct interpretation is:
+
+> independently moving operative EU legal state is a real and consequential failure
+> structure, but Needle has **not demonstrated that it is common across real EU-law research
+> or implementation work**.
+
+The frozen corpus is therefore better understood as intentionally adversarial/enriched
+failure memory, not as a frequency map of ordinary EU-law work.
+
+### EU prevalence programme status
+
+# **PARK**
+
+Further prevalence sampling would now risk serial result-seeking.
+
+Reopen only from a materially new external trigger, for example:
+
+- measured reconstruction burden in a real legal/regulatory workflow;
+- a verified regulatory-intelligence product contract that omits a consequential state;
+- an independently observed wrong answer caused by current-text/change-only representation;
+- a genuinely different public source population that becomes available for mechanical
+  sampling.
+
+Do not reopen merely by choosing another case family likely to contain stateful examples.
+
+No corpus/class, Reference Pack, schema, software or product change is earned.
+
+### Next WIP — Issue #381
+
+With #377 complete, WIP returns to the preserved broader research front:
+
+> **legal-AI evaluation science / evaluation-contract assurance**
+
+Queued successor:
+
+> **#381 — DISCOVER: legal evaluation representation validity**
+
+Core question:
+
+> when are atomic rubric/criterion contracts a valid representation of expert legal quality,
+> and when do alternative representations such as comparative judgment, hierarchical issue
+> structures or qualified holistic adjudication measure the task more faithfully?
+
+#381 is an orthogonal scientific question, not a commercial DELIVERY test and not a revival
+of corpus-assisted legal-research superiority. It activates after the #377 completion
+branch is accepted.
 
 ### Commercial / external-validation boundary
 

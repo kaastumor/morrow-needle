@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DIRECTION REVIEW — POST-USE NULL**
+# **DISCOVER — EXTERNAL REGRESSION-ROLE PRECEDENT**
 
 Frozen scientific source:
 
@@ -23,44 +23,56 @@ Released use surface:
 
 ### Current WIP
 
-# **#329 — direction review after first real USE null**
+# **#331 — does external eval practice support Needle's regression-corpus role?**
 
 Result:
 
-> **SELECT DISCOVER — EXTERNAL PRECEDENT / ROLE TEST**
+> **NARROW_TO_REFERENCE_FIXTURES**
 
-Reason:
+External precedent supports a real role for known/exposed failures in regression
+engineering, but the operational boundary is stronger than Needle's previous project-local
+wording:
 
-- #327's `BASELINE_SUFFICIENT` is one bounded null and must not be replaced by a
-  friendlier immediate USE task;
-- another internal corpus audit has lower expected information gain;
-- current legal-AI practice is rich in public capability benchmarks;
-- general LLM engineering also has a distinct known-failure / reusable regression-dataset
-  practice;
-- #311 shows Needle only partially matches an executable regression contract;
-- the highest-value next uncertainty is therefore whether Needle's surviving
-  `regression/reference corpus` identity maps honestly to established external practice.
+- public legal benchmarks pair tasks with outputs/rubrics/evaluation contracts;
+- mature LLM regression workflows pair reusable inputs with expected behavior and
+  evaluators, often promoting real production failures into those datasets;
+- exposure is compatible with regression use;
+- a preserved failure description without a runnable expected check is reference/debugging
+  material, not by itself an executable regression test.
 
-Review:
+Canonical identity consequence:
 
-> `docs/reviews/issue329-post-use-null-direction-review-2026-09-26.md`
+> **known-failure reference corpus + exposed regression fixtures + minimal evaluation
+> discipline**
 
-### Next eligible work after #329 merge
+Reference status is corpus-wide. Executable regression status is case/fixture-specific.
 
-# **#331 — does external eval practice support Needle's regression-corpus role?**
+The revealed EVALUATION cases clearly preserve executable historical regression contracts.
+DERIVATION cases remain heterogeneous and must not be post-hoc normalized into an
+81-case oracle while pretending that contract was historical.
 
-#331 must compare:
-- public legal capability/evaluation benchmarks;
-- production-style LLM regression/eval datasets;
-- Needle's actual 81-case execution/provenance contract.
+No corpus/class, Reference Pack v0.1 byte, model run, product scope, #214 or #327 result
+changes.
 
-It must be able to narrow Needle to reference/fixture language if external regression
-practice requires stronger executable contracts than most Needle cases provide.
+Result:
 
-No harness build, corpus growth, product revival, #214 reinterpretation or #327 retry is
-authorised.
+> `docs/reviews/issue331-external-regression-role-result-2026-09-26.md`
 
-WIP=1 remains binding: #331 starts only after #329 merges/closes.
+### Next eligible work after #331 merge
+
+# **#333 — direction review after external role clarification**
+
+#333 must decide whether the clarified reference/fixture identity earns:
+- a real USE question;
+- an externally anchored DISCOVER question;
+- a derived executable subset/release;
+- further consolidation;
+- or maintenance with a concrete trigger.
+
+It must explicitly reject building an executable subset merely to resemble external eval
+tooling.
+
+WIP=1 remains binding: #333 starts only after #331 merges/closes.
 
 ## Historical backlog archive
 

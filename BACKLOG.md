@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **REVIEW — POST-REPRESENTATION RESEARCH ALLOCATION**
+# **DISCOVER — LEGAL RUBRIC ACCEPTANCE-BOUNDARY AUDIT**
 
 Frozen scientific source:
 
@@ -32,77 +32,123 @@ Issue #377:
 
 > **EU_LEGAL_STATE_EXISTENCE_SUPPORTED — PREVALENCE_NOT_SUPPORTED**
 
-The structural EU-law phenomenon is real; broad prevalence is not supported and the
-prevalence programme is parked.
-
 Issue #381:
 
 > **REPRESENTATION_CHOICE_MATTERS**
 
-The canonical evaluation protocol now requires a declared decision objective, evaluation
-representation, non-compensatory constraints, valid-alternative policy and aggregation
-semantics before representation-specific integrity checks.
+Issue #384 direction review:
 
-A true paired representation comparison remains externally gated on qualified independent
-legal adjudication.
+> **SELECT_FALSE_REJECTION**
 
-### Direction review — Issue #384
-
-Disposition:
-
-# **SELECT_FALSE_REJECTION**
-
-Compared lanes:
-
-- temporal/oracle maintenance — real operational job, but another public benchmark drift
-  hunt would risk repeating #375 and commercial regulatory-change products already own much
-  of the general maintenance problem;
-- legal-agent trajectory assurance — scientifically interesting, but public legal trajectory
-  evidence is currently too thin for a high-quality bounded run;
-- commercial contract map — public documentation ceiling reached; deeper adjudication needs
-  demos/product access/users;
-- customer-specific maintained evaluation estates — job plausible, but decisive evidence is
-  external buyer/workflow evidence;
-- false rejection — newly sharpened, publicly investigable and directly attacks a distinct
-  residual after #381.
-
-Durable direction review:
-
-> `docs/reviews/issue384-post-representation-direction-2026-09-26.md`
-
-### Next WIP — Issue #385
+### Current WIP — Issue #385
 
 > **DISCOVER — legal rubric acceptance-boundary audit**
 
-Core question:
+Phase 1 result:
 
-> **Do inspectable legal evaluation contracts contain structurally detectable false-rejection
-> risk because their criteria encode one acceptable formulation/path too narrowly, and can
-> positive-alternative probing detect that risk without weakening fatal legal requirements?**
+# **PUBLIC_EVIDENCE_INSUFFICIENT**
 
-This is **not** the same as #381.
+The audit distinguishes incomplete acceptable-set authoring from other evaluation defects.
 
-- #381: is the chosen representation valid for the decision?
-- #385: assuming a criterion representation is appropriate, is its acceptance boundary
-  complete enough not to reject professionally valid work?
+A qualifying positive would require:
 
-External trigger:
+- an independently supportable professionally valid legal answer;
+- rejection by the evaluation contract;
+- rejection caused specifically by an omitted acceptable route/formulation;
+- task instructions that permit that route;
+- a narrow repair that admits the valid answer without admitting a paired materially wrong
+  answer.
 
-> `Judging Is Not Enumerating: Silent Omissions in LLM-Authored Acceptable Sets` (2026)
-> shows a broad recognition-vs-enumeration gap and large false rejection in non-legal,
-> frequently LLM-authored verifiers.
+Clean public legal positives located under that definition:
 
-Those percentages must **not** be transferred into law. The legal-domain question remains
-open and falsifiable.
+> **0**
 
-Phase 1 will inspect public legal rubric/criterion contracts, classify how they represent
-acceptable variation, and look for independently supportable positive-alternative probes
-paired with negative/fatal controls.
+Do not interpret zero as a prevalence estimate.
+
+### Evidence that weakens the hypothesis
+
+Strong current legal benchmarks already contain explicit safeguards.
+
+DELTA:
+
+- requires criteria to accommodate professionally defensible approaches;
+- routes potentially defensible unhandled approaches to qualified human review rather than
+  failing novelty alone;
+- revises accepted omissions in later dataset versions;
+- escalates pass-changing judge disagreement to qualified lawyers;
+- mechanically exposes semantic/flexible criterion language across the public set.
+
+The public DELTA release has 15 tasks / 273 criteria. A simple high-recall English-text scan
+found 90 criteria using semantic verbs and 40 criteria containing an obvious heuristic
+flexibility marker such as alternatives, "or otherwise", "or equivalent" or example-based
+formulation. This is not a quality score, but it is strong evidence that the contract is not
+a naive single-reference-answer matcher.
+
+Legal Benchmarks' public methodology likewise states that criteria should accommodate
+professionally defensible approaches.
+
+### Evidence that preserves structural risk
+
+PLawBench publicly describes strict literal/item-by-item matching against finite expert
+rubrics.
+
+LexRubric represents ideal-answer quality through a finite set of 12,337 expert-written
+atomic criteria.
+
+Those designs can create an acceptance-boundary risk in principle when a professionally
+valid strategy is not represented.
+
+But the bounded audit did not locate a clean independently adjudicated legal example where
+that mechanism actually caused false rejection.
+
+### Defects explicitly excluded from #385 positive evidence
+
+- DELTA #1 — wrong legal oracle;
+- DELTA #2 — activation/gradability ambiguity;
+- Harvey LAB #146 — internal count/allowlist inconsistency;
+- Harvey LAB #147 — rubric undercoverage causing false acceptance;
+- #375 Harvey HSR values — stale/wrong legal oracle;
+- JudgmentBench holistic-ranking gap — representation validity, owned by #381.
+
+Generic 2026 work such as `Judging Is Not Enumerating` and `Rubrics on Trial` supports the
+general mechanism but not legal-domain prevalence.
+
+Durable result:
+
+> `docs/discovery/issue385-legal-rubric-acceptance-boundary-2026-09-26.md`
+
+### Protocol consequence
+
+No new protocol layer is earned.
+
+The existing post-#375/#381 protocol already owns the minimal defense:
+
+- valid-alternative policy;
+- positive formulation/mutation checks where practical;
+- non-compensatory fatal requirements;
+- qualified adjudication;
+- versioned evaluation contracts.
+
+Adding another named acceptance-boundary layer would duplicate existing discipline.
+
+### #385 allocation consequence
+
+Close #385 without implementation.
+
+Do not create synthetic "valid alternatives" and grade them with the same system merely to
+manufacture a legal false-rejection result.
+
+A future external observation may reopen the question if it supplies:
+
+1. qualified independent acceptance of an answer;
+2. rubric rejection;
+3. a task that clearly permits the alternative;
+4. a narrow acceptance-boundary repair;
+5. a paired invalid answer that still fails.
 
 ### Separate commercial boundary
 
-The #375 disposition **READY_FOR_EXTERNAL_VALIDATION** remains valid for the commercial
-DELIVERY hypothesis and remains behind the sponsor's external-outreach gate.
+The #375 commercial DELIVERY question remains external and unchanged.
 
 ### Binding guardrails
 
@@ -114,9 +160,11 @@ Preserve:
 - #366 retirement of standing artifact-value proof;
 - #377 prevalence park;
 - #381 representation-validity repair;
+- #385 public-evidence insufficiency;
 - Reference Pack v0.2 frozen/current;
-- **INSPECTABLE_ONLY_FOR_NOW** licensing;
-- no v0.3, product implementation, corpus/taxonomy growth or software surface from #385.
+- **INSPECTABLE_ONLY_FOR_NOW** licensing.
+
+No v0.3, product implementation, corpus/taxonomy growth or new protocol layer follows.
 
 WIP=1 remains binding.
 

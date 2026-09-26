@@ -1,6 +1,16 @@
 # Candidate B — lean-team status-card usability test contract v0.1
 
-Status: **PREPARED ONLY — NO OUTREACH AUTHORISED**
+Status: **ACTIVE ONE-PARTICIPANT PILOT — CONTACT NOT YET SENT**
+
+## Activation state
+
+The sponsor authorised continuation of Candidate B on 27 September 2026.
+
+Issue #422 freezes the first one-participant crossover design, participant profile, case allocation and decision rule before recruitment.
+
+This authorisation does **not** grant access to the sponsor's mailbox or authorise paid vendor/product access.
+
+The first contact remains unsent until a contact route is explicitly chosen.
 
 ## Claim under test
 

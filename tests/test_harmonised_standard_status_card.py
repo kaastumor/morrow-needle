@@ -15,6 +15,11 @@ GAR = json.loads(
         encoding="utf-8"
     )
 )
+LVD_WITHDRAWAL = json.loads(
+    Path(
+        "fixtures/dependency/lvd-en60335-2-60-scheduled-withdrawal-v0.1.json"
+    ).read_text(encoding="utf-8")
+)
 
 
 def test_toy_status_changes_from_cited_to_restricted():
@@ -45,3 +50,28 @@ def test_no_presumption_does_not_become_standard_prohibition():
     assert "alternative conformity route" in card
     assert "standards organisation" in card
     assert "NOT_AVAILABLE_VIA_THIS_OJ_REFERENCE" in card
+
+
+def test_card_exposes_scheduled_future_withdrawal_before_it_takes_effect():
+    card = render_card(
+        LVD_WITHDRAWAL,
+        "EN 60335-2-60:2003",
+        date(2026, 9, 26),
+    )
+
+    assert "**OJ-reference state:** CITED" in card
+    assert "Next scheduled owning event" in card
+    assert "effective 2027-01-18" in card
+    assert "schedules withdrawal" in card
+
+
+def test_card_applies_withdrawal_after_effective_date():
+    card = render_card(
+        LVD_WITHDRAWAL,
+        "EN 60335-2-60:2003",
+        date(2027, 1, 18),
+    )
+
+    assert "**OJ-reference state:** NOT_CITED" in card
+    assert "**Presumption consequence:** NOT_AVAILABLE_VIA_THIS_OJ_REFERENCE" in card
+    assert "lvd-en60335-2-60-withdrawal-2027-01-18" in card

@@ -204,7 +204,7 @@ For longitudinal comparison:
 - do not call the exercise blind;
 - use fresh sealed cases for new claims of generalised superiority.
 
-## 13. Evaluation-contract integrity
+## 12. Evaluation-contract integrity
 
 Before trusting a benchmark, regression result or comparative score, validate the **evaluation contract itself**.
 
@@ -252,7 +252,19 @@ At minimum check:
    - do not compare scores across materially changed contracts as though only the evaluated
      system changed.
 
-7. **Stability decomposition when the decision is sensitive**
+7. **Legal-time ownership**
+   - when law, fees, thresholds, deadlines, source state, authority or applicability can
+     change, give the task an explicit `law_as_of`, controlling event date or equally
+     unambiguous legal-time perspective;
+   - every score-bearing mutable legal literal must preserve its authoritative evidence
+     owner and effective date/period;
+   - do not let a bare threshold, fee, date or legal status become evaluator truth without
+     a temporal owner;
+   - historical tasks may remain valid after later legal change when their historical
+     perspective is explicit; current-law tasks must be revalidated/versioned when the
+     score-bearing legal state changes.
+
+8. **Stability decomposition when the decision is sensitive**
    - distinguish answer/system variance from judge variance;
    - where a small score difference could change a project or release decision, freeze an
      identical output and repeat judging before attributing the delta to the subject;
@@ -292,7 +304,7 @@ Passing this gate does not prove a benchmark is representative or a model is rel
 only establishes that the evaluation contract is coherent enough for its score to mean what
 the project says it means.
 
-## 12. Complexity rule
+## 13. Complexity rule
 
 A corpus failure may justify a method, persistence layer or code repair only if
 the simpler workflow demonstrably cannot preserve the required distinction.

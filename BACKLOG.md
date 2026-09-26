@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DIRECTION REVIEW — CONDITIONAL PACKET VALUE**
+# **USE — COMPLEXITY-STRATIFIED FAILURE ANALYSIS**
 
 Frozen scientific source:
 
@@ -27,55 +27,78 @@ Supported reference job:
 
 ### Current WIP
 
-# **#351 — direction review after orthogonal v0.2 packet-value null**
+# **#353 — complexity-stratified packet-value test on case-treatment failures**
+
+Results:
+
+> **CONDITIONAL_PACKET_VALUE_SUPPORTED**
+
+> **V0.2_NAVIGATION = SUCCESS**
+
+> **STRUCTURED_LAYER_SIGNAL = INDETERMINATE**
+
+Mechanical selection from the independently defined `Treatment (Doctrinal Agreement)`
+stratum chose the first complete author-labelled Hallucination:
+
+> Westlaw on `Reid v. Fargo, 241 U.S. 544 (1916)` / `Irvine v. The Hesper,
+> 122 U.S. 256`.
+
+The response claimed Reid did not mention or treat Irvine.
+
+Reid expressly states that the de novo admiralty-appeal right **authoritatively resulted
+from Irvine**.
+
+The external query separately misdates Irvine as 1916; the actual decision year is 1887.
+That metadata defect was preserved without inventing it as the cause of the hallucination.
+
+The strong ordinary postmortem already recovered the relationship and useful boundary.
+
+v0.2 then added material reusable structure:
+- `NO_EXISTING_CLASS_MATCH`;
+- known/public reuse status;
+- proposition-specific treatment boundary;
+- stable handling of the malformed year without losing the reporter-citation identity;
+- a non-trivial regression PASS/FAIL contract.
+
+Unlike #349, the external row did not itself provide an obvious reusable oracle. Correct
+treatment had to be reconstructed from the legal authority relationship.
+
+Accepted bounded value boundary:
+
+> **Needle adds material packet value where the strong ordinary postmortem still leaves
+> consequential legal relationship/state/boundary/reuse structure to formalize.**
+
+When ground truth and the future regression oracle are already explicit and trivial, the
+ordinary postmortem may remain sufficient.
+
+This is a use-allocation boundary, not a population/performance claim.
+
+v0.2 required no broad repository archaeology.
+
+Structured external-failure data remains unearned:
+- recurrent fields exist;
+- their materiality is conditional;
+- no canonical external-analysis membership owner exists yet.
 
 Result:
 
-> **SELECT USE — COMPLEXITY-STRATIFIED FAILURE ANALYSIS**
+> `docs/uses/issue353-conditional-packet-value-use-2026-09-26.md`
 
-Reason:
+### Next eligible work after #353 merge
 
-- #339 observed material packet value on a failure requiring non-trivial doctrine,
-  historical source-state, boundary and regression reconstruction;
-- #349 observed no material packet gain on a binary single-source disposition inversion;
-- v0.2 itself succeeded on #349 and required no broad repository archaeology;
-- "legal hallucination" is therefore too coarse a use category;
-- the next decision-relevant question is whether packet value depends on non-trivial
-  legal-state / authority-relationship / boundary / reuse structure.
+# **#355 — direction review after conditional packet-value support**
 
-The next test uses the independently defined `Treatment (Doctrinal Agreement)` stratum
-from the Hallucination-Free? dataset.
+#355 must decide whether:
+- the conditional value contract should now be consolidated into current public/use
+  guidance;
+- a falsifying boundary USE has higher information gain;
+- a small derived navigation index over accepted USE results is now earned;
+- another mode dominates.
 
-Rows in the `Circuit Splits` stratum are excluded from the next selection because
-orientation during #351 exposed individual row contents/labels.
+No v0.3, structured external-failure database, corpus growth, product revival or
+superiority claim is authorised.
 
-Review:
-
-> `docs/reviews/issue351-conditional-value-direction-review-2026-09-26.md`
-
-### Next eligible work after #351 merge
-
-# **#353 — complexity-stratified packet-value test on case-treatment failures**
-
-Selection:
-- public `reglab/legal_rag_hallucinations` dataset;
-- Question Category = `Treatment`;
-- first complete response labelled `Hallucination` in published order;
-- no Needle inspection before selection;
-- no replacement.
-
-#353 must compare observable complexity properties across #339/#349/#353 without inventing
-a post-hoc score.
-
-It must report:
-- one primary outcome;
-- `STRUCTURED_LAYER_SIGNAL = YES / NO / INDETERMINATE`;
-- `V0.2_NAVIGATION = SUCCESS / GAP`.
-
-No v0.3, structured external-failure layer, corpus growth, product revival or superiority
-claim is authorised.
-
-WIP=1 remains binding: #353 starts only after #351 merges/closes.
+WIP=1 remains binding: #355 starts only after #353 merges/closes.
 
 ## Historical backlog archive
 

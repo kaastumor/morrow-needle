@@ -5,30 +5,40 @@ const CASES = Object.freeze([
     id: "gar-en497",
     label: "GAR · EN 497:2022 · formal non-publication",
     standard: "EN 497:2022",
+    supportedFrom: "2026-07-23",
+    supportedThrough: "2026-09-26",
     fixture: "../../fixtures/dependency/gar-en497-authoritative-dynamic-set-v0.1.json"
   }),
   Object.freeze({
     id: "machinery-en50434",
     label: "Machinery · EN 50434:2014 · restricted citation",
     standard: "EN 50434:2014",
+    supportedFrom: "2026-01-12",
+    supportedThrough: "2026-09-26",
     fixture: "../../fixtures/dependency/machinery-en50434-restriction-v0.1.json"
   }),
   Object.freeze({
     id: "toy-en71",
     label: "Toy Safety · EN 71-1:2014+A1:2018 · restricted citation",
     standard: "EN 71-1:2014+A1:2018",
+    supportedFrom: "2025-09-09",
+    supportedThrough: "2026-09-26",
     fixture: "../../fixtures/dependency/toy-safety-authoritative-dynamic-set-v0.1.json"
   }),
   Object.freeze({
     id: "lvd-en60335-2-14",
     label: "LVD · EN 60335-2-14:2006 · formal non-publication",
     standard: "EN 60335-2-14:2006",
+    supportedFrom: "2025-07-17",
+    supportedThrough: "2026-09-26",
     fixture: "../../fixtures/dependency/lvd-en60335-2-14-formal-nonpublication-v0.1.json"
   }),
   Object.freeze({
     id: "lvd-en60335-2-60",
     label: "LVD · EN 60335-2-60:2003 · future withdrawal",
     standard: "EN 60335-2-60:2003",
+    supportedFrom: "2025-07-18",
+    supportedThrough: "2027-01-18",
     fixture: "../../fixtures/dependency/lvd-en60335-2-60-scheduled-withdrawal-v0.1.json"
   })
 ]);
@@ -37,6 +47,14 @@ function parseDate(value) {
   const date = new Date(value + "T00:00:00Z");
   if (Number.isNaN(date.valueOf())) throw new Error("invalid date");
   return date;
+}
+
+function assertSupportedDate(caseMeta, asOfValue) {
+  if (asOfValue < caseMeta.supportedFrom || asOfValue > caseMeta.supportedThrough) {
+    throw new Error(
+      `date outside frozen evidence window ${caseMeta.supportedFrom} to ${caseMeta.supportedThrough}`
+    );
+  }
 }
 
 function transitionMatches(transition, standard) {
@@ -139,6 +157,7 @@ function renderCard(record, caseMeta, projection) {
       <dt>As of</dt><dd>${escapeHtml(projection.asOf)}</dd>
       <dt>Regime</dt><dd>${escapeHtml(dependency.governing_rule.act_id)} · ${escapeHtml(dependency.governing_rule.provision)}</dd>
       <dt>Standard</dt><dd>${escapeHtml(caseMeta.standard)}</dd>
+      <dt>Frozen evidence window</dt><dd>${escapeHtml(caseMeta.supportedFrom)} to ${escapeHtml(caseMeta.supportedThrough)}</dd>
       <dt>Presumption consequence</dt><dd>${escapeHtml(projection.consequence)}</dd>
     </dl>
     ${eventBlock("Latest owning event", projection.latest)}
@@ -151,6 +170,7 @@ function renderCard(record, caseMeta, projection) {
 }
 
 async function loadCase(caseMeta, asOfValue, fetcher = fetch) {
+  assertSupportedDate(caseMeta, asOfValue);
   const response = await fetcher(caseMeta.fixture, {cache: "no-store"});
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
   const record = await response.json();
@@ -166,6 +186,17 @@ function populateCaseSelect(select) {
   }
 }
 
+function applyDateBounds(caseMeta, dateInput) {
+  dateInput.min = caseMeta.supportedFrom;
+  dateInput.max = caseMeta.supportedThrough;
+  if (dateInput.value < caseMeta.supportedFrom || dateInput.value > caseMeta.supportedThrough) {
+    dateInput.value = "2026-09-26";
+    if (dateInput.value < caseMeta.supportedFrom || dateInput.value > caseMeta.supportedThrough) {
+      dateInput.value = caseMeta.supportedThrough;
+    }
+  }
+}
+
 async function updateView() {
   const select = document.querySelector("#case-select");
   const dateInput = document.querySelector("#as-of");
@@ -175,6 +206,7 @@ async function updateView() {
 
   if (!caseMeta) return;
 
+  applyDateBounds(caseMeta, dateInput);
   status.textContent = "Loading official-state fixture…";
   card.hidden = true;
 
@@ -198,7 +230,7 @@ function boot() {
 }
 
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = {CASES, parseDate, projectStatus, sourceHref, collectEvidence};
+  module.exports = {CASES, parseDate, assertSupportedDate, projectStatus, sourceHref, collectEvidence};
 }
 if (typeof document !== "undefined") {
   boot();

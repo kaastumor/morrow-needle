@@ -1,0 +1,118 @@
+{
+  "schema_version": "authoritative-dynamic-set-v0.1",
+  "set_id": "machinery:harmonised-standard-references",
+  "set_character": "AUTHORITATIVE_DYNAMIC_SET",
+  "authority": {
+    "authority_id": "EUROPEAN_COMMISSION",
+    "label": "European Commission",
+    "authority_type": "EU_INSTITUTION"
+  },
+  "publication_surface": {
+    "surface_type": "OFFICIAL_JOURNAL",
+    "identifier": "Official Journal references of harmonised standards supporting Directive 2006/42/EC",
+    "authenticity_basis": "Directive 2006/42/EC Article 7(2) links publication of a harmonised-standard reference in the Official Journal to presumption of conformity with the corresponding essential health and safety requirements.",
+    "source_ref": {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32006L0042",
+      "locator": "Article 7(2)",
+      "language": "ENG",
+      "role": "LEGAL_BASIS",
+      "authority_character": "BINDING_LEGAL_TEXT"
+    }
+  },
+  "legal_basis_refs": [
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32006L0042",
+      "locator": "Article 7(2)",
+      "language": "ENG",
+      "role": "LEGAL_BASIS",
+      "authority_character": "BINDING_LEGAL_TEXT"
+    },
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32026D0080",
+      "locator": "Article 1, Article 2 and Annex row 622a",
+      "language": "ENG",
+      "role": "TRANSITION",
+      "authority_character": "BINDING_LEGAL_TEXT"
+    }
+  ],
+  "dependencies": [
+    {
+      "dependency_id": "machinery-art7-on-harmonised-reference-set",
+      "governing_rule": {
+        "act_id": "CELEX:32006L0042",
+        "provision": "Article 7(2)",
+        "language": "ENG"
+      },
+      "relation_character": "LEGAL_EFFECT_CONDITIONED_ON_AUTHORITATIVE_SET_STATE",
+      "condition_statement": "Presumption of conformity under Directive 2006/42/EC Article 7(2) depends on conformity with a harmonised standard whose reference has been published in the Official Journal, subject to any published restriction.",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32006L0042",
+          "locator": "Article 7(2)",
+          "language": "ENG",
+          "role": "DEPENDENCY",
+          "authority_character": "BINDING_LEGAL_TEXT"
+        }
+      ]
+    }
+  ],
+  "transitions": [
+    {
+      "transition_id": "machinery-en50434-restriction-2026-01-13",
+      "member": {
+        "label": "EN 50434:2014",
+        "identifiers": [
+          {
+            "scheme": "HARMONISED_STANDARD",
+            "value": "EN 50434:2014"
+          }
+        ]
+      },
+      "operation": "RESTRICT_MEMBER",
+      "effective_from": "2026-01-13",
+      "before": {
+        "membership": "INCLUDED",
+        "status": "ACTIVE"
+      },
+      "after": {
+        "membership": "INCLUDED",
+        "status": "RESTRICTED"
+      },
+      "scope": {
+        "character": "PARTIAL_MEMBER",
+        "statement": "Commission Implementing Decision (EU) 2026/80 maintains the OJ reference to EN 50434:2014 with a restriction: for machines whose shredding means can rotate above 300 r/min, the standard does not confer presumption of conformity with Annex I points 1.1.2(a) and 1.3.3 of Directive 2006/42/EC."
+      },
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32026D0080",
+          "locator": "Article 1 and Annex row 622a — maintained OJ reference with restriction",
+          "language": "ENG",
+          "role": "TRANSITION",
+          "authority_character": "BINDING_LEGAL_TEXT"
+        },
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32026D0080",
+          "locator": "Article 2 — entry into force on 13 January 2026",
+          "language": "ENG",
+          "role": "SCOPE",
+          "authority_character": "BINDING_LEGAL_TEXT"
+        }
+      ]
+    }
+  ],
+  "forbidden_inferences": [
+    "The restriction withdraws the entire OJ reference to EN 50434:2014.",
+    "EN 50434:2014 provides no presumption of conformity for machines outside the stated restricted scope.",
+    "Lack of presumption for the specified requirements and machines means use of the standard is prohibited or that no alternative conformity route exists.",
+    "Commission Implementing Decision (EU) 2026/80 is a textual amendment of Directive 2006/42/EC Article 7(2)."
+  ],
+  "notes": "Candidate-B frozen #411 restriction case. It tests partial loss of presumption while OJ citation remains."
+}

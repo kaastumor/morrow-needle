@@ -53,10 +53,12 @@ corpus, Reference Pack or dedicated Needle software. Equivalent excellent
 benchmark/postmortem practice is a legitimate substitute and must receive full credit.
 
 The standing research line seeking a distinct external packet/artifact advantage is
-retired after #362's predeclared falsifier. Reopen it only from a materially changed
-boundary such as repeated real external use, measured handoff/reconstruction burden that
-ordinary practice fails to solve, or an independent setup capable of measuring
-operational delta without self-grading.
+retired by the broader evidence consolidation completed in #366. #362 remains part of that
+history but, after #375's integrity audit, is weighted as **directional allocation evidence**
+rather than a high-grade independently adjudicated falsifier. Reopen the retired line only
+from a materially changed boundary such as repeated real external use, measured
+handoff/reconstruction burden that ordinary practice fails to solve, or an independent setup
+capable of measuring operational delta without self-grading.
 
 This contract is **conditional, not ceremonial**:
 
@@ -127,9 +129,13 @@ The sealed #214 index-assisted latent diagnostic pilot produced:
 
 > **0 diagnostic rescues / 0 C-only regressions**
 
-Under its frozen rule, a general latent corpus-workflow advantage was not demonstrated.
-Do not retry, reinterpret or rescue that null with harder post-hoc cases or secondary
-metrics.
+Under its frozen rule, a general latent corpus-workflow advantage was not demonstrated and
+H-24 remains rejected for project allocation. #375 later identified a material repository
+reproducibility limitation because exact revealed evaluator-package plaintext/raw outputs are
+not preserved and the one-run/single-grading design does not decompose variance. Treat #214
+as a **strong bounded negative**, not as proof of zero benefit or a fully reproducible
+population result. Do not retry or rescue the exposed experiment with harder post-hoc cases
+or secondary metrics.
 
 The corpus remains useful as exposed regression/reference material. That value does not
 itself establish product demand, workflow superiority or model-performance improvement.

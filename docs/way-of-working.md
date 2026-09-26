@@ -72,6 +72,32 @@ chosen separately.
 priority. Orientation and constitutional documents must link to it rather than copy its
 live state.
 
+## Evaluation-contract integrity first refusal
+
+Before interpreting a benchmark, regression or comparative score, apply the canonical
+evaluation-contract integrity gate in
+`docs/evaluations/adversarial-corpus-protocol-v0.1.md`.
+
+Use its five working groups:
+
+1. **contract adequacy** — central requested work must matter, valid alternatives must not be
+   falsely rejected, conditional criteria must be gradable and shared facts must reconcile;
+2. **evidence and temporal scope** — score-bearing propositions need the right evidence owner
+   and an unambiguous governing time/event;
+3. **execution validity** — distinguish evaluator infrastructure failure from failure of a
+   capability deliberately included in the tested system;
+4. **versioned audit record** — pin effective task state and preserve the revealed execution
+   record;
+5. **decision-sensitive uncertainty** — separate answer/system variance from judge variance
+   when it could change the decision.
+
+A benchmark with a sophisticated harness or lawyer-written rubrics is not exempt. Passing
+the gate does not establish correctness, representativeness or Needle-specific value; it
+only makes the score contract interpretable.
+
+This is ordinary evaluation hygiene. Do not claim it as a Needle-specific advantage unless
+an independent comparison demonstrates operational value.
+
 ## Failure-analysis USE first refusal
 
 For a known external or internal legal-information failure, do **not** begin by filling a

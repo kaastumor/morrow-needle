@@ -11,16 +11,16 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — PROPRIETARY / COMMERCIAL OPTION-SPACE EXHAUSTION**
+# **REVIEW — PRE-PARTNER HONING COMPLETE / EXTERNAL VALIDATION OWNER GATE**
 
 Frozen scientific source:
 
 > **NEEDLE_CORPUS_REFERENCE_2026-09-25 — 81 cases / 26 classes**
 
-Primary supported identity remains:
+Primary supported identity:
 
-> **known-failure reference corpus + exposed regression fixtures + minimal evaluation
-> discipline**
+> **known-failure legal-research reference corpus + exposed regression fixtures + minimal
+> evaluation discipline**
 
 Current released reference surface:
 
@@ -28,96 +28,82 @@ Current released reference surface:
 
 ### Owner rights decision
 
-On 2026-09-26 the sponsor explicitly selected:
+The sponsor's 2026-09-26 decision remains:
 
 > **INSPECTABLE_ONLY_FOR_NOW**
 
+Do not add an open-source/open-data license. Citation remains pending only on the sponsor's
+exact public creator string; creator order remains **Morrow first, sponsor/owner second**.
+
+### #375 final readiness disposition
+
+# **READY_FOR_EXTERNAL_VALIDATION**
+
+Durable handoff:
+
+> `docs/reviews/issue375-pre-partner-readiness-red-team-2026-09-26.md`
+
+The pre-partner phase earned useful evaluation-integrity repairs, but its final red team
+places a firm endpoint on internally controlled honing.
+
+Corrections that now bind:
+
+- #214 remains a strong project-allocation negative, but with material repository
+  reproducibility limits; avoid unqualified **hard null** wording in current interpretation;
+- #362 is directional allocation evidence, not a high-grade independently adjudicated
+  falsifier;
+- the DELTA replay arm was already project-exposed through #150 and therefore supplies repeat
+  applicability, not fresh transfer evidence;
+- the Harvey replay preserves the source-checkable C-039/C-040 numerical contract mismatch;
+  absence of a dedicated `law_as_of` field is not independently a defect when controlling
+  event dates own legal time;
+- no Harvey harness/judge execution occurred, so the finding is a written contract defect,
+  not an observed production scoring failure;
+- the evaluation-integrity gate is ordinary hygiene, compressed into five groups: contract
+  adequacy; evidence/temporal scope; execution validity; versioned audit record;
+  decision-sensitive uncertainty.
+
+### Next substantive evidence source
+
+The remaining commercial question is fixed as **DELIVERY**:
+
+> Can a Needle-derived workflow produce an already acceptable legal evaluation/oracle
+> package with materially lower total qualified-expert effort, rework, maintenance burden
+> or turnaround than the evaluator's actual alternative?
+
+That question cannot be answered credibly by another internally selected public benchmark.
+
+A future external validation requires:
+- independently supplied workload;
+- actual evaluator alternative/workflow;
+- qualified independent acceptance;
+- fixed quality threshold;
+- total expert effort including briefing/checking/correction/adjudication;
+- other labour/model/tool cost;
+- rework/disputes/turnaround.
+
+### Owner gate
+
+The sponsor explicitly deferred partner outreach.
+
 Therefore:
-- keep the public repository without a project open-source/open-data license;
-- do not add MIT, Apache-2.0, CC BY 4.0 or another broad reuse grant;
-- treat this as deliberate option preservation, not a permanent anti-open-source position;
-- reopen licensing only from a concrete external reuse/distribution need or materially changed project identity/value boundary;
-- third-party/linked evidence remains outside any future project-authored license grant.
 
-Citation is independent and remains pending only on the sponsor's exact public creator string.
-The agreed creator order is **Morrow first, sponsor/owner second**. Do not create
-`CITATION.cff` until the exact second creator string is supplied explicitly.
+> **NO AUTONOMOUS SUCCESSOR RESEARCH ISSUE IS AUTHORISED WHILE THAT OUTREACH DEFERRAL
+> REMAINS IN FORCE.**
 
-### Current WIP
+This is not permission to invent another benchmark hunt, corpus audit, v0.3, software build
+or product surface merely to preserve momentum.
 
-# **#373 — exhaust remaining proprietary/commercial option space**
+When the sponsor reopens external contact, partner/evaluator validation becomes the next
+substantive project mode.
 
-Corrected result after independent adversarial review:
+Until then, only correctness/source-integrity maintenance triggered by new evidence is
+eligible; no standing activity queue is created.
 
-> **COMMERCIAL_JOB_EXISTS_BUT_NEEDLE_SPECIFIC_VALUE_UNPROVEN**
+No product implementation, corpus growth, taxonomy growth, v0.3, structured
+external-failure database, license change or standing experiment programme is authorised.
 
-Durable review:
-
-> `docs/reviews/issue373-proprietary-commercial-option-space-2026-09-26.md`
-
-The initial #373 pass was too strong when it treated:
-- no Needle-specific method advantage;
-- strong/crowded incumbents;
-- weak IP/secrecy moat; and
-- no commercial opportunity
-
-as if they were equivalent conclusions.
-
-They are not.
-
-What remains binding:
-- #214 hard null;
-- #327 generic companion-use null;
-- #339/#353 bounded positives;
-- #349/#362 strong-baseline nulls;
-- #364 anti-rescue rule;
-- #366 smaller identity primary.
-
-What #373 now supports:
-- a real commercial/operational legal-AI evaluation job exists externally;
-- private/fresh evaluation, expert oracle construction and repeated QA are real activities;
-- Needle has **not** demonstrated a proprietary product, moat, evaluation advantage or buyer
-  demand;
-- several commercial delivery mechanisms remain logically untested, including specialist
-  input to established evaluators, customer-owned evaluation estates, buyer-side procurement
-  assessment, independent adjudication, narrow maintenance/audit work and training/research
-  services;
-- none earns implementation.
-
-The previously proposed taxonomy-first sealed falsifier is **not accepted** because it would
-select Needle's own classes before a customer workload exists, risks treatment contamination
-and self-grading, and would test method usefulness before proving the outcome matters to an
-external buyer.
-
-### Next eligible allocation after #373 acceptance
-
-# **DISCOVER — concrete external evaluator/buyer job + acceptance criteria**
-
-The next serious work should begin from an independently evidenced external job, not from a
-Needle class.
-
-Required evidence before a comparison:
-1. identifiable evaluator, legal-AI vendor/team, law firm/enterprise buyer or adjacent
-   operator;
-2. recurring evaluation/QA/procurement/adjudication task;
-3. current solution/workaround;
-4. consequential gap, capacity constraint or cost;
-5. decision that better execution would change.
-
-Then preselect exactly one value claim:
-- **METHOD:** Needle produces more decision-relevant testing at equal resources; or
-- **DELIVERY:** Needle can deliver accepted output at materially better cost, turnaround,
-  maintenance burden or reliability.
-
-Do not switch claims after a null.
-
-A paid pilot or concrete budget-backed procurement commitment is required before maintained
-product development.
-
-No product implementation, corpus growth, v0.3, structured database, license change or
-standing experiment programme is authorized.
-
-WIP=1 remains binding: do not open the successor issue until #373/PR #374 is accepted.
+WIP=1 remains binding.
 
 ## Historical backlog archive
 

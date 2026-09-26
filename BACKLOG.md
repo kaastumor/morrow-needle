@@ -11,97 +11,131 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **REVIEW — PRE-PARTNER HONING COMPLETE / EXTERNAL VALIDATION OWNER GATE**
+# **DISCOVER — EU LEGAL-STATE OUTSIDE-IN**
 
 Frozen scientific source:
 
 > **NEEDLE_CORPUS_REFERENCE_2026-09-25 — 81 cases / 26 classes**
 
-Primary supported identity:
+Primary supported identity remains:
 
 > **known-failure legal-research reference corpus + exposed regression fixtures + minimal
 > evaluation discipline**
 
-Current released reference surface:
+Current released reference surface remains:
 
 > **Needle Reference Pack v0.2 — navigation/reference surface**
 
-### Owner rights decision
+### Sponsor research allocation
 
-The sponsor's 2026-09-26 decision remains:
+The sponsor explicitly reopened an **EU-legislation-specific research lane** on 2026-09-26.
 
-> **INSPECTABLE_ONLY_FOR_NOW**
+This does not remove or demote the separate broader research front identified in the
+preceding strategic review:
 
-Do not add an open-source/open-data license. Citation remains pending only on the sponsor's
-exact public creator string; creator order remains **Morrow first, sponsor/owner second**.
+> **legal-AI evaluation science / evaluation-contract assurance**
 
-### #375 final readiness disposition
+The two lanes answer different questions:
 
-# **READY_FOR_EXTERNAL_VALIDATION**
+1. **EU legal-state research** — whether consequential EU-law answers repeatedly depend on
+   independently moving legal states that current-text/change-monitoring representations do
+   not losslessly preserve;
+2. **evaluation science** — whether the legal-AI evaluation contract itself validly measures
+   the quality it claims to measure.
 
-Durable handoff:
+WIP remains 1. The EU legal-state lane is current WIP; the evaluation-science lane is
+preserved as a separate future research front, not cancelled.
 
-> `docs/reviews/issue375-pre-partner-readiness-red-team-2026-09-26.md`
+### Current WIP — Issue #377
 
-The pre-partner phase earned useful evaluation-integrity repairs, but its final red team
-places a firm endpoint on internally controlled honing.
+> **DISCOVER — EU legal-state outside-in investigation**
 
-Corrections that now bind:
+Issue #377 starts outside the Needle taxonomy. It freezes current EU regimes/questions
+before class mapping and gives the strongest ordinary official-source research and mature
+regulatory-intelligence alternatives full credit.
 
-- #214 remains a strong project-allocation negative, but with material repository
-  reproducibility limits; avoid unqualified **hard null** wording in current interpretation;
-- #362 is directional allocation evidence, not a high-grade independently adjudicated
-  falsifier;
-- the DELTA replay arm was already project-exposed through #150 and therefore supplies repeat
-  applicability, not fresh transfer evidence;
-- the Harvey replay preserves the source-checkable C-039/C-040 numerical contract mismatch;
-  absence of a dedicated `law_as_of` field is not independently a defect when controlling
-  event dates own legal time;
-- no Harvey harness/judge execution occurred, so the finding is a written contract defect,
-  not an observed production scoring failure;
-- the evaluation-integrity gate is ordinary hygiene, compressed into five groups: contract
-  adequacy; evidence/temporal scope; execution validity; versioned audit record;
-  decision-sensitive uncertainty.
+Phase 1 quick tranche:
 
-### Next substantive evidence source
+- AI Act;
+- NIS2;
+- DORA;
+- EUDR;
+- CBAM;
+- gas-appliance harmonised-standard citation state.
 
-The remaining commercial question is fixed as **DELIVERY**:
+Phase 1 disposition:
+
+# **EU_LEGAL_STATE_SIGNAL**
+
+Observed descriptive profile:
+
+- **1/6 TEXT_SUFFICIENT**;
+- **5/6 MULTI_OWNER_STATE_REQUIRED**.
+
+This is **not a prevalence estimate** and is not evidence that Needle improves research.
+
+The important red-team result is that **multi-owner state is not itself a Needle
+mechanism**. DORA supplied a negative control: ordinary Level-1 -> Level-2 delegated-law
+research can require multiple legal instruments without exposing a residual representation
+problem.
+
+The stronger candidate boundary for Phase 2 is:
+
+> an operative answer depends on an independently moving state whose change is not safely
+> reducible to ordinary parent-text amendment/version tracking and whose omission can change
+> the legal answer.
+
+Durable Phase 1 result:
+
+> `docs/discovery/issue377-eu-legal-state-phase1-2026-09-26.md`
+
+### Phase 2 gate
+
+A larger 20–30 question outside-in sample is eligible because Phase 1 produced a non-trivial
+signal, but it must test **prevalence and boundary**, not Needle advantage.
+
+Requirements:
+
+- mechanically or externally selected contemporary EU-law application questions;
+- questions frozen before reconstruction;
+- strongest boring official-source research first;
+- text-only controls;
+- no Needle class labels until legal-state ownership is characterized;
+- a concrete answer-changing omission before a case counts as residual;
+- `NO_EXISTING_CLASS_MATCH` remains a valid result;
+- commercial capability that cannot be verified publicly is **unknown**, not absent.
+
+No corpus/class growth follows automatically from the study.
+
+### Commercial / external-validation boundary
+
+The #375 disposition **READY_FOR_EXTERNAL_VALIDATION** remains valid for the separate
+commercial DELIVERY hypothesis:
 
 > Can a Needle-derived workflow produce an already acceptable legal evaluation/oracle
 > package with materially lower total qualified-expert effort, rework, maintenance burden
 > or turnaround than the evaluator's actual alternative?
 
-That question cannot be answered credibly by another internally selected public benchmark.
+The sponsor's earlier deferral of partner outreach still governs that commercial test.
 
-A future external validation requires:
-- independently supplied workload;
-- actual evaluator alternative/workflow;
-- qualified independent acceptance;
-- fixed quality threshold;
-- total expert effort including briefing/checking/correction/adjudication;
-- other labour/model/tool cost;
-- rework/disputes/turnaround.
+It no longer blocks the separately authorized EU legal-state scientific research lane.
 
-### Owner gate
+### Binding guardrails
 
-The sponsor explicitly deferred partner outreach.
+Preserve:
 
-Therefore:
+- #214 as a strong binding bounded negative with limited repository reproducibility;
+- #327 as a bounded generic-use null;
+- #362 as directional allocation evidence, not a high-grade falsifier;
+- #366's retirement of the standing attempt to prove distinct Needle artifact/workflow
+  advantage;
+- Reference Pack v0.2 as frozen/current;
+- **INSPECTABLE_ONLY_FOR_NOW** licensing;
+- no v0.3, product implementation, corpus growth, taxonomy growth or software surface merely
+  because Phase 1 found multi-owner legal states.
 
-> **NO AUTONOMOUS SUCCESSOR RESEARCH ISSUE IS AUTHORISED WHILE THAT OUTREACH DEFERRAL
-> REMAINS IN FORCE.**
-
-This is not permission to invent another benchmark hunt, corpus audit, v0.3, software build
-or product surface merely to preserve momentum.
-
-When the sponsor reopens external contact, partner/evaluator validation becomes the next
-substantive project mode.
-
-Until then, only correctness/source-integrity maintenance triggered by new evidence is
-eligible; no standing activity queue is created.
-
-No product implementation, corpus growth, taxonomy growth, v0.3, structured
-external-failure database, license change or standing experiment programme is authorised.
+Research may change confidence in Needle's EU-law identity. It may not convert an interesting
+state transition into product scope by default.
 
 WIP=1 remains binding.
 

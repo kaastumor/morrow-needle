@@ -34,21 +34,15 @@
       }
     }
   ],
-  "repair": {
-    "actions": [],
-    "status": "NOT_REQUIRED"
-  },
   "result_impact": {
     "comparability": "UNKNOWN",
     "existing_outputs_action": "HUMAN_DECISION_REQUIRED",
     "scope": "Any comparison of firm-knowledge scores across the two effective task-contract revisions.",
     "reason": "Semantic task contracts changed, but public history alone does not establish the maintainer's intended score-comparability semantics."
   },
-  "open_questions": [
-    "Whether Harvey maintainers consider scores across these revisions comparable for any use."
-  ],
   "adjudication": {
     "status": "PENDING",
     "note": "The revision is owner-adopted; Needle does not characterize the revision itself as a defect or accepted repair."
-  }
+  },
+  "repair_status": "NOT_REQUIRED"
 }

@@ -195,6 +195,42 @@ Do not rescue Candidate A by adding fields, taxonomy, ontology or UI.
 
 A Candidate-A failure does not falsify Candidates B/C.
 
+### Historical operational-Core reassessment — Issue #407
+
+The sponsor authorised one bounded test of whether the old persistent operational machinery had
+been under-tested by the earlier one-shot value gates.
+
+Seven chronology-selected historical operational cycles were replayed against a strong
+**HASH-AWARE MAINTAINED BASELINE**.
+
+Observed:
+
+- 67,911 new feed events across the frozen cycles;
+- 264 eligible maintained-resource observations;
+- 135 metadata-only / 99 content-changed / 30 source-unresolved;
+- 42 repeated eligible roots;
+- lightweight baseline classification matched Needle **264/264**;
+- repeated known-content state chains were equally preservable by the lightweight ledger;
+- Needle attempted 99 legal analyses and established **0 legal candidates/outcomes**.
+
+Disposition:
+
+# **LIGHTWEIGHT_BASELINE_SUFFICIENT**
+
+Consequences:
+
+- historical operational Core remains **parked**;
+- no fresh prospective operational experiment is earned;
+- generic source monitoring / snapshots / hash comparison remain valid technical capability but
+  receive no Needle-specific value credit;
+- do not revive Full Needle or a generic EU monitoring product from historical capability;
+- Candidate B may reuse narrow old components only when a concrete practitioner-owned operative-state
+  job earns them.
+
+Durable result:
+
+> `docs/uses/issue407-longitudinal-operational-value-probe-2026-09-26.md`
+
 ### Owner gate
 
 No external contact has been authorised.

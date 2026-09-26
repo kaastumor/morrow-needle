@@ -97,8 +97,63 @@ Phase 1 must separate:
 - annotation/review cost;
 - release/pass-fail suitability.
 
-Needle's current evaluation-integrity gate is itself under review: determine which checks
-are representation-agnostic hygiene and which implicitly assume criterion-based evaluation.
+Needle's current evaluation-integrity gate has now been reviewed.
+
+Phase 1 disposition:
+
+# **REPRESENTATION_CHOICE_MATTERS**
+
+External evidence does not identify one globally superior representation. It supports a
+conditional map:
+
+- **atomic/conjunctive criteria** — strongest fit for mandatory requirements, regression,
+  fatal-error vetoes and diagnostic localisation;
+- **comparative judgment** — strongest observed fit for holistic relative quality ranking in
+  JudgmentBench, but not by itself an absolute release gate;
+- **hierarchical issue structures** — useful when issue coverage and correctness must remain
+  separate;
+- **qualified holistic adjudication** — maps directly to professional acceptability but is
+  expensive and difficult to standardise;
+- **hybrids** — eligible when roles and non-compensatory rules are frozen in advance.
+
+Important red-team evidence:
+
+- JudgmentBench's 0.908 vs 0.150 rank-fidelity result strongly challenges the presumption
+  that atomic rubrics capture holistic expert quality;
+- JudgmentBench itself notes that comparative judgments are harder to decompose/audit;
+- CalibratedRubric reports that filtering/calibrating rubric items materially improves
+  agreement on JudgmentBench, showing that "rubrics" are not one fixed measurement form;
+- PLawBench/LexRubric remain strong evidence for diagnostic value of fine-grained criteria;
+- LEGIT shows issue coverage and correctness can move differently.
+
+Minimal protocol repair is earned and implemented on the active branch:
+
+> every consequential evaluation must first declare its **decision objective, representation,
+> non-compensatory constraints, valid-alternative policy and aggregation semantics** before
+> representation-specific integrity checks are applied.
+
+Durable result:
+
+> `docs/discovery/issue381-evaluation-representation-phase1-2026-09-26.md`
+
+### #381 next gate
+
+A genuine paired representation experiment is scientifically earned, but **cannot be
+credibly self-graded**.
+
+The discriminating design needs qualified independent legal adjudication on the same frozen
+work products and at least two task families:
+
+1. a **fatal-error / conjunctive** task where one legal defect should veto otherwise strong
+   work;
+2. a **multiple-defensible-strategies** task where a narrow answer key risks false rejection.
+
+Until qualified adjudication is available, do not manufacture the experiment with model
+self-labels or rubric-derived "ground truth".
+
+#381 may therefore complete after the protocol repair and evidence synthesis, with the
+empirical representation comparison recorded as an external-adjudication-dependent future
+gate.
 
 ### Separate commercial boundary
 

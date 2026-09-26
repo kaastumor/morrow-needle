@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **REVIEW — LAST PUBLIC RESEARCH LANE CHECK**
+# **DISCOVER — LEGAL-AGENT TRAJECTORY CONSEQUENTIALITY**
 
 Frozen scientific source:
 
@@ -26,97 +26,100 @@ Current released reference surface remains:
 
 > **Needle Reference Pack v0.2 — navigation/reference surface**
 
-### Completed evidence sequence
+### Recent research sequence
 
 - #377 — **EU_LEGAL_STATE_EXISTENCE_SUPPORTED — PREVALENCE_NOT_SUPPORTED**
 - #381 — **REPRESENTATION_CHOICE_MATTERS**
 - #385 — **PUBLIC_EVIDENCE_INSUFFICIENT** for demonstrated legal-rubric false rejection
+- #388 — **SELECT_AGENT_TRAJECTORY**
 
-The project has repeatedly narrowed plausible gaps rather than promoting them from structural
-possibility alone.
-
-### Direction review — Issue #388
-
-Disposition:
-
-# **SELECT_AGENT_TRAJECTORY**
-
-New public evidence makes one more bounded lane worth testing.
-
-Harvey LAB now explicitly:
-
-- records full legal-agent traces;
-- separates trace capture from final-deliverable scoring;
-- reports trajectory behaviors correlated with task outcomes;
-- argues that trajectory is an important measurement unit for long-horizon professional
-  work.
-
-Aithos LARA supplies a different and stronger type of case:
-
-> agent behavior during the trajectory can itself constitute the legal violation, regardless
-> of any benign final summary.
-
-Generic trace/trajectory infrastructure is already strongly occupied by Arize/Phoenix,
-LangSmith and similar systems.
-
-Therefore the research question is **not** whether trajectories can be traced or scored.
-
-It is:
-
-> **Which trajectory properties in legal-agent work are independently consequential, rather
-> than merely diagnostic correlates of a good final output?**
-
-Use three categories:
-
-- **OUTCOME_ONLY** — path has no independent consequence once final work is correct/supported;
-- **TRAJECTORY_DIAGNOSTIC** — path predicts/explains quality, cost or reliability;
-- **TRAJECTORY_CONSTITUTIVE** — the path itself must satisfy an independently justified
-  legal/professional constraint.
-
-Potential constitutive examples require their own owner:
-
-- prohibited data access/processing;
-- privilege/confidentiality breach;
-- legally prohibited tool action;
-- required approval/escalation bypass;
-- binding process/verification obligation;
-- prohibited source/tool use;
-- auditable provenance chain where the process record itself is part of the contract.
-
-Do **not** turn preferred research style into a legal requirement.
-
-Durable review:
-
-> `docs/reviews/issue388-agent-trajectory-direction-2026-09-26.md`
-
-### Next WIP
-
-Create and execute one bounded Phase-1 study:
+### Current WIP — Issue #390
 
 > **DISCOVER — legal-agent trajectory consequentiality**
 
-The study must:
+Result:
 
-1. map public legal-agent evaluation contracts;
-2. separate diagnostic from constitutive trajectory requirements;
-3. require an independent legal/professional owner for every constitutive claim;
-4. test whether a supposed process requirement is already losslessly observable from the
-   final deliverable;
-5. give generic trace infrastructure full incumbent credit;
-6. determine whether Needle contributes anything beyond domain-specific hypotheses.
+# **TRAJECTORY_IS_DIAGNOSTIC_ONLY_FOR_NEEDLE_SCOPE**
 
-Eligible outcomes:
+Public evidence clearly shows that legal-agent traces are useful and that some agent
+trajectories are legally constitutive.
 
-- `LEGAL_TRAJECTORY_CONTRACT_EXISTS`
-- `TRAJECTORY_IS_DIAGNOSTIC_ONLY_FOR_NEEDLE_SCOPE`
-- `PUBLIC_EVIDENCE_INSUFFICIENT`
-- `EXTERNAL_GATE_REACHED`
+But those are different claims.
 
-No model run, harness build, corpus/class growth or product work.
+Harvey LAB:
+
+- records complete run transcripts/tool activity;
+- grades final deliverables separately;
+- reports associations between research/validation/revision behavior and output performance.
+
+For ordinary legal-work tasks, those path features are:
+
+> **TRAJECTORY_DIAGNOSTIC**
+
+They help explain quality and improve agents, but the legal deliverable does not become
+invalid merely because the agent followed an unusual sequence.
+
+Aithos LARA supplies a true:
+
+> **TRAJECTORY_CONSTITUTIVE**
+
+class because an agent can take a legally prohibited action during the interaction itself.
+A later benign final answer cannot erase an unlawful data-processing/manipulation/action
+event.
+
+That is evidence for agent compliance/governance, not for a new Needle legal-research layer.
+
+### Needle-specific falsifier
+
+Needle's surviving source/time/authority requirements are primarily checkable from:
+
+- final legal propositions;
+- citations/evidence owners;
+- legal/source time;
+- provenance/evaluation record.
+
+The project has no accepted evidence owner showing:
+
+> a final legal/evidence output passes every current consequential check, yet the hidden
+> research path itself violates a Needle-owned requirement.
+
+Candidate constitutive path requirements such as:
+
+- prohibited data/tool access;
+- confidentiality/privacy breach;
+- mandatory human approval;
+- binding workflow/security policy;
+
+are real when independently owned, but their owner is compliance/security/client policy.
+
+Generic tracing/trajectory infrastructure is already well occupied by systems such as
+Arize/Phoenix.
+
+No Needle trajectory layer, product or corpus expansion is earned.
+
+Durable result:
+
+> `docs/discovery/issue390-legal-agent-trajectory-consequentiality-2026-09-26.md`
+
+### Allocation consequence
+
+Close #390 without implementation.
+
+The remaining serious questions increasingly require evidence unavailable from another
+internally selected public artifact:
+
+- actual customer/evaluator workflow contracts;
+- private product behavior;
+- qualified independent adjudication;
+- measured total expert effort / rework / turnaround;
+- real incident traces or buyer acceptance.
+
+A final allocation review should now test whether the **external evidence gate** has genuinely
+been reached rather than automatically opening another discovery lane.
 
 ### Separate commercial boundary
 
-The #375 commercial DELIVERY hypothesis remains external and unchanged.
+The #375 commercial DELIVERY hypothesis remains valid and external.
 
 ### Binding guardrails
 
@@ -129,8 +132,11 @@ Preserve:
 - #377 prevalence park;
 - #381 representation-validity repair;
 - #385 public-evidence insufficiency;
+- #390 trajectory narrowing;
 - Reference Pack v0.2 frozen/current;
 - **INSPECTABLE_ONLY_FOR_NOW** licensing.
+
+No v0.3, product implementation, corpus/taxonomy growth or trajectory infrastructure follows.
 
 WIP=1 remains binding.
 

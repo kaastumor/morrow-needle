@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **MAINTAIN — MVP READINESS REPAIR**
+# **DISCOVER — MVP JOB / VALUE GATE**
 
 Frozen scientific source:
 
@@ -32,67 +32,169 @@ The sponsor has explicitly set the next strategic objective:
 
 > **work toward an MVP that demonstrates actual added value on a real job**
 
-This supersedes the prior absence of active experimental WIP as a programme-allocation state.
-It does **not** supersede the project's negative/null evidence or authorize a product build
-before a job/value gate is passed.
+Product discovery is now active.
 
-### Current WIP — Issue #398
+No implementation is authorised until a real job/value gate passes.
 
-> **MAINTAIN — MVP readiness repairs from system audit**
+### Issue #400 — MVP job/value gate
 
-This bounded repair milestone clears demonstrated pre-product defects:
+Current disposition:
 
-1. retire stale PR #372 without merging its superseded live-state edits;
-2. route `release/**` and `fixtures/**` changes through the existing unit-test gate;
-3. reconcile Way of Working / Project Health so a completed evidence horizon can enter
-   `EVIDENCE_GATED / COMPLETED_FOR_CURRENT_EVIDENCE` without manufacturing activity.
+# **LEAD_MVP_CANDIDATE — LEGAL EVALUATION / ORACLE MAINTENANCE DELIVERY**
 
-No new workflow, framework, corpus class, release, license or product surface is earned by
-this maintenance issue.
+Retained candidate set:
 
-### Successor after #398
+- **SECONDARY_CANDIDATE — known failure/postmortem -> reusable regression/oracle**
+- **SECONDARY_CANDIDATE — EU operative-state reconstruction across authoritative owners**
 
-# **DISCOVER — MVP JOB / VALUE GATE**
+Priority is not binary value.
 
-The next active horizon is product discovery, not product implementation.
+A non-selected candidate remains live unless evidence actually falsifies its job/value
+proposition.
 
-It must select **one** concrete recurring or consequential job and compare:
+Do **not** rewrite "not first" as "no value".
 
-- a real user / job owner;
-- the strongest realistic incumbent workflow;
-- a measurable baseline;
-- the smallest disposable Needle intervention;
-- independent or user-owned acceptance;
-- total qualified effort / rework / turnaround where relevant;
-- a repeat-use or behavior-change signal.
+Durable analysis:
 
-Candidate job families may be compared, but no candidate receives a presumption of selection:
+> `docs/discovery/issue400-mvp-job-value-gate-2026-09-26.md`
 
-- legal evaluation / oracle maintenance and delivery;
-- EU operative-state reconstruction across authoritative owners;
-- known-failure postmortem -> reusable regression/oracle conversion.
+### Why Candidate A leads first
 
-The discovery gate must be willing to conclude that none is currently strong enough for an
-MVP.
+Candidate A currently has the strongest combination of:
 
-### MVP rule
+- independently visible recurring work;
+- paid/commercial evaluation behavior;
+- explicit acceptance contracts;
+- documented qualified-expert dependence;
+- measurable production/maintenance burden;
+- a disposable first intervention that does not require product architecture.
 
-> **The first MVP is disposable.**
+The candidate claim remains:
 
-A prototype, script, generated artifact or partly manual workflow is acceptable if it is the
-cheapest credible test of user value.
+> **DELIVERY** — can a Needle-derived maintenance/delivery workflow reach an evaluator's
+> existing accepted legal-quality threshold with materially lower qualified-expert burden,
+> rework or turnaround than the evaluator's actual current workflow?
 
-Do **not** harden architecture before repeated value is observed.
+This does **not** claim:
 
-No MVP implementation is authorised until the discovery gate freezes:
+- better legal reasoning;
+- better oracles by default;
+- corpus-assisted correctness superiority;
+- generic legal-research advantage;
+- commercial demand for Needle specifically.
 
-1. user/job;
-2. incumbent;
-3. value hypothesis;
-4. measurement contract;
-5. validity/evidence floor;
-6. smallest test;
-7. kill rule.
+### Retained Candidate C
+
+Known failure/postmortem -> reusable regression/oracle remains promising because it aligns
+closely with Needle's surviving asset.
+
+Its generic engineering mechanics are already strongly occupied by eval platforms such as
+Braintrust/Phoenix.
+
+The potential Needle residual is therefore only:
+
+> **legal oracle conversion** — source/time/evidence/boundary work needed to turn a
+> consequential legal failure into a trustworthy reusable regression.
+
+Promotion trigger:
+
+- real legal-AI incident;
+- existing trace/postmortem;
+- current regression process;
+- external owner willing to compare oracle-conversion burden.
+
+Candidate C may become a narrow wedge into Candidate A.
+
+### Retained Candidate B
+
+EU operative-state reconstruction remains a credible narrower vertical.
+
+Its current evidence says:
+
+- cross-owner legal-state composition is real;
+- broad prevalence was not supported;
+- official/commercial incumbents are materially stronger than early Needle framing assumed;
+- real practitioner reconstruction burden remains unmeasured.
+
+Promotion trigger:
+
+- recurring practitioner-owned cross-owner matter;
+- measurable reopening/composition burden;
+- concrete product/workflow gap observed under real use.
+
+Low prevalence does **not** imply low value where consequence is high.
+
+### Frozen first MVP validation contract
+
+Target user:
+
+> one legal-AI evaluation/oracle owner.
+
+Preferred job:
+
+> one real legal-evaluation item needing maintenance/repair because law, source state,
+> accepted interpretation or the evaluation contract changed.
+
+Comparator:
+
+> evaluator's actual current workflow.
+
+Needle-assisted intervention:
+
+> smallest manual/model-assisted maintenance packet sufficient for the evaluator's job.
+
+Measure:
+
+- total qualified-expert time;
+- legal corrections by severity;
+- rework rounds;
+- unresolved disputes;
+- turnaround;
+- relevant non-lawyer/model/tool cost;
+- final acceptance.
+
+The evaluator must predeclare:
+
+- minimum accepted legal quality;
+- what burden reduction is material;
+- acceptable rework/correction level;
+- whether turnaround matters;
+- what would cause real reuse.
+
+Strongest behavior signal:
+
+> evaluator chooses or commits a second real item after the first accepted result.
+
+### Kill rule
+
+If Candidate A does not meet the evaluator's predeclared accepted-quality and material-burden
+threshold:
+
+> **do not build the MVP around Candidate A.**
+
+Return to the retained candidate set.
+
+A failed A pilot does **not** falsify Candidate B or C.
+
+### Owner gate
+
+The next discriminating evidence requires an external evaluator/job owner.
+
+Existing sponsor governance still says:
+
+> **DO NOT INITIATE EXTERNAL PARTNER / EVALUATOR OUTREACH WITHOUT EXPLICIT SPONSOR
+> AUTHORISATION.**
+
+Therefore the immediate owner decision after #400 is:
+
+# **AUTHORISE ONE BOUNDED MVP-VALIDATION OUTREACH OR KEEP OUTREACH CLOSED**
+
+If authorised:
+
+- seek one pilot, not mass outreach;
+- do not pitch a finished product;
+- do not claim Needle superiority;
+- ask for one evaluator-owned workload + actual incumbent + acceptance threshold.
 
 ### Existing evidence remains binding
 
@@ -108,39 +210,14 @@ Preserve:
 - #390 trajectory narrowing;
 - #392 external evidence gate;
 - #395 official-model narrowing;
-- `EU_ONLY_EXTERNAL_GATES_REMAIN` for the current public EU-source programme;
+- `EU_ONLY_EXTERNAL_GATES_REMAIN`;
 - Reference Pack v0.2 frozen/current;
 - **INSPECTABLE_ONLY_FOR_NOW** licensing.
 
-The MVP chapter may use Needle's existing assets.
+No product build, v0.3, corpus/taxonomy growth, new ontology or license change follows from
+#400 alone.
 
-It may **not** reinterpret prior nulls as positive evidence merely because product discovery
-has been reopened.
-
-### External-contact boundary
-
-MVP discovery may define target users, jobs, evidence contracts and outreach requirements.
-
-The sponsor's earlier partner/evaluator outreach deferral remains in force until explicitly
-reopened:
-
-> **DO NOT SEND OR INITIATE EXTERNAL PARTNER / EVALUATOR OUTREACH YET.**
-
-If direct user evidence becomes the next blocking input, surface the exact outreach/test
-contract for owner authorization rather than substituting another internal benchmark hunt.
-
-### Evidence-gated programme state
-
-The operating system now permits:
-
-> **EVIDENCE_GATED / COMPLETED_FOR_CURRENT_EVIDENCE**
-
-when no bounded active task is earned.
-
-This preserves programme ownership and re-entry conditions without requiring recurring
-reviews or experiments merely to avoid an "idle" label.
-
-WIP=1 remains binding whenever active work exists.
+WIP=1 remains binding.
 
 ## Historical backlog archive
 

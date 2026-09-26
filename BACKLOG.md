@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DIRECTION REVIEW — POST-REFERENCE-CONTRACT REVISION**
+# **USE — EXTERNAL LEGAL-AI FAILURE ANALYSIS**
 
 Frozen scientific source:
 
@@ -23,49 +23,74 @@ Supported reference job:
 
 ### Current WIP
 
-# **#337 — direction review after reference-contract revision**
+# **#339 — external legal-AI failure packet versus strong postmortem baseline**
 
 Result:
 
-> **SELECT USE — FAILURE ANALYSIS**
+> **NEEDLE_VALUE_PACK_GAP**
 
-Reason:
+Mechanical external selection chose `scalr-2`, the first author-labelled Hallucination
+in the preselected public `Hallucination-Free?` dataset after an initial incomplete row.
 
-- #335 defined a differentiated failure-analysis packet but direct relative value remains
-  untested;
-- #327 already rules out treating generic legal-research companion use as demonstrated;
-- another external literature pass has lower information gain than applying the packet to
-  an independently observed failure;
-- pack v0.2 is a consequence hypothesis, not an earned deliverable;
-- the next test can directly compare Needle against a strong ordinary source-linked
-  postmortem without requiring novelty.
+The legal failure concerned patent obviousness after **KSR v. Teleflex**: a flexible
+teaching/suggestion/motivation principle was incorrectly rigidified into an exclusive
+mandatory prerequisite.
 
-Review:
+The frozen strong ordinary postmortem already recovered:
+- controlling KSR doctrine;
+- historical pre-AIA §103(a) state;
+- causal error;
+- consequence;
+- corrective rule.
 
-> `docs/reviews/issue337-post-reference-contract-direction-review-2026-09-26.md`
+Repository-level Needle added material failure-analysis/reuse structure:
+- **NO_EXISTING_CLASS_MATCH** rather than forced taxonomy;
+- derivation/validation/exposure semantics;
+- a two-sided boundary: TSM is neither mandatory-exclusive nor irrelevant;
+- historical source-state reuse discipline;
+- explicit post-hoc regression-conversion status;
+- concrete PASS/FAIL conditions.
 
-### Next eligible work after #337 merge
+This is observed packet value for the evaluator/debugger/maintainer job, not novelty and
+not correctness/model superiority.
 
-# **#339 — external legal-AI failure packet versus strong postmortem baseline**
+### Reference Pack gap
 
-#339 must:
-- mechanically select the first author-labeled hallucinated/materially ungrounded response
-  from the preselected public `Hallucination-Free?` dataset;
-- freeze a strong source-linked failure postmortem before consulting Needle;
-- then test full repository-level Needle packet value;
-- then test whether Reference Pack v0.1 surfaces any observed Needle value;
-- evaluate relative packet quality, not component novelty;
-- preserve a null if the ordinary postmortem is sufficient.
+Reference Pack v0.1 could:
+- expose class definitions;
+- help confirm no honest class match;
+- expose general regression-only reuse warnings.
 
-Possible pack consequence:
+It could not surface the full observed packet without repository reconstruction:
+- external no-class failure packet;
+- boundary/negative evidence;
+- historical source-state reuse note;
+- derived regression-conversion status;
+- PASS/FAIL contract.
 
-> repository-level value + material v0.1 reconstruction burden may earn a future pack
-> improvement hypothesis.
+Therefore a future Reference Pack improvement is now **earned as a design question**.
 
-No automatic pack v0.2, executable suite, corpus growth, product revival or model
-superiority claim is authorised.
+No v0.2 implementation, corpus case/class admission, product revival or superiority claim
+follows automatically.
 
-WIP=1 remains binding: #339 starts only after #337 merges/closes.
+Result:
+
+> `docs/uses/issue339-external-failure-packet-use-2026-09-26.md`
+
+### Next eligible work after #339 merge
+
+# **#341 — direction review after observed packet value + Reference Pack gap**
+
+#341 must decide whether:
+- one direct positive use is sufficient to begin bounded Reference Pack v0.2 design/release
+  work;
+- an orthogonal second failure-analysis USE should replicate packet value first;
+- another mode has higher expected information value.
+
+Any v0.2 must remain a derived layer over canonical evidence owners and solve only the
+failure-analysis surface gaps demonstrated by #339.
+
+WIP=1 remains binding: #341 starts only after #339 merges/closes.
 
 ## Historical backlog archive
 

@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **CONSOLIDATE — CONDITIONAL FAILURE-ANALYSIS USE CONTRACT**
+# **CONSOLIDATE — EXTERNAL EVALUATOR-VALUE EVIDENCE**
 
 Frozen scientific source:
 
@@ -23,70 +23,73 @@ Current released reference surface:
 
 ### Current WIP
 
-# **#357 — consolidate conditional failure-analysis use contract**
+# **#359 / #361 — reconcile external evaluator-job night campaign**
 
 Result:
 
-> **CONSOLIDATED**
+> **EXTERNAL_DISCIPLINE_VALUE_SUPPORTED; FULL_PACKET_JOB_UNPROVEN**
 
-Durable rule:
+The eight-run external-value campaign moved the project outside its own packet framing and
+tested a real evaluator/oracle-maintenance job.
 
-> **Strong source-linked postmortem first. Full Needle packet work is earned only when
-> consequential reusable legal relationship/state/boundary/reuse structure remains to
-> formalize.**
+The supported conclusion is deliberately narrow:
 
-A sufficient postmortem is a valid endpoint.
+> **Needle-style failure-analysis discipline can add value on some legally complex
+> evaluator/oracle-repair tasks. It is not yet established that the full Needle artifact,
+> its corpus or Reference Pack provides material incremental value over excellent ordinary
+> evaluator/postmortem practice.**
 
-Full packet work should not be added ceremonially when:
-- truth is explicit in one stable source;
-- the expected answer is already supplied;
-- the future regression oracle is nearly tautological;
-- the additional artifact would add only labels/governance metadata.
+Night evidence:
+- a conditional external evaluator/oracle-maintenance job exists;
+- strong incumbent benchmark/version/postmortem practice absorbs most of that job;
+- a narrow residual survives when oracle repair requires consequential legal-state,
+  authority-relationship, boundary or reuse reconstruction;
+- LaborBench supplied a favorable method-level positive;
+- OpenContracts/LegalBench-RAG supplied a negative control where ordinary data repair and
+  regression tests were sufficient;
+- no v0.3, software surface, structured external-failure database or corpus growth earned
+  itself.
 
-Signals that packet work may earn itself include:
-- multi-authority or legal-state reconstruction;
-- material historical/source-identity handling;
-- consequential boundary/opposite-error preservation;
-- scientific/exposure status that materially affects future reuse;
-- non-trivial regression conversion / PASS-FAIL design.
+Important red-team boundary:
 
-These are signals, not a numeric threshold or necessary/sufficient criteria.
-
-Owners reconciled:
-- README — public orientation;
-- project charter — durable conditional external-use boundary;
-- Way of Working — executable failure-analysis first-refusal procedure.
-
-Reference Pack v0.2 remains frozen and unchanged.
-
-`NO_EXISTING_CLASS_MATCH` and omission-over-synthesis remain binding.
-
-`STRUCTURED_LAYER_SIGNAL = INDETERMINATE`; no external-failure database or v0.3 is
-authorised.
+> the conditional-value rule must not become unfalsifiable by calling positive cases
+> "complex" after the fact.
 
 Result:
 
-> `docs/reviews/issue357-conditional-use-contract-consolidation-2026-09-26.md`
+> `docs/reviews/issue359-night-external-value-convergence-2026-09-26.md`
 
-### Next eligible work after #357 merge
+### Next eligible work after reconciliation merge
 
-# **#359 — direction review after conditional-use consolidation**
+# **#362 — paired temporal-oracle test of Needle incremental value**
 
-#359 must take a wide lens and test whether the recent chain has become too packet-centric.
+#362 predeclares complexity before row inspection.
 
-It must explicitly compare:
-- an external consumer/job discovery question;
-- a genuine falsifier USE of the conditional boundary;
-- further release/navigation work;
-- consolidation/maintenance only with a concrete trigger.
+External benchmark:
+> **ChronoLex-TW**
 
-The next allocation should prefer new external information over further self-description
-where the evidence supports it.
+Paired design:
+- first complete externally labelled `Shifted` item;
+- mechanically matched `Stable` control;
+- excellent ordinary evaluator-maintainer baseline first;
+- Needle discipline second;
+- corpus/Reference Pack only if packet work is actually earned.
 
-No v0.3, structured external-failure database, corpus growth, product revival or superiority
-claim is authorised.
+Directional falsifier:
 
-WIP=1 remains binding: #359 starts only after #357 merges/closes.
+> Needle should add more consequential reusable structure on the changed-law item than on
+> the stable control.
+
+The hypothesis weakens if:
+- good practice already captures all consequential changed-law state;
+- Needle adds only labels/reformatting;
+- comparable "value" appears on the stable control;
+- any useful delta is fully absorbable into ordinary source/effective-date/correction/
+  regression fields.
+
+No release/product change is authorised before #362.
+
+WIP=1 remains binding: #362 starts only after this reconciliation merges/closes.
 
 ## Historical backlog archive
 

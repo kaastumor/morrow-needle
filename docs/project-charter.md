@@ -46,6 +46,13 @@ lineage, provenance/exposure and accepted boundaries needed to reconstruct and c
 known failure. A compact release/navigation layer may point to that evidence without
 becoming the evidence itself.
 
+Current external evidence supports this contract primarily at the **discipline** level.
+It does not yet establish that an external evaluator must adopt the frozen Needle corpus,
+Reference Pack or any dedicated Needle software to obtain the useful result. Equivalent
+excellent benchmark/postmortem practice is a legitimate substitute and must receive full
+credit. Artifact-level incremental value remains an open empirical question rather than a
+project premise.
+
 This contract is **conditional, not ceremonial**:
 
 > **Strong source-linked postmortem first. Full Needle packet work is earned only when

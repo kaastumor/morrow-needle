@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — LEGAL EVALUATION REPRESENTATION VALIDITY**
+# **REVIEW — POST-REPRESENTATION RESEARCH ALLOCATION**
 
 Frozen scientific source:
 
@@ -26,161 +26,97 @@ Current released reference surface remains:
 
 > **Needle Reference Pack v0.2 — navigation/reference surface**
 
-### Completed EU-specific lane — Issue #377
+### Recently completed research
 
-Final disposition:
+Issue #377:
 
 > **EU_LEGAL_STATE_EXISTENCE_SUPPORTED — PREVALENCE_NOT_SUPPORTED**
 
-The EU-specific investigation is parked after three bounded phases:
+The structural EU-law phenomenon is real; broad prevalence is not supported and the
+prevalence programme is parked.
 
-- Phase 2 stratified structural stress sample: 7/24 strong residuals after anti-inflation;
-- Phase 3A official implementation Q&A: 0/16;
-- Phase 3B mechanically selected CJEU matter-specific disputes: 1/12.
+Issue #381:
 
-Do not pool those denominators. The source populations differ materially.
+> **REPRESENTATION_CHOICE_MATTERS**
 
-Supported interpretation:
+The canonical evaluation protocol now requires a declared decision objective, evaluation
+representation, non-compensatory constraints, valid-alternative policy and aggregation
+semantics before representation-specific integrity checks.
 
-> some EU-law questions genuinely depend on independently moving operative state that
-> cannot be reduced to current parent text plus ordinary amendment/cross-instrument
-> interpretation.
+A true paired representation comparison remains externally gated on qualified independent
+legal adjudication.
 
-Unsupported interpretation:
+### Direction review — Issue #384
 
-> that residual is common across ordinary EU-law research or implementation work.
+Disposition:
 
-The frozen corpus remains an intentionally adversarial/enriched known-failure reference
-asset, not a frequency map of legal work.
+# **SELECT_FALSE_REJECTION**
 
-Reopen EU prevalence research only from a materially different external trigger, not by
-selecting another likely-positive case family.
+Compared lanes:
 
-Durable owners:
+- temporal/oracle maintenance — real operational job, but another public benchmark drift
+  hunt would risk repeating #375 and commercial regulatory-change products already own much
+  of the general maintenance problem;
+- legal-agent trajectory assurance — scientifically interesting, but public legal trajectory
+  evidence is currently too thin for a high-quality bounded run;
+- commercial contract map — public documentation ceiling reached; deeper adjudication needs
+  demos/product access/users;
+- customer-specific maintained evaluation estates — job plausible, but decisive evidence is
+  external buyer/workflow evidence;
+- false rejection — newly sharpened, publicly investigable and directly attacks a distinct
+  residual after #381.
 
-- `docs/discovery/issue377-eu-legal-state-phase2-2026-09-26.md`;
-- `docs/discovery/issue377-eu-real-task-prevalence-2026-09-26.md`;
-- `docs/discovery/issue377-matter-specific-cjeu-contrast-2026-09-26.md`;
-- `docs/reviews/issue377-post-implementation-null-direction-2026-09-26.md`.
+Durable direction review:
 
-### Current WIP — Issue #381
+> `docs/reviews/issue384-post-representation-direction-2026-09-26.md`
 
-> **DISCOVER — legal evaluation representation validity**
+### Next WIP — Issue #385
 
-The active question now attacks the project's surviving **minimal evaluation discipline**:
+> **DISCOVER — legal rubric acceptance-boundary audit**
 
-> **When is an atomic criterion/rubric contract a valid representation of expert legal
-> quality, and when does comparative judgment, hierarchical issue structure, qualified
-> holistic adjudication or a hybrid preserve the decision-relevant signal better?**
+Core question:
 
-Current external tension:
+> **Do inspectable legal evaluation contracts contain structurally detectable false-rejection
+> risk because their criteria encode one acceptable formulation/path too narrowly, and can
+> positive-alternative probing detect that risk without weakening fatal legal requirements?**
 
-- JudgmentBench directly compares rubric scoring and pairwise comparative judgment on the
-  same legal tasks with the same expert population and reports a large ranking-fidelity /
-  annotation-cost advantage for comparative judgment;
-- PLawBench and LexRubric intentionally use large expert-written atomic-rubric estates for
-  fine-grained diagnosis;
-- LEGIT uses hierarchical legal issue trees to separate issue coverage from correctness;
-- Legal Benchmarks uses fixed binary substantive criteria with cross-family judges and
-  qualified-lawyer escalation when disagreement can change pass/fail.
+This is **not** the same as #381.
 
-No representation is presumed globally superior.
+- #381: is the chosen representation valid for the decision?
+- #385: assuming a criterion representation is appropriate, is its acceptance boundary
+  complete enough not to reject professionally valid work?
 
-Phase 1 must separate:
+External trigger:
 
-- measurement validity;
-- ranking fidelity;
-- false acceptance;
-- false rejection;
-- diagnostic localisation;
-- issue coverage;
-- annotation/review cost;
-- release/pass-fail suitability.
+> `Judging Is Not Enumerating: Silent Omissions in LLM-Authored Acceptable Sets` (2026)
+> shows a broad recognition-vs-enumeration gap and large false rejection in non-legal,
+> frequently LLM-authored verifiers.
 
-Needle's current evaluation-integrity gate has now been reviewed.
+Those percentages must **not** be transferred into law. The legal-domain question remains
+open and falsifiable.
 
-Phase 1 disposition:
-
-# **REPRESENTATION_CHOICE_MATTERS**
-
-External evidence does not identify one globally superior representation. It supports a
-conditional map:
-
-- **atomic/conjunctive criteria** — strongest fit for mandatory requirements, regression,
-  fatal-error vetoes and diagnostic localisation;
-- **comparative judgment** — strongest observed fit for holistic relative quality ranking in
-  JudgmentBench, but not by itself an absolute release gate;
-- **hierarchical issue structures** — useful when issue coverage and correctness must remain
-  separate;
-- **qualified holistic adjudication** — maps directly to professional acceptability but is
-  expensive and difficult to standardise;
-- **hybrids** — eligible when roles and non-compensatory rules are frozen in advance.
-
-Important red-team evidence:
-
-- JudgmentBench's 0.908 vs 0.150 rank-fidelity result strongly challenges the presumption
-  that atomic rubrics capture holistic expert quality;
-- JudgmentBench itself notes that comparative judgments are harder to decompose/audit;
-- CalibratedRubric reports that filtering/calibrating rubric items materially improves
-  agreement on JudgmentBench, showing that "rubrics" are not one fixed measurement form;
-- PLawBench/LexRubric remain strong evidence for diagnostic value of fine-grained criteria;
-- LEGIT shows issue coverage and correctness can move differently.
-
-Minimal protocol repair is earned and implemented on the active branch:
-
-> every consequential evaluation must first declare its **decision objective, representation,
-> non-compensatory constraints, valid-alternative policy and aggregation semantics** before
-> representation-specific integrity checks are applied.
-
-Durable result:
-
-> `docs/discovery/issue381-evaluation-representation-phase1-2026-09-26.md`
-
-### #381 next gate
-
-A genuine paired representation experiment is scientifically earned, but **cannot be
-credibly self-graded**.
-
-The discriminating design needs qualified independent legal adjudication on the same frozen
-work products and at least two task families:
-
-1. a **fatal-error / conjunctive** task where one legal defect should veto otherwise strong
-   work;
-2. a **multiple-defensible-strategies** task where a narrow answer key risks false rejection.
-
-Until qualified adjudication is available, do not manufacture the experiment with model
-self-labels or rubric-derived "ground truth".
-
-#381 may therefore complete after the protocol repair and evidence synthesis, with the
-empirical representation comparison recorded as an external-adjudication-dependent future
-gate.
+Phase 1 will inspect public legal rubric/criterion contracts, classify how they represent
+acceptable variation, and look for independently supportable positive-alternative probes
+paired with negative/fatal controls.
 
 ### Separate commercial boundary
 
 The #375 disposition **READY_FOR_EXTERNAL_VALIDATION** remains valid for the commercial
-DELIVERY hypothesis:
-
-> Can a Needle-derived workflow produce an already acceptable legal evaluation/oracle
-> package with materially lower total qualified-expert effort, rework, maintenance burden
-> or turnaround than the evaluator's actual alternative?
-
-That commercial question remains behind the sponsor's external-outreach gate and is not
-being answered by #381.
+DELIVERY hypothesis and remains behind the sponsor's external-outreach gate.
 
 ### Binding guardrails
 
 Preserve:
 
-- #214 as a strong binding bounded negative with limited repository reproducibility;
-- #327 as a bounded generic-use null;
-- #362 as directional allocation evidence, not a high-grade falsifier;
-- #366's retirement of the standing attempt to prove distinct Needle artifact/workflow
-  advantage;
-- #377's EU prevalence nulls and park decision;
-- Reference Pack v0.2 as frozen/current;
+- #214 strong bounded negative;
+- #327 generic-use null;
+- #362 directional allocation evidence only;
+- #366 retirement of standing artifact-value proof;
+- #377 prevalence park;
+- #381 representation-validity repair;
+- Reference Pack v0.2 frozen/current;
 - **INSPECTABLE_ONLY_FOR_NOW** licensing;
-- no v0.3, product implementation, corpus growth, taxonomy growth or software surface merely
-  because a research representation looks promising.
+- no v0.3, product implementation, corpus/taxonomy growth or software surface from #385.
 
 WIP=1 remains binding.
 

@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **REVIEW — EXTERNAL EVIDENCE GATE / EU PUBLIC RESEARCH EXHAUSTED FOR CURRENT CLAIMS**
+# **MAINTAIN — MVP READINESS REPAIR**
 
 Frozen scientific source:
 
@@ -26,139 +26,75 @@ Current released reference surface remains:
 
 > **Needle Reference Pack v0.2 — navigation/reference surface**
 
-### Sponsor EU-specific research instruction
+### Sponsor objective
 
-The sponsor required that EU-specific research be exhausted deliberately rather than silently
-displaced by the broader legal-AI / evaluation programme.
+The sponsor has explicitly set the next strategic objective:
 
-That requirement has now been taken through an explicit exhaustion sequence:
+> **work toward an MVP that demonstrates actual added value on a real job**
 
-- #377 — legal-state existence/boundary + two outside-in prevalence contrasts;
-- #394 — EU-specific exhaustion matrix;
-- #395 — official EU information-model sufficiency against the seven frozen #377 residuals.
+This supersedes the prior absence of active experimental WIP as a programme-allocation state.
+It does **not** supersede the project's negative/null evidence or authorize a product build
+before a job/value gate is passed.
 
-Final current EU disposition:
+### Current WIP — Issue #398
 
-# **EU_ONLY_EXTERNAL_GATES_REMAIN**
+> **MAINTAIN — MVP readiness repairs from system audit**
 
-This means:
+This bounded repair milestone clears demonstrated pre-product defects:
 
-> the currently available internally selected **public EU-source** research programme has
-> reached its evidence boundary for the supported claims.
+1. retire stale PR #372 without merging its superseded live-state edits;
+2. route `release/**` and `fixtures/**` changes through the existing unit-test gate;
+3. reconcile Way of Working / Project Health so a completed evidence horizon can enter
+   `EVIDENCE_GATED / COMPLETED_FOR_CURRENT_EVIDENCE` without manufacturing activity.
 
-It does **not** mean EU research is permanently closed.
+No new workflow, framework, corpus class, release, license or product surface is earned by
+this maintenance issue.
 
-Reopen from genuinely new public EU evidence or through one of the named external gates
-below.
+### Successor after #398
 
-### #395 official-stack result
+# **DISCOVER — MVP JOB / VALUE GATE**
 
-Disposition:
+The next active horizon is product discovery, not product implementation.
 
-# **OFFICIAL_STACK_PARTIAL_WITH_EXTERNAL_STATE_OWNERS**
+It must select **one** concrete recurring or consequential job and compare:
 
-The stronger incumbent baseline now includes:
+- a real user / job owner;
+- the strongest realistic incumbent workflow;
+- a measurable baseline;
+- the smallest disposable Needle intervention;
+- independent or user-owned acceptance;
+- total qualified effort / rework / turnaround where relevant;
+- a repeat-use or behavior-change signal.
 
-- ELI v1.5;
-- ELI-Impact;
-- Cellar / Common Data Model;
-- LOMO 1.0;
-- EUR-Lex / national-transposition metadata;
-- domain-specific official state owners such as EUDAMED and Commission status/value
-  publications.
+Candidate job families may be compared, but no candidate receives a presumption of selection:
 
-Frozen seven-residual result:
+- legal evaluation / oracle maintenance and delivery;
+- EU operative-state reconstruction across authoritative owners;
+- known-failure postmortem -> reusable regression/oracle conversion.
 
-- **3/7 OFFICIAL_MODEL_LINKED_OWNER**;
-- **4/7 LEGAL_INFERENCE_REQUIRED**;
-- **0/7 MODEL_GAP_CONFIRMED**;
-- **0/7 OFFICIAL_MODEL_DIRECT**;
-- **0/7 INDETERMINATE**.
+The discovery gate must be willing to conclude that none is currently strong enough for an
+MVP.
 
-Therefore the project has **not** demonstrated that a new integrated EU legal-state ontology
-is needed.
+### MVP rule
 
-The surviving EU-specific scientific observation is narrower:
+> **The first MVP is disposable.**
 
-> operative legal state can require composition across legal-resource metadata, interpreted
-> legal rules and specialised authoritative state owners, followed by legal inference.
+A prototype, script, generated artifact or partly manual workflow is acceptable if it is the
+cheapest credible test of user value.
 
-That is not a Needle-specific advantage.
+Do **not** harden architecture before repeated value is observed.
 
-Durable owner:
+No MVP implementation is authorised until the discovery gate freezes:
 
-> `docs/discovery/issue395-official-eu-model-sufficiency-2026-09-26.md`
+1. user/job;
+2. incumbent;
+3. value hypothesis;
+4. measurement contract;
+5. validity/evidence floor;
+6. smallest test;
+7. kill rule.
 
-EU exhaustion owner:
-
-> `docs/reviews/issue394-eu-research-exhaustion-matrix-2026-09-26.md`
-
-### EU lanes at their current public boundary
-
-Publicly tested / parked:
-
-- legal-state existence and anti-inflation boundary;
-- generic official implementation prevalence;
-- matter-specific CJEU prevalence;
-- delegated / implementing / authority-handoff existence;
-- private-origin / standards legal-recognition existence;
-- official EU information-model sufficiency;
-- legal-resource / change / effect representation;
-- major external-owner patterns.
-
-Do **not** reopen these by selecting another likely-positive case family.
-
-### EU-specific external gates
-
-The following remain legitimate research questions, but their next discriminating evidence is
-external:
-
-1. **real practitioner burden / prevalence**
-   - real EU-law task/output/failure populations;
-   - reconstruction time / reopening burden;
-   - incident histories;
-
-2. **regulatory-intelligence product capability**
-   - demo/trial/sandbox;
-   - detailed technical/procurement contract;
-   - observed behavior on frozen EU state questions;
-
-3. **EU evaluation/oracle maintenance**
-   - maintained benchmark/evaluation estate;
-   - legal-update history;
-   - qualified repair/adjudication effort;
-   - downstream scoring consequences;
-
-4. **buyer/customer value**
-   - actual workflow;
-   - incumbent alternative;
-   - confidentiality constraints;
-   - acceptance;
-   - total qualified effort / cost / turnaround.
-
-A genuinely new public EU ontology, dataset, official registry contract or independently
-observed failure can also reopen one bounded public question.
-
-### Broader project frontier
-
-#392 remains binding:
-
-# **CONSOLIDATE_THEN_EXTERNAL_GATE**
-
-The four broader external evidence gates remain distinct:
-
-1. evaluator DELIVERY;
-2. qualified evaluation-science adjudication;
-3. product-capability access;
-4. real workflow / incident evidence.
-
-The sponsor's earlier external partner/evaluator outreach deferral remains binding:
-
-> **DO NOT INITIATE EXTERNAL PARTNER OUTREACH WITHOUT EXPLICIT SPONSOR AUTHORISATION.**
-
-There is currently **no active experimental WIP**.
-
-### Binding guardrails
+### Existing evidence remains binding
 
 Preserve:
 
@@ -166,19 +102,45 @@ Preserve:
 - #327 generic-use null;
 - #362 directional allocation evidence only;
 - #366 retirement of standing artifact-value proof;
-- #377 prevalence park;
+- #377 EU prevalence park;
 - #381 representation-validity repair;
 - #385 public-evidence insufficiency;
 - #390 trajectory narrowing;
 - #392 external evidence gate;
 - #395 official-model narrowing;
+- `EU_ONLY_EXTERNAL_GATES_REMAIN` for the current public EU-source programme;
 - Reference Pack v0.2 frozen/current;
 - **INSPECTABLE_ONLY_FOR_NOW** licensing.
 
-No v0.3, product implementation, corpus/taxonomy growth, new ontology or software surface
-follows from the EU exhaustion programme.
+The MVP chapter may use Needle's existing assets.
 
-WIP=1 remains binding.
+It may **not** reinterpret prior nulls as positive evidence merely because product discovery
+has been reopened.
+
+### External-contact boundary
+
+MVP discovery may define target users, jobs, evidence contracts and outreach requirements.
+
+The sponsor's earlier partner/evaluator outreach deferral remains in force until explicitly
+reopened:
+
+> **DO NOT SEND OR INITIATE EXTERNAL PARTNER / EVALUATOR OUTREACH YET.**
+
+If direct user evidence becomes the next blocking input, surface the exact outreach/test
+contract for owner authorization rather than substituting another internal benchmark hunt.
+
+### Evidence-gated programme state
+
+The operating system now permits:
+
+> **EVIDENCE_GATED / COMPLETED_FOR_CURRENT_EVIDENCE**
+
+when no bounded active task is earned.
+
+This preserves programme ownership and re-entry conditions without requiring recurring
+reviews or experiments merely to avoid an "idle" label.
+
+WIP=1 remains binding whenever active work exists.
 
 ## Historical backlog archive
 

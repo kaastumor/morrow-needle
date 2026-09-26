@@ -20,15 +20,18 @@ without rebuilding the discarded architecture.
    approximated.
 7. **Delivery and discovery are different tracks.** Delivery implements accepted
    scope. Discovery produces evidence about possible scope.
-8. **Stop is a valid outcome for a hypothesis, not for the sponsored program.** A rejected hypothesis is successful evidence. The programme then moves to one bounded purposeful mode under WIP=1; that mode need not be another experiment.
+8. **Stop is a valid outcome for a hypothesis or evidence horizon.** A rejected hypothesis is successful evidence. The sponsored programme may also enter an explicit `EVIDENCE_GATED / COMPLETED_FOR_CURRENT_EVIDENCE` state when no active task is earned. Sponsorship and responsibility continue; task consumption does not.
 
 ## Purposeful continuity
 
-Morrow // Needle is sponsor-funded and must not use `IDLE BY DESIGN` as a default
-project state.
+Morrow // Needle is sponsor-funded and must not use `IDLE BY DESIGN` as an excuse to
+avoid an earned task, maintenance obligation or explicit sponsor objective.
 
-That sponsor constraint does **not** create an automatic discovery or experiment
-conveyor.
+That sponsor constraint does **not** create an automatic discovery, review or experiment
+conveyor. When the current evidence earns no active work, an explicit
+`EVIDENCE_GATED / COMPLETED_FOR_CURRENT_EVIDENCE` state is valid. It means the programme
+remains owned and responsive with named re-entry conditions; it does not mean sponsorship
+has ended.
 
 When a bounded horizon ends, reconcile the result and choose exactly one purposeful mode
 that best serves the current evidence:
@@ -37,11 +40,12 @@ that best serves the current evidence:
 - **CONSOLIDATE** — reconcile, compress, retire or simplify accumulated state;
 - **USE** — apply accepted assets to a real task within their supported scope;
 - **REVIEW / RELEASE** — assess or prepare a coherent finished deliverable;
-- **MAINTAIN** — preserve correctness, evidence validity, integrity, cost or operability.
+- **MAINTAIN** — preserve correctness, evidence validity, integrity, cost or operability;
+- **EVIDENCE_GATED / COMPLETED_FOR_CURRENT_EVIDENCE** — no active WIP because no bounded task is currently earned; record the re-entry trigger and remain responsive.
 
 The canonical transition is:
 
-> **finish -> reconcile -> choose one purposeful mode -> WIP=1**
+> **finish -> reconcile -> choose one justified active mode OR an explicit evidence-gated state -> WIP=1 when active**
 
 not:
 
@@ -49,7 +53,7 @@ not:
 
 and not:
 
-> **finish -> leave the project indefinitely idle**
+> **finish -> drift into unowned inactivity without an explicit state or re-entry condition**
 
 Selection must be grounded in the current evidence and sponsor constraints. Local WIP
 discipline does not prove that the selected mode is the best project-level allocation.
@@ -66,7 +70,8 @@ Continuity preserves:
 
 A completed work item may end in `ADOPT`, `REVISE`, `REJECT`, `PARK`,
 `SIMPLIFY` or `STOP`, with a subtype where useful. The project-level successor is
-chosen separately.
+chosen separately and may legitimately be an evidence-gated state until a named re-entry
+event or sponsor objective arrives.
 
 `BACKLOG.md` is the sole mutable owner of the current mode, WIP and immediate
 priority. Orientation and constitutional documents must link to it rather than copy its
@@ -516,7 +521,9 @@ At the end of a meaningful horizon:
 - reconcile the live owner (`BACKLOG.md`) plus any durable owner whose meaning actually
   changed; do not update README/charter merely to copy current queue state;
 - choose `continue / simplify / redirect / stop` for the horizon;
-- then choose exactly one purposeful successor mode under the continuity rule. The
-  successor may be discovery, consolidation, use, review/release or maintenance.
+- then choose either one justified successor mode under the continuity rule **or** an
+  explicit `EVIDENCE_GATED / COMPLETED_FOR_CURRENT_EVIDENCE` state with named re-entry
+  conditions. Active successor modes may be discovery, consolidation, use,
+  review/release or maintenance.
 
 Activity count, commits and issue throughput are never project-value evidence.

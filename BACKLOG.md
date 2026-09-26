@@ -11,68 +11,61 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — EXTERNAL REGRESSION-ROLE PRECEDENT**
+# **DIRECTION REVIEW — POST-ROLE CLARIFICATION**
 
 Frozen scientific source:
 
 > **NEEDLE_CORPUS_REFERENCE_2026-09-25 — 81 cases / 26 classes**
 
-Released use surface:
-
-> **Needle Reference Pack v0.1 — REFERENCE_PACK_READY**
-
-### Current WIP
-
-# **#331 — does external eval practice support Needle's regression-corpus role?**
-
-Result:
-
-> **NARROW_TO_REFERENCE_FIXTURES**
-
-External precedent supports a real role for known/exposed failures in regression
-engineering, but the operational boundary is stronger than Needle's previous project-local
-wording:
-
-- public legal benchmarks pair tasks with outputs/rubrics/evaluation contracts;
-- mature LLM regression workflows pair reusable inputs with expected behavior and
-  evaluators, often promoting real production failures into those datasets;
-- exposure is compatible with regression use;
-- a preserved failure description without a runnable expected check is reference/debugging
-  material, not by itself an executable regression test.
-
-Canonical identity consequence:
+Current identity:
 
 > **known-failure reference corpus + exposed regression fixtures + minimal evaluation
 > discipline**
 
-Reference status is corpus-wide. Executable regression status is case/fixture-specific.
-
-The revealed EVALUATION cases clearly preserve executable historical regression contracts.
-DERIVATION cases remain heterogeneous and must not be post-hoc normalized into an
-81-case oracle while pretending that contract was historical.
-
-No corpus/class, Reference Pack v0.1 byte, model run, product scope, #214 or #327 result
-changes.
-
-Result:
-
-> `docs/reviews/issue331-external-regression-role-result-2026-09-26.md`
-
-### Next eligible work after #331 merge
+### Current WIP
 
 # **#333 — direction review after external role clarification**
 
-#333 must decide whether the clarified reference/fixture identity earns:
-- a real USE question;
-- an externally anchored DISCOVER question;
-- a derived executable subset/release;
-- further consolidation;
-- or maintenance with a concrete trigger.
+Result:
 
-It must explicitly reject building an executable subset merely to resemble external eval
-tooling.
+> **SELECT DISCOVER — EXTERNAL RESIDUAL-VALUE / SUBSTITUTE TEST**
 
-WIP=1 remains binding: #333 starts only after #331 merges/closes.
+Reason:
+
+- #214 rules out assuming diagnostic/correctness advantage;
+- #327's first real pack-use observation was `BASELINE_SUFFICIENT`;
+- #331 established an externally coherent reference/fixture identity but did not establish
+  residual value for the reference corpus;
+- packaging the ten executable evaluation cases now would be technically feasible but
+  would solve no demonstrated use need;
+- a one-case regression rerun would mainly confirm executability already established by
+  #311/#331;
+- the highest-value unresolved question is whether mature legal benchmarks, legal-AI
+  failure/error artifacts and ordinary source-linked postmortems already serve the same
+  reference/provenance/reconstruction job losslessly.
+
+Review:
+
+> `docs/reviews/issue333-post-role-direction-review-2026-09-26.md`
+
+### Next eligible work after #333 merge
+
+# **#335 — residual value of a provenance-rich legal known-failure corpus**
+
+#335 must compare Needle against strong external substitutes and be willing to narrow the
+project to:
+
+> **project archive + case-specific regression fixtures**
+
+if no consequential external reference-corpus residual survives.
+
+It must not infer value from novelty, field combination, repository polish or competitor
+absence.
+
+No executable subset build, pack v0.2, corpus growth, product revival or model run is
+authorised.
+
+WIP=1 remains binding: #335 starts only after #333 merges/closes.
 
 ## Historical backlog archive
 

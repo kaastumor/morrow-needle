@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **OWNER GATE — EXTERNAL MVP VALUE EVIDENCE**
+# **EXTERNAL USER TEST — CANDIDATE B ACTIVE**
 
 Frozen scientific source:
 
@@ -155,25 +155,39 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
-### Immediate priority / owner decision
+### Immediate priority — Candidate B external-user gate
 
-No outreach, participant contact, purchase or vendor account is authorised by current governance.
+The sponsor has selected Candidate B to continue.
 
-The next serious MVP information gain therefore requires the sponsor to authorise **one minimum external-access lane**.
+Active WIP:
 
-Until that decision:
+> **#422 — one target-user crossover session**
 
-- **WIP=0 for candidate deep work**;
-- correctness/source-integrity maintenance remains eligible;
-- genuinely new independent evidence may trigger reassessment;
-- no new internal Candidate-A replay;
-- no new Candidate-B feature;
-- no manufactured Candidate-C postmortem;
-- no corpus/class growth;
-- no Full Needle revival;
-- no generic monitoring/platform build.
+The first-session design, participant task brief, facilitator answer sheet and recruitment note are frozen before participant response.
 
-This is an evidence frontier, not abandonment.
+First target-user profile:
+
+> **small product-compliance adviser serving retailers/importers/manufacturers with real harmonised-standard maintenance work**
+
+The first named recruitment target is recorded in #422 and the frozen recruitment note.
+
+Current execution boundary:
+
+- the B research lane and one-participant pilot are authorised;
+- no participant contact has yet been sent;
+- do not access or connect the sponsor's mailbox without explicit permission;
+- do not purchase vendor access or create paid/vendor accounts;
+- do not add B product features before the user session;
+- if the user signal is positive, #411's direct-product-access gate remains next;
+- if mixed/negative, narrow, repair or stop B before building.
+
+Current state:
+
+> **WIP=1 — EXTERNAL USER SESSION PREPARED / CONTACT UNSENT**
+
+A and C remain preserved under #420 and are not active WIP.
+
+No new internal Candidate-A replay, manufactured Candidate-C postmortem, corpus/class growth, Full Needle revival or generic monitoring/platform build is authorised.
 
 ## Historical backlog archive
 

@@ -111,7 +111,7 @@
   "forbidden_inferences": [
     "Publication or adoption of EN 60335-2-14:2006 by a standards organisation by itself gives presumption of conformity under Directive 2014/35/EU.",
     "The Commission decision not to publish the OJ reference means the European standard itself ceases to exist.",
-    "Lack of OJ-reference presumption means use of the standard is prohibited or that conformity with Directive 2014/35/EU is impossible by another route.",
+    "Lack of OJ-reference presumption means use of the standard is prohibited or that no alternative conformity route exists under Directive 2014/35/EU.",
     "Commission Implementing Decision (EU) 2025/1464 is a textual amendment of Directive 2014/35/EU Article 12."
   ],
   "notes": "Candidate-B frozen #411 formal-nonpublication case for kitchen machines."

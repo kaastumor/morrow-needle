@@ -47,52 +47,77 @@ The agreed creator order is **Morrow first, sponsor/owner second**. Do not creat
 
 # **#373 — exhaust remaining proprietary/commercial option space**
 
-Result:
+Corrected result after independent adversarial review:
 
-> **ONLY_SERVICE_OR_MAINTENANCE_VALUE_SURVIVES**
+> **COMMERCIAL_JOB_EXISTS_BUT_NEEDLE_SPECIFIC_VALUE_UNPROVEN**
 
 Durable review:
 
 > `docs/reviews/issue373-proprietary-commercial-option-space-2026-09-26.md`
 
-The review found no defensible current proprietary moat in:
-- the exposed 81-case corpus itself;
-- a revived general legal-research product;
-- generic citation/currentness checking;
-- broad regulatory-change software;
-- generic AI assurance;
-- generic benchmark infrastructure;
-- the retired external packet/artifact thesis.
+The initial #373 pass was too strong when it treated:
+- no Needle-specific method advantage;
+- strong/crowded incumbents;
+- weak IP/secrecy moat; and
+- no commercial opportunity
 
-One materially different boundary survives as a falsifiable hypothesis:
+as if they were equivalent conclusions.
 
-> **fresh/private adversarial legal-state evaluation + maintained legal oracles +
-> customer-specific regression sets**
+They are not.
 
-The potential value owner is **ongoing private/fresh maintenance and evaluation work**, not
-the frozen public corpus by itself.
+What remains binding:
+- #214 hard null;
+- #327 generic companion-use null;
+- #339/#353 bounded positives;
+- #349/#362 strong-baseline nulls;
+- #364 anti-rescue rule;
+- #366 smaller identity primary.
 
-This does not override #214, #327 or #362. It asks whether Needle's accumulated failure
-knowledge improves **hidden challenge/oracle design**, not ordinary legal-research answers.
+What #373 now supports:
+- a real commercial/operational legal-AI evaluation job exists externally;
+- private/fresh evaluation, expert oracle construction and repeated QA are real activities;
+- Needle has **not** demonstrated a proprietary product, moat, evaluation advantage or buyer
+  demand;
+- several commercial delivery mechanisms remain logically untested, including specialist
+  input to established evaluators, customer-owned evaluation estates, buyer-side procurement
+  assessment, independent adjudication, narrow maintenance/audit work and training/research
+  services;
+- none earns implementation.
 
-Strong external incumbents already prove that private benchmark sets, confidential
-evaluation, certification and repeat regression are real jobs. Needle-specific relative
-value remains unproven.
+The previously proposed taxonomy-first sealed falsifier is **not accepted** because it would
+select Needle's own classes before a customer workload exists, risks treatment contamination
+and self-grading, and would test method usefulness before proving the outcome matters to an
+external buyer.
 
-The cheapest credible falsifier is a fresh sealed challenge-design comparison:
+### Next eligible allocation after #373 acceptance
 
-> strongest ordinary legal-benchmark design first; Needle-informed challenge/oracle design
-> second; count only a consequential test/oracle delta.
+# **DISCOVER — concrete external evaluator/buyer job + acceptance criteria**
 
-Kill the residual hypothesis if excellent ordinary benchmark practice produces the same
-consequential PASS/FAIL contract.
+The next serious work should begin from an independently evidenced external job, not from a
+Needle class.
 
-The sponsor has already explicitly requested that remaining proprietary directions be
-exhausted. After #373 is accepted, that owner instruction is sufficient to authorize this
-single bounded residual falsifier; it does **not** authorize product implementation,
-corpus growth, v0.3 or a standing experiment programme.
+Required evidence before a comparison:
+1. identifiable evaluator, legal-AI vendor/team, law firm/enterprise buyer or adjacent
+   operator;
+2. recurring evaluation/QA/procurement/adjudication task;
+3. current solution/workaround;
+4. consequential gap, capacity constraint or cost;
+5. decision that better execution would change.
 
-WIP=1 remains binding.
+Then preselect exactly one value claim:
+- **METHOD:** Needle produces more decision-relevant testing at equal resources; or
+- **DELIVERY:** Needle can deliver accepted output at materially better cost, turnaround,
+  maintenance burden or reliability.
+
+Do not switch claims after a null.
+
+A paid pilot or concrete budget-backed procurement commitment is required before maintained
+product development.
+
+No product implementation, corpus growth, v0.3, structured database, license change or
+standing experiment programme is authorized.
+
+WIP=1 remains binding: do not open the successor issue until #373/PR #374 is accepted.
 
 ## Historical backlog archive
 

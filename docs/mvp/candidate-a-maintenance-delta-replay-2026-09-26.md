@@ -60,11 +60,11 @@ It does **not** test user value, expert-time savings or Needle superiority.
 - evidence status: `SUPPORTED`
 - governing time: `CONTROLLING_EVENT_DATE` / task's 2025 transaction timeline
 
-## Repair
+## Repair status
 
-- revise C-039 and C-040 to the authoritative 2025 values;
-- preserve the transaction/event dates as the time owner rather than inventing a separate mandatory law-as-of field;
-- status: `PROPOSED`.
+- `PROPOSED`;
+- the proposed corrected states already live in HSR-01 / HSR-02 `after` values;
+- transaction/event dates remain the temporal owner rather than inventing a separate mandatory law-as-of field.
 
 ## Existing-result consequence
 
@@ -120,10 +120,10 @@ Fields materially used:
 - evidence status: `SUPPORTED`
 - governing time: `NOT_APPLICABLE`.
 
-## Repair
+## Repair status
 
-- make the vacuous/inactive case explicit, or change the task so the condition is actually elicited;
-- status: `PROPOSED`.
+- `PROPOSED`;
+- the candidate activation semantics are already represented in DELTA-01 `after`.
 
 ## Existing-result consequence
 
@@ -171,11 +171,11 @@ criterion activation.
 - evidence status: `SUPPORTED`;
 - governing time: `NOT_APPLICABLE`.
 
-## Repair
+## Repair status
 
-- none asserted by Needle;
-- the candidate revision is an actual accepted repository revision;
-- status: `ACCEPTED` only in the narrow sense that the repository adopted the revision, **not** that Needle has validated every semantic change as legally correct.
+- `NOT_REQUIRED`;
+- the candidate revision is an owner-adopted repository revision;
+- Needle does **not** characterize the revision itself as a defect or accepted repair.
 
 ## Existing-result consequence
 
@@ -213,10 +213,10 @@ Those are not the same claim.
 | risk direction | yes | yes | yes | **YES** |
 | evidence owner | legal authority | task/criterion/run evidence | immutable revision comparison | **YES** |
 | governing time | required | N/A | N/A | **YES, conditional** |
-| repair actions/status | yes | yes | control/no defect asserted | **YES** |
+| repair status | proposed | proposed | not required | **YES** |
 | comparability | unknown | not comparable | unknown | **YES** |
 | rejudge/rerun/human action | yes | yes | yes | **YES** |
-| open/adjudication state | yes | yes | yes | **YES, optional** |
+| adjudication state | pending | pending | pending | **YES, optional** |
 | Needle taxonomy | no | no | no | **REMOVE CONFIRMED** |
 | full source graph | no | no | no | **REMOVE CONFIRMED** |
 | full rubric duplication | no | no | no | **REMOVE CONFIRMED** |
@@ -227,7 +227,7 @@ No replay required a new top-level field.
 
 The only semantic refinement earned is:
 
-> `repair.status: ACCEPTED` must mean the **repair/change is accepted by the contract owner**,
+> `repair_status: ACCEPTED` must mean the **repair is accepted by the contract owner**,
 > not merely that a Git commit exists.
 
 For the Harvey v3 control, the candidate revision is an accepted repository state but the
@@ -236,7 +236,7 @@ Needle record should not label the semantic change a validated 'repair'.
 Therefore the hardened contract should distinguish:
 
 - `change_status`: `OBSERVED`, `ADOPTED_BY_OWNER`, `SUPERSEDED`;
-- `repair.status`: `NOT_REQUIRED`, `PROPOSED`, `ACCEPTED`, `REJECTED`, `PARTIAL`.
+- `repair_status`: `NOT_REQUIRED`, `PROPOSED`, `ACCEPTED`, `REJECTED`, `PARTIAL`.
 
 This is a small but real hardening change.
 
@@ -263,8 +263,9 @@ That is an internal coherence observation, **not measured user savings**.
 
 # Deterministic validation decision
 
-The same structural fields survived three heterogeneous events and the invariants are now
-stable enough to justify **one tiny structural validator/schema**.
+After the replay, redundant repair-action and generic open-question fields were removed.
+The remaining structural fields survived all three heterogeneous events and are stable
+enough to justify **one tiny structural validator/schema**.
 
 Earned validation scope:
 

@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **USE — ORTHOGONAL REFERENCE PACK v0.2 REPLICATION**
+# **DIRECTION REVIEW — CONDITIONAL PACKET VALUE**
 
 Frozen scientific source:
 
@@ -27,71 +27,55 @@ Supported reference job:
 
 ### Current WIP
 
-# **#349 — orthogonal external failure replication through Reference Pack v0.2**
-
-Results:
-
-> **POSTMORTEM_BASELINE_SUFFICIENT**
-
-> **V0.2 NAVIGATION SUCCESS**
-
-> **STRUCTURED_LAYER_SIGNAL = NO**
-
-Mechanical selection from the independent `Large Legal Fictions` dataset chose the first
-complete author-labelled hallucination:
-
-> `Crawford v. United States`, 375 F.2d 332 — model answered `reverse`, while the
-> reported D.C. Circuit opinion formally says `Affirmed`.
-
-The strong ordinary postmortem already preserved:
-- exact external row/ground truth;
-- direct opinion;
-- binary disposition-inversion mechanism;
-- consequence;
-- corrective rule;
-- sufficient boundary.
-
-Reference Pack v0.2 then:
-- correctly supported `NO_EXISTING_CLASS_MATCH`;
-- supplied exposed/known-case scientific-reuse discipline;
-- prevented synthetic source-state complexity via `Omit rather than synthesize`;
-- supplied regression/boundary ownership rules;
-- required **no broad repository archaeology**.
-
-That validates the v0.2 navigation improvement.
-
-It does **not** replicate #339's material packet-value gain. For this simple binary
-single-source task, governance/reuse metadata does not materially improve the failure
-analysis over the strong postmortem.
-
-Emerging hypothesis, not yet accepted conclusion:
-
-> Needle packet value is conditional and may be highest where the failure requires
-> non-trivial source-state, boundary, provenance/reuse or regression-conversion reasoning.
-
-Structured external-failure data remains unearned.
+# **#351 — direction review after orthogonal v0.2 packet-value null**
 
 Result:
 
-> `docs/uses/issue349-v02-orthogonal-failure-replication-2026-09-26.md`
+> **SELECT USE — COMPLEXITY-STRATIFIED FAILURE ANALYSIS**
 
-### Next eligible work after #349 merge
+Reason:
 
-# **#351 — direction review after orthogonal v0.2 packet-value null**
+- #339 observed material packet value on a failure requiring non-trivial doctrine,
+  historical source-state, boundary and regression reconstruction;
+- #349 observed no material packet gain on a binary single-source disposition inversion;
+- v0.2 itself succeeded on #349 and required no broad repository archaeology;
+- "legal hallucination" is therefore too coarse a use category;
+- the next decision-relevant question is whether packet value depends on non-trivial
+  legal-state / authority-relationship / boundary / reuse structure.
 
-#351 must preserve both:
-- #339 positive packet value;
-- #349 postmortem-baseline null + v0.2 navigation success.
+The next test uses the independently defined `Treatment (Doctrinal Agreement)` stratum
+from the Hallucination-Free? dataset.
 
-It must not average these into a vague mixed result.
+Rows in the `Circuit Splits` stratum are excluded from the next selection because
+orientation during #351 exposed individual row contents/labels.
 
-The central candidate question is whether the **conditional-value boundary** should now be
-tested directly.
+Review:
+
+> `docs/reviews/issue351-conditional-value-direction-review-2026-09-26.md`
+
+### Next eligible work after #351 merge
+
+# **#353 — complexity-stratified packet-value test on case-treatment failures**
+
+Selection:
+- public `reglab/legal_rag_hallucinations` dataset;
+- Question Category = `Treatment`;
+- first complete response labelled `Hallucination` in published order;
+- no Needle inspection before selection;
+- no replacement.
+
+#353 must compare observable complexity properties across #339/#349/#353 without inventing
+a post-hoc score.
+
+It must report:
+- one primary outcome;
+- `STRUCTURED_LAYER_SIGNAL = YES / NO / INDETERMINATE`;
+- `V0.2_NAVIGATION = SUCCESS / GAP`.
 
 No v0.3, structured external-failure layer, corpus growth, product revival or superiority
 claim is authorised.
 
-WIP=1 remains binding: #351 starts only after #349 merges/closes.
+WIP=1 remains binding: #353 starts only after #351 merges/closes.
 
 ## Historical backlog archive
 

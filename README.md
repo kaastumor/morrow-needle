@@ -1,6 +1,6 @@
 # Morrow // Needle
 
-**Adversarial legal-research regression/reference corpus + minimal evaluation discipline for EU legal change.**
+**Adversarial legal-research known-failure reference corpus + exposed regression fixtures + minimal evaluation discipline for EU legal change.**
 
 Needle preserves difficult, source-backed legal-information failure cases and the evidence
 needed to inspect, challenge and reuse them honestly. It is not a legal-news product, a
@@ -26,7 +26,9 @@ Read the owners above instead.
 
 The evidence-backed project form is deliberately small:
 
-- an **adversarial regression/reference corpus** of exposed legal-information traps;
+- an **adversarial known-failure reference corpus** of exposed legal-information traps;
+- **exposed regression fixtures/cases** only where an evidence owner preserves a runnable
+  task plus an expected/evaluator contract;
 - a **minimal evaluation discipline** for cases where a genuinely new comparative claim
   warrants preregistration, sealing and a strong comparator;
 - **Needle Method** as an optional structured handoff/reporting convention;
@@ -38,6 +40,11 @@ particular, the sealed #214 pilot produced **0 diagnostic rescues / 0 C-only
 regressions**. That scientific null remains binding for its tested claim.
 
 Negative and parity findings are part of the asset, not failed work.
+
+Current terminology deliberately distinguishes the whole reference corpus from its
+executable subset: **reference status is corpus-wide; regression status is
+case/fixture-specific**. See
+`docs/reviews/issue331-external-regression-role-result-2026-09-26.md`.
 
 ## Reuse and citation status
 

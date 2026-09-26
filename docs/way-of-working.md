@@ -72,6 +72,28 @@ chosen separately.
 priority. Orientation and constitutional documents must link to it rather than copy its
 live state.
 
+## Evaluation-contract integrity first refusal
+
+Before interpreting a benchmark, regression or comparative score, apply the canonical
+evaluation-contract integrity gate in
+`docs/evaluations/adversarial-corpus-protocol-v0.1.md`.
+
+In particular, distinguish:
+
+- legal truth from whether the rubric actually covers the task;
+- a true proposition from whether a conditional criterion is gradable;
+- subject failure from harness/extraction/judge-input failure;
+- task-contract revision from model/system change;
+- answer variance from judge variance.
+
+A benchmark with a sophisticated harness or lawyer-written rubrics is not exempt from these
+checks. Public 2026 legal-benchmark maintenance defects show that criterion/source mistakes,
+vacuous conditions, incomplete rubrics, internally inconsistent counts and silent execution
+failures can survive otherwise strong processes.
+
+This gate is ordinary evaluation hygiene. Do not claim it as a Needle-specific advantage
+unless an independent comparison demonstrates operational value.
+
 ## Failure-analysis USE first refusal
 
 For a known external or internal legal-information failure, do **not** begin by filling a

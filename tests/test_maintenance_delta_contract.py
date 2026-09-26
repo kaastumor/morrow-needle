@@ -40,8 +40,8 @@ def test_legal_proposition_requires_evidence_and_governing_time():
 
     errors = semantic_errors(record)
 
-    assert any("LEGAl_PROPOSITION".lower() in error.lower() and "evidence" in error for error in errors)
-    assert any("LEGAl_PROPOSITION".lower() in error.lower() and "governing_time" in error for error in errors)
+    assert any("LEGAL_PROPOSITION".lower() in error.lower() and "evidence" in error for error in errors)
+    assert any("LEGAL_PROPOSITION".lower() in error.lower() and "governing_time" in error for error in errors)
 
 
 def test_owner_adopted_change_requires_candidate_contract_reference():

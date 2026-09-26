@@ -252,20 +252,25 @@ Do not reopen merely by choosing another case family likely to contain stateful 
 
 No corpus/class, Reference Pack, schema, software or product change is earned.
 
-### Next WIP
+### Next WIP — Issue #381
 
 With #377 complete, WIP returns to the preserved broader research front:
 
 > **legal-AI evaluation science / evaluation-contract assurance**
 
-The first question should attack the surviving evaluation discipline itself:
+Queued successor:
+
+> **#381 — DISCOVER: legal evaluation representation validity**
+
+Core question:
 
 > when are atomic rubric/criterion contracts a valid representation of expert legal quality,
 > and when do alternative representations such as comparative judgment, hierarchical issue
 > structures or qualified holistic adjudication measure the task more faithfully?
 
-This is an orthogonal scientific question, not a commercial DELIVERY test and not a revival
-of corpus-assisted legal-research superiority.
+#381 is an orthogonal scientific question, not a commercial DELIVERY test and not a revival
+of corpus-assisted legal-research superiority. It activates after the #377 completion
+branch is accepted.
 
 ### Commercial / external-validation boundary
 

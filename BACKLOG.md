@@ -133,26 +133,70 @@ Durable result:
 
 > `docs/discovery/issue377-eu-legal-state-phase2-2026-09-26.md`
 
-### Next research question inside #377
+### Phase 3A — externally sourced implementation-Q&A prevalence pilot
 
-The stress sample establishes a boundary, not prevalence.
+Phase 3A froze 16 real questions from official EU implementation-Q&A / FAQ channels before
+detailed answer reconstruction:
 
-The next eligible EU-specific question is therefore:
+- EBA DORA Q&A;
+- ESMA MiCA Q&A;
+- Commission EUDR FAQ;
+- Commission MDR Annex XVI transitional Q&A.
 
-> **REAL-TASK PREVALENCE:** how often does the independently-moving-state residual occur in
-> externally sourced real EU-law work rather than in a deliberately stratified stress
-> sample, and how often does omission actually reverse/materially distort the answer?
+Disposition:
 
-Any continuation must:
+# **IMPLEMENTATION_QA_RESIDUAL_NULL — MATTER_SPECIFIC_PREVALENCE_UNRESOLVED**
 
-- source tasks independently of Needle classes;
-- preserve text-only and ordinary-change controls;
-- separate ordinary transposition/delegated-law research from stronger state residuals;
-- treat strong official/commercial research as the baseline;
-- keep public commercial capability that cannot be verified as **unknown**, not absent;
-- allow a clean result that residual prevalence is low or that ordinary practice absorbs it.
+Observed profile:
 
-No product, schema, class or corpus work is earned yet.
+- **12/16 TEXT_SUFFICIENT**;
+- **4/16 ORDINARY_CROSS_INSTRUMENT**;
+- **0/16 CHANGE_HISTORY_SUFFICIENT**;
+- **0/16 INDEPENDENT_OPERATIVE_STATE**;
+- **0/16 INDETERMINATE**.
+
+This is a binding negative result for a broad prevalence claim.
+
+The difficult questions in this official implementation-Q&A frame were difficult because of
+interpretation, definitions or ordinary cross-instrument legal research. None required the
+stronger Phase-2 residual:
+
+> an independently moving operative state whose omission can reverse or materially distort
+> the answer and which cannot be reduced to ordinary text/amendment/version research.
+
+Phase 2 therefore survives as an **existence/boundary** result, not as evidence that the
+residual is common in generic implementation work.
+
+Important source-frame limitation:
+
+> official Q&A systems naturally publish general interpretation questions and can
+> under-sample full matter-specific actor/date/cohort/designation/certificate/status facts.
+
+Therefore 0/16 does **not** establish zero prevalence across real EU-law work.
+
+Durable result:
+
+> `docs/discovery/issue377-eu-real-task-prevalence-2026-09-26.md`
+
+### Direction gate after the Phase 3A null
+
+Do **not** immediately pick a more favorable matter-specific sample.
+
+A direction review must first compare:
+
+1. **PARK** — preserve the residual as a bounded EU-law phenomenon but stop prevalence work;
+2. **DISCOVER SOURCE FRAME** — only if a mechanically selectable external corpus of real
+   matter-specific EU-law problems can be identified before seeing whether it contains
+   Needle-shaped states;
+3. **COMMERCIAL CONTRACT REVIEW** — inspect strong regulatory-intelligence product contracts
+   deeply enough to learn whether the residual is already operationally represented;
+4. **SWITCH FRONT** — return current WIP to the preserved legal-AI evaluation-science /
+   evaluation-contract programme.
+
+A matter-specific continuation is permitted only if the source frame itself exists
+independently of the desired result.
+
+No class hunt, bespoke case construction, product build or corpus growth is authorised.
 
 ### Commercial / external-validation boundary
 

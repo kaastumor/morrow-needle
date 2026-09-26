@@ -106,9 +106,16 @@ and task already make the correct answer and future regression oracle obvious.
 
 The comparator is always the strongest competent postmortem, not a deliberately thin note.
 
-This rule is supported by bounded USE evidence (#339, #349, #353) and may be revised by a
-future falsifier. It does not establish population prevalence, model superiority or a
-general workflow advantage.
+This rule is supported by bounded USE evidence (#339, #349, #353) and was directly
+challenged by #362. It remains useful as a **project execution first-refusal rule**, but it
+does not establish population prevalence, model superiority, a general workflow advantage,
+or a reliable pre-result selector for where Needle adds incremental value.
+
+Do not maintain a standing experiment queue whose purpose is to prove this discipline is
+uniquely Needle-specific. Reopen external artifact-value testing only from a materially
+changed boundary such as repeated real external use, measured reconstruction/handoff burden
+that excellent ordinary practice fails to solve, or an independently measurable operational
+comparison.
 
 ## Incumbent and residual-value test
 

@@ -7,12 +7,15 @@ corpus derivation functions and does not introduce new scientific data.
 
 from __future__ import annotations
 
+import sys
 from pathlib import Path
-
-from scripts import build_reference_pack as v01
 
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from scripts import build_reference_pack as v01
 OUTPUT_DIR = ROOT / "release" / "needle-reference-pack-v0.2"
 MANIFEST = OUTPUT_DIR / "manifest.json"
 CASES = OUTPUT_DIR / "cases.jsonl"

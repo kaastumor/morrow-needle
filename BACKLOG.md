@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — MVP JOB / VALUE GATE**
+# **REVIEW — CANDIDATE A CORE READY / EXTERNAL VALUE TEST OWNER GATE**
 
 Frozen scientific source:
 
@@ -19,8 +19,7 @@ Frozen scientific source:
 
 Primary supported identity remains:
 
-> **known-failure legal-research reference corpus + exposed regression fixtures + minimal
-> evaluation discipline**
+> **known-failure legal-research reference corpus + exposed regression fixtures + minimal evaluation discipline**
 
 Current released reference surface remains:
 
@@ -28,173 +27,196 @@ Current released reference surface remains:
 
 ### Sponsor objective
 
-The sponsor has explicitly set the next strategic objective:
+The sponsor's current strategic objective remains:
 
 > **work toward an MVP that demonstrates actual added value on a real job**
 
-Product discovery is now active.
+The sponsor also explicitly required:
 
-No implementation is authorised until a real job/value gate passes.
+> **select candidate -> consolidate -> extract smallest MVP core -> harden -> internal replay/red-team -> pre-partner readiness -> external validation**
 
-### Issue #400 — MVP job/value gate
+#402 completes the internal Candidate-A consolidation/hardening phase.
 
-Current disposition:
+### Issue #402 final disposition
 
-# **LEAD_MVP_CANDIDATE — LEGAL EVALUATION / ORACLE MAINTENANCE DELIVERY**
+# **CORE_READY_FOR_EXTERNAL_VALUE_TEST**
 
-Retained candidate set:
+This means only:
 
-- **SECONDARY_CANDIDATE — known failure/postmortem -> reusable regression/oracle**
-- **SECONDARY_CANDIDATE — EU operative-state reconstruction across authoritative owners**
+> Candidate A is internally coherent and small enough that an external evaluator can test its
+> value without first helping Needle design the intervention.
 
-Priority is not binary value.
+It does **not** mean:
 
-A non-selected candidate remains live unless evidence actually falsifies its job/value
-proposition.
+- external value is proven;
+- Needle is distinct from mature private maintainer practice;
+- expert time is reduced;
+- product-market fit exists;
+- software build is earned;
+- outreach is authorised.
 
-Do **not** rewrite "not first" as "no value".
+Durable readiness review:
 
-Durable analysis:
+> `docs/reviews/issue402-candidate-a-core-readiness-2026-09-26.md`
 
-> `docs/discovery/issue400-mvp-job-value-gate-2026-09-26.md`
+### Candidate A core after subtraction
 
-### Why Candidate A leads first
+The larger #400 maintenance packet was rejected.
 
-Candidate A currently has the strongest combination of:
+Strong incumbents already own most static evaluation hygiene:
 
-- independently visible recurring work;
-- paid/commercial evaluation behavior;
-- explicit acceptance contracts;
-- documented qualified-expert dependence;
-- measurable production/maintenance burden;
-- a disposable first intervention that does not require product architecture.
+- task/instruction contracts;
+- legal sources / answer contracts;
+- criteria;
+- legal cut-offs;
+- defensible-alternative handling;
+- all-pass / non-compensatory semantics;
+- human adjudication;
+- task/dataset versioning and changelogs.
 
-The candidate claim remains:
+Those receive **zero differentiation credit**.
 
-> **DELIVERY** — can a Needle-derived maintenance/delivery workflow reach an evaluator's
-> existing accepted legal-quality threshold with materially lower qualified-expert burden,
-> rework or turnaround than the evaluator's actual current workflow?
+The surviving core is:
 
-This does **not** claim:
+# **MAINTENANCE DELTA CONTRACT v0.1**
 
-- better legal reasoning;
-- better oracles by default;
-- corpus-assisted correctness superiority;
-- generic legal-research advantage;
-- commercial demand for Needle specifically.
+> **change -> evidence/time owner -> affected score-bearing contract -> revised state -> prior-result consequence -> adjudication state**
 
-### Retained Candidate C
+Human-facing artifact:
 
-Known failure/postmortem -> reusable regression/oracle remains promising because it aligns
-closely with Needle's surviving asset.
+> `docs/mvp/candidate-a-maintenance-delta-card-template.md`
 
-Its generic engineering mechanics are already strongly occupied by eval platforms such as
-Braintrust/Phoenix.
+Structured internal contract:
 
-The potential Needle residual is therefore only:
+> `docs/mvp/candidate-a-maintenance-delta-core-v0.1.md`
 
-> **legal oracle conversion** — source/time/evidence/boundary work needed to turn a
-> consequential legal failure into a trustworthy reusable regression.
+Executable support:
 
-Promotion trigger:
+- `schemas/maintenance-delta-v0.1.schema.json`;
+- `scripts/validate_maintenance_delta.py`;
+- three fixtures under `fixtures/mvp/maintenance-delta/`;
+- `tests/test_maintenance_delta_contract.py`.
 
-- real legal-AI incident;
-- existing trace/postmortem;
-- current regression process;
-- external owner willing to compare oracle-conversion burden.
+The structured layer is internal reproducibility machinery, **not the product**.
 
-Candidate C may become a narrow wedge into Candidate A.
+### Internal replay result
 
-### Retained Candidate B
+Three already-known events were replayed:
 
-EU operative-state reconstruction remains a credible narrower vertical.
+1. Harvey HSR stale 2025 score-bearing literals;
+2. DELTA S-009 activation ambiguity;
+3. Harvey firm-knowledge v3 semantic revision as a no-defect control.
 
-Its current evidence says:
+Disposition:
 
-- cross-owner legal-state composition is real;
-- broad prevalence was not supported;
-- official/commercial incumbents are materially stronger than early Needle framing assumed;
-- real practitioner reconstruction burden remains unmeasured.
+> **CORE_COHERENT — MINIMAL STRUCTURAL VALIDATION EARNED**
 
-Promotion trigger:
+The negative control forced an important distinction:
 
-- recurring practitioner-owned cross-owner matter;
-- measurable reopening/composition burden;
-- concrete product/workflow gap observed under real use.
+> **owner-adopted change != accepted repair**
 
-Low prevalence does **not** imply low value where consequence is high.
+The replays establish representation/field stability only.
 
-### Frozen first MVP validation contract
+They do **not** establish user value, time savings, correctness advantage or prevalence.
 
-Target user:
+### Strongest remaining Candidate-A risk
 
-> one legal-AI evaluation/oracle owner.
+# **THE CORE MAY OPTIMIZE THE CHEAP PART**
 
-Preferred job:
+The Maintenance Delta Card begins after a maintenance trigger exists.
 
-> one real legal-evaluation item needing maintenance/repair because law, source state,
-> accepted interpretation or the evaluation contract changed.
+The expensive part of real work may instead be:
 
-Comparator:
+- detecting the legal/source change;
+- understanding the new law;
+- establishing the correct legal answer;
+- resolving contested professional judgment.
 
-> evaluator's actual current workflow.
+Therefore any external pilot must measure **full end-to-end qualified-expert effort**, not
+only time spent producing/reviewing the card.
 
-Needle-assisted intervention:
+If propagation/documentation savings are small relative to legal detection/adjudication,
+Candidate A should fail rather than expand.
 
-> smallest manual/model-assisted maintenance packet sufficient for the evaluator's job.
+### Frozen external value-test contract
 
-Measure:
+Prepared only:
 
-- total qualified-expert time;
-- legal corrections by severity;
-- rework rounds;
-- unresolved disputes;
-- turnaround;
-- relevant non-lawyer/model/tool cost;
-- final acceptance.
+> `docs/mvp/candidate-a-external-value-test-contract-v0.1.md`
 
-The evaluator must predeclare:
+Required external test properties:
 
-- minimum accepted legal quality;
-- what burden reduction is material;
-- acceptable rework/correction level;
-- whether turnaround matters;
-- what would cause real reuse.
+- evaluator-owned real maintenance event;
+- evaluator's actual incumbent workflow;
+- predeclared accepted-quality floor;
+- predeclared burden reduction material enough to change behavior;
+- full qualified-expert time;
+- correction/rework burden;
+- historical-result handling;
+- turnaround and material hidden costs;
+- repeat-use / second-real-item signal.
 
-Strongest behavior signal:
+Preferred design:
 
-> evaluator chooses or commits a second real item after the first accepted result.
+> two owner-supplied reasonably matched real maintenance events, one incumbent and one
+> Needle-assisted.
 
-### Kill rule
+### Candidate preservation
 
-If Candidate A does not meet the evaluator's predeclared accepted-quality and material-burden
-threshold:
+Candidate C remains:
 
-> **do not build the MVP around Candidate A.**
+> **SECONDARY_CANDIDATE — known failure/postmortem -> reusable regression/oracle**
 
-Return to the retained candidate set.
+#402 shows that `FAILURE_POSTMORTEM` may be the most natural **entry trigger/wedge** into the
+same maintenance-delta core.
 
-A failed A pilot does **not** falsify Candidate B or C.
+Candidate C is not rejected and is not yet promoted over A.
+
+Candidate B remains:
+
+> **SECONDARY_CANDIDATE — EU operative-state reconstruction across authoritative owners**
+
+No EU-specific machinery was embedded in Candidate A.
+
+EU state enters only when an actual maintenance delta needs a specific evidence owner.
+
+### Kill rules
+
+Do not build Candidate A if external evidence shows:
+
+- accepted quality degrades;
+- material expert-burden reduction is not achieved;
+- savings are shifted into later adjudication;
+- incumbent maintenance already provides equivalent state at equal/lower burden;
+- the card records decisions but does not reduce reopening/rework;
+- the evaluator does not choose a second real use.
+
+Do not rescue Candidate A by adding fields, taxonomy, ontology or UI.
+
+A Candidate-A failure does not falsify Candidates B/C.
 
 ### Owner gate
 
-The next discriminating evidence requires an external evaluator/job owner.
+No external contact has been authorised.
 
-Existing sponsor governance still says:
+The next **decisive Candidate-A value evidence** requires a real evaluator/job owner, but
+the project must not confuse that fact with automatic permission to contact one.
 
-> **DO NOT INITIATE EXTERNAL PARTNER / EVALUATOR OUTREACH WITHOUT EXPLICIT SPONSOR
-> AUTHORISATION.**
+Current owner choice:
 
-Therefore the immediate owner decision after #400 is:
+# **AUTHORISE ONE BOUNDED EXTERNAL MVP VALUE TEST OR KEEP OUTREACH CLOSED**
 
-# **AUTHORISE ONE BOUNDED MVP-VALIDATION OUTREACH OR KEEP OUTREACH CLOSED**
+If outreach remains closed:
+
+> enter **EVIDENCE_GATED / COMPLETED_FOR_CURRENT_EVIDENCE** for Candidate A rather than
+> manufacturing another benchmark hunt.
 
 If authorised:
 
-- seek one pilot, not mass outreach;
-- do not pitch a finished product;
-- do not claim Needle superiority;
-- ask for one evaluator-owned workload + actual incumbent + acceptance threshold.
+- seek one pilot owner, not mass outreach;
+- share the maintenance-value question and compact card, not Needle's historical machinery;
+- do not claim superiority;
+- let the owner supply the real workload, incumbent and acceptance threshold.
 
 ### Existing evidence remains binding
 
@@ -214,10 +236,9 @@ Preserve:
 - Reference Pack v0.2 frozen/current;
 - **INSPECTABLE_ONLY_FOR_NOW** licensing.
 
-No product build, v0.3, corpus/taxonomy growth, new ontology or license change follows from
-#400 alone.
+No product UI, v0.3, corpus/taxonomy growth, new ontology or license change follows from #402.
 
-WIP=1 remains binding.
+WIP=1 remains binding whenever active work exists.
 
 ## Historical backlog archive
 

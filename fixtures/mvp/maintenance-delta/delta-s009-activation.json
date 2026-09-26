@@ -1,0 +1,47 @@
+{
+  "schema_version": "maintenance-delta-v0.1",
+  "record_id": "delta-s009-activation-ambiguity",
+  "change_status": "OBSERVED",
+  "subject": {
+    "task_id": "family-law/minor-representative-conflict-of-interest:S-009",
+    "baseline_contract_ref": "legalbenchmarks/delta v1.1.0-era public task referenced by issue #2"
+  },
+  "trigger": {
+    "kind": "CRITERION_ACTIVATION_AMBIGUITY",
+    "summary": "S-009 is conditional on an answer raising dynamic interpretation, but the task does not require that argument and the inactive case is undefined.",
+    "reference": "legalbenchmarks/delta#2"
+  },
+  "delta_units": [
+    {
+      "id": "DELTA-01",
+      "kind": "CRITERION_ACTIVATION",
+      "before": "PASS insofar as the answer discusses dynamic interpretation and correctly explains the doctrine; the inactive case is unspecified.",
+      "after": "PASS if the answer does not discuss dynamic interpretation, or, if it does, correctly explains that dynamic interpretation is not an independent standard.",
+      "affected_contract_refs": [
+        "S-009"
+      ],
+      "risk": [
+        "AMBIGUOUS_GRADING"
+      ],
+      "evidence": {
+        "owner_ref": "DELTA task prompt, S-009 text and cross-judge disagreement reported in issue #2",
+        "proposition": "The written criterion has no determinate grading semantics when the answer does not raise dynamic interpretation.",
+        "status": "SUPPORTED"
+      },
+      "governing_time": {
+        "kind": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "result_impact": {
+    "comparability": "NOT_COMPARABLE",
+    "existing_outputs_action": "REJUDGE_EXISTING_OUTPUTS",
+    "scope": "Outputs previously scored under the ambiguous S-009 criterion.",
+    "reason": "Different judges can assign opposite verdicts when the condition does not fire; pre/post criterion scores are not comparable without re-judging."
+  },
+  "adjudication": {
+    "status": "PENDING",
+    "note": "Public dispute exists; no accepted upstream repair is assumed."
+  },
+  "repair_status": "PROPOSED"
+}

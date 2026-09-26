@@ -1,0 +1,71 @@
+{
+  "schema_version": "maintenance-delta-v0.1",
+  "record_id": "harvey-hsr-2025-stale-literals",
+  "change_status": "OBSERVED",
+  "subject": {
+    "task_id": "antitrust-competition/analyze-antitrust-hsr-strategy",
+    "baseline_contract_ref": "harveyai/harvey-labs@1dd81403b2fbb60596f7aea3fcecafad7bf73143"
+  },
+  "trigger": {
+    "kind": "WRONG_OR_STALE_LEGAL_PROPOSITION",
+    "summary": "Two score-bearing HSR literals conflict with the authoritative 2025 FTC schedule applicable to the task's 2025 transaction events.",
+    "reference": "morrow-needle#375"
+  },
+  "delta_units": [
+    {
+      "id": "HSR-01",
+      "kind": "LEGAL_PROPOSITION",
+      "before": "C-040 requires the 2025 HSR size-of-transaction threshold to be USD 119.5 million.",
+      "after": "The applicable 2025 size-of-transaction threshold is USD 126.4 million.",
+      "affected_contract_refs": [
+        "C-040"
+      ],
+      "risk": [
+        "FALSE_REJECT",
+        "FALSE_ACCEPT"
+      ],
+      "evidence": {
+        "owner_ref": "FTC 2025 HSR threshold schedule effective 2025-02-21",
+        "proposition": "The 2025 size-of-transaction threshold is USD 126.4 million.",
+        "status": "SUPPORTED"
+      },
+      "governing_time": {
+        "kind": "CONTROLLING_EVENT_DATE",
+        "value_or_ref": "Task transaction dates in April-August 2025, after 2025-02-21."
+      }
+    },
+    {
+      "id": "HSR-02",
+      "kind": "LEGAL_PROPOSITION",
+      "before": "C-039 requires a USD 160,000 filing fee for the USD 425 million transaction.",
+      "after": "The applicable 2025 filing fee for the USD 425 million transaction is USD 105,000.",
+      "affected_contract_refs": [
+        "C-039"
+      ],
+      "risk": [
+        "FALSE_REJECT",
+        "FALSE_ACCEPT"
+      ],
+      "evidence": {
+        "owner_ref": "FTC 2025 HSR filing-fee schedule effective 2025-02-21",
+        "proposition": "A USD 425 million transaction falls in the USD 105,000 fee band.",
+        "status": "SUPPORTED"
+      },
+      "governing_time": {
+        "kind": "CONTROLLING_EVENT_DATE",
+        "value_or_ref": "Task transaction dates in April-August 2025, after 2025-02-21."
+      }
+    }
+  ],
+  "result_impact": {
+    "comparability": "UNKNOWN",
+    "existing_outputs_action": "HUMAN_DECISION_REQUIRED",
+    "scope": "Any result scored against C-039/C-040 at the pinned defective task revision under the task's 2025 transaction dates.",
+    "reason": "Authoritative 2025 values can be falsely rejected while stale rubric values can pass; historical raw outputs must be inspected to decide whether re-judging is sufficient."
+  },
+  "adjudication": {
+    "status": "PENDING",
+    "note": "Needle has not received upstream maintainer or qualified external adjudication of the proposed repair."
+  },
+  "repair_status": "PROPOSED"
+}

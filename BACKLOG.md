@@ -45,84 +45,96 @@ The agreed creator order is **Morrow first, sponsor/owner second**. Do not creat
 
 ### Current WIP
 
-# **#375 — identify a concrete external legal-AI evaluation job**
+# **#375 — external evaluation job + pre-partner reality honing**
 
-Result:
+Commercial-job result remains:
 
 > **VENDOR_EVALUATION_JOB_EARNS_TEST**
 
-Claim type:
+Claim type remains:
 
 > **DELIVERY**
 
-Durable review:
+But the sponsor explicitly superseded immediate partner outreach.
 
-> `docs/discovery/issue375-external-evaluation-job-2026-09-26.md`
+Current mode:
 
-The strongest externally evidenced job is:
+> **DISCOVER — EXTERNAL REALITY / PRE-PARTNER HONING**
 
-> **independent legal-AI evaluation / retesting for vendors**
+Durable records:
+- `docs/discovery/issue375-external-evaluation-job-2026-09-26.md`
+- `docs/discovery/issue375-pre-partner-external-reality-honing-2026-09-26.md`
 
-Why it earns one bounded delivery test:
-- vendors pay for independent public/private assessments;
-- evaluation/certification recurs across benchmark cycles;
-- acceptance criteria are already lawyer-authored, fixed and reviewable;
-- Vals documented that full manual scoring would exceed 400 hours and that law firms were
-  capacity-limited in producing detailed complex reference answers;
-- confidentiality can prevent simple reuse of prior work product;
-- current benchmark communities still depend on practitioner task contribution and judging.
+### External-reality finding
 
-This does **not** establish Needle-specific method value.
+Strong public legal benchmarks already provide:
+- lawyer-authored criteria;
+- legal research cut-offs;
+- controlling-authority citations;
+- blind grading and human escalation;
+- realistic work-product tasks;
+- semantic/versioned benchmark maintenance.
 
-#362 remains binding against a new "Needle makes better oracles" claim.
+Therefore these are **incumbent practice**, not Needle differentiation.
 
-The only eligible successor claim is:
+However, public DELTA and Harvey LAB maintenance defects expose a real weakness in Needle's
+own minimal evaluation discipline:
 
-> **DELIVERY — can a Needle-derived workflow produce an accepted legal
-> oracle/reference-answer package with materially lower total qualified-expert burden than
-> the actual alternative?**
+> Needle did not explicitly verify that an evaluation contract itself is complete,
+> source-correct, gradable, internally consistent, executable and stable enough for its
+> PASS/FAIL result to mean what the project says it means.
 
-Required measurements:
-- qualified reviewer time;
-- legal corrections;
-- rework rounds;
-- unresolved disputes;
-- total turnaround;
-- final acceptance/rejection.
+Observed external defects included:
+- wrong statutory paragraph in a grading criterion;
+- a legally true but vacuous conditional criterion;
+- a rubric that can all-pass while omitting the task's central requested work;
+- contradictory counts/allowlists across criteria;
+- conversion/harness failure scored as subject failure;
+- semantic drift in score-bearing task contracts;
+- answer variance and judge variance being conflated.
 
-Needle class matches, longer rubrics, extra metadata or prettier structure do not count.
+The canonical evaluation protocol and Way of Working now include an
+**evaluation-contract integrity gate** covering:
+1. task-to-criterion coverage;
+2. exact criterion/evidence correctness;
+3. activation and gradability;
+4. cross-criterion consistency;
+5. execution validity before subject failure;
+6. semantic revision control;
+7. stability decomposition when decision-sensitive.
 
-### External dependency before execution
+These rules are **ordinary evaluation hygiene**, not a Needle superiority claim.
 
-The project cannot credibly self-supply the next pilot.
+A holdout public Harvey task repair (#135), selected after the gate was written, was
+consistent with the new gate: its rubric referenced the wrong source matter and contained
+unresolved source conflicts.
 
-Required before any comparison:
-1. one independently supplied real evaluation workload/brief;
-2. one qualified external legal reviewer/adjudicator;
-3. an acceptance threshold defined before Needle treatment;
-4. blinded comparison where practical.
+Reference Pack v0.2 remains unchanged.
+The frozen corpus remains **81 cases / 26 classes**.
 
-Therefore:
+### Current next step inside #375
 
-> **EXECUTION BLOCKED ON EXTERNAL WORKLOAD + QUALIFIED REVIEWER**
+# **REVIEW — dogfood the integrity gate on Needle's own evaluation estate**
 
-### Next eligible allocation after #375 acceptance
+Apply the newly earned gate without rerunning experiments to a bounded preselected sample:
 
-# **DISCOVER / HUMAN VALIDATION — obtain one pilot partner**
+- #88 surfaced-trap suite;
+- #214 latent corpus-assisted diagnostic pilot;
+- #362 paired evaluator/oracle-maintenance falsifier.
 
-The next WIP should seek exactly one suitable evaluator/vendor/legal-team partner willing
-to provide:
-- one bounded evaluation brief;
-- acceptance criteria;
-- qualified review of two blinded deliverables.
+Ask only whether their task/criterion/evidence contracts meet the standard Needle now
+expects from external benchmarks.
 
-Outreach must not claim Needle superiority and must not pitch a built product.
+Repair provenance/contract hygiene only when earned.
+
+Do **not** change a historical scientific result unless a defect is genuinely
+result-material.
+
+Partner outreach remains deferred until this readiness audit is complete.
 
 No product implementation, corpus growth, v0.3, structured external-failure database,
 license change or standing experiment programme is authorized.
 
-Frozen scientific state remains **81 cases / 26 classes**.
-Reference Pack v0.2 remains current.
 Owner licensing posture remains **INSPECTABLE_ONLY_FOR_NOW**.
 
 WIP=1 remains binding.

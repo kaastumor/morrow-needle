@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DIRECTION REVIEW — POST-ROLE CLARIFICATION**
+# **DISCOVER — EXTERNAL REFERENCE-CORPUS RESIDUAL VALUE**
 
 Frozen scientific source:
 
@@ -22,50 +22,75 @@ Current identity:
 > **known-failure reference corpus + exposed regression fixtures + minimal evaluation
 > discipline**
 
+Supported reference job:
+
+> **legal failure analysis / evaluation design / debugging / regression-fixture derivation**
+
 ### Current WIP
-
-# **#333 — direction review after external role clarification**
-
-Result:
-
-> **SELECT DISCOVER — EXTERNAL RESIDUAL-VALUE / SUBSTITUTE TEST**
-
-Reason:
-
-- #214 rules out assuming diagnostic/correctness advantage;
-- #327's first real pack-use observation was `BASELINE_SUFFICIENT`;
-- #331 established an externally coherent reference/fixture identity but did not establish
-  residual value for the reference corpus;
-- packaging the ten executable evaluation cases now would be technically feasible but
-  would solve no demonstrated use need;
-- a one-case regression rerun would mainly confirm executability already established by
-  #311/#331;
-- the highest-value unresolved question is whether mature legal benchmarks, legal-AI
-  failure/error artifacts and ordinary source-linked postmortems already serve the same
-  reference/provenance/reconstruction job losslessly.
-
-Review:
-
-> `docs/reviews/issue333-post-role-direction-review-2026-09-26.md`
-
-### Next eligible work after #333 merge
 
 # **#335 — residual value of a provenance-rich legal known-failure corpus**
 
-#335 must compare Needle against strong external substitutes and be willing to narrow the
-project to:
+Result:
 
-> **project archive + case-specific regression fixtures**
+> **REVISE_REFERENCE_CONTRACT**
 
-if no consequential external reference-corpus residual survives.
+Strong external substitutes materially constrain the claim:
 
-It must not infer value from novelty, field combination, repository polish or competitor
-absence.
+- LegalBench, KCL and DELTA are stronger capability/evaluation contracts;
+- legal-hallucination studies preserve queries, outputs, labels, source/citation metadata
+  and error typologies;
+- AI Incident Database already provides searchable failure memory, provenance,
+  classifications, citations and point-in-time snapshots;
+- competent source-linked postmortems can preserve one failure in depth.
 
-No executable subset build, pack v0.2, corpus growth, product revival or model run is
-authorised.
+Therefore "failure memory + provenance" is not a Needle-specific residual.
 
-WIP=1 remains binding: #335 starts only after #333 merges/closes.
+A narrower repository-level residual survives:
+
+> standardize the consequential **legal-state failure mechanism** across cases while
+> preserving evidence/source-state lineage, derivation/evaluation/exposure provenance,
+> accepted family boundaries and a safe path into case-specific regression engineering.
+
+That job is primarily for evaluators, debugging/failure analysis, benchmark/test designers
+and maintainers.
+
+It is **not demonstrated as a generic companion during ordinary legal research**; #327
+remains `BASELINE_SUFFICIENT`.
+
+Reference Pack v0.1 remains a navigation layer into the evidence estate, not a
+self-contained failure-analysis dataset.
+
+Result:
+
+> `docs/reviews/issue335-reference-residual-value-result-2026-09-26.md`
+
+### Next eligible work after #335 merge
+
+# **#337 — direction review after reference-contract revision**
+
+#337 must compare purposeful modes with special attention to a real USE test of the revised
+contract:
+
+> apply Needle to one independently observed external legal-AI failure, against a strong
+> ordinary source-linked failure postmortem baseline.
+
+The comparison must test **relative packet quality**, not novelty:
+- can Needle preserve the failure more completely, reconstructably or usefully?
+- does its combined legal-state/evidence/boundary/exposure packet reduce material loss?
+- does the repository-level packet add value even where incumbents already provide some
+  of the same components?
+
+If repository-level Needle value is observed but Reference Pack v0.1 cannot surface the
+same value without substantial reconstruction, that is evidence that a future pack
+improvement may be earned.
+
+Any such USE must use mechanical/predeclared selection and may not cherry-pick a failure
+because it visibly matches a Needle class.
+
+No automatic pack v0.2, executable suite, corpus growth, product revival or model
+superiority claim is authorised.
+
+WIP=1 remains binding: #337 starts only after #335 merges/closes.
 
 ## Historical backlog archive
 

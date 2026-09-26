@@ -39,6 +39,13 @@ contract; exposure does not disqualify a case from regression reuse, but a failu
 without that contract is reference/debugging material rather than a turnkey regression
 test.
 
+The primary external reference contract is **legal failure analysis / evaluation design /
+debugging**, not routine assistance while answering an ordinary legal question. The
+repository evidence estate preserves the decisive legal-state distinction, evidence
+lineage, provenance/exposure and accepted boundaries needed to reconstruct and challenge a
+known failure. A compact release/navigation layer may point to that evidence without
+becoming the evidence itself.
+
 The canonical comparative-evaluation protocol is
 `docs/evaluations/adversarial-corpus-protocol-v0.1.md`, used only when a new claim earns
 a sealed comparison. It is not a standing experiment engine.

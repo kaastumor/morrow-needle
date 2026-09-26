@@ -46,6 +46,23 @@ executable subset: **reference status is corpus-wide; regression status is
 case/fixture-specific**. See
 `docs/reviews/issue331-external-regression-role-result-2026-09-26.md`.
 
+## Supported reference job
+
+The corpus's current externally defensible job is **legal failure analysis, evaluation
+design, debugging and regression-fixture derivation**.
+
+It preserves source-backed failure mechanisms so an evaluator or maintainer can reconstruct
+the consequential legal-state distinction, inspect provenance/exposure, challenge family
+boundaries and—where an executable contract exists—reuse the case as an exposed regression.
+
+It is **not demonstrated as a generic companion for ordinary legal research**. The first
+mechanically selected real post-answer use test (#327) returned
+`BASELINE_SUFFICIENT`.
+
+Reference Pack v0.1 remains a compact navigation layer into the repository evidence estate;
+it does not self-contain every boundary or source-state artifact. See
+`docs/reviews/issue335-reference-residual-value-result-2026-09-26.md`.
+
 ## Reuse and citation status
 
 This repository is public, but it currently has **no project license** and no root

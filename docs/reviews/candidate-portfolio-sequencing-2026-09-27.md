@@ -121,3 +121,40 @@ deep lane:
 
 This document records sponsor intent and allocation logic. `BACKLOG.md` remains the sole live WIP
 owner.
+
+## Post-B allocation update — #416 / #418
+
+Candidate B has now reached the decision gate anticipated above.
+
+#416 found:
+
+> **INTERNAL_WORKFLOW_ADVANTAGE_SUPPORTED — TARGET_USER_TEST_STILL_REQUIRED**
+
+with an important narrowing: the Commission's official discovery surface was already strong; the
+surviving signal is known-standard state normalization/reconstruction, especially partial
+restrictions and current-versus-future legal state.
+
+#418 then applied this document's capability/access/segment-fit lens to A and C.
+
+Result:
+
+> **BOTH_EXTERNALLY_GATED — STOP_INTERNAL_CANDIDATE_WORK**
+
+This supersedes the earlier temporary preference to continue B internally.
+
+Current allocation:
+
+- **A — external value gated**: real evaluator-owned maintenance event + actual incumbent process;
+- **B — external user/capability gated**: target-user crossover, then direct product access if earned;
+- **C — external incident gated**: real legal-AI incident + current postmortem/regression process.
+
+The market-access correction still protects all three hypotheses from the false inference
+"enterprise capability exists, therefore no smaller-segment value."
+
+It does **not** justify another internally selected proxy once the discriminating variable is owned
+by a real user/workflow/incident.
+
+No candidate is rejected. The next deep lane begins only when the sponsor authorises the minimum
+external access required by one promotion trigger.
+
+`BACKLOG.md` remains the sole live WIP owner.

@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **REVIEW — EXTERNAL EVIDENCE GATE / OWNER OUTREACH DEFERRED**
+# **CONSOLIDATE — EU-SPECIFIC RESEARCH EXHAUSTION MAP**
 
 Frozen scientific source:
 
@@ -26,184 +26,110 @@ Current released reference surface remains:
 
 > **Needle Reference Pack v0.2 — navigation/reference surface**
 
-### Post-#375 research frontier review
+### Sponsor instruction
 
-The sponsor's challenge to the earlier "external reality now / no more internal proof"
-assumption was correct.
+The sponsor explicitly requires that EU-specific research remain a serious project front and
+be **exhausted deliberately rather than silently displaced** by the broader legal-AI /
+evaluation programme.
 
-The project then executed additional bounded public research:
+Therefore:
 
-- #377 — **EU_LEGAL_STATE_EXISTENCE_SUPPORTED — PREVALENCE_NOT_SUPPORTED**
-- #381 — **REPRESENTATION_CHOICE_MATTERS**
-- #385 — **PUBLIC_EVIDENCE_INSUFFICIENT** for demonstrated legal-rubric false rejection
-- #390 — **TRAJECTORY_IS_DIAGNOSTIC_ONLY_FOR_NEEDLE_SCOPE**
+> **#377's prevalence park is not equivalent to EU research exhaustion.**
 
-Those runs materially changed project understanding and are preserved as evidence rather
-than treated as failed momentum.
+### Research frontier already reached
 
-Final direction review #392:
+#392 remains valid for the broader programme:
 
-# **CONSOLIDATE_THEN_EXTERNAL_GATE**
+> **CONSOLIDATE_THEN_EXTERNAL_GATE**
+
+Most remaining commercial/value questions require:
+
+- evaluator/buyer workflow evidence;
+- qualified independent legal adjudication;
+- product/demo access;
+- real task/failure/incident populations.
+
+Partner/evaluator outreach remains owner-gated and is not authorised by this consolidation.
+
+### Current consolidation — Issue #394
+
+Disposition:
+
+# **EU_PUBLIC_RESEARCH_NOT_EXHAUSTED**
 
 Durable owner:
 
-> `docs/reviews/issue392-research-frontier-external-evidence-gate-2026-09-26.md`
+> `docs/reviews/issue394-eu-research-exhaustion-matrix-2026-09-26.md`
 
-### What is now externally gated
+The exhaustion matrix distinguishes:
 
-Do not collapse all external validation into one generic partner exercise.
+- public claims already tested to their current boundary;
+- negative/prevalence lanes that should stay parked;
+- questions that now require real workflow/product/adjudication evidence;
+- one EU-specific public question that has **not** yet been tested.
 
-#### Gate 1 — evaluator DELIVERY
+### One remaining public EU lane — Issue #395
 
-Question:
+Queued successor:
 
-> Can a Needle-derived workflow deliver an already acceptable legal evaluation/oracle
-> package with materially lower total qualified-expert burden than the evaluator's actual
-> alternative?
-
-Needs:
-
-- evaluator-owned workload;
-- incumbent workflow;
-- independent acceptance threshold;
-- total expert time;
-- rework/correction/adjudication;
-- model/tool/other labor cost;
-- turnaround.
-
-This remains the #375 commercial hypothesis.
-
-#### Gate 2 — qualified evaluation-science adjudication
-
-Questions:
-
-- does evaluation representation materially change expert legal quality decisions?
-- do criterion contracts reject professionally valid alternatives?
-
-Needs:
-
-- qualified independent legal reviewers;
-- same frozen work products;
-- fatal-error and multiple-defensible-strategy task families;
-- preserved disagreement;
-- reference decisions not derived from the representation under test.
-
-#### Gate 3 — product-capability access
+> **DISCOVER — official EU legal-information representation sufficiency**
 
 Question:
 
-> Do mature regulatory-intelligence/evaluation systems already preserve the legal-state,
-> maintenance and evidence contracts Needle considers interesting?
+> Can the current official EU information stack — ELI v1.5, ELI-Impact, Cellar/CDM,
+> EUR-Lex metadata and national-transposition metadata — represent the seven surviving #377
+> legal-state structures losslessly, or does the decisive state necessarily live in an
+> external owner / legal-inference layer?
 
-Needs one or more of:
+This is a direct falsification test of Needle's information-model distinctiveness.
 
-- product demo/trial;
-- sandbox access;
-- detailed technical/procurement documentation;
-- frozen comparison workload;
-- operator/practitioner evidence.
+It is **not**:
 
-Public absence from marketing/docs is not evidence of missing capability.
+- another prevalence sample;
+- a new case/class hunt;
+- a product build;
+- a commercial capability claim.
 
-#### Gate 4 — real workflow / incident evidence
+Strong anti-Needle result is welcome:
 
-Questions:
+> if the official stack already represents or cleanly delegates most/all seven residual
+> states, a separate Needle-style state abstraction is much less distinctive.
 
-- how prevalent are Needle-type failure structures in actual legal work?
-- when is an agent trajectory independently consequential?
-- what is real oracle-maintenance burden?
+After #395, rerun the EU exhaustion matrix. No other EU public experiment is authorised merely
+to keep research active.
 
-Needs:
+### EU-specific lanes already at boundary
 
-- real task/output/failure population;
-- production incident/postmortem logs;
-- workflow policies;
-- production traces;
-- maintenance history.
+- legal-state existence/boundary — supported;
+- generic implementation prevalence — negative / parked;
+- matter-specific CJEU prevalence — negative / parked;
+- delegated/authority-handoff existence — sufficiently represented;
+- private-origin/standards legal-recognition existence — sufficiently represented;
+- real-work prevalence / burden — real workflow evidence required;
+- EU evaluation/oracle maintenance — qualified adjudication + maintenance history required;
+- commercial regulatory-intelligence capability — product access required;
+- practitioner/customer value — real workflow evidence required.
 
-### Why no new internal public lane is queued
+### Binding guardrails
 
-#### Temporal/oracle maintenance
+Preserve:
 
-The construct is real and already represented in #375/#377/protocol repairs.
+- #214 strong bounded negative;
+- #327 generic-use null;
+- #362 directional allocation evidence only;
+- #366 retirement of standing artifact-value proof;
+- #377 prevalence park;
+- #381 representation-validity repair;
+- #385 public-evidence insufficiency;
+- #390 trajectory narrowing;
+- #392 external evidence gate;
+- Reference Pack v0.2 frozen/current;
+- **INSPECTABLE_ONLY_FOR_NOW** licensing.
 
-Another public mutable-law benchmark hunt could find another stale criterion, but would not
-credibly measure frequency, repair burden or Needle-specific savings.
+No v0.3, product implementation, corpus/taxonomy growth or software surface follows from
+#394/#395.
 
-#### Failure ecology
-
-The frozen corpus is enriched by design.
-
-Current public legal benchmark/task surfaces do not provide a sufficiently neutral raw
-failure population for another taxonomy-prevalence claim without generating project-authored
-outputs or selecting a biased hard set.
-
-#### Commercial contract map
-
-Public product documentation established strong incumbents and claimed capabilities, but is
-too shallow to prove capability **absence**.
-
-#### Customer-specific evaluation estates
-
-The job is plausible, but value, burden, confidentiality constraints and willingness to
-outsource/pay require real buyer workflow evidence.
-
-#### Evaluation science / trajectory
-
-The next discriminating evidence requires independent legal adjudicators or externally
-owned workflow/process contracts.
-
-### Owner gate
-
-The sponsor previously deferred partner/evaluator outreach.
-
-That deferral remains binding.
-
-> **DO NOT INITIATE EXTERNAL PARTNER OUTREACH WITHOUT EXPLICIT SPONSOR AUTHORISATION.**
-
-The project is ready to execute an external evidence gate when the sponsor chooses which one
-to open.
-
-### Internally eligible work while the owner gate remains closed
-
-Only bounded work with a concrete trigger:
-
-- correctness/source-integrity maintenance;
-- repair of newly demonstrated evidence defects;
-- consolidation that removes stale/duplicated interpretation;
-- release-integrity maintenance of v0.2;
-- response to genuinely new public evidence.
-
-Do not open another internally selected benchmark/corpus/product experiment merely to avoid
-the owner gate.
-
-### Claims that remain parked even after external access
-
-External contact does not automatically reopen:
-
-- generic corpus-assisted latent correctness/diagnostic superiority;
-- generic legal-research companion advantage;
-- broad product/platform build;
-- proprietary legal-reasoning method;
-- representative 26-class coverage;
-- taxonomy/corpus growth for aesthetics;
-- generic trajectory infrastructure/product;
-- generic regulatory-intelligence product;
-- license/open-source change.
-
-#214/#327/#366 remain binding unless materially new evidence directly changes their scope.
-
-### Binding project state
-
-- frozen corpus: **81 cases / 26 classes**
-- Reference Pack: **v0.2**
-- licensing: **INSPECTABLE_ONLY_FOR_NOW**
-- no v0.3
-- no product build
-- no corpus/taxonomy growth
-- no autonomous successor experiment
-- WIP=1 remains the governance rule; there is currently **no active experimental WIP**
-  beyond this owner evidence gate.
+WIP=1 remains binding.
 
 ## Historical backlog archive
 

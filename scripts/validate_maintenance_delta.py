@@ -69,7 +69,6 @@ def semantic_errors(record: dict[str, Any]) -> list[str]:
                     )
 
     subject = record.get("subject", {})
-    repair = record.get("repair", {})
     change_status = record.get("change_status")
 
     if change_status == "ADOPTED_BY_OWNER" and not subject.get("candidate_contract_ref"):
@@ -77,23 +76,13 @@ def semantic_errors(record: dict[str, Any]) -> list[str]:
             "ADOPTED_BY_OWNER requires subject.candidate_contract_ref"
         )
 
-    repair_status = repair.get("status")
-    actions = repair.get("actions", [])
+    repair_status = record.get("repair_status")
 
     if repair_status == "ACCEPTED":
         if not subject.get("candidate_contract_ref"):
             errors.append("accepted repair requires subject.candidate_contract_ref")
         if change_status != "ADOPTED_BY_OWNER":
             errors.append("accepted repair requires change_status ADOPTED_BY_OWNER")
-        if not actions:
-            errors.append("accepted repair requires at least one repair action")
-
-    if repair_status in {"PROPOSED", "PARTIAL"} and not actions:
-        errors.append(f"{repair_status} repair requires at least one repair action")
-
-    if repair_status == "NOT_REQUIRED" and actions:
-        errors.append("NOT_REQUIRED repair must not contain repair actions")
-
     unresolved_evidence = any(
         unit.get("evidence", {}).get("status") == "UNRESOLVED"
         for unit in units

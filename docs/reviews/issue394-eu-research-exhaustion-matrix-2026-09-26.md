@@ -280,3 +280,44 @@ One bounded public lane remains:
 After that lane, the project must re-run this exhaustion matrix.
 
 No other EU public experiment is authorised merely to keep research active.
+
+
+---
+
+## Post-#395 exhaustion update
+
+Issue #395 executed the one remaining public lane identified by this matrix.
+
+Result:
+
+> **OFFICIAL_STACK_PARTIAL_WITH_EXTERNAL_STATE_OWNERS**
+
+Across the seven frozen #377 residual state structures:
+
+- 3/7 are best represented as `OFFICIAL_MODEL_LINKED_OWNER`;
+- 4/7 are `LEGAL_INFERENCE_REQUIRED`;
+- 0/7 produced a confirmed official `MODEL_GAP`.
+
+The official incumbent baseline was also strengthened by LOMO 1.0, which explicitly models
+interpreted legal rules, agents, actions/results, conditions, temporal state and references
+to external datasets/standards/software/services.
+
+Therefore this matrix's public lane is now complete.
+
+Updated EU-wide disposition:
+
+# **EU_ONLY_EXTERNAL_GATES_REMAIN**
+
+This means the current public/official-source research questions have been taken to their
+useful boundary. Remaining decision-relevant EU work requires:
+
+- product capability access;
+- real practitioner/workflow evidence;
+- maintained evaluation/oracle history;
+- qualified independent adjudication;
+- buyer/customer evidence.
+
+A materially new official EU model, public dataset, registry contract or independently
+observed failure may reopen one bounded public question.
+
+It does not authorize serial public case hunting.

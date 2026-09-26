@@ -10,8 +10,8 @@ issue/PR.
 
 ## Purpose
 
-Morrow // Needle is an **adversarial legal-research regression/reference corpus +
-minimal evaluation discipline for EU legal change**.
+Morrow // Needle is an **adversarial legal-research known-failure reference corpus +
+exposed regression fixtures + minimal evaluation discipline for EU legal change**.
 
 Its demonstrated project-specific contribution is the disciplined preservation of:
 
@@ -32,6 +32,12 @@ The smallest supported form is:
 > **corpus + evidence references + minimal evaluation discipline**
 
 The canonical corpus entry point is `corpus/index-v0.1.json`.
+
+The 81-case whole is a **known-failure reference corpus**. Executable regression status is
+case/fixture-specific and requires a preserved runnable task plus an expected/evaluator
+contract; exposure does not disqualify a case from regression reuse, but a failure record
+without that contract is reference/debugging material rather than a turnkey regression
+test.
 
 The canonical comparative-evaluation protocol is
 `docs/evaluations/adversarial-corpus-protocol-v0.1.md`, used only when a new claim earns

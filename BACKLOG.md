@@ -11,11 +11,16 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **CONSOLIDATE — RETIRE EXTERNAL ARTIFACT-VALUE PROOF LINE**
+# **REVIEW / RELEASE — OWNER RIGHTS + CITATION GATE**
 
 Frozen scientific source:
 
 > **NEEDLE_CORPUS_REFERENCE_2026-09-25 — 81 cases / 26 classes**
+
+Primary supported identity:
+
+> **known-failure reference corpus + exposed regression fixtures + minimal evaluation
+> discipline**
 
 Current released reference surface:
 
@@ -23,61 +28,67 @@ Current released reference surface:
 
 ### Current WIP
 
-# **#366 — retire standing external artifact-value proof line**
+# **#368 — owner license and citation decision package**
 
 Result:
 
-> **SMALLER_IDENTITY_PRIMARY**
+> **OWNER_DECISION_READY**
 
-Primary supported identity:
-
-> **known-failure reference corpus + exposed regression fixtures + minimal evaluation
-> discipline**
-
-Failure-analysis first-refusal remains useful project practice.
-
-It is no longer a standing external Needle value claim.
-
-Preserved separately:
-- #339/#353 bounded positives;
-- #349/#362 strong-baseline nulls;
-- #359/#361 external discipline signal + full artifact job unproven;
-- #214/#327 binding nulls.
-
-H-25 has been removed from the live assumption register so the retired proof line cannot
-silently recreate an experiment queue.
-
-External artifact-value research may reopen only from a materially changed boundary:
-- repeated actual external use/request;
-- independently measured reconstruction/handoff burden ordinary practice fails to solve;
-- changed intended use;
-- independently measurable operational comparison;
-- material comparator change.
-
-No new "complexity proxy" search is authorised.
-
-No v0.3, structured external-failure database, issue-owner snapshot programme, corpus growth,
-product revival or superiority claim is earned.
-
-Result:
-
-> `docs/reviews/issue366-retire-external-artifact-value-proof-2026-09-26.md`
-
-### Next eligible work after #366 merge
-
-# **#368 — REVIEW / RELEASE: owner license and citation decision package**
-
-The remaining concrete release boundary is owner-controlled:
-
+Verified state:
 - public repository;
 - no project license;
 - no root CITATION.cff;
-- public visibility does not grant broad reuse permission.
+- public visibility is not a broad reuse grant;
+- repository mixes software/tooling with project-authored corpus/data/documentation.
 
-#368 may prepare the decision package but must not select/apply a license without explicit
-owner approval.
+If the owner wants **inspectable-only** status:
+- keep the current no-license state;
+- optionally add citation metadata independently.
 
-WIP=1 remains binding: #368 starts only after #366 merges/closes.
+If the owner wants **open reuse**, the project-level recommendation is:
+
+> **split licensing — MIT for software/code + CC BY 4.0 for project-authored
+> corpus/data/documentation**
+
+Apache-2.0 remains the code alternative if explicit patent terms are desired.
+
+Third-party/linked evidence is not relicensed.
+
+Citation is independent of licensing.
+
+A `CITATION.cff` should be added only after the owner explicitly approves preferred
+creator/authorship identity.
+
+Decision package:
+
+> `docs/reviews/issue368-owner-license-citation-decision-2026-09-26.md`
+
+### Owner gate
+
+No license or citation authorship may be applied autonomously.
+
+Required explicit choices:
+
+1. **reuse posture**
+   - inspectable-only; or
+   - open reuse.
+
+2. if open reuse:
+   - recommended split MIT + CC BY 4.0; or
+   - Apache-2.0 + CC BY 4.0 if explicit patent terms are desired; or
+   - another owner-selected posture.
+
+3. **preferred citation identity**
+   - creator/author name(s) or organization;
+   - optional ORCID(s);
+   - citation enabled or not.
+
+Until the owner decides, the current public/inspectable no-license state remains correct.
+
+No scientific, corpus, pack or product change is blocked by this decision; only external
+reuse/citation permission is unresolved.
+
+WIP=1 remains binding at this owner gate.
 
 ## Historical backlog archive
 

@@ -1,0 +1,276 @@
+{
+  "artifact_role": "DERIVED_REFERENCE_LAYER",
+  "classes": [
+    {
+      "case_count": 4,
+      "case_ids": [
+        "anoplophora-finding-demarcated-area",
+        "eu-ecolabel-did-list-data-input",
+        "eu-ets-tnac-metric-trigger",
+        "hpai-woerdense-finding-spatial-effect"
+      ],
+      "definition": "An unchanged legal rule delegates an operative result to an authoritative non-normative external factual or data input, such as a quantitative value set or an officially confirmed categorical finding; a new authoritative input can change the legal/compliance output without parent-text mutation.",
+      "id": "AUTHORITATIVE_EXTERNAL_INPUT_TRIGGER"
+    },
+    {
+      "case_count": 3,
+      "case_ids": [
+        "brussels-i-choice-of-forum",
+        "matrimonial-property-participation-law-forum-composition",
+        "succession-choice-of-court"
+      ],
+      "definition": "A legally valid jurisdiction agreement can displace default jurisdiction rules by selecting the court or courts competent for a dispute, subject to its scope, exclusivity, formal/substantive validity and mandatory protected-party or exclusive-jurisdiction limits; forum cannot be inferred safely from default connecting factors or from a choice-of-law clause.",
+      "id": "CHOICE_OF_FORUM_STATE"
+    },
+    {
+      "case_count": 3,
+      "case_ids": [
+        "matrimonial-property-participation-law-forum-composition",
+        "rome-i-contract-choice-of-law",
+        "succession-professio-juris-choice"
+      ],
+      "definition": "A legally valid choice by the relevant party or person can select the law governing a relationship or succession instead of the law that would follow from default connecting factors; applicable law cannot be inferred safely from forum, location, habitual residence or nationality alone, and the existence, validity, scope and mandatory limits of the choice must be preserved.",
+      "id": "CHOICE_OF_LAW_STATE"
+    },
+    {
+      "case_count": 4,
+      "case_ids": [
+        "ai-act-legacy-cohort-applicability",
+        "dpf-historical-data-cohort-after-exit",
+        "mdr-legacy-device-cohort-applicability",
+        "mica-grandfathering-member-state-option"
+      ],
+      "definition": "Current legal applicability depends on a regulated subject, asset, data set or object's qualifying historical cohort event or legacy state, such as placement on market, putting into service, receipt while qualifying status existed, certificate/declaration status or significant change; similar current states can therefore receive different legal treatment unless cohort-defining history is preserved.",
+      "id": "COHORTED_TRANSITIONAL_APPLICABILITY"
+    },
+    {
+      "case_count": 3,
+      "case_ids": [
+        "mifid-cross-border-passport-activation",
+        "professional-card-cross-border-activation",
+        "ucits-host-market-passport-activation"
+      ],
+      "definition": "A home-state authorisation, qualification or regulated entitlement can acquire legally effective use in another Member State through a specified Union notification, transmission, recognition or passport procedure; home entitlement alone does not prove host-state activation, while completion of the Union procedure may remove the need for a fresh standalone host authorisation. The activation step, target host/service scope and continuing home entitlement must be preserved.",
+      "id": "CROSS_BORDER_RECOGNITION_ACTIVATION_STATE"
+    },
+    {
+      "case_count": 3,
+      "case_ids": [
+        "ai-act-eea-incorporation-pending",
+        "gdpr-eu-eea-application-gap",
+        "swiss-schengen-borders-code-adoption"
+      ],
+      "definition": "A legal act can be operative in one legal order while remaining only relevant, notified, under scrutiny, accepted-but-not-yet-effective or otherwise non-operative in a linked legal order until that order's required acceptance or incorporation mechanism and entry-into-effect conditions are satisfied; legal state, dates and adaptations must remain attached to the target legal order.",
+      "id": "CROSS_ORDER_INCORPORATION_STATE"
+    },
+    {
+      "case_count": 4,
+      "case_ids": [
+        "eppo-time-varying-participation",
+        "ireland-aamm-protocol21-post-adoption-opt-in",
+        "matrimonial-property-participation-law-forum-composition",
+        "rome-iii-participating-member-states"
+      ],
+      "definition": "An EU act can bind or apply as Union law only in a legally defined subset of Member States because of enhanced cooperation, opt-ins or Treaty protocols, and that participation set can change over time; applicability must be resolved against the act's participation regime and relevant date rather than inferred from the EU act label or today's participant list. A separate agreement or incorporation route that makes equivalent or partial content operative does not by itself make a non-participating Member State a participant in the EU act.",
+      "id": "DIFFERENTIATED_MEMBER_STATE_PARTICIPATION"
+    },
+    {
+      "case_count": 3,
+      "case_ids": [
+        "farrell-emanation-state-invocability",
+        "kl-x-directive-charter-composition",
+        "marshall-directive-vertical-invocability"
+      ],
+      "definition": "A Directive provision may be in force and its transposition deadline may have expired, yet direct invocability in a dispute depends on whether the provision is sufficiently precise and unconditional and whether the defendant is the State or an emanation of the State; a Directive cannot of itself impose obligations on a private individual.",
+      "id": "DIRECTIVE_INVOCABILITY_STATE"
+    },
+    {
+      "case_count": 5,
+      "case_ids": [
+        "adv-harmonised-standard-restriction",
+        "dpf-historical-data-cohort-after-exit",
+        "eidas-anf-trusted-list-status",
+        "ld2-shredder-320",
+        "toy-wave-roller-dynamic-standard-gateway"
+      ],
+      "definition": "Legal effect changes because the authoritative status of a referenced external item changes while the parent rule or external identifier remains unchanged.",
+      "id": "DYNAMIC_REFERENCE_STATUS"
+    },
+    {
+      "case_count": 3,
+      "case_ids": [
+        "kl-x-directive-charter-composition",
+        "petlichev-primacy-disapplication",
+        "rfc-seraing-primacy-disapplication"
+      ],
+      "definition": "A national provision can remain formally valid, in force and textually current while directly effective EU law requires it to be disapplied in the relevant dispute or scope; formal validity does not determine operative applicability, and the conflict, direct-effect condition and procedural context must be preserved.",
+      "id": "EU_PRIMACY_DISAPPLICATION_STATE"
+    },
+    {
+      "case_count": 4,
+      "case_ids": [
+        "adv-nis2-italian-heading",
+        "commission-state-aid-single-authentic-language",
+        "reg2025-905-dutch-corrigendum-scope",
+        "reg794-corrigendum-marker-locality"
+      ],
+      "definition": "A language or expression representation can carry local authenticity, corrective scope, labels or ordinals that are not safe cross-expression legal identities or effects; cross-expression use requires the relevant authenticity/scope rule or a canonical underlying identifier.",
+      "id": "EXPRESSION_LOCAL_REPRESENTATION_ASYMMETRY"
+    },
+    {
+      "case_count": 3,
+      "case_ids": [
+        "barber-temporal-limitation-exception",
+        "c360-25-interpretation-temporal-effect",
+        "planet49-interpretation-no-new-start"
+      ],
+      "definition": "A preliminary ruling normally clarifies the interpreted EU rule from that rule's own entry into force; the judgment date is not a default new prospective start, while any express Court-imposed limitation of temporal effects is an exceptional legal boundary that must be preserved.",
+      "id": "JUDICIAL_INTERPRETATION_TEMPORAL_EFFECT"
+    },
+    {
+      "case_count": 4,
+      "case_ids": [
+        "ld2-haringvliet-2015",
+        "meta-dma-partial-annulment-validity",
+        "qs-interim-suspension-operative-state",
+        "test-achats-validity-text-divergence"
+      ],
+      "definition": "A judicial holding changes validity or operative legal state while the target text remains printed or textually unchanged.",
+      "id": "JUDICIAL_VALIDITY_TEXT_DIVERGENCE"
+    },
+    {
+      "case_count": 3,
+      "case_ids": [
+        "construction-products-commission-software-version",
+        "dpp-semantic-profile-version",
+        "transport-ghg-calculation-tool-effect"
+      ],
+      "definition": "A legally consequential calculation, declaration, submission or verification depends on a prescribed, authoritative, privileged or certified machine-actionable artifact such as an executable tool, ruleset, schema or semantic profile; artifact identity, version or regulatory status is legally relevant evidence, so substituting another/current artifact can change the accepted result or validation consequence without parent-text mutation.",
+      "id": "MACHINE_COMPLIANCE_ARTIFACT"
+    },
+    {
+      "case_count": 3,
+      "case_ids": [
+        "gdpr-child-consent-national-option",
+        "mica-grandfathering-member-state-option",
+        "working-time-more-favourable-national-protection"
+      ],
+      "definition": "A Union rule expressly permits a bounded national option, parameter or more protective national rule, so the operative legal result can legitimately differ by Member State even though the same Union framework applies; the relevant national exercise of that permission must be resolved, and the Union default/floor or another Member State's rule is insufficient.",
+      "id": "MEMBER_STATE_PERMITTED_DIVERGENCE"
+    },
+    {
+      "case_count": 3,
+      "case_ids": [
+        "chmp-positive-opinion-pending-commission-decision",
+        "eba-crowdfunding-rts-authority-handoff",
+        "eba-fixed-overheads-rts-authority-handoff"
+      ],
+      "definition": "An official specialist artifact may be complete or final within its upstream role while a different institution owns the downstream binding decision; legal effect must remain attached to the procedure's actual decision owner and binding act rather than inherited from upstream authority, finality or practical importance.",
+      "id": "OFFICIAL_AUTHORITY_HANDOFF"
+    },
+    {
+      "case_count": 3,
+      "case_ids": [
+        "eu-mercosur-parallel-agreement-lifecycle",
+        "eu-mexico-parallel-agreement-lifecycle",
+        "ld2-chile-lifecycle"
+      ],
+      "definition": "An umbrella negotiation or political deal is implemented through legally distinct interim and comprehensive agreements whose signature, provisional application, conclusion, entry into force and replacement states must remain attached to the correct instrument.",
+      "id": "PARALLEL_INSTRUMENT_LIFECYCLE"
+    },
+    {
+      "case_count": 4,
+      "case_ids": [
+        "adv-ets-private-verifier",
+        "biotrh-szutest-notified-body",
+        "capri-sp-private-rating",
+        "toy-wave-roller-dynamic-standard-gateway"
+      ],
+      "definition": "A private-origin output, technical artifact or determination can have a bounded legal role because public law recognises, approves, incorporates or adopts it, without converting the private source into a public authority.",
+      "id": "PRIVATE_ORIGIN_LEGAL_RECOGNITION"
+    },
+    {
+      "case_count": 3,
+      "case_ids": [
+        "eu-merger-procedural-clock-suspension",
+        "medicines-assessment-clock-suspension",
+        "smoke-flavouring-efsa-clock-suspension"
+      ],
+      "definition": "A legally defined decision or assessment period can be suspended and later resumed by specified procedural events; nominal elapsed calendar or working time is not equivalent to elapsed legal clock time unless suspension intervals are preserved.",
+      "id": "PROCEDURAL_CLOCK_SUSPENSION"
+    },
+    {
+      "case_count": 3,
+      "case_ids": [
+        "delegated-act-non-objection-entry-into-force",
+        "merger-deemed-compatible-silence",
+        "staff-regulations-publication-silence"
+      ],
+      "definition": "A legally specified period can expire without an affirmative decision, objection or other required institutional action and the governing rule itself assigns a legal consequence to that non-action; the resulting state cannot be reconstructed safely by searching only for positive acts.",
+      "id": "PROCEDURAL_SILENCE_LEGAL_EFFECT"
+    },
+    {
+      "case_count": 4,
+      "case_ids": [
+        "adv-polish-visa-backprojection",
+        "nl-nis2-commission-tracker-lag",
+        "reg794-consolidation-backprojection",
+        "se-nis2-commission-tracker-lag"
+      ],
+      "definition": "A consolidated, derived, summary or tracker view has its own observation, editorial or update horizon that can diverge from the legal/source state relevant to the query; current accessibility and nominal view date are not substitutes for the view's actual temporal state.",
+      "id": "SOURCE_VIEW_TEMPORAL_DIVERGENCE"
+    },
+    {
+      "case_count": 4,
+      "case_ids": [
+        "adv-chatgpt-vlose-applicability",
+        "construction-products-commission-software-version",
+        "dsa-stripchat-status-application-lag",
+        "ld2-temu-june"
+      ],
+      "definition": "Authoritative status or set membership and downstream legal applicability begin or end at different legal boundaries.",
+      "id": "STATUS_APPLICATION_SEPARATION"
+    },
+    {
+      "case_count": 3,
+      "case_ids": [
+        "adv-licence-1300-boundary",
+        "fsr-digital-notification-cutoff",
+        "skagerrak-prawn-subday-boundary"
+      ],
+      "definition": "A legally material boundary occurs at a time finer than calendar-date granularity.",
+      "id": "SUBDAY_TEMPORAL_BOUNDARY"
+    },
+    {
+      "case_count": 3,
+      "case_ids": [
+        "cyprus-protocol10-acquis-suspension",
+        "denmark-greenland-faroe-territorial-regime",
+        "france-outermost-oct-territorial-regime"
+      ],
+      "definition": "EU-law applicability can differ between territories constitutionally linked to the same sovereign Member State because Treaty or instrument-specific territorial status attaches to the territory rather than the country label; legal scope must preserve the relevant territorial regime instead of inheriting mainland or Member-State status wholesale.",
+      "id": "SUBSTATE_TERRITORIAL_REGIME"
+    },
+    {
+      "case_count": 3,
+      "case_ids": [
+        "ai-act-third-country-output-use-nexus",
+        "gdpr-third-country-targeting-nexus",
+        "mar-third-country-instrument-nexus"
+      ],
+      "definition": "EU-law applicability can attach to an actor or conduct outside the Union because the governing rule defines scope through a legally specified Union nexus, such as targeted persons or recipients, a regulated Union market or instrument, or output/use in the Union; actor establishment or physical location alone is insufficient, while incidental or passive Union contact is insufficient where the required nexus is not met.",
+      "id": "UNION_NEXUS_APPLICABILITY"
+    },
+    {
+      "case_count": 3,
+      "case_ids": [
+        "ccs-storage-site-vertical-volume",
+        "dutch-airspace-vertical-extent",
+        "wfd-groundwater-overlying-status-bodies"
+      ],
+      "definition": "Legal geography has a legally consequential vertical extent or stratification such that horizontal geometry alone can conflate distinct legal spatial states; this includes bounded altitude/volume and stacked legally distinct spatial units, but excludes vertical measurements that can be losslessly projected into a horizontal mask.",
+      "id": "VERTICAL_SPATIAL_EXTENT"
+    }
+  ],
+  "warning": "Generated from corpus/index-v0.1.json. Do not edit this pack as legal truth; legal facts remain owned by referenced evidence chains."
+}

@@ -11,13 +11,13 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **REVIEW / RELEASE — OWNER RIGHTS + CITATION GATE**
+# **DISCOVER — PROPRIETARY / COMMERCIAL OPTION-SPACE EXHAUSTION**
 
 Frozen scientific source:
 
 > **NEEDLE_CORPUS_REFERENCE_2026-09-25 — 81 cases / 26 classes**
 
-Primary supported identity:
+Primary supported identity remains:
 
 > **known-failure reference corpus + exposed regression fixtures + minimal evaluation
 > discipline**
@@ -26,69 +26,98 @@ Current released reference surface:
 
 > **Needle Reference Pack v0.2 — navigation/reference surface**
 
+### Owner rights decision
+
+On 2026-09-26 the sponsor explicitly selected:
+
+> **INSPECTABLE_ONLY_FOR_NOW**
+
+Therefore:
+- keep the public repository without a project open-source/open-data license;
+- do not add MIT, Apache-2.0, CC BY 4.0 or another broad reuse grant;
+- treat this as deliberate option preservation, not a permanent anti-open-source position;
+- reopen licensing only from a concrete external reuse/distribution need or materially changed project identity/value boundary;
+- third-party/linked evidence remains outside any future project-authored license grant.
+
+Citation is independent and remains pending only on the sponsor's exact public creator string.
+The agreed creator order is **Morrow first, sponsor/owner second**. Do not create
+`CITATION.cff` until the exact second creator string is supplied explicitly.
+
 ### Current WIP
 
-# **#368 — owner license and citation decision package**
+# **#373 — exhaust remaining proprietary/commercial option space**
 
-Result:
+Corrected result after independent adversarial review:
 
-> **OWNER_DECISION_READY**
+> **COMMERCIAL_JOB_EXISTS_BUT_NEEDLE_SPECIFIC_VALUE_UNPROVEN**
 
-Verified state:
-- public repository;
-- no project license;
-- no root CITATION.cff;
-- public visibility is not a broad reuse grant;
-- repository mixes software/tooling with project-authored corpus/data/documentation.
+Durable review:
 
-If the owner wants **inspectable-only** status:
-- keep the current no-license state;
-- optionally add citation metadata independently.
+> `docs/reviews/issue373-proprietary-commercial-option-space-2026-09-26.md`
 
-If the owner wants **open reuse**, the project-level recommendation is:
+The initial #373 pass was too strong when it treated:
+- no Needle-specific method advantage;
+- strong/crowded incumbents;
+- weak IP/secrecy moat; and
+- no commercial opportunity
 
-> **split licensing — MIT for software/code + CC BY 4.0 for project-authored
-> corpus/data/documentation**
+as if they were equivalent conclusions.
 
-Apache-2.0 remains the code alternative if explicit patent terms are desired.
+They are not.
 
-Third-party/linked evidence is not relicensed.
+What remains binding:
+- #214 hard null;
+- #327 generic companion-use null;
+- #339/#353 bounded positives;
+- #349/#362 strong-baseline nulls;
+- #364 anti-rescue rule;
+- #366 smaller identity primary.
 
-Citation is independent of licensing.
+What #373 now supports:
+- a real commercial/operational legal-AI evaluation job exists externally;
+- private/fresh evaluation, expert oracle construction and repeated QA are real activities;
+- Needle has **not** demonstrated a proprietary product, moat, evaluation advantage or buyer
+  demand;
+- several commercial delivery mechanisms remain logically untested, including specialist
+  input to established evaluators, customer-owned evaluation estates, buyer-side procurement
+  assessment, independent adjudication, narrow maintenance/audit work and training/research
+  services;
+- none earns implementation.
 
-A `CITATION.cff` should be added only after the owner explicitly approves preferred
-creator/authorship identity.
+The previously proposed taxonomy-first sealed falsifier is **not accepted** because it would
+select Needle's own classes before a customer workload exists, risks treatment contamination
+and self-grading, and would test method usefulness before proving the outcome matters to an
+external buyer.
 
-Decision package:
+### Next eligible allocation after #373 acceptance
 
-> `docs/reviews/issue368-owner-license-citation-decision-2026-09-26.md`
+# **DISCOVER — concrete external evaluator/buyer job + acceptance criteria**
 
-### Owner gate
+The next serious work should begin from an independently evidenced external job, not from a
+Needle class.
 
-No license or citation authorship may be applied autonomously.
+Required evidence before a comparison:
+1. identifiable evaluator, legal-AI vendor/team, law firm/enterprise buyer or adjacent
+   operator;
+2. recurring evaluation/QA/procurement/adjudication task;
+3. current solution/workaround;
+4. consequential gap, capacity constraint or cost;
+5. decision that better execution would change.
 
-Required explicit choices:
+Then preselect exactly one value claim:
+- **METHOD:** Needle produces more decision-relevant testing at equal resources; or
+- **DELIVERY:** Needle can deliver accepted output at materially better cost, turnaround,
+  maintenance burden or reliability.
 
-1. **reuse posture**
-   - inspectable-only; or
-   - open reuse.
+Do not switch claims after a null.
 
-2. if open reuse:
-   - recommended split MIT + CC BY 4.0; or
-   - Apache-2.0 + CC BY 4.0 if explicit patent terms are desired; or
-   - another owner-selected posture.
+A paid pilot or concrete budget-backed procurement commitment is required before maintained
+product development.
 
-3. **preferred citation identity**
-   - creator/author name(s) or organization;
-   - optional ORCID(s);
-   - citation enabled or not.
+No product implementation, corpus growth, v0.3, structured database, license change or
+standing experiment programme is authorized.
 
-Until the owner decides, the current public/inspectable no-license state remains correct.
-
-No scientific, corpus, pack or product change is blocked by this decision; only external
-reuse/citation permission is unresolved.
-
-WIP=1 remains binding at this owner gate.
+WIP=1 remains binding: do not open the successor issue until #373/PR #374 is accepted.
 
 ## Historical backlog archive
 

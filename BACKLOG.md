@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **USE — EXTERNAL LEGAL-AI FAILURE ANALYSIS**
+# **DIRECTION REVIEW — POST-PACKET-VALUE / PACK-GAP**
 
 Frozen scientific source:
 
@@ -23,74 +23,48 @@ Supported reference job:
 
 ### Current WIP
 
-# **#339 — external legal-AI failure packet versus strong postmortem baseline**
-
-Result:
-
-> **NEEDLE_VALUE_PACK_GAP**
-
-Mechanical external selection chose `scalr-2`, the first author-labelled Hallucination
-in the preselected public `Hallucination-Free?` dataset after an initial incomplete row.
-
-The legal failure concerned patent obviousness after **KSR v. Teleflex**: a flexible
-teaching/suggestion/motivation principle was incorrectly rigidified into an exclusive
-mandatory prerequisite.
-
-The frozen strong ordinary postmortem already recovered:
-- controlling KSR doctrine;
-- historical pre-AIA §103(a) state;
-- causal error;
-- consequence;
-- corrective rule.
-
-Repository-level Needle added material failure-analysis/reuse structure:
-- **NO_EXISTING_CLASS_MATCH** rather than forced taxonomy;
-- derivation/validation/exposure semantics;
-- a two-sided boundary: TSM is neither mandatory-exclusive nor irrelevant;
-- historical source-state reuse discipline;
-- explicit post-hoc regression-conversion status;
-- concrete PASS/FAIL conditions.
-
-This is observed packet value for the evaluator/debugger/maintainer job, not novelty and
-not correctness/model superiority.
-
-### Reference Pack gap
-
-Reference Pack v0.1 could:
-- expose class definitions;
-- help confirm no honest class match;
-- expose general regression-only reuse warnings.
-
-It could not surface the full observed packet without repository reconstruction:
-- external no-class failure packet;
-- boundary/negative evidence;
-- historical source-state reuse note;
-- derived regression-conversion status;
-- PASS/FAIL contract.
-
-Therefore a future Reference Pack improvement is now **earned as a design question**.
-
-No v0.2 implementation, corpus case/class admission, product revival or superiority claim
-follows automatically.
-
-Result:
-
-> `docs/uses/issue339-external-failure-packet-use-2026-09-26.md`
-
-### Next eligible work after #339 merge
-
 # **#341 — direction review after observed packet value + Reference Pack gap**
 
-#341 must decide whether:
-- one direct positive use is sufficient to begin bounded Reference Pack v0.2 design/release
-  work;
-- an orthogonal second failure-analysis USE should replicate packet value first;
-- another mode has higher expected information value.
+Result:
 
-Any v0.2 must remain a derived layer over canonical evidence owners and solve only the
-failure-analysis surface gaps demonstrated by #339.
+> **SELECT REVIEW / RELEASE — DESIGN ONLY**
 
-WIP=1 remains binding: #341 starts only after #339 merges/closes.
+Reason:
+
+- #339 directly observed material repository-level packet value on a mechanically selected
+  independent legal-AI failure;
+- #339 also identified concrete Reference Pack v0.1 surface gaps;
+- one positive case is enough to earn a cheap/reversible design investigation;
+- one case is not enough to justify implementation/release of a broad new structured
+  packet schema;
+- designing the minimum candidate first makes an orthogonal replication more
+  discriminating;
+- implementation remains blocked until #343 determines what is truthfully derivable and
+  what requires replication.
+
+Review:
+
+> `docs/reviews/issue341-post-packet-value-direction-review-2026-09-26.md`
+
+### Next eligible work after #341 merge
+
+# **#343 — minimum Reference Pack v0.2 failure-analysis surface**
+
+#343 is **design only**.
+
+It must:
+- derive requirements only from demonstrated #339 gaps;
+- compare docs/navigation-only, derived packet index, separate external-analysis layer and
+  new canonical packet-object options;
+- identify one canonical owner for every proposed field;
+- reject fields that would become copied/competing legal truth;
+- replay #339 without admitting it into the corpus;
+- state which parts, if any, require orthogonal replication before implementation.
+
+No release directory changes, builder/schema implementation, new corpus case/class,
+external-failure admission or superiority claim are authorised.
+
+WIP=1 remains binding: #343 starts only after #341 merges/closes.
 
 ## Historical backlog archive
 

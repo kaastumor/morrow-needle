@@ -45,79 +45,87 @@ The agreed creator order is **Morrow first, sponsor/owner second**. Do not creat
 
 ### Current WIP
 
-# **#373 — exhaust remaining proprietary/commercial option space**
+# **#375 — identify a concrete external legal-AI evaluation job**
 
-Corrected result after independent adversarial review:
+Result:
 
-> **COMMERCIAL_JOB_EXISTS_BUT_NEEDLE_SPECIFIC_VALUE_UNPROVEN**
+> **VENDOR_EVALUATION_JOB_EARNS_TEST**
+
+Claim type:
+
+> **DELIVERY**
 
 Durable review:
 
-> `docs/reviews/issue373-proprietary-commercial-option-space-2026-09-26.md`
+> `docs/discovery/issue375-external-evaluation-job-2026-09-26.md`
 
-The initial #373 pass was too strong when it treated:
-- no Needle-specific method advantage;
-- strong/crowded incumbents;
-- weak IP/secrecy moat; and
-- no commercial opportunity
+The strongest externally evidenced job is:
 
-as if they were equivalent conclusions.
+> **independent legal-AI evaluation / retesting for vendors**
 
-They are not.
+Why it earns one bounded delivery test:
+- vendors pay for independent public/private assessments;
+- evaluation/certification recurs across benchmark cycles;
+- acceptance criteria are already lawyer-authored, fixed and reviewable;
+- Vals documented that full manual scoring would exceed 400 hours and that law firms were
+  capacity-limited in producing detailed complex reference answers;
+- confidentiality can prevent simple reuse of prior work product;
+- current benchmark communities still depend on practitioner task contribution and judging.
 
-What remains binding:
-- #214 hard null;
-- #327 generic companion-use null;
-- #339/#353 bounded positives;
-- #349/#362 strong-baseline nulls;
-- #364 anti-rescue rule;
-- #366 smaller identity primary.
+This does **not** establish Needle-specific method value.
 
-What #373 now supports:
-- a real commercial/operational legal-AI evaluation job exists externally;
-- private/fresh evaluation, expert oracle construction and repeated QA are real activities;
-- Needle has **not** demonstrated a proprietary product, moat, evaluation advantage or buyer
-  demand;
-- several commercial delivery mechanisms remain logically untested, including specialist
-  input to established evaluators, customer-owned evaluation estates, buyer-side procurement
-  assessment, independent adjudication, narrow maintenance/audit work and training/research
-  services;
-- none earns implementation.
+#362 remains binding against a new "Needle makes better oracles" claim.
 
-The previously proposed taxonomy-first sealed falsifier is **not accepted** because it would
-select Needle's own classes before a customer workload exists, risks treatment contamination
-and self-grading, and would test method usefulness before proving the outcome matters to an
-external buyer.
+The only eligible successor claim is:
 
-### Next eligible allocation after #373 acceptance
+> **DELIVERY — can a Needle-derived workflow produce an accepted legal
+> oracle/reference-answer package with materially lower total qualified-expert burden than
+> the actual alternative?**
 
-# **DISCOVER — concrete external evaluator/buyer job + acceptance criteria**
+Required measurements:
+- qualified reviewer time;
+- legal corrections;
+- rework rounds;
+- unresolved disputes;
+- total turnaround;
+- final acceptance/rejection.
 
-The next serious work should begin from an independently evidenced external job, not from a
-Needle class.
+Needle class matches, longer rubrics, extra metadata or prettier structure do not count.
 
-Required evidence before a comparison:
-1. identifiable evaluator, legal-AI vendor/team, law firm/enterprise buyer or adjacent
-   operator;
-2. recurring evaluation/QA/procurement/adjudication task;
-3. current solution/workaround;
-4. consequential gap, capacity constraint or cost;
-5. decision that better execution would change.
+### External dependency before execution
 
-Then preselect exactly one value claim:
-- **METHOD:** Needle produces more decision-relevant testing at equal resources; or
-- **DELIVERY:** Needle can deliver accepted output at materially better cost, turnaround,
-  maintenance burden or reliability.
+The project cannot credibly self-supply the next pilot.
 
-Do not switch claims after a null.
+Required before any comparison:
+1. one independently supplied real evaluation workload/brief;
+2. one qualified external legal reviewer/adjudicator;
+3. an acceptance threshold defined before Needle treatment;
+4. blinded comparison where practical.
 
-A paid pilot or concrete budget-backed procurement commitment is required before maintained
-product development.
+Therefore:
 
-No product implementation, corpus growth, v0.3, structured database, license change or
-standing experiment programme is authorized.
+> **EXECUTION BLOCKED ON EXTERNAL WORKLOAD + QUALIFIED REVIEWER**
 
-WIP=1 remains binding: do not open the successor issue until #373/PR #374 is accepted.
+### Next eligible allocation after #375 acceptance
+
+# **DISCOVER / HUMAN VALIDATION — obtain one pilot partner**
+
+The next WIP should seek exactly one suitable evaluator/vendor/legal-team partner willing
+to provide:
+- one bounded evaluation brief;
+- acceptance criteria;
+- qualified review of two blinded deliverables.
+
+Outreach must not claim Needle superiority and must not pitch a built product.
+
+No product implementation, corpus growth, v0.3, structured external-failure database,
+license change or standing experiment programme is authorized.
+
+Frozen scientific state remains **81 cases / 26 classes**.
+Reference Pack v0.2 remains current.
+Owner licensing posture remains **INSPECTABLE_ONLY_FOR_NOW**.
+
+WIP=1 remains binding.
 
 ## Historical backlog archive
 

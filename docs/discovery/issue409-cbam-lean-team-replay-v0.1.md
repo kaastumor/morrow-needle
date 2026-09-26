@@ -1,8 +1,20 @@
 # Issue #409 — CBAM lean-team historical maintenance replay v0.1
 
-Status: **FROZEN BEFORE EXECUTION**
+Status: **RETIRED_UNEXECUTED — stronger accessible small-team incumbent found before execution**
 
 Date: 2026-09-26
+
+## Retirement note
+
+Before execution, #409 found multiple niche CBAM tools publicly aimed at small importers with threshold/price/default-value/reporting/trace capabilities overlapping the proposed Candidate-B treatment.
+
+The baseline contract was therefore no longer strong enough. This replay is retained for history but must **not** be executed as the Candidate-B value test.
+
+Canonical correction:
+
+> `docs/discovery/issue409-accessible-incumbent-correction-2026-09-26.md`
+
+---
 
 ## Purpose
 

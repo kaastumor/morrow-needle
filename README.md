@@ -46,14 +46,15 @@ executable subset: **reference status is corpus-wide; regression status is
 case/fixture-specific**. See
 `docs/reviews/issue331-external-regression-role-result-2026-09-26.md`.
 
-## Supported reference job
+## Reference role and safe use
 
-The corpus's current externally defensible job is **legal failure analysis, evaluation
-design, debugging and regression-fixture derivation**.
+The corpus's primary supported role is as a **known-failure reference asset with
+case-specific exposed regression fixtures**.
 
-It preserves source-backed failure mechanisms so an evaluator or maintainer can reconstruct
-the consequential legal-state distinction, inspect provenance/exposure, challenge family
-boundaries and—where an executable contract exists—reuse the case as an exposed regression.
+It can support legal failure analysis, evaluation design, debugging and regression-fixture
+derivation, but those uses should not be mistaken for a separately demonstrated external
+Needle workflow advantage. The useful discipline is retained as project practice; excellent
+ordinary source-linked evaluator/postmortem work remains a fully legitimate substitute.
 
 ### Use-allocation rule
 
@@ -72,8 +73,15 @@ Do **not** add Needle ceremony when the truth is explicit in one stable source, 
 answer is already supplied, the future regression oracle is nearly tautological, or the
 extra packet would add only labels/governance metadata.
 
-This boundary is supported by the bounded #339, #349 and #353 uses. It is a practical
-allocation rule, not a population or model-performance claim.
+This boundary is supported by the bounded #339, #349 and #353 uses and challenged by
+the predeclared #362 falsifier. It is a practical **first-refusal discipline**, not a
+population claim, model-performance claim, or validated selector for when Needle will add
+incremental value.
+
+The standing effort to prove a distinct external Needle packet/artifact job is retired.
+Reopen that question only from a materially changed boundary such as repeated real external
+use, measured handoff/reconstruction burden that ordinary practice fails to solve, or an
+independent evaluation setup capable of measuring operational delta without self-grading.
 
 `NO_EXISTING_CLASS_MATCH` remains valid, and omission is preferred over synthetic packet
 fields.
@@ -82,11 +90,14 @@ Needle is still **not demonstrated as a generic companion for ordinary legal res
 The first mechanically selected real post-answer use test (#327) returned
 `BASELINE_SUFFICIENT`.
 
-Reference Pack v0.2 is the current compact failure-analysis navigation/method surface.
+Reference Pack v0.2 remains the current compact navigation/method surface.
 Reference Pack v0.1 remains preserved as its historical predecessor. The pack points to
 truth owners rather than self-containing every legal boundary, source-state or regression
-artifact. See `docs/reviews/issue335-reference-residual-value-result-2026-09-26.md` and
-`docs/uses/issue353-conditional-packet-value-use-2026-09-26.md`.
+artifact. Its existence is not evidence of separate product demand or artifact-level
+incremental value. See
+`docs/reviews/issue335-reference-residual-value-result-2026-09-26.md`,
+`docs/uses/issue353-conditional-packet-value-use-2026-09-26.md`, and
+`docs/uses/issue362-paired-temporal-oracle-incremental-value-2026-09-26.md`.
 
 ## Reuse and citation status
 

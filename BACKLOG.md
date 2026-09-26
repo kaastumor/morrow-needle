@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **CONSOLIDATE — EXTERNAL EVALUATOR-VALUE EVIDENCE**
+# **USE — PAIRED INCREMENTAL-VALUE FALSIFIER**
 
 Frozen scientific source:
 
@@ -23,73 +23,67 @@ Current released reference surface:
 
 ### Current WIP
 
-# **#359 / #361 — reconcile external evaluator-job night campaign**
-
-Result:
-
-> **EXTERNAL_DISCIPLINE_VALUE_SUPPORTED; FULL_PACKET_JOB_UNPROVEN**
-
-The eight-run external-value campaign moved the project outside its own packet framing and
-tested a real evaluator/oracle-maintenance job.
-
-The supported conclusion is deliberately narrow:
-
-> **Needle-style failure-analysis discipline can add value on some legally complex
-> evaluator/oracle-repair tasks. It is not yet established that the full Needle artifact,
-> its corpus or Reference Pack provides material incremental value over excellent ordinary
-> evaluator/postmortem practice.**
-
-Night evidence:
-- a conditional external evaluator/oracle-maintenance job exists;
-- strong incumbent benchmark/version/postmortem practice absorbs most of that job;
-- a narrow residual survives when oracle repair requires consequential legal-state,
-  authority-relationship, boundary or reuse reconstruction;
-- LaborBench supplied a favorable method-level positive;
-- OpenContracts/LegalBench-RAG supplied a negative control where ordinary data repair and
-  regression tests were sufficient;
-- no v0.3, software surface, structured external-failure database or corpus growth earned
-  itself.
-
-Important red-team boundary:
-
-> the conditional-value rule must not become unfalsifiable by calling positive cases
-> "complex" after the fact.
-
-Result:
-
-> `docs/reviews/issue359-night-external-value-convergence-2026-09-26.md`
-
-### Next eligible work after reconciliation merge
-
 # **#362 — paired temporal-oracle test of Needle incremental value**
 
-#362 predeclares complexity before row inspection.
+Result:
 
-External benchmark:
-> **ChronoLex-TW**
+> **CONDITIONAL_HYPOTHESIS_NOT_SUPPORTED**
 
-Paired design:
-- first complete externally labelled `Shifted` item;
-- mechanically matched `Stable` control;
-- excellent ordinary evaluator-maintainer baseline first;
-- Needle discipline second;
-- corpus/Reference Pack only if packet work is actually earned.
+> **DISCIPLINE_DELTA = NO**
 
-Directional falsifier:
+> **ARTIFACT_DELTA = NO**
 
-> Needle should add more consequential reusable structure on the changed-law item than on
-> the stable control.
+> **V0.2_NAVIGATION = NOT_NEEDED**
 
-The hypothesis weakens if:
-- good practice already captures all consequential changed-law state;
-- Needle adds only labels/reformatting;
-- comparable "value" appears on the stable control;
-- any useful delta is fully absorbable into ordinary source/effective-date/correction/
-  regression fields.
+The pair was mechanically frozen before source analysis from ChronoLex-TW:
 
-No release/product change is authorised before #362.
+- `CLTW-2012-criminal-41` — externally labelled `Shifted`;
+- `CLTW-2020-criminal-19` — first same-statute `Stable` control.
 
-WIP=1 remains binding: #362 starts only after this reconciliation merges/closes.
+The predeclared external temporal condition failed to order the legally consequential
+reconstruction burden:
+
+- the Shifted Article 122 row had a later text amendment, but the answer-determinative
+  penalty/procedural state remained materially stable;
+- the Stable Article 168 row required the richer substantive/procedural/Supreme-Court
+  relationship.
+
+Excellent ordinary evaluator-maintenance practice already preserved all consequential
+target-date, source-state, boundary and regression logic on both rows.
+
+Needle added no material discipline-level or artifact-level delta.
+
+This does **not** erase #339/#353. It does reject treating an observable "changed-law /
+stable-law" or loosely defined "complexity" condition as a demonstrated predictor of
+incremental Needle value.
+
+Do not search for a friendlier replacement pair.
+
+Result:
+
+> `docs/uses/issue362-paired-temporal-oracle-incremental-value-2026-09-26.md`
+
+### Next eligible work after #362 merge
+
+# **#364 — direction review after paired incremental-value falsifier**
+
+#364 must explicitly decide between:
+- **CONSOLIDATE / REDIRECT** — absorb the useful discipline into excellent ordinary
+  practice and stop treating external artifact-value proof as a standing research line;
+- **USE** — only if a credible case-selection-independent operational test can measure
+  reconstruction/handoff/regression benefit without self-grading;
+- **DISCOVER** — only for direct external adoption/demand evidence rather than benchmark
+  existence;
+- release/maintenance only with a concrete trigger.
+
+Anti-rescue rule:
+
+> do not answer #362 by selecting another favorable complexity proxy.
+
+No v0.3, structured external-failure database, corpus growth, product revival or superiority
+claim is authorised.
+
+WIP=1 remains binding: #364 starts only after #362 merges/closes.
 
 ## Historical backlog archive
 

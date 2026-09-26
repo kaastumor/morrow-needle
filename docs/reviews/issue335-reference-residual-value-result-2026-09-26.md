@@ -215,7 +215,10 @@ At repository level, an accepted Needle case/family can preserve:
 
 No fixed incumbent in the sample losslessly supplies that whole contract.
 
-## Why this is not a novelty claim
+That is a meaningful **differentiation finding**, even though it is not a component-level
+novelty finding.
+
+## Differentiation is not the same as novelty
 
 The components all have precedents:
 
@@ -225,16 +228,36 @@ The components all have precedents:
 - postmortems preserve detailed individual failures;
 - regression systems convert known failures into future tests.
 
-Needle does not establish value by combining components nobody else combines.
+That does **not** imply that the combined Needle packet is interchangeable with those
+incumbents.
 
-The residual is narrower:
+The fixed sample did not identify another artifact that, at case/family level, combines
+all of:
+
+- the decisive legal-state failure mechanism;
+- authoritative evidence/source-state lineage;
+- derivation/evaluation/exposure provenance;
+- accepted boundary/negative evidence;
+- stable cross-case causal family organization;
+- a controlled path into regression engineering.
+
+This may be a practically superior failure-analysis packet for some evaluator/debugger
+jobs even though every component has an external precedent.
+
+The project must therefore distinguish three claims:
+
+1. **novelty** — not established or required;
+2. **differentiated packet/contract** — supported by the fixed comparison sample;
+3. **meaningful relative value in use** — still requires direct evidence.
+
+The residual claim is:
 
 > **for legal failure analysis and evaluation/debugging work, the project preserves the
 > exact legal-state failure mechanism and its evidence/boundary/exposure history in a
-> reusable cross-case form.**
+> reusable cross-case packet that the fixed incumbent sample does not losslessly match.**
 
-That is a different job from capability scoring, broad hallucination taxonomy or general
-incident memory.
+That is a different and potentially better job contract than capability scoring, broad
+hallucination taxonomy, general incident memory or ordinary one-off postmortems.
 
 ## Strongest attack — ordinary postmortems plus benchmark literature
 
@@ -282,6 +305,17 @@ Therefore:
 
 > the **repository evidence estate** supports the full failure-analysis contract;
 > Reference Pack v0.1 is only a compact navigation/reference layer into it.
+
+This creates a concrete **Reference Pack improvement hypothesis**:
+
+> if a real failure-analysis use demonstrates that the full Needle packet adds material
+> value but pack-only use cannot access the relevant boundary/source-state/provenance
+> context without reconstructing repository history, then a future Reference Pack version
+> may earn richer failure-analysis fields or navigation.
+
+That improvement must be earned by observed use. It must not be rejected merely because
+other legal-AI tools or incident repositories already exist, and it must not be implemented
+merely because a richer pack seems elegant.
 
 Do not upgrade the pack into a self-contained failure-analysis dataset by wording alone.
 

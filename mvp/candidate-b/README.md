@@ -6,8 +6,8 @@ This static surface projects five frozen official EU harmonised-standard legal-s
 
 It exists to test one narrow user question:
 
-> Can a lean product/compliance user understand the operative OJ-reference state and its timing
-> more easily than by reconstructing the same state from fragmented official pages?
+> Does a compact projection of operative OJ-reference state and timing provide useful workflow
+> value versus the strongest free official-source process for a real product-compliance user?
 
 It is **not** a live monitoring service and must not be used as a current compliance database.
 
@@ -59,6 +59,10 @@ inventing historical/future state.
 capability.
 
 This MVP is not a novelty demonstration.
+
+#416 found that the Commission Formal Objections page is already a strong centralized discovery
+surface for the frozen workload. The remaining test is therefore narrower: whether the maintained
+state projection itself has useful workflow value.
 
 A positive usability result against free official sources would only show that the compact
 decision-ready rendering deserves further comparison against real incumbent product views.

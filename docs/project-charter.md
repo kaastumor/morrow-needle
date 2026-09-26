@@ -39,19 +39,24 @@ contract; exposure does not disqualify a case from regression reuse, but a failu
 without that contract is reference/debugging material rather than a turnkey regression
 test.
 
-The primary external reference contract is **legal failure analysis / evaluation design /
-debugging**, not routine assistance while answering an ordinary legal question. The
-repository evidence estate preserves the decisive legal-state distinction, evidence
-lineage, provenance/exposure and accepted boundaries needed to reconstruct and challenge a
-known failure. A compact release/navigation layer may point to that evidence without
-becoming the evidence itself.
+The corpus's primary external role is **reference and case-specific exposed regression
+reuse**. It can support legal failure analysis, evaluation design and debugging, but those
+activities are not a separately demonstrated Needle workflow advantage. The repository
+evidence estate preserves the decisive legal-state distinction, evidence lineage,
+provenance/exposure and accepted boundaries needed to reconstruct and challenge a known
+failure. A compact release/navigation layer may point to that evidence without becoming
+the evidence itself.
 
-Current external evidence supports this contract primarily at the **discipline** level.
-It does not yet establish that an external evaluator must adopt the frozen Needle corpus,
-Reference Pack or any dedicated Needle software to obtain the useful result. Equivalent
-excellent benchmark/postmortem practice is a legitimate substitute and must receive full
-credit. Artifact-level incremental value remains an open empirical question rather than a
-project premise.
+Current external evidence supports the associated failure-analysis rules as useful
+**professional discipline**, not as a demonstrated requirement to adopt the frozen Needle
+corpus, Reference Pack or dedicated Needle software. Equivalent excellent
+benchmark/postmortem practice is a legitimate substitute and must receive full credit.
+
+The standing research line seeking a distinct external packet/artifact advantage is
+retired after #362's predeclared falsifier. Reopen it only from a materially changed
+boundary such as repeated real external use, measured handoff/reconstruction burden that
+ordinary practice fails to solve, or an independent setup capable of measuring
+operational delta without self-grading.
 
 This contract is **conditional, not ceremonial**:
 

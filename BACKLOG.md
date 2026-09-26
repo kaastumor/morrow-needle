@@ -88,30 +88,68 @@ Durable analysis:
 
 > `docs/discovery/issue409-lean-team-capability-access-map-2026-09-26.md`
 
-### Phase 2 result — first eligible vertical selected mechanically
+### Phase 2 result — accessible-incumbent correction before execution
 
-Selection used the frozen #377 residual order and predeclared conditions.
+CBAM was initially the first eligible residual under the frozen #377 order.
 
-First eligible residual:
+Before executing the replay, a stronger small-team incumbent was found:
 
-# **CBAM LEAN-TEAM OPERATIVE-STATE MAINTENANCE**
+- niche CBAM products publicly market threshold tracking;
+- maintained certificate-price/default-value state;
+- audit trails / reporting;
+- small-importer plans with published prices.
 
-Why CBAM qualifies:
+Therefore the planned CBAM spreadsheet-vs-Needle replay would have become a strawman.
 
-- official EU material explicitly identifies SME/smaller-importer burden;
-- the 50-tonne threshold creates actor-specific applicability state;
-- Commission certificate price is an independently moving authoritative input;
-- current price/timeline/default-value/status sources are public;
-- a narrow importer job can be replayed without confidential customer data.
+Disposition:
 
-Strong anti-Needle control:
+# **CBAM REPLAY RETIRED_UNEXECUTED**
 
-> CBAM simplification removed roughly 90% of importers from definitive obligations; if official
-> guidance + notes is sufficient for the remaining narrow job, Candidate B should fail.
+This is not evidence that every CBAM tool is good.
 
-Durable selection:
+It is enough to reject the assumption that maintained CBAM state is available only through an
+enterprise regulatory-intelligence stack.
 
-> `docs/discovery/issue409-cbam-vertical-selection-2026-09-26.md`
+Durable correction:
+
+> `docs/discovery/issue409-accessible-incumbent-correction-2026-09-26.md`
+
+The lean-team selection rule is now strengthened:
+
+> **accessible vertical point solutions receive full incumbent credit before a Candidate-B residual
+> is accepted.**
+
+Re-running the frozen #377 order:
+
+- CBAM — access residual not established;
+- CER — lean/smaller target population not independently established;
+- CSRD — current mandatory core target is >EUR450m turnover + >1,000 employees, not the first lean wedge;
+- **MDR — proceeds to detailed residual audit.**
+
+### MDR residual audit
+
+Independent official evidence makes MDR materially relevant to Candidate B:
+
+- the EU medical-device sector is strongly SME-shaped;
+- Commission evaluation material reports SMEs bearing disproportionate MDR/IVDR compliance cost;
+- legacy-device eligibility depends on a conjunction of device/cohort, prior-law compliance,
+  no-significant-change, risk, QMS/application/written-agreement milestones and
+  notified-body/certificate state;
+- EUDAMED is now a mandatory live owner for key actor/device/certificate state.
+
+Affordable EUDAMED point tools also exist and receive full credit.
+
+Their public contracts visibly cover registry preparation, certificate/status monitoring and alerts,
+but the current public scan does not establish whether affordable tools already compose the full
+**operative transition-eligibility conclusion**.
+
+Disposition:
+
+# **MDR RESIDUAL PLAUSIBLE — DETAILED WORKFLOW TEST EARNED**
+
+Durable analysis:
+
+> `docs/discovery/issue409-mdr-lean-team-residual-audit-2026-09-26.md`
 
 ### Candidate A status
 
@@ -131,27 +169,20 @@ Candidate C remains:
 
 ### Next #409 step
 
-Freeze and execute one **lean-team CBAM historical maintenance replay**.
+Freeze one **MDR legacy-device operative-eligibility replay**.
 
-The comparator is not enterprise regtech. It is a capable lean workflow with:
+The strong lean comparator must include:
 
-- official/public sources;
-- browser/search;
-- free alerts where available;
-- spreadsheet/notes;
+- official MDR / MDCG guidance;
+- EUDAMED public state;
+- ordinary maintained notes/checklist;
 - general source-grounded AI;
-- retained prior notes and links.
+- affordable point-tool capability for EUDAMED preparation/monitoring where publicly available.
 
-The Candidate-B treatment may use only the smallest already-built concepts earned by the job:
+Candidate B gets credit only for the **cross-owner legal-state composition** that remains after those
+incumbents are subtracted.
 
-- evidence-owner register;
-- governing-time state;
-- authoritative external-state references;
-- applicability condition;
-- prior/current operative-state delta;
-- provenance/source observation where useful.
-
-No new schema or UI before replay.
+No new schema or UI before the replay demonstrates recurring residual structure.
 
 ### Existing evidence remains binding
 

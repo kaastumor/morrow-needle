@@ -133,7 +133,39 @@ Evidence-driven implementation quickly became much leaner:
 This lean implementation choice is a recurring Needle pattern: large conceptual ambition, but
 architecture only when adversarial evidence requires it.
 
-## 8. What the original vision still contributes
+## 8. Built versus merely imagined product layers
+
+Historical memory must distinguish shipped/proven prototypes from roadmap ideas.
+
+### Actually built/frozen
+
+- Thread v0.1;
+- structured Retrieval v0.1;
+- Half-Life v0.1;
+- Source Anomaly v0.1;
+- Legislative X-Ray / Dependency Ripple v0.1;
+- operational update monitoring/re-observation/classification;
+- CHANGE_FEED / AUDIT_FEED / ABSTENTION_FEED routing and feed-card contracts;
+- an early thin product checkpoint;
+- later Corpus Explorer v0.1.
+
+### Identified as possible future directions but deliberately not earned/built as full product layers
+
+- richer affected-entity intelligence;
+- public-interest/importance ranking as a product system;
+- broad public UI/application platform;
+- general API/platform layer;
+- subscription/large-scale delivery machinery;
+- additional analytics merely to create product breadth.
+
+Affected-entity intelligence was at one point identified as the strongest information gap after the
+first live feed cards, but later adversarial/product-value gates intervened before a new canonical
+layer was justified.
+
+Likewise, early architecture sketches mentioned larger database/queue/frontend infrastructure, but
+the project deliberately stayed with a much leaner evidence-backed implementation.
+
+## 9. What the original vision still contributes
 
 The public-feed thesis is not current, but several original ideas remain highly relevant:
 

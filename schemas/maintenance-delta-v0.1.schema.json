@@ -1,0 +1,315 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://morrow-needle.invalid/schemas/maintenance-delta-v0.1.json",
+  "title": "Morrow // Needle Maintenance Delta v0.1",
+  "description": "Minimal maintenance delta for an existing legal evaluation contract. Records changed score-bearing state, evidence/time ownership, repair and prior-result consequences without duplicating the underlying task or rubric.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_id",
+    "change_status",
+    "subject",
+    "trigger",
+    "delta_units",
+    "repair",
+    "result_impact"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "maintenance-delta-v0.1"
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "change_status": {
+      "type": "string",
+      "enum": [
+        "OBSERVED",
+        "ADOPTED_BY_OWNER",
+        "SUPERSEDED"
+      ]
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "task_id",
+        "baseline_contract_ref"
+      ],
+      "properties": {
+        "task_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "baseline_contract_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "candidate_contract_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "trigger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "summary",
+        "reference"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "LAW_OR_SOURCE_CHANGE",
+            "WRONG_OR_STALE_LEGAL_PROPOSITION",
+            "CRITERION_ACTIVATION_AMBIGUITY",
+            "CRITERION_COVERAGE_GAP",
+            "CROSS_CRITERION_INCONSISTENCY",
+            "ACCEPTANCE_BOUNDARY_CHANGE",
+            "TASK_OR_RUBRIC_REVISION",
+            "FAILURE_POSTMORTEM",
+            "OTHER"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "observed_at": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "delta_units": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/delta_unit"
+      }
+    },
+    "repair": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "actions",
+        "status"
+      ],
+      "properties": {
+        "actions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "NOT_REQUIRED",
+            "PROPOSED",
+            "ACCEPTED",
+            "REJECTED",
+            "PARTIAL"
+          ]
+        }
+      }
+    },
+    "result_impact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "comparability",
+        "existing_outputs_action",
+        "scope",
+        "reason"
+      ],
+      "properties": {
+        "comparability": {
+          "type": "string",
+          "enum": [
+            "COMPARABLE",
+            "NOT_COMPARABLE",
+            "UNKNOWN"
+          ]
+        },
+        "existing_outputs_action": {
+          "type": "string",
+          "enum": [
+            "NONE",
+            "REJUDGE_EXISTING_OUTPUTS",
+            "RERUN_SUBJECTS",
+            "REVIEW_SAMPLE",
+            "HUMAN_DECISION_REQUIRED"
+          ]
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "adjudication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "NOT_REQUIRED",
+            "PENDING",
+            "ACCEPTED",
+            "REJECTED",
+            "SPLIT"
+          ]
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "owner_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  },
+  "$defs": {
+    "delta_unit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "before",
+        "after",
+        "affected_contract_refs",
+        "risk"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "LEGAL_PROPOSITION",
+            "CRITERION_ACTIVATION",
+            "CRITERION_COVERAGE",
+            "CRITERION_CONSISTENCY",
+            "TASK_INSTRUCTION",
+            "ACCEPTANCE_BOUNDARY",
+            "RESULT_INTERPRETATION",
+            "OTHER"
+          ]
+        },
+        "before": {
+          "type": "string",
+          "minLength": 1
+        },
+        "after": {
+          "type": "string",
+          "minLength": 1
+        },
+        "affected_contract_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "risk": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "FALSE_REJECT",
+              "FALSE_ACCEPT",
+              "AMBIGUOUS_GRADING",
+              "NON_COMPARABLE_RESULTS",
+              "NO_KNOWN_SCORE_IMPACT",
+              "UNKNOWN"
+            ]
+          }
+        },
+        "evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "owner_ref",
+            "proposition",
+            "status"
+          ],
+          "properties": {
+            "owner_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "proposition": {
+              "type": "string",
+              "minLength": 1
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "SUPPORTED",
+                "CONTESTED",
+                "UNRESOLVED"
+              ]
+            }
+          }
+        },
+        "governing_time": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind"
+          ],
+          "properties": {
+            "kind": {
+              "type": "string",
+              "enum": [
+                "LAW_AS_OF",
+                "CONTROLLING_EVENT_DATE",
+                "EFFECTIVE_PERIOD",
+                "NOT_APPLICABLE",
+                "UNRESOLVED"
+              ]
+            },
+            "value_or_ref": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

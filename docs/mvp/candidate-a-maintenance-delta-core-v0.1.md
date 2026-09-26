@@ -94,10 +94,6 @@ Required:
 - `trigger.summary` — concise description;
 - `trigger.reference` — issue, source, incident, adjudication or change artifact that caused review.
 
-Optional:
-
-- `trigger.observed_at` — timestamp/date when operationally useful.
-
 ### 3.4 Delta units
 
 At least one delta unit is required.
@@ -154,16 +150,20 @@ Use:
 Do not require a standalone law-as-of field when a transaction, filing, closing or other
 event unambiguously owns legal time.
 
-### 3.7 Repair
+### 3.7 Repair status
 
 Required:
 
-- `repair.actions` — the minimal changes needed to restore a coherent evaluation contract;
-- `repair.status` — `NOT_REQUIRED`, `PROPOSED`, `ACCEPTED`, `REJECTED`, or `PARTIAL`.
+- `repair_status` — `NOT_REQUIRED`, `PROPOSED`, `ACCEPTED`, `REJECTED`, or `PARTIAL`.
 
-An accepted repair must point to `subject.candidate_contract_ref` and requires `change_status: ADOPTED_BY_OWNER`.
+The proposed/revised contract state already lives in each delta unit's `after` field. A
+separate repair-action list was replayed and removed as duplication.
 
-A legitimate semantic revision that is not being characterized as a defect may use `repair.status: NOT_REQUIRED`.
+An accepted repair must point to `subject.candidate_contract_ref` and requires
+`change_status: ADOPTED_BY_OWNER`.
+
+A legitimate semantic revision that is not being characterized as a defect may use
+`repair_status: NOT_REQUIRED`.
 
 ### 3.8 Prior-result consequence
 
@@ -194,14 +194,16 @@ The contract must distinguish:
 - change where existing raw outputs can be re-judged without rerunning the subject;
 - change that requires a fresh subject run.
 
-### 3.9 Open questions / adjudication
+### 3.9 Adjudication
 
 Optional but explicit when needed:
 
-- `open_questions[]`;
 - `adjudication.status` — `NOT_REQUIRED`, `PENDING`, `ACCEPTED`, `REJECTED`, `SPLIT`;
 - `adjudication.note`;
 - `adjudication.owner_ref` when available.
+
+Unresolved questions belong in the evidence/result/adjudication notes that own them; a generic
+open-question list was replayed and removed as redundant.
 
 Do not convert unresolved legal disagreement into a confident repaired oracle.
 
@@ -216,10 +218,10 @@ A delta record is structurally invalid if any of these fail:
 3. a legal/factual correction has an evidence owner or is marked `UNRESOLVED`;
 4. a time-varying legal proposition has a governing-time owner or is marked `UNRESOLVED`;
 5. an accepted repair has an immutable candidate-contract reference and owner-adopted change state;
-6. a legitimate adopted revision may record `repair.status: NOT_REQUIRED` without being mislabeled a defect;
+6. a legitimate adopted revision may record `repair_status: NOT_REQUIRED` without being mislabeled a defect;
 7. any potential historical-score effect has an explicit comparability decision;
 8. `NOT_COMPARABLE` or `UNKNOWN` may not silently pair with `existing_outputs_action: NONE`;
-9. unresolved evidence may not support `repair.status: ACCEPTED` without explicit qualified adjudication;
+9. unresolved evidence may not support `repair_status: ACCEPTED` without explicit qualified adjudication;
 10. `NO_KNOWN_SCORE_IMPACT` may not be combined with a contradictory failure-risk label;
 11. the delta record may not silently add unrelated rubric requirements;
 12. taxonomy/class labels are never required.
@@ -243,7 +245,7 @@ Every machine/human record should be renderable as one **Maintenance Delta Card*
 `affected criteria / risk direction`
 
 ### Repair
-`minimal contract edit`
+`delta-unit after state + repair status`
 
 ### Existing results
 `comparable / rejudge / rerun / human decision required`
@@ -257,7 +259,7 @@ The card should remain understandable without Needle taxonomy knowledge.
 
 ## 6. Structural validation
 
-The three bounded #402 replays used the same field groups and exposed one semantic distinction (`change_status` versus `repair.status`) without requiring a new top-level concept.
+The three bounded #402 replays used the same field groups and exposed one semantic distinction (`change_status` versus `repair_status`) without requiring a new top-level concept.
 
 That is enough to earn a **small structural schema + semantic validator**.
 

@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DIRECTION REVIEW — POST-DEPTH ALLOCATION**
+# **USE — REAL-TASK REFERENCE PACK TEST**
 
 Frozen scientific source:
 
@@ -23,47 +23,51 @@ Released use surface:
 
 ### Current WIP
 
-# **#325 — post-depth project direction review**
+# **#327 — real-task post-answer Reference Pack value test**
 
 Result:
 
-> **SELECT USE**
+> **BASELINE_SUFFICIENT**
 
-Reason:
+One mechanically selected OJ-L task — Commission Implementing Regulation (EU) 2026/2101
+on definitive anti-dumping duties for Chinese pea protein — was solved and frozen from
+ordinary official sources before any Needle consultation.
 
-- post-release integrity/interpretation work has made the internal corpus state unusually
-  well described;
-- #317/#319/#321 found no need for additional negative-evidence, boundary or independence
-  registries/repairs;
-- the three-run depth lane is complete;
-- Reference Pack v0.1 has synthetic cold-start evidence but no real-use evidence;
-- the charter's north star explicitly prefers a concrete legal-information task before
-  durable Needle state earns itself;
-- another release, maintenance pass or internal discovery question currently has lower
-  expected information gain.
+The ordinary record already preserved:
 
-Review:
+- legal scope and rates;
+- 26 September 2026 entry into force;
+- provisional-to-definitive transition;
+- collection/release of secured provisional amounts;
+- no additional retroactive collection;
+- documentary conditions;
+- new-exporter route;
+- Basic Regulation review/expiry horizon;
+- authoritative source/version state.
 
-> `docs/reviews/issue325-post-depth-direction-review-2026-09-26.md`
+The later Reference Pack pass found only approximate class analogies. It added no missing
+source, state, transition, uncertainty, provenance repair or reconstruction fact.
 
-### Next eligible work after #325 merge
+This is one bounded real-use null. It does not generalise to all pack uses and may not be
+replaced by a friendlier task.
 
-# **#327 — USE: real-task post-answer Reference Pack value test**
+Result:
 
-#327 must:
+> `docs/uses/issue327-real-task-reference-pack-use-2026-09-26.md`
 
-- mechanically select one fresh public EU legal-information task without consulting
-  Needle case/class contents;
-- solve and freeze it first with the strongest ordinary source-grounded method;
-- consult Reference Pack v0.1 only afterward;
-- count only concrete non-duplicative provenance/reconstruction/repeatability/regression
-  or inspection value;
-- record `BASELINE_SUFFICIENT` if the pack adds only labels/analogy;
-- avoid any correctness/diagnostic/workflow-superiority claim.
+#214 remains unchanged.
 
-This is explicitly **not** a retry of #214.
+### Next eligible work after #327 merge
 
-WIP=1 remains binding: #327 starts only after #325 merges/closes.
+# **#329 — direction review after first real USE null**
+
+#329 must decide the next purposeful mode without:
+- replacing #327 with a more favourable use task;
+- assuming a second USE run is warranted;
+- returning automatically to internal corpus audits;
+- opening pack v0.2 or corpus growth by default.
+
+WIP=1 remains binding: #329 starts only after #327 merges/closes.
 
 ## Historical backlog archive
 

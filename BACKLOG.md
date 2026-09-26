@@ -11,13 +11,13 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **REVIEW / RELEASE — OWNER RIGHTS + CITATION GATE**
+# **DISCOVER — PROPRIETARY / COMMERCIAL OPTION-SPACE EXHAUSTION**
 
 Frozen scientific source:
 
 > **NEEDLE_CORPUS_REFERENCE_2026-09-25 — 81 cases / 26 classes**
 
-Primary supported identity:
+Primary supported identity remains:
 
 > **known-failure reference corpus + exposed regression fixtures + minimal evaluation
 > discipline**
@@ -26,69 +26,65 @@ Current released reference surface:
 
 > **Needle Reference Pack v0.2 — navigation/reference surface**
 
+### Owner rights decision
+
+On 2026-09-26 the sponsor explicitly selected:
+
+> **INSPECTABLE_ONLY_FOR_NOW**
+
+Therefore:
+- keep the public repository without a project open-source/open-data license;
+- do not add MIT, Apache-2.0, CC BY 4.0 or another broad reuse grant;
+- treat this as deliberate option preservation, not a permanent anti-open-source position;
+- reopen licensing only from a concrete external reuse/distribution need or materially changed project identity/value boundary;
+- third-party/linked evidence remains outside any future project-authored license grant.
+
+Citation is independent and remains pending only on the sponsor's exact public creator string.
+The agreed creator order is **Morrow first, sponsor/owner second**. Do not create
+`CITATION.cff` until the exact second creator string is supplied explicitly.
+
 ### Current WIP
 
-# **#368 — owner license and citation decision package**
+# **#373 — exhaust remaining proprietary/commercial option space**
 
-Result:
+Sponsor trigger:
 
-> **OWNER_DECISION_READY**
+> Before treating Needle only as a public reference asset, deliberately test whether any
+> materially different proprietary/commercial value owner remains untested.
 
-Verified state:
-- public repository;
-- no project license;
-- no root CITATION.cff;
-- public visibility is not a broad reuse grant;
-- repository mixes software/tooling with project-authored corpus/data/documentation.
+This is a changed intended-use/allocation question permitted by the charter's reopening
+rules. It does **not** revive the retired external packet-value proof line.
 
-If the owner wants **inspectable-only** status:
-- keep the current no-license state;
-- optionally add citation metadata independently.
+Binding state remains:
+- #214 hard null;
+- #327 generic companion-use null;
+- #339/#353 bounded positives;
+- #349/#362 strong-baseline nulls;
+- #359/#361 conditional evaluator/oracle-maintenance signal;
+- #364 anti-rescue rule;
+- #366 smaller identity primary.
 
-If the owner wants **open reuse**, the project-level recommendation is:
+#373 must inspect, at minimum:
+- maintained evaluation/oracle service;
+- enterprise legal-AI assurance/QA;
+- proprietary extensions/software serving a different evidenced job;
+- private/expanded or customer-specific regression data;
+- benchmark/evaluation infrastructure;
+- paid curation/certification/support/training/bespoke evaluation;
+- orthogonal commercial jobs not already named.
 
-> **split licensing — MIT for software/code + CC BY 4.0 for project-authored
-> corpus/data/documentation**
+For each candidate require:
+- a concrete buyer/job and external evidence of the burden;
+- strongest realistic incumbent;
+- a distinct residual value owner;
+- an explicit relationship to the binding Needle nulls;
+- whether the current public estate has already destroyed the proposed moat;
+- the cheapest credible falsifier.
 
-Apache-2.0 remains the code alternative if explicit patent terms are desired.
+No product implementation, corpus growth, v0.3, structured external-failure database,
+superiority claim or replacement complexity proxy is authorized by this discovery.
 
-Third-party/linked evidence is not relicensed.
-
-Citation is independent of licensing.
-
-A `CITATION.cff` should be added only after the owner explicitly approves preferred
-creator/authorship identity.
-
-Decision package:
-
-> `docs/reviews/issue368-owner-license-citation-decision-2026-09-26.md`
-
-### Owner gate
-
-No license or citation authorship may be applied autonomously.
-
-Required explicit choices:
-
-1. **reuse posture**
-   - inspectable-only; or
-   - open reuse.
-
-2. if open reuse:
-   - recommended split MIT + CC BY 4.0; or
-   - Apache-2.0 + CC BY 4.0 if explicit patent terms are desired; or
-   - another owner-selected posture.
-
-3. **preferred citation identity**
-   - creator/author name(s) or organization;
-   - optional ORCID(s);
-   - citation enabled or not.
-
-Until the owner decides, the current public/inspectable no-license state remains correct.
-
-No scientific, corpus, pack or product change is blocked by this decision; only external
-reuse/citation permission is unresolved.
-
-WIP=1 remains binding at this owner gate.
+WIP=1 remains binding.
 
 ## Historical backlog archive
 

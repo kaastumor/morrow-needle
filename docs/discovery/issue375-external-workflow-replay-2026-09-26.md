@@ -11,6 +11,29 @@ tasks that were selected **without Needle taxonomy and without known-defect targ
 This is a Needle-readiness exercise, not competitor scoring and not evidence of a
 Needle-specific methodological advantage.
 
+## Post-run interpretation correction
+
+An independent readiness red team changed the **weight and wording** of this replay without
+reversing its source-backed finding.
+
+- The DELTA task was **not project-fresh**. Issue #150 had already inspected the same
+  `competition-law/acm-concentration-notification-requirement` task at the same
+  `c713132` revision. The selection rule here was mechanically frozen, but a new chat/session
+  cannot erase project-level exposure. DELTA therefore counts as a repeat application/control,
+  not fresh transfer evidence.
+- The Harvey C-039/C-040 numerical contradiction remains supported by the pinned rubric and
+  the FTC 2025 schedule.
+- Absence of a dedicated `law_as_of` field is **not by itself a temporal-contract defect**.
+  Transaction, filing, closing or other governing event dates can own legal time. The Harvey
+  task contains 2025 transaction dates; the defect is that its score-bearing numbers conflict
+  with the authoritative 2025 schedule applicable to those events.
+- No harness/judge run was executed here. The replay establishes a written grading-contract
+  mismatch capable of false rejection if applied as written; it does not establish an
+  observed production scoring failure.
+
+No task is retrospectively replaced. The bounded sample and its exposure history are both
+preserved.
+
 ## Frozen sample
 
 Selection was committed in Issue #375 before task substance was inspected.
@@ -186,7 +209,9 @@ The packaged facts and rubric place the proposed transaction in 2025:
 
 The task contains 50 pass/fail criteria.
 
-Unlike DELTA, `task.json` has no explicit `law_as_of` or other declared legal cut-off.
+`task.json` has no dedicated `law_as_of` field. That absence is not independently
+defective: the packaged transaction dates can supply the temporal owner when they
+unambiguously control the legal rule.
 
 ## Material criterion-evidence defects
 
@@ -247,29 +272,21 @@ Disposition:
 
 > **MATERIAL CRITERION-EVIDENCE ERROR**
 
-## Temporal-contract defect
+## Temporal interpretation
 
-The stale values are made more dangerous by the absence of an explicit legal cut-off.
+The transaction materials place the relevant deal events after the FTC's 21 February 2025
+effective date. That is enough to test C-039/C-040 against the 2025 schedule.
 
-By 2026:
-- the HSR size-of-transaction threshold is USD 133.9 million;
-- the fee for a transaction in the USD 189.6-586.9 million band is USD 110,000;
-- HSR-form status itself experienced litigation/administrative changes during 2026.
+The replay therefore does **not** retain a separate finding merely because `task.json` lacks
+a dedicated legal-cutoff field. A legal evaluation can own time through explicit controlling
+event dates, and different legal questions may be owned by different events (for example,
+closing for reportability and the start of the waiting period for the filing fee).
 
-Sources:
-- https://www.ftc.gov/enforcement/competition-matters/2026/01/new-hsr-thresholds-filing-fees-2026
-- https://www.ftc.gov/enforcement/premerger-notification-program
+The maintenance lesson is narrower:
 
-A legal benchmark may legitimately ask for a historical 2025 answer.
-
-But it must say so in the score-bearing task contract.
-
-Otherwise a current-law researcher and a historical transaction-time researcher can follow
-different defensible temporal perspectives while the fixed rubric silently rewards only one.
-
-Disposition:
-
-> **MISSING LEGAL-TIME OWNER**
+> mutable score-bearing legal literals need an unambiguous temporal owner and an authoritative
+> effective-period source; a standalone `law_as_of` field is one implementation, not the
+> requirement itself.
 
 ## Why this is consequential
 
@@ -340,20 +357,21 @@ The mechanically selected two-task replay produced:
 | DELTA ACM notification | **CLEAN_CORE_WITH_SCOPE_BOUNDARY** |
 | Harvey LAB HSR strategy | **MATERIAL_EVALUATION_CONTRACT_DEFECT** |
 
-This is a stronger outcome than selecting known broken tasks:
+Interpretation:
 
-- the DELTA control shows the gate can preserve a near-null;
-- the Harvey task demonstrates that a consequential source/time error can survive a large,
-  sophisticated, actively maintained rubric.
+- DELTA shows repeat applicability only because #150 had already exposed the same task/revision;
+- Harvey supplies the substantive source-checkable finding: two score-bearing HSR literals
+  conflict with the authoritative 2025 schedule;
+- neither arm measures Needle-versus-maintainer effort, detection rate or actual judge
+  behaviour.
 
 Harvey's public commit history shows the selected task was included in a May 2026 task
-quality/content-polish change, so the defect cannot be dismissed merely as an untouched
-ancient fixture.
+quality/content-polish change, so the numerical mismatch was not merely an untouched ancient
+fixture.
 
-That does **not** establish that Needle is better than Harvey LAB or DELTA.
-
-It establishes that the integrity rule earned from external failures transfers to a
-mechanically selected, previously uninspected task.
+That does **not** establish that Needle is better than Harvey LAB or DELTA. It shows that the
+integrity discipline can be usefully applied to an externally owned contract, with the
+freshness limitation above.
 
 ---
 
@@ -363,8 +381,9 @@ The existing integrity gate is sharpened with a specific legal-evaluation rule:
 
 ## Legal-time ownership
 
-Every score-bearing legal evaluation must identify its intended legal perspective when the
-law, threshold, fee, deadline, source state or authority could change.
+Every score-bearing legal evaluation must have an unambiguous legal-time owner when the
+law, threshold, fee, deadline, source state or authority could change. A dedicated cutoff
+field is optional when controlling event dates already make that perspective unambiguous.
 
 Use at least one of:
 - explicit `law_as_of`;
@@ -396,7 +415,8 @@ This is ordinary evaluation integrity, not a proprietary Needle method claim.
 
 # Effect on pre-partner readiness
 
-The external workflow replay supports a real improvement in Needle's readiness.
+The replay, interpreted with its exposure limits, supports a bounded improvement in Needle's
+evaluation discipline and a concrete worked example for external inspection.
 
 Needle is now better positioned to answer:
 
@@ -414,4 +434,4 @@ another class/corpus expansion.
 
 ## Final replay disposition
 
-# **EXTERNAL_REPLAY_EARNS_INTEGRITY_HONING**
+# **EXTERNAL_REPLAY_SUPPORTS_INTEGRITY_HONING_WITH_EXPOSURE_LIMIT**

@@ -55,91 +55,117 @@ Future commercial claim type remains:
 
 > **DELIVERY**
 
-But immediate partner outreach remains explicitly deferred by sponsor decision.
+Immediate partner outreach remains explicitly deferred by sponsor decision.
 
 Current mode:
 
-> **DISCOVER — EXTERNAL REALITY / PRE-PARTNER HONING**
+> **REVIEW — PRE-PARTNER READINESS RED TEAM**
 
 Durable records:
 - `docs/discovery/issue375-external-evaluation-job-2026-09-26.md`
 - `docs/discovery/issue375-pre-partner-external-reality-honing-2026-09-26.md`
 - `docs/audits/issue375-historical-evaluation-contract-integrity-2026-09-26.md`
+- `docs/discovery/issue375-external-workflow-replay-2026-09-26.md`
 
 ### Completed honing checkpoints
 
 #### 1. External benchmark reality
 
-Public DELTA/Harvey practice establishes that lawyer-authored criteria, legal cut-offs,
-source citation, realistic work-product tasks, human escalation and versioning are strong
-incumbent practice rather than Needle differentiation.
-
-Public maintenance defects nevertheless exposed a real gap in Needle's own minimal
-evaluation discipline.
-
-The canonical protocol now includes **evaluation-contract integrity** checks for:
-- task-to-criterion coverage;
-- exact criterion/evidence correctness;
-- activation/gradability;
-- cross-criterion consistency;
-- execution validity before subject failure;
-- semantic revision control;
-- stability decomposition when decision-sensitive;
-- post-reveal preservation of prompts, keys, raw outputs and score/adjudication records.
-
-These are ordinary evaluation hygiene, not a Needle superiority claim.
+Strong DELTA/Harvey practice established the incumbent. Public maintenance defects earned
+a canonical **evaluation-contract integrity** gate rather than a new Needle class.
 
 #### 2. Historical Needle self-audit
 
-Preselected #88/#214/#362 were audited without reruns.
+- **#88:** preserved after #95's construct repair; raw output archival incomplete.
+- **#214:** binding bounded negative for allocation, with material repository
+  reproducibility limits.
+- **#362:** preserved as directional allocation evidence, downweighted from high-grade
+  falsifier status.
 
-Result:
-- **#88:** result preserved; #95 construct repair remains correct; raw output archive is
-  incomplete;
-- **#214:** remains a binding bounded negative for project allocation, but exact hidden
-  evaluator-package plaintext/raw outputs are not preserved in GitHub and one-run/single-
-  grading execution limits repository reproducibility;
-- **#362:** preserve as directionally useful allocation evidence, but downweight from a
-  high-grade falsifier because decisive source citations are not durably preserved and the
-  "more residual structure" endpoint lacks independent executable adjudication.
+No old product/workflow thesis reopened.
 
-No old product/workflow thesis is reopened by these corrections.
+#### 3. Mechanically selected external workflow replay
+
+The sample was frozen before task inspection:
+
+- DELTA commit `c7131327d24e3167b6c3f9f06a7c5d41e25ac7df`, first published task;
+- Harvey LAB commit `1dd81403b2fbb60596f7aea3fcecafad7bf73143`, first lexicographic public
+  task directory containing `task.json`.
+
+Results:
+
+> **DELTA — CLEAN_CORE_WITH_SCOPE_BOUNDARY**
+
+The explicit `law_as_of` contract kept the ordinary Dutch concentration-notification
+criteria temporally coherent. A limited boundary remains around special regimes, but no
+result-breaking defect was established.
+
+> **Harvey LAB — MATERIAL_EVALUATION_CONTRACT_DEFECT**
+
+The selected 2025 HSR task's rubric:
+- incorrectly calls USD 119.5 million the 2025 size-of-transaction threshold, although the
+  FTC's threshold effective 21 February 2025 was USD 126.4 million;
+- requires a USD 160,000 filing fee for a USD 425 million transaction, while the applicable
+  2025 FTC fee band was USD 105,000;
+- has no explicit legal-time owner despite score-bearing rules that change over time.
+
+A legally correct answer can therefore fail while stale evaluator numbers can pass.
+
+This was not selected from a known defect. Post-discovery issue search found no existing
+Harvey LAB issue for the task/criteria.
+
+### Canonical honing earned
+
+The evaluation protocol now requires **legal-time ownership**:
+
+- explicit `law_as_of`, controlling event date or equivalent legal-time perspective when
+  mutable legal state can change the score;
+- authoritative source + effective period for mutable score-bearing thresholds, fees,
+  deadlines, statuses and dates;
+- revalidation/versioning when current-law score-bearing state changes;
+- historical tasks remain valid only when their historical perspective is explicit.
+
+This is ordinary evaluation hygiene, not a Needle superiority claim.
 
 Frozen scientific state remains **81 cases / 26 classes**.
 Reference Pack v0.2 remains current.
 Owner licensing posture remains **INSPECTABLE_ONLY_FOR_NOW**.
 
-### Current next step inside #375
+### Current final step inside #375
 
-# **USE / REVIEW — externally defined workflow replay**
+# **REVIEW — pre-partner readiness red team**
 
-Use a small preselected public benchmark sample whose task and acceptance contract were
-defined outside Needle.
+Do not run another benchmark hunt.
 
-Purpose:
+Attack Needle as an external evaluator would encounter it **now**.
 
-> test whether the new evaluation-contract integrity gate produces a consequential
-> maintenance/evaluation improvement over the benchmark's own strong ordinary process.
+At minimum inspect:
+- current project identity and claims;
+- Reference Pack v0.2 as the external-facing reference surface;
+- canonical evaluation protocol after #375;
+- evidence hierarchy after #88/#214/#362 reweighting;
+- the vendor-evaluation DELIVERY hypothesis;
+- what an external evaluator could understand and use without project archaeology.
 
-Selection must be external-first and non-Needle:
-- no Needle class used to choose a task;
-- no search for a known benchmark defect after selection;
-- preferably one DELTA task and one materially different Harvey LAB task;
-- freeze exact public task/version before review.
+Ask:
 
-For each selected task:
-1. reconstruct the benchmark's own task/criterion contract first;
-2. apply the integrity gate without Needle taxonomy;
-3. record only consequential defects or maintenance burden;
-4. if no defect exists, preserve that null;
-5. do not rewrite the external benchmark or submit upstream PRs.
+1. Is Needle now coherent enough to show externally without overstating what is proven?
+2. Does the current public surface expose the newly earned evaluation-integrity discipline,
+   or is that capability only buried in governance/history?
+3. Is one additional pre-partner improvement externally earned, or would more honing become
+   self-directed product polishing?
+4. What exactly should be shown to an evaluator, and what should remain internal/history?
+5. What claims must **not** be made in a future external conversation?
 
-Stop after the bounded sample.
+End with exactly one:
+- `READY_FOR_EXTERNAL_VALIDATION`
+- `HONE_ONE_SPECIFIC_GAP`
+- `NOT_READY_NO_EARNED_HONING`
 
-The goal is **Needle readiness**, not competitor auditing or proof of superiority.
+If `HONE_ONE_SPECIFIC_GAP`, name exactly one gap with a bounded acceptance condition.
+Do not create a feature roadmap.
 
-Partner outreach remains deferred until the pre-partner honing campaign reaches a clean
-readiness decision.
+Partner outreach remains deferred until this readiness red team completes.
 
 No product implementation, corpus growth, v0.3, structured external-failure database,
 license change or standing experiment programme is authorized.

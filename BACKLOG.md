@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — MVP JOB / VALUE GATE**
+# **CONSOLIDATE / MAINTAIN — CANDIDATE A MVP CORE HARDENING**
 
 Frozen scientific source:
 
@@ -19,8 +19,7 @@ Frozen scientific source:
 
 Primary supported identity remains:
 
-> **known-failure legal-research reference corpus + exposed regression fixtures + minimal
-> evaluation discipline**
+> **known-failure legal-research reference corpus + exposed regression fixtures + minimal evaluation discipline**
 
 Current released reference surface remains:
 
@@ -32,169 +31,110 @@ The sponsor has explicitly set the next strategic objective:
 
 > **work toward an MVP that demonstrates actual added value on a real job**
 
-Product discovery is now active.
+The sponsor also explicitly rejected jumping directly from candidate selection to external outreach.
 
-No implementation is authorised until a real job/value gate passes.
+Required sequence:
 
-### Issue #400 — MVP job/value gate
+> **select candidate -> consolidate -> extract smallest MVP core -> harden -> internal replay/red-team -> pre-partner readiness -> external validation**
 
-Current disposition:
+### Current WIP — Issue #402
 
-# **LEAD_MVP_CANDIDATE — LEGAL EVALUATION / ORACLE MAINTENANCE DELIVERY**
+> **CONSOLIDATE — Candidate A MVP core hardening**
 
-Retained candidate set:
+Candidate A remains the first MVP allocation:
 
-- **SECONDARY_CANDIDATE — known failure/postmortem -> reusable regression/oracle**
-- **SECONDARY_CANDIDATE — EU operative-state reconstruction across authoritative owners**
+> **legal evaluation / oracle maintenance delivery**
 
-Priority is not binary value.
+Candidates B and C remain live secondary candidates.
 
-A non-selected candidate remains live unless evidence actually falsifies its job/value
-proposition.
+No outreach is authorised while #402 is active.
 
-Do **not** rewrite "not first" as "no value".
+### Phase 1/2 direction — static packet largely subtracts away
 
-Durable analysis:
+Strong incumbent review materially narrows Candidate A.
 
-> `docs/discovery/issue400-mvp-job-value-gate-2026-09-26.md`
+Current public incumbent contracts already own much of the proposed #400 packet:
 
-### Why Candidate A leads first
+- task/instruction definition;
+- lawyer-authored pass/fail criteria;
+- source/citation fields;
+- explicit legal cut-off / law-as-of handling in mature task contracts;
+- accommodation of professionally defensible alternatives;
+- all-pass / non-compensatory failure semantics;
+- dual/multi-judge evaluation;
+- qualified-lawyer escalation;
+- dataset/task versioning and changelogs;
+- criterion disputes and legal review.
 
-Candidate A currently has the strongest combination of:
+Therefore those elements receive **no Needle differentiation credit**.
 
-- independently visible recurring work;
-- paid/commercial evaluation behavior;
-- explicit acceptance contracts;
-- documented qualified-expert dependence;
-- measurable production/maintenance burden;
-- a disposable first intervention that does not require product architecture.
+The plausible residual is now smaller:
 
-The candidate claim remains:
+# **MAINTENANCE DELTA CONTRACT**
 
-> **DELIVERY** — can a Needle-derived maintenance/delivery workflow reach an evaluator's
-> existing accepted legal-quality threshold with materially lower qualified-expert burden,
-> rework or turnaround than the evaluator's actual current workflow?
+Candidate residual:
 
-This does **not** claim:
+> when a legal/evaluation contract changes, preserve exactly which score-bearing proposition changed, what authority/time owns the change, which criteria/results are affected, what repair is required, and whether prior results remain comparable or require re-judging/retesting.
 
-- better legal reasoning;
-- better oracles by default;
-- corpus-assisted correctness superiority;
-- generic legal-research advantage;
-- commercial demand for Needle specifically.
+This is a candidate value surface, not yet proven external value.
 
-### Retained Candidate C
+### Incumbent subtraction status
 
-Known failure/postmortem -> reusable regression/oracle remains promising because it aligns
-closely with Needle's surviving asset.
+Current element dispositions:
 
-Its generic engineering mechanics are already strongly occupied by eval platforms such as
-Braintrust/Phoenix.
+- task / intended decision -> **JOB_REQUIRED_BUT_NOT_DIFFERENTIATING**
+- full source set -> **JOB_REQUIRED_BUT_NOT_DIFFERENTIATING**
+- accepted legal proposition / answer key -> **INCUMBENT_STANDARD**
+- observable criteria -> **INCUMBENT_STANDARD**
+- valid-alternative policy -> **INCUMBENT_STANDARD**
+- fatal / non-compensatory semantics -> **INCUMBENT_STANDARD**
+- whole-task versioning -> **INCUMBENT_STANDARD**
+- generic adjudication notes -> **INCUMBENT_STANDARD**
+- generic evidence map -> **JOB_REQUIRED_BUT_NOT_DIFFERENTIATING**
+- proposition-specific governing-time/evidence owner for a changed score-bearing claim -> **NEEDLE_RESIDUAL_CANDIDATE**
+- semantic change-to-criterion propagation record -> **NEEDLE_RESIDUAL_CANDIDATE**
+- explicit prior-result comparability / rejudge / retest decision -> **NEEDLE_RESIDUAL_CANDIDATE**
+- unrelated Needle class/taxonomy metadata -> **REMOVE**
 
-The potential Needle residual is therefore only:
+Public silence is not evidence that incumbents lack the residual capabilities.
 
-> **legal oracle conversion** — source/time/evidence/boundary work needed to turn a
-> consequential legal failure into a trustworthy reusable regression.
+### Candidate C relationship
 
-Promotion trigger:
+Candidate C — known failure/postmortem -> reusable regression/oracle — is not being discarded.
 
-- real legal-AI incident;
-- existing trace/postmortem;
-- current regression process;
-- external owner willing to compare oracle-conversion burden.
+It may be a **trigger/wedge into the same maintenance-delta core**:
 
-Candidate C may become a narrow wedge into Candidate A.
+> a production/postmortem failure can create the same need to identify the affected legal proposition, evidence owner, criterion repair and regression/retest consequence.
 
-### Retained Candidate B
+#402 must explicitly test whether Candidate C should remain separate or be treated as a particularly concrete entry path into Candidate A.
 
-EU operative-state reconstruction remains a credible narrower vertical.
+### Candidate B relationship
 
-Its current evidence says:
+EU operative-state reconstruction remains separate and live.
 
-- cross-owner legal-state composition is real;
-- broad prevalence was not supported;
-- official/commercial incumbents are materially stronger than early Needle framing assumed;
-- real practitioner reconstruction burden remains unmeasured.
+Do not import EU state machinery into Candidate A unless a maintenance event actually needs it.
 
-Promotion trigger:
+### #402 next phases
 
-- recurring practitioner-owned cross-owner matter;
-- measurable reopening/composition burden;
-- concrete product/workflow gap observed under real use.
+1. freeze the minimal maintenance-delta contract;
+2. replay it on already-known public maintenance events only:
+   - one source/time/oracle correction;
+   - one criterion activation/ambiguity correction;
+   - one version/change control where change is legitimate rather than a defect;
+3. record actual fields used and remove unused fields;
+4. add deterministic validation only if the replay earns it;
+5. adversarially test whether the residual collapses to ordinary benchmark-maintainer hygiene;
+6. run a pre-partner readiness gate.
 
-Low prevalence does **not** imply low value where consequence is high.
+### External value claim remains unproven
 
-### Frozen first MVP validation contract
+The eventual claim remains:
 
-Target user:
+> **DELIVERY** — can the hardened minimal core reduce qualified-expert burden/rework/turnaround at the evaluator's accepted quality floor?
 
-> one legal-AI evaluation/oracle owner.
+No internal replay can prove that.
 
-Preferred job:
-
-> one real legal-evaluation item needing maintenance/repair because law, source state,
-> accepted interpretation or the evaluation contract changed.
-
-Comparator:
-
-> evaluator's actual current workflow.
-
-Needle-assisted intervention:
-
-> smallest manual/model-assisted maintenance packet sufficient for the evaluator's job.
-
-Measure:
-
-- total qualified-expert time;
-- legal corrections by severity;
-- rework rounds;
-- unresolved disputes;
-- turnaround;
-- relevant non-lawyer/model/tool cost;
-- final acceptance.
-
-The evaluator must predeclare:
-
-- minimum accepted legal quality;
-- what burden reduction is material;
-- acceptable rework/correction level;
-- whether turnaround matters;
-- what would cause real reuse.
-
-Strongest behavior signal:
-
-> evaluator chooses or commits a second real item after the first accepted result.
-
-### Kill rule
-
-If Candidate A does not meet the evaluator's predeclared accepted-quality and material-burden
-threshold:
-
-> **do not build the MVP around Candidate A.**
-
-Return to the retained candidate set.
-
-A failed A pilot does **not** falsify Candidate B or C.
-
-### Owner gate
-
-The next discriminating evidence requires an external evaluator/job owner.
-
-Existing sponsor governance still says:
-
-> **DO NOT INITIATE EXTERNAL PARTNER / EVALUATOR OUTREACH WITHOUT EXPLICIT SPONSOR
-> AUTHORISATION.**
-
-Therefore the immediate owner decision after #400 is:
-
-# **AUTHORISE ONE BOUNDED MVP-VALIDATION OUTREACH OR KEEP OUTREACH CLOSED**
-
-If authorised:
-
-- seek one pilot, not mass outreach;
-- do not pitch a finished product;
-- do not claim Needle superiority;
-- ask for one evaluator-owned workload + actual incumbent + acceptance threshold.
+The purpose of #402 is only to make the intervention coherent, minimal and non-embarrassing before external value testing.
 
 ### Existing evidence remains binding
 
@@ -214,8 +154,7 @@ Preserve:
 - Reference Pack v0.2 frozen/current;
 - **INSPECTABLE_ONLY_FOR_NOW** licensing.
 
-No product build, v0.3, corpus/taxonomy growth, new ontology or license change follows from
-#400 alone.
+No product UI, v0.3, corpus/taxonomy growth, new legal ontology or external outreach follows from #402.
 
 WIP=1 remains binding.
 

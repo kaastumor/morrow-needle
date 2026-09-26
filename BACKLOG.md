@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **REVIEW / RELEASE — OWNER RIGHTS + CITATION GATE**
+# **MAINTAIN — AUTOMATION / COST DISCIPLINE**
 
 Frozen scientific source:
 
@@ -28,67 +28,52 @@ Current released reference surface:
 
 ### Current WIP
 
-# **#368 — owner license and citation decision package**
+# **#371 — prune GitHub Actions to the smaller Needle identity**
 
 Result:
 
-> **OWNER_DECISION_READY**
+> **KEEP_CURRENT_AUTOMATION**
 
-Verified state:
-- public repository;
+Audit result:
+- 25 workflow files exist;
+- **23 are manual-only historical diagnostics** and create no standing Actions cost;
+- only Repository sanitation and Unit tests run automatically;
+- Unit tests are already path-filtered away from ordinary docs/governance work;
+- the latest 100 Actions runs contain 45 post-merge `push` runs that would be removable
+  if PR-only delivery could be enforced safely;
+- repository rulesets are absent and branch protection remains **UNVERIFIED** because the
+  integration cannot inspect it.
+
+Therefore removing `main` push validation would exchange a verified integrity safeguard
+for an unverified assumption about direct-push prevention.
+
+No workflow changes are earned.
+
+Audit:
+
+> `docs/audits/issue371-actions-cost-audit-2026-09-26.md`
+
+### Current owner gate remains unresolved
+
+# **Reuse / citation owner decision**
+
+Issue #368 has already produced an owner-ready decision package.
+
+Current default remains:
+- public / inspectable;
 - no project license;
-- no root CITATION.cff;
-- public visibility is not a broad reuse grant;
-- repository mixes software/tooling with project-authored corpus/data/documentation.
+- no broad reuse grant;
+- no CITATION.cff.
 
-If the owner wants **inspectable-only** status:
-- keep the current no-license state;
-- optionally add citation metadata independently.
-
-If the owner wants **open reuse**, the project-level recommendation is:
-
-> **split licensing — MIT for software/code + CC BY 4.0 for project-authored
-> corpus/data/documentation**
+If the owner later chooses open reuse, the project-level recommendation remains:
+> split licensing — MIT for software/code + CC BY 4.0 for project-authored
+> corpus/data/documentation.
 
 Apache-2.0 remains the code alternative if explicit patent terms are desired.
 
-Third-party/linked evidence is not relicensed.
+No license or citation authorship may be applied without explicit owner approval.
 
-Citation is independent of licensing.
-
-A `CITATION.cff` should be added only after the owner explicitly approves preferred
-creator/authorship identity.
-
-Decision package:
-
-> `docs/reviews/issue368-owner-license-citation-decision-2026-09-26.md`
-
-### Owner gate
-
-No license or citation authorship may be applied autonomously.
-
-Required explicit choices:
-
-1. **reuse posture**
-   - inspectable-only; or
-   - open reuse.
-
-2. if open reuse:
-   - recommended split MIT + CC BY 4.0; or
-   - Apache-2.0 + CC BY 4.0 if explicit patent terms are desired; or
-   - another owner-selected posture.
-
-3. **preferred citation identity**
-   - creator/author name(s) or organization;
-   - optional ORCID(s);
-   - citation enabled or not.
-
-Until the owner decides, the current public/inspectable no-license state remains correct.
-
-No scientific, corpus, pack or product change is blocked by this decision; only external
-reuse/citation permission is unresolved.
-
-WIP=1 remains binding at this owner gate.
+The Actions audit does not block any scientific/corpus work and does not alter this gate.
 
 ## Historical backlog archive
 

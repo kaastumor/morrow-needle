@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **REVIEW — CANDIDATE A CORE READY / EXTERNAL VALUE TEST OWNER GATE**
+# **DISCOVER — CANDIDATE B / LEAN-TEAM EU OPERATIVE STATE**
 
 Frozen scientific source:
 
@@ -27,254 +27,149 @@ Current released reference surface remains:
 
 ### Sponsor objective
 
-The sponsor's current strategic objective remains:
+The sponsor's strategic objective remains:
 
 > **work toward an MVP that demonstrates actual added value on a real job**
 
-The sponsor also explicitly required:
+The sponsor has explicitly reopened Candidate B because #407's strong comparator already possessed
+generic maintained monitoring/state capability that may be realistic for enterprise compliance teams
+but not for smaller/lean legal-compliance functions.
 
-> **select candidate -> consolidate -> extract smallest MVP core -> harden -> internal replay/red-team -> pre-partner readiness -> external validation**
+### Current WIP — Issue #409
 
-#402 completes the internal Candidate-A consolidation/hardening phase.
+> **DISCOVER — Candidate B for lean-team EU operative-state maintenance**
 
-### Issue #402 final disposition
+New hypothesis:
 
-# **CORE_READY_FOR_EXTERNAL_VALUE_TEST**
+> **A lean legal/compliance team without enterprise regulatory-intelligence infrastructure may
+> benefit from a small Needle-derived workflow that maintains the operative legal state relevant
+> to its own products/activities across multiple authoritative owners, with less manual reopening,
+> filtering and reconstruction than its realistic lightweight alternative.**
 
-This means only:
+This is an **access / operational-economics** hypothesis, not a novelty claim.
 
-> Candidate A is internally coherent and small enough that an external evaluator can test its
-> value without first helping Needle design the intervention.
+### What #407 still proves
 
-It does **not** mean:
+#407 remains binding:
 
-- external value is proven;
-- Needle is distinct from mature private maintainer practice;
-- expert time is reduced;
-- product-market fit exists;
-- software build is earned;
-- outreach is authorised.
+> when the comparator already has root/work grouping, prior/current source snapshots, hashes,
+> ordinary maintained notes and capable legal review, the historical richer operational Core showed
+> no incremental value on the frozen seven-cycle workload.
 
-Durable readiness review:
+Therefore #409 does **not** revive:
 
-> `docs/reviews/issue402-candidate-a-core-readiness-2026-09-26.md`
+- Full Needle;
+- generic EU monitoring;
+- generic source-hash infrastructure as proprietary value;
+- a claim that enterprise regtech lacks the capability.
 
-### Candidate A core after subtraction
+### Phase 1 result — capability exists, access question remains
 
-The larger #400 maintenance packet was rejected.
+Enterprise capability receives full credit:
 
-Strong incumbents already own most static evaluation hygiene:
+- Thomson Reuters Regulatory Intelligence;
+- CUBE RegPlatform;
+- Bloomberg Regology;
+- mature official EU information/registry systems.
 
-- task/instruction contracts;
-- legal sources / answer contracts;
-- criteria;
-- legal cut-offs;
-- defensible-alternative handling;
-- all-pass / non-compensatory semantics;
-- human adjudication;
-- task/dataset versioning and changelogs.
+Public/official evidence also supports a real smaller-entity burden question:
 
-Those receive **zero differentiation credit**.
-
-The surviving core is:
-
-# **MAINTENANCE DELTA CONTRACT v0.1**
-
-> **change -> evidence/time owner -> affected score-bearing contract -> revised state -> prior-result consequence -> adjudication state**
-
-Human-facing artifact:
-
-> `docs/mvp/candidate-a-maintenance-delta-card-template.md`
-
-Structured internal contract:
-
-> `docs/mvp/candidate-a-maintenance-delta-core-v0.1.md`
-
-Executable support:
-
-- `schemas/maintenance-delta-v0.1.schema.json`;
-- `scripts/validate_maintenance_delta.py`;
-- three fixtures under `fixtures/mvp/maintenance-delta/`;
-- `tests/test_maintenance_delta_contract.py`.
-
-The structured layer is internal reproducibility machinery, **not the product**.
-
-### Internal replay result
-
-Three already-known events were replayed:
-
-1. Harvey HSR stale 2025 score-bearing literals;
-2. DELTA S-009 activation ambiguity;
-3. Harvey firm-knowledge v3 semantic revision as a no-defect control.
+- Commission material reports regulatory burden disproportionately affecting SMEs;
+- Commission reporting says 28% of EU SMEs report >10% of staff engaged in assessing/compliance
+  with regulatory requirements/standards;
+- 2025 SME survey material identifies regulatory complexity as a leading concern;
+- vendor-sponsored 2026 compliance survey evidence suggests many lean teams remain heavily manual.
 
 Disposition:
 
-> **CORE_COHERENT — MINIMAL STRUCTURAL VALIDATION EARNED**
+> **CAPABILITY_EXISTS — ACCESS / OPERATING-BURDEN QUESTION REMAINS OPEN**
 
-The negative control forced an important distinction:
+Durable analysis:
 
-> **owner-adopted change != accepted repair**
+> `docs/discovery/issue409-lean-team-capability-access-map-2026-09-26.md`
 
-The replays establish representation/field stability only.
+### Phase 2 result — first eligible vertical selected mechanically
 
-They do **not** establish user value, time savings, correctness advantage or prevalence.
+Selection used the frozen #377 residual order and predeclared conditions.
 
-### Strongest remaining Candidate-A risk
+First eligible residual:
 
-# **THE CORE MAY OPTIMIZE THE CHEAP PART**
+# **CBAM LEAN-TEAM OPERATIVE-STATE MAINTENANCE**
 
-The Maintenance Delta Card begins after a maintenance trigger exists.
+Why CBAM qualifies:
 
-The expensive part of real work may instead be:
+- official EU material explicitly identifies SME/smaller-importer burden;
+- the 50-tonne threshold creates actor-specific applicability state;
+- Commission certificate price is an independently moving authoritative input;
+- current price/timeline/default-value/status sources are public;
+- a narrow importer job can be replayed without confidential customer data.
 
-- detecting the legal/source change;
-- understanding the new law;
-- establishing the correct legal answer;
-- resolving contested professional judgment.
+Strong anti-Needle control:
 
-Therefore any external pilot must measure **full end-to-end qualified-expert effort**, not
-only time spent producing/reviewing the card.
+> CBAM simplification removed roughly 90% of importers from definitive obligations; if official
+> guidance + notes is sufficient for the remaining narrow job, Candidate B should fail.
 
-If propagation/documentation savings are small relative to legal detection/adjudication,
-Candidate A should fail rather than expand.
+Durable selection:
 
-### Frozen external value-test contract
+> `docs/discovery/issue409-cbam-vertical-selection-2026-09-26.md`
 
-Prepared only:
+### Candidate A status
 
-> `docs/mvp/candidate-a-external-value-test-contract-v0.1.md`
+Candidate A remains:
 
-Required external test properties:
+> **CORE_READY_FOR_EXTERNAL_VALUE_TEST**
 
-- evaluator-owned real maintenance event;
-- evaluator's actual incumbent workflow;
-- predeclared accepted-quality floor;
-- predeclared burden reduction material enough to change behavior;
-- full qualified-expert time;
-- correction/rework burden;
-- historical-result handling;
-- turnaround and material hidden costs;
-- repeat-use / second-real-item signal.
+but is **paused**, not rejected, while sponsor-authorised Candidate-B discovery is active.
 
-Preferred design:
+The Maintenance Delta core and external test contract remain intact.
 
-> two owner-supplied reasonably matched real maintenance events, one incumbent and one
-> Needle-assisted.
-
-### Candidate preservation
+### Candidate C status
 
 Candidate C remains:
 
 > **SECONDARY_CANDIDATE — known failure/postmortem -> reusable regression/oracle**
 
-#402 shows that `FAILURE_POSTMORTEM` may be the most natural **entry trigger/wedge** into the
-same maintenance-delta core.
+### Next #409 step
 
-Candidate C is not rejected and is not yet promoted over A.
+Freeze and execute one **lean-team CBAM historical maintenance replay**.
 
-Candidate B remains:
+The comparator is not enterprise regtech. It is a capable lean workflow with:
 
-> **SECONDARY_CANDIDATE — EU operative-state reconstruction across authoritative owners**
+- official/public sources;
+- browser/search;
+- free alerts where available;
+- spreadsheet/notes;
+- general source-grounded AI;
+- retained prior notes and links.
 
-No EU-specific machinery was embedded in Candidate A.
+The Candidate-B treatment may use only the smallest already-built concepts earned by the job:
 
-EU state enters only when an actual maintenance delta needs a specific evidence owner.
+- evidence-owner register;
+- governing-time state;
+- authoritative external-state references;
+- applicability condition;
+- prior/current operative-state delta;
+- provenance/source observation where useful.
 
-### Kill rules
-
-Do not build Candidate A if external evidence shows:
-
-- accepted quality degrades;
-- material expert-burden reduction is not achieved;
-- savings are shifted into later adjudication;
-- incumbent maintenance already provides equivalent state at equal/lower burden;
-- the card records decisions but does not reduce reopening/rework;
-- the evaluator does not choose a second real use.
-
-Do not rescue Candidate A by adding fields, taxonomy, ontology or UI.
-
-A Candidate-A failure does not falsify Candidates B/C.
-
-### Historical operational-Core reassessment — Issue #407
-
-The sponsor authorised one bounded test of whether the old persistent operational machinery had
-been under-tested by the earlier one-shot value gates.
-
-Seven chronology-selected historical operational cycles were replayed against a strong
-**HASH-AWARE MAINTAINED BASELINE**.
-
-Observed:
-
-- 67,911 new feed events across the frozen cycles;
-- 264 eligible maintained-resource observations;
-- 135 metadata-only / 99 content-changed / 30 source-unresolved;
-- 42 repeated eligible roots;
-- lightweight baseline classification matched Needle **264/264**;
-- repeated known-content state chains were equally preservable by the lightweight ledger;
-- Needle attempted 99 legal analyses and established **0 legal candidates/outcomes**.
-
-Disposition:
-
-# **LIGHTWEIGHT_BASELINE_SUFFICIENT**
-
-Consequences:
-
-- historical operational Core remains **parked**;
-- no fresh prospective operational experiment is earned;
-- generic source monitoring / snapshots / hash comparison remain valid technical capability but
-  receive no Needle-specific value credit;
-- do not revive Full Needle or a generic EU monitoring product from historical capability;
-- Candidate B may reuse narrow old components only when a concrete practitioner-owned operative-state
-  job earns them.
-
-Durable result:
-
-> `docs/uses/issue407-longitudinal-operational-value-probe-2026-09-26.md`
-
-### Owner gate
-
-No external contact has been authorised.
-
-The next **decisive Candidate-A value evidence** requires a real evaluator/job owner, but
-the project must not confuse that fact with automatic permission to contact one.
-
-Current owner choice:
-
-# **AUTHORISE ONE BOUNDED EXTERNAL MVP VALUE TEST OR KEEP OUTREACH CLOSED**
-
-If outreach remains closed:
-
-> enter **EVIDENCE_GATED / COMPLETED_FOR_CURRENT_EVIDENCE** for Candidate A rather than
-> manufacturing another benchmark hunt.
-
-If authorised:
-
-- seek one pilot owner, not mass outreach;
-- share the maintenance-value question and compact card, not Needle's historical machinery;
-- do not claim superiority;
-- let the owner supply the real workload, incumbent and acceptance threshold.
+No new schema or UI before replay.
 
 ### Existing evidence remains binding
 
 Preserve:
 
-- #214 strong bounded negative;
-- #327 generic-use null;
-- #362 directional allocation evidence only;
-- #366 retirement of standing artifact-value proof;
-- #377 EU prevalence park;
-- #381 representation-validity repair;
-- #385 public-evidence insufficiency;
-- #390 trajectory narrowing;
-- #392 external evidence gate;
-- #395 official-model narrowing;
-- `EU_ONLY_EXTERNAL_GATES_REMAIN`;
+- #97 Method latent-detection null;
+- #214 strong bounded corpus-assisted diagnostic negative;
+- #327 generic Reference Pack use null;
+- #366 standing artifact-value proof retired;
+- #377 EU-state existence supported / prevalence not supported;
+- #395 official-stack narrowing / no model-gap claim;
+- #407 lightweight maintained baseline sufficient on generic operational monitoring;
 - Reference Pack v0.2 frozen/current;
 - **INSPECTABLE_ONLY_FOR_NOW** licensing.
 
-No product UI, v0.3, corpus/taxonomy growth, new ontology or license change follows from #402.
+No outreach is authorised.
 
-WIP=1 remains binding whenever active work exists.
+WIP=1 remains binding.
 
 ## Historical backlog archive
 

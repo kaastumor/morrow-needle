@@ -29,19 +29,27 @@ It cannot establish:
 
 GAR — **EN 497:2022**
 
-### Arm O — strongest free official-source workflow
+### First-participant order
 
-1. Machinery — **EN 50434:2014**
-2. LVD — **EN 60335-2-60:2003**
+> **Arm B first, then Arm O**
+
+This is deliberately conservative for Candidate B: any residual task-format learning after calibration benefits the official-source arm rather than B.
 
 ### Arm B — Candidate-B card
 
 1. Toy Safety — **EN 71-1:2014+A1:2018**
+2. LVD — **EN 60335-2-60:2003**
+
+### Arm O — strongest free official-source workflow
+
+1. Machinery — **EN 50434:2014**
 2. LVD — **EN 60335-2-14:2006**
+
+The split gives each arm one restriction case. Candidate B also receives the harder current-vs-future temporal case, so a B timing/convenience signal cannot be explained by giving it only the simpler non-publication case.
 
 Do not swap cases after seeing participant behavior.
 
-If a second participant is later earned, reverse the Arm O / Arm B allocation.
+If a second participant is later earned, reverse both arm order and case allocation.
 
 ## Strong official baseline
 
@@ -132,7 +140,7 @@ Critical error:
 
 > Treating the restriction as withdrawal of the entire OJ reference.
 
-### Arm O — LVD / EN 60335-2-60:2003
+### Arm B — LVD / EN 60335-2-60:2003
 
 Expected current status on 26 September 2026:
 
@@ -180,7 +188,7 @@ Critical error:
 
 > Treating the restriction as loss of every legal effect of EN 71-1:2014+A1:2018.
 
-### Arm B — LVD / EN 60335-2-14:2006
+### Arm O — LVD / EN 60335-2-14:2006
 
 Expected current status:
 

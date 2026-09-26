@@ -47,42 +47,50 @@ The agreed creator order is **Morrow first, sponsor/owner second**. Do not creat
 
 # **#373 — exhaust remaining proprietary/commercial option space**
 
-Sponsor trigger:
+Result:
 
-> Before treating Needle only as a public reference asset, deliberately test whether any
-> materially different proprietary/commercial value owner remains untested.
+> **ONLY_SERVICE_OR_MAINTENANCE_VALUE_SURVIVES**
 
-This is a changed intended-use/allocation question permitted by the charter's reopening
-rules. It does **not** revive the retired external packet-value proof line.
+Durable review:
 
-Binding state remains:
-- #214 hard null;
-- #327 generic companion-use null;
-- #339/#353 bounded positives;
-- #349/#362 strong-baseline nulls;
-- #359/#361 conditional evaluator/oracle-maintenance signal;
-- #364 anti-rescue rule;
-- #366 smaller identity primary.
+> `docs/reviews/issue373-proprietary-commercial-option-space-2026-09-26.md`
 
-#373 must inspect, at minimum:
-- maintained evaluation/oracle service;
-- enterprise legal-AI assurance/QA;
-- proprietary extensions/software serving a different evidenced job;
-- private/expanded or customer-specific regression data;
-- benchmark/evaluation infrastructure;
-- paid curation/certification/support/training/bespoke evaluation;
-- orthogonal commercial jobs not already named.
+The review found no defensible current proprietary moat in:
+- the exposed 81-case corpus itself;
+- a revived general legal-research product;
+- generic citation/currentness checking;
+- broad regulatory-change software;
+- generic AI assurance;
+- generic benchmark infrastructure;
+- the retired external packet/artifact thesis.
 
-For each candidate require:
-- a concrete buyer/job and external evidence of the burden;
-- strongest realistic incumbent;
-- a distinct residual value owner;
-- an explicit relationship to the binding Needle nulls;
-- whether the current public estate has already destroyed the proposed moat;
-- the cheapest credible falsifier.
+One materially different boundary survives as a falsifiable hypothesis:
 
-No product implementation, corpus growth, v0.3, structured external-failure database,
-superiority claim or replacement complexity proxy is authorized by this discovery.
+> **fresh/private adversarial legal-state evaluation + maintained legal oracles +
+> customer-specific regression sets**
+
+The potential value owner is **ongoing private/fresh maintenance and evaluation work**, not
+the frozen public corpus by itself.
+
+This does not override #214, #327 or #362. It asks whether Needle's accumulated failure
+knowledge improves **hidden challenge/oracle design**, not ordinary legal-research answers.
+
+Strong external incumbents already prove that private benchmark sets, confidential
+evaluation, certification and repeat regression are real jobs. Needle-specific relative
+value remains unproven.
+
+The cheapest credible falsifier is a fresh sealed challenge-design comparison:
+
+> strongest ordinary legal-benchmark design first; Needle-informed challenge/oracle design
+> second; count only a consequential test/oracle delta.
+
+Kill the residual hypothesis if excellent ordinary benchmark practice produces the same
+consequential PASS/FAIL contract.
+
+The sponsor has already explicitly requested that remaining proprietary directions be
+exhausted. After #373 is accepted, that owner instruction is sufficient to authorize this
+single bounded residual falsifier; it does **not** authorize product implementation,
+corpus growth, v0.3 or a standing experiment programme.
 
 WIP=1 remains binding.
 

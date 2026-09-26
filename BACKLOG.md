@@ -11,11 +11,15 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **REVIEW / RELEASE — REFERENCE PACK v0.2 DESIGN**
+# **DIRECTION REVIEW — POST-REFERENCE-PACK-v0.2 RELEASE**
 
 Frozen scientific source:
 
 > **NEEDLE_CORPUS_REFERENCE_2026-09-25 — 81 cases / 26 classes**
+
+Current released reference surface:
+
+> **Needle Reference Pack v0.2 — failure-analysis navigation surface**
 
 Supported reference job:
 
@@ -23,75 +27,46 @@ Supported reference job:
 
 ### Current WIP
 
-# **#343 — minimum Reference Pack v0.2 failure-analysis surface**
+# **#348 — direction review after Reference Pack v0.2 release**
 
 Result:
 
-> **V02_DOC_NAV_ONLY**
-
-The design review compared four options.
-
-Selected:
-
-> self-contained v0.2 over the same frozen corpus views + one
-> `failure-analysis-guide.md`.
-
-The guide exposes the demonstrated packet contract and exact owner navigation without
-creating a second legal truth store.
-
-Rejected for v0.2:
-- generalized `failure-analysis-packets.jsonl`;
-- new boundary registry;
-- new external-failure database;
-- new canonical packet object/schema.
+> **SELECT USE — ORTHOGONAL FAILURE-ANALYSIS REPLICATION**
 
 Reason:
 
-- the corpus already canonically owns identity/classes/provenance/exposure/traps;
-- #339's most valuable boundary/source-state/regression fields are case-specific and owned
-  by exact accepted result/evidence owners;
-- copying them into a generalized v0.2 data row would create new truth/maintenance
-  obligations after only one positive external use;
-- a guide can surface the method and direct consumer to the exact owner without broad
-  history reconstruction.
+- #339 observed one positive failure-analysis packet result;
+- #343 made structured external-failure data explicitly replication-gated;
+- v0.2 was built specifically to reduce the repository reconstruction burden observed in
+  #339;
+- another release/design pass now has lower information gain than testing the released
+  surface;
+- the next use can simultaneously test packet-value recurrence, v0.2 navigation quality
+  and structured-field recurrence.
 
-Implementation does **not** require orthogonal replication because it only exposes accepted
-project rules and owner navigation.
+Review:
 
-Any machine-readable external failure packet layer **does** require orthogonal replication
-first.
+> `docs/reviews/issue348-post-v02-direction-review-2026-09-26.md`
 
-Rights constraint remains:
+### Next eligible work after #348 merge
 
-> #307 `OWNER_LICENSE_DECISION_REQUIRED`; no project license currently exists.
+# **#349 — orthogonal external failure replication through Reference Pack v0.2**
 
-v0.2 may be publicly inspectable/reference material but must not claim open licensing
-without an owner decision.
+#349 must:
+- use the preselected `Large Legal Fictions` public dataset;
+- mechanically choose one complete author-labelled hallucinated response in published
+  order, excluding only the #339 patent-obviousness question type to enforce orthogonality;
+- freeze the strongest ordinary postmortem first;
+- use Reference Pack v0.2 before broad repository history;
+- preserve a null if packet value does not replicate;
+- measure any residual repository archaeology;
+- compare packet-field recurrence with #339;
+- report `STRUCTURED_LAYER_SIGNAL = YES / NO / INDETERMINATE`.
 
-Result:
+No v0.3, structured external-failure layer, corpus growth, product revival or superiority
+claim is authorised.
 
-> `docs/reviews/issue343-reference-pack-v02-design-2026-09-26.md`
-
-### Next eligible work after #343 merge
-
-# **#345 — implement Reference Pack v0.2 failure-analysis navigation surface**
-
-#345 is authorised to:
-- create a new v0.2 release directory;
-- preserve the same frozen corpus source/data semantics;
-- add exactly one substantive new guide: `failure-analysis-guide.md`;
-- update v0.2 README/manifest/checksum/build-validation machinery as required;
-- use a thin additive builder approach;
-- prove v0.1 remains byte-identical.
-
-#345 is **not** authorised to:
-- create structured external failure records;
-- create a boundary registry;
-- add corpus cases/classes;
-- choose a license;
-- claim model/workflow/product superiority.
-
-WIP=1 remains binding: #345 starts only after #343 merges/closes.
+WIP=1 remains binding: #349 starts only after #348 merges/closes.
 
 ## Historical backlog archive
 

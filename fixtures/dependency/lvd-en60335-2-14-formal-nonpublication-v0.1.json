@@ -1,0 +1,118 @@
+{
+  "schema_version": "authoritative-dynamic-set-v0.1",
+  "set_id": "lvd:harmonised-standard-references",
+  "set_character": "AUTHORITATIVE_DYNAMIC_SET",
+  "authority": {
+    "authority_id": "EUROPEAN_COMMISSION",
+    "label": "European Commission",
+    "authority_type": "EU_INSTITUTION"
+  },
+  "publication_surface": {
+    "surface_type": "OFFICIAL_JOURNAL",
+    "identifier": "Official Journal references of harmonised standards supporting Directive 2014/35/EU",
+    "authenticity_basis": "Directive 2014/35/EU Article 12 makes publication of a harmonised-standard reference in the Official Journal the condition for presumption of conformity with covered safety objectives.",
+    "source_ref": {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32014L0035",
+      "locator": "Article 12",
+      "language": "ENG",
+      "role": "LEGAL_BASIS",
+      "authority_character": "BINDING_LEGAL_TEXT"
+    }
+  },
+  "legal_basis_refs": [
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32014L0035",
+      "locator": "Article 12",
+      "language": "ENG",
+      "role": "LEGAL_BASIS",
+      "authority_character": "BINDING_LEGAL_TEXT"
+    },
+    {
+      "source_type": "EUR_LEX",
+      "identifier": "CELEX:32025D1464",
+      "locator": "Article 1 and Article 2",
+      "language": "ENG",
+      "role": "TRANSITION",
+      "authority_character": "BINDING_LEGAL_TEXT"
+    }
+  ],
+  "dependencies": [
+    {
+      "dependency_id": "lvd-art12-on-harmonised-reference-set",
+      "governing_rule": {
+        "act_id": "CELEX:32014L0035",
+        "provision": "Article 12",
+        "language": "ENG"
+      },
+      "relation_character": "LEGAL_EFFECT_CONDITIONED_ON_AUTHORITATIVE_SET_STATE",
+      "condition_statement": "Presumption of conformity under Directive 2014/35/EU Article 12 depends on conformity with harmonised standards or parts whose references have been published in the Official Journal.",
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32014L0035",
+          "locator": "Article 12",
+          "language": "ENG",
+          "role": "DEPENDENCY",
+          "authority_character": "BINDING_LEGAL_TEXT"
+        }
+      ]
+    }
+  ],
+  "transitions": [
+    {
+      "transition_id": "lvd-en60335-2-14-formal-nonpublication-2025-07-18",
+      "member": {
+        "label": "EN 60335-2-14:2006",
+        "identifiers": [
+          {
+            "scheme": "HARMONISED_STANDARD",
+            "value": "EN 60335-2-14:2006"
+          }
+        ]
+      },
+      "operation": "STATUS_CHANGE",
+      "effective_from": "2025-07-18",
+      "before": {
+        "membership": "NOT_INCLUDED",
+        "status": "NOT_APPLICABLE"
+      },
+      "after": {
+        "membership": "NOT_INCLUDED",
+        "status": "OTHER"
+      },
+      "scope": {
+        "character": "FULL_MEMBER",
+        "statement": "Commission Implementing Decision (EU) 2025/1464 formally decides not to publish the OJ reference to EN 60335-2-14:2006 (including the listed amendments/corrections) after concluding that it fails to meet specified safety objectives of Directive 2014/35/EU."
+      },
+      "evidence_state": "DIRECT",
+      "source_refs": [
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32025D1464",
+          "locator": "Article 1 — decision not to publish the reference to EN 60335-2-14:2006",
+          "language": "ENG",
+          "role": "TRANSITION",
+          "authority_character": "BINDING_LEGAL_TEXT"
+        },
+        {
+          "source_type": "EUR_LEX",
+          "identifier": "CELEX:32025D1464",
+          "locator": "Article 2 — entry into force on publication in the Official Journal on 18 July 2025",
+          "language": "ENG",
+          "role": "SCOPE",
+          "authority_character": "BINDING_LEGAL_TEXT"
+        }
+      ]
+    }
+  ],
+  "forbidden_inferences": [
+    "Publication or adoption of EN 60335-2-14:2006 by a standards organisation by itself gives presumption of conformity under Directive 2014/35/EU.",
+    "The Commission decision not to publish the OJ reference means the European standard itself ceases to exist.",
+    "Lack of OJ-reference presumption means use of the standard is prohibited or that no alternative conformity route exists under Directive 2014/35/EU.",
+    "Commission Implementing Decision (EU) 2025/1464 is a textual amendment of Directive 2014/35/EU Article 12."
+  ],
+  "notes": "Candidate-B frozen #411 formal-nonpublication case for kitchen machines."
+}

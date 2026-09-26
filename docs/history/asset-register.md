@@ -57,7 +57,7 @@ Nothing here is automatically authorised for new work.
 | Evaluation integrity protocol | `docs/evaluations/adversarial-corpus-protocol-v0.1.md` | task/representation/evidence/execution/version/uncertainty discipline | **CURRENT when evaluations are run** | any consequential comparative evaluation |
 | Failure-analysis packet discipline | v0.2 docs/uses | conditional reusable value after strong postmortem | **CURRENT conditional rule** | use when non-trivial state/boundary/reuse structure remains |
 | Candidate A Maintenance Delta | `docs/mvp`, schema/validator/fixtures | smallest surviving eval-maintenance intervention | **CURRENT lead MVP candidate core** | external evaluator-owned value test |
-| Candidate B EU operative state | research/docs/issues #377/#395 | cross-owner legal-state reconstruction hypothesis | **SECONDARY CANDIDATE** | practitioner-owned recurring burden / observed incumbent gap |
+| Candidate B EU operative state / harmonised-standard status | `docs/mvp/candidate-b-harmonised-standard-status-core-v0.1.md`, `mvp/candidate-b/`, dynamic-set fixtures | cross-owner operative-state research narrowed into a five-case standards-status usability wedge for lean product teams | **ACTIVE DISPOSABLE MVP CANDIDATE — VALUE UNPROVEN** | target-user usability vs free official sources, then direct incumbent-product comparison per #411 |
 | Candidate C failure -> regression/oracle | failure-analysis + Candidate-A trigger | close fit to surviving corpus asset | **SECONDARY CANDIDATE / possible wedge** | real incident owner + current postmortem/regression process |
 
 ## Critical interpretation notes

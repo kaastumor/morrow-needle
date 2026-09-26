@@ -21,6 +21,17 @@ LVD_WITHDRAWAL = json.loads(
     ).read_text(encoding="utf-8")
 )
 
+MACHINERY = json.loads(
+    Path("fixtures/dependency/machinery-en50434-restriction-v0.1.json").read_text(
+        encoding="utf-8"
+    )
+)
+LVD_NONPUBLICATION = json.loads(
+    Path(
+        "fixtures/dependency/lvd-en60335-2-14-formal-nonpublication-v0.1.json"
+    ).read_text(encoding="utf-8")
+)
+
 
 def test_toy_status_changes_from_cited_to_restricted():
     before = render_card(TOY, "EN 71-1:2014+A1:2018", date(2025, 9, 9))
@@ -75,3 +86,23 @@ def test_card_applies_withdrawal_after_effective_date():
     assert "**OJ-reference state:** NOT_CITED" in card
     assert "**Presumption consequence:** NOT_AVAILABLE_VIA_THIS_OJ_REFERENCE" in card
     assert "lvd-en60335-2-60-withdrawal-2027-01-18" in card
+
+
+def test_machinery_card_keeps_reference_cited_but_restricted():
+    card = render_card(MACHINERY, "EN 50434:2014", date(2026, 9, 26))
+
+    assert "**OJ-reference state:** CITED_WITH_RESTRICTION" in card
+    assert "**Presumption consequence:** RESTRICTED_TO_STATED_SCOPE" in card
+    assert "300 r/min" in card
+
+
+def test_lvd_nonpublication_card_is_not_cited_with_owning_event():
+    card = render_card(
+        LVD_NONPUBLICATION,
+        "EN 60335-2-14:2006",
+        date(2026, 9, 26),
+    )
+
+    assert "**OJ-reference state:** NOT_CITED" in card
+    assert "lvd-en60335-2-14-formal-nonpublication-2025-07-18" in card
+    assert "alternative conformity route" in card

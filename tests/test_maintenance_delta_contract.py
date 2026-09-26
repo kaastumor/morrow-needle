@@ -54,7 +54,7 @@ def test_owner_adopted_change_requires_candidate_contract_reference():
     )
 
 
-def test_accepted_repair_requires_owner_adoption_candidate_and_action():
+def test_accepted_repair_requires_owner_adoption_and_candidate_reference():
     record = copy.deepcopy(FIXTURES["delta-s009-activation"])
     record["repair_status"] = "ACCEPTED"
     record["change_status"] = "OBSERVED"

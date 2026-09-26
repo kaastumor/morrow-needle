@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **USE — PAIRED INCREMENTAL-VALUE FALSIFIER**
+# **DIRECTION REVIEW — POST-INCREMENTAL-VALUE FALSIFIER**
 
 Frozen scientific source:
 
@@ -23,67 +23,55 @@ Current released reference surface:
 
 ### Current WIP
 
-# **#362 — paired temporal-oracle test of Needle incremental value**
-
-Result:
-
-> **CONDITIONAL_HYPOTHESIS_NOT_SUPPORTED**
-
-> **DISCIPLINE_DELTA = NO**
-
-> **ARTIFACT_DELTA = NO**
-
-> **V0.2_NAVIGATION = NOT_NEEDED**
-
-The pair was mechanically frozen before source analysis from ChronoLex-TW:
-
-- `CLTW-2012-criminal-41` — externally labelled `Shifted`;
-- `CLTW-2020-criminal-19` — first same-statute `Stable` control.
-
-The predeclared external temporal condition failed to order the legally consequential
-reconstruction burden:
-
-- the Shifted Article 122 row had a later text amendment, but the answer-determinative
-  penalty/procedural state remained materially stable;
-- the Stable Article 168 row required the richer substantive/procedural/Supreme-Court
-  relationship.
-
-Excellent ordinary evaluator-maintenance practice already preserved all consequential
-target-date, source-state, boundary and regression logic on both rows.
-
-Needle added no material discipline-level or artifact-level delta.
-
-This does **not** erase #339/#353. It does reject treating an observable "changed-law /
-stable-law" or loosely defined "complexity" condition as a demonstrated predictor of
-incremental Needle value.
-
-Do not search for a friendlier replacement pair.
-
-Result:
-
-> `docs/uses/issue362-paired-temporal-oracle-incremental-value-2026-09-26.md`
-
-### Next eligible work after #362 merge
-
 # **#364 — direction review after paired incremental-value falsifier**
 
-#364 must explicitly decide between:
-- **CONSOLIDATE / REDIRECT** — absorb the useful discipline into excellent ordinary
-  practice and stop treating external artifact-value proof as a standing research line;
-- **USE** — only if a credible case-selection-independent operational test can measure
-  reconstruction/handoff/regression benefit without self-grading;
-- **DISCOVER** — only for direct external adoption/demand evidence rather than benchmark
-  existence;
-- release/maintenance only with a concrete trigger.
+Result:
 
-Anti-rescue rule:
+> **SELECT CONSOLIDATE / REDIRECT**
 
-> do not answer #362 by selecting another favorable complexity proxy.
+Reason:
+
+- #339/#353 remain bounded positive observations;
+- #349/#362 show that excellent ordinary postmortem/evaluator practice can fully absorb
+  the consequential work;
+- #359/#361 supports a real external evaluator/oracle-maintenance problem but not a
+  demonstrated need for the full Needle artifact;
+- #362 invalidated the tested changed-law/stable-law proxy and lowered confidence that a
+  preselectable "complexity" condition predicts Needle value;
+- a case-selection-independent operational test is not currently measurable without
+  self-grading;
+- direct external adoption/demand evidence is absent;
+- no release or maintenance trigger dominates.
+
+Do not search for a friendlier complexity proxy.
+
+Review:
+
+> `docs/reviews/issue364-post-incremental-value-falsifier-direction-2026-09-26.md`
+
+### Next eligible work after #364 merge
+
+# **#366 — retire standing external artifact-value proof line**
+
+#366 must reconcile the smaller project identity:
+
+> known-failure reference corpus + exposed regression fixtures + minimal evaluation
+> discipline.
+
+Useful failure-analysis practice remains in the Way of Working, but distinct external
+Needle artifact value is no longer a standing proof programme.
+
+#366 must:
+- preserve #339/#353 positives and #349/#362 nulls independently;
+- revise H-25 so it creates no automatic experiment queue;
+- preserve v0.2 and the 81/26 frozen corpus unchanged;
+- record explicit re-entry triggers;
+- select a next project mode without starting another external packet-value experiment.
 
 No v0.3, structured external-failure database, corpus growth, product revival or superiority
 claim is authorised.
 
-WIP=1 remains binding: #364 starts only after #362 merges/closes.
+WIP=1 remains binding: #366 starts only after #364 merges/closes.
 
 ## Historical backlog archive
 

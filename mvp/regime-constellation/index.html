@@ -424,6 +424,160 @@
       </aside>
     </section>
 
+    <section class="change-review-section" aria-labelledby="change-review-heading">
+      <p class="section-kicker">Change review</p>
+      <h2 id="change-review-heading">What should be re-opened when a represented legal node changes?</h2>
+      <p class="change-review-intro">
+        This is a <strong>human review queue</strong>, not an automatic finding that downstream legal effect changed.
+        Propagation requires a verified typed dependency plus overlap with the changed provision or mechanism.
+      </p>
+
+      <div class="change-selector" role="group" aria-label="Choose a frozen change-control example">
+        <button type="button" data-change-control="reg-2024-1860" aria-pressed="true">2024/1860 · MDR + IVDR change</button>
+        <button type="button" data-change-control="dec-2025-1324" aria-pressed="false">2025/1324 · expert panels</button>
+        <button type="button" data-change-control="reg-2023-1194" aria-pressed="false">2023/1194 · child amendment</button>
+      </div>
+
+      <div id="change-review-status" class="change-review-status" aria-live="polite">
+        Showing review candidates for Regulation (EU) 2024/1860.
+      </div>
+
+      <div class="change-cases">
+        <article class="change-case is-active" data-change-case="reg-2024-1860">
+          <header class="change-case-header">
+            <div>
+              <p class="change-source-kind">Upstream legal change</p>
+              <h3>Regulation (EU) 2024/1860</h3>
+              <p>Amends both MDR and IVDR concerning gradual EUDAMED roll-out, supply interruption/discontinuation information duties and IVDR transitional provisions.</p>
+            </div>
+            <a href="https://eur-lex.europa.eu/eli/reg/2024/1860/oj/eng" target="_blank" rel="noreferrer">Open official source</a>
+          </header>
+
+          <div class="review-queue">
+            <article class="review-item review-direct">
+              <p class="queue-state">DIRECT_REVIEW</p>
+              <h4>MDR core current-state/context</h4>
+              <p><strong>Why:</strong> Article 1 of 2024/1860 directly amends Regulation 2017/745.</p>
+              <p><strong>Review:</strong> verify current EUDAMED and supply-interruption explanations against the amended MDR provisions.</p>
+            </article>
+
+            <article class="review-item review-direct">
+              <p class="queue-state">DIRECT_REVIEW</p>
+              <h4>IVDR core + transition explanation</h4>
+              <p><strong>Why:</strong> Article 2 of 2024/1860 directly amends Regulation 2017/746, including transitional provisions for certain IVDs.</p>
+              <p><strong>Review:</strong> verify current IVDR transition wording and EUDAMED-linked state.</p>
+            </article>
+
+            <article class="review-item review-direct">
+              <p class="queue-state">DIRECT_REVIEW</p>
+              <h4>Joint transition/change relation</h4>
+              <p><strong>Why:</strong> 2024/1860 is itself represented in the joint change lane and its branch/effect description must match the amending act.</p>
+            </article>
+
+            <article class="review-item review-downstream">
+              <p class="queue-state">DOWNSTREAM_REVIEW</p>
+              <h4>EUDAMED temporal/system-state explanation</h4>
+              <p><strong>Why:</strong> 2024/1860 changes the legal mechanics for gradual EUDAMED roll-out; this represented explanation consumes that mechanism.</p>
+              <p><strong>Stop:</strong> do not propagate from “EUDAMED” to every implementing measure. Continue only through a verified EUDAMED/provision dependency.</p>
+            </article>
+
+            <article class="review-item review-context">
+              <p class="queue-state">CONTEXT_ONLY</p>
+              <h4>Decision (EU) 2025/2371</h4>
+              <p><strong>Why not queued:</strong> it is a later functionality event already represented at the current evidence checkpoint. It helps explain resulting state rather than proving an unresolved defect.</p>
+              <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025D2371" target="_blank" rel="noreferrer">Open official decision</a>
+            </article>
+
+            <article class="review-item review-stop">
+              <p class="queue-state">NO_PROPAGATION</p>
+              <h4>Unrelated common-specification, reference-lab, delegated and expert-panel children</h4>
+              <p><strong>Why propagation stops:</strong> sharing MDR/IVDR family membership is not a dependency. No represented provision-specific edge connects the 2024/1860 changes to those child claims.</p>
+            </article>
+          </div>
+        </article>
+
+        <article class="change-case" data-change-case="dec-2025-1324" hidden>
+          <header class="change-case-header">
+            <div>
+              <p class="change-source-kind">Direct child amendment</p>
+              <h3>Commission Implementing Decision (EU) 2025/1324</h3>
+              <p>Expressly amends Implementing Decision (EU) 2019/1396 concerning expert panels.</p>
+            </div>
+            <a href="https://eur-lex.europa.eu/eli/dec_impl/2025/1324/oj/eng" target="_blank" rel="noreferrer">Open official source</a>
+          </header>
+
+          <div class="review-queue">
+            <article class="review-item review-direct">
+              <p class="queue-state">DIRECT_REVIEW</p>
+              <h4>Implementing Decision 2019/1396 expert-panel node</h4>
+              <p><strong>Why:</strong> 2025/1324 directly amends this represented legal resource.</p>
+              <a href="https://eur-lex.europa.eu/eli/dec_impl/2019/1396/2025-07-28/eng" target="_blank" rel="noreferrer">Open current consolidated decision</a>
+            </article>
+
+            <article class="review-item review-direct">
+              <p class="queue-state">DIRECT_REVIEW</p>
+              <h4>“Later amended by 2025/1324” relationship</h4>
+              <p><strong>Why:</strong> the displayed mutation edge is itself part of the maintained explanation and must match the amending act.</p>
+            </article>
+
+            <article class="review-item review-stop">
+              <p class="queue-state">NO_PROPAGATION</p>
+              <h4>MDR / IVDR core and unrelated implementing families</h4>
+              <p><strong>Why propagation stops:</strong> expert panels perform MDR/IVDR tasks, but the current bounded projection contains no further verified dependency from the changed expert-panel provisions into those neighboring claims.</p>
+            </article>
+
+            <article class="review-item review-context">
+              <p class="queue-state">CONTEXT_ONLY</p>
+              <h4>DOWNSTREAM_REVIEW: none earned</h4>
+              <p>No second verified dependency continues downstream from the amended expert-panel node in this slice.</p>
+            </article>
+          </div>
+        </article>
+
+        <article class="change-case" data-change-case="reg-2023-1194" hidden>
+          <header class="change-case-header">
+            <div>
+              <p class="change-source-kind">Known out-of-slice amendment</p>
+              <h3>Commission Implementing Regulation (EU) 2023/1194</h3>
+              <p>Amends represented Implementing Regulation 2022/2346 as regards transitional provisions for certain Annex XVI products.</p>
+            </div>
+            <a href="https://eur-lex.europa.eu/eli/reg_impl/2023/1194/oj/eng" target="_blank" rel="noreferrer">Open official source</a>
+          </header>
+
+          <div class="review-queue">
+            <article class="review-item review-direct">
+              <p class="queue-state">DIRECT_REVIEW</p>
+              <h4>Implementing Regulation 2022/2346 representative node</h4>
+              <p><strong>Why:</strong> 2023/1194 directly amends its transitional provisions. The representative child cannot safely be treated as self-contained for transition state.</p>
+            </article>
+
+            <article class="review-item review-context">
+              <p class="queue-state">CONTEXT_ONLY</p>
+              <h4>MDR core branch</h4>
+              <p><strong>Why not directly queued:</strong> MDR supplies the parent legal context, but 2023/1194 amends the child implementing regulation rather than the MDR itself.</p>
+            </article>
+
+            <article class="review-item review-context">
+              <p class="queue-state">OUT_OF_SCOPE</p>
+              <h4>2023/1194 remains outside the normal child expansion</h4>
+              <p><strong>Why:</strong> this control demonstrates that a known amendment can trigger a targeted review without forcing the bounded constellation to ingest every related act.</p>
+            </article>
+
+            <article class="review-item review-stop">
+              <p class="queue-state">NO_PROPAGATION</p>
+              <h4>DOWNSTREAM_REVIEW: none represented</h4>
+              <p>No further typed child dependency continues from 2022/2346 in the bounded slice.</p>
+            </article>
+          </div>
+        </article>
+      </div>
+
+      <aside class="change-review-boundary">
+        <strong>Review candidate ≠ legal effect changed.</strong>
+        The queue says what a maintainer should reopen. It does not decide whether the downstream legal position actually changed.
+      </aside>
+    </section>
+
     <section class="diagnostics-section" aria-labelledby="diagnostics-heading">
       <p class="section-kicker">Research diagnostics</p>
       <h2 id="diagnostics-heading">Evidence and coverage signals</h2>

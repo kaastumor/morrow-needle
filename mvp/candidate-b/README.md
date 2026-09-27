@@ -27,6 +27,27 @@ Visible freshness language makes clear that the data is frozen demonstration evi
 
 External-user recruitment remains deferred under #425.
 
+## Static deployment bundle
+
+A hosting bundle can be generated from canonical repository files without committing a second
+hand-maintained copy of the legal-state data:
+
+```sh
+node mvp/candidate-b/build-static-demo.js
+```
+
+This creates ignored `dist/` output containing only:
+
+- the Candidate-B HTML/CSS/JavaScript surface;
+- the five frozen canonical fixtures required by the prototype;
+- a small build manifest recording that the artifact is not live monitoring and that external
+  value remains unproven.
+
+`vercel.json` points a static deployment at this generated `dist/` directory.
+
+The repository currently has no connected Vercel team/project in this ChatGPT environment, so this
+is **deployment-ready, not deployed**.
+
 ## Local launch
 
 From repository root:

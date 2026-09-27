@@ -230,3 +230,85 @@ test("diagnostic panel keeps one-column reflow on narrow layouts", () => {
   assert.match(css, /@media \(max-width: 58rem\)/);
   assert.match(css, /\.diagnostic-grid\s*\{[\s\S]*grid-template-columns: 1fr/);
 });
+
+
+test("change review exposes exactly three frozen upstream controls", () => {
+  assert.equal((html.match(/data-change-case=/g) || []).length, 3);
+  assert.equal((html.match(/data-change-control=/g) || []).length, 3);
+
+  assert.match(html, /2024\/1860 · MDR \+ IVDR change/);
+  assert.match(html, /2025\/1324 · expert panels/);
+  assert.match(html, /2023\/1194 · child amendment/);
+});
+
+test("change review uses explicit queue states without equating review with legal effect", () => {
+  for (const state of [
+    "DIRECT_REVIEW",
+    "DOWNSTREAM_REVIEW",
+    "CONTEXT_ONLY",
+    "NO_PROPAGATION",
+    "OUT_OF_SCOPE"
+  ]) {
+    assert.ok(html.includes(state), "missing queue state: " + state);
+  }
+
+  assert.match(html, /Review candidate ≠ legal effect changed/);
+  assert.match(html, /human review queue/);
+  assert.doesNotMatch(html, /blast-radius score/i);
+  assert.doesNotMatch(html, /severity score/i);
+  assert.doesNotMatch(html, /risk score/i);
+});
+
+test("2024/1860 control queues only typed overlap and makes non-propagation visible", () => {
+  const start = html.indexOf('data-change-case="reg-2024-1860"');
+  const end = html.indexOf('data-change-case="dec-2025-1324"', start);
+  const block = html.slice(start, end);
+
+  assert.match(block, /MDR core current-state\/context/);
+  assert.match(block, /IVDR core \+ transition explanation/);
+  assert.match(block, /EUDAMED temporal\/system-state explanation/);
+  assert.match(block, /Decision \(EU\) 2025\/2371/);
+  assert.match(block, /NO_PROPAGATION/);
+  assert.match(block, /sharing MDR\/IVDR family membership is not a dependency/i);
+  assert.match(block, /eli\/reg\/2024\/1860\/oj\/eng/);
+});
+
+test("2025/1324 control stops after expert-panel branch without a second dependency", () => {
+  const start = html.indexOf('data-change-case="dec-2025-1324"');
+  const end = html.indexOf('data-change-case="reg-2023-1194"', start);
+  const block = html.slice(start, end);
+
+  assert.match(block, /Implementing Decision 2019\/1396 expert-panel node/);
+  assert.match(block, /Later amended by 2025\/1324/i);
+  assert.match(block, /DOWNSTREAM_REVIEW: none earned/);
+  assert.match(block, /no further verified dependency/i);
+  assert.match(block, /eli\/dec_impl\/2025\/1324\/oj\/eng/);
+});
+
+test("2023/1194 control targets represented child without forcing graph expansion", () => {
+  const start = html.indexOf('data-change-case="reg-2023-1194"');
+  const block = html.slice(start);
+
+  assert.match(block, /Implementing Regulation 2022\/2346 representative node/);
+  assert.match(block, /OUT_OF_SCOPE/);
+  assert.match(block, /without forcing the bounded constellation to ingest every related act/i);
+  assert.match(block, /DOWNSTREAM_REVIEW: none represented/);
+  assert.match(block, /eli\/reg_impl\/2023\/1194\/oj\/eng/);
+});
+
+test("change control selector is keyboard-native and updates visible case state", () => {
+  assert.match(html, /<button type="button" data-change-control=/);
+  assert.match(html, /aria-pressed="true"/);
+  assert.match(html, /aria-live="polite"/);
+  assert.match(js, /function applyChangeControl/);
+  assert.match(js, /item\.hidden = !active/);
+  assert.match(js, /button\.setAttribute\("aria-pressed"/);
+});
+
+test("change review reflows to one column on narrower viewports", () => {
+  assert.match(css, /\.review-queue/);
+  assert.match(css, /@media \(max-width: 58rem\)/);
+  assert.match(css, /\.change-case-header,[\s\S]*\.review-queue[\s\S]*grid-template-columns: 1fr/);
+  assert.match(css, /@media \(max-width: 34rem\)/);
+  assert.match(css, /\.change-selector[\s\S]*display: grid/);
+});

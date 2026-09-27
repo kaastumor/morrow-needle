@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **EXTERNAL USER TEST — CANDIDATE B ACTIVE**
+# **PRODUCT READINESS — CANDIDATE B ACTIVE / EXTERNAL USERS DEFERRED**
 
 Frozen scientific source:
 
@@ -64,16 +64,22 @@ Durable result:
 
 > `docs/discovery/issue416-candidate-b-free-official-workflow-proxy-2026-09-27.md`
 
-Candidate B is now:
+Candidate B's value claim remains externally unproven, but the sponsor has corrected the sequencing.
 
-> **EXTERNAL USER/CAPABILITY GATED**
+Current allocation:
 
-Promotion sequence:
+> **INTERNAL PRODUCT-READINESS ACTIVE — EXTERNAL USERS DEFERRED**
 
-1. sponsor-authorised target-user crossover session using `docs/mvp/candidate-b-usability-test-contract-v0.1.md`;
-2. if positive, direct incumbent-product access under #411.
+The future target-user crossover contract remains preserved, but it is no longer the immediate next step.
 
-No B feature growth is earned before that evidence.
+Reason:
+- the current local five-case prototype is not yet credible enough to justify a cold professional time request;
+- near-term outreach would confound product value with trust, legitimacy and participant-incentive failure;
+- internal work may now improve the narrow artifact toward a credible external-product threshold without claiming that those improvements prove user value.
+
+#411 remains binding: no commercial-product superiority claim is earned without direct incumbent-product access.
+
+No generic compliance-platform build is authorised.
 
 ### Post-B portfolio review — #418
 
@@ -119,13 +125,17 @@ A remains preserved and is not rejected.
 
 #### Candidate B
 
-> **EXTERNAL USER/CAPABILITY GATED — INTERNAL WORKFLOW SIGNAL POSITIVE**
+> **PRODUCT READINESS ACTIVE — INTERNAL WORKFLOW SIGNAL POSITIVE / EXTERNAL VALUE UNPROVEN**
 
-Promotion trigger:
+Current trigger:
 
-> one real target-user crossover session; if positive, direct product access under #411.
+> meet the #425 credible-product threshold before reconsidering external-user recruitment.
 
-B remains preserved and is not claimed unique.
+Later promotion sequence:
+
+> low-friction target-user test -> if positive, direct product access under #411.
+
+B remains narrow and is not claimed unique.
 
 #### Candidate C
 
@@ -155,40 +165,50 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
-### Immediate priority — Candidate B external-user gate
+### Immediate priority — Candidate B credible-product threshold
 
-The sponsor has selected Candidate B to continue.
+The sponsor has selected Candidate B to continue but has moved external-user recruitment materially later.
 
 Active WIP:
 
-> **#422 — one target-user crossover session**
+> **#425 — build toward a credible narrow product before asking outsiders for time**
 
-The first-session design, participant task brief, facilitator answer sheet and recruitment note are frozen before participant response.
+#422 is closed as near-term execution and preserved only as a future pre-registered usability design.
 
-First target-user profile:
+Sponsor correction:
 
-> **small product-compliance adviser serving retailers/importers/manufacturers with real harmonised-standard maintenance work**
+> an unknown local prototype asking a small specialist consultancy for 30–45 unpaid minutes is not a credible first external move.
 
-The first named recruitment target is recorded in #422 and the frozen recruitment note.
+Likely near-term outreach outcomes would be dominated by:
+- ignore/delete;
+- scam or sales suspicion;
+- lack of time/incentive;
+- polite decline.
 
-Current execution boundary:
+That would produce weak evidence about Candidate-B value.
 
-- the B research lane and one-participant pilot are authorised;
-- no participant contact has yet been sent;
-- do not access or connect the sponsor's mailbox without explicit permission;
-- do not purchase vendor access or create paid/vendor accounts;
-- do not add B product features before the user session;
-- if the user signal is positive, #411's direct-product-access gate remains next;
-- if mixed/negative, narrow, repair or stop B before building.
+Current product-readiness threshold:
+
+- understandable without facilitator narration;
+- ordinary-browser operation without GitHub/Python setup;
+- neutral safety and evidence boundaries;
+- product-like known-standard lookup rather than a fixture picker;
+- representative handling of cited / restricted / not-cited / future-transition states;
+- one-click official evidence;
+- explicit freshness semantics;
+- no false live-monitoring claim;
+- acceptable desktop/mobile use;
+- future evaluation can be completed in minutes rather than asking for a 30–45 minute favour.
 
 Current state:
 
-> **WIP=1 — EXTERNAL USER SESSION PREPARED / CONTACT UNSENT**
+> **WIP=1 — #425 PRODUCT READINESS / NO EXTERNAL OUTREACH**
+
+External-user re-entry is deferred until the artifact itself is credible enough to earn attention. When it returns, prefer a short self-serve task, warm introduction, or compensated research over cold unpaid long-form outreach.
 
 A and C remain preserved under #420 and are not active WIP.
 
-No new internal Candidate-A replay, manufactured Candidate-C postmortem, corpus/class growth, Full Needle revival or generic monitoring/platform build is authorised.
-
+No cold outreach, mailbox connection, paid/vendor account, generic compliance-platform build, manufactured Candidate-C postmortem, corpus/class growth or Full Needle revival is authorised.
 ## Historical backlog archive
 
 Everything below this line is retained for project history. It may contain old queue

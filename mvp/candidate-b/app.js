@@ -212,6 +212,10 @@ function renderCard(record, caseMeta, projection) {
     .map(item => `<li>${escapeHtml(item)}</li>`)
     .join("");
 
+  const governingActLink = caseMeta.regimeShort === "LVD"
+    ? `<p class="governing-act-link"><a href="#lvd-lifecycle">Explore the governing act: Low Voltage Directive 2014/35/EU →</a></p>`
+    : "";
+
   return `
     <div class="result-heading">
       <div>
@@ -240,6 +244,8 @@ function renderCard(record, caseMeta, projection) {
       <p>Open the binding source before relying on this status in a real conformity decision.</p>
       <ul class="evidence-list">${evidenceHtml}</ul>
     </section>
+
+    ${governingActLink}
 
     <details class="guardrails">
       <summary>What this status does not establish</summary>
@@ -302,6 +308,7 @@ function boot() {
   const examples = document.querySelector("#example-standards");
   const status = document.querySelector("#load-status");
   const card = document.querySelector("#status-card");
+  const lifecycle = document.querySelector("#lvd-lifecycle");
 
   let activeCase = null;
 
@@ -349,6 +356,16 @@ function boot() {
 
   wireCaseButtons(results, selectCase);
   wireCaseButtons(examples, selectCase);
+
+  if (lifecycle) {
+    wireCaseButtons(lifecycle, async selected => {
+      await selectCase(selected);
+      document.querySelector("#status-tool").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+  }
 
   status.textContent = "Enter a known standard reference or choose an example.";
 }

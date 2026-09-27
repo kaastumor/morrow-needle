@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **REVIEW — REGIME CONSTELLATION RELATION INTEGRITY / LVD TEST FROZEN**
+# **DISCOVER — REGIME REVIEW/GAP SIGNALS / LVD TEST FROZEN**
 
 Frozen scientific source:
 
@@ -165,78 +165,63 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
-### Immediate priority — Medical-devices constellation relation-integrity review
+### Immediate priority — Typed regime review/gap signals
 
-The LVD Navigator formative packet is complete and frozen:
+The LVD Navigator formative packet remains frozen:
 
 > `docs/evaluation/navigator-formative-v0.1/`
 
-Issue #453 is closed.
+Recruitment remains externally gated and no human-test evidence is inferred from the macro line.
 
-Recruitment remains externally gated:
+Completed macro milestones:
 
-> **READY_FOR_USER_TEST != AUTHORIZED_TO_CONTACT PARTICIPANTS**
+- #456 — selected the MDR/IVDR medical-devices regime as the first dense-regime fixture;
+- #457 — built the separate `/regime/` constellation with nine first-render macro objects;
+- #460 — adversarial relation-integrity review and repair.
 
-The sponsor has explicitly authorised a separate internal discovery/build line after the test packet was frozen.
+#460 disposition:
 
-This work must not:
-- modify the frozen LVD test artifact;
-- count as human-test evidence;
-- delay/replace later real-user evidence by claiming internal validation.
+> **PASS_TO_NEXT_EXPERIMENT — AFTER REPAIR**
 
-Macro discovery owner #456 concluded:
+Durable review:
 
-> **ADOPT_FOR_EXPERIMENT — MEDICAL-DEVICES REGIME AS FIRST MACRO FIXTURE**
+> `docs/reviews/issue460-regime-constellation-integrity-2026-09-27.md`
 
-Durable discovery:
+Important #460 findings:
+- family-level aggregation can hide branch-specific child truth;
+- every represented child now carries explicit MDR / IVDR / both ownership;
+- branch focus propagates inside shared families while sibling context remains visible;
+- repeated legal resources in cross-cutting views are labelled as cross-references rather than double-counted;
+- implementing/delegated family counts are dated frozen navigation summaries, not completeness claims;
+- binding law, non-binding guidance and proposal/procedure material remain separate.
 
-> `docs/discovery/issue456-macro-regime-connectedness-2026-09-27.md`
+Current discovery owner:
 
-Reason for the fixture:
-- three predecessor medical-device directives transition into two current sibling regulations;
-- the Commission overview exposes joint transition amendments, implementing measures, delegated acts, EUDAMED/system events, corrigenda and non-binding guidance;
-- current proposal material can test enacted-vs-proposed separation;
-- the official overview is already a strong grouped-list baseline.
+> **#462 — Typed regime review/gap signals from the medical-devices slice**
 
-#457 first-build objective is complete and merged.
+Question:
 
-Current review owner:
+> can the bounded typed regime projection point a human toward useful coverage/review work without converting graph absence or staleness into a legal conclusion?
 
-> **#460 — Regime constellation compression and relation integrity**
-
-v0.1 contract:
-- first render capped at roughly 8–10 major objects/families;
-- no force-directed graph;
-- predecessor/core branches remain visible;
-- child acts stay aggregated until expansion;
-- binding legislation, non-binding guidance and proposals are visually/semantically separate;
-- every individual edge has a human relation label;
-- graph absence never means legal absence;
-- gap labels remain coverage/evidence/review/structural-gap **signals**, not legal conclusions.
-
-Initial fixture is bounded. No complete medical-devices database is authorised.
+Initial controls:
+- represented Regulation 2022/2346 is officially shown as amended by 2023/1194, which is outside the bounded slice — candidate **COVERAGE_GAP**;
+- the delegated sample currently exposes MDR children while the Commission overview also names IVDR-side Delegated Regulation 2023/503 — candidate **branch coverage gap**;
+- Decision 2025/2371 is a cross-branch EUDAMED functionality/transition trigger — candidate **TEMPORAL_REVIEW_SIGNAL**;
+- a concrete **STRUCTURAL_GAP_CANDIDATE** must fail closed unless an authoritative provision and bounded source search support it.
 
 Still prohibited:
-- all-EU-law graph;
+- automatic legal-defect findings;
+- missing node = missing law;
+- citation-count heuristics;
 - recursive crawler;
-- national implementation database;
-- general case-law graph;
-- automatic gap/legal-defect conclusions;
-- commercial superiority claims;
-- modification of frozen LVD P8 materials.
-
-Current review findings:
-- top-level family aggregation was useful, but branch focus did not initially propagate to branch-specific child acts inside shared families;
-- EUDAMED 2021/2078 appeared in both the implementing family and the EUDAMED system lane without an explicit cross-reference/not-double-counted explanation;
-- family counts need visible source-date/counting semantics;
-- transition children need MDR / IVDR / both ownership visible at child level.
-
-Repair principle:
-> keep sibling context visible, but never let aggregation erase which branch an individual child actually belongs to.
+- complete medical-device dataset expansion;
+- second dense regime;
+- modification of frozen LVD P8 materials;
+- external/user-value claim.
 
 Current state:
 
-> **WIP=1 — #460 REGIME CONSTELLATION INTEGRITY REVIEW / LVD TEST FROZEN**
+> **WIP=1 — #462 REGIME REVIEW/GAP SIGNAL DISCOVERY / LVD TEST FROZEN**
 
 ## Historical backlog archive
 

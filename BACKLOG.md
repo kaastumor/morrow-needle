@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **PREP — EU LEGISLATION NAVIGATOR P8 MATERIALS / RECRUITMENT NOT AUTHORIZED**
+# **BUILD — NAVIGATOR MACRO / REGIME CONSTELLATION v0.1 / LVD TEST FROZEN**
 
 Frozen scientific source:
 
@@ -165,85 +165,67 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
-### Immediate priority — Navigator P8 formative-test materials
+### Immediate priority — Medical-devices regime constellation v0.1
 
-The sponsor-adopted horizon remains:
+The LVD Navigator formative packet is complete and frozen:
 
-> `docs/plans/eu-legislation-navigator-prototype-v0.1.md`
+> `docs/evaluation/navigator-formative-v0.1/`
 
-Completed milestones:
+Issue #453 is closed.
 
-- #434 — first deployed LVD lifecycle/context slice;
-- #437 — P1/P2 reader job, alternatives and LVD evidence contract;
-- #438 — P3 single-page presentation decision;
-- #440 — P4 content-complete LVD page;
-- #443 — P5 integrity/browser/accessibility review;
-- #447 — P6 maintenance/correction rehearsal;
-- #450 — P7 readiness decision.
-
-P7 disposition:
-
-> **READY_FOR_USER_TEST**
-
-Durable result:
-
-> `docs/reviews/issue450-navigator-p7-readiness-2026-09-27.md`
-
-Interpretation:
-
-- the artifact is ready to learn from real readers;
-- user value is not proven;
-- the strong source-linked note remains the comparator;
-- official sources receive full credit;
-- LVD may be unusually favorable;
-- multi-act scaling is not earned;
-- standards-status vs Navigator product identity remains unresolved;
-- no commercial or market claim is earned.
-
-Current prep owner:
-
-> **#453 — Navigator formative human-test packet**
-
-#453 may prepare:
-- participant-facing direct Navigator entry instructions;
-- frozen source-linked-note comparator;
-- task sets A/B;
-- answer/evidence key;
-- counterbalance schedule;
-- facilitator/self-serve instructions;
-- observation sheet;
-- debrief questions;
-- unsent recruitment copy;
-- analysis template;
-- stop-rule checklist.
-
-Recruitment boundary:
+Recruitment remains externally gated:
 
 > **READY_FOR_USER_TEST != AUTHORIZED_TO_CONTACT PARTICIPANTS**
 
-No outreach, compensation purchase or participant-data service may be used without explicit sponsor authorization.
+The sponsor has explicitly authorised a separate internal discovery/build line after the test packet was frozen.
 
-The human comparison should:
-- start directly at the LVD context section;
-- isolate the known-act orientation job from the legacy standards-status shell;
-- target 20–25 minutes;
-- use 6 initial participants, with up to 2 more only if materially useful;
-- preserve the strong note;
-- stop on consequential false inference;
-- narrow/park rather than add rescue features if comparative value does not survive.
+This work must not:
+- modify the frozen LVD test artifact;
+- count as human-test evidence;
+- delay/replace later real-user evidence by claiming internal validation.
+
+Macro discovery owner #456 concluded:
+
+> **ADOPT_FOR_EXPERIMENT — MEDICAL-DEVICES REGIME AS FIRST MACRO FIXTURE**
+
+Durable discovery:
+
+> `docs/discovery/issue456-macro-regime-connectedness-2026-09-27.md`
+
+Reason for the fixture:
+- three predecessor medical-device directives transition into two current sibling regulations;
+- the Commission overview exposes joint transition amendments, implementing measures, delegated acts, EUDAMED/system events, corrigenda and non-binding guidance;
+- current proposal material can test enacted-vs-proposed separation;
+- the official overview is already a strong grouped-list baseline.
+
+Current build owner:
+
+> **#457 — Medical-devices regime constellation v0.1**
+
+v0.1 contract:
+- first render capped at roughly 8–10 major objects/families;
+- no force-directed graph;
+- predecessor/core branches remain visible;
+- child acts stay aggregated until expansion;
+- binding legislation, non-binding guidance and proposals are visually/semantically separate;
+- every individual edge has a human relation label;
+- graph absence never means legal absence;
+- gap labels remain coverage/evidence/review/structural-gap **signals**, not legal conclusions.
+
+Initial fixture is bounded. No complete medical-devices database is authorised.
 
 Still prohibited:
-- second act;
-- national transposition database;
-- case-law graph;
-- general search;
-- live monitoring;
-- multi-act backend/platform build;
-- commercial superiority claims.
+- all-EU-law graph;
+- recursive crawler;
+- national implementation database;
+- general case-law graph;
+- automatic gap/legal-defect conclusions;
+- commercial superiority claims;
+- modification of frozen LVD P8 materials.
 
 Current state:
 
-> **WIP=1 — #453 NAVIGATOR HUMAN-TEST PREP / NO OUTREACH**
+> **WIP=1 — #457 MEDICAL-DEVICES REGIME CONSTELLATION v0.1 / LVD TEST FROZEN**
 
 ## Historical backlog archive
 

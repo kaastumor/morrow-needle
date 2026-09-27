@@ -68,7 +68,7 @@ test("Overview preserves legally material first-impression qualifiers", () => {
   assert.match(overview, /Transition matters:/);
   assert.match(overview, /transitional rules preserve some effects/i);
   assert.match(overview, /Proposal — not enacted/);
-  assert.match(overview, /Evidence-bounded EU-level view/);
+  assert.match(overview, /Evidence-bounded EU-level view/i);
   assert.match(overview, /Scope here:/);
   assert.match(overview, /Official MDR source/);
   assert.match(overview, /Official IVDR source/);

@@ -255,7 +255,8 @@ p { max-width: 62ch; }
 
 a:focus-visible,
 button:focus-visible,
-input:focus-visible {
+input:focus-visible,
+summary:focus-visible {
   outline: .2rem solid currentColor;
   outline-offset: .2rem;
 }
@@ -707,9 +708,11 @@ input:focus-visible {
 /* P5 relationship/readability repairs */
 
 .detail-cue {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
   margin-top: .55rem;
-  padding: 0;
+  padding: .2rem 0;
   border: 0;
   border-bottom: 1px solid currentColor;
   background: transparent;
@@ -902,4 +905,14 @@ input:focus-visible {
   .relation-source {
     grid-column: 1;
   }
+}
+
+
+.lineage-node,
+.relation-body,
+.relation-source,
+.dependency-node,
+.dependency-explanation,
+.applicability-grid dd {
+  overflow-wrap: anywhere;
 }

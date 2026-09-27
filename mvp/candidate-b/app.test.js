@@ -168,7 +168,7 @@ test("LVD lifecycle view keeps relationship semantics in readable text", () => {
 
   assert.match(html, /Product-law framework/i);
   assert.match(html, /Common legislative framework/i);
-  assert.match(html, /Standardisation mechanism/i);
+  assert.match(html, /Standardisation framework/i);
   assert.match(html, /Amended by/i);
   assert.match(html, /no successor is represented in this evidence view/i);
   assert.doesNotMatch(html, /RELATED_TO/);
@@ -254,9 +254,10 @@ test("operative dependencies distinguish definition imports from procedural depe
   const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
 
   assert.match(html, /Operative legal dependencies/i);
-  assert.match(html, /IMPORTS_DEFINITION_FROM/);
-  assert.match(html, /LVD Article 2\(9\).*Regulation \(EU\) No 1025\/2012, Article 2\(1\)\(c\)/i);
-  assert.match(html, /USES_PROCEDURE_IN/);
+  assert.match(html, /imports definition from/i);
+  assert.match(html, /LVD Article 2\(9\)/i);
+  assert.match(html, /Regulation \(EU\) No 1025\/2012 · Article 2\(1\)\(c\)/i);
+  assert.match(html, /uses procedure in/i);
   assert.match(html, /Articles 10\(6\) and 11/i);
   assert.match(html, /Why this matters here/i);
   assert.match(html, /does not mean the whole external Regulation is automatically imported/i);

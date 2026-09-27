@@ -155,12 +155,12 @@ button[aria-pressed="true"] {
   opacity: .82;
 }
 
-.lineage-arrows {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  justify-items: center;
-  font-size: .78rem;
+.destination {
+  margin-top: .2rem;
+  font-size: .72rem !important;
   font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .035em;
 }
 
 .core-grid {
@@ -445,16 +445,6 @@ details summary {
   .core-grid,
   .context-rows {
     grid-template-columns: 1fr;
-  }
-
-  .lineage-arrows {
-    grid-template-columns: 1fr;
-    justify-items: start;
-    padding-left: .6rem;
-  }
-
-  .lineage-arrows span + span {
-    display: none;
   }
 
   .block-heading,

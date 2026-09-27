@@ -29,7 +29,8 @@ test("medical-devices lineage preserves the predecessor-to-two-branch shape", ()
 test("macro families expose Commission-overview counts without completeness claims", () => {
   assert.match(html, /17 unique acts/);
   assert.match(html, /7 unique acts/);
-  assert.match(html, /named on the Commission overview at the evidence date/i);
+  assert.match(html, /Commission overview/i);
+  assert.match(html, /checked <time datetime="2026-09-27">27 September 2026<\/time>/i);
   assert.match(html, /not a complete map of medical-device law/i);
   assert.doesNotMatch(html, /all EU medical-device law/i);
 });

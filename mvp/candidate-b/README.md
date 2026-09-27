@@ -1,8 +1,8 @@
-# Candidate B — disposable harmonised-standard status MVP
+# Candidate B — harmonised-standard status product-readiness prototype
 
-Status: **USABILITY PROTOTYPE — VALUE UNPROVEN**
+Status: **PRODUCT-READINESS PROTOTYPE — EXTERNAL VALUE UNPROVEN**
 
-This static surface projects five frozen official EU harmonised-standard legal-status cases.
+This static surface provides a known-standard lookup over five frozen official EU harmonised-standard legal-status records.
 
 It exists to test one narrow user question:
 
@@ -10,6 +10,22 @@ It exists to test one narrow user question:
 > value versus the strongest free official-source process for a real product-compliance user?
 
 It is **not** a live monitoring service and must not be used as a current compliance database.
+
+## Current product shape
+
+The primary interaction is now deliberately product-like but still narrow:
+
+1. enter a harmonised-standard reference already known to be relevant;
+2. select a supported status date;
+3. read a human-facing OJ citation state and presumption consequence;
+4. inspect a restriction or already-fixed future transition;
+5. open the attached official EUR-Lex evidence.
+
+The interface no longer exposes an internal fixture/case selector as its primary task.
+
+Visible freshness language makes clear that the data is frozen demonstration evidence, not live monitoring.
+
+External-user recruitment remains deferred under #425.
 
 ## Local launch
 

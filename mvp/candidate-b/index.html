@@ -132,7 +132,10 @@
         </div>
         <div>
           <dt>Object / material scope</dt>
-          <dd>Electrical equipment designed for <strong>50–1,000 V AC</strong> or <strong>75–1,500 V DC</strong>, subject to Annex II exclusions.</dd>
+          <dd>
+            Electrical equipment designed for <strong>50–1,000 V AC</strong> or <strong>75–1,500 V DC</strong>, subject to Annex II exclusions.
+            <button class="detail-cue" type="button" data-details-target="lvd-exclusions" aria-controls="lvd-exclusions">See exclusions below ↓</button>
+          </dd>
         </div>
         <div>
           <dt>Market activity</dt>
@@ -140,7 +143,10 @@
         </div>
         <div>
           <dt>Economic operators</dt>
-          <dd>Manufacturer, authorised representative, importer and distributor are distinct roles. The Directive assigns different responsibilities to those roles.</dd>
+          <dd>
+            Manufacturer, authorised representative, importer and distributor are distinct roles. The Directive assigns different responsibilities to those roles.
+            <button class="detail-cue" type="button" data-details-target="lvd-actors" aria-controls="lvd-actors">See role details below ↓</button>
+          </dd>
         </div>
         <div>
           <dt>Territory / market context</dt>
@@ -152,7 +158,7 @@
         </div>
       </dl>
 
-      <details class="scope-details">
+      <details id="lvd-exclusions" class="scope-details">
         <summary>Major Annex II exclusions</summary>
         <p>Article 1 excludes the equipment and phenomena listed in Annex II. The represented list includes:</p>
         <ul class="scope-list">
@@ -170,7 +176,7 @@
         <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014L0035" target="_blank" rel="noreferrer">Open the full official Directive and Annex II</a>
       </details>
 
-      <details class="scope-details">
+      <details id="lvd-actors" class="scope-details">
         <summary>Economic-operator orientation</summary>
         <div class="actor-grid">
           <article>
@@ -201,31 +207,38 @@
     <section class="act-section" aria-labelledby="lineage-heading">
       <p class="section-kicker">Lineage</p>
       <h3 id="lineage-heading">Where it came from</h3>
-      <ol class="legal-lineage">
-        <li>
-          <div class="lineage-node">
-            <strong>Council Directive 73/23/EEC</strong>
-            <span>Original low-voltage harmonisation act in this displayed lineage.</span>
-            <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31973L0023" target="_blank" rel="noreferrer">Official text</a>
-          </div>
-        </li>
-        <li>
-          <span class="relation-label">Codified as ↓</span>
-          <div class="lineage-node">
-            <strong>Directive 2006/95/EC</strong>
-            <span>The 2006 act expressly identifies itself as a codified version and says 73/23/EEC had been substantially amended.</span>
-            <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32006L0095" target="_blank" rel="noreferrer">Official text · recital 1</a>
-          </div>
-        </li>
-        <li>
-          <span class="relation-label">Recast as ↓</span>
-          <div class="lineage-node lineage-current">
-            <strong>Directive 2014/35/EU</strong>
-            <span>The 2014 act is expressly a recast. Article 27 repealed Directive 2006/95/EC from 20 April 2016.</span>
-            <a href="https://eur-lex.europa.eu/eli/dir/2014/35/oj/eng" target="_blank" rel="noreferrer">Official text · recital 1 and Article 27</a>
-          </div>
-        </li>
-      </ol>
+      <div class="lineage-path" role="group" aria-label="Low Voltage Directive legal lineage">
+        <article class="lineage-node">
+          <p class="relationship-type">Earlier regime</p>
+          <strong>Council Directive 73/23/EEC</strong>
+          <span>Original low-voltage harmonisation act in this displayed lineage.</span>
+          <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31973L0023" target="_blank" rel="noreferrer">Official text</a>
+        </article>
+
+        <div class="lineage-edge" aria-label="Codified as">
+          <span>Codified as</span>
+          <span aria-hidden="true">→</span>
+        </div>
+
+        <article class="lineage-node">
+          <p class="relationship-type">Codification</p>
+          <strong>Directive 2006/95/EC</strong>
+          <span>The 2006 act expressly identifies itself as a codified version and says 73/23/EEC had been substantially amended.</span>
+          <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32006L0095" target="_blank" rel="noreferrer">Official text · recital 1</a>
+        </article>
+
+        <div class="lineage-edge" aria-label="Recast as">
+          <span>Recast as</span>
+          <span aria-hidden="true">→</span>
+        </div>
+
+        <article class="lineage-node lineage-current">
+          <p class="relationship-type">Current focal act</p>
+          <strong>Directive 2014/35/EU</strong>
+          <span>The 2014 act is expressly a recast. Article 27 repealed Directive 2006/95/EC from 20 April 2016.</span>
+          <a href="https://eur-lex.europa.eu/eli/dir/2014/35/oj/eng" target="_blank" rel="noreferrer">Official text · recital 1 and Article 27</a>
+        </article>
+      </div>
       <p class="bounded-unknown"><strong>Successor:</strong> no successor is represented in this evidence view. That is not a claim that no successor can exist or be proposed.</p>
     </section>
 
@@ -269,40 +282,50 @@
       <h3 id="context-heading">What shapes this act</h3>
       <p class="section-intro">These are different kinds of legal relationship. They are grouped for navigation, not collapsed into one generic “influence” edge.</p>
 
-      <div class="context-grid">
-        <article class="context-card">
-          <p class="relationship-type">Legal basis</p>
-          <h4>Article 114 TFEU</h4>
-          <p>The Directive was adopted on the internal-market harmonisation legal basis in Article 114 of the Treaty on the Functioning of the European Union.</p>
-          <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012E114" target="_blank" rel="noreferrer">Open Article 114</a>
+      <div class="relation-ledger">
+        <article class="relation-row">
+          <div class="relation-kind">Legal basis</div>
+          <div class="relation-body">
+            <h4>Article 114 TFEU</h4>
+            <p>The Directive was adopted on the internal-market harmonisation legal basis in Article 114 of the Treaty on the Functioning of the European Union.</p>
+          </div>
+          <a class="relation-source" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012E114" target="_blank" rel="noreferrer">Open Article 114</a>
         </article>
 
-        <article class="context-card">
-          <p class="relationship-type">Product-law framework</p>
-          <h4>Regulation (EC) No 765/2008</h4>
-          <p>Recital 2 identifies this Regulation as the framework for accreditation, market surveillance, controls on products from third countries and general CE-marking principles.</p>
-          <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008R0765" target="_blank" rel="noreferrer">Open official act</a>
+        <article class="relation-row">
+          <div class="relation-kind">Product-law framework</div>
+          <div class="relation-body">
+            <h4>Regulation (EC) No 765/2008</h4>
+            <p>Recital 2 identifies this Regulation as the framework for accreditation, market surveillance, controls on products from third countries and general CE-marking principles.</p>
+          </div>
+          <a class="relation-source" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008R0765" target="_blank" rel="noreferrer">Open official act</a>
         </article>
 
-        <article class="context-card">
-          <p class="relationship-type">Common legislative framework</p>
-          <h4>Decision No 768/2008/EC</h4>
-          <p>Recital 3 says the Decision provides common principles and reference provisions for product legislation and that Directive 2006/95/EC should be adapted to it.</p>
-          <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008D0768" target="_blank" rel="noreferrer">Open official act</a>
+        <article class="relation-row">
+          <div class="relation-kind">Common legislative framework</div>
+          <div class="relation-body">
+            <h4>Decision No 768/2008/EC</h4>
+            <p>Recital 3 says the Decision provides common principles and reference provisions for product legislation and that Directive 2006/95/EC should be adapted to it.</p>
+          </div>
+          <a class="relation-source" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008D0768" target="_blank" rel="noreferrer">Open official act</a>
         </article>
 
-        <article class="context-card">
-          <p class="relationship-type">Standardisation mechanism</p>
-          <h4>Regulation (EU) No 1025/2012</h4>
-          <p>Recitals 16–17 link the LVD's harmonised-standard mechanism and formal-objection procedure to the European Standardisation Regulation.</p>
-          <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32012R1025" target="_blank" rel="noreferrer">Open official act</a>
+        <article class="relation-row">
+          <div class="relation-kind">Standardisation framework</div>
+          <div class="relation-body">
+            <h4>Regulation (EU) No 1025/2012</h4>
+            <p>Recitals 16–17 link the LVD's harmonised-standard mechanism and formal-objection procedure to the European Standardisation Regulation.</p>
+          </div>
+          <a class="relation-source" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32012R1025" target="_blank" rel="noreferrer">Open official act</a>
         </article>
 
-        <article class="context-card">
-          <p class="relationship-type">Amended by</p>
-          <h4>Directive (EU) 2024/2749</h4>
-          <p>Article 8 adds LVD emergency procedures concerning conformity assessment, presumption of conformity, common specifications and market surveillance during an internal-market emergency.</p>
-          <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L2749" target="_blank" rel="noreferrer">Open official act · Article 8</a>
+        <article class="relation-row">
+          <div class="relation-kind">Amended by</div>
+          <div class="relation-body">
+            <h4>Directive (EU) 2024/2749</h4>
+            <p>Article 8 adds LVD emergency procedures concerning conformity assessment, presumption of conformity, common specifications and market surveillance during an internal-market emergency.</p>
+          </div>
+          <a class="relation-source" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L2749" target="_blank" rel="noreferrer">Open official act · Article 8</a>
         </article>
       </div>
     </section>
@@ -314,23 +337,49 @@
         These are not merely “related laws”. Each displayed provision supplies a definition or procedure needed to understand how the LVD mechanism works.
       </p>
 
-      <div class="dependency-cards">
-        <article class="dependency-card">
-          <p class="relationship-type">IMPORTS_DEFINITION_FROM</p>
-          <h4>LVD Article 2(9) → Regulation (EU) No 1025/2012, Article 2(1)(c)</h4>
-          <p><strong>Relevant rule:</strong> the LVD defines “harmonised standard” by importing the definition from the European Standardisation Regulation.</p>
-          <p><strong>Why this matters here:</strong> Article 12's presumption operates on “harmonised standards”; the external definition determines what that term means in this mechanism.</p>
-          <p class="source-context"><strong>Source context:</strong> Regulation 1025/2012, current EUR-Lex consolidated text checked in the 2026 legal view.</p>
-          <a href="https://eur-lex.europa.eu/eli/reg/2012/1025/2024-12-13/eng" target="_blank" rel="noreferrer">Open the full official source — Article 2</a>
+      <div class="operative-routes">
+        <article class="operative-route">
+          <div class="dependency-path" aria-label="LVD Article 2(9) imports the harmonised-standard definition from Regulation 1025/2012 Article 2(1)(c)">
+            <div class="dependency-node">
+              <span class="node-role">Focal provision</span>
+              <strong>LVD Article 2(9)</strong>
+            </div>
+            <div class="dependency-edge">
+              <span>imports definition from</span>
+              <span aria-hidden="true">→</span>
+            </div>
+            <div class="dependency-node">
+              <span class="node-role">External provision</span>
+              <strong>Regulation (EU) No 1025/2012 · Article 2(1)(c)</strong>
+            </div>
+          </div>
+          <div class="dependency-explanation">
+            <p><strong>Relevant rule:</strong> the LVD defines “harmonised standard” by importing the definition from the European Standardisation Regulation.</p>
+            <p><strong>Why this matters here:</strong> Article 12's presumption operates on “harmonised standards”; the external definition determines what that term means in this mechanism.</p>
+            <a href="https://eur-lex.europa.eu/eli/reg/2012/1025/2024-12-13/eng" target="_blank" rel="noreferrer">Open full official source · Article 2</a>
+          </div>
         </article>
 
-        <article class="dependency-card">
-          <p class="relationship-type">USES_PROCEDURE_IN</p>
-          <h4>LVD Article 12 → Regulation (EU) No 1025/2012, Articles 10(6) and 11</h4>
-          <p><strong>Relevant rule:</strong> Article 10(6) provides for publication of qualifying harmonised-standard references; Article 11 provides the formal-objection route and decisions to publish, not publish, restrict, maintain or withdraw references.</p>
-          <p><strong>Why this matters here:</strong> this external machinery helps determine whether the OJ-reference state behind the LVD presumption exists, is restricted or is withdrawn.</p>
-          <p class="source-context"><strong>Source context:</strong> this explains the mechanism behind the frozen LVD standard-status examples shown below.</p>
-          <a href="https://eur-lex.europa.eu/eli/reg/2012/1025/2024-12-13/eng" target="_blank" rel="noreferrer">Open the full official source — Articles 10–11</a>
+        <article class="operative-route">
+          <div class="dependency-path" aria-label="LVD Article 12 uses the publication and formal-objection procedure in Regulation 1025/2012 Articles 10(6) and 11">
+            <div class="dependency-node">
+              <span class="node-role">Focal provision</span>
+              <strong>LVD Article 12</strong>
+            </div>
+            <div class="dependency-edge">
+              <span>uses procedure in</span>
+              <span aria-hidden="true">→</span>
+            </div>
+            <div class="dependency-node">
+              <span class="node-role">External provisions</span>
+              <strong>Regulation (EU) No 1025/2012 · Articles 10(6) and 11</strong>
+            </div>
+          </div>
+          <div class="dependency-explanation">
+            <p><strong>Relevant rule:</strong> Article 10(6) provides for publication of qualifying harmonised-standard references; Article 11 provides the formal-objection route and decisions to publish, not publish, restrict, maintain or withdraw references.</p>
+            <p><strong>Why this matters here:</strong> this machinery helps determine whether the OJ-reference state behind the LVD presumption exists, is restricted or is withdrawn.</p>
+            <a href="https://eur-lex.europa.eu/eli/reg/2012/1025/2024-12-13/eng" target="_blank" rel="noreferrer">Open full official source · Articles 10–11</a>
+          </div>
         </article>
       </div>
 

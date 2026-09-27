@@ -309,6 +309,7 @@ function boot() {
   const status = document.querySelector("#load-status");
   const card = document.querySelector("#status-card");
   const lifecycle = document.querySelector("#lvd-lifecycle");
+  const detailCues = document.querySelectorAll("[data-details-target]");
 
   let activeCase = null;
 
@@ -364,6 +365,17 @@ function boot() {
         behavior: "smooth",
         block: "start"
       });
+    });
+  }
+
+  for (const cue of detailCues) {
+    cue.addEventListener("click", () => {
+      const target = document.getElementById(cue.dataset.detailsTarget);
+      if (!target || target.tagName !== "DETAILS") return;
+      target.open = true;
+      target.scrollIntoView({behavior: "smooth", block: "nearest"});
+      const summary = target.querySelector("summary");
+      if (summary) summary.focus({preventScroll: true});
     });
   }
 

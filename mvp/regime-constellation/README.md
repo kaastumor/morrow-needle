@@ -83,3 +83,23 @@ It intentionally distinguishes:
 These are evidence/review signals, not findings that EU law is defective.
 
 The current implementation is static and hand-verified. It does not crawl, score or automatically infer legal gaps.
+
+
+## Change review
+
+The page also contains a static three-control change-review demonstration derived from #467.
+
+It shows:
+- direct review candidates;
+- downstream review candidates;
+- context-only nodes;
+- explicit non-propagation;
+- out-of-scope controls.
+
+The review queue is deliberately provision-aware. Family membership and ordinary graph reachability do not propagate by default.
+
+The queue answers:
+> what should a maintainer reopen?
+
+It does not answer:
+> what legal effect definitely changed?

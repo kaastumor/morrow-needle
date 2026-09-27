@@ -336,3 +336,13 @@ test("relationship layouts collapse to one-dimensional reading order on narrow s
   assert.match(css, /\.dependency-path\s*\{[\s\S]*grid-template-columns: 1fr/);
   assert.match(css, /\.relation-row\s*\{[\s\S]*grid-template-columns: 1fr/);
 });
+
+
+test("disclosures and relationship text receive explicit accessibility hardening", () => {
+  const css = fs.readFileSync(path.join(__dirname, "styles.css"), "utf8");
+
+  assert.match(css, /summary:focus-visible/);
+  assert.match(css, /\.detail-cue\s*\{[\s\S]*min-height:\s*2rem/);
+  assert.match(css, /\.lineage-node,[\s\S]*overflow-wrap:\s*anywhere/);
+  assert.match(css, /\.dependency-node,[\s\S]*overflow-wrap:\s*anywhere/);
+});

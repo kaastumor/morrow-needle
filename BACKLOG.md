@@ -226,15 +226,15 @@ Do not answer these gaps with:
 
 Next WIP after #437 closes:
 
-> **P3 — compare the same frozen LVD facts as a competent source-linked note, the current progressive-disclosure page, and only a cheap Overview/Legal-detail wireframe.**
+> **#438 — compare the same frozen LVD facts as a competent source-linked note, the current progressive-disclosure page, and only a cheap Overview/Legal-detail wireframe.**
 
 Default null for P3:
 
 > **one progressively disclosed page is sufficient; a view toggle must earn itself.**
 
-Current state:
+Current state after this P1/P2 checkpoint merges:
 
-> **WIP=1 — #437 NAVIGATOR P1/P2 DISCOVERY / NO EXTERNAL OUTREACH**
+> **WIP=1 — #438 NAVIGATOR P3 PRESENTATION DECISION / NO EXTERNAL OUTREACH**
 
 ## Historical backlog archive
 

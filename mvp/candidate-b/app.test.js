@@ -5,9 +5,15 @@ const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
 
-const {CASES, assertSupportedDate, projectStatus, sourceHref} = require("./app.js");
-
-const ROOT = path.join(__dirname, "..", "..");
+const {
+  CASES,
+  assertSupportedDate,
+  findCases,
+  projectStatus,
+  statusLabel,
+  consequenceLabel,
+  sourceHref
+} = require("./app.js");
 
 function loadFixture(caseId) {
   const meta = CASES.find(entry => entry.id === caseId);
@@ -23,6 +29,13 @@ test("prototype uses exactly the five frozen #411 cases", () => {
     "lvd-en60335-2-14",
     "lvd-en60335-2-60"
   ]);
+});
+
+test("known-standard lookup resolves exact references and useful aliases", () => {
+  assert.equal(findCases("EN 60335-2-60:2003")[0].id, "lvd-en60335-2-60");
+  assert.equal(findCases("EN 71")[0].id, "toy-en71");
+  assert.ok(findCases("LVD").length >= 2);
+  assert.deepEqual(findCases("not in frozen set"), []);
 });
 
 test("query date 2026-09-26 yields the frozen current states", () => {
@@ -69,6 +82,11 @@ test("Machinery restriction preserves citation while narrowing presumption", () 
   assert.match(projection.latest.scope.statement, /300 r\/min/);
 });
 
+test("raw internal states are translated into user-facing labels", () => {
+  assert.equal(statusLabel("CITED_WITH_RESTRICTION"), "Cited — restriction applies");
+  assert.match(consequenceLabel("NOT_AVAILABLE_VIA_THIS_OJ_REFERENCE"), /not available/i);
+});
+
 test("official evidence links resolve from CELEX identifiers", () => {
   assert.equal(
     sourceHref({source_type:"EUR_LEX", identifier:"CELEX:32026D0080"}),
@@ -76,11 +94,21 @@ test("official evidence links resolve from CELEX identifiers", () => {
   );
 });
 
-test("static prototype states the product-compliance boundary", () => {
+test("static prototype states the product-compliance and frozen-data boundaries", () => {
   const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
   assert.match(html, /does not determine full product compliance/i);
   assert.match(html, /does not replace the standard text, testing/i);
+  assert.match(html, /Frozen demonstration data/i);
+  assert.match(html, /not a live monitoring service/i);
   assert.doesNotMatch(html, /unique|best|superior|automates CE compliance/i);
+});
+
+test("primary interaction is known-standard lookup rather than internal case selection", () => {
+  const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
+  assert.match(html, /Standard reference/i);
+  assert.match(html, /id="standard-query"/);
+  assert.doesNotMatch(html, /id="case-select"/);
+  assert.doesNotMatch(html, />\s*Case\s*</i);
 });
 
 test("prototype is responsive and keyboard-focus visible", () => {
@@ -88,9 +116,8 @@ test("prototype is responsive and keyboard-focus visible", () => {
   const css = fs.readFileSync(path.join(__dirname, "styles.css"), "utf8");
   assert.match(html, /class="skip-link"/);
   assert.match(css, /:focus-visible/);
-  assert.match(css, /@media \(max-width: 42rem\)/);
+  assert.match(css, /@media \(max-width: 46rem\)/);
 });
-
 
 test("each case exposes a bounded frozen evidence window", () => {
   for (const meta of CASES) {

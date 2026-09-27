@@ -280,3 +280,58 @@ test("Navigator exposes a correction route and independent-status boundary", () 
   assert.match(html, /independent research prototype/i);
   assert.match(html, /not an EU institution or official legal service/i);
 });
+
+
+test("applicability cards explicitly reveal where expanded detail can be found", () => {
+  const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
+  const js = fs.readFileSync(path.join(__dirname, "app.js"), "utf8");
+
+  assert.match(html, /See exclusions below ↓/);
+  assert.match(html, /data-details-target="lvd-exclusions"/);
+  assert.match(html, /id="lvd-exclusions"/);
+  assert.match(html, /See role details below ↓/);
+  assert.match(html, /data-details-target="lvd-actors"/);
+  assert.match(html, /id="lvd-actors"/);
+  assert.match(js, /target\.open = true/);
+  assert.match(js, /summary\.focus/);
+});
+
+test("lineage is presented as an explicit typed relationship path", () => {
+  const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
+
+  assert.match(html, /class="lineage-path"/);
+  assert.match(html, />Codified as</);
+  assert.match(html, />Recast as</);
+  assert.match(html, /Earlier regime/);
+  assert.match(html, /Current focal act/);
+});
+
+test("framework context uses a relationship ledger rather than equal-weight cards", () => {
+  const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
+
+  assert.match(html, /class="relation-ledger"/);
+  assert.match(html, /class="relation-row"/);
+  assert.match(html, /class="relation-kind">Legal basis/);
+  assert.match(html, /class="relation-kind">Amended by/);
+});
+
+test("operative dependencies visually encode focal provision, relation and external provision", () => {
+  const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
+
+  assert.match(html, /class="operative-routes"/);
+  assert.match(html, /class="dependency-path"/);
+  assert.match(html, /Focal provision/);
+  assert.match(html, /External provision/);
+  assert.match(html, /imports definition from/);
+  assert.match(html, /uses procedure in/);
+  assert.match(html, /Why this matters here/i);
+});
+
+test("relationship layouts collapse to one-dimensional reading order on narrow screens", () => {
+  const css = fs.readFileSync(path.join(__dirname, "styles.css"), "utf8");
+
+  assert.match(css, /\.lineage-path\s*\{[\s\S]*grid-template-columns:/);
+  assert.match(css, /@media \(max-width: 58rem\)/);
+  assert.match(css, /\.dependency-path\s*\{[\s\S]*grid-template-columns: 1fr/);
+  assert.match(css, /\.relation-row\s*\{[\s\S]*grid-template-columns: 1fr/);
+});

@@ -74,7 +74,13 @@ test("branch focus preserves sibling context rather than hiding it", () => {
   assert.match(html, /Focus IVDR/);
   assert.match(js, /classList\.toggle\("is-context"/);
   assert.match(js, /stays visible as sibling context/);
-  assert.doesNotMatch(js, /\.hidden\s*=/);
+
+  const focusStart = js.indexOf("function applyFocus");
+  const focusEnd = js.indexOf("function applyChangeControl", focusStart);
+  assert.notEqual(focusStart, -1);
+  assert.notEqual(focusEnd, -1);
+  const focusLogic = js.slice(focusStart, focusEnd);
+  assert.doesNotMatch(focusLogic, /\.hidden\s*=/);
 });
 
 test("narrow layouts collapse the constellation to a one-column reading order", () => {

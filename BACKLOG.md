@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **REVIEW — EU LEGISLATION NAVIGATOR P5 ACTIVE / EXTERNAL USERS DEFERRED**
+# **REHEARSE — EU LEGISLATION NAVIGATOR P6 ACTIVE / EXTERNAL USERS DEFERRED**
 
 Frozen scientific source:
 
@@ -165,7 +165,7 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
-### Immediate priority — Navigator P5 semantic/browser/accessibility review
+### Immediate priority — Navigator P6 maintenance/update rehearsal
 
 The sponsor-adopted horizon remains:
 
@@ -176,46 +176,46 @@ Completed milestones:
 - #434 — first deployed LVD lifecycle/context slice;
 - #437 — P1/P2 reader job, strongest alternatives and source-backed LVD content contract;
 - #438 — P3 presentation decision: single progressive-disclosure page;
-- #440 — P4 content-complete LVD page.
+- #440 — P4 content-complete LVD page;
+- #443 — P5 semantic integrity, browser and accessibility review.
 
-#440 merged through PR #442 after the exact Vercel-gated head passed deterministic Candidate-B tests and static-bundle tests.
+P5 disposition:
 
-The completed page now includes:
+> **PASS_TO_P6**
 
-- Article-1-grounded purpose;
-- first-class applicability dimensions:
-  - formal addressee;
-  - object/material scope;
-  - market activity;
-  - economic operators;
-  - territory/market context;
-  - time;
-  - Annex-II exclusions;
-- bounded economic-operator orientation;
-- separate legal-view / evidence-verified / source-version dates;
-- operative legal dependencies with exact focal/external provisions and why-it-matters explanations;
-- Articles 12–14 represented presumption routes;
-- correction/coverage boundary;
-- preserved known-standard lookup and LVD status examples.
+Durable review:
 
-Current review owner:
+> `docs/reviews/issue443-navigator-p5-integrity-2026-09-27.md`
 
-> **#443 — Navigator P5 semantic integrity, browser and accessibility**
+P5 found and repaired real defects:
+- below-detail discoverability;
+- lineage/context/dependency relationship perception;
+- disclosure focus / target / long-label resilience.
 
-P5 is explicitly adversarial, not feature work.
+No critical semantic misrepresentation survived the adversarial pass.
 
-It must attack:
-- formal-addressee vs practical-scope confusion;
-- voltage-range / exclusion / actor-role misreadings;
-- temporal conflation;
-- lineage vs framework-context confusion;
-- operative-dependency overreach;
-- Article-12 full-compliance inference;
-- currentness/completeness implications;
-- page density / hierarchy;
-- keyboard, focus, reflow, semantic structure and browser interaction.
+Important limitations remain:
+- no claim of WCAG 2.2 AA conformance;
+- sponsor browser use is useful design evidence, not external-user validation;
+- the assistant's Vercel connector still cannot independently fetch the GitHub-linked final deployment;
+- substantial act explanation remains hand-authored in HTML and may duplicate legal facts.
 
-Critical semantic misrepresentation blocks progression.
+That last risk now owns the work.
+
+Current rehearsal owner:
+
+> **#447 — Navigator P6 maintenance and correction blast radius**
+
+P6 must replay:
+1. one consequential legal-state/update event;
+2. one relationship/evidence correction;
+
+and measure:
+- how many claims/files/tests require review;
+- whether a stale duplicate can survive;
+- whether freshness/version fields are maintainable;
+- whether canonical Needle owners actually prevent divergence;
+- what minimum repair is needed before readiness.
 
 Still prohibited:
 - second act;
@@ -224,16 +224,16 @@ Still prohibited:
 - applicable-standard discovery;
 - general search;
 - live monitoring;
-- new backend/model call;
+- new backend/model call merely to solve architecture aesthetics;
 - external outreach.
 
-Only if P5 passes:
+Only after P6:
 
-> **P6 — maintenance/update rehearsal on the same LVD page**
+> **P7 — readiness decision under the Navigator prototype plan**
 
 Current state:
 
-> **WIP=1 — #443 NAVIGATOR P5 INTEGRITY REVIEW / NO EXTERNAL OUTREACH**
+> **WIP=1 — #447 NAVIGATOR P6 MAINTENANCE REHEARSAL / NO EXTERNAL OUTREACH**
 
 ## Historical backlog archive
 

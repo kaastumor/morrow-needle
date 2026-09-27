@@ -17,6 +17,12 @@ function applyFocus(view, map, buttons, status) {
     object.classList.toggle("is-context", !inFocus);
   }
 
+  for (const child of map.querySelectorAll("[data-child-branches]")) {
+    const branches = branchSet(child.dataset.childBranches);
+    const inFocus = view === "all" || branches.has(view);
+    child.classList.toggle("is-context", !inFocus);
+  }
+
   if (view === "mdr") {
     status.textContent = "MDR focused. IVDR-only material stays visible as sibling context.";
   } else if (view === "ivdr") {

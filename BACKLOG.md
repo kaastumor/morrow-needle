@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — REGIME UI DENSITY RESET / LVD TEST FROZEN**
+# **REVIEW — REGIME UI v0.1 vs v0.2 / LVD TEST FROZEN**
 
 Frozen scientific source:
 
@@ -165,57 +165,74 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
-### Immediate priority — Proper UI research run on regime information density
+### Immediate priority — Sponsor comparison of regime UI v0.1 and v0.2
 
-Sponsor review of #471 identified a clear failure:
-> the current regime prototype has **too much text on screen at once**.
+The sponsor-observed text-overload failure has been researched and addressed through #473.
 
-This is not treated as a copy-editing request.
+#473 completed:
+1. current-density measurement;
+2. UI/IA foundations and external pattern study;
+3. one concrete task-layered proposition;
+4. adversarial red team;
+5. separate comparison implementation;
+6. deployment and structural validation.
 
-Current owner:
+Durable results:
+- `docs/discovery/issue473-regime-ui-density-research-2026-09-27.md`
+- `docs/design/issue473-regime-ui-proposition-v0.2-2026-09-27.md`
+- `docs/reviews/issue473-regime-ui-proposition-red-team-2026-09-27.md`
+- `docs/reviews/issue473-regime-ui-comparison-readout-2026-09-27.md`
 
-> **#473 — UI density reset for regime navigation**
+Accepted implementation:
+- PR #474;
+- main commit `ccb4c0c6575a829025b17cde2a00768ca430ddc9`;
+- v0.2 route: `/regime-v2/`;
+- original comparator remains `/regime/`.
 
-Required sequence:
-1. measure current surface;
-2. rebuild UI/IA foundations from external research and strong public-service/legal patterns;
-3. make one concrete presentation proposition;
-4. red-team that proposition;
-5. test it on the same frozen medical-devices evidence in a **separate comparison route**;
-6. deploy a sponsor-reviewable preview.
+Measured structural difference:
+- original approximate initially visible text: **2,087 words**;
+- v0.2 default Header + Overview: **266 words**;
+- reduction: **87.3%**.
 
-Current measured baseline:
-- 2,441 total words in the current regime HTML;
-- approximately 2,087 words exposed in the initial DOM state after excluding collapsed details and hidden alternate Change Review cases;
-- 127 paragraphs;
-- 61 headings;
-- 53 article/card blocks;
-- 47 links;
-- 9 buttons;
-- 7 major sections.
+This is not a user-usability result.
 
-Those counts are diagnostics, not usability thresholds. The core failure is simultaneous reading demand and weak prioritisation.
+v0.2 architecture:
+- **Overview** — regime shape and first-impression legal qualifiers;
+- **Explore** — one branch/family at a time;
+- **Change review** — one upstream change and compact review queue;
+- **Expert / research** — projection diagnostics and research boundaries.
 
-Binding research question:
+Red-team invariants preserved on the default layer:
+- predecessor transition caveat;
+- compact MDR/IVDR scope cues;
+- enacted-vs-proposal distinction;
+- evidence date / coverage boundary;
+- explicit typed predecessor destinations.
 
-> **Can the same legal/evidence truth be presented with materially lower simultaneous reading demand while preserving regime orientation, typed legal distinctions, evidence access and change-review capability?**
+Current review owner:
 
-Research must explicitly revisit #435's earlier “always visible” content assumptions. The earlier design correctly protected legal meaning but likely over-promoted too many secondary facts into the default surface.
+> **#475 — Compare regime UI v0.1 and task-layered v0.2**
 
-Test boundaries:
-- same medical-devices fixture;
-- current `/regime/` remains unchanged as comparator;
-- new route only for the UI experiment;
-- no second regime;
-- no data/corpus expansion;
-- no graph library unless simpler DOM/CSS fails;
-- no automated gap/legal-effect inference;
-- no LVD P8 changes;
-- no external value claim.
+Review URLs:
+
+> Original: `https://morrow-needle-git-auto-473-ui-density-reset-jeroen91-2293.vercel.app/regime/`
+
+> v0.2: `https://morrow-needle-git-auto-473-ui-density-reset-jeroen91-2293.vercel.app/regime-v2/`
+
+Freeze until sponsor comparison:
+- no second dense regime;
+- no dataset expansion;
+- no additional UI modes;
+- no graph library;
+- no new diagnostics;
+- no automatic change/gap engine;
+- no LVD P8 changes.
+
+Only critical correctness/deployment repair may bypass the gate.
 
 Current state:
 
-> **WIP=1 — #473 UI RESEARCH / PROPOSITION / RED TEAM / COMPARISON PROTOTYPE**
+> **WIP=1 — #475 SPONSOR UI COMPARISON / NO NEW BUILD WORK**
 
 ## Historical backlog archive
 

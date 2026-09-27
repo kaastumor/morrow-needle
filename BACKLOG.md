@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DECIDE — EU LEGISLATION NAVIGATOR P7 READINESS GATE / EXTERNAL USERS DEFERRED**
+# **PREP — EU LEGISLATION NAVIGATOR P8 MATERIALS / RECRUITMENT NOT AUTHORIZED**
 
 Frozen scientific source:
 
@@ -165,7 +165,7 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
-### Immediate priority — Navigator P7 readiness gate
+### Immediate priority — Navigator P8 formative-test materials
 
 The sponsor-adopted horizon remains:
 
@@ -174,67 +174,76 @@ The sponsor-adopted horizon remains:
 Completed milestones:
 
 - #434 — first deployed LVD lifecycle/context slice;
-- #437 — P1/P2 reader job, strongest alternatives and source-backed LVD content contract;
-- #438 — P3 presentation decision: single progressive-disclosure page;
+- #437 — P1/P2 reader job, alternatives and LVD evidence contract;
+- #438 — P3 single-page presentation decision;
 - #440 — P4 content-complete LVD page;
-- #443 — P5 semantic integrity/browser/accessibility review;
-- #447 — P6 maintenance and correction rehearsal.
+- #443 — P5 integrity/browser/accessibility review;
+- #447 — P6 maintenance/correction rehearsal;
+- #450 — P7 readiness decision.
 
-P6 disposition:
+P7 disposition:
 
-> **PASS_TO_P7 — PROTOTYPE-SCALE MAINTENANCE ONLY**
+> **READY_FOR_USER_TEST**
 
 Durable result:
 
-> `docs/reviews/issue447-navigator-p6-maintenance-rehearsal-2026-09-27.md`
+> `docs/reviews/issue450-navigator-p7-readiness-2026-09-27.md`
 
-P6 reproduced two real maintenance failure classes:
+Interpretation:
 
-1. repeated dates with different legal meanings could drift while broad string-presence tests remained green;
-2. an operative-dependency locator could be partially changed while a stale duplicate preserved a passing global assertion.
+- the artifact is ready to learn from real readers;
+- user value is not proven;
+- the strong source-linked note remains the comparator;
+- official sources receive full credit;
+- LVD may be unusually favorable;
+- multi-act scaling is not earned;
+- standards-status vs Navigator product identity remains unresolved;
+- no commercial or market claim is earned.
 
-Repairs:
-- typed temporal fact IDs distinguish:
-  - legal view;
-  - evidence verified;
-  - amendment application;
-  - source/consolidation version;
-- consistency checks protect machine + visible date copies;
-- versioned LVD source links are checked against the consolidation-version fact;
-- operative dependency routes have stable IDs and scoped semantic tests;
-- unnecessary hidden dependency-locator duplication was removed.
+Current prep owner:
 
-Important limit:
+> **#453 — Navigator formative human-test packet**
 
-> **this is maintainable enough for one formative prototype; it is not an earned multi-act publishing architecture.**
+#453 may prepare:
+- participant-facing direct Navigator entry instructions;
+- frozen source-linked-note comparator;
+- task sets A/B;
+- answer/evidence key;
+- counterbalance schedule;
+- facilitator/self-serve instructions;
+- observation sheet;
+- debrief questions;
+- unsent recruitment copy;
+- analysis template;
+- stop-rule checklist.
 
-Current decision owner:
+Recruitment boundary:
 
-> **#450 — Navigator P7 readiness gate**
+> **READY_FOR_USER_TEST != AUTHORIZED_TO_CONTACT PARTICIPANTS**
 
-P7 must choose exactly one:
-- READY_FOR_USER_TEST
-- REVISE_BEFORE_USER_TEST
-- NARROW
-- PARK
+No outreach, compensation purchase or participant-data service may be used without explicit sponsor authorization.
 
-P7 must give full credit to:
-- official-source bundle;
-- competent source-linked note;
-- the possibility that LVD is unusually suitable;
-- sponsor enthusiasm as design evidence but not general demand;
-- the possibility that standards-status and act-Navigator are two distinct jobs sharing one shell.
+The human comparison should:
+- start directly at the LVD context section;
+- isolate the known-act orientation job from the legacy standards-status shell;
+- target 20–25 minutes;
+- use 6 initial participants, with up to 2 more only if materially useful;
+- preserve the strong note;
+- stop on consequential false inference;
+- narrow/park rather than add rescue features if comparative value does not survive.
 
-Still prohibited during the decision:
+Still prohibited:
 - second act;
-- external outreach;
-- product expansion;
-- commercial superiority claims;
-- physical repo fork unless independently earned.
+- national transposition database;
+- case-law graph;
+- general search;
+- live monitoring;
+- multi-act backend/platform build;
+- commercial superiority claims.
 
 Current state:
 
-> **WIP=1 — #450 NAVIGATOR P7 READINESS DECISION / NO EXTERNAL OUTREACH**
+> **WIP=1 — #453 NAVIGATOR HUMAN-TEST PREP / NO OUTREACH**
 
 ## Historical backlog archive
 

@@ -424,3 +424,154 @@ summary {
     width: fit-content;
   }
 }
+
+
+/* #468 change-review demonstrator */
+
+.change-review-section {
+  border-top: 1px solid currentColor;
+  padding-top: 1.6rem;
+  margin-top: 2.4rem;
+}
+
+.change-review-intro {
+  max-width: 64rem;
+}
+
+.change-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin: 1rem 0 .65rem;
+}
+
+.change-selector button {
+  min-height: 2.75rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: .55rem .85rem;
+  background: Canvas;
+  color: CanvasText;
+  cursor: pointer;
+}
+
+.change-selector button[aria-pressed="true"] {
+  border-width: 2px;
+  font-weight: 800;
+}
+
+.change-review-status {
+  font-size: .9rem;
+  opacity: .82;
+  margin-bottom: 1rem;
+}
+
+.change-case {
+  border: 1px solid currentColor;
+  border-radius: .8rem;
+  padding: 1rem;
+}
+
+.change-case[hidden] {
+  display: none;
+}
+
+.change-case-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: start;
+  padding-bottom: .9rem;
+  border-bottom: 1px solid currentColor;
+}
+
+.change-source-kind {
+  margin: 0 0 .25rem;
+  text-transform: uppercase;
+  letter-spacing: .055em;
+  font-size: .75rem;
+  font-weight: 800;
+}
+
+.change-case-header h3 {
+  margin: 0 0 .45rem;
+  font-size: 1.35rem;
+}
+
+.change-case-header p:last-child {
+  margin-bottom: 0;
+}
+
+.review-queue {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .8rem;
+  margin-top: 1rem;
+}
+
+.review-item {
+  border: 1px solid currentColor;
+  border-radius: .6rem;
+  padding: .85rem .95rem;
+}
+
+.queue-state {
+  display: inline-block;
+  margin: 0 0 .5rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: .14rem .42rem;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.review-item h4 {
+  margin: 0 0 .45rem;
+}
+
+.review-item p:last-child {
+  margin-bottom: 0;
+}
+
+.review-direct {
+  border-width: 2px;
+}
+
+.review-downstream {
+  border-style: double;
+  border-width: 3px;
+}
+
+.review-context {
+  border-style: dashed;
+}
+
+.review-stop {
+  opacity: .76;
+}
+
+.change-review-boundary {
+  margin-top: 1rem;
+  border-left: .22rem solid currentColor;
+  padding-left: .8rem;
+  max-width: 64rem;
+}
+
+@media (max-width: 58rem) {
+  .change-case-header,
+  .review-queue {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 34rem) {
+  .change-selector {
+    display: grid;
+  }
+
+  .change-selector button {
+    width: 100%;
+    text-align: left;
+  }
+}

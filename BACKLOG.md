@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **PRODUCT READINESS — CANDIDATE B ACTIVE / EXTERNAL USERS DEFERRED**
+# **DISCOVERY — EU LEGISLATION NAVIGATOR P1/P2 ACTIVE / EXTERNAL USERS DEFERRED**
 
 Frozen scientific source:
 
@@ -27,7 +27,7 @@ Current released reference surface remains:
 
 ### Sponsor objective
 
-> **work toward an MVP that demonstrates actual added value on a real job**
+> **complete one credible, evidence-bounded EU act page and determine whether its integrated orientation/verification job warrants further product investment**
 
 The internal candidate portfolio has now reached an external evidence frontier.
 
@@ -165,50 +165,76 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
-### Immediate priority — act-centric legal lifecycle projection
+### Immediate priority — Navigator P1/P2 reader job + evidence contract
 
-The sponsor has completed the previous Candidate-B product-readiness horizon and, while using the live Vercel surface, identified a concrete next job:
+The sponsor has adopted:
 
-> **when inspecting a directive, show where it came from, its lifecycle, typed predecessors/successors, what materially shapes it, what flows from it, and the official evidence behind those relationships.**
+> `docs/plans/eu-legislation-navigator-prototype-v0.1.md`
 
-#425 is complete for the current internal product-readiness horizon. External value remains unproven and cold external outreach remains deferred.
+as the next bounded product/research horizon.
 
-#432 red-teamed the lifecycle implementation against:
-- the charter's explicit non-goal of a general-purpose legal knowledge graph;
-- historical Full Needle contraction;
-- Thread/lineage reactivation rules;
-- temporal/identity/procedure truth ownership;
-- completeness illusion and maintenance explosion.
+Important current-state reconciliation:
 
-Disposition:
+- #434 is complete as the first Low Voltage Directive vertical slice;
+- sponsor use of the deployed page produced a strong **internal orientation/context signal**;
+- that signal is not external-user evidence, comparative superiority or market demand;
+- no second act is authorised yet;
+- cold external outreach remains deferred.
 
-> **ADOPT_FOR_EXPERIMENT — ACT-CENTRIC, ONE ACT, ONE-HOP, TYPED RELATIONSHIPS, NO NEW TRUTH STORE**
+Current discovery owner:
 
-Durable review:
+> **#437 — Navigator P1/P2 reader job, alternatives and LVD evidence contract**
 
-> `docs/discovery/issue432-act-centric-lifecycle-red-team-2026-09-27.md`
+Durable P1/P2 result:
 
-First focal act:
+> `docs/discovery/issue437-navigator-p1-p2-reader-job-evidence-2026-09-27.md`
 
-> **Directive 2014/35/EU — Low Voltage Directive**
+Current product hypothesis:
 
-Hard implementation boundaries:
-- no generic `RELATED_TO` edge;
-- no completeness claim such as “all influences”;
-- no recursive/general legal graph;
-- no new canonical lifecycle ontology in the first slice;
-- lineage must not own dates;
-- read-side projection must not duplicate canonical legal truth;
-- no national transposition/case-law network/applicable-standard discovery in this slice;
-- default UI should be a compact typed lifecycle map, not a force-directed graph.
+> **for a reader who already has a specific EU act, one coherent page may reduce the work of reconstructing purpose, scope, lifecycle, legal lineage/context and evidence across several strong official surfaces.**
 
-Next WIP:
+Strong baseline receives full credit:
 
-> **#434 — BUILD the bounded Low Voltage Directive lifecycle projection**
+- EUR-Lex act/current consolidated text;
+- EUR-Lex summary;
+- Commission LVD/harmonised-standards page;
+- OEIL only where legislative history matters;
+- a competent source-linked note built from the same evidence.
+
+#437 disposition:
+
+> **ADOPT_FOR_EXPERIMENT — COMPLETE THE LVD CONTENT CONTRACT, THEN RUN P3 PRESENTATION DECISION**
+
+Material content gaps now identified:
+
+1. Article-1-grounded purpose;
+2. Annex-II major exclusions;
+3. bounded manufacturer/importer/distributor orientation;
+4. explicit legal-as-of vs evidence-verified vs source-version semantics;
+5. Articles 13/14 fallback-presumption context;
+6. compact correction/evidence-boundary path.
+
+Do not answer these gaps with:
+- another act;
+- a broader graph;
+- national transposition;
+- case-law expansion;
+- applicable-standard discovery;
+- live monitoring;
+- a new backend;
+- a new ontology.
+
+Next WIP after #437 closes:
+
+> **P3 — compare the same frozen LVD facts as a competent source-linked note, the current progressive-disclosure page, and only a cheap Overview/Legal-detail wireframe.**
+
+Default null for P3:
+
+> **one progressively disclosed page is sufficient; a view toggle must earn itself.**
 
 Current state:
 
-> **WIP=1 — #434 ACT-CENTRIC LIFECYCLE EXPERIMENT / NO EXTERNAL OUTREACH**
+> **WIP=1 — #437 NAVIGATOR P1/P2 DISCOVERY / NO EXTERNAL OUTREACH**
 
 ## Historical backlog archive
 

@@ -11,7 +11,7 @@ This audit does **not** claim external user value.
 
 ## Result
 
-> **7 PASS / 3 PARTIAL — PRODUCT-SHAPED, DEPLOYMENT-READY, NOT YET EXTERNALLY PRESENTABLE**
+> **8 PASS / 2 PARTIAL — PRODUCT-SHAPED, DEPLOYMENT-READY, NOT YET EXTERNALLY PRESENTABLE**
 
 The remaining gaps are experiential/infrastructure gaps, not evidence for another feature expansion.
 
@@ -27,8 +27,24 @@ The remaining gaps are experiential/infrastructure gaps, not evidence for anothe
 | 6 | official evidence one click away | **PASS** | Cards retain direct EUR-Lex links derived from canonical evidence refs. |
 | 7 | clear freshness/evidence-date semantics | **PASS** | Each result shows a supported frozen evidence window and the selected status date. Unsupported dates fail closed. |
 | 8 | no claim of live monitoring if it is not live | **PASS** | The page and generated build manifest explicitly state that live monitoring is false. |
-| 9 | acceptable desktop/mobile basic usability | **PARTIAL** | Responsive CSS and keyboard-focus handling exist, but no actual browser/viewport smoke test has been completed in the current environment. |
+| 9 | acceptable desktop/mobile basic usability | **PASS** | A local Chromium/Playwright smoke test exercised the current UI flow at 1440px and 390px. No horizontal overflow or console/page errors were observed; the status card, evidence links, future-transition block and restricted-state rendering remained usable at the narrow viewport. |
 | 10 | short self-serve evaluation path taking minutes, not a 30–45 minute favour | **PARTIAL** | The flow is structurally short—search or example -> status -> evidence—but actual completion/friction has not been browser-timed or externally observed. |
+
+## Browser smoke-test evidence
+
+A local browser harness was used after the initial audit.
+
+Representative checks:
+
+- desktop viewport: **1440 px**;
+- narrow/mobile viewport: **390 px**;
+- mobile `document.body.scrollWidth` equalled `window.innerWidth` (**390 px**), so no horizontal overflow was observed;
+- EN 60335-2-60:2003 rendered **Cited** on 26 September 2026 with an **Already-fixed next event** on **18 January 2027**;
+- four official-evidence links rendered for that representative record;
+- EN 50434:2014 rendered **Cited — restriction applies** and retained the **300 r/min** scope;
+- no browser console/page errors were observed.
+
+This smoke test validates basic rendering and interaction mechanics. It is not a substitute for a hosted deployment or a fresh human usability observation.
 
 ## Important negative conclusion
 
@@ -50,16 +66,16 @@ Those would not resolve the actual remaining uncertainty.
 
 The next internally justified step is:
 
-> **HOST + BROWSER VERIFY THE CURRENT NARROW ARTIFACT**
+> **HOST THE CURRENT NARROW ARTIFACT + VERIFY THE HOSTED BUNDLE**
 
-Required evidence:
+Local browser mechanics are now smoke-tested.
+
+Remaining evidence:
 
 1. deploy the generated static bundle to a normal browser-accessible preview;
-2. verify one representative restricted case and the future-withdrawal case end-to-end;
-3. verify official evidence links;
-4. verify desktop and narrow/mobile viewport rendering;
-5. record whether a fresh user can understand the task from the page alone;
-6. time the self-serve path informally without turning it into an external-user study.
+2. verify that the hosted bundle behaves like the local smoke-tested surface;
+3. keep the first human interaction low-friction and separate from any cold 30–45 minute research ask;
+4. only then decide whether the self-serve path is credible enough for later human validation.
 
 ## Current infrastructure limitation
 

@@ -12,6 +12,12 @@ const APP_FILES = Object.freeze([
   "app.js"
 ]);
 
+const REGIME_FILES = Object.freeze([
+  "index.html",
+  "styles.css",
+  "app.js"
+]);
+
 const FIXTURE_FILES = Object.freeze([
   "gar-en497-authoritative-dynamic-set-v0.1.json",
   "machinery-en50434-restriction-v0.1.json",
@@ -29,10 +35,18 @@ function buildStaticDemo() {
   fs.rmSync(DIST, {recursive: true, force: true});
 
   const appOut = path.join(DIST, "mvp", "candidate-b");
+  const regimeOut = path.join(DIST, "regime");
   const fixturesOut = path.join(DIST, "fixtures", "dependency");
 
   for (const file of APP_FILES) {
     copyFile(path.join(__dirname, file), path.join(appOut, file));
+  }
+
+  for (const file of REGIME_FILES) {
+    copyFile(
+      path.join(ROOT, "mvp", "regime-constellation", file),
+      path.join(regimeOut, file)
+    );
   }
 
   for (const file of FIXTURE_FILES) {
@@ -58,6 +72,7 @@ function buildStaticDemo() {
     generatedFrom: "canonical repository files",
     appFiles: APP_FILES,
     fixtureFiles: FIXTURE_FILES,
+    regimeFiles: REGIME_FILES,
     externalValueProven: false,
     liveMonitoring: false
   };
@@ -74,8 +89,8 @@ function buildStaticDemo() {
 if (require.main === module) {
   const manifest = buildStaticDemo();
   process.stdout.write(
-    `Built Candidate-B static demo with ${manifest.fixtureFiles.length} canonical fixtures.\n`
+    `Built Candidate-B + regime constellation static demo with ${manifest.fixtureFiles.length} canonical fixtures.\n`
   );
 }
 
-module.exports = {APP_FILES, FIXTURE_FILES, buildStaticDemo};
+module.exports = {APP_FILES, REGIME_FILES, FIXTURE_FILES, buildStaticDemo};

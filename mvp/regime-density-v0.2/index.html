@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A task-layered, evidence-bounded view of the EU medical-devices regime.">
+  <title>Needle Navigator — Medical Devices Regime v0.2</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <main id="main">
+    <header class="site-header">
+      <div>
+        <p class="eyebrow">Needle Navigator · UI comparison v0.2</p>
+        <h1>EU medical-devices regime</h1>
+        <p class="lede">Three predecessor directives were replaced by two current core regulations, with later transition, implementation, EUDAMED and guidance layers around them.</p>
+      </div>
+
+      <div class="meta-line" role="note">
+        <span><strong>EU-level</strong></span>
+        <span>Evidence checked <time datetime="2026-09-27">27 Sep 2026</time></span>
+        <span>Bounded view</span>
+      </div>
+
+      <div class="view-bar">
+        <nav class="task-switcher" aria-label="Choose what you want to do">
+          <button type="button" data-view-button="overview" aria-pressed="true">Overview</button>
+          <button type="button" data-view-button="explore" aria-pressed="false">Explore</button>
+          <button type="button" data-view-button="changes" aria-pressed="false">Change review</button>
+        </nav>
+        <button type="button" class="expert-entry" data-view-button="expert" aria-pressed="false">Expert / research</button>
+      </div>
+    </header>
+
+    <section class="view-panel" data-view-panel="overview" aria-labelledby="overview-heading">
+      <div class="section-title">
+        <p class="section-kicker">Overview</p>
+        <h2 id="overview-heading" tabindex="-1">See the regime before reading the detail</h2>
+      </div>
+
+      <div class="lineage-spine" data-primary-block>
+        <div class="predecessor-row" aria-label="Predecessor directives">
+          <div class="act-chip"><strong>90/385/EEC</strong><span>Active implantable devices</span></div>
+          <div class="act-chip"><strong>93/42/EEC</strong><span>Medical devices</span></div>
+          <div class="act-chip"><strong>98/79/EC</strong><span>In-vitro diagnostics</span></div>
+        </div>
+
+        <div class="lineage-arrows" aria-hidden="true">
+          <span>replaced by ↓</span>
+          <span>replaced by ↓</span>
+        </div>
+
+        <div class="core-grid">
+          <article class="core-card">
+            <p class="branch-label">Current core · MDR</p>
+            <h3>Medical Devices Regulation</h3>
+            <p class="citation">Regulation (EU) 2017/745</p>
+            <p class="scope-line"><strong>Scope here:</strong> medical devices and the MDR-side regime.</p>
+            <a href="https://eur-lex.europa.eu/eli/reg/2017/745/oj/eng" target="_blank" rel="noreferrer">Official MDR source</a>
+          </article>
+
+          <article class="core-card">
+            <p class="branch-label">Current core · IVDR</p>
+            <h3>In Vitro Diagnostic Medical Devices Regulation</h3>
+            <p class="citation">Regulation (EU) 2017/746</p>
+            <p class="scope-line"><strong>Scope here:</strong> in-vitro diagnostic medical devices and the IVDR-side regime.</p>
+            <a href="https://eur-lex.europa.eu/eli/reg/2017/746/oj/eng" target="_blank" rel="noreferrer">Official IVDR source</a>
+          </article>
+        </div>
+
+        <p class="transition-note">
+          <strong>Transition matters:</strong> replacement does not make every predecessor effect vanish immediately; transitional rules preserve some effects for bounded cases.
+        </p>
+      </div>
+
+      <section class="overview-block" data-primary-block aria-labelledby="layers-heading">
+        <div class="block-heading">
+          <div>
+            <p class="section-kicker">Browse represented layers</p>
+            <h3 id="layers-heading">What hangs from the core regime?</h3>
+          </div>
+          <button type="button" data-open-view="explore">Explore these layers</button>
+        </div>
+
+        <ul class="layer-list">
+          <li><strong>Implementing measures</strong><span>MDR, IVDR or both · 17 listed in the frozen Commission overview</span></li>
+          <li><strong>Delegated acts</strong><span>MDR and IVDR layers · 7 listed in the frozen overview</span></li>
+          <li><strong>EUDAMED / system operation</strong><span>Cross-branch operational and transition triggers</span></li>
+          <li><strong>Non-binding guidance</strong><span>Implementation guidance, kept distinct from legislation</span></li>
+        </ul>
+      </section>
+
+      <section class="overview-block current-context" data-primary-block aria-labelledby="context-heading">
+        <p class="section-kicker">Current context</p>
+        <h3 id="context-heading">Two things not to collapse</h3>
+        <div class="context-rows">
+          <p><strong>Enacted change:</strong> Regulation (EU) 2024/1860 amends both MDR and IVDR around EUDAMED, supply information and IVDR transition.</p>
+          <p><strong>Proposal — not enacted:</strong> COM(2025) 1023 is represented separately from current law.</p>
+        </div>
+      </section>
+
+      <aside class="coverage-line" data-primary-block>
+        <strong>Coverage:</strong> evidence-bounded EU-level view. It does not represent every document that may be legally relevant.
+      </aside>
+    </section>
+
+    <section class="view-panel" data-view-panel="explore" aria-labelledby="explore-heading" hidden>
+      <div class="context-strip" aria-label="Persistent regime context">
+        <strong>MDR 2017/745</strong>
+        <span>+</span>
+        <strong>IVDR 2017/746</strong>
+        <span>Evidence 27 Sep 2026</span>
+      </div>
+
+      <div class="section-title">
+        <p class="section-kicker">Explore</p>
+        <h2 id="explore-heading" tabindex="-1">Browse one represented layer at a time</h2>
+        <p>Navigation groupings help you browse. Individual rows keep their own legal relationship and branch meaning.</p>
+      </div>
+
+      <div class="explore-tools">
+        <div class="branch-switcher" role="group" aria-label="Filter represented branch">
+          <button type="button" data-branch="all" aria-pressed="true">Whole regime</button>
+          <button type="button" data-branch="mdr" aria-pressed="false">MDR</button>
+          <button type="button" data-branch="ivdr" aria-pressed="false">IVDR</button>
+        </div>
+
+        <div class="family-switcher" role="group" aria-label="Choose a represented layer">
+          <button type="button" data-family="implementing" aria-pressed="true">Implementing</button>
+          <button type="button" data-family="delegated" aria-pressed="false">Delegated</button>
+          <button type="button" data-family="transition" aria-pressed="false">Transition</button>
+          <button type="button" data-family="eudamed" aria-pressed="false">EUDAMED</button>
+          <button type="button" data-family="guidance" aria-pressed="false">Guidance</button>
+        </div>
+      </div>
+
+      <p id="explore-status" class="status-line" aria-live="polite">Showing representative implementing measures across the whole regime.</p>
+
+      <div class="family-panels">
+        <section class="family-panel" data-family-panel="implementing" aria-labelledby="family-implementing">
+          <div class="family-title">
+            <div>
+              <h3 id="family-implementing">Implementing measures</h3>
+              <p>17 unique acts listed in the frozen Commission overview; six representative rows shown here.</p>
+            </div>
+            <a href="https://health.ec.europa.eu/medical-devices-new-regulations/overview_en" target="_blank" rel="noreferrer">Commission overview</a>
+          </div>
+
+          <ul class="relation-list">
+            <li data-row-branches="mdr">
+              <div><span class="branch-badge">MDR legal basis</span><strong>2021/2078</strong><span>sets EUDAMED arrangements</span></div>
+              <div class="row-actions"><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2078" target="_blank" rel="noreferrer">Official source</a><details><summary>Why?</summary><p>Adopted under MDR Article 33(8). EUDAMED itself serves the wider MDR/IVDR system.</p><p class="code-note">Internal relation state: implementing/system dependency.</p></details></div>
+            </li>
+            <li data-row-branches="ivdr">
+              <div><span class="branch-badge">IVDR</span><strong>2022/1107</strong><span>common specifications · class D IVDs</span></div>
+              <div class="row-actions"><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R1107" target="_blank" rel="noreferrer">Official source</a><details><summary>Why?</summary><p>Implements common specifications for specified class D in-vitro diagnostic devices under IVDR.</p></details></div>
+            </li>
+            <li data-row-branches="mdr">
+              <div><span class="branch-badge">MDR</span><strong>2022/2346</strong><span>common specifications · Annex XVI products</span></div>
+              <div class="row-actions"><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2346" target="_blank" rel="noreferrer">Official source</a><details><summary>Why?</summary><p>MDR-side common specifications for Annex XVI product groups.</p><p class="local-notice"><strong>Additional amendment:</strong> 2023/1194 amends its transitional provisions and is not expanded as a normal child in this bounded sample. <a href="https://eur-lex.europa.eu/eli/reg_impl/2023/1194/oj/eng" target="_blank" rel="noreferrer">Open amendment</a>.</p></details></div>
+            </li>
+            <li data-row-branches="ivdr">
+              <div><span class="branch-badge">IVDR</span><strong>2023/2713</strong><span>EU reference laboratories</span></div>
+              <div class="row-actions"><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2713" target="_blank" rel="noreferrer">Official source</a><details><summary>Why?</summary><p>Designates EU reference laboratories for specified high-risk IVD functions under IVDR.</p></details></div>
+            </li>
+            <li data-row-branches="mdr ivdr">
+              <div><span class="branch-badge">MDR + IVDR</span><strong>2026/977</strong><span>notified-body / conformity-assessment requirements</span></div>
+              <div class="row-actions"><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026R0977" target="_blank" rel="noreferrer">Official source</a><details><summary>Why?</summary><p>Uses legal bases in both MDR and IVDR for notified-body application/designation requirements.</p></details></div>
+            </li>
+            <li data-row-branches="mdr ivdr">
+              <div><span class="branch-badge">MDR basis · IVDR tasks too</span><strong>2019/1396 → 2025/1324</strong><span>expert-panel designation and amendment</span></div>
+              <div class="row-actions"><a href="https://eur-lex.europa.eu/eli/dec_impl/2019/1396/2025-07-28/eng" target="_blank" rel="noreferrer">Official source</a><details><summary>Why?</summary><p>The implementing-decision basis is MDR Article 106; the expert-panel structure also performs specified IVDR tasks.</p></details></div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="family-panel" data-family-panel="delegated" aria-labelledby="family-delegated" hidden>
+          <div class="family-title">
+            <div>
+              <h3 id="family-delegated">Delegated acts</h3>
+              <p>Representative expansion only; 7 unique delegated/delegated-amending regulations are listed in the frozen Commission overview.</p>
+            </div>
+            <a href="https://health.ec.europa.eu/medical-devices-new-regulations/overview_en" target="_blank" rel="noreferrer">Commission overview</a>
+          </div>
+
+          <ul class="relation-list">
+            <li data-row-branches="mdr">
+              <div><span class="branch-badge">MDR</span><strong>2023/2197 → 2025/788</strong><span>UDI assignment · contact lenses</span></div>
+              <div class="row-actions"><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2197" target="_blank" rel="noreferrer">Official source</a><details><summary>Why?</summary><p>2023/2197 amends MDR UDI rules for highly individualised contact lenses; 2025/788 changes its application date.</p></details></div>
+            </li>
+            <li data-row-branches="mdr">
+              <div><span class="branch-badge">MDR</span><strong>2023/502</strong><span>notified-body reassessment frequency</span></div>
+              <div class="row-actions"><a href="https://eur-lex.europa.eu/eli/reg_del/2023/502/oj/eng" target="_blank" rel="noreferrer">Official source</a><details><summary>Why?</summary><p>Amends MDR rules on complete reassessment frequency for notified bodies.</p></details></div>
+            </li>
+            <li data-row-branches="mdr">
+              <div><span class="branch-badge">MDR</span><strong>2026/1451</strong><span>clinical-investigation exemption list</span></div>
+              <div class="row-actions"><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026R1451" target="_blank" rel="noreferrer">Official source</a><details><summary>Why?</summary><p>Amends the MDR list relevant to clinical-investigation exemptions.</p></details></div>
+            </li>
+          </ul>
+
+          <p class="local-notice"><strong>Representative sample:</strong> the official overview also includes IVDR delegated acts. Delegated Regulation 2023/503 is one verified IVDR example outside this expansion. <a href="https://eur-lex.europa.eu/eli/reg_del/2023/503/oj/eng" target="_blank" rel="noreferrer">Open 2023/503</a>.</p>
+        </section>
+
+        <section class="family-panel" data-family-panel="transition" aria-labelledby="family-transition" hidden>
+          <div class="family-title"><div><h3 id="family-transition">Transition / later change</h3><p>Branch-specific changes grouped for navigation; each row keeps its own branch meaning.</p></div></div>
+          <ul class="relation-list">
+            <li data-row-branches="mdr"><div><span class="branch-badge">MDR</span><strong>2020/561</strong><span>amends MDR application dates</span></div><div class="row-actions"><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0561" target="_blank" rel="noreferrer">Official source</a></div></li>
+            <li data-row-branches="ivdr"><div><span class="branch-badge">IVDR</span><strong>2022/112</strong><span>amends IVDR transition</span></div><div class="row-actions"><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0112" target="_blank" rel="noreferrer">Official source</a></div></li>
+            <li data-row-branches="mdr ivdr"><div><span class="branch-badge">MDR + IVDR</span><strong>2023/607</strong><span>amends transitional provisions</span></div><div class="row-actions"><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0607" target="_blank" rel="noreferrer">Official source</a></div></li>
+            <li data-row-branches="mdr ivdr"><div><span class="branch-badge">MDR + IVDR</span><strong>2024/1860</strong><span>EUDAMED, supply information and IVDR transition</span></div><div class="row-actions"><a href="https://eur-lex.europa.eu/eli/reg/2024/1860/oj/eng" target="_blank" rel="noreferrer">Official source</a></div></li>
+          </ul>
+        </section>
+
+        <section class="family-panel" data-family-panel="eudamed" aria-labelledby="family-eudamed" hidden>
+          <div class="family-title"><div><h3 id="family-eudamed">EUDAMED / system operation</h3><p>A cross-cutting navigation lens. Repeated acts are cross-references, not extra instruments.</p></div></div>
+          <ul class="relation-list">
+            <li data-row-branches="mdr"><div><span class="branch-badge">MDR legal basis</span><strong>2021/2078</strong><span>sets EUDAMED arrangements</span></div><div class="row-actions"><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2078" target="_blank" rel="noreferrer">Official source</a></div></li>
+            <li data-row-branches="mdr ivdr"><div><span class="branch-badge">MDR + IVDR</span><strong>2025/2371</strong><span>declares first four modules functional</span></div><div class="row-actions"><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025D2371" target="_blank" rel="noreferrer">Official source</a><details><summary>Why?</summary><p>Functionality triggers transition mechanics tied to provisions in both regimes; the Commission states the first four modules became mandatory from 28 May 2026.</p></details></div></li>
+          </ul>
+        </section>
+
+        <section class="family-panel" data-family-panel="guidance" aria-labelledby="family-guidance" hidden>
+          <div class="family-title"><div><h3 id="family-guidance">Non-binding guidance</h3><p>Useful implementation context, kept textually distinct from legislation.</p></div></div>
+          <ul class="relation-list">
+            <li data-row-branches="mdr"><div><span class="branch-badge">MDR · non-binding</span><strong>MDCG 2021-25 rev.1</strong><span>legacy-device transition guidance</span></div><div class="row-actions"><a href="https://health.ec.europa.eu/medical-devices-sector/new-regulations/guidance-mdcg-endorsed-documents-and-other-guidance_en" target="_blank" rel="noreferrer">Official guidance page</a><details><summary>Why?</summary><p>MDCG guidance presents a common implementation understanding but is not legally binding.</p></details></div></li>
+          </ul>
+        </section>
+      </div>
+    </section>
+
+    <section class="view-panel" data-view-panel="changes" aria-labelledby="changes-heading" hidden>
+      <div class="context-strip" aria-label="Persistent regime context">
+        <strong>MDR 2017/745</strong><span>+</span><strong>IVDR 2017/746</strong><span>Evidence 27 Sep 2026</span>
+      </div>
+
+      <div class="section-title">
+        <p class="section-kicker">Change review</p>
+        <h2 id="changes-heading" tabindex="-1">What should be re-opened after this change?</h2>
+        <p>A review candidate is not a conclusion that legal effect changed.</p>
+      </div>
+
+      <div class="change-selector" role="group" aria-label="Choose upstream change">
+        <button type="button" data-change-control="reg-2024-1860" aria-pressed="true">2024/1860</button>
+        <button type="button" data-change-control="dec-2025-1324" aria-pressed="false">2025/1324</button>
+        <button type="button" data-change-control="reg-2023-1194" aria-pressed="false">2023/1194</button>
+      </div>
+      <p id="change-status" class="status-line" aria-live="polite">Showing review queue for Regulation (EU) 2024/1860.</p>
+
+      <article class="change-case" data-change-case="reg-2024-1860">
+        <div class="change-heading">
+          <div><strong>Regulation (EU) 2024/1860</strong><span>Directly amends MDR and IVDR</span></div>
+          <a href="https://eur-lex.europa.eu/eli/reg/2024/1860/oj/eng" target="_blank" rel="noreferrer">Official source</a>
+        </div>
+        <ul class="queue-list">
+          <li><span class="queue-label">Review directly</span><strong>MDR current-state explanation</strong><span>Article 1 directly amends MDR.</span><details><summary>Why?</summary><p>Internal state: <code>DIRECT_REVIEW</code>. Re-check represented EUDAMED and supply-interruption wording against the amended MDR provisions.</p></details></li>
+          <li><span class="queue-label">Review directly</span><strong>IVDR transition explanation</strong><span>Article 2 directly amends IVDR, including transition.</span><details><summary>Why?</summary><p>Internal state: <code>DIRECT_REVIEW</code>. Re-check IVDR transition and EUDAMED-linked wording.</p></details></li>
+          <li><span class="queue-label">Review directly</span><strong>Joint transition/change relation</strong><span>The displayed relationship itself describes this amending act.</span></li>
+          <li><span class="queue-label">Review downstream</span><strong>EUDAMED system state</strong><span>The amendment changes gradual rollout mechanics.</span><details><summary>Why?</summary><p>Internal state: <code>DOWNSTREAM_REVIEW</code>. Continue only through a verified EUDAMED/provision dependency.</p></details></li>
+          <li class="queue-muted"><span class="queue-label">Context</span><strong>Decision 2025/2371</strong><span>Later functionality event already represented at this evidence date.</span></li>
+          <li class="queue-stop"><span class="queue-label">Stop here</span><strong>Unrelated child families</strong><span>Family membership alone is not a dependency.</span><details><summary>Why?</summary><p>Internal state: <code>NO_PROPAGATION</code>. No represented provision-specific edge continues into common-specification, reference-lab, delegated or expert-panel children.</p></details></li>
+        </ul>
+      </article>
+
+      <article class="change-case" data-change-case="dec-2025-1324" hidden>
+        <div class="change-heading">
+          <div><strong>Decision (EU) 2025/1324</strong><span>Directly amends the expert-panel decision</span></div>
+          <a href="https://eur-lex.europa.eu/eli/dec_impl/2025/1324/oj/eng" target="_blank" rel="noreferrer">Official source</a>
+        </div>
+        <ul class="queue-list">
+          <li><span class="queue-label">Review directly</span><strong>Decision 2019/1396 expert-panel node</strong><span>The upstream decision expressly amends it.</span><details><summary>Why?</summary><p>Internal state: <code>DIRECT_REVIEW</code>.</p></details></li>
+          <li><span class="queue-label">Review directly</span><strong>“amended by 2025/1324” relation</strong><span>The maintained mutation edge must match the amending act.</span></li>
+          <li class="queue-stop"><span class="queue-label">Stop here</span><strong>MDR / IVDR core and unrelated families</strong><span>No second verified dependency continues downstream.</span><details><summary>Why?</summary><p>Internal state: <code>NO_PROPAGATION</code>. Expert-panel tasks touching both regimes do not make every neighboring claim dependent on the changed provisions.</p></details></li>
+        </ul>
+      </article>
+
+      <article class="change-case" data-change-case="reg-2023-1194" hidden>
+        <div class="change-heading">
+          <div><strong>Regulation (EU) 2023/1194</strong><span>Known amendment outside the normal child expansion</span></div>
+          <a href="https://eur-lex.europa.eu/eli/reg_impl/2023/1194/oj/eng" target="_blank" rel="noreferrer">Official source</a>
+        </div>
+        <ul class="queue-list">
+          <li><span class="queue-label">Review directly</span><strong>Regulation 2022/2346 node</strong><span>2023/1194 directly amends its transitional provisions.</span></li>
+          <li class="queue-muted"><span class="queue-label">Context</span><strong>MDR core</strong><span>Parent legal context; it is not itself amended by 2023/1194.</span></li>
+          <li class="queue-muted"><span class="queue-label">Outside sample</span><strong>2023/1194 graph node</strong><span>Known source control; no need to ingest it as a normal child to trigger review.</span><details><summary>Why?</summary><p>Internal state: <code>OUT_OF_SCOPE</code>.</p></details></li>
+          <li class="queue-stop"><span class="queue-label">Stop here</span><strong>No represented downstream child</strong><span>No further typed dependency continues from 2022/2346 in this slice.</span></li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="view-panel" data-view-panel="expert" aria-labelledby="expert-heading" hidden>
+      <div class="context-strip" aria-label="Persistent regime context">
+        <strong>Medical-devices projection</strong><span>Evidence 27 Sep 2026</span><span>Research layer</span>
+      </div>
+
+      <div class="section-title">
+        <p class="section-kicker">Expert / research</p>
+        <h2 id="expert-heading" tabindex="-1">Projection diagnostics</h2>
+        <p>Maintenance and evidence-quality signals for this bounded projection—not findings that EU law is defective.</p>
+      </div>
+
+      <ul class="diagnostic-list">
+        <li><span class="diagnostic-state">Coverage omission</span><strong>2022/2346 has an amendment outside the normal expansion</strong><span>Official source identifies 2023/1194.</span><a href="https://eur-lex.europa.eu/eli/reg_impl/2023/1194/oj/eng" target="_blank" rel="noreferrer">Source</a></li>
+        <li><span class="diagnostic-state">Branch coverage</span><strong>IVDR delegated example outside representative expansion</strong><span>2023/503 is a verified positive control.</span><a href="https://eur-lex.europa.eu/eli/reg_del/2023/503/oj/eng" target="_blank" rel="noreferrer">Source</a></li>
+        <li><span class="diagnostic-state">Transition trigger</span><strong>EUDAMED functionality event represented/reviewed</strong><span>Decision 2025/2371 is not an unresolved gap.</span><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025D2371" target="_blank" rel="noreferrer">Source</a></li>
+        <li><span class="diagnostic-state">Structural-gap candidate</span><strong>None asserted</strong><span>Incomplete graph coverage cannot prove legal absence.</span><details><summary>Threshold</summary><p>Requires a mandatory expectation, identifiable downstream measure, sufficiently complete official-source search, and no evidence the requirement was satisfied another way.</p></details></li>
+      </ul>
+
+      <details class="method-note">
+        <summary>Research boundary and signal definitions</summary>
+        <p><strong>Coverage</strong> means an official source positively identifies something outside this slice. <strong>Review</strong> needs a real upstream change and a maintained dependent claim. <strong>Structural absence</strong> fails closed unless the evidence can support an expected-but-unidentified downstream measure.</p>
+      </details>
+
+      <div class="source-baseline">
+        <h3>Primary official baselines</h3>
+        <a href="https://health.ec.europa.eu/medical-devices-new-regulations/overview_en" target="_blank" rel="noreferrer">Commission medical-devices overview</a>
+        <a href="https://health.ec.europa.eu/medical-devices-sector/directives_en" target="_blank" rel="noreferrer">Commission predecessor directives</a>
+        <a href="https://health.ec.europa.eu/medical-devices-sector/new-regulations/guidance-mdcg-endorsed-documents-and-other-guidance_en" target="_blank" rel="noreferrer">Commission MDCG guidance</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

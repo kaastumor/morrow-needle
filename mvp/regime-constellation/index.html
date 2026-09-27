@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A bounded, evidence-linked macro view of the EU medical-devices regime.">
+  <title>Needle — Medical Devices Regime Constellation</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#regime-main">Skip to regime map</a>
+
+  <main id="regime-main">
+    <header class="hero">
+      <p class="eyebrow">Navigator macro experiment · #457</p>
+      <h1>EU medical-devices regime</h1>
+      <p class="lede">
+        A compressed view of how predecessor directives, the MDR/IVDR core, transition measures,
+        downstream legislation, system-operation acts and guidance fit together.
+      </p>
+
+      <div class="prototype-strip" role="note">
+        <strong>Bounded prototype.</strong>
+        <span>Evidence checked 27 September 2026 · EU-level view · not live monitoring · not a complete map of medical-device law.</span>
+      </div>
+
+      <div class="focus-controls" role="group" aria-label="Regime focus">
+        <button type="button" data-focus="all" aria-pressed="true">Whole regime</button>
+        <button type="button" data-focus="mdr" aria-pressed="false">Focus MDR</button>
+        <button type="button" data-focus="ivdr" aria-pressed="false">Focus IVDR</button>
+      </div>
+      <p id="focus-status" class="focus-status" aria-live="polite">
+        Whole regime shown. MDR and IVDR branches are both in focus.
+      </p>
+    </header>
+
+    <section class="reading-key" aria-labelledby="key-heading">
+      <h2 id="key-heading">How to read this</h2>
+      <dl>
+        <div><dt>Solid card</dt><dd>Binding EU legal act or legal-act family represented in this slice.</dd></div>
+        <div><dt>Dashed card</dt><dd>Non-binding guidance. Useful context, not legislation.</dd></div>
+        <div><dt>Double-outline card</dt><dd>Proposal/procedure material. Not enacted law.</dd></div>
+        <div><dt>Counts</dt><dd>Navigation summaries from the Commission overview, not legal importance scores or completeness claims.</dd></div>
+      </dl>
+    </section>
+
+    <section class="regime-section" aria-labelledby="map-heading">
+      <div class="section-heading">
+        <p class="section-kicker">Macro view</p>
+        <h2 id="map-heading">From predecessor regime to current branches</h2>
+      </div>
+
+      <div id="regime-map" class="regime-map" data-view="all">
+        <article class="macro-object predecessor-cluster state-binding" data-macro-object data-branches="mdr ivdr">
+          <p class="object-role">Predecessor regime</p>
+          <h3>Three directives</h3>
+          <div class="mini-nodes">
+            <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31990L0385" target="_blank" rel="noreferrer">90/385/EEC · active implantable devices</a>
+            <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31993L0042" target="_blank" rel="noreferrer">93/42/EEC · medical devices</a>
+            <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31998L0079" target="_blank" rel="noreferrer">98/79/EC · in-vitro diagnostics</a>
+          </div>
+          <p class="relation-copy">
+            90/385/EEC + 93/42/EEC <strong>replaced by MDR</strong>; 98/79/EC <strong>replaced by IVDR</strong>.
+          </p>
+        </article>
+
+        <div class="branch-connector" aria-hidden="true">
+          <span>replaced by ↓</span>
+        </div>
+
+        <div class="core-row">
+          <article class="macro-object core-act state-binding" data-macro-object data-branches="mdr">
+            <p class="object-role">Current core branch</p>
+            <h3>Medical Devices Regulation</h3>
+            <p><strong>Regulation (EU) 2017/745 · MDR</strong></p>
+            <p>Replaced the active-implantable and general medical-device directives with effect from 26 May 2021, subject to transitional rules.</p>
+            <a href="https://eur-lex.europa.eu/eli/reg/2017/745/oj/eng" target="_blank" rel="noreferrer">Open official MDR</a>
+          </article>
+
+          <article class="macro-object core-act state-binding" data-macro-object data-branches="ivdr">
+            <p class="object-role">Current core branch</p>
+            <h3>In Vitro Diagnostic Medical Devices Regulation</h3>
+            <p><strong>Regulation (EU) 2017/746 · IVDR</strong></p>
+            <p>Replaced Directive 98/79/EC with effect from 26 May 2022, subject to transitional rules.</p>
+            <a href="https://eur-lex.europa.eu/eli/reg/2017/746/oj/eng" target="_blank" rel="noreferrer">Open official IVDR</a>
+          </article>
+        </div>
+
+        <article class="macro-object state-binding joint-change" data-macro-object data-branches="mdr ivdr">
+          <p class="object-role">Joint transition / change layer</p>
+          <h3>Later acts reshape the transition</h3>
+          <p>
+            This lane groups later regulations that changed application or transitional arrangements around one or both core regulations.
+          </p>
+          <details>
+            <summary>Show represented transition/change acts</summary>
+            <ul class="child-list">
+              <li>
+                <span class="child-relation">amends MDR application dates</span>
+                <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0561" target="_blank" rel="noreferrer">Regulation (EU) 2020/561</a>
+              </li>
+              <li>
+                <span class="child-relation">amends IVDR transition</span>
+                <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0112" target="_blank" rel="noreferrer">Regulation (EU) 2022/112</a>
+              </li>
+              <li>
+                <span class="child-relation">amends MDR + IVDR transitional provisions</span>
+                <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0607" target="_blank" rel="noreferrer">Regulation (EU) 2023/607</a>
+              </li>
+              <li>
+                <span class="child-relation">amends MDR + IVDR for EUDAMED / supply / IVDR transition</span>
+                <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1860" target="_blank" rel="noreferrer">Regulation (EU) 2024/1860</a>
+              </li>
+              <li>
+                <span class="child-relation">corrects MDR text</span>
+                <a href="https://health.ec.europa.eu/medical-devices-new-regulations/overview_en" target="_blank" rel="noreferrer">MDR corrigendum sample · official Commission overview</a>
+              </li>
+            </ul>
+          </details>
+        </article>
+
+        <div class="family-grid">
+          <article class="macro-object family-card state-binding" data-macro-object data-branches="mdr ivdr">
+            <div class="family-heading">
+              <div>
+                <p class="object-role">Downstream binding layer</p>
+                <h3>Implementing measures</h3>
+              </div>
+              <strong class="family-count">17 represented</strong>
+            </div>
+            <p>Unique implementing regulations/decisions named on the Commission overview at the evidence date.</p>
+            <details>
+              <summary>Explore representative implementing acts</summary>
+              <ul class="child-list">
+                <li>
+                  <span class="child-relation">sets EUDAMED arrangements</span>
+                  <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2078" target="_blank" rel="noreferrer">Implementing Regulation (EU) 2021/2078</a>
+                </li>
+                <li>
+                  <span class="child-relation">common specifications · IVDR class D</span>
+                  <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R1107" target="_blank" rel="noreferrer">Implementing Regulation (EU) 2022/1107</a>
+                </li>
+                <li>
+                  <span class="child-relation">common specifications · Annex XVI products</span>
+                  <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2346" target="_blank" rel="noreferrer">Implementing Regulation (EU) 2022/2346</a>
+                </li>
+                <li>
+                  <span class="child-relation">EU reference laboratories · IVDR</span>
+                  <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2713" target="_blank" rel="noreferrer">Implementing Regulation (EU) 2023/2713</a>
+                </li>
+                <li>
+                  <span class="child-relation">notified-body / conformity-assessment requirements</span>
+                  <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026R0977" target="_blank" rel="noreferrer">Implementing Regulation (EU) 2026/977</a>
+                </li>
+                <li>
+                  <span class="child-relation">expert-panel designation, later amended</span>
+                  <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019D1396" target="_blank" rel="noreferrer">Implementing Decision (EU) 2019/1396</a>
+                  <span>→ amended by </span>
+                  <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025D1324" target="_blank" rel="noreferrer">Decision (EU) 2025/1324</a>
+                </li>
+              </ul>
+            </details>
+          </article>
+
+          <article class="macro-object family-card state-binding" data-macro-object data-branches="mdr ivdr">
+            <div class="family-heading">
+              <div>
+                <p class="object-role">Downstream binding layer</p>
+                <h3>Delegated acts</h3>
+              </div>
+              <strong class="family-count">7 represented</strong>
+            </div>
+            <p>Unique delegated/delegated-amending regulations named on the Commission overview at the evidence date.</p>
+            <details>
+              <summary>Explore representative delegated acts</summary>
+              <ul class="child-list">
+                <li>
+                  <span class="child-relation">UDI assignment · contact lenses</span>
+                  <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2197" target="_blank" rel="noreferrer">Delegated Regulation (EU) 2023/2197</a>
+                  <span>→ application date amended by </span>
+                  <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0788" target="_blank" rel="noreferrer">Delegated Regulation (EU) 2025/788</a>
+                </li>
+                <li>
+                  <span class="child-relation">notified-body reassessment frequency · MDR</span>
+                  <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0502" target="_blank" rel="noreferrer">Delegated Regulation (EU) 2023/502</a>
+                </li>
+                <li>
+                  <span class="child-relation">clinical-investigation exemption list · MDR</span>
+                  <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026R1451" target="_blank" rel="noreferrer">Delegated Regulation (EU) 2026/1451</a>
+                </li>
+              </ul>
+            </details>
+          </article>
+
+          <article class="macro-object family-card state-binding" data-macro-object data-branches="mdr ivdr">
+            <p class="object-role">Operational / transition trigger</p>
+            <h3>EUDAMED system lane</h3>
+            <p>
+              Some regime changes depend on the legal/operational state of EUDAMED modules rather than merely on the date of the core regulations.
+            </p>
+            <details>
+              <summary>Show represented system acts</summary>
+              <ul class="child-list">
+                <li>
+                  <span class="child-relation">sets EUDAMED arrangements</span>
+                  <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2078" target="_blank" rel="noreferrer">Implementing Regulation (EU) 2021/2078</a>
+                </li>
+                <li>
+                  <span class="child-relation">declares first four modules functional</span>
+                  <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025D2371" target="_blank" rel="noreferrer">Commission Decision (EU) 2025/2371</a>
+                </li>
+              </ul>
+            </details>
+          </article>
+
+          <article class="macro-object family-card state-nonbinding" data-macro-object data-branches="mdr ivdr">
+            <p class="object-role">Non-binding layer</p>
+            <h3>Guidance</h3>
+            <p><strong>Non-binding guidance.</strong> MDCG materials explain common understandings of implementation but are not legislation.</p>
+            <details>
+              <summary>Show one represented guidance item</summary>
+              <ul class="child-list">
+                <li>
+                  <span class="child-relation">guidance for legacy-device transition</span>
+                  <a href="https://health.ec.europa.eu/medical-devices-sector/new-regulations/guidance-mdcg-endorsed-documents-and-other-guidance_en" target="_blank" rel="noreferrer">MDCG 2021-25 rev.1 · official guidance page</a>
+                </li>
+              </ul>
+            </details>
+          </article>
+        </div>
+
+        <article class="macro-object state-proposal proposal-card" data-macro-object data-branches="mdr ivdr">
+          <p class="object-role">Procedure / proposal lane</p>
+          <h3>2025 targeted revision proposal</h3>
+          <p>
+            <strong>Proposal — not enacted law.</strong>
+            The Commission proposed a targeted revision of the MDR/IVDR framework in December 2025.
+          </p>
+          <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025PC1023" target="_blank" rel="noreferrer">Open official proposal COM(2025) 1023</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="signals-section" aria-labelledby="signals-heading">
+      <p class="section-kicker">Research signals</p>
+      <h2 id="signals-heading">What a missing or stale connection may mean</h2>
+      <p>
+        The constellation can support review queues, but a missing node is never automatically a legal gap.
+      </p>
+
+      <div class="signal-grid">
+        <article>
+          <h3>Coverage gap</h3>
+          <p>This prototype intentionally expands only representative child acts. The Commission overview is broader than this slice.</p>
+        </article>
+        <article>
+          <h3>Evidence gap</h3>
+          <p>A relationship appears relevant but has not yet been verified strongly enough to display as legal fact.</p>
+        </article>
+        <article>
+          <h3>Review gap</h3>
+          <p>An upstream act changed after a dependent claim was last reviewed. That means “recheck”, not “the child is invalid”.</p>
+        </article>
+        <article>
+          <h3>Structural-gap candidate</h3>
+          <p>An authoritative provision appears to require or enable a downstream measure, but no matching child has yet been identified after bounded source review.</p>
+        </article>
+      </div>
+
+      <aside class="boundary-note">
+        <strong>No legal gap is inferred from a missing node.</strong>
+        This v0.1 view is a manually bounded research projection, not a complete database of EU medical-device law.
+      </aside>
+    </section>
+
+    <section class="source-section" aria-labelledby="sources-heading">
+      <p class="section-kicker">Strong baseline</p>
+      <h2 id="sources-heading">Official source surfaces</h2>
+      <p>
+        The Commission already provides a strong grouped overview. This experiment only earns value if typed branch structure,
+        temporal distinctions and drill-down make the regime easier to understand than that source-linked list.
+      </p>
+      <ul>
+        <li><a href="https://health.ec.europa.eu/medical-devices-new-regulations/overview_en" target="_blank" rel="noreferrer">European Commission — Medical devices regulations overview</a></li>
+        <li><a href="https://health.ec.europa.eu/medical-devices-sector/directives_en" target="_blank" rel="noreferrer">European Commission — predecessor directives</a></li>
+        <li><a href="https://health.ec.europa.eu/medical-devices-sector/new-regulations/guidance-mdcg-endorsed-documents-and-other-guidance_en" target="_blank" rel="noreferrer">European Commission — MDCG guidance</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

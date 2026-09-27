@@ -69,7 +69,7 @@ test("Overview preserves legally material first-impression qualifiers", () => {
   assert.match(overview, /transitional rules preserve some effects/i);
   assert.match(overview, /Proposal — not enacted/);
   assert.match(overview, /Evidence-bounded EU-level view/i);
-  assert.match(overview, /Scope here:/);
+  assert.match(overview, /<strong>Scope:<\/strong>/);
   assert.match(overview, /Official MDR source/);
   assert.match(overview, /Official IVDR source/);
 });
@@ -81,7 +81,9 @@ test("Overview expresses the bounded three-to-two regime spine", () => {
   assert.match(overview, /98\/79\/EC/);
   assert.match(overview, /Regulation \(EU\) 2017\/745/);
   assert.match(overview, /Regulation \(EU\) 2017\/746/);
-  assert.match(overview, /replaced by/);
+  assert.match(overview, /Replaced by MDR/);
+  assert.match(overview, /Replaced by IVDR/);
+  assert.doesNotMatch(overview, /lineage-arrows/);
 });
 
 test("Explore shows one family at a time and keeps representative lists bounded", () => {
@@ -175,4 +177,13 @@ test("no graph or dashboard scoring language is introduced", () => {
   assert.doesNotMatch(html, /severity score/i);
   assert.doesNotMatch(html, /blast-radius score/i);
   assert.doesNotMatch(html, /RELATED_TO/);
+});
+
+
+test("compact scope phrases reflect the official Article 1 subject-matter boundary", () => {
+  const overview = blockForView("overview");
+  assert.match(overview, /medical devices for human use and accessories/i);
+  assert.match(overview, /Annex XVI product groups/i);
+  assert.match(overview, /in-vitro diagnostic medical devices for human use and accessories/i);
+  assert.match(overview, /performance studies are also within scope/i);
 });

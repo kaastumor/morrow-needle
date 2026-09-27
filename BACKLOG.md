@@ -204,6 +204,33 @@ Current state:
 
 > **WIP=1 — #425 PRODUCT READINESS / NO EXTERNAL OUTREACH**
 
+Current readiness audit:
+
+> **8 PASS / 2 PARTIAL — PRODUCT-SHAPED, DEPLOYMENT-READY, NOT YET EXTERNALLY PRESENTABLE**
+
+Durable audit:
+
+> `docs/mvp/candidate-b-product-readiness-audit-v0.1.md`
+
+Remaining partials are deliberately narrow:
+
+1. no ordinary-browser hosted preview has been verified;
+2. the short self-serve path is structurally present but has not been validated by a fresh human.
+
+Local browser smoke testing now supports the desktop/mobile criterion:
+- no horizontal overflow at 390 px;
+- future-withdrawal and restriction states render correctly;
+- official evidence links render;
+- no browser console/page errors were observed.
+
+Do **not** answer these gaps with new product features.
+
+Smallest next step:
+
+> **host + verify the current narrow artifact**
+
+The connected Vercel capability currently exposes no team/project, and no GitHub Pages management action is available through the connected GitHub toolset. Avoid adding GitHub Actions deployment machinery merely to bypass that unless the sponsor explicitly accepts the cost trade-off.
+
 External-user re-entry is deferred until the artifact itself is credible enough to earn attention. When it returns, prefer a short self-serve task, warm introduction, or compensated research over cold unpaid long-form outreach.
 
 A and C remain preserved under #420 and are not active WIP.

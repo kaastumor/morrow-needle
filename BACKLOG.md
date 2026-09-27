@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **BUILD — REGIME RESEARCH DIAGNOSTICS v0.1 / LVD TEST FROZEN**
+# **BUILD — REGIME CHANGE REVIEW v0.1 / LVD TEST FROZEN**
 
 Frozen scientific source:
 
@@ -165,7 +165,7 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
-### Immediate priority — Static regime research-diagnostics panel
+### Immediate priority — Static change-review blast-radius demonstrator
 
 The LVD Navigator formative packet remains frozen:
 
@@ -177,47 +177,61 @@ Completed macro milestones:
 - #456 — selected the medical-devices regime;
 - #457 — built the bounded constellation;
 - #460 — repaired branch/count/cross-list compression defects;
-- #462 — defined safe review/gap signal semantics.
+- #462 — defined safe coverage/review/gap signals;
+- #464 — added the four-state static research-diagnostics panel;
+- #467 — defined provision-aware review propagation.
 
-#462 disposition:
+#467 disposition:
 
-> **ADOPT_FOR_EXPERIMENT — REVIEW QUEUE, NOT LEGAL-GAP DETECTOR**
+> **ADOPT_FOR_EXPERIMENT — PROVISION-AWARE REVIEW PROPAGATION**
 
 Durable discovery:
 
-> `docs/discovery/issue462-regime-review-gap-signals-2026-09-27.md`
+> `docs/discovery/issue467-regime-blast-radius-2026-09-27.md`
 
-The safe signal contract now distinguishes:
-- **COVERAGE_GAP** — official positive evidence identifies a relevant omitted item;
-- **REVIEW_GAP** — requires claim-level reviewed-through evidence and an upstream change; no current live example is asserted;
-- **TEMPORAL_REVIEW_SIGNAL** — source-backed transition event that tells maintainers what should be rechecked;
-- **STRUCTURAL_GAP_CANDIDATE** — strict research-only state requiring mandatory expectation + sufficiently complete official search; current fixture returns **no candidate**.
+Binding review-propagation rule:
 
-Positive controls:
-- 2022/2346 -> official amendment 2023/1194 outside the bounded represented child slice;
-- delegated family -> IVDR counterpart 2023/503 outside the representative expansion;
-- EUDAMED Decision 2025/2371 -> cross-branch transition trigger already represented/reviewed at the current evidence checkpoint.
+> **typed dependency + changed provision/semantic overlap; ordinary graph reachability is insufficient.**
+
+Queue states:
+- **DIRECT_REVIEW**
+- **DOWNSTREAM_REVIEW**
+- **CONTEXT_ONLY**
+- **NO_PROPAGATION**
+- **OUT_OF_SCOPE**
+
+Controls:
+- 2024/1860 -> both core branches + transition/EUDAMED review, but not every descendant;
+- 2025/1324 -> 2019/1396 expert-panel branch only; no broader downstream propagation earned;
+- 2023/1194 -> represented 2022/2346 child only; no graph expansion required.
+
+Non-propagating defaults:
+- family membership;
+- genealogy alone;
+- generic citation;
+- proposal relationship for current-law state;
+- non-binding guidance without an explicit claim dependency;
+- cross-list navigation reuse.
 
 Current build owner:
 
-> **#464 — Static regime research-diagnostics panel**
+> **#468 — Static change-review blast-radius demonstrator**
 
-The panel must show exactly four diagnostic states and explicitly state:
-> **evidence/coverage signals, not findings that EU law is defective.**
+The build must make exclusions visible:
+> a small review queue is a success; a large glowing graph is not.
 
 Still prohibited:
-- automatic legal-gap detector;
-- severity/risk scoring;
-- citation-count heuristics;
-- recursive crawler;
-- complete medical-device dataset expansion;
-- second dense regime;
+- automated legal-effect analysis;
+- recursive traversal;
+- risk/severity scoring;
+- another dense regime;
+- complete medical-device dataset;
 - modification of frozen LVD P8 materials;
 - user/market claim.
 
 Current state:
 
-> **WIP=1 — #464 STATIC REGIME RESEARCH DIAGNOSTICS / LVD TEST FROZEN**
+> **WIP=1 — #468 STATIC CHANGE-REVIEW DEMONSTRATOR / LVD TEST FROZEN**
 
 ## Historical backlog archive
 

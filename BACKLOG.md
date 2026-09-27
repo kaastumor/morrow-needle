@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **REHEARSE — EU LEGISLATION NAVIGATOR P6 ACTIVE / EXTERNAL USERS DEFERRED**
+# **DECIDE — EU LEGISLATION NAVIGATOR P7 READINESS GATE / EXTERNAL USERS DEFERRED**
 
 Frozen scientific source:
 
@@ -165,7 +165,7 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
-### Immediate priority — Navigator P6 maintenance/update rehearsal
+### Immediate priority — Navigator P7 readiness gate
 
 The sponsor-adopted horizon remains:
 
@@ -177,63 +177,64 @@ Completed milestones:
 - #437 — P1/P2 reader job, strongest alternatives and source-backed LVD content contract;
 - #438 — P3 presentation decision: single progressive-disclosure page;
 - #440 — P4 content-complete LVD page;
-- #443 — P5 semantic integrity, browser and accessibility review.
+- #443 — P5 semantic integrity/browser/accessibility review;
+- #447 — P6 maintenance and correction rehearsal.
 
-P5 disposition:
+P6 disposition:
 
-> **PASS_TO_P6**
+> **PASS_TO_P7 — PROTOTYPE-SCALE MAINTENANCE ONLY**
 
-Durable review:
+Durable result:
 
-> `docs/reviews/issue443-navigator-p5-integrity-2026-09-27.md`
+> `docs/reviews/issue447-navigator-p6-maintenance-rehearsal-2026-09-27.md`
 
-P5 found and repaired real defects:
-- below-detail discoverability;
-- lineage/context/dependency relationship perception;
-- disclosure focus / target / long-label resilience.
+P6 reproduced two real maintenance failure classes:
 
-No critical semantic misrepresentation survived the adversarial pass.
+1. repeated dates with different legal meanings could drift while broad string-presence tests remained green;
+2. an operative-dependency locator could be partially changed while a stale duplicate preserved a passing global assertion.
 
-Important limitations remain:
-- no claim of WCAG 2.2 AA conformance;
-- sponsor browser use is useful design evidence, not external-user validation;
-- the assistant's Vercel connector still cannot independently fetch the GitHub-linked final deployment;
-- substantial act explanation remains hand-authored in HTML and may duplicate legal facts.
+Repairs:
+- typed temporal fact IDs distinguish:
+  - legal view;
+  - evidence verified;
+  - amendment application;
+  - source/consolidation version;
+- consistency checks protect machine + visible date copies;
+- versioned LVD source links are checked against the consolidation-version fact;
+- operative dependency routes have stable IDs and scoped semantic tests;
+- unnecessary hidden dependency-locator duplication was removed.
 
-That last risk now owns the work.
+Important limit:
 
-Current rehearsal owner:
+> **this is maintainable enough for one formative prototype; it is not an earned multi-act publishing architecture.**
 
-> **#447 — Navigator P6 maintenance and correction blast radius**
+Current decision owner:
 
-P6 must replay:
-1. one consequential legal-state/update event;
-2. one relationship/evidence correction;
+> **#450 — Navigator P7 readiness gate**
 
-and measure:
-- how many claims/files/tests require review;
-- whether a stale duplicate can survive;
-- whether freshness/version fields are maintainable;
-- whether canonical Needle owners actually prevent divergence;
-- what minimum repair is needed before readiness.
+P7 must choose exactly one:
+- READY_FOR_USER_TEST
+- REVISE_BEFORE_USER_TEST
+- NARROW
+- PARK
 
-Still prohibited:
+P7 must give full credit to:
+- official-source bundle;
+- competent source-linked note;
+- the possibility that LVD is unusually suitable;
+- sponsor enthusiasm as design evidence but not general demand;
+- the possibility that standards-status and act-Navigator are two distinct jobs sharing one shell.
+
+Still prohibited during the decision:
 - second act;
-- national transposition database;
-- case-law graph;
-- applicable-standard discovery;
-- general search;
-- live monitoring;
-- new backend/model call merely to solve architecture aesthetics;
-- external outreach.
-
-Only after P6:
-
-> **P7 — readiness decision under the Navigator prototype plan**
+- external outreach;
+- product expansion;
+- commercial superiority claims;
+- physical repo fork unless independently earned.
 
 Current state:
 
-> **WIP=1 — #447 NAVIGATOR P6 MAINTENANCE REHEARSAL / NO EXTERNAL OUTREACH**
+> **WIP=1 — #450 NAVIGATOR P7 READINESS DECISION / NO EXTERNAL OUTREACH**
 
 ## Historical backlog archive
 

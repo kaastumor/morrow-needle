@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER — REGIME REVIEW/GAP SIGNALS / LVD TEST FROZEN**
+# **BUILD — REGIME RESEARCH DIAGNOSTICS v0.1 / LVD TEST FROZEN**
 
 Frozen scientific source:
 
@@ -165,63 +165,59 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
-### Immediate priority — Typed regime review/gap signals
+### Immediate priority — Static regime research-diagnostics panel
 
 The LVD Navigator formative packet remains frozen:
 
 > `docs/evaluation/navigator-formative-v0.1/`
 
-Recruitment remains externally gated and no human-test evidence is inferred from the macro line.
+No participant outreach is authorised and the macro line remains separate from the frozen LVD test.
 
 Completed macro milestones:
+- #456 — selected the medical-devices regime;
+- #457 — built the bounded constellation;
+- #460 — repaired branch/count/cross-list compression defects;
+- #462 — defined safe review/gap signal semantics.
 
-- #456 — selected the MDR/IVDR medical-devices regime as the first dense-regime fixture;
-- #457 — built the separate `/regime/` constellation with nine first-render macro objects;
-- #460 — adversarial relation-integrity review and repair.
+#462 disposition:
 
-#460 disposition:
+> **ADOPT_FOR_EXPERIMENT — REVIEW QUEUE, NOT LEGAL-GAP DETECTOR**
 
-> **PASS_TO_NEXT_EXPERIMENT — AFTER REPAIR**
+Durable discovery:
 
-Durable review:
+> `docs/discovery/issue462-regime-review-gap-signals-2026-09-27.md`
 
-> `docs/reviews/issue460-regime-constellation-integrity-2026-09-27.md`
+The safe signal contract now distinguishes:
+- **COVERAGE_GAP** — official positive evidence identifies a relevant omitted item;
+- **REVIEW_GAP** — requires claim-level reviewed-through evidence and an upstream change; no current live example is asserted;
+- **TEMPORAL_REVIEW_SIGNAL** — source-backed transition event that tells maintainers what should be rechecked;
+- **STRUCTURAL_GAP_CANDIDATE** — strict research-only state requiring mandatory expectation + sufficiently complete official search; current fixture returns **no candidate**.
 
-Important #460 findings:
-- family-level aggregation can hide branch-specific child truth;
-- every represented child now carries explicit MDR / IVDR / both ownership;
-- branch focus propagates inside shared families while sibling context remains visible;
-- repeated legal resources in cross-cutting views are labelled as cross-references rather than double-counted;
-- implementing/delegated family counts are dated frozen navigation summaries, not completeness claims;
-- binding law, non-binding guidance and proposal/procedure material remain separate.
+Positive controls:
+- 2022/2346 -> official amendment 2023/1194 outside the bounded represented child slice;
+- delegated family -> IVDR counterpart 2023/503 outside the representative expansion;
+- EUDAMED Decision 2025/2371 -> cross-branch transition trigger already represented/reviewed at the current evidence checkpoint.
 
-Current discovery owner:
+Current build owner:
 
-> **#462 — Typed regime review/gap signals from the medical-devices slice**
+> **#464 — Static regime research-diagnostics panel**
 
-Question:
-
-> can the bounded typed regime projection point a human toward useful coverage/review work without converting graph absence or staleness into a legal conclusion?
-
-Initial controls:
-- represented Regulation 2022/2346 is officially shown as amended by 2023/1194, which is outside the bounded slice — candidate **COVERAGE_GAP**;
-- the delegated sample currently exposes MDR children while the Commission overview also names IVDR-side Delegated Regulation 2023/503 — candidate **branch coverage gap**;
-- Decision 2025/2371 is a cross-branch EUDAMED functionality/transition trigger — candidate **TEMPORAL_REVIEW_SIGNAL**;
-- a concrete **STRUCTURAL_GAP_CANDIDATE** must fail closed unless an authoritative provision and bounded source search support it.
+The panel must show exactly four diagnostic states and explicitly state:
+> **evidence/coverage signals, not findings that EU law is defective.**
 
 Still prohibited:
-- automatic legal-defect findings;
-- missing node = missing law;
+- automatic legal-gap detector;
+- severity/risk scoring;
 - citation-count heuristics;
 - recursive crawler;
 - complete medical-device dataset expansion;
 - second dense regime;
 - modification of frozen LVD P8 materials;
-- external/user-value claim.
+- user/market claim.
 
 Current state:
 
-> **WIP=1 — #462 REGIME REVIEW/GAP SIGNAL DISCOVERY / LVD TEST FROZEN**
+> **WIP=1 — #464 STATIC REGIME RESEARCH DIAGNOSTICS / LVD TEST FROZEN**
 
 ## Historical backlog archive
 

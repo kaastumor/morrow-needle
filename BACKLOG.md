@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **REVIEW — PRESENTABLE REGIME PROTOTYPE / LVD TEST FROZEN**
+# **DISCOVER — REGIME UI DENSITY RESET / LVD TEST FROZEN**
 
 Frozen scientific source:
 
@@ -165,63 +165,57 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
-### Immediate priority — Sponsor review of the presentable regime prototype
+### Immediate priority — Proper UI research run on regime information density
 
-The LVD Navigator formative packet remains frozen:
+Sponsor review of #471 identified a clear failure:
+> the current regime prototype has **too much text on screen at once**.
 
-> `docs/evaluation/navigator-formative-v0.1/`
+This is not treated as a copy-editing request.
 
-No participant outreach is authorised and no macro-line work may modify the frozen LVD test artifact.
+Current owner:
 
-The first medical-devices macro/regime research burst has reached a reviewable product surface.
+> **#473 — UI density reset for regime navigation**
 
-Completed:
-- #456 — selected the MDR/IVDR fixture;
-- #457 — built the nine-object regime constellation;
-- #460 — repaired child-branch/count/cross-list compression errors;
-- #462 — narrowed “gap” semantics to evidence/review signals;
-- #464 — added bounded Research Diagnostics;
-- #467 — defined provision-aware review propagation;
-- #468 — added the presentable three-control Change Review and review navigation.
+Required sequence:
+1. measure current surface;
+2. rebuild UI/IA foundations from external research and strong public-service/legal patterns;
+3. make one concrete presentation proposition;
+4. red-team that proposition;
+5. test it on the same frozen medical-devices evidence in a **separate comparison route**;
+6. deploy a sponsor-reviewable preview.
 
-Accepted review build:
-- PR #470;
-- merged main commit `c8afbbde7bf2356c5125b223e14b5a2baa279c32`;
-- exact accepted PR head `f403a3a1fe997709beccf00c70ce2c000be76fc9`;
-- Vercel SUCCESS;
-- mirrored GitHub static/browser gate SUCCESS;
-- 77 Node assertions passed;
-- static bundle build SUCCESS.
+Current measured baseline:
+- 2,441 total words in the current regime HTML;
+- approximately 2,087 words exposed in the initial DOM state after excluding collapsed details and hidden alternate Change Review cases;
+- 127 paragraphs;
+- 61 headings;
+- 53 article/card blocks;
+- 47 links;
+- 9 buttons;
+- 7 major sections.
 
-Review candidate:
+Those counts are diagnostics, not usability thresholds. The core failure is simultaneous reading demand and weak prioritisation.
 
-> https://morrow-needle-git-auto-468-static-change-review-jeroen91-2293.vercel.app/regime/
+Binding research question:
 
-Current review owner:
+> **Can the same legal/evidence truth be presented with materially lower simultaneous reading demand while preserving regime orientation, typed legal distinctions, evidence access and change-review capability?**
 
-> **#471 — Sponsor review of medical-devices regime prototype**
+Research must explicitly revisit #435's earlier “always visible” content assumptions. The earlier design correctly protected legal meaning but likely over-promoted too many secondary facts into the default surface.
 
-Review the surface as a product, especially:
-1. does the macro view actually make a dense regime feel smaller;
-2. does MDR/IVDR focus preserve useful sibling context;
-3. do family drill-downs carry enough legal meaning without overload;
-4. does Change Review make propagation + stop reasons intuitive;
-5. do Research Diagnostics belong in the public view or an expert/research layer;
-6. does the whole thing feel like one progressive product or two surfaces that should separate.
-
-Freeze until sponsor review:
-- no second dense regime;
-- no dataset expansion;
-- no automatic graph traversal;
-- no new diagnostics;
-- no severity/risk scoring;
-- no LVD P8 changes.
-
-Only critical correctness/deployment defects may bypass this freeze.
+Test boundaries:
+- same medical-devices fixture;
+- current `/regime/` remains unchanged as comparator;
+- new route only for the UI experiment;
+- no second regime;
+- no data/corpus expansion;
+- no graph library unless simpler DOM/CSS fails;
+- no automated gap/legal-effect inference;
+- no LVD P8 changes;
+- no external value claim.
 
 Current state:
 
-> **WIP=1 — #471 SPONSOR REVIEW GATE / NO NEW BUILD WORK**
+> **WIP=1 — #473 UI RESEARCH / PROPOSITION / RED TEAM / COMPARISON PROTOTYPE**
 
 ## Historical backlog archive
 

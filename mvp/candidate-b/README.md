@@ -1,8 +1,8 @@
-# Candidate B — harmonised-standard status product-readiness prototype
+# Candidate B — harmonised-standard status + act-context product experiment
 
-Status: **PRODUCT-READINESS PROTOTYPE — EXTERNAL VALUE UNPROVEN**
+Status: **PRODUCT EXPERIMENT — EXTERNAL VALUE UNPROVEN**
 
-This static surface provides a known-standard lookup over five frozen official EU harmonised-standard legal-status records.
+This static surface provides a known-standard lookup over five frozen official EU harmonised-standard legal-status records and one bounded act-centric context view for Directive 2014/35/EU.
 
 It exists to test one narrow user question:
 
@@ -25,7 +25,31 @@ The interface no longer exposes an internal fixture/case selector as its primary
 
 Visible freshness language makes clear that the data is frozen demonstration evidence, not live monitoring.
 
-External-user recruitment remains deferred under #425.
+External-user recruitment remains deferred. #434 is an internal product experiment, not external-value evidence.
+
+## Act-centric lifecycle experiment
+
+The first governing-act view is deliberately bounded to **Directive 2014/35/EU — Low Voltage Directive**.
+
+It is text-first and source-linked. It shows:
+
+- the displayed 73/23/EEC -> 2006/95/EC -> 2014/35/EU lineage;
+- adoption, publication, entry-into-force, transposition/application and repeal-transition dates as distinct events;
+- the current consolidated text date and Directive (EU) 2024/2749 amendment;
+- Article 114 TFEU as the legal basis;
+- selected framework context from Regulation (EC) No 765/2008, Decision No 768/2008/EC and Regulation (EU) No 1025/2012;
+- Article 12's harmonised-standard/OJ-reference mechanism;
+- links back to the two frozen LVD standard-status examples.
+
+The view explicitly does **not** claim complete legal context. It excludes national transposition, a general case-law graph, applicable-standard discovery, all amendments/standards and recursive relationship traversal.
+
+The visual treatment is secondary to semantic HTML: every displayed legal relationship remains readable without relying on arrows, layout or colour.
+
+Design research:
+`docs/mvp/candidate-b-lifecycle-information-design-research-2026-09-27.md`
+
+Red-team boundary:
+`docs/discovery/issue432-act-centric-lifecycle-red-team-2026-09-27.md`
 
 ## Static deployment bundle
 
@@ -45,8 +69,8 @@ This creates ignored `dist/` output containing only:
 
 `vercel.json` points a static deployment at this generated `dist/` directory.
 
-The repository currently has no connected Vercel team/project in this ChatGPT environment, so this
-is **deployment-ready, not deployed**.
+The generated bundle has been successfully deployed through Vercel from the canonical GitHub repository.
+Deployment URLs are environment-specific and are not treated as canonical project identifiers.
 
 ## Local launch
 

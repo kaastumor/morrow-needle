@@ -206,7 +206,7 @@ Current state:
 
 Current readiness audit:
 
-> **7 PASS / 3 PARTIAL — PRODUCT-SHAPED, DEPLOYMENT-READY, NOT YET EXTERNALLY PRESENTABLE**
+> **8 PASS / 2 PARTIAL — PRODUCT-SHAPED, DEPLOYMENT-READY, NOT YET EXTERNALLY PRESENTABLE**
 
 Durable audit:
 
@@ -215,14 +215,19 @@ Durable audit:
 Remaining partials are deliberately narrow:
 
 1. no ordinary-browser hosted preview has been verified;
-2. responsive/mobile behavior is supported in code but not visually smoke-tested;
-3. the short self-serve path is structurally present but has not been timed/observed in a real browser session.
+2. the short self-serve path is structurally present but has not been validated by a fresh human.
+
+Local browser smoke testing now supports the desktop/mobile criterion:
+- no horizontal overflow at 390 px;
+- future-withdrawal and restriction states render correctly;
+- official evidence links render;
+- no browser console/page errors were observed.
 
 Do **not** answer these gaps with new product features.
 
 Smallest next step:
 
-> **host + browser-verify the current narrow artifact**
+> **host + verify the current narrow artifact**
 
 The connected Vercel capability currently exposes no team/project, and no GitHub Pages management action is available through the connected GitHub toolset. Avoid adding GitHub Actions deployment machinery merely to bypass that unless the sponsor explicitly accepts the cost trade-off.
 

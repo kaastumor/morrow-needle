@@ -68,3 +68,18 @@ This prototype is separate from:
 `docs/evaluation/navigator-formative-v0.1/`
 
 Do not modify or replace the frozen LVD test materials from this work.
+
+
+## Research diagnostics
+
+The page includes a bounded diagnostics demonstration derived from #462.
+
+It intentionally distinguishes:
+- known coverage omission;
+- branch-sample coverage omission;
+- represented temporal transition trigger;
+- structural-gap candidate: **none asserted**.
+
+These are evidence/review signals, not findings that EU law is defective.
+
+The current implementation is static and hand-verified. It does not crawl, score or automatically infer legal gaps.

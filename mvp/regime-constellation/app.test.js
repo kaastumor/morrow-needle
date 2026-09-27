@@ -171,3 +171,62 @@ test("guidance sample remains explicitly non-binding and branch-specific", () =>
   assert.match(guidance, /MDR · non-binding/);
   assert.match(html, /Non-binding guidance/);
 });
+
+
+test("research diagnostics expose exactly four bounded signal states", () => {
+  const count = (html.match(/data-diagnostic-state=/g) || []).length;
+  assert.equal(count, 4);
+
+  assert.match(html, /data-diagnostic-state="coverage-amendment"/);
+  assert.match(html, /data-diagnostic-state="coverage-branch"/);
+  assert.match(html, /data-diagnostic-state="temporal-trigger"/);
+  assert.match(html, /data-diagnostic-state="structural-null"/);
+});
+
+test("positive coverage controls link exact official omitted acts without adding graph children", () => {
+  assert.match(html, /CELEX:32023R1194/);
+  assert.match(html, /reg_del\/2023\/503\/oj\/eng/);
+  assert.match(html, /official amendment not expanded/i);
+  assert.match(html, /sampling limitation, not evidence/i);
+
+  // Omitted controls stay diagnostics, not normal child nodes in the represented graph.
+  assert.equal((html.match(/CELEX:32023R1194/g) || []).length, 1);
+  assert.equal((html.match(/reg_del\/2023\/503\/oj\/eng/g) || []).length, 1);
+});
+
+test("temporal signal is represented as reviewed transition context rather than an open gap", () => {
+  assert.match(html, /Decision \(EU\) 2025\/2371/);
+  assert.match(html, /28 May 2026/);
+  assert.match(html, /Represented \/ reviewed/);
+  assert.match(html, /not displayed as an unresolved gap/i);
+  assert.match(html, /CELEX:32025D2371/);
+  assert.match(html, /medical-devices-eudamed\/overview_en/);
+});
+
+test("structural-gap state fails closed", () => {
+  assert.match(html, /Structural-gap candidate/);
+  assert.match(html, /None asserted/);
+  assert.match(html, /absent graph node cannot establish/i);
+  assert.match(html, /mandatory expectation/i);
+  assert.match(html, /sufficiently complete official-source search/i);
+});
+
+test("diagnostics explicitly reject defect language and opaque scoring", () => {
+  assert.match(html, /not findings that EU law is defective/i);
+  assert.doesNotMatch(html, /missing law/i);
+  assert.doesNotMatch(html, /EU failed/i);
+  assert.doesNotMatch(html, /legal vacuum/i);
+  assert.doesNotMatch(html, /severity score/i);
+  assert.doesNotMatch(html, /risk score/i);
+});
+
+test("review-gap diagnostic abstains without claim-level reviewed-through evidence", () => {
+  assert.match(html, /no current claim-level REVIEW_GAP is asserted/i);
+  assert.match(html, /dependent claim's own reviewed-through time/i);
+});
+
+test("diagnostic panel keeps one-column reflow on narrow layouts", () => {
+  assert.match(css, /\.diagnostic-grid/);
+  assert.match(css, /@media \(max-width: 58rem\)/);
+  assert.match(css, /\.diagnostic-grid\s*\{[\s\S]*grid-template-columns: 1fr/);
+});

@@ -337,3 +337,90 @@ summary {
 .family-count-note time {
   font-variant-numeric: tabular-nums;
 }
+
+
+.diagnostics-section {
+  border-top: 1px solid currentColor;
+  padding-top: 1.6rem;
+  margin-top: 2.4rem;
+}
+
+.diagnostics-intro {
+  max-width: 62rem;
+}
+
+.diagnostic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .85rem;
+  margin-top: 1rem;
+}
+
+.diagnostic-card {
+  border: 1px solid currentColor;
+  border-radius: .65rem;
+  padding: .9rem 1rem;
+}
+
+.diagnostic-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: .8rem;
+  align-items: start;
+}
+
+.diagnostic-kind {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-size: .75rem;
+  font-weight: 800;
+}
+
+.diagnostic-status {
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: .16rem .45rem;
+  font-size: .72rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.diagnostic-card h3 {
+  margin-top: .65rem;
+}
+
+.diagnostic-card a {
+  display: inline-block;
+  margin: .25rem .8rem .2rem 0;
+}
+
+.diagnostic-resolved {
+  border-style: double;
+  border-width: 3px;
+}
+
+.diagnostic-null {
+  border-style: dashed;
+}
+
+.diagnostics-boundary {
+  margin-top: 1rem;
+  border-left: .22rem solid currentColor;
+  padding-left: .8rem;
+  max-width: 64rem;
+}
+
+@media (max-width: 58rem) {
+  .diagnostic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .diagnostic-heading {
+    display: grid;
+  }
+
+  .diagnostic-status {
+    width: fit-content;
+  }
+}

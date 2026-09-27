@@ -261,6 +261,80 @@
       </div>
     </section>
 
+    <section class="diagnostics-section" aria-labelledby="diagnostics-heading">
+      <p class="section-kicker">Research diagnostics</p>
+      <h2 id="diagnostics-heading">Evidence and coverage signals</h2>
+      <p class="diagnostics-intro">
+        These are research/navigation signals, <strong>not findings that EU law is defective</strong>.
+        Open coverage means this bounded projection omits something that an official source positively identifies.
+        A transition trigger is a legal event to inspect, not automatically a defect.
+      </p>
+
+      <div class="diagnostic-grid">
+        <article class="diagnostic-card diagnostic-open" data-diagnostic-state="coverage-amendment">
+          <div class="diagnostic-heading">
+            <p class="diagnostic-kind">Coverage omission · official amendment not expanded in this slice</p>
+            <span class="diagnostic-status">Open coverage</span>
+          </div>
+          <h3>2022/2346 has an official amendment outside this slice</h3>
+          <p>
+            Implementing Regulation (EU) 2022/2346 is represented above.
+            The Commission overview and EUR-Lex identify Implementing Regulation (EU) 2023/1194 as amending its transitional provisions.
+            That amending act is intentionally not expanded as a normal child in this bounded constellation.
+          </p>
+          <p><strong>Meaning:</strong> represented node is not self-contained; review the additional amendment before relying on its transition state.</p>
+          <a href="https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32023R1194" target="_blank" rel="noreferrer">Open official amending act 2023/1194</a>
+        </article>
+
+        <article class="diagnostic-card diagnostic-open" data-diagnostic-state="coverage-branch">
+          <div class="diagnostic-heading">
+            <p class="diagnostic-kind">Branch coverage</p>
+            <span class="diagnostic-status">Open coverage</span>
+          </div>
+          <h3>IVDR delegated example exists outside this representative expansion</h3>
+          <p>
+            The expanded delegated sample currently shows MDR-side examples.
+            The Commission overview also names Delegated Regulation (EU) 2023/503, which amends IVDR Regulation 2017/746 on notified-body reassessment frequency.
+          </p>
+          <p><strong>Meaning:</strong> no expanded IVDR child here is a sampling limitation, not evidence that the IVDR branch lacks delegated legislation.</p>
+          <a href="https://eur-lex.europa.eu/eli/reg_del/2023/503/oj/eng" target="_blank" rel="noreferrer">Open official IVDR delegated act 2023/503</a>
+        </article>
+
+        <article class="diagnostic-card diagnostic-resolved" data-diagnostic-state="temporal-trigger">
+          <div class="diagnostic-heading">
+            <p class="diagnostic-kind">Temporal review signal</p>
+            <span class="diagnostic-status">Represented / reviewed</span>
+          </div>
+          <h3>EUDAMED functionality changed cross-branch transition state</h3>
+          <p>
+            Decision (EU) 2025/2371 confirmed functionality of four EUDAMED systems tied to provisions in both MDR and IVDR.
+            The Commission states those four modules became mandatory to use from 28 May 2026.
+          </p>
+          <p><strong>Meaning:</strong> this event is a reason to review EUDAMED-dependent explanations. The current projection was checked after that transition, so this is not displayed as an unresolved gap.</p>
+          <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025D2371" target="_blank" rel="noreferrer">Open official functionality decision</a>
+          <a href="https://health.ec.europa.eu/medical-devices-eudamed/overview_en" target="_blank" rel="noreferrer">Open Commission EUDAMED overview</a>
+        </article>
+
+        <article class="diagnostic-card diagnostic-null" data-diagnostic-state="structural-null">
+          <div class="diagnostic-heading">
+            <p class="diagnostic-kind">Structural-gap candidate</p>
+            <span class="diagnostic-status">None asserted</span>
+          </div>
+          <h3>No structural absence claim is supported by this bounded projection</h3>
+          <p>
+            The current slice is intentionally incomplete. An enabling power to adopt a measure is not automatically a duty to adopt one,
+            and an absent graph node cannot establish that an expected legal measure does not exist.
+          </p>
+          <p><strong>Threshold before any future signal:</strong> a mandatory expectation, an identifiable target measure, a sufficiently complete official-source search, and no evidence that the requirement was satisfied another way.</p>
+        </article>
+      </div>
+
+      <p class="diagnostics-boundary">
+        <strong>Review-gap note:</strong> no current claim-level REVIEW_GAP is asserted either.
+        That signal would require a dependent claim's own reviewed-through time plus a later upstream change; the macro prototype does not yet own that evidence at claim level.
+      </p>
+    </section>
+
     <section class="signals-section" aria-labelledby="signals-heading">
       <p class="section-kicker">Research signals</p>
       <h2 id="signals-heading">What a missing or stale connection may mean</h2>

@@ -165,85 +165,51 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
-### Immediate priority — Candidate B credible-product threshold
+### Immediate priority — act-centric legal lifecycle projection
 
-The sponsor has selected Candidate B to continue but has moved external-user recruitment materially later.
+The sponsor has completed the previous Candidate-B product-readiness horizon and, while using the live Vercel surface, identified a concrete next job:
 
-Active WIP:
+> **when inspecting a directive, show where it came from, its lifecycle, typed predecessors/successors, what materially shapes it, what flows from it, and the official evidence behind those relationships.**
 
-> **#425 — build toward a credible narrow product before asking outsiders for time**
+#425 is complete for the current internal product-readiness horizon. External value remains unproven and cold external outreach remains deferred.
 
-#422 is closed as near-term execution and preserved only as a future pre-registered usability design.
+#432 red-teamed the lifecycle implementation against:
+- the charter's explicit non-goal of a general-purpose legal knowledge graph;
+- historical Full Needle contraction;
+- Thread/lineage reactivation rules;
+- temporal/identity/procedure truth ownership;
+- completeness illusion and maintenance explosion.
 
-Sponsor correction:
+Disposition:
 
-> an unknown local prototype asking a small specialist consultancy for 30–45 unpaid minutes is not a credible first external move.
+> **ADOPT_FOR_EXPERIMENT — ACT-CENTRIC, ONE ACT, ONE-HOP, TYPED RELATIONSHIPS, NO NEW TRUTH STORE**
 
-Likely near-term outreach outcomes would be dominated by:
-- ignore/delete;
-- scam or sales suspicion;
-- lack of time/incentive;
-- polite decline.
+Durable review:
 
-That would produce weak evidence about Candidate-B value.
+> `docs/discovery/issue432-act-centric-lifecycle-red-team-2026-09-27.md`
 
-Current product-readiness threshold:
+First focal act:
 
-- understandable without facilitator narration;
-- ordinary-browser operation without GitHub/Python setup;
-- neutral safety and evidence boundaries;
-- product-like known-standard lookup rather than a fixture picker;
-- representative handling of cited / restricted / not-cited / future-transition states;
-- one-click official evidence;
-- explicit freshness semantics;
-- no false live-monitoring claim;
-- acceptable desktop/mobile use;
-- future evaluation can be completed in minutes rather than asking for a 30–45 minute favour.
+> **Directive 2014/35/EU — Low Voltage Directive**
+
+Hard implementation boundaries:
+- no generic `RELATED_TO` edge;
+- no completeness claim such as “all influences”;
+- no recursive/general legal graph;
+- no new canonical lifecycle ontology in the first slice;
+- lineage must not own dates;
+- read-side projection must not duplicate canonical legal truth;
+- no national transposition/case-law network/applicable-standard discovery in this slice;
+- default UI should be a compact typed lifecycle map, not a force-directed graph.
+
+Next WIP:
+
+> **#434 — BUILD the bounded Low Voltage Directive lifecycle projection**
 
 Current state:
 
-> **WIP=1 — #425 HOSTING GATE / NO EXTERNAL OUTREACH**
+> **WIP=1 — #434 ACT-CENTRIC LIFECYCLE EXPERIMENT / NO EXTERNAL OUTREACH**
 
-Current readiness audit:
-
-> **8 PASS / 2 PARTIAL — PRODUCT-SHAPED, DEPLOYMENT-READY, NOT YET EXTERNALLY PRESENTABLE**
-
-Durable audit:
-
-> `docs/mvp/candidate-b-product-readiness-audit-v0.1.md`
-
-Remaining partials are deliberately narrow:
-
-1. no ordinary-browser hosted preview has been verified;
-2. the short self-serve path is structurally present but has not been validated by a fresh human.
-
-Local browser smoke testing now supports the desktop/mobile criterion:
-- no horizontal overflow at 390 px;
-- future-withdrawal and restriction states render correctly;
-- official evidence links render;
-- no browser console/page errors were observed.
-
-Do **not** answer these gaps with new product features.
-
-Smallest next step:
-
-> **host + verify the current narrow artifact**
-
-The connected Vercel capability currently exposes no team/project, and no GitHub Pages management action is available through the connected GitHub toolset. Avoid adding GitHub Actions deployment machinery merely to bypass that unless the sponsor explicitly accepts the cost trade-off.
-
-A separate Replit app was considered and rejected because it would create a shadow implementation outside the canonical GitHub product path merely to obtain a URL.
-
-Current dependency:
-
-> **HOST THE GENERATED CANONICAL BUNDLE THROUGH A REAL DEPLOYMENT TARGET**
-
-No further Candidate-B feature work is justified solely to avoid this dependency.
-
-External-user re-entry is deferred until the artifact itself is credible enough to earn attention. When it returns, prefer a short self-serve task, warm introduction, or compensated research over cold unpaid long-form outreach.
-
-A and C remain preserved under #420 and are not active WIP.
-
-No cold outreach, mailbox connection, paid/vendor account, generic compliance-platform build, manufactured Candidate-C postmortem, corpus/class growth or Full Needle revival is authorised.
 ## Historical backlog archive
 
 Everything below this line is retained for project history. It may contain old queue

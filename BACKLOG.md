@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **BUILD — SUMMARY-FIRST MEDICAL-DEVICES LANDING PAGE / LVD TEST FROZEN**
+# **REVIEW — SUMMARY-FIRST MEDICAL-DEVICES LANDING PAGE / LVD TEST FROZEN**
 
 Frozen scientific source:
 
@@ -165,72 +165,70 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
-### Immediate priority — Summary-first medical-devices public landing page
+### Immediate priority — Sponsor review of summary-first medical-devices landing page
 
-Sponsor review plus an independent foundational UX audit found a deeper problem than the #473 density issue:
+#477 completed the bounded foundational UX correction.
 
-> **both regime prototypes explain how legislation connects before explaining what it does and who needs to care.**
+Independent review finding now treated as binding for this experiment:
 
-#475 therefore closed with:
+> **public entry must explain what the rules do and who needs to care before asking the reader to understand the legal web.**
 
-> **REVISE — PUBLIC ENTRY STARTS ONE ABSTRACTION LAYER TOO HIGH**
+Completed under #477:
+- six frozen comprehension/relevance tasks;
+- claim-to-source editorial evidence map;
+- summary-first continuous reading page;
+- separate `/medical-devices/` route;
+- unchanged `/regime/` and `/regime-v2/` comparators;
+- existing Vercel/static test gate extended to the new route.
 
-The v0.2 relationship/exploration components remain useful, but are no longer treated as the public entry contract.
+Accepted build:
+- PR #478;
+- main merge `bfe8c469b71b43c042e9e511e598397110dc4489`;
+- exact accepted PR head `7eda75216740e3cc3c89e624699393c074fa3465`;
+- Vercel SUCCESS;
+- sanitation SUCCESS;
+- mirrored repository test/build SUCCESS.
 
-Current owner:
+Review candidate:
 
-> **#477 — Summary-first medical-devices public landing page**
+> https://morrow-needle-git-auto-477-summary-first-landing-jeroen91-2293.vercel.app/medical-devices/
 
-The experiment is bounded to the existing MDR/IVDR fixture.
+Comparator:
 
-Pre-build controls already frozen:
-- six task prompts in `docs/evaluation/medical-devices-summary-first-v0.1/tasks-and-answer-key.md`;
-- claim-to-source map in `docs/evidence/issue477-medical-devices-summary-content-map-2026-09-27.md`;
-- adoption note in `docs/reviews/issue477-foundational-ux-review-adoption-2026-09-27.md`.
+> https://morrow-needle-git-auto-473-ui-density-reset-jeroen91-2293.vercel.app/regime-v2/
 
-Required reading order:
-1. identity / evidence boundary;
-2. **what these rules do**;
-3. **who and what is covered**;
-4. **current rules and dates**;
-5. **what the rules require**;
-6. **what changed**;
-7. **how the rules fit together**;
-8. **sources and coverage**.
+Current review owner:
 
-Important distinctions:
-- regime overview != legal act;
-- no single regime “in force” or application date;
-- MDR and IVDR retain separate legal states/dates;
-- main roles are non-exhaustive;
-- unlisted role != exclusion;
-- intended purpose/product/activity/time can determine relevance;
-- proposals remain separate from enacted law;
-- consequential source links remain public, not expert-only;
-- editorial summary remains a projection over reviewed official evidence.
+> **#479 — Summary-first medical-devices landing page**
 
-Build route:
+Review around the frozen six questions:
+1. purpose;
+2. MDR vs IVDR;
+3. importer/distributor relevance;
+4. laboratory/research-use boundary;
+5. dates/transition;
+6. verification/proposal status.
 
-> **`/medical-devices/`**
+Important product boundary:
+- this is a regime overview, not one legal instrument;
+- no single regime status/application date is invented;
+- relationship exploration remains secondary;
+- research/maintenance diagnostics are not public primary navigation;
+- no personalised applicability verdict is provided.
 
-Comparators remain:
-- `/regime-v2/`;
-- `/regime/`;
-- the strong Commission/EUR-Lex official-source workflow.
+Freeze until sponsor review:
+- no second regime;
+- no individual MDR/IVDR page build;
+- no applicability selector;
+- no new graph/diagnostics;
+- no automated monitoring;
+- no LVD P8 changes.
 
-Still prohibited:
-- second regime;
-- applicability classifier;
-- personalised legal-advice verdict;
-- new graph/ontology;
-- corpus expansion;
-- automated monitoring;
-- new diagnostics;
-- LVD P8 modification.
+Only critical correctness/deployment repairs may bypass the gate.
 
 Current state:
 
-> **WIP=1 — #477 SUMMARY-FIRST BUILD / NO EXTERNAL OUTREACH**
+> **WIP=1 — #479 SPONSOR SUMMARY-FIRST REVIEW / NO NEW BUILD WORK**
 
 ## Historical backlog archive
 

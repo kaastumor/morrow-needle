@@ -21,12 +21,28 @@ function loadFixture(caseId) {
   return {meta, record: JSON.parse(fs.readFileSync(fixturePath, "utf8"))};
 }
 
-function factDatetimes(html, factId) {
+function factTimes(html, factId) {
   const pattern = new RegExp(
-    '<time\\s+data-fact-id="' + factId + '"\\s+datetime="([^"]+)"',
+    '<time\\s+data-fact-id="' + factId + '"\\s+datetime="([^"]+)">([^<]+)</time>',
     "g"
   );
-  return Array.from(html.matchAll(pattern), match => match[1]);
+  return Array.from(html.matchAll(pattern), match => ({
+    datetime: match[1],
+    text: match[2]
+  }));
+}
+
+function factDatetimes(html, factId) {
+  return factTimes(html, factId).map(item => item.datetime);
+}
+
+function englishDate(isoDate) {
+  const [year, month, day] = isoDate.split("-").map(Number);
+  const months = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+  ];
+  return `${day} ${months[month - 1]} ${year}`;
 }
 
 function dependencyRoute(html, dependencyId) {
@@ -368,14 +384,18 @@ test("disclosures and relationship text receive explicit accessibility hardening
 test("typed repeated dates stay internally consistent without collapsing distinct temporal concepts", () => {
   const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
 
-  const applicationDates = factDatetimes(html, "lvd-2024-2749-application");
-  const consolidationDates = factDatetimes(html, "lvd-consolidation-version");
+  const applicationFacts = factTimes(html, "lvd-2024-2749-application");
+  const consolidationFacts = factTimes(html, "lvd-consolidation-version");
 
-  assert.equal(applicationDates.length, 3);
-  assert.equal(new Set(applicationDates).size, 1);
+  assert.equal(applicationFacts.length, 3);
+  assert.equal(new Set(applicationFacts.map(item => item.datetime)).size, 1);
+  assert.equal(new Set(applicationFacts.map(item => item.text)).size, 1);
+  assert.ok(applicationFacts.every(item => item.text === englishDate(item.datetime)));
 
-  assert.equal(consolidationDates.length, 3);
-  assert.equal(new Set(consolidationDates).size, 1);
+  assert.equal(consolidationFacts.length, 3);
+  assert.equal(new Set(consolidationFacts.map(item => item.datetime)).size, 1);
+  assert.equal(new Set(consolidationFacts.map(item => item.text)).size, 1);
+  assert.ok(consolidationFacts.every(item => item.text === englishDate(item.datetime)));
 
   assert.ok(html.includes('data-fact-id="lvd-2024-2749-application"'));
   assert.ok(html.includes('data-fact-id="lvd-consolidation-version"'));
@@ -408,6 +428,7 @@ test("operative dependency maintenance sentries scope locators to each route", (
   assert.match(definitionRoute, /imports definition from/i);
   assert.match(definitionRoute, /Regulation \(EU\) No 1025\/2012 · Article 2\(1\)\(c\)/);
   assert.match(definitionRoute, /defines “harmonised standard” by importing the definition/i);
+  assert.match(definitionRoute, /Open full official source · Article 2/);
 
   const procedureRoute = dependencyRoute(html, "lvd-art12-reg1025-oj-procedure");
   assert.match(procedureRoute, /LVD Article 12/);
@@ -415,6 +436,7 @@ test("operative dependency maintenance sentries scope locators to each route", (
   assert.match(procedureRoute, /Regulation \(EU\) No 1025\/2012 · Articles 10\(6\) and 11/);
   assert.match(procedureRoute, /Article 10\(6\) provides/i);
   assert.match(procedureRoute, /Article 11 provides/i);
+  assert.match(procedureRoute, /Open full official source · Articles 10–11/);
 
   assert.doesNotMatch(html, /dependency-path" aria-label=/);
 });

@@ -204,11 +204,11 @@ Hard implementation boundaries:
 
 Next WIP:
 
-> **#433 — BUILD the bounded Low Voltage Directive lifecycle projection**
+> **#434 — BUILD the bounded Low Voltage Directive lifecycle projection**
 
 Current state:
 
-> **WIP=1 — #433 ACT-CENTRIC LIFECYCLE EXPERIMENT / NO EXTERNAL OUTREACH**
+> **WIP=1 — #434 ACT-CENTRIC LIFECYCLE EXPERIMENT / NO EXTERNAL OUTREACH**
 
 ## Historical backlog archive
 

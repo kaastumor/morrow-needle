@@ -135,3 +135,68 @@ test("prototype refuses unsupported historical dates instead of inventing state"
     /outside frozen evidence window/
   );
 });
+
+
+test("LVD lifecycle view contains the required text-first legal information", () => {
+  const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
+
+  for (const required of [
+    "Directive 2014/35/EU",
+    "Council Directive 73/23/EEC",
+    "Directive 2006/95/EC",
+    "Codified as",
+    "Recast as",
+    "26 Feb 2014",
+    "29 Mar 2014",
+    "18 Apr 2014",
+    "20 Apr 2016",
+    "Directive (EU) 2024/2749",
+    "30 May 2026",
+    "Article 114 TFEU",
+    "Regulation (EC) No 765/2008",
+    "Decision No 768/2008/EC",
+    "Regulation (EU) No 1025/2012",
+    "What flows from Article 12",
+    "Coverage boundary"
+  ]) {
+    assert.ok(html.includes(required), "missing required lifecycle text: " + required);
+  }
+});
+
+test("LVD lifecycle view keeps relationship semantics in readable text", () => {
+  const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
+
+  assert.match(html, /Product-law framework/i);
+  assert.match(html, /Common legislative framework/i);
+  assert.match(html, /Standardisation mechanism/i);
+  assert.match(html, /Amended by/i);
+  assert.match(html, /no successor is represented in this evidence view/i);
+  assert.doesNotMatch(html, /RELATED_TO/);
+  assert.doesNotMatch(html, />\s*all influences\s*</i);
+});
+
+test("LVD lifecycle view exposes official evidence and bounded-currentness", () => {
+  const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
+
+  assert.match(html, /Evidence checked 27 September 2026/i);
+  assert.match(html, /CELEX:02014L0035-20260530/);
+  assert.match(html, /CELEX:32024L2749/);
+  assert.match(html, /not live legal monitoring/i);
+  assert.match(html, /does not claim to map every amendment/i);
+});
+
+test("LVD lifecycle view links back to the two frozen LVD status examples", () => {
+  const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
+
+  assert.match(html, /data-case-id="lvd-en60335-2-14"/);
+  assert.match(html, /data-case-id="lvd-en60335-2-60"/);
+});
+
+test("lifecycle visual treatment preserves a narrow-screen text layout", () => {
+  const css = fs.readFileSync(path.join(__dirname, "styles.css"), "utf8");
+
+  assert.match(css, /\.lifecycle-timeline li/);
+  assert.match(css, /\.dependency-chain/);
+  assert.match(css, /@media \(max-width: 46rem\)/);
+  assert.match(css, /grid-template-columns: 1fr/);
+});

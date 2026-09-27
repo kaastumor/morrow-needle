@@ -312,3 +312,15 @@ test("change review reflows to one column on narrower viewports", () => {
   assert.match(css, /@media \(max-width: 34rem\)/);
   assert.match(css, /\.change-selector[\s\S]*display: grid/);
 });
+
+
+test("review surface exposes a concise regime summary and direct section navigation", () => {
+  assert.match(html, /Needle Navigator · Regime view/);
+  assert.match(html, /class="regime-at-a-glance"/);
+  assert.match(html, />3<\/strong><span>predecessor directives/);
+  assert.match(html, />2<\/strong><span>current core regulations/);
+  assert.match(html, /href="#map-heading">Regime map/);
+  assert.match(html, /href="#change-review-heading">Change review/);
+  assert.match(html, /href="#diagnostics-heading">Research diagnostics/);
+  assert.match(html, /href="#sources-heading">Official sources/);
+});

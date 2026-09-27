@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **REVIEW — REGIME UI v0.1 vs v0.2 / LVD TEST FROZEN**
+# **BUILD — SUMMARY-FIRST MEDICAL-DEVICES LANDING PAGE / LVD TEST FROZEN**
 
 Frozen scientific source:
 
@@ -165,74 +165,72 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
-### Immediate priority — Sponsor comparison of regime UI v0.1 and v0.2
+### Immediate priority — Summary-first medical-devices public landing page
 
-The sponsor-observed text-overload failure has been researched and addressed through #473.
+Sponsor review plus an independent foundational UX audit found a deeper problem than the #473 density issue:
 
-#473 completed:
-1. current-density measurement;
-2. UI/IA foundations and external pattern study;
-3. one concrete task-layered proposition;
-4. adversarial red team;
-5. separate comparison implementation;
-6. deployment and structural validation.
+> **both regime prototypes explain how legislation connects before explaining what it does and who needs to care.**
 
-Durable results:
-- `docs/discovery/issue473-regime-ui-density-research-2026-09-27.md`
-- `docs/design/issue473-regime-ui-proposition-v0.2-2026-09-27.md`
-- `docs/reviews/issue473-regime-ui-proposition-red-team-2026-09-27.md`
-- `docs/reviews/issue473-regime-ui-comparison-readout-2026-09-27.md`
+#475 therefore closed with:
 
-Accepted implementation:
-- PR #474;
-- main commit `ccb4c0c6575a829025b17cde2a00768ca430ddc9`;
-- v0.2 route: `/regime-v2/`;
-- original comparator remains `/regime/`.
+> **REVISE — PUBLIC ENTRY STARTS ONE ABSTRACTION LAYER TOO HIGH**
 
-Measured structural difference:
-- original approximate initially visible text: **2,087 words**;
-- v0.2 default Header + Overview: **266 words**;
-- reduction: **87.3%**.
+The v0.2 relationship/exploration components remain useful, but are no longer treated as the public entry contract.
 
-This is not a user-usability result.
+Current owner:
 
-v0.2 architecture:
-- **Overview** — regime shape and first-impression legal qualifiers;
-- **Explore** — one branch/family at a time;
-- **Change review** — one upstream change and compact review queue;
-- **Expert / research** — projection diagnostics and research boundaries.
+> **#477 — Summary-first medical-devices public landing page**
 
-Red-team invariants preserved on the default layer:
-- predecessor transition caveat;
-- compact MDR/IVDR scope cues;
-- enacted-vs-proposal distinction;
-- evidence date / coverage boundary;
-- explicit typed predecessor destinations.
+The experiment is bounded to the existing MDR/IVDR fixture.
 
-Current review owner:
+Pre-build controls already frozen:
+- six task prompts in `docs/evaluation/medical-devices-summary-first-v0.1/tasks-and-answer-key.md`;
+- claim-to-source map in `docs/evidence/issue477-medical-devices-summary-content-map-2026-09-27.md`;
+- adoption note in `docs/reviews/issue477-foundational-ux-review-adoption-2026-09-27.md`.
 
-> **#475 — Compare regime UI v0.1 and task-layered v0.2**
+Required reading order:
+1. identity / evidence boundary;
+2. **what these rules do**;
+3. **who and what is covered**;
+4. **current rules and dates**;
+5. **what the rules require**;
+6. **what changed**;
+7. **how the rules fit together**;
+8. **sources and coverage**.
 
-Review URLs:
+Important distinctions:
+- regime overview != legal act;
+- no single regime “in force” or application date;
+- MDR and IVDR retain separate legal states/dates;
+- main roles are non-exhaustive;
+- unlisted role != exclusion;
+- intended purpose/product/activity/time can determine relevance;
+- proposals remain separate from enacted law;
+- consequential source links remain public, not expert-only;
+- editorial summary remains a projection over reviewed official evidence.
 
-> Original: `https://morrow-needle-git-auto-473-ui-density-reset-jeroen91-2293.vercel.app/regime/`
+Build route:
 
-> v0.2: `https://morrow-needle-git-auto-473-ui-density-reset-jeroen91-2293.vercel.app/regime-v2/`
+> **`/medical-devices/`**
 
-Freeze until sponsor comparison:
-- no second dense regime;
-- no dataset expansion;
-- no additional UI modes;
-- no graph library;
-- no new diagnostics;
-- no automatic change/gap engine;
-- no LVD P8 changes.
+Comparators remain:
+- `/regime-v2/`;
+- `/regime/`;
+- the strong Commission/EUR-Lex official-source workflow.
 
-Only critical correctness/deployment repair may bypass the gate.
+Still prohibited:
+- second regime;
+- applicability classifier;
+- personalised legal-advice verdict;
+- new graph/ontology;
+- corpus expansion;
+- automated monitoring;
+- new diagnostics;
+- LVD P8 modification.
 
 Current state:
 
-> **WIP=1 — #475 SPONSOR UI COMPARISON / NO NEW BUILD WORK**
+> **WIP=1 — #477 SUMMARY-FIRST BUILD / NO EXTERNAL OUTREACH**
 
 ## Historical backlog archive
 

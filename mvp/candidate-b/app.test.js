@@ -39,8 +39,8 @@ function factDatetimes(html, factId) {
 function englishDate(isoDate) {
   const [year, month, day] = isoDate.split("-").map(Number);
   const months = [
-    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
   ];
   return `${day} ${months[month - 1]} ${year}`;
 }
@@ -439,4 +439,23 @@ test("operative dependency maintenance sentries scope locators to each route", (
   assert.match(procedureRoute, /Open full official source · Articles 10–11/);
 
   assert.doesNotMatch(html, /dependency-path" aria-label=/);
+});
+
+
+test("legal-view and evidence-verification dates remain separately typed even when equal", () => {
+  const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
+
+  const legalViewFacts = factTimes(html, "lvd-legal-view-date");
+  const evidenceFacts = factTimes(html, "lvd-evidence-verified-date");
+
+  assert.equal(legalViewFacts.length, 2);
+  assert.equal(new Set(legalViewFacts.map(item => item.datetime)).size, 1);
+  assert.equal(new Set(legalViewFacts.map(item => item.text)).size, 1);
+  assert.ok(legalViewFacts.every(item => item.text === englishDate(item.datetime)));
+
+  assert.equal(evidenceFacts.length, 1);
+  assert.ok(evidenceFacts.every(item => item.text === englishDate(item.datetime)));
+
+  assert.ok(html.includes('data-fact-id="lvd-legal-view-date"'));
+  assert.ok(html.includes('data-fact-id="lvd-evidence-verified-date"'));
 });

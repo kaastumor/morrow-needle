@@ -280,3 +280,305 @@ input:focus-visible {
 
   .status-badge { white-space: normal; }
 }
+
+
+.section-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem 1rem;
+  margin-top: 1.4rem;
+}
+
+.section-nav a {
+  display: inline-block;
+  border-bottom: 1px solid currentColor;
+  padding: .25rem 0;
+  font-weight: 700;
+}
+
+.act-context {
+  margin-top: 3rem;
+  border: 1px solid currentColor;
+  border-radius: .9rem;
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+.act-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: start;
+}
+
+.formal-citation {
+  margin: .25rem 0 0;
+  font-size: 1.05rem;
+  opacity: .8;
+}
+
+.act-freshness { margin-bottom: 1.75rem; }
+
+.act-summary {
+  max-width: 60rem;
+  margin-bottom: 1.75rem;
+}
+
+.act-summary h3 {
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
+  margin-top: .15rem;
+}
+
+.act-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .9rem;
+  margin: 0 0 2.25rem;
+}
+
+.act-facts > div {
+  border: 1px solid currentColor;
+  border-radius: .6rem;
+  padding: .9rem 1rem;
+}
+
+.act-facts dt {
+  font-weight: 800;
+  margin-bottom: .35rem;
+}
+
+.act-facts dd { margin: 0; }
+
+.act-section {
+  border-top: 1px solid currentColor;
+  padding-top: 1.6rem;
+  margin-top: 2rem;
+}
+
+.act-section h3 {
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
+  margin-top: .15rem;
+}
+
+.section-intro { max-width: 52rem; }
+
+.legal-lineage,
+.lifecycle-timeline,
+.dependency-chain {
+  list-style: none;
+  margin: 1.25rem 0;
+  padding: 0;
+}
+
+.legal-lineage {
+  display: grid;
+  gap: .75rem;
+  max-width: 48rem;
+}
+
+.legal-lineage li {
+  display: grid;
+  gap: .45rem;
+}
+
+.lineage-node {
+  display: grid;
+  gap: .35rem;
+  border: 1px solid currentColor;
+  border-radius: .6rem;
+  padding: .9rem 1rem;
+}
+
+.lineage-node a { width: fit-content; }
+
+.lineage-current { border-width: 2px; }
+
+.relation-label {
+  font-weight: 800;
+  font-size: .9rem;
+  padding-left: .25rem;
+}
+
+.bounded-unknown {
+  border-left: .25rem solid currentColor;
+  padding-left: .9rem;
+  max-width: 52rem;
+}
+
+.lifecycle-timeline {
+  display: grid;
+  gap: 0;
+  max-width: 58rem;
+}
+
+.lifecycle-timeline li {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 1rem;
+  padding: .9rem 0 .9rem 1.2rem;
+  border-left: .2rem solid currentColor;
+  position: relative;
+}
+
+.lifecycle-timeline li::before {
+  content: "";
+  position: absolute;
+  width: .55rem;
+  height: .55rem;
+  border: .15rem solid currentColor;
+  border-radius: 50%;
+  left: -.45rem;
+  top: 1.25rem;
+  background: Canvas;
+}
+
+.lifecycle-timeline time {
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.lifecycle-timeline div {
+  display: grid;
+  gap: .2rem;
+}
+
+.context-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .9rem;
+  margin-top: 1.25rem;
+}
+
+.context-card {
+  border: 1px solid currentColor;
+  border-radius: .6rem;
+  padding: 1rem;
+}
+
+.context-card h4 {
+  margin: .15rem 0 .55rem;
+  font-size: 1.1rem;
+}
+
+.context-card p { margin: .35rem 0 .8rem; }
+
+.relationship-type {
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  font-size: .74rem;
+  font-weight: 800;
+  opacity: .75;
+}
+
+.dependency-chain {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .75rem;
+  margin-top: 1.25rem;
+}
+
+.dependency-chain li {
+  display: grid;
+  gap: .35rem;
+  border: 1px solid currentColor;
+  border-radius: .6rem;
+  padding: .9rem 1rem;
+  position: relative;
+}
+
+.dependency-chain li:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  right: -.72rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: Canvas;
+  padding: 0 .15rem;
+  font-weight: 800;
+}
+
+.downstream-examples {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  align-items: center;
+}
+
+.downstream-examples p {
+  flex-basis: 100%;
+  margin-bottom: .15rem;
+}
+
+.downstream-examples button {
+  min-height: 2.7rem;
+  border: 1px solid currentColor;
+  border-radius: .45rem;
+  padding: .55rem .75rem;
+  background: Canvas;
+  color: CanvasText;
+  cursor: pointer;
+  text-align: left;
+}
+
+.evidence-details {
+  margin-top: 1rem;
+  border: 1px solid currentColor;
+  border-radius: .6rem;
+  padding: .8rem 1rem;
+}
+
+.evidence-details summary {
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.evidence-metadata {
+  display: grid;
+  grid-template-columns: minmax(10rem, 14rem) 1fr;
+  gap: .75rem 1rem;
+  margin-bottom: .25rem;
+}
+
+.evidence-metadata dt { font-weight: 800; }
+.evidence-metadata dd { margin: 0; }
+
+.coverage-note {
+  margin-top: 2rem;
+  border: 1px dashed currentColor;
+  border-radius: .6rem;
+  padding: .9rem 1rem;
+  max-width: 60rem;
+}
+
+.governing-act-link {
+  margin: 1.5rem 0 0;
+  font-weight: 800;
+}
+
+@media (max-width: 46rem) {
+  .act-header,
+  .act-facts,
+  .context-grid,
+  .dependency-chain,
+  .evidence-metadata {
+    grid-template-columns: 1fr;
+  }
+
+  .act-header {
+    display: grid;
+  }
+
+  .lifecycle-timeline li {
+    grid-template-columns: 1fr;
+    gap: .25rem;
+  }
+
+  .dependency-chain li:not(:last-child)::after {
+    content: "↓";
+    right: auto;
+    left: 1rem;
+    top: auto;
+    bottom: -.85rem;
+    transform: none;
+  }
+}

@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **BUILD — NAVIGATOR MACRO / REGIME CONSTELLATION v0.1 / LVD TEST FROZEN**
+# **REVIEW — REGIME CONSTELLATION RELATION INTEGRITY / LVD TEST FROZEN**
 
 Frozen scientific source:
 
@@ -165,7 +165,7 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
-### Immediate priority — Medical-devices regime constellation v0.1
+### Immediate priority — Medical-devices constellation relation-integrity review
 
 The LVD Navigator formative packet is complete and frozen:
 
@@ -198,9 +198,11 @@ Reason for the fixture:
 - current proposal material can test enacted-vs-proposed separation;
 - the official overview is already a strong grouped-list baseline.
 
-Current build owner:
+#457 first-build objective is complete and merged.
 
-> **#457 — Medical-devices regime constellation v0.1**
+Current review owner:
+
+> **#460 — Regime constellation compression and relation integrity**
 
 v0.1 contract:
 - first render capped at roughly 8–10 major objects/families;
@@ -223,9 +225,18 @@ Still prohibited:
 - commercial superiority claims;
 - modification of frozen LVD P8 materials.
 
+Current review findings:
+- top-level family aggregation was useful, but branch focus did not initially propagate to branch-specific child acts inside shared families;
+- EUDAMED 2021/2078 appeared in both the implementing family and the EUDAMED system lane without an explicit cross-reference/not-double-counted explanation;
+- family counts need visible source-date/counting semantics;
+- transition children need MDR / IVDR / both ownership visible at child level.
+
+Repair principle:
+> keep sibling context visible, but never let aggregation erase which branch an individual child actually belongs to.
+
 Current state:
 
-> **WIP=1 — #457 MEDICAL-DEVICES REGIME CONSTELLATION v0.1 / LVD TEST FROZEN**
+> **WIP=1 — #460 REGIME CONSTELLATION INTEGRITY REVIEW / LVD TEST FROZEN**
 
 ## Historical backlog archive
 

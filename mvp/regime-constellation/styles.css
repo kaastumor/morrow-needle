@@ -298,3 +298,42 @@ summary {
     text-align: left;
   }
 }
+
+
+/* #460 relation-integrity review repairs */
+
+.branch-badge {
+  display: inline-block;
+  width: fit-content;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: .12rem .42rem;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .035em;
+  text-transform: uppercase;
+}
+
+.child-note,
+.cross-reference-note,
+.family-count-note {
+  font-size: .9rem;
+  opacity: .82;
+}
+
+.child-list li.is-context {
+  opacity: .42;
+}
+
+.child-list li.is-context .branch-badge::after {
+  content: " · sibling context";
+}
+
+.cross-reference-note {
+  border-left: .2rem solid currentColor;
+  padding-left: .75rem;
+}
+
+.family-count-note time {
+  font-variant-numeric: tabular-nums;
+}

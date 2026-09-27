@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVERY — EU LEGISLATION NAVIGATOR P1/P2 ACTIVE / EXTERNAL USERS DEFERRED**
+# **DISCOVERY — EU LEGISLATION NAVIGATOR P3 COMPLETE / P4 BUILD NEXT / EXTERNAL USERS DEFERRED**
 
 Frozen scientific source:
 
@@ -165,76 +165,72 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
-### Immediate priority — Navigator P1/P2 reader job + evidence contract
+### Immediate priority — Navigator P4 content-complete LVD page
 
-The sponsor has adopted:
+The sponsor-adopted horizon remains:
 
 > `docs/plans/eu-legislation-navigator-prototype-v0.1.md`
 
-as the next bounded product/research horizon.
+Completed milestones:
 
-Important current-state reconciliation:
+- #434 — first deployed LVD lifecycle/context slice;
+- #437 — P1/P2 reader job, strongest alternatives and source-backed LVD content contract;
+- #438 — P3 presentation decision.
 
-- #434 is complete as the first Low Voltage Directive vertical slice;
-- sponsor use of the deployed page produced a strong **internal orientation/context signal**;
-- that signal is not external-user evidence, comparative superiority or market demand;
-- no second act is authorised yet;
-- cold external outreach remains deferred.
+P3 disposition:
 
-Current discovery owner:
+> **ADOPT_FOR_EXPERIMENT — SINGLE PROGRESSIVE-DISCLOSURE PAGE**
 
-> **#437 — Navigator P1/P2 reader job, alternatives and LVD evidence contract**
+Durable result:
 
-Durable P1/P2 result:
+> `docs/discovery/issue438-navigator-p3-presentation-decision-2026-09-27.md`
 
-> `docs/discovery/issue437-navigator-p1-p2-reader-job-evidence-2026-09-27.md`
+Presentation decision:
 
-Current product hypothesis:
+- keep one page and one reading order;
+- retain the competent concise source-linked note as a strong later comparator;
+- do not add an Overview / Legal-detail toggle now;
+- keep the split-view wireframe parked unless the completed page becomes unwieldy or real readers demonstrate distinct navigation/depth needs.
 
-> **for a reader who already has a specific EU act, one coherent page may reduce the work of reconstructing purpose, scope, lifecycle, legal lineage/context and evidence across several strong official surfaces.**
+Reason:
 
-Strong baseline receives full credit:
+- the split view duplicates purpose/scope, dates, lineage, Article-12 limits, freshness and coverage presentation;
+- that creates maintenance and hidden-caveat risk before any user need for separate modes is evidenced;
+- progressive disclosure can already support occasional orientation and deeper verification from one shared claim set.
 
-- EUR-Lex act/current consolidated text;
-- EUR-Lex summary;
-- Commission LVD/harmonised-standards page;
-- OEIL only where legislative history matters;
-- a competent source-linked note built from the same evidence.
+Current build owner:
 
-#437 disposition:
+> **#440 — Complete LVD Navigator content contract on single page**
 
-> **ADOPT_FOR_EXPERIMENT — COMPLETE THE LVD CONTENT CONTRACT, THEN RUN P3 PRESENTATION DECISION**
+#440 is limited to:
+- Article-1-grounded purpose;
+- Annex-II major exclusions;
+- bounded manufacturer / authorised-representative / importer / distributor orientation;
+- legal-as-of vs evidence-verified vs source-version semantics;
+- Articles 13/14 fallback-presumption context;
+- correction / evidence-boundary information;
+- warning/copy compression where safe;
+- preservation of the original known-standard lookup.
 
-Material content gaps now identified:
-
-1. Article-1-grounded purpose;
-2. Annex-II major exclusions;
-3. bounded manufacturer/importer/distributor orientation;
-4. explicit legal-as-of vs evidence-verified vs source-version semantics;
-5. Articles 13/14 fallback-presumption context;
-6. compact correction/evidence-boundary path.
-
-Do not answer these gaps with:
-- another act;
-- a broader graph;
-- national transposition;
-- case-law expansion;
+Still prohibited:
+- second act;
+- national transposition database;
+- case-law graph;
 - applicable-standard discovery;
+- general search;
 - live monitoring;
-- a new backend;
-- a new ontology.
+- new backend/model call;
+- external outreach.
 
-Next WIP after #437 closes:
+After #440:
+- P5 semantic/browser/accessibility review;
+- P6 maintenance rehearsal;
+- P7 readiness decision;
+- no second act before that gate.
 
-> **#438 — compare the same frozen LVD facts as a competent source-linked note, the current progressive-disclosure page, and only a cheap Overview/Legal-detail wireframe.**
+Current state:
 
-Default null for P3:
-
-> **one progressively disclosed page is sufficient; a view toggle must earn itself.**
-
-Current state after this P1/P2 checkpoint merges:
-
-> **WIP=1 — #438 NAVIGATOR P3 PRESENTATION DECISION / NO EXTERNAL OUTREACH**
+> **WIP=1 — #440 NAVIGATOR P4 CONTENT COMPLETION / NO EXTERNAL OUTREACH**
 
 ## Historical backlog archive
 

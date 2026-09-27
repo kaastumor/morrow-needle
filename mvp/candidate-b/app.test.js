@@ -21,6 +21,23 @@ function loadFixture(caseId) {
   return {meta, record: JSON.parse(fs.readFileSync(fixturePath, "utf8"))};
 }
 
+function factDatetimes(html, factId) {
+  const pattern = new RegExp(
+    '<time\\s+data-fact-id="' + factId + '"\\s+datetime="([^"]+)"',
+    "g"
+  );
+  return Array.from(html.matchAll(pattern), match => match[1]);
+}
+
+function dependencyRoute(html, dependencyId) {
+  const startMarker = '<article class="operative-route" data-dependency-id="' + dependencyId + '">';
+  const start = html.indexOf(startMarker);
+  assert.notEqual(start, -1, "dependency route not found: " + dependencyId);
+  const end = html.indexOf("</article>", start);
+  assert.notEqual(end, -1, "dependency route is not closed: " + dependencyId);
+  return html.slice(start, end + "</article>".length);
+}
+
 test("prototype uses exactly the five frozen #411 cases", () => {
   assert.deepEqual(CASES.map(entry => entry.id), [
     "gar-en497",
@@ -345,4 +362,59 @@ test("disclosures and relationship text receive explicit accessibility hardening
   assert.match(css, /\.detail-cue\s*\{[\s\S]*min-height:\s*2rem/);
   assert.match(css, /\.lineage-node,[\s\S]*overflow-wrap:\s*anywhere/);
   assert.match(css, /\.dependency-node,[\s\S]*overflow-wrap:\s*anywhere/);
+});
+
+
+test("typed repeated dates stay internally consistent without collapsing distinct temporal concepts", () => {
+  const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
+
+  const applicationDates = factDatetimes(html, "lvd-2024-2749-application");
+  const consolidationDates = factDatetimes(html, "lvd-consolidation-version");
+
+  assert.equal(applicationDates.length, 3);
+  assert.equal(new Set(applicationDates).size, 1);
+
+  assert.equal(consolidationDates.length, 3);
+  assert.equal(new Set(consolidationDates).size, 1);
+
+  assert.ok(html.includes('data-fact-id="lvd-2024-2749-application"'));
+  assert.ok(html.includes('data-fact-id="lvd-consolidation-version"'));
+});
+
+test("versioned LVD source links agree with the displayed consolidation-version fact", () => {
+  const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
+  const consolidationDate = factDatetimes(html, "lvd-consolidation-version")[0];
+
+  const eliVersions = Array.from(
+    html.matchAll(/https:\/\/eur-lex\.europa\.eu\/eli\/dir\/2014\/35\/(\d{4}-\d{2}-\d{2})\/eng/g),
+    match => match[1]
+  );
+  assert.ok(eliVersions.length >= 4);
+  assert.ok(eliVersions.every(value => value === consolidationDate));
+
+  const celexVersions = Array.from(
+    html.matchAll(/02014L0035-(\d{8})/g),
+    match => match[1].replace(/(\d{4})(\d{2})(\d{2})/, "$1-$2-$3")
+  );
+  assert.ok(celexVersions.length >= 2);
+  assert.ok(celexVersions.every(value => value === consolidationDate));
+});
+
+test("operative dependency maintenance sentries scope locators to each route", () => {
+  const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
+
+  const definitionRoute = dependencyRoute(html, "lvd-art2-9-reg1025-definition");
+  assert.match(definitionRoute, /LVD Article 2\(9\)/);
+  assert.match(definitionRoute, /imports definition from/i);
+  assert.match(definitionRoute, /Regulation \(EU\) No 1025\/2012 · Article 2\(1\)\(c\)/);
+  assert.match(definitionRoute, /defines “harmonised standard” by importing the definition/i);
+
+  const procedureRoute = dependencyRoute(html, "lvd-art12-reg1025-oj-procedure");
+  assert.match(procedureRoute, /LVD Article 12/);
+  assert.match(procedureRoute, /uses procedure in/i);
+  assert.match(procedureRoute, /Regulation \(EU\) No 1025\/2012 · Articles 10\(6\) and 11/);
+  assert.match(procedureRoute, /Article 10\(6\) provides/i);
+  assert.match(procedureRoute, /Article 11 provides/i);
+
+  assert.doesNotMatch(html, /dependency-path" aria-label=/);
 });

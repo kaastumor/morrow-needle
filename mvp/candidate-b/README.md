@@ -33,15 +33,23 @@ The first governing-act view is deliberately bounded to **Directive 2014/35/EU �
 
 It is text-first and source-linked. It shows:
 
+- Article-1-grounded purpose and voltage scope;
+- a first-class **Who / what does this concern?** view that separates formal addressee, economic actors, market activity, product scope, territory/time context and Annex-II exclusions;
+- bounded manufacturer / authorised-representative / importer / distributor orientation;
 - the displayed 73/23/EEC -> 2006/95/EC -> 2014/35/EU lineage;
 - adoption, publication, entry-into-force, transposition/application and repeal-transition dates as distinct events;
+- separate legal-as-of, evidence-verified and source-version dates;
 - the current consolidated text date and Directive (EU) 2024/2749 amendment;
 - Article 114 TFEU as the legal basis;
 - selected framework context from Regulation (EC) No 765/2008, Decision No 768/2008/EC and Regulation (EU) No 1025/2012;
-- Article 12's harmonised-standard/OJ-reference mechanism;
-- links back to the two frozen LVD standard-status examples.
+- first-class **operative legal dependencies**, including the imported harmonised-standard definition and Regulation 1025/2012 OJ-reference/formal-objection machinery;
+- Article 12's harmonised-standard/OJ-reference mechanism plus the represented Articles 13/14 fallback presumption routes;
+- links back to the two frozen LVD standard-status examples;
+- an explicit correction and evidence-coverage route.
 
 The view explicitly does **not** claim complete legal context. It excludes national transposition, a general case-law graph, applicable-standard discovery, all amendments/standards and recursive relationship traversal.
+
+“Operative dependency” is narrower than “related legislation”: the page shows an external provision only where it materially supplies a definition, procedure, condition or other legal mechanism needed to understand the focal act. Displaying such a dependency does not imply that the entire external act is imported into every LVD question.
 
 The visual treatment is secondary to semantic HTML: every displayed legal relationship remains readable without relying on arrows, layout or colour.
 

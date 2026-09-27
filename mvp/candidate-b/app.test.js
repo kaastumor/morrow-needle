@@ -157,7 +157,7 @@ test("LVD lifecycle view contains the required text-first legal information", ()
     "Decision No 768/2008/EC",
     "Regulation (EU) No 1025/2012",
     "What flows from Article 12",
-    "Coverage boundary"
+    "Coverage and correction"
   ]) {
     assert.ok(html.includes(required), "missing required lifecycle text: " + required);
   }
@@ -178,7 +178,10 @@ test("LVD lifecycle view keeps relationship semantics in readable text", () => {
 test("LVD lifecycle view exposes official evidence and bounded-currentness", () => {
   const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
 
-  assert.match(html, /Evidence checked 27 September 2026/i);
+  assert.match(html, /Evidence verified/i);
+  assert.match(html, /27 September 2026/i);
+  assert.match(html, /Legal view/i);
+  assert.match(html, /EUR-Lex consolidation used/i);
   assert.match(html, /CELEX:02014L0035-20260530/);
   assert.match(html, /CELEX:32024L2749/);
   assert.match(html, /not live legal monitoring/i);
@@ -199,4 +202,81 @@ test("lifecycle visual treatment preserves a narrow-screen text layout", () => {
   assert.match(css, /\.dependency-chain/);
   assert.match(css, /@media \(max-width: 46rem\)/);
   assert.match(css, /grid-template-columns: 1fr/);
+});
+
+
+test("LVD applicability separates formal addressee from practical scope dimensions", () => {
+  const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
+
+  for (const required of [
+    "Who / what does this concern?",
+    "Formal addressee",
+    "EU Member States",
+    "Object / material scope",
+    "Market activity",
+    "Economic operators",
+    "Territory / market context",
+    "Time represented here"
+  ]) {
+    assert.ok(html.includes(required), "missing applicability dimension: " + required);
+  }
+
+  assert.match(html, /50–1,000 V AC/);
+  assert.match(html, /75–1,500 V DC/);
+  assert.match(html, /Union market in the course of a commercial activity/i);
+  assert.match(html, /does not determine a reader's national implementation position/i);
+});
+
+test("LVD scope exposes Annex II exclusions without inventing alternative regimes", () => {
+  const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
+
+  assert.match(html, /Major Annex II exclusions/i);
+  assert.match(html, /explosive atmosphere/i);
+  assert.match(html, /radiology and medical purposes/i);
+  assert.match(html, /plugs and socket outlets for domestic use/i);
+  assert.match(html, /custom-built evaluation kits/i);
+  assert.match(html, /does not by itself tell you which other EU or national legal regime applies/i);
+});
+
+test("LVD actor orientation names roles but refuses personalised role determination", () => {
+  const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
+
+  for (const role of ["Manufacturer", "Authorised representative", "Importer", "Distributor"]) {
+    assert.match(html, new RegExp(role, "i"));
+  }
+
+  assert.match(html, /role orientation, not a determination of which role you occupy/i);
+  assert.match(html, /Article 6 — full source/i);
+  assert.match(html, /Article 9 — full source/i);
+});
+
+test("operative dependencies distinguish definition imports from procedural dependencies", () => {
+  const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
+
+  assert.match(html, /Operative legal dependencies/i);
+  assert.match(html, /IMPORTS_DEFINITION_FROM/);
+  assert.match(html, /LVD Article 2\(9\).*Regulation \(EU\) No 1025\/2012, Article 2\(1\)\(c\)/i);
+  assert.match(html, /USES_PROCEDURE_IN/);
+  assert.match(html, /Articles 10\(6\) and 11/i);
+  assert.match(html, /Why this matters here/i);
+  assert.match(html, /does not mean the whole external Regulation is automatically imported/i);
+  assert.match(html, /eli\/reg\/2012\/1025\/2024-12-13\/eng/);
+});
+
+test("LVD presumption section keeps Articles 12, 13 and 14 distinct", () => {
+  const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
+
+  assert.match(html, /Article 12 provides/i);
+  assert.match(html, /Article 13 provides a route involving published IEC safety provisions/i);
+  assert.match(html, /Article 14 provides a further national-standard route/i);
+  assert.match(html, /not a general certificate of full product compliance/i);
+});
+
+test("Navigator exposes a correction route and independent-status boundary", () => {
+  const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
+
+  assert.match(html, /Coverage and correction/i);
+  assert.match(html, /issues\/new/);
+  assert.match(html, /independent research prototype/i);
+  assert.match(html, /not an EU institution or official legal service/i);
 });

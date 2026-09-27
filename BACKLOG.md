@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **BUILD — REGIME CHANGE REVIEW v0.1 / LVD TEST FROZEN**
+# **REVIEW — PRESENTABLE REGIME PROTOTYPE / LVD TEST FROZEN**
 
 Frozen scientific source:
 
@@ -165,73 +165,63 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
-### Immediate priority — Static change-review blast-radius demonstrator
+### Immediate priority — Sponsor review of the presentable regime prototype
 
 The LVD Navigator formative packet remains frozen:
 
 > `docs/evaluation/navigator-formative-v0.1/`
 
-No participant outreach is authorised and the macro line remains separate from the frozen LVD test.
+No participant outreach is authorised and no macro-line work may modify the frozen LVD test artifact.
 
-Completed macro milestones:
-- #456 — selected the medical-devices regime;
-- #457 — built the bounded constellation;
-- #460 — repaired branch/count/cross-list compression defects;
-- #462 — defined safe coverage/review/gap signals;
-- #464 — added the four-state static research-diagnostics panel;
-- #467 — defined provision-aware review propagation.
+The first medical-devices macro/regime research burst has reached a reviewable product surface.
 
-#467 disposition:
+Completed:
+- #456 — selected the MDR/IVDR fixture;
+- #457 — built the nine-object regime constellation;
+- #460 — repaired child-branch/count/cross-list compression errors;
+- #462 — narrowed “gap” semantics to evidence/review signals;
+- #464 — added bounded Research Diagnostics;
+- #467 — defined provision-aware review propagation;
+- #468 — added the presentable three-control Change Review and review navigation.
 
-> **ADOPT_FOR_EXPERIMENT — PROVISION-AWARE REVIEW PROPAGATION**
+Accepted review build:
+- PR #470;
+- merged main commit `c8afbbde7bf2356c5125b223e14b5a2baa279c32`;
+- exact accepted PR head `f403a3a1fe997709beccf00c70ce2c000be76fc9`;
+- Vercel SUCCESS;
+- mirrored GitHub static/browser gate SUCCESS;
+- 77 Node assertions passed;
+- static bundle build SUCCESS.
 
-Durable discovery:
+Review candidate:
 
-> `docs/discovery/issue467-regime-blast-radius-2026-09-27.md`
+> https://morrow-needle-git-auto-468-static-change-review-jeroen91-2293.vercel.app/regime/
 
-Binding review-propagation rule:
+Current review owner:
 
-> **typed dependency + changed provision/semantic overlap; ordinary graph reachability is insufficient.**
+> **#471 — Sponsor review of medical-devices regime prototype**
 
-Queue states:
-- **DIRECT_REVIEW**
-- **DOWNSTREAM_REVIEW**
-- **CONTEXT_ONLY**
-- **NO_PROPAGATION**
-- **OUT_OF_SCOPE**
+Review the surface as a product, especially:
+1. does the macro view actually make a dense regime feel smaller;
+2. does MDR/IVDR focus preserve useful sibling context;
+3. do family drill-downs carry enough legal meaning without overload;
+4. does Change Review make propagation + stop reasons intuitive;
+5. do Research Diagnostics belong in the public view or an expert/research layer;
+6. does the whole thing feel like one progressive product or two surfaces that should separate.
 
-Controls:
-- 2024/1860 -> both core branches + transition/EUDAMED review, but not every descendant;
-- 2025/1324 -> 2019/1396 expert-panel branch only; no broader downstream propagation earned;
-- 2023/1194 -> represented 2022/2346 child only; no graph expansion required.
+Freeze until sponsor review:
+- no second dense regime;
+- no dataset expansion;
+- no automatic graph traversal;
+- no new diagnostics;
+- no severity/risk scoring;
+- no LVD P8 changes.
 
-Non-propagating defaults:
-- family membership;
-- genealogy alone;
-- generic citation;
-- proposal relationship for current-law state;
-- non-binding guidance without an explicit claim dependency;
-- cross-list navigation reuse.
-
-Current build owner:
-
-> **#468 — Static change-review blast-radius demonstrator**
-
-The build must make exclusions visible:
-> a small review queue is a success; a large glowing graph is not.
-
-Still prohibited:
-- automated legal-effect analysis;
-- recursive traversal;
-- risk/severity scoring;
-- another dense regime;
-- complete medical-device dataset;
-- modification of frozen LVD P8 materials;
-- user/market claim.
+Only critical correctness/deployment defects may bypass this freeze.
 
 Current state:
 
-> **WIP=1 — #468 STATIC CHANGE-REVIEW DEMONSTRATOR / LVD TEST FROZEN**
+> **WIP=1 — #471 SPONSOR REVIEW GATE / NO NEW BUILD WORK**
 
 ## Historical backlog archive
 

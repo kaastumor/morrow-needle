@@ -202,7 +202,7 @@ Current product-readiness threshold:
 
 Current state:
 
-> **WIP=1 — #425 PRODUCT READINESS / NO EXTERNAL OUTREACH**
+> **WIP=1 — #425 HOSTING GATE / NO EXTERNAL OUTREACH**
 
 Current readiness audit:
 
@@ -230,6 +230,14 @@ Smallest next step:
 > **host + verify the current narrow artifact**
 
 The connected Vercel capability currently exposes no team/project, and no GitHub Pages management action is available through the connected GitHub toolset. Avoid adding GitHub Actions deployment machinery merely to bypass that unless the sponsor explicitly accepts the cost trade-off.
+
+A separate Replit app was considered and rejected because it would create a shadow implementation outside the canonical GitHub product path merely to obtain a URL.
+
+Current dependency:
+
+> **HOST THE GENERATED CANONICAL BUNDLE THROUGH A REAL DEPLOYMENT TARGET**
+
+No further Candidate-B feature work is justified solely to avoid this dependency.
 
 External-user re-entry is deferred until the artifact itself is credible enough to earn attention. When it returns, prefer a short self-serve task, warm introduction, or compensated research over cold unpaid long-form outreach.
 

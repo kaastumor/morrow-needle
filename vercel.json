@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "buildCommand": "node mvp/candidate-b/build-static-demo.js",
+  "buildCommand": "node --test mvp/candidate-b/app.test.js mvp/candidate-b/build-static-demo.test.js && node mvp/candidate-b/build-static-demo.js",
   "outputDirectory": "dist",
   "cleanUrls": true
 }

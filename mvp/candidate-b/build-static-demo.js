@@ -18,6 +18,12 @@ const REGIME_FILES = Object.freeze([
   "app.js"
 ]);
 
+const REGIME_V2_FILES = Object.freeze([
+  "index.html",
+  "styles.css",
+  "app.js"
+]);
+
 const FIXTURE_FILES = Object.freeze([
   "gar-en497-authoritative-dynamic-set-v0.1.json",
   "machinery-en50434-restriction-v0.1.json",
@@ -36,6 +42,7 @@ function buildStaticDemo() {
 
   const appOut = path.join(DIST, "mvp", "candidate-b");
   const regimeOut = path.join(DIST, "regime");
+  const regimeV2Out = path.join(DIST, "regime-v2");
   const fixturesOut = path.join(DIST, "fixtures", "dependency");
 
   for (const file of APP_FILES) {
@@ -46,6 +53,13 @@ function buildStaticDemo() {
     copyFile(
       path.join(ROOT, "mvp", "regime-constellation", file),
       path.join(regimeOut, file)
+    );
+  }
+
+  for (const file of REGIME_V2_FILES) {
+    copyFile(
+      path.join(ROOT, "mvp", "regime-density-v0.2", file),
+      path.join(regimeV2Out, file)
     );
   }
 
@@ -73,6 +87,7 @@ function buildStaticDemo() {
     appFiles: APP_FILES,
     fixtureFiles: FIXTURE_FILES,
     regimeFiles: REGIME_FILES,
+    regimeV2Files: REGIME_V2_FILES,
     externalValueProven: false,
     liveMonitoring: false
   };
@@ -89,8 +104,8 @@ function buildStaticDemo() {
 if (require.main === module) {
   const manifest = buildStaticDemo();
   process.stdout.write(
-    `Built Candidate-B + regime constellation static demo with ${manifest.fixtureFiles.length} canonical fixtures.\n`
+    `Built Candidate-B + regime comparison surfaces with ${manifest.fixtureFiles.length} canonical fixtures.\n`
   );
 }
 
-module.exports = {APP_FILES, REGIME_FILES, FIXTURE_FILES, buildStaticDemo};
+module.exports = {APP_FILES, REGIME_FILES, REGIME_V2_FILES, FIXTURE_FILES, buildStaticDemo};

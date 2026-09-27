@@ -157,7 +157,7 @@ test("LVD lifecycle view contains the required text-first legal information", ()
     "Decision No 768/2008/EC",
     "Regulation (EU) No 1025/2012",
     "What flows from Article 12",
-    "Coverage boundary"
+    "Coverage and correction"
   ]) {
     assert.ok(html.includes(required), "missing required lifecycle text: " + required);
   }

@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVERY — EU LEGISLATION NAVIGATOR P3 COMPLETE / P4 BUILD NEXT / EXTERNAL USERS DEFERRED**
+# **REVIEW — EU LEGISLATION NAVIGATOR P5 ACTIVE / EXTERNAL USERS DEFERRED**
 
 Frozen scientific source:
 
@@ -165,7 +165,7 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
-### Immediate priority — Navigator P4 content-complete LVD page
+### Immediate priority — Navigator P5 semantic/browser/accessibility review
 
 The sponsor-adopted horizon remains:
 
@@ -175,42 +175,47 @@ Completed milestones:
 
 - #434 — first deployed LVD lifecycle/context slice;
 - #437 — P1/P2 reader job, strongest alternatives and source-backed LVD content contract;
-- #438 — P3 presentation decision.
+- #438 — P3 presentation decision: single progressive-disclosure page;
+- #440 — P4 content-complete LVD page.
 
-P3 disposition:
+#440 merged through PR #442 after the exact Vercel-gated head passed deterministic Candidate-B tests and static-bundle tests.
 
-> **ADOPT_FOR_EXPERIMENT — SINGLE PROGRESSIVE-DISCLOSURE PAGE**
+The completed page now includes:
 
-Durable result:
-
-> `docs/discovery/issue438-navigator-p3-presentation-decision-2026-09-27.md`
-
-Presentation decision:
-
-- keep one page and one reading order;
-- retain the competent concise source-linked note as a strong later comparator;
-- do not add an Overview / Legal-detail toggle now;
-- keep the split-view wireframe parked unless the completed page becomes unwieldy or real readers demonstrate distinct navigation/depth needs.
-
-Reason:
-
-- the split view duplicates purpose/scope, dates, lineage, Article-12 limits, freshness and coverage presentation;
-- that creates maintenance and hidden-caveat risk before any user need for separate modes is evidenced;
-- progressive disclosure can already support occasional orientation and deeper verification from one shared claim set.
-
-Current build owner:
-
-> **#440 — Complete LVD Navigator content contract on single page**
-
-#440 is limited to:
 - Article-1-grounded purpose;
-- Annex-II major exclusions;
-- bounded manufacturer / authorised-representative / importer / distributor orientation;
-- legal-as-of vs evidence-verified vs source-version semantics;
-- Articles 13/14 fallback-presumption context;
-- correction / evidence-boundary information;
-- warning/copy compression where safe;
-- preservation of the original known-standard lookup.
+- first-class applicability dimensions:
+  - formal addressee;
+  - object/material scope;
+  - market activity;
+  - economic operators;
+  - territory/market context;
+  - time;
+  - Annex-II exclusions;
+- bounded economic-operator orientation;
+- separate legal-view / evidence-verified / source-version dates;
+- operative legal dependencies with exact focal/external provisions and why-it-matters explanations;
+- Articles 12–14 represented presumption routes;
+- correction/coverage boundary;
+- preserved known-standard lookup and LVD status examples.
+
+Current review owner:
+
+> **#443 — Navigator P5 semantic integrity, browser and accessibility**
+
+P5 is explicitly adversarial, not feature work.
+
+It must attack:
+- formal-addressee vs practical-scope confusion;
+- voltage-range / exclusion / actor-role misreadings;
+- temporal conflation;
+- lineage vs framework-context confusion;
+- operative-dependency overreach;
+- Article-12 full-compliance inference;
+- currentness/completeness implications;
+- page density / hierarchy;
+- keyboard, focus, reflow, semantic structure and browser interaction.
+
+Critical semantic misrepresentation blocks progression.
 
 Still prohibited:
 - second act;
@@ -222,15 +227,13 @@ Still prohibited:
 - new backend/model call;
 - external outreach.
 
-After #440:
-- P5 semantic/browser/accessibility review;
-- P6 maintenance rehearsal;
-- P7 readiness decision;
-- no second act before that gate.
+Only if P5 passes:
+
+> **P6 — maintenance/update rehearsal on the same LVD page**
 
 Current state:
 
-> **WIP=1 — #440 NAVIGATOR P4 CONTENT COMPLETION / NO EXTERNAL OUTREACH**
+> **WIP=1 — #443 NAVIGATOR P5 INTEGRITY REVIEW / NO EXTERNAL OUTREACH**
 
 ## Historical backlog archive
 

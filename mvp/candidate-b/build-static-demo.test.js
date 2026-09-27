@@ -32,6 +32,8 @@ test("static demo bundle contains only the frozen Candidate-B surface and five f
 });
 
 test("bundle is generated from canonical fixture paths rather than a committed second dataset", () => {
+  buildStaticDemo();
+
   for (const file of FIXTURE_FILES) {
     const canonical = fs.readFileSync(
       path.join(ROOT, "fixtures", "dependency", file),

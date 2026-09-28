@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **REVISE — MEDICAL-DEVICES CURRENT-STATE CONTRACT / LVD TEST FROZEN**
+# **EVIDENCE_GATED — MEDICAL-DEVICES HUMAN VALUE / LVD TEST FROZEN**
 
 Frozen scientific source:
 
@@ -165,55 +165,56 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
-### Immediate priority — #481 current-state / freshness repair
+### Current gate — medical-devices human value
 
-#479 completed the internal comparison of the summary-first medical-devices landing page against:
-- the frozen six #477 orientation tasks;
-- `/regime-v2/`;
-- the strongest current Commission/EUR-Lex workflow.
+#481 completed the bounded current-state/freshness repair and fresh comparison.
 
-Durable review:
-
-> `docs/reviews/issue479-summary-first-comparison-2026-09-28.md`
+Durable evidence:
+- `docs/evidence/issue481-medical-devices-current-state-repair-2026-09-28.md`;
+- `docs/reviews/issue481-current-state-freshness-comparison-2026-09-28.md`.
 
 Disposition:
 
-> **REVISE_SUMMARY_FIRST — FOUNDATIONAL CONTRACT SUPPORTED / CURRENT-STATE CONTRACT NEEDS REPAIR**
+> **CONTINUE — PRODUCT-READINESS HORIZON COMPLETE / HUMAN VALUE NOW OWNS THE UNCERTAINTY**
 
-Supported:
-- purpose and practical effect now precede relationship exploration;
-- MDR/IVDR branch distinction is understandable from the public entry;
-- manufacturer/importer/distributor relevance is visible;
-- the IVDR laboratory/research-use boundary is visible;
-- landmark application dates remain transition-qualified;
-- proposal/current-law distinction and public verification links survive;
-- `/regime-v2/` remains useful as the deeper relationship layer.
+Supported internally:
+- summary-first public entry survives;
+- purpose/actors/material boundaries precede relationship exploration;
+- current-state wording is locally honest and explicitly bounded;
+- 28 May 2026 EUDAMED operation is represented without inventing a regime-wide date;
+- current EUR-Lex MDR/IVDR source-version metadata is refreshed;
+- COM(2025) 1023 remains explicitly non-enacted/ongoing;
+- the repair did not require a broad act inventory;
+- `/regime-v2/` remains the deeper legal-relationship layer.
 
-Not yet supported:
-- external comprehension or preference;
-- task-time improvement;
-- commercial/product value;
-- expansion to a second regime or individual act pages.
+Still unproven:
+- novice/user comprehension in real use;
+- preference over the strongest official workflow;
+- task-time or error reduction;
+- trust/value sufficient to change behaviour;
+- commercial value;
+- generalisation to another regime.
 
-Main red-team defect:
-- the landing page locally frames **“Current rules and dates”** / **“What changed after the core Regulations?”** more broadly than its represented change set supports;
-- current official material also surfaces 2025/2026 implementing/delegated developments and the 28 May 2026 EUDAMED mandatory-use milestone;
-- several of those later layers already exist in `/regime-v2/`, so this is an information-contract/freshness issue rather than missing fixture capability.
+Largest remaining uncertainty:
 
-Current owner:
+> **Does a person who does not already know the fixture understand, trust and prefer the integrated orientation/verification path enough for it to matter over the ordinary Commission/EUR-Lex workflow?**
 
-> **#481 — REVISE: Repair current-state/freshness contract for medical-devices landing page**
+Current mode:
 
-Bounded objective:
-1. keep summary-first reading order;
-2. make current/change wording locally honest;
-3. surface the minimum 2026 operational/current-state context needed to avoid false completeness;
-4. keep COM(2025) 1023 visibly non-enacted with current procedure link;
-5. continue routing deeper act-family exploration to `/regime-v2/`.
+> **EVIDENCE_GATED — HUMAN VALUE TEST READY / NO OUTREACH AUTHORISED**
 
-Falsifier:
+No new implementation WIP is earned.
 
-> **PARK_PUBLIC_REGIME_PAGE** or narrow to a source-linked note if an honest current-state layer requires reproducing so much of the official baseline that the summary-first advantage disappears, or if no clear integrated task advantage survives.
+Re-entry requires one of:
+1. explicit sponsor authorization for a low-friction human test;
+2. a sponsor-provided/warm participant or credible recruitment route;
+3. equivalent externally owned use evidence.
+
+When re-entry is authorized, use the repaired summary-first route against the strong official workflow in a short self-serve comparison (roughly 5–10 minutes), using the six frozen #477 tasks plus source-traceability/current-state questions.
+
+A positive human result authorizes a separate product-investment gate, not automatic expansion.
+
+A neutral/negative result should narrow or park this public-regime direction before further build work.
 
 Still prohibited:
 - second regime;
@@ -224,11 +225,12 @@ Still prohibited:
 - automated monitoring;
 - new diagnostics;
 - LVD P8 changes;
-- external-user-value claim from internal review.
+- external-user-value or commercial claims from internal evidence;
+- outreach without explicit sponsor authorization.
 
 Current state:
 
-> **WIP=1 — #481 BOUNDED CURRENT-STATE / FRESHNESS REPAIR**
+> **COMPLETED_FOR_CURRENT_INTERNAL_EVIDENCE — HUMAN VALUE GATED**
 
 ## Historical backlog archive
 

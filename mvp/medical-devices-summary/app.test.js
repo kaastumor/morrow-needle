@@ -190,6 +190,7 @@ test("navigation is continuous-reading and keyboard-native", () => {
 });
 
 test("mobile layout is one-column and does not require horizontal graph scrolling", () => {
+  assert.match(css, /body \\{ margin: 0; overflow-wrap: anywhere; \\}/);
   assert.match(css, /@media \(max-width: 42rem\)/);
   assert.match(css, /\.topbar, main \{[\s\S]*width: min\(72ch, calc\(100% - 2rem\)\)/);
   assert.doesNotMatch(css, /grid-template-columns/);

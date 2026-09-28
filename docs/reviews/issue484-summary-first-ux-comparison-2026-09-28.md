@@ -34,3 +34,26 @@ Requested execution setting: Codex, GPT-6 Sol High. Independently observed model
 **ADOPT as the internal structural candidate, pending sponsor qualitative acceptance.** The frozen first-contact, role-contiguity, source, qualification, date, navigation and reflow criteria are supported by source/DOM and local rendering. The longer desktop scroll and unobserved comprehension remain explicit. No claim of user value, legal completeness, current law re-verification or external readiness follows. A material legal-qualification defect found in review would override this recommendation.
 
 Branch `auto/484-summary-first-ux` is the reviewable checkpoint. Initial automatic approval review blocked PR creation because it did not recognize explicit authorization for potential collaborator notifications. The sponsor then explicitly authorized finishing this PR and reported no repository collaborators; no reviewers are requested. #484 remains open; no merge or deployment is implied. The next step is sponsor review of the focused PR and unresolved observations. Run 3 remains conditional on an accepted P5 result.
+
+
+## Direct P5 accessibility completion — 29 September 2026
+
+A bounded recovery closed the three previously unobserved browser items on the exact PR candidate. Vercel reported the preview deployment for code checkpoint `7d760d5c0f17274116a2945d972a8c3e25b16b44` successful. The browser sandbox could not navigate external HTTPS directly, so the rendered checks used Chromium `set_content` with byte-identical Git source from that deployed commit rather than claiming remote-page rendering. The candidate CSS blob at the final code checkpoint is `30d21b7f167390cb76d54eb398951a40c81d5930`.
+
+### Observed defect and bounded fix
+
+At 200% root text size, the pre-fix candidate had no overflow at 1440×900 but long non-link tokens caused horizontal page scrolling at 390×844 and 320×700. No content was clipped. The smallest demonstrated fix was inherited `overflow-wrap: anywhere` on `body`; a focused regression assertion was added. An initial over-escaped regression assertion caused one CI/Vercel failure and was corrected without changing application behavior.
+
+After the fix, Chromium at 200% text size reported, at all three tested viewports (1440×900, 390×844, 320×700): **zero horizontal page overflow, zero clipped elements, and all 35 links still rendered**. The 320px result therefore also preserves the previously required narrow reflow under the stronger 200% text stress.
+
+### Rendered contrast
+
+Fresh light- and dark-theme computed-style checks found no text or focus-indicator failures against the conservative 4.5:1 text and 3:1 focus thresholds used for this recovery. Minimum observed text/focus contrast was approximately **9.40:1 in light theme** (white canvas) and **7.84:1 in dark theme** (RGB 18/18/18 canvas). Focused links render a solid ~3px current-color outline with positive offset.
+
+### Complete keyboard traversal
+
+Sequential Tab traversal covered all **35** anchors in DOM order at both 1440×900 and 390×844. Every focused link remained rendered and auto-scrolled fully within the viewport; no trap or obscured-focus case was observed. Enter generated activation for all 35 links under navigation-suppression instrumentation, including all **25 external official-source links**. The earlier built-route smoke observation for the skip link, in-page targets and `/regime-v2/#explore` destination remains applicable; this recovery did not claim successful live opening of external EU destinations because outbound browser navigation is blocked in the execution sandbox.
+
+### Verification and disposition
+
+Current-head repository sanitation and Unit tests passed after the fix, and Vercel returned success. The structural candidate therefore returns to **ADOPT as the internal structural candidate, pending sponsor qualitative acceptance**. Reader comprehension, assistive-technology traversal, fresh live legal-procedure verification and real-user value remain outside this internal P5 result. No merge or publication follows from this evidence.

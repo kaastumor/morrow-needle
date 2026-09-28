@@ -16,6 +16,32 @@ Status: **CANONICAL EXECUTION RUNBOOK**
 The scheduled worker is an executor, not the product owner. GitHub repository
 state overrides chat memory and the scheduler prompt.
 
+## Verified autonomous handoff
+
+Use one designated executor for the current WIP. Prefer that executor to read the
+input, execute the bounded task, save the result and verify its durable receipt.
+Separate producers require a working consumer and approved delivery route first.
+Keep issues/PRs/BACKLOG as owners; do not introduce another queue.
+
+A comment/readback test proves only that operation. Verify branch/PR writes, local
+execution, browser observations and private persistence when the selected task
+requires them. A prompt cannot grant access, select a model or enforce a budget.
+Test one real existing-result handoff and one substantive recovery cycle before
+claiming end-to-end operation. Use the scheduled-task contract for activation and
+cost review; timer activation alone is not acceptance.
+
+A new explicit sponsor-authorized contract may replace a historical campaign's
+read-only envelope. Actual permission or automatic-approval denial still stops the
+affected operation: never switch tools, credentials or destinations to evade it.
+Without a permitted durable route, stop new intake and report the capability gap.
+
+Resume pending results before producing another. Record exact task/input/output
+revision and a separate attempt identity; verify saved bytes or readback and the
+consumer disposition. Receipt is not substantive acceptance. Default new
+unacknowledged-output capacity is one; unknown legacy backlog blocks new intake,
+not explicitly selected recovery of an existing item. Inspect open work and its
+latest checkpoint before treating stale main/PR text as unfinished execution.
+
 ## Source-of-truth order
 
 At the start of every run inspect, in order:
@@ -47,13 +73,17 @@ First inspect unfinished automation PRs and their active ownership. Resume,
 repair or finish work owned by this worker or explicitly handed off or confirmed
 abandoned. An unfinished PR is not permission to take over another live session.
 
-Select at most **one** eligible open issue whose title begins `AUTO READY —`.
+Select at most **one** eligible open issue whose title begins `AUTO READY —`,
+or one bounded slice explicitly delegated in a current sponsor-authorized execution
+checkpoint on the active issue. Such a checkpoint must name scope, acceptance,
+owner and stop conditions; it does not authorize an adjacent task or new horizon.
 Use the current `BACKLOG.md` priority order and the active parent gate's scope;
 dependencies must be satisfied. Historical completed queues, including
 #105–#116, are not an active task list. Resolve or record dependencies on live
 work before selecting a separate task.
 
-If no eligible AUTO READY issue exists, do not manufacture work. Inspect for a blocker
+If neither an eligible AUTO READY issue nor an explicitly delegated bounded slice
+exists, do not manufacture work. Inspect for a blocker
 only if the active gate explicitly requires it, then stop the **worker run**.
 
 Sponsor continuity is a project-level allocation rule, not permission for the scheduled

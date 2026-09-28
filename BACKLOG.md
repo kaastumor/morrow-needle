@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **EVIDENCE_GATED — MEDICAL-DEVICES HUMAN VALUE / LVD TEST FROZEN**
+# **DISCOVER → IMPLEMENT — MEDICAL-DEVICES PUBLIC UI/UX / LVD TEST FROZEN**
 
 Frozen scientific source:
 
@@ -165,56 +165,70 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
-### Current gate — medical-devices human value
+### Immediate priority — #484 summary-first public UI/UX refinement
 
-#481 completed the bounded current-state/freshness repair and fresh comparison.
+#481 completes the bounded current-state/freshness repair.
 
 Durable evidence:
 - `docs/evidence/issue481-medical-devices-current-state-repair-2026-09-28.md`;
 - `docs/reviews/issue481-current-state-freshness-comparison-2026-09-28.md`.
 
-Disposition:
+#481 disposition:
 
-> **CONTINUE — PRODUCT-READINESS HORIZON COMPLETE / HUMAN VALUE NOW OWNS THE UNCERTAINTY**
+> **CONTINUE — FRESHNESS CONTRACT REPAIRED / RETURN TO UI/UX RESEARCH-IMPLEMENTATION LOOP**
 
-Supported internally:
-- summary-first public entry survives;
-- purpose/actors/material boundaries precede relationship exploration;
+Supported:
+- summary-first reading order remains the public-entry contract;
 - current-state wording is locally honest and explicitly bounded;
-- 28 May 2026 EUDAMED operation is represented without inventing a regime-wide date;
-- current EUR-Lex MDR/IVDR source-version metadata is refreshed;
-- COM(2025) 1023 remains explicitly non-enacted/ongoing;
+- the 28 May 2026 EUDAMED operational milestone is represented without inventing one regime-wide date;
+- current EUR-Lex source-version metadata is refreshed;
+- COM(2025) 1023 remains visibly non-enacted/ongoing;
 - the repair did not require a broad act inventory;
 - `/regime-v2/` remains the deeper legal-relationship layer.
 
+Important sponsor correction:
+
+> **the public-view programme has not finished its internal UI/UX research-and-implementation phase.**
+
+#481 repaired content/currentness. It did not answer the remaining visual hierarchy, scan-path, progressive-disclosure, source-presentation, mobile or interaction-design questions.
+
+Current owner:
+
+> **#484 — DISCOVER → PROPOSE → RED TEAM → IMPLEMENT → COMPARE: Summary-first public landing UI/UX refinement**
+
+#484 must:
+1. observe/measure the repaired `/medical-devices/` surface;
+2. research strong public/legal design precedents;
+3. form one primary UI proposition;
+4. red-team it;
+5. implement the surviving proposition;
+6. compare before vs after structurally.
+
+Research baseline includes:
+- Europa Component Library;
+- GOV.UK Design System;
+- W3C/WCAG;
+- EUR-Lex;
+- legislation.gov.uk;
+- additional strong public/legal precedent where useful.
+
+Primary UX questions:
+- does the repaired page still read like a styled legal memo?
+- can first-contact scanning improve without hiding important qualifications?
+- are sources too visually noisy?
+- do role/date/change sections need stronger hierarchy or grouping?
+- does in-page navigation help orientation?
+- what may safely move behind progressive disclosure, if anything?
+- does mobile preserve the intended reading path?
+
 Still unproven:
-- novice/user comprehension in real use;
+- novice/user comprehension;
 - preference over the strongest official workflow;
-- task-time or error reduction;
-- trust/value sufficient to change behaviour;
+- task-time/error reduction;
 - commercial value;
 - generalisation to another regime.
 
-Largest remaining uncertainty:
-
-> **Does a person who does not already know the fixture understand, trust and prefer the integrated orientation/verification path enough for it to matter over the ordinary Commission/EUR-Lex workflow?**
-
-Current mode:
-
-> **EVIDENCE_GATED — HUMAN VALUE TEST READY / NO OUTREACH AUTHORISED**
-
-No new implementation WIP is earned.
-
-Re-entry requires one of:
-1. explicit sponsor authorization for a low-friction human test;
-2. a sponsor-provided/warm participant or credible recruitment route;
-3. equivalent externally owned use evidence.
-
-When re-entry is authorized, use the repaired summary-first route against the strong official workflow in a short self-serve comparison (roughly 5–10 minutes), using the six frozen #477 tasks plus source-traceability/current-state questions.
-
-A positive human result authorizes a separate product-investment gate, not automatic expansion.
-
-A neutral/negative result should narrow or park this public-regime direction before further build work.
+Those are later gates. They do not block the currently intended UI/UX research loop.
 
 Still prohibited:
 - second regime;
@@ -223,14 +237,13 @@ Still prohibited:
 - new graph/ontology;
 - broad act inventory;
 - automated monitoring;
-- new diagnostics;
 - LVD P8 changes;
-- external-user-value or commercial claims from internal evidence;
+- external-user-value/commercial claims from internal evidence;
 - outreach without explicit sponsor authorization.
 
 Current state:
 
-> **COMPLETED_FOR_CURRENT_INTERNAL_EVIDENCE — HUMAN VALUE GATED**
+> **WIP=1 — #484 UI/UX RESEARCH → IMPLEMENTATION, after #483/#481 merge**
 
 ## Historical backlog archive
 

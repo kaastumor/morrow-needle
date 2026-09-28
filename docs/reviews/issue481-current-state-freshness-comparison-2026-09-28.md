@@ -109,46 +109,58 @@ All six #477 task families remain supported:
 
 ## 7. Product-health decision
 
-Direction for this horizon:
+Direction for the #481 freshness horizon:
 
-> **CONTINUE**
+> **CONTINUE — FRESHNESS CONTRACT REPAIRED / RETURN TO UI/UX RESEARCH-IMPLEMENTATION LOOP**
 
 Reason:
-- the foundational public-information contract survived;
-- the freshness repair remained small;
+- the foundational summary-first information contract survived;
+- the current-state repair remained small;
 - the official baseline did not eliminate the plausible cross-source integration job;
-- no architecture expansion was required.
+- no architecture expansion was required;
+- #481 answered a legal-information freshness defect, not the remaining visual/interaction-design questions.
 
-But continuation does **not** mean another internal build.
+Important correction:
 
-The largest consequential uncertainty is now:
+> #481 does **not** establish that internal product-readiness work is complete.
 
-> **Does a person who does not already know the fixture actually understand, trust and prefer this integrated path enough for it to matter over an ordinary official-source workflow?**
+The public-view programme was already operating as a UI/UX research -> proposition -> red-team -> implementation -> comparison loop. The repaired summary-first page has not yet received the intended dedicated visual/interaction pass.
 
-Further internally selected UI/content work would increasingly become self-grading.
+The next internal uncertainty is therefore:
+
+> **Can the summary-first page become materially easier to scan and navigate without hiding legal qualifications or turning the legislation into a dashboard?**
 
 ## 8. Successor mode
 
-> **EVIDENCE_GATED — HUMAN VALUE TEST READY / NO OUTREACH AUTHORISED**
+> **#484 — DISCOVER -> PROPOSE -> RED TEAM -> IMPLEMENT -> COMPARE: SUMMARY-FIRST PUBLIC LANDING UI/UX REFINEMENT**
 
-No new implementation WIP is earned.
+The successor should investigate and then implement one primary UI/UX proposition against the repaired `/medical-devices/` route.
 
-Re-entry requires one of:
-1. explicit sponsor authorization to run a low-friction human test;
-2. a sponsor-provided/warm participant or credible recruitment route;
-3. equivalent externally owned use evidence.
+Required research includes:
+- actual repaired-page structure and density;
+- Europa Component Library;
+- GOV.UK Design System;
+- WCAG/W3C guidance;
+- EUR-Lex;
+- legislation.gov.uk;
+- relevant public/legal-information precedents.
 
-The first human test should remain small:
-- target duration: roughly 5–10 minutes;
-- compare the repaired summary-first route with the strong official workflow, not raw legislation;
-- use the six frozen task families plus source-traceability/current-state questions;
-- record comprehension/error/source confidence and qualitative workflow preference;
-- do not ask for legal advice or real-case compliance determinations;
-- do not infer market demand from usability alone.
+The implementation should focus on:
+- visual hierarchy;
+- scannability;
+- in-page navigation;
+- role/product presentation;
+- date/current-operation presentation;
+- source-link treatment;
+- relationship handoff;
+- mobile behavior;
+- bounded progressive disclosure only where information is genuinely secondary.
 
-A positive human result would authorize a separate product-investment gate, not automatic expansion to a second regime.
+Material legal qualifications must remain visible.
 
-A neutral/negative result should trigger narrowing or parking before further build work.
+Human testing remains a later requirement for comprehension/value claims, but it is **not** the immediate successor to #481.
+
+No external outreach is authorized.
 
 ## 9. What remains prohibited
 
@@ -164,8 +176,10 @@ A neutral/negative result should trigger narrowing or parking before further bui
 
 ## 10. Conclusion
 
-#481 completes the internally credible version of this experiment.
+#481 completes the bounded current-state/freshness repair.
 
-The next useful evidence is human/external.
+It returns the public-view branch to its intended UI/UX research-and-implementation programme.
 
-More internal polishing is not the current bottleneck.
+Next owner:
+
+> **#484 — summary-first public landing UI/UX refinement**

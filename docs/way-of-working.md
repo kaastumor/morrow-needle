@@ -651,6 +651,9 @@ do not return full worker transcripts to the coordinator.
   paid work; do not silently buy credits, increase limits or add API services. Account for
   retries, review and repair when assessing cost per verified useful outcome. Operator
   efficiency anecdotes are hypotheses, not promised savings or measured billing reductions.
+- If usage telemetry or host spending limits are unavailable, label the budget as an
+  estimate and bound exposure through an approved cadence and run count. Do not claim an
+  enforced spending ceiling; if one is required, activation remains blocked.
 - No meaningful delta means the defined `NO_CHANGE` result and no discretionary notice.
   Notify for reviewable completion, an actionable blocker, budget exhaustion or a material
   contradiction; do not promise silence if the host always delivers task results.

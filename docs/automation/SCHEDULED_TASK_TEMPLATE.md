@@ -21,7 +21,8 @@ Use hourly polling only when justified by latency; start substantial research da
 - Read/write permissions:
 - Maximum runtime: 20 minutes by default for new scheduled research
 - Maximum items per run: 1
-- Usage ceiling: sponsor-approved value; actual telemetry or UNKNOWN
+- Usage budget and enforcement: sponsor-approved value; actual telemetry or UNKNOWN;
+  approved cadence/run cap when spending limits cannot be enforced
 - Deduplication key: repository + lane + task ID + input revision + contract version
 - Maximum pending packets: specify a numeric cap before activation
 - Memory cap: 8 KiB resume index / 20 recent receipt references by default

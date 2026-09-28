@@ -7,7 +7,8 @@ own durable decisions. Do not create PROJECT/CURRENT_STATE/DECISIONS duplicates.
 
 | Change | Required checks / evidence |
 | --- | --- |
-| Guidance/research text only | `python scripts/check_repo_sanitation.py`; review actual diff, references, owner consistency and privacy |
+| Guidance/operating text | `python scripts/check_repo_sanitation.py`; review actual diff, references, owner consistency and privacy |
+| Research/evidence text | Sanitation plus the active issue's evidence checks: verify sources, provenance, governing time, alternatives/falsifiers, negative results and the relevant incumbent comparison; do not infer scientific acceptance from a clean document |
 | Python behavior | Install with `python -m pip install -e ".[test]"`; focused tests, then `python -m pytest -q` where affected |
 | Corpus/schema/evaluation | `python scripts/validate_adversarial_corpus.py` and affected tests; scientific acceptance remains separate |
 | Browser MVP | Relevant Node tests and actual changed user journey; build when applicable |

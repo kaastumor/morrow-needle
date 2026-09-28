@@ -42,6 +42,26 @@ unacknowledged-output capacity is one; unknown legacy backlog blocks new intake,
 not explicitly selected recovery of an existing item. Inspect open work and its
 latest checkpoint before treating stale main/PR text as unfinished execution.
 
+## Delegated trial and successor selection
+
+When a current sponsor contract explicitly delegates autonomous follow-up, use its
+recorded scope and expiry, including ordinary next-task selection within the charter.
+For the authorized trial see [native-trial-2026-09-29.md](native-trial-2026-09-29.md).
+The issue authorization and saved task are operational authority for that trial;
+this pending documentation is not a claim that a PR has merged.
+
+Reconcile primary evidence, disposition and next action before producing another
+output. The one-output cap covers unprocessed output, not every open PR. Processing
+does not grant merge, scientific/source acceptance or human approval. If the current
+WIP is blocked, retain its re-entry condition and explicitly suspend it before one
+earned nonconflicting alternative; do not accumulate blocked successors.
+
+Broad opportunity selection runs at most once per local day or on materially changed
+evidence, requirements or capability. Compare at most three candidates and select one;
+task-driven research for active development is not restricted to that daily scan.
+A new hourly invocation is not a new evidence trigger. No valuable executable option
+means a cheap NO_CHANGE, not another audit or manufactured task.
+
 ## Source-of-truth order
 
 At the start of every run inspect, in order:
@@ -64,8 +84,8 @@ use its detailed search/confirmation guidance only when the active task needs it
 On a new session, read the governing documents above. Within the same resumed task,
 compare their SHAs and reload changed rules/state plus task-relevant evidence; do not
 repeatedly load the entire history. A new task or changed gate requires a fresh scope
-check. The worker's AUTO READY eligibility boundary still applies; a model choice does
-not expand it.
+check. The eligibility rules below and any current scoped sponsor delegation apply;
+a model choice alone does not expand them.
 
 ## Selection rule
 
@@ -73,23 +93,19 @@ First inspect unfinished automation PRs and their active ownership. Resume,
 repair or finish work owned by this worker or explicitly handed off or confirmed
 abandoned. An unfinished PR is not permission to take over another live session.
 
-Select at most **one** eligible open issue whose title begins `AUTO READY —`,
-or one bounded slice explicitly delegated in a current sponsor-authorized execution
-checkpoint on the active issue. Such a checkpoint must name scope, acceptance,
-owner and stop conditions; it does not authorize an adjacent task or new horizon.
-Use the current `BACKLOG.md` priority order and the active parent gate's scope;
-dependencies must be satisfied. Historical completed queues, including
-#105–#116, are not an active task list. Resolve or record dependencies on live
-work before selecting a separate task.
+Select at most **one** bounded eligible task. An `AUTO READY —` issue or an
+explicitly delegated active-issue slice is eligible. Under a current sponsor contract
+that delegates ordinary allocation, the worker may also select and record the next
+justified question within the charter and accepted parent gate. Record scope,
+baseline/adversary, acceptance, ownership and stop conditions before execution,
+using the current issue and a reviewable BACKLOG update. A label or another sponsor
+prompt is not required for that delegated ordinary choice.
 
-If neither an eligible AUTO READY issue nor an explicitly delegated bounded slice
-exists, do not manufacture work. Inspect for a blocker
-only if the active gate explicitly requires it, then stop the **worker run**.
-
-Sponsor continuity is a project-level allocation rule, not permission for the scheduled
-executor to invent a successor. Selecting DISCOVER / CONSOLIDATE / USE / REVIEW-RELEASE /
-MAINTAIN scope belongs to the owner/governing project process and must appear in BACKLOG
-before this worker executes it.
+Use current BACKLOG priority and inspect latest issue/PR evidence before trusting
+stale summaries. Resolve live dependencies; completed queues such as #105–#116 are
+not active work. Finish or explicitly suspend blocked WIP before an earned alternative.
+Do not create a new strategic horizon or weaken an acceptance gate. If no valuable,
+feasible authorized task exists, stop this run with NO_CHANGE.
 
 ## Method
 
@@ -157,7 +173,7 @@ from repository state without repeating or guessing prior work.
 
 - branch from current `main`;
 - use a short-lived `auto/<issue>-<slug>` branch;
-- one AUTO issue per run;
+- one bounded eligible task per run;
 - add regression tests/fixtures where behavior can regress;
 - run repository sanitation and relevant tests;
 - open a PR;

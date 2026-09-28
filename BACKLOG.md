@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **REVISE — MEDICAL-DEVICES CURRENT-STATE CONTRACT / LVD TEST FROZEN**
+# **DISCOVER → IMPLEMENT — MEDICAL-DEVICES PUBLIC UI/UX / LVD TEST FROZEN**
 
 Frozen scientific source:
 
@@ -165,55 +165,70 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
-### Immediate priority — #481 current-state / freshness repair
+### Immediate priority — #484 summary-first public UI/UX refinement
 
-#479 completed the internal comparison of the summary-first medical-devices landing page against:
-- the frozen six #477 orientation tasks;
-- `/regime-v2/`;
-- the strongest current Commission/EUR-Lex workflow.
+#481 completes the bounded current-state/freshness repair.
 
-Durable review:
+Durable evidence:
+- `docs/evidence/issue481-medical-devices-current-state-repair-2026-09-28.md`;
+- `docs/reviews/issue481-current-state-freshness-comparison-2026-09-28.md`.
 
-> `docs/reviews/issue479-summary-first-comparison-2026-09-28.md`
+#481 disposition:
 
-Disposition:
-
-> **REVISE_SUMMARY_FIRST — FOUNDATIONAL CONTRACT SUPPORTED / CURRENT-STATE CONTRACT NEEDS REPAIR**
+> **CONTINUE — FRESHNESS CONTRACT REPAIRED / RETURN TO UI/UX RESEARCH-IMPLEMENTATION LOOP**
 
 Supported:
-- purpose and practical effect now precede relationship exploration;
-- MDR/IVDR branch distinction is understandable from the public entry;
-- manufacturer/importer/distributor relevance is visible;
-- the IVDR laboratory/research-use boundary is visible;
-- landmark application dates remain transition-qualified;
-- proposal/current-law distinction and public verification links survive;
-- `/regime-v2/` remains useful as the deeper relationship layer.
+- summary-first reading order remains the public-entry contract;
+- current-state wording is locally honest and explicitly bounded;
+- the 28 May 2026 EUDAMED operational milestone is represented without inventing one regime-wide date;
+- current EUR-Lex source-version metadata is refreshed;
+- COM(2025) 1023 remains visibly non-enacted/ongoing;
+- the repair did not require a broad act inventory;
+- `/regime-v2/` remains the deeper legal-relationship layer.
 
-Not yet supported:
-- external comprehension or preference;
-- task-time improvement;
-- commercial/product value;
-- expansion to a second regime or individual act pages.
+Important sponsor correction:
 
-Main red-team defect:
-- the landing page locally frames **“Current rules and dates”** / **“What changed after the core Regulations?”** more broadly than its represented change set supports;
-- current official material also surfaces 2025/2026 implementing/delegated developments and the 28 May 2026 EUDAMED mandatory-use milestone;
-- several of those later layers already exist in `/regime-v2/`, so this is an information-contract/freshness issue rather than missing fixture capability.
+> **the public-view programme has not finished its internal UI/UX research-and-implementation phase.**
+
+#481 repaired content/currentness. It did not answer the remaining visual hierarchy, scan-path, progressive-disclosure, source-presentation, mobile or interaction-design questions.
 
 Current owner:
 
-> **#481 — REVISE: Repair current-state/freshness contract for medical-devices landing page**
+> **#484 — DISCOVER → PROPOSE → RED TEAM → IMPLEMENT → COMPARE: Summary-first public landing UI/UX refinement**
 
-Bounded objective:
-1. keep summary-first reading order;
-2. make current/change wording locally honest;
-3. surface the minimum 2026 operational/current-state context needed to avoid false completeness;
-4. keep COM(2025) 1023 visibly non-enacted with current procedure link;
-5. continue routing deeper act-family exploration to `/regime-v2/`.
+#484 must:
+1. observe/measure the repaired `/medical-devices/` surface;
+2. research strong public/legal design precedents;
+3. form one primary UI proposition;
+4. red-team it;
+5. implement the surviving proposition;
+6. compare before vs after structurally.
 
-Falsifier:
+Research baseline includes:
+- Europa Component Library;
+- GOV.UK Design System;
+- W3C/WCAG;
+- EUR-Lex;
+- legislation.gov.uk;
+- additional strong public/legal precedent where useful.
 
-> **PARK_PUBLIC_REGIME_PAGE** or narrow to a source-linked note if an honest current-state layer requires reproducing so much of the official baseline that the summary-first advantage disappears, or if no clear integrated task advantage survives.
+Primary UX questions:
+- does the repaired page still read like a styled legal memo?
+- can first-contact scanning improve without hiding important qualifications?
+- are sources too visually noisy?
+- do role/date/change sections need stronger hierarchy or grouping?
+- does in-page navigation help orientation?
+- what may safely move behind progressive disclosure, if anything?
+- does mobile preserve the intended reading path?
+
+Still unproven:
+- novice/user comprehension;
+- preference over the strongest official workflow;
+- task-time/error reduction;
+- commercial value;
+- generalisation to another regime.
+
+Those are later gates. They do not block the currently intended UI/UX research loop.
 
 Still prohibited:
 - second regime;
@@ -222,13 +237,13 @@ Still prohibited:
 - new graph/ontology;
 - broad act inventory;
 - automated monitoring;
-- new diagnostics;
 - LVD P8 changes;
-- external-user-value claim from internal review.
+- external-user-value/commercial claims from internal evidence;
+- outreach without explicit sponsor authorization.
 
 Current state:
 
-> **WIP=1 — #481 BOUNDED CURRENT-STATE / FRESHNESS REPAIR**
+> **WIP=1 — #484 UI/UX RESEARCH → IMPLEMENTATION, after #483/#481 merge**
 
 ## Historical backlog archive
 

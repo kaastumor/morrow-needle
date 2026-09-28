@@ -66,7 +66,7 @@ test("T4 IVDR laboratory boundary is visible and rejects label-only classificati
   assert.match(block, /manufacturer specifically intends them for in-vitro diagnostic examination/i);
 });
 
-test("T5 dates remain member-act dates with transition qualification", () => {
+test("T5 dates remain member-act dates with transition qualification and current operation", () => {
   const block = section("dates", "requirements");
   assert.match(block, /26 May 2021/);
   assert.match(block, /MDR general application \/ predecessor replacement/);
@@ -74,12 +74,16 @@ test("T5 dates remain member-act dates with transition qualification", () => {
   assert.match(block, /IVDR general application \/ predecessor replacement/);
   assert.match(block, /These dates do not settle every legacy-device case/);
   assert.match(block, /subject to conditions/i);
+  assert.match(block, /Current operational milestone — 28 May 2026/);
+  assert.match(block, /first four EUDAMED modules became mandatory to use/i);
+  assert.match(block, /does not mean all six EUDAMED modules are already mandatory/i);
   assert.doesNotMatch(block, /regime applies from/i);
 });
 
 test("T6 proposal remains explicitly non-binding and verification is public", () => {
   assert.match(html, /Proposal — not enacted/);
-  assert.match(html, /still requires adoption by Parliament and Council to become binding Union law/i);
+  assert.match(html, /Procedure 2025\/0404\(COD\) remains ongoing/i);
+  assert.match(html, /eur-lex\.europa\.eu\/procedure\/EN\/2025_404/);
   assert.match(html, /Sources and coverage/);
   assert.match(html, /MDR — current EUR-Lex access/);
   assert.match(html, /IVDR — current EUR-Lex access/);
@@ -94,6 +98,16 @@ test("role effects are concise, source-linked, and do not become personal verdic
   assert.doesNotMatch(html, /you are covered/i);
   assert.doesNotMatch(html, /you are exempt/i);
   assert.doesNotMatch(html, /compliant with the law/i);
+});
+
+test("later-development section is explicitly selected rather than falsely complete", () => {
+  assert.match(html, /Selected later changes and current procedure/);
+  assert.match(html, /not a complete list of post-2017 acts/i);
+  assert.match(html, /2025–2026 measures continue beyond 2024\/1860/);
+  assert.match(html, /Decision \(EU\) 2025\/2371/);
+  assert.match(html, /Implementing Regulation \(EU\) 2026\/977/);
+  assert.match(html, /Delegated Regulations \(EU\) 2026\/1359 and 2026\/1451/);
+  assert.doesNotMatch(html, /What changed after the core Regulations\?/);
 });
 
 test("material qualifications are visible rather than hidden behind generic details", () => {
@@ -132,9 +146,9 @@ test("predecessor mapping stays typed and transition-qualified", () => {
 test("editorial and legal/source dates stay distinct", () => {
   const block = section("sources");
   assert.match(block, /Editorial review date/);
-  assert.match(block, /27 September 2026/);
+  assert.match(block, /28 September 2026/);
   assert.match(block, /MDR consolidated version seen in EUR-Lex/);
-  assert.match(block, /1 January 2026/);
+  assert.match(block, /19 July 2026/);
   assert.match(block, /IVDR consolidated version seen in EUR-Lex/);
   assert.match(block, /10 January 2025/);
 });

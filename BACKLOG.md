@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **REVIEW — SUMMARY-FIRST MEDICAL-DEVICES LANDING PAGE / LVD TEST FROZEN**
+# **REVISE — MEDICAL-DEVICES CURRENT-STATE CONTRACT / LVD TEST FROZEN**
 
 Frozen scientific source:
 
@@ -165,70 +165,70 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
-### Immediate priority — Sponsor review of summary-first medical-devices landing page
+### Immediate priority — #481 current-state / freshness repair
 
-#477 completed the bounded foundational UX correction.
+#479 completed the internal comparison of the summary-first medical-devices landing page against:
+- the frozen six #477 orientation tasks;
+- `/regime-v2/`;
+- the strongest current Commission/EUR-Lex workflow.
 
-Independent review finding now treated as binding for this experiment:
+Durable review:
 
-> **public entry must explain what the rules do and who needs to care before asking the reader to understand the legal web.**
+> `docs/reviews/issue479-summary-first-comparison-2026-09-28.md`
 
-Completed under #477:
-- six frozen comprehension/relevance tasks;
-- claim-to-source editorial evidence map;
-- summary-first continuous reading page;
-- separate `/medical-devices/` route;
-- unchanged `/regime/` and `/regime-v2/` comparators;
-- existing Vercel/static test gate extended to the new route.
+Disposition:
 
-Accepted build:
-- PR #478;
-- main merge `bfe8c469b71b43c042e9e511e598397110dc4489`;
-- exact accepted PR head `7eda75216740e3cc3c89e624699393c074fa3465`;
-- Vercel SUCCESS;
-- sanitation SUCCESS;
-- mirrored repository test/build SUCCESS.
+> **REVISE_SUMMARY_FIRST — FOUNDATIONAL CONTRACT SUPPORTED / CURRENT-STATE CONTRACT NEEDS REPAIR**
 
-Review candidate:
+Supported:
+- purpose and practical effect now precede relationship exploration;
+- MDR/IVDR branch distinction is understandable from the public entry;
+- manufacturer/importer/distributor relevance is visible;
+- the IVDR laboratory/research-use boundary is visible;
+- landmark application dates remain transition-qualified;
+- proposal/current-law distinction and public verification links survive;
+- `/regime-v2/` remains useful as the deeper relationship layer.
 
-> https://morrow-needle-git-auto-477-summary-first-landing-jeroen91-2293.vercel.app/medical-devices/
+Not yet supported:
+- external comprehension or preference;
+- task-time improvement;
+- commercial/product value;
+- expansion to a second regime or individual act pages.
 
-Comparator:
+Main red-team defect:
+- the landing page locally frames **“Current rules and dates”** / **“What changed after the core Regulations?”** more broadly than its represented change set supports;
+- current official material also surfaces 2025/2026 implementing/delegated developments and the 28 May 2026 EUDAMED mandatory-use milestone;
+- several of those later layers already exist in `/regime-v2/`, so this is an information-contract/freshness issue rather than missing fixture capability.
 
-> https://morrow-needle-git-auto-473-ui-density-reset-jeroen91-2293.vercel.app/regime-v2/
+Current owner:
 
-Current review owner:
+> **#481 — REVISE: Repair current-state/freshness contract for medical-devices landing page**
 
-> **#479 — Summary-first medical-devices landing page**
+Bounded objective:
+1. keep summary-first reading order;
+2. make current/change wording locally honest;
+3. surface the minimum 2026 operational/current-state context needed to avoid false completeness;
+4. keep COM(2025) 1023 visibly non-enacted with current procedure link;
+5. continue routing deeper act-family exploration to `/regime-v2/`.
 
-Review around the frozen six questions:
-1. purpose;
-2. MDR vs IVDR;
-3. importer/distributor relevance;
-4. laboratory/research-use boundary;
-5. dates/transition;
-6. verification/proposal status.
+Falsifier:
 
-Important product boundary:
-- this is a regime overview, not one legal instrument;
-- no single regime status/application date is invented;
-- relationship exploration remains secondary;
-- research/maintenance diagnostics are not public primary navigation;
-- no personalised applicability verdict is provided.
+> **PARK_PUBLIC_REGIME_PAGE** or narrow to a source-linked note if an honest current-state layer requires reproducing so much of the official baseline that the summary-first advantage disappears, or if no clear integrated task advantage survives.
 
-Freeze until sponsor review:
-- no second regime;
-- no individual MDR/IVDR page build;
-- no applicability selector;
-- no new graph/diagnostics;
-- no automated monitoring;
-- no LVD P8 changes.
-
-Only critical correctness/deployment repairs may bypass the gate.
+Still prohibited:
+- second regime;
+- individual MDR/IVDR page build;
+- applicability classifier;
+- new graph/ontology;
+- broad act inventory;
+- automated monitoring;
+- new diagnostics;
+- LVD P8 changes;
+- external-user-value claim from internal review.
 
 Current state:
 
-> **WIP=1 — #479 SPONSOR SUMMARY-FIRST REVIEW / NO NEW BUILD WORK**
+> **WIP=1 — #481 BOUNDED CURRENT-STATE / FRESHNESS REPAIR**
 
 ## Historical backlog archive
 

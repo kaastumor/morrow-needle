@@ -14,7 +14,7 @@ Use hourly polling only when justified by latency; start substantial research da
 - Name:
 - Purpose:
 - Surface:
-- Model and reasoning:
+- Requested model and reasoning (verify actual host selection separately):
 - Trigger or cadence (including timezone):
 - Authoritative inputs (including pinned revision and access):
 - Persistent state (durable location, owner and recovery procedure):
@@ -56,7 +56,8 @@ constraints and exact filled contract. A link alone is insufficient if files are
 5. Compare against recorded accepted and pending state; emit only meaningful deltas.
    Do not reissue completed/pending packets. Revalidate revision changes before applying.
 6. Respect pending capacity and overlapping ownership. Unknown state or no durable output
-   route blocks new intake. No-change returns NO_CHANGE without discretionary notification.
+   route blocks new intake while permitted review/recovery continues. No-change returns
+   NO_CHANGE without discretionary notification.
 7. Keep memory small/structured/capped. Archive full evidence/logs in the approved location;
    summarize decisions and references. Never delete unresolved state to satisfy the cap.
 8. Checkpoint before the timebox expires. Report partial work, unavailable access, skipped

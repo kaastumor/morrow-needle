@@ -25,7 +25,7 @@ pending PR/checkpoint. Repeat critical rules in the capsule even when AGENTS con
 
 - Task ID, contract version, input revision, lane and current owner:
 - Requested / actual model and effort (UNKNOWN if unavailable):
-- Timebox; maximum items; usage ceiling and telemetry availability:
+- Timebox; maximum items; approved usage budget/enforcement and telemetry availability:
 - Durable output/checkpoint location and privacy classification:
 - Existing packet/PR to resume; deduplication key; dependency:
 - Critical constraints repeated: project evidence/privacy rules; no unapproved merge,

@@ -592,13 +592,21 @@ Before returning, review the actual output/diff against them. AGENTS instruction
 guidance, not an enforced permission boundary; use actual tool permissions and existing
 CI/review gates. Never claim that writing this policy configured the runtime.
 
-### Surface and model routing
+### Project mode, surface, model and status
 
-| Work | Surface / recommendation |
+These are separate decisions. `BACKLOG.md` owns project mode and active WIP; the task's
+primary output determines its execution surface. Model/effort is a recommendation until
+the host's actual selection is verified. The completion receipt records execution status;
+it does not change project mode or grant acceptance.
+
+| Primary output | Execution surface |
 | --- | --- |
 | Requirements, task design, prioritization, critique, short answers | Ordinary Chat |
 | Substantial research, connected-app work, finished non-code deliverables | Work |
 | Primary result is repository inspection/change, tests, review, commit or PR | Codex |
+
+| Work | Model/effort recommendation |
+| --- | --- |
 | Narrow repeatable work with objective verification | GPT-6 Luna |
 | Normal bounded multi-step execution and allocation | GPT-6 Sol Medium |
 | Difficult interpretation, architecture, debugging or weak verification | Sol High |
@@ -611,8 +619,9 @@ cannot switch models: report a mismatch before implementation; do not silently c
 a substitution. Missing access is not a reason to buy more reasoning. Prefer a deterministic
 script for mechanical work; do not use Chat to circumvent Work/Codex usage limits.
 
-No permanent expensive supervisor. A short coordinator selects and accepts work using
-durable state; workers keep implementation detail outside that context. Use subagents
+No permanent expensive supervisor. When coordination is needed, a short-lived coordinator
+selects and reconciles work using durable state; this policy configures no dispatcher.
+Workers keep implementation detail outside that context. Use subagents
 only for genuinely independent bounded work or validation; no role-play hierarchy or
 recursive delegation by default. One writer per overlapping scope. Use completion
 signals/long waits, not repeated polling. Summarize material results and artifact refs;
@@ -623,8 +632,8 @@ do not return full worker transcripts to the coordinator.
 - New scheduled research tasks default to **20 minutes and one bounded item per run**.
   Reserve time to checkpoint; at the limit persist partial work and the next exact action.
   The timebox ends execution, not the hypothesis or project. Do not stretch it by spawning
-  workers or starting a second run. Other task types require an explicit timebox in their
-  approved capsule; do not infer unlimited execution.
+  workers or starting a second run. Other task types record a task-appropriate timebox in
+  their capsule; this does not require fresh sponsor approval within an accepted mandate.
 - This document does not change existing saved schedules. Before activation, verify that
   their saved prompts, access and runtime settings implement the approved contract.
   If the runtime cannot enforce a limit, label it advisory and test checkpointing.
@@ -633,11 +642,14 @@ do not return full worker transcripts to the coordinator.
   durable state before retrying an ambiguous write. Never repeat an impossible operation.
 - Repeated identical failure on two successive runs blocks that lane pending a changed
   prerequisite; emit one actionable notice. Record the block in durable state so future
-  invocations do only the eligibility check. Do not autonomously rewrite/disable schedules.
+  invocations of that lane check eligibility without repeating the failed operation.
+  Continue permitted review/recovery and separately eligible, nonconflicting work under
+  the existing allocation rules. Do not autonomously rewrite/disable schedules.
 - Before new intake, inspect pending results and consumer acknowledgments. Deduplicate
   on repository, lane, task ID, input revision and contract version, with a separate attempt
   ID. Revalidate stale inputs before application. Unknown pending state is a recovery gate,
-  not permission to generate another packet. Review debt takes priority over new intake.
+  not permission to generate another packet; review and recovery may continue. Review debt
+  takes priority over new intake.
 - Keep existing backlog/issues/PRs as owners, not a new shadow task database. Scheduled
   state must have an approved durable location, a pending-item cap and a bounded resume
   summary (default at most 8 KiB and 20 recent receipt references). Preserve unresolved

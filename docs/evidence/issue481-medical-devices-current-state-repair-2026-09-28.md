@@ -104,3 +104,12 @@ Link COM(2025) 1023 to the current EUR-Lex procedure and describe it as an ongoi
 ## Falsifier retained
 
 If honest current-state orientation requires reproducing a broad act inventory, the public regime page should narrow or park rather than becoming a second relationship browser.
+
+
+## Fresh official-version check
+
+At the final #481 comparison checkpoint:
+- EUR-Lex reports the MDR current consolidated version as **19 July 2026**;
+- EUR-Lex reports the IVDR current consolidated version as **10 January 2025**.
+
+The landing-page verification metadata is aligned to those current EUR-Lex states rather than retaining the earlier #477 observation for MDR.

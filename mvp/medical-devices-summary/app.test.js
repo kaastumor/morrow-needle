@@ -153,6 +153,15 @@ test("H2-only contents navigation tells the reading story and stays out of the s
   assert.doesNotMatch(siteBar, /<nav/);
 });
 
+test("mobile reading order starts with the explanation before the contents list", () => {
+  const summaryPos = html.indexOf('id="summary"');
+  const navPos = html.indexOf('<nav class="page-nav"');
+  const coveredPos = html.indexOf('id="covered"');
+  assert.ok(summaryPos < navPos && navPos < coveredPos);
+  assert.match(css, /grid-template-areas:\s*"contents summary"\s*"contents reading"/);
+  assert.match(css, /@media \(max-width: 64rem\)[\s\S]*grid-template-areas:\s*"summary" "contents" "reading"/);
+});
+
 test("relationship browser remains secondary and comes after substantive orientation", () => {
   const relationPos = html.indexOf('id="relationships"');
   const requirementPos = html.indexOf('id="requirements"');

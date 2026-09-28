@@ -135,12 +135,16 @@ h3 {
 
 .page-layout {
   display: grid;
+  grid-template-areas:
+    "contents summary"
+    "contents reading";
   grid-template-columns: minmax(11rem, 14rem) minmax(0, 48rem);
-  gap: clamp(2rem, 5vw, 4.5rem);
+  column-gap: clamp(2rem, 5vw, 4.5rem);
   align-items: start;
 }
 
 .contents-rail {
+  grid-area: contents;
   position: sticky;
   top: 1rem;
 }
@@ -182,6 +186,7 @@ h3 {
 }
 
 .reading-column {
+  grid-area: reading;
   min-width: 0;
 }
 
@@ -193,6 +198,7 @@ h3 {
 }
 
 .summary {
+  grid-area: summary;
   padding-top: 0;
   margin-top: 0;
   border-top: 0;
@@ -539,6 +545,7 @@ h3 {
 
 @media (max-width: 64rem) {
   .page-layout {
+    grid-template-areas: "summary" "contents" "reading";
     grid-template-columns: 1fr;
     gap: 1.75rem;
   }
@@ -568,6 +575,10 @@ h3 {
 
   .reading-column {
     max-width: 48rem;
+  }
+
+  .reading-column > .content-section:first-child {
+    margin-top: 0;
   }
 }
 

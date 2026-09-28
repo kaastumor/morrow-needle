@@ -1,6 +1,6 @@
 # #484 — Summary-first medical-devices P4/P5 comparison
 
-Date: 28 September 2026. Status: **implementation candidate; sponsor qualitative acceptance pending**.
+Date: 28 September 2026. Status: **implementation candidate on a prepared branch; PR creation and sponsor qualitative acceptance pending**.
 Requested execution setting: Codex, GPT-6 Sol High. Independently observed model/effort: **UNKNOWN**; usage: **UNKNOWN**. The host did not expose these settings. This is the bounded P4/P5 continuation of the [Run 1 P0–P3 and frozen criteria](https://github.com/kaastumor/morrow-needle/issues/484#issuecomment-5876758447), not a new UX criterion or legal coverage programme.
 
 ## Pinned comparison and method
@@ -33,4 +33,4 @@ Requested execution setting: Codex, GPT-6 Sol High. Independently observed model
 
 **ADOPT as the internal structural candidate, pending sponsor qualitative acceptance.** The frozen first-contact, role-contiguity, source, qualification, date, navigation and reflow criteria are supported by source/DOM and local rendering. The longer desktop scroll and unobserved comprehension remain explicit. No claim of user value, legal completeness, current law re-verification or external readiness follows. A material legal-qualification defect found in review would override this recommendation.
 
-The focused PR is the review boundary. #484 remains open; no merge or deployment is implied. The next eligible step is sponsor review of this candidate and its unresolved observations, then the bounded closeout decision in run 3 if accepted.
+Branch `auto/484-summary-first-ux` is the reviewable checkpoint. Automatic approval review rejected both ready and draft PR creation because opening either may notify external collaborators and it did not find explicit user authorization for that contact. #484 remains open and its issue thread could not be updated in this run; no merge or deployment is implied. The next step is explicit authorization to open the focused PR, followed by sponsor review of this candidate and its unresolved observations. Run 3 remains conditional on an accepted P5 result.

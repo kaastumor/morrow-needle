@@ -148,7 +148,7 @@ test("editorial and legal/source dates stay distinct", () => {
   assert.match(block, /Editorial review date/);
   assert.match(block, /28 September 2026/);
   assert.match(block, /MDR consolidated version seen in EUR-Lex/);
-  assert.match(block, /1 January 2026/);
+  assert.match(block, /19 July 2026/);
   assert.match(block, /IVDR consolidated version seen in EUR-Lex/);
   assert.match(block, /10 January 2025/);
 });

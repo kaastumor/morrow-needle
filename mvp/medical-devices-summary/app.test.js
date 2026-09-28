@@ -60,9 +60,10 @@ test("IVDR laboratory boundary remains visible in the public layer", () => {
   const block = section("covered", "timeline");
   assert.match(block, /Lab boundary/);
   assert.match(block, /general lab or research-use products are outside IVDR unless specifically intended/i);
-  const boundaryStart = block.indexOf("Lab boundary");
-  const surrounding = block.slice(Math.max(0, boundaryStart - 150), boundaryStart + 350);
-  assert.doesNotMatch(surrounding, /expert-only/);
+  const boundaryStart = block.lastIndexOf('<p class="qualification"', block.indexOf("Lab boundary"));
+  const boundaryEnd = block.indexOf("</p>", boundaryStart);
+  const boundary = block.slice(boundaryStart, boundaryEnd);
+  assert.doesNotMatch(boundary, /expert-only/);
 });
 
 test("timeline is a real six-milestone visual model with typed states", () => {

@@ -1,6 +1,6 @@
 # Summary-first medical-devices landing page
 
-Issue: #477  
+Issues: #477, #484
 Route: `/medical-devices/`
 
 Purpose:
@@ -8,14 +8,14 @@ Purpose:
 
 ## Public reading order
 
-1. identity / evidence boundary;
-2. standard summary — what these rules do;
-3. who and what is covered;
-4. current rules and dates;
-5. what the rules require;
-6. what changed;
-7. how the rules fit together;
-8. sources and coverage.
+1. identity and purpose summary;
+2. visible editorial/evidence boundary and in-page contents;
+3. MDR/IVDR product branches;
+4. roles and duties together;
+5. application dates, transition qualification and current operation;
+6. selected enacted developments and a separately qualified proposal;
+7. deeper relationship handoff;
+8. sources, dates and coverage limits.
 
 ## Comparators
 

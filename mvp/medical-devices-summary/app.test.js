@@ -17,14 +17,21 @@ function section(id, nextId) {
 
 test("public entry begins with substantive summary rather than relationship tooling", () => {
   const summaryPos = html.indexOf('id="summary-heading"');
+  const editorialPos = html.indexOf('class="editorial-note"');
+  const contentsPos = html.indexOf('class="contents"');
   const coveredPos = html.indexOf('id="covered"');
+  const rolesPos = html.indexOf('id="roles"');
+  const datesPos = html.indexOf('id="dates"');
+  const developmentsPos = html.indexOf('id="developments"');
   const relationPos = html.indexOf('id="relationships"');
 
   assert.ok(summaryPos > -1);
-  assert.ok(summaryPos < coveredPos);
-  assert.ok(coveredPos < relationPos);
+  assert.ok(summaryPos < editorialPos && editorialPos < contentsPos);
+  assert.ok(contentsPos < coveredPos && coveredPos < rolesPos);
+  assert.ok(rolesPos < datesPos && datesPos < developmentsPos && developmentsPos < relationPos);
   assert.match(html, /What these rules do/);
-  assert.match(html, /Who and what is covered/);
+  assert.match(html, /Products: MDR and IVDR/);
+  assert.match(html, /not an official EU service/);
   assert.doesNotMatch(html.slice(0, coveredPos), /Change review/);
   assert.doesNotMatch(html.slice(0, coveredPos), /Expert \/ research/);
 });
@@ -38,7 +45,7 @@ test("T1 purpose can be answered from the standard summary", () => {
 });
 
 test("T2 branch distinction is explicit and source-linked", () => {
-  const block = section("covered", "dates");
+  const block = section("covered", "roles");
   assert.match(block, /MDR/);
   assert.match(block, /Regulation \(EU\) 2017\/745/);
   assert.match(block, /Start here for medical devices for human use and accessories/i);
@@ -50,7 +57,7 @@ test("T2 branch distinction is explicit and source-linked", () => {
 });
 
 test("T3 importer and distributor relevance is visible without opening raw law", () => {
-  const block = section("covered", "dates");
+  const block = section("roles", "dates");
   assert.match(block, /You do not have to be the manufacturer to need these rules/);
   assert.match(block, /Importer/);
   assert.match(block, /third country on the Union market/i);
@@ -60,14 +67,14 @@ test("T3 importer and distributor relevance is visible without opening raw law",
 });
 
 test("T4 IVDR laboratory boundary is visible and rejects label-only classification", () => {
-  const block = section("covered", "dates");
+  const block = section("covered", "roles");
   assert.match(block, /Important laboratory boundary/);
   assert.match(block, /general laboratory or research-use products are outside the IVDR unless/i);
   assert.match(block, /manufacturer specifically intends them for in-vitro diagnostic examination/i);
 });
 
 test("T5 dates remain member-act dates with transition qualification and current operation", () => {
-  const block = section("dates", "requirements");
+  const block = section("dates", "developments");
   assert.match(block, /26 May 2021/);
   assert.match(block, /MDR general application \/ predecessor replacement/);
   assert.match(block, /26 May 2022/);
@@ -82,19 +89,26 @@ test("T5 dates remain member-act dates with transition qualification and current
 
 test("T6 proposal remains explicitly non-binding and verification is public", () => {
   assert.match(html, /Proposal — not enacted/);
-  assert.match(html, /Procedure 2025\/0404\(COD\) remains ongoing/i);
+  assert.match(html, /Procedure 2025\/0404\(COD\) remained ongoing at this page's 28 September 2026 evidence checkpoint/i);
   assert.match(html, /eur-lex\.europa\.eu\/procedure\/EN\/2025_404/);
-  assert.match(html, /Sources and coverage/);
+  assert.match(html, /Sources and limits/);
   assert.match(html, /MDR — current EUR-Lex access/);
   assert.match(html, /IVDR — current EUR-Lex access/);
 });
 
 test("role effects are concise, source-linked, and do not become personal verdicts", () => {
-  const block = section("requirements", "relationships");
-  assert.match(block, /Manufacturers/);
-  assert.match(block, /Importers/);
-  assert.match(block, /Distributors/);
+  const block = section("roles", "dates");
+  assert.match(block, /Manufacturer/);
+  assert.match(block, /Authorised representative/);
+  assert.match(block, /Importer/);
+  assert.match(block, /Distributor/);
   assert.match(block, /Other affected groups/);
+  for (const role of ["Manufacturer", "Importer", "Distributor"]) {
+    const article = block.slice(block.indexOf(`<h3>${role}</h3>`), block.indexOf("</article>", block.indexOf(`<h3>${role}</h3>`)));
+    assert.match(article, /Responsibilities:/);
+    assert.match(article, /href="https:\/\//);
+  }
+  assert.match(block, /id="requirements"/); // Legacy fragment remains a meaningful destination.
   assert.doesNotMatch(html, /you are covered/i);
   assert.doesNotMatch(html, /you are exempt/i);
   assert.doesNotMatch(html, /compliant with the law/i);
@@ -119,7 +133,7 @@ test("material qualifications are visible rather than hidden behind generic deta
 });
 
 test("regime page does not invent one legal status or application date", () => {
-  assert.match(html, /Editorial overview of multiple legal acts/);
+  assert.match(html, /editorial overview of multiple legal acts/i);
   assert.doesNotMatch(html, /Regime status/);
   assert.doesNotMatch(html, /In force<\/dd>/);
   assert.doesNotMatch(html, /Regime application date/);
@@ -162,17 +176,22 @@ test("page states unresolved scope instead of claiming completeness", () => {
 });
 
 test("navigation is continuous-reading and keyboard-native", () => {
-  assert.match(html, /<nav aria-label="On this page">/);
+  assert.match(html, /<nav class="contents" aria-label="On this page">/);
   assert.match(html, /href="#covered"/);
+  assert.match(html, /href="#roles"/);
   assert.match(html, /href="#dates"/);
-  assert.match(html, /href="#requirements"/);
+  assert.match(html, /href="#developments"/);
   assert.match(html, /href="#relationships"/);
   assert.match(html, /href="#sources"/);
+  for (const id of ["covered", "roles", "dates", "developments", "relationships", "sources"]) {
+    assert.match(html, new RegExp(`id="${id}"`));
+  }
   assert.doesNotMatch(html, /aria-pressed/);
 });
 
 test("mobile layout is one-column and does not require horizontal graph scrolling", () => {
   assert.match(css, /@media \(max-width: 42rem\)/);
-  assert.match(css, /\.state-strip,[\s\S]*\.lineage[\s\S]*grid-template-columns: 1fr/);
+  assert.match(css, /\.topbar, main \{[\s\S]*width: min\(72ch, calc\(100% - 2rem\)\)/);
+  assert.doesNotMatch(css, /grid-template-columns/);
   assert.doesNotMatch(css, /overflow-x:\s*(auto|scroll)/);
 });

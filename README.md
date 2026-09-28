@@ -10,6 +10,7 @@ general legal ontology, a proprietary reasoning method or an automatic research 
 
 The repository has deliberately separate owners:
 
+- **repository session contract:** [AGENTS.md](AGENTS.md)
 - **current horizon / WIP / immediate priority:** `BACKLOG.md`
 - **accepted corpus:** `corpus/index-v0.1.json`
 - **durable purpose and boundaries:** `docs/project-charter.md`
@@ -18,7 +19,7 @@ The repository has deliberately separate owners:
 - **project-thesis evidence:** `docs/value-evidence.md`
 - **material live assumptions:** `docs/assumptions.md`
 - **comparative-evaluation discipline:** `docs/evaluations/adversarial-corpus-protocol-v0.1.md`
-- **current #375 evidence/readiness interpretation:** `docs/reviews/issue375-pre-partner-readiness-red-team-2026-09-26.md`
+- **historical #375 pre-partner readiness interpretation:** `docs/reviews/issue375-pre-partner-readiness-red-team-2026-09-26.md`
 - **historical project memory / parked-capability register:** `docs/history/README.md`
 
 Do not copy live issue numbers, corpus counts or queue state into orientation documents.

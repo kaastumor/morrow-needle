@@ -23,7 +23,8 @@ authorise reactivation.
 
 - **Codex** is the primary repository-native environment for implementation, engineering,
   testing and verification.
-- **ChatGPT** is the sponsor, research, strategy and exploration environment.
+- **Chat** handles sponsor discussion, requirements and task capsules; **Work** handles
+  substantial research, analysis and non-code deliverables.
 
 Neither environment is a truth store. Decisions and evidence that constrain future work
 must be reconciled into the appropriate repository owner (`BACKLOG.md`, active issue/PR,
@@ -40,3 +41,20 @@ session ends.
   access that did not occur.
 - Do not copy mutable WIP, current counts, issue status or queue state into this file. Read
   their canonical owners instead.
+
+## Bounded execution entry
+
+Repository map: `src/needle/` Python core; `mvp/` browser prototypes; `tests/` checks;
+`fixtures/`, `schemas/`, `corpus/` evidence/validation; `docs/` contracts and decisions.
+
+Use [docs/way-of-working.md](docs/way-of-working.md) for bounded autonomy, model routing, timeboxes,
+recovery and authorization. Use [task capsules](docs/automation/TASK_TEMPLATE.md),
+[verification commands](docs/automation/VERIFICATION.md) and the
+[schedule activation gate](docs/automation/SCHEDULED_TASK_TEMPLATE.md).
+Purpose and invariants stay in the existing charter; current work stays in BACKLOG and
+its active checkpoint; durable decisions stay in the existing decision records.
+
+Repeat critical project constraints in each task. Inspect before editing; make the smallest
+coherent change; verify the actual outcome and diff; report checks run/skipped honestly.
+No merge, deploy, publication, deletion, production/credential change, purchase or external
+contact without explicit scoped authorization. A ready PR is pending, not accepted.

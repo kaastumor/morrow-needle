@@ -1,5 +1,16 @@
 # Morrow // Needle — Hourly autonomous worker
 
+This runbook does not enable or change a schedule. Before each saved-task migration,
+use [SCHEDULED_TASK_TEMPLATE.md](SCHEDULED_TASK_TEMPLATE.md); repeat the project's
+critical constraints in the saved prompt. New scheduled research defaults to **20 minutes,
+one bounded item**, followed by an honest checkpoint. Existing saved tasks require
+separate manual testing and approval before configuration changes.
+
+Use [TASK_TEMPLATE.md](TASK_TEMPLATE.md) and [VERIFICATION.md](VERIFICATION.md).
+The canonical operating policy owns routing, retry, deduplication, memory and authorization.
+Merge/deploy/publication and other consequential actions require explicit scoped sponsor
+authorization; a green PR is READY_FOR_REVIEW, not automatic permission to merge.
+
 Status: **CANONICAL EXECUTION RUNBOOK**
 
 The scheduled worker is an executor, not the product owner. GitHub repository
@@ -121,8 +132,8 @@ from repository state without repeating or guessing prior work.
 - run repository sanitation and relevant tests;
 - open a PR;
 - inspect CI and repair real repository failures;
-- normally squash-merge only when acceptance criteria are satisfied and CI is
-  green;
+- leave the PR READY_FOR_REVIEW when acceptance and CI pass; squash-merge only
+  with explicit scoped authorization;
 - if GitHub Actions fails before any repository step executes, the narrow
   CI-degraded exception in `docs/way-of-working.md` may be used only after
   equivalent deterministic checks pass in a real runtime and the PR records the
@@ -219,4 +230,3 @@ Record only:
 - next eligible AUTO READY issue, if one exists.
 
 Activity volume is not progress.
-

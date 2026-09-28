@@ -13,7 +13,7 @@ without rebuilding the discarded architecture.
    architecture layers.
 3. **WIP = 1 per autonomous worker.** One issue, one branch, one PR.
 4. **Trunk-oriented flow.** Short-lived branches from current `main`; squash
-   merge after acceptance.
+   merge after acceptance and explicit scoped authorization.
 5. **Strong boring baseline.** Browser platform, Python stdlib and existing
    repository capabilities come before frameworks/services.
 6. **Fail closed.** Broken/malformed evidence must be visible rather than silently
@@ -243,7 +243,7 @@ Autonomous work is executed in **checkpointed bursts** so chat/transport failure
 not erase or duplicate substantive work.
 
 1. **One coherent milestone per turn.** Examples: research -> durable
-   checkpoint/result, or PR -> one CI check -> merge/resumable SHA. Do not chain
+   checkpoint/result, or PR -> one CI check -> reviewable/resumable SHA (merge only if explicitly authorized). Do not chain
    several experiments merely because the session is still open.
 2. **Persist important state early.** Before a long research/implementation run, create
    or confirm the owning issue and branch/checkpoint so GitHub remains the recovery
@@ -345,7 +345,7 @@ For an implementation issue:
 - CI inspected honestly;
 - no secrets/private/local paths introduced;
 - documentation changed only where canonical state changed;
-- PR squash-merged;
+- PR squash-merged only with explicit scoped authorization; otherwise worker output is READY_FOR_REVIEW and the issue remains pending;
 - issue closed;
 - next dependency becomes eligible.
 
@@ -362,7 +362,7 @@ For a discovery issue:
 
 ## CI-degraded exception
 
-Green CI is the normal merge gate.
+Green CI is the normal technical merge gate; explicit scoped merge authorization is also required. The CI-degraded exception below never grants that authorization.
 
 A narrow exception exists only when GitHub Actions fails **before any repository
 step executes**, as already observed in September 2026.
@@ -395,7 +395,7 @@ static inspection and may not advance to the dependent issue.
 - branch: `auto/<issue>-<short-slug>`;
 - one AUTO issue per branch/PR;
 - PR title starts with the issue number;
-- squash merge;
+- squash merge only with explicit scoped authorization;
 - no unrelated cleanup bundled into delivery work.
 
 ## MVP architecture rule
@@ -556,3 +556,113 @@ At the end of a meaningful horizon:
   review/release or maintenance.
 
 Activity count, commits and issue throughput are never project-value evidence.
+
+## Bounded autonomous execution and usage
+
+Continue within the accepted mandate without asking the sponsor to invent routine
+tasks. At each entry inspect live main, open work, active ownership and the existing
+BACKLOG/checkpoint. Resume recoverable work before selecting another question. Use
+the project's existing allocation and evidence gates; autonomy does not earn new scope.
+
+One run owns one bounded item. At completion, verify, preserve negative/null evidence,
+reconcile once in the existing owner, and identify the next eligible action. Start a
+fresh bounded task/context for an independently reviewable chunk; pass a compact
+[task capsule](automation/TASK_TEMPLATE.md), not the conversation. Fresh context
+is a context-management technique, not proof of independent scientific review.
+
+### Authority and acceptance
+
+Autonomous authority covers in-scope research, analysis, drafts, focused checks and
+authorized branch/PR preparation. Merging, deploying, publishing, deleting information,
+changing production settings, rotating credentials, purchasing, contacting external
+parties, changing the charter/evaluation criteria or creating/changing schedules requires
+explicit sponsor authorization for that action or a recorded standing scope.
+A general "continue", passing CI or an older generic merge instruction is insufficient.
+Do not ask again when valid explicit authorization already covers the action.
+
+A worker may finish at `READY_FOR_REVIEW`, `RECONCILIATION_PENDING`,
+`CHECKPOINTED` or `BLOCKED`; none means accepted/merged. Keep the owning issue open
+until its acceptance criteria are met. Do not advance a dependent implementation from
+unmerged assumptions or open competing WIP. A blocked item may yield to a separately
+eligible, nonconflicting alternative under the existing allocation rules; record why.
+If none exists, record the missing prerequisite and re-entry trigger, then stop the run.
+
+Repeat critical scope, privacy, evidence and authorization constraints in every capsule.
+Before returning, review the actual output/diff against them. AGENTS instructions are
+guidance, not an enforced permission boundary; use actual tool permissions and existing
+CI/review gates. Never claim that writing this policy configured the runtime.
+
+### Surface and model routing
+
+| Work | Surface / recommendation |
+| --- | --- |
+| Requirements, task design, prioritization, critique, short answers | Ordinary Chat |
+| Substantial research, connected-app work, finished non-code deliverables | Work |
+| Primary result is repository inspection/change, tests, review, commit or PR | Codex |
+| Narrow repeatable work with objective verification | GPT-6 Luna |
+| Normal bounded multi-step execution and allocation | GPT-6 Sol Medium |
+| Difficult interpretation, architecture, debugging or weak verification | Sol High |
+| Exceptional ambiguity, security/concurrency risk or critical review | Sol XHigh when justified |
+| Hard decision/review where expected value exceeds additional usage | Astra, explicitly justified |
+
+Choose using ambiguity, blast radius, reversibility, privacy and verification strength,
+not task size alone. Record requested and actual model/effort (or `UNKNOWN`). A prompt
+cannot switch models: report a mismatch before implementation; do not silently claim
+a substitution. Missing access is not a reason to buy more reasoning. Prefer a deterministic
+script for mechanical work; do not use Chat to circumvent Work/Codex usage limits.
+
+No permanent expensive supervisor. A short coordinator selects and accepts work using
+durable state; workers keep implementation detail outside that context. Use subagents
+only for genuinely independent bounded work or validation; no role-play hierarchy or
+recursive delegation by default. One writer per overlapping scope. Use completion
+signals/long waits, not repeated polling. Summarize material results and artifact refs;
+do not return full worker transcripts to the coordinator.
+
+### Budgets, recovery and memory
+
+- New scheduled research tasks default to **20 minutes and one bounded item per run**.
+  Reserve time to checkpoint; at the limit persist partial work and the next exact action.
+  The timebox ends execution, not the hypothesis or project. Do not stretch it by spawning
+  workers or starting a second run. Other task types require an explicit timebox in their
+  approved capsule; do not infer unlimited execution.
+- This document does not change existing saved schedules. Before activation, verify that
+  their saved prompts, access and runtime settings implement the approved contract.
+  If the runtime cannot enforce a limit, label it advisory and test checkpointing.
+- Use one retry for a transient operation (two attempts total), within the same timebox.
+  Missing permissions/tools/required evidence stop that operation immediately. Inspect
+  durable state before retrying an ambiguous write. Never repeat an impossible operation.
+- Repeated identical failure on two successive runs blocks that lane pending a changed
+  prerequisite; emit one actionable notice. Record the block in durable state so future
+  invocations do only the eligibility check. Do not autonomously rewrite/disable schedules.
+- Before new intake, inspect pending results and consumer acknowledgments. Deduplicate
+  on repository, lane, task ID, input revision and contract version, with a separate attempt
+  ID. Revalidate stale inputs before application. Unknown pending state is a recovery gate,
+  not permission to generate another packet. Review debt takes priority over new intake.
+- Keep existing backlog/issues/PRs as owners, not a new shadow task database. Scheduled
+  state must have an approved durable location, a pending-item cap and a bounded resume
+  summary (default at most 8 KiB and 20 recent receipt references). Preserve unresolved
+  receipts and scientific evidence in the appropriate archive before compacting the index;
+  if safe compaction is unavailable, stop intake rather than discard them.
+- Store full logs outside the coordinator context in a durable, privacy-appropriate place.
+  A receipt records task/input refs, status, output ref, verification, consumer acknowledgment,
+  next action, elapsed time and actual usage if exposed. Unknown usage stays `UNKNOWN`;
+  label estimates separately. Never put protected source identifiers in public receipts.
+- No monetary/credit ceiling is presumed approved. Obtain it before enabling new recurring
+  paid work; do not silently buy credits, increase limits or add API services. Account for
+  retries, review and repair when assessing cost per verified useful outcome. Operator
+  efficiency anecdotes are hypotheses, not promised savings or measured billing reductions.
+- No meaningful delta means the defined `NO_CHANGE` result and no discretionary notice.
+  Notify for reviewable completion, an actionable blocker, budget exhaustion or a material
+  contradiction; do not promise silence if the host always delivers task results.
+
+Use [verification guidance](automation/VERIFICATION.md) for proportionate checks.
+Use the [scheduled-task contract](automation/SCHEDULED_TASK_TEMPLATE.md) for manual
+testing, approval and the first-three-run calibration. This policy creates no schedules.
+
+### Needle evidence boundary
+
+Product discovery, UX/usability results and historical Needle scientific/evaluation
+claims remain separate. A prototype improvement cannot reopen a parked scientific thesis,
+unfreeze a corpus or promote a new maintained feature. Use the active BACKLOG/AUTO contract
+and its external-evidence gate. Research proposes evidence; implementation needs earned
+scope. Preserve negative/parity evidence and the strongest boring baseline.

@@ -1,280 +1,268 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-detail="public">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="A source-linked orientation to the EU medical-device rules, MDR and IVDR.">
+  <meta name="description" content="A visual, source-linked orientation to the EU medical-device rules, MDR and IVDR.">
   <title>Needle Navigator — EU medical-device rules</title>
   <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="topbar">
-    <a class="brand" href="#main">Needle Navigator</a>
-    <nav aria-label="On this page">
-      <a href="#covered">Who and what is covered</a>
-      <a href="#dates">Dates</a>
-      <a href="#requirements">What the rules require</a>
-      <a href="#relationships">How the rules fit together</a>
-      <a href="#sources">Sources</a>
-    </nav>
+    <a class="brand" href="#main" aria-label="Needle Navigator home">Needle<span>Navigator</span></a>
+    <div class="view-switch" role="group" aria-label="Detail level">
+      <button type="button" data-view="public" aria-pressed="true">Public</button>
+      <button type="button" data-view="expert" aria-pressed="false">Expert</button>
+    </div>
   </header>
 
   <main id="main">
     <header class="hero">
-      <p class="eyebrow">Regime overview · MDR + IVDR</p>
-      <h1>EU medical-device rules</h1>
-      <p class="dek">
-        A source-linked orientation to the two core EU Regulations for medical devices and in-vitro diagnostic medical devices.
-      </p>
-
-      <dl class="state-strip">
-        <div><dt>Page type</dt><dd>Editorial overview of multiple legal acts</dd></div>
-        <div><dt>Evidence checked</dt><dd><time datetime="2026-09-28">28 September 2026</time></dd></div>
-        <div><dt>Coverage</dt><dd>Selected EU-level framework, not complete legal coverage</dd></div>
-      </dl>
-
-      <section class="summary" aria-labelledby="summary-heading">
-        <p class="section-kicker">Standard summary</p>
-        <h2 id="summary-heading">What these rules do</h2>
-        <p>
-          The EU medical-device framework sets rules for placing, supplying and putting medical devices and in-vitro diagnostic devices into service in the Union. It covers evidence and conformity before market entry, responsibilities in the supply chain, traceability, and monitoring after devices reach the market.
+      <div class="hero-copy">
+        <p class="eyebrow">Independent EU legislation guide</p>
+        <h1>EU medical-device rules, without the legal maze</h1>
+        <p class="dek">
+          Two core Regulations shape how medical devices and in-vitro diagnostics reach and stay on the EU market — covering conformity before entry, supply-chain duties, traceability and post-market monitoring.
+          Start with the product branch, then use the timeline and law map to see how the framework fits together.
         </p>
-        <p>
-          The framework is built around two core acts: the <strong>MDR</strong> for medical devices and the <strong>IVDR</strong> for in-vitro diagnostic devices. Patients, users and healthcare professionals are affected by the safety and performance system, while economic operators such as manufacturers, authorised representatives, importers and distributors carry specific regulatory responsibilities.
-        </p>
-        <div class="summary-actions">
-          <a class="primary-action" href="#covered">Check who / what to inspect</a>
-          <a href="https://health.ec.europa.eu/medical-devices-new-regulations/overview_en" target="_blank" rel="noreferrer">Commission framework overview</a>
+        <div class="trust-strip" aria-label="Editorial status">
+          <span>Not an official EU service</span>
+          <span>Evidence checked <time datetime="2026-09-28">28 Sep 2026</time></span>
+          <span>EU-level orientation</span>
         </div>
-      </section>
+      </div>
+
+      <nav class="quick-nav" aria-label="On this page">
+        <a href="#covered">MDR or IVDR?</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#relationships">Law map</a>
+        <a href="#roles">Your role</a>
+        <a href="#sources">Sources</a>
+      </nav>
     </header>
 
-    <section id="covered" class="content-section" aria-labelledby="covered-heading">
-      <p class="section-kicker">Relevance</p>
-      <h2 id="covered-heading">Who and what is covered?</h2>
-      <p class="section-intro">
-        Start with the product, the activity and the role. These are the main routes into the framework; they are not a personal legal determination and the role list is not exhaustive.
-      </p>
+    <section id="covered" class="section branch-section" aria-labelledby="covered-heading">
+      <div class="section-heading">
+        <p class="section-kicker">Start here</p>
+        <h2 id="covered-heading">Which core rule is the starting point?</h2>
+        <p>Product and intended purpose drive the branch. This is orientation, not a personal legal determination.</p>
+      </div>
 
-      <div class="core-rules">
-        <article class="rule-card">
-          <div class="rule-heading">
-            <div>
-              <p class="rule-label">MDR</p>
-              <h3>Medical Devices Regulation</h3>
-              <p class="citation">Regulation (EU) 2017/745</p>
-            </div>
-            <span class="branch-tag">Medical devices</span>
+      <div class="branch-grid">
+        <article class="branch-card mdr">
+          <div class="branch-topline">
+            <span class="branch-code">MDR</span>
+            <span class="branch-citation">Regulation (EU) 2017/745</span>
           </div>
-          <p>
-            Start here for medical devices for human use and accessories. The MDR also reaches specified Annex XVI product groups without an intended medical purpose when the Regulation's conditions apply.
-          </p>
-          <p class="boundary">
-            <strong>Boundary:</strong> the MDR does not cover IVDs governed by the IVDR, and it contains other product-boundary and exclusion rules that may matter.
-          </p>
-          <div class="inline-links">
-            <a href="https://eur-lex.europa.eu/eli/reg/2017/745" target="_blank" rel="noreferrer">MDR current EUR-Lex text</a>
-            <a href="https://eur-lex.europa.eu/summary/ENG/4301046" target="_blank" rel="noreferrer">EUR-Lex MDR summary</a>
+          <h3>Medical devices</h3>
+          <p>Medical devices for human use, accessories, and some Annex XVI products without an intended medical purpose.</p>
+          <p class="qualification"><strong>Boundary:</strong> IVDs fall under the IVDR; other exclusions can matter.</p>
+          <div class="branch-actions">
+            <a href="https://eur-lex.europa.eu/eli/reg/2017/745" target="_blank" rel="noreferrer">Open MDR on EUR-Lex ↗</a>
+            <a class="expert-only" href="https://eur-lex.europa.eu/summary/ENG/4301046" target="_blank" rel="noreferrer">Background summary ↗</a>
           </div>
         </article>
 
-        <article class="rule-card">
-          <div class="rule-heading">
-            <div>
-              <p class="rule-label">IVDR</p>
-              <h3>In Vitro Diagnostic Medical Devices Regulation</h3>
-              <p class="citation">Regulation (EU) 2017/746</p>
-            </div>
-            <span class="branch-tag">Diagnostic devices</span>
+        <article class="branch-card ivdr">
+          <div class="branch-topline">
+            <span class="branch-code">IVDR</span>
+            <span class="branch-citation">Regulation (EU) 2017/746</span>
           </div>
-          <p>
-            Start here for in-vitro diagnostic medical devices for human use, their accessories and performance studies. The definition depends on the manufacturer's intended purpose for examining human specimens and providing diagnostic or related information.
-          </p>
-          <p class="boundary important">
-            <strong>Important laboratory boundary:</strong> general laboratory or research-use products are outside the IVDR unless, considering their characteristics, the manufacturer specifically intends them for in-vitro diagnostic examination.
-          </p>
-          <div class="inline-links">
-            <a href="https://eur-lex.europa.eu/eli/reg/2017/746" target="_blank" rel="noreferrer">IVDR current EUR-Lex text</a>
-            <a href="https://eur-lex.europa.eu/summary/EN/4301047" target="_blank" rel="noreferrer">EUR-Lex IVDR summary</a>
+          <h3>In-vitro diagnostics</h3>
+          <p>IVDs for human specimens, accessories and performance studies, based on the manufacturer's intended purpose.</p>
+          <p class="qualification"><strong>Lab boundary:</strong> general lab or research-use products are outside IVDR unless specifically intended for IVD examination.</p>
+          <div class="branch-actions">
+            <a href="https://eur-lex.europa.eu/eli/reg/2017/746" target="_blank" rel="noreferrer">Open IVDR on EUR-Lex ↗</a>
+            <a class="expert-only" href="https://eur-lex.europa.eu/summary/EN/4301047" target="_blank" rel="noreferrer">Background summary ↗</a>
           </div>
         </article>
       </div>
+    </section>
 
-      <section class="actors" aria-labelledby="actors-heading">
-        <div class="section-subheading">
-          <div>
-            <p class="section-kicker">Main regulated roles</p>
-            <h3 id="actors-heading">You do not have to be the manufacturer to need these rules</h3>
-          </div>
-          <a href="https://health.ec.europa.eu/medical-devices-topics-interest/economic-operators_en" target="_blank" rel="noreferrer">Commission economic-operator guide</a>
+    <section id="timeline" class="section visual-section" aria-labelledby="timeline-heading">
+      <div class="section-heading">
+        <p class="section-kicker">Time</p>
+        <h2 id="timeline-heading">The framework in six milestones</h2>
+        <p>Application dates, operational milestones and proposals are different things.</p>
+      </div>
+
+      <div class="timeline-shell">
+        <ol class="timeline-track">
+          <li class="timeline-item predecessor">
+            <time>1990–1998</time>
+            <span class="timeline-type">Predecessors</span>
+            <strong>AIMDD, MDD and IVDD</strong>
+            <span class="expert-only">Three directives later replaced by MDR/IVDR, subject to transition effects.</span>
+          </li>
+          <li class="timeline-item law">
+            <time datetime="2017">2017</time>
+            <span class="timeline-type">Core law</span>
+            <strong>MDR + IVDR adopted</strong>
+          </li>
+          <li class="timeline-item law">
+            <time datetime="2021-05-26">26 May 2021</time>
+            <span class="timeline-type">Applies</span>
+            <strong>MDR generally applies</strong>
+          </li>
+          <li class="timeline-item law">
+            <time datetime="2022-05-26">26 May 2022</time>
+            <span class="timeline-type">Applies</span>
+            <strong>IVDR generally applies</strong>
+          </li>
+          <li class="timeline-item proposal">
+            <time datetime="2025-12">Dec 2025</time>
+            <span class="timeline-type">Proposal</span>
+            <strong>Further targeted revision proposed</strong>
+          </li>
+          <li class="timeline-item operation">
+            <time datetime="2026-05-28">28 May 2026</time>
+            <span class="timeline-type">Operation</span>
+            <strong>First four EUDAMED modules mandatory</strong>
+          </li>
+        </ol>
+
+        <p class="qualification timeline-note">
+          <strong>Transition warning:</strong> these milestones do not settle every legacy-device case, and the EUDAMED milestone does not mean all six modules are mandatory.
+        </p>
+
+        <details class="supporting-detail expert-only">
+          <summary>Timeline sources and legal detail</summary>
+          <p>
+            MDR replaced Directives 90/385/EEC and 93/42/EEC from its general application date; IVDR replaced Directive 98/79/EC from its general application date, both subject to transition rules.
+            COM(2025) 1023 was still an ongoing proposal at the 28 September 2026 evidence checkpoint.
+          </p>
+          <p class="source-links">
+            <a href="https://health.ec.europa.eu/medical-devices-new-regulations/overview_en" target="_blank" rel="noreferrer">Commission overview ↗</a>
+            <a href="https://health.ec.europa.eu/medical-devices-eudamed/overview_en" target="_blank" rel="noreferrer">EUDAMED overview ↗</a>
+            <a href="https://eur-lex.europa.eu/procedure/EN/2025_404?sortOrder=asc" target="_blank" rel="noreferrer">2025/0404(COD) ↗</a>
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <section id="relationships" class="section visual-section" aria-labelledby="relationships-heading">
+      <div class="section-heading">
+        <p class="section-kicker">Structure</p>
+        <h2 id="relationships-heading">How the legislation hangs together</h2>
+        <p>The public view shows the spine; the relationship browser carries the deeper act family.</p>
+      </div>
+
+      <div class="law-map" role="group" aria-label="EU medical-device legislation relationship map">
+        <div class="law-map-root">EU medical-device framework</div>
+
+        <div class="law-map-branches">
+          <article class="law-branch mdr">
+            <div class="predecessor-stack" aria-label="MDR predecessors">
+              <span>90/385/EEC</span>
+              <span>93/42/EEC</span>
+            </div>
+            <div class="core-node">
+              <span class="branch-code">MDR</span>
+              <strong>Regulation 2017/745</strong>
+              <small>Medical devices</small>
+            </div>
+            <div class="child-node">Implementing + delegated acts</div>
+          </article>
+
+          <article class="law-branch ivdr">
+            <div class="predecessor-stack" aria-label="IVDR predecessor">
+              <span>98/79/EC</span>
+            </div>
+            <div class="core-node">
+              <span class="branch-code">IVDR</span>
+              <strong>Regulation 2017/746</strong>
+              <small>In-vitro diagnostics</small>
+            </div>
+            <div class="child-node">Implementing + delegated acts</div>
+          </article>
         </div>
 
-        <ul class="actor-list">
-          <li><strong>Manufacturer</strong><span>Designs/manufactures or has the device made and markets it under its name; carries the primary conformity system.</span></li>
-          <li><strong>Authorised representative</strong><span>Acts in the Union under a written mandate for specified tasks for a manufacturer established outside the Union.</span></li>
-          <li><strong>Importer</strong><span>Places a device from a third country on the Union market and has its own verification, traceability and cooperation duties.</span></li>
-          <li><strong>Distributor</strong><span>Makes devices available in the supply chain and has specified checks and duties around non-conformity, complaints and cooperation.</span></li>
-        </ul>
+        <div class="cross-cutting">
+          <span class="map-label">Cross-cutting enacted change</span>
+          <strong>Regulation (EU) 2024/1860</strong>
+          <span>Transition + EUDAMED + supply-interruption changes</span>
+        </div>
 
-        <aside class="scope-caution">
-          <strong>Do not infer exclusion from this list.</strong>
-          Other roles and special settings can matter, roles can overlap, and duties depend on the product and activity. This page routes the legal questions; it does not decide an individual compliance position.
-        </aside>
-      </section>
-    </section>
-
-    <section id="dates" class="content-section" aria-labelledby="dates-heading">
-      <p class="section-kicker">Landmark dates and current operation</p>
-      <h2 id="dates-heading">Two core application dates — plus a current EUDAMED milestone</h2>
-
-      <div class="date-grid">
-        <article>
-          <p class="date">26 May 2021</p>
-          <h3>MDR general application / predecessor replacement</h3>
-          <p>Regulation 2017/745 replaced Directives 90/385/EEC and 93/42/EEC from this date, subject to transition rules.</p>
-        </article>
-        <article>
-          <p class="date">26 May 2022</p>
-          <h3>IVDR general application / predecessor replacement</h3>
-          <p>Regulation 2017/746 replaced Directive 98/79/EC from this date, subject to transition rules.</p>
-        </article>
+        <div class="proposal-node">
+          <span class="map-label">Proposal — not law</span>
+          <strong>COM(2025) 1023</strong>
+          <span>Targeted revision · procedure 2025/0404(COD)</span>
+        </div>
       </div>
 
-      <aside class="transition-warning">
-        <strong>These dates do not settle every legacy-device case.</strong>
-        Later EU measures preserve or extend transition routes for specified devices subject to conditions. The relevant product, certificate/declaration, risk class and timing can change the answer.
-        <a href="https://health.ec.europa.eu/medical-devices-new-regulations/overview_en" target="_blank" rel="noreferrer">Commission transition overview</a>
-        <a href="https://health.ec.europa.eu/medical-devices-vitro-diagnostics/transitional-provisions_en" target="_blank" rel="noreferrer">IVDR transition detail</a>
-      </aside>
-
-      <aside class="transition-warning">
-        <strong>Current operational milestone — 28 May 2026.</strong>
-        The first four EUDAMED modules became mandatory to use from this date after Commission Decision (EU) 2025/2371 declared them functional and the six-month transition triggered by Regulation (EU) 2024/1860 ran. This does not mean all six EUDAMED modules are already mandatory.
-        <a href="https://health.ec.europa.eu/medical-devices-eudamed/overview_en" target="_blank" rel="noreferrer">Commission EUDAMED overview</a>
-        <a href="https://eur-lex.europa.eu/eli/dec/2025/2371/oj/eng" target="_blank" rel="noreferrer">Decision (EU) 2025/2371</a>
-      </aside>
-    </section>
-
-    <section id="requirements" class="content-section" aria-labelledby="requirements-heading">
-      <p class="section-kicker">Practical effect</p>
-      <h2 id="requirements-heading">What the rules require</h2>
-      <p class="section-intro">
-        Responsibilities differ by role and device. These are orientation points, not a substitute for the relevant provisions.
-      </p>
-
-      <div class="requirement-list">
-        <article>
-          <h3>Manufacturers</h3>
-          <p>Ensure devices are designed and manufactured to the applicable requirements, maintain risk/evaluation systems and technical documentation, and support post-market monitoring.</p>
-          <a href="https://eur-lex.europa.eu/eli/reg/2017/745" target="_blank" rel="noreferrer">MDR Article 10</a>
-          <a href="https://eur-lex.europa.eu/eli/reg/2017/746" target="_blank" rel="noreferrer">IVDR Article 10</a>
-        </article>
-        <article>
-          <h3>Importers</h3>
-          <p>Carry their own checks before placing third-country devices on the Union market and have traceability, cooperation and corrective responsibilities.</p>
-          <a href="https://health.ec.europa.eu/medical-devices-topics-interest/reprocessing-devices/authorised-representatives-importers-and-distributors_en" target="_blank" rel="noreferrer">Commission role guidance</a>
-        </article>
-        <article>
-          <h3>Distributors</h3>
-          <p>Must act with due care and perform specified checks before making devices available, with duties around complaints, non-conformity and cooperation.</p>
-          <a href="https://health.ec.europa.eu/medical-devices-topics-interest/reprocessing-devices/authorised-representatives-importers-and-distributors_en" target="_blank" rel="noreferrer">Commission role guidance</a>
-        </article>
-        <article>
-          <h3>Other affected groups</h3>
-          <p>Patients, users, healthcare professionals, health institutions, notified bodies and authorities can all be affected by the framework, but their position is not the same as an economic operator's duties.</p>
-          <a href="https://health.ec.europa.eu/medical-devices-new-regulations/overview_en" target="_blank" rel="noreferrer">Commission framework overview</a>
-        </article>
+      <div class="map-actions">
+        <a class="primary-action" href="/regime-v2/#explore">Explore the full relationship browser</a>
+        <a class="expert-only" href="/regime-v2/#changes">Inspect selected change propagation</a>
       </div>
     </section>
 
-    <section class="content-section" aria-labelledby="changed-heading">
-      <p class="section-kicker">Selected later developments</p>
-      <h2 id="changed-heading">Selected later changes and current procedure</h2>
-      <p class="section-intro">
-        This is an orientation set, not a complete list of post-2017 acts. The Commission's current overview also lists later implementing and delegated measures; deeper act-family coverage remains in the relationship browser.
-      </p>
+    <section id="roles" class="section roles-section" aria-labelledby="roles-heading">
+      <div class="section-heading">
+        <p class="section-kicker">People and organisations</p>
+        <h2 id="roles-heading">Who carries duties?</h2>
+        <p>You do not have to be the manufacturer. Roles can overlap and this list is not exhaustive.</p>
+      </div>
 
-      <div class="change-list">
-        <article class="change-row enacted">
-          <div>
-            <span class="status-label">Enacted</span>
-            <strong>Regulation (EU) 2024/1860</strong>
+      <div id="requirements" class="role-table">
+        <details>
+          <summary><span>Manufacturer</span><strong>Primary conformity system</strong></summary>
+          <div class="role-detail">
+            <p>Designs/manufactures or has the device made and markets it under its name. Maintains risk/evaluation systems, technical documentation and post-market monitoring.</p>
+            <p><a href="https://eur-lex.europa.eu/eli/reg/2017/745" target="_blank" rel="noreferrer">MDR Article 10 act text ↗</a> · <a href="https://eur-lex.europa.eu/eli/reg/2017/746" target="_blank" rel="noreferrer">IVDR Article 10 act text ↗</a></p>
           </div>
-          <p>Amends both MDR and IVDR around gradual EUDAMED roll-out, information obligations for interruption/discontinuation of supply and IVDR transitional provisions.</p>
-          <a href="https://eur-lex.europa.eu/eli/reg/2024/1860/oj/eng" target="_blank" rel="noreferrer">Official act</a>
-        </article>
-
-        <article class="change-row enacted">
-          <div>
-            <span class="status-label">Selected enacted measures</span>
-            <strong>2025–2026 measures continue beyond 2024/1860</strong>
+        </details>
+        <details>
+          <summary><span>Authorised representative</span><strong>Mandated EU tasks</strong></summary>
+          <div class="role-detail">
+            <p>Acts in the Union under a written mandate for specified tasks for a manufacturer established outside the Union.</p>
+            <p><a href="https://health.ec.europa.eu/medical-devices-topics-interest/reprocessing-devices/authorised-representatives-importers-and-distributors_en" target="_blank" rel="noreferrer">Commission guidance ↗</a></p>
           </div>
-          <p>Examples in the current official overview include Decision (EU) 2025/2371 on EUDAMED functionality, Implementing Regulation (EU) 2026/977 on conformity-assessment/notified-body requirements, and Delegated Regulations (EU) 2026/1359 and 2026/1451 amending specific MDR exemption lists. This landing page does not enumerate the full act family.</p>
-          <a href="https://health.ec.europa.eu/medical-devices-new-regulations/overview_en" target="_blank" rel="noreferrer">Commission current overview</a>
-        </article>
-
-        <article class="change-row proposal">
-          <div>
-            <span class="status-label">Proposal — not enacted</span>
-            <strong>COM(2025) 1023</strong>
+        </details>
+        <details>
+          <summary><span>Importer</span><strong>Checks before market placement</strong></summary>
+          <div class="role-detail">
+            <p>Places a device from a third country on the Union market; carries checks plus traceability, cooperation and corrective duties.</p>
+            <p><a href="https://health.ec.europa.eu/medical-devices-topics-interest/reprocessing-devices/authorised-representatives-importers-and-distributors_en" target="_blank" rel="noreferrer">Commission guidance ↗</a></p>
           </div>
-          <p>The Commission proposed a further targeted revision in December 2025. Procedure 2025/0404(COD) remains ongoing at this page's evidence checkpoint, so the proposal is not current binding Union law.</p>
-          <a href="https://eur-lex.europa.eu/procedure/EN/2025_404?sortOrder=asc" target="_blank" rel="noreferrer">Current EUR-Lex procedure</a>
-        </article>
+        </details>
+        <details>
+          <summary><span>Distributor</span><strong>Due-care checks in supply</strong></summary>
+          <div class="role-detail">
+            <p>Makes devices available in the supply chain, with specified checks and duties around complaints, non-conformity and cooperation.</p>
+            <p><a href="https://health.ec.europa.eu/medical-devices-topics-interest/reprocessing-devices/authorised-representatives-importers-and-distributors_en" target="_blank" rel="noreferrer">Commission guidance ↗</a></p>
+          </div>
+        </details>
       </div>
+
+      <p class="role-footnote">Patients, users, healthcare professionals, health institutions, notified bodies and authorities are also affected, but not as one common “economic operator” role.</p>
     </section>
 
-    <section id="relationships" class="content-section" aria-labelledby="relationships-heading">
-      <p class="section-kicker">Context</p>
-      <h2 id="relationships-heading">How the rules fit together</h2>
-      <p class="section-intro">
-        Once the current purpose and scope are clear, the relationship view helps explain where the two Regulations came from and what hangs around them.
-      </p>
-
-      <div class="lineage">
-        <div><strong>90/385/EEC</strong><span>active implantable devices</span><span class="arrow">→ MDR</span></div>
-        <div><strong>93/42/EEC</strong><span>medical devices</span><span class="arrow">→ MDR</span></div>
-        <div><strong>98/79/EC</strong><span>in-vitro diagnostics</span><span class="arrow">→ IVDR</span></div>
+    <section id="sources" class="section sources-section" aria-labelledby="sources-heading">
+      <div class="section-heading">
+        <p class="section-kicker">Verification</p>
+        <h2 id="sources-heading">Sources and limits</h2>
       </div>
 
-      <p class="transition-mini">
-        Replacement does not imply every predecessor effect vanished on one date: transition rules preserve defined routes for some devices.
-      </p>
-
-      <div class="relationship-actions">
-        <a class="primary-action" href="/regime-v2/#explore">Explore implementing, delegated and EUDAMED relationships</a>
-        <a href="/regime-v2/#changes">Open change-review view</a>
+      <div class="source-grid">
+        <a href="https://eur-lex.europa.eu/eli/reg/2017/745" target="_blank" rel="noreferrer"><strong>MDR</strong><span>EUR-Lex current access ↗</span></a>
+        <a href="https://eur-lex.europa.eu/eli/reg/2017/746" target="_blank" rel="noreferrer"><strong>IVDR</strong><span>EUR-Lex current access ↗</span></a>
+        <a href="https://health.ec.europa.eu/medical-devices-new-regulations/overview_en" target="_blank" rel="noreferrer"><strong>Framework</strong><span>Commission overview ↗</span></a>
+        <a href="https://health.ec.europa.eu/medical-devices-eudamed/overview_en" target="_blank" rel="noreferrer"><strong>EUDAMED</strong><span>Commission overview ↗</span></a>
       </div>
-    </section>
 
-    <section id="sources" class="content-section sources" aria-labelledby="sources-heading">
-      <p class="section-kicker">Verification</p>
-      <h2 id="sources-heading">Sources and coverage</h2>
-      <p>
-        This page is an editorial orientation built from official EU sources. It is not the legislation itself, does not cover every relevant act or national rule, and does not determine whether a particular product or organisation is compliant.
+      <div class="expert-meta expert-only">
+        <div><span>Editorial review</span><strong>28 Sep 2026</strong></div>
+        <div><span>MDR consolidation seen</span><strong>19 Jul 2026</strong></div>
+        <div><span>IVDR consolidation seen</span><strong>10 Jan 2025</strong></div>
+      </div>
+
+      <p class="final-boundary">
+        <strong>This overview does not decide compliance.</strong>
+        Complete exclusions, classification, every transition deadline, national rules and personalised applicability remain outside this page.
       </p>
-
-      <ul>
-        <li><a href="https://eur-lex.europa.eu/eli/reg/2017/745" target="_blank" rel="noreferrer">MDR — current EUR-Lex access</a></li>
-        <li><a href="https://eur-lex.europa.eu/eli/reg/2017/746" target="_blank" rel="noreferrer">IVDR — current EUR-Lex access</a></li>
-        <li><a href="https://health.ec.europa.eu/medical-devices-new-regulations/overview_en" target="_blank" rel="noreferrer">European Commission — medical-devices regulations overview</a></li>
-        <li><a href="https://health.ec.europa.eu/medical-devices-eudamed/overview_en" target="_blank" rel="noreferrer">European Commission — EUDAMED current overview</a></li>
-        <li><a href="https://health.ec.europa.eu/medical-devices-topics-interest/economic-operators_en" target="_blank" rel="noreferrer">European Commission — economic operators</a></li>
-        <li><a href="https://eur-lex.europa.eu/procedure/EN/2025_404?sortOrder=asc" target="_blank" rel="noreferrer">EUR-Lex — COM(2025) 1023 procedure 2025/0404(COD)</a></li>
-      </ul>
-
-      <dl class="verification-meta">
-        <div><dt>Editorial review date</dt><dd>28 September 2026</dd></div>
-        <div><dt>MDR consolidated version seen in EUR-Lex</dt><dd>19 July 2026</dd></div>
-        <div><dt>IVDR consolidated version seen in EUR-Lex</dt><dd>10 January 2025</dd></div>
-      </dl>
-
-      <aside class="final-boundary">
-        <strong>Still unresolved by this overview:</strong>
-        complete exclusions, device classification, every transition deadline, national health-service rules, national implementation details and personalised applicability.
-      </aside>
     </section>
   </main>
 </body>

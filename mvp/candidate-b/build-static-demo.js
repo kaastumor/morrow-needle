@@ -26,7 +26,8 @@ const REGIME_V2_FILES = Object.freeze([
 
 const MEDICAL_SUMMARY_FILES = Object.freeze([
   "index.html",
-  "styles.css"
+  "styles.css",
+  "app.js"
 ]);
 
 const FIXTURE_FILES = Object.freeze([

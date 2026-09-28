@@ -57,3 +57,46 @@ Sequential Tab traversal covered all **35** anchors in DOM order at both 1440×9
 ### Verification and disposition
 
 Current-head repository sanitation and Unit tests passed after the fix, and Vercel returned success. The structural candidate therefore returns to **ADOPT as the internal structural candidate, pending sponsor qualitative acceptance**. Reader comprehension, assistive-technology traversal, fresh live legal-procedure verification and real-user value remain outside this internal P5 result. No merge or publication follows from this evidence.
+
+
+## Sponsor revision and visual-first iteration — 29 September 2026
+
+Sponsor review withheld acceptance after the accessibility-complete candidate: direction was liked, but the page remained too text-heavy, visually under-designed, and lacked both a timeline graph and a legislation hierarchy graph. The sponsor also required budget-friendly tooling. Figma was connected and a Starter-plan design file was created, but the next MCP design-system call hit the Starter-plan call limit and offered a paid upgrade; no upgrade was authorized. The implementation therefore used the existing GitHub/Vercel + native design-guidance/browser-verification path.
+
+### Surviving proposition
+
+The public entry now treats diagrams as information-bearing structure rather than decoration:
+
+- a compact hero answers purpose and exposes the independent editorial boundary;
+- MDR and IVDR appear as the first substantive branch choice;
+- a six-milestone timeline distinguishes predecessor, core-law/application, proposal and operational states with text labels as well as styling;
+- a legislation map shows the EU medical-device framework root, MDR/IVDR branches, predecessor directives, implementing/delegated children, Regulation (EU) 2024/1860 as a cross-cutting enacted change, and COM(2025) 1023 as a dashed “Proposal — not law” node;
+- role definitions collapse to four summary rows with native disclosure for secondary detail;
+- Public / Expert view separates secondary source/context metadata without hiding the product, transition, proposal or compliance qualifications;
+- source access remains directly available in the public layer.
+
+Rendered public DOM text at the exact candidate measured **445 whitespace-separated words** with role disclosures closed and Expert-only content hidden; Expert mode measured 487 words before opening native details. This is a descriptive text-load proxy, not reading-time or comprehension evidence. The hero itself is regression-bounded at 105 words or fewer.
+
+### Exact rendered checkpoint and visual verification
+
+Checkpoint: `d074fbfa4cb2cf6e79da9c5931927c94d60d72c0`.
+
+Exact Git blobs independently matched the locally rendered bytes:
+
+- HTML `5bffbe27a2c0cd7af97d430a901a7c080ef9f0b0`
+- CSS `8173079196a8a2fe89c61a66a9bc91b076a49fda`
+- interaction script `f82e881624a56d6a5bb7d8e2af388a614b7857b5`
+
+Vercel reported the exact checkpoint READY. The execution sandbox still blocks external Chromium navigation, so visual inspection used Chromium `set_content` with those byte-identical Git blobs. Desktop 1440×900 and mobile 390×844 full-page renders were inspected. The timeline reads horizontally on desktop and vertically on mobile; the law map uses a root/branch structure on desktop and a single-column hierarchy on mobile. No horizontal page overflow occurred at 1440, 390 or 320 CSS px, including at 200% root text size. Public mode exposes 25 links and no hidden Expert-only content. A fresh isolated interaction check confirmed the Expert button changes the root detail state and exposes six Expert-only elements.
+
+### Verification
+
+At the exact checkpoint:
+- GitHub Unit tests run 746: **success**;
+- Repository sanitation run 1002: **success**;
+- Vercel deployment: **success / READY**;
+- focused medical-devices contract: 18 structural tests within the broader suite.
+
+### Current disposition
+
+**REVIEW AGAIN — sponsor acceptance is requested on the new visual-first candidate, not the prior text-heavy candidate.** The internal evidence supports a materially different page architecture and a functioning responsive visual model, but reader comprehension and preference remain untested. No merge or publication is implied.

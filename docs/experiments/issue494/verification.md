@@ -27,3 +27,16 @@ A later connected-source review read the European Parliament Open Data rules, th
 The reading protocol now freezes a 16-reader, between-subject diagnostic pilot proposal with 8 readers per arm, three critical comprehension items, separately recorded correctness/unresolved/source-opening/navigation/time outcomes, a hard wrong-attribution stop and a pre-specified continuation threshold. No participant recruitment or execution is authorised by that freeze.
 
 PR-head Vercel preview deployment for the earlier head was observed READY but remained behind Vercel authentication even through the connected deployment tooling. Therefore browser rendering, keyboard/focus, reflow and external source-link activation remain **unverified**, not failed. A new preview for later commits must be tied to its exact head before it can count as evidence.
+
+
+## Real-browser verification and reflow repair — 29 September 2026
+
+Remote Desktop Commander connected to **Jeroen-PC** and exposed the existing local Chrome/Playwright runtime. To avoid mutating an existing checkout, exact PR head `bdbcbddf0c4e6aaa9db8a5f8efcb2bfaa0392ef3` was downloaded from GitHub codeload into an isolated scratch directory. The #494 generator and tests passed there before browser work.
+
+Headless Google Chrome was then driven through Playwright against a local HTTP server serving the frozen `specimen.html` and `baseline.html`. At 1440×900, 390×844 and 320×700, both arms loaded with two decision sections/tables, keyboard Tab focus landed on a real link with a visible solid focus outline, and direct `#january`/`#march` navigation produced the intended target outline. Four representative source links (both official-publication URLs and both HowTheyVote vote pages) emitted the exact expected browser requests; requests were intercepted/aborted, so this proves activation but not destination retrieval.
+
+The first browser pass found a real reflow defect: with root text size set to **200% (32px)**, both arms produced document-level horizontal overflow at 390px and 320px. Diagnosis isolated long legal/status tokens and headings such as `INSPECTABLE_ONLY_FOR_NOW`, `P9_TA(2024)0018` and `2022/0092(COD)`; table overflow itself was already contained in the intended `.table-wrap` scroll region. A candidate table-width fix was tested and rejected as unnecessary. The minimal retained repair is `overflow-wrap:anywhere` on headings, paragraphs, definition-list text and links.
+
+A clean minimality replay restored the exact original stylesheet, applied **only** that text-wrap rule, and reran the full browser matrix. Result: no document-level horizontal overflow at 1440px, 390px or 320px, including 200% root text, in either arm. At 320px the tables intentionally remain horizontally scrollable inside their local wrapper; the page itself does not overflow. This is browser evidence for the rendered static pages, not WCAG conformance or participant comprehension.
+
+The repository patch records only the minimal text-wrap repair plus a static regression assertion. A final exact-head replay is still required after these repository commits before the browser gate can be marked closed.

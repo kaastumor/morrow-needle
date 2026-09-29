@@ -22,7 +22,8 @@
   </header>
   <nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> / Medical-device legislation</nav>
   <div class="detail-bar">
-    <div class="view-switch" role="group" aria-label="Detail level">
+    <span class="product-detail-label">Detail level for this overview</span>
+    <div class="view-switch" role="group" aria-label="Detail level for this overview">
       <button type="button" data-view="public" aria-pressed="true">Public</button>
       <button type="button" data-view="expert" aria-pressed="false">Expert</button>
     </div>
@@ -32,16 +33,20 @@
     <header class="hero">
       <div class="hero-copy">
         <p class="eyebrow">Needle EU · independent research demonstration</p>
-        <h1>EU medical-device rules, without the legal maze</h1>
+        <h1>Medical-device legislation</h1>
         <p class="dek">
           Two core Regulations shape how medical devices and in-vitro diagnostics reach and stay on the EU market — covering conformity before entry, MDR clinical investigations, IVDR performance studies, supply-chain duties, traceability and post-market monitoring.
           Start with the product branch, then use the timeline and law map to see how the framework fits together.
         </p>
-        <div class="trust-strip" aria-label="Editorial status">
-          <span>Not an official EU service</span>
-          <span>Evidence checked <time datetime="2026-09-28">28 Sep 2026</time></span>
-          <span>EU-level orientation</span>
-        </div>
+        <aside class="product-evidence" aria-labelledby="medical-evidence-heading">
+          <h2 id="medical-evidence-heading">Evidence and limits</h2>
+          <dl class="product-evidence__facts">
+            <div><dt>Evidence date</dt><dd>Checked <time datetime="2026-09-28">28 Sep 2026</time>.</dd></div>
+            <div><dt>Authority</dt><dd><a href="#sources">Official MDR, IVDR and related sources</a> govern.</dd></div>
+            <div><dt>Status</dt><dd>Selected EU-level orientation; not an official or live service.</dd></div>
+            <div><dt>Unknowns and correction</dt><dd>Not a personal applicability decision. <a href="https://github.com/kaastumor/morrow-needle/issues/new">Report an error</a>.</dd></div>
+          </dl>
+        </aside>
       </div>
 
       <nav class="quick-nav" aria-label="On this page">

@@ -131,8 +131,8 @@ test("static prototype states the product-compliance and frozen-data boundaries"
   const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
   assert.match(html, /does not determine full product compliance/i);
   assert.match(html, /does not replace the standard text, testing/i);
-  assert.match(html, /Frozen demonstration data/i);
-  assert.match(html, /not a live monitoring service/i);
+  assert.match(html, /Five frozen records/i);
+  assert.match(html, /not live monitoring/i);
   assert.doesNotMatch(html, /unique|best|superior|automates CE compliance/i);
 });
 

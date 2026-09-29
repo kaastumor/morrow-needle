@@ -1,5 +1,14 @@
 /* Shared, static product navigation for the bounded Needle EU routes. */
 :root {
+  --product-space-1: .5rem;
+  --product-space-2: .75rem;
+  --product-space-3: 1rem;
+  --product-space-4: 1.5rem;
+  --product-space-5: 2.5rem;
+  --product-radius-control: .2rem;
+  --product-radius-surface: .3rem;
+  --product-content: 72rem;
+  --product-reading: 62ch;
   --shell-bg: #f4f6fa;
   --shell-surface: #fff;
   --shell-text: #152033;
@@ -90,6 +99,9 @@ body.product-route {
 .detail-bar {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--product-space-2);
   width: min(72rem, calc(100% - 2rem));
   margin: .45rem auto 0;
 }
@@ -115,6 +127,78 @@ body.product-route {
 .product-entry__path p { max-width: 52ch; }
 .product-entry__path a { font-weight: 750; }
 .product-entry__limits { max-width: 72ch; border-top: 1px solid var(--shell-border); padding-top: 1.25rem; }
+
+/* Product routes share a visual vocabulary; route-specific legal diagrams retain their own semantics. */
+body.product-route main { width: min(var(--product-content), calc(100% - 2rem)); }
+.product-route main h1 {
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  line-height: 1.06;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+.product-detail-label, .product-task-note { color: var(--shell-muted); font-size: .82rem; }
+.product-task-note { max-width: var(--product-reading); margin: .5rem 0 0; }
+.product-route main h2 { font-size: clamp(1.55rem, 3vw, 2.4rem); line-height: 1.15; letter-spacing: -.025em; }
+.product-route main h3 { font-size: 1.25rem; line-height: 1.25; }
+.product-route :is(.eyebrow, .section-kicker, .product-entry__eyebrow) {
+  color: var(--shell-muted);
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+.product-route :is(.dek, .lede, .product-entry__lede) { max-width: var(--product-reading); font-size: clamp(1.05rem, 2vw, 1.2rem); line-height: 1.5; }
+.product-route :is(.branch-card, .tool-shell, .act-context, .context-card, .product-entry__path, .source-baseline, .act-chip, .reg-card) {
+  border-color: var(--shell-border);
+  border-radius: var(--product-radius-surface);
+  box-shadow: none;
+}
+.product-route :is(.core-card, .act-facts > div, .lineage-node, .dependency-chain li, .evidence-details, .coverage-note, .applicability-grid > div, .scope-details, .dependency-card, .dependency-node) { border-radius: var(--product-radius-surface); }
+.product-route :is(.act-facts > div, .evidence-details, .applicability-grid > div, .scope-details) { border-color: var(--shell-border); }
+.product-route :is(button, input, .quick-nav a, .primary-action, .source-grid a, .lookup-result) { border-radius: var(--product-radius-control); }
+.product-route button { font: inherit; min-height: 2.5rem; }
+.product-route button[aria-pressed="true"] { font-weight: 800; }
+.product-route :is(a, button, input, select, summary):focus-visible {
+  outline: .2rem solid var(--shell-link);
+  outline-offset: .18rem;
+}
+.product-route .view-switch { border-radius: var(--product-radius-control); }
+.product-route .view-switch button { border-radius: 0; }
+
+/* One evidence/source/status contract is repeated at the top of every retained route. */
+.product-evidence {
+  max-width: var(--product-content);
+  margin: var(--product-space-4) 0;
+  padding: var(--product-space-3) var(--product-space-4);
+  border: 1px solid var(--shell-border);
+  border-left: .25rem solid #0a669e;
+  border-radius: var(--product-radius-surface);
+  background: var(--shell-surface);
+  color: var(--shell-text);
+}
+.product-evidence h2 { margin: 0 0 var(--product-space-2); font-size: 1.1rem !important; letter-spacing: 0 !important; }
+.product-evidence__facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--product-space-2) var(--product-space-4); margin: 0; }
+.product-evidence__facts div { min-width: 0; }
+.product-evidence__facts dt { color: var(--shell-muted); font-size: .78rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+.product-evidence__facts dd { margin: .15rem 0 0; overflow-wrap: anywhere; }
+.product-evidence a { color: var(--shell-link); }
+.product-route :is(.warning, .boundary-note, .local-notice, .product-entry__scope) {
+  border-radius: var(--product-radius-surface);
+  border-color: var(--shell-border);
+  background: var(--shell-surface);
+}
+.product-route :is(.prototype-strip, .freshness, .meta-line, .trust-strip, .context-strip) { border-radius: var(--product-radius-surface); }
+.product-route .status-badge { border-radius: var(--product-radius-control); white-space: normal; }
+.product-route .branch-badge { border-radius: var(--product-radius-control); }
+.product-route .view-bar { align-items: flex-start; flex-wrap: wrap; }
+.product-route .expert-entry { opacity: 1; }
+.product-route .task-switcher { border-left: .2rem solid var(--shell-border); padding-left: var(--product-space-2); }
+.product-route .task-switcher::before { content: "On this page"; flex-basis: 100%; color: var(--shell-muted); font-size: .78rem; font-weight: 800; text-transform: uppercase; }
+.product-route .section-nav::before { content: "On this page"; flex-basis: 100%; color: var(--shell-muted); font-size: .78rem; font-weight: 800; text-transform: uppercase; }
+
+@media (max-width: 38rem) {
+  .product-evidence__facts { grid-template-columns: 1fr; }
+  .product-evidence { padding: var(--product-space-3); }
+}
 
 @media (prefers-color-scheme: dark) {
   :root {

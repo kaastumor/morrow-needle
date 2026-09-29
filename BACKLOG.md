@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **DISCOVER → IMPLEMENT — MEDICAL-DEVICES PUBLIC UI/UX / LVD TEST FROZEN**
+# **IMPLEMENT — NEEDLE EU BOUNDED PROTOTYPE / LVD TEST FROZEN**
 
 Frozen scientific source:
 
@@ -27,7 +27,7 @@ Current released reference surface remains:
 
 ### Sponsor objective
 
-> **complete one credible, evidence-bounded EU act page and determine whether its integrated orientation/verification job warrants further product investment**
+> **complete a connected, evidence-bounded Needle EU prototype over an explicit small content set, then present it for sponsor review**
 
 The internal candidate portfolio has now reached an external evidence frontier.
 
@@ -165,85 +165,17 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
-### Immediate priority — #484 summary-first public UI/UX refinement
+### Immediate priority — #490 accepted-foundation repair
 
-#481 completes the bounded current-state/freshness repair.
+Sponsor direction of 29 September 2026 authorizes a bounded, connected Needle EU prototype beyond the earlier landing-page phase. The prohibitions here on individual act pages, connected navigation and one small contrasting example are superseded for that programme. This does not reopen an applicability classifier, broad act inventory, legal ontology, monitoring, the frozen corpus/LVD evaluation, or value claims from internal work.
 
-Durable evidence:
-- `docs/evidence/issue481-medical-devices-current-state-repair-2026-09-28.md`;
-- `docs/reviews/issue481-current-state-freshness-comparison-2026-09-28.md`.
+PR #489 is merged: accepted source head `36f90e9471b5a048c5a85e84a5c3ff666cf85e42`; main squash `948cb8c28801dd3d056998ca59b2a446bdb98c3e`. Preserve its restrained editorial design. #488 is a separate unaccepted governance proposal.
 
-#481 disposition:
+#490's evidence/interaction review found **REPAIR_REQUIRED** (comment 5880868788). Its F1–F6 findings own the current repair: public sources, selected-coverage safeguards, consequential scope/transition wording, legacy anchors, timeline/map semantics, and disclosure/no-script behavior. Actual browser verification was blocked before load by `net::ERR_BLOCKED_BY_ADMINISTRATOR`; it remains an open gate until tested in an authorized browser environment.
 
-> **CONTINUE — FRESHNESS CONTRACT REPAIRED / RETURN TO UI/UX RESEARCH-IMPLEMENTATION LOOP**
+The [Needle EU prototype programme](docs/plans/needle-eu-prototype-programme-v0.2.md) defines M0 repair, M1 connected medical-devices journey, M2 one justified contrasting example, M3 hardening/demonstration, and M4 sponsor review. These are dependencies, not parallel WIP. Current active work is **WIP=1 — #490 M0 repair and reviewable PR**. No M1 build begins while a demonstrated M0 regression remains. The prototype finish line requires a working bounded experience and actual browser evidence; sponsor acceptance, merge and release are separate decisions.
 
-Supported:
-- summary-first reading order remains the public-entry contract;
-- current-state wording is locally honest and explicitly bounded;
-- the 28 May 2026 EUDAMED operational milestone is represented without inventing one regime-wide date;
-- current EUR-Lex source-version metadata is refreshed;
-- COM(2025) 1023 remains visibly non-enacted/ongoing;
-- the repair did not require a broad act inventory;
-- `/regime-v2/` remains the deeper legal-relationship layer.
-
-Important sponsor correction:
-
-> **the public-view programme has not finished its internal UI/UX research-and-implementation phase.**
-
-#481 repaired content/currentness. It did not answer the remaining visual hierarchy, scan-path, progressive-disclosure, source-presentation, mobile or interaction-design questions.
-
-Current owner:
-
-> **#484 — DISCOVER → PROPOSE → RED TEAM → IMPLEMENT → COMPARE: Summary-first public landing UI/UX refinement**
-
-#484 must:
-1. observe/measure the repaired `/medical-devices/` surface;
-2. research strong public/legal design precedents;
-3. form one primary UI proposition;
-4. red-team it;
-5. implement the surviving proposition;
-6. compare before vs after structurally.
-
-Research baseline includes:
-- Europa Component Library;
-- GOV.UK Design System;
-- W3C/WCAG;
-- EUR-Lex;
-- legislation.gov.uk;
-- additional strong public/legal precedent where useful.
-
-Primary UX questions:
-- does the repaired page still read like a styled legal memo?
-- can first-contact scanning improve without hiding important qualifications?
-- are sources too visually noisy?
-- do role/date/change sections need stronger hierarchy or grouping?
-- does in-page navigation help orientation?
-- what may safely move behind progressive disclosure, if anything?
-- does mobile preserve the intended reading path?
-
-Still unproven:
-- novice/user comprehension;
-- preference over the strongest official workflow;
-- task-time/error reduction;
-- commercial value;
-- generalisation to another regime.
-
-Those are later gates. They do not block the currently intended UI/UX research loop.
-
-Still prohibited:
-- second regime;
-- individual MDR/IVDR page build;
-- applicability classifier;
-- new graph/ontology;
-- broad act inventory;
-- automated monitoring;
-- LVD P8 changes;
-- external-user-value/commercial claims from internal evidence;
-- outreach without explicit sponsor authorization.
-
-Current state:
-
-> **WIP=1 — #484 UI/UX RESEARCH → IMPLEMENTATION, after #483/#481 merge**
+Candidate A and C remain externally gated and inactive. At M4, use #418 and their current asset owners for a short recommendation, then ask for sponsor direction before activating either. Sponsor investment in Needle EU is not external value evidence.
 
 ## Historical backlog archive
 

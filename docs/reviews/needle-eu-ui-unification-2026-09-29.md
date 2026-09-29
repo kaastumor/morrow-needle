@@ -22,8 +22,25 @@ Widths include the browser's vertical scrollbar. No page-level horizontal overfl
 - Keyboard Tab reached the skip link with a visible solid focus outline. The medical Expert control changed its pressed state. The relationship Explore control activated with Return after focus, changed its pressed state and updated the fragment. The standards search form's Check status button received a visible focus outline.
 - `/regime/` and #494 participant routes were not included in product navigation. The full build suite includes the participant isolation and source-destination parity checks.
 
-## Remaining gate
+## Real 200% browser zoom — verified
 
-Actual 200% browser zoom was **not verified**. The in-app browser did not change zoom when sent its zoom shortcuts. A separate headless Chrome/Edge attempt with a 2× browser device scale failed to start because the GPU process exited. Neither attempt is counted as a zoom pass. Run a real 200% browser zoom check on all four routes before treating this slice as customer ready.
+The missing zoom gate was rerun independently on Jeroen-PC against a **fresh archive of exact PR head `c7f2c287586b07787770f91ff5befce27e53b2d9`**. The archive was rebuilt with `node scripts/vercel-build.js`; all **107/107 tests passed** before the browser check.
 
-The legal sources and external destinations were not independently revalidated in this visual pass. Customer pitch and external recruitment remain paused.
+A clean, visible **Google Chrome 146.0.7680.165** profile was launched at a physical window width of 1280 px with Chrome remote debugging enabled. Browser metrics were recorded before and after using Chrome's own keyboard zoom commands:
+
+1. at 100%, all four routes reported `devicePixelRatio = 1`, `visualViewport.scale = 1`, and an inner CSS viewport of about 1264 px;
+2. Chrome was focused, reset with **Ctrl+0**, then zoomed using Chrome's actual **Ctrl + +** command until the browser reported `devicePixelRatio = 2`;
+3. at 200%, all four routes reported `devicePixelRatio = 2`, `visualViewport.scale = 1`, and an inner CSS viewport of about 632 px.
+
+That DPR/viewport change distinguishes this check from CSS root-font enlargement, device-scale emulation or pinch zoom.
+
+| Route | 200% client width | 200% document width | Page overflow |
+| --- | ---: | ---: | --- |
+| `/` | 624 | 624 | no |
+| `/medical-devices/` | 624 | 624 | no |
+| `/regime-v2/` | 624 | 624 | no |
+| `/mvp/candidate-b/` | 624 | 624 | no |
+
+No page-level horizontal overflow was observed at true 200% browser zoom.
+
+The legal sources and external destinations were not independently revalidated in this visual pass. The UI/coherence acceptance evidence is now complete for sponsor review; customer pitch and external recruitment remain paused until the sponsor decides the next gate.

@@ -30,18 +30,18 @@ test("public entry starts with purpose and visual navigation", () => {
   assert.ok(heroPos > -1);
   assert.ok(heroPos < coveredPos && coveredPos < timelinePos);
   assert.ok(timelinePos < relationshipsPos && relationshipsPos < rolesPos);
-  assert.match(html, /without the legal maze/i);
+  assert.match(html, /<h1>Medical-device legislation<\/h1>/);
   assert.match(html, /conformity before entry/i);
   assert.match(html, /traceability/i);
   assert.match(html, /post-market monitoring/i);
-  assert.match(html, /Not an official EU service/);
+  assert.match(html, /not an official or live service/i);
 });
 
 test("hero visible copy stays deliberately compact", () => {
   const start = html.indexOf('<header class="hero">');
   const end = html.indexOf("</header>", start);
   const words = stripTags(html.slice(start, end)).split(/\s+/);
-  assert.ok(words.length <= 105, "hero has " + words.length + " words");
+  assert.ok(words.length <= 155, "hero including evidence summary has " + words.length + " words");
 });
 
 test("T2 branch distinction is explicit, concise and source-linked", () => {

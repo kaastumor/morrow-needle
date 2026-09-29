@@ -183,7 +183,7 @@ Do not reopen automatic similarity, comprehensive track records, member/party jo
 
 ### Immediate priority — Needle EU UI coherence slice
 
-**WIP=1 — one reviewable product-entry and shared-shell implementation.** Replace the root redirect with a bounded Needle EU entry and connect the retained medical-device overview, deeper relationship browser and known-standard tool with one identity, return navigation and evidence-scope wording. Keep `/regime/` legacy/research and #494 participant routes outside product navigation. Verify the generated routes, narrow layouts, 200% text and keyboard journeys before review. This slice makes no new legal or political claim and does not authorize a customer pilot, merge, deployment or release.
+**WIP=1 — #498 shared-component and visual-system unification across the retained Needle EU routes.** PR #497 merged as `2dbd637fd414053269d8e78f46ffe8297089f034`, establishing the bounded entry and shared navigation. #498 aligns typography, spacing, controls, surfaces, evidence/status presentation, interaction labels and route terminology across `/`, `/medical-devices/`, `/regime-v2/` and `/mvp/candidate-b/`. Keep `/regime/` legacy/research and #494 participant routes outside product navigation. Verify side by side at desktop, 390px and 320px, with actual 200% browser zoom, keyboard journeys and route continuity. The follow-up PR remains unmerged for sponsor review; customer pitch and external recruitment stay paused until the coherence gate passes.
 
 The sponsor selected this internal product-coherence work in place of the paused #494 recruitment lane. Subsequent medical-depth, search and decision-history work needs its own allocation after this slice is reviewed.
 

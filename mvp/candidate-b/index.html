@@ -22,18 +22,23 @@
 <main id="main" tabindex="-1">
   <header class="hero">
     <p class="eyebrow">Needle EU · independent research demonstration</p>
-    <h1>Harmonised Standard Status</h1>
+    <h1>Known-standard status</h1>
     <p class="lede">Check the EU Official Journal reference state of a standard you already know — including restrictions and already-fixed future changes.</p>
 
-    <div class="prototype-strip" role="note">
-      <strong>Frozen demonstration data</strong>
-      <span>5 official-evidence records · not a live monitoring service</span>
-    </div>
+    <aside class="product-evidence" aria-labelledby="standard-evidence-heading">
+      <h2 id="standard-evidence-heading">Evidence and limits</h2>
+      <dl class="product-evidence__facts">
+        <div><dt>Evidence date</dt><dd>Record-specific legal-view date shown in each result; default lookup date <time datetime="2026-09-26">26 Sep 2026</time>.</dd></div>
+        <div><dt>Authority</dt><dd><a href="#evidence-heading">Linked official acts and OJ references</a> govern.</dd></div>
+        <div><dt>Status</dt><dd>Five frozen records; not live monitoring or a compliance decision.</dd></div>
+        <div><dt>Unknowns and correction</dt><dd>Other standards are outside this set. <a href="https://github.com/kaastumor/morrow-needle/issues/new">Report an error</a>.</dd></div>
+      </dl>
+    </aside>
 
     <div class="warning">
       <strong>Scope boundary:</strong> this does not determine full product compliance. It does not replace the standard text, testing, technical assessment, notified bodies, supplier evidence or qualified conformity judgment.
     </div>
-    <nav class="section-nav" aria-label="Prototype sections">
+    <nav class="section-nav" aria-label="Page sections">
       <a href="#status-tool">Standard status</a>
       <a href="#lvd-lifecycle">Low Voltage Directive context</a>
     </nav>

@@ -25,3 +25,5 @@ td:not(:first-child), th:not(:first-child) { text-align: right; }
 .small { font-size: .94rem; }
 @media (max-width: 35rem) { dl { display: block; } dt { margin-top: .8rem; } .table-wrap { margin-inline: -.6rem; } th, td { padding: .4rem; } }
 @media print { :root { background: white; } header, main, footer { max-width: none; } .decision, .handoff, .notice { break-inside: avoid; } a { color: inherit; } }
+
+h1, h2, h3, p, dt, dd, a { overflow-wrap: anywhere; }

@@ -40,3 +40,21 @@ The first browser pass found a real reflow defect: with root text size set to **
 A clean minimality replay restored the exact original stylesheet, applied **only** that text-wrap rule, and reran the full browser matrix. Result: no document-level horizontal overflow at 1440px, 390px or 320px, including 200% root text, in either arm. At 320px the tables intentionally remain horizontally scrollable inside their local wrapper; the page itself does not overflow. This is browser evidence for the rendered static pages, not WCAG conformance or participant comprehension.
 
 The repository patch records only the minimal text-wrap repair plus a static regression assertion. A final exact-head replay is still required after these repository commits before the browser gate can be marked closed.
+
+
+## Exact-head browser gate closure — 29 September 2026
+
+After the minimal reflow repair was committed, exact PR head `57314714fd5b6376c47a1aff98d0d6d0b7db4737` was downloaded afresh from GitHub codeload into a new isolated directory on Jeroen-PC. No existing checkout was changed. The #494 generator and test suite passed **3/3**, including the new text-reflow safeguard.
+
+The same Chrome/Playwright matrix was then rerun on that exact archive:
+- both `specimen.html` and `baseline.html` at 1440×900, 390×844 and 320×700;
+- normal text and root text enlarged to 200% (computed 32px);
+- document-level horizontal overflow absent at every width/size combination;
+- at 320px, each vote table remains intentionally horizontally scrollable inside `.table-wrap`, without causing page-level overflow;
+- first keyboard Tab reaches a link with a visible solid focus outline in both arms;
+- direct `#january` and `#march` navigation resolves to the intended decision section and applies the target outline;
+- browser activation emitted the exact expected requests for both selected EUR-Lex publication URLs and both HowTheyVote vote-page URLs. Those requests were deliberately intercepted/aborted; destination retrieval was **not** claimed.
+
+This closes the previously open **rendering / keyboard-focus / fragment-navigation / narrow reflow / 200%-text / representative source-link activation** browser gate for the static experiment pages. It is not WCAG conformance, source-destination availability, participant comprehension or reader-benefit evidence.
+
+Screenshots and machine-readable browser output were retained only in the isolated local verification workspace on Jeroen-PC; they are not production assets or source evidence.

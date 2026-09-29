@@ -41,26 +41,35 @@ Recruitment source and contact method require separate sponsor authorisation bef
 
 Assign anonymous IDs in arrival order: `P01` through `P16`.
 
-Use this frozen balanced sequence:
+Allocation was frozen **before any participant observation** using this deterministic randomisation rule:
+
+1. seed string: `needle-494-reading-pilot-v1-2026-09-29`;
+2. for each participant ID, compute lowercase hexadecimal SHA-256 of `<seed>|<participant_id>`;
+3. sort IDs ascending by that hash;
+4. assign the first eight ranked IDs to Arm A and the remaining eight to Arm B.
+
+This avoids operator discretion and makes the allocation independently reproducible without depending on a specific PRNG implementation.
+
+Frozen sequence in arrival-ID order:
 
 | Participant | Arm |
 | --- | --- |
 | P01 | A |
 | P02 | B |
-| P03 | B |
+| P03 | A |
 | P04 | A |
-| P05 | B |
-| P06 | A |
-| P07 | A |
+| P05 | A |
+| P06 | B |
+| P07 | B |
 | P08 | B |
 | P09 | A |
-| P10 | B |
+| P10 | A |
 | P11 | A |
 | P12 | B |
-| P13 | B |
-| P14 | A |
+| P13 | A |
+| P14 | B |
 | P15 | B |
-| P16 | A |
+| P16 | B |
 
 Do not swap assignments because of expertise, apparent politics, early scores, device, availability or operator preference. If a participant withdraws before seeing the page, keep the ID/arm as a non-start and recruit a replacement under a new ID after the original P16 only if separately authorised; do not refill the old slot silently.
 

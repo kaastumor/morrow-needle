@@ -27,6 +27,20 @@ Compare the frozen pages as two presentations of equal evidence. Before any scor
 
 These eight questions are exposed development checks, not held-out fixtures. A pass on them is neither a user benefit finding nor an unprimed retrieval finding.
 
+## Frozen pre-run addendum — diagnostic reading pilot
+
+This addendum freezes the first proposed reader pilot **before any participant observation**. It is a small diagnostic comparison, not a population estimate, political-opinion study or authorisation to recruit.
+
+- **Sample:** 16 English-reading adults, 8 per arm.
+- **Assignment:** between-subject 1:1 assignment to linked specimen or competent handoff. No crossover in the scored pilot because seeing either arm teaches the shared factual answer.
+- **Environment:** desktop/laptop reading only for the scored pilot, with the same source availability in both arms. Mobile/reflow remains a separate browser/accessibility check.
+- **Questions:** the eight frozen reading questions below. Questions 1 (exact voted text), 7 (package versus clause) and 8 (within-file ballot coverage) are **critical items**.
+- **Recorded outcomes:** answer correctness, explicitly unresolved answers, source openings, navigation errors and completion time. Record these separately; do not collapse them into one score.
+- **Political stance:** do not ask for support/opposition, party preference, vote intention or persuasion. The artifact is stance-invariant and the study concerns comprehension/navigation only.
+- **Hard stop:** an interface-caused wrong ballot, stage or voted-text attribution blocks the affected output regardless of speed.
+- **Pre-specified diagnostic continuation rule:** the linked-specimen arm must not perform worse than the handoff arm on any critical item and must produce at least **3 additional correct critical-item responses** across the 24 critical-item opportunities in its 8-person arm. Otherwise treat the presentation result as parity/insufficient and retain the simpler handoff. This is a pragmatic pilot threshold, **not** a statistical-significance claim.
+- **Recruitment/execution:** still requires separate authorisation. Fix recruitment source, randomisation procedure, exact browser/device setup and timing instructions before the first participant; do not choose them after observing outcomes.
+
 ## Separate integration comparison
 
 Only under a separately frozen and authorised workflow test, start both paths from the same citizen question and accessible source environment. Count discovering, joining, checking, explaining, updating and maintaining evidence, including precomputed editorial work for the linked page. Keep that effort distinct from presentation comprehension or timing. Do not label evidence-assembly savings as proven presentation benefit. No integration comparison or participant work has yet run.

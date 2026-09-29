@@ -29,7 +29,7 @@ These eight questions are exposed development checks, not held-out fixtures. A p
 
 ## Frozen pre-run addendum — diagnostic reading pilot
 
-This addendum freezes the first proposed reader pilot **before any participant observation**. It is a small diagnostic comparison, not a population estimate, political-opinion study or authorisation to recruit.
+This addendum freezes the first proposed reader pilot **before any participant observation**. It is a small diagnostic comparison, not a population estimate, political-opinion study or authorisation to recruit. Operational details are frozen in [pilot-runbook.md](pilot-runbook.md), with predeclared capture fields in [pilot-observation-template.csv](pilot-observation-template.csv).
 
 - **Sample:** 16 English-reading adults, 8 per arm.
 - **Assignment:** between-subject 1:1 assignment to linked specimen or competent handoff. No crossover in the scored pilot because seeing either arm teaches the shared factual answer.

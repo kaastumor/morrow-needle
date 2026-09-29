@@ -59,7 +59,7 @@ test("T2 branch distinction is explicit, concise and source-linked", () => {
 test("IVDR laboratory boundary remains visible in the public layer", () => {
   const block = section("covered", "timeline");
   assert.match(block, /Lab boundary/);
-  assert.match(block, /general lab or research-use products are outside IVDR unless specifically intended/i);
+  assert.match(block, /general lab or research-use products are outside IVDR unless, in view of their characteristics, the manufacturer specifically intends/i);
   const boundaryStart = block.lastIndexOf('<p class="qualification"', block.indexOf("Lab boundary"));
   const boundaryEnd = block.indexOf("</p>", boundaryStart);
   const boundary = block.slice(boundaryStart, boundaryEnd);
@@ -84,8 +84,18 @@ test("timeline is a real six-milestone visual model with typed states", () => {
 test("timeline preserves transition and EUDAMED qualifications", () => {
   const block = section("timeline", "relationships");
   assert.match(block, /Transition warning/);
+  assert.match(block, /defined legacy routes can remain available subject to conditions/i);
   assert.match(block, /do not settle every legacy-device case/i);
   assert.match(block, /does not mean all six modules are mandatory/i);
+  assert.match(block, /Spacing is schematic, not proportional to elapsed time/);
+});
+
+test("timeline evidence is available in Public without opening Expert detail", () => {
+  const block = section("timeline", "relationships");
+  const publicPart = block.slice(0, block.indexOf('<details class="supporting-detail expert-only">'));
+  assert.match(publicPart, /health\.ec\.europa\.eu\/medical-devices-new-regulations\/overview_en/);
+  assert.match(publicPart, /health\.ec\.europa\.eu\/medical-devices-eudamed\/overview_en/);
+  assert.match(publicPart, /eur-lex\.europa\.eu\/procedure\/EN\/2025_404/);
 });
 
 test("law map shows hierarchy, lineage, cross-cutting change and proposal", () => {
@@ -100,6 +110,21 @@ test("law map shows hierarchy, lineage, cross-cutting change and proposal", () =
   assert.match(block, /Proposal — not law/);
   assert.match(block, /COM\(2025\) 1023/);
   assert.match(block, /2025\/0404\(COD\)/);
+  assert.match(block, /Editorial grouping, not a legal act/);
+  assert.match(block, /Amends both MDR and IVDR/);
+  assert.match(block, /categories, not individual acts/);
+  assert.match(block, /schematic, not a complete act inventory/);
+  assert.match(block, /eur-lex\.europa\.eu\/eli\/reg\/2024\/1860\/oj\/eng/);
+  assert.match(block, /eur-lex\.europa\.eu\/procedure\/EN\/2025_404/);
+});
+
+test("selected later context is bounded and links official acts", () => {
+  const block = section("relationships", "roles");
+  for (const id of ["2025/2371", "2026/977", "2026/1359", "2026/1451"]) {
+    assert.match(block, new RegExp(id.replace("/", "\\/")));
+  }
+  assert.match(block, /examples, not every later measure/i);
+  assert.match(block, /Commission's wider act overview/);
 });
 
 test("relationship browser stays a deeper handoff", () => {
@@ -132,12 +157,19 @@ test("proposal is never styled or described as enacted law", () => {
 });
 
 test("public and expert modes use an accessible pressed-state switch", () => {
-  assert.match(html, /data-detail="public"/);
+  assert.doesNotMatch(html, /<html[^>]*data-detail=/);
   assert.match(html, /data-view="public" aria-pressed="true"/);
   assert.match(html, /data-view="expert" aria-pressed="false"/);
+  assert.match(css, /\.view-switch\s*\{\s*display: none/);
+  assert.match(css, /\[data-detail\] \.view-switch \{ display: inline-flex/);
   assert.match(css, /\[data-detail="public"\] \.expert-only/);
   assert.match(app, /root\.dataset\.detail = next/);
   assert.match(app, /setAttribute\("aria-pressed"/);
+});
+
+test("native role disclosures have a visible state affordance", () => {
+  assert.match(css, /\.role-table summary::after[\s\S]*content: "\+"/);
+  assert.match(css, /\.role-table details\[open\] summary::after \{ content: "−"; \}/);
 });
 
 test("expert mode owns secondary metadata rather than core caveats", () => {
@@ -179,6 +211,9 @@ test("page states unresolved scope instead of claiming completeness", () => {
 test("navigation targets the visual-first reading path", () => {
   for (const id of ["covered", "timeline", "relationships", "roles", "sources"]) {
     assert.match(html, new RegExp('href="#' + id + '"'));
+    assert.match(html, new RegExp('id="' + id + '"'));
+  }
+  for (const id of ["dates", "changes", "developments", "requirements"]) {
     assert.match(html, new RegExp('id="' + id + '"'));
   }
 });

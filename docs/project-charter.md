@@ -184,7 +184,14 @@ obligation.
 
 ## Public-product status
 
-Broad public-product expansion remains **STOPPED, not deleted**.
+Broad public-product expansion outside the sponsor-authorised **Needle EU bounded
+prototype** remains **STOPPED, not deleted**. The 29 September 2026 sponsor direction
+authorises a connected public EU-legislation experience over a small source-supported
+content set, including substantive act views, navigation, dates, relationships and one
+later contrasting example. [BACKLOG.md](../BACKLOG.md) owns its current delivery state
+and [the programme contract](plans/needle-eu-prototype-programme-v0.2.md) owns its
+finish line. This is funded prototype development, not evidence of external user or
+commercial value. The frozen scientific corpus and negative findings remain binding.
 
 Existing Explorer, Thread, X-Ray/dependency-ripple, Retrieval, Source Anomaly, Half-Life,
 feed/card and operational artifacts are preserved research history. They may re-enter only

@@ -104,13 +104,14 @@ button, summary { font: inherit; }
 .brand span { color: var(--muted); font-weight: 650; }
 
 .view-switch {
-  display: inline-flex;
+  display: none;
   gap: .2rem;
   padding: .2rem;
   border: 1px solid var(--border);
   border-radius: .15rem;
   background: var(--surface);
 }
+[data-detail] .view-switch { display: inline-flex; }
 .view-switch button {
   min-height: 2.25rem;
   padding: .35rem .75rem;
@@ -127,6 +128,7 @@ button, summary { font: inherit; }
 }
 
 [data-detail="public"] .expert-only { display: none !important; }
+.anchor-alias { display: block; scroll-margin-top: 5rem; }
 
 main {
   width: min(1180px, calc(100% - 2rem));
@@ -366,6 +368,7 @@ p { margin: .4rem 0 1rem; }
 }
 .supporting-detail p { max-width: 78ch; color: var(--muted); }
 .source-links { display: flex; flex-wrap: wrap; gap: .5rem 1rem; }
+.timeline-sources { margin-top: 1rem; font-size: .88rem; }
 
 .law-map {
   position: relative;
@@ -395,6 +398,13 @@ p { margin: .4rem 0 1rem; }
   width: 2px;
   height: 2rem;
   background: var(--line);
+}
+.law-map-root small {
+  display: block;
+  margin-top: .15rem;
+  color: var(--muted);
+  font-size: .72rem;
+  font-weight: 600;
 }
 .law-map-branches {
   position: relative;
@@ -506,6 +516,14 @@ p { margin: .4rem 0 1rem; }
   align-items: center;
   margin-top: 1rem;
 }
+.map-caption {
+  max-width: 78ch;
+  margin: 1rem 0;
+  color: var(--muted);
+  font-size: .88rem;
+}
+.later-measures ul { margin: .8rem 0; padding-left: 1.3rem; }
+.later-measures li + li { margin-top: .35rem; }
 .primary-action {
   display: inline-flex;
   min-height: 2.8rem;
@@ -521,18 +539,28 @@ p { margin: .4rem 0 1rem; }
 .roles-section { max-width: 920px; margin-inline: auto; }
 .role-table {
   border-top: 1px solid var(--border);
+  scroll-margin-top: 5rem;
 }
 .role-table details { border-bottom: 1px solid var(--border); }
 .role-table summary {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto auto;
   gap: 1rem;
   align-items: center;
   padding: 1.05rem .15rem;
   cursor: pointer;
-  list-style-position: outside;
+  list-style: none;
 }
+.role-table summary::-webkit-details-marker { display: none; }
+.role-table summary::after {
+  content: "+";
+  color: var(--link);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.role-table details[open] summary::after { content: "−"; }
 .role-table summary span { font-weight: 850; }
 .role-table summary strong {
   color: var(--muted);
@@ -621,8 +649,10 @@ p { margin: .4rem 0 1rem; }
 }
 
 @media (max-width: 38rem) {
-  .topbar { align-items: flex-start; }
-  .view-switch button { padding-inline: .55rem; }
+  .topbar { width: min(1180px, calc(100% - 1rem)); flex-direction: column; align-items: stretch; gap: .5rem; }
+  .view-switch { align-self: flex-start; }
+  .view-switch button { padding-inline: .55rem; white-space: nowrap; }
+  .anchor-alias, .role-table { scroll-margin-top: 11rem; }
   main { width: min(100% - 1rem, 1180px); }
   .hero { padding: 1.75rem 0 1.5rem; }
   .trust-strip { display: grid; gap: .25rem; }
@@ -641,7 +671,9 @@ p { margin: .4rem 0 1rem; }
   .predecessor-stack { justify-content: flex-start; }
   .core-node { justify-items: start; min-height: auto; text-align: left; }
   .child-node { text-align: left; }
-  .role-table summary { grid-template-columns: 1fr; gap: .2rem; }
+  .role-table summary { grid-template-columns: minmax(0, 1fr) auto; gap: .2rem; }
+  .role-table summary::after { grid-column: 2; grid-row: 1 / span 2; }
+  .role-table summary strong { grid-column: 1; }
   .role-table summary strong { text-align: left; }
   .source-grid, .expert-meta { grid-template-columns: 1fr; }
 }

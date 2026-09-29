@@ -129,7 +129,7 @@ test("selected later context is bounded and links official acts", () => {
 
 test("relationship browser stays a deeper handoff", () => {
   const block = section("relationships", "roles");
-  assert.match(block, /Explore the full relationship browser/);
+  assert.match(block, /Explore selected relationships/);
   assert.match(block, /\/regime-v2\/#explore/);
 });
 

@@ -1,0 +1,136 @@
+/* Shared, static product navigation for the bounded Needle EU routes. */
+:root {
+  --shell-bg: #f4f6fa;
+  --shell-surface: #fff;
+  --shell-text: #152033;
+  --shell-muted: #5d697c;
+  --shell-border: #d8e0eb;
+  --shell-link: #214ecf;
+}
+
+body.product-route {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  background: var(--shell-bg);
+  color: var(--shell-text);
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.55;
+}
+
+.product-route > .skip-link {
+  position: fixed;
+  z-index: 100;
+  top: .5rem;
+  left: .5rem;
+  transform: translateY(-200%);
+  padding: .65rem .8rem;
+  border: 2px solid var(--shell-text);
+  background: var(--shell-surface);
+  color: var(--shell-text);
+  font-weight: 750;
+}
+.product-route > .skip-link:focus { transform: none; }
+
+.product-shell, .product-footer {
+  box-sizing: border-box;
+  width: min(72rem, calc(100% - 2rem));
+  margin-inline: auto;
+  color: var(--shell-text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+.product-shell {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .55rem 1.5rem;
+  padding: .85rem 0;
+  border-bottom: 1px solid var(--shell-border);
+}
+
+.product-shell__brand {
+  color: var(--shell-text);
+  font-weight: 850;
+  letter-spacing: -.025em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.product-shell__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .2rem 1.2rem;
+  margin-left: auto;
+  font-size: .9rem;
+}
+
+.product-shell a, .product-footer a { color: var(--shell-link); text-underline-offset: .16em; }
+.product-shell__nav a { padding: .35rem 0; }
+.product-shell__nav a[aria-current="page"] {
+  color: var(--shell-text);
+  font-weight: 750;
+  text-decoration-thickness: .14em;
+}
+
+.product-shell a:focus-visible, .product-footer a:focus-visible {
+  outline: .2rem solid #172554;
+  outline-offset: .2rem;
+}
+
+.product-breadcrumb {
+  width: min(72rem, calc(100% - 2rem));
+  margin: .65rem auto 0;
+  color: var(--shell-muted);
+  font-size: .84rem;
+}
+.product-breadcrumb a { color: var(--shell-link); }
+
+.detail-bar {
+  display: flex;
+  justify-content: flex-end;
+  width: min(72rem, calc(100% - 2rem));
+  margin: .45rem auto 0;
+}
+
+.product-return { display: inline-block; margin: .3rem 0 .8rem; font-weight: 700; }
+
+.product-footer {
+  padding: 1.4rem 0 2.5rem;
+  border-top: 1px solid var(--shell-border);
+  font-size: .86rem;
+  color: var(--shell-muted);
+}
+.product-footer p { max-width: 75ch; margin: .3rem 0; }
+
+.product-entry { width: min(72rem, calc(100% - 2rem)); margin: 0 auto; padding: 3rem 0 5rem; }
+.product-entry__eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: .76rem; font-weight: 800; color: var(--shell-muted); }
+.product-entry h1 { max-width: 14ch; margin: .25rem 0 .8rem; font-size: clamp(2.35rem, 6vw, 4.5rem); line-height: 1.04; letter-spacing: -.035em; }
+.product-entry__lede { max-width: 58ch; font-size: 1.15rem; }
+.product-entry__scope { max-width: 72ch; padding: 1rem 1.2rem; border-left: .25rem solid #0a669e; background: var(--shell-surface); }
+.product-entry__paths { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 2.5rem 0; }
+.product-entry__path { padding: 1.4rem; border: 1px solid var(--shell-border); background: var(--shell-surface); }
+.product-entry__path h2 { margin: .15rem 0 .55rem; font-size: 1.45rem; line-height: 1.2; }
+.product-entry__path p { max-width: 52ch; }
+.product-entry__path a { font-weight: 750; }
+.product-entry__limits { max-width: 72ch; border-top: 1px solid var(--shell-border); padding-top: 1.25rem; }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --shell-bg: #0d121a;
+    --shell-surface: #141c27;
+    --shell-text: #f3f6fb;
+    --shell-muted: #aeb9c9;
+    --shell-border: #2d394a;
+    --shell-link: #9db2ff;
+  }
+  body.product-route { color-scheme: dark; }
+  .product-shell a:focus-visible, .product-footer a:focus-visible { outline-color: #fff; }
+}
+
+@media (max-width: 38rem) {
+  .product-shell__nav { width: 100%; margin-left: 0; gap: .1rem 1rem; }
+  .product-entry__paths { grid-template-columns: 1fr; }
+  .product-entry { padding-top: 2rem; }
+}

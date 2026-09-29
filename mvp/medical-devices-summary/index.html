@@ -4,25 +4,34 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="A visual, source-linked orientation to the EU medical-device rules, MDR and IVDR.">
-  <title>Needle Navigator — EU medical-device rules</title>
+  <title>Medical-device legislation — Needle EU</title>
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="/product-shell.css">
   <script src="./app.js" defer></script>
 </head>
-<body>
+<body class="product-route">
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="topbar">
-    <a class="brand" href="#main" aria-label="Needle Navigator home">Needle<span>Navigator</span></a>
+  <header class="product-shell">
+    <a class="product-shell__brand" href="/">Needle EU</a>
+    <nav class="product-shell__nav" aria-label="Product navigation">
+      <a href="/medical-devices/" aria-current="page">Medical-device legislation</a>
+      <a href="/mvp/candidate-b/">Known-standard status</a>
+      <a href="/#coverage">About coverage</a>
+    </nav>
+  </header>
+  <nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> / Medical-device legislation</nav>
+  <div class="detail-bar">
     <div class="view-switch" role="group" aria-label="Detail level">
       <button type="button" data-view="public" aria-pressed="true">Public</button>
       <button type="button" data-view="expert" aria-pressed="false">Expert</button>
     </div>
-  </header>
+  </div>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
     <header class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">Independent EU legislation guide</p>
+        <p class="eyebrow">Needle EU · independent research demonstration</p>
         <h1>EU medical-device rules, without the legal maze</h1>
         <p class="dek">
           Two core Regulations shape how medical devices and in-vitro diagnostics reach and stay on the EU market — covering conformity before entry, MDR clinical investigations, IVDR performance studies, supply-chain duties, traceability and post-market monitoring.
@@ -210,7 +219,8 @@
       </details>
 
       <div class="map-actions">
-        <a class="primary-action" href="/regime-v2/#explore">Explore the full relationship browser</a>
+        <a class="primary-action" href="/regime-v2/#explore">Explore selected relationships</a>
+        <a href="/regime-v2/#changes">Review represented changes</a>
         <a class="expert-only" href="/regime-v2/#changes">Inspect selected change propagation</a>
       </div>
     </section>
@@ -281,5 +291,9 @@
       </p>
     </section>
   </main>
+  <footer class="product-footer">
+    <p>Needle EU · independent research demonstration. This EU-level overview was evidence checked on 28 Sep 2026; it is not live monitoring or an official EU service.</p>
+    <p>Official sources govern. <a href="/#coverage">Coverage and limits</a> · <a href="https://github.com/kaastumor/morrow-needle/issues/new">Report a correction</a></p>
+  </footer>
 </body>
 </html>

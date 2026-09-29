@@ -65,3 +65,24 @@ Screenshots and machine-readable browser output were retained only in the isolat
 A final content comparison of the frozen HTML arms found the same **13 unique external source destinations** in both arms. The competent handoff contains repeated links at its source-first entry point, but no source destination unavailable to the linked specimen. This is treated as the intended navigation/presentation difference, not an evidence-budget difference.
 
 The same review identified one avoidable design risk before any participant observation: the earlier 8/8 allocation was balanced but manually authored, so arrival order could become an unnecessary confound. No participant had been contacted or observed. The allocation was therefore replaced before execution by a reproducible deterministic randomisation: SHA-256 of the frozen seed `needle-494-reading-pilot-v1-2026-09-29` plus each participant ID, with the first eight hash-ranked IDs assigned Arm A and the rest Arm B. The resulting arrival-ID sequence is recorded in `pilot-runbook.md`. No political, expertise or outcome variable enters assignment.
+
+
+## Reader-pilot delivery preparation — 29 September 2026
+
+After PR #495 was merged to main as `2d30abe339865e0b2fdd53485cd8c113af721ddd`, Vercel production was observed READY at deployment `dpl_Ey13o594BdnZaL77ZrRYATDCqAXC`. The merged research files themselves were not copied by the existing static build: direct production requests to `/docs/experiments/issue494/specimen.html` and `baseline.html` returned 404. Therefore participant execution could not start from the merged research artifact alone.
+
+A second delivery-specific red-team found another leakage risk: the research pages expose navigation to the comparison arm, evidence ledger and protocol/answer key. Those links are useful to reviewers but invalid for a between-subject participant treatment.
+
+The bounded delivery patch therefore:
+- generates participant-only copies from the frozen specimen/baseline without changing their factual decision content;
+- removes comparison/research navigation and the #494 research-record hyperlink;
+- preserves the exact official/provider source destinations used by the treatments;
+- publishes only `/research/issue494/a/` and `/research/issue494/b/` plus their stylesheet through the existing static build;
+- adds tests that reject leaked comparison/protocol/evidence routes and require source-destination parity.
+
+Isolated Jeroen-PC verification on branch head `72a1dca71b7ba308306f05446f3889ad2ce46737` executed:
+- `node --test docs/experiments/issue494/build-participant-pages.test.js mvp/candidate-b/build-static-demo.test.js`: **4/4 pass**;
+- `node mvp/candidate-b/build-static-demo.js`: pass;
+- both participant route directories were generated under `dist/research/issue494/`.
+
+Sponsor authorization now covers recruitment/contact and execution of the frozen 16-reader pilot. **No paid panel, incentive, purchase or new vendor account is inferred from that authorization.** No participant has yet been contacted or observed.

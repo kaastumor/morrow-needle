@@ -112,6 +112,7 @@ test("law map shows hierarchy, lineage, cross-cutting change and proposal", () =
   assert.match(block, /2025\/0404\(COD\)/);
   assert.match(block, /Editorial grouping, not a legal act/);
   assert.match(block, /Amends both MDR and IVDR/);
+  assert.match(block, /categories, not individual acts/);
   assert.match(block, /schematic, not a complete act inventory/);
   assert.match(block, /eur-lex\.europa\.eu\/eli\/reg\/2024\/1860\/oj\/eng/);
   assert.match(block, /eur-lex\.europa\.eu\/procedure\/EN\/2025_404/);

@@ -10,8 +10,46 @@ issue/PR.
 
 ## Purpose
 
-Morrow // Needle is an **adversarial legal-research known-failure reference corpus +
-exposed regression fixtures + minimal evaluation discipline for EU legal change**.
+Morrow // Needle pursues **accessible public understanding of EU legal change**.
+
+Product north star:
+
+> Help an occasional, non-specialist EU-law reader understand an important development,
+> why it may matter, what stage it has reached and how to verify it, without first
+> mastering the institutions or knowing the right legal vocabulary.
+
+This is the product objective, not a demonstrated comparative-value claim. The initial
+audience is a hypothesis: occasional non-specialist readers. Citizen awareness and
+journalistic research are useful task settings. A company research example does not
+automatically commit Needle to professional applicability or compliance advice.
+
+Two entry jobs remain distinct:
+
+- **Specific question:** ordinary wording or a known act -> relevant identity/version ->
+  understandable orientation -> useful depth -> official evidence.
+- **Personal overview:** user-confirmed broad context -> relevant developments within
+  declared coverage -> reasons for relevance, stage and uncertainty -> optional supported
+  participation or preparation. No named law, dispute or immediate action is required
+  for awareness to be useful.
+
+They may share evidence identities and presentation discipline, but need separate
+acceptance and value comparisons. Known-act orientation is a first capability, not the
+whole product identity or a value prerequisite for contextual-awareness discovery.
+Public/Expert is a presentation hypothesis over the same facts, not two truth stores.
+
+Material value would mean better understanding of consequential status/scope/date
+conditions, less reconstruction effort, or discovery of a genuinely relevant development
+otherwise missed. Compare each job with the strongest realistically accessible alternative;
+internal checks, attractive explanations and technical sophistication do not establish
+reader value. If a bounded comparison finds the alternative sufficient, stop or narrow that
+tested claim rather than invent a rescue feature. Maintenance includes legal review,
+corrections and rework; a useful interface that cannot be kept trustworthy must narrow.
+
+## Supported research contribution
+
+The supported reference asset remains an **adversarial legal-research known-failure
+reference corpus + exposed regression fixtures + minimal evaluation discipline for EU
+legal change**.
 
 Its demonstrated project-specific contribution is the disciplined preservation of:
 
@@ -25,7 +63,7 @@ Its demonstrated project-specific contribution is the disciplined preservation o
 Needle is not supported as a proprietary legal-reasoning method or a general
 corpus-assisted diagnostic advantage.
 
-## Current project form
+## Supported reference form
 
 The smallest supported form is:
 
@@ -83,7 +121,7 @@ Needle Method may be used as a structured handoff/reporting convention. Canonica
 persistence, software projections and higher product surfaces are optional and must earn
 use on a concrete task.
 
-## North star
+## Research and implementation principle
 
 > Given a concrete EU legal-information question, first solve it with the strongest
 > defensible research method. Preserve durable Needle state only when it materially
@@ -187,11 +225,20 @@ obligation.
 Broad public-product expansion outside the sponsor-authorised **Needle EU bounded
 prototype** remains **STOPPED, not deleted**. The 29 September 2026 sponsor direction
 authorises a connected public EU-legislation experience over a small source-supported
-content set, including substantive act views, navigation, dates, relationships and one
-later contrasting example. [BACKLOG.md](../BACKLOG.md) owns its current delivery state
+content set, including question-first entry, substantive act views, navigation, dates, relationships
+and bounded contrasting public coverage. Approved search/language requirements and wider
+adversarial testing are scoped by the programme and their issue contracts. A small public
+collection does not limit test diversity or promise EU-wide maintained coverage.
+[BACKLOG.md](../BACKLOG.md) owns its current delivery state
 and [the programme contract](plans/needle-eu-prototype-programme-v0.2.md) owns its
 finish line. This is funded prototype development, not evidence of external user or
 commercial value. The frozen scientific corpus and negative findings remain binding.
+
+Contextual citizen awareness and exact decision/related-vote history retain separate
+research, delivery and participant-activity gates. Preserving their purpose does not
+activate implementation, recruitment or broader voting-history coverage. Candidate A/C
+professional options remain externally owned-evidence gated; the public-product objective
+does not revive their internal experiment programmes.
 
 Existing Explorer, Thread, X-Ray/dependency-ripple, Retrieval, Source Anomaly, Half-Life,
 feed/card and operational artifacts are preserved research history. They may re-enter only
@@ -250,7 +297,8 @@ Do not reopen merely because another example can be found.
 
 - a general-interest EU legal-news feed;
 - feature accumulation to create a moat;
-- personalised legal recommendations;
+- personalised legal recommendations or definitive applicability/compliance verdicts;
+- political ratings, persuasion profiles or voting recommendations;
 - replacing lawyers or issuing legal advice;
 - predicting political or judicial outcomes;
 - broad jurisdiction expansion by default;

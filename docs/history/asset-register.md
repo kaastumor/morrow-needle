@@ -56,9 +56,28 @@ Nothing here is automatically authorised for new work.
 | Reference Pack v0.1/v0.2 | `release/` | current external navigation/reference surface | **CURRENT** | maintain only for accepted reference role / concrete user need |
 | Evaluation integrity protocol | `docs/evaluations/adversarial-corpus-protocol-v0.1.md` | task/representation/evidence/execution/version/uncertainty discipline | **CURRENT when evaluations are run** | any consequential comparative evaluation |
 | Failure-analysis packet discipline | v0.2 docs/uses | conditional reusable value after strong postmortem | **CURRENT conditional rule** | use when non-trivial state/boundary/reuse structure remains |
+| Needle EU public explanation and connected prototype | `mvp/product-home/`, `mvp/medical-devices-summary/`, `mvp/regime-density-v0.2/`, prototype programme | sponsor-funded orientation surface, with source/time/scope safeguards | **PRODUCT HYPOTHESIS / BOUNDED DELIVERY; EXTERNAL VALUE UNPROVEN** | finite reader journey and job-specific comparison; reuse historical machinery only where the task earns it |
 | Candidate A Maintenance Delta | `docs/mvp`, schema/validator/fixtures | smallest surviving eval-maintenance intervention | **EXTERNAL VALUE GATED — CORE READY** | real evaluator/evaluation owner + real maintenance event + actual incumbent process and owner acceptance |
-| Candidate B EU operative state / harmonised-standard status | `docs/mvp/candidate-b-harmonised-standard-status-core-v0.1.md`, `mvp/candidate-b/`, dynamic-set fixtures | five-case known-standard status wedge; #416 found bounded reconstruction advantage over free official workflow while discovery itself was already strong | **EXTERNAL USER/CAPABILITY GATED — INTERNAL WORKFLOW SIGNAL POSITIVE** | target-user crossover session; if positive, direct incumbent-product comparison per #411 |
+| Candidate B EU operative state / harmonised-standard status | `docs/mvp/candidate-b-harmonised-standard-status-core-v0.1.md`, `mvp/candidate-b/`, dynamic-set fixtures | five-case known-standard status wedge; #416 found bounded reconstruction advantage over free official workflow while discovery itself was already strong | **INTERNAL WORKFLOW SIGNAL POSITIVE / EXTERNAL VALUE UNPROVEN** | product-readiness and participant sequencing in BACKLOG; later target-user crossover and, if positive, direct incumbent-product comparison per #411 |
 | Candidate C failure -> regression/oracle | failure-analysis + Candidate-A trigger | close fit to surviving corpus asset; generic regression plumbing is accessible, leaving legal-oracle conversion as the residual | **EXTERNAL INCIDENT GATED — RESIDUAL HYPOTHESIS PRESERVED** | real legal-AI incident owner + current postmortem/regression process + accepted oracle/regression decision |
+
+## Public-product ambitions and contraction boundary
+
+The charter distinguishes the supported reference asset from the public-understanding
+product objective. Specific-question orientation and contextual citizen awareness are
+different jobs. The original known-act slice does not redefine the long-term purpose.
+
+[#493](https://github.com/kaastumor/morrow-needle/issues/493) preserves contextual awareness,
+participation and preparation; [#494](https://github.com/kaastumor/morrow-needle/issues/494)
+preserves exact decision/related-vote research. Their research, delivery and participant
+gates remain separate. Neither an exposed paper overview nor an isolated vote specimen
+demonstrates external value or authorizes a general platform.
+
+[The commercial option-space review](../reviews/issue373-proprietary-commercial-option-space-2026-09-26.md)
+distinguishes method advantage, delivery economics and proprietary defensibility. Negative
+method results do not prove every service, curation or private-evaluation job useless.
+Such options still require a concrete external owner/job and do not automatically receive
+investment. Live sequencing is owned only by BACKLOG.
 
 ## Critical interpretation notes
 

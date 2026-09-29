@@ -11,7 +11,8 @@ without rebuilding the discarded architecture.
    manufacture a new value thesis.
 2. **Thin vertical slices.** Prefer a complete small user outcome over horizontal
    architecture layers.
-3. **WIP = 1 per autonomous worker.** One issue, one branch, one PR.
+3. **WIP = 1 for active project execution.** One issue, one branch, one PR; additional
+   workers do not create independent delivery lanes or overlapping writers.
 4. **Trunk-oriented flow.** Short-lived branches from current `main`; squash
    merge after acceptance and explicit scoped authorization.
 5. **Strong boring baseline.** Browser platform, Python stdlib and existing

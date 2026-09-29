@@ -1,8 +1,8 @@
 # #494 bounded reading pilot runbook — frozen before participants
 
-Status: **PRE-RUN OPERATIONAL FREEZE — RECRUITMENT/EXECUTION NOT AUTHORISED**
+Status: **PILOT EXECUTION AUTHORISED — PARTICIPANT RECRUITMENT NOT YET STARTED**
 
-This runbook operationalises the diagnostic presentation comparison in [protocol.md](protocol.md). It does not authorise recruitment, participant contact, public release, or merge. Do not change these rules after observing a participant unless the run is stopped and the change is recorded as a new experiment version.
+This runbook operationalises the diagnostic presentation comparison in [protocol.md](protocol.md). The sponsor authorised the bounded reader pilot on 29 September 2026 after PR #495 was merged. Recruitment and execution may proceed under this frozen protocol, but no participant has yet been contacted. Do not change these rules after observing a participant unless the run is stopped and the change is recorded as a new experiment version.
 
 ## 1. Purpose and arms
 
@@ -35,7 +35,7 @@ Legal or EU-policy expertise is **not** an automatic exclusion. Record it only a
 
 Do **not** collect political preference, ideology, party support, vote intention, support/opposition to the legislation, or persuasion outcomes.
 
-Recruitment source and contact method require separate sponsor authorisation before use. The authorised recruiter must not target people based on politics.
+Recruitment and participant contact are sponsor-authorised for this bounded pilot. The recruiter must not target people based on politics. Any paid panel, incentive, vendor account or purchase remains separately cost-gated unless explicitly approved.
 
 ## 3. Allocation
 
@@ -193,11 +193,13 @@ No content change is permitted mid-run. If any content must change, stop, versio
 
 This file prepares execution only.
 
-Still requires separate sponsor authorisation:
+Authorised for this pilot:
 - recruitment or participant contact;
-- execution of the 16-reader pilot;
-- incentives/purchases;
-- public sharing outside the existing protected/research boundary;
-- merge or production deployment.
+- execution of the frozen 16-reader pilot.
+
+Still requires separate approval:
+- paid panel fees, incentives, purchases or new vendor accounts;
+- public sharing outside the bounded participant-delivery routes;
+- any later product merge/release beyond the participant-delivery patch.
 
 No stronger model is required to execute this protocol. A model may help audit coding after results, but it must not replace the frozen answer key or silently infer political attitudes.

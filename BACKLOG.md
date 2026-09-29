@@ -165,6 +165,24 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
+### Current bounded reader pilot — #494
+
+Sponsor authorization of 29 September 2026 activates the already-frozen #494 bounded reader pilot **after** merge of PR #495. This is the current WIP=1 execution lane only while participant delivery/recruitment/run is active; it does not displace the broader #490 prototype programme beyond this bounded evidence gate.
+
+Current state:
+- PR #495 merged to main as `2d30abe339865e0b2fdd53485cd8c113af721ddd`;
+- exact browser/comparability/pilot protocol gates are frozen in `docs/experiments/issue494/`;
+- 16 English-reading adults, 8 per arm, between-subject;
+- no political-preference, party-support, vote-intention or persuasion data;
+- paid panel fees, incentives, purchases and new vendor accounts remain cost-gated unless separately approved;
+- no participant result exists until actual humans complete the frozen task.
+
+Immediate priority:
+
+> **WIP=1 — #494 participant-safe delivery routes -> recruit eligible readers -> execute frozen pilot -> report the pre-specified result without rescue.**
+
+Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
+
 ### Immediate priority — #490 accepted-foundation repair
 
 Sponsor direction of 29 September 2026 authorizes a bounded, connected Needle EU prototype beyond the earlier landing-page phase. The prohibitions here on individual act pages, connected navigation and one small contrasting example are superseded for that programme. This does not reopen an applicability classifier, broad act inventory, legal ontology, monitoring, the frozen corpus/LVD evaluation, or value claims from internal work.

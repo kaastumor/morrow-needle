@@ -41,6 +41,19 @@ Allowed dispositions: **survives / revise / reject / park / experiment**.
 
 | H-24 | Offering the frozen adversarial corpus index as an optional analogy/reference aid, with its explicit adversarial framing, materially improves latent diagnosis and consequential correctness over ordinary source-grounded QA on fresh realistic legal-research challenge tasks. | reject | #214's recorded sealed 3+1 execution produced three adversarial parity pairs and a pass/pass control with 0 recorded diagnostic rescues. Under the frozen #210 rule, the workflow claim remains rejected for project allocation. #375 later found that exact evaluator-package plaintext/raw outputs are not preserved in GitHub and single-run/single-grading execution does not decompose variance, so describe #214 as a strong bounded negative with limited repository reproducibility rather than an unqualified fully reproducible hard null. |
 
+## Public-product hypotheses
+
+These are new intended-use claims, not revisions of rejected historical claims. Their
+delivery and research allocation stays in BACKLOG and the programme.
+
+| ID | Assumption | Current disposition | Strongest pressure / discriminating evidence |
+| --- | --- | --- | --- |
+| H-25 | A bounded question-to-evidence journey helps occasional readers understand a covered EU act/change with less reconstruction effort or fewer consequential misunderstandings than a strong accessible alternative. | experiment | #490/programme authorizes prototype delivery, not reader-value proof. Compare the same task/scope with competent official navigation or a strong source-linked note; count errors, useful completion and total effort. A sufficient comparator stops/narrows the tested claim. |
+| H-26 | Contextual citizen discovery can identify useful developments before a reader knows the law or question, across explicit coverage. | revise | #493's hand-curated exposed overview is development evidence only. Its delivery gate remains. A fresh unprimed context, declared coverage and independent relevance/omission checking are needed; an act list supplied to both sides does not test discovery. Orientation results neither validate nor reject this job. |
+| H-27 | Clear explanation and source access can be kept current at proportionate cost as the bounded public set changes. | experiment | Existing update mechanics do not measure the full legal-review burden. Rehearse one consequential correction, record review/repair/rework and affected claims, and narrow if affordable upkeep requires broader architecture or unsupported currentness. |
+| H-28 | One multilingual search foundation can support useful queries while keeping language, source/version identity and fallback limits explicit. | experiment | #490's retained local artifact has bounded development checks, not all-language quality or integrated browser proof. All official EU languages are the design requirement; prioritize representative real queries and preserve missing-resource states. Recover/integrate before new ranker work; the exposed field-ranking candidate failed its promotion gate. |
+| H-29 | A source-linked change-to-decision view improves understanding of exact votes and defensibly related history beyond official/provider navigation. | park | #494's isolated specimen/protocol is not a participant result, comprehensive history or product-value proof. Its participant gate remains. Compare decision/version/stage/affiliation/selection comprehension; fabricated attribution blocks the affected output. |
+
 ## Register rules
 
 - Add an assumption only if being wrong could change architecture, project

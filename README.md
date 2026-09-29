@@ -1,10 +1,19 @@
 # Morrow // Needle
 
-**Adversarial legal-research known-failure reference corpus + exposed regression fixtures + minimal evaluation discipline for EU legal change.**
+**Accessible, source-verifiable understanding of EU legal change — a bounded public-product hypothesis, supported by a preserved legal-research reference asset.**
 
-Needle preserves difficult, source-backed legal-information failure cases and the evidence
-needed to inspect, challenge and reuse them honestly. It is not a legal-news product, a
-general legal ontology, a proprietary reasoning method or an automatic research engine.
+Needle EU aims to help occasional readers find and understand a relevant development,
+its purpose, scope, stage, dates and evidence, with useful depth. Specific-question
+orientation and contextual citizen awareness are distinct jobs; their reader value is
+not yet demonstrated. The [charter](docs/project-charter.md) owns that purpose and its
+boundaries; the [prototype programme](docs/plans/needle-eu-prototype-programme-v0.2.md)
+owns the bounded delivery contract. Read [BACKLOG](BACKLOG.md) for current allocation.
+
+The supported research asset remains an **adversarial legal-research known-failure
+reference corpus + exposed regression fixtures + minimal evaluation discipline**.
+Needle preserves source-backed failure cases and the evidence needed to inspect,
+challenge and reuse them honestly. That asset does not establish a proprietary reasoning
+method, automatic research advantage or demand for the public product.
 
 ## Start here
 

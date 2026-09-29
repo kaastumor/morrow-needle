@@ -11,13 +11,13 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **IMPLEMENT — NEEDLE EU BOUNDED PROTOTYPE / LVD TEST FROZEN**
+# **CONSOLIDATE — NEEDLE EU STRATEGY / DELIVERY RECONCILIATION**
 
 Frozen scientific source:
 
 > **NEEDLE_CORPUS_REFERENCE_2026-09-25 — 81 cases / 26 classes**
 
-Primary supported identity remains:
+Supported research asset remains:
 
 > **known-failure legal-research reference corpus + exposed regression fixtures + minimal evaluation discipline**
 
@@ -27,7 +27,15 @@ Current released reference surface remains:
 
 ### Sponsor objective
 
-> **complete a connected, evidence-bounded Needle EU prototype over an explicit small content set, then present it for sponsor review**
+> **advance accessible public understanding of EU legal change by completing one connected,
+> evidence-bounded question-to-evidence prototype journey, then resolve reader value against
+> strong alternatives.**
+
+The [charter](docs/project-charter.md) distinguishes the product objective from the supported
+reference asset. [The existing programme](docs/plans/needle-eu-prototype-programme-v0.2.md)
+owns the finite finish line and dependency sequence. Contextual citizen awareness (#493)
+is a separate discovery job, not a known-act page or an automatically active delivery lane.
+Known-act success is not its value prerequisite; its recorded delivery gates still apply.
 
 The internal candidate portfolio has now reached an external evidence frontier.
 
@@ -181,11 +189,43 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — Needle EU UI coherence slice
+### Immediate priority — strategy and delivery reconciliation
 
-**WIP=1 — #498 shared-component and visual-system unification across the retained Needle EU routes.** PR #497 merged as `2dbd637fd414053269d8e78f46ffe8297089f034`, establishing the bounded entry and shared navigation. #498 aligns typography, spacing, controls, surfaces, evidence/status presentation, interaction labels and route terminology across `/`, `/medical-devices/`, `/regime-v2/` and `/mvp/candidate-b/`. Keep `/regime/` legacy/research and #494 participant routes outside product navigation. Verify side by side at desktop, 390px and 320px, with actual 200% browser zoom, keyboard journeys and route continuity. The follow-up PR remains unmerged for sponsor review; customer pitch and external recruitment stay paused until the coherence gate passes.
+**WIP=1 — #500.** The sponsor moved the strategic audit/brainstorm review to implementation
+on 30 September 2026. The current slice reconciles existing strategy and delivery owners;
+its branch/PR is pending review, not accepted state. No application feature or participant
+activity is started in this slice. PR #488 remains a separate unaccepted governance proposal.
 
-The sponsor selected this internal product-coherence work in place of the paused #494 recruitment lane. Subsequent medical-depth, search and decision-history work needs its own allocation after this slice is reviewed.
+Accepted UI foundation:
+
+- #497 merged as `2dbd637fd414053269d8e78f46ffe8297089f034`;
+- #499 merged as `c264b767363fda8cbaaff89ce2e6dacf90bedb8c`; #498 is completed;
+- the accepted entry, shared navigation and visual/evidence components are retained.
+
+Those merges close their scoped UI work. They do not close the full prototype or prove
+customer readiness, comprehension, comparative value or current legal-source accuracy.
+
+**Next eligible application slice after #500 is accepted:** resume #490/programme M1,
+rechecking ownership and the retained search artifact before writing. Connect ordinary
+questions and exact references to one supported explanation/detail/evidence journey.
+Use the existing visual baseline and preserve explicit source/language/version coverage.
+The retained local search/result component is a recovery candidate, not yet verified
+repository integration; its rejected field-ranker experiment is not the retained engine.
+Artifact provenance and integration limits are recorded in
+[#490's checkpoint](https://github.com/kaastumor/morrow-needle/issues/490#issuecomment-5889536165).
+
+Read and pick up [#492](https://github.com/kaastumor/morrow-needle/issues/492) within that
+same programme: select the first three structurally different source-supported development
+cases, freeze expectations and exercise available product paths. This is the initial
+adversarial tranche, not a second WIP or three new maintained public pages. Unimplemented
+features remain NOT_TESTED; test coverage may exceed public coverage. The issue owns
+development/reserved-case handling and the later bounded campaign.
+
+External recruitment and customer pitch remain paused. #493 and #494 retain their
+separate research/implementation/participant gates. After finite prototype readiness,
+recommend separate orientation and contextual-awareness comparisons; do not automatically
+expand act coverage, vote history, Candidate A/C or monitoring. Participant activity and
+any changed delivery allocation require the existing scoped decisions.
 
 ### Prior #490 accepted-foundation repair
 
@@ -193,9 +233,9 @@ Sponsor direction of 29 September 2026 authorizes a bounded, connected Needle EU
 
 PR #489 is merged: accepted source head `36f90e9471b5a048c5a85e84a5c3ff666cf85e42`; main squash `948cb8c28801dd3d056998ca59b2a446bdb98c3e`. Preserve its restrained editorial design. #488 is a separate unaccepted governance proposal.
 
-#490's evidence/interaction review found **REPAIR_REQUIRED** (comment 5880868788). Its F1–F6 findings own the current repair: public sources, selected-coverage safeguards, consequential scope/transition wording, legacy anchors, timeline/map semantics, and disclosure/no-script behavior. That review's Playwright navigation was blocked before load by `net::ERR_BLOCKED_BY_ADMINISTRATOR`. PR #491 now records a separate permitted in-app-browser check of the built route; final-head repository CI and PR review remain open.
+#490's evidence/interaction review found **REPAIR_REQUIRED** (comment 5880868788). Its F1–F6 findings owned the accepted foundation repair: public sources, selected-coverage safeguards, consequential scope/transition wording, legacy anchors, timeline/map semantics, and disclosure/no-script behavior. That review's Playwright navigation was blocked before load by `net::ERR_BLOCKED_BY_ADMINISTRATOR`. PR #491 recorded a separate permitted in-app-browser check of the built route and is merged as `c10f0979d70580a13c4817b878c7bdf261723ee3`. That is prior scoped evidence, not a fresh browser or legal-source review.
 
-The [Needle EU prototype programme](docs/plans/needle-eu-prototype-programme-v0.2.md) defines M0 repair, M1 connected medical-devices journey, M2 one justified contrasting example, M3 hardening/demonstration, and M4 sponsor review. These are dependencies, not parallel WIP. The #490 M0 repair is historical context for the accepted overview. The prototype finish line requires a working bounded experience and actual browser evidence; sponsor acceptance, merge and release are separate decisions.
+The [Needle EU prototype programme](docs/plans/needle-eu-prototype-programme-v0.2.md) defines M0 foundation, M1 question-to-evidence medical-devices journey, M2 bounded public reuse plus wider #492 adversarial testing, M3 hardening/held-back checks and M4 sponsor review. These are dependencies, not parallel WIP. The #490 M0 repair is historical context for the accepted overview. The prototype finish line requires a working bounded experience and actual browser evidence; sponsor acceptance, merge and release are separate decisions.
 
 Candidate A and C remain externally gated and inactive. At M4, use #418 and their current asset owners for a short recommendation, then ask for sponsor direction before activating either. Sponsor investment in Needle EU is not external value evidence.
 

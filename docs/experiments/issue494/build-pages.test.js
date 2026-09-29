@@ -18,7 +18,8 @@ test('both arms preserve exact decision identities, limits and source access', (
     assert.equal((html.match(/class="decision"/g) || []).length, 2);
     assert.equal((html.match(/<tr>\s*<th scope="row">/g) || []).length, 16);
     assert.match(html, /Hohlmeier appears as PPE \/ FOR/);
-    assert.match(html, /Licensing compatibility is unresolved/);
+    assert.match(html, /does not import its downloadable\/API database or vote summaries/);
+    assert.match(html, /public redistribution still requires exact source-item attribution\/licensing review/);
     assert.doesNotMatch(html, /<script|I support|I oppose|I have no position/);
     for (const url of ['https://eur-lex.europa.eu/eli/C/2025/617/oj/eng', 'https://eur-lex.europa.eu/eli/C/2025/1699/oj/eng', 'https://howtheyvote.eu/votes/163059', 'https://howtheyvote.eu/votes/166226']) assert.ok(html.includes(url));
   }

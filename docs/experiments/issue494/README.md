@@ -6,6 +6,8 @@ Status: frozen development material for a later, separately authorised reading e
 - [Competent official/provider handoff](baseline.html): the same factual answer, limits, source access and information budget in a simple source-first layout.
 - [Selection and evidence ledger](evidence.md): file admission, ballot admission, source identities, coverage and uncertainty.
 - [Frozen protocol and answer rubric](protocol.md): presentation comparison, frozen diagnostic pre-run addendum and distinct integration comparison. Do not recruit or execute readers under this freeze alone.
+- [Pilot runbook](pilot-runbook.md): fixed eligibility, allocation, task instructions, timing, coding, analysis and stop rules.
+- [Observation template](pilot-observation-template.csv): predeclared fields for the 16-reader diagnostic pilot.
 - [Verification record](verification.md): source access, executed checks and the browser-policy block.
 
 The pages are static, local development views. Their source links leave the repository. Sharing a section URL with a `#january` or `#march` fragment retains its caveat inside that section. The same fixed content is shown regardless of a reader's support, opposition or neutral stance; there is no stance input or sorting code.

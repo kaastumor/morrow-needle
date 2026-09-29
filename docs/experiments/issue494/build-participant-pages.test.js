@@ -15,7 +15,8 @@ function externalUrls(html) {
 }
 
 test("participant pages preserve treatment facts but hide research/comparison routes", () => {
-  const {pages} = buildParticipantPages();
+  const tmp = fs.mkdtempSync(path.join(require("node:os").tmpdir(), "needle-494-participants-"));
+  const {pages} = buildParticipantPages(tmp);
 
   for (const html of Object.values(pages)) {
     for (const fact of [
@@ -43,14 +44,17 @@ test("participant pages preserve treatment facts but hide research/comparison ro
     assert.match(html, /Needle #494 reading study/);
   }
 
-  assert.ok(fs.existsSync(path.join(DIR, OUTPUTS.a)));
-  assert.ok(fs.existsSync(path.join(DIR, OUTPUTS.b)));
+  assert.ok(fs.existsSync(path.join(tmp, OUTPUTS.a)));
+  assert.ok(fs.existsSync(path.join(tmp, OUTPUTS.b)));
+  fs.rmSync(tmp, {recursive: true, force: true});
 });
 
 test("participant arms expose the same unique external source destinations", () => {
-  const {pages} = buildParticipantPages();
+  const tmp = fs.mkdtempSync(path.join(require("node:os").tmpdir(), "needle-494-participants-"));
+  const {pages} = buildParticipantPages(tmp);
   const a = [...new Set(externalUrls(pages.a))].sort();
   const b = [...new Set(externalUrls(pages.b))].sort();
   assert.deepEqual(a, b);
   assert.equal(a.length, 12);
+  fs.rmSync(tmp, {recursive: true, force: true});
 });

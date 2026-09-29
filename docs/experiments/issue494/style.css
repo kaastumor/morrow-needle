@@ -1,0 +1,29 @@
+:root { color-scheme: light; font: 1rem/1.55 system-ui, sans-serif; background: #f5f3ed; color: #202820; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: #174d57; text-underline-offset: .18em; }
+a:focus-visible { outline: .2rem solid #aa5b12; outline-offset: .2rem; }
+header, main, footer { max-width: 72rem; margin: auto; padding: 1.25rem; }
+header { border-bottom: .25rem solid #244a46; }
+nav a { display: inline-block; margin-right: 1.25rem; padding: .3rem 0; }
+h1, h2, h3 { line-height: 1.2; }
+h1 { max-width: 19ch; font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { margin-top: 0; }
+.lede { font-size: 1.15rem; max-width: 72ch; }
+.notice, .decision, .handoff { background: white; border: 1px solid #bcc9be; padding: clamp(1rem, 2.5vw, 1.75rem); margin: 1.5rem 0; }
+.notice { border-left: .4rem solid #aa5b12; }
+.decision:target { outline: .25rem solid #aa5b12; outline-offset: .2rem; }
+.question { font-weight: 700; font-size: 1.12rem; }
+dl { display: grid; grid-template-columns: minmax(8rem, 13rem) minmax(0, 1fr); gap: .4rem 1rem; }
+dt { font-weight: 700; }
+dd { margin: 0; }
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: .45rem .6rem; border-bottom: 1px solid #cad4cc; }
+thead th { border-bottom: 2px solid #244a46; }
+td:not(:first-child), th:not(:first-child) { text-align: right; }
+.small { font-size: .94rem; }
+@media (max-width: 35rem) { dl { display: block; } dt { margin-top: .8rem; } .table-wrap { margin-inline: -.6rem; } th, td { padding: .4rem; } }
+@media print { :root { background: white; } header, main, footer { max-width: none; } .decision, .handoff, .notice { break-inside: avoid; } a { color: inherit; } }
+
+h1, h2, h3, p, dt, dd, a { overflow-wrap: anywhere; }

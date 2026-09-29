@@ -1,0 +1,1 @@
+participant_id,arm,started,execution_valid,invalid_reason,prior_eu_legal_familiarity,browser,viewport_width,viewport_height,q1_code,q1_note,q2_code,q2_note,q3_code,q3_note,q4_code,q4_note,q5_code,q5_note,q6_code,q6_note,q7_code,q7_note,q8_code,q8_note,elapsed_seconds,source_open_count,navigation_error_count,source_failure_count,hard_stop,hard_stop_note,operator_note

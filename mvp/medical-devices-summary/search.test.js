@@ -52,6 +52,32 @@ test("unsupported and missing-language states remain explicit", () => {
   assert.ok(allowed.primary.every(hit => hit.sourceLanguageFallback));
 });
 
+test("all 24 language settings keep exact-reference fallback explicit", () => {
+  for (const language of resources.registry.languages) {
+    const result = engine.search("2017/745", {queryLanguage: language.tag});
+    if (language.tag === "en") {
+      assert.equal(result.status, "REFERENCE_MENTIONS_ONLY");
+    } else {
+      assert.equal(result.status, "REFERENCE_OTHER_LANGUAGE_AVAILABLE");
+      assert.equal(result.primary.length, 0);
+      const allowed = engine.search("2017/745", {queryLanguage: language.tag, allowOtherLanguages: true});
+      assert.ok(allowed.primary.length);
+      assert.ok(allowed.primary.every(hit => hit.sourceLanguage === "en" && hit.sourceLanguageFallback));
+    }
+  }
+});
+
+test("integrated presenter rejects detached identity and unsafe official URLs", () => {
+  const response = engine.search("EUDAMED actor registration", {queryLanguage: "en"});
+  assert.ok(response.primary.length);
+  response.primary[0].url = "https://example.com/forged";
+  assert.throws(() => presenter.present(response), /identity|detached/i);
+
+  const unsafe = structuredClone(data);
+  unsafe.sources.actors.url = "javascript:alert(1)";
+  assert.throws(() => Search.createEngine(unsafe, resources), /Unsafe source URL/);
+});
+
 test("built route loads the retained modules and keeps no-script official links", () => {
   const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
   for (const name of ["language", "word-forms", "search", "evidence-view", "search-panel"]) {

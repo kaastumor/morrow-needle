@@ -39,14 +39,15 @@ function participantCopy(sourceFile) {
   return html;
 }
 
-function buildParticipantPages() {
+function buildParticipantPages(outputDir = DIR) {
   const pages = {
     a: participantCopy("specimen.html"),
     b: participantCopy("baseline.html")
   };
 
-  fs.writeFileSync(path.join(DIR, OUTPUTS.a), pages.a, "utf8");
-  fs.writeFileSync(path.join(DIR, OUTPUTS.b), pages.b, "utf8");
+  fs.mkdirSync(outputDir, {recursive: true});
+  fs.writeFileSync(path.join(outputDir, OUTPUTS.a), pages.a, "utf8");
+  fs.writeFileSync(path.join(outputDir, OUTPUTS.b), pages.b, "utf8");
 
   return {pages, outputs: OUTPUTS};
 }

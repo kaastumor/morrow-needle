@@ -5,6 +5,7 @@ const path = require("node:path");
 
 const ROOT = path.resolve(__dirname, "..", "..");
 const DIST = path.join(ROOT, "dist");
+const {participantCopy} = require("../../docs/experiments/issue494/build-participant-pages.js");
 
 const APP_FILES = Object.freeze([
   "index.html",
@@ -30,6 +31,8 @@ const MEDICAL_SUMMARY_FILES = Object.freeze([
   "app.js"
 ]);
 
+const PILOT_FILES = Object.freeze(["index.html", "style.css"]);
+
 const FIXTURE_FILES = Object.freeze([
   "gar-en497-authoritative-dynamic-set-v0.1.json",
   "machinery-en50434-restriction-v0.1.json",
@@ -51,6 +54,8 @@ function buildStaticDemo() {
   const regimeV2Out = path.join(DIST, "regime-v2");
   const medicalSummaryOut = path.join(DIST, "medical-devices");
   const fixturesOut = path.join(DIST, "fixtures", "dependency");
+  const pilotAOut = path.join(DIST, "research", "issue494", "a");
+  const pilotBOut = path.join(DIST, "research", "issue494", "b");
 
   for (const file of APP_FILES) {
     copyFile(path.join(__dirname, file), path.join(appOut, file));
@@ -76,6 +81,13 @@ function buildStaticDemo() {
       path.join(medicalSummaryOut, file)
     );
   }
+
+  fs.mkdirSync(pilotAOut, {recursive: true});
+  fs.mkdirSync(pilotBOut, {recursive: true});
+  fs.writeFileSync(path.join(pilotAOut, "index.html"), participantCopy("specimen.html"), "utf8");
+  fs.writeFileSync(path.join(pilotBOut, "index.html"), participantCopy("baseline.html"), "utf8");
+  copyFile(path.join(ROOT, "docs", "experiments", "issue494", "style.css"), path.join(pilotAOut, "style.css"));
+  copyFile(path.join(ROOT, "docs", "experiments", "issue494", "style.css"), path.join(pilotBOut, "style.css"));
 
   for (const file of FIXTURE_FILES) {
     copyFile(
@@ -103,6 +115,8 @@ function buildStaticDemo() {
     regimeFiles: REGIME_FILES,
     regimeV2Files: REGIME_V2_FILES,
     medicalSummaryFiles: MEDICAL_SUMMARY_FILES,
+    pilotFiles: PILOT_FILES,
+    pilotRoutes: ["/research/issue494/a/", "/research/issue494/b/"],
     externalValueProven: false,
     liveMonitoring: false
   };
@@ -123,4 +137,4 @@ if (require.main === module) {
   );
 }
 
-module.exports = {APP_FILES, REGIME_FILES, REGIME_V2_FILES, MEDICAL_SUMMARY_FILES, FIXTURE_FILES, buildStaticDemo};
+module.exports = {APP_FILES, REGIME_FILES, REGIME_V2_FILES, MEDICAL_SUMMARY_FILES, PILOT_FILES, FIXTURE_FILES, buildStaticDemo};

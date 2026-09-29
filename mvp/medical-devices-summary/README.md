@@ -62,3 +62,11 @@ Frozen task contract:
 `docs/evaluation/medical-devices-summary-first-v0.1/tasks-and-answer-key.md`
 
 The page is an editorial projection over official evidence, not a replacement legal source.
+
+## Captured guidance search in M1
+
+The page mounts the retained dependency-free multilingual engine and source-bound evidence presenter from the 29 September 2026 package (`needle-evidence-view-2026-09-29.zip`, SHA-256 `7c4f8e0b04da936df88dd59840adc548ff9dea75d76253c3dedab196e215a0d1`). The five root `src/` modules are in `search/`; the rejected `experiments/field-ranking/src/` modules are excluded. `search/index.json` contains only the captured English Commission actor-registration, EUDAMED-overview and economic-operators guidance pages, observed 29 September 2026. The consumer/native-language experiment and Dutch IGJ page are not public M1 search coverage. Original lines and source identifiers are preserved; the capture is web-tool-extracted narrative, not raw HTML or a live legal source feed. The Commission text is attributed © European Union, CC BY 4.0.
+
+`search/resources.json` provides the common 24-language registry and external language resources. Only English source text is included here, so selecting another question language gives an explicit coverage state unless the reader opts in to labelled English evidence. The interface copy is English. Approximate matches, heading/context-only hits, incomplete previews and exact-reference mentions are labelled. Reference mentions are guidance locators, not authentic act text. MDR and IVDR direct EUR-Lex links remain available without scripts. Search has no query storage, model call or telemetry.
+
+Run `node --test mvp/medical-devices-summary/search.test.js`, the browser MVP suite in `docs/automation/VERIFICATION.md`, and `node mvp/candidate-b/build-static-demo.js`. The built route is `/medical-devices/`. The component's inherited package tests and replay are separate checks; they do not prove quality for this narrower public source pool or all 24 languages. M1 act detail views and broader #492 adversarial cases remain separate work.

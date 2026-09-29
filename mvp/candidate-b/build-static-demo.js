@@ -27,7 +27,15 @@ const REGIME_V2_FILES = Object.freeze([
 const MEDICAL_SUMMARY_FILES = Object.freeze([
   "index.html",
   "styles.css",
-  "app.js"
+  "app.js",
+  "search-init.js",
+  "search/language.js",
+  "search/word-forms.js",
+  "search/search.js",
+  "search/evidence-view.js",
+  "search/search-panel.js",
+  "search/index.json",
+  "search/resources.json"
 ]);
 
 const FIXTURE_FILES = Object.freeze([

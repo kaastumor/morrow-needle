@@ -7,6 +7,12 @@
   <title>Needle Navigator — EU medical-device rules</title>
   <link rel="stylesheet" href="./styles.css">
   <script src="./app.js" defer></script>
+  <script src="./search/language.js" defer></script>
+  <script src="./search/word-forms.js" defer></script>
+  <script src="./search/search.js" defer></script>
+  <script src="./search/evidence-view.js" defer></script>
+  <script src="./search/search-panel.js" defer></script>
+  <script src="./search-init.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -36,6 +42,7 @@
       </div>
 
       <nav class="quick-nav" aria-label="On this page">
+        <a href="#search">Ask a question</a>
         <a href="#covered">MDR or IVDR?</a>
         <a href="#timeline">Timeline</a>
         <a href="#relationships">Law map</a>
@@ -43,6 +50,17 @@
         <a href="#sources">Sources</a>
       </nav>
     </header>
+
+    <section id="search" class="section search-section" aria-labelledby="search-heading">
+      <div class="section-heading">
+        <p class="section-kicker">Find source passages</p>
+        <h2 id="search-heading">Ask about the covered medical-device guidance</h2>
+        <p>Search three captured English Commission guidance pages on EUDAMED and economic operators. Results show original source wording and its limits, not a legal answer or the full text of MDR or IVDR.</p>
+      </div>
+      <div id="needle-search" aria-label="Captured guidance search"></div>
+      <p class="search-boundary">Only English source pages are captured here. All 24 official EU question languages can be selected, but vocabulary support varies and missing results do not mean the law is absent. Other-language evidence requires permission; none is in this maintained collection. Source captures were observed 29 Sep 2026 and may be incomplete or outdated. Captured Commission text: © European Union, CC BY 4.0.</p>
+      <p>For the authentic act text, open the <a href="https://eur-lex.europa.eu/eli/reg/2017/745">MDR</a> or <a href="https://eur-lex.europa.eu/eli/reg/2017/746">IVDR</a> on EUR-Lex. These links remain available when scripts are off.</p>
+    </section>
 
     <section id="covered" class="section branch-section" aria-labelledby="covered-heading">
       <div class="section-heading">

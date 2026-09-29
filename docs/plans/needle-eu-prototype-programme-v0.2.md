@@ -32,7 +32,9 @@ Sponsor investment authorizes this build. It does not demonstrate user preferenc
 | M3 — Harden and demonstrate | End-to-end checks, accessibility/reflow, data consistency, maintenance rehearsal, screenshots and small later comprehension-comparison design | Reproducible revision-level evidence and honest limitations |
 | M4 — Sponsor review | Working demonstration, coverage, costs and unresolved risks | Ask whether the prototype milestone is accepted; merge/public release require separate scoped approval |
 
-M0 is the sole active delivery slice. Do not start M1 until demonstrated M0 regressions are repaired. A later milestone is a dependency, not parallel WIP. Compare the simplest credible alternative for each new interaction: a direct source-linked list before a graph; native disclosure before custom state; a static build before framework or database.
+M0's F1–F6 repair was merged in #491 at `c10f0979d70580a13c4817b878c7bdf261723ee3`. M1 is the active delivery slice under #490. The retained source-bound search component is one part of M1; it does not complete act detail views or journeys A–G. Compare the simplest credible alternative for each new interaction: a direct source-linked list before a graph; native disclosure before custom state; a static build before framework or database.
+
+#492 adds an adversarial requirement to this sequence. During M1, make a compact diversity matrix and pilot structurally contrasting source-backed cases against the connected journey before freezing reusable search/display assumptions. During M2, extend the bounded reuse check with development fixtures while keeping public coverage small. During M3, replay retained regressions and held-back cases on the built revision, reporting unresolved serious failures before M4. Experimental fixtures do not become public act pages automatically, and previously exposed cases are regressions rather than independent validation.
 
 ## Red-team and architecture decision
 

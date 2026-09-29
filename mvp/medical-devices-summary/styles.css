@@ -67,6 +67,32 @@ summary:focus-visible {
 }
 button, summary { font: inherit; }
 
+.search-section { border-top: 1px solid var(--border); }
+#needle-search {
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: .55rem;
+  background: var(--surface);
+}
+#needle-search form { display: grid; gap: .8rem; }
+#needle-search label { display: grid; gap: .25rem; max-width: 46rem; }
+#needle-search label:has(input[type="checkbox"]) { display: flex; align-items: flex-start; }
+#needle-search textarea, #needle-search select {
+  width: 100%; max-width: 46rem; min-width: 0;
+  padding: .55rem; border: 1px solid var(--line); border-radius: .3rem;
+  color: var(--text); background: var(--surface); font: inherit;
+}
+#needle-search button {
+  width: fit-content; padding: .55rem .9rem; border: 1px solid var(--text);
+  border-radius: .3rem; color: var(--text); background: var(--surface-soft); cursor: pointer;
+}
+.needle-evidence-card { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+.needle-evidence-card blockquote { margin: .7rem 0; padding: .65rem 1rem; border-left: .2rem solid var(--mdr); white-space: pre-wrap; }
+.needle-evidence-meta, .needle-evidence-notice, .search-boundary { color: var(--muted); font-size: .9rem; }
+.needle-evidence-full { white-space: pre-wrap; overflow-wrap: anywhere; }
+#needle-search [role="status"] { margin: .8rem 0; }
+#needle-search details { margin: .65rem 0; }
+
 .skip-link {
   position: fixed;
   z-index: 100;

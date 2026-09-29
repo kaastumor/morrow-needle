@@ -165,15 +165,15 @@ Preserve without reinterpretation:
 - no outreach, purchase or vendor account without explicit sponsor authorisation;
 - WIP=1 whenever active work exists.
 
-### Immediate priority — #490 accepted-foundation repair
+### Immediate priority — #490 M1 connected medical-devices journey
 
 Sponsor direction of 29 September 2026 authorizes a bounded, connected Needle EU prototype beyond the earlier landing-page phase. The prohibitions here on individual act pages, connected navigation and one small contrasting example are superseded for that programme. This does not reopen an applicability classifier, broad act inventory, legal ontology, monitoring, the frozen corpus/LVD evaluation, or value claims from internal work.
 
 PR #489 is merged: accepted source head `36f90e9471b5a048c5a85e84a5c3ff666cf85e42`; main squash `948cb8c28801dd3d056998ca59b2a446bdb98c3e`. Preserve its restrained editorial design. #488 is a separate unaccepted governance proposal.
 
-#490's evidence/interaction review found **REPAIR_REQUIRED** (comment 5880868788). Its F1–F6 findings own the current repair: public sources, selected-coverage safeguards, consequential scope/transition wording, legacy anchors, timeline/map semantics, and disclosure/no-script behavior. That review's Playwright navigation was blocked before load by `net::ERR_BLOCKED_BY_ADMINISTRATOR`. PR #491 now records a separate permitted in-app-browser check of the built route; final-head repository CI and PR review remain open.
+#490's evidence/interaction review found **REPAIR_REQUIRED** (comment 5880868788). Its F1–F6 repair was merged in #491 at `c10f0979d70580a13c4817b878c7bdf261723ee3`, with a permitted browser check. The earlier blocked Playwright run remains a separate environment observation.
 
-The [Needle EU prototype programme](docs/plans/needle-eu-prototype-programme-v0.2.md) defines M0 repair, M1 connected medical-devices journey, M2 one justified contrasting example, M3 hardening/demonstration, and M4 sponsor review. These are dependencies, not parallel WIP. Current active work is **WIP=1 — #490 M0 repair and reviewable PR**. No M1 build begins while a demonstrated M0 regression remains. The prototype finish line requires a working bounded experience and actual browser evidence; sponsor acceptance, merge and release are separate decisions.
+The [Needle EU prototype programme](docs/plans/needle-eu-prototype-programme-v0.2.md) defines M0 repair, M1 connected medical-devices journey, M2 one justified contrasting example, M3 hardening/demonstration, and M4 sponsor review. These are dependencies, not parallel WIP. Current active work is **WIP=1 — #490 M1 search/evidence integration on one reviewable branch**. The retained multilingual core is being connected to three captured English Commission medical-guidance sources; the consumer/native-language experiment remains outside maintained public coverage. M1 still needs substantive MDR/IVDR act views and the remaining connected journeys. #492 adds diverse-law adversarial testing: a compact M1 assumption pilot, broader M2 fixtures and M3 held-back replay, without publishing every test case. The prototype finish line requires a working bounded experience and actual browser evidence; sponsor acceptance, merge and release are separate decisions.
 
 Candidate A and C remain externally gated and inactive. At M4, use #418 and their current asset owners for a short recommendation, then ask for sponsor direction before activating either. Sponsor investment in Needle EU is not external value evidence.
 

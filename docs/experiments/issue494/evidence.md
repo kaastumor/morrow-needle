@@ -44,6 +44,12 @@ The group labels below reproduce historical source labels. **NI is non-attached 
 
 The source labels are not silently converted to present-day names. The counts show split groups, including ECR and ID, without assigning a single group position. The two decisions cannot be pooled into a rate or a member-switching story.
 
-## Rights and release boundary
+## Provenance, reuse, and release boundary
 
-HowTheyVote's data and text have documented licence terms; compatibility with Needle's existing `INSPECTABLE_ONLY_FOR_NOW` state remains unresolved. This specimen links to the provider and reproduces only the bounded reported aggregate facts needed to inspect the research question. **Resolve attribution and licensing before redistribution, embedding or public release.**
+The two displayed aggregate results and historical group rows are sourced here through the **reported European Parliament primary-text recounts** recorded in #494. HowTheyVote remains an external comparator and navigation aid; this specimen does **not** import its downloadable/API database, vote summaries or member dataset. A future HowTheyVote ingestion path would be a separate product and licensing decision.
+
+The [European Parliament's Open Data rules](https://data.europarl.europa.eu/en/discover/rules-on-the-european-parliaments-open-data) state that Parliament open data uses CC BY 4.0. The Parliament's [general legal notice](https://www.europarl.europa.eu/legal-notice/en) also permits reuse of EU-owned textual material with source acknowledgement, subject to item-specific conditions. These reuse statements do not authenticate the manually transferred source text or prove that every linked item has identical terms; exact source-item attribution and conditions still need to be preserved.
+
+[HowTheyVote's methodology and licence notice](https://howtheyvote.eu/about) states that voting data made available through downloads/API is licensed under the ODbL, with database contents under the Database Contents License unless otherwise noted; photos and vote summaries are excluded. Those database rights are not relied on for the two tables in this specimen.
+
+Needle's repository licensing state remains **`INSPECTABLE_ONLY_FOR_NOW`**. Public redistribution, embedding or production reuse remains gated until the exact source-item attribution/terms and their interaction with Needle's release model are reviewed. This research note is **not legal clearance**.

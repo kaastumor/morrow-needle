@@ -58,3 +58,10 @@ The same Chrome/Playwright matrix was then rerun on that exact archive:
 This closes the previously open **rendering / keyboard-focus / fragment-navigation / narrow reflow / 200%-text / representative source-link activation** browser gate for the static experiment pages. It is not WCAG conformance, source-destination availability, participant comprehension or reader-benefit evidence.
 
 Screenshots and machine-readable browser output were retained only in the isolated local verification workspace on Jeroen-PC; they are not production assets or source evidence.
+
+
+## Pre-merge comparability red-team — 29 September 2026
+
+A final content comparison of the frozen HTML arms found the same **13 unique external source destinations** in both arms. The competent handoff contains repeated links at its source-first entry point, but no source destination unavailable to the linked specimen. This is treated as the intended navigation/presentation difference, not an evidence-budget difference.
+
+The same review identified one avoidable design risk before any participant observation: the earlier 8/8 allocation was balanced but manually authored, so arrival order could become an unnecessary confound. No participant had been contacted or observed. The allocation was therefore replaced before execution by a reproducible deterministic randomisation: SHA-256 of the frozen seed `needle-494-reading-pilot-v1-2026-09-29` plus each participant ID, with the first eight hash-ranked IDs assigned Arm A and the rest Arm B. The resulting arrival-ID sequence is recorded in `pilot-runbook.md`. No political, expertise or outcome variable enters assignment.

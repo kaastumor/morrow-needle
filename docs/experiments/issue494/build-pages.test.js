@@ -35,3 +35,9 @@ test('recorded group distributions match selected ballot totals', () => {
     }
   }
 });
+
+
+test('text reflow safeguard remains enabled for long legal identifiers', () => {
+  const css = fs.readFileSync(path.join(dir, 'style.css'), 'utf8');
+  assert.match(css, /h1, h2, h3, p, dt, dd, a \{ overflow-wrap: anywhere; \}/);
+});

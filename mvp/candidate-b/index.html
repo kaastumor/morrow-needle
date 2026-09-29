@@ -4,14 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="A frozen research prototype for checking harmonised-standard OJ status and exploring evidence-bounded legal context for the Low Voltage Directive.">
-  <title>Needle — Harmonised Standard Status</title>
+  <title>Known-standard status — Needle EU</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/product-shell.css">
 </head>
-<body>
-<a class="skip-link" href="#status-tool">Skip to status lookup</a>
-<main>
+<body class="product-route">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="product-shell">
+  <a class="product-shell__brand" href="/">Needle EU</a>
+  <nav class="product-shell__nav" aria-label="Product navigation">
+    <a href="/medical-devices/">Medical-device legislation</a>
+    <a href="/mvp/candidate-b/" aria-current="page">Known-standard status</a>
+    <a href="/#coverage">About coverage</a>
+  </nav>
+</header>
+<nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> / Known-standard status</nav>
+<main id="main" tabindex="-1">
   <header class="hero">
-    <p class="eyebrow">Morrow // Needle · research prototype</p>
+    <p class="eyebrow">Needle EU · independent research demonstration</p>
     <h1>Harmonised Standard Status</h1>
     <p class="lede">Check the EU Official Journal reference state of a standard you already know — including restrictions and already-fixed future changes.</p>
 
@@ -466,6 +476,10 @@
     <p class="boundary-copy">The current build is a product-readiness experiment using frozen official evidence. It is designed to test the shape of a narrow standards-status tool, not to act as a current compliance database.</p>
   </section>
 </main>
+<footer class="product-footer">
+  <p>Needle EU · independent research demonstration. This tool uses five frozen official-evidence records and is not live monitoring or an official EU service.</p>
+  <p>Official acts and notices govern. <a href="/#coverage">Coverage and limits</a> · <a href="https://github.com/kaastumor/morrow-needle/issues/new">Report a correction</a></p>
+</footer>
 <script src="app.js" defer></script>
 </body>
 </html>

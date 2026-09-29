@@ -4,7 +4,7 @@ const VIEW_LABELS = Object.freeze({
   overview: "Overview",
   explore: "Explore",
   changes: "Change review",
-  expert: "Expert / research"
+  expert: "Research diagnostics"
 });
 
 function setPressed(buttons, key, datasetName) {

@@ -5,7 +5,7 @@ const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
 
-const {APP_FILES, REGIME_FILES, REGIME_V2_FILES, MEDICAL_SUMMARY_FILES, PILOT_FILES, FIXTURE_FILES, buildStaticDemo} = require("./build-static-demo.js");
+const {APP_FILES, REGIME_FILES, REGIME_V2_FILES, MEDICAL_SUMMARY_FILES, PRODUCT_HOME_FILES, PILOT_FILES, FIXTURE_FILES, buildStaticDemo} = require("./build-static-demo.js");
 
 const ROOT = path.resolve(__dirname, "..", "..");
 const DIST = path.join(ROOT, "dist");
@@ -18,6 +18,7 @@ test("static bundle contains frozen Candidate-B plus the separate regime prototy
   assert.deepEqual(manifest.regimeFiles, REGIME_FILES);
   assert.deepEqual(manifest.regimeV2Files, REGIME_V2_FILES);
   assert.deepEqual(manifest.medicalSummaryFiles, MEDICAL_SUMMARY_FILES);
+  assert.deepEqual(manifest.productHomeFiles, PRODUCT_HOME_FILES);
   assert.deepEqual(manifest.pilotFiles, PILOT_FILES);
   assert.deepEqual(manifest.pilotRoutes, ["/research/issue494/a/", "/research/issue494/b/"]);
   assert.equal(manifest.fixtureFiles.length, 5);
@@ -55,7 +56,34 @@ test("static bundle contains frozen Candidate-B plus the separate regime prototy
   }
 
   assert.ok(fs.existsSync(path.join(DIST, "index.html")));
+  assert.ok(fs.existsSync(path.join(DIST, "product-shell.css")));
   assert.ok(fs.existsSync(path.join(DIST, "build-manifest.json")));
+});
+
+test("product entry and retained routes have a static return path while research stays isolated", () => {
+  buildStaticDemo();
+  const routes = ["index.html", "medical-devices/index.html", "regime-v2/index.html", "mvp/candidate-b/index.html"];
+  for (const route of routes) {
+    const html = fs.readFileSync(path.join(DIST, route), "utf8");
+    assert.match(html, /Needle EU/);
+    assert.match(html, /class="product-shell__brand" href="\/"/);
+    assert.match(html, /href="\/#coverage"|href="#coverage"/);
+    assert.match(html, /href="\/product-shell\.css"/);
+  }
+  const home = fs.readFileSync(path.join(DIST, "index.html"), "utf8");
+  assert.doesNotMatch(home, /http-equiv="refresh"/);
+  assert.match(home, /href="\/medical-devices\/"/);
+  assert.match(home, /href="\/mvp\/candidate-b\/"/);
+  const medical = fs.readFileSync(path.join(DIST, "medical-devices", "index.html"), "utf8");
+  assert.match(medical, /href="\/regime-v2\/#explore"/);
+  assert.match(medical, /href="\/regime-v2\/#changes"/);
+  const deeper = fs.readFileSync(path.join(DIST, "regime-v2", "index.html"), "utf8");
+  for (const fragment of ["explore", "changes", "expert"]) assert.match(deeper, new RegExp(`id="${fragment}"`));
+  assert.match(deeper, /Return to medical-device overview/);
+  for (const arm of ["a", "b"]) {
+    const research = fs.readFileSync(path.join(DIST, "research", "issue494", arm, "index.html"), "utf8");
+    assert.doesNotMatch(research, /product-shell__nav/);
+  }
 });
 
 test("bundle is generated from canonical fixture paths rather than a committed second dataset", () => {

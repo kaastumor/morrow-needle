@@ -4,18 +4,31 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="A task-layered, evidence-bounded view of the EU medical-devices regime.">
-  <title>Needle Navigator — Medical Devices Regime v0.2</title>
+  <title>Medical-device relationships — Needle EU</title>
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="/product-shell.css">
+  <noscript><style>.view-panel[hidden] { display: block !important; }</style></noscript>
 </head>
-<body>
+<body class="product-route">
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <main id="main">
+  <header class="product-shell">
+    <a class="product-shell__brand" href="/">Needle EU</a>
+    <nav class="product-shell__nav" aria-label="Product navigation">
+      <a href="/medical-devices/" aria-current="location">Medical-device legislation</a>
+      <a href="/mvp/candidate-b/">Known-standard status</a>
+      <a href="/#coverage">About coverage</a>
+    </nav>
+  </header>
+  <nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/medical-devices/">Medical-device legislation</a> / Relationships</nav>
+
+  <main id="main" tabindex="-1">
     <header class="site-header">
       <div>
-        <p class="eyebrow">Needle Navigator · UI comparison v0.2</p>
+        <p class="eyebrow">Needle EU · independent research demonstration</p>
         <h1>EU medical-devices regime</h1>
         <p class="lede">Three predecessor directives were replaced by two current core regulations, with later transition, implementation, EUDAMED and guidance layers around them.</p>
+        <a class="product-return" href="/medical-devices/">← Return to medical-device overview</a>
       </div>
 
       <div class="meta-line" role="note">
@@ -30,11 +43,11 @@
           <button type="button" data-view-button="explore" aria-pressed="false">Explore</button>
           <button type="button" data-view-button="changes" aria-pressed="false">Change review</button>
         </nav>
-        <button type="button" class="expert-entry" data-view-button="expert" aria-pressed="false">Expert / research</button>
+        <button type="button" class="expert-entry" data-view-button="expert" aria-pressed="false">Research diagnostics</button>
       </div>
     </header>
 
-    <section class="view-panel" data-view-panel="overview" aria-labelledby="overview-heading">
+    <section id="overview" class="view-panel" data-view-panel="overview" aria-labelledby="overview-heading">
       <div class="section-title">
         <p class="section-kicker">Overview</p>
         <h2 id="overview-heading" tabindex="-1">See the regime before reading the detail</h2>
@@ -101,7 +114,7 @@
       </aside>
     </section>
 
-    <section class="view-panel" data-view-panel="explore" aria-labelledby="explore-heading" hidden>
+    <section id="explore" class="view-panel" data-view-panel="explore" aria-labelledby="explore-heading" hidden>
       <div class="context-strip" aria-label="Persistent regime context">
         <strong>MDR 2017/745</strong>
         <span>+</span>
@@ -225,7 +238,7 @@
       </div>
     </section>
 
-    <section class="view-panel" data-view-panel="changes" aria-labelledby="changes-heading" hidden>
+    <section id="changes" class="view-panel" data-view-panel="changes" aria-labelledby="changes-heading" hidden>
       <div class="context-strip" aria-label="Persistent regime context">
         <strong>MDR 2017/745</strong><span>+</span><strong>IVDR 2017/746</strong><span>Evidence 27 Sep 2026</span>
       </div>
@@ -284,13 +297,13 @@
       </article>
     </section>
 
-    <section class="view-panel" data-view-panel="expert" aria-labelledby="expert-heading" hidden>
+    <section id="expert" class="view-panel" data-view-panel="expert" aria-labelledby="expert-heading" hidden>
       <div class="context-strip" aria-label="Persistent regime context">
         <strong>Medical-devices projection</strong><span>Evidence 27 Sep 2026</span><span>Research layer</span>
       </div>
 
       <div class="section-title">
-        <p class="section-kicker">Expert / research</p>
+        <p class="section-kicker">Research diagnostics</p>
         <h2 id="expert-heading" tabindex="-1">Projection diagnostics</h2>
         <p>Maintenance and evidence-quality signals for this bounded projection—not findings that EU law is defective.</p>
       </div>
@@ -315,6 +328,11 @@
       </div>
     </section>
   </main>
+
+  <footer class="product-footer">
+    <p>Needle EU · independent research demonstration. This bounded EU-level relationship view was evidence checked on 27 Sep 2026; it is not live monitoring or an official EU service.</p>
+    <p>Official sources govern. <a href="/medical-devices/">Medical-device overview</a> · <a href="/#coverage">Coverage and limits</a> · <a href="https://github.com/kaastumor/morrow-needle/issues/new">Report a correction</a></p>
+  </footer>
 
   <script src="./app.js"></script>
 </body>

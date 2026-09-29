@@ -31,6 +31,8 @@ const MEDICAL_SUMMARY_FILES = Object.freeze([
   "app.js"
 ]);
 
+const PRODUCT_HOME_FILES = Object.freeze(["index.html"]);
+
 const PILOT_FILES = Object.freeze(["index.html", "style.css"]);
 
 const FIXTURE_FILES = Object.freeze([
@@ -53,6 +55,7 @@ function buildStaticDemo() {
   const regimeOut = path.join(DIST, "regime");
   const regimeV2Out = path.join(DIST, "regime-v2");
   const medicalSummaryOut = path.join(DIST, "medical-devices");
+  const productHomeOut = DIST;
   const fixturesOut = path.join(DIST, "fixtures", "dependency");
   const pilotAOut = path.join(DIST, "research", "issue494", "a");
   const pilotBOut = path.join(DIST, "research", "issue494", "b");
@@ -82,6 +85,11 @@ function buildStaticDemo() {
     );
   }
 
+  for (const file of PRODUCT_HOME_FILES) {
+    copyFile(path.join(ROOT, "mvp", "product-home", file), path.join(productHomeOut, file));
+  }
+  copyFile(path.join(ROOT, "mvp", "product-shell.css"), path.join(DIST, "product-shell.css"));
+
   fs.mkdirSync(pilotAOut, {recursive: true});
   fs.mkdirSync(pilotBOut, {recursive: true});
   fs.writeFileSync(path.join(pilotAOut, "index.html"), participantCopy("specimen.html"), "utf8");
@@ -96,17 +104,6 @@ function buildStaticDemo() {
     );
   }
 
-  fs.writeFileSync(
-    path.join(DIST, "index.html"),
-    `<!doctype html>
-<meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=/mvp/candidate-b/">
-<title>Needle — Harmonised Standard Status</title>
-<p><a href="/mvp/candidate-b/">Open Harmonised Standard Status</a></p>
-`,
-    "utf8"
-  );
-
   const manifest = {
     artifact: "candidate-b-static-demo",
     generatedFrom: "canonical repository files",
@@ -115,6 +112,8 @@ function buildStaticDemo() {
     regimeFiles: REGIME_FILES,
     regimeV2Files: REGIME_V2_FILES,
     medicalSummaryFiles: MEDICAL_SUMMARY_FILES,
+    productHomeFiles: PRODUCT_HOME_FILES,
+    productShellFile: "product-shell.css",
     pilotFiles: PILOT_FILES,
     pilotRoutes: ["/research/issue494/a/", "/research/issue494/b/"],
     externalValueProven: false,
@@ -133,8 +132,8 @@ function buildStaticDemo() {
 if (require.main === module) {
   const manifest = buildStaticDemo();
   process.stdout.write(
-    `Built Candidate-B + regime comparison surfaces with ${manifest.fixtureFiles.length} canonical fixtures.\n`
+    `Built bounded Needle EU product routes with ${manifest.fixtureFiles.length} canonical fixtures.\n`
   );
 }
 
-module.exports = {APP_FILES, REGIME_FILES, REGIME_V2_FILES, MEDICAL_SUMMARY_FILES, PILOT_FILES, FIXTURE_FILES, buildStaticDemo};
+module.exports = {APP_FILES, REGIME_FILES, REGIME_V2_FILES, MEDICAL_SUMMARY_FILES, PRODUCT_HOME_FILES, PILOT_FILES, FIXTURE_FILES, buildStaticDemo};

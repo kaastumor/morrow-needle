@@ -6,6 +6,7 @@
   <meta name="description" content="A bounded, source-linked entry to Needle EU medical-device legislation and known-standard status.">
   <title>Covered EU legislation — Needle EU</title>
   <link rel="stylesheet" href="/product-shell.css">
+  <link rel="stylesheet" href="/search.css">
 </head>
 <body class="product-route">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -33,6 +34,16 @@
     </aside>
     <p class="product-entry__scope"><strong>Bounded coverage.</strong> These are evidence-dated views of selected EU-level material, not a complete or live EU legislation service. Official acts and notices remain the source to verify legal status.</p>
 
+    <section class="product-search" aria-labelledby="search-heading">
+      <p class="product-entry__eyebrow">Captured-source search</p>
+      <h2 id="search-heading">Ask where to start</h2>
+      <p class="product-search__intro">Search four English medical-device guidance captures using ordinary wording or an exact reference. Results show source passages, not generated legal answers. Question language, source language, jurisdiction and legal version remain separate.</p>
+      <p id="medical-guidance-search-status" class="product-search__status">Loading the bounded evidence index…</p>
+      <div id="medical-guidance-search" aria-label="Search captured medical guidance"></div>
+      <noscript><p class="product-entry__scope">Search needs JavaScript. The direct overview and official sources remain available below.</p></noscript>
+      <p class="product-search__fallback"><a href="/medical-devices/">Open the maintained medical-device overview</a> · <a href="/medical-devices/#sources">Go directly to its official sources</a></p>
+    </section>
+
     <div class="product-entry__paths" aria-label="Available paths">
       <section class="product-entry__path">
         <p class="product-entry__eyebrow">Legislation overview</p>
@@ -59,5 +70,12 @@
     <p>Needle EU · independent research demonstration. Coverage and evidence dates are stated on each view; this is not live monitoring or an official EU service.</p>
     <p>Official sources govern. <a href="/#coverage">Coverage and limits</a> · <a href="https://github.com/kaastumor/morrow-needle/issues/new">Report a correction</a></p>
   </footer>
+  <script src="/search/language.js" defer></script>
+  <script src="/search/word-forms.js" defer></script>
+  <script src="/search/search.js" defer></script>
+  <script src="/search/medical-engine.js" defer></script>
+  <script src="/search/evidence-view.js" defer></script>
+  <script src="/search/search-panel.js" defer></script>
+  <script src="/search/app.js" defer></script>
 </body>
 </html>

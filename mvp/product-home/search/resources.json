@@ -1,0 +1,842 @@
+{
+  "registry": {
+    "schema": "needle-languages-v1",
+    "checkedAt": "2026-09-29",
+    "source": "https://european-union.europa.eu/principles-countries-history/languages_en",
+    "nativeLabelSource": "https://europa.eu/youreurope/citizens/consumers/shopping/guarantees/index_fr.htm",
+    "languages": [
+      {
+        "tag": "bg",
+        "name": "Bulgarian",
+        "nativeName": "български",
+        "script": "Cyrl",
+        "direction": "ltr"
+      },
+      {
+        "tag": "hr",
+        "name": "Croatian",
+        "nativeName": "hrvatski",
+        "script": "Latn",
+        "direction": "ltr"
+      },
+      {
+        "tag": "cs",
+        "name": "Czech",
+        "nativeName": "čeština",
+        "script": "Latn",
+        "direction": "ltr"
+      },
+      {
+        "tag": "da",
+        "name": "Danish",
+        "nativeName": "dansk",
+        "script": "Latn",
+        "direction": "ltr"
+      },
+      {
+        "tag": "nl",
+        "name": "Dutch",
+        "nativeName": "Nederlands",
+        "script": "Latn",
+        "direction": "ltr"
+      },
+      {
+        "tag": "en",
+        "name": "English",
+        "nativeName": "English",
+        "script": "Latn",
+        "direction": "ltr"
+      },
+      {
+        "tag": "et",
+        "name": "Estonian",
+        "nativeName": "eesti",
+        "script": "Latn",
+        "direction": "ltr"
+      },
+      {
+        "tag": "fi",
+        "name": "Finnish",
+        "nativeName": "suomi",
+        "script": "Latn",
+        "direction": "ltr"
+      },
+      {
+        "tag": "fr",
+        "name": "French",
+        "nativeName": "français",
+        "script": "Latn",
+        "direction": "ltr"
+      },
+      {
+        "tag": "de",
+        "name": "German",
+        "nativeName": "Deutsch",
+        "script": "Latn",
+        "direction": "ltr"
+      },
+      {
+        "tag": "el",
+        "name": "Greek",
+        "nativeName": "Ελληνικά",
+        "script": "Grek",
+        "direction": "ltr"
+      },
+      {
+        "tag": "hu",
+        "name": "Hungarian",
+        "nativeName": "magyar",
+        "script": "Latn",
+        "direction": "ltr"
+      },
+      {
+        "tag": "ga",
+        "name": "Irish",
+        "nativeName": "Gaeilge",
+        "script": "Latn",
+        "direction": "ltr"
+      },
+      {
+        "tag": "it",
+        "name": "Italian",
+        "nativeName": "italiano",
+        "script": "Latn",
+        "direction": "ltr"
+      },
+      {
+        "tag": "lv",
+        "name": "Latvian",
+        "nativeName": "latviešu",
+        "script": "Latn",
+        "direction": "ltr"
+      },
+      {
+        "tag": "lt",
+        "name": "Lithuanian",
+        "nativeName": "lietuvių",
+        "script": "Latn",
+        "direction": "ltr"
+      },
+      {
+        "tag": "mt",
+        "name": "Maltese",
+        "nativeName": "Malti",
+        "script": "Latn",
+        "direction": "ltr"
+      },
+      {
+        "tag": "pl",
+        "name": "Polish",
+        "nativeName": "polski",
+        "script": "Latn",
+        "direction": "ltr"
+      },
+      {
+        "tag": "pt",
+        "name": "Portuguese",
+        "nativeName": "português",
+        "script": "Latn",
+        "direction": "ltr"
+      },
+      {
+        "tag": "ro",
+        "name": "Romanian",
+        "nativeName": "română",
+        "script": "Latn",
+        "direction": "ltr"
+      },
+      {
+        "tag": "sk",
+        "name": "Slovak",
+        "nativeName": "slovenčina",
+        "script": "Latn",
+        "direction": "ltr"
+      },
+      {
+        "tag": "sl",
+        "name": "Slovenian",
+        "nativeName": "slovenščina",
+        "script": "Latn",
+        "direction": "ltr"
+      },
+      {
+        "tag": "es",
+        "name": "Spanish",
+        "nativeName": "español",
+        "script": "Latn",
+        "direction": "ltr"
+      },
+      {
+        "tag": "sv",
+        "name": "Swedish",
+        "nativeName": "svenska",
+        "script": "Latn",
+        "direction": "ltr"
+      }
+    ]
+  },
+  "packs": {
+    "bg": {
+      "schema": "needle-language-pack-v1",
+      "language": "bg",
+      "version": "2026-09-29-c1",
+      "stopWords": [],
+      "quality": "LABEL_ONLY",
+      "specialistValidation": false,
+      "machineTranslation": false
+    },
+    "hr": {
+      "schema": "needle-language-pack-v1",
+      "language": "hr",
+      "version": "2026-09-29-c1",
+      "stopWords": [],
+      "quality": "UNICODE_LEXICAL_ONLY",
+      "specialistValidation": false,
+      "machineTranslation": false
+    },
+    "cs": {
+      "schema": "needle-language-pack-v1",
+      "language": "cs",
+      "version": "2026-09-29-c1",
+      "stopWords": [],
+      "quality": "UNICODE_LEXICAL_ONLY",
+      "specialistValidation": false,
+      "machineTranslation": false
+    },
+    "da": {
+      "schema": "needle-language-pack-v1",
+      "language": "da",
+      "version": "2026-09-29-c1",
+      "stopWords": [],
+      "quality": "UNICODE_LEXICAL_ONLY",
+      "specialistValidation": false,
+      "machineTranslation": false
+    },
+    "nl": {
+      "schema": "needle-language-pack-v1",
+      "language": "nl",
+      "version": "2026-09-29-c1",
+      "stopWords": [
+        "het",
+        "de",
+        "een",
+        "en",
+        "of",
+        "van",
+        "voor",
+        "naar",
+        "op",
+        "aan",
+        "is",
+        "zijn",
+        "was",
+        "als",
+        "bij",
+        "met",
+        "welke",
+        "wat",
+        "waar",
+        "wie",
+        "hoe",
+        "ik",
+        "wij",
+        "je",
+        "mijn",
+        "onze",
+        "hun",
+        "dit",
+        "dat",
+        "deze",
+        "heb",
+        "hebben",
+        "kan",
+        "hem",
+        "er"
+      ],
+      "quality": "DEVELOPMENT_RESOURCE",
+      "specialistValidation": false,
+      "machineTranslation": false
+    },
+    "en": {
+      "schema": "needle-language-pack-v1",
+      "language": "en",
+      "version": "2026-09-29-c1",
+      "stopWords": [
+        "a",
+        "an",
+        "the",
+        "and",
+        "or",
+        "of",
+        "for",
+        "to",
+        "from",
+        "in",
+        "on",
+        "at",
+        "is",
+        "are",
+        "was",
+        "were",
+        "be",
+        "been",
+        "as",
+        "by",
+        "with",
+        "which",
+        "what",
+        "where",
+        "who",
+        "how",
+        "do",
+        "does",
+        "did",
+        "i",
+        "we",
+        "you",
+        "my",
+        "our",
+        "their",
+        "it",
+        "its",
+        "this",
+        "that",
+        "these",
+        "those",
+        "have",
+        "has",
+        "had",
+        "can",
+        "could",
+        "should",
+        "would",
+        "will",
+        "all",
+        "into",
+        "than",
+        "then",
+        "just",
+        "about",
+        "some",
+        "now"
+      ],
+      "quality": "DEVELOPMENT_RESOURCE",
+      "specialistValidation": false,
+      "machineTranslation": false
+    },
+    "et": {
+      "schema": "needle-language-pack-v1",
+      "language": "et",
+      "version": "2026-09-29-c1",
+      "stopWords": [],
+      "quality": "UNICODE_LEXICAL_ONLY",
+      "specialistValidation": false,
+      "machineTranslation": false
+    },
+    "fi": {
+      "schema": "needle-language-pack-v1",
+      "language": "fi",
+      "version": "2026-09-29-c1",
+      "stopWords": [],
+      "quality": "UNICODE_LEXICAL_ONLY",
+      "specialistValidation": false,
+      "machineTranslation": false
+    },
+    "fr": {
+      "schema": "needle-language-pack-v1",
+      "language": "fr",
+      "version": "2026-09-29-c1",
+      "stopWords": [],
+      "quality": "LABEL_ONLY",
+      "specialistValidation": false,
+      "machineTranslation": false
+    },
+    "de": {
+      "schema": "needle-language-pack-v1",
+      "language": "de",
+      "version": "2026-09-29-c1",
+      "stopWords": [],
+      "quality": "UNICODE_LEXICAL_ONLY",
+      "specialistValidation": false,
+      "machineTranslation": false
+    },
+    "el": {
+      "schema": "needle-language-pack-v1",
+      "language": "el",
+      "version": "2026-09-29-c1",
+      "stopWords": [],
+      "quality": "LABEL_ONLY",
+      "specialistValidation": false,
+      "machineTranslation": false
+    },
+    "hu": {
+      "schema": "needle-language-pack-v1",
+      "language": "hu",
+      "version": "2026-09-29-c1",
+      "stopWords": [],
+      "quality": "UNICODE_LEXICAL_ONLY",
+      "specialistValidation": false,
+      "machineTranslation": false
+    },
+    "ga": {
+      "schema": "needle-language-pack-v1",
+      "language": "ga",
+      "version": "2026-09-29-c1",
+      "stopWords": [],
+      "quality": "UNICODE_LEXICAL_ONLY",
+      "specialistValidation": false,
+      "machineTranslation": false
+    },
+    "it": {
+      "schema": "needle-language-pack-v1",
+      "language": "it",
+      "version": "2026-09-29-c1",
+      "stopWords": [],
+      "quality": "UNICODE_LEXICAL_ONLY",
+      "specialistValidation": false,
+      "machineTranslation": false
+    },
+    "lv": {
+      "schema": "needle-language-pack-v1",
+      "language": "lv",
+      "version": "2026-09-29-c1",
+      "stopWords": [],
+      "quality": "UNICODE_LEXICAL_ONLY",
+      "specialistValidation": false,
+      "machineTranslation": false
+    },
+    "lt": {
+      "schema": "needle-language-pack-v1",
+      "language": "lt",
+      "version": "2026-09-29-c1",
+      "stopWords": [],
+      "quality": "UNICODE_LEXICAL_ONLY",
+      "specialistValidation": false,
+      "machineTranslation": false
+    },
+    "mt": {
+      "schema": "needle-language-pack-v1",
+      "language": "mt",
+      "version": "2026-09-29-c1",
+      "stopWords": [],
+      "quality": "LABEL_ONLY",
+      "specialistValidation": false,
+      "machineTranslation": false
+    },
+    "pl": {
+      "schema": "needle-language-pack-v1",
+      "language": "pl",
+      "version": "2026-09-29-c1",
+      "stopWords": [],
+      "quality": "UNICODE_LEXICAL_ONLY",
+      "specialistValidation": false,
+      "machineTranslation": false
+    },
+    "pt": {
+      "schema": "needle-language-pack-v1",
+      "language": "pt",
+      "version": "2026-09-29-c1",
+      "stopWords": [],
+      "quality": "UNICODE_LEXICAL_ONLY",
+      "specialistValidation": false,
+      "machineTranslation": false
+    },
+    "ro": {
+      "schema": "needle-language-pack-v1",
+      "language": "ro",
+      "version": "2026-09-29-c1",
+      "stopWords": [],
+      "quality": "UNICODE_LEXICAL_ONLY",
+      "specialistValidation": false,
+      "machineTranslation": false
+    },
+    "sk": {
+      "schema": "needle-language-pack-v1",
+      "language": "sk",
+      "version": "2026-09-29-c1",
+      "stopWords": [],
+      "quality": "UNICODE_LEXICAL_ONLY",
+      "specialistValidation": false,
+      "machineTranslation": false
+    },
+    "sl": {
+      "schema": "needle-language-pack-v1",
+      "language": "sl",
+      "version": "2026-09-29-c1",
+      "stopWords": [],
+      "quality": "UNICODE_LEXICAL_ONLY",
+      "specialistValidation": false,
+      "machineTranslation": false
+    },
+    "es": {
+      "schema": "needle-language-pack-v1",
+      "language": "es",
+      "version": "2026-09-29-c1",
+      "stopWords": [],
+      "quality": "UNICODE_LEXICAL_ONLY",
+      "specialistValidation": false,
+      "machineTranslation": false
+    },
+    "sv": {
+      "schema": "needle-language-pack-v1",
+      "language": "sv",
+      "version": "2026-09-29-c1",
+      "stopWords": [],
+      "quality": "UNICODE_LEXICAL_ONLY",
+      "specialistValidation": false,
+      "machineTranslation": false
+    }
+  },
+  "vocabulary": {
+    "schema": "needle-concept-labels-v1",
+    "resourceVersion": "2026-09-29-c1",
+    "concepts": [
+      {
+        "id": "C001",
+        "topic": "medical",
+        "labels": {
+          "en": [
+            "importer",
+            "importers",
+            "import",
+            "importing"
+          ],
+          "nl": [
+            "importeur",
+            "importeren"
+          ]
+        },
+        "provenance": {
+          "kind": "migrated-developer-aliases",
+          "source": "baseline/aliases.json",
+          "review": "EXPOSED_UNVALIDATED",
+          "notLegalEquivalence": true
+        }
+      },
+      {
+        "id": "C002",
+        "topic": "medical",
+        "labels": {
+          "en": [
+            "distributor",
+            "distributors",
+            "distribution"
+          ],
+          "nl": [
+            "distributeur",
+            "distributeurs"
+          ]
+        },
+        "provenance": {
+          "kind": "migrated-developer-aliases",
+          "source": "baseline/aliases.json",
+          "review": "EXPOSED_UNVALIDATED",
+          "notLegalEquivalence": true
+        }
+      },
+      {
+        "id": "C003",
+        "topic": "medical",
+        "labels": {
+          "en": [
+            "manufacturer",
+            "manufacturers"
+          ],
+          "nl": [
+            "fabrikant",
+            "fabrikanten"
+          ]
+        },
+        "provenance": {
+          "kind": "migrated-developer-aliases",
+          "source": "baseline/aliases.json",
+          "review": "EXPOSED_UNVALIDATED",
+          "notLegalEquivalence": true
+        }
+      },
+      {
+        "id": "C004",
+        "topic": "medical",
+        "labels": {
+          "en": [
+            "diagnostic",
+            "diagnostics"
+          ],
+          "nl": [
+            "diagnostische",
+            "diagnostisch"
+          ]
+        },
+        "provenance": {
+          "kind": "migrated-developer-aliases",
+          "source": "baseline/aliases.json",
+          "review": "EXPOSED_UNVALIDATED",
+          "notLegalEquivalence": true
+        }
+      },
+      {
+        "id": "C005",
+        "topic": "medical",
+        "labels": {
+          "en": [
+            "tests",
+            "test"
+          ],
+          "nl": [
+            "test",
+            "tests",
+            "testen"
+          ]
+        },
+        "provenance": {
+          "kind": "migrated-developer-aliases",
+          "source": "baseline/aliases.json",
+          "review": "EXPOSED_UNVALIDATED",
+          "notLegalEquivalence": true
+        }
+      },
+      {
+        "id": "C006",
+        "topic": "medical",
+        "labels": {
+          "en": [
+            "registration",
+            "register",
+            "registering",
+            "sign up"
+          ],
+          "nl": [
+            "registratie",
+            "registreren"
+          ]
+        },
+        "provenance": {
+          "kind": "migrated-developer-aliases",
+          "source": "baseline/aliases.json",
+          "review": "EXPOSED_UNVALIDATED",
+          "notLegalEquivalence": true
+        }
+      },
+      {
+        "id": "C007",
+        "topic": "medical",
+        "labels": {
+          "en": [
+            "mandatory",
+            "required"
+          ],
+          "nl": [
+            "verplicht",
+            "verplichte"
+          ]
+        },
+        "provenance": {
+          "kind": "migrated-developer-aliases",
+          "source": "baseline/aliases.json",
+          "review": "EXPOSED_UNVALIDATED",
+          "notLegalEquivalence": true
+        }
+      },
+      {
+        "id": "C008",
+        "topic": "medical",
+        "labels": {
+          "en": [
+            "date",
+            "deadline",
+            "when"
+          ],
+          "nl": [
+            "datum",
+            "wanneer"
+          ]
+        },
+        "provenance": {
+          "kind": "migrated-developer-aliases",
+          "source": "baseline/aliases.json",
+          "review": "EXPOSED_UNVALIDATED",
+          "notLegalEquivalence": true
+        }
+      },
+      {
+        "id": "C009",
+        "topic": "medical",
+        "labels": {
+          "en": [
+            "change",
+            "changed"
+          ],
+          "nl": [
+            "wijziging",
+            "veranderd"
+          ]
+        },
+        "provenance": {
+          "kind": "migrated-developer-aliases",
+          "source": "baseline/aliases.json",
+          "review": "EXPOSED_UNVALIDATED",
+          "notLegalEquivalence": true
+        }
+      },
+      {
+        "id": "C021",
+        "topic": null,
+        "labels": {
+          "en": [
+            "netherlands",
+            "dutch"
+          ],
+          "nl": [
+            "nederland",
+            "dutch"
+          ]
+        },
+        "provenance": {
+          "kind": "migrated-developer-aliases",
+          "source": "baseline/aliases.json",
+          "review": "EXPOSED_UNVALIDATED",
+          "notLegalEquivalence": true
+        }
+      },
+      {
+        "id": "C022",
+        "topic": null,
+        "labels": {
+          "en": [
+            "not",
+            "no"
+          ],
+          "nl": [
+            "niet",
+            "no"
+          ]
+        },
+        "provenance": {
+          "kind": "migrated-developer-aliases",
+          "source": "baseline/aliases.json",
+          "review": "EXPOSED_UNVALIDATED",
+          "notLegalEquivalence": true
+        }
+      },
+      {
+        "id": "C023",
+        "topic": null,
+        "labels": {
+          "en": [
+            "rules",
+            "rule"
+          ],
+          "nl": [
+            "regels",
+            "regel"
+          ]
+        },
+        "provenance": {
+          "kind": "migrated-developer-aliases",
+          "source": "baseline/aliases.json",
+          "review": "EXPOSED_UNVALIDATED",
+          "notLegalEquivalence": true
+        }
+      },
+      {
+        "id": "C024",
+        "topic": "medical",
+        "labels": {},
+        "universalLabels": [
+          "EUDAMED"
+        ],
+        "provenance": {
+          "kind": "existing-source-identifier",
+          "source": "baseline/index.json",
+          "notLegalEquivalence": true
+        }
+      },
+      {
+        "id": "C025",
+        "topic": "medical",
+        "labels": {},
+        "universalLabels": [
+          "IVDR"
+        ],
+        "provenance": {
+          "kind": "existing-source-identifier",
+          "source": "baseline/index.json",
+          "notLegalEquivalence": true
+        }
+      },
+      {
+        "id": "C026",
+        "topic": "medical",
+        "labels": {},
+        "universalLabels": [
+          "MDR"
+        ],
+        "provenance": {
+          "kind": "existing-source-identifier",
+          "source": "baseline/index.json",
+          "notLegalEquivalence": true
+        }
+      },
+      {
+        "id": "C027",
+        "topic": "medical",
+        "labels": {},
+        "universalLabels": [
+          "SRN"
+        ],
+        "provenance": {
+          "kind": "existing-source-identifier",
+          "source": "baseline/index.json",
+          "notLegalEquivalence": true
+        }
+      }
+    ],
+    "labelObservations": "label-observations.json",
+    "note": "Local neutral concept IDs are retrieval hints. Not EuroVoc identifiers, not translation, and not a legal ontology."
+  },
+  "domain": {
+    "schema": "needle-domain-v1",
+    "contexts": {
+      "medical": [
+        "C024",
+        "C025"
+      ]
+    },
+    "genericConcepts": [
+      "C008",
+      "C009",
+      "C023"
+    ],
+    "genericTerms": {
+      "en": [
+        "eu",
+        "information",
+        "rights",
+        "why",
+        "date"
+      ],
+      "nl": [
+        "eu",
+        "informatie",
+        "rechten",
+        "waarom",
+        "datum"
+      ]
+    },
+    "caveatHeadings": {
+      "en": [
+        "exceptions",
+        "warning"
+      ]
+    },
+    "forecastTerms": {
+      "en": [
+        "expected date"
+      ]
+    },
+    "topicOverrides": {
+      "C008": null,
+      "C009": null
+    }
+  }
+}

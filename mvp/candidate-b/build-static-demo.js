@@ -31,7 +31,19 @@ const MEDICAL_SUMMARY_FILES = Object.freeze([
   "app.js"
 ]);
 
-const PRODUCT_HOME_FILES = Object.freeze(["index.html"]);
+const PRODUCT_HOME_FILES = Object.freeze(["index.html", "search.css"]);
+
+const PRODUCT_SEARCH_FILES = Object.freeze([
+  "app.js",
+  "evidence-view.js",
+  "index.json",
+  "language.js",
+  "medical-engine.js",
+  "resources.json",
+  "search-panel.js",
+  "search.js",
+  "word-forms.js"
+]);
 
 const PILOT_FILES = Object.freeze(["index.html", "style.css"]);
 
@@ -88,6 +100,12 @@ function buildStaticDemo() {
   for (const file of PRODUCT_HOME_FILES) {
     copyFile(path.join(ROOT, "mvp", "product-home", file), path.join(productHomeOut, file));
   }
+  for (const file of PRODUCT_SEARCH_FILES) {
+    copyFile(
+      path.join(ROOT, "mvp", "product-home", "search", file),
+      path.join(productHomeOut, "search", file)
+    );
+  }
   copyFile(path.join(ROOT, "mvp", "product-shell.css"), path.join(DIST, "product-shell.css"));
 
   fs.mkdirSync(pilotAOut, {recursive: true});
@@ -113,6 +131,7 @@ function buildStaticDemo() {
     regimeV2Files: REGIME_V2_FILES,
     medicalSummaryFiles: MEDICAL_SUMMARY_FILES,
     productHomeFiles: PRODUCT_HOME_FILES,
+    productSearchFiles: PRODUCT_SEARCH_FILES,
     productShellFile: "product-shell.css",
     pilotFiles: PILOT_FILES,
     pilotRoutes: ["/research/issue494/a/", "/research/issue494/b/"],
@@ -136,4 +155,4 @@ if (require.main === module) {
   );
 }
 
-module.exports = {APP_FILES, REGIME_FILES, REGIME_V2_FILES, MEDICAL_SUMMARY_FILES, PRODUCT_HOME_FILES, PILOT_FILES, FIXTURE_FILES, buildStaticDemo};
+module.exports = {APP_FILES, REGIME_FILES, REGIME_V2_FILES, MEDICAL_SUMMARY_FILES, PRODUCT_HOME_FILES, PRODUCT_SEARCH_FILES, PILOT_FILES, FIXTURE_FILES, buildStaticDemo};

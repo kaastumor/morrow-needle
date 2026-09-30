@@ -1,0 +1,72 @@
+.product-search {
+  margin: 2.5rem 0;
+  padding: 1.4rem;
+  border: 1px solid var(--shell-border);
+  border-radius: var(--product-radius-surface);
+  background: var(--shell-surface);
+}
+.product-search > h2 { margin-top: 0; }
+.product-search__intro { max-width: 70ch; }
+.product-search__status, .needle-evidence-meta, .needle-evidence-notice {
+  color: var(--shell-muted);
+  font-size: .88rem;
+}
+#medical-guidance-search form {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(12rem, 1fr);
+  gap: .8rem 1rem;
+  align-items: end;
+  margin: 1rem 0;
+}
+#medical-guidance-search label { display: grid; gap: .35rem; font-weight: 700; }
+#medical-guidance-search label:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  font-weight: 500;
+}
+#medical-guidance-search textarea, #medical-guidance-search select {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: .7rem;
+  border: 1px solid var(--shell-border);
+  border-radius: var(--product-radius-control);
+  background: var(--shell-bg);
+  color: var(--shell-text);
+  font: inherit;
+}
+#medical-guidance-search button {
+  justify-self: start;
+  padding: .55rem .85rem;
+  border: 1px solid var(--shell-text);
+  background: var(--shell-text);
+  color: var(--shell-surface);
+  cursor: pointer;
+}
+#medical-guidance-search button + button { margin-left: .45rem; background: transparent; color: var(--shell-text); }
+.needle-evidence-card {
+  max-width: 74ch;
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid var(--shell-border);
+  border-left: .22rem solid #0a669e;
+  border-radius: var(--product-radius-surface);
+  background: var(--shell-bg);
+}
+.needle-evidence-card h3 { margin: .2rem 0 .6rem; }
+.needle-evidence-card blockquote {
+  margin: .8rem 0;
+  padding-left: 1rem;
+  border-left: .2rem solid var(--shell-border);
+  white-space: pre-line;
+}
+.needle-evidence-card details { margin: .7rem 0; }
+.needle-evidence-card summary { cursor: pointer; font-weight: 700; }
+.needle-evidence-full { max-width: 70ch; white-space: pre-line; }
+.product-search__fallback { margin-top: 1rem; }
+
+@media (max-width: 38rem) {
+  .product-search { padding: 1rem; }
+  #medical-guidance-search form { grid-template-columns: 1fr; }
+}

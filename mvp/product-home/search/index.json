@@ -1,0 +1,2331 @@
+{
+  "schema": "needle-passage-index-v1",
+  "observedAt": "2026-09-29",
+  "sources": {
+    "actors": {
+      "id": "actors",
+      "title": "Actor registration module",
+      "url": "https://health.ec.europa.eu/medical-devices-eudamed/actor-registration-module_en",
+      "topic": "medical",
+      "observedAt": "2026-09-29",
+      "sourceType": "official-guidance",
+      "representation": "web-tool-extracted-lines-transcribed",
+      "rawHtmlVerified": false,
+      "selection": "Main narrative, including adjacent sections; excluded items are declared, not assumed absent.",
+      "omitted": "Navigation, blanks, latest updates and footer; image and linked PDF contents not retrieved.",
+      "license": "CC-BY-4.0",
+      "editorialDate": null,
+      "lines": [
+        {
+          "line": 33,
+          "text": "# Actor registration module"
+        },
+        {
+          "line": 39,
+          "text": "The Actor registration is the first of the six EUDAMED modules."
+        },
+        {
+          "line": 40,
+          "text": "The Commission Decision (EU) 2025/2371 of 26 November 2025 on the notice regarding the functionality and the fulfilment of the functional specifications of certain electronic systems included in the European Database on Medical Devices has declared this module functional and, in accordance with the transitional provisions set out in Regulation (EU) 2024/1860; as from 28 May 2026 the Actor module is mandatory to use."
+        },
+        {
+          "line": 41,
+          "text": "The Actor module is used voluntarily since December 2020."
+        },
+        {
+          "line": 42,
+          "text": "## Actor identifier / Single registration number (SRN)"
+        },
+        {
+          "line": 44,
+          "text": "The Actor registration module enables economic operators to submit, by means of an actor registration request, the information necessary to obtain an actor identifier/single registration number (Actor ID/SRN)."
+        },
+        {
+          "line": 46,
+          "text": "The Actor ID/SRN is a EU-wide unique identification for economic operators in the medical devices sector."
+        },
+        {
+          "line": 47,
+          "text": "* Following the assessment and approval of the request by the concerned national competent authority, EUDAMED generates the Actor ID/SRN of the economic operator to the national competent authority and transfers it to the requesting economic operator"
+        },
+        {
+          "line": 48,
+          "text": "* Infographic: Actor roles and Actor ID/SRN"
+        },
+        {
+          "line": 49,
+          "text": "## Actor registration request process"
+        },
+        {
+          "line": 51,
+          "text": "Economic operators in the medical devices sector Every economic operator (EU and non-EU manufacturers, authorised representatives, system/procedure pack producers and importers) must register as an actor in EUDAMED before placing devices or Systems/Procedure Packs in the EU market."
+        },
+        {
+          "line": 53,
+          "text": "* Infographic: Actor registration request process"
+        },
+        {
+          "line": 54,
+          "text": "## Documents to provide with the actor registration request"
+        },
+        {
+          "line": 56,
+          "text": "1. Declaration on information security responsibilities"
+        },
+        {
+          "line": 57,
+          "text": "All actors must upload a signed declaration on information security responsibilities (template in all EU languages)"
+        },
+        {
+          "line": 58,
+          "text": "2. Mandate summary document"
+        },
+        {
+          "line": 59,
+          "text": "To register in EUDAMED, non-EU manufacturers must have an active authorised representative and submit a mandate summary document with their registration request."
+        },
+        {
+          "line": 60,
+          "text": "## EUDAMED registered users"
+        },
+        {
+          "line": 62,
+          "text": "When an actor is registered in EUDAMED, everyone who intends to act on behalf of this actor needs to submit an access request."
+        },
+        {
+          "line": 64,
+          "text": "* Infographic: Users access requests"
+        },
+        {
+          "line": 66,
+          "text": "## Documentation"
+        },
+        {
+          "line": 68,
+          "text": "* The EUDAMED Information Centre contains the relevant updated documentation including User Guides, technical documentation and Q&A sections."
+        },
+        {
+          "line": 69,
+          "text": "## Guidance"
+        },
+        {
+          "line": 71,
+          "text": "* MDCG 2021-13 Rev. 1 - Questions and answers on obligations and related rules for the registration in EUDAMED of actors other than manufacturers, authorised representatives and importers subject to the obligations of Article 31 MDR and Article 28 IVDR"
+        },
+        {
+          "line": 72,
+          "text": "* Guidance documents to assist stakeholders in implementing the medical devices regulations"
+        }
+      ],
+      "sourceLanguage": "en",
+      "expressionId": "actors:en:2026-09-29",
+      "workId": "actors",
+      "versionKey": "2026-09-29",
+      "translationStatus": "publisher-language-text",
+      "versionAlignment": "UNKNOWN",
+      "legalAuthority": "official-guidance-not-authentic-act",
+      "jurisdiction": null
+    },
+    "eudamed": {
+      "id": "eudamed",
+      "title": "EUDAMED overview",
+      "url": "https://health.ec.europa.eu/medical-devices-eudamed/overview_en",
+      "topic": "medical",
+      "observedAt": "2026-09-29",
+      "sourceType": "official-guidance",
+      "representation": "web-tool-extracted-lines-transcribed",
+      "rawHtmlVerified": false,
+      "selection": "Main narrative, including adjacent sections; excluded items are declared, not assumed absent.",
+      "omitted": "Language/navigation controls, blank lines, latest-updates carousel and footer. Image/video contents and linked documents not included.",
+      "license": "CC-BY-4.0",
+      "editorialDate": null,
+      "lines": [
+        {
+          "line": 33,
+          "text": "# Overview"
+        },
+        {
+          "line": 39,
+          "text": "EUDAMED, the European Database on Medical Devices is the IT system established by Regulation (EU) 2017/745 on medical devices and Regulation (EU) 2017/746 on in vitro diagnosis medical devices."
+        },
+        {
+          "line": 41,
+          "text": "As of 28 May 2026, the following 4 modules of EUDAMED became mandatory to use:"
+        },
+        {
+          "line": 43,
+          "text": "* Actor registration"
+        },
+        {
+          "line": 44,
+          "text": "* UDI/Device registration"
+        },
+        {
+          "line": 45,
+          "text": "* Notified Bodies & Certificates"
+        },
+        {
+          "line": 46,
+          "text": "* Market Surveillance"
+        },
+        {
+          "line": 47,
+          "text": "EUDAMED provides a living picture of the lifecycle of medical devices available in the European Union. It integrates different electronic systems to collate and process information about medical devices. EUDAMED aims to enhance overall transparency, including better access to information for public and healthcare professionals and to enhance coordination between the different Member States in the EU."
+        },
+        {
+          "line": 48,
+          "text": "The Commission Implementing Regulation (EU) 2021/2078 of 26 November 2021 lays down the detailed arrangements necessary for the setting up and maintenance of EUDAMED."
+        },
+        {
+          "line": 50,
+          "text": "EUDAMED is structured around 6 interconnected modules and a public website:"
+        },
+        {
+          "line": 51,
+          "text": "1. Actor registration (mandatory since 28 May 2026)"
+        },
+        {
+          "line": 52,
+          "text": "2. UDI/Device registration (mandatory since 28 May 2026)"
+        },
+        {
+          "line": 53,
+          "text": "3. Notified Bodies and Certificates (mandatory since 28 May 2026)"
+        },
+        {
+          "line": 54,
+          "text": "4. Clinical Investigations and performance studies (under analysis)"
+        },
+        {
+          "line": 55,
+          "text": "5. Vigilance and post-market surveillance (in development)"
+        },
+        {
+          "line": 56,
+          "text": "6. Market Surveillance (mandatory since 28 May 2026, for the Competent Authorities and the European Commission)"
+        },
+        {
+          "line": 57,
+          "text": "* EUDAMED restricted"
+        },
+        {
+          "line": 58,
+          "text": "* EUDAMED public"
+        },
+        {
+          "line": 60,
+          "text": "See also EUDAMED guidance documents."
+        },
+        {
+          "line": 61,
+          "text": "## What is the state of play of the implementation of EUDAMED?"
+        },
+        {
+          "line": 63,
+          "text": "The Commission Decision (EU) 2025/2371 of 26 November 2025 on the notice regarding the functionality and the fulfilment of the functional specifications of certain electronic systems included in the European Database on Medical Devices declaring the functionality of the first four modules has been published in the OJEU of 27 November 2025."
+        },
+        {
+          "line": 64,
+          "text": "In accordance with the transitional provisions set out in Regulation (EU) 2024/1860, this publication triggers a transition period of 6 months;"
+        },
+        {
+          "line": 66,
+          "text": "Therefore, as from 28 May 2026 the first four modules are mandatory to use:"
+        },
+        {
+          "line": 67,
+          "text": "* Actor registration (available voluntarily since December 2020)"
+        },
+        {
+          "line": 68,
+          "text": "* UDI/device registration (available voluntarily since October 2021)"
+        },
+        {
+          "line": 69,
+          "text": "* Notified Bodies and Certificates (available voluntarily since October 2021 except for the mechanism for scrutiny and the clinical evaluation consultation procedure (CECP) functionalities)"
+        },
+        {
+          "line": 70,
+          "text": "* Market Surveillance."
+        },
+        {
+          "line": 71,
+          "text": "The two remaining modules; Post-Market surveillance and Vigilance, and Clinical Investigation & Performance Studies are under development and will be released when they are mandatory to use. There will be no time for voluntary use for these two modules before they become mandatory"
+        },
+        {
+          "line": 73,
+          "text": "* EUDAMED Timeline"
+        },
+        {
+          "line": 74,
+          "text": "* Gradual roll out of EUDAMED - Q&A on practical aspects related to the implementation of the gradual roll-out of EUDAMED pursuant to the MDR and IVDR, as amended by Regulation (EU) 2024/1860"
+        },
+        {
+          "line": 75,
+          "text": "## Transitional period"
+        },
+        {
+          "line": 77,
+          "text": "Timelines summarising the tansitional periods for the devices and certificates."
+        },
+        {
+          "line": 79,
+          "text": "* 6 Months transitional period – Regulation devices"
+        },
+        {
+          "line": 80,
+          "text": "* Devices & certificates registration"
+        },
+        {
+          "line": 81,
+          "text": "* Legacy and Regulation devices placed on the market before the mandatory use"
+        },
+        {
+          "line": 82,
+          "text": "* Certificates registration"
+        },
+        {
+          "line": 84,
+          "text": "## Functional specifications"
+        },
+        {
+          "line": 86,
+          "text": "* EUDAMED functional specifications"
+        },
+        {
+          "line": 87,
+          "text": "## Videos"
+        },
+        {
+          "line": 89,
+          "text": "* EUDAMED public site video"
+        },
+        {
+          "line": 91,
+          "text": "EUDAMED public site"
+        },
+        {
+          "line": 93,
+          "text": "EUDAMED public site"
+        },
+        {
+          "line": 95,
+          "text": "* EUDAMED restricted site video"
+        },
+        {
+          "line": 97,
+          "text": "EUDAMED Restricted site"
+        },
+        {
+          "line": 99,
+          "text": "EUDAMED restricted site"
+        },
+        {
+          "line": 101,
+          "text": "Disclaimer: In the future, when all modules will be released and mandatory to use all functionalities shown in the videos will be available."
+        }
+      ],
+      "sourceLanguage": "en",
+      "expressionId": "eudamed:en:2026-09-29",
+      "workId": "eudamed",
+      "versionKey": "2026-09-29",
+      "translationStatus": "publisher-language-text",
+      "versionAlignment": "UNKNOWN",
+      "legalAuthority": "official-guidance-not-authentic-act",
+      "jurisdiction": null
+    },
+    "igj": {
+      "id": "igj",
+      "title": "Registration of economic operator in EUDAMED",
+      "url": "https://english.igj.nl/medical-technology/market-authorisation/registration-of-economic-operator-in-eudamed",
+      "topic": "medical",
+      "observedAt": "2026-09-29",
+      "sourceType": "official-guidance",
+      "representation": "web-tool-extracted-lines-transcribed",
+      "rawHtmlVerified": false,
+      "selection": "Main narrative, including adjacent sections; excluded items are declared, not assumed absent.",
+      "omitted": "Navigation and footer; linked documents and images not included. The forecast wording is retained, not silently updated.",
+      "license": "CC0",
+      "editorialDate": null,
+      "lines": [
+        {
+          "line": 5,
+          "text": "# Registration of economic operator in EUDAMED"
+        },
+        {
+          "line": 7,
+          "text": "The market authorisation of medical devices (MDR, EU/745) and medical devices for in vitro diagnostics (IVDR, EU/746) requires registration. As of January 2026 (expected date), economic operators will be required to register in the European database EUDAMED for this purpose (MDR, Article 31; IVDR, Article 28)."
+        },
+        {
+          "line": 8,
+          "text": "In order to gain access to EUDAMED, manufacturers, importers and authorised representatives can register in the EUDAMED actor registration module, after which they are issued with a single registration number, or SRN. This SRN number allows access to EUDAMED and makes it possible, for example:"
+        },
+        {
+          "line": 9,
+          "text": "* to request a conformity assessment from a notified body;"
+        },
+        {
+          "line": 10,
+          "text": "* to submit the obligatory product information about medical devices or in vitro diagnostic medical devices;"
+        },
+        {
+          "line": 11,
+          "text": "* to submit obligatory reports of incidents or corrective actions involving medical devices or in vitro diagnostic medical devices."
+        },
+        {
+          "line": 12,
+          "text": "## Competent authority"
+        },
+        {
+          "line": 13,
+          "text": "In the Netherlands, the Central Information Point for Healthcare professions (CIBG) is the competent authority for the registration of economic operators in the EUDAMED actor registration module. The CIBG is also responsible for issuing export certificates (market access for countries outside the EU) to manufacturers registered in the Netherlands. It assesses all new applications and, if approved, grants access to economic operators."
+        },
+        {
+          "line": 14,
+          "text": "If the details are complete and verified, the registered users will receive an SRN."
+        },
+        {
+          "line": 15,
+          "text": "## Registration via SRN"
+        },
+        {
+          "line": 17,
+          "text": "After completing the actor registration Farmatec assesses your application for uniqueness (double applications), completeness and registered address in the Netherlands. In the event of a positive assessment, the SRN is assigned."
+        },
+        {
+          "line": 18,
+          "text": "For the registration process and supplementary information, please visit the CIBG website (in Dutch)."
+        },
+        {
+          "line": 19,
+          "text": "## More information"
+        },
+        {
+          "line": 21,
+          "text": "More information on the future developments of EUDAMED, registration and the issuing of the SRN can be found on the following websites:"
+        },
+        {
+          "line": 22,
+          "text": "* The Inspectorate’s web page about Regulation (EU) 2024/1860, with information about the modules available in EUDAMED."
+        },
+        {
+          "line": 23,
+          "text": "* EUDAMED user documentation: User Guide for Economic Operators (pdf)"
+        },
+        {
+          "line": 24,
+          "text": "* All European Commission (technical) information on EUDAMED"
+        },
+        {
+          "line": 25,
+          "text": "* More information on the obligations of economic operators in EUDAMED: Central government website"
+        }
+      ],
+      "sourceLanguage": "en",
+      "expressionId": "igj:en:2026-09-29",
+      "workId": "igj",
+      "versionKey": "2026-09-29",
+      "translationStatus": "publisher-language-text",
+      "versionAlignment": "UNKNOWN",
+      "legalAuthority": "official-guidance-not-authentic-act",
+      "jurisdiction": null
+    },
+    "operators": {
+      "id": "operators",
+      "title": "Economic operators",
+      "url": "https://health.ec.europa.eu/medical-devices-topics-interest/economic-operators_en",
+      "topic": "medical",
+      "observedAt": "2026-09-29",
+      "sourceType": "official-guidance",
+      "representation": "web-tool-extracted-lines-transcribed",
+      "rawHtmlVerified": false,
+      "selection": "Main narrative, including adjacent sections; excluded items are declared, not assumed absent.",
+      "omitted": "Language/navigation controls, blank lines, latest-updates carousel and footer; link labels retained but unresolved destinations not invented.",
+      "license": "CC-BY-4.0",
+      "editorialDate": null,
+      "lines": [
+        {
+          "line": 33,
+          "text": "# Economic operators"
+        },
+        {
+          "line": 39,
+          "text": "The EU medical device regulations, Regulation (EU) 2017/745 on medical devices (MDR) and Regulation (EU) 2017/746 (IVDR) on in vitro diagnostic medical devices, assign specific responsibilities to the economic operators:"
+        },
+        {
+          "line": 40,
+          "text": "* manufacturers (as defined in Article 2(30) MDR and Article 2(23) IVDR);"
+        },
+        {
+          "line": 41,
+          "text": "* authorised representatives (as defined by Article 2(32) MDR and Article 2(25) IVDR);"
+        },
+        {
+          "line": 42,
+          "text": "* importers (as defined in Article 2(33) MDR and Article 2(26) IVDR);"
+        },
+        {
+          "line": 43,
+          "text": "* distributors (as defined in Article 2(34) MDR and Article 2(27) IVDR);"
+        },
+        {
+          "line": 44,
+          "text": "* system/procedure pack producers (as defined in Article 22(1) MDR and Article 22(3) MDR)."
+        },
+        {
+          "line": 45,
+          "text": "All economic operators must fulfil the applicable provisions in the Regulations that aim to ensure that medical devices are safe, effective and traceable throughout the supply chain."
+        },
+        {
+          "line": 47,
+          "text": "The factsheet linked below outlines the general provisions applicable to economic operators."
+        },
+        {
+          "line": 49,
+          "text": "Guidance documents have been created to further outline the operational and practical implementation of specific provisions for economic operators."
+        },
+        {
+          "line": 50,
+          "text": "## Useful links"
+        },
+        {
+          "line": 52,
+          "text": "* Factsheet for authorised representatives, importers and distributors"
+        },
+        {
+          "line": 53,
+          "text": "* Dedicated guidance documents"
+        }
+      ],
+      "sourceLanguage": "en",
+      "expressionId": "operators:en:2026-09-29",
+      "workId": "operators",
+      "versionKey": "2026-09-29",
+      "translationStatus": "publisher-language-text",
+      "versionAlignment": "UNKNOWN",
+      "legalAuthority": "official-guidance-not-authentic-act",
+      "jurisdiction": null
+    }
+  },
+  "sections": [
+    {
+      "id": "actors:s33",
+      "sourceId": "actors",
+      "headingLine": 33,
+      "heading": "Actor registration module",
+      "level": 1,
+      "path": [
+        "Actor registration module"
+      ],
+      "lines": [
+        {
+          "id": "actors:39",
+          "line": 39,
+          "text": "The Actor registration is the first of the six EUDAMED modules."
+        },
+        {
+          "id": "actors:40",
+          "line": 40,
+          "text": "The Commission Decision (EU) 2025/2371 of 26 November 2025 on the notice regarding the functionality and the fulfilment of the functional specifications of certain electronic systems included in the European Database on Medical Devices has declared this module functional and, in accordance with the transitional provisions set out in Regulation (EU) 2024/1860; as from 28 May 2026 the Actor module is mandatory to use."
+        },
+        {
+          "id": "actors:41",
+          "line": 41,
+          "text": "The Actor module is used voluntarily since December 2020."
+        }
+      ],
+      "text": "The Actor registration is the first of the six EUDAMED modules.\nThe Commission Decision (EU) 2025/2371 of 26 November 2025 on the notice regarding the functionality and the fulfilment of the functional specifications of certain electronic systems included in the European Database on Medical Devices has declared this module functional and, in accordance with the transitional provisions set out in Regulation (EU) 2024/1860; as from 28 May 2026 the Actor module is mandatory to use.\nThe Actor module is used voluntarily since December 2020.",
+      "evidenceEligible": true
+    },
+    {
+      "id": "actors:s42",
+      "sourceId": "actors",
+      "headingLine": 42,
+      "heading": "Actor identifier / Single registration number (SRN)",
+      "level": 2,
+      "path": [
+        "Actor registration module",
+        "Actor identifier / Single registration number (SRN)"
+      ],
+      "lines": [
+        {
+          "id": "actors:44",
+          "line": 44,
+          "text": "The Actor registration module enables economic operators to submit, by means of an actor registration request, the information necessary to obtain an actor identifier/single registration number (Actor ID/SRN)."
+        },
+        {
+          "id": "actors:46",
+          "line": 46,
+          "text": "The Actor ID/SRN is a EU-wide unique identification for economic operators in the medical devices sector."
+        },
+        {
+          "id": "actors:47",
+          "line": 47,
+          "text": "* Following the assessment and approval of the request by the concerned national competent authority, EUDAMED generates the Actor ID/SRN of the economic operator to the national competent authority and transfers it to the requesting economic operator"
+        },
+        {
+          "id": "actors:48",
+          "line": 48,
+          "text": "* Infographic: Actor roles and Actor ID/SRN"
+        }
+      ],
+      "text": "The Actor registration module enables economic operators to submit, by means of an actor registration request, the information necessary to obtain an actor identifier/single registration number (Actor ID/SRN).\nThe Actor ID/SRN is a EU-wide unique identification for economic operators in the medical devices sector.\n* Following the assessment and approval of the request by the concerned national competent authority, EUDAMED generates the Actor ID/SRN of the economic operator to the national competent authority and transfers it to the requesting economic operator\n* Infographic: Actor roles and Actor ID/SRN",
+      "evidenceEligible": true
+    },
+    {
+      "id": "actors:s49",
+      "sourceId": "actors",
+      "headingLine": 49,
+      "heading": "Actor registration request process",
+      "level": 2,
+      "path": [
+        "Actor registration module",
+        "Actor registration request process"
+      ],
+      "lines": [
+        {
+          "id": "actors:51",
+          "line": 51,
+          "text": "Economic operators in the medical devices sector Every economic operator (EU and non-EU manufacturers, authorised representatives, system/procedure pack producers and importers) must register as an actor in EUDAMED before placing devices or Systems/Procedure Packs in the EU market."
+        },
+        {
+          "id": "actors:53",
+          "line": 53,
+          "text": "* Infographic: Actor registration request process"
+        }
+      ],
+      "text": "Economic operators in the medical devices sector Every economic operator (EU and non-EU manufacturers, authorised representatives, system/procedure pack producers and importers) must register as an actor in EUDAMED before placing devices or Systems/Procedure Packs in the EU market.\n* Infographic: Actor registration request process",
+      "evidenceEligible": true
+    },
+    {
+      "id": "actors:s54",
+      "sourceId": "actors",
+      "headingLine": 54,
+      "heading": "Documents to provide with the actor registration request",
+      "level": 2,
+      "path": [
+        "Actor registration module",
+        "Documents to provide with the actor registration request"
+      ],
+      "lines": [
+        {
+          "id": "actors:56",
+          "line": 56,
+          "text": "1. Declaration on information security responsibilities"
+        },
+        {
+          "id": "actors:57",
+          "line": 57,
+          "text": "All actors must upload a signed declaration on information security responsibilities (template in all EU languages)"
+        },
+        {
+          "id": "actors:58",
+          "line": 58,
+          "text": "2. Mandate summary document"
+        },
+        {
+          "id": "actors:59",
+          "line": 59,
+          "text": "To register in EUDAMED, non-EU manufacturers must have an active authorised representative and submit a mandate summary document with their registration request."
+        }
+      ],
+      "text": "1. Declaration on information security responsibilities\nAll actors must upload a signed declaration on information security responsibilities (template in all EU languages)\n2. Mandate summary document\nTo register in EUDAMED, non-EU manufacturers must have an active authorised representative and submit a mandate summary document with their registration request.",
+      "evidenceEligible": true
+    },
+    {
+      "id": "actors:s60",
+      "sourceId": "actors",
+      "headingLine": 60,
+      "heading": "EUDAMED registered users",
+      "level": 2,
+      "path": [
+        "Actor registration module",
+        "EUDAMED registered users"
+      ],
+      "lines": [
+        {
+          "id": "actors:62",
+          "line": 62,
+          "text": "When an actor is registered in EUDAMED, everyone who intends to act on behalf of this actor needs to submit an access request."
+        },
+        {
+          "id": "actors:64",
+          "line": 64,
+          "text": "* Infographic: Users access requests"
+        }
+      ],
+      "text": "When an actor is registered in EUDAMED, everyone who intends to act on behalf of this actor needs to submit an access request.\n* Infographic: Users access requests",
+      "evidenceEligible": true
+    },
+    {
+      "id": "actors:s66",
+      "sourceId": "actors",
+      "headingLine": 66,
+      "heading": "Documentation",
+      "level": 2,
+      "path": [
+        "Actor registration module",
+        "Documentation"
+      ],
+      "lines": [
+        {
+          "id": "actors:68",
+          "line": 68,
+          "text": "* The EUDAMED Information Centre contains the relevant updated documentation including User Guides, technical documentation and Q&A sections."
+        }
+      ],
+      "text": "* The EUDAMED Information Centre contains the relevant updated documentation including User Guides, technical documentation and Q&A sections.",
+      "evidenceEligible": false
+    },
+    {
+      "id": "actors:s69",
+      "sourceId": "actors",
+      "headingLine": 69,
+      "heading": "Guidance",
+      "level": 2,
+      "path": [
+        "Actor registration module",
+        "Guidance"
+      ],
+      "lines": [
+        {
+          "id": "actors:71",
+          "line": 71,
+          "text": "* MDCG 2021-13 Rev. 1 - Questions and answers on obligations and related rules for the registration in EUDAMED of actors other than manufacturers, authorised representatives and importers subject to the obligations of Article 31 MDR and Article 28 IVDR"
+        },
+        {
+          "id": "actors:72",
+          "line": 72,
+          "text": "* Guidance documents to assist stakeholders in implementing the medical devices regulations"
+        }
+      ],
+      "text": "* MDCG 2021-13 Rev. 1 - Questions and answers on obligations and related rules for the registration in EUDAMED of actors other than manufacturers, authorised representatives and importers subject to the obligations of Article 31 MDR and Article 28 IVDR\n* Guidance documents to assist stakeholders in implementing the medical devices regulations",
+      "evidenceEligible": false
+    },
+    {
+      "id": "eudamed:s33",
+      "sourceId": "eudamed",
+      "headingLine": 33,
+      "heading": "Overview",
+      "level": 1,
+      "path": [
+        "Overview"
+      ],
+      "lines": [
+        {
+          "id": "eudamed:39",
+          "line": 39,
+          "text": "EUDAMED, the European Database on Medical Devices is the IT system established by Regulation (EU) 2017/745 on medical devices and Regulation (EU) 2017/746 on in vitro diagnosis medical devices."
+        },
+        {
+          "id": "eudamed:41",
+          "line": 41,
+          "text": "As of 28 May 2026, the following 4 modules of EUDAMED became mandatory to use:"
+        },
+        {
+          "id": "eudamed:43",
+          "line": 43,
+          "text": "* Actor registration"
+        },
+        {
+          "id": "eudamed:44",
+          "line": 44,
+          "text": "* UDI/Device registration"
+        },
+        {
+          "id": "eudamed:45",
+          "line": 45,
+          "text": "* Notified Bodies & Certificates"
+        },
+        {
+          "id": "eudamed:46",
+          "line": 46,
+          "text": "* Market Surveillance"
+        },
+        {
+          "id": "eudamed:47",
+          "line": 47,
+          "text": "EUDAMED provides a living picture of the lifecycle of medical devices available in the European Union. It integrates different electronic systems to collate and process information about medical devices. EUDAMED aims to enhance overall transparency, including better access to information for public and healthcare professionals and to enhance coordination between the different Member States in the EU."
+        },
+        {
+          "id": "eudamed:48",
+          "line": 48,
+          "text": "The Commission Implementing Regulation (EU) 2021/2078 of 26 November 2021 lays down the detailed arrangements necessary for the setting up and maintenance of EUDAMED."
+        },
+        {
+          "id": "eudamed:50",
+          "line": 50,
+          "text": "EUDAMED is structured around 6 interconnected modules and a public website:"
+        },
+        {
+          "id": "eudamed:51",
+          "line": 51,
+          "text": "1. Actor registration (mandatory since 28 May 2026)"
+        },
+        {
+          "id": "eudamed:52",
+          "line": 52,
+          "text": "2. UDI/Device registration (mandatory since 28 May 2026)"
+        },
+        {
+          "id": "eudamed:53",
+          "line": 53,
+          "text": "3. Notified Bodies and Certificates (mandatory since 28 May 2026)"
+        },
+        {
+          "id": "eudamed:54",
+          "line": 54,
+          "text": "4. Clinical Investigations and performance studies (under analysis)"
+        },
+        {
+          "id": "eudamed:55",
+          "line": 55,
+          "text": "5. Vigilance and post-market surveillance (in development)"
+        },
+        {
+          "id": "eudamed:56",
+          "line": 56,
+          "text": "6. Market Surveillance (mandatory since 28 May 2026, for the Competent Authorities and the European Commission)"
+        },
+        {
+          "id": "eudamed:57",
+          "line": 57,
+          "text": "* EUDAMED restricted"
+        },
+        {
+          "id": "eudamed:58",
+          "line": 58,
+          "text": "* EUDAMED public"
+        },
+        {
+          "id": "eudamed:60",
+          "line": 60,
+          "text": "See also EUDAMED guidance documents."
+        }
+      ],
+      "text": "EUDAMED, the European Database on Medical Devices is the IT system established by Regulation (EU) 2017/745 on medical devices and Regulation (EU) 2017/746 on in vitro diagnosis medical devices.\nAs of 28 May 2026, the following 4 modules of EUDAMED became mandatory to use:\n* Actor registration\n* UDI/Device registration\n* Notified Bodies & Certificates\n* Market Surveillance\nEUDAMED provides a living picture of the lifecycle of medical devices available in the European Union. It integrates different electronic systems to collate and process information about medical devices. EUDAMED aims to enhance overall transparency, including better access to information for public and healthcare professionals and to enhance coordination between the different Member States in the EU.\nThe Commission Implementing Regulation (EU) 2021/2078 of 26 November 2021 lays down the detailed arrangements necessary for the setting up and maintenance of EUDAMED.\nEUDAMED is structured around 6 interconnected modules and a public website:\n1. Actor registration (mandatory since 28 May 2026)\n2. UDI/Device registration (mandatory since 28 May 2026)\n3. Notified Bodies and Certificates (mandatory since 28 May 2026)\n4. Clinical Investigations and performance studies (under analysis)\n5. Vigilance and post-market surveillance (in development)\n6. Market Surveillance (mandatory since 28 May 2026, for the Competent Authorities and the European Commission)\n* EUDAMED restricted\n* EUDAMED public\nSee also EUDAMED guidance documents.",
+      "evidenceEligible": true
+    },
+    {
+      "id": "eudamed:s61",
+      "sourceId": "eudamed",
+      "headingLine": 61,
+      "heading": "What is the state of play of the implementation of EUDAMED?",
+      "level": 2,
+      "path": [
+        "Overview",
+        "What is the state of play of the implementation of EUDAMED?"
+      ],
+      "lines": [
+        {
+          "id": "eudamed:63",
+          "line": 63,
+          "text": "The Commission Decision (EU) 2025/2371 of 26 November 2025 on the notice regarding the functionality and the fulfilment of the functional specifications of certain electronic systems included in the European Database on Medical Devices declaring the functionality of the first four modules has been published in the OJEU of 27 November 2025."
+        },
+        {
+          "id": "eudamed:64",
+          "line": 64,
+          "text": "In accordance with the transitional provisions set out in Regulation (EU) 2024/1860, this publication triggers a transition period of 6 months;"
+        },
+        {
+          "id": "eudamed:66",
+          "line": 66,
+          "text": "Therefore, as from 28 May 2026 the first four modules are mandatory to use:"
+        },
+        {
+          "id": "eudamed:67",
+          "line": 67,
+          "text": "* Actor registration (available voluntarily since December 2020)"
+        },
+        {
+          "id": "eudamed:68",
+          "line": 68,
+          "text": "* UDI/device registration (available voluntarily since October 2021)"
+        },
+        {
+          "id": "eudamed:69",
+          "line": 69,
+          "text": "* Notified Bodies and Certificates (available voluntarily since October 2021 except for the mechanism for scrutiny and the clinical evaluation consultation procedure (CECP) functionalities)"
+        },
+        {
+          "id": "eudamed:70",
+          "line": 70,
+          "text": "* Market Surveillance."
+        },
+        {
+          "id": "eudamed:71",
+          "line": 71,
+          "text": "The two remaining modules; Post-Market surveillance and Vigilance, and Clinical Investigation & Performance Studies are under development and will be released when they are mandatory to use. There will be no time for voluntary use for these two modules before they become mandatory"
+        },
+        {
+          "id": "eudamed:73",
+          "line": 73,
+          "text": "* EUDAMED Timeline"
+        },
+        {
+          "id": "eudamed:74",
+          "line": 74,
+          "text": "* Gradual roll out of EUDAMED - Q&A on practical aspects related to the implementation of the gradual roll-out of EUDAMED pursuant to the MDR and IVDR, as amended by Regulation (EU) 2024/1860"
+        }
+      ],
+      "text": "The Commission Decision (EU) 2025/2371 of 26 November 2025 on the notice regarding the functionality and the fulfilment of the functional specifications of certain electronic systems included in the European Database on Medical Devices declaring the functionality of the first four modules has been published in the OJEU of 27 November 2025.\nIn accordance with the transitional provisions set out in Regulation (EU) 2024/1860, this publication triggers a transition period of 6 months;\nTherefore, as from 28 May 2026 the first four modules are mandatory to use:\n* Actor registration (available voluntarily since December 2020)\n* UDI/device registration (available voluntarily since October 2021)\n* Notified Bodies and Certificates (available voluntarily since October 2021 except for the mechanism for scrutiny and the clinical evaluation consultation procedure (CECP) functionalities)\n* Market Surveillance.\nThe two remaining modules; Post-Market surveillance and Vigilance, and Clinical Investigation & Performance Studies are under development and will be released when they are mandatory to use. There will be no time for voluntary use for these two modules before they become mandatory\n* EUDAMED Timeline\n* Gradual roll out of EUDAMED - Q&A on practical aspects related to the implementation of the gradual roll-out of EUDAMED pursuant to the MDR and IVDR, as amended by Regulation (EU) 2024/1860",
+      "evidenceEligible": true
+    },
+    {
+      "id": "eudamed:s75",
+      "sourceId": "eudamed",
+      "headingLine": 75,
+      "heading": "Transitional period",
+      "level": 2,
+      "path": [
+        "Overview",
+        "Transitional period"
+      ],
+      "lines": [
+        {
+          "id": "eudamed:77",
+          "line": 77,
+          "text": "Timelines summarising the tansitional periods for the devices and certificates."
+        },
+        {
+          "id": "eudamed:79",
+          "line": 79,
+          "text": "* 6 Months transitional period – Regulation devices"
+        },
+        {
+          "id": "eudamed:80",
+          "line": 80,
+          "text": "* Devices & certificates registration"
+        },
+        {
+          "id": "eudamed:81",
+          "line": 81,
+          "text": "* Legacy and Regulation devices placed on the market before the mandatory use"
+        },
+        {
+          "id": "eudamed:82",
+          "line": 82,
+          "text": "* Certificates registration"
+        }
+      ],
+      "text": "Timelines summarising the tansitional periods for the devices and certificates.\n* 6 Months transitional period – Regulation devices\n* Devices & certificates registration\n* Legacy and Regulation devices placed on the market before the mandatory use\n* Certificates registration",
+      "evidenceEligible": true
+    },
+    {
+      "id": "eudamed:s84",
+      "sourceId": "eudamed",
+      "headingLine": 84,
+      "heading": "Functional specifications",
+      "level": 2,
+      "path": [
+        "Overview",
+        "Functional specifications"
+      ],
+      "lines": [
+        {
+          "id": "eudamed:86",
+          "line": 86,
+          "text": "* EUDAMED functional specifications"
+        }
+      ],
+      "text": "* EUDAMED functional specifications",
+      "evidenceEligible": false
+    },
+    {
+      "id": "eudamed:s87",
+      "sourceId": "eudamed",
+      "headingLine": 87,
+      "heading": "Videos",
+      "level": 2,
+      "path": [
+        "Overview",
+        "Videos"
+      ],
+      "lines": [
+        {
+          "id": "eudamed:89",
+          "line": 89,
+          "text": "* EUDAMED public site video"
+        },
+        {
+          "id": "eudamed:91",
+          "line": 91,
+          "text": "EUDAMED public site"
+        },
+        {
+          "id": "eudamed:93",
+          "line": 93,
+          "text": "EUDAMED public site"
+        },
+        {
+          "id": "eudamed:95",
+          "line": 95,
+          "text": "* EUDAMED restricted site video"
+        },
+        {
+          "id": "eudamed:97",
+          "line": 97,
+          "text": "EUDAMED Restricted site"
+        },
+        {
+          "id": "eudamed:99",
+          "line": 99,
+          "text": "EUDAMED restricted site"
+        },
+        {
+          "id": "eudamed:101",
+          "line": 101,
+          "text": "Disclaimer: In the future, when all modules will be released and mandatory to use all functionalities shown in the videos will be available."
+        }
+      ],
+      "text": "* EUDAMED public site video\nEUDAMED public site\nEUDAMED public site\n* EUDAMED restricted site video\nEUDAMED Restricted site\nEUDAMED restricted site\nDisclaimer: In the future, when all modules will be released and mandatory to use all functionalities shown in the videos will be available.",
+      "evidenceEligible": true
+    },
+    {
+      "id": "igj:s5",
+      "sourceId": "igj",
+      "headingLine": 5,
+      "heading": "Registration of economic operator in EUDAMED",
+      "level": 1,
+      "path": [
+        "Registration of economic operator in EUDAMED"
+      ],
+      "lines": [
+        {
+          "id": "igj:7",
+          "line": 7,
+          "text": "The market authorisation of medical devices (MDR, EU/745) and medical devices for in vitro diagnostics (IVDR, EU/746) requires registration. As of January 2026 (expected date), economic operators will be required to register in the European database EUDAMED for this purpose (MDR, Article 31; IVDR, Article 28)."
+        },
+        {
+          "id": "igj:8",
+          "line": 8,
+          "text": "In order to gain access to EUDAMED, manufacturers, importers and authorised representatives can register in the EUDAMED actor registration module, after which they are issued with a single registration number, or SRN. This SRN number allows access to EUDAMED and makes it possible, for example:"
+        },
+        {
+          "id": "igj:9",
+          "line": 9,
+          "text": "* to request a conformity assessment from a notified body;"
+        },
+        {
+          "id": "igj:10",
+          "line": 10,
+          "text": "* to submit the obligatory product information about medical devices or in vitro diagnostic medical devices;"
+        },
+        {
+          "id": "igj:11",
+          "line": 11,
+          "text": "* to submit obligatory reports of incidents or corrective actions involving medical devices or in vitro diagnostic medical devices."
+        }
+      ],
+      "text": "The market authorisation of medical devices (MDR, EU/745) and medical devices for in vitro diagnostics (IVDR, EU/746) requires registration. As of January 2026 (expected date), economic operators will be required to register in the European database EUDAMED for this purpose (MDR, Article 31; IVDR, Article 28).\nIn order to gain access to EUDAMED, manufacturers, importers and authorised representatives can register in the EUDAMED actor registration module, after which they are issued with a single registration number, or SRN. This SRN number allows access to EUDAMED and makes it possible, for example:\n* to request a conformity assessment from a notified body;\n* to submit the obligatory product information about medical devices or in vitro diagnostic medical devices;\n* to submit obligatory reports of incidents or corrective actions involving medical devices or in vitro diagnostic medical devices.",
+      "evidenceEligible": true
+    },
+    {
+      "id": "igj:s12",
+      "sourceId": "igj",
+      "headingLine": 12,
+      "heading": "Competent authority",
+      "level": 2,
+      "path": [
+        "Registration of economic operator in EUDAMED",
+        "Competent authority"
+      ],
+      "lines": [
+        {
+          "id": "igj:13",
+          "line": 13,
+          "text": "In the Netherlands, the Central Information Point for Healthcare professions (CIBG) is the competent authority for the registration of economic operators in the EUDAMED actor registration module. The CIBG is also responsible for issuing export certificates (market access for countries outside the EU) to manufacturers registered in the Netherlands. It assesses all new applications and, if approved, grants access to economic operators."
+        },
+        {
+          "id": "igj:14",
+          "line": 14,
+          "text": "If the details are complete and verified, the registered users will receive an SRN."
+        }
+      ],
+      "text": "In the Netherlands, the Central Information Point for Healthcare professions (CIBG) is the competent authority for the registration of economic operators in the EUDAMED actor registration module. The CIBG is also responsible for issuing export certificates (market access for countries outside the EU) to manufacturers registered in the Netherlands. It assesses all new applications and, if approved, grants access to economic operators.\nIf the details are complete and verified, the registered users will receive an SRN.",
+      "evidenceEligible": true
+    },
+    {
+      "id": "igj:s15",
+      "sourceId": "igj",
+      "headingLine": 15,
+      "heading": "Registration via SRN",
+      "level": 2,
+      "path": [
+        "Registration of economic operator in EUDAMED",
+        "Registration via SRN"
+      ],
+      "lines": [
+        {
+          "id": "igj:17",
+          "line": 17,
+          "text": "After completing the actor registration Farmatec assesses your application for uniqueness (double applications), completeness and registered address in the Netherlands. In the event of a positive assessment, the SRN is assigned."
+        },
+        {
+          "id": "igj:18",
+          "line": 18,
+          "text": "For the registration process and supplementary information, please visit the CIBG website (in Dutch)."
+        }
+      ],
+      "text": "After completing the actor registration Farmatec assesses your application for uniqueness (double applications), completeness and registered address in the Netherlands. In the event of a positive assessment, the SRN is assigned.\nFor the registration process and supplementary information, please visit the CIBG website (in Dutch).",
+      "evidenceEligible": true
+    },
+    {
+      "id": "igj:s19",
+      "sourceId": "igj",
+      "headingLine": 19,
+      "heading": "More information",
+      "level": 2,
+      "path": [
+        "Registration of economic operator in EUDAMED",
+        "More information"
+      ],
+      "lines": [
+        {
+          "id": "igj:21",
+          "line": 21,
+          "text": "More information on the future developments of EUDAMED, registration and the issuing of the SRN can be found on the following websites:"
+        },
+        {
+          "id": "igj:22",
+          "line": 22,
+          "text": "* The Inspectorate’s web page about Regulation (EU) 2024/1860, with information about the modules available in EUDAMED."
+        },
+        {
+          "id": "igj:23",
+          "line": 23,
+          "text": "* EUDAMED user documentation: User Guide for Economic Operators (pdf)"
+        },
+        {
+          "id": "igj:24",
+          "line": 24,
+          "text": "* All European Commission (technical) information on EUDAMED"
+        },
+        {
+          "id": "igj:25",
+          "line": 25,
+          "text": "* More information on the obligations of economic operators in EUDAMED: Central government website"
+        }
+      ],
+      "text": "More information on the future developments of EUDAMED, registration and the issuing of the SRN can be found on the following websites:\n* The Inspectorate’s web page about Regulation (EU) 2024/1860, with information about the modules available in EUDAMED.\n* EUDAMED user documentation: User Guide for Economic Operators (pdf)\n* All European Commission (technical) information on EUDAMED\n* More information on the obligations of economic operators in EUDAMED: Central government website",
+      "evidenceEligible": false
+    },
+    {
+      "id": "operators:s33",
+      "sourceId": "operators",
+      "headingLine": 33,
+      "heading": "Economic operators",
+      "level": 1,
+      "path": [
+        "Economic operators"
+      ],
+      "lines": [
+        {
+          "id": "operators:39",
+          "line": 39,
+          "text": "The EU medical device regulations, Regulation (EU) 2017/745 on medical devices (MDR) and Regulation (EU) 2017/746 (IVDR) on in vitro diagnostic medical devices, assign specific responsibilities to the economic operators:"
+        },
+        {
+          "id": "operators:40",
+          "line": 40,
+          "text": "* manufacturers (as defined in Article 2(30) MDR and Article 2(23) IVDR);"
+        },
+        {
+          "id": "operators:41",
+          "line": 41,
+          "text": "* authorised representatives (as defined by Article 2(32) MDR and Article 2(25) IVDR);"
+        },
+        {
+          "id": "operators:42",
+          "line": 42,
+          "text": "* importers (as defined in Article 2(33) MDR and Article 2(26) IVDR);"
+        },
+        {
+          "id": "operators:43",
+          "line": 43,
+          "text": "* distributors (as defined in Article 2(34) MDR and Article 2(27) IVDR);"
+        },
+        {
+          "id": "operators:44",
+          "line": 44,
+          "text": "* system/procedure pack producers (as defined in Article 22(1) MDR and Article 22(3) MDR)."
+        },
+        {
+          "id": "operators:45",
+          "line": 45,
+          "text": "All economic operators must fulfil the applicable provisions in the Regulations that aim to ensure that medical devices are safe, effective and traceable throughout the supply chain."
+        },
+        {
+          "id": "operators:47",
+          "line": 47,
+          "text": "The factsheet linked below outlines the general provisions applicable to economic operators."
+        },
+        {
+          "id": "operators:49",
+          "line": 49,
+          "text": "Guidance documents have been created to further outline the operational and practical implementation of specific provisions for economic operators."
+        }
+      ],
+      "text": "The EU medical device regulations, Regulation (EU) 2017/745 on medical devices (MDR) and Regulation (EU) 2017/746 (IVDR) on in vitro diagnostic medical devices, assign specific responsibilities to the economic operators:\n* manufacturers (as defined in Article 2(30) MDR and Article 2(23) IVDR);\n* authorised representatives (as defined by Article 2(32) MDR and Article 2(25) IVDR);\n* importers (as defined in Article 2(33) MDR and Article 2(26) IVDR);\n* distributors (as defined in Article 2(34) MDR and Article 2(27) IVDR);\n* system/procedure pack producers (as defined in Article 22(1) MDR and Article 22(3) MDR).\nAll economic operators must fulfil the applicable provisions in the Regulations that aim to ensure that medical devices are safe, effective and traceable throughout the supply chain.\nThe factsheet linked below outlines the general provisions applicable to economic operators.\nGuidance documents have been created to further outline the operational and practical implementation of specific provisions for economic operators.",
+      "evidenceEligible": true
+    },
+    {
+      "id": "operators:s50",
+      "sourceId": "operators",
+      "headingLine": 50,
+      "heading": "Useful links",
+      "level": 2,
+      "path": [
+        "Economic operators",
+        "Useful links"
+      ],
+      "lines": [
+        {
+          "id": "operators:52",
+          "line": 52,
+          "text": "* Factsheet for authorised representatives, importers and distributors"
+        },
+        {
+          "id": "operators:53",
+          "line": 53,
+          "text": "* Dedicated guidance documents"
+        }
+      ],
+      "text": "* Factsheet for authorised representatives, importers and distributors\n* Dedicated guidance documents",
+      "evidenceEligible": false
+    }
+  ],
+  "blocks": [
+    {
+      "id": "actors:b39",
+      "sectionId": "actors:s33",
+      "sourceId": "actors",
+      "heading": "Actor registration module",
+      "path": [
+        "Actor registration module"
+      ],
+      "lines": [
+        {
+          "id": "actors:39",
+          "line": 39,
+          "text": "The Actor registration is the first of the six EUDAMED modules."
+        }
+      ],
+      "text": "The Actor registration is the first of the six EUDAMED modules.",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "actors:b40",
+      "sectionId": "actors:s33",
+      "sourceId": "actors",
+      "heading": "Actor registration module",
+      "path": [
+        "Actor registration module"
+      ],
+      "lines": [
+        {
+          "id": "actors:40",
+          "line": 40,
+          "text": "The Commission Decision (EU) 2025/2371 of 26 November 2025 on the notice regarding the functionality and the fulfilment of the functional specifications of certain electronic systems included in the European Database on Medical Devices has declared this module functional and, in accordance with the transitional provisions set out in Regulation (EU) 2024/1860; as from 28 May 2026 the Actor module is mandatory to use."
+        }
+      ],
+      "text": "The Commission Decision (EU) 2025/2371 of 26 November 2025 on the notice regarding the functionality and the fulfilment of the functional specifications of certain electronic systems included in the European Database on Medical Devices has declared this module functional and, in accordance with the transitional provisions set out in Regulation (EU) 2024/1860; as from 28 May 2026 the Actor module is mandatory to use.",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "actors:b41",
+      "sectionId": "actors:s33",
+      "sourceId": "actors",
+      "heading": "Actor registration module",
+      "path": [
+        "Actor registration module"
+      ],
+      "lines": [
+        {
+          "id": "actors:41",
+          "line": 41,
+          "text": "The Actor module is used voluntarily since December 2020."
+        }
+      ],
+      "text": "The Actor module is used voluntarily since December 2020.",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "actors:b44",
+      "sectionId": "actors:s42",
+      "sourceId": "actors",
+      "heading": "Actor identifier / Single registration number (SRN)",
+      "path": [
+        "Actor registration module",
+        "Actor identifier / Single registration number (SRN)"
+      ],
+      "lines": [
+        {
+          "id": "actors:44",
+          "line": 44,
+          "text": "The Actor registration module enables economic operators to submit, by means of an actor registration request, the information necessary to obtain an actor identifier/single registration number (Actor ID/SRN)."
+        }
+      ],
+      "text": "The Actor registration module enables economic operators to submit, by means of an actor registration request, the information necessary to obtain an actor identifier/single registration number (Actor ID/SRN).",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "actors:b46",
+      "sectionId": "actors:s42",
+      "sourceId": "actors",
+      "heading": "Actor identifier / Single registration number (SRN)",
+      "path": [
+        "Actor registration module",
+        "Actor identifier / Single registration number (SRN)"
+      ],
+      "lines": [
+        {
+          "id": "actors:46",
+          "line": 46,
+          "text": "The Actor ID/SRN is a EU-wide unique identification for economic operators in the medical devices sector."
+        },
+        {
+          "id": "actors:47",
+          "line": 47,
+          "text": "* Following the assessment and approval of the request by the concerned national competent authority, EUDAMED generates the Actor ID/SRN of the economic operator to the national competent authority and transfers it to the requesting economic operator"
+        },
+        {
+          "id": "actors:48",
+          "line": 48,
+          "text": "* Infographic: Actor roles and Actor ID/SRN"
+        }
+      ],
+      "text": "The Actor ID/SRN is a EU-wide unique identification for economic operators in the medical devices sector.\n* Following the assessment and approval of the request by the concerned national competent authority, EUDAMED generates the Actor ID/SRN of the economic operator to the national competent authority and transfers it to the requesting economic operator\n* Infographic: Actor roles and Actor ID/SRN",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "actors:b51",
+      "sectionId": "actors:s49",
+      "sourceId": "actors",
+      "heading": "Actor registration request process",
+      "path": [
+        "Actor registration module",
+        "Actor registration request process"
+      ],
+      "lines": [
+        {
+          "id": "actors:51",
+          "line": 51,
+          "text": "Economic operators in the medical devices sector Every economic operator (EU and non-EU manufacturers, authorised representatives, system/procedure pack producers and importers) must register as an actor in EUDAMED before placing devices or Systems/Procedure Packs in the EU market."
+        },
+        {
+          "id": "actors:53",
+          "line": 53,
+          "text": "* Infographic: Actor registration request process"
+        }
+      ],
+      "text": "Economic operators in the medical devices sector Every economic operator (EU and non-EU manufacturers, authorised representatives, system/procedure pack producers and importers) must register as an actor in EUDAMED before placing devices or Systems/Procedure Packs in the EU market.\n* Infographic: Actor registration request process",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "actors:b56",
+      "sectionId": "actors:s54",
+      "sourceId": "actors",
+      "heading": "Documents to provide with the actor registration request",
+      "path": [
+        "Actor registration module",
+        "Documents to provide with the actor registration request"
+      ],
+      "lines": [
+        {
+          "id": "actors:56",
+          "line": 56,
+          "text": "1. Declaration on information security responsibilities"
+        }
+      ],
+      "text": "1. Declaration on information security responsibilities",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "actors:b57",
+      "sectionId": "actors:s54",
+      "sourceId": "actors",
+      "heading": "Documents to provide with the actor registration request",
+      "path": [
+        "Actor registration module",
+        "Documents to provide with the actor registration request"
+      ],
+      "lines": [
+        {
+          "id": "actors:57",
+          "line": 57,
+          "text": "All actors must upload a signed declaration on information security responsibilities (template in all EU languages)"
+        },
+        {
+          "id": "actors:58",
+          "line": 58,
+          "text": "2. Mandate summary document"
+        }
+      ],
+      "text": "All actors must upload a signed declaration on information security responsibilities (template in all EU languages)\n2. Mandate summary document",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "actors:b59",
+      "sectionId": "actors:s54",
+      "sourceId": "actors",
+      "heading": "Documents to provide with the actor registration request",
+      "path": [
+        "Actor registration module",
+        "Documents to provide with the actor registration request"
+      ],
+      "lines": [
+        {
+          "id": "actors:59",
+          "line": 59,
+          "text": "To register in EUDAMED, non-EU manufacturers must have an active authorised representative and submit a mandate summary document with their registration request."
+        }
+      ],
+      "text": "To register in EUDAMED, non-EU manufacturers must have an active authorised representative and submit a mandate summary document with their registration request.",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "actors:b62",
+      "sectionId": "actors:s60",
+      "sourceId": "actors",
+      "heading": "EUDAMED registered users",
+      "path": [
+        "Actor registration module",
+        "EUDAMED registered users"
+      ],
+      "lines": [
+        {
+          "id": "actors:62",
+          "line": 62,
+          "text": "When an actor is registered in EUDAMED, everyone who intends to act on behalf of this actor needs to submit an access request."
+        },
+        {
+          "id": "actors:64",
+          "line": 64,
+          "text": "* Infographic: Users access requests"
+        }
+      ],
+      "text": "When an actor is registered in EUDAMED, everyone who intends to act on behalf of this actor needs to submit an access request.\n* Infographic: Users access requests",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "actors:b68",
+      "sectionId": "actors:s66",
+      "sourceId": "actors",
+      "heading": "Documentation",
+      "path": [
+        "Actor registration module",
+        "Documentation"
+      ],
+      "lines": [
+        {
+          "id": "actors:68",
+          "line": 68,
+          "text": "* The EUDAMED Information Centre contains the relevant updated documentation including User Guides, technical documentation and Q&A sections."
+        }
+      ],
+      "text": "* The EUDAMED Information Centre contains the relevant updated documentation including User Guides, technical documentation and Q&A sections.",
+      "evidenceEligible": false,
+      "kind": "pointer-or-media"
+    },
+    {
+      "id": "actors:b71",
+      "sectionId": "actors:s69",
+      "sourceId": "actors",
+      "heading": "Guidance",
+      "path": [
+        "Actor registration module",
+        "Guidance"
+      ],
+      "lines": [
+        {
+          "id": "actors:71",
+          "line": 71,
+          "text": "* MDCG 2021-13 Rev. 1 - Questions and answers on obligations and related rules for the registration in EUDAMED of actors other than manufacturers, authorised representatives and importers subject to the obligations of Article 31 MDR and Article 28 IVDR"
+        },
+        {
+          "id": "actors:72",
+          "line": 72,
+          "text": "* Guidance documents to assist stakeholders in implementing the medical devices regulations"
+        }
+      ],
+      "text": "* MDCG 2021-13 Rev. 1 - Questions and answers on obligations and related rules for the registration in EUDAMED of actors other than manufacturers, authorised representatives and importers subject to the obligations of Article 31 MDR and Article 28 IVDR\n* Guidance documents to assist stakeholders in implementing the medical devices regulations",
+      "evidenceEligible": false,
+      "kind": "pointer-or-media"
+    },
+    {
+      "id": "eudamed:b39",
+      "sectionId": "eudamed:s33",
+      "sourceId": "eudamed",
+      "heading": "Overview",
+      "path": [
+        "Overview"
+      ],
+      "lines": [
+        {
+          "id": "eudamed:39",
+          "line": 39,
+          "text": "EUDAMED, the European Database on Medical Devices is the IT system established by Regulation (EU) 2017/745 on medical devices and Regulation (EU) 2017/746 on in vitro diagnosis medical devices."
+        }
+      ],
+      "text": "EUDAMED, the European Database on Medical Devices is the IT system established by Regulation (EU) 2017/745 on medical devices and Regulation (EU) 2017/746 on in vitro diagnosis medical devices.",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "eudamed:b41",
+      "sectionId": "eudamed:s33",
+      "sourceId": "eudamed",
+      "heading": "Overview",
+      "path": [
+        "Overview"
+      ],
+      "lines": [
+        {
+          "id": "eudamed:41",
+          "line": 41,
+          "text": "As of 28 May 2026, the following 4 modules of EUDAMED became mandatory to use:"
+        },
+        {
+          "id": "eudamed:43",
+          "line": 43,
+          "text": "* Actor registration"
+        },
+        {
+          "id": "eudamed:44",
+          "line": 44,
+          "text": "* UDI/Device registration"
+        },
+        {
+          "id": "eudamed:45",
+          "line": 45,
+          "text": "* Notified Bodies & Certificates"
+        },
+        {
+          "id": "eudamed:46",
+          "line": 46,
+          "text": "* Market Surveillance"
+        }
+      ],
+      "text": "As of 28 May 2026, the following 4 modules of EUDAMED became mandatory to use:\n* Actor registration\n* UDI/Device registration\n* Notified Bodies & Certificates\n* Market Surveillance",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "eudamed:b47",
+      "sectionId": "eudamed:s33",
+      "sourceId": "eudamed",
+      "heading": "Overview",
+      "path": [
+        "Overview"
+      ],
+      "lines": [
+        {
+          "id": "eudamed:47",
+          "line": 47,
+          "text": "EUDAMED provides a living picture of the lifecycle of medical devices available in the European Union. It integrates different electronic systems to collate and process information about medical devices. EUDAMED aims to enhance overall transparency, including better access to information for public and healthcare professionals and to enhance coordination between the different Member States in the EU."
+        }
+      ],
+      "text": "EUDAMED provides a living picture of the lifecycle of medical devices available in the European Union. It integrates different electronic systems to collate and process information about medical devices. EUDAMED aims to enhance overall transparency, including better access to information for public and healthcare professionals and to enhance coordination between the different Member States in the EU.",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "eudamed:b48",
+      "sectionId": "eudamed:s33",
+      "sourceId": "eudamed",
+      "heading": "Overview",
+      "path": [
+        "Overview"
+      ],
+      "lines": [
+        {
+          "id": "eudamed:48",
+          "line": 48,
+          "text": "The Commission Implementing Regulation (EU) 2021/2078 of 26 November 2021 lays down the detailed arrangements necessary for the setting up and maintenance of EUDAMED."
+        }
+      ],
+      "text": "The Commission Implementing Regulation (EU) 2021/2078 of 26 November 2021 lays down the detailed arrangements necessary for the setting up and maintenance of EUDAMED.",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "eudamed:b50",
+      "sectionId": "eudamed:s33",
+      "sourceId": "eudamed",
+      "heading": "Overview",
+      "path": [
+        "Overview"
+      ],
+      "lines": [
+        {
+          "id": "eudamed:50",
+          "line": 50,
+          "text": "EUDAMED is structured around 6 interconnected modules and a public website:"
+        },
+        {
+          "id": "eudamed:51",
+          "line": 51,
+          "text": "1. Actor registration (mandatory since 28 May 2026)"
+        },
+        {
+          "id": "eudamed:52",
+          "line": 52,
+          "text": "2. UDI/Device registration (mandatory since 28 May 2026)"
+        },
+        {
+          "id": "eudamed:53",
+          "line": 53,
+          "text": "3. Notified Bodies and Certificates (mandatory since 28 May 2026)"
+        },
+        {
+          "id": "eudamed:54",
+          "line": 54,
+          "text": "4. Clinical Investigations and performance studies (under analysis)"
+        },
+        {
+          "id": "eudamed:55",
+          "line": 55,
+          "text": "5. Vigilance and post-market surveillance (in development)"
+        },
+        {
+          "id": "eudamed:56",
+          "line": 56,
+          "text": "6. Market Surveillance (mandatory since 28 May 2026, for the Competent Authorities and the European Commission)"
+        },
+        {
+          "id": "eudamed:57",
+          "line": 57,
+          "text": "* EUDAMED restricted"
+        },
+        {
+          "id": "eudamed:58",
+          "line": 58,
+          "text": "* EUDAMED public"
+        }
+      ],
+      "text": "EUDAMED is structured around 6 interconnected modules and a public website:\n1. Actor registration (mandatory since 28 May 2026)\n2. UDI/Device registration (mandatory since 28 May 2026)\n3. Notified Bodies and Certificates (mandatory since 28 May 2026)\n4. Clinical Investigations and performance studies (under analysis)\n5. Vigilance and post-market surveillance (in development)\n6. Market Surveillance (mandatory since 28 May 2026, for the Competent Authorities and the European Commission)\n* EUDAMED restricted\n* EUDAMED public",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "eudamed:b60",
+      "sectionId": "eudamed:s33",
+      "sourceId": "eudamed",
+      "heading": "Overview",
+      "path": [
+        "Overview"
+      ],
+      "lines": [
+        {
+          "id": "eudamed:60",
+          "line": 60,
+          "text": "See also EUDAMED guidance documents."
+        }
+      ],
+      "text": "See also EUDAMED guidance documents.",
+      "evidenceEligible": false,
+      "kind": "pointer-or-media"
+    },
+    {
+      "id": "eudamed:b63",
+      "sectionId": "eudamed:s61",
+      "sourceId": "eudamed",
+      "heading": "What is the state of play of the implementation of EUDAMED?",
+      "path": [
+        "Overview",
+        "What is the state of play of the implementation of EUDAMED?"
+      ],
+      "lines": [
+        {
+          "id": "eudamed:63",
+          "line": 63,
+          "text": "The Commission Decision (EU) 2025/2371 of 26 November 2025 on the notice regarding the functionality and the fulfilment of the functional specifications of certain electronic systems included in the European Database on Medical Devices declaring the functionality of the first four modules has been published in the OJEU of 27 November 2025."
+        }
+      ],
+      "text": "The Commission Decision (EU) 2025/2371 of 26 November 2025 on the notice regarding the functionality and the fulfilment of the functional specifications of certain electronic systems included in the European Database on Medical Devices declaring the functionality of the first four modules has been published in the OJEU of 27 November 2025.",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "eudamed:b64",
+      "sectionId": "eudamed:s61",
+      "sourceId": "eudamed",
+      "heading": "What is the state of play of the implementation of EUDAMED?",
+      "path": [
+        "Overview",
+        "What is the state of play of the implementation of EUDAMED?"
+      ],
+      "lines": [
+        {
+          "id": "eudamed:64",
+          "line": 64,
+          "text": "In accordance with the transitional provisions set out in Regulation (EU) 2024/1860, this publication triggers a transition period of 6 months;"
+        }
+      ],
+      "text": "In accordance with the transitional provisions set out in Regulation (EU) 2024/1860, this publication triggers a transition period of 6 months;",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "eudamed:b66",
+      "sectionId": "eudamed:s61",
+      "sourceId": "eudamed",
+      "heading": "What is the state of play of the implementation of EUDAMED?",
+      "path": [
+        "Overview",
+        "What is the state of play of the implementation of EUDAMED?"
+      ],
+      "lines": [
+        {
+          "id": "eudamed:66",
+          "line": 66,
+          "text": "Therefore, as from 28 May 2026 the first four modules are mandatory to use:"
+        },
+        {
+          "id": "eudamed:67",
+          "line": 67,
+          "text": "* Actor registration (available voluntarily since December 2020)"
+        },
+        {
+          "id": "eudamed:68",
+          "line": 68,
+          "text": "* UDI/device registration (available voluntarily since October 2021)"
+        },
+        {
+          "id": "eudamed:69",
+          "line": 69,
+          "text": "* Notified Bodies and Certificates (available voluntarily since October 2021 except for the mechanism for scrutiny and the clinical evaluation consultation procedure (CECP) functionalities)"
+        },
+        {
+          "id": "eudamed:70",
+          "line": 70,
+          "text": "* Market Surveillance."
+        }
+      ],
+      "text": "Therefore, as from 28 May 2026 the first four modules are mandatory to use:\n* Actor registration (available voluntarily since December 2020)\n* UDI/device registration (available voluntarily since October 2021)\n* Notified Bodies and Certificates (available voluntarily since October 2021 except for the mechanism for scrutiny and the clinical evaluation consultation procedure (CECP) functionalities)\n* Market Surveillance.",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "eudamed:b71",
+      "sectionId": "eudamed:s61",
+      "sourceId": "eudamed",
+      "heading": "What is the state of play of the implementation of EUDAMED?",
+      "path": [
+        "Overview",
+        "What is the state of play of the implementation of EUDAMED?"
+      ],
+      "lines": [
+        {
+          "id": "eudamed:71",
+          "line": 71,
+          "text": "The two remaining modules; Post-Market surveillance and Vigilance, and Clinical Investigation & Performance Studies are under development and will be released when they are mandatory to use. There will be no time for voluntary use for these two modules before they become mandatory"
+        },
+        {
+          "id": "eudamed:73",
+          "line": 73,
+          "text": "* EUDAMED Timeline"
+        },
+        {
+          "id": "eudamed:74",
+          "line": 74,
+          "text": "* Gradual roll out of EUDAMED - Q&A on practical aspects related to the implementation of the gradual roll-out of EUDAMED pursuant to the MDR and IVDR, as amended by Regulation (EU) 2024/1860"
+        }
+      ],
+      "text": "The two remaining modules; Post-Market surveillance and Vigilance, and Clinical Investigation & Performance Studies are under development and will be released when they are mandatory to use. There will be no time for voluntary use for these two modules before they become mandatory\n* EUDAMED Timeline\n* Gradual roll out of EUDAMED - Q&A on practical aspects related to the implementation of the gradual roll-out of EUDAMED pursuant to the MDR and IVDR, as amended by Regulation (EU) 2024/1860",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "eudamed:b77",
+      "sectionId": "eudamed:s75",
+      "sourceId": "eudamed",
+      "heading": "Transitional period",
+      "path": [
+        "Overview",
+        "Transitional period"
+      ],
+      "lines": [
+        {
+          "id": "eudamed:77",
+          "line": 77,
+          "text": "Timelines summarising the tansitional periods for the devices and certificates."
+        },
+        {
+          "id": "eudamed:79",
+          "line": 79,
+          "text": "* 6 Months transitional period – Regulation devices"
+        },
+        {
+          "id": "eudamed:80",
+          "line": 80,
+          "text": "* Devices & certificates registration"
+        },
+        {
+          "id": "eudamed:81",
+          "line": 81,
+          "text": "* Legacy and Regulation devices placed on the market before the mandatory use"
+        },
+        {
+          "id": "eudamed:82",
+          "line": 82,
+          "text": "* Certificates registration"
+        }
+      ],
+      "text": "Timelines summarising the tansitional periods for the devices and certificates.\n* 6 Months transitional period – Regulation devices\n* Devices & certificates registration\n* Legacy and Regulation devices placed on the market before the mandatory use\n* Certificates registration",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "eudamed:b86",
+      "sectionId": "eudamed:s84",
+      "sourceId": "eudamed",
+      "heading": "Functional specifications",
+      "path": [
+        "Overview",
+        "Functional specifications"
+      ],
+      "lines": [
+        {
+          "id": "eudamed:86",
+          "line": 86,
+          "text": "* EUDAMED functional specifications"
+        }
+      ],
+      "text": "* EUDAMED functional specifications",
+      "evidenceEligible": false,
+      "kind": "pointer-or-media"
+    },
+    {
+      "id": "eudamed:b89",
+      "sectionId": "eudamed:s87",
+      "sourceId": "eudamed",
+      "heading": "Videos",
+      "path": [
+        "Overview",
+        "Videos"
+      ],
+      "lines": [
+        {
+          "id": "eudamed:89",
+          "line": 89,
+          "text": "* EUDAMED public site video"
+        }
+      ],
+      "text": "* EUDAMED public site video",
+      "evidenceEligible": false,
+      "kind": "pointer-or-media"
+    },
+    {
+      "id": "eudamed:b91",
+      "sectionId": "eudamed:s87",
+      "sourceId": "eudamed",
+      "heading": "Videos",
+      "path": [
+        "Overview",
+        "Videos"
+      ],
+      "lines": [
+        {
+          "id": "eudamed:91",
+          "line": 91,
+          "text": "EUDAMED public site"
+        }
+      ],
+      "text": "EUDAMED public site",
+      "evidenceEligible": false,
+      "kind": "pointer-or-media"
+    },
+    {
+      "id": "eudamed:b93",
+      "sectionId": "eudamed:s87",
+      "sourceId": "eudamed",
+      "heading": "Videos",
+      "path": [
+        "Overview",
+        "Videos"
+      ],
+      "lines": [
+        {
+          "id": "eudamed:93",
+          "line": 93,
+          "text": "EUDAMED public site"
+        },
+        {
+          "id": "eudamed:95",
+          "line": 95,
+          "text": "* EUDAMED restricted site video"
+        }
+      ],
+      "text": "EUDAMED public site\n* EUDAMED restricted site video",
+      "evidenceEligible": false,
+      "kind": "pointer-or-media"
+    },
+    {
+      "id": "eudamed:b97",
+      "sectionId": "eudamed:s87",
+      "sourceId": "eudamed",
+      "heading": "Videos",
+      "path": [
+        "Overview",
+        "Videos"
+      ],
+      "lines": [
+        {
+          "id": "eudamed:97",
+          "line": 97,
+          "text": "EUDAMED Restricted site"
+        }
+      ],
+      "text": "EUDAMED Restricted site",
+      "evidenceEligible": false,
+      "kind": "pointer-or-media"
+    },
+    {
+      "id": "eudamed:b99",
+      "sectionId": "eudamed:s87",
+      "sourceId": "eudamed",
+      "heading": "Videos",
+      "path": [
+        "Overview",
+        "Videos"
+      ],
+      "lines": [
+        {
+          "id": "eudamed:99",
+          "line": 99,
+          "text": "EUDAMED restricted site"
+        }
+      ],
+      "text": "EUDAMED restricted site",
+      "evidenceEligible": false,
+      "kind": "pointer-or-media"
+    },
+    {
+      "id": "eudamed:b101",
+      "sectionId": "eudamed:s87",
+      "sourceId": "eudamed",
+      "heading": "Videos",
+      "path": [
+        "Overview",
+        "Videos"
+      ],
+      "lines": [
+        {
+          "id": "eudamed:101",
+          "line": 101,
+          "text": "Disclaimer: In the future, when all modules will be released and mandatory to use all functionalities shown in the videos will be available."
+        }
+      ],
+      "text": "Disclaimer: In the future, when all modules will be released and mandatory to use all functionalities shown in the videos will be available.",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "igj:b7",
+      "sectionId": "igj:s5",
+      "sourceId": "igj",
+      "heading": "Registration of economic operator in EUDAMED",
+      "path": [
+        "Registration of economic operator in EUDAMED"
+      ],
+      "lines": [
+        {
+          "id": "igj:7",
+          "line": 7,
+          "text": "The market authorisation of medical devices (MDR, EU/745) and medical devices for in vitro diagnostics (IVDR, EU/746) requires registration. As of January 2026 (expected date), economic operators will be required to register in the European database EUDAMED for this purpose (MDR, Article 31; IVDR, Article 28)."
+        }
+      ],
+      "text": "The market authorisation of medical devices (MDR, EU/745) and medical devices for in vitro diagnostics (IVDR, EU/746) requires registration. As of January 2026 (expected date), economic operators will be required to register in the European database EUDAMED for this purpose (MDR, Article 31; IVDR, Article 28).",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "igj:b8",
+      "sectionId": "igj:s5",
+      "sourceId": "igj",
+      "heading": "Registration of economic operator in EUDAMED",
+      "path": [
+        "Registration of economic operator in EUDAMED"
+      ],
+      "lines": [
+        {
+          "id": "igj:8",
+          "line": 8,
+          "text": "In order to gain access to EUDAMED, manufacturers, importers and authorised representatives can register in the EUDAMED actor registration module, after which they are issued with a single registration number, or SRN. This SRN number allows access to EUDAMED and makes it possible, for example:"
+        },
+        {
+          "id": "igj:9",
+          "line": 9,
+          "text": "* to request a conformity assessment from a notified body;"
+        },
+        {
+          "id": "igj:10",
+          "line": 10,
+          "text": "* to submit the obligatory product information about medical devices or in vitro diagnostic medical devices;"
+        },
+        {
+          "id": "igj:11",
+          "line": 11,
+          "text": "* to submit obligatory reports of incidents or corrective actions involving medical devices or in vitro diagnostic medical devices."
+        }
+      ],
+      "text": "In order to gain access to EUDAMED, manufacturers, importers and authorised representatives can register in the EUDAMED actor registration module, after which they are issued with a single registration number, or SRN. This SRN number allows access to EUDAMED and makes it possible, for example:\n* to request a conformity assessment from a notified body;\n* to submit the obligatory product information about medical devices or in vitro diagnostic medical devices;\n* to submit obligatory reports of incidents or corrective actions involving medical devices or in vitro diagnostic medical devices.",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "igj:b13",
+      "sectionId": "igj:s12",
+      "sourceId": "igj",
+      "heading": "Competent authority",
+      "path": [
+        "Registration of economic operator in EUDAMED",
+        "Competent authority"
+      ],
+      "lines": [
+        {
+          "id": "igj:13",
+          "line": 13,
+          "text": "In the Netherlands, the Central Information Point for Healthcare professions (CIBG) is the competent authority for the registration of economic operators in the EUDAMED actor registration module. The CIBG is also responsible for issuing export certificates (market access for countries outside the EU) to manufacturers registered in the Netherlands. It assesses all new applications and, if approved, grants access to economic operators."
+        }
+      ],
+      "text": "In the Netherlands, the Central Information Point for Healthcare professions (CIBG) is the competent authority for the registration of economic operators in the EUDAMED actor registration module. The CIBG is also responsible for issuing export certificates (market access for countries outside the EU) to manufacturers registered in the Netherlands. It assesses all new applications and, if approved, grants access to economic operators.",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "igj:b14",
+      "sectionId": "igj:s12",
+      "sourceId": "igj",
+      "heading": "Competent authority",
+      "path": [
+        "Registration of economic operator in EUDAMED",
+        "Competent authority"
+      ],
+      "lines": [
+        {
+          "id": "igj:14",
+          "line": 14,
+          "text": "If the details are complete and verified, the registered users will receive an SRN."
+        }
+      ],
+      "text": "If the details are complete and verified, the registered users will receive an SRN.",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "igj:b17",
+      "sectionId": "igj:s15",
+      "sourceId": "igj",
+      "heading": "Registration via SRN",
+      "path": [
+        "Registration of economic operator in EUDAMED",
+        "Registration via SRN"
+      ],
+      "lines": [
+        {
+          "id": "igj:17",
+          "line": 17,
+          "text": "After completing the actor registration Farmatec assesses your application for uniqueness (double applications), completeness and registered address in the Netherlands. In the event of a positive assessment, the SRN is assigned."
+        }
+      ],
+      "text": "After completing the actor registration Farmatec assesses your application for uniqueness (double applications), completeness and registered address in the Netherlands. In the event of a positive assessment, the SRN is assigned.",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "igj:b18",
+      "sectionId": "igj:s15",
+      "sourceId": "igj",
+      "heading": "Registration via SRN",
+      "path": [
+        "Registration of economic operator in EUDAMED",
+        "Registration via SRN"
+      ],
+      "lines": [
+        {
+          "id": "igj:18",
+          "line": 18,
+          "text": "For the registration process and supplementary information, please visit the CIBG website (in Dutch)."
+        }
+      ],
+      "text": "For the registration process and supplementary information, please visit the CIBG website (in Dutch).",
+      "evidenceEligible": false,
+      "kind": "pointer-or-media"
+    },
+    {
+      "id": "igj:b21",
+      "sectionId": "igj:s19",
+      "sourceId": "igj",
+      "heading": "More information",
+      "path": [
+        "Registration of economic operator in EUDAMED",
+        "More information"
+      ],
+      "lines": [
+        {
+          "id": "igj:21",
+          "line": 21,
+          "text": "More information on the future developments of EUDAMED, registration and the issuing of the SRN can be found on the following websites:"
+        },
+        {
+          "id": "igj:22",
+          "line": 22,
+          "text": "* The Inspectorate’s web page about Regulation (EU) 2024/1860, with information about the modules available in EUDAMED."
+        },
+        {
+          "id": "igj:23",
+          "line": 23,
+          "text": "* EUDAMED user documentation: User Guide for Economic Operators (pdf)"
+        },
+        {
+          "id": "igj:24",
+          "line": 24,
+          "text": "* All European Commission (technical) information on EUDAMED"
+        },
+        {
+          "id": "igj:25",
+          "line": 25,
+          "text": "* More information on the obligations of economic operators in EUDAMED: Central government website"
+        }
+      ],
+      "text": "More information on the future developments of EUDAMED, registration and the issuing of the SRN can be found on the following websites:\n* The Inspectorate’s web page about Regulation (EU) 2024/1860, with information about the modules available in EUDAMED.\n* EUDAMED user documentation: User Guide for Economic Operators (pdf)\n* All European Commission (technical) information on EUDAMED\n* More information on the obligations of economic operators in EUDAMED: Central government website",
+      "evidenceEligible": false,
+      "kind": "pointer-or-media"
+    },
+    {
+      "id": "operators:b39",
+      "sectionId": "operators:s33",
+      "sourceId": "operators",
+      "heading": "Economic operators",
+      "path": [
+        "Economic operators"
+      ],
+      "lines": [
+        {
+          "id": "operators:39",
+          "line": 39,
+          "text": "The EU medical device regulations, Regulation (EU) 2017/745 on medical devices (MDR) and Regulation (EU) 2017/746 (IVDR) on in vitro diagnostic medical devices, assign specific responsibilities to the economic operators:"
+        },
+        {
+          "id": "operators:40",
+          "line": 40,
+          "text": "* manufacturers (as defined in Article 2(30) MDR and Article 2(23) IVDR);"
+        },
+        {
+          "id": "operators:41",
+          "line": 41,
+          "text": "* authorised representatives (as defined by Article 2(32) MDR and Article 2(25) IVDR);"
+        },
+        {
+          "id": "operators:42",
+          "line": 42,
+          "text": "* importers (as defined in Article 2(33) MDR and Article 2(26) IVDR);"
+        },
+        {
+          "id": "operators:43",
+          "line": 43,
+          "text": "* distributors (as defined in Article 2(34) MDR and Article 2(27) IVDR);"
+        },
+        {
+          "id": "operators:44",
+          "line": 44,
+          "text": "* system/procedure pack producers (as defined in Article 22(1) MDR and Article 22(3) MDR)."
+        }
+      ],
+      "text": "The EU medical device regulations, Regulation (EU) 2017/745 on medical devices (MDR) and Regulation (EU) 2017/746 (IVDR) on in vitro diagnostic medical devices, assign specific responsibilities to the economic operators:\n* manufacturers (as defined in Article 2(30) MDR and Article 2(23) IVDR);\n* authorised representatives (as defined by Article 2(32) MDR and Article 2(25) IVDR);\n* importers (as defined in Article 2(33) MDR and Article 2(26) IVDR);\n* distributors (as defined in Article 2(34) MDR and Article 2(27) IVDR);\n* system/procedure pack producers (as defined in Article 22(1) MDR and Article 22(3) MDR).",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "operators:b45",
+      "sectionId": "operators:s33",
+      "sourceId": "operators",
+      "heading": "Economic operators",
+      "path": [
+        "Economic operators"
+      ],
+      "lines": [
+        {
+          "id": "operators:45",
+          "line": 45,
+          "text": "All economic operators must fulfil the applicable provisions in the Regulations that aim to ensure that medical devices are safe, effective and traceable throughout the supply chain."
+        }
+      ],
+      "text": "All economic operators must fulfil the applicable provisions in the Regulations that aim to ensure that medical devices are safe, effective and traceable throughout the supply chain.",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "operators:b47",
+      "sectionId": "operators:s33",
+      "sourceId": "operators",
+      "heading": "Economic operators",
+      "path": [
+        "Economic operators"
+      ],
+      "lines": [
+        {
+          "id": "operators:47",
+          "line": 47,
+          "text": "The factsheet linked below outlines the general provisions applicable to economic operators."
+        }
+      ],
+      "text": "The factsheet linked below outlines the general provisions applicable to economic operators.",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "operators:b49",
+      "sectionId": "operators:s33",
+      "sourceId": "operators",
+      "heading": "Economic operators",
+      "path": [
+        "Economic operators"
+      ],
+      "lines": [
+        {
+          "id": "operators:49",
+          "line": 49,
+          "text": "Guidance documents have been created to further outline the operational and practical implementation of specific provisions for economic operators."
+        }
+      ],
+      "text": "Guidance documents have been created to further outline the operational and practical implementation of specific provisions for economic operators.",
+      "evidenceEligible": true,
+      "kind": "narrative"
+    },
+    {
+      "id": "operators:b52",
+      "sectionId": "operators:s50",
+      "sourceId": "operators",
+      "heading": "Useful links",
+      "path": [
+        "Economic operators",
+        "Useful links"
+      ],
+      "lines": [
+        {
+          "id": "operators:52",
+          "line": 52,
+          "text": "* Factsheet for authorised representatives, importers and distributors"
+        },
+        {
+          "id": "operators:53",
+          "line": 53,
+          "text": "* Dedicated guidance documents"
+        }
+      ],
+      "text": "* Factsheet for authorised representatives, importers and distributors\n* Dedicated guidance documents",
+      "evidenceEligible": false,
+      "kind": "pointer-or-media"
+    }
+  ],
+  "links": [
+    {
+      "from": "eudamed",
+      "at": 51,
+      "to": "actors",
+      "label": "Actor registration",
+      "relation": "body-link",
+      "observedVia": "turn397111view2"
+    }
+  ],
+  "aliases": [
+    [
+      "importer",
+      "importers",
+      "import",
+      "importing",
+      "importeur",
+      "importeren"
+    ],
+    [
+      "distributor",
+      "distributors",
+      "distribution",
+      "distributeur",
+      "distributeurs"
+    ],
+    [
+      "manufacturer",
+      "manufacturers",
+      "fabrikant",
+      "fabrikanten"
+    ],
+    [
+      "diagnostic",
+      "diagnostics",
+      "diagnostische",
+      "diagnostisch"
+    ],
+    [
+      "tests",
+      "test",
+      "test",
+      "tests",
+      "testen"
+    ],
+    [
+      "registration",
+      "register",
+      "registering",
+      "sign up",
+      "registratie",
+      "registreren"
+    ],
+    [
+      "mandatory",
+      "required",
+      "verplicht",
+      "verplichte"
+    ],
+    [
+      "date",
+      "deadline",
+      "when",
+      "datum",
+      "wanneer"
+    ],
+    [
+      "change",
+      "changed",
+      "wijziging",
+      "veranderd"
+    ],
+    [
+      "netherlands",
+      "dutch",
+      "nederland",
+      "dutch"
+    ],
+    [
+      "not",
+      "no",
+      "niet",
+      "no"
+    ],
+    [
+      "rules",
+      "rule",
+      "regels",
+      "regel"
+    ],
+    [],
+    [],
+    [],
+    []
+  ],
+  "extractionRevision": "multilingual-native-guidance-development-d1"
+}

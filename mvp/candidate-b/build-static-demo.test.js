@@ -5,7 +5,7 @@ const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
 
-const {APP_FILES, REGIME_FILES, REGIME_V2_FILES, MEDICAL_SUMMARY_FILES, PRODUCT_HOME_FILES, PILOT_FILES, FIXTURE_FILES, buildStaticDemo} = require("./build-static-demo.js");
+const {APP_FILES, REGIME_FILES, REGIME_V2_FILES, MEDICAL_SUMMARY_FILES, PRODUCT_HOME_FILES, PRODUCT_SEARCH_FILES, PILOT_FILES, FIXTURE_FILES, buildStaticDemo} = require("./build-static-demo.js");
 
 const ROOT = path.resolve(__dirname, "..", "..");
 const DIST = path.join(ROOT, "dist");
@@ -19,6 +19,7 @@ test("static bundle contains frozen Candidate-B plus the separate regime prototy
   assert.deepEqual(manifest.regimeV2Files, REGIME_V2_FILES);
   assert.deepEqual(manifest.medicalSummaryFiles, MEDICAL_SUMMARY_FILES);
   assert.deepEqual(manifest.productHomeFiles, PRODUCT_HOME_FILES);
+  assert.deepEqual(manifest.productSearchFiles, PRODUCT_SEARCH_FILES);
   assert.deepEqual(manifest.pilotFiles, PILOT_FILES);
   assert.deepEqual(manifest.pilotRoutes, ["/research/issue494/a/", "/research/issue494/b/"]);
   assert.equal(manifest.fixtureFiles.length, 5);
@@ -56,6 +57,9 @@ test("static bundle contains frozen Candidate-B plus the separate regime prototy
   }
 
   assert.ok(fs.existsSync(path.join(DIST, "index.html")));
+  for (const file of PRODUCT_SEARCH_FILES) {
+    assert.ok(fs.existsSync(path.join(DIST, "search", file)));
+  }
   assert.ok(fs.existsSync(path.join(DIST, "product-shell.css")));
   assert.ok(fs.existsSync(path.join(DIST, "build-manifest.json")));
 });

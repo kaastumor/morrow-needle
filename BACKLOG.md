@@ -189,14 +189,12 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — executable internal project plan
+### Immediate priority — M1 connected search seam
 
-**WIP=1 — #502.** The sponsor authorized #501's merge and requested a proper project plan
-with internal development before external activity. #501 is accepted as
-`36d70949c6841a01a5a89b8236d811ae48031dce`; #500 is complete. #502 extends the existing
-programme with concrete work packages, dependency order, effort/reserve, completion
-evidence and readiness/contingency gates. Its plan PR remains pending review; no application
-feature or participant activity starts in this slice. #488 remains a separate unaccepted
+**WIP=1 — #490 / programme M1.** The executable plan from #502 is accepted through merged
+PR #503 as `531e473d1df4e6e62081675d0955919c36dc6df5`; #502 is complete. The current reviewable
+slice integrates the verified retained search/evidence component into the product home with
+only the four approved medical-guidance captures. #488 remains a separate unaccepted
 governance proposal.
 
 Accepted UI foundation:
@@ -208,15 +206,19 @@ Accepted UI foundation:
 Those merges close their scoped UI work. They do not close the full prototype or prove
 customer readiness, comprehension, comparative value or current legal-source accuracy.
 
-**Next eligible application slice after #502 is accepted:** resume #490/programme M1 WP1,
-rechecking ownership and recovering/verifying the retained search artifact before writing.
-Prepare the early #492 threat matrix/first cases, then integrate one small seam. Connect ordinary
-questions and exact references to one supported explanation/detail/evidence journey.
-Use the existing visual baseline and preserve explicit source/language/version coverage.
-The retained local search/result component is a recovery candidate, not yet verified
-repository integration; its rejected field-ranker experiment is not the retained engine.
-Artifact provenance and integration limits are recorded in
+The retained package provenance and integration limits remain recorded in
 [#490's checkpoint](https://github.com/kaastumor/morrow-needle/issues/490#issuecomment-5889536165).
+Its integrity and 71 component checks were reverified before integration; the rejected
+field-ranker remains excluded. The current seam keeps direct navigation and no-script paths,
+separates query/source language from jurisdiction/version, and fails closed when a query has
+only incidental lexical overlap with the medical collection. Browser interaction evidence is
+still required on the exact review head; unavailable browser executables are an execution
+blocker, not a rendered PASS.
+
+**Next action:** Verification reviews the exact draft-PR head, including source filtering,
+ordinary-query and exact-reference behavior, the outside-coverage control, static-build
+inclusion and real browser behavior when an authorized executable is available. No merge,
+deployment, release or external participant activity follows automatically.
 
 Read and pick up [#492](https://github.com/kaastumor/morrow-needle/issues/492) within that
 same programme: select the first three structurally different source-supported development

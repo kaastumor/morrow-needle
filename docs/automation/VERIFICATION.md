@@ -17,7 +17,7 @@ own durable decisions. Do not create PROJECT/CURRENT_STATE/DECISIONS duplicates.
 Python requires 3.12 or later. The current browser test command is:
 
 ```sh
-node --test mvp/app.test.js mvp/candidate-b/app.test.js mvp/candidate-b/build-static-demo.test.js mvp/regime-constellation/app.test.js mvp/regime-density-v0.2/app.test.js mvp/medical-devices-summary/app.test.js
+node --test mvp/app.test.js mvp/candidate-b/app.test.js mvp/candidate-b/build-static-demo.test.js mvp/regime-constellation/app.test.js mvp/regime-density-v0.2/app.test.js mvp/medical-devices-summary/app.test.js mvp/product-home/search.test.js
 ```
 
 Candidate B static build: `node mvp/candidate-b/build-static-demo.js`.

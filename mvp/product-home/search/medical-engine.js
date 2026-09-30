@@ -6,16 +6,18 @@
 })(globalThis, function (Search) {
   "use strict";
 
+  // Generic roles, registration and timing words occur in many regulated domains.
+  // Require an explicit medical subject in the question before showing this collection.
+  const MEDICAL_ANCHOR = /\b(?:EUDAMED|IVDR|MDR|SRN|medical[\s-]+devices?|in[\s-]+vitro[\s-]+diagnostic(?:s|[\s-]+devices?)?)\b/iu;
+
   function createEngine(data, resources) {
     const engine = Search.createEngine(data, resources);
-    const medicalConcepts = new Set((resources.vocabulary.concepts || []).filter(item => item.topic === "medical").map(item => item.id));
     return {
       ...engine,
       search(query, options) {
         const response = engine.search(query, options);
         if (response.status !== "RESULTS") return response;
-        const signalled = (response.analysis || []).some(analysis => (analysis.conceptIds || []).some(id => medicalConcepts.has(id)));
-        if (signalled) return response;
+        if (MEDICAL_ANCHOR.test(query)) return response;
         return {
           ...response,
           status: "OUTSIDE_MAINTAINED_COVERAGE",

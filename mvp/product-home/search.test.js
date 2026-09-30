@@ -41,6 +41,22 @@ test("generic and outside-coverage questions fail safely", () => {
   const consumer = engine.search("A private person sold me used goods: is that the same guarantee as buying second-hand from a professional?", {queryLanguage: "en"});
   assert.equal(consumer.status, "OUTSIDE_MAINTAINED_COVERAGE");
   assert.equal(consumer.primary.length, 0);
+  for (const question of [
+    "When is registration required for importing cosmetics into the EU?",
+    "What registration is required for an importer of toys?",
+    "When is registration required for importing goods?"
+  ]) {
+    const result = engine.search(question, {queryLanguage: "en"});
+    assert.equal(result.status, "OUTSIDE_MAINTAINED_COVERAGE", question);
+    assert.equal(result.primary.length, 0, question);
+    assert.equal(result.evidence.length, 0, question);
+  }
+});
+
+test("an explicit medical-device question retains its guidance results", () => {
+  const result = engine.search("medical device importer registration", {queryLanguage: "en"});
+  assert.equal(result.status, "RESULTS");
+  assert.ok(result.primary.length > 0);
 });
 
 test("home keeps direct paths and a no-script fallback", () => {

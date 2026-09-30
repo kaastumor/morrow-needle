@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **CONSOLIDATE — NEEDLE EU STRATEGY / DELIVERY RECONCILIATION**
+# **PLAN — NEEDLE EU INTERNAL PROTOTYPE DELIVERY**
 
 Frozen scientific source:
 
@@ -189,12 +189,15 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — strategy and delivery reconciliation
+### Immediate priority — executable internal project plan
 
-**WIP=1 — #500.** The sponsor moved the strategic audit/brainstorm review to implementation
-on 30 September 2026. The current slice reconciles existing strategy and delivery owners;
-its branch/PR is pending review, not accepted state. No application feature or participant
-activity is started in this slice. PR #488 remains a separate unaccepted governance proposal.
+**WIP=1 — #502.** The sponsor authorized #501's merge and requested a proper project plan
+with internal development before external activity. #501 is accepted as
+`36d70949c6841a01a5a89b8236d811ae48031dce`; #500 is complete. #502 extends the existing
+programme with concrete work packages, dependency order, effort/reserve, completion
+evidence and readiness/contingency gates. Its plan PR remains pending review; no application
+feature or participant activity starts in this slice. #488 remains a separate unaccepted
+governance proposal.
 
 Accepted UI foundation:
 
@@ -205,8 +208,9 @@ Accepted UI foundation:
 Those merges close their scoped UI work. They do not close the full prototype or prove
 customer readiness, comprehension, comparative value or current legal-source accuracy.
 
-**Next eligible application slice after #500 is accepted:** resume #490/programme M1,
-rechecking ownership and the retained search artifact before writing. Connect ordinary
+**Next eligible application slice after #502 is accepted:** resume #490/programme M1 WP1,
+rechecking ownership and recovering/verifying the retained search artifact before writing.
+Prepare the early #492 threat matrix/first cases, then integrate one small seam. Connect ordinary
 questions and exact references to one supported explanation/detail/evidence journey.
 Use the existing visual baseline and preserve explicit source/language/version coverage.
 The retained local search/result component is a recovery candidate, not yet verified
@@ -221,8 +225,13 @@ adversarial tranche, not a second WIP or three new maintained public pages. Unim
 features remain NOT_TESTED; test coverage may exceed public coverage. The issue owns
 development/reserved-case handling and the later bounded campaign.
 
-External recruitment and customer pitch remain paused. #493 and #494 retain their
-separate research/implementation/participant gates. After finite prototype readiness,
+External recruitment, participant execution, customer pitch, sales pilots and paid panels
+remain paused through internal M1-M4 delivery. Before requesting external authority,
+complete/disposition the committed journeys, diverse-law campaign, browser evidence and
+maintenance rehearsal, and obtain sponsor acceptance of the internal milestone. Public
+official-source/incumbent research remains internal preparation. The programme's
+external-readiness gate owns the conditions; completion is not automatic contact authority.
+#493 and #494 retain their separate research/implementation/participant gates. After that gate,
 recommend separate orientation and contextual-awareness comparisons; do not automatically
 expand act coverage, vote history, Candidate A/C or monitoring. Participant activity and
 any changed delivery allocation require the existing scoped decisions.

@@ -1,6 +1,7 @@
 # Needle EU — bounded prototype programme
 
-Reconciled 30 September 2026 after the strategic audit and brainstorm review.
+Reconciled 30 September 2026 after the strategic audit and brainstorm review; extended
+with the sponsor-requested internal project plan and external-readiness gate.
 This is the existing delivery contract, not a second live queue;
 [BACKLOG.md](../../BACKLOG.md) alone owns mode, WIP and next action.
 
@@ -26,6 +27,45 @@ It starts without a named act, dispute or question and allows awareness without 
 action. It is not included as an implemented v1 promise. Its delivery gate remains;
 known-act success is not a value prerequisite for testing it. Exact decision/related-vote
 history (#494) remains a separate research comparison with its participant pause intact.
+
+## Planning baseline and scope
+
+Dated inspection: accepted main `36d70949c6841a01a5a89b8236d811ae48031dce`.
+This is a starting evidence snapshot, not a mutable progress board.
+
+| Baseline | Evidence / consequence for planning |
+| --- | --- |
+| Purpose and delivery reconciliation accepted | PR #501 merged; use the charter and this programme, with BACKLOG as live owner |
+| Existing visual foundation and navigation accepted in Git | Preserve the home, medical overview, regime view and standards surface; their historical checks are scoped prior evidence |
+| Question-first search not connected in the inspected product entry | The inspected home/medical HTML has no search control; retained local modules are absent from the repository tree. Recover before recreating them |
+| Medical core-act explanation still needs a connected detail journey | Inspected MDR/IVDR core links lead to official external sources; this is not proof of an implemented substantive internal detail view |
+| Diverse-law and later public discovery remain learning obligations | #492 requires actual revision-level cases; #493 contextual discovery is a distinct later job |
+| External reader evidence absent at this checkpoint | Code/HTML inspection and previous internal results do not close usability, value or the paused #494 participant gate |
+
+The delivery set is the existing medical overview plus substantive MDR/IVDR core views,
+its represented date/relationship/evidence routes, and at most one justified contrasting
+public act/regime. Candidate B remains an existing narrow route, not another simultaneous
+product build. Wider discovery/test fixtures live outside the maintained public catalogue.
+Do not expand every linked act into a new explainer or rebuild a historical graph engine.
+
+## Ownership and execution
+
+- **Sponsor:** purpose changes, scope beyond this horizon, milestone acceptance and scoped
+  merge/release/spending/participant decisions.
+- **Designated executor:** one current Codex implementation owner under BACKLOG; complete
+  one bounded issue/branch/PR at a time and checkpoint actual evidence.
+- **Research/source work:** part of the current package, using existing evidence and
+  appropriate official sources; route substantial research to Work only when needed and
+  preserve one execution owner. No extra worker or schedule is activated by this plan.
+- **Review:** executor self-review plus repository checks; source, browser, sponsor and
+  later human evidence remain separately labelled. No invented independent reviewer.
+
+Use existing #490 as the prototype coordination/history owner, #492 for case/exposure
+rules and the active scoped issue/PR for the current package. Reconcile #490's old intake
+limits when a ready implementation slice is adopted; its later sponsor-approved programme
+supersedes the old prohibition on detail pages, not the evidence floor. Create a child
+delivery issue only when its inputs and dependencies are ready, rather than generating all
+work-package issues in advance. BACKLOG alone selects which package is active.
 
 ## Outcome and finite finish line
 
@@ -93,6 +133,7 @@ add a semantic model/provider without a newly demonstrated consequential gap.
 The first working search may use a declared captured/source set. That is an implementation
 boundary, not a redefinition of the sponsor's web-assisted discovery ambition. Preserve
 three evidence states when discovery is available:
+
 1. maintained/source-checked Needle explanation;
 2. newly found official material not yet fully analysed;
 3. reporting/commentary, useful as a lead rather than authority for operative status.
@@ -125,6 +166,67 @@ The table specifies dependencies, not live WIP. Read BACKLOG and active issues f
 Prefer direct source-linked lists before new graphs, native disclosure before custom state,
 and existing static HTML/CSS/JS before frameworks, databases or new services.
 
+## Executable work packages and planning allowance
+
+The packages refine M1-M4 above; they are dependencies, not an automatically active queue.
+Start from the earliest unmet prerequisite after inspecting actual accepted state.
+
+| Package / milestone | Depends on | Concrete output and completion criteria | Planning units |
+| --- | --- | --- | ---: |
+| WP1 — Recover search inputs / M1 | Accepted foundation and current ownership | Retrieve the retained package through permitted access; verify saved bytes/checksum, manifest and consumer contract; distinguish retained engine from rejected experiment; inspect source/language coverage and licenses. Record recoverable files, integration seam and any named blocker. Do not claim integration yet | 2 |
+| WP2 — Early diversity and source risks / M1 | Foundation; WP1 informs source constraints | Compact assumption/diversity matrix; first three maximally different source-supported development cases with expected behavior fixed before execution; run available paths and mark missing ones NOT_TESTED. Reuse known evidence as exposed regressions; reserve later cases under #492 without tuning on them | 3 |
+| WP3 — First search-to-evidence slice / M1 | WP1 and WP2's initial expectations | Integrate the retained search/result component into the existing entry with declared coverage, exact-reference and ordinary-query behavior, language/fallback states, source-bound previews and evidence handoff. Run relevant Node/build checks and the actual built browser path; retain rejected-ranker result | 3 |
+| WP4 — Substantive medical act views / M1 | WP2 threats and WP3 identity/navigation contract | MDR and IVDR detail views using one content contract: purpose, scope/roles/exclusions, supported effects/change, qualified dates, relationships, source/version and unresolved points. Review material claims against their existing evidence owners/primary sources. Public/deeper layers agree; no definitive compliance verdict | 5 |
+| WP5 — Connected depth and navigation / M1 | WP3-WP4 | Home/question -> result -> act -> time/relationship/evidence -> return/deep link works. Material conditions remain in the public view. Label supporting official handoffs and incomplete previews; no decorative promises or false relationship/date semantics | 2 |
+| WP6 — Bounded reuse and development campaign / M2 | M1 useful journey | Select at most one source-grounded contrasting public example for a consequential contract difference. Complete the justified #492 development tranche, including positive controls; preserve failures, minimal repairs and replay evidence. Keep public maintenance and adversarial fixture counts separate | 4 |
+| WP7 — Hardening and reserved checks / M3 | Development repairs and WP6 | Run retained regressions and the four reserved #492 checks without prior tuning; report actual exposure/isolation limits. Check identity/time/language/source failures, keyboard, 390px/320px and actual 200% browser zoom on a pinned built revision. Significant unresolved failures get explicit dispositions | 3 |
+| WP8 — Maintenance and operating feasibility / M3 | Stable bounded content and WP5 | Rehearse one consequential source change/correction: determine affected claims, review sources, repair, replay and date the explanation; rerun affected checks if the rehearsal changes the built revision. Record legal review, engineering, rework, affected outputs and source-access/provider constraints; narrow if trustworthy upkeep is disproportionate | 2 |
+| WP9 — Internal acceptance package / M4 | WP7-WP8 and finite readiness checklist | Working internal demo, declared coverage/version, journey/test/maintenance evidence, unresolved risks, effort/cost readout and a small future comparison proposal. Sponsor chooses ACCEPT_INTERNAL_PROTOTYPE, REVISE, NARROW or PARK. No external activity follows automatically | 2 |
+| Discovery / demonstrated-repair reserve | A recorded new uncertainty or actual defect | Investigate a consequential surprise or repair a demonstrated blocker. Record why, evidence gained and units consumed; not extra pages, repeated tuning, optional features or a new aesthetic direction | 4 |
+| Total initial allowance | | Replan at milestone boundaries using actual findings; do not consume units to satisfy a quota | 30 |
+
+One unit is approximately 45-60 minutes of focused human-equivalent planning effort,
+not an agent runtime promise, calendar commitment, usage allowance or approved monetary
+budget. These are initial estimates; execution may be much faster or blocked by access.
+Use normal bounded bursts (scheduled research retains its existing 20-minute advisory
+envelope), record actual elapsed work/usage where visible and keep UNKNOWN values honest.
+This plan does not create or change a schedule.
+
+Protect WP2's discovery, WP4's legal/source review, WP6's adversarial work and WP8's
+maintenance investigation from silent conversion into feature coding. Reuse accepted
+evidence instead of repeating research. Narrow coverage or simplify the interaction before
+adding an engine, framework or paid service.
+
+At each M1/M2/M3 exit report: accepted output refs, unmet gate, spent/remaining estimate,
+material surprises, reserve use and the next exact package. If reserve is exhausted or the
+horizon cannot fit the bounded approach, record a scope/effort replan in the existing owner.
+Routine in-scope simplification is delegated; changed product purpose, broader maintained
+coverage, paid dependencies or weakened acceptance need scoped sponsor direction.
+
+## First executable capsule after plan acceptance
+
+**Outcome:** recover the retained search package and establish the first integration seam
+and three-case threat plan (WP1, with a compact WP2 preparation handoff). Do not start the
+whole search or legal-page build before knowing which artifact is actually available.
+
+Codex; recommend Sol Medium for ordinary recovery/integration judgment. Actual model/usage
+stays UNKNOWN unless the host exposes it. One issue/branch/PR; resume existing work before
+new intake. Re-read main, BACKLOG, #490's retained-package checkpoint and #492.
+
+1. Inspect current tree/build and source owners; confirm no competing writer.
+2. Use the durable locator in the checkpoint, verify saved checksum and package contents,
+   read its consumer instructions and identify retained versus experimental files.
+3. Map source coverage and the smallest safe mount/build seam; nominate the three
+   structurally different development cases without consuming reserved tests.
+4. Run available package preflight checks in a real runtime. Record missing Git/browser/
+   source access as execution limits; do not bypass denied access or rerun an impossible
+   operation. Preserve a recoverable checkpoint and the next exact integration task.
+
+Done when recovery/provenance, scope/identity constraints, actual checks and the proposed
+seam are inspectable, or a specific changed-prerequisite blocker is recorded. A recovered
+package is not a deployed feature. No paid service, schedule change, participant contact,
+merge/release, corpus change or scientific rescue is granted by this capsule.
+
 ## Diverse-law campaign — #492
 
 [#492](https://github.com/kaastumor/morrow-needle/issues/492) owns the case-selection,
@@ -146,9 +248,42 @@ useful-answer success; blanket abstention on a committed in-coverage task is a f
 Discovery may proceed before all features exist, with unavailable capabilities untested.
 No extra parallel worker, schedule, public catalogue or scientific-corpus growth follows.
 
+## External-readiness gate — sponsor sequencing
+
+The sponsor instructed on 30 September 2026: **do not go external too soon**.
+The programme therefore stays in internal development through M4. No external participant
+contact, recruitment, session, customer pitch, sales pilot or paid panel is executable
+from this plan alone. The paused #494 and Candidate B recruitment paths do not bypass it.
+
+Before requesting participant authority, the internal acceptance package must show:
+
+- a coherent working committed journey rather than disconnected polished pages;
+- completion/disposition of the selected #492 development and reserved checks;
+- source/status/date/scope fidelity and visible coverage/language limitations;
+- actual relevant browser/reflow/keyboard evidence and no unresolved critical
+  misrepresentation or broken committed path;
+- the correction/maintenance rehearsal and operating-risk readout;
+- a concrete, narrow proposed task/comparator, rather than a general customer pitch;
+- sponsor acceptance of the internal milestone.
+
+Then obtain a **separate scoped decision** on whether to run a specific reader comparison,
+its audience, costs and contact authority. Sponsor acceptance of code or an internal demo
+is not human/commercial value evidence or authorization to contact people.
+
+Public official-source research, bounded incumbent capability research and source access
+checks may happen internally throughout the plan. They are essential preparation, not
+participant observations, customer demand or a procurement commitment. In-product external
+discovery remains a separately tested dependency, not an excuse to buy a service.
+
+This gate prevents premature exposure; it is not a requirement for perfect worldwide
+coverage. The finite checklist and documented defects determine readiness. At M4 recommend
+the smallest informative next test or a justified narrowing; do not create another
+unbounded internal rehearsal programme to avoid the actual external uncertainty.
+
 ## External learning and extension decisions
 
-After finite readiness and the separately required participant authority, compare the
+After M4 internal acceptance, the external-readiness gate and separately required
+participant authority, compare the
 orientation job with competent official navigation or a strong source-linked note under
 the same task/scope. Measure consequential understanding/errors, useful completion and
 total effort, not only preference or clicks. Frozen historical evaluation criteria remain
@@ -173,6 +308,29 @@ extension from the observed bottleneck or useful next task:
 
 At M4, give a short #418 portfolio recommendation, not a new internal replay or automatic
 activation. Public-interest usefulness and commercial viability remain different decisions.
+
+## Progress, evidence and contingency
+
+BACKLOG owns mode/WIP/next action. The active issue/PR owns package criteria, current
+attempt and pending evidence. Preserve substantive source/tests/results in the relevant
+existing owner; this programme owns dependencies and gates, not copied execution status.
+
+A completion receipt records input revision and scope, actual output refs, commands and
+results, skipped checks/reasons, source and exposure limits, elapsed work/usage or UNKNOWN,
+reserve/estimate change and the next exact eligible action. Distinguish CHECKPOINTED,
+BLOCKED and READY_FOR_REVIEW from accepted/merged. Passing CI does not automatically
+advance a dependency; merge requires existing scoped authorization.
+
+| Risk / trigger | Response within this plan |
+| --- | --- |
+| Search package unavailable or checksum/identity mismatch | Preserve the blocker and required access/input; do not silently reconstruct or promote an unverifiable package. A bounded simpler implementation proposal must be explicit, not a rescue claim |
+| Browser execution blocked | Continue permitted source/unit/build checks; browser gate remains unmet. Name the required runtime rather than claiming screenshots or mocks prove interaction |
+| Source unavailable, contradictory or stale | Hold the affected claim, show the source/evidence date and uncertainty, or narrow coverage; no plausible completion from snippets |
+| Medical template fails on a different legal structure | Keep pre-fix evidence, repair the smallest contract/representation and replay; do not expand a universal ontology |
+| Multilingual result looks complete but omits a condition | Preserve actual source language/context, label preview/fallback and repair tested retrieval/display; synthetic registry checks never prove all-language quality |
+| Maintenance requires broad monitoring or escalating manual review | Measure the actual burden; narrow maintained content or propose a specific bottleneck intervention before new infrastructure |
+| Reserve exhausted / serial repair churn | Stop discretionary expansion, reconcile remaining gates and replan/narrow at the milestone; no automatic new experiment or provider |
+| Internal UI polish keeps delaying external uncertainty | Apply the finite M4 criteria; only demonstrated defects justify repairs. Ask for a concrete later test decision, not another aesthetic cycle |
 
 ## Red-team and architecture controls
 

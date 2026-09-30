@@ -9,6 +9,7 @@ const SEARCH = path.join(__dirname, "search");
 const data = JSON.parse(fs.readFileSync(path.join(SEARCH, "index.json"), "utf8"));
 const resources = JSON.parse(fs.readFileSync(path.join(SEARCH, "resources.json"), "utf8"));
 const engine = require("./search/medical-engine.js").createEngine(data, resources);
+const presenter = require("./search/evidence-view.js").createPresenter(engine);
 const app = require("./search/app.js");
 
 test("public search bundle contains only the admitted medical guidance sources", () => {
@@ -51,6 +52,16 @@ test("generic and outside-coverage questions fail safely", () => {
     assert.equal(result.primary.length, 0, question);
     assert.equal(result.evidence.length, 0, question);
   }
+});
+
+test("the retained IGJ forecast is visibly qualified without rewriting its source text", () => {
+  const result = presenter.present(engine.search("EUDAMED", {queryLanguage: "en"}));
+  const forecast = result.cards.find(card => card.id === "igj:s5");
+  assert.ok(forecast);
+  assert.match(forecast.fullSection.text, /January 2026 \(expected date\)/);
+  assert.match(forecast.editorialWarning, /Do not use that forecast as current EUDAMED status/);
+  assert.equal(forecast.editorialWarningUrl, "https://health.ec.europa.eu/medical-devices-eudamed/overview_en");
+  assert.ok(result.cards.filter(card => card.id !== "igj:s5").every(card => !card.editorialWarning));
 });
 
 test("an explicit medical-device question retains its guidance results", () => {

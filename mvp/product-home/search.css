@@ -64,6 +64,12 @@
 .needle-evidence-card details { margin: .7rem 0; }
 .needle-evidence-card summary { cursor: pointer; font-weight: 700; }
 .needle-evidence-full { max-width: 70ch; white-space: pre-line; }
+.needle-evidence-warning {
+  padding: .55rem .75rem;
+  border-left: .22rem solid #8a5600;
+  background: #fff7e8;
+  color: #342715;
+}
 .product-search__fallback { margin-top: 1rem; }
 
 @media (max-width: 38rem) {

@@ -51,7 +51,7 @@ function createPresenter(engine){
   const omitted=section.lines.filter(l=>!displayed.has(l.id)).length;
   const notice=previewStatus==='complete-section'?'Complete captured section; the wider document can contain additional conditions.':previewStatus==='source-excerpt'?'Source excerpt, not a complete answer. Other paragraphs may qualify it; the complete captured section is available below.':'No short, whole matching passage fits the preview limit. Open the complete captured section; no fragment was invented.';
   const reasons={'body-direct':'Original search terms or explicit concept labels match the source body.','body-approximate':'Only suggested word forms match the source body. Spelling resemblance is not legal equivalence.','heading-only':'The match is in a heading, not the source body. Treat this as a navigation candidate.','context-only':'The match is inherited from source/page context, not the source body. Treat this as a navigation candidate.'};
-  return {kind:'section',id:section.id,heading:section.heading,sourceId:source.id,sourceLanguage:source.sourceLanguage,sourceLanguageFallback:!!hit.sourceLanguageFallback,url:safeUrl(source.url),expressionId:source.expressionId,workId:source.workId,versionKey:source.versionKey,versionAlignment:source.versionAlignment,translationStatus:source.translationStatus,legalAuthority:source.legalAuthority,observedAt:data.observedAt,matchKind,matchReason:reasons[matchKind],bodyMatches:body,headingMatches:heading,contextMatches:parents,preview:{status:previewStatus,text,lines:structuredClone(lines),words:words(text),omittedParagraphs:omitted,notice},fullSection:{text:section.text,lines:structuredClone(section.lines),words:words(section.text)},evidenceStatus:'captured-guidance-not-current-law-verification'};
+  return {kind:'section',id:section.id,heading:section.heading,sourceId:source.id,sourceLanguage:source.sourceLanguage,sourceLanguageFallback:!!hit.sourceLanguageFallback,url:safeUrl(source.url),expressionId:source.expressionId,workId:source.workId,versionKey:source.versionKey,versionAlignment:source.versionAlignment,translationStatus:source.translationStatus,legalAuthority:source.legalAuthority,observedAt:data.observedAt,matchKind,matchReason:reasons[matchKind],bodyMatches:body,headingMatches:heading,contextMatches:parents,preview:{status:previewStatus,text,lines:structuredClone(lines),words:words(text),omittedParagraphs:omitted,notice},fullSection:{text:section.text,lines:structuredClone(section.lines),words:words(section.text)},editorialWarning:section.editorialWarning||null,editorialWarningUrl:section.editorialWarningUrl?safeUrl(section.editorialWarningUrl):null,evidenceStatus:'captured-guidance-not-current-law-verification'};
  }
  function present(response,options={}){
   if(!response||!Array.isArray(response.primary))throw new TypeError('A search response is required');
@@ -69,6 +69,11 @@ function renderCard(document,model,position){
   article.append(node('p',model.matchReason,'needle-evidence-meta'));
   const excerpt=node('blockquote',model.preview.text||model.preview.notice);excerpt.lang=model.sourceLanguage;article.append(excerpt);
   article.append(node('p',model.preview.notice,'needle-evidence-notice'));
+  if(model.editorialWarning){
+   const warning=node('p',model.editorialWarning,'needle-evidence-warning');
+   if(model.editorialWarningUrl){const source=node('a',' Check Commission module status');source.href=safeUrl(model.editorialWarningUrl);source.target='_blank';source.rel='noopener noreferrer';warning.append(source);}
+   article.append(warning);
+  }
   const details=node('details');details.append(node('summary','Read the complete captured section ('+model.fullSection.words+' words), including qualifications'));
   const full=node('p',model.fullSection.text,'needle-evidence-full');full.lang=model.sourceLanguage;details.append(full);article.append(details);
   article.append(node('p','Captured '+model.observedAt+' · '+model.evidenceStatus+' · version alignment '+model.versionAlignment,'needle-evidence-meta'));

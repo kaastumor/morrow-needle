@@ -189,39 +189,39 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — WP7 sponsor review
+### Immediate priority — WP7 accepted; WP8 / M3 next
 
-**WIP=1 — #513 / PR #514.** The held-back replay and obtainable pinned-revision hardening
-are complete on application head
-`0ecbcb6d0fb70278c165f97f3f48eb3e56780891`.
+**No active implementation WIP.** Sponsor accepted WP7 / #513 with the rendered-browser
+limit retained and authorized squash-merge of PR #514 as
+`42ba8453d4b47e106390ef303d7eceed9c7d7729`.
 
-Four cases were first exposed only after M2 acceptance:
-- R1 Machinery Regulation 2023/1230;
-- R2 Consumer Credit Directive 2023/2225;
-- R3 electronic-display Regulation 2019/2021 + Danish-only corrigendum 2026/90645;
-- R4 withdrawn SEP proposal COM(2023) 232 / 2023/0133(COD).
+Accepted WP7 result:
+- four held-back cases R1-R4 were frozen before first exposure;
+- all four failed closed safely with no medical substitution or represented-act shortcut;
+- first-exposure evidence was preserved before those cases became regressions;
+- pinned-route/deep-link/skip-focus/no-script/disclosure/narrow-layout static contracts pass;
+- no user-facing product implementation changed.
 
-All four returned safe no-result/outside-coverage states with no represented-act shortcut.
-Their pre-regression outputs are preserved in
-`docs/discovery/issue513-held-back-hardening-2026-10-01.md`; after exposure they became
-ordinary regressions.
+The accepted limitation remains explicit: actual rendered keyboard traversal, 390 px, 320 px,
+disclosure interaction and actual 200% browser zoom are NOT_TESTED / BLOCKED. They are not
+relabelled PASS.
 
-Exact application-head evidence:
-- Unit tests `36914118936`: SUCCESS;
-- Repository sanitation `36914118942`: SUCCESS;
-- Vercel: SUCCESS / READY;
-- static route/deep-link/skip-focus/no-script/disclosure/narrow-layout contracts: PASS.
+Estimated programme allocation after WP7: 22 / 30 planning units used, 8 / 30 remaining,
+including the untouched four-unit discovery/demonstrated-repair reserve. Actual elapsed/model
+cost remains UNKNOWN where not exposed.
 
-**Explicit browser limit:** actual rendered keyboard traversal, 390 px, 320 px, disclosure
-interaction and actual 200% page zoom are NOT_TESTED / BLOCKED in this runtime. Static/CSS
-checks are not relabelled browser evidence.
+**Next dependency:** WP8 / M3 maintenance and operating-feasibility rehearsal.
 
-Current substantive disposition: **PASS_WITH_BROWSER_LIMIT**. No critical misrepresentation
-was observed and no product repair was required.
+Preferred rehearsal input is the maintained EUDAMED evidence conflict already present in the
+product: the IGJ capture still states “January 2026 (expected date)” while the Commission's
+current EUDAMED material states that four modules became mandatory from 28 May 2026. The
+rehearsal should preserve the captured IGJ text for audit/history, determine which outputs
+can surface it, minimally prevent known-stale forecast text from serving as current primary
+evidence, replay affected queries and record source/legal-review/engineering effort.
 
-**Next action:** sponsor accepts/merges PR #514 with the browser limit retained, requests a
-bounded repair, or requires a browser-capable verification pass before acceptance.
-Autonomous lanes should otherwise return NO_CHANGE and must not start WP8 in parallel.
+Do not rewrite captured source text to make it current. Do not remove the source merely
+because one section is stale. WP8 should measure the smallest trustworthy correction path
+before proposing monitoring infrastructure.
 
 External recruitment, participant execution, customer pitch, sales pilots and paid panels
 remain paused through internal M1-M4 delivery. #493/#494 and Candidate A/C retain their

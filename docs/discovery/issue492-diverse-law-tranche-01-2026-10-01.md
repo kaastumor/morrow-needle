@@ -144,24 +144,29 @@ for the next M1 work:
 These are constraints on WP4/WP5 design, not authorization to build a national-law engine,
 a general temporal ontology or live monitoring.
 
-## Remaining execution before WP4
+## Replay evidence and handoff
 
-Run a narrow exact-revision replay of the current product paths:
+Exact review head that introduced the threat regressions: `f5136d7274073ff4f53603a0eb77b039e990b927`.
 
-1. ordinary + exact-reference NIS2 query → no medical substitution; outside/no-result state
-   is explicit;
-2. ordinary + exact-reference AI Act query → no medical substitution; outside/no-result
-   state is explicit;
-3. Candidate-B `EN 60335-2-60:2003` at 26 Sep 2026 → current cited state plus
-   18 Jan 2027 future withdrawal.
+Runtime evidence:
+- exact committed medical search engine/data/resources replayed for D1/D2: **PASS**;
+- exact committed Candidate-B projection/fixture replayed for D3: **PASS**;
+- GitHub Unit tests run `36857548235`: **SUCCESS**;
+- GitHub Repository sanitation run `36857548313`: **SUCCESS**;
+- Vercel status on the same test head: **SUCCESS**.
 
-Record exact output/status and browser/runtime evidence if available. A failure is a
-product-boundary defect and should be repaired minimally on the same WIP. A pass closes
-this first WP2 tranche and unlocks WP4 substantive MDR/IVDR views under the three
-requirements above.
+The Unit-test workflow executes both `mvp/product-home/search.test.js` and
+`mvp/candidate-b/app.test.js`, so the new outside-coverage regressions and the existing
+future-withdrawal regression ran together. No product code changed in this tranche.
 
-The sponsor has separately accepted the remaining #504 200% zoom/no-script/remote-preview
-limits; do not reopen those unrelated checks during this replay.
+Rendered browser replay was not repeated because this slice adds no new rendering path:
+D1/D2 terminate in existing fail-closed states, while D3 uses the existing Candidate-B card.
+This is not a browser-comprehension claim. The sponsor-deferred #504 zoom/no-script/remote
+preview checks remain deferred.
+
+**Disposition: TRANCHE_01_PASS.** After this checkpoint is reviewed/accepted, WP4 —
+substantive MDR/IVDR act views — is the next package and must carry the three constraints
+above.
 
 ## Boundaries retained
 

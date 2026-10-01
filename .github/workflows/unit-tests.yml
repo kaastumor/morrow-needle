@@ -53,6 +53,6 @@ jobs:
       - name: Validate canonical adversarial corpus
         run: python scripts/validate_adversarial_corpus.py
       - name: Run browser projection unit tests
-        run: node --test mvp/app.test.js mvp/candidate-b/app.test.js mvp/candidate-b/build-static-demo.test.js mvp/regime-constellation/app.test.js mvp/regime-density-v0.2/app.test.js mvp/medical-devices-summary/app.test.js mvp/medical-act-detail/act-detail.test.js mvp/product-home/search.test.js
+        run: node --test mvp/app.test.js mvp/candidate-b/app.test.js mvp/candidate-b/build-static-demo.test.js mvp/regime-constellation/app.test.js mvp/regime-density-v0.2/app.test.js mvp/medical-devices-summary/app.test.js mvp/medical-act-detail/act-detail.test.js mvp/customs-low-value-imports/app.test.js mvp/product-home/search.test.js
       - name: Build static review surfaces
         run: node mvp/candidate-b/build-static-demo.js

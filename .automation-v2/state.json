@@ -2,23 +2,18 @@
   "schema": 2,
   "contract": "AUTOMATION_CONTROL_V2_20261001",
   "repository": "kaastumor/morrow-needle",
-  "generation": 2,
-  "state": "COMPLETE",
-  "owner_attempt": null,
-  "lease_until": null,
-  "updated_at": 1790859764,
+  "generation": 3,
+  "state": "CLAIMED",
+  "owner_attempt": "needle-pilot-20261001-wp5",
+  "lease_until": 1790862036,
+  "updated_at": 1790860236,
   "stage": {
-    "key": "e25c9d25000e74b29bd8d606902356d1f215b8e0b29a1d4f2b9f11aee5c88a2c",
-    "task": 490,
-    "name": "control-fixture-race",
+    "key": "320101fff263f9ea7df47ba3935bf26bb3ce07b4da58ec777f6dba894040e638",
+    "task": 508,
+    "name": "wp5-connected-navigation",
     "input_revision": "c035e58a53aed718b1dc0cf72265c0f295bca0b5"
   },
-  "checkpoint": {
-    "receipt_ref": "https://github.com/kaastumor/morrow-needle/commit/0f8d980e5d81b77973d859dcd5a8a230947f3085",
-    "verification": "Synthetic claim/checkpoint/resume PASS",
-    "next_action": "Next eligible real stage; this fixture is not useful project progress",
-    "disposition": "SEE_CANONICAL_OWNER"
-  },
+  "checkpoint": null,
   "operation": null,
   "effects": [],
   "receipts": [

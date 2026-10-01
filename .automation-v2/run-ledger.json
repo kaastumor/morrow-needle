@@ -1,6 +1,24 @@
 {
-  "schema": 1,
   "contract": "CONTINUOUS_VALIDATION_V1_20261001",
   "repository": "kaastumor/morrow-needle",
-  "runs": []
+  "runs": [
+    {
+      "canonical_owner": "https://github.com/kaastumor/morrow-needle/pull/512",
+      "checks": [
+        "controller_tests",
+        "live_inventory",
+        "canonical_gate",
+        "target_readback"
+      ],
+      "control_ref": "c764d8901d053bc9f63c1b3cd46a6469149ffe7b",
+      "evidence_kind": "WORKER_SELF_REPORT",
+      "finished_at": 1790875824,
+      "main_head": "b443f770d90a30dd412b4bab0cf82b1543e1e1f1",
+      "outcome": "GATED",
+      "run_id": "759c9301-c93d-449f-a4b9-7dfc7117f370",
+      "started_at": 1790875751,
+      "task_id": "6abc4ceae8808191b350f310b1363a96"
+    }
+  ],
+  "schema": 1
 }

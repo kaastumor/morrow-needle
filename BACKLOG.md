@@ -189,39 +189,39 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — WP7 / M3 hardening
+### Immediate priority — WP7 sponsor review
 
-**WIP=1 — #513.** WP7 is active on branch
-`verify/513-m3-held-back-hardening`.
+**WIP=1 — #513 / PR #514.** The held-back replay and obtainable pinned-revision hardening
+are complete on application head
+`0ecbcb6d0fb70278c165f97f3f48eb3e56780891`.
 
-The four previously held-back #492 cases were selected only after M2 acceptance and their
-expectations were frozen before replay:
+Four cases were first exposed only after M2 acceptance:
+- R1 Machinery Regulation 2023/1230;
+- R2 Consumer Credit Directive 2023/2225;
+- R3 electronic-display Regulation 2019/2021 + Danish-only corrigendum 2026/90645;
+- R4 withdrawn SEP proposal COM(2023) 232 / 2023/0133(COD).
 
-- R1 — Machinery Regulation (EU) 2023/1230: future general application/repeal plus earlier
-  provision-specific dates;
-- R2 — Directive (EU) 2023/2225 on consumer credit: transposition vs 20 Nov 2026 application;
-- R3 — Regulation (EU) 2019/2021 plus Danish-only corrigendum 2026/90645;
-- R4 — withdrawn COM(2023) 232 / procedure 2023/0133(COD).
+All four returned safe no-result/outside-coverage states with no represented-act shortcut.
+Their pre-regression outputs are preserved in
+`docs/discovery/issue513-held-back-hardening-2026-10-01.md`; after exposure they became
+ordinary regressions.
 
-First exposure on canonical pre-test main `007a4624bb7d50f2925188c7bdf70bff5f9befbb`
-returned only safe no-result/outside-coverage states and no internal act shortcut. Raw
-results and official-source boundaries are preserved in
-`docs/discovery/issue513-held-back-hardening-2026-10-01.md`.
+Exact application-head evidence:
+- Unit tests `36914118936`: SUCCESS;
+- Repository sanitation `36914118942`: SUCCESS;
+- Vercel: SUCCESS / READY;
+- static route/deep-link/skip-focus/no-script/disclosure/narrow-layout contracts: PASS.
 
-After first exposure, R1-R4 are now ordinary regressions. No product repair has been made
-because no critical misrepresentation was observed.
+**Explicit browser limit:** actual rendered keyboard traversal, 390 px, 320 px, disclosure
+interaction and actual 200% page zoom are NOT_TESTED / BLOCKED in this runtime. Static/CSS
+checks are not relabelled browser evidence.
 
-Current branch adds:
-- retained R1-R4 fail-closed regression checks;
-- one pinned-build hardening test over retained public routes, deep links, skip/focus
-  entry points, disclosures/no-script presence and source-level narrow-layout contracts.
+Current substantive disposition: **PASS_WITH_BROWSER_LIMIT**. No critical misrepresentation
+was observed and no product repair was required.
 
-**Important limit:** source/CSS checks are not actual rendered 320/390/200%-zoom evidence.
-If no authorized actual browser runtime is available, those rendered checks remain
-BLOCKED / NOT_TESTED rather than being relabelled PASS.
-
-**Next action:** run exact branch CI/Vercel, preserve any failure, repair only demonstrated
-defects, and then record the pinned-revision hardening disposition. No WP8 in parallel.
+**Next action:** sponsor accepts/merges PR #514 with the browser limit retained, requests a
+bounded repair, or requires a browser-capable verification pass before acceptance.
+Autonomous lanes should otherwise return NO_CHANGE and must not start WP8 in parallel.
 
 External recruitment, participant execution, customer pitch, sales pilots and paid panels
 remain paused through internal M1-M4 delivery. #493/#494 and Candidate A/C retain their

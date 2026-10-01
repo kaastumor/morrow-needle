@@ -191,7 +191,7 @@ Do not reopen automatic similarity, comprehensive track records, member/party jo
 
 ### Immediate priority — internal question-to-explanation improvement
 
-**Mode: INTERNAL_PRODUCT_READINESS / IMPLEMENTATION_ACTIVE. WIP=1: #519.**
+**Mode: INTERNAL_PRODUCT_READINESS / REVIEW_PENDING. WIP=1: #519.**
 
 On 2 October 2026 (Europe/Amsterdam), the sponsor explicitly deferred external-reader
 preparation and approved internal improvements before presenting the product externally.
@@ -202,9 +202,10 @@ Sole slice: ordinary-question navigation to existing supported medical-device an
 pages, with explicit page-locator/evidence separation and clarification instead of inferred
 applicability. Issue #519 owns acceptance, verification and its reviewable branch/PR.
 The four-source medical engine, frozen scientific corpus and negative evidence stay intact.
-Implementation is pending review, not accepted. The issue owns recorded checks and the
-blocked actual-browser journey (`ERR_BLOCKED_BY_CLIENT` on the local build); unit/static
-checks do not satisfy rendered-browser, reflow or zoom verification.
+Implementation is pending sponsor acceptance, not merged. Issue #519 and PR #520 own the
+runtime checks and actual rendered desktop question/navigation, settings/Clear and keyboard
+evidence. Narrow-screen reflow and zoom remain NOT_TESTED; the desktop result does not
+satisfy those checks or establish reader value.
 
 Approved sequence after this slice, one at a time:
 1. at-a-glance explanation of purpose/change/roles/current and upcoming state;

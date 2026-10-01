@@ -56,3 +56,13 @@ test("rendered pages preserve typed relationships and connected product navigati
     assert.match(html, /href="\/regime-v2\/#changes"/);
   }
 });
+
+
+test("IVDR keeps 2024/1860 entry-into-force separate from Article 10a application", () => {
+  const transition = ACTS.ivdr.timeline.find(row => row[0] === "AMENDMENT_EFFECT");
+  const supply = ACTS.ivdr.timeline.find(row => row[0] === "AMENDMENT_APPLICATION");
+  assert.deepEqual(transition.slice(0, 2), ["AMENDMENT_EFFECT", "2024-07-09"]);
+  assert.deepEqual(supply.slice(0, 2), ["AMENDMENT_APPLICATION", "2025-01-10"]);
+  assert.match(transition[3], /transition framework/i);
+  assert.match(supply[3], /Article 10a/i);
+});

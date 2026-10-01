@@ -66,3 +66,16 @@ test("IVDR keeps 2024/1860 entry-into-force separate from Article 10a applicatio
   assert.match(transition[3], /transition framework/i);
   assert.match(supply[3], /Article 10a/i);
 });
+
+
+test("WP5 deep links expose time relationships evidence and return paths", () => {
+  for (const act of Object.values(ACTS)) {
+    const html = renderActPage(act);
+    for (const fragment of ["time", "relationships", "sources"]) {
+      assert.match(html, new RegExp('href="#' + fragment + '"'));
+      assert.match(html, new RegExp('id="' + fragment + '"'));
+    }
+    assert.match(html, /href="\/medical-devices\/"/);
+    assert.match(html, /href="\/#search-heading"/);
+  }
+});

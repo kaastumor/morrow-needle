@@ -189,36 +189,39 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — M2 exited; WP7 / M3 next
+### Immediate priority — WP7 / M3 hardening
 
-**No active implementation WIP.** Sponsor accepted WP6 / #511 and authorized squash-merge
-of PR #512 as `dfdb7046285c11b1ff970efefecb2ba5b536ebcd`.
+**WIP=1 — #513.** WP7 is active on branch
+`verify/513-m3-held-back-hardening`.
 
-M2 is recorded as
-`M2_DEPENDENCY_EXIT — PASS_WITH_RECORDED_LIMITS` in
-`docs/reviews/needle-eu-m2-exit-2026-10-01.md`.
+The four previously held-back #492 cases were selected only after M2 acceptance and their
+expectations were frozen before replay:
 
-Accepted M2 result:
-- D1-D8 development campaign completed;
-- D4/D5 positive controls retained;
-- D6/D8 establish explicit non-generalisation boundaries;
-- D7 earned exactly one bounded public contrast at `/customs-low-value-imports/`;
-- no universal legal-instrument schema was introduced;
-- D6-D8 search behavior remains fail-closed;
-- the four WP7 held-back cases remained unselected/unexposed through M2.
+- R1 — Machinery Regulation (EU) 2023/1230: future general application/repeal plus earlier
+  provision-specific dates;
+- R2 — Directive (EU) 2023/2225 on consumer credit: transposition vs 20 Nov 2026 application;
+- R3 — Regulation (EU) 2019/2021 plus Danish-only corrigendum 2026/90645;
+- R4 — withdrawn COM(2023) 232 / procedure 2023/0133(COD).
 
-Estimated programme allocation after M2: 19 / 30 planning units used, 11 / 30 remaining,
-including the untouched four-unit discovery/demonstrated-repair reserve. Actual elapsed/model
-cost remains UNKNOWN where not exposed.
+First exposure on canonical pre-test main `007a4624bb7d50f2925188c7bdf70bff5f9befbb`
+returned only safe no-result/outside-coverage states and no internal act shortcut. Raw
+results and official-source boundaries are preserved in
+`docs/discovery/issue513-held-back-hardening-2026-10-01.md`.
 
-**Next dependency:** WP7 / M3 — hardening and four held-back cases. The next pickup must
-first establish one owner under WIP=1, select four fresh contrasting cases only now, freeze
-expectations before replay, then run retained regressions plus those held-back cases on one
-pinned revision. Browser/reflow/keyboard/actual-200%-zoom checks belong to this package where
-the runtime permits them.
+After first exposure, R1-R4 are now ordinary regressions. No product repair has been made
+because no critical misrepresentation was observed.
 
-WP8 maintenance rehearsal remains separate and must not be folded into WP7 unless a WP7
-repair itself makes a source-correction rehearsal necessary.
+Current branch adds:
+- retained R1-R4 fail-closed regression checks;
+- one pinned-build hardening test over retained public routes, deep links, skip/focus
+  entry points, disclosures/no-script presence and source-level narrow-layout contracts.
+
+**Important limit:** source/CSS checks are not actual rendered 320/390/200%-zoom evidence.
+If no authorized actual browser runtime is available, those rendered checks remain
+BLOCKED / NOT_TESTED rather than being relabelled PASS.
+
+**Next action:** run exact branch CI/Vercel, preserve any failure, repair only demonstrated
+defects, and then record the pinned-revision hardening disposition. No WP8 in parallel.
 
 External recruitment, participant execution, customer pitch, sales pilots and paid panels
 remain paused through internal M1-M4 delivery. #493/#494 and Candidate A/C retain their

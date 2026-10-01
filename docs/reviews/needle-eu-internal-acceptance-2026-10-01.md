@@ -3,7 +3,7 @@
 Date: 1 October 2026  
 Programme: Morrow // Needle — bounded Needle EU prototype  
 Canonical input: `431ddcc108ff77ae138c0233892a73b05e895023`  
-Status: **READY_FOR_SPONSOR_DISPOSITION**
+Status: **ACCEPTED_INTERNAL_PROTOTYPE**
 
 This package is for internal prototype acceptance only. It does not authorize public release,
 external participant work, customer contact, paid research or a claim of comparative value.
@@ -406,7 +406,7 @@ If the sponsor chooses REVISE/NARROW/PARK, record the exact bounded disposition 
 
 Select exactly one:
 
-- [ ] ACCEPT_INTERNAL_PROTOTYPE
+- [x] ACCEPT_INTERNAL_PROTOTYPE
 - [ ] REVISE
 - [ ] NARROW
 - [ ] PARK
@@ -419,3 +419,31 @@ Separate decisions, not implied:
 - Candidate A/C activation;
 - monitoring infrastructure;
 - paid services.
+
+
+## 15. Final acceptance receipt
+
+Sponsor disposition on 1 October 2026: **ACCEPT_INTERNAL_PROTOTYPE**.
+
+PR #518 was squash-merged with expected-head protection as
+`a3308dbf7e779174ee6ddd706be9cfc7128f5d6c`.
+
+Git-object readback confirmed the merge tree is identical to the exact reviewed PR-head tree
+`3567c17af48ce2b9362db7716da215fb79d0c587`.
+
+Accepted programme accounting:
+- estimated used: **26 / 30 planning units**;
+- estimated reserve left unconsumed: **4 / 30**.
+
+Acceptance does **not** authorize:
+- public release;
+- external participant/customer work;
+- #493 implementation;
+- #494 participant execution;
+- Candidate A/C activation;
+- monitoring infrastructure;
+- paid services.
+
+Re-entry for external comparison requires the missing actual browser/reflow/keyboard evidence
+or an explicit sponsor re-scope of that external-readiness condition, plus a separate scoped
+participant/comparison authorization.

@@ -74,3 +74,50 @@ cases become ordinary regression inputs.
 WP7 still separately owns pinned-revision keyboard/reflow/deep-link/200%-zoom evidence.
 Source/unit/static checks may support those layers, but an actual 200% browser observation
 must remain BLOCKED / NOT_TESTED if no authorized browser runtime is available.
+
+
+## Pinned-revision hardening result
+
+Pinned application/review head:
+`0ecbcb6d0fb70278c165f97f3f48eb3e56780891`.
+
+After first exposure, R1-R4 were added as ordinary fail-closed regressions. No product code
+was changed because no held-back case exposed a critical misrepresentation.
+
+### Automated/static evidence
+
+- Unit tests run `36914118936`: **SUCCESS**.
+- Repository sanitation run `36914118942`: **SUCCESS**.
+- Vercel status on the same head: **SUCCESS / READY**.
+- Normal static build completed successfully.
+- Retained D1-D8 regressions and R1-R4 held-back regressions ran together.
+- Generated retained public routes are asserted present with home/return paths.
+- MDR/IVDR `#time`, `#relationships`, `#sources` and customs contrast deep links are
+  asserted in the generated bundle.
+- All retained routes have a skip-link and `#main` focus target in generated HTML.
+- Shared CSS retains visible `:focus-visible` rules and skip-link focus behavior.
+- Home no-script fallback and evidence disclosure construction remain represented.
+- Source-level narrow-layout contracts for the shared shell, search, medical detail,
+  customs contrast and regime-v2 styles contain responsive breakpoints and no
+  `overflow-x: auto|scroll` dependency.
+
+### Rendered-browser limits
+
+The following are **NOT_TESTED / BLOCKED in this runtime**, not PASS:
+
+- actual rendered keyboard traversal/focus order;
+- actual rendered 390 px layout;
+- actual rendered 320 px layout;
+- actual 200% browser page zoom;
+- rendered disclosure interaction on the final pinned head.
+
+Static/source assertions do not substitute for those observations.
+
+## WP7 substantive disposition
+
+**PASS_WITH_BROWSER_LIMIT.**
+
+The four held-back cases exposed no new unsafe substitution or status/date/source
+misrepresentation. No critical defect remains from the obtainable replay/static evidence.
+The browser-only checks remain explicit limits for sponsor disposition and later M3/M4
+acceptance; they are not silently converted into PASS.

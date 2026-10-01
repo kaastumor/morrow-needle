@@ -47,7 +47,8 @@ test("language-scoped correction is visible and English is not silently rewritte
 
 test("official source and return paths remain available", () => {
   assert.match(html, /eli\/reg_del\/2026\/1022\/oj\/eng/);
-  assert.match(html, /CELEX:02026R1022-20260701/);\n  assert.match(html, /eli\\/reg_del\\/2015\\/2446\\/oj\\/eng/);
+  assert.match(html, /CELEX:02026R1022-20260701/);
+  assert.match(html, /eli\\/reg_del\\/2015\\/2446\\/oj\\/eng/);
   assert.match(html, /href="\/"/);
   assert.match(html, /href="\/#search-heading"/);
 });

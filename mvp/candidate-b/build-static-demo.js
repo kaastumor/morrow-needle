@@ -166,8 +166,7 @@ function buildStaticDemo() {
 if (require.main === module) {
   const manifest = buildStaticDemo();
   process.stdout.write(
-    `Built bounded Needle EU product routes with ${manifest.fixtureFiles.length} canonical fixtures.
-`
+    `Built bounded Needle EU product routes with ${manifest.fixtureFiles.length} canonical fixtures.\n`
   );
 }
 

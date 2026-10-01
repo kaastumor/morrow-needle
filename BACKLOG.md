@@ -189,41 +189,32 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — WP5 sponsor review
+### Immediate priority — M1 exited; WP6 / M2 next
 
-**WIP=1 — #509 / PR #510.** The connected-depth/navigation slice is implemented and
-verification-complete on application head
-`c0ad712df6c71b4572a8fa76bd1b909832285e1b`.
+**No active implementation WIP.** Sponsor accepted WP5 / #509 and authorized squash-merge
+of PR #510 as `a7064684c3c8ea59d749bd3d41148e928c84eaf7`.
 
-Accepted-behavior candidate:
-- exact represented identifier `2017/745` -> MDR detail;
-- exact represented identifier `2017/746` -> IVDR detail;
-- ordinary in-coverage medical guidance result -> bounded medical overview only;
-- outside-coverage and unknown-reference states -> no represented-act shortcut;
-- act-detail `#time`, `#relationships`, `#sources` fragments and overview/home return
-  paths remain stable.
+M1 / WP1-WP5 is now recorded as
+`M1_DEPENDENCY_EXIT — PASS_WITH_RECORDED_LIMITS` in
+`docs/reviews/needle-eu-m1-exit-2026-10-01.md` (main `f86bf816faa807588cdaa9262d543f85c153cab2`).
 
-Exact application-head evidence:
-- model replay returned the expected navigation/state for MDR, IVDR, ordinary medical,
-  NIS2 and unknown-reference controls;
-- Unit tests run `36869653081`: SUCCESS;
-- Repository sanitation run `36869653107`: SUCCESS;
-- Vercel status: SUCCESS;
-- normal CI static-build step completed successfully.
+The committed medical journey now supports:
 
-Navigation is explicitly a product path, not an applicability or legal-dependency claim.
-Direct official-source links remain available. No search ranking/data/source or public-law
-coverage changed.
+> question/exact represented identifier -> source-bound result/locator -> bounded overview or
+> MDR/IVDR act -> typed time / relationships / evidence -> return/deep navigation.
 
-**Next action:** sponsor accepts/merges PR #510 or requests one bounded repair. Planning,
-Implementation and Verification should otherwise return NO_CHANGE on this exact behavior
-and must not create WP6 in parallel.
+M1 does not establish legal completeness, all-language quality, personalised applicability,
+reader value, live monitoring or external readiness. Sponsor-deferred #504 runtime checks
+remain deferred; WP7/M3 owns the later pinned browser/reflow/keyboard/200%-zoom hardening.
 
-After accepted merge, M1's WP5 dependency is complete and the programme may reconcile the
-M1 exit before activating WP6 / M2. No successor package is active while PR #510 is open.
+**Next dependency:** WP6 / M2 — bounded reuse and the wider #492 development campaign.
+The next pickup must first establish one owner under WIP=1, respect #492's development vs
+reserved-case separation, and test materially different legal structures before earning at
+most one contrasting maintained public example.
 
-Sponsor-deferred #504 200%-zoom/no-script/remote-preview checks remain deferred unless the
-changed navigation itself demonstrates a consequential regression.
+Estimated programme allocation after M1: 15 / 30 planning units used, 15 / 30 remaining;
+the four-unit discovery/demonstrated-repair reserve remains unconsumed. Actual elapsed
+human-equivalent effort/model cost is UNKNOWN where not exposed.
 
 External recruitment, participant execution, customer pitch, sales pilots and paid panels
 remain paused through internal M1-M4 delivery. #493/#494 and Candidate A/C retain their

@@ -6,7 +6,7 @@ function mount(root,config){
  if(!root||!root.ownerDocument||!config)throw new TypeError('A DOM root and data/resources configuration are required');
  const document=root.ownerDocument,engine=(config.engineFactory||Search.createEngine)(config.data,config.resources),presenter=View.createPresenter(engine);
  const el=(tag,text,cls)=>{const x=document.createElement(tag);if(text!==undefined)x.textContent=text;if(cls)x.className=cls;return x;};
- const form=el('form'),query=el('textarea'),language=el('select'),other=el('input'),submit=el('button','Find source sections'),clear=el('button','Clear'),status=el('p'),results=el('div'),warnings=el('details'),warningText=el('p');
+ const form=el('form'),query=el('textarea'),language=el('select'),other=el('input'),submit=el('button','Find source sections'),clear=el('button','Clear'),status=el('p'),results=el('div'),continuation=el('div'),warnings=el('details'),warningText=el('p');
  query.maxLength=500;query.required=true;query.rows=3;other.type='checkbox';submit.type='submit';clear.type='button';status.setAttribute('role','status');status.setAttribute('aria-live','polite');
  const label=(text,input)=>{const x=el('label');x.append(el('span',text),input);return x;};
  for(const l of config.resources.registry.languages){const o=el('option',l.nativeName+' ('+l.tag+')');o.value=l.tag;language.append(o);}
@@ -14,11 +14,11 @@ function mount(root,config){
  form.append(label('Your question',query),label('Question language — not jurisdiction',language),label('Allow explicitly labelled other-language evidence',other),submit,clear);
  warnings.append(el('summary','Source coverage and matching limitations'),warningText);
  const notice=el('p','Captured-source preview. Not live search, translation, or an individual legal determination. The interface is currently English; source languages remain explicit.','needle-evidence-notice');
- root.replaceChildren(notice,form,status,results,warnings);
- function clearResult(){results.replaceChildren();warningText.textContent='';status.textContent='';}
+ root.replaceChildren(notice,form,status,results,continuation,warnings);
+ function clearResult(){results.replaceChildren();continuation.replaceChildren();warningText.textContent='';status.textContent='';}
  function run(){
   try{const response=engine.search(query.value,{queryLanguage:language.value,allowOtherLanguages:other.checked,budget:400,includeContext:false});const view=presenter.present(response);
-   const cards=view.cards.map((c,i)=>View.renderCard(document,c,i));results.replaceChildren(...cards);
+   const cards=view.cards.map((c,i)=>View.renderCard(document,c,i));results.replaceChildren(...cards);continuation.replaceChildren();if(view.navigation){const next=View.renderContinuation(document,view.navigation);if(next)continuation.append(next);}
    status.textContent=cards.length?(view.approximateOnly?'Approximate candidates only — inspect the source wording, not a verified answer.':cards.length+' source sections to inspect. Results may cover only part of the question.'):(states[view.status]||view.status);
    const forms=(response.wordFormMatches||[]).map(m=>m.queryToken+' → '+m.sourceToken+' ['+m.language+']');
    warningText.textContent=[...(view.warnings||[]),'Available captured source languages: '+(response.coverage.availableSourceLanguages||[]).join(', '),...(forms.length?['Observed spelling suggestions, not established synonyms: '+forms.join('; ')]:[])].join('\n');

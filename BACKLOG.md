@@ -189,31 +189,41 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — WP4 accepted; WP5 next dependency
+### Immediate priority — WP5 sponsor review
 
-**No active implementation WIP.** Sponsor accepted WP4 / #506 and authorized squash-merge
-of PR #507. The exact reviewed tree was merged to canonical main as
-`057bfa9b0addfc8761f4561409c61fc70a8f71ea`.
+**WIP=1 — #509 / PR #510.** The connected-depth/navigation slice is implemented and
+verification-complete on application head
+`c0ad712df6c71b4572a8fa76bd1b909832285e1b`.
 
-Accepted WP4 output:
-- substantive internal MDR and IVDR act-detail routes;
-- one shared source-bounded content contract;
-- explicit source/consolidation identity, scope/role orientation, typed dates and selected
-  legal relationships;
-- national/applicability and compliance boundaries retained;
-- current and fixed-future temporal states kept distinct;
-- review repair separating the 9 Jul 2024 IVDR transition amendment from the
-  10 Jan 2025 Article 10a supply-interruption application date.
+Accepted-behavior candidate:
+- exact represented identifier `2017/745` -> MDR detail;
+- exact represented identifier `2017/746` -> IVDR detail;
+- ordinary in-coverage medical guidance result -> bounded medical overview only;
+- outside-coverage and unknown-reference states -> no represented-act shortcut;
+- act-detail `#time`, `#relationships`, `#sources` fragments and overview/home return
+  paths remain stable.
 
-Final pre-merge verification on the exact reviewed head was green for Unit tests,
-Repository sanitation and Vercel. The squash-merge tree is byte-identical to that reviewed
-head. Protected-preview/browser-comprehension evidence remains limited as recorded on #507;
-the sponsor-deferred #504 200%-zoom/no-script/remote-preview checks remain deferred.
+Exact application-head evidence:
+- model replay returned the expected navigation/state for MDR, IVDR, ordinary medical,
+  NIS2 and unknown-reference controls;
+- Unit tests run `36869653081`: SUCCESS;
+- Repository sanitation run `36869653107`: SUCCESS;
+- Vercel status: SUCCESS;
+- normal CI static-build step completed successfully.
 
-**Next programme dependency:** WP5 — connected depth and navigation. WP5 is not active in
-this reconciliation and no successor code branch/PR is created here. The next pickup should
-first establish its single owner under WIP=1, then verify the complete journey
-question/search -> result -> MDR/IVDR act -> time/relationship/evidence -> return/deep link.
+Navigation is explicitly a product path, not an applicability or legal-dependency claim.
+Direct official-source links remain available. No search ranking/data/source or public-law
+coverage changed.
+
+**Next action:** sponsor accepts/merges PR #510 or requests one bounded repair. Planning,
+Implementation and Verification should otherwise return NO_CHANGE on this exact behavior
+and must not create WP6 in parallel.
+
+After accepted merge, M1's WP5 dependency is complete and the programme may reconcile the
+M1 exit before activating WP6 / M2. No successor package is active while PR #510 is open.
+
+Sponsor-deferred #504 200%-zoom/no-script/remote-preview checks remain deferred unless the
+changed navigation itself demonstrates a consequential regression.
 
 External recruitment, participant execution, customer pitch, sales pilots and paid panels
 remain paused through internal M1-M4 delivery. #493/#494 and Candidate A/C retain their

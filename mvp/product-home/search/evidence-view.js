@@ -3,6 +3,22 @@
 'use strict';
 const words=text=>text.trim()?text.trim().split(/\s+/u).length:0;
 const safeUrl=value=>{const u=new URL(value);if(u.protocol!=='https:'||u.username||u.password)throw new TypeError('Unsafe official-source URL');return u.href;};
+const representedActs=Object.freeze({
+ '2017/745':Object.freeze({code:'MDR',href:'/medical-devices/mdr/'}),
+ '2017/746':Object.freeze({code:'IVDR',href:'/medical-devices/ivdr/'})
+});
+function continuationFor(response){
+ const references=Array.isArray(response&&response.references)?response.references:[];
+ const exact=references.find(ref=>ref.kind==='NUMBER'&&representedActs[ref.value]);
+ if(exact){
+  const act=representedActs[exact.value];
+  return {kind:'act',href:act.href,label:'Open represented '+act.code+' detail',notice:'Exact identifier maps to a maintained internal act view. This navigation does not establish applicability or replace the official act.'};
+ }
+ if(response&&response.status==='RESULTS'){
+  return {kind:'overview',href:'/medical-devices/',label:'Continue in medical-device overview',notice:'No single act identity was inferred from these guidance matches. Use the bounded overview to choose the represented branch.'};
+ }
+ return null;
+}
 function createPresenter(engine){
  if(!engine||typeof engine.search!=='function'||typeof engine.sourceContext!=='function'||!engine.data||!engine.languages)throw new TypeError('A source-bound search engine is required');
  const data=structuredClone(engine.data);
@@ -55,7 +71,7 @@ function createPresenter(engine){
  }
  function present(response,options={}){
   if(!response||!Array.isArray(response.primary))throw new TypeError('A search response is required');
-  return {status:response.status,query:response.query,queryLanguage:response.queryLanguage,approximateOnly:!!response.approximateOnly,warnings:[...(response.warnings||[])],cards:response.primary.map(hit=>card(hit,response,options)),rankingChanged:false};
+  return {status:response.status,query:response.query,queryLanguage:response.queryLanguage,approximateOnly:!!response.approximateOnly,warnings:[...(response.warnings||[])],cards:response.primary.map(hit=>card(hit,response,options)),navigation:continuationFor(response),rankingChanged:false};
  }
  return {present};
 }
@@ -83,5 +99,14 @@ function renderCard(document,model,position){
  const link=node('a','Open official source');link.href=safeUrl(model.url);link.target='_blank';link.rel='noopener noreferrer';article.append(link);
  return article;
 }
-return {createPresenter,renderCard};
+function renderContinuation(document,model){
+ if(!model)return null;
+ if(!document||typeof document.createElement!=='function')throw new TypeError('A DOM document is required');
+ const aside=document.createElement('aside');aside.className='needle-evidence-continuation';
+ const heading=document.createElement('p');heading.className='needle-evidence-meta';heading.textContent=model.kind==='act'?'Continue with the represented act':'Continue in the bounded legislation view';
+ const link=document.createElement('a');link.href=model.href;link.textContent=model.label;
+ const notice=document.createElement('p');notice.className='needle-evidence-notice';notice.textContent=model.notice;
+ aside.append(heading,link,notice);return aside;
+}
+return {createPresenter,renderCard,continuationFor,renderContinuation};
 });

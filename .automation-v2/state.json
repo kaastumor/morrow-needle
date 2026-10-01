@@ -3,17 +3,22 @@
   "contract": "AUTOMATION_CONTROL_V2_20261001",
   "repository": "kaastumor/morrow-needle",
   "generation": 4,
-  "state": "ACTIVE",
-  "owner_attempt": "interactive-continuous-reconcile-20261001",
-  "lease_until": 1790877290,
-  "updated_at": 1790875535,
+  "state": "WAITING_EXTERNAL",
+  "owner_attempt": null,
+  "lease_until": null,
+  "updated_at": 1790875540,
   "stage": {
     "key": "275fde565a0226dc3acd6c8c3838ede1fd29cf955a074618de72c87df15fc6e8",
     "task": 511,
     "name": "reconcile-superseded-wp5",
     "input_revision": "86e14cf4e0d7f7756a8578bbe2f5b9118422df82"
   },
-  "checkpoint": null,
+  "checkpoint": {
+    "receipt_ref": "https://github.com/kaastumor/morrow-needle/pull/512",
+    "verification": "Readback: #508 closed/superseded; #511 open; PR512 head 86e14cf ready for sponsor review; no application effect",
+    "next_action": "Await sponsor review of PR512. Do not resume closed WP5/#508 or activate WP7. Recheck canonical owner/head on next launch; prior blocker receipts retained as history.",
+    "disposition": "SEE_CANONICAL_OWNER"
+  },
   "operation": null,
   "effects": [],
   "receipts": [
@@ -37,6 +42,13 @@
       "receipt_ref": "https://github.com/kaastumor/morrow-needle/issues/508#issuecomment-5932176484",
       "attempt": "needle-pilot-20261001-wp5",
       "at": 1790860349
+    },
+    {
+      "key": "275fde565a0226dc3acd6c8c3838ede1fd29cf955a074618de72c87df15fc6e8",
+      "state": "WAITING_EXTERNAL",
+      "receipt_ref": "https://github.com/kaastumor/morrow-needle/pull/512",
+      "attempt": "interactive-continuous-reconcile-20261001",
+      "at": 1790875540
     }
   ],
   "archive_ref": null,

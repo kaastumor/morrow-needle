@@ -6,7 +6,7 @@
   "state": "ACTIVE",
   "owner_attempt": "needle-pilot-20261001-wp5",
   "lease_until": 1790862036,
-  "updated_at": 1790860300,
+  "updated_at": 1790860332,
   "stage": {
     "key": "320101fff263f9ea7df47ba3935bf26bb3ce07b4da58ec777f6dba894040e638",
     "task": 508,
@@ -19,10 +19,15 @@
     "kind": "issue_checkpoint",
     "target_ref": "issues/508",
     "expected_head": "c035e58a53aed718b1dc0cf72265c0f295bca0b5",
-    "status": "INTENDED",
-    "output_ref": null
+    "status": "VERIFIED",
+    "output_ref": "https://github.com/kaastumor/morrow-needle/issues/508#issuecomment-5932176484"
   },
-  "effects": [],
+  "effects": [
+    {
+      "id": "wp5-checkout-blocker-v1",
+      "output_ref": "https://github.com/kaastumor/morrow-needle/issues/508#issuecomment-5932176484"
+    }
+  ],
   "receipts": [
     {
       "key": "e25c9d25000e74b29bd8d606902356d1f215b8e0b29a1d4f2b9f11aee5c88a2c",

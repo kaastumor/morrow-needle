@@ -189,48 +189,44 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — M3 exited; WP9 / M4 next
+### Immediate priority — WP9 / M4 sponsor review
 
-**No active implementation WIP.** Sponsor accepted WP8 / #515 and authorized squash-merge
-of PR #516 as `047b0734e02ce7181eae84647721cd0d38914b3e`.
+**WIP=1 — #517.** The final internal-acceptance package is assembled on
+`review/517-internal-acceptance`.
 
-M3 is recorded as
-`M3_DEPENDENCY_EXIT — PASS_WITH_ACCEPTED_BROWSER_LIMIT` in
-`docs/reviews/needle-eu-m3-exit-2026-10-01.md`.
+Decision package:
+`docs/reviews/needle-eu-internal-acceptance-2026-10-01.md`.
 
-Accepted M3 result:
-- four held-back #492 cases were frozen before first exposure and now exist as regressions;
-- no critical legal/status/source misrepresentation was observed from obtainable evidence;
-- pinned route/deep-link/no-script/disclosure/narrow-layout static hardening passed;
-- the remaining actual rendered keyboard / 390 px / 320 px / disclosure / 200%-zoom checks
-  remain NOT_TESTED / BLOCKED and were explicitly accepted as a programme limit;
-- a real stale EUDAMED source conflict was rehearsed and repaired without rewriting captured
-  source text or adding monitoring infrastructure;
-- maintenance cost and one CI-harness rework were recorded.
+It reconciles:
+- the bounded working medical question-to-evidence journey;
+- maintained coverage/version/source boundaries;
+- D1-D8 development and R1-R4 held-back evidence;
+- the one earned customs contrast;
+- accepted WP7 browser limitations;
+- the WP8 stale-source maintenance rehearsal;
+- programme effort/cost;
+- unresolved external-readiness and reader-value risks;
+- one narrow future comparison proposal.
 
-The M3 exit does **not** satisfy the later external-readiness gate by itself because the
-programme still names actual browser/reflow/keyboard evidence as a precondition for external
-participant authority.
+Executor recommendation:
 
-Estimated programme allocation after M3: 24 / 30 planning units used, 6 / 30 remaining,
-including the untouched four-unit discovery/demonstrated-repair reserve.
+> **ACCEPT_INTERNAL_PROTOTYPE**, while keeping external readiness BLOCKED until the missing
+> actual browser/reflow/keyboard evidence is obtained or that later gate is explicitly
+> re-scoped.
 
-**Next dependency:** WP9 / M4 — internal acceptance package. WP9 should add no new product
-feature. It should assemble the current working bounded journey, declared coverage/version,
-journey/adversarial/maintenance evidence, unresolved risks, effort/cost readout and one
-narrow future comparison proposal for sponsor disposition.
+No new product feature is part of WP9.
 
-Expected sponsor choices:
+Estimated programme allocation if WP9 is accepted: 26 / 30 planning units used, with the
+four-unit discovery/demonstrated-repair reserve unconsumed.
+
+**Next action:** sponsor chooses exactly one:
 - ACCEPT_INTERNAL_PROTOTYPE;
 - REVISE;
 - NARROW;
 - PARK.
 
-No external activity, release or production deployment follows automatically from any
-internal acceptance disposition.
-
-External recruitment, participant execution, customer pitch, sales pilots and paid panels
-remain paused. #493/#494 and Candidate A/C retain their separate gates.
+No public release, external participant work, #493/#494 activation, Candidate A/C work,
+monitoring infrastructure or paid service follows automatically from internal acceptance.
 
 ### Prior #490 accepted-foundation repair
 

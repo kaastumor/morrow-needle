@@ -241,3 +241,8 @@ test("core-act cards route to substantive internal MDR and IVDR detail views", (
   assert.match(html, /Official MDR source/);
   assert.match(html, /Official IVDR source/);
 });
+
+
+test("medical overview contains no literal escaped-newline artifacts", () => {
+  assert.doesNotMatch(html, /\\n/);
+});

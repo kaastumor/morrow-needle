@@ -3,10 +3,10 @@
   "contract": "AUTOMATION_CONTROL_V2_20261001",
   "repository": "kaastumor/morrow-needle",
   "generation": 1,
-  "state": "CLAIMED",
+  "state": "ACTIVE",
   "owner_attempt": "probe-a",
   "lease_until": 1790861491,
-  "updated_at": 1790859691,
+  "updated_at": 1790859760,
   "stage": {
     "key": "e25c9d25000e74b29bd8d606902356d1f215b8e0b29a1d4f2b9f11aee5c88a2c",
     "task": 490,

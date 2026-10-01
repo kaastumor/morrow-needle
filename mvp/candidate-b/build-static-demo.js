@@ -31,6 +31,8 @@ const MEDICAL_SUMMARY_FILES = Object.freeze([
   "app.js"
 ]);
 
+const MEDICAL_ACT_ROUTES = Object.freeze(["mdr", "ivdr"]);
+
 const PRODUCT_HOME_FILES = Object.freeze(["index.html", "search.css"]);
 
 const PRODUCT_SEARCH_FILES = Object.freeze([

@@ -189,38 +189,42 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — WP4 substantive MDR/IVDR act views
+### Immediate priority — WP4 sponsor review
 
-**WIP=1 — #506 / programme WP4.** Sponsor accepted and merged #505 as
-`b2ce2b5b13f5d86722464feef37affbf107062eb`. The first #492 threat tranche is accepted
-and its three constraints are binding on this implementation.
+**WIP=1 — #506 / PR #507.** The substantive MDR/IVDR act-detail slice is implemented
+and verification-complete on exact head
+`3e1195b579a2595a8296f3127217637876ca5452`.
 
-Current slice: build one shared static act-detail contract for the represented MDR and IVDR
-core acts. Each view must expose legal/source identity, bounded scope and roles, typed dates,
-selected relationships, official evidence and unresolved limits. Public wording must not
-become a personalised applicability or compliance verdict.
+Review found and repaired two defects before this gate:
+- stray literal escaped-newline text in the overview's new internal links;
+- an IVDR temporal collapse that incorrectly placed both the 2024/1860 transition
+  amendment and Article 10a supply-interruption duty on 10 Jan 2025. The final contract
+  separates the amendment's 9 Jul 2024 entry into force from the 10 Jan 2025 Article 10a
+  application date.
 
-The #492 constraints carried into this WIP are:
-- EU-level dates do not settle national rules or individual applicability;
-- temporal state is amendment/version aware and can be provision-specific;
-- current state and fixed future transitions stay distinct.
+Current exact-head evidence:
+- Unit tests run `36862519177`: SUCCESS;
+- Repository sanitation run `36862519206`: SUCCESS;
+- Vercel deployment `dpl_9MbSaDX9ozPAgznKAWSufj4EypwQ`: READY;
+- static build generates both `/medical-devices/mdr/` and
+  `/medical-devices/ivdr/` plus their shared stylesheet;
+- MDR/IVDR source-version identity, national/applicability boundary, typed relationships,
+  current state and fixed-future transitions are covered by focused tests.
 
-Source check for this slice records MDR current consolidation 19 Jul 2026, IVDR current
-consolidation 10 Jan 2025, Regulation (EU) 2024/1860 as the cross-cutting amendment, and
-28 May 2026 as the mandatory-use date for the first four EUDAMED modules. Exact sources
-remain linked in the act views; consolidated texts are documentary aids, not replacements
-for authentic OJ acts.
+The protected preview is not a human/browser-comprehension result. Sponsor-deferred #504
+200%-zoom/no-script/remote-preview checks remain deferred; no standalone work should reopen
+them.
 
-**Next action:** implement and verify #506 on branch `impl/506-medical-act-views`; open one
-reviewable PR when focused tests/static build and normal CI are ready. No second WIP.
+**Next action:** sponsor accepts/merges PR #507 or requests one bounded repair. Planning,
+Implementation and Verification should otherwise return NO_CHANGE on this exact head and
+must not create a successor WIP.
 
-The sponsor-deferred #504 actual-200%-zoom, rendered-no-script and remote-preview/new-tab
-checks remain `NOT_TESTED / SAFE_LIMIT` and are not reopened unless this changed UI itself
-creates a relevant regression.
+After accepted merge, the programme dependency advances to WP5 — connected depth and
+navigation — but WP5 is not active while #507 remains unmerged.
 
 External recruitment, participant execution, customer pitch, sales pilots and paid panels
-remain paused through internal M1-M4 delivery. #493/#494 and Candidate A/C keep their
-separate gates. No release or deployment follows automatically.
+remain paused through internal M1-M4 delivery. #493/#494 and Candidate A/C retain their
+separate gates. No release or production deployment follows automatically.
 
 ### Prior #490 accepted-foundation repair
 

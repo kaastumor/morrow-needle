@@ -189,37 +189,47 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — WP8 / M3 maintenance rehearsal
+### Immediate priority — WP8 sponsor review
 
-**WIP=1 — #515.** WP8 is active on branch
-`maint/515-eudamed-source-retirement`.
+**WIP=1 — #515 / PR #516.** The real-source maintenance rehearsal is implemented and
+verification-complete on application head
+`26ebce505418906e99d994363b72ede9cdb8f9c4`.
 
-Real maintenance conflict:
-- the retained IGJ EUDAMED capture still contains “January 2026 (expected date)”;
-- current Commission EUDAMED material states that four modules became mandatory from
+Maintenance event:
+- retained IGJ guidance still says “January 2026 (expected date)” for required EUDAMED
+  registration;
+- current Commission material states the first four EUDAMED modules became mandatory from
   28 May 2026;
-- pre-repair replay showed broad `EUDAMED` search ranking the stale `igj:s5` section
-  third despite its editorial warning.
+- pre-repair broad `EUDAMED` search ranked the stale IGJ section third despite a warning.
 
-Smallest repair implemented:
-- preserve the IGJ source and captured forecast text;
-- retire only `igj:s5` plus child blocks `igj:b7` / `igj:b8` from active evidence;
-- record maintenance status, check date, reason and current Commission evidence URL;
-- make exact-reference lookup honor `evidenceEligible:false` consistently;
-- leave other IGJ sections eligible.
+Accepted-behavior candidate:
+- preserve the original IGJ capture for audit/history;
+- retire only `igj:s5` and its two blocks from active evidence;
+- store explicit maintenance status/check date/reason/current Commission evidence URL;
+- exact-reference lookup now respects evidence retirement;
+- other IGJ sections stay eligible.
 
-Post-repair branch replay:
-- broad `EUDAMED` no longer surfaces `igj:s5`;
-- specific EUDAMED timing query remains supported by current Commission/actor material;
-- exact `2017/745` and `2017/746` behavior is unchanged;
-- the retired capture remains inspectable via source context.
+Exact application-head evidence:
+- Unit tests `36926800336`: SUCCESS;
+- Repository sanitation `36926800317`: SUCCESS;
+- Vercel: SUCCESS / READY;
+- static build: SUCCESS;
+- broad EUDAMED no longer surfaces the stale section;
+- current EUDAMED timing and MDR/IVDR exact routing remain intact.
 
 Maintenance record:
 `docs/reviews/needle-eu-wp8-maintenance-rehearsal-2026-10-01.md`.
 
-**Next action:** run normal CI/static build and exact affected-query replay on one reviewable
-PR. Repair only demonstrated regressions. No monitoring infrastructure is justified by this
-single bounded correction rehearsal.
+Operating-feasibility result: this correction required a source review, section-level
+retirement, one generic eligibility consistency repair and focused replay. **No new
+monitoring infrastructure is justified by this single rehearsal.** The rehearsal does not
+prove complete currentness of the four-source collection.
+
+Estimated programme allocation after WP8 if accepted: 24 / 30 planning units used,
+6 / 30 remaining, including the untouched four-unit discovery/demonstrated-repair reserve.
+
+**Next action:** sponsor accepts/merges PR #516 or requests one bounded repair. Autonomous
+lanes should otherwise return NO_CHANGE and must not activate WP9 in parallel.
 
 External recruitment, participant execution, customer pitch, sales pilots and paid panels
 remain paused through internal M1-M4 delivery. #493/#494 and Candidate A/C retain their

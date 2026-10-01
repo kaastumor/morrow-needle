@@ -189,39 +189,39 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — M1 diverse-law threat replay
+### Immediate priority — M1 diverse-law tranche review
 
-**WIP=1 — #492 / programme WP2, after merged #504.** PR #504 is accepted and squash-merged
-as `0d876b4f66c3c4b5c8b5ada80adab6f6ad164acf`. Its remaining actual-200%-zoom,
-rendered-no-script and remote-preview/new-tab checks are sponsor-accepted
-`NOT_TESTED / SAFE_LIMIT` items and are not current blockers.
+**WIP=1 — #492 / draft PR #505.** The first structurally diverse WP2 threat tranche is
+complete on its review branch. Exact engine/projection replay and the normal Unit-test
+workflow passed; Repository sanitation and Vercel are green. No product code changed.
 
-The first #492 structurally diverse development tranche is now frozen in
-`docs/discovery/issue492-diverse-law-tranche-01-2026-10-01.md`:
+Durable result:
+`docs/discovery/issue492-diverse-law-tranche-01-2026-10-01.md`.
 
-- NIS2 -> Dutch Cyberbeveiligingswet: separate EU transposition timing from national
-  measure identity and the Dutch 15 August 2026 in-force date;
-- AI Act -> Regulation (EU) 2026/1744: current explanations must respect amended,
-  provision-specific staged application dates rather than reuse the original timetable;
-- LVD / EN 60335-2-60:2003: preserve current cited state together with the already-fixed
-  18 January 2027 withdrawal.
+The tranche retains three constraints for subsequent act-detail/navigation work:
 
-The merged medical search does not contain NIS2 or AI Act evidence and must not substitute
-nearby medical guidance. Candidate B already owns the LVD future-state regression. This
-tranche therefore tests safe coverage boundaries plus one represented temporal control;
-it does **not** authorize new public pages.
+- national implementation state must not be inherited from an EU directive date;
+- temporal explanations must be amendment/version aware and may require provision-specific
+  application dates;
+- current state and an already-fixed future state must remain distinct.
 
-**Next action:** execute the narrow exact-revision replay recorded in the tranche note:
-NIS2 and AI-Act ordinary/exact-reference inputs must fail safely without medical
-substitution; the Candidate-B LVD control must show current citation plus the fixed future
-withdrawal. Record exact runtime/browser status where available. Repair only a demonstrated
-boundary defect. A passing replay closes this first WP2 tranche and unlocks WP4
-substantive MDR/IVDR act views under the three resulting content constraints.
+For the two new outside-coverage controls, `2022/2555` and `2024/1689` return
+`REFERENCE_NOT_IN_SNAPSHOT`; ordinary NIS2 and AI-Act questions return
+`OUTSIDE_MAINTAINED_COVERAGE`, all without evidence substitution. The represented LVD
+control remains `CITED` on 26 Sep 2026 while exposing the 18 Jan 2027 withdrawal as its
+next fixed event.
+
+**Next action:** review/accept PR #505. Do not start a second WIP while that checkpoint is
+pending. After accepted reconciliation, the next programme package is WP4 — substantive
+MDR/IVDR act views — using the three constraints above. No NIS2/AI public page is implied.
+
+PR #504 remains accepted on main as `0d876b4f66c3c4b5c8b5ada80adab6f6ad164acf`.
+Its sponsor-deferred actual-200%-zoom, rendered-no-script and remote-preview/new-tab checks
+remain `NOT_TESTED / SAFE_LIMIT` and are not current blockers.
 
 External recruitment, participant execution, customer pitch, sales pilots and paid panels
 remain paused through internal M1-M4 delivery. #493/#494 and Candidate A/C keep their
-separate gates. No merge, release, deployment or broader maintained coverage follows
-automatically.
+separate gates. No release, deployment or broader maintained coverage follows automatically.
 
 ### Prior #490 accepted-foundation repair
 

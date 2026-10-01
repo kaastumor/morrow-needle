@@ -9,7 +9,9 @@ const SEARCH = path.join(__dirname, "search");
 const data = JSON.parse(fs.readFileSync(path.join(SEARCH, "index.json"), "utf8"));
 const resources = JSON.parse(fs.readFileSync(path.join(SEARCH, "resources.json"), "utf8"));
 const engine = require("./search/medical-engine.js").createEngine(data, resources);
-const presenter = require("./search/evidence-view.js").createPresenter(engine);
+const evidenceView = require("./search/evidence-view.js");
+const presenter = evidenceView.createPresenter(engine);
+const panel = require("./search/search-panel.js");
 const app = require("./search/app.js");
 
 test("public search bundle contains only the admitted medical guidance sources", () => {
@@ -95,4 +97,46 @@ test("home keeps direct paths and a no-script fallback", () => {
   assert.match(html, /<noscript>/);
   assert.match(html, /href="\/medical-devices\/"/);
   assert.match(html, /href="\/medical-devices\/#sources"/);
+});
+
+
+test("represented exact identifiers own deterministic internal act routes", () => {
+  const mdr = presenter.present(engine.search("2017/745", {queryLanguage: "en"}));
+  const ivdr = presenter.present(engine.search("2017/746", {queryLanguage: "en"}));
+
+  assert.deepEqual(mdr.navigation, {
+    kind: "act",
+    href: "/medical-devices/mdr/",
+    label: "Open represented MDR detail",
+    notice: "Exact identifier maps to a maintained internal act view. This navigation does not establish applicability or replace the official act."
+  });
+  assert.deepEqual(ivdr.navigation, {
+    kind: "act",
+    href: "/medical-devices/ivdr/",
+    label: "Open represented IVDR detail",
+    notice: "Exact identifier maps to a maintained internal act view. This navigation does not establish applicability or replace the official act."
+  });
+});
+
+test("ordinary medical results continue only to the bounded overview", () => {
+  const view = presenter.present(engine.search("medical device importer registration", {queryLanguage: "en"}));
+  assert.equal(view.status, "RESULTS");
+  assert.deepEqual(view.navigation, {
+    kind: "overview",
+    href: "/medical-devices/",
+    label: "Continue in medical-device overview",
+    notice: "No single act identity was inferred from these guidance matches. Use the bounded overview to choose the represented branch."
+  });
+});
+
+test("outside and unknown-reference states gain no internal act shortcut", () => {
+  const outside = presenter.present(engine.search("When did NIS2 take effect in the Netherlands?", {queryLanguage: "en"}));
+  const unknown = presenter.present(engine.search("2022/2555", {queryLanguage: "en"}));
+  assert.equal(outside.navigation, null);
+  assert.equal(unknown.navigation, null);
+});
+
+test("search panel module parses with connected-navigation rendering available", () => {
+  assert.equal(typeof panel.mount, "function");
+  assert.equal(typeof evidenceView.renderContinuation, "function");
 });

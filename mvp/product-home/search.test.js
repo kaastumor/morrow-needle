@@ -54,6 +54,25 @@ test("generic and outside-coverage questions fail safely", () => {
   }
 });
 
+test("NIS2 and AI Act threat cases do not substitute captured medical guidance", () => {
+  for (const reference of ["2022/2555", "2024/1689"]) {
+    const result = engine.search(reference, {queryLanguage: "en"});
+    assert.equal(result.status, "REFERENCE_NOT_IN_SNAPSHOT", reference);
+    assert.equal(result.primary.length, 0, reference);
+    assert.equal(result.evidence.length, 0, reference);
+  }
+
+  for (const question of [
+    "When did NIS2 take effect in the Netherlands?",
+    "When does the AI Act apply to high-risk systems?"
+  ]) {
+    const result = engine.search(question, {queryLanguage: "en"});
+    assert.notEqual(result.status, "RESULTS", question);
+    assert.equal(result.primary.length, 0, question);
+    assert.equal(result.evidence.length, 0, question);
+  }
+});
+
 test("the retained IGJ forecast is visibly qualified without rewriting its source text", () => {
   const result = presenter.present(engine.search("EUDAMED", {queryLanguage: "en"}));
   const forecast = result.cards.find(card => card.id === "igj:s5");

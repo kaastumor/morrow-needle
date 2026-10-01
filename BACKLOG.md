@@ -189,54 +189,39 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — M1 connected search seam
+### Immediate priority — M1 diverse-law tranche review
 
-**WIP=1 — #490 / programme M1.** The executable plan from #502 is accepted through merged
-PR #503 as `531e473d1df4e6e62081675d0955919c36dc6df5`; #502 is complete. The current reviewable
-slice integrates the verified retained search/evidence component into the product home with
-only the four approved medical-guidance captures. #488 remains a separate unaccepted
-governance proposal.
+**WIP=1 — #492 / draft PR #505.** The first structurally diverse WP2 threat tranche is
+complete on its review branch. Exact engine/projection replay and the normal Unit-test
+workflow passed; Repository sanitation and Vercel are green. No product code changed.
 
-Accepted UI foundation:
+Durable result:
+`docs/discovery/issue492-diverse-law-tranche-01-2026-10-01.md`.
 
-- #497 merged as `2dbd637fd414053269d8e78f46ffe8297089f034`;
-- #499 merged as `c264b767363fda8cbaaff89ce2e6dacf90bedb8c`; #498 is completed;
-- the accepted entry, shared navigation and visual/evidence components are retained.
+The tranche retains three constraints for subsequent act-detail/navigation work:
 
-Those merges close their scoped UI work. They do not close the full prototype or prove
-customer readiness, comprehension, comparative value or current legal-source accuracy.
+- national implementation state must not be inherited from an EU directive date;
+- temporal explanations must be amendment/version aware and may require provision-specific
+  application dates;
+- current state and an already-fixed future state must remain distinct.
 
-The retained package provenance and integration limits remain recorded in
-[#490's checkpoint](https://github.com/kaastumor/morrow-needle/issues/490#issuecomment-5889536165).
-Its integrity and 71 component checks were reverified before integration; the rejected
-field-ranker remains excluded. The current seam keeps direct navigation and no-script paths,
-separates query/source language from jurisdiction/version, and fails closed when a query has
-only incidental lexical overlap with the medical collection. Browser interaction evidence is
-still required on the exact review head; unavailable browser executables are an execution
-blocker, not a rendered PASS.
+For the two new outside-coverage controls, `2022/2555` and `2024/1689` return
+`REFERENCE_NOT_IN_SNAPSHOT`; ordinary NIS2 and AI-Act questions return
+`OUTSIDE_MAINTAINED_COVERAGE`, all without evidence substitution. The represented LVD
+control remains `CITED` on 26 Sep 2026 while exposing the 18 Jan 2027 withdrawal as its
+next fixed event.
 
-**Next action:** Verification reviews the exact draft-PR head, including source filtering,
-ordinary-query and exact-reference behavior, the outside-coverage control, static-build
-inclusion and real browser behavior when an authorized executable is available. No merge,
-deployment, release or external participant activity follows automatically.
+**Next action:** review/accept PR #505. Do not start a second WIP while that checkpoint is
+pending. After accepted reconciliation, the next programme package is WP4 — substantive
+MDR/IVDR act views — using the three constraints above. No NIS2/AI public page is implied.
 
-Read and pick up [#492](https://github.com/kaastumor/morrow-needle/issues/492) within that
-same programme: select the first three structurally different source-supported development
-cases, freeze expectations and exercise available product paths. This is the initial
-adversarial tranche, not a second WIP or three new maintained public pages. Unimplemented
-features remain NOT_TESTED; test coverage may exceed public coverage. The issue owns
-development/reserved-case handling and the later bounded campaign.
+PR #504 remains accepted on main as `0d876b4f66c3c4b5c8b5ada80adab6f6ad164acf`.
+Its sponsor-deferred actual-200%-zoom, rendered-no-script and remote-preview/new-tab checks
+remain `NOT_TESTED / SAFE_LIMIT` and are not current blockers.
 
 External recruitment, participant execution, customer pitch, sales pilots and paid panels
-remain paused through internal M1-M4 delivery. Before requesting external authority,
-complete/disposition the committed journeys, diverse-law campaign, browser evidence and
-maintenance rehearsal, and obtain sponsor acceptance of the internal milestone. Public
-official-source/incumbent research remains internal preparation. The programme's
-external-readiness gate owns the conditions; completion is not automatic contact authority.
-#493 and #494 retain their separate research/implementation/participant gates. After that gate,
-recommend separate orientation and contextual-awareness comparisons; do not automatically
-expand act coverage, vote history, Candidate A/C or monitoring. Participant activity and
-any changed delivery allocation require the existing scoped decisions.
+remain paused through internal M1-M4 delivery. #493/#494 and Candidate A/C keep their
+separate gates. No release, deployment or broader maintained coverage follows automatically.
 
 ### Prior #490 accepted-foundation repair
 

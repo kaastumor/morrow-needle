@@ -35,6 +35,11 @@ const MEDICAL_SUMMARY_FILES = Object.freeze([
 
 const MEDICAL_ACT_ROUTES = Object.freeze(["mdr", "ivdr"]);
 
+const CUSTOMS_CONTRAST_FILES = Object.freeze([
+  "index.html",
+  "styles.css"
+]);
+
 const PRODUCT_HOME_FILES = Object.freeze(["index.html", "search.css"]);
 
 const PRODUCT_SEARCH_FILES = Object.freeze([
@@ -71,6 +76,7 @@ function buildStaticDemo() {
   const regimeOut = path.join(DIST, "regime");
   const regimeV2Out = path.join(DIST, "regime-v2");
   const medicalSummaryOut = path.join(DIST, "medical-devices");
+  const customsContrastOut = path.join(DIST, "customs-low-value-imports");
   const productHomeOut = DIST;
   const medicalActStyle = path.join(DIST, "medical-devices", "act-detail.css");
   const fixturesOut = path.join(DIST, "fixtures", "dependency");
@@ -99,6 +105,13 @@ function buildStaticDemo() {
     copyFile(
       path.join(ROOT, "mvp", "medical-devices-summary", file),
       path.join(medicalSummaryOut, file)
+    );
+  }
+
+  for (const file of CUSTOMS_CONTRAST_FILES) {
+    copyFile(
+      path.join(ROOT, "mvp", "customs-low-value-imports", file),
+      path.join(customsContrastOut, file)
     );
   }
 
@@ -145,6 +158,7 @@ function buildStaticDemo() {
     medicalSummaryFiles: MEDICAL_SUMMARY_FILES,
     medicalActRoutes: MEDICAL_ACT_ROUTES,
     medicalActStyle: "medical-devices/act-detail.css",
+    customsContrastFiles: CUSTOMS_CONTRAST_FILES,
     productHomeFiles: PRODUCT_HOME_FILES,
     productSearchFiles: PRODUCT_SEARCH_FILES,
     productShellFile: "product-shell.css",
@@ -170,4 +184,4 @@ if (require.main === module) {
   );
 }
 
-module.exports = {APP_FILES, REGIME_FILES, REGIME_V2_FILES, MEDICAL_SUMMARY_FILES, MEDICAL_ACT_ROUTES, PRODUCT_HOME_FILES, PRODUCT_SEARCH_FILES, PILOT_FILES, FIXTURE_FILES, buildStaticDemo};
+module.exports = {APP_FILES, REGIME_FILES, REGIME_V2_FILES, MEDICAL_SUMMARY_FILES, MEDICAL_ACT_ROUTES, CUSTOMS_CONTRAST_FILES, PRODUCT_HOME_FILES, PRODUCT_SEARCH_FILES, PILOT_FILES, FIXTURE_FILES, buildStaticDemo};

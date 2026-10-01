@@ -189,32 +189,38 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — M1 exited; WP6 / M2 next
+### Immediate priority — WP6 sponsor review
 
-**No active implementation WIP.** Sponsor accepted WP5 / #509 and authorized squash-merge
-of PR #510 as `a7064684c3c8ea59d749bd3d41148e928c84eaf7`.
+**WIP=1 — #511 / PR #512.** The M2 development campaign and one bounded contrast are
+implemented and verification-complete on application head
+`485e0be0af564b5f754316fca908667cf968dba5`.
 
-M1 / WP1-WP5 is now recorded as
-`M1_DEPENDENCY_EXIT — PASS_WITH_RECORDED_LIMITS` in
-`docs/reviews/needle-eu-m1-exit-2026-10-01.md` (main `f86bf816faa807588cdaa9262d543f85c153cab2`).
+D1-D8 development findings are recorded in
+`docs/discovery/issue511-m2-development-campaign-2026-10-01.md`.
 
-The committed medical journey now supports:
+Current disposition:
+- D4 exact IVDR and D5 ordinary EUDAMED remain positive controls;
+- D6 addressee-specific Implementing Decision and D8 corrigendum demonstrate that the
+  medical core-act template is not universal;
+- D7 Delegated Regulation (EU) 2026/1022 earned the one allowed bounded public contrast at
+  `/customs-low-value-imports/`;
+- D6-D8 search paths remain fail-closed without medical substitution;
+- the D7 page preserves threshold scope, separate application/entry-into-force dates,
+  optional early use, later Annex application and the German/Dutch-only corrigendum;
+- no universal legal-instrument framework was introduced.
 
-> question/exact represented identifier -> source-bound result/locator -> bounded overview or
-> MDR/IVDR act -> typed time / relationships / evidence -> return/deep navigation.
+Final application-head evidence:
+- Unit tests `36881125338`: SUCCESS;
+- Repository sanitation `36881125392`: SUCCESS;
+- Vercel `dpl_Au4Mm3QrMnkcT1GTWuJZvSyfsSJW`: READY;
+- normal CI static build completed successfully.
 
-M1 does not establish legal completeness, all-language quality, personalised applicability,
-reader value, live monitoring or external readiness. Sponsor-deferred #504 runtime checks
-remain deferred; WP7/M3 owns the later pinned browser/reflow/keyboard/200%-zoom hardening.
+The four WP7/M3 held-back cases remain unselected/unexposed and must not be used to tune
+this WP6 branch.
 
-**Next dependency:** WP6 / M2 — bounded reuse and the wider #492 development campaign.
-The next pickup must first establish one owner under WIP=1, respect #492's development vs
-reserved-case separation, and test materially different legal structures before earning at
-most one contrasting maintained public example.
-
-Estimated programme allocation after M1: 15 / 30 planning units used, 15 / 30 remaining;
-the four-unit discovery/demonstrated-repair reserve remains unconsumed. Actual elapsed
-human-equivalent effort/model cost is UNKNOWN where not exposed.
+**Next action:** sponsor accepts/merges PR #512 or requests one bounded repair. Autonomous
+Planning / Implementation / Verification should otherwise return NO_CHANGE on this exact
+behavior and must not activate WP7 in parallel.
 
 External recruitment, participant execution, customer pitch, sales pilots and paid panels
 remain paused through internal M1-M4 delivery. #493/#494 and Candidate A/C retain their

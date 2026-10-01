@@ -5,7 +5,9 @@ const path = require("node:path");
 
 const ROOT = path.resolve(__dirname, "..", "..");
 const DIST = path.join(ROOT, "dist");
-const {participantCopy} = require("../../docs/experiments/issue494/build-participant-pages.js");\nconst {ACTS} = require("../medical-act-detail/acts.js");\nconst {renderActPage} = require("../medical-act-detail/render.js");
+const {participantCopy} = require("../../docs/experiments/issue494/build-participant-pages.js");
+const {ACTS} = require("../medical-act-detail/acts.js");
+const {renderActPage} = require("../medical-act-detail/render.js");
 
 const APP_FILES = Object.freeze([
   "index.html",
@@ -69,7 +71,8 @@ function buildStaticDemo() {
   const regimeOut = path.join(DIST, "regime");
   const regimeV2Out = path.join(DIST, "regime-v2");
   const medicalSummaryOut = path.join(DIST, "medical-devices");
-  const productHomeOut = DIST;\n  const medicalActStyle = path.join(DIST, "medical-devices", "act-detail.css");
+  const productHomeOut = DIST;
+  const medicalActStyle = path.join(DIST, "medical-devices", "act-detail.css");
   const fixturesOut = path.join(DIST, "fixtures", "dependency");
   const pilotAOut = path.join(DIST, "research", "issue494", "a");
   const pilotBOut = path.join(DIST, "research", "issue494", "b");
@@ -99,7 +102,15 @@ function buildStaticDemo() {
     );
   }
 
-  copyFile(path.join(ROOT, "mvp", "medical-act-detail", "styles.css"), medicalActStyle);\n  for (const route of MEDICAL_ACT_ROUTES) {\n    const act = ACTS[route];\n    const routeDir = path.join(DIST, "medical-devices", route);\n    fs.mkdirSync(routeDir, {recursive: true});\n    fs.writeFileSync(path.join(routeDir, "index.html"), renderActPage(act), "utf8");\n  }\n\n  for (const file of PRODUCT_HOME_FILES) {
+  copyFile(path.join(ROOT, "mvp", "medical-act-detail", "styles.css"), medicalActStyle);
+  for (const route of MEDICAL_ACT_ROUTES) {
+    const act = ACTS[route];
+    const routeDir = path.join(DIST, "medical-devices", route);
+    fs.mkdirSync(routeDir, {recursive: true});
+    fs.writeFileSync(path.join(routeDir, "index.html"), renderActPage(act), "utf8");
+  }
+
+  for (const file of PRODUCT_HOME_FILES) {
     copyFile(path.join(ROOT, "mvp", "product-home", file), path.join(productHomeOut, file));
   }
   for (const file of PRODUCT_SEARCH_FILES) {
@@ -131,7 +142,9 @@ function buildStaticDemo() {
     fixtureFiles: FIXTURE_FILES,
     regimeFiles: REGIME_FILES,
     regimeV2Files: REGIME_V2_FILES,
-    medicalSummaryFiles: MEDICAL_SUMMARY_FILES,\n    medicalActRoutes: MEDICAL_ACT_ROUTES,\n    medicalActStyle: "medical-devices/act-detail.css",
+    medicalSummaryFiles: MEDICAL_SUMMARY_FILES,
+    medicalActRoutes: MEDICAL_ACT_ROUTES,
+    medicalActStyle: "medical-devices/act-detail.css",
     productHomeFiles: PRODUCT_HOME_FILES,
     productSearchFiles: PRODUCT_SEARCH_FILES,
     productShellFile: "product-shell.css",
@@ -153,7 +166,8 @@ function buildStaticDemo() {
 if (require.main === module) {
   const manifest = buildStaticDemo();
   process.stdout.write(
-    `Built bounded Needle EU product routes with ${manifest.fixtureFiles.length} canonical fixtures.\n`
+    `Built bounded Needle EU product routes with ${manifest.fixtureFiles.length} canonical fixtures.
+`
   );
 }
 

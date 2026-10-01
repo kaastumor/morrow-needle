@@ -75,14 +75,18 @@ test("NIS2 and AI Act threat cases do not substitute captured medical guidance",
   }
 });
 
-test("the retained IGJ forecast is visibly qualified without rewriting its source text", () => {
+test("the stale IGJ forecast is preserved for audit but retired from active evidence", () => {
   const result = presenter.present(engine.search("EUDAMED", {queryLanguage: "en"}));
-  const forecast = result.cards.find(card => card.id === "igj:s5");
+  assert.equal(result.cards.some(card => card.id === "igj:s5"), false);
+
+  const forecast = engine.sourceContext("igj:s5");
   assert.ok(forecast);
-  assert.match(forecast.fullSection.text, /January 2026 \(expected date\)/);
+  assert.equal(forecast.evidenceEligible, false);
+  assert.equal(forecast.maintenanceStatus, "RETIRED_FROM_ACTIVE_EVIDENCE");
+  assert.equal(forecast.maintenanceCheckedAt, "2026-10-01");
+  assert.match(forecast.text, /January 2026 \(expected date\)/);
   assert.match(forecast.editorialWarning, /Do not use that forecast as current EUDAMED status/);
-  assert.equal(forecast.editorialWarningUrl, "https://health.ec.europa.eu/medical-devices-eudamed/overview_en");
-  assert.ok(result.cards.filter(card => card.id !== "igj:s5").every(card => !card.editorialWarning));
+  assert.equal(forecast.maintenanceEvidenceUrl, "https://health.ec.europa.eu/medical-devices-eudamed/overview_en");
 });
 
 test("an explicit medical-device question retains its guidance results", () => {
@@ -189,4 +193,27 @@ test("WP7 held-back cases remain fail-closed after first exposure", () => {
   const proposal = engine.search("Is the EU standard essential patents proposal still ongoing?", {queryLanguage: "en"});
   assert.equal(proposal.status, "NO_SUPPORTED_TERMS");
   assert.equal(presenter.present(proposal).navigation, null);
+});
+
+
+test("exact-reference lookup also honors evidence retirement", () => {
+  const retired = structuredClone(data);
+  const block = retired.blocks.find(item => item.id === "eudamed:b39");
+  assert.ok(block);
+  block.evidenceEligible = false;
+
+  const retiredEngine = require("./search/medical-engine.js").createEngine(retired, resources);
+  const result = retiredEngine.search("2017/746", {queryLanguage: "en"});
+
+  assert.equal(result.status, "REFERENCE_MENTIONS_ONLY");
+  assert.equal(result.primary.some(item => item.id === "eudamed:b39"), false);
+  assert.equal(result.primary.some(item => item.id === "operators:b39"), true);
+});
+
+test("current EUDAMED timing result remains available after stale-source retirement", () => {
+  const result = engine.search("EUDAMED is mandatory now: does that include all six modules?", {queryLanguage: "en", budget: 400});
+  assert.equal(result.status, "RESULTS");
+  assert.ok(result.primary.some(item => item.sourceId === "eudamed"));
+  assert.equal(result.primary.some(item => item.id === "igj:s5"), false);
+  assert.match(result.evidence.map(item => item.text).join("\n"), /28 May 2026|first four modules are mandatory|following 4 modules of EUDAMED became mandatory/i);
 });

@@ -163,3 +163,30 @@ test("WP6 D6-D8 exact references and ordinary wording fail closed", () => {
   assert.equal(corrigendum.status, "REFERENCE_NOT_IN_SNAPSHOT");
   assert.equal(presenter.present(corrigendum).navigation, null);
 });
+
+
+test("WP7 held-back cases remain fail-closed after first exposure", () => {
+  for (const reference of ["2023/1230", "2023/2225", "2026/90645", "2023/0133"]) {
+    const result = engine.search(reference, {queryLanguage: "en"});
+    assert.equal(result.status, "REFERENCE_NOT_IN_SNAPSHOT", reference);
+    assert.equal(result.primary.length, 0, reference);
+    assert.equal(result.evidence.length, 0, reference);
+    assert.equal(presenter.present(result).navigation, null, reference);
+  }
+
+  const machinery = engine.search("Does the Machinery Regulation already apply and replace Directive 2006/42/EC?", {queryLanguage: "en"});
+  assert.equal(machinery.status, "REFERENCE_NOT_IN_SNAPSHOT");
+  assert.equal(presenter.present(machinery).navigation, null);
+
+  const credit = engine.search("Do the new EU consumer credit rules apply from 20 November 2025?", {queryLanguage: "en"});
+  assert.equal(credit.status, "OUTSIDE_MAINTAINED_COVERAGE");
+  assert.equal(presenter.present(credit).navigation, null);
+
+  const corrigendum = engine.search("Did the 3 August 2026 corrigendum change the English ecodesign rules for electronic displays?", {queryLanguage: "en"});
+  assert.equal(corrigendum.status, "OUTSIDE_MAINTAINED_COVERAGE");
+  assert.equal(presenter.present(corrigendum).navigation, null);
+
+  const proposal = engine.search("Is the EU standard essential patents proposal still ongoing?", {queryLanguage: "en"});
+  assert.equal(proposal.status, "NO_SUPPORTED_TERMS");
+  assert.equal(presenter.present(proposal).navigation, null);
+});

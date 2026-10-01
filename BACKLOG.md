@@ -189,44 +189,46 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — WP9 / M4 sponsor review
+### Immediate priority — completed for current internal evidence
 
-**WIP=1 — #517.** The final internal-acceptance package is assembled on
-`review/517-internal-acceptance`.
+**Mode: EVIDENCE_GATED / COMPLETED_FOR_CURRENT_INTERNAL_EVIDENCE.**
 
-Decision package:
+Sponsor accepted the bounded Needle EU internal prototype on 1 October 2026.
+
+Accepted M4 merge:
+`a3308dbf7e779174ee6ddd706be9cfc7128f5d6c`.
+
+Canonical decision package:
 `docs/reviews/needle-eu-internal-acceptance-2026-10-01.md`.
 
-It reconciles:
-- the bounded working medical question-to-evidence journey;
-- maintained coverage/version/source boundaries;
-- D1-D8 development and R1-R4 held-back evidence;
-- the one earned customs contrast;
-- accepted WP7 browser limitations;
-- the WP8 stale-source maintenance rehearsal;
-- programme effort/cost;
-- unresolved external-readiness and reader-value risks;
-- one narrow future comparison proposal.
+Programme result:
+- M1 connected medical question-to-evidence journey accepted;
+- M2 diverse-law development/generalisation campaign accepted;
+- M3 held-back hardening and maintenance rehearsal accepted;
+- WP9/M4 internal acceptance accepted;
+- estimated programme allocation: **26 / 30 planning units used**;
+- **4 / 30 reserve units remain unconsumed**.
 
-Executor recommendation:
+No active implementation WIP is authorized.
 
-> **ACCEPT_INTERNAL_PROTOTYPE**, while keeping external readiness BLOCKED until the missing
-> actual browser/reflow/keyboard evidence is obtained or that later gate is explicitly
-> re-scoped.
+The next meaningful uncertainty is **reader/comparative value**, not another internal feature.
 
-No new product feature is part of WP9.
+Re-entry conditions for a known-act reader comparison:
+1. obtain actual rendered browser/reflow/keyboard evidence on the accepted revision, or
+   explicitly re-scope that external-readiness condition;
+2. separately authorize the exact participant/comparison scope.
 
-Estimated programme allocation if WP9 is accepted: 26 / 30 planning units used, with the
-four-unit discovery/demonstrated-repair reserve unconsumed.
+Until then:
+- do not expand the public law catalogue;
+- do not add monitoring infrastructure without repeated maintenance evidence;
+- do not activate #493, #494, Candidate A/C or external/customer work automatically;
+- do not treat the accepted prototype as evidence of superiority, demand or all-language
+  capability;
+- preserve accepted regressions, source/version boundaries and maintenance metadata.
 
-**Next action:** sponsor chooses exactly one:
-- ACCEPT_INTERNAL_PROTOTYPE;
-- REVISE;
-- NARROW;
-- PARK.
-
-No public release, external participant work, #493/#494 activation, Candidate A/C work,
-monitoring infrastructure or paid service follows automatically from internal acceptance.
+#493 contextual-awareness implementation remains PARKED.
+#494 vote-history implementation/participant execution remains PARKED.
+Candidate A/C remain inactive.
 
 ### Prior #490 accepted-foundation repair
 

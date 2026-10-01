@@ -189,55 +189,48 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — WP8 sponsor review
+### Immediate priority — M3 exited; WP9 / M4 next
 
-**WIP=1 — #515 / PR #516.** The real-source maintenance rehearsal is implemented and
-verification-complete for the substantive repair on
-`26ebce505418906e99d994363b72ede9cdb8f9c4`; final test-harness rework is on
-`098428575fc8226510c10fc62ef50fa4189daa6e`.
+**No active implementation WIP.** Sponsor accepted WP8 / #515 and authorized squash-merge
+of PR #516 as `047b0734e02ce7181eae84647721cd0d38914b3e`.
 
-Maintenance event:
-- retained IGJ guidance still says “January 2026 (expected date)” for required EUDAMED
-  registration;
-- current Commission material states the first four EUDAMED modules became mandatory from
-  28 May 2026;
-- pre-repair broad `EUDAMED` search ranked the stale IGJ section third despite a warning.
+M3 is recorded as
+`M3_DEPENDENCY_EXIT — PASS_WITH_ACCEPTED_BROWSER_LIMIT` in
+`docs/reviews/needle-eu-m3-exit-2026-10-01.md`.
 
-Accepted-behavior candidate:
-- preserve the original IGJ capture for audit/history;
-- retire only `igj:s5` and its two blocks from active evidence;
-- store explicit maintenance status/check date/reason/current Commission evidence URL;
-- exact-reference lookup now respects evidence retirement;
-- other IGJ sections stay eligible.
+Accepted M3 result:
+- four held-back #492 cases were frozen before first exposure and now exist as regressions;
+- no critical legal/status/source misrepresentation was observed from obtainable evidence;
+- pinned route/deep-link/no-script/disclosure/narrow-layout static hardening passed;
+- the remaining actual rendered keyboard / 390 px / 320 px / disclosure / 200%-zoom checks
+  remain NOT_TESTED / BLOCKED and were explicitly accepted as a programme limit;
+- a real stale EUDAMED source conflict was rehearsed and repaired without rewriting captured
+  source text or adding monitoring infrastructure;
+- maintenance cost and one CI-harness rework were recorded.
 
-Exact application-head evidence:
-- Unit tests `36926800336`: SUCCESS;
-- Repository sanitation `36926800317`: SUCCESS;
-- Vercel: SUCCESS / READY;
-- static build: SUCCESS;
-- broad EUDAMED no longer surfaces the stale section;
-- current EUDAMED timing and MDR/IVDR exact routing remain intact.
+The M3 exit does **not** satisfy the later external-readiness gate by itself because the
+programme still names actual browser/reflow/keyboard evidence as a precondition for external
+participant authority.
 
-Maintenance record:
-`docs/reviews/needle-eu-wp8-maintenance-rehearsal-2026-10-01.md`.
+Estimated programme allocation after M3: 24 / 30 planning units used, 6 / 30 remaining,
+including the untouched four-unit discovery/demonstrated-repair reserve.
 
-Final-head CI also exposed and repaired a shared-`dist/` race in the WP7 hardening tests;
-that rework changed no product behavior and is recorded in the maintenance cost account.
+**Next dependency:** WP9 / M4 — internal acceptance package. WP9 should add no new product
+feature. It should assemble the current working bounded journey, declared coverage/version,
+journey/adversarial/maintenance evidence, unresolved risks, effort/cost readout and one
+narrow future comparison proposal for sponsor disposition.
 
-Operating-feasibility result: this correction required a source review, section-level
-retirement, one generic eligibility consistency repair and focused replay. **No new
-monitoring infrastructure is justified by this single rehearsal.** The rehearsal does not
-prove complete currentness of the four-source collection.
+Expected sponsor choices:
+- ACCEPT_INTERNAL_PROTOTYPE;
+- REVISE;
+- NARROW;
+- PARK.
 
-Estimated programme allocation after WP8 if accepted: 24 / 30 planning units used,
-6 / 30 remaining, including the untouched four-unit discovery/demonstrated-repair reserve.
-
-**Next action:** sponsor accepts/merges PR #516 or requests one bounded repair. Autonomous
-lanes should otherwise return NO_CHANGE and must not activate WP9 in parallel.
+No external activity, release or production deployment follows automatically from any
+internal acceptance disposition.
 
 External recruitment, participant execution, customer pitch, sales pilots and paid panels
-remain paused through internal M1-M4 delivery. #493/#494 and Candidate A/C retain their
-separate gates. No release or production deployment follows automatically.
+remain paused. #493/#494 and Candidate A/C retain their separate gates.
 
 ### Prior #490 accepted-foundation repair
 

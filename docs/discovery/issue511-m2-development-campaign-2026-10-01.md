@@ -127,3 +127,77 @@ generic legal-instrument framework.
 
 WP7's four reserved cases remain unselected and unexposed. No repair decision in this note
 uses them.
+
+
+## D7 bounded public contrast — implemented
+
+WP6 earned exactly one maintained contrast route:
+
+> `/customs-low-value-imports/`
+
+The page is intentionally separate from `mvp/medical-act-detail/`. It reuses only the
+conventions that survived D1-D8:
+
+- source/version identity;
+- explicit scope/threshold limits;
+- typed temporal events;
+- typed legal relationships;
+- language-scoped correction visibility;
+- nearby official-source handoffs;
+- explicit non-applicability/non-compliance boundaries.
+
+It does **not** introduce a universal act renderer or generic EU-law ontology.
+
+### D7 temporal representation
+
+The public contrast preserves the following distinct events:
+
+- 30 Apr 2026 — adoption;
+- 1 Jul 2026 — Official Journal publication and the date Article 2 states the Regulation
+  applies from;
+- 2 Jul 2026 — entry into force, as the day following publication;
+- from 1 Jul 2026 — voluntary early provision of the data in Annex point (2)(a)-(b);
+- 4 Aug 2026 — later corrigendum affecting German and Dutch, explicitly not English;
+- 1 Nov 2026 — Annex point (2)(a)-(b) application.
+
+The ordering is left explicit rather than normalized into a single “effective date”.
+
+### Product placement
+
+The home route links this as **M2 contrast example**, separately from the medical overview
+and known-standard tool. Copy states that it is one bounded example, not comprehensive
+customs coverage.
+
+The page does not calculate customs owed, determine a user's declaration route, or imply
+that the delegated amendment is the whole Union customs regime.
+
+### Verification
+
+Final review candidate head:
+`485e0be0af564b5f754316fca908667cf968dba5`.
+
+- D1-D8 development results preserved.
+- D6-D8 exact/ordinary search controls remain fail-closed.
+- D4/D5 positive controls remain in the existing suite.
+- Customs contrast focused tests are included in the normal Node workflow.
+- Unit tests run `36881125338`: **SUCCESS**.
+- Repository sanitation run `36881125392`: **SUCCESS**.
+- Vercel deployment `dpl_Au4Mm3QrMnkcT1GTWuJZvSyfsSJW`: **READY**.
+- A rendered `/customs-low-value-imports/` route was observed on the immediately preceding
+  page-identical preview; later branch changes touched only test source.
+- Normal CI static-build step completed successfully on the final head.
+
+The four WP7 held-back cases remain unselected and unexposed.
+
+## WP6 disposition
+
+**READY_FOR_SPONSOR_REVIEW.**
+
+The development campaign supports a bounded generalisation claim:
+
+> Needle's evidence/version/typed-time/typed-relationship discipline transfers beyond the
+> medical example, but instrument-specific audience/scope/change semantics must remain
+> instrument-specific.
+
+It does not support a universal EU-instrument template, general customs coverage, complete
+EU-law search, all-language quality or external/user value.

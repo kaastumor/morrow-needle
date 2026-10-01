@@ -1,14 +1,19 @@
 {
   "archive_ref": null,
-  "checkpoint": null,
+  "checkpoint": {
+    "disposition": "SEE_CANONICAL_OWNER",
+    "next_action": "Await a separately authorized successor after the strategic audit; do not start product expansion, external participants, #493/#494, or Candidate A/C autonomously.",
+    "receipt_ref": "https://github.com/kaastumor/morrow-needle/issues/517",
+    "verification": "Main 1aedd84b and closed #517 confirm internal acceptance; BACKLOG reports no active implementation WIP."
+  },
   "contract": "AUTOMATION_CONTROL_V2_20261001",
   "effects": [],
   "failure_count": 0,
   "failure_key": null,
   "generation": 6,
-  "lease_until": 1790893700,
+  "lease_until": null,
   "operation": null,
-  "owner_attempt": "needle-continuous-20261001-completion-24e6c7c9",
+  "owner_attempt": null,
   "receipts": [
     {
       "at": 1790859761,
@@ -44,6 +49,13 @@
       "key": "b16fc1054949ca7dec903739822eaf5e8824e9096b0c289b0388cb63c711922d",
       "receipt_ref": "https://github.com/kaastumor/morrow-needle/pull/514",
       "state": "WAITING_EXTERNAL"
+    },
+    {
+      "at": 1790892070,
+      "attempt": "needle-continuous-20261001-completion-24e6c7c9",
+      "key": "90ebf6035a619272a7079e64e6ab893bf6beb65e9efd21b8603132216f0ed732",
+      "receipt_ref": "https://github.com/kaastumor/morrow-needle/issues/517",
+      "state": "COMPLETE"
     }
   ],
   "repository": "kaastumor/morrow-needle",
@@ -54,6 +66,6 @@
     "name": "reconcile-internal-prototype-completion",
     "task": 517
   },
-  "state": "ACTIVE",
-  "updated_at": 1790891990
+  "state": "COMPLETE",
+  "updated_at": 1790892070
 }

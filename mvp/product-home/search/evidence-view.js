@@ -8,7 +8,9 @@ const representedActs=Object.freeze({
  '2017/746':Object.freeze({code:'IVDR',href:'/medical-devices/ivdr/'})
 });
 function continuationFor(response){
+ if(!response||!['RESULTS','REFERENCE_MENTIONS_ONLY'].includes(response.status))return null;
  const references=Array.isArray(response&&response.references)?response.references:[];
+ if(references.length>1||references.some(ref=>ref.kind!=='NUMBER'||!representedActs[ref.value]))return null;
  const exact=references.find(ref=>ref.kind==='NUMBER'&&representedActs[ref.value]);
  if(exact){
   const act=representedActs[exact.value];

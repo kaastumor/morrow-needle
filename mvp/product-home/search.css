@@ -80,6 +80,17 @@
 .needle-evidence-continuation p { margin: .25rem 0; }
 .needle-evidence-continuation a { font-weight: 700; }
 .product-search__fallback { margin-top: 1rem; }
+.needle-page-navigation {
+  max-width: 74ch;
+  margin: 1rem 0;
+  padding: .9rem 1rem;
+  border: 1px solid var(--shell-border);
+  border-radius: var(--product-radius-surface);
+  background: var(--shell-bg);
+}
+.needle-page-navigation h3 { margin: 0 0 .6rem; }
+.needle-page-navigation li { margin: .5rem 0; }
+.needle-page-navigation a { font-weight: 700; }
 
 @media (max-width: 38rem) {
   .product-search { padding: 1rem; }

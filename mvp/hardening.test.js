@@ -4,29 +4,29 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
-const {buildStaticDemo} = require("./candidate-b/build-static-demo.js");
+const {ACTS} = require("./medical-act-detail/acts.js");
+const {renderActPage} = require("./medical-act-detail/render.js");
 
-const ROOT = path.resolve(__dirname, "..");
-const DIST = path.join(ROOT, "dist");
+const MVP = __dirname;
 
-function read(rel) {
-  return fs.readFileSync(path.join(DIST, rel), "utf8");
+function readSource(rel) {
+  return fs.readFileSync(path.join(MVP, rel), "utf8");
 }
 
-test("WP7 pinned build exposes all retained public routes and return paths", () => {
-  buildStaticDemo();
-  const routes = [
-    "index.html",
-    "medical-devices/index.html",
-    "medical-devices/mdr/index.html",
-    "medical-devices/ivdr/index.html",
-    "customs-low-value-imports/index.html",
-    "regime-v2/index.html",
-    "mvp/candidate-b/index.html"
-  ];
-  for (const route of routes) {
-    assert.ok(fs.existsSync(path.join(DIST, route)), route);
-    const html = read(route);
+function retainedHtml() {
+  return new Map([
+    ["home", readSource("product-home/index.html")],
+    ["medical", readSource("medical-devices-summary/index.html")],
+    ["mdr", renderActPage(ACTS.mdr)],
+    ["ivdr", renderActPage(ACTS.ivdr)],
+    ["customs", readSource("customs-low-value-imports/index.html")],
+    ["regime-v2", readSource("regime-density-v0.2/index.html")],
+    ["candidate-b", readSource("candidate-b/index.html")]
+  ]);
+}
+
+test("WP7 retained public route contracts keep common navigation and return affordances", () => {
+  for (const [route, html] of retainedHtml()) {
     assert.match(html, /Needle EU/, route);
     assert.match(html, /href="\/"/, route);
     assert.match(html, /product-shell\.css/, route);
@@ -34,37 +34,27 @@ test("WP7 pinned build exposes all retained public routes and return paths", () 
 });
 
 test("WP7 retained routes expose keyboard-visible entry points and focus targets", () => {
-  buildStaticDemo();
-  for (const route of [
-    "index.html",
-    "medical-devices/index.html",
-    "medical-devices/mdr/index.html",
-    "medical-devices/ivdr/index.html",
-    "customs-low-value-imports/index.html",
-    "regime-v2/index.html",
-    "mvp/candidate-b/index.html"
-  ]) {
-    const html = read(route);
+  for (const [route, html] of retainedHtml()) {
     assert.match(html, /class="skip-link"/, route);
     assert.match(html, /id="main"/, route);
   }
-  const shell = read("product-shell.css");
+  const shell = readSource("product-shell.css");
   assert.match(shell, /:focus-visible/);
   assert.match(shell, /\.skip-link:focus/);
 });
 
-test("WP7 deep links remain present in generated MDR IVDR and contrast pages", () => {
-  buildStaticDemo();
-  for (const route of ["medical-devices/mdr/index.html", "medical-devices/ivdr/index.html"]) {
-    const html = read(route);
+test("WP7 deep links remain present in rendered MDR IVDR and contrast contracts", () => {
+  for (const act of Object.values(ACTS)) {
+    const html = renderActPage(act);
     for (const fragment of ["time", "relationships", "sources"]) {
-      assert.match(html, new RegExp('id="' + fragment + '"'), route + " #" + fragment);
-      assert.match(html, new RegExp('href="#' + fragment + '"'), route + " href #" + fragment);
+      assert.match(html, new RegExp('id="' + fragment + '"'));
+      assert.match(html, new RegExp('href="#' + fragment + '"'));
     }
     assert.match(html, /href="\/medical-devices\/"/);
     assert.match(html, /href="\/#search-heading"/);
   }
-  const customs = read("customs-low-value-imports/index.html");
+
+  const customs = readSource("customs-low-value-imports/index.html");
   for (const fragment of ["scope", "time", "relationships", "sources"]) {
     assert.match(customs, new RegExp('id="' + fragment + '"'));
     assert.match(customs, new RegExp('href="#' + fragment + '"'));
@@ -74,26 +64,24 @@ test("WP7 deep links remain present in generated MDR IVDR and contrast pages", (
 test("WP7 narrow-layout source contracts avoid horizontal-scroll dependence", () => {
   const cssFiles = [
     "product-shell.css",
-    "search.css",
-    "medical-devices/act-detail.css",
+    "product-home/search.css",
+    "medical-act-detail/styles.css",
     "customs-low-value-imports/styles.css",
-    "regime-v2/styles.css"
+    "regime-density-v0.2/styles.css"
   ];
-  buildStaticDemo();
   for (const rel of cssFiles) {
-    const css = read(rel);
+    const css = readSource(rel);
     assert.doesNotMatch(css, /overflow-x:\s*(?:scroll|auto)/, rel);
   }
-  assert.match(read("product-shell.css"), /@media \(max-width: 38rem\)/);
-  assert.match(read("search.css"), /@media \(max-width: 38rem\)/);
-  assert.match(read("customs-low-value-imports/styles.css"), /@media\(max-width:46rem\)/);
+  assert.match(readSource("product-shell.css"), /@media \(max-width: 38rem\)/);
+  assert.match(readSource("product-home/search.css"), /@media \(max-width: 38rem\)/);
+  assert.match(readSource("customs-low-value-imports/styles.css"), /@media\(max-width:46rem\)/);
 });
 
 test("WP7 disclosure and no-script fallbacks remain represented", () => {
-  buildStaticDemo();
-  const home = read("index.html");
+  const home = readSource("product-home/index.html");
   assert.match(home, /<noscript>/);
-  const evidenceView = fs.readFileSync(path.join(ROOT, "mvp", "product-home", "search", "evidence-view.js"), "utf8");
+  const evidenceView = readSource("product-home/search/evidence-view.js");
   assert.match(evidenceView, /node\('details'\)|createElement\('details'\)/);
   assert.match(evidenceView, /document\.createElement\('summary'\)|node\('summary'/);
 });

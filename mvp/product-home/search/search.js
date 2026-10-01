@@ -62,7 +62,7 @@ function createEngine(input,resources){
   if(/(?<!\d)\d{1,2}[/.]\d{1,2}[/.]\d{4}(?!\d)/u.test(query)){out.status='DATE_INTENT_REQUIRED';out.warnings.push('Select an explicit ISO date and its purpose; day/month order was not guessed.');return out;}
   const exact=references(query);
   if(exact.length){
-   const matching=data.blocks.filter(u=>references(u.text).some(x=>exact.some(y=>x.kind===y.kind&&x.value===y.value)));
+   const matching=data.blocks.filter(u=>u.evidenceEligible!==false&&references(u.text).some(x=>exact.some(y=>x.kind===y.kind&&x.value===y.value)));
    out.references=exact;
    out.primary=matching.filter(u=>eligible(data.sources[u.sourceId])).map(u=>({...u,...sourceFields(data.sources[u.sourceId]),reason:'Exact reference mentioned in guidance, not retrieved legal-act text.',sourceLanguageFallback:!queryLanguages.includes(lang.resolve(data.sources[u.sourceId].sourceLanguage).base)}));
    out.status=out.primary.length?'REFERENCE_MENTIONS_ONLY':matching.length?'REFERENCE_OTHER_LANGUAGE_AVAILABLE':'REFERENCE_NOT_IN_SNAPSHOT';

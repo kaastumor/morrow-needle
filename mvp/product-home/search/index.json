@@ -1020,7 +1020,11 @@
       "text": "The market authorisation of medical devices (MDR, EU/745) and medical devices for in vitro diagnostics (IVDR, EU/746) requires registration. As of January 2026 (expected date), economic operators will be required to register in the European database EUDAMED for this purpose (MDR, Article 31; IVDR, Article 28).\nIn order to gain access to EUDAMED, manufacturers, importers and authorised representatives can register in the EUDAMED actor registration module, after which they are issued with a single registration number, or SRN. This SRN number allows access to EUDAMED and makes it possible, for example:\n* to request a conformity assessment from a notified body;\n* to submit the obligatory product information about medical devices or in vitro diagnostic medical devices;\n* to submit obligatory reports of incidents or corrective actions involving medical devices or in vitro diagnostic medical devices.",
       "editorialWarning": "This IGJ passage retains a January 2026 forecast. Do not use that forecast as current EUDAMED status. The Commission overview says four modules became mandatory on 28 May 2026.",
       "editorialWarningUrl": "https://health.ec.europa.eu/medical-devices-eudamed/overview_en",
-      "evidenceEligible": true
+      "maintenanceStatus": "RETIRED_FROM_ACTIVE_EVIDENCE",
+      "maintenanceCheckedAt": "2026-10-01",
+      "maintenanceReason": "Forecast date conflicts with later current Commission EUDAMED status; preserve capture for audit but do not serve it as current primary evidence.",
+      "maintenanceEvidenceUrl": "https://health.ec.europa.eu/medical-devices-eudamed/overview_en",
+      "evidenceEligible": false
     },
     {
       "id": "igj:s12",
@@ -1950,7 +1954,7 @@
         }
       ],
       "text": "The market authorisation of medical devices (MDR, EU/745) and medical devices for in vitro diagnostics (IVDR, EU/746) requires registration. As of January 2026 (expected date), economic operators will be required to register in the European database EUDAMED for this purpose (MDR, Article 31; IVDR, Article 28).",
-      "evidenceEligible": true,
+      "evidenceEligible": false,
       "kind": "narrative"
     },
     {
@@ -1984,7 +1988,7 @@
         }
       ],
       "text": "In order to gain access to EUDAMED, manufacturers, importers and authorised representatives can register in the EUDAMED actor registration module, after which they are issued with a single registration number, or SRN. This SRN number allows access to EUDAMED and makes it possible, for example:\n* to request a conformity assessment from a notified body;\n* to submit the obligatory product information about medical devices or in vitro diagnostic medical devices;\n* to submit obligatory reports of incidents or corrective actions involving medical devices or in vitro diagnostic medical devices.",
-      "evidenceEligible": true,
+      "evidenceEligible": false,
       "kind": "narrative"
     },
     {

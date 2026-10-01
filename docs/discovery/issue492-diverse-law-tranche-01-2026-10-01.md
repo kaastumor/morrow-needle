@@ -120,9 +120,14 @@ The existing Candidate-B route already owns D3:
   18 Jan 2027;
 - the projection contract distinguishes current `CITED` state from the next fixed event.
 
-Disposition for D3:
+Disposition for D3 after exact projection replay:
 
-> **STRUCTURAL PASS on canonical fixture/projection inspection; rendered runtime replay NOT_EXECUTED in this slice.**
+> **PASS — current and future state remain distinct.**
+
+At 26 Sep 2026 the committed projection returns `CITED` /
+`AVAILABLE_WITHIN_COVERED_SCOPE` with the next event on 18 Jan 2027. At that later date
+the same fixture returns `NOT_CITED` / `NOT_AVAILABLE_VIA_THIS_OJ_REFERENCE`.
+The existing Candidate-B unit regression exercises the same transition.
 
 This preserves #416 as exposed regression evidence rather than pretending D3 is a fresh
 independent validation case.

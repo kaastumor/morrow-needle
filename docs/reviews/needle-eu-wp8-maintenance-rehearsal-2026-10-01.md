@@ -3,7 +3,7 @@
 Date: 1 October 2026  
 Canonical pre-repair revision: `a5007ecc13e84fbd60956700df3198b6620e5a1f`
 
-Status: **REPAIR_IMPLEMENTED — verification pending**
+Status: **VERIFICATION_PASS — READY_FOR_SPONSOR_REVIEW**
 
 ## Maintenance event
 
@@ -132,7 +132,28 @@ general crawler/service. If repeated corrections later show that manual source c
 the dominant cost or stale evidence escapes frequently, that would be the evidence needed
 to reconsider monitoring.
 
-## Verification still required
+## Verification
 
-Run the normal CI/static build and exact affected-query replay on the final branch head.
-If green, WP8 can proceed to sponsor review with this maintenance-cost result.
+Application/rehearsal head:
+`26ebce505418906e99d994363b72ede9cdb8f9c4`.
+
+- Unit tests run `36926800336`: **SUCCESS**.
+- Repository sanitation run `36926800317`: **SUCCESS**.
+- Vercel: **SUCCESS / READY**.
+- Normal static build: **SUCCESS**.
+- Exact post-repair replay confirmed:
+  - broad `EUDAMED` no longer returns `igj:s5`;
+  - current timing query remains supported;
+  - exact MDR/IVDR routing remains unchanged;
+  - preserved retired capture remains inspectable.
+
+No product-wide source recrawl, new provider, database, crawler or monitoring service was
+required.
+
+## WP8 disposition
+
+**PASS — READY_FOR_SPONSOR_REVIEW.**
+
+The rehearsal demonstrates a proportionate bounded correction path for one consequential
+source conflict. It does not establish that all maintained sources are current or that
+manual review will remain proportionate at larger scale.

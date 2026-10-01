@@ -3,20 +3,33 @@
   "contract": "AUTOMATION_CONTROL_V2_20261001",
   "repository": "kaastumor/morrow-needle",
   "generation": 1,
-  "state": "ACTIVE",
-  "owner_attempt": "probe-a",
-  "lease_until": 1790861491,
-  "updated_at": 1790859760,
+  "state": "CHECKPOINTED",
+  "owner_attempt": null,
+  "lease_until": null,
+  "updated_at": 1790859761,
   "stage": {
     "key": "e25c9d25000e74b29bd8d606902356d1f215b8e0b29a1d4f2b9f11aee5c88a2c",
     "task": 490,
     "name": "control-fixture-race",
     "input_revision": "c035e58a53aed718b1dc0cf72265c0f295bca0b5"
   },
-  "checkpoint": null,
+  "checkpoint": {
+    "receipt_ref": "https://github.com/kaastumor/morrow-needle/commit/0f8d980e5d81b77973d859dcd5a8a230947f3085",
+    "verification": "Synthetic control readback PASS",
+    "next_action": "Resume same synthetic stage; no project work",
+    "disposition": "SEE_CANONICAL_OWNER"
+  },
   "operation": null,
   "effects": [],
-  "receipts": [],
+  "receipts": [
+    {
+      "key": "e25c9d25000e74b29bd8d606902356d1f215b8e0b29a1d4f2b9f11aee5c88a2c",
+      "state": "CHECKPOINTED",
+      "receipt_ref": "https://github.com/kaastumor/morrow-needle/commit/0f8d980e5d81b77973d859dcd5a8a230947f3085",
+      "attempt": "probe-a",
+      "at": 1790859761
+    }
+  ],
   "archive_ref": null,
   "failure_count": 0,
   "failure_key": null

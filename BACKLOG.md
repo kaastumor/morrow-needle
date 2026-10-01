@@ -189,54 +189,39 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — M1 connected search seam
+### Immediate priority — M1 diverse-law threat replay
 
-**WIP=1 — #490 / programme M1.** The executable plan from #502 is accepted through merged
-PR #503 as `531e473d1df4e6e62081675d0955919c36dc6df5`; #502 is complete. The current reviewable
-slice integrates the verified retained search/evidence component into the product home with
-only the four approved medical-guidance captures. #488 remains a separate unaccepted
-governance proposal.
+**WIP=1 — #492 / programme WP2, after merged #504.** PR #504 is accepted and squash-merged
+as `0d876b4f66c3c4b5c8b5ada80adab6f6ad164acf`. Its remaining actual-200%-zoom,
+rendered-no-script and remote-preview/new-tab checks are sponsor-accepted
+`NOT_TESTED / SAFE_LIMIT` items and are not current blockers.
 
-Accepted UI foundation:
+The first #492 structurally diverse development tranche is now frozen in
+`docs/discovery/issue492-diverse-law-tranche-01-2026-10-01.md`:
 
-- #497 merged as `2dbd637fd414053269d8e78f46ffe8297089f034`;
-- #499 merged as `c264b767363fda8cbaaff89ce2e6dacf90bedb8c`; #498 is completed;
-- the accepted entry, shared navigation and visual/evidence components are retained.
+- NIS2 -> Dutch Cyberbeveiligingswet: separate EU transposition timing from national
+  measure identity and the Dutch 15 August 2026 in-force date;
+- AI Act -> Regulation (EU) 2026/1744: current explanations must respect amended,
+  provision-specific staged application dates rather than reuse the original timetable;
+- LVD / EN 60335-2-60:2003: preserve current cited state together with the already-fixed
+  18 January 2027 withdrawal.
 
-Those merges close their scoped UI work. They do not close the full prototype or prove
-customer readiness, comprehension, comparative value or current legal-source accuracy.
+The merged medical search does not contain NIS2 or AI Act evidence and must not substitute
+nearby medical guidance. Candidate B already owns the LVD future-state regression. This
+tranche therefore tests safe coverage boundaries plus one represented temporal control;
+it does **not** authorize new public pages.
 
-The retained package provenance and integration limits remain recorded in
-[#490's checkpoint](https://github.com/kaastumor/morrow-needle/issues/490#issuecomment-5889536165).
-Its integrity and 71 component checks were reverified before integration; the rejected
-field-ranker remains excluded. The current seam keeps direct navigation and no-script paths,
-separates query/source language from jurisdiction/version, and fails closed when a query has
-only incidental lexical overlap with the medical collection. Browser interaction evidence is
-still required on the exact review head; unavailable browser executables are an execution
-blocker, not a rendered PASS.
-
-**Next action:** Verification reviews the exact draft-PR head, including source filtering,
-ordinary-query and exact-reference behavior, the outside-coverage control, static-build
-inclusion and real browser behavior when an authorized executable is available. No merge,
-deployment, release or external participant activity follows automatically.
-
-Read and pick up [#492](https://github.com/kaastumor/morrow-needle/issues/492) within that
-same programme: select the first three structurally different source-supported development
-cases, freeze expectations and exercise available product paths. This is the initial
-adversarial tranche, not a second WIP or three new maintained public pages. Unimplemented
-features remain NOT_TESTED; test coverage may exceed public coverage. The issue owns
-development/reserved-case handling and the later bounded campaign.
+**Next action:** execute the narrow exact-revision replay recorded in the tranche note:
+NIS2 and AI-Act ordinary/exact-reference inputs must fail safely without medical
+substitution; the Candidate-B LVD control must show current citation plus the fixed future
+withdrawal. Record exact runtime/browser status where available. Repair only a demonstrated
+boundary defect. A passing replay closes this first WP2 tranche and unlocks WP4
+substantive MDR/IVDR act views under the three resulting content constraints.
 
 External recruitment, participant execution, customer pitch, sales pilots and paid panels
-remain paused through internal M1-M4 delivery. Before requesting external authority,
-complete/disposition the committed journeys, diverse-law campaign, browser evidence and
-maintenance rehearsal, and obtain sponsor acceptance of the internal milestone. Public
-official-source/incumbent research remains internal preparation. The programme's
-external-readiness gate owns the conditions; completion is not automatic contact authority.
-#493 and #494 retain their separate research/implementation/participant gates. After that gate,
-recommend separate orientation and contextual-awareness comparisons; do not automatically
-expand act coverage, vote history, Candidate A/C or monitoring. Participant activity and
-any changed delivery allocation require the existing scoped decisions.
+remain paused through internal M1-M4 delivery. #493/#494 and Candidate A/C keep their
+separate gates. No merge, release, deployment or broader maintained coverage follows
+automatically.
 
 ### Prior #490 accepted-foundation repair
 

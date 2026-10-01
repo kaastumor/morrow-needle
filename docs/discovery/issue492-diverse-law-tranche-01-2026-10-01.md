@@ -97,13 +97,18 @@ shows:
 Therefore D1 and D2 are **outside declared maintained coverage** on this revision. That is
 a legitimate safety result, not evidence that Needle can explain them.
 
-Disposition for D1/D2 on this slice:
+Disposition for D1/D2 after exact replay on `f5136d7274073ff4f53603a0eb77b039e990b927`:
 
-> **SAFE_LIMIT at the repository contract layer; exact UI/runtime output NOT_TESTED here.**
+> **PASS — fail-closed maintained-coverage boundary.**
 
-A later executable replay must confirm that representative ordinary and exact-reference
-queries do not substitute a medical-device result. It must not add these laws to the public
-catalogue merely to make the test pass.
+Exact committed engine/data/resource bytes returned:
+- `2022/2555` -> `REFERENCE_NOT_IN_SNAPSHOT`, with no primary/evidence output;
+- ordinary NIS2/Netherlands wording -> `OUTSIDE_MAINTAINED_COVERAGE`, with no primary/evidence output;
+- `2024/1689` -> `REFERENCE_NOT_IN_SNAPSHOT`, with no primary/evidence output;
+- ordinary AI-Act/high-risk wording -> `OUTSIDE_MAINTAINED_COVERAGE`, with no primary/evidence output.
+
+The regression now lives in `mvp/product-home/search.test.js`. This proves safe abstention
+for these inputs, not an ability to answer NIS2 or AI-Act questions.
 
 ### Candidate-B known-standard path
 

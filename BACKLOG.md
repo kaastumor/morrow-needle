@@ -189,39 +189,37 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — WP7 accepted; WP8 / M3 next
+### Immediate priority — WP8 / M3 maintenance rehearsal
 
-**No active implementation WIP.** Sponsor accepted WP7 / #513 with the rendered-browser
-limit retained and authorized squash-merge of PR #514 as
-`42ba8453d4b47e106390ef303d7eceed9c7d7729`.
+**WIP=1 — #515.** WP8 is active on branch
+`maint/515-eudamed-source-retirement`.
 
-Accepted WP7 result:
-- four held-back cases R1-R4 were frozen before first exposure;
-- all four failed closed safely with no medical substitution or represented-act shortcut;
-- first-exposure evidence was preserved before those cases became regressions;
-- pinned-route/deep-link/skip-focus/no-script/disclosure/narrow-layout static contracts pass;
-- no user-facing product implementation changed.
+Real maintenance conflict:
+- the retained IGJ EUDAMED capture still contains “January 2026 (expected date)”;
+- current Commission EUDAMED material states that four modules became mandatory from
+  28 May 2026;
+- pre-repair replay showed broad `EUDAMED` search ranking the stale `igj:s5` section
+  third despite its editorial warning.
 
-The accepted limitation remains explicit: actual rendered keyboard traversal, 390 px, 320 px,
-disclosure interaction and actual 200% browser zoom are NOT_TESTED / BLOCKED. They are not
-relabelled PASS.
+Smallest repair implemented:
+- preserve the IGJ source and captured forecast text;
+- retire only `igj:s5` plus child blocks `igj:b7` / `igj:b8` from active evidence;
+- record maintenance status, check date, reason and current Commission evidence URL;
+- make exact-reference lookup honor `evidenceEligible:false` consistently;
+- leave other IGJ sections eligible.
 
-Estimated programme allocation after WP7: 22 / 30 planning units used, 8 / 30 remaining,
-including the untouched four-unit discovery/demonstrated-repair reserve. Actual elapsed/model
-cost remains UNKNOWN where not exposed.
+Post-repair branch replay:
+- broad `EUDAMED` no longer surfaces `igj:s5`;
+- specific EUDAMED timing query remains supported by current Commission/actor material;
+- exact `2017/745` and `2017/746` behavior is unchanged;
+- the retired capture remains inspectable via source context.
 
-**Next dependency:** WP8 / M3 maintenance and operating-feasibility rehearsal.
+Maintenance record:
+`docs/reviews/needle-eu-wp8-maintenance-rehearsal-2026-10-01.md`.
 
-Preferred rehearsal input is the maintained EUDAMED evidence conflict already present in the
-product: the IGJ capture still states “January 2026 (expected date)” while the Commission's
-current EUDAMED material states that four modules became mandatory from 28 May 2026. The
-rehearsal should preserve the captured IGJ text for audit/history, determine which outputs
-can surface it, minimally prevent known-stale forecast text from serving as current primary
-evidence, replay affected queries and record source/legal-review/engineering effort.
-
-Do not rewrite captured source text to make it current. Do not remove the source merely
-because one section is stale. WP8 should measure the smallest trustworthy correction path
-before proposing monitoring infrastructure.
+**Next action:** run normal CI/static build and exact affected-query replay on one reviewable
+PR. Repair only demonstrated regressions. No monitoring infrastructure is justified by this
+single bounded correction rehearsal.
 
 External recruitment, participant execution, customer pitch, sales pilots and paid panels
 remain paused through internal M1-M4 delivery. #493/#494 and Candidate A/C retain their

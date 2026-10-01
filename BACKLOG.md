@@ -189,38 +189,31 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — WP4 sponsor review
+### Immediate priority — WP4 accepted; WP5 next dependency
 
-**WIP=1 — #506 / PR #507.** The substantive MDR/IVDR act-detail slice is implemented
-and verification-complete on exact head
-`3e1195b579a2595a8296f3127217637876ca5452`.
+**No active implementation WIP.** Sponsor accepted WP4 / #506 and authorized squash-merge
+of PR #507. The exact reviewed tree was merged to canonical main as
+`057bfa9b0addfc8761f4561409c61fc70a8f71ea`.
 
-Review found and repaired two defects before this gate:
-- stray literal escaped-newline text in the overview's new internal links;
-- an IVDR temporal collapse that incorrectly placed both the 2024/1860 transition
-  amendment and Article 10a supply-interruption duty on 10 Jan 2025. The final contract
-  separates the amendment's 9 Jul 2024 entry into force from the 10 Jan 2025 Article 10a
-  application date.
+Accepted WP4 output:
+- substantive internal MDR and IVDR act-detail routes;
+- one shared source-bounded content contract;
+- explicit source/consolidation identity, scope/role orientation, typed dates and selected
+  legal relationships;
+- national/applicability and compliance boundaries retained;
+- current and fixed-future temporal states kept distinct;
+- review repair separating the 9 Jul 2024 IVDR transition amendment from the
+  10 Jan 2025 Article 10a supply-interruption application date.
 
-Current exact-head evidence:
-- Unit tests run `36862519177`: SUCCESS;
-- Repository sanitation run `36862519206`: SUCCESS;
-- Vercel deployment `dpl_9MbSaDX9ozPAgznKAWSufj4EypwQ`: READY;
-- static build generates both `/medical-devices/mdr/` and
-  `/medical-devices/ivdr/` plus their shared stylesheet;
-- MDR/IVDR source-version identity, national/applicability boundary, typed relationships,
-  current state and fixed-future transitions are covered by focused tests.
+Final pre-merge verification on the exact reviewed head was green for Unit tests,
+Repository sanitation and Vercel. The squash-merge tree is byte-identical to that reviewed
+head. Protected-preview/browser-comprehension evidence remains limited as recorded on #507;
+the sponsor-deferred #504 200%-zoom/no-script/remote-preview checks remain deferred.
 
-The protected preview is not a human/browser-comprehension result. Sponsor-deferred #504
-200%-zoom/no-script/remote-preview checks remain deferred; no standalone work should reopen
-them.
-
-**Next action:** sponsor accepts/merges PR #507 or requests one bounded repair. Planning,
-Implementation and Verification should otherwise return NO_CHANGE on this exact head and
-must not create a successor WIP.
-
-After accepted merge, the programme dependency advances to WP5 — connected depth and
-navigation — but WP5 is not active while #507 remains unmerged.
+**Next programme dependency:** WP5 — connected depth and navigation. WP5 is not active in
+this reconciliation and no successor code branch/PR is created here. The next pickup should
+first establish its single owner under WIP=1, then verify the complete journey
+question/search -> result -> MDR/IVDR act -> time/relationship/evidence -> return/deep link.
 
 External recruitment, participant execution, customer pitch, sales pilots and paid panels
 remain paused through internal M1-M4 delivery. #493/#494 and Candidate A/C retain their

@@ -2,37 +2,20 @@
   "schema": 2,
   "contract": "AUTOMATION_CONTROL_V2_20261001",
   "repository": "kaastumor/morrow-needle",
-  "generation": 3,
-  "state": "BLOCKED",
-  "owner_attempt": null,
-  "lease_until": null,
-  "updated_at": 1790860349,
+  "generation": 4,
+  "state": "CLAIMED",
+  "owner_attempt": "interactive-continuous-reconcile-20261001",
+  "lease_until": 1790877290,
+  "updated_at": 1790875490,
   "stage": {
-    "key": "320101fff263f9ea7df47ba3935bf26bb3ce07b4da58ec777f6dba894040e638",
-    "task": 508,
-    "name": "wp5-connected-navigation",
-    "input_revision": "c035e58a53aed718b1dc0cf72265c0f295bca0b5"
+    "key": "275fde565a0226dc3acd6c8c3838ede1fd29cf955a074618de72c87df15fc6e8",
+    "task": 511,
+    "name": "reconcile-superseded-wp5",
+    "input_revision": "86e14cf4e0d7f7756a8578bbe2f5b9118422df82"
   },
-  "checkpoint": {
-    "receipt_ref": "https://github.com/kaastumor/morrow-needle/issues/508#issuecomment-5932176484",
-    "verification": "Controller 32/32 PASS; GitHub R/W PASS; isolated checkout BLOCKED",
-    "next_action": "Re-enter same stage only when authenticated isolated checkout capability is available",
-    "disposition": "SEE_CANONICAL_OWNER"
-  },
-  "operation": {
-    "id": "wp5-checkout-blocker-v1",
-    "kind": "issue_checkpoint",
-    "target_ref": "issues/508",
-    "expected_head": "c035e58a53aed718b1dc0cf72265c0f295bca0b5",
-    "status": "VERIFIED",
-    "output_ref": "https://github.com/kaastumor/morrow-needle/issues/508#issuecomment-5932176484"
-  },
-  "effects": [
-    {
-      "id": "wp5-checkout-blocker-v1",
-      "output_ref": "https://github.com/kaastumor/morrow-needle/issues/508#issuecomment-5932176484"
-    }
-  ],
+  "checkpoint": null,
+  "operation": null,
+  "effects": [],
   "receipts": [
     {
       "key": "e25c9d25000e74b29bd8d606902356d1f215b8e0b29a1d4f2b9f11aee5c88a2c",

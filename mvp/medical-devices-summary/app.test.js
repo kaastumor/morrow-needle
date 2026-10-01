@@ -233,3 +233,16 @@ test("visual state is not conveyed by color alone", () => {
   assert.match(html, /<span class="timeline-type">Operation<\/span>/);
   assert.match(html, /<span class="map-label">Proposal — not law<\/span>/);
 });
+
+
+test("core-act cards route to substantive internal MDR and IVDR detail views", () => {
+  assert.match(html, /href="\/medical-devices\/mdr\/"/);
+  assert.match(html, /href="\/medical-devices\/ivdr\/"/);
+  assert.match(html, /Official MDR source/);
+  assert.match(html, /Official IVDR source/);
+});
+
+
+test("medical overview contains no literal escaped-newline artifacts", () => {
+  assert.doesNotMatch(html, /\\n/);
+});

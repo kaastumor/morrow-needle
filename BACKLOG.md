@@ -189,39 +189,42 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — M1 diverse-law tranche review
+### Immediate priority — WP4 sponsor review
 
-**WIP=1 — #492 / draft PR #505.** The first structurally diverse WP2 threat tranche is
-complete on its review branch. Exact engine/projection replay and the normal Unit-test
-workflow passed; Repository sanitation and Vercel are green. No product code changed.
+**WIP=1 — #506 / PR #507.** The substantive MDR/IVDR act-detail slice is implemented
+and verification-complete on exact head
+`3e1195b579a2595a8296f3127217637876ca5452`.
 
-Durable result:
-`docs/discovery/issue492-diverse-law-tranche-01-2026-10-01.md`.
+Review found and repaired two defects before this gate:
+- stray literal escaped-newline text in the overview's new internal links;
+- an IVDR temporal collapse that incorrectly placed both the 2024/1860 transition
+  amendment and Article 10a supply-interruption duty on 10 Jan 2025. The final contract
+  separates the amendment's 9 Jul 2024 entry into force from the 10 Jan 2025 Article 10a
+  application date.
 
-The tranche retains three constraints for subsequent act-detail/navigation work:
+Current exact-head evidence:
+- Unit tests run `36862519177`: SUCCESS;
+- Repository sanitation run `36862519206`: SUCCESS;
+- Vercel deployment `dpl_9MbSaDX9ozPAgznKAWSufj4EypwQ`: READY;
+- static build generates both `/medical-devices/mdr/` and
+  `/medical-devices/ivdr/` plus their shared stylesheet;
+- MDR/IVDR source-version identity, national/applicability boundary, typed relationships,
+  current state and fixed-future transitions are covered by focused tests.
 
-- national implementation state must not be inherited from an EU directive date;
-- temporal explanations must be amendment/version aware and may require provision-specific
-  application dates;
-- current state and an already-fixed future state must remain distinct.
+The protected preview is not a human/browser-comprehension result. Sponsor-deferred #504
+200%-zoom/no-script/remote-preview checks remain deferred; no standalone work should reopen
+them.
 
-For the two new outside-coverage controls, `2022/2555` and `2024/1689` return
-`REFERENCE_NOT_IN_SNAPSHOT`; ordinary NIS2 and AI-Act questions return
-`OUTSIDE_MAINTAINED_COVERAGE`, all without evidence substitution. The represented LVD
-control remains `CITED` on 26 Sep 2026 while exposing the 18 Jan 2027 withdrawal as its
-next fixed event.
+**Next action:** sponsor accepts/merges PR #507 or requests one bounded repair. Planning,
+Implementation and Verification should otherwise return NO_CHANGE on this exact head and
+must not create a successor WIP.
 
-**Next action:** review/accept PR #505. Do not start a second WIP while that checkpoint is
-pending. After accepted reconciliation, the next programme package is WP4 — substantive
-MDR/IVDR act views — using the three constraints above. No NIS2/AI public page is implied.
-
-PR #504 remains accepted on main as `0d876b4f66c3c4b5c8b5ada80adab6f6ad164acf`.
-Its sponsor-deferred actual-200%-zoom, rendered-no-script and remote-preview/new-tab checks
-remain `NOT_TESTED / SAFE_LIMIT` and are not current blockers.
+After accepted merge, the programme dependency advances to WP5 — connected depth and
+navigation — but WP5 is not active while #507 remains unmerged.
 
 External recruitment, participant execution, customer pitch, sales pilots and paid panels
-remain paused through internal M1-M4 delivery. #493/#494 and Candidate A/C keep their
-separate gates. No release, deployment or broader maintained coverage follows automatically.
+remain paused through internal M1-M4 delivery. #493/#494 and Candidate A/C retain their
+separate gates. No release or production deployment follows automatically.
 
 ### Prior #490 accepted-foundation repair
 

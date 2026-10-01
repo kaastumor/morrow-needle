@@ -6,6 +6,8 @@ const path = require("node:path");
 const ROOT = path.resolve(__dirname, "..", "..");
 const DIST = path.join(ROOT, "dist");
 const {participantCopy} = require("../../docs/experiments/issue494/build-participant-pages.js");
+const {ACTS} = require("../medical-act-detail/acts.js");
+const {renderActPage} = require("../medical-act-detail/render.js");
 
 const APP_FILES = Object.freeze([
   "index.html",
@@ -30,6 +32,8 @@ const MEDICAL_SUMMARY_FILES = Object.freeze([
   "styles.css",
   "app.js"
 ]);
+
+const MEDICAL_ACT_ROUTES = Object.freeze(["mdr", "ivdr"]);
 
 const PRODUCT_HOME_FILES = Object.freeze(["index.html", "search.css"]);
 
@@ -68,6 +72,7 @@ function buildStaticDemo() {
   const regimeV2Out = path.join(DIST, "regime-v2");
   const medicalSummaryOut = path.join(DIST, "medical-devices");
   const productHomeOut = DIST;
+  const medicalActStyle = path.join(DIST, "medical-devices", "act-detail.css");
   const fixturesOut = path.join(DIST, "fixtures", "dependency");
   const pilotAOut = path.join(DIST, "research", "issue494", "a");
   const pilotBOut = path.join(DIST, "research", "issue494", "b");
@@ -95,6 +100,14 @@ function buildStaticDemo() {
       path.join(ROOT, "mvp", "medical-devices-summary", file),
       path.join(medicalSummaryOut, file)
     );
+  }
+
+  copyFile(path.join(ROOT, "mvp", "medical-act-detail", "styles.css"), medicalActStyle);
+  for (const route of MEDICAL_ACT_ROUTES) {
+    const act = ACTS[route];
+    const routeDir = path.join(DIST, "medical-devices", route);
+    fs.mkdirSync(routeDir, {recursive: true});
+    fs.writeFileSync(path.join(routeDir, "index.html"), renderActPage(act), "utf8");
   }
 
   for (const file of PRODUCT_HOME_FILES) {
@@ -130,6 +143,8 @@ function buildStaticDemo() {
     regimeFiles: REGIME_FILES,
     regimeV2Files: REGIME_V2_FILES,
     medicalSummaryFiles: MEDICAL_SUMMARY_FILES,
+    medicalActRoutes: MEDICAL_ACT_ROUTES,
+    medicalActStyle: "medical-devices/act-detail.css",
     productHomeFiles: PRODUCT_HOME_FILES,
     productSearchFiles: PRODUCT_SEARCH_FILES,
     productShellFile: "product-shell.css",
@@ -155,4 +170,4 @@ if (require.main === module) {
   );
 }
 
-module.exports = {APP_FILES, REGIME_FILES, REGIME_V2_FILES, MEDICAL_SUMMARY_FILES, PRODUCT_HOME_FILES, PRODUCT_SEARCH_FILES, PILOT_FILES, FIXTURE_FILES, buildStaticDemo};
+module.exports = {APP_FILES, REGIME_FILES, REGIME_V2_FILES, MEDICAL_SUMMARY_FILES, MEDICAL_ACT_ROUTES, PRODUCT_HOME_FILES, PRODUCT_SEARCH_FILES, PILOT_FILES, FIXTURE_FILES, buildStaticDemo};

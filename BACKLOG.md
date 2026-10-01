@@ -189,31 +189,31 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — WP4 accepted; WP5 next dependency
+### Immediate priority — WP5 connected depth and navigation
 
-**No active implementation WIP.** Sponsor accepted WP4 / #506 and authorized squash-merge
-of PR #507. The exact reviewed tree was merged to canonical main as
-`057bfa9b0addfc8761f4561409c61fc70a8f71ea`.
+**WIP=1 — #509 / programme WP5.** WP4 is accepted on main through
+`057bfa9b0addfc8761f4561409c61fc70a8f71ea`; the documentation reconciliation is
+`c035e58a53aed718b1dc0cf72265c0f295bca0b5`.
 
-Accepted WP4 output:
-- substantive internal MDR and IVDR act-detail routes;
-- one shared source-bounded content contract;
-- explicit source/consolidation identity, scope/role orientation, typed dates and selected
-  legal relationships;
-- national/applicability and compliance boundaries retained;
-- current and fixed-future temporal states kept distinct;
-- review repair separating the 9 Jul 2024 IVDR transition amendment from the
-  10 Jan 2025 Article 10a supply-interruption application date.
+Current slice connects the accepted journey without adding legal coverage:
 
-Final pre-merge verification on the exact reviewed head was green for Unit tests,
-Repository sanitation and Vercel. The squash-merge tree is byte-identical to that reviewed
-head. Protected-preview/browser-comprehension evidence remains limited as recorded on #507;
-the sponsor-deferred #504 200%-zoom/no-script/remote-preview checks remain deferred.
+- exact represented identifiers `2017/745` and `2017/746` may expose deterministic
+  internal MDR/IVDR detail routes;
+- ordinary in-coverage guidance results continue to the bounded medical overview rather than
+  guessing one act;
+- outside-coverage and unknown-reference states receive no represented-act shortcut;
+- the existing act-detail `#time`, `#relationships`, `#sources` anchors and overview/home
+  return paths are the connected depth contract.
 
-**Next programme dependency:** WP5 — connected depth and navigation. WP5 is not active in
-this reconciliation and no successor code branch/PR is created here. The next pickup should
-first establish its single owner under WIP=1, then verify the complete journey
-question/search -> result -> MDR/IVDR act -> time/relationship/evidence -> return/deep link.
+Navigation edges are product navigation, not legal applicability or dependency claims.
+Direct official-source links remain available.
+
+**Next action:** verify branch `impl/509-connected-navigation` through one reviewable PR.
+Exercise exact IVDR/MDR, ordinary medical, and #492 outside-coverage controls plus static
+deep-link generation. Repair only demonstrated broken/unsafe navigation.
+
+Sponsor-deferred #504 200%-zoom/no-script/remote-preview checks remain deferred unless this
+navigation change itself creates a consequential regression.
 
 External recruitment, participant execution, customer pitch, sales pilots and paid panels
 remain paused through internal M1-M4 delivery. #493/#494 and Candidate A/C retain their

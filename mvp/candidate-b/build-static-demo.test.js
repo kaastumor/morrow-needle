@@ -17,7 +17,8 @@ test("static bundle contains frozen Candidate-B plus the separate regime prototy
   assert.deepEqual(manifest.fixtureFiles, FIXTURE_FILES);
   assert.deepEqual(manifest.regimeFiles, REGIME_FILES);
   assert.deepEqual(manifest.regimeV2Files, REGIME_V2_FILES);
-  assert.deepEqual(manifest.medicalSummaryFiles, MEDICAL_SUMMARY_FILES);\n  assert.deepEqual(manifest.medicalActRoutes, MEDICAL_ACT_ROUTES);
+  assert.deepEqual(manifest.medicalSummaryFiles, MEDICAL_SUMMARY_FILES);
+  assert.deepEqual(manifest.medicalActRoutes, MEDICAL_ACT_ROUTES);
   assert.deepEqual(manifest.productHomeFiles, PRODUCT_HOME_FILES);
   assert.deepEqual(manifest.productSearchFiles, PRODUCT_SEARCH_FILES);
   assert.deepEqual(manifest.pilotFiles, PILOT_FILES);
@@ -56,7 +57,15 @@ test("static bundle contains frozen Candidate-B plus the separate regime prototy
     assert.ok(fs.existsSync(path.join(DIST, "fixtures", "dependency", file)));
   }
 
-  for (const route of MEDICAL_ACT_ROUTES) {\n    const detail = path.join(DIST, "medical-devices", route, "index.html");\n    assert.ok(fs.existsSync(detail));\n    const detailHtml = fs.readFileSync(detail, "utf8");\n    assert.match(detailHtml, /Core act · source-bounded orientation/);\n  }\n  assert.ok(fs.existsSync(path.join(DIST, "medical-devices", "act-detail.css")));\n\n  assert.ok(fs.existsSync(path.join(DIST, "index.html")));
+  for (const route of MEDICAL_ACT_ROUTES) {
+    const detail = path.join(DIST, "medical-devices", route, "index.html");
+    assert.ok(fs.existsSync(detail));
+    const detailHtml = fs.readFileSync(detail, "utf8");
+    assert.match(detailHtml, /Core act · source-bounded orientation/);
+  }
+  assert.ok(fs.existsSync(path.join(DIST, "medical-devices", "act-detail.css")));
+
+  assert.ok(fs.existsSync(path.join(DIST, "index.html")));
   for (const file of PRODUCT_SEARCH_FILES) {
     assert.ok(fs.existsSync(path.join(DIST, "search", file)));
   }

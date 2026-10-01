@@ -140,3 +140,26 @@ test("search panel module parses with connected-navigation rendering available",
   assert.equal(typeof panel.mount, "function");
   assert.equal(typeof evidenceView.renderContinuation, "function");
 });
+
+
+test("WP6 D6-D8 exact references and ordinary wording fail closed", () => {
+  for (const reference of ["2026/1323", "2026/1022", "2025/90725"]) {
+    const result = engine.search(reference, {queryLanguage: "en"});
+    assert.equal(result.status, "REFERENCE_NOT_IN_SNAPSHOT", reference);
+    assert.equal(result.primary.length, 0, reference);
+    assert.equal(result.evidence.length, 0, reference);
+    assert.equal(presenter.present(result).navigation, null, reference);
+  }
+
+  const decision = engine.search("Which Member States does Decision 2026/1323 apply to?", {queryLanguage: "en"});
+  assert.equal(decision.status, "REFERENCE_NOT_IN_SNAPSHOT");
+  assert.equal(presenter.present(decision).navigation, null);
+
+  const customs = engine.search("When do the temporary EUR 3 customs duty data requirements apply?", {queryLanguage: "en"});
+  assert.equal(customs.status, "NO_SUPPORTED_TERMS");
+  assert.equal(presenter.present(customs).navigation, null);
+
+  const corrigendum = engine.search("What did the September 2025 corrigendum to Regulation 2024/2956 change?", {queryLanguage: "en"});
+  assert.equal(corrigendum.status, "REFERENCE_NOT_IN_SNAPSHOT");
+  assert.equal(presenter.present(corrigendum).navigation, null);
+});

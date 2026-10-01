@@ -192,8 +192,9 @@ Do not reopen automatic similarity, comprehensive track records, member/party jo
 ### Immediate priority — WP8 sponsor review
 
 **WIP=1 — #515 / PR #516.** The real-source maintenance rehearsal is implemented and
-verification-complete on application head
-`26ebce505418906e99d994363b72ede9cdb8f9c4`.
+verification-complete for the substantive repair on
+`26ebce505418906e99d994363b72ede9cdb8f9c4`; final test-harness rework is on
+`098428575fc8226510c10fc62ef50fa4189daa6e`.
 
 Maintenance event:
 - retained IGJ guidance still says “January 2026 (expected date)” for required EUDAMED
@@ -219,6 +220,9 @@ Exact application-head evidence:
 
 Maintenance record:
 `docs/reviews/needle-eu-wp8-maintenance-rehearsal-2026-10-01.md`.
+
+Final-head CI also exposed and repaired a shared-`dist/` race in the WP7 hardening tests;
+that rework changed no product behavior and is recorded in the maintenance cost account.
 
 Operating-feasibility result: this correction required a source review, section-level
 retirement, one generic eligibility consistency repair and focused replay. **No new

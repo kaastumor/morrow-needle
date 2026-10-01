@@ -1,19 +1,14 @@
 {
   "archive_ref": null,
-  "checkpoint": {
-    "disposition": "SEE_CANONICAL_OWNER",
-    "next_action": "Await sponsor review of PR #514. Do not merge or activate WP8 autonomously; preserve explicit browser limits and recheck canonical owner/head on next run.",
-    "receipt_ref": "https://github.com/kaastumor/morrow-needle/pull/514",
-    "verification": "WP7 head 8de6abf5; Unit tests and sanitation SUCCESS; Vercel READY; browser checks remain NOT_TESTED/BLOCKED"
-  },
+  "checkpoint": null,
   "contract": "AUTOMATION_CONTROL_V2_20261001",
   "effects": [],
   "failure_count": 0,
   "failure_key": null,
-  "generation": 5,
-  "lease_until": null,
+  "generation": 6,
+  "lease_until": 1790893700,
   "operation": null,
-  "owner_attempt": null,
+  "owner_attempt": "needle-continuous-20261001-completion-24e6c7c9",
   "receipts": [
     {
       "at": 1790859761,
@@ -54,11 +49,11 @@
   "repository": "kaastumor/morrow-needle",
   "schema": 2,
   "stage": {
-    "input_revision": "8de6abf5c98d79dce41eb8bedda66f1cd60c3bdb",
-    "key": "b16fc1054949ca7dec903739822eaf5e8824e9096b0c289b0388cb63c711922d",
-    "name": "reconcile-wp7-review-gate",
-    "task": 513
+    "input_revision": "1aedd84b198c80868fc21cdd3d48117af0396435",
+    "key": "90ebf6035a619272a7079e64e6ab893bf6beb65e9efd21b8603132216f0ed732",
+    "name": "reconcile-internal-prototype-completion",
+    "task": 517
   },
-  "state": "WAITING_EXTERNAL",
-  "updated_at": 1790885017
+  "state": "CLAIMED",
+  "updated_at": 1790891900
 }

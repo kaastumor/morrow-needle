@@ -5,7 +5,7 @@ const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
 
-const {APP_FILES, REGIME_FILES, REGIME_V2_FILES, MEDICAL_SUMMARY_FILES, PRODUCT_HOME_FILES, PRODUCT_SEARCH_FILES, PILOT_FILES, FIXTURE_FILES, buildStaticDemo} = require("./build-static-demo.js");
+const {APP_FILES, REGIME_FILES, REGIME_V2_FILES, MEDICAL_SUMMARY_FILES, MEDICAL_ACT_ROUTES, PRODUCT_HOME_FILES, PRODUCT_SEARCH_FILES, PILOT_FILES, FIXTURE_FILES, buildStaticDemo} = require("./build-static-demo.js");
 
 const ROOT = path.resolve(__dirname, "..", "..");
 const DIST = path.join(ROOT, "dist");
@@ -17,7 +17,7 @@ test("static bundle contains frozen Candidate-B plus the separate regime prototy
   assert.deepEqual(manifest.fixtureFiles, FIXTURE_FILES);
   assert.deepEqual(manifest.regimeFiles, REGIME_FILES);
   assert.deepEqual(manifest.regimeV2Files, REGIME_V2_FILES);
-  assert.deepEqual(manifest.medicalSummaryFiles, MEDICAL_SUMMARY_FILES);
+  assert.deepEqual(manifest.medicalSummaryFiles, MEDICAL_SUMMARY_FILES);\n  assert.deepEqual(manifest.medicalActRoutes, MEDICAL_ACT_ROUTES);
   assert.deepEqual(manifest.productHomeFiles, PRODUCT_HOME_FILES);
   assert.deepEqual(manifest.productSearchFiles, PRODUCT_SEARCH_FILES);
   assert.deepEqual(manifest.pilotFiles, PILOT_FILES);
@@ -56,7 +56,7 @@ test("static bundle contains frozen Candidate-B plus the separate regime prototy
     assert.ok(fs.existsSync(path.join(DIST, "fixtures", "dependency", file)));
   }
 
-  assert.ok(fs.existsSync(path.join(DIST, "index.html")));
+  for (const route of MEDICAL_ACT_ROUTES) {\n    const detail = path.join(DIST, "medical-devices", route, "index.html");\n    assert.ok(fs.existsSync(detail));\n    const detailHtml = fs.readFileSync(detail, "utf8");\n    assert.match(detailHtml, /Core act · source-bounded orientation/);\n  }\n  assert.ok(fs.existsSync(path.join(DIST, "medical-devices", "act-detail.css")));\n\n  assert.ok(fs.existsSync(path.join(DIST, "index.html")));
   for (const file of PRODUCT_SEARCH_FILES) {
     assert.ok(fs.existsSync(path.join(DIST, "search", file)));
   }
@@ -66,7 +66,7 @@ test("static bundle contains frozen Candidate-B plus the separate regime prototy
 
 test("product entry and retained routes have a static return path while research stays isolated", () => {
   buildStaticDemo();
-  const routes = ["index.html", "medical-devices/index.html", "regime-v2/index.html", "mvp/candidate-b/index.html"];
+  const routes = ["index.html", "medical-devices/index.html", "medical-devices/mdr/index.html", "medical-devices/ivdr/index.html", "regime-v2/index.html", "mvp/candidate-b/index.html"];
   for (const route of routes) {
     const html = fs.readFileSync(path.join(DIST, route), "utf8");
     assert.match(html, /Needle EU/);

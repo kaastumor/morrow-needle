@@ -189,39 +189,38 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — M1 diverse-law tranche review
+### Immediate priority — WP4 substantive MDR/IVDR act views
 
-**WIP=1 — #492 / draft PR #505.** The first structurally diverse WP2 threat tranche is
-complete on its review branch. Exact engine/projection replay and the normal Unit-test
-workflow passed; Repository sanitation and Vercel are green. No product code changed.
+**WIP=1 — #506 / programme WP4.** Sponsor accepted and merged #505 as
+`b2ce2b5b13f5d86722464feef37affbf107062eb`. The first #492 threat tranche is accepted
+and its three constraints are binding on this implementation.
 
-Durable result:
-`docs/discovery/issue492-diverse-law-tranche-01-2026-10-01.md`.
+Current slice: build one shared static act-detail contract for the represented MDR and IVDR
+core acts. Each view must expose legal/source identity, bounded scope and roles, typed dates,
+selected relationships, official evidence and unresolved limits. Public wording must not
+become a personalised applicability or compliance verdict.
 
-The tranche retains three constraints for subsequent act-detail/navigation work:
+The #492 constraints carried into this WIP are:
+- EU-level dates do not settle national rules or individual applicability;
+- temporal state is amendment/version aware and can be provision-specific;
+- current state and fixed future transitions stay distinct.
 
-- national implementation state must not be inherited from an EU directive date;
-- temporal explanations must be amendment/version aware and may require provision-specific
-  application dates;
-- current state and an already-fixed future state must remain distinct.
+Source check for this slice records MDR current consolidation 19 Jul 2026, IVDR current
+consolidation 10 Jan 2025, Regulation (EU) 2024/1860 as the cross-cutting amendment, and
+28 May 2026 as the mandatory-use date for the first four EUDAMED modules. Exact sources
+remain linked in the act views; consolidated texts are documentary aids, not replacements
+for authentic OJ acts.
 
-For the two new outside-coverage controls, `2022/2555` and `2024/1689` return
-`REFERENCE_NOT_IN_SNAPSHOT`; ordinary NIS2 and AI-Act questions return
-`OUTSIDE_MAINTAINED_COVERAGE`, all without evidence substitution. The represented LVD
-control remains `CITED` on 26 Sep 2026 while exposing the 18 Jan 2027 withdrawal as its
-next fixed event.
+**Next action:** implement and verify #506 on branch `impl/506-medical-act-views`; open one
+reviewable PR when focused tests/static build and normal CI are ready. No second WIP.
 
-**Next action:** review/accept PR #505. Do not start a second WIP while that checkpoint is
-pending. After accepted reconciliation, the next programme package is WP4 — substantive
-MDR/IVDR act views — using the three constraints above. No NIS2/AI public page is implied.
-
-PR #504 remains accepted on main as `0d876b4f66c3c4b5c8b5ada80adab6f6ad164acf`.
-Its sponsor-deferred actual-200%-zoom, rendered-no-script and remote-preview/new-tab checks
-remain `NOT_TESTED / SAFE_LIMIT` and are not current blockers.
+The sponsor-deferred #504 actual-200%-zoom, rendered-no-script and remote-preview/new-tab
+checks remain `NOT_TESTED / SAFE_LIMIT` and are not reopened unless this changed UI itself
+creates a relevant regression.
 
 External recruitment, participant execution, customer pitch, sales pilots and paid panels
 remain paused through internal M1-M4 delivery. #493/#494 and Candidate A/C keep their
-separate gates. No release, deployment or broader maintained coverage follows automatically.
+separate gates. No release or deployment follows automatically.
 
 ### Prior #490 accepted-foundation repair
 

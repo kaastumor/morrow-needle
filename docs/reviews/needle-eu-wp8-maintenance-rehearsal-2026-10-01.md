@@ -107,7 +107,14 @@ Product changes:
 
 No framework, database, monitoring service, source crawler or new provider was added.
 
-Implementation rework before this checkpoint: none beyond the planned bounded repair.
+Implementation rework:
+- final-head CI exposed a pre-existing concurrency flaw in `mvp/hardening.test.js`: the
+  hardening suite and static-build suite both rebuilt/deleted shared `dist/` concurrently
+  under Node's parallel test runner;
+- repair: hardening tests now inspect source/render contracts without mutating shared
+  `dist/`; the dedicated static-build suite remains the sole build-output owner;
+- no user-facing product behavior changed in this rework.
+
 Actual elapsed human-equivalent time and metered model/tool cost are **UNKNOWN** where not
 exposed.
 
@@ -134,8 +141,11 @@ to reconsider monitoring.
 
 ## Verification
 
-Application/rehearsal head:
+Substantive source-retirement head:
 `26ebce505418906e99d994363b72ede9cdb8f9c4`.
+
+Test-harness repair head:
+`098428575fc8226510c10fc62ef50fa4189daa6e`.
 
 - Unit tests run `36926800336`: **SUCCESS**.
 - Repository sanitation run `36926800317`: **SUCCESS**.

@@ -1,57 +1,52 @@
 {
-  "schema": 2,
+  "archive_ref": null,
+  "checkpoint": null,
   "contract": "AUTOMATION_CONTROL_V2_20261001",
-  "repository": "kaastumor/morrow-needle",
-  "generation": 4,
-  "state": "WAITING_EXTERNAL",
-  "owner_attempt": null,
-  "lease_until": null,
-  "updated_at": 1790875540,
-  "stage": {
-    "key": "275fde565a0226dc3acd6c8c3838ede1fd29cf955a074618de72c87df15fc6e8",
-    "task": 511,
-    "name": "reconcile-superseded-wp5",
-    "input_revision": "86e14cf4e0d7f7756a8578bbe2f5b9118422df82"
-  },
-  "checkpoint": {
-    "receipt_ref": "https://github.com/kaastumor/morrow-needle/pull/512",
-    "verification": "Readback: #508 closed/superseded; #511 open; PR512 head 86e14cf ready for sponsor review; no application effect",
-    "next_action": "Await sponsor review of PR512. Do not resume closed WP5/#508 or activate WP7. Recheck canonical owner/head on next launch; prior blocker receipts retained as history.",
-    "disposition": "SEE_CANONICAL_OWNER"
-  },
-  "operation": null,
   "effects": [],
+  "failure_count": 0,
+  "failure_key": null,
+  "generation": 5,
+  "lease_until": 1790886752,
+  "operation": null,
+  "owner_attempt": "needle-continuous-20261001-wp7-reconcile-bfa42878",
   "receipts": [
     {
-      "key": "e25c9d25000e74b29bd8d606902356d1f215b8e0b29a1d4f2b9f11aee5c88a2c",
-      "state": "CHECKPOINTED",
-      "receipt_ref": "https://github.com/kaastumor/morrow-needle/commit/0f8d980e5d81b77973d859dcd5a8a230947f3085",
+      "at": 1790859761,
       "attempt": "probe-a",
-      "at": 1790859761
-    },
-    {
       "key": "e25c9d25000e74b29bd8d606902356d1f215b8e0b29a1d4f2b9f11aee5c88a2c",
-      "state": "COMPLETE",
       "receipt_ref": "https://github.com/kaastumor/morrow-needle/commit/0f8d980e5d81b77973d859dcd5a8a230947f3085",
+      "state": "CHECKPOINTED"
+    },
+    {
+      "at": 1790859764,
       "attempt": "probe-resumed",
-      "at": 1790859764
+      "key": "e25c9d25000e74b29bd8d606902356d1f215b8e0b29a1d4f2b9f11aee5c88a2c",
+      "receipt_ref": "https://github.com/kaastumor/morrow-needle/commit/0f8d980e5d81b77973d859dcd5a8a230947f3085",
+      "state": "COMPLETE"
     },
     {
-      "key": "320101fff263f9ea7df47ba3935bf26bb3ce07b4da58ec777f6dba894040e638",
-      "state": "BLOCKED",
-      "receipt_ref": "https://github.com/kaastumor/morrow-needle/issues/508#issuecomment-5932176484",
+      "at": 1790860349,
       "attempt": "needle-pilot-20261001-wp5",
-      "at": 1790860349
+      "key": "320101fff263f9ea7df47ba3935bf26bb3ce07b4da58ec777f6dba894040e638",
+      "receipt_ref": "https://github.com/kaastumor/morrow-needle/issues/508#issuecomment-5932176484",
+      "state": "BLOCKED"
     },
     {
-      "key": "275fde565a0226dc3acd6c8c3838ede1fd29cf955a074618de72c87df15fc6e8",
-      "state": "WAITING_EXTERNAL",
-      "receipt_ref": "https://github.com/kaastumor/morrow-needle/pull/512",
+      "at": 1790875540,
       "attempt": "interactive-continuous-reconcile-20261001",
-      "at": 1790875540
+      "key": "275fde565a0226dc3acd6c8c3838ede1fd29cf955a074618de72c87df15fc6e8",
+      "receipt_ref": "https://github.com/kaastumor/morrow-needle/pull/512",
+      "state": "WAITING_EXTERNAL"
     }
   ],
-  "archive_ref": null,
-  "failure_count": 0,
-  "failure_key": null
+  "repository": "kaastumor/morrow-needle",
+  "schema": 2,
+  "stage": {
+    "input_revision": "8de6abf5c98d79dce41eb8bedda66f1cd60c3bdb",
+    "key": "b16fc1054949ca7dec903739822eaf5e8824e9096b0c289b0388cb63c711922d",
+    "name": "reconcile-wp7-review-gate",
+    "task": 513
+  },
+  "state": "CLAIMED",
+  "updated_at": 1790884952
 }

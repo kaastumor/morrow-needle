@@ -189,29 +189,38 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — WP6 / M2 bounded reuse campaign
+### Immediate priority — WP6 sponsor review
 
-**WIP=1 — #511.** M1 exited with recorded limits; WP6 is active on
-`research/511-m2-development-campaign`.
+**WIP=1 — #511 / PR #512.** The M2 development campaign and one bounded contrast are
+implemented and verification-complete on application head
+`485e0be0af564b5f754316fca908667cf968dba5`.
 
-D1-D8 development cases are now executed/documented in
+D1-D8 development findings are recorded in
 `docs/discovery/issue511-m2-development-campaign-2026-10-01.md`.
 
-Current finding:
+Current disposition:
 - D4 exact IVDR and D5 ordinary EUDAMED remain positive controls;
-- D6 addressee-specific Implementing Decision and D8 corrigendum prove the medical
-  core-act template must **not** be treated as universal;
-- D7 Delegated Regulation (EU) 2026/1022 is the strongest bounded contrast candidate:
-  subordinate/amending relationship, EUR 150 scope threshold, 1 Jul 2026 general
-  application, 1 Nov 2026 Annex-data application, and voluntary early use from 1 Jul;
-- D6-D8 search paths fail closed without medical substitution; regression coverage is added.
+- D6 addressee-specific Implementing Decision and D8 corrigendum demonstrate that the
+  medical core-act template is not universal;
+- D7 Delegated Regulation (EU) 2026/1022 earned the one allowed bounded public contrast at
+  `/customs-low-value-imports/`;
+- D6-D8 search paths remain fail-closed without medical substitution;
+- the D7 page preserves threshold scope, separate application/entry-into-force dates,
+  optional early use, later Annex application and the German/Dutch-only corrigendum;
+- no universal legal-instrument framework was introduced.
 
-**Next action:** in this same WIP, implement at most one separate bounded D7 contrast page,
-reusing only the product shell, evidence/version discipline, typed dates/relationships and
-scope boundaries that actually generalised. Do not generalise `medical-act-detail` into a
-universal instrument framework.
+Final application-head evidence:
+- Unit tests `36881125338`: SUCCESS;
+- Repository sanitation `36881125392`: SUCCESS;
+- Vercel `dpl_Au4Mm3QrMnkcT1GTWuJZvSyfsSJW`: READY;
+- normal CI static build completed successfully.
 
-The four WP7 held-back cases remain unselected/unexposed and must not inform WP6 repairs.
+The four WP7/M3 held-back cases remain unselected/unexposed and must not be used to tune
+this WP6 branch.
+
+**Next action:** sponsor accepts/merges PR #512 or requests one bounded repair. Autonomous
+Planning / Implementation / Verification should otherwise return NO_CHANGE on this exact
+behavior and must not activate WP7 in parallel.
 
 External recruitment, participant execution, customer pitch, sales pilots and paid panels
 remain paused through internal M1-M4 delivery. #493/#494 and Candidate A/C retain their

@@ -42,7 +42,7 @@
       const engineFactory = options.engineFactory || (MedicalSearch && MedicalSearch.createEngine);
       if (!engineFactory) throw new TypeError("Medical coverage guard unavailable");
       const instance = panel.mount(mount, {data, resources, queryLanguage: "en", engineFactory});
-      if (status) status.textContent = "Search ready. Only the four listed English medical-guidance captures are represented.";
+      if (status) status.textContent = "Search ready. Existing English page links and the four captured medical-guidance sources are available.";
       return instance;
     } catch (error) {
       if (status) status.textContent = "Captured-source search is unavailable. The direct medical overview and official-source links below still work.";

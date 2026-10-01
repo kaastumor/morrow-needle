@@ -48,6 +48,7 @@ const PRODUCT_SEARCH_FILES = Object.freeze([
   "index.json",
   "language.js",
   "medical-engine.js",
+  "page-navigation.js",
   "resources.json",
   "search-panel.js",
   "search.js",

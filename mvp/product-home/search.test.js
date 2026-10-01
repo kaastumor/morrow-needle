@@ -13,6 +13,7 @@ const evidenceView = require("./search/evidence-view.js");
 const presenter = evidenceView.createPresenter(engine);
 const panel = require("./search/search-panel.js");
 const app = require("./search/app.js");
+const pageNavigation = require("./search/page-navigation.js");
 
 test("public search bundle contains only the admitted medical guidance sources", () => {
   assert.equal(app.validateBundle(data, resources), true);
@@ -216,4 +217,89 @@ test("current EUDAMED timing result remains available after stale-source retirem
   assert.ok(result.primary.some(item => item.sourceId === "eudamed"));
   assert.equal(result.primary.some(item => item.id === "igj:s5"), false);
   assert.match(result.evidence.map(item => item.text).join("\n"), /28 May 2026|first four modules are mandatory|following 4 modules of EUDAMED became mandatory/i);
+});
+
+function locate(question, language = "en") {
+  return pageNavigation.locate(question, engine.search(question, {queryLanguage: language, budget: 400}));
+}
+
+test("ordinary questions reach existing time and role sections without expanding captured evidence", () => {
+  assert.equal(locate("What changed in IVDR in 2024, and when do the dates apply?").choices[0].href, "/medical-devices/ivdr/#time");
+  const customs = "What changes for low-value customs parcels under EUR 150?";
+  const response = engine.search(customs, {queryLanguage: "en"});
+  assert.equal(response.primary.length, 0);
+  assert.equal(response.evidence.length, 0);
+  assert.equal(locate(customs).choices[0].href, "/customs-low-value-imports/#time");
+  assert.equal(locate("What are the MDR distributor roles?").choices[0].href, "/medical-devices/mdr/#roles");
+  assert.equal(locate("Does EUDAMED include all six modules?").choices[0].href, "/medical-devices/");
+});
+
+test("conflicting subjects offer choices and vague questions do not silently choose an act", () => {
+  for (const question of ["MDR and IVDR dates", "MDR 2017/746", "2017/745 and 2017/746"]) {
+    const result = locate(question);
+    assert.equal(result.kind, "clarify", question);
+    assert.equal(result.choices.length, 2, question);
+    assert.deepEqual(new Set(result.choices.map(item => item.label)), new Set(["Medical devices (MDR)", "In-vitro diagnostics (IVDR)"]));
+  }
+  const vague = locate("What changed?");
+  assert.equal(vague.kind, "clarify");
+  assert.deepEqual(vague.choices.map(item => item.href), ["/medical-devices/", "/customs-low-value-imports/#time"]);
+});
+
+test("exact page locators honor identifier type and never replace unknown references", () => {
+  for (const question of ["2017/746", "32017R0746", "https://data.europa.eu/eli/reg/2017/746/oj"]) {
+    assert.equal(locate(question).choices[0].href, "/medical-devices/ivdr/", question);
+  }
+  assert.equal(locate("https://data.europa.eu/eli/reg_del/2026/1022/oj").choices[0].href, "/customs-low-value-imports/");
+  for (const question of ["2017/745 and 2022/2555", "MDR 2024/1689", "https://data.europa.eu/eli/reg_del/2017/746/oj", "https://data.europa.eu/eli/reg/2026/1022/oj", "https://data.europa.eu/eli/reg/2017/746/2024-07-09"]) {
+    assert.equal(locate(question), null, question);
+  }
+});
+
+test("navigation respects unsupported subjects, language and requested-state guards", () => {
+  for (const question of ["When does the AI Act apply?", "MDR and cosmetics registration", "MDR as of 2020-01-01", "MDR on 01/02/2026"]) {
+    assert.equal(locate(question), null, question);
+  }
+  assert.equal(locate("2017/746", "nl"), null);
+  assert.equal(presenter.present(engine.search("2017/746", {queryLanguage: "nl"})).navigation, null);
+  assert.equal(presenter.present(engine.search("2017/745 and 2022/2555", {queryLanguage: "en"})).navigation, null);
+});
+
+// Minimal DOM fixture for panel interaction; this is not browser/layout verification.
+function panelFixture() {
+  const document = {createElement: tag => new Element(tag)};
+  class Element {
+    constructor(tag) { this.tagName = tag; this.ownerDocument = document; this.children = []; this.attributes = {}; this.listeners = {}; this.textContent = ""; }
+    append(...items) { this.children.push(...items); }
+    replaceChildren(...items) { this.children = items; }
+    setAttribute(name, value) { this.attributes[name] = value; }
+    removeAttribute(name) { delete this.attributes[name]; }
+    addEventListener(name, handler) { this.listeners[name] = handler; }
+    removeEventListener(name) { delete this.listeners[name]; }
+    focus() { this.focused = true; }
+    all() { return [this, ...this.children.flatMap(child => child.all())]; }
+  }
+  const root = document.createElement("div");
+  return {root, mounted: panel.mount(root, {data, resources, engineFactory: require("./search/medical-engine.js").createEngine})};
+}
+
+test("panel separates page navigation from guidance and clears stale links on settings changes", () => {
+  const {root, mounted} = panelFixture();
+  const view = mounted.search("What changes for low-value customs parcels under EUR 150?");
+  assert.equal(view.cards.length, 0);
+  assert.equal(root.all().find(item => item.tagName === "a").href, "/customs-low-value-imports/#time");
+  assert.match(root.all().find(item => item.attributes.role === "status").textContent, /No captured medical-guidance passage/);
+  root.all().find(item => item.tagName === "select").listeners.change();
+  assert.equal(root.all().filter(item => item.tagName === "a").length, 0);
+  const timing = mounted.search("EUDAMED is mandatory now: does that include all six modules?");
+  assert.ok(timing.cards.length > 0);
+  assert.match(root.all().find(item => item.attributes.role === "status").textContent, /Results may cover only part of the question/);
+  mounted.search("2017/745 and 2022/2555");
+  assert.equal(root.all().filter(item => item.tagName === "a" && item.href.startsWith("/")).length, 0);
+  mounted.search("MDR and cosmetics registration");
+  assert.equal(root.all().filter(item => item.tagName === "a" && item.href.startsWith("/")).length, 0);
+  root.all().find(item => item.tagName === "button" && item.textContent === "Clear").listeners.click();
+  assert.equal(root.all().find(item => item.tagName === "textarea").value, "");
+  mounted.destroy();
+  assert.equal(root.children.length, 0);
 });

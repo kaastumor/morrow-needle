@@ -11,7 +11,7 @@ queue as if they were co-equal live state.
 
 ### Mode
 
-# **PLAN — NEEDLE EU INTERNAL PROTOTYPE DELIVERY**
+# **PLAN — NEEDLE EU INTERNAL PRODUCT READINESS**
 
 Frozen scientific source:
 
@@ -33,7 +33,7 @@ Current released reference surface remains:
 
 The [charter](docs/project-charter.md) distinguishes the product objective from the supported
 reference asset. [The existing programme](docs/plans/needle-eu-prototype-programme-v0.2.md)
-owns the finite finish line and dependency sequence. Contextual citizen awareness (#493)
+owns the accepted prototype's finite finish line and dependency sequence. Contextual citizen awareness (#493)
 is a separate discovery job, not a known-act page or an automatically active delivery lane.
 Known-act success is not its value prerequisite; its recorded delivery gates still apply.
 
@@ -189,7 +189,41 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — completed for current internal evidence
+### Immediate priority — internal question-to-explanation improvement
+
+**Mode: INTERNAL_PRODUCT_READINESS / REVIEW_PENDING. WIP=1: #519.**
+
+On 2 October 2026 (Europe/Amsterdam), the sponsor explicitly deferred external-reader
+preparation and approved internal improvements before presenting the product externally.
+This supersedes the next-step allocation below; it does not change M4's accepted evidence
+or establish reader value.
+
+Sole slice: ordinary-question navigation to existing supported medical-device and customs
+pages, with explicit page-locator/evidence separation and clarification instead of inferred
+applicability. Issue #519 owns acceptance, verification and its reviewable branch/PR.
+The four-source medical engine, frozen scientific corpus and negative evidence stay intact.
+Implementation is pending sponsor acceptance, not merged. Issue #519 and PR #520 own the
+runtime checks and actual rendered desktop question/navigation, settings/Clear and keyboard
+evidence. Narrow-screen reflow and zoom remain NOT_TESTED; the desktop result does not
+satisfy those checks or establish reader value.
+
+Approved sequence after this slice, one at a time:
+1. at-a-glance explanation of purpose/change/roles/current and upcoming state;
+2. useful, source-linked depth and meaningful relationships;
+3. language access, starting with the demonstrated Dutch-query gap;
+4. rendered product/navigation coherence;
+5. bounded source reliability and traceable corrections.
+
+Broader official-source access remains an internal investigation, distinct from an owned
+all-law current-state ledger. No catalogue expansion or monitoring programme is active.
+External reader preparation, participants and outreach remain deferred. #493/#494 and
+portfolio A/C remain parked. No merge, release/deployment, automation change or spending
+is implied by this approval. Prior actual-browser/zoom limits remain recorded.
+
+The approved internal improvement is a new scope after M4; the historical programme's
+26/30 allocation and 4/30 unconsumed reserve are not silently reallocated.
+
+### Accepted M0-M4 result — completed for its internal evidence
 
 **Mode: EVIDENCE_GATED / COMPLETED_FOR_CURRENT_INTERNAL_EVIDENCE.**
 
@@ -209,9 +243,8 @@ Programme result:
 - estimated programme allocation: **26 / 30 planning units used**;
 - **4 / 30 reserve units remain unconsumed**.
 
-No active implementation WIP is authorized.
-
-The next meaningful uncertainty is **reader/comparative value**, not another internal feature.
+Reader/comparative value remains unmeasured. The sponsor's later internal-improvement
+decision above owns current allocation; reader comparison is a deferred future question.
 
 Re-entry conditions for a known-act reader comparison:
 1. obtain actual rendered browser/reflow/keyboard evidence on the accepted revision, or

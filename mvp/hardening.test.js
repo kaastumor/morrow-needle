@@ -93,7 +93,7 @@ test("WP7 disclosure and no-script fallbacks remain represented", () => {
   buildStaticDemo();
   const home = read("index.html");
   assert.match(home, /<noscript>/);
-  const evidenceView = fs.readFileSync(path.join(ROOT, "product-home", "search", "evidence-view.js"), "utf8");
-  assert.match(evidenceView, /document\.createElement\('details'\)/);
+  const evidenceView = fs.readFileSync(path.join(ROOT, "mvp", "product-home", "search", "evidence-view.js"), "utf8");
+  assert.match(evidenceView, /node\('details'\)|createElement\('details'\)/);
   assert.match(evidenceView, /document\.createElement\('summary'\)|node\('summary'/);
 });

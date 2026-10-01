@@ -1,6 +1,6 @@
 # #492 first diverse-law development tranche — 1 October 2026
 
-Status: **PARTIAL_EXECUTION — cases and expectations frozen; available repository paths inspected; exact runtime replay still required before WP4.**
+Status: **TRANCHE_01_PASS — expectations were frozen before replay; the exact engine/projection replay passed on the review head. WP4 is next after this checkpoint is accepted.**
 
 Canonical input: `0d876b4f66c3c4b5c8b5ada80adab6f6ad164acf` (merged #504).
 

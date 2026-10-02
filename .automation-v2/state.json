@@ -1,19 +1,14 @@
 {
   "archive_ref": null,
-  "checkpoint": {
-    "disposition": "SEE_CANONICAL_OWNER",
-    "next_action": "Reconcile merged #519/#520 in BACKLOG, then establish the next approved internal at-a-glance explanation slice under WIP=1 after confirming no concurrent successor.",
-    "receipt_ref": "https://github.com/kaastumor/morrow-needle/pull/520",
-    "verification": "Exact head 4853096b: 157/157 JS, static build, 81-case corpus and sanitation PASS; merge tree equals reviewed head tree."
-  },
+  "checkpoint": null,
   "contract": "AUTOMATION_CONTROL_V2_20261001",
   "effects": [],
   "failure_count": 0,
   "failure_key": null,
-  "generation": 7,
-  "lease_until": null,
+  "generation": 8,
+  "lease_until": 1790901638,
   "operation": null,
-  "owner_attempt": null,
+  "owner_attempt": "needle-continuous-20261002-successor-eeb9be60",
   "receipts": [
     {
       "at": 1790859761,
@@ -68,11 +63,11 @@
   "repository": "kaastumor/morrow-needle",
   "schema": 2,
   "stage": {
-    "input_revision": "4853096b18b81e198a35551ed3858308875b6779",
-    "key": "9702c9682bdfb26ddb19986fa6d0dcd06782c247006dbbb4709bebfc2f6f4f64",
-    "name": "review-519-supported-page-navigation",
+    "input_revision": "d2245c3958baff5ea8420694116c2dc8efda36a9",
+    "key": "3316f358f6482f7d1e7909952f2f9f9e76e02096b755c03e92faa581ee852cc8",
+    "name": "establish-at-a-glance-successor",
     "task": 519
   },
-  "state": "COMPLETE",
-  "updated_at": 1790899409
+  "state": "CLAIMED",
+  "updated_at": 1790899838
 }

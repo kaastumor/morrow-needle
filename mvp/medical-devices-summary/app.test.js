@@ -44,6 +44,35 @@ test("hero visible copy stays deliberately compact", () => {
   assert.ok(words.length <= 155, "hero including evidence summary has " + words.length + " words");
 });
 
+test("at-a-glance layer states purpose, roles, current/upcoming state and depth without applicability claims", () => {
+  const glanceStart = html.indexOf('class="glance-panel"');
+  const coveredStart = html.indexOf('id="covered"');
+  assert.ok(glanceStart > -1 && glanceStart < coveredStart);
+  const block = html.slice(glanceStart, coveredStart);
+  assert.match(block, /At a glance/i);
+  assert.match(block, /Purpose/);
+  assert.match(block, /Current state/);
+  assert.match(block, /Change and upcoming state/);
+  assert.match(block, /Roles/);
+  assert.match(block, /Evidence and depth/);
+  assert.match(block, /26 May 2021/);
+  assert.match(block, /26 May 2022/);
+  assert.match(block, /28 May 2026/);
+  assert.match(block, /Regulation \(EU\) 2024\/1860/);
+  assert.match(block, /still a proposal/i);
+  assert.match(block, /does not assign one to you/i);
+  assert.match(block, /href="#timeline"/);
+  assert.match(block, /href="#roles"/);
+  assert.match(block, /href="#sources"/);
+  assert.doesNotMatch(block, /you are covered|you must comply|applies to you/i);
+});
+
+test("at-a-glance medical layout collapses without horizontal-scroll dependence", () => {
+  assert.match(css, /\.glance-grid[\s\S]*grid-template-columns: repeat\(5/);
+  assert.match(css, /@media \(max-width: 38rem\)[\s\S]*\.glance-grid[\s\S]*grid-template-columns: 1fr/);
+  assert.doesNotMatch(css, /\.glance-grid[\s\S]*overflow-x:\s*(auto|scroll)/);
+});
+
 test("T2 branch distinction is explicit, concise and source-linked", () => {
   const block = section("covered", "timeline");
   assert.match(block, /MDR/);

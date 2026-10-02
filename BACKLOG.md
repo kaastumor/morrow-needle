@@ -191,7 +191,7 @@ Do not reopen automatic similarity, comprehensive track records, member/party jo
 
 ### Immediate priority — source-linked relationship depth
 
-**Mode: INTERNAL_PRODUCT_READINESS / IMPLEMENTATION. WIP=1: #523.**
+**Mode: INTERNAL_PRODUCT_READINESS / REVIEW_PENDING. WIP=1: #523.**
 
 On 2 October 2026 (Europe/Amsterdam), the sponsor accepted the at-a-glance explanation
 slice. PR #522 was squash-merged to main as
@@ -214,6 +214,32 @@ sanitation. Because this changes visible relationship navigation/content, actual
 desktop, narrow-viewport and keyboard traversal checks are required. The sponsor-deferred
 200% zoom, rendered no-script and full accessibility audit remain separate unless actually
 exercised.
+
+Verification checkpoint:
+- draft PR #524 browser-tested product head
+  `90eca766c896b21a1e2972a8d62b9436ae6b51ed`;
+- GitHub Unit tests #804 succeeded: 668 Python tests, canonical 81-case adversarial-corpus
+  validation, 164 JavaScript tests and static review build; Repository sanitation #1094
+  succeeded;
+- the repository's local Vercel build path also passed 111 build-surface tests and produced
+  the static product routes from the exact branch archive;
+- actual Chromium at 1365x900 and 390x844 passed on MDR, IVDR and the customs contrast:
+  MDR/IVDR each exposed four typed relationship-level official sources, customs exposed
+  three, and none of the three pages had document-level horizontal overflow;
+- keyboard traversal reached MDR's at-a-glance `#relationships` link after four Tab
+  presses with a visible 3px focus outline; Enter navigated to `#relationships`, and the
+  next Tab reached the first official relationship source with the same visible outline;
+- retained screenshots: MDR desktop SHA-256
+  `fc1762c53a7e74dfe9a6f0a0cd0937b22d9f090abdbeb2e9a76ccb0047028092`;
+  customs narrow SHA-256
+  `f86d8ad8fac11184c331688949ae1a55699e70510e0bf680e9bb791e371468f6`;
+- Vercel preview status is **SAFE_LIMIT** rather than a product failure: the Git integration
+  hit the account's daily deployment cap (more than 100 deployments), so no #524 preview
+  deployment was created.
+
+This evidence is internal regression/rendering evidence, not reader-value or universal
+legal-relationship proof. 200% zoom, rendered no-script and a full accessibility audit
+remain NOT_TESTED. PR #524 remains unmerged pending sponsor acceptance.
 
 Approved sequence after #523, one at a time:
 1. language access, starting with the demonstrated Dutch-query gap;

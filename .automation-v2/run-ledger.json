@@ -116,6 +116,24 @@
       "run_id": "89a1d3d0-28a7-405d-b1d5-0d73e0eb641e",
       "started_at": 1790895412,
       "task_id": "6abc4ceae8808191b350f310b1363a96"
+    },
+    {
+      "canonical_owner": "https://github.com/kaastumor/morrow-needle/pull/520",
+      "checks": [
+        "live_inventory",
+        "canonical_gate",
+        "project_tests",
+        "target_readback",
+        "lease_fence"
+      ],
+      "control_ref": "a1b4150a74616cacf8309ba21ca2ecf39841093c",
+      "evidence_kind": "WORKER_SELF_REPORT",
+      "finished_at": 1790899490,
+      "main_head": "d2245c3958baff5ea8420694116c2dc8efda36a9",
+      "outcome": "COMPLETED",
+      "run_id": "7b1ea6a8-94e1-4d7b-b35e-9ba24669b515",
+      "started_at": 1790898972,
+      "task_id": "6abc4ceae8808191b350f310b1363a96"
     }
   ],
   "schema": 1

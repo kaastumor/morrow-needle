@@ -3,6 +3,8 @@
 const SHARED = Object.freeze({
   evidenceChecked: "2026-10-01",
   eudamedUrl: "https://health.ec.europa.eu/medical-devices-eudamed/overview_en",
+  amendment2022Url: "https://eur-lex.europa.eu/eli/reg/2022/112/oj/eng",
+  amendment2023Url: "https://eur-lex.europa.eu/eli/reg/2023/607/oj/eng",
   amendment2024Url: "https://eur-lex.europa.eu/eli/reg/2024/1860/oj/eng",
   eudamedDecisionUrl: "https://eur-lex.europa.eu/eli/dec/2025/2371/oj/eng"
 });
@@ -40,10 +42,10 @@ const ACTS = Object.freeze({
       ["FUTURE_TRANSITION", "2028-12-31", "Selected legacy transition", "Other eligible class IIb, class IIa and specified class I legacy devices may use the amended transition route through this date, subject to conditions."]
     ],
     relationships: [
-      ["REPLACES", "Directives 90/385/EEC and 93/42/EEC", "Replaced from the MDR regime subject to transition provisions."],
-      ["AMENDED_BY", "Regulation (EU) 2023/607", "Changed selected MDR transition provisions and removed the former sell-off deadline."],
-      ["AMENDED_BY", "Regulation (EU) 2024/1860", "Added supply-interruption duties and gradual EUDAMED roll-out changes; also amended IVDR."],
-      ["OPERATIONAL_TRIGGER", "Decision (EU) 2025/2371", "Declared the first four represented EUDAMED systems functional, leading to mandatory use from 28 May 2026."]
+      ["REPLACES", "Directives 90/385/EEC and 93/42/EEC", "Replaced from the MDR regime subject to transition provisions.", "https://eur-lex.europa.eu/eli/reg/2017/745/oj/eng"],
+      ["AMENDED_BY", "Regulation (EU) 2023/607", "Changed selected MDR transition provisions and removed the former sell-off deadline.", SHARED.amendment2023Url],
+      ["AMENDED_BY", "Regulation (EU) 2024/1860", "Added supply-interruption duties and gradual EUDAMED roll-out changes; also amended IVDR.", SHARED.amendment2024Url],
+      ["OPERATIONAL_TRIGGER", "Decision (EU) 2025/2371", "Declared the first four represented EUDAMED systems functional, leading to mandatory use from 28 May 2026.", SHARED.eudamedDecisionUrl]
     ],
     transitionSource: "https://eur-lex.europa.eu/eli/reg/2023/607/oj/eng",
     articlesUrl: "https://eur-lex.europa.eu/eli/reg/2017/745/2026-07-19/eng"
@@ -82,10 +84,10 @@ const ACTS = Object.freeze({
       ["FUTURE_TRANSITION", "2029-12-31", "Class B / sterile A legacy transition", "Eligible class B and class A sterile legacy devices may use the amended route through this date, subject to conditions."]
     ],
     relationships: [
-      ["REPLACES", "Directive 98/79/EC", "Replaced from the IVDR regime subject to transition provisions."],
-      ["AMENDED_BY", "Regulation (EU) 2022/112", "Introduced an earlier staggered transition for selected legacy IVDs."],
-      ["AMENDED_BY", "Regulation (EU) 2024/1860", "Further extended selected IVDR transitions and added supply-interruption/EUDAMED changes; also amended MDR."],
-      ["OPERATIONAL_TRIGGER", "Decision (EU) 2025/2371", "Declared the first four represented EUDAMED systems functional, leading to mandatory use from 28 May 2026."]
+      ["REPLACES", "Directive 98/79/EC", "Replaced from the IVDR regime subject to transition provisions.", "https://eur-lex.europa.eu/eli/reg/2017/746/oj/eng"],
+      ["AMENDED_BY", "Regulation (EU) 2022/112", "Introduced an earlier staggered transition for selected legacy IVDs.", SHARED.amendment2022Url],
+      ["AMENDED_BY", "Regulation (EU) 2024/1860", "Further extended selected IVDR transitions and added supply-interruption/EUDAMED changes; also amended MDR.", SHARED.amendment2024Url],
+      ["OPERATIONAL_TRIGGER", "Decision (EU) 2025/2371", "Declared the first four represented EUDAMED systems functional, leading to mandatory use from 28 May 2026.", SHARED.eudamedDecisionUrl]
     ],
     transitionSource: "https://eur-lex.europa.eu/eli/reg/2024/1860/oj/eng",
     articlesUrl: "https://eur-lex.europa.eu/eli/reg/2017/746/2025-01-10/eng"

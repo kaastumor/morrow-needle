@@ -15,6 +15,42 @@ function renderRows(rows, className, renderer) {
   return '<div class="' + className + '">' + rows.map(renderer).join("") + "</div>";
 }
 
+function humanDate(iso) {
+  const [year, month, day] = String(iso).split("-");
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  return Number(day) + " " + months[Number(month) - 1] + " " + year;
+}
+
+function renderActGlance(act) {
+  const future = act.timeline.filter(row => row[0] === "FUTURE_TRANSITION");
+  const lastFuture = future[future.length - 1];
+  const roleNames = act.roles.map(row => row[0]).join(", ");
+  const representedChanges = act.relationships
+    .filter(row => row[0] === "AMENDED_BY" || row[0] === "OPERATIONAL_TRIGGER")
+    .map(row => row[1])
+    .join(", ");
+
+  return '<section class="act-glance" aria-labelledby="act-glance-heading">' +
+    '<div class="act-glance-heading"><p class="section-kicker">At a glance</p>' +
+    '<h2 id="act-glance-heading">What matters before the detail</h2>' +
+    '<p>Summary of the same represented act data below; it does not determine a reader\'s role or applicability.</p></div>' +
+    '<div class="act-glance-grid">' +
+    '<article><h3>Purpose</h3><p>' + esc(act.purpose) + '</p><a href="#scope">Open scope →</a></article>' +
+    '<article><h3>Current state</h3><p>' + esc(act.legalStatus) + '. General application date: ' +
+    esc(humanDate(act.generalApplicationDate)) + '.</p><a href="#time">See typed dates →</a></article>' +
+    '<article><h3>What changed</h3><p>Represented later changes include ' + esc(representedChanges) +
+    '. Relationship labels below distinguish amendments from operational triggers.</p><a href="#relationships">See legal connections →</a></article>' +
+    '<article><h3>Roles represented</h3><p>' + esc(roleNames) +
+    '. Roles can overlap; this page does not assign one to you.</p><a href="#roles">Compare role summaries →</a></article>' +
+    '<article><h3>Upcoming state</h3><p>' +
+    (lastFuture ? 'Selected legacy-transition milestones shown below extend through ' + esc(humanDate(lastFuture[1])) +
+    ', subject to the stated conditions.' : 'No future transition milestone is represented in this bounded view.') +
+    '</p><a href="#time">Inspect transitions →</a></article>' +
+    '<article><h3>Evidence and depth</h3><p>Source version, official act links and limits remain explicit below.</p>' +
+    '<a href="#sources">Open official evidence →</a></article>' +
+    '</div></section>';
+}
+
 function renderActPage(act) {
   const scope = act.scope.map(item => '<li>' + esc(item) + "</li>").join("");
   const roles = renderRows(act.roles, "act-role-grid", ([role, article, text]) =>
@@ -49,6 +85,7 @@ function renderActPage(act) {
     '<div><dt>Consolidated version used</dt><dd><a href="' + esc(act.consolidatedSource) + '" target="_blank" rel="noreferrer">' + esc(act.consolidationDate) + ' ↗</a></dd></div>' +
     '<div><dt>General application</dt><dd><time datetime="' + esc(act.generalApplicationDate) + '">' + esc(act.generalApplicationDate) + '</time></dd></div>' +
     '</dl><p><strong>Boundary:</strong> this EU-level regulation view does not settle national rules, enforcement choices or a reader\'s individual applicability. A consolidation is a documentary aid; authentic Official Journal acts govern.</p></aside></header>' +
+    renderActGlance(act) +
     '<nav class="act-local-nav" aria-label="On this page"><a href="#scope">Scope</a><a href="#roles">Roles</a><a href="#time">Time</a><a href="#relationships">Relationships</a><a href="#sources">Sources</a></nav>' +
     '<section id="scope" class="act-section"><p class="section-kicker">Purpose and scope</p><h2>What this act covers</h2><ul class="act-scope">' + scope + '</ul><p class="act-boundary">This is selected orientation. Classification, every exclusion, national rules and personal applicability require the full sources and facts.</p></section>' +
     '<section id="roles" class="act-section"><p class="section-kicker">Economic-operator orientation</p><h2>Represented roles</h2>' + roles + '<p class="act-boundary">Roles can overlap. These summaries do not determine which role a reader occupies and are not complete obligation lists. Follow the article source below.</p></section>' +

@@ -677,3 +677,56 @@ p { margin: .4rem 0 1rem; }
   .role-table summary strong { text-align: left; }
   .source-grid, .expert-meta { grid-template-columns: 1fr; }
 }
+
+
+.glance-panel {
+  margin: 1.5rem 0 0;
+  padding: 1.4rem;
+  border: 1px solid var(--border);
+  background: var(--surface-soft);
+}
+.glance-heading {
+  max-width: 46rem;
+}
+.glance-heading h2 {
+  margin: .2rem 0 .4rem;
+}
+.glance-heading p:last-child {
+  margin-bottom: 1rem;
+  color: var(--muted);
+}
+.glance-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: .75rem;
+}
+.glance-grid article {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+.glance-grid h3 {
+  margin: 0 0 .45rem;
+  font-size: 1rem;
+}
+.glance-grid p {
+  margin: 0 0 .7rem;
+  color: var(--text);
+}
+.glance-grid a {
+  font-weight: 750;
+}
+@media (max-width: 64rem) {
+  .glance-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 38rem) {
+  .glance-panel {
+    padding: 1rem;
+  }
+  .glance-grid {
+    grid-template-columns: 1fr;
+  }
+}

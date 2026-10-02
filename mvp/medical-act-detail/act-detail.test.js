@@ -46,6 +46,32 @@ test("rendered pages keep national/applicability and compliance boundaries expli
   }
 });
 
+test("rendered act pages expose a bounded at-a-glance layer before deeper navigation", () => {
+  for (const act of Object.values(ACTS)) {
+    const html = renderActPage(act);
+    const glance = html.indexOf('class="act-glance"');
+    const nav = html.indexOf('class="act-local-nav"');
+    assert.ok(glance > -1 && glance < nav);
+    const block = html.slice(glance, nav);
+    assert.match(block, /At a glance/i);
+    assert.match(block, /Purpose/);
+    assert.match(block, /Current state/);
+    assert.match(block, /What changed/);
+    assert.match(block, /Roles represented/);
+    assert.match(block, /Upcoming state/);
+    assert.match(block, /Evidence and depth/);
+    assert.match(block, /does not assign one to you/i);
+    assert.match(block, /href="#scope"/);
+    assert.match(block, /href="#roles"/);
+    assert.match(block, /href="#time"/);
+    assert.match(block, /href="#relationships"/);
+    assert.match(block, /href="#sources"/);
+    assert.doesNotMatch(block, /applies to you|you must comply/i);
+  }
+  assert.match(renderActPage(ACTS.mdr), /31 Dec 2028/);
+  assert.match(renderActPage(ACTS.ivdr), /31 Dec 2029/);
+});
+
 test("rendered pages preserve typed relationships and connected product navigation", () => {
   for (const act of Object.values(ACTS)) {
     const html = renderActPage(act);

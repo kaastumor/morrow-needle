@@ -15,6 +15,35 @@ test("contrast identifies one delegated amending act without claiming general cu
   assert.match(html, /does not calculate customs owed/i);
 });
 
+test("at-a-glance customs layer separates purpose, operator context, current/upcoming dates and evidence", () => {
+  const glance = html.indexOf('class="contrast-glance"');
+  const nav = html.indexOf('class="contrast-nav"');
+  assert.ok(glance > -1 && glance < nav);
+  const block = html.slice(glance, nav);
+  assert.match(block, /At a glance/i);
+  assert.match(block, /Purpose/);
+  assert.match(block, /What changed/);
+  assert.match(block, /Operator context/);
+  assert.match(block, /Current state/);
+  assert.match(block, /Upcoming state/);
+  assert.match(block, /Evidence and depth/);
+  assert.match(block, /does not determine who must file/i);
+  assert.match(block, /application from 1 Jul 2026/i);
+  assert.match(block, /entry into force on 2 Jul 2026/i);
+  assert.match(block, /mandatory on 1 Nov 2026/i);
+  assert.match(block, /href="#scope"/);
+  assert.match(block, /href="#time"/);
+  assert.match(block, /href="#relationships"/);
+  assert.match(block, /href="#sources"/);
+  assert.doesNotMatch(block, /you owe|you must file|applies to you/i);
+});
+
+test("at-a-glance customs layout collapses without horizontal-scroll dependence", () => {
+  assert.match(css, /\.contrast-glance-grid[\s\S]*grid-template-columns:repeat\(3/);
+  assert.match(css, /@media\(max-width:46rem\)[\s\S]*\.contrast-glance-grid[\s\S]*grid-template-columns:1fr/);
+  assert.doesNotMatch(css, /\.contrast-glance-grid[\s\S]*overflow-x:\s*(auto|scroll)/);
+});
+
 test("scope threshold and subordinate relationship stay explicit", () => {
   assert.match(html, /intrinsic value not exceeding EUR 150/i);
   assert.match(html, /AMENDS/);

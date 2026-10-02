@@ -52,6 +52,21 @@ test("scope threshold and subordinate relationship stay explicit", () => {
   assert.match(html, /Regulation \(EU\) No 952\/2013/);
 });
 
+test("customs relationships expose direct official evidence at the connection", () => {
+  const start = html.indexOf('id="relationships"');
+  const end = html.indexOf('id="why"', start);
+  const block = html.slice(start, end);
+  assert.equal((block.match(/class="relation-source"/g) || []).length, 3);
+  assert.match(block, /Official amending act/);
+  assert.match(block, /eli\/reg_del\/2026\/1022\/oj\/eng/);
+  assert.match(block, /Official framework act/);
+  assert.match(block, /eli\/reg\/2013\/952\/oj\/eng/);
+  assert.match(block, /Official language-scoped corrigendum/);
+  assert.match(block, /corrigendum\/2026-08-04\/oj/);
+  assert.match(block, /does not by itself establish liability/i);
+  assert.doesNotMatch(block, />RELATED</);
+});
+
 test("temporal concepts are not collapsed into one effective date", () => {
   for (const required of [
     "30 Apr 2026",

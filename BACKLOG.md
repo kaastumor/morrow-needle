@@ -189,55 +189,62 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — internal at-a-glance explanation
+### Immediate priority — source-linked relationship depth
 
-**Mode: INTERNAL_PRODUCT_READINESS / REVIEW_PENDING. WIP=1: #521.**
+**Mode: INTERNAL_PRODUCT_READINESS / REVIEW_PENDING. WIP=1: #523.**
 
-On 2 October 2026 (Europe/Amsterdam), the sponsor accepted the preceding bounded
-ordinary-question navigation slice. PR #520 was squash-merged to main as
-`d2245c3958baff5ea8420694116c2dc8efda36a9`; #519 is completed. Its 15 desktop
-journey/control checks, 157 JavaScript tests and final-head CI are acceptance evidence
-for that navigation increment only. Its deferred 200% zoom and rendered no-script checks
-remain recorded limits rather than silently becoming tested.
+On 2 October 2026 (Europe/Amsterdam), the sponsor accepted the at-a-glance explanation
+slice. PR #522 was squash-merged to main as
+`973bb68462050a21d9169e2e5c5ee1b8d5e2fd91`; #521 is completed. Its final-head CI,
+rendered desktop/narrow checks and keyboard evidence apply only to that accepted summary
+increment. The deferred 200% zoom, rendered no-script and full accessibility audit remain
+recorded limits.
 
-The sole active successor slice is #521: make the already-supported medical-device and
-customs pages understandable at a glance before deeper reading. The summary layer must
-state purpose, represented change, roles/operator context, current versus upcoming state,
-and where source-linked depth lives. It must project the existing authored facts and
-limits, not create a new source set, applicability classifier, ontology, all-law answer
-system or parallel prototype.
+The sole active successor slice is #523: make represented legal relationships useful at
+the point where they appear by preserving the typed relationship, explaining the bounded
+connection and linking the official evidence for that connection. The implementation is
+limited to the already-supported MDR/IVDR detail and customs contrast paths. It must reuse
+existing authored claims and sources rather than create a new law catalogue, legal-effect
+engine, ontology, monitoring layer or applicability system.
 
-#521 owns one isolated implementation branch and one reviewable PR. Exact-head
-verification must include the relevant focused tests, full existing JavaScript suite,
-static build, frozen 81-case adversarial corpus and repository sanitation. Because this
-slice changes visible presentation, actual rendered desktop, narrow-viewport and keyboard
-checks are required for the changed flow. The sponsor-deferred 200% zoom and rendered
-no-script checks remain separate unless they are actually exercised.
+#523 owns one isolated implementation branch and one reviewable PR. Exact-head
+verification must include focused relationship assertions, the full existing JavaScript
+suite, Python suite, static build, frozen 81-case adversarial corpus and repository
+sanitation. Because this changes visible relationship navigation/content, actual rendered
+desktop, narrow-viewport and keyboard traversal checks are required. The sponsor-deferred
+200% zoom, rendered no-script and full accessibility audit remain separate unless actually
+exercised.
 
 Verification checkpoint:
-- draft PR #522 product head `92984dbc0f6991ce1e91a65565695277ea1100bd`;
-- GitHub CI: 668 Python tests passed; frozen corpus validation passed at 81 cases;
-  162 JavaScript tests passed; static review build passed; repository sanitation passed;
-  Vercel preview status succeeded;
-- actual Chromium rendering at 1365x900 and 390x844 passed on the medical overview,
-  MDR detail, IVDR detail and customs contrast; expected summary cards rendered in the
-  responsive grid with no document-level horizontal overflow;
-- keyboard traversal on the medical overview reached the first at-a-glance link after
-  eight Tab presses with a visible 3px focus outline; Enter followed it to `#covered`;
-- retained screenshots: desktop SHA-256
-  `6e5e4bc1edbb8e2a42271de0a7acb360829f3ea873654afe5253fe4d914b63ce`;
-  narrow SHA-256
-  `3fbc2acbb787081108a0d7222d06c4bb11e78907e1fd4e816c8b63a7448cbfe0`.
+- draft PR #524 browser-tested product head
+  `90eca766c896b21a1e2972a8d62b9436ae6b51ed`;
+- GitHub Unit tests #804 succeeded: 668 Python tests, canonical 81-case adversarial-corpus
+  validation, 164 JavaScript tests and static review build; Repository sanitation #1094
+  succeeded;
+- the repository's local Vercel build path also passed 111 build-surface tests and produced
+  the static product routes from the exact branch archive;
+- actual Chromium at 1365x900 and 390x844 passed on MDR, IVDR and the customs contrast:
+  MDR/IVDR each exposed four typed relationship-level official sources, customs exposed
+  three, and none of the three pages had document-level horizontal overflow;
+- keyboard traversal reached MDR's at-a-glance `#relationships` link after four Tab
+  presses with a visible 3px focus outline; Enter navigated to `#relationships`, and the
+  next Tab reached the first official relationship source with the same visible outline;
+- retained screenshots: MDR desktop SHA-256
+  `fc1762c53a7e74dfe9a6f0a0cd0937b22d9f090abdbeb2e9a76ccb0047028092`;
+  customs narrow SHA-256
+  `f86d8ad8fac11184c331688949ae1a55699e70510e0bf680e9bb791e371468f6`;
+- Vercel preview status is **SAFE_LIMIT** rather than a product failure: the Git integration
+  hit the account's daily deployment cap (more than 100 deployments), so no #524 preview
+  deployment was created.
 
-This evidence is internal regression/rendering evidence, not reader-value proof.
-200% zoom, rendered no-script and a full accessibility audit remain NOT_TESTED for #521.
-PR #522 remains unmerged pending sponsor acceptance.
+This evidence is internal regression/rendering evidence, not reader-value or universal
+legal-relationship proof. 200% zoom, rendered no-script and a full accessibility audit
+remain NOT_TESTED. PR #524 remains unmerged pending sponsor acceptance.
 
-Approved sequence after #521, one at a time:
-1. useful, source-linked depth and meaningful relationships;
-2. language access, starting with the demonstrated Dutch-query gap;
-3. rendered product/navigation coherence;
-4. bounded source reliability and traceable corrections.
+Approved sequence after #523, one at a time:
+1. language access, starting with the demonstrated Dutch-query gap;
+2. rendered product/navigation coherence;
+3. bounded source reliability and traceable corrections.
 
 Broader official-source access remains an internal investigation, distinct from an owned
 all-law current-state ledger. No catalogue expansion or monitoring programme is active.

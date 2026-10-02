@@ -72,6 +72,28 @@ test("rendered act pages expose a bounded at-a-glance layer before deeper naviga
   assert.match(renderActPage(ACTS.ivdr), /31 Dec 2029/);
 });
 
+test("medical relationships carry direct official evidence without collapsing relationship types", () => {
+  for (const act of Object.values(ACTS)) {
+    assert.equal(act.relationships.length, 4);
+    for (const row of act.relationships) {
+      assert.equal(row.length, 4);
+      assert.match(row[3], /^https:\/\/eur-lex\.europa\.eu\//);
+    }
+    const html = renderActPage(act);
+    const start = html.indexOf('id="relationships"');
+    const end = html.indexOf('id="sources"', start);
+    const block = html.slice(start, end);
+    assert.equal((block.match(/class="act-relation-source"/g) || []).length, 4);
+    assert.match(block, /Official core-act source/);
+    assert.match(block, /Official amending act/);
+    assert.match(block, /Official trigger decision/);
+    assert.match(block, /does not by itself prove every downstream effect/i);
+    assert.doesNotMatch(block, />RELATED</);
+  }
+  assert.match(renderActPage(ACTS.mdr), /eli\/reg\/2023\/607\/oj\/eng/);
+  assert.match(renderActPage(ACTS.ivdr), /eli\/reg\/2022\/112\/oj\/eng/);
+});
+
 test("rendered pages preserve typed relationships and connected product navigation", () => {
   for (const act of Object.values(ACTS)) {
     const html = renderActPage(act);

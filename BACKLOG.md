@@ -191,7 +191,7 @@ Do not reopen automatic similarity, comprehensive track records, member/party jo
 
 ### Immediate priority — internal at-a-glance explanation
 
-**Mode: INTERNAL_PRODUCT_READINESS / IMPLEMENTATION. WIP=1: #521.**
+**Mode: INTERNAL_PRODUCT_READINESS / REVIEW_PENDING. WIP=1: #521.**
 
 On 2 October 2026 (Europe/Amsterdam), the sponsor accepted the preceding bounded
 ordinary-question navigation slice. PR #520 was squash-merged to main as
@@ -213,6 +213,25 @@ static build, frozen 81-case adversarial corpus and repository sanitation. Becau
 slice changes visible presentation, actual rendered desktop, narrow-viewport and keyboard
 checks are required for the changed flow. The sponsor-deferred 200% zoom and rendered
 no-script checks remain separate unless they are actually exercised.
+
+Verification checkpoint:
+- draft PR #522 product head `92984dbc0f6991ce1e91a65565695277ea1100bd`;
+- GitHub CI: 668 Python tests passed; frozen corpus validation passed at 81 cases;
+  162 JavaScript tests passed; static review build passed; repository sanitation passed;
+  Vercel preview status succeeded;
+- actual Chromium rendering at 1365x900 and 390x844 passed on the medical overview,
+  MDR detail, IVDR detail and customs contrast; expected summary cards rendered in the
+  responsive grid with no document-level horizontal overflow;
+- keyboard traversal on the medical overview reached the first at-a-glance link after
+  eight Tab presses with a visible 3px focus outline; Enter followed it to `#covered`;
+- retained screenshots: desktop SHA-256
+  `6e5e4bc1edbb8e2a42271de0a7acb360829f3ea873654afe5253fe4d914b63ce`;
+  narrow SHA-256
+  `3fbc2acbb787081108a0d7222d06c4bb11e78907e1fd4e816c8b63a7448cbfe0`.
+
+This evidence is internal regression/rendering evidence, not reader-value proof.
+200% zoom, rendered no-script and a full accessibility audit remain NOT_TESTED for #521.
+PR #522 remains unmerged pending sponsor acceptance.
 
 Approved sequence after #521, one at a time:
 1. useful, source-linked depth and meaningful relationships;

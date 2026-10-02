@@ -189,38 +189,44 @@ Re-entry requires a separately recorded sponsor decision after the reviewed prod
 
 Do not reopen automatic similarity, comprehensive track records, member/party joins or new political features during this pilot.
 
-### Immediate priority — internal question-to-explanation improvement
+### Immediate priority — internal at-a-glance explanation
 
-**Mode: INTERNAL_PRODUCT_READINESS / REVIEW_PENDING. WIP=1: #519.**
+**Mode: INTERNAL_PRODUCT_READINESS / IMPLEMENTATION. WIP=1: #521.**
 
-On 2 October 2026 (Europe/Amsterdam), the sponsor explicitly deferred external-reader
-preparation and approved internal improvements before presenting the product externally.
-This supersedes the next-step allocation below; it does not change M4's accepted evidence
-or establish reader value.
+On 2 October 2026 (Europe/Amsterdam), the sponsor accepted the preceding bounded
+ordinary-question navigation slice. PR #520 was squash-merged to main as
+`d2245c3958baff5ea8420694116c2dc8efda36a9`; #519 is completed. Its 15 desktop
+journey/control checks, 157 JavaScript tests and final-head CI are acceptance evidence
+for that navigation increment only. Its deferred 200% zoom and rendered no-script checks
+remain recorded limits rather than silently becoming tested.
 
-Sole slice: ordinary-question navigation to existing supported medical-device and customs
-pages, with explicit page-locator/evidence separation and clarification instead of inferred
-applicability. Issue #519 owns acceptance, verification and its reviewable branch/PR.
-The four-source medical engine, frozen scientific corpus and negative evidence stay intact.
-Implementation is pending sponsor acceptance, not merged. Issue #519 and PR #520 own the
-runtime checks and actual rendered desktop question/navigation, settings/Clear and keyboard
-evidence. Narrow-screen reflow and zoom remain NOT_TESTED; the desktop result does not
-satisfy those checks or establish reader value.
+The sole active successor slice is #521: make the already-supported medical-device and
+customs pages understandable at a glance before deeper reading. The summary layer must
+state purpose, represented change, roles/operator context, current versus upcoming state,
+and where source-linked depth lives. It must project the existing authored facts and
+limits, not create a new source set, applicability classifier, ontology, all-law answer
+system or parallel prototype.
 
-Approved sequence after this slice, one at a time:
-1. at-a-glance explanation of purpose/change/roles/current and upcoming state;
-2. useful, source-linked depth and meaningful relationships;
-3. language access, starting with the demonstrated Dutch-query gap;
-4. rendered product/navigation coherence;
-5. bounded source reliability and traceable corrections.
+#521 owns one isolated implementation branch and one reviewable PR. Exact-head
+verification must include the relevant focused tests, full existing JavaScript suite,
+static build, frozen 81-case adversarial corpus and repository sanitation. Because this
+slice changes visible presentation, actual rendered desktop, narrow-viewport and keyboard
+checks are required for the changed flow. The sponsor-deferred 200% zoom and rendered
+no-script checks remain separate unless they are actually exercised.
+
+Approved sequence after #521, one at a time:
+1. useful, source-linked depth and meaningful relationships;
+2. language access, starting with the demonstrated Dutch-query gap;
+3. rendered product/navigation coherence;
+4. bounded source reliability and traceable corrections.
 
 Broader official-source access remains an internal investigation, distinct from an owned
 all-law current-state ledger. No catalogue expansion or monitoring programme is active.
 External reader preparation, participants and outreach remain deferred. #493/#494 and
 portfolio A/C remain parked. No merge, release/deployment, automation change or spending
-is implied by this approval. Prior actual-browser/zoom limits remain recorded.
+is implied by this implementation authority.
 
-The approved internal improvement is a new scope after M4; the historical programme's
+The approved internal improvements are new scope after M4; the historical programme's
 26/30 allocation and 4/30 unconsumed reserve are not silently reallocated.
 
 ### Accepted M0-M4 result — completed for its internal evidence

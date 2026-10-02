@@ -21,6 +21,13 @@ function humanDate(iso) {
   return Number(day) + " " + months[Number(month) - 1] + " " + year;
 }
 
+function relationshipSourceLabel(type) {
+  if (type === "AMENDED_BY") return "Official amending act";
+  if (type === "OPERATIONAL_TRIGGER") return "Official trigger decision";
+  if (type === "REPLACES") return "Official core-act source";
+  return "Official relationship source";
+}
+
 function renderActGlance(act) {
   const future = act.timeline.filter(row => row[0] === "FUTURE_TRANSITION");
   const lastFuture = future[future.length - 1];
@@ -61,9 +68,10 @@ function renderActPage(act) {
     '</time><div><span class="act-type">' + esc(type.replaceAll("_", " ")) + '</span><strong>' +
     esc(label) + '</strong><p>' + esc(text) + '</p></div></li>'
   ).join("") + "</ol>";
-  const relationships = '<ul class="act-relations">' + act.relationships.map(([type, target, text]) =>
+  const relationships = '<ul class="act-relations">' + act.relationships.map(([type, target, text, sourceUrl]) =>
     '<li><span class="act-type">' + esc(type.replaceAll("_", " ")) + '</span><strong>' + esc(target) +
-    '</strong><p>' + esc(text) + '</p></li>'
+    '</strong><p>' + esc(text) + '</p><a class="act-relation-source" href="' + esc(sourceUrl) +
+    '" target="_blank" rel="noreferrer">' + relationshipSourceLabel(type) + ' ↗</a></li>'
   ).join("") + "</ul>";
 
   return '<!doctype html>\n<html lang="en">\n<head>\n' +
@@ -90,7 +98,7 @@ function renderActPage(act) {
     '<section id="scope" class="act-section"><p class="section-kicker">Purpose and scope</p><h2>What this act covers</h2><ul class="act-scope">' + scope + '</ul><p class="act-boundary">This is selected orientation. Classification, every exclusion, national rules and personal applicability require the full sources and facts.</p></section>' +
     '<section id="roles" class="act-section"><p class="section-kicker">Economic-operator orientation</p><h2>Represented roles</h2>' + roles + '<p class="act-boundary">Roles can overlap. These summaries do not determine which role a reader occupies and are not complete obligation lists. Follow the article source below.</p></section>' +
     '<section id="time" class="act-section"><p class="section-kicker">Time</p><h2>Current state and selected transitions</h2><p>Dates are typed by legal function. A future transition is not shown as current state, and a general application date does not replace provision-specific dates.</p>' + timeline + '</section>' +
-    '<section id="relationships" class="act-section"><p class="section-kicker">Relationships</p><h2>Selected legal connections</h2><p>Relationship labels describe the represented legal connection; visual proximity is not an impact inference.</p>' + relationships + '</section>' +
+    '<section id="relationships" class="act-section"><p class="section-kicker">Relationships</p><h2>Selected legal connections</h2><p>Relationship labels describe the represented legal connection; visual proximity is not an impact inference. Each represented connection links to the official source used for that relationship.</p>' + relationships + '<p class="act-boundary">A relationship source supports the connection shown here; it does not by itself prove every downstream effect or a reader\'s individual applicability.</p></section>' +
     '<section id="sources" class="act-section"><p class="section-kicker">Verification</p><h2>Official sources and next paths</h2><div class="act-source-grid">' +
     '<a href="' + esc(act.originalSource) + '" target="_blank" rel="noreferrer"><strong>Original act</strong><span>Official EUR-Lex text ↗</span></a>' +
     '<a href="' + esc(act.articlesUrl) + '" target="_blank" rel="noreferrer"><strong>Article text</strong><span>Versioned consolidation ↗</span></a>' +
